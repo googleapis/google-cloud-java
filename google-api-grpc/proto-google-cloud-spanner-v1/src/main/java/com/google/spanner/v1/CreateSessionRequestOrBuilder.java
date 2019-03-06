@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface CreateSessionRequestOrBuilder extends
+public interface CreateSessionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.CreateSessionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The database in which the new session is created.
    * </pre>
@@ -16,16 +19,19 @@ public interface CreateSessionRequestOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * Required. The database in which the new session is created.
    * </pre>
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 
   /**
+   *
+   *
    * <pre>
    * The session to create.
    * </pre>
@@ -34,6 +40,8 @@ public interface CreateSessionRequestOrBuilder extends
    */
   boolean hasSession();
   /**
+   *
+   *
    * <pre>
    * The session to create.
    * </pre>
@@ -42,6 +50,8 @@ public interface CreateSessionRequestOrBuilder extends
    */
   com.google.spanner.v1.Session getSession();
   /**
+   *
+   *
    * <pre>
    * The session to create.
    * </pre>

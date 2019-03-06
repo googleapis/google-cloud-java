@@ -18,13 +18,9 @@ package com.google.cloud.datastore;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-
 import java.util.List;
 
-/**
- * An incomplete key (without a name or id).
- * This class is immutable.
- */
+/** An incomplete key (without a name or id). This class is immutable. */
 public class IncompleteKey extends BaseKey {
 
   private static final long serialVersionUID = 4947014765344279019L;
@@ -41,8 +37,8 @@ public class IncompleteKey extends BaseKey {
 
     @Override
     public IncompleteKey build() {
-      ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
-          .addAll(ancestors).add(PathElement.of(kind)).build();
+      ImmutableList<PathElement> path =
+          ImmutableList.<PathElement>builder().addAll(ancestors).add(PathElement.of(kind)).build();
       return new IncompleteKey(projectId, namespace, path);
     }
   }
@@ -73,10 +69,7 @@ public class IncompleteKey extends BaseKey {
     return new IncompleteKey(projectId, namespace, path);
   }
 
-
-  /**
-   * Returns the key's parent.
-   */
+  /** Returns the key's parent. */
   @Override
   public Key getParent() {
     List<PathElement> ancestors = getAncestors();
@@ -97,16 +90,13 @@ public class IncompleteKey extends BaseKey {
     return keyBuilder.addAncestors(ancestors.subList(0, ancestors.size() - 1)).build();
   }
 
-
   public static Builder newBuilder(String projectId, String kind) {
     return new Builder(projectId, kind);
   }
 
-
   public static Builder newBuilder(IncompleteKey copyFrom) {
     return new Builder(copyFrom);
   }
-
 
   public static Builder newBuilder(Key parent, String kind) {
     return newBuilder(parent.getProjectId(), kind)

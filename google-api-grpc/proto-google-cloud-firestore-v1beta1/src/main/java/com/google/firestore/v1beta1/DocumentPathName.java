@@ -14,20 +14,21 @@
 
 package com.google.firestore.v1beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class DocumentPathName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/databases/{database}/documents/{document_path=**}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/databases/{database}/documents/{document_path=**}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -63,19 +64,19 @@ public class DocumentPathName implements ResourceName {
 
   public static DocumentPathName of(String project, String database, String documentPath) {
     return newBuilder()
-      .setProject(project)
-      .setDatabase(database)
-      .setDocumentPath(documentPath)
-      .build();
+        .setProject(project)
+        .setDatabase(database)
+        .setDocumentPath(documentPath)
+        .build();
   }
 
   public static String format(String project, String database, String documentPath) {
     return newBuilder()
-      .setProject(project)
-      .setDatabase(database)
-      .setDocumentPath(documentPath)
-      .build()
-      .toString();
+        .setProject(project)
+        .setDatabase(database)
+        .setDocumentPath(documentPath)
+        .build()
+        .toString();
   }
 
   public static DocumentPathName parse(String formattedString) {
@@ -83,7 +84,8 @@ public class DocumentPathName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "DocumentPathName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "DocumentPathName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("database"), matchMap.get("document_path"));
   }
 
@@ -132,7 +134,8 @@ public class DocumentPathName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "database", database, "document_path", documentPath);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "database", database, "document_path", documentPath);
   }
 
   /** Builder for DocumentPathName. */
@@ -169,8 +172,7 @@ public class DocumentPathName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(DocumentPathName documentPathName) {
       project = documentPathName.project;
@@ -209,4 +211,3 @@ public class DocumentPathName implements ResourceName {
     return h;
   }
 }
-

@@ -29,11 +29,9 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
-
-import org.junit.Test;
-
 import java.io.IOException;
 import java.net.SocketTimeoutException;
+import org.junit.Test;
 
 public class DnsExceptionTest {
 

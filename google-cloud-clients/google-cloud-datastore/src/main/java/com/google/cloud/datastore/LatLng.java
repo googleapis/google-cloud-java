@@ -22,8 +22,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * A Google Cloud Datastore LatLng (represented by latitude and longitude in degrees).
- * This class is immutable.
+ * A Google Cloud Datastore LatLng (represented by latitude and longitude in degrees). This class is
+ * immutable.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
@@ -45,18 +45,12 @@ public final class LatLng implements Serializable {
     this.longitude = longitude;
   }
 
-
-  /**
-   * Returns the latitude.
-   */
+  /** Returns the latitude. */
   public double getLatitude() {
     return latitude;
   }
 
-
-  /**
-   * Returns the longitude.
-   */
+  /** Returns the longitude. */
   public double getLongitude() {
     return longitude;
   }
@@ -73,8 +67,10 @@ public final class LatLng implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this || (obj instanceof LatLng && this.latitude == ((LatLng) obj).latitude
-               && this.longitude == ((LatLng) obj).longitude);
+    return obj == this
+        || (obj instanceof LatLng
+            && this.latitude == ((LatLng) obj).latitude
+            && this.longitude == ((LatLng) obj).longitude);
   }
 
   public static LatLng of(double latitude, double longitude) {

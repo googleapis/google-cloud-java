@@ -97,8 +97,8 @@ public interface TransactionContext extends ReadContext {
 
   /**
    * Executes the DML statement(s) and returns the number of rows modified. For non-DML statements,
-   * it will result in an {@code IllegalArgumentException}. The effects of the DML statement
-   * will be visible to subsequent operations in the transaction.
+   * it will result in an {@code IllegalArgumentException}. The effects of the DML statement will be
+   * visible to subsequent operations in the transaction.
    */
   long executeUpdate(Statement statement);
 }

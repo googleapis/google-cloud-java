@@ -23,7 +23,7 @@ import "google/cloud/automl/v1beta1/translation.proto";
 option go_package = "google.golang.org/genproto/googleapis/cloud/automl/v1beta1;automl";
 option java_multiple_files = true;
 option java_package = "com.google.cloud.automl.v1beta1";
-
+option php_namespace = "Google\\Cloud\\AutoMl\\V1beta1";
 
 // Contains annotation information that is relevant to AutoML.
 message AnnotationPayload {
@@ -42,10 +42,11 @@ message AnnotationPayload {
   // ancestor dataset, or the dataset that was used to train the model in use.
   string annotation_spec_id = 1;
 
-  // Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-  // was trained. Because this field returns a value at model training time,
-  // for different models trained using the same dataset, the returned value
-  // could be different as model owner could update the display_name between
-  // any two model training.
+  // Output only. The value of
+  // [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+  // when the model was trained. Because this field returns a value at model
+  // training time, for different models trained using the same dataset, the
+  // returned value could be different as model owner could update the
+  // display_name between any two model training.
   string display_name = 5;
 }

@@ -74,10 +74,9 @@ public final class InstanceId {
   /**
    * Creates an {@code InstanceId} from the name of the instance.
    *
-   * @param name the instance name of the form {@code
-   *     projects/PROJECT_ID/instances/INSTANCE_ID}
+   * @param name the instance name of the form {@code projects/PROJECT_ID/instances/INSTANCE_ID}
    * @throws IllegalArgumentException if {@code instanceName} does not conform to the expected
-   * pattern.
+   *     pattern.
    */
   static InstanceId of(String name) {
     Map<String, String> parts = NAME_TEMPLATE.match(name);
@@ -86,9 +85,7 @@ public final class InstanceId {
     return of(parts.get("project"), parts.get("instance"));
   }
 
-  /**
-   * Creates an {@code InstanceId} given project and instance IDs.
-   */
+  /** Creates an {@code InstanceId} given project and instance IDs. */
   public static InstanceId of(String project, String instance) {
     return new InstanceId(project, instance);
   }

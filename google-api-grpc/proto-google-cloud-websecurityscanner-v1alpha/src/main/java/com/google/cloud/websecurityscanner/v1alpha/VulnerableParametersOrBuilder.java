@@ -3,20 +3,24 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface VulnerableParametersOrBuilder extends
+public interface VulnerableParametersOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.VulnerableParameters)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The vulnerable parameter names.
    * </pre>
    *
    * <code>repeated string parameter_names = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getParameterNamesList();
+  java.util.List<java.lang.String> getParameterNamesList();
   /**
+   *
+   *
    * <pre>
    * The vulnerable parameter names.
    * </pre>
@@ -25,6 +29,8 @@ public interface VulnerableParametersOrBuilder extends
    */
   int getParameterNamesCount();
   /**
+   *
+   *
    * <pre>
    * The vulnerable parameter names.
    * </pre>
@@ -33,12 +39,13 @@ public interface VulnerableParametersOrBuilder extends
    */
   java.lang.String getParameterNames(int index);
   /**
+   *
+   *
    * <pre>
    * The vulnerable parameter names.
    * </pre>
    *
    * <code>repeated string parameter_names = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParameterNamesBytes(int index);
+  com.google.protobuf.ByteString getParameterNamesBytes(int index);
 }

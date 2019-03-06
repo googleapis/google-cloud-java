@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface DeleteSinkRequestOrBuilder extends
+public interface DeleteSinkRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.DeleteSinkRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The full resource name of the sink to delete, including the
    * parent resource and the sink identifier:
@@ -22,6 +25,8 @@ public interface DeleteSinkRequestOrBuilder extends
    */
   java.lang.String getSinkName();
   /**
+   *
+   *
    * <pre>
    * Required. The full resource name of the sink to delete, including the
    * parent resource and the sink identifier:
@@ -34,6 +39,5 @@ public interface DeleteSinkRequestOrBuilder extends
    *
    * <code>string sink_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSinkNameBytes();
+  com.google.protobuf.ByteString getSinkNameBytes();
 }

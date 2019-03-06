@@ -22,7 +22,6 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.MetricInfo;
 
-
 /**
  * A snippet for Stackdriver Logging showing how to create a metric. The snippet also shows how to
  * list all metrics.
@@ -35,12 +34,13 @@ public class CreateAndListMetrics {
   public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-    try(Logging logging = LoggingOptions.getDefaultInstance().getService()) {
+    try (Logging logging = LoggingOptions.getDefaultInstance().getService()) {
 
       // Create a metric
-      MetricInfo metricInfo = MetricInfo.newBuilder("test-metric", "severity >= ERROR")
-          .setDescription("Log entries with severity higher or equal to ERROR")
-          .build();
+      MetricInfo metricInfo =
+          MetricInfo.newBuilder("test-metric", "severity >= ERROR")
+              .setDescription("Log entries with severity higher or equal to ERROR")
+              .build();
       logging.create(metricInfo);
 
       // List metrics

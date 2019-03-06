@@ -3,7 +3,7 @@
 
 package com.google.cloud.redis.v1;
 
-public interface ZoneMetadataOrBuilder extends
+public interface ZoneMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1.ZoneMetadata)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1beta2;
 
-public interface DependencyEdgeOrBuilder extends
+public interface DependencyEdgeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1beta2.DependencyEdge)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Represents the head of this token in the dependency tree.
    * This is the index of the token which has an arc going to this token.
@@ -21,6 +24,8 @@ public interface DependencyEdgeOrBuilder extends
   int getHeadTokenIndex();
 
   /**
+   *
+   *
    * <pre>
    * The parse label for the token.
    * </pre>
@@ -29,6 +34,8 @@ public interface DependencyEdgeOrBuilder extends
    */
   int getLabelValue();
   /**
+   *
+   *
    * <pre>
    * The parse label for the token.
    * </pre>

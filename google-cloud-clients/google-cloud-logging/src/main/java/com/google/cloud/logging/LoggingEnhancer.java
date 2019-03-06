@@ -16,10 +16,7 @@
 
 package com.google.cloud.logging;
 
-/**
- * An enhancer for log entries.
- * Used to add custom labels to the {@link LogEntry.Builder}
- */
+/** An enhancer for log entries. Used to add custom labels to the {@link LogEntry.Builder} */
 public interface LoggingEnhancer {
   void enhanceLogEntry(LogEntry.Builder builder);
 }

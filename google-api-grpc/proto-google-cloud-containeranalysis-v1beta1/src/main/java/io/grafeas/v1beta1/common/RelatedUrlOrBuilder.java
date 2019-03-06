@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.common;
 
-public interface RelatedUrlOrBuilder extends
+public interface RelatedUrlOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.RelatedUrl)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Specific URL associated with the resource.
    * </pre>
@@ -16,16 +19,19 @@ public interface RelatedUrlOrBuilder extends
    */
   java.lang.String getUrl();
   /**
+   *
+   *
    * <pre>
    * Specific URL associated with the resource.
    * </pre>
    *
    * <code>string url = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUrlBytes();
+  com.google.protobuf.ByteString getUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * Label to describe usage of the URL.
    * </pre>
@@ -34,12 +40,13 @@ public interface RelatedUrlOrBuilder extends
    */
   java.lang.String getLabel();
   /**
+   *
+   *
    * <pre>
    * Label to describe usage of the URL.
    * </pre>
    *
    * <code>string label = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLabelBytes();
+  com.google.protobuf.ByteString getLabelBytes();
 }

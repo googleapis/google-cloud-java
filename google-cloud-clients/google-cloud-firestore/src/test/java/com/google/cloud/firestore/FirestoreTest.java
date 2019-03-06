@@ -25,9 +25,9 @@ import static org.mockito.Mockito.doAnswer;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.ListCollectionIdsRequest;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,10 +44,7 @@ public class FirestoreTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
@@ -116,6 +113,25 @@ public class FirestoreTest {
     // Note that we sort based on the order in the getAll() call.
     assertEquals("doc4", snapshot.get(2).getId());
     assertEquals("doc3", snapshot.get(3).getId());
+  }
+
+  @Test
+  public void getAllWithFieldMask() throws Exception {
+    doAnswer(getAllResponse(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            getAllCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    DocumentReference doc1 = firestoreMock.document("coll/doc1");
+    FieldMask fieldMask = FieldMask.of(FieldPath.of("foo", "bar"));
+
+    firestoreMock.getAll(new DocumentReference[] {doc1}, fieldMask).get();
+
+    BatchGetDocumentsRequest request = getAllCapture.getValue();
+    assertEquals(1, request.getMask().getFieldPathsCount());
+    assertEquals("foo.bar", request.getMask().getFieldPaths(0));
   }
 
   @Test

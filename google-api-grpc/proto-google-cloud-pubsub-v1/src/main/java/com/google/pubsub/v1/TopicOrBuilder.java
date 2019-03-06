@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface TopicOrBuilder extends
+public interface TopicOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.Topic)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the topic. It must have the format
    * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
@@ -21,6 +24,8 @@ public interface TopicOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the topic. It must have the format
    * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
@@ -32,64 +37,70 @@ public interface TopicOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Policy constraining how messages published to the topic may be stored. It
    * is determined when the topic is created based on the policy configured at
@@ -103,6 +114,8 @@ public interface TopicOrBuilder extends
    */
   boolean hasMessageStoragePolicy();
   /**
+   *
+   *
    * <pre>
    * Policy constraining how messages published to the topic may be stored. It
    * is determined when the topic is created based on the policy configured at
@@ -116,6 +129,8 @@ public interface TopicOrBuilder extends
    */
   com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy();
   /**
+   *
+   *
    * <pre>
    * Policy constraining how messages published to the topic may be stored. It
    * is determined when the topic is created based on the policy configured at

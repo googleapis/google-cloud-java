@@ -4,6 +4,8 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Response for reporting an individual error event.
  * Data may be added to this message in the future.
@@ -11,23 +13,23 @@ package com.google.devtools.clouderrorreporting.v1beta1;
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse}
  */
-public  final class ReportErrorEventResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ReportErrorEventResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)
     ReportErrorEventResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ReportErrorEventResponse.newBuilder() to construct.
   private ReportErrorEventResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ReportErrorEventResponse() {
-  }
+
+  private ReportErrorEventResponse() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ReportErrorEventResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,39 +48,42 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.class, com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.class,
+            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -90,8 +95,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     unknownFields.writeTo(output);
   }
 
@@ -109,12 +113,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
-    if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)) {
+    if (!(obj
+        instanceof com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse other = (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse other =
+        (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse) obj;
 
     boolean result = true;
     result = result && unknownFields.equals(other.unknownFields);
@@ -134,96 +140,105 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response for reporting an individual error event.
    * Data may be added to this message in the future.
@@ -231,38 +246,41 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)
       com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.class, com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.class,
+              com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.Builder
+                  .class);
     }
 
-    // Construct using com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.newBuilder()
+    // Construct using
+    // com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -270,19 +288,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse getDefaultInstanceForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.getDefaultInstance();
+    public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+        getDefaultInstanceForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+          .getDefaultInstance();
     }
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse build() {
-      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse result = buildPartial();
+      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -291,7 +312,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse result = new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse(this);
+      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse result =
+          new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse(this);
       onBuilt();
       return result;
     }
@@ -300,46 +322,52 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)other);
+      if (other
+          instanceof com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse) {
+        return mergeFrom(
+            (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse other) {
+      if (other
+          == com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+              .getDefaultInstance()) return this;
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -359,7 +387,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -368,9 +398,9 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -380,30 +410,33 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)
-  private static final com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse DEFAULT_INSTANCE;
+  private static final com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+      DEFAULT_INSTANCE;
+
   static {
-    DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse();
+    DEFAULT_INSTANCE =
+        new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse();
   }
 
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse getDefaultInstance() {
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReportErrorEventResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ReportErrorEventResponse>() {
-    @java.lang.Override
-    public ReportErrorEventResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReportErrorEventResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ReportErrorEventResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ReportErrorEventResponse>() {
+        @java.lang.Override
+        public ReportErrorEventResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReportErrorEventResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ReportErrorEventResponse> parser() {
     return PARSER;
@@ -415,9 +448,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse getDefaultInstanceForType() {
+  public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

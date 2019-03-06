@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface GetInstanceRequestOrBuilder extends
+public interface GetInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.GetInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the requested instance. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -17,6 +20,8 @@ public interface GetInstanceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the requested instance. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -24,6 +29,5 @@ public interface GetInstanceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

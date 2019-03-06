@@ -19,7 +19,6 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.UserDefinedFunctionResource;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -68,27 +67,21 @@ public abstract class UserDefinedFunction implements Serializable {
     this.content = content;
   }
 
-
-  /**
-   * Returns the type of user defined function.
-   */
+  /** Returns the type of user defined function. */
   public Type getType() {
     return type;
   }
 
-
   /**
-   * If {@link #getType()} is {@link Type#INLINE} this method returns a code blob. If
-   * {@link #getType()} is {@link Type#FROM_URI} the method returns a Google Cloud Storage
-   * URI (e.g. gs://bucket/path).
+   * If {@link #getType()} is {@link Type#INLINE} this method returns a code blob. If {@link
+   * #getType()} is {@link Type#FROM_URI} the method returns a Google Cloud Storage URI (e.g.
+   * gs://bucket/path).
    */
   public String getContent() {
     return content;
   }
 
-  /**
-   * A Google Cloud BigQuery user-defined function, as a code blob.
-   */
+  /** A Google Cloud BigQuery user-defined function, as a code blob. */
   static final class InlineFunction extends UserDefinedFunction {
 
     private static final long serialVersionUID = 1083672109192091686L;
@@ -109,9 +102,7 @@ public abstract class UserDefinedFunction implements Serializable {
     }
   }
 
-  /**
-   * A Google Cloud BigQuery user-defined function, as an URI to Google Cloud Storage.
-   */
+  /** A Google Cloud BigQuery user-defined function, as an URI to Google Cloud Storage. */
   static final class UriFunction extends UserDefinedFunction {
 
     private static final long serialVersionUID = 4660331691852223839L;
@@ -145,9 +136,7 @@ public abstract class UserDefinedFunction implements Serializable {
 
   public abstract com.google.api.services.bigquery.model.UserDefinedFunctionResource toPb();
 
-  /**
-   * Creates a Google Cloud BigQuery user-defined function given a code blob.
-   */
+  /** Creates a Google Cloud BigQuery user-defined function given a code blob. */
   public static UserDefinedFunction inline(String functionDefinition) {
     return new InlineFunction(functionDefinition);
   }

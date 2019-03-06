@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.source;
 
-public interface RepoIdOrBuilder extends
+public interface RepoIdOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.source.RepoId)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A combination of a project ID and a repo name.
    * </pre>
@@ -16,6 +19,8 @@ public interface RepoIdOrBuilder extends
    */
   boolean hasProjectRepoId();
   /**
+   *
+   *
    * <pre>
    * A combination of a project ID and a repo name.
    * </pre>
@@ -24,6 +29,8 @@ public interface RepoIdOrBuilder extends
    */
   io.grafeas.v1beta1.source.ProjectRepoId getProjectRepoId();
   /**
+   *
+   *
    * <pre>
    * A combination of a project ID and a repo name.
    * </pre>
@@ -33,6 +40,8 @@ public interface RepoIdOrBuilder extends
   io.grafeas.v1beta1.source.ProjectRepoIdOrBuilder getProjectRepoIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A server-assigned, globally unique identifier.
    * </pre>
@@ -41,14 +50,15 @@ public interface RepoIdOrBuilder extends
    */
   java.lang.String getUid();
   /**
+   *
+   *
    * <pre>
    * A server-assigned, globally unique identifier.
    * </pre>
    *
    * <code>string uid = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getUidBytes();
+  com.google.protobuf.ByteString getUidBytes();
 
   public io.grafeas.v1beta1.source.RepoId.IdCase getIdCase();
 }

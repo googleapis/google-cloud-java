@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ReportedErrorEventOrBuilder extends
+public interface ReportedErrorEventOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Optional] Time when the event occurred.
    * If not provided, the time when the event was received by the
@@ -18,6 +21,8 @@ public interface ReportedErrorEventOrBuilder extends
    */
   boolean hasEventTime();
   /**
+   *
+   *
    * <pre>
    * [Optional] Time when the event occurred.
    * If not provided, the time when the event was received by the
@@ -28,6 +33,8 @@ public interface ReportedErrorEventOrBuilder extends
    */
   com.google.protobuf.Timestamp getEventTime();
   /**
+   *
+   *
    * <pre>
    * [Optional] Time when the event occurred.
    * If not provided, the time when the event was received by the
@@ -39,6 +46,8 @@ public interface ReportedErrorEventOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEventTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Required] The service context in which this error has occurred.
    * </pre>
@@ -47,6 +56,8 @@ public interface ReportedErrorEventOrBuilder extends
    */
   boolean hasServiceContext();
   /**
+   *
+   *
    * <pre>
    * [Required] The service context in which this error has occurred.
    * </pre>
@@ -55,15 +66,20 @@ public interface ReportedErrorEventOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getServiceContext();
   /**
+   *
+   *
    * <pre>
    * [Required] The service context in which this error has occurred.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContext service_context = 2;</code>
    */
-  com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder getServiceContextOrBuilder();
+  com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder
+      getServiceContextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Required] A message describing the error. The message can contain an
    * exception stack in one of the supported programming languages and formats.
@@ -75,6 +91,8 @@ public interface ReportedErrorEventOrBuilder extends
    */
   java.lang.String getMessage();
   /**
+   *
+   *
    * <pre>
    * [Required] A message describing the error. The message can contain an
    * exception stack in one of the supported programming languages and formats.
@@ -84,10 +102,11 @@ public interface ReportedErrorEventOrBuilder extends
    *
    * <code>string message = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getMessageBytes();
+  com.google.protobuf.ByteString getMessageBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] A description of the context in which the error occurred.
    * </pre>
@@ -96,6 +115,8 @@ public interface ReportedErrorEventOrBuilder extends
    */
   boolean hasContext();
   /**
+   *
+   *
    * <pre>
    * [Optional] A description of the context in which the error occurred.
    * </pre>
@@ -104,6 +125,8 @@ public interface ReportedErrorEventOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorContext getContext();
   /**
+   *
+   *
    * <pre>
    * [Optional] A description of the context in which the error occurred.
    * </pre>

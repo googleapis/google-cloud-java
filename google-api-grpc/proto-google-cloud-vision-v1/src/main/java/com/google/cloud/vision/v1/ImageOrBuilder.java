@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface ImageOrBuilder extends
+public interface ImageOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.Image)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Image content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
@@ -19,6 +22,8 @@ public interface ImageOrBuilder extends
   com.google.protobuf.ByteString getContent();
 
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage image location, or publicly-accessible image
    * URL. If both `content` and `source` are provided for an image, `content`
@@ -29,6 +34,8 @@ public interface ImageOrBuilder extends
    */
   boolean hasSource();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage image location, or publicly-accessible image
    * URL. If both `content` and `source` are provided for an image, `content`
@@ -39,6 +46,8 @@ public interface ImageOrBuilder extends
    */
   com.google.cloud.vision.v1.ImageSource getSource();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage image location, or publicly-accessible image
    * URL. If both `content` and `source` are provided for an image, `content`

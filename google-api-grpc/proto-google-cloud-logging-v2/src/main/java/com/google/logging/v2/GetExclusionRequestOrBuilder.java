@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface GetExclusionRequestOrBuilder extends
+public interface GetExclusionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.GetExclusionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of an existing exclusion:
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
@@ -21,6 +24,8 @@ public interface GetExclusionRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of an existing exclusion:
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
@@ -32,6 +37,5 @@ public interface GetExclusionRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

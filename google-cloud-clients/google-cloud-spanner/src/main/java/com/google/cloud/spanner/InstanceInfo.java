@@ -41,7 +41,6 @@ public class InstanceInfo {
       this.selector = selector;
     }
 
-
     @Override
     public String getSelector() {
       return selector;

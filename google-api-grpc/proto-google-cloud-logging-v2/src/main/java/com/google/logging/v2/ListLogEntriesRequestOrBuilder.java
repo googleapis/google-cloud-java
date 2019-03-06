@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface ListLogEntriesRequestOrBuilder extends
+public interface ListLogEntriesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListLogEntriesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
@@ -18,9 +21,11 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.util.List<java.lang.String>
-      getProjectIdsList();
+  @java.lang.Deprecated
+  java.util.List<java.lang.String> getProjectIdsList();
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
@@ -31,8 +36,11 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated int getProjectIdsCount();
+  @java.lang.Deprecated
+  int getProjectIdsCount();
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
@@ -43,8 +51,11 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectIds(int index);
+  @java.lang.Deprecated
+  java.lang.String getProjectIds(int index);
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use `resource_names` instead.  One or more project identifiers
    * or project numbers from which to retrieve log entries.  Example:
@@ -55,10 +66,12 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>repeated string project_ids = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdsBytes(int index);
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Required. Names of one or more parent resources from which to
    * retrieve log entries:
@@ -71,9 +84,10 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>repeated string resource_names = 8;</code>
    */
-  java.util.List<java.lang.String>
-      getResourceNamesList();
+  java.util.List<java.lang.String> getResourceNamesList();
   /**
+   *
+   *
    * <pre>
    * Required. Names of one or more parent resources from which to
    * retrieve log entries:
@@ -88,6 +102,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    */
   int getResourceNamesCount();
   /**
+   *
+   *
    * <pre>
    * Required. Names of one or more parent resources from which to
    * retrieve log entries:
@@ -102,6 +118,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    */
   java.lang.String getResourceNames(int index);
   /**
+   *
+   *
    * <pre>
    * Required. Names of one or more parent resources from which to
    * retrieve log entries:
@@ -114,10 +132,11 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>repeated string resource_names = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceNamesBytes(int index);
+  com.google.protobuf.ByteString getResourceNamesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
    * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
@@ -132,6 +151,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Optional. A filter that chooses which log entries to return.  See [Advanced
    * Logs Filters](/logging/docs/view/advanced_filters).  Only log entries that
@@ -144,10 +165,11 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. How the results should be sorted.  Presently, the only permitted
    * values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
@@ -161,6 +183,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * Optional. How the results should be sorted.  Presently, the only permitted
    * values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
@@ -172,10 +196,11 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>string order_by = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The maximum number of results to return from this request.
    * Non-positive values are ignored.  The presence of `next_page_token` in the
@@ -187,6 +212,8 @@ public interface ListLogEntriesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `page_token` must be the value of
@@ -198,6 +225,8 @@ public interface ListLogEntriesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `page_token` must be the value of
@@ -207,6 +236,5 @@ public interface ListLogEntriesRequestOrBuilder extends
    *
    * <code>string page_token = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

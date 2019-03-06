@@ -3,36 +3,49 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InspectDataSourceDetailsOrBuilder extends
+public interface InspectDataSourceDetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectDataSourceDetails)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The configuration used for this job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;
+   * </code>
    */
   boolean hasRequestedOptions();
   /**
+   *
+   *
    * <pre>
    * The configuration used for this job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;
+   * </code>
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions getRequestedOptions();
   /**
+   *
+   *
    * <pre>
    * The configuration used for this job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;</code>
+   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptions requested_options = 2;
+   * </code>
    */
-  com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptionsOrBuilder getRequestedOptionsOrBuilder();
+  com.google.privacy.dlp.v2.InspectDataSourceDetails.RequestedOptionsOrBuilder
+      getRequestedOptionsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A summary of the outcome of this inspect job.
    * </pre>
@@ -41,6 +54,8 @@ public interface InspectDataSourceDetailsOrBuilder extends
    */
   boolean hasResult();
   /**
+   *
+   *
    * <pre>
    * A summary of the outcome of this inspect job.
    * </pre>
@@ -49,6 +64,8 @@ public interface InspectDataSourceDetailsOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails.Result getResult();
   /**
+   *
+   *
    * <pre>
    * A summary of the outcome of this inspect job.
    * </pre>

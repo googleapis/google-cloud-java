@@ -4,33 +4,37 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * SetMasterAuthRequest updates the admin password of a cluster.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.SetMasterAuthRequest}
  */
-public  final class SetMasterAuthRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SetMasterAuthRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.SetMasterAuthRequest)
     SetMasterAuthRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SetMasterAuthRequest.newBuilder() to construct.
   private SetMasterAuthRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SetMasterAuthRequest() {
     projectId_ = "";
     zone_ = "";
     clusterId_ = "";
     action_ = 0;
+    name_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SetMasterAuthRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,85 +54,103 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            zone_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clusterId_ = s;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            action_ = rawValue;
-            break;
-          }
-          case 42: {
-            com.google.container.v1.MasterAuth.Builder subBuilder = null;
-            if (update_ != null) {
-              subBuilder = update_.toBuilder();
+              projectId_ = s;
+              break;
             }
-            update_ = input.readMessage(com.google.container.v1.MasterAuth.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(update_);
-              update_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              zone_ = s;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterId_ = s;
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              action_ = rawValue;
+              break;
+            }
+          case 42:
+            {
+              com.google.container.v1.MasterAuth.Builder subBuilder = null;
+              if (update_ != null) {
+                subBuilder = update_.toBuilder();
+              }
+              update_ =
+                  input.readMessage(com.google.container.v1.MasterAuth.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(update_);
+                update_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetMasterAuthRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_SetMasterAuthRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetMasterAuthRequest_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_SetMasterAuthRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.SetMasterAuthRequest.class, com.google.container.v1.SetMasterAuthRequest.Builder.class);
+            com.google.container.v1.SetMasterAuthRequest.class,
+            com.google.container.v1.SetMasterAuthRequest.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Operation type: what type update to perform.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1.SetMasterAuthRequest.Action}
    */
-  public enum Action
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Action implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Operation is unknown and will error out.
      * </pre>
@@ -137,6 +159,8 @@ private static final long serialVersionUID = 0L;
      */
     UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Set the password to a user generated value.
      * </pre>
@@ -145,6 +169,8 @@ private static final long serialVersionUID = 0L;
      */
     SET_PASSWORD(1),
     /**
+     *
+     *
      * <pre>
      * Generate a new password and set it to that.
      * </pre>
@@ -153,6 +179,8 @@ private static final long serialVersionUID = 0L;
      */
     GENERATE_PASSWORD(2),
     /**
+     *
+     *
      * <pre>
      * Set the username.  If an empty username is provided, basic authentication
      * is disabled for the cluster.  If a non-empty username is provided, basic
@@ -167,6 +195,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Operation is unknown and will error out.
      * </pre>
@@ -175,6 +205,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Set the password to a user generated value.
      * </pre>
@@ -183,6 +215,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SET_PASSWORD_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Generate a new password and set it to that.
      * </pre>
@@ -191,6 +225,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GENERATE_PASSWORD_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Set the username.  If an empty username is provided, basic authentication
      * is disabled for the cluster.  If a non-empty username is provided, basic
@@ -202,7 +238,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SET_USERNAME_VALUE = 3;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -211,9 +246,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Action valueOf(int value) {
       return forNumber(value);
@@ -221,46 +254,47 @@ private static final long serialVersionUID = 0L;
 
     public static Action forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return SET_PASSWORD;
-        case 2: return GENERATE_PASSWORD;
-        case 3: return SET_USERNAME;
-        default: return null;
+        case 0:
+          return UNKNOWN;
+        case 1:
+          return SET_PASSWORD;
+        case 2:
+          return GENERATE_PASSWORD;
+        case 3:
+          return SET_USERNAME;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Action>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Action> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Action> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Action>() {
-            public Action findValueByNumber(int number) {
-              return Action.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Action> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Action>() {
+          public Action findValueByNumber(int number) {
+            return Action.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.container.v1.SetMasterAuthRequest.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Action[] VALUES = values();
 
-    public static Action valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Action valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -280,40 +314,45 @@ private static final long serialVersionUID = 0L;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -324,42 +363,47 @@ private static final long serialVersionUID = 0L;
   public static final int ZONE_FIELD_NUMBER = 2;
   private volatile java.lang.Object zone_;
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       zone_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getZoneBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       zone_ = b;
       return b;
     } else {
@@ -370,38 +414,43 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object clusterId_;
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterIdBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterId_ = b;
       return b;
     } else {
@@ -412,6 +461,8 @@ private static final long serialVersionUID = 0L;
   public static final int ACTION_FIELD_NUMBER = 4;
   private int action_;
   /**
+   *
+   *
    * <pre>
    * The exact form of action to be taken on the master auth.
    * </pre>
@@ -422,6 +473,8 @@ private static final long serialVersionUID = 0L;
     return action_;
   }
   /**
+   *
+   *
    * <pre>
    * The exact form of action to be taken on the master auth.
    * </pre>
@@ -430,13 +483,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
     @SuppressWarnings("deprecation")
-    com.google.container.v1.SetMasterAuthRequest.Action result = com.google.container.v1.SetMasterAuthRequest.Action.valueOf(action_);
-    return result == null ? com.google.container.v1.SetMasterAuthRequest.Action.UNRECOGNIZED : result;
+    com.google.container.v1.SetMasterAuthRequest.Action result =
+        com.google.container.v1.SetMasterAuthRequest.Action.valueOf(action_);
+    return result == null
+        ? com.google.container.v1.SetMasterAuthRequest.Action.UNRECOGNIZED
+        : result;
   }
 
   public static final int UPDATE_FIELD_NUMBER = 5;
   private com.google.container.v1.MasterAuth update_;
   /**
+   *
+   *
    * <pre>
    * A description of the update.
    * </pre>
@@ -447,6 +505,8 @@ private static final long serialVersionUID = 0L;
     return update_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * A description of the update.
    * </pre>
@@ -457,6 +517,8 @@ private static final long serialVersionUID = 0L;
     return update_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
   }
   /**
+   *
+   *
    * <pre>
    * A description of the update.
    * </pre>
@@ -467,7 +529,53 @@ private static final long serialVersionUID = 0L;
     return getUpdate();
   }
 
+  public static final int NAME_FIELD_NUMBER = 7;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster) of the cluster to set auth.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 7;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster) of the cluster to set auth.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 7;</code>
+   */
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -479,8 +587,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
@@ -495,6 +602,9 @@ private static final long serialVersionUID = 0L;
     }
     if (update_ != null) {
       output.writeMessage(5, getUpdate());
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -515,12 +625,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterId_);
     }
     if (action_ != com.google.container.v1.SetMasterAuthRequest.Action.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, action_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, action_);
     }
     if (update_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getUpdate());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdate());
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -530,26 +641,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.SetMasterAuthRequest)) {
       return super.equals(obj);
     }
-    com.google.container.v1.SetMasterAuthRequest other = (com.google.container.v1.SetMasterAuthRequest) obj;
+    com.google.container.v1.SetMasterAuthRequest other =
+        (com.google.container.v1.SetMasterAuthRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
-    result = result && getZone()
-        .equals(other.getZone());
-    result = result && getClusterId()
-        .equals(other.getClusterId());
+    result = result && getProjectId().equals(other.getProjectId());
+    result = result && getZone().equals(other.getZone());
+    result = result && getClusterId().equals(other.getClusterId());
     result = result && action_ == other.action_;
     result = result && (hasUpdate() == other.hasUpdate());
     if (hasUpdate()) {
-      result = result && getUpdate()
-          .equals(other.getUpdate());
+      result = result && getUpdate().equals(other.getUpdate());
     }
+    result = result && getName().equals(other.getName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -573,123 +682,134 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + UPDATE_FIELD_NUMBER;
       hash = (53 * hash) + getUpdate().hashCode();
     }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.container.v1.SetMasterAuthRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.SetMasterAuthRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.SetMasterAuthRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.SetMasterAuthRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.SetMasterAuthRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.SetMasterAuthRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.SetMasterAuthRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * SetMasterAuthRequest updates the admin password of a cluster.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.SetMasterAuthRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.SetMasterAuthRequest)
       com.google.container.v1.SetMasterAuthRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetMasterAuthRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetMasterAuthRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetMasterAuthRequest_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetMasterAuthRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.SetMasterAuthRequest.class, com.google.container.v1.SetMasterAuthRequest.Builder.class);
+              com.google.container.v1.SetMasterAuthRequest.class,
+              com.google.container.v1.SetMasterAuthRequest.Builder.class);
     }
 
     // Construct using com.google.container.v1.SetMasterAuthRequest.newBuilder()
@@ -697,16 +817,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -724,13 +843,15 @@ private static final long serialVersionUID = 0L;
         update_ = null;
         updateBuilder_ = null;
       }
+      name_ = "";
+
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetMasterAuthRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetMasterAuthRequest_descriptor;
     }
 
     @java.lang.Override
@@ -749,7 +870,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.SetMasterAuthRequest buildPartial() {
-      com.google.container.v1.SetMasterAuthRequest result = new com.google.container.v1.SetMasterAuthRequest(this);
+      com.google.container.v1.SetMasterAuthRequest result =
+          new com.google.container.v1.SetMasterAuthRequest(this);
       result.projectId_ = projectId_;
       result.zone_ = zone_;
       result.clusterId_ = clusterId_;
@@ -759,6 +881,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.update_ = updateBuilder_.build();
       }
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -767,38 +890,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.SetMasterAuthRequest) {
-        return mergeFrom((com.google.container.v1.SetMasterAuthRequest)other);
+        return mergeFrom((com.google.container.v1.SetMasterAuthRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -824,6 +948,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpdate()) {
         mergeUpdate(other.getUpdate());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -856,18 +984,21 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -876,20 +1007,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -897,52 +1030,62 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -950,19 +1093,22 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object zone_ = "";
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         zone_ = s;
         return s;
@@ -971,21 +1117,23 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getZoneBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         zone_ = b;
         return b;
       } else {
@@ -993,55 +1141,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZone(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setZone(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       zone_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearZone() {
-      
+
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       zone_ = value;
       onChanged();
       return this;
@@ -1049,17 +1207,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterId_ = "";
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getClusterId() {
       java.lang.Object ref = clusterId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterId_ = s;
         return s;
@@ -1068,19 +1229,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterIdBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getClusterIdBytes() {
       java.lang.Object ref = clusterId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterId_ = b;
         return b;
       } else {
@@ -1088,49 +1251,59 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public Builder setClusterId(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setClusterId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearClusterId() {
-      
+
       clusterId_ = getDefaultInstance().getClusterId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public Builder setClusterIdBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterId_ = value;
       onChanged();
       return this;
@@ -1138,6 +1311,8 @@ private static final long serialVersionUID = 0L;
 
     private int action_ = 0;
     /**
+     *
+     *
      * <pre>
      * The exact form of action to be taken on the master auth.
      * </pre>
@@ -1148,6 +1323,8 @@ private static final long serialVersionUID = 0L;
       return action_;
     }
     /**
+     *
+     *
      * <pre>
      * The exact form of action to be taken on the master auth.
      * </pre>
@@ -1160,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The exact form of action to be taken on the master auth.
      * </pre>
@@ -1168,10 +1347,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.SetMasterAuthRequest.Action getAction() {
       @SuppressWarnings("deprecation")
-      com.google.container.v1.SetMasterAuthRequest.Action result = com.google.container.v1.SetMasterAuthRequest.Action.valueOf(action_);
-      return result == null ? com.google.container.v1.SetMasterAuthRequest.Action.UNRECOGNIZED : result;
+      com.google.container.v1.SetMasterAuthRequest.Action result =
+          com.google.container.v1.SetMasterAuthRequest.Action.valueOf(action_);
+      return result == null
+          ? com.google.container.v1.SetMasterAuthRequest.Action.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The exact form of action to be taken on the master auth.
      * </pre>
@@ -1182,12 +1366,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       action_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The exact form of action to be taken on the master auth.
      * </pre>
@@ -1195,7 +1381,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.SetMasterAuthRequest.Action action = 4;</code>
      */
     public Builder clearAction() {
-      
+
       action_ = 0;
       onChanged();
       return this;
@@ -1203,8 +1389,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.MasterAuth update_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuth, com.google.container.v1.MasterAuth.Builder, com.google.container.v1.MasterAuthOrBuilder> updateBuilder_;
+            com.google.container.v1.MasterAuth,
+            com.google.container.v1.MasterAuth.Builder,
+            com.google.container.v1.MasterAuthOrBuilder>
+        updateBuilder_;
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1215,6 +1406,8 @@ private static final long serialVersionUID = 0L;
       return updateBuilder_ != null || update_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1229,6 +1422,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1249,14 +1444,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
      *
      * <code>.google.container.v1.MasterAuth update = 5;</code>
      */
-    public Builder setUpdate(
-        com.google.container.v1.MasterAuth.Builder builderForValue) {
+    public Builder setUpdate(com.google.container.v1.MasterAuth.Builder builderForValue) {
       if (updateBuilder_ == null) {
         update_ = builderForValue.build();
         onChanged();
@@ -1267,6 +1463,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1277,7 +1475,9 @@ private static final long serialVersionUID = 0L;
       if (updateBuilder_ == null) {
         if (update_ != null) {
           update_ =
-            com.google.container.v1.MasterAuth.newBuilder(update_).mergeFrom(value).buildPartial();
+              com.google.container.v1.MasterAuth.newBuilder(update_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           update_ = value;
         }
@@ -1289,6 +1489,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1307,6 +1509,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1314,11 +1518,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MasterAuth update = 5;</code>
      */
     public com.google.container.v1.MasterAuth.Builder getUpdateBuilder() {
-      
+
       onChanged();
       return getUpdateFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1329,11 +1535,12 @@ private static final long serialVersionUID = 0L;
       if (updateBuilder_ != null) {
         return updateBuilder_.getMessageOrBuilder();
       } else {
-        return update_ == null ?
-            com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
+        return update_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : update_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description of the update.
      * </pre>
@@ -1341,21 +1548,123 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MasterAuth update = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuth, com.google.container.v1.MasterAuth.Builder, com.google.container.v1.MasterAuthOrBuilder> 
+            com.google.container.v1.MasterAuth,
+            com.google.container.v1.MasterAuth.Builder,
+            com.google.container.v1.MasterAuthOrBuilder>
         getUpdateFieldBuilder() {
       if (updateBuilder_ == null) {
-        updateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.MasterAuth, com.google.container.v1.MasterAuth.Builder, com.google.container.v1.MasterAuthOrBuilder>(
-                getUpdate(),
-                getParentForChildren(),
-                isClean());
+        updateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MasterAuth,
+                com.google.container.v1.MasterAuth.Builder,
+                com.google.container.v1.MasterAuthOrBuilder>(
+                getUpdate(), getParentForChildren(), isClean());
         update_ = null;
       }
       return updateBuilder_;
     }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster) of the cluster to set auth.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster) of the cluster to set auth.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster) of the cluster to set auth.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster) of the cluster to set auth.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster) of the cluster to set auth.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1365,12 +1674,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.SetMasterAuthRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.SetMasterAuthRequest)
   private static final com.google.container.v1.SetMasterAuthRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.SetMasterAuthRequest();
   }
@@ -1379,16 +1688,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SetMasterAuthRequest>
-      PARSER = new com.google.protobuf.AbstractParser<SetMasterAuthRequest>() {
-    @java.lang.Override
-    public SetMasterAuthRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SetMasterAuthRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SetMasterAuthRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SetMasterAuthRequest>() {
+        @java.lang.Override
+        public SetMasterAuthRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SetMasterAuthRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SetMasterAuthRequest> parser() {
     return PARSER;
@@ -1403,6 +1712,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.SetMasterAuthRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -26,11 +26,9 @@ import com.google.api.services.bigquery.model.TableCell;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
-
-import org.junit.Test;
-
 import java.math.BigDecimal;
 import java.util.Map;
+import org.junit.Test;
 
 public class FieldValueTest {
 
@@ -39,12 +37,14 @@ public class FieldValueTest {
   private static final TableCell BOOLEAN_FIELD = new TableCell().setV("false");
   private static final Map<String, String> INTEGER_FIELD = ImmutableMap.of("v", "1");
   private static final Map<String, String> FLOAT_FIELD = ImmutableMap.of("v", "1.5");
+  private static final Map<String, String> GEOGRAPHY_FIELD =
+      ImmutableMap.of("v", "POINT(-122.350220 47.649154)");
   private static final Map<String, String> NUMERIC_FIELD =
       ImmutableMap.of("v", "123456789.123456789");
   private static final Map<String, String> STRING_FIELD = ImmutableMap.of("v", "string");
   private static final Map<String, String> TIMESTAMP_FIELD = ImmutableMap.of("v", "42");
   private static final Map<String, String> BYTES_FIELD = ImmutableMap.of("v", BYTES_BASE64);
-  private static final Map<String, Object> NULL_FIELD =
+  private static final Map<String, String> NULL_FIELD =
       ImmutableMap.of("v", Data.nullOf(String.class));
   private static final Map<String, Object> REPEATED_FIELD =
       ImmutableMap.<String, Object>of("v", ImmutableList.<Object>of(INTEGER_FIELD, INTEGER_FIELD));
@@ -62,6 +62,9 @@ public class FieldValueTest {
     value = FieldValue.fromPb(FLOAT_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(1.5, value.getDoubleValue(), 0);
+    value = FieldValue.fromPb(GEOGRAPHY_FIELD);
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
+    assertEquals("POINT(-122.350220 47.649154)", value.getStringValue());
     value = FieldValue.fromPb(NUMERIC_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(new BigDecimal("123456789.123456789"), value.getNumericValue());
@@ -86,7 +89,6 @@ public class FieldValueTest {
     assertEquals(FieldValue.fromPb(TIMESTAMP_FIELD), value.getRepeatedValue().get(1));
   }
 
-
   @Test
   public void testEquals() {
     FieldValue booleanValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "false");
@@ -101,8 +103,12 @@ public class FieldValueTest {
     assertEquals(floatValue, FieldValue.fromPb(FLOAT_FIELD));
     assertEquals(floatValue.hashCode(), FieldValue.fromPb(FLOAT_FIELD).hashCode());
 
-    FieldValue numericValue =
-        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "123456789.123456789");
+    FieldValue geographyValue =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "POINT(-122.350220 47.649154)");
+    assertEquals(geographyValue, FieldValue.fromPb(GEOGRAPHY_FIELD));
+    assertEquals(geographyValue.hashCode(), FieldValue.fromPb(GEOGRAPHY_FIELD).hashCode());
+
+    FieldValue numericValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "123456789.123456789");
     assertEquals(numericValue, FieldValue.fromPb(NUMERIC_FIELD));
     assertEquals(numericValue.hashCode(), FieldValue.fromPb(NUMERIC_FIELD).hashCode());
 
@@ -122,13 +128,13 @@ public class FieldValueTest {
     assertEquals(nullValue, FieldValue.fromPb(NULL_FIELD));
     assertEquals(nullValue.hashCode(), FieldValue.fromPb(NULL_FIELD).hashCode());
 
-    FieldValue repeatedValue = FieldValue.of(FieldValue.Attribute.REPEATED,
-        ImmutableList.of(integerValue, integerValue));
+    FieldValue repeatedValue =
+        FieldValue.of(FieldValue.Attribute.REPEATED, ImmutableList.of(integerValue, integerValue));
     assertEquals(repeatedValue, FieldValue.fromPb(REPEATED_FIELD));
     assertEquals(repeatedValue.hashCode(), FieldValue.fromPb(REPEATED_FIELD).hashCode());
 
-    FieldValue recordValue = FieldValue.of(FieldValue.Attribute.RECORD,
-        ImmutableList.of(floatValue, timestampValue));
+    FieldValue recordValue =
+        FieldValue.of(FieldValue.Attribute.RECORD, ImmutableList.of(floatValue, timestampValue));
     assertEquals(recordValue, FieldValue.fromPb(RECORD_FIELD));
     assertEquals(recordValue.hashCode(), FieldValue.fromPb(RECORD_FIELD).hashCode());
   }

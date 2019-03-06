@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface EntityResultOrBuilder extends
+public interface EntityResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.EntityResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resulting entity.
    * </pre>
@@ -16,6 +19,8 @@ public interface EntityResultOrBuilder extends
    */
   boolean hasEntity();
   /**
+   *
+   *
    * <pre>
    * The resulting entity.
    * </pre>
@@ -24,6 +29,8 @@ public interface EntityResultOrBuilder extends
    */
   com.google.datastore.v1.Entity getEntity();
   /**
+   *
+   *
    * <pre>
    * The resulting entity.
    * </pre>
@@ -33,14 +40,16 @@ public interface EntityResultOrBuilder extends
   com.google.datastore.v1.EntityOrBuilder getEntityOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The version of the entity, a strictly positive number that monotonically
    * increases with changes to the entity.
-   * This field is set for [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity
-   * results.
-   * For [missing][google.datastore.v1.LookupResponse.missing] entities in `LookupResponse`, this
-   * is the version of the snapshot that was used to look up the entity, and it
-   * is always set except for eventually consistent reads.
+   * This field is set for
+   * [`FULL`][google.datastore.v1.EntityResult.ResultType.FULL] entity results.
+   * For [missing][google.datastore.v1.LookupResponse.missing] entities in
+   * `LookupResponse`, this is the version of the snapshot that was used to look
+   * up the entity, and it is always set except for eventually consistent reads.
    * </pre>
    *
    * <code>int64 version = 4;</code>
@@ -48,6 +57,8 @@ public interface EntityResultOrBuilder extends
   long getVersion();
 
   /**
+   *
+   *
    * <pre>
    * A cursor that points to the position after the result entity.
    * Set only when the `EntityResult` is part of a `QueryResultBatch` message.

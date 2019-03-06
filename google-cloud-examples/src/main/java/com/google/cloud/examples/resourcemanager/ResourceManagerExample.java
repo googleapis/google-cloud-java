@@ -21,7 +21,6 @@ import com.google.cloud.resourcemanager.ProjectInfo;
 import com.google.cloud.resourcemanager.ResourceManager;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.base.Joiner;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,9 +31,10 @@ import java.util.Scanner;
  *
  * <p>This example creates, deletes, gets, and lists projects.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/ResourceManagerExample
  * [list | [create | delete | get] projectId]}</pre>
  */

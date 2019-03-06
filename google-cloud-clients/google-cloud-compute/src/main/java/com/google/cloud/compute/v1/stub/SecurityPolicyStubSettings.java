@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -301,7 +301,9 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
 
             @Override
             public Iterable<SecurityPolicy> extractResources(SecurityPolicyList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<SecurityPolicy>of();
             }
           };
 
@@ -309,7 +311,8 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
           ListSecurityPoliciesHttpRequest, SecurityPolicyList, ListSecurityPoliciesPagedResponse>
       LIST_SECURITY_POLICIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSecurityPoliciesHttpRequest, SecurityPolicyList,
+              ListSecurityPoliciesHttpRequest,
+              SecurityPolicyList,
               ListSecurityPoliciesPagedResponse>() {
             @Override
             public ApiFuture<ListSecurityPoliciesPagedResponse> getFuturePagedResponse(

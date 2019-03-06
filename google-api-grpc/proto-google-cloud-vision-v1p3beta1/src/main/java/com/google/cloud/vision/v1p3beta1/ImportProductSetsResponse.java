@@ -4,34 +4,39 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Response message for the `ImportProductSets` method.
  * This message is returned by the
- * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
- * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+ * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+ * method in the returned
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.ImportProductSetsResponse}
  */
-public  final class ImportProductSetsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ImportProductSetsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ImportProductSetsResponse)
     ImportProductSetsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ImportProductSetsResponse.newBuilder() to construct.
   private ImportProductSetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ImportProductSetsResponse() {
     referenceImages_ = java.util.Collections.emptyList();
     statuses_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ImportProductSetsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,38 +56,41 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              referenceImages_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.ReferenceImage>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                referenceImages_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.ReferenceImage>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              referenceImages_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ReferenceImage.parser(),
+                      extensionRegistry));
+              break;
             }
-            referenceImages_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.ReferenceImage.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              statuses_ = new java.util.ArrayList<com.google.rpc.Status>();
-              mutable_bitField0_ |= 0x00000002;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                statuses_ = new java.util.ArrayList<com.google.rpc.Status>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              statuses_.add(input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
+              break;
             }
-            statuses_.add(
-                input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         referenceImages_ = java.util.Collections.unmodifiableList(referenceImages_);
@@ -94,22 +102,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.class, com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.Builder.class);
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.class,
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.Builder.class);
   }
 
   public static final int REFERENCE_IMAGES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> referenceImages_;
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
@@ -120,17 +133,21 @@ private static final long serialVersionUID = 0L;
     return referenceImages_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
       getReferenceImagesOrBuilderList() {
     return referenceImages_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
@@ -141,6 +158,8 @@ private static final long serialVersionUID = 0L;
     return referenceImages_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
@@ -151,6 +170,8 @@ private static final long serialVersionUID = 0L;
     return referenceImages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
@@ -165,6 +186,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUSES_FIELD_NUMBER = 2;
   private java.util.List<com.google.rpc.Status> statuses_;
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -179,6 +202,8 @@ private static final long serialVersionUID = 0L;
     return statuses_;
   }
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -189,11 +214,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
-  public java.util.List<? extends com.google.rpc.StatusOrBuilder> 
-      getStatusesOrBuilderList() {
+  public java.util.List<? extends com.google.rpc.StatusOrBuilder> getStatusesOrBuilderList() {
     return statuses_;
   }
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -208,6 +234,8 @@ private static final long serialVersionUID = 0L;
     return statuses_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -222,6 +250,8 @@ private static final long serialVersionUID = 0L;
     return statuses_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -232,12 +262,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
-  public com.google.rpc.StatusOrBuilder getStatusesOrBuilder(
-      int index) {
+  public com.google.rpc.StatusOrBuilder getStatusesOrBuilder(int index) {
     return statuses_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -249,8 +279,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < referenceImages_.size(); i++) {
       output.writeMessage(1, referenceImages_.get(i));
     }
@@ -267,12 +296,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < referenceImages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, referenceImages_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, referenceImages_.get(i));
     }
     for (int i = 0; i < statuses_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, statuses_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, statuses_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -282,18 +309,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse other = (com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse) obj;
+    com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse other =
+        (com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse) obj;
 
     boolean result = true;
-    result = result && getReferenceImagesList()
-        .equals(other.getReferenceImagesList());
-    result = result && getStatusesList()
-        .equals(other.getStatusesList());
+    result = result && getReferenceImagesList().equals(other.getReferenceImagesList());
+    result = result && getStatusesList().equals(other.getStatusesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -319,120 +345,132 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response message for the `ImportProductSets` method.
    * This message is returned by the
-   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
-   * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * method in the returned
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.ImportProductSetsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.ImportProductSetsResponse)
       com.google.cloud.vision.v1p3beta1.ImportProductSetsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.class, com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.Builder.class);
+              com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.class,
+              com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.newBuilder()
@@ -440,18 +478,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getReferenceImagesFieldBuilder();
         getStatusesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -471,9 +509,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsResponse_descriptor;
     }
 
     @java.lang.Override
@@ -492,7 +530,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse buildPartial() {
-      com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse result = new com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse(this);
+      com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse result =
+          new com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse(this);
       int from_bitField0_ = bitField0_;
       if (referenceImagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -520,38 +559,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -559,7 +599,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse other) {
-      if (other == com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse.getDefaultInstance())
+        return this;
       if (referenceImagesBuilder_ == null) {
         if (!other.referenceImages_.isEmpty()) {
           if (referenceImages_.isEmpty()) {
@@ -578,9 +619,10 @@ private static final long serialVersionUID = 0L;
             referenceImagesBuilder_ = null;
             referenceImages_ = other.referenceImages_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            referenceImagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getReferenceImagesFieldBuilder() : null;
+            referenceImagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getReferenceImagesFieldBuilder()
+                    : null;
           } else {
             referenceImagesBuilder_.addAllMessages(other.referenceImages_);
           }
@@ -604,9 +646,10 @@ private static final long serialVersionUID = 0L;
             statusesBuilder_ = null;
             statuses_ = other.statuses_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            statusesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getStatusesFieldBuilder() : null;
+            statusesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getStatusesFieldBuilder()
+                    : null;
           } else {
             statusesBuilder_.addAllMessages(other.statuses_);
           }
@@ -631,7 +674,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -640,28 +684,38 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> referenceImages_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureReferenceImagesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        referenceImages_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.ReferenceImage>(referenceImages_);
+        referenceImages_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.ReferenceImage>(
+                referenceImages_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ReferenceImage, com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder, com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> referenceImagesBuilder_;
+            com.google.cloud.vision.v1p3beta1.ReferenceImage,
+            com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder,
+            com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
+        referenceImagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> getReferenceImagesList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage>
+        getReferenceImagesList() {
       if (referenceImagesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(referenceImages_);
       } else {
@@ -669,6 +723,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -683,6 +739,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -697,6 +755,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -718,6 +778,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -736,6 +798,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -756,6 +820,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -777,6 +843,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -795,6 +863,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -813,6 +883,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -823,8 +895,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.ReferenceImage> values) {
       if (referenceImagesBuilder_ == null) {
         ensureReferenceImagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, referenceImages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, referenceImages_);
         onChanged();
       } else {
         referenceImagesBuilder_.addAllMessages(values);
@@ -832,6 +903,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -849,6 +922,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -866,6 +941,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -877,6 +954,8 @@ private static final long serialVersionUID = 0L;
       return getReferenceImagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -886,19 +965,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImagesOrBuilder(
         int index) {
       if (referenceImagesBuilder_ == null) {
-        return referenceImages_.get(index);  } else {
+        return referenceImages_.get(index);
+      } else {
         return referenceImagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> 
-         getReferenceImagesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
+        getReferenceImagesOrBuilderList() {
       if (referenceImagesBuilder_ != null) {
         return referenceImagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -906,6 +988,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -913,10 +997,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
      */
     public com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder addReferenceImagesBuilder() {
-      return getReferenceImagesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance());
+      return getReferenceImagesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
@@ -925,26 +1011,34 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder addReferenceImagesBuilder(
         int index) {
-      return getReferenceImagesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance());
+      return getReferenceImagesFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of reference_images that are imported successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder> 
-         getReferenceImagesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder>
+        getReferenceImagesBuilderList() {
       return getReferenceImagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ReferenceImage, com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder, com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.ReferenceImage,
+            com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder,
+            com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
         getReferenceImagesFieldBuilder() {
       if (referenceImagesBuilder_ == null) {
-        referenceImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ReferenceImage, com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder, com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>(
+        referenceImagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ReferenceImage,
+                com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder,
+                com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>(
                 referenceImages_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -954,19 +1048,22 @@ private static final long serialVersionUID = 0L;
       return referenceImagesBuilder_;
     }
 
-    private java.util.List<com.google.rpc.Status> statuses_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.rpc.Status> statuses_ = java.util.Collections.emptyList();
+
     private void ensureStatusesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         statuses_ = new java.util.ArrayList<com.google.rpc.Status>(statuses_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> statusesBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        statusesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -985,6 +1082,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1003,6 +1102,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1021,6 +1122,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1031,8 +1134,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public Builder setStatuses(
-        int index, com.google.rpc.Status value) {
+    public Builder setStatuses(int index, com.google.rpc.Status value) {
       if (statusesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1046,6 +1148,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1056,8 +1160,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public Builder setStatuses(
-        int index, com.google.rpc.Status.Builder builderForValue) {
+    public Builder setStatuses(int index, com.google.rpc.Status.Builder builderForValue) {
       if (statusesBuilder_ == null) {
         ensureStatusesIsMutable();
         statuses_.set(index, builderForValue.build());
@@ -1068,6 +1171,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1092,6 +1197,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1102,8 +1209,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public Builder addStatuses(
-        int index, com.google.rpc.Status value) {
+    public Builder addStatuses(int index, com.google.rpc.Status value) {
       if (statusesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1117,6 +1223,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1127,8 +1235,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public Builder addStatuses(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder addStatuses(com.google.rpc.Status.Builder builderForValue) {
       if (statusesBuilder_ == null) {
         ensureStatusesIsMutable();
         statuses_.add(builderForValue.build());
@@ -1139,6 +1246,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1149,8 +1258,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public Builder addStatuses(
-        int index, com.google.rpc.Status.Builder builderForValue) {
+    public Builder addStatuses(int index, com.google.rpc.Status.Builder builderForValue) {
       if (statusesBuilder_ == null) {
         ensureStatusesIsMutable();
         statuses_.add(index, builderForValue.build());
@@ -1161,6 +1269,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1171,12 +1281,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public Builder addAllStatuses(
-        java.lang.Iterable<? extends com.google.rpc.Status> values) {
+    public Builder addAllStatuses(java.lang.Iterable<? extends com.google.rpc.Status> values) {
       if (statusesBuilder_ == null) {
         ensureStatusesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, statuses_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, statuses_);
         onChanged();
       } else {
         statusesBuilder_.addAllMessages(values);
@@ -1184,6 +1292,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1205,6 +1315,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1226,6 +1338,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1236,11 +1350,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public com.google.rpc.Status.Builder getStatusesBuilder(
-        int index) {
+    public com.google.rpc.Status.Builder getStatusesBuilder(int index) {
       return getStatusesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1251,14 +1366,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public com.google.rpc.StatusOrBuilder getStatusesOrBuilder(
-        int index) {
+    public com.google.rpc.StatusOrBuilder getStatusesOrBuilder(int index) {
       if (statusesBuilder_ == null) {
-        return statuses_.get(index);  } else {
+        return statuses_.get(index);
+      } else {
         return statusesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1269,8 +1386,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public java.util.List<? extends com.google.rpc.StatusOrBuilder> 
-         getStatusesOrBuilderList() {
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder> getStatusesOrBuilderList() {
       if (statusesBuilder_ != null) {
         return statusesBuilder_.getMessageOrBuilderList();
       } else {
@@ -1278,6 +1394,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1289,10 +1407,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
     public com.google.rpc.Status.Builder addStatusesBuilder() {
-      return getStatusesFieldBuilder().addBuilder(
-          com.google.rpc.Status.getDefaultInstance());
+      return getStatusesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1303,12 +1422,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public com.google.rpc.Status.Builder addStatusesBuilder(
-        int index) {
-      return getStatusesFieldBuilder().addBuilder(
-          index, com.google.rpc.Status.getDefaultInstance());
+    public com.google.rpc.Status.Builder addStatusesBuilder(int index) {
+      return getStatusesFieldBuilder()
+          .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The rpc status for each ImportProductSet request, including both successes
      * and errors.
@@ -1319,16 +1439,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status statuses = 2;</code>
      */
-    public java.util.List<com.google.rpc.Status.Builder> 
-         getStatusesBuilderList() {
+    public java.util.List<com.google.rpc.Status.Builder> getStatusesBuilderList() {
       return getStatusesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getStatusesFieldBuilder() {
       if (statusesBuilder_ == null) {
-        statusesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
+        statusesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
                 statuses_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1337,9 +1460,9 @@ private static final long serialVersionUID = 0L;
       }
       return statusesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1349,12 +1472,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.ImportProductSetsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.ImportProductSetsResponse)
   private static final com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse();
   }
@@ -1363,16 +1486,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImportProductSetsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ImportProductSetsResponse>() {
-    @java.lang.Override
-    public ImportProductSetsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImportProductSetsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ImportProductSetsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ImportProductSetsResponse>() {
+        @java.lang.Override
+        public ImportProductSetsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ImportProductSetsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ImportProductSetsResponse> parser() {
     return PARSER;
@@ -1387,6 +1510,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

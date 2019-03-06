@@ -55,8 +55,8 @@ public class LocalResourceManagerHelperTest {
   private static final ResourceManagerRpc rpc =
       new HttpResourceManagerRpc(RESOURCE_MANAGER_HELPER.getOptions());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
-      new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
-          "partial-project");
+      new com.google.api.services.cloudresourcemanager.model.Project()
+          .setProjectId("partial-project");
   private static final com.google.api.services.cloudresourcemanager.model.Project COMPLETE_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project()
           .setProjectId("complete-project")
@@ -65,9 +65,12 @@ public class LocalResourceManagerHelperTest {
   private static final com.google.api.services.cloudresourcemanager.model.Project
       PROJECT_WITH_PARENT =
           copyFrom(COMPLETE_PROJECT).setProjectId("project-with-parent-id").setParent(PARENT);
-  private static final List<Binding> BINDINGS = ImmutableList.of(
-      new Binding().setRole("roles/owner").setMembers(ImmutableList.of("user:me@gmail.com")),
-      new Binding().setRole("roles/viewer").setMembers(ImmutableList.of("group:group@gmail.com")));
+  private static final List<Binding> BINDINGS =
+      ImmutableList.of(
+          new Binding().setRole("roles/owner").setMembers(ImmutableList.of("user:me@gmail.com")),
+          new Binding()
+              .setRole("roles/viewer")
+              .setMembers(ImmutableList.of("group:group@gmail.com")));
   private static final com.google.api.services.cloudresourcemanager.model.Policy POLICY =
       new com.google.api.services.cloudresourcemanager.model.Policy().setBindings(BINDINGS);
 
@@ -128,8 +131,9 @@ public class LocalResourceManagerHelperTest {
       fail("Should fail, project already exists.");
     } catch (ResourceManagerException e) {
       assertEquals(409, e.getCode());
-      assertTrue(e.getMessage().startsWith("A project with the same project ID")
-          && e.getMessage().endsWith("already exists."));
+      assertTrue(
+          e.getMessage().startsWith("A project with the same project ID")
+              && e.getMessage().endsWith("already exists."));
       assertEquals(
           POLICY.getBindings(), rpc.getPolicy(PARTIAL_PROJECT.getProjectId()).getBindings());
     }
@@ -176,8 +180,8 @@ public class LocalResourceManagerHelperTest {
   @Test
   public void testIsInvalidProjectName() {
     com.google.api.services.cloudresourcemanager.model.Project project =
-        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
-            "some-project-id");
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId("some-project-id");
     rpc.create(project);
     assertNull(rpc.get(project.getProjectId(), EMPTY_RPC_OPTIONS).getName());
     RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
@@ -198,16 +202,18 @@ public class LocalResourceManagerHelperTest {
   @Test
   public void testIsInvalidProjectLabels() {
     com.google.api.services.cloudresourcemanager.model.Project project =
-        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
-            "some-valid-project-id");
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId("some-valid-project-id");
     String invalidLabelMessageSubstring = "invalid label entry";
     project.setLabels(ImmutableMap.of("", "v1"));
     expectInvalidArgumentException(project, invalidLabelMessageSubstring);
-    project.setLabels(ImmutableMap.of(
-        "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail", "v1"));
+    project.setLabels(
+        ImmutableMap.of(
+            "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail", "v1"));
     expectInvalidArgumentException(project, invalidLabelMessageSubstring);
-    project.setLabels(ImmutableMap.of(
-        "k1", "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail"));
+    project.setLabels(
+        ImmutableMap.of(
+            "k1", "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail"));
     expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("k1?", "v1"));
     expectInvalidArgumentException(project, invalidLabelMessageSubstring);
@@ -230,10 +236,7 @@ public class LocalResourceManagerHelperTest {
     project.setLabels(ImmutableMap.of("k-1", ""));
     rpc.create(project);
     assertNotNull(rpc.get(project.getProjectId(), EMPTY_RPC_OPTIONS));
-    assertTrue(rpc.get(project.getProjectId(), EMPTY_RPC_OPTIONS)
-        .getLabels()
-        .get("k-1")
-        .isEmpty());
+    assertTrue(rpc.get(project.getProjectId(), EMPTY_RPC_OPTIONS).getLabels().get("k-1").isEmpty());
   }
 
   @Test
@@ -366,8 +369,8 @@ public class LocalResourceManagerHelperTest {
   @Test
   public void testListFieldOptions() {
     Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
-    rpcOptions.put(ResourceManagerRpc.Option.FIELDS,
-        "projects(projectId,name,labels),nextPageToken");
+    rpcOptions.put(
+        ResourceManagerRpc.Option.FIELDS, "projects(projectId,name,labels),nextPageToken");
     rpc.create(PROJECT_WITH_PARENT);
     Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
         rpc.list(rpcOptions);
@@ -479,8 +482,8 @@ public class LocalResourceManagerHelperTest {
             .setName("myProj")
             .setLabels(ImmutableMap.of("color", "blue", "size", "big"));
     com.google.api.services.cloudresourcemanager.model.Project nonMatchingProject3 =
-        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
-            "non-matching-project3");
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId("non-matching-project3");
     rpc.create(matchingProject);
     rpc.create(nonMatchingProject1);
     rpc.create(nonMatchingProject2);
@@ -530,8 +533,8 @@ public class LocalResourceManagerHelperTest {
     rpc.create(COMPLETE_PROJECT);
     rpc.delete(COMPLETE_PROJECT.getProjectId());
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
-        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
-            COMPLETE_PROJECT.getProjectId());
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId(COMPLETE_PROJECT.getProjectId());
     try {
       rpc.replace(anotherProject);
       fail("Should fail because the project is not ACTIVE.");
@@ -547,8 +550,8 @@ public class LocalResourceManagerHelperTest {
     RESOURCE_MANAGER_HELPER.changeLifecycleState(
         COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS");
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
-        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
-            COMPLETE_PROJECT.getProjectId());
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId(COMPLETE_PROJECT.getProjectId());
     try {
       rpc.replace(anotherProject);
       fail("Should fail because the project is not ACTIVE.");
@@ -572,7 +575,7 @@ public class LocalResourceManagerHelperTest {
       assertEquals(400, e.getCode());
       assertEquals(
           "The server currently only supports setting the parent once "
-          + "and does not allow unsetting it.",
+              + "and does not allow unsetting it.",
           e.getMessage());
     }
   }
@@ -581,8 +584,8 @@ public class LocalResourceManagerHelperTest {
   public void testReplaceRemovingParent() {
     rpc.create(PROJECT_WITH_PARENT);
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
-        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
-            PROJECT_WITH_PARENT.getProjectId());
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId(PROJECT_WITH_PARENT.getProjectId());
     try {
       rpc.replace(anotherProject);
       fail("Should fail because the project's parent was unset.");
@@ -590,7 +593,7 @@ public class LocalResourceManagerHelperTest {
       assertEquals(400, e.getCode());
       assertEquals(
           "The server currently only supports setting the parent once "
-          + "and does not allow unsetting it.",
+              + "and does not allow unsetting it.",
           e.getMessage());
     }
   }
@@ -690,17 +693,19 @@ public class LocalResourceManagerHelperTest {
       assertEquals("Project nonexistent-project not found.", e.getMessage());
     }
     rpc.create(PARTIAL_PROJECT);
-    assertEquals(ImmutableList.of(true),
-        rpc.testPermissions(PARTIAL_PROJECT.getProjectId(), permissions));
+    assertEquals(
+        ImmutableList.of(true), rpc.testPermissions(PARTIAL_PROJECT.getProjectId(), permissions));
   }
 
   @Test
   public void testChangeLifecycleStatus() {
-    assertFalse(RESOURCE_MANAGER_HELPER.changeLifecycleState(
-        COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS"));
+    assertFalse(
+        RESOURCE_MANAGER_HELPER.changeLifecycleState(
+            COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS"));
     rpc.create(COMPLETE_PROJECT);
-    assertTrue(RESOURCE_MANAGER_HELPER.changeLifecycleState(
-        COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS"));
+    assertTrue(
+        RESOURCE_MANAGER_HELPER.changeLifecycleState(
+            COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS"));
     assertEquals(
         "DELETE_IN_PROGRESS",
         rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS).getLifecycleState());

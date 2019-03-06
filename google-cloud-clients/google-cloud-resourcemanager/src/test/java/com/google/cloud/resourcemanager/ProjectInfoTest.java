@@ -21,10 +21,8 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.Map;
+import org.junit.Test;
 
 public class ProjectInfoTest {
 
@@ -36,14 +34,15 @@ public class ProjectInfoTest {
   private static final ProjectInfo.State STATE = ProjectInfo.State.DELETE_REQUESTED;
   private static final ProjectInfo.ResourceId PARENT =
       new ProjectInfo.ResourceId("id", "organization");
-  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.newBuilder(PROJECT_ID)
-      .setName(NAME)
-      .setLabels(LABELS)
-      .setProjectNumber(PROJECT_NUMBER)
-      .setCreateTimeMillis(CREATE_TIME_MILLIS)
-      .setState(STATE)
-      .setParent(PARENT)
-      .build();
+  private static final ProjectInfo FULL_PROJECT_INFO =
+      ProjectInfo.newBuilder(PROJECT_ID)
+          .setName(NAME)
+          .setLabels(LABELS)
+          .setProjectNumber(PROJECT_NUMBER)
+          .setCreateTimeMillis(CREATE_TIME_MILLIS)
+          .setState(STATE)
+          .setParent(PARENT)
+          .build();
   private static final ProjectInfo PARTIAL_PROJECT_INFO =
       ProjectInfo.newBuilder(PROJECT_ID).build();
   private static final ProjectInfo UNNAMED_PROJECT_FROM_LIST =

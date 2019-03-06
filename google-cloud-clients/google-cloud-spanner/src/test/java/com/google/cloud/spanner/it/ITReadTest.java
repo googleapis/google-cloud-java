@@ -290,10 +290,7 @@ public class ITReadTest {
   public void invalidDatabase() {
     RemoteSpannerHelper helper = env.getTestHelper();
     DatabaseClient invalidClient =
-        helper
-            .getClient()
-            .getDatabaseClient(
-                DatabaseId.of(helper.getInstanceId(), "invalid"));
+        helper.getClient().getDatabaseClient(DatabaseId.of(helper.getInstanceId(), "invalid"));
     expectedException.expect(isSpannerException(ErrorCode.NOT_FOUND));
     invalidClient
         .singleUse(TimestampBound.strong())

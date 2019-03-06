@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface DeleteProductSetRequestOrBuilder extends
+public interface DeleteProductSetRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.DeleteProductSetRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the ProductSet to delete.
    * Format is:
@@ -18,6 +21,8 @@ public interface DeleteProductSetRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of the ProductSet to delete.
    * Format is:
@@ -26,6 +31,5 @@ public interface DeleteProductSetRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

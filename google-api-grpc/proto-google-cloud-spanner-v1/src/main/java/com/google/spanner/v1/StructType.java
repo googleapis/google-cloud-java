@@ -4,30 +4,34 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
- * `StructType` defines the fields of a [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
+ * `StructType` defines the fields of a
+ * [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.StructType}
  */
-public  final class StructType extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class StructType extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.StructType)
     StructTypeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use StructType.newBuilder() to construct.
   private StructType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private StructType() {
     fields_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private StructType(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +51,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              fields_ = new java.util.ArrayList<com.google.spanner.v1.StructType.Field>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                fields_ = new java.util.ArrayList<com.google.spanner.v1.StructType.Field>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fields_.add(
+                  input.readMessage(
+                      com.google.spanner.v1.StructType.Field.parser(), extensionRegistry));
+              break;
             }
-            fields_.add(
-                input.readMessage(com.google.spanner.v1.StructType.Field.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -78,24 +83,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_fieldAccessorTable
+    return com.google.spanner.v1.TypeProto
+        .internal_static_google_spanner_v1_StructType_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.spanner.v1.StructType.class, com.google.spanner.v1.StructType.Builder.class);
   }
 
-  public interface FieldOrBuilder extends
+  public interface FieldOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.spanner.v1.StructType.Field)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The name of the field. For reads, this is the column name. For
      * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -110,6 +119,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getName();
     /**
+     *
+     *
      * <pre>
      * The name of the field. For reads, this is the column name. For
      * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -122,10 +133,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getNameBytes();
+    com.google.protobuf.ByteString getNameBytes();
 
     /**
+     *
+     *
      * <pre>
      * The type of the field.
      * </pre>
@@ -134,6 +146,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasType();
     /**
+     *
+     *
      * <pre>
      * The type of the field.
      * </pre>
@@ -142,6 +156,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.spanner.v1.Type getType();
     /**
+     *
+     *
      * <pre>
      * The type of the field.
      * </pre>
@@ -151,30 +167,33 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.TypeOrBuilder getTypeOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * Message representing a single field of a struct.
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.StructType.Field}
    */
-  public  static final class Field extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Field extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.spanner.v1.StructType.Field)
       FieldOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Field.newBuilder() to construct.
     private Field(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Field() {
       name_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Field(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -194,60 +213,66 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
-              break;
-            }
-            case 18: {
-              com.google.spanner.v1.Type.Builder subBuilder = null;
-              if (type_ != null) {
-                subBuilder = type_.toBuilder();
+                name_ = s;
+                break;
               }
-              type_ = input.readMessage(com.google.spanner.v1.Type.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(type_);
-                type_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                com.google.spanner.v1.Type.Builder subBuilder = null;
+                if (type_ != null) {
+                  subBuilder = type_.toBuilder();
+                }
+                type_ = input.readMessage(com.google.spanner.v1.Type.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(type_);
+                  type_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_Field_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.TypeProto
+          .internal_static_google_spanner_v1_StructType_Field_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_Field_fieldAccessorTable
+      return com.google.spanner.v1.TypeProto
+          .internal_static_google_spanner_v1_StructType_Field_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.StructType.Field.class, com.google.spanner.v1.StructType.Field.Builder.class);
+              com.google.spanner.v1.StructType.Field.class,
+              com.google.spanner.v1.StructType.Field.Builder.class);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
+     *
+     *
      * <pre>
      * The name of the field. For reads, this is the column name. For
      * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -265,14 +290,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the field. For reads, this is the column name. For
      * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -285,13 +311,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -302,6 +326,8 @@ private static final long serialVersionUID = 0L;
     public static final int TYPE_FIELD_NUMBER = 2;
     private com.google.spanner.v1.Type type_;
     /**
+     *
+     *
      * <pre>
      * The type of the field.
      * </pre>
@@ -312,6 +338,8 @@ private static final long serialVersionUID = 0L;
       return type_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the field.
      * </pre>
@@ -322,6 +350,8 @@ private static final long serialVersionUID = 0L;
       return type_ == null ? com.google.spanner.v1.Type.getDefaultInstance() : type_;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the field.
      * </pre>
@@ -333,6 +363,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -344,8 +375,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
@@ -365,8 +395,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
       if (type_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getType());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getType());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -376,7 +405,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.spanner.v1.StructType.Field)) {
         return super.equals(obj);
@@ -384,12 +413,10 @@ private static final long serialVersionUID = 0L;
       com.google.spanner.v1.StructType.Field other = (com.google.spanner.v1.StructType.Field) obj;
 
       boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
+      result = result && getName().equals(other.getName());
       result = result && (hasType() == other.hasType());
       if (hasType()) {
-        result = result && getType()
-            .equals(other.getType());
+        result = result && getType().equals(other.getType());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -413,88 +440,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.spanner.v1.StructType.Field parseFrom(
-        java.nio.ByteBuffer data)
+    public static com.google.spanner.v1.StructType.Field parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.spanner.v1.StructType.Field parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static com.google.spanner.v1.StructType.Field parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.spanner.v1.StructType.Field parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.spanner.v1.StructType.Field parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.spanner.v1.StructType.Field prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -504,27 +537,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Message representing a single field of a struct.
      * </pre>
      *
      * Protobuf type {@code google.spanner.v1.StructType.Field}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.spanner.v1.StructType.Field)
         com.google.spanner.v1.StructType.FieldOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_Field_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.spanner.v1.TypeProto
+            .internal_static_google_spanner_v1_StructType_Field_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_Field_fieldAccessorTable
+        return com.google.spanner.v1.TypeProto
+            .internal_static_google_spanner_v1_StructType_Field_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.spanner.v1.StructType.Field.class, com.google.spanner.v1.StructType.Field.Builder.class);
+                com.google.spanner.v1.StructType.Field.class,
+                com.google.spanner.v1.StructType.Field.Builder.class);
       }
 
       // Construct using com.google.spanner.v1.StructType.Field.newBuilder()
@@ -532,16 +570,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -557,9 +594,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_Field_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.spanner.v1.TypeProto
+            .internal_static_google_spanner_v1_StructType_Field_descriptor;
       }
 
       @java.lang.Override
@@ -578,7 +615,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.spanner.v1.StructType.Field buildPartial() {
-        com.google.spanner.v1.StructType.Field result = new com.google.spanner.v1.StructType.Field(this);
+        com.google.spanner.v1.StructType.Field result =
+            new com.google.spanner.v1.StructType.Field(this);
         result.name_ = name_;
         if (typeBuilder_ == null) {
           result.type_ = type_;
@@ -593,38 +631,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.spanner.v1.StructType.Field) {
-          return mergeFrom((com.google.spanner.v1.StructType.Field)other);
+          return mergeFrom((com.google.spanner.v1.StructType.Field) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -671,6 +712,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object name_ = "";
       /**
+       *
+       *
        * <pre>
        * The name of the field. For reads, this is the column name. For
        * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -686,8 +729,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
@@ -696,6 +738,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The name of the field. For reads, this is the column name. For
        * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -708,13 +752,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string name = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
+      public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -722,6 +764,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The name of the field. For reads, this is the column name. For
        * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -734,17 +778,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string name = 1;</code>
        */
-      public Builder setName(
-          java.lang.String value) {
+      public Builder setName(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         name_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The name of the field. For reads, this is the column name. For
        * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -758,12 +803,14 @@ private static final long serialVersionUID = 0L;
        * <code>string name = 1;</code>
        */
       public Builder clearName() {
-        
+
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The name of the field. For reads, this is the column name. For
        * SQL queries, it is the column alias (e.g., `"Word"` in the
@@ -776,13 +823,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string name = 1;</code>
        */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         name_ = value;
         onChanged();
         return this;
@@ -790,8 +836,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.spanner.v1.Type type_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.spanner.v1.Type, com.google.spanner.v1.Type.Builder, com.google.spanner.v1.TypeOrBuilder> typeBuilder_;
+              com.google.spanner.v1.Type,
+              com.google.spanner.v1.Type.Builder,
+              com.google.spanner.v1.TypeOrBuilder>
+          typeBuilder_;
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -802,6 +853,8 @@ private static final long serialVersionUID = 0L;
         return typeBuilder_ != null || type_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -816,6 +869,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -836,14 +891,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
        *
        * <code>.google.spanner.v1.Type type = 2;</code>
        */
-      public Builder setType(
-          com.google.spanner.v1.Type.Builder builderForValue) {
+      public Builder setType(com.google.spanner.v1.Type.Builder builderForValue) {
         if (typeBuilder_ == null) {
           type_ = builderForValue.build();
           onChanged();
@@ -854,6 +910,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -863,8 +921,7 @@ private static final long serialVersionUID = 0L;
       public Builder mergeType(com.google.spanner.v1.Type value) {
         if (typeBuilder_ == null) {
           if (type_ != null) {
-            type_ =
-              com.google.spanner.v1.Type.newBuilder(type_).mergeFrom(value).buildPartial();
+            type_ = com.google.spanner.v1.Type.newBuilder(type_).mergeFrom(value).buildPartial();
           } else {
             type_ = value;
           }
@@ -876,6 +933,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -894,6 +953,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -901,11 +962,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.spanner.v1.Type type = 2;</code>
        */
       public com.google.spanner.v1.Type.Builder getTypeBuilder() {
-        
+
         onChanged();
         return getTypeFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -916,11 +979,12 @@ private static final long serialVersionUID = 0L;
         if (typeBuilder_ != null) {
           return typeBuilder_.getMessageOrBuilder();
         } else {
-          return type_ == null ?
-              com.google.spanner.v1.Type.getDefaultInstance() : type_;
+          return type_ == null ? com.google.spanner.v1.Type.getDefaultInstance() : type_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The type of the field.
        * </pre>
@@ -928,18 +992,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.spanner.v1.Type type = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.spanner.v1.Type, com.google.spanner.v1.Type.Builder, com.google.spanner.v1.TypeOrBuilder> 
+              com.google.spanner.v1.Type,
+              com.google.spanner.v1.Type.Builder,
+              com.google.spanner.v1.TypeOrBuilder>
           getTypeFieldBuilder() {
         if (typeBuilder_ == null) {
-          typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.spanner.v1.Type, com.google.spanner.v1.Type.Builder, com.google.spanner.v1.TypeOrBuilder>(
-                  getType(),
-                  getParentForChildren(),
-                  isClean());
+          typeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.spanner.v1.Type,
+                  com.google.spanner.v1.Type.Builder,
+                  com.google.spanner.v1.TypeOrBuilder>(
+                  getType(), getParentForChildren(), isClean());
           type_ = null;
         }
         return typeBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -952,12 +1020,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.spanner.v1.StructType.Field)
     }
 
     // @@protoc_insertion_point(class_scope:google.spanner.v1.StructType.Field)
     private static final com.google.spanner.v1.StructType.Field DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.spanner.v1.StructType.Field();
     }
@@ -966,16 +1034,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Field>
-        PARSER = new com.google.protobuf.AbstractParser<Field>() {
-      @java.lang.Override
-      public Field parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Field(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Field> PARSER =
+        new com.google.protobuf.AbstractParser<Field>() {
+          @java.lang.Override
+          public Field parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Field(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Field> parser() {
       return PARSER;
@@ -990,19 +1058,20 @@ private static final long serialVersionUID = 0L;
     public com.google.spanner.v1.StructType.Field getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int FIELDS_FIELD_NUMBER = 1;
   private java.util.List<com.google.spanner.v1.StructType.Field> fields_;
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1011,29 +1080,33 @@ private static final long serialVersionUID = 0L;
     return fields_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
    */
-  public java.util.List<? extends com.google.spanner.v1.StructType.FieldOrBuilder> 
+  public java.util.List<? extends com.google.spanner.v1.StructType.FieldOrBuilder>
       getFieldsOrBuilderList() {
     return fields_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1042,13 +1115,15 @@ private static final long serialVersionUID = 0L;
     return fields_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1057,23 +1132,25 @@ private static final long serialVersionUID = 0L;
     return fields_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
    * lists, where the order of field values matches the order of
-   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-   * matches the order of columns in a read request, or the order of
-   * fields in the `SELECT` clause of a query.
+   * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+   * order of fields matches the order of columns in a read request, or the
+   * order of fields in the `SELECT` clause of a query.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
    */
-  public com.google.spanner.v1.StructType.FieldOrBuilder getFieldsOrBuilder(
-      int index) {
+  public com.google.spanner.v1.StructType.FieldOrBuilder getFieldsOrBuilder(int index) {
     return fields_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1085,8 +1162,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < fields_.size(); i++) {
       output.writeMessage(1, fields_.get(i));
     }
@@ -1100,8 +1176,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < fields_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, fields_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, fields_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1111,7 +1186,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.StructType)) {
       return super.equals(obj);
@@ -1119,8 +1194,7 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.StructType other = (com.google.spanner.v1.StructType) obj;
 
     boolean result = true;
-    result = result && getFieldsList()
-        .equals(other.getFieldsList());
+    result = result && getFieldsList().equals(other.getFieldsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1141,118 +1215,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.StructType parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.StructType parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.StructType parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.StructType parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.StructType parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.StructType parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.StructType parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.spanner.v1.StructType prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * `StructType` defines the fields of a [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
+   * `StructType` defines the fields of a
+   * [STRUCT][google.spanner.v1.TypeCode.STRUCT] type.
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.StructType}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.StructType)
       com.google.spanner.v1.StructTypeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.TypeProto
+          .internal_static_google_spanner_v1_StructType_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_fieldAccessorTable
+      return com.google.spanner.v1.TypeProto
+          .internal_static_google_spanner_v1_StructType_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.StructType.class, com.google.spanner.v1.StructType.Builder.class);
+              com.google.spanner.v1.StructType.class,
+              com.google.spanner.v1.StructType.Builder.class);
     }
 
     // Construct using com.google.spanner.v1.StructType.newBuilder()
@@ -1260,17 +1343,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFieldsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1284,9 +1367,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_StructType_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.TypeProto
+          .internal_static_google_spanner_v1_StructType_descriptor;
     }
 
     @java.lang.Override
@@ -1324,38 +1407,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.StructType) {
-        return mergeFrom((com.google.spanner.v1.StructType)other);
+        return mergeFrom((com.google.spanner.v1.StructType) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1382,9 +1466,10 @@ private static final long serialVersionUID = 0L;
             fieldsBuilder_ = null;
             fields_ = other.fields_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            fieldsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFieldsFieldBuilder() : null;
+            fieldsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFieldsFieldBuilder()
+                    : null;
           } else {
             fieldsBuilder_.addAllMessages(other.fields_);
           }
@@ -1418,28 +1503,35 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.spanner.v1.StructType.Field> fields_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFieldsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         fields_ = new java.util.ArrayList<com.google.spanner.v1.StructType.Field>(fields_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.StructType.Field, com.google.spanner.v1.StructType.Field.Builder, com.google.spanner.v1.StructType.FieldOrBuilder> fieldsBuilder_;
+            com.google.spanner.v1.StructType.Field,
+            com.google.spanner.v1.StructType.Field.Builder,
+            com.google.spanner.v1.StructType.FieldOrBuilder>
+        fieldsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1452,13 +1544,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1471,13 +1565,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1490,19 +1586,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public Builder setFields(
-        int index, com.google.spanner.v1.StructType.Field value) {
+    public Builder setFields(int index, com.google.spanner.v1.StructType.Field value) {
       if (fieldsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1516,13 +1613,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1539,13 +1638,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1564,19 +1665,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public Builder addFields(
-        int index, com.google.spanner.v1.StructType.Field value) {
+    public Builder addFields(int index, com.google.spanner.v1.StructType.Field value) {
       if (fieldsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1590,19 +1692,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public Builder addFields(
-        com.google.spanner.v1.StructType.Field.Builder builderForValue) {
+    public Builder addFields(com.google.spanner.v1.StructType.Field.Builder builderForValue) {
       if (fieldsBuilder_ == null) {
         ensureFieldsIsMutable();
         fields_.add(builderForValue.build());
@@ -1613,13 +1716,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1636,13 +1741,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1651,8 +1758,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.spanner.v1.StructType.Field> values) {
       if (fieldsBuilder_ == null) {
         ensureFieldsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fields_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fields_);
         onChanged();
       } else {
         fieldsBuilder_.addAllMessages(values);
@@ -1660,13 +1766,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1682,13 +1790,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
@@ -1704,54 +1814,59 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public com.google.spanner.v1.StructType.Field.Builder getFieldsBuilder(
-        int index) {
+    public com.google.spanner.v1.StructType.Field.Builder getFieldsBuilder(int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public com.google.spanner.v1.StructType.FieldOrBuilder getFieldsOrBuilder(
-        int index) {
+    public com.google.spanner.v1.StructType.FieldOrBuilder getFieldsOrBuilder(int index) {
       if (fieldsBuilder_ == null) {
-        return fields_.get(index);  } else {
+        return fields_.get(index);
+      } else {
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public java.util.List<? extends com.google.spanner.v1.StructType.FieldOrBuilder> 
-         getFieldsOrBuilderList() {
+    public java.util.List<? extends com.google.spanner.v1.StructType.FieldOrBuilder>
+        getFieldsOrBuilderList() {
       if (fieldsBuilder_ != null) {
         return fieldsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1759,60 +1874,70 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
     public com.google.spanner.v1.StructType.Field.Builder addFieldsBuilder() {
-      return getFieldsFieldBuilder().addBuilder(
-          com.google.spanner.v1.StructType.Field.getDefaultInstance());
+      return getFieldsFieldBuilder()
+          .addBuilder(com.google.spanner.v1.StructType.Field.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public com.google.spanner.v1.StructType.Field.Builder addFieldsBuilder(
-        int index) {
-      return getFieldsFieldBuilder().addBuilder(
-          index, com.google.spanner.v1.StructType.Field.getDefaultInstance());
+    public com.google.spanner.v1.StructType.Field.Builder addFieldsBuilder(int index) {
+      return getFieldsFieldBuilder()
+          .addBuilder(index, com.google.spanner.v1.StructType.Field.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of fields that make up this struct. Order is
      * significant, because values of this struct type are represented as
      * lists, where the order of field values matches the order of
-     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the order of fields
-     * matches the order of columns in a read request, or the order of
-     * fields in the `SELECT` clause of a query.
+     * fields in the [StructType][google.spanner.v1.StructType]. In turn, the
+     * order of fields matches the order of columns in a read request, or the
+     * order of fields in the `SELECT` clause of a query.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
      */
-    public java.util.List<com.google.spanner.v1.StructType.Field.Builder> 
-         getFieldsBuilderList() {
+    public java.util.List<com.google.spanner.v1.StructType.Field.Builder> getFieldsBuilderList() {
       return getFieldsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.StructType.Field, com.google.spanner.v1.StructType.Field.Builder, com.google.spanner.v1.StructType.FieldOrBuilder> 
+            com.google.spanner.v1.StructType.Field,
+            com.google.spanner.v1.StructType.Field.Builder,
+            com.google.spanner.v1.StructType.FieldOrBuilder>
         getFieldsFieldBuilder() {
       if (fieldsBuilder_ == null) {
-        fieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.spanner.v1.StructType.Field, com.google.spanner.v1.StructType.Field.Builder, com.google.spanner.v1.StructType.FieldOrBuilder>(
+        fieldsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.spanner.v1.StructType.Field,
+                com.google.spanner.v1.StructType.Field.Builder,
+                com.google.spanner.v1.StructType.FieldOrBuilder>(
                 fields_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1821,9 +1946,9 @@ private static final long serialVersionUID = 0L;
       }
       return fieldsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1833,12 +1958,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.StructType)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.StructType)
   private static final com.google.spanner.v1.StructType DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.StructType();
   }
@@ -1847,16 +1972,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StructType>
-      PARSER = new com.google.protobuf.AbstractParser<StructType>() {
-    @java.lang.Override
-    public StructType parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StructType(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<StructType> PARSER =
+      new com.google.protobuf.AbstractParser<StructType>() {
+        @java.lang.Override
+        public StructType parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new StructType(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<StructType> parser() {
     return PARSER;
@@ -1871,6 +1996,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.v1.StructType getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

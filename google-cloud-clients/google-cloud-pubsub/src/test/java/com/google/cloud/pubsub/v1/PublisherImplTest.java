@@ -53,7 +53,8 @@ import org.threeten.bp.Duration;
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 
-  private static final ProjectTopicName TEST_TOPIC = ProjectTopicName.of("test-project", "test-topic");
+  private static final ProjectTopicName TEST_TOPIC =
+      ProjectTopicName.of("test-project", "test-topic");
 
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();

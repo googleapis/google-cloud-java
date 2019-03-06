@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v2;
 
-public interface SpanOrBuilder extends
+public interface SpanOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v2.Span)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the span in the following format:
    *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
@@ -21,6 +24,8 @@ public interface SpanOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the span in the following format:
    *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
@@ -32,10 +37,11 @@ public interface SpanOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The [SPAN_ID] portion of the span's resource name.
    * </pre>
@@ -44,16 +50,19 @@ public interface SpanOrBuilder extends
    */
   java.lang.String getSpanId();
   /**
+   *
+   *
    * <pre>
    * The [SPAN_ID] portion of the span's resource name.
    * </pre>
    *
    * <code>string span_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getSpanIdBytes();
+  com.google.protobuf.ByteString getSpanIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The [SPAN_ID] of this span's parent span. If this is a root span,
    * then this field must be empty.
@@ -63,6 +72,8 @@ public interface SpanOrBuilder extends
    */
   java.lang.String getParentSpanId();
   /**
+   *
+   *
    * <pre>
    * The [SPAN_ID] of this span's parent span. If this is a root span,
    * then this field must be empty.
@@ -70,10 +81,11 @@ public interface SpanOrBuilder extends
    *
    * <code>string parent_span_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getParentSpanIdBytes();
+  com.google.protobuf.ByteString getParentSpanIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
@@ -88,6 +100,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasDisplayName();
   /**
+   *
+   *
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
@@ -102,6 +116,8 @@ public interface SpanOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getDisplayName();
   /**
+   *
+   *
    * <pre>
    * A description of the span's operation (up to 128 bytes).
    * Stackdriver Trace displays the description in the
@@ -117,6 +133,8 @@ public interface SpanOrBuilder extends
   com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getDisplayNameOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The start time of the span. On the client side, this is the time kept by
    * the local machine where the span execution starts. On the server side, this
@@ -127,6 +145,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * The start time of the span. On the client side, this is the time kept by
    * the local machine where the span execution starts. On the server side, this
@@ -137,6 +157,8 @@ public interface SpanOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * The start time of the span. On the client side, this is the time kept by
    * the local machine where the span execution starts. On the server side, this
@@ -148,6 +170,8 @@ public interface SpanOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The end time of the span. On the client side, this is the time kept by
    * the local machine where the span execution ends. On the server side, this
@@ -158,6 +182,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * The end time of the span. On the client side, this is the time kept by
    * the local machine where the span execution ends. On the server side, this
@@ -168,6 +194,8 @@ public interface SpanOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * The end time of the span. On the client side, this is the time kept by
    * the local machine where the span execution ends. On the server side, this
@@ -179,6 +207,8 @@ public interface SpanOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A set of attributes on the span. You can have up to 32 attributes per
    * span.
@@ -188,6 +218,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasAttributes();
   /**
+   *
+   *
    * <pre>
    * A set of attributes on the span. You can have up to 32 attributes per
    * span.
@@ -197,6 +229,8 @@ public interface SpanOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.Span.Attributes getAttributes();
   /**
+   *
+   *
    * <pre>
    * A set of attributes on the span. You can have up to 32 attributes per
    * span.
@@ -207,6 +241,8 @@ public interface SpanOrBuilder extends
   com.google.devtools.cloudtrace.v2.Span.AttributesOrBuilder getAttributesOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Stack trace captured at the start of the span.
    * </pre>
@@ -215,6 +251,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasStackTrace();
   /**
+   *
+   *
    * <pre>
    * Stack trace captured at the start of the span.
    * </pre>
@@ -223,6 +261,8 @@ public interface SpanOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.StackTrace getStackTrace();
   /**
+   *
+   *
    * <pre>
    * Stack trace captured at the start of the span.
    * </pre>
@@ -232,6 +272,8 @@ public interface SpanOrBuilder extends
   com.google.devtools.cloudtrace.v2.StackTraceOrBuilder getStackTraceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A set of time events. You can have up to 32 annotations and 128 message
    * events per span.
@@ -241,6 +283,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasTimeEvents();
   /**
+   *
+   *
    * <pre>
    * A set of time events. You can have up to 32 annotations and 128 message
    * events per span.
@@ -250,6 +294,8 @@ public interface SpanOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.Span.TimeEvents getTimeEvents();
   /**
+   *
+   *
    * <pre>
    * A set of time events. You can have up to 32 annotations and 128 message
    * events per span.
@@ -260,6 +306,8 @@ public interface SpanOrBuilder extends
   com.google.devtools.cloudtrace.v2.Span.TimeEventsOrBuilder getTimeEventsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Links associated with the span. You can have up to 128 links per Span.
    * </pre>
@@ -268,6 +316,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasLinks();
   /**
+   *
+   *
    * <pre>
    * Links associated with the span. You can have up to 128 links per Span.
    * </pre>
@@ -276,6 +326,8 @@ public interface SpanOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.Span.Links getLinks();
   /**
+   *
+   *
    * <pre>
    * Links associated with the span. You can have up to 128 links per Span.
    * </pre>
@@ -285,6 +337,8 @@ public interface SpanOrBuilder extends
   com.google.devtools.cloudtrace.v2.Span.LinksOrBuilder getLinksOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * An optional final status for this span.
    * </pre>
@@ -293,6 +347,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasStatus();
   /**
+   *
+   *
    * <pre>
    * An optional final status for this span.
    * </pre>
@@ -301,6 +357,8 @@ public interface SpanOrBuilder extends
    */
   com.google.rpc.Status getStatus();
   /**
+   *
+   *
    * <pre>
    * An optional final status for this span.
    * </pre>
@@ -310,6 +368,8 @@ public interface SpanOrBuilder extends
   com.google.rpc.StatusOrBuilder getStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * (Optional) Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
@@ -321,6 +381,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasSameProcessAsParentSpan();
   /**
+   *
+   *
    * <pre>
    * (Optional) Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
@@ -332,6 +394,8 @@ public interface SpanOrBuilder extends
    */
   com.google.protobuf.BoolValue getSameProcessAsParentSpan();
   /**
+   *
+   *
    * <pre>
    * (Optional) Set this parameter to indicate whether this span is in
    * the same process as its parent. If you do not set this parameter,
@@ -344,6 +408,8 @@ public interface SpanOrBuilder extends
   com.google.protobuf.BoolValueOrBuilder getSameProcessAsParentSpanOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * An optional number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
@@ -353,6 +419,8 @@ public interface SpanOrBuilder extends
    */
   boolean hasChildSpanCount();
   /**
+   *
+   *
    * <pre>
    * An optional number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.
@@ -362,6 +430,8 @@ public interface SpanOrBuilder extends
    */
   com.google.protobuf.Int32Value getChildSpanCount();
   /**
+   *
+   *
    * <pre>
    * An optional number of child spans that were generated while this span
    * was active. If set, allows implementation to detect missing child spans.

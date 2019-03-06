@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.attestation;
 
-public interface AuthorityOrBuilder extends
+public interface AuthorityOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.attestation.Authority)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
@@ -16,6 +19,8 @@ public interface AuthorityOrBuilder extends
    */
   boolean hasHint();
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
@@ -24,6 +29,8 @@ public interface AuthorityOrBuilder extends
    */
   io.grafeas.v1beta1.attestation.Authority.Hint getHint();
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>

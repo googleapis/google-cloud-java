@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -357,7 +357,9 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
             @Override
             public Iterable<Queue> extractResources(ListQueuesResponse payload) {
-              return payload.getQueuesList();
+              return payload.getQueuesList() != null
+                  ? payload.getQueuesList()
+                  : ImmutableList.<Queue>of();
             }
           };
 
@@ -391,7 +393,9 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
             @Override
             public Iterable<Task> extractResources(ListTasksResponse payload) {
-              return payload.getTasksList();
+              return payload.getTasksList() != null
+                  ? payload.getTasksList()
+                  : ImmutableList.<Task>of();
             }
           };
 

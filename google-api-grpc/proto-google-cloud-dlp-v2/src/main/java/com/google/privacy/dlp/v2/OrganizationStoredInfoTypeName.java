@@ -14,20 +14,20 @@
 
 package com.google.privacy.dlp.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/storedInfoTypes/{stored_info_type}");
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/storedInfoTypes/{stored_info_type}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +56,15 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
   }
 
   public static OrganizationStoredInfoTypeName of(String organization, String storedInfoType) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setStoredInfoType(storedInfoType)
-      .build();
+    return newBuilder().setOrganization(organization).setStoredInfoType(storedInfoType).build();
   }
 
   public static String format(String organization, String storedInfoType) {
     return newBuilder()
-      .setOrganization(organization)
-      .setStoredInfoType(storedInfoType)
-      .build()
-      .toString();
+        .setOrganization(organization)
+        .setStoredInfoType(storedInfoType)
+        .build()
+        .toString();
   }
 
   public static OrganizationStoredInfoTypeName parse(String formattedString) {
@@ -75,7 +72,9 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "OrganizationStoredInfoTypeName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "OrganizationStoredInfoTypeName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("stored_info_type"));
   }
 
@@ -123,7 +122,8 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("organization", organization, "stored_info_type", storedInfoType);
+    return PATH_TEMPLATE.instantiate(
+        "organization", organization, "stored_info_type", storedInfoType);
   }
 
   /** Builder for OrganizationStoredInfoTypeName. */
@@ -150,8 +150,7 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(OrganizationStoredInfoTypeName organizationStoredInfoTypeName) {
       organization = organizationStoredInfoTypeName.organization;
@@ -186,4 +185,3 @@ public class OrganizationStoredInfoTypeName extends StoredInfoTypeName {
     return h;
   }
 }
-

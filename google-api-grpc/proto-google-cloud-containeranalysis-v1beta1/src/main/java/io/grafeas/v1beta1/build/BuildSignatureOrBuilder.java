@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.build;
 
-public interface BuildSignatureOrBuilder extends
+public interface BuildSignatureOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.build.BuildSignature)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Public key of the builder which can be used to verify that the related
    * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -26,6 +29,8 @@ public interface BuildSignatureOrBuilder extends
    */
   java.lang.String getPublicKey();
   /**
+   *
+   *
    * <pre>
    * Public key of the builder which can be used to verify that the related
    * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -42,10 +47,11 @@ public interface BuildSignatureOrBuilder extends
    *
    * <code>string public_key = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPublicKeyBytes();
+  com.google.protobuf.ByteString getPublicKeyBytes();
 
   /**
+   *
+   *
    * <pre>
    * Signature of the related `BuildProvenance`. In JSON, this is base-64
    * encoded.
@@ -56,6 +62,8 @@ public interface BuildSignatureOrBuilder extends
   com.google.protobuf.ByteString getSignature();
 
   /**
+   *
+   *
    * <pre>
    * An ID for the key used to sign. This could be either an Id for the key
    * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -67,6 +75,8 @@ public interface BuildSignatureOrBuilder extends
    */
   java.lang.String getKeyId();
   /**
+   *
+   *
    * <pre>
    * An ID for the key used to sign. This could be either an Id for the key
    * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -76,10 +86,11 @@ public interface BuildSignatureOrBuilder extends
    *
    * <code>string key_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getKeyIdBytes();
+  com.google.protobuf.ByteString getKeyIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The type of the key, either stored in `public_key` or referenced in
    * `key_id`
@@ -89,6 +100,8 @@ public interface BuildSignatureOrBuilder extends
    */
   int getKeyTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of the key, either stored in `public_key` or referenced in
    * `key_id`

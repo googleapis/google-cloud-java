@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface GetTransferRunRequestOrBuilder extends
+public interface GetTransferRunRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
@@ -17,6 +20,8 @@ public interface GetTransferRunRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
@@ -24,6 +29,5 @@ public interface GetTransferRunRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

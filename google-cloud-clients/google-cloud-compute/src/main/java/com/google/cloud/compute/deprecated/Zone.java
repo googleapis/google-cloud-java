@@ -21,13 +21,12 @@ import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine zone.
@@ -52,7 +51,8 @@ public class Zone implements Serializable {
       };
 
   private static final long serialVersionUID = 6113636504417213010L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final ZoneId zoneId;
   private final String generatedId;
@@ -62,9 +62,7 @@ public class Zone implements Serializable {
   private final RegionId region;
   private final DeprecationStatus<ZoneId> deprecationStatus;
 
-  /**
-   * Status of the region.
-   */
+  /** Status of the region. */
   public static final class Status extends StringEnumValue {
     private static final long serialVersionUID = -1052872318386811804L;
 
@@ -76,9 +74,8 @@ public class Zone implements Serializable {
           }
         };
 
-    private static final StringEnumType<Status> type = new StringEnumType(
-        Status.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Status> type =
+        new StringEnumType(Status.class, CONSTRUCTOR);
 
     public static final Status UP = type.createAndRegister("UP");
     public static final Status DOWN = type.createAndRegister("DOWN");
@@ -88,23 +85,19 @@ public class Zone implements Serializable {
     }
 
     /**
-     * Get the Status for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Status for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Status valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Status for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Status for the given String constant, and allow unrecognized values. */
     public static Status valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Status.
-     */
+    /** Return the known values for Status. */
     public static Status[] values() {
       return type.values();
     }
@@ -173,44 +166,32 @@ public class Zone implements Serializable {
     this.deprecationStatus = builder.deprecationStatus;
   }
 
-  /**
-   * Returns the zone's identity.
-   */
+  /** Returns the zone's identity. */
   public ZoneId getZoneId() {
     return zoneId;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns an optional textual description of the zone.
-   */
+  /** Returns an optional textual description of the zone. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the zone.
-   */
+  /** Returns the service-generated unique identifier for the zone. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the status of the zone.
-   */
+  /** Returns the status of the zone. */
   public Status getStatus() {
     return status;
   }
 
-  /**
-   * Returns the identity of the region that hosts the zone.
-   */
+  /** Returns the identity of the region that hosts the zone. */
   public RegionId getRegion() {
     return region;
   }
@@ -246,8 +227,8 @@ public class Zone implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(Zone.class)
-        && Objects.equals(toPb(), ((Zone) obj).toPb());
+            && obj.getClass().equals(Zone.class)
+            && Objects.equals(toPb(), ((Zone) obj).toPb());
   }
 
   com.google.api.services.compute.model.Zone toPb() {
@@ -257,7 +238,8 @@ public class Zone implements Serializable {
       zonePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      zonePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      zonePb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     zonePb.setName(zoneId.getZone());
     zonePb.setDescription(description);
@@ -285,7 +267,8 @@ public class Zone implements Serializable {
       builder.setGeneratedId(zonePb.getId().toString());
     }
     if (zonePb.getCreationTimestamp() != null) {
-      builder.setCreationTimestamp(TIMESTAMP_FORMATTER.parseMillis(zonePb.getCreationTimestamp()));
+      builder.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.parse(zonePb.getCreationTimestamp(), Instant.FROM).toEpochMilli());
     }
     builder.setDescription(zonePb.getDescription());
     if (zonePb.getStatus() != null) {

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListUptimeCheckConfigsRequestOrBuilder extends
+public interface ListUptimeCheckConfigsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListUptimeCheckConfigsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project whose uptime check configurations are listed. The format
    *   is `projects/[PROJECT_ID]`.
@@ -17,6 +20,8 @@ public interface ListUptimeCheckConfigsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The project whose uptime check configurations are listed. The format
    *   is `projects/[PROJECT_ID]`.
@@ -24,10 +29,11 @@ public interface ListUptimeCheckConfigsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. The server
    * may further constrain the maximum number of results returned in a single
@@ -40,6 +46,8 @@ public interface ListUptimeCheckConfigsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -50,6 +58,8 @@ public interface ListUptimeCheckConfigsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -58,6 +68,5 @@ public interface ListUptimeCheckConfigsRequestOrBuilder extends
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

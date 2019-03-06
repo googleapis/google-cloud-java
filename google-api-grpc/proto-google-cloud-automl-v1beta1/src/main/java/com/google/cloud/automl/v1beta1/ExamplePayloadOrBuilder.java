@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ExamplePayloadOrBuilder extends
+public interface ExamplePayloadOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ExamplePayload)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * An example image.
    * </pre>
@@ -16,6 +19,8 @@ public interface ExamplePayloadOrBuilder extends
    */
   boolean hasImage();
   /**
+   *
+   *
    * <pre>
    * An example image.
    * </pre>
@@ -24,6 +29,8 @@ public interface ExamplePayloadOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.Image getImage();
   /**
+   *
+   *
    * <pre>
    * An example image.
    * </pre>
@@ -33,6 +40,8 @@ public interface ExamplePayloadOrBuilder extends
   com.google.cloud.automl.v1beta1.ImageOrBuilder getImageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Example text.
    * </pre>
@@ -41,6 +50,8 @@ public interface ExamplePayloadOrBuilder extends
    */
   boolean hasTextSnippet();
   /**
+   *
+   *
    * <pre>
    * Example text.
    * </pre>
@@ -49,6 +60,8 @@ public interface ExamplePayloadOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.TextSnippet getTextSnippet();
   /**
+   *
+   *
    * <pre>
    * Example text.
    * </pre>

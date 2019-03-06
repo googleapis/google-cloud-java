@@ -4,6 +4,8 @@
 package com.google.pubsub.v1;
 
 /**
+ *
+ *
  * <pre>
  * A policy that specifies the conditions for resource expiration (i.e.,
  * automatic resource deletion).
@@ -11,23 +13,23 @@ package com.google.pubsub.v1;
  *
  * Protobuf type {@code google.pubsub.v1.ExpirationPolicy}
  */
-public  final class ExpirationPolicy extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.ExpirationPolicy)
     ExpirationPolicyOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ExpirationPolicy.newBuilder() to construct.
   private ExpirationPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ExpirationPolicy() {
-  }
+
+  private ExpirationPolicy() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ExpirationPolicy(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,54 +49,59 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (ttl_ != null) {
-              subBuilder = ttl_.toBuilder();
-            }
-            ttl_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(ttl_);
-              ttl_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (ttl_ != null) {
+                subBuilder = ttl_.toBuilder();
+              }
+              ttl_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ttl_);
+                ttl_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ExpirationPolicy_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_ExpirationPolicy_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ExpirationPolicy_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_ExpirationPolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.ExpirationPolicy.class, com.google.pubsub.v1.ExpirationPolicy.Builder.class);
+            com.google.pubsub.v1.ExpirationPolicy.class,
+            com.google.pubsub.v1.ExpirationPolicy.Builder.class);
   }
 
   public static final int TTL_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration ttl_;
   /**
+   *
+   *
    * <pre>
    * Specifies the "time-to-live" duration for an associated resource. The
    * resource expires if it is not active for a period of `ttl`. The definition
@@ -110,6 +117,8 @@ private static final long serialVersionUID = 0L;
     return ttl_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the "time-to-live" duration for an associated resource. The
    * resource expires if it is not active for a period of `ttl`. The definition
@@ -125,6 +134,8 @@ private static final long serialVersionUID = 0L;
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the "time-to-live" duration for an associated resource. The
    * resource expires if it is not active for a period of `ttl`. The definition
@@ -141,6 +152,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -152,8 +164,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (ttl_ != null) {
       output.writeMessage(1, getTtl());
     }
@@ -167,8 +178,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (ttl_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getTtl());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTtl());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -178,7 +188,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.pubsub.v1.ExpirationPolicy)) {
       return super.equals(obj);
@@ -188,8 +198,7 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasTtl() == other.hasTtl());
     if (hasTtl()) {
-      result = result && getTtl()
-          .equals(other.getTtl());
+      result = result && getTtl().equals(other.getTtl());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -211,97 +220,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.ExpirationPolicy parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.pubsub.v1.ExpirationPolicy parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.ExpirationPolicy parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.pubsub.v1.ExpirationPolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A policy that specifies the conditions for resource expiration (i.e.,
    * automatic resource deletion).
@@ -309,21 +324,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.pubsub.v1.ExpirationPolicy}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.ExpirationPolicy)
       com.google.pubsub.v1.ExpirationPolicyOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ExpirationPolicy_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_ExpirationPolicy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ExpirationPolicy_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_ExpirationPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.ExpirationPolicy.class, com.google.pubsub.v1.ExpirationPolicy.Builder.class);
+              com.google.pubsub.v1.ExpirationPolicy.class,
+              com.google.pubsub.v1.ExpirationPolicy.Builder.class);
     }
 
     // Construct using com.google.pubsub.v1.ExpirationPolicy.newBuilder()
@@ -331,16 +348,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -354,9 +370,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_ExpirationPolicy_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_ExpirationPolicy_descriptor;
     }
 
     @java.lang.Override
@@ -375,7 +391,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.pubsub.v1.ExpirationPolicy buildPartial() {
-      com.google.pubsub.v1.ExpirationPolicy result = new com.google.pubsub.v1.ExpirationPolicy(this);
+      com.google.pubsub.v1.ExpirationPolicy result =
+          new com.google.pubsub.v1.ExpirationPolicy(this);
       if (ttlBuilder_ == null) {
         result.ttl_ = ttl_;
       } else {
@@ -389,38 +406,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.ExpirationPolicy) {
-        return mergeFrom((com.google.pubsub.v1.ExpirationPolicy)other);
+        return mergeFrom((com.google.pubsub.v1.ExpirationPolicy) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -463,8 +481,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration ttl_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> ttlBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        ttlBuilder_;
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -480,6 +503,8 @@ private static final long serialVersionUID = 0L;
       return ttlBuilder_ != null || ttl_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -499,6 +524,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -524,6 +551,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -535,8 +564,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration ttl = 1;</code>
      */
-    public Builder setTtl(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (ttlBuilder_ == null) {
         ttl_ = builderForValue.build();
         onChanged();
@@ -547,6 +575,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -561,8 +591,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeTtl(com.google.protobuf.Duration value) {
       if (ttlBuilder_ == null) {
         if (ttl_ != null) {
-          ttl_ =
-            com.google.protobuf.Duration.newBuilder(ttl_).mergeFrom(value).buildPartial();
+          ttl_ = com.google.protobuf.Duration.newBuilder(ttl_).mergeFrom(value).buildPartial();
         } else {
           ttl_ = value;
         }
@@ -574,6 +603,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -597,6 +628,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -609,11 +642,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration ttl = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getTtlBuilder() {
-      
+
       onChanged();
       return getTtlFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -629,11 +664,12 @@ private static final long serialVersionUID = 0L;
       if (ttlBuilder_ != null) {
         return ttlBuilder_.getMessageOrBuilder();
       } else {
-        return ttl_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : ttl_;
+        return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the "time-to-live" duration for an associated resource. The
      * resource expires if it is not active for a period of `ttl`. The definition
@@ -646,21 +682,23 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration ttl = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getTtlFieldBuilder() {
       if (ttlBuilder_ == null) {
-        ttlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getTtl(),
-                getParentForChildren(),
-                isClean());
+        ttlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(getTtl(), getParentForChildren(), isClean());
         ttl_ = null;
       }
       return ttlBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -670,12 +708,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.pubsub.v1.ExpirationPolicy)
   }
 
   // @@protoc_insertion_point(class_scope:google.pubsub.v1.ExpirationPolicy)
   private static final com.google.pubsub.v1.ExpirationPolicy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.pubsub.v1.ExpirationPolicy();
   }
@@ -684,16 +722,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ExpirationPolicy>
-      PARSER = new com.google.protobuf.AbstractParser<ExpirationPolicy>() {
-    @java.lang.Override
-    public ExpirationPolicy parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ExpirationPolicy(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ExpirationPolicy> PARSER =
+      new com.google.protobuf.AbstractParser<ExpirationPolicy>() {
+        @java.lang.Override
+        public ExpirationPolicy parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ExpirationPolicy(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ExpirationPolicy> parser() {
     return PARSER;
@@ -708,6 +746,4 @@ private static final long serialVersionUID = 0L;
   public com.google.pubsub.v1.ExpirationPolicy getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

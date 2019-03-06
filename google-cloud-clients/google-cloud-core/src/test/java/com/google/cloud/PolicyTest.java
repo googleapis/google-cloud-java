@@ -26,13 +26,11 @@ import static org.junit.Assert.fail;
 import com.google.cloud.Policy.DefaultMarshaller;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import org.junit.Test;
 
 public class PolicyTest {
 
@@ -46,20 +44,23 @@ public class PolicyTest {
   private static final Role VIEWER = Role.viewer();
   private static final Role EDITOR = Role.editor();
   private static final Role OWNER = Role.owner();
-  private static final Map<Role, ImmutableSet<Identity>> BINDINGS = ImmutableMap.of(
-      VIEWER,
-      ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS),
-      EDITOR,
-      ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN));
-  private static final Policy SIMPLE_POLICY = Policy.newBuilder()
-      .addIdentity(VIEWER, USER, SERVICE_ACCOUNT, ALL_USERS)
-      .addIdentity(EDITOR, ALL_AUTH_USERS, GROUP, DOMAIN)
-      .build();
-  private static final Policy FULL_POLICY = Policy.newBuilder()
-      .setBindings(SIMPLE_POLICY.getBindings())
-      .setEtag("etag")
-      .setVersion(1)
-      .build();
+  private static final Map<Role, ImmutableSet<Identity>> BINDINGS =
+      ImmutableMap.of(
+          VIEWER,
+          ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS),
+          EDITOR,
+          ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN));
+  private static final Policy SIMPLE_POLICY =
+      Policy.newBuilder()
+          .addIdentity(VIEWER, USER, SERVICE_ACCOUNT, ALL_USERS)
+          .addIdentity(EDITOR, ALL_AUTH_USERS, GROUP, DOMAIN)
+          .build();
+  private static final Policy FULL_POLICY =
+      Policy.newBuilder()
+          .setBindings(SIMPLE_POLICY.getBindings())
+          .setEtag("etag")
+          .setVersion(1)
+          .build();
 
   @Test
   public void testBuilder() {
@@ -79,22 +80,26 @@ public class PolicyTest {
     assertEquals(ImmutableMap.of(VIEWER, BINDINGS.get(VIEWER)), policy.getBindings());
     assertNull(policy.getEtag());
     assertEquals(0, policy.getVersion());
-    policy = policy.toBuilder()
-        .removeIdentity(VIEWER, USER, ALL_USERS)
-        .addIdentity(VIEWER, DOMAIN, GROUP)
-        .build();
-    assertEquals(ImmutableMap.of(VIEWER, ImmutableSet.of(SERVICE_ACCOUNT, DOMAIN, GROUP)),
+    policy =
+        policy
+            .toBuilder()
+            .removeIdentity(VIEWER, USER, ALL_USERS)
+            .addIdentity(VIEWER, DOMAIN, GROUP)
+            .build();
+    assertEquals(
+        ImmutableMap.of(VIEWER, ImmutableSet.of(SERVICE_ACCOUNT, DOMAIN, GROUP)),
         policy.getBindings());
     assertNull(policy.getEtag());
     assertEquals(0, policy.getVersion());
-    policy = Policy.newBuilder()
-        .removeIdentity(VIEWER, USER)
-        .addIdentity(OWNER, USER, SERVICE_ACCOUNT)
-        .addIdentity(EDITOR, GROUP)
-        .removeIdentity(EDITOR, GROUP)
-        .build();
-    assertEquals(ImmutableMap.of(OWNER, ImmutableSet.of(USER, SERVICE_ACCOUNT)),
-        policy.getBindings());
+    policy =
+        Policy.newBuilder()
+            .removeIdentity(VIEWER, USER)
+            .addIdentity(OWNER, USER, SERVICE_ACCOUNT)
+            .addIdentity(EDITOR, GROUP)
+            .removeIdentity(EDITOR, GROUP)
+            .build();
+    assertEquals(
+        ImmutableMap.of(OWNER, ImmutableSet.of(USER, SERVICE_ACCOUNT)), policy.getBindings());
     assertNull(policy.getEtag());
     assertEquals(0, policy.getVersion());
   }

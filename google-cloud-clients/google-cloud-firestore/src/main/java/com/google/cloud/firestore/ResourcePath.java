@@ -18,7 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
-import com.google.firestore.v1beta1.DatabaseRootName;
+import com.google.firestore.v1.DatabaseRootName;
 import java.util.Arrays;
 import java.util.Comparator;
 import javax.annotation.Nonnull;
@@ -127,9 +127,8 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
    */
   String getName() {
     String path = getPath();
-
     if (path.isEmpty()) {
-      return getDatabaseName().toString();
+      return getDatabaseName() + "/documents";
     } else {
       return getDatabaseName() + "/documents/" + getPath();
     }

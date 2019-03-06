@@ -14,13 +14,13 @@
 
 package com.google.devtools.cloudtrace.v2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -62,20 +62,11 @@ public class SpanName implements ResourceName {
   }
 
   public static SpanName of(String project, String trace, String span) {
-    return newBuilder()
-      .setProject(project)
-      .setTrace(trace)
-      .setSpan(span)
-      .build();
+    return newBuilder().setProject(project).setTrace(trace).setSpan(span).build();
   }
 
   public static String format(String project, String trace, String span) {
-    return newBuilder()
-      .setProject(project)
-      .setTrace(trace)
-      .setSpan(span)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setTrace(trace).setSpan(span).build().toString();
   }
 
   public static SpanName parse(String formattedString) {
@@ -83,7 +74,8 @@ public class SpanName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "SpanName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "SpanName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("trace"), matchMap.get("span"));
   }
 
@@ -169,8 +161,7 @@ public class SpanName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(SpanName spanName) {
       project = spanName.project;
@@ -209,4 +200,3 @@ public class SpanName implements ResourceName {
     return h;
   }
 }
-

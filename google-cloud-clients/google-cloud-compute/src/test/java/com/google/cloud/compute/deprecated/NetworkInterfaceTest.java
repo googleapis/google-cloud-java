@@ -21,10 +21,8 @@ import static org.junit.Assert.assertNull;
 
 import com.google.cloud.compute.deprecated.NetworkInterface.AccessConfig;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class NetworkInterfaceTest {
 
@@ -38,9 +36,9 @@ public class NetworkInterfaceTest {
           .setNatIp("192.168.1.1")
           .setType(AccessConfig.Type.ONE_TO_ONE_NAT)
           .build();
-  private static final List<AccessConfig> ACCESS_CONFIGURATIONS =
-      ImmutableList.of(ACCESS_CONFIG);
-  private static final NetworkInterface NETWORK_INTERFACE = NetworkInterface.newBuilder(NETWORK)
+  private static final List<AccessConfig> ACCESS_CONFIGURATIONS = ImmutableList.of(ACCESS_CONFIG);
+  private static final NetworkInterface NETWORK_INTERFACE =
+      NetworkInterface.newBuilder(NETWORK)
           .setName(NAME)
           .setNetworkIp(NETWORK_IP)
           .setSubnetwork(SUBNETWORK)
@@ -49,8 +47,7 @@ public class NetworkInterfaceTest {
 
   @Test
   public void testAccessConfigToBuilder() {
-    AccessConfig accessConfig =
-        ACCESS_CONFIG.toBuilder().setName("newName").build();
+    AccessConfig accessConfig = ACCESS_CONFIG.toBuilder().setName("newName").build();
     assertEquals("newName", accessConfig.getName());
     compareAccessConfig(ACCESS_CONFIG, accessConfig.toBuilder().setName("accessConfig").build());
   }
@@ -93,12 +90,13 @@ public class NetworkInterfaceTest {
     assertEquals(NETWORK_IP, NETWORK_INTERFACE.getNetworkIp());
     assertEquals(SUBNETWORK, NETWORK_INTERFACE.getSubnetwork());
     assertEquals(ACCESS_CONFIGURATIONS, NETWORK_INTERFACE.getAccessConfigurations());
-    NetworkInterface networkInterface = NetworkInterface.newBuilder("network")
-        .setName(NAME)
-        .setNetworkIp(NETWORK_IP)
-        .setSubnetwork(SUBNETWORK)
-        .setAccessConfigurations(ACCESS_CONFIG)
-        .build();
+    NetworkInterface networkInterface =
+        NetworkInterface.newBuilder("network")
+            .setName(NAME)
+            .setNetworkIp(NETWORK_IP)
+            .setSubnetwork(SUBNETWORK)
+            .setAccessConfigurations(ACCESS_CONFIG)
+            .build();
     assertEquals(NAME, networkInterface.getName());
     assertEquals(NetworkId.of("network"), networkInterface.getNetwork());
     assertEquals(NETWORK_IP, networkInterface.getNetworkIp());
@@ -135,8 +133,7 @@ public class NetworkInterfaceTest {
 
   @Test
   public void testAccessConfigToAndFromPb() {
-    AccessConfig accessConfig =
-        AccessConfig.fromPb(ACCESS_CONFIG.toPb());
+    AccessConfig accessConfig = AccessConfig.fromPb(ACCESS_CONFIG.toPb());
     compareAccessConfig(ACCESS_CONFIG, accessConfig);
     accessConfig = AccessConfig.of();
     compareAccessConfig(accessConfig, AccessConfig.fromPb(accessConfig.toPb()));
@@ -153,12 +150,14 @@ public class NetworkInterfaceTest {
   @Test
   public void testSetProjectId() {
     NetworkInterface networkInterface = NetworkInterface.of(NETWORK);
-    compareNetworkInterface(networkInterface,
-        NetworkInterface.of(NetworkId.of("network")).setProjectId("project"));
-    networkInterface = NETWORK_INTERFACE.toBuilder()
-        .setNetwork(NetworkId.of("network"))
-        .setSubnetwork(SubnetworkId.of("region", "subnetwork"))
-        .build();
+    compareNetworkInterface(
+        networkInterface, NetworkInterface.of(NetworkId.of("network")).setProjectId("project"));
+    networkInterface =
+        NETWORK_INTERFACE
+            .toBuilder()
+            .setNetwork(NetworkId.of("network"))
+            .setSubnetwork(SubnetworkId.of("region", "subnetwork"))
+            .build();
     compareNetworkInterface(NETWORK_INTERFACE, networkInterface.setProjectId("project"));
   }
 

@@ -22,10 +22,8 @@ import static org.junit.Assert.assertNull;
 import com.google.cloud.compute.deprecated.SnapshotInfo.Status;
 import com.google.cloud.compute.deprecated.SnapshotInfo.StorageBytesStatus;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class SnapshotInfoTest {
 
@@ -33,8 +31,8 @@ public class SnapshotInfoTest {
   private static final DiskId SOURCE_DISK = DiskId.of("project", "zone", "disk");
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final List<LicenseId> LICENSES =
+      ImmutableList.of(LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
   private static final SnapshotId SNAPSHOT_ID = SnapshotId.of("project", "snapshot");
   private static final Status STATUS = Status.CREATING;
   private static final Long DISK_SIZE_GB = 42L;
@@ -111,10 +109,12 @@ public class SnapshotInfoTest {
 
   @Test
   public void testSetProjectId() {
-    SnapshotInfo snapshotInfo = SNAPSHOT_INFO.toBuilder()
-        .setSnapshotId(SnapshotId.of("snapshot"))
-        .setSourceDisk(DiskId.of("zone", "disk"))
-        .build();
+    SnapshotInfo snapshotInfo =
+        SNAPSHOT_INFO
+            .toBuilder()
+            .setSnapshotId(SnapshotId.of("snapshot"))
+            .setSourceDisk(DiskId.of("zone", "disk"))
+            .build();
     compareSnapshotInfo(SNAPSHOT_INFO, snapshotInfo.setProjectId("project"));
   }
 

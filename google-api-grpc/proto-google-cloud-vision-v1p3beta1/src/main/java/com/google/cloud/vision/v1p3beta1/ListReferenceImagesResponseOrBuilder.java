@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ListReferenceImagesResponseOrBuilder extends
+public interface ListReferenceImagesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ListReferenceImagesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of reference images.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> 
-      getReferenceImagesList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> getReferenceImagesList();
   /**
+   *
+   *
    * <pre>
    * The list of reference images.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListReferenceImagesResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImages(int index);
   /**
+   *
+   *
    * <pre>
    * The list of reference images.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListReferenceImagesResponseOrBuilder extends
    */
   int getReferenceImagesCount();
   /**
+   *
+   *
    * <pre>
    * The list of reference images.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
       getReferenceImagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of reference images.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
    */
-  com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImagesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImagesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of items to return. Default 10, maximum 100.
    * </pre>
@@ -61,6 +72,8 @@ public interface ListReferenceImagesResponseOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The next_page_token returned from a previous List request, if any.
    * </pre>
@@ -69,12 +82,13 @@ public interface ListReferenceImagesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * The next_page_token returned from a previous List request, if any.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

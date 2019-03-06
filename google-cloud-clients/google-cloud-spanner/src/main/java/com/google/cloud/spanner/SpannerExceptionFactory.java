@@ -18,6 +18,8 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerException.DoNotConstructDirectly;
 
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
 import io.grpc.Context;
@@ -49,6 +51,28 @@ public final class SpannerExceptionFactory {
   }
 
   /**
+   * Transforms a {@code TimeoutException} to a {@code SpannerException}.
+   *
+   * <pre>
+   * <code>
+   * try {
+   *   Spanner spanner = SpannerOptions.getDefaultInstance();
+   *   spanner
+   *       .getDatabaseAdminClient()
+   *       .createDatabase("[INSTANCE_ID]", "[DATABASE_ID]", [STATEMENTS])
+   *       .get();
+   * } catch (TimeoutException e) {
+   *   propagateTimeout(e);
+   * }
+   * </code>
+   * </pre>
+   */
+  public static SpannerException propagateTimeout(TimeoutException e) {
+    return SpannerExceptionFactory.newSpannerException(
+        ErrorCode.DEADLINE_EXCEEDED, "Operation did not complete in the given time", e);
+  }
+
+  /**
    * Creates a new exception based on {@code cause}.
    *
    * <p>Intended for internal library use; user code should use {@link
@@ -71,6 +95,8 @@ public final class SpannerExceptionFactory {
       return newSpannerExceptionPreformatted(e.getErrorCode(), e.getMessage(), e);
     } else if (cause instanceof CancellationException) {
       return newSpannerExceptionForCancellation(context, cause);
+    } else if (cause instanceof ApiException) {
+      return fromApiException((ApiException) cause);
     }
     // Extract gRPC status.  This will produce "UNKNOWN" for non-gRPC exceptions.
     Status status = Status.fromThrowable(cause);
@@ -120,6 +146,17 @@ public final class SpannerExceptionFactory {
     }
   }
 
+  private static SpannerException fromApiException(ApiException exception) {
+    Status.Code code = ((GrpcStatusCode) exception.getStatusCode()).getTransportCode();
+    ErrorCode errorCode = ErrorCode.fromGrpcStatus(Status.fromCode(code));
+    if (exception.getCause() != null) {
+      return SpannerExceptionFactory.newSpannerException(
+          errorCode, exception.getMessage(), exception.getCause());
+    } else {
+      return SpannerExceptionFactory.newSpannerException(errorCode, exception.getMessage());
+    }
+  }
+
   private static boolean isRetryable(ErrorCode code, @Nullable Throwable cause) {
     switch (code) {
       case INTERNAL:
@@ -159,7 +196,8 @@ public final class SpannerExceptionFactory {
                 // See b/27794742.
                 return true;
               }
-              if (cause.getMessage()
+              if (cause
+                  .getMessage()
                   .contains("Received unexpected EOS on DATA frame from server")) {
                 return true;
               }

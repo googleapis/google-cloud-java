@@ -14,20 +14,21 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class SessionEntityTypeName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class SessionEntityTypeName implements ResourceName {
   }
 
   public static SessionEntityTypeName of(String project, String session, String entityType) {
-    return newBuilder()
-      .setProject(project)
-      .setSession(session)
-      .setEntityType(entityType)
-      .build();
+    return newBuilder().setProject(project).setSession(session).setEntityType(entityType).build();
   }
 
   public static String format(String project, String session, String entityType) {
     return newBuilder()
-      .setProject(project)
-      .setSession(session)
-      .setEntityType(entityType)
-      .build()
-      .toString();
+        .setProject(project)
+        .setSession(session)
+        .setEntityType(entityType)
+        .build()
+        .toString();
   }
 
   public static SessionEntityTypeName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class SessionEntityTypeName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "SessionEntityTypeName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "SessionEntityTypeName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("session"), matchMap.get("entity_type"));
   }
 
@@ -132,7 +130,8 @@ public class SessionEntityTypeName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "session", session, "entity_type", entityType);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "session", session, "entity_type", entityType);
   }
 
   /** Builder for SessionEntityTypeName. */
@@ -169,8 +168,7 @@ public class SessionEntityTypeName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(SessionEntityTypeName sessionEntityTypeName) {
       project = sessionEntityTypeName.project;
@@ -209,4 +207,3 @@ public class SessionEntityTypeName implements ResourceName {
     return h;
   }
 }
-

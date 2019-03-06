@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -267,8 +267,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-            .setMaxInboundMessageSize(20<<20); // 20MB
+    return InstantiatingGrpcChannelProvider.newBuilder().setMaxInboundMessageSize(20 << 20); // 20MB
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -356,7 +355,9 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
             @Override
             public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList();
+              return payload.getSubscriptionsList() != null
+                  ? payload.getSubscriptionsList()
+                  : ImmutableList.<Subscription>of();
             }
           };
 
@@ -390,7 +391,9 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
             @Override
             public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList();
+              return payload.getSnapshotsList() != null
+                  ? payload.getSnapshotsList()
+                  : ImmutableList.<Snapshot>of();
             }
           };
 
@@ -398,7 +401,8 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSubscriptionsRequest, ListSubscriptionsResponse,
+              ListSubscriptionsRequest,
+              ListSubscriptionsResponse,
               ListSubscriptionsPagedResponse>() {
             @Override
             public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(
@@ -475,21 +479,11 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
       definitions.put(
-          "pull",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.RESOURCE_EXHAUSTED,
-                  StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "http_get",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "non_idempotent",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("none", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -623,7 +617,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
       builder
           .updateSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -633,7 +627,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
       builder
           .deleteSubscriptionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -643,12 +637,12 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
       builder
           .acknowledgeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("messaging"));
 
       builder
           .pullSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("pull"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("messaging"));
 
       builder
@@ -663,22 +657,22 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
       builder
           .createSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .updateSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .deleteSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .seekSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder

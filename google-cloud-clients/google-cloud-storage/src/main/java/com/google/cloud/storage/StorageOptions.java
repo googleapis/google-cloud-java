@@ -17,14 +17,14 @@
 package com.google.cloud.storage;
 
 import com.google.cloud.NoCredentials;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.cloud.storage.spi.v1.HttpStorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
@@ -55,8 +55,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
     }
   }
 
-  public static class Builder extends
-      ServiceOptions.Builder<Storage, StorageOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<Storage, StorageOptions, Builder> {
 
     private Builder() {}
 
@@ -83,8 +82,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
     super(StorageFactory.class, StorageRpcFactory.class, builder, new StorageDefaults());
   }
 
-  private static class StorageDefaults implements
-      ServiceDefaults<Storage, StorageOptions> {
+  private static class StorageDefaults implements ServiceDefaults<Storage, StorageOptions> {
 
     @Override
     public StorageFactory getDefaultServiceFactory() {
@@ -122,16 +120,12 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
     return (StorageRpc) getRpc();
   }
 
-  /**
-   * Returns a default {@code StorageOptions} instance.
-   */
+  /** Returns a default {@code StorageOptions} instance. */
   public static StorageOptions getDefaultInstance() {
     return newBuilder().build();
   }
 
-  /**
-   * Returns a unauthenticated {@code StorageOptions} instance.
-   */
+  /** Returns a unauthenticated {@code StorageOptions} instance. */
   public static StorageOptions getUnauthenticatedInstance() {
     return newBuilder().setCredentials(NoCredentials.getInstance()).build();
   }
@@ -151,7 +145,6 @@ public class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
   public boolean equals(Object obj) {
     return obj instanceof StorageOptions && baseEquals((StorageOptions) obj);
   }
-
 
   public static Builder newBuilder() {
     return new Builder();

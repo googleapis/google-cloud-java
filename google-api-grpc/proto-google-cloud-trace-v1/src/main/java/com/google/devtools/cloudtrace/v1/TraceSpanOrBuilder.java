@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v1;
 
-public interface TraceSpanOrBuilder extends
+public interface TraceSpanOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v1.TraceSpan)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Identifier for the span. Must be a 64-bit integer other than 0 and
    * unique within a trace.
@@ -18,6 +21,8 @@ public interface TraceSpanOrBuilder extends
   long getSpanId();
 
   /**
+   *
+   *
    * <pre>
    * Distinguishes between spans generated in a particular context. For example,
    * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -28,6 +33,8 @@ public interface TraceSpanOrBuilder extends
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * Distinguishes between spans generated in a particular context. For example,
    * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -39,6 +46,8 @@ public interface TraceSpanOrBuilder extends
   com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind();
 
   /**
+   *
+   *
    * <pre>
    * Name of the span. Must be less than 128 bytes. The span name is sanitized
    * and displayed in the Stackdriver Trace tool in the
@@ -53,6 +62,8 @@ public interface TraceSpanOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Name of the span. Must be less than 128 bytes. The span name is sanitized
    * and displayed in the Stackdriver Trace tool in the
@@ -65,10 +76,11 @@ public interface TraceSpanOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Start time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -77,6 +89,8 @@ public interface TraceSpanOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Start time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -85,6 +99,8 @@ public interface TraceSpanOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Start time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -94,6 +110,8 @@ public interface TraceSpanOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * End time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -102,6 +120,8 @@ public interface TraceSpanOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * End time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -110,6 +130,8 @@ public interface TraceSpanOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * End time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -119,6 +141,8 @@ public interface TraceSpanOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * ID of the parent span, if any. Optional.
    * </pre>
@@ -128,6 +152,8 @@ public interface TraceSpanOrBuilder extends
   long getParentSpanId();
 
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -166,6 +192,8 @@ public interface TraceSpanOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -202,15 +230,13 @@ public interface TraceSpanOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -247,9 +273,10 @@ public interface TraceSpanOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -286,11 +313,10 @@ public interface TraceSpanOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -327,7 +353,5 @@ public interface TraceSpanOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

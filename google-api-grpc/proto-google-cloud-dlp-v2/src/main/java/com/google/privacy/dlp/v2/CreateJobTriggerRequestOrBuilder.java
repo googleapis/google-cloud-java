@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CreateJobTriggerRequestOrBuilder extends
+public interface CreateJobTriggerRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CreateJobTriggerRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
@@ -16,16 +19,19 @@ public interface CreateJobTriggerRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The JobTrigger to create.
    * </pre>
@@ -34,6 +40,8 @@ public interface CreateJobTriggerRequestOrBuilder extends
    */
   boolean hasJobTrigger();
   /**
+   *
+   *
    * <pre>
    * The JobTrigger to create.
    * </pre>
@@ -42,6 +50,8 @@ public interface CreateJobTriggerRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.JobTrigger getJobTrigger();
   /**
+   *
+   *
    * <pre>
    * The JobTrigger to create.
    * </pre>
@@ -51,6 +61,8 @@ public interface CreateJobTriggerRequestOrBuilder extends
   com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The trigger id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -62,6 +74,8 @@ public interface CreateJobTriggerRequestOrBuilder extends
    */
   java.lang.String getTriggerId();
   /**
+   *
+   *
    * <pre>
    * The trigger id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -71,6 +85,5 @@ public interface CreateJobTriggerRequestOrBuilder extends
    *
    * <code>string trigger_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getTriggerIdBytes();
+  com.google.protobuf.ByteString getTriggerIdBytes();
 }

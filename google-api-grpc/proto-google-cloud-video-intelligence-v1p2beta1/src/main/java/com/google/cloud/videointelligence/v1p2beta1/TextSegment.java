@@ -4,31 +4,34 @@
 package com.google.cloud.videointelligence.v1p2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Video segment level annotation results for text detection.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p2beta1.TextSegment}
  */
-public  final class TextSegment extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p2beta1.TextSegment)
     TextSegmentOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use TextSegment.newBuilder() to construct.
   private TextSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private TextSegment() {
     confidence_ = 0F;
     frames_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private TextSegment(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,47 +51,55 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder subBuilder = null;
-            if (segment_ != null) {
-              subBuilder = segment_.toBuilder();
-            }
-            segment_ = input.readMessage(com.google.cloud.videointelligence.v1p2beta1.VideoSegment.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(segment_);
-              segment_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder subBuilder = null;
+              if (segment_ != null) {
+                subBuilder = segment_.toBuilder();
+              }
+              segment_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p2beta1.VideoSegment.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(segment_);
+                segment_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 21: {
-
-            confidence_ = input.readFloat();
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              frames_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p2beta1.TextFrame>();
-              mutable_bitField0_ |= 0x00000004;
+              break;
             }
-            frames_.add(
-                input.readMessage(com.google.cloud.videointelligence.v1p2beta1.TextFrame.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 21:
+            {
+              confidence_ = input.readFloat();
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                frames_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1p2beta1.TextFrame>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              frames_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p2beta1.TextFrame.parser(),
+                      extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         frames_ = java.util.Collections.unmodifiableList(frames_);
@@ -97,23 +108,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1p2beta1.TextSegment.class, com.google.cloud.videointelligence.v1p2beta1.TextSegment.Builder.class);
+            com.google.cloud.videointelligence.v1p2beta1.TextSegment.class,
+            com.google.cloud.videointelligence.v1p2beta1.TextSegment.Builder.class);
   }
 
   private int bitField0_;
   public static final int SEGMENT_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p2beta1.VideoSegment segment_;
   /**
+   *
+   *
    * <pre>
    * Video segment where a text snippet was detected.
    * </pre>
@@ -124,6 +140,8 @@ private static final long serialVersionUID = 0L;
     return segment_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Video segment where a text snippet was detected.
    * </pre>
@@ -131,9 +149,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.videointelligence.v1p2beta1.VideoSegment segment = 1;</code>
    */
   public com.google.cloud.videointelligence.v1p2beta1.VideoSegment getSegment() {
-    return segment_ == null ? com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance() : segment_;
+    return segment_ == null
+        ? com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance()
+        : segment_;
   }
   /**
+   *
+   *
    * <pre>
    * Video segment where a text snippet was detected.
    * </pre>
@@ -147,6 +169,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_;
   /**
+   *
+   *
    * <pre>
    * Confidence for the track of detected text. It is calculated as the highest
    * over all frames where OCR detected text appears.
@@ -161,6 +185,8 @@ private static final long serialVersionUID = 0L;
   public static final int FRAMES_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> frames_;
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
@@ -171,17 +197,21 @@ private static final long serialVersionUID = 0L;
     return frames_;
   }
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
    */
-  public java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
+  public java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>
       getFramesOrBuilderList() {
     return frames_;
   }
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
@@ -192,6 +222,8 @@ private static final long serialVersionUID = 0L;
     return frames_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
@@ -202,6 +234,8 @@ private static final long serialVersionUID = 0L;
     return frames_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
@@ -214,6 +248,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -225,8 +260,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (segment_ != null) {
       output.writeMessage(1, getSegment());
     }
@@ -246,16 +280,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (segment_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSegment());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSegment());
     }
     if (confidence_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, confidence_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
     }
     for (int i = 0; i < frames_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, frames_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, frames_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -265,25 +296,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1p2beta1.TextSegment)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1p2beta1.TextSegment other = (com.google.cloud.videointelligence.v1p2beta1.TextSegment) obj;
+    com.google.cloud.videointelligence.v1p2beta1.TextSegment other =
+        (com.google.cloud.videointelligence.v1p2beta1.TextSegment) obj;
 
     boolean result = true;
     result = result && (hasSegment() == other.hasSegment());
     if (hasSegment()) {
-      result = result && getSegment()
-          .equals(other.getSegment());
+      result = result && getSegment().equals(other.getSegment());
     }
-    result = result && (
-        java.lang.Float.floatToIntBits(getConfidence())
-        == java.lang.Float.floatToIntBits(
-            other.getConfidence()));
-    result = result && getFramesList()
-        .equals(other.getFramesList());
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getConfidence())
+                == java.lang.Float.floatToIntBits(other.getConfidence()));
+    result = result && getFramesList().equals(other.getFramesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -300,8 +330,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getSegment().hashCode();
     }
     hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getConfidence());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
     if (getFramesCount() > 0) {
       hash = (37 * hash) + FRAMES_FIELD_NUMBER;
       hash = (53 * hash) + getFramesList().hashCode();
@@ -312,117 +341,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.TextSegment parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1p2beta1.TextSegment prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1p2beta1.TextSegment prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Video segment level annotation results for text detection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1p2beta1.TextSegment}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p2beta1.TextSegment)
       com.google.cloud.videointelligence.v1p2beta1.TextSegmentOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1p2beta1.TextSegment.class, com.google.cloud.videointelligence.v1p2beta1.TextSegment.Builder.class);
+              com.google.cloud.videointelligence.v1p2beta1.TextSegment.class,
+              com.google.cloud.videointelligence.v1p2beta1.TextSegment.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1p2beta1.TextSegment.newBuilder()
@@ -430,17 +469,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFramesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -462,9 +501,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_TextSegment_descriptor;
     }
 
     @java.lang.Override
@@ -483,7 +522,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.videointelligence.v1p2beta1.TextSegment buildPartial() {
-      com.google.cloud.videointelligence.v1p2beta1.TextSegment result = new com.google.cloud.videointelligence.v1p2beta1.TextSegment(this);
+      com.google.cloud.videointelligence.v1p2beta1.TextSegment result =
+          new com.google.cloud.videointelligence.v1p2beta1.TextSegment(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (segmentBuilder_ == null) {
@@ -510,38 +550,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1p2beta1.TextSegment) {
-        return mergeFrom((com.google.cloud.videointelligence.v1p2beta1.TextSegment)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1p2beta1.TextSegment) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -549,7 +590,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.videointelligence.v1p2beta1.TextSegment other) {
-      if (other == com.google.cloud.videointelligence.v1p2beta1.TextSegment.getDefaultInstance()) return this;
+      if (other == com.google.cloud.videointelligence.v1p2beta1.TextSegment.getDefaultInstance())
+        return this;
       if (other.hasSegment()) {
         mergeSegment(other.getSegment());
       }
@@ -574,9 +616,10 @@ private static final long serialVersionUID = 0L;
             framesBuilder_ = null;
             frames_ = other.frames_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            framesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFramesFieldBuilder() : null;
+            framesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFramesFieldBuilder()
+                    : null;
           } else {
             framesBuilder_.addAllMessages(other.frames_);
           }
@@ -601,7 +644,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1p2beta1.TextSegment) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1p2beta1.TextSegment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -610,12 +654,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.cloud.videointelligence.v1p2beta1.VideoSegment segment_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p2beta1.VideoSegment, com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder, com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder> segmentBuilder_;
+            com.google.cloud.videointelligence.v1p2beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder>
+        segmentBuilder_;
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -626,6 +676,8 @@ private static final long serialVersionUID = 0L;
       return segmentBuilder_ != null || segment_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -634,12 +686,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.videointelligence.v1p2beta1.VideoSegment getSegment() {
       if (segmentBuilder_ == null) {
-        return segment_ == null ? com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance() : segment_;
+        return segment_ == null
+            ? com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance()
+            : segment_;
       } else {
         return segmentBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -660,6 +716,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -678,6 +736,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -688,7 +748,9 @@ private static final long serialVersionUID = 0L;
       if (segmentBuilder_ == null) {
         if (segment_ != null) {
           segment_ =
-            com.google.cloud.videointelligence.v1p2beta1.VideoSegment.newBuilder(segment_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1p2beta1.VideoSegment.newBuilder(segment_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           segment_ = value;
         }
@@ -700,6 +762,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -718,6 +782,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -725,26 +791,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.videointelligence.v1p2beta1.VideoSegment segment = 1;</code>
      */
     public com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder getSegmentBuilder() {
-      
+
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1p2beta1.VideoSegment segment = 1;</code>
      */
-    public com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder getSegmentOrBuilder() {
+    public com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder
+        getSegmentOrBuilder() {
       if (segmentBuilder_ != null) {
         return segmentBuilder_.getMessageOrBuilder();
       } else {
-        return segment_ == null ?
-            com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance() : segment_;
+        return segment_ == null
+            ? com.google.cloud.videointelligence.v1p2beta1.VideoSegment.getDefaultInstance()
+            : segment_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segment where a text snippet was detected.
      * </pre>
@@ -752,21 +824,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.videointelligence.v1p2beta1.VideoSegment segment = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p2beta1.VideoSegment, com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder, com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder> 
+            com.google.cloud.videointelligence.v1p2beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder>
         getSegmentFieldBuilder() {
       if (segmentBuilder_ == null) {
-        segmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1p2beta1.VideoSegment, com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder, com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder>(
-                getSegment(),
-                getParentForChildren(),
-                isClean());
+        segmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p2beta1.VideoSegment,
+                com.google.cloud.videointelligence.v1p2beta1.VideoSegment.Builder,
+                com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder>(
+                getSegment(), getParentForChildren(), isClean());
         segment_ = null;
       }
       return segmentBuilder_;
     }
 
-    private float confidence_ ;
+    private float confidence_;
     /**
+     *
+     *
      * <pre>
      * Confidence for the track of detected text. It is calculated as the highest
      * over all frames where OCR detected text appears.
@@ -778,6 +855,8 @@ private static final long serialVersionUID = 0L;
       return confidence_;
     }
     /**
+     *
+     *
      * <pre>
      * Confidence for the track of detected text. It is calculated as the highest
      * over all frames where OCR detected text appears.
@@ -786,12 +865,14 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 2;</code>
      */
     public Builder setConfidence(float value) {
-      
+
       confidence_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Confidence for the track of detected text. It is calculated as the highest
      * over all frames where OCR detected text appears.
@@ -800,25 +881,33 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 2;</code>
      */
     public Builder clearConfidence() {
-      
+
       confidence_ = 0F;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> frames_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFramesIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        frames_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p2beta1.TextFrame>(frames_);
+        frames_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1p2beta1.TextFrame>(
+                frames_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p2beta1.TextFrame, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder, com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> framesBuilder_;
+            com.google.cloud.videointelligence.v1p2beta1.TextFrame,
+            com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder,
+            com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>
+        framesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -833,6 +922,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -847,6 +938,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -861,6 +954,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -882,6 +977,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -900,6 +997,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -920,6 +1019,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -941,6 +1042,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -959,6 +1062,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -977,6 +1082,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -984,11 +1091,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
      */
     public Builder addAllFrames(
-        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrame> values) {
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrame>
+            values) {
       if (framesBuilder_ == null) {
         ensureFramesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, frames_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, frames_);
         onChanged();
       } else {
         framesBuilder_.addAllMessages(values);
@@ -996,6 +1103,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -1013,6 +1122,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -1030,6 +1141,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -1041,6 +1154,8 @@ private static final long serialVersionUID = 0L;
       return getFramesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -1050,19 +1165,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder getFramesOrBuilder(
         int index) {
       if (framesBuilder_ == null) {
-        return frames_.get(index);  } else {
+        return frames_.get(index);
+      } else {
         return framesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
      */
-    public java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
-         getFramesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>
+        getFramesOrBuilderList() {
       if (framesBuilder_ != null) {
         return framesBuilder_.getMessageOrBuilderList();
       } else {
@@ -1070,6 +1188,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -1077,10 +1197,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
      */
     public com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder addFramesBuilder() {
-      return getFramesFieldBuilder().addBuilder(
-          com.google.cloud.videointelligence.v1p2beta1.TextFrame.getDefaultInstance());
+      return getFramesFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1p2beta1.TextFrame.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
@@ -1089,26 +1211,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder addFramesBuilder(
         int index) {
-      return getFramesFieldBuilder().addBuilder(
-          index, com.google.cloud.videointelligence.v1p2beta1.TextFrame.getDefaultInstance());
+      return getFramesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.videointelligence.v1p2beta1.TextFrame.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Information related to the frames where OCR detected text appears.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder> 
-         getFramesBuilderList() {
+    public java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder>
+        getFramesBuilderList() {
       return getFramesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p2beta1.TextFrame, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder, com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
+            com.google.cloud.videointelligence.v1p2beta1.TextFrame,
+            com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder,
+            com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>
         getFramesFieldBuilder() {
       if (framesBuilder_ == null) {
-        framesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.videointelligence.v1p2beta1.TextFrame, com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder, com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>(
+        framesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p2beta1.TextFrame,
+                com.google.cloud.videointelligence.v1p2beta1.TextFrame.Builder,
+                com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>(
                 frames_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1117,9 +1248,9 @@ private static final long serialVersionUID = 0L;
       }
       return framesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1129,12 +1260,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p2beta1.TextSegment)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p2beta1.TextSegment)
   private static final com.google.cloud.videointelligence.v1p2beta1.TextSegment DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1p2beta1.TextSegment();
   }
@@ -1143,16 +1274,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TextSegment>
-      PARSER = new com.google.protobuf.AbstractParser<TextSegment>() {
-    @java.lang.Override
-    public TextSegment parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TextSegment(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<TextSegment> PARSER =
+      new com.google.protobuf.AbstractParser<TextSegment>() {
+        @java.lang.Override
+        public TextSegment parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TextSegment(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<TextSegment> parser() {
     return PARSER;
@@ -1167,6 +1298,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.videointelligence.v1p2beta1.TextSegment getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

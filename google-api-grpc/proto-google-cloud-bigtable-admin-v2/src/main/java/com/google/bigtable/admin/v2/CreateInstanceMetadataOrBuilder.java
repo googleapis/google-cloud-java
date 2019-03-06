@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CreateInstanceMetadataOrBuilder extends
+public interface CreateInstanceMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateInstanceMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateInstance operation.
    * </pre>
@@ -16,6 +19,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   boolean hasOriginalRequest();
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateInstance operation.
    * </pre>
@@ -24,6 +29,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   com.google.bigtable.admin.v2.CreateInstanceRequest getOriginalRequest();
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateInstance operation.
    * </pre>
@@ -33,6 +40,8 @@ public interface CreateInstanceMetadataOrBuilder extends
   com.google.bigtable.admin.v2.CreateInstanceRequestOrBuilder getOriginalRequestOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -41,6 +50,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   boolean hasRequestTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -49,6 +60,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getRequestTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -58,6 +71,8 @@ public interface CreateInstanceMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>
@@ -66,6 +81,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   boolean hasFinishTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>
@@ -74,6 +91,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getFinishTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>

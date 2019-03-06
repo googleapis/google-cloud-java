@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bom</artifactId>
-      <version>0.70.0-alpha</version>
+      <version>0.82.0-alpha</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -30,11 +30,6 @@ If you are using Maven, add this to your pom.xml file
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigtable</artifactId>
-  </dependency>
-
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-bigtable-admin</artifactId>
   </dependency>
 
   <dependency>
@@ -53,16 +48,14 @@ If you are using Maven, add this to your pom.xml file
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable:0.70.0-alpha'
-compile 'com.google.cloud:google-cloud-bigtable-admin:0.70.0-alpha'
-testCompile 'com.google.cloud:google-cloud-bigtable-emulator:0.70.0-alpha'
+compile 'com.google.cloud:google-cloud-bigtable:0.82.0-alpha'
+testCompile 'com.google.cloud:google-cloud-bigtable-emulator:0.82.0-alpha'
 testCompile 'junit:junit:4.12'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.70.0-alpha"
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable-admin" % "0.70.0-alpha"
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable-emulator" % "0.70.0-alpha" % Test
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.82.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable-emulator" % "0.82.0-alpha" % Test
 libraryDependencies += "junit" % "junit" % "4.12" % Test
 ```
 [//]: # ({x-version-update-end})
@@ -110,25 +103,10 @@ public class ExampleTest {
   @Before
   public void setUp() throws IOException {
     // Initialize the clients to connect to the emulator
-    BigtableTableAdminSettings.Builder tableAdminSettings = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of("fake-project", "fake-instance"));
-    tableAdminSettings.stubSettings()
-        .setCredentialsProvider(NoCredentialsProvider.create())
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(
-                GrpcTransportChannel.create(bigtableEmulator.getAdminChannel())
-            )
-        );
+    BigtableTableAdminSettings.Builder tableAdminSettings = BigtableTableAdminSettings.newBuilderForEmulator(bigtableEmulator.getPort());
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
 
-    BigtableDataSettings.Builder dataSettings = BigtableDataSettings.newBuilder()
-        .setInstanceName(com.google.cloud.bigtable.data.v2.models.InstanceName.of("fake-project", "fake-instance"))
-        .setCredentialsProvider(NoCredentialsProvider.create())
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(
-                GrpcTransportChannel.create(bigtableEmulator.getDataChannel())
-            )
-        );
+    BigtableDataSettings.Builder dataSettings = BigtableDataSettings.newBuilderForEmulator(bigtableEmulator.getPort());
     dataClient = BigtableDataClient.create(dataSettings.build());
 
     // Create a test table that can be used in tests

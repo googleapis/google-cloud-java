@@ -3,20 +3,25 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface TaskOrBuilder extends
+public interface TaskOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.Task)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   * Optionally caller-specified in
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -31,15 +36,19 @@ public interface TaskOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
-   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   * Optionally caller-specified in
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -52,40 +61,42 @@ public interface TaskOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+   * HTTP request that is sent to the App Engine app handler.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
    */
   boolean hasAppEngineHttpRequest();
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+   * HTTP request that is sent to the App Engine app handler.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
    */
   com.google.cloud.tasks.v2beta3.AppEngineHttpRequest getAppEngineHttpRequest();
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+   * HTTP request that is sent to the App Engine app handler.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -93,6 +104,54 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder getAppEngineHttpRequestOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  boolean hasHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder();
+
+  /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -103,6 +162,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -113,6 +174,8 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -124,6 +187,8 @@ public interface TaskOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -133,6 +198,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -142,6 +209,8 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -152,9 +221,126 @@ public interface TaskOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the
+   * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+   *   10 minutes.
+   *   The deadline must be in the interval [15 seconds, 30 minutes].
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+   * 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  boolean hasDispatchDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the
+   * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+   *   10 minutes.
+   *   The deadline must be in the interval [15 seconds, 30 minutes].
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+   * 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  com.google.protobuf.Duration getDispatchDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the
+   * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+   *   10 minutes.
+   *   The deadline must be in the interval [15 seconds, 30 minutes].
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+   * 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getDispatchDeadlineOrBuilder();
+
+  /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts dispatched.
-   * This count includes tasks which have been dispatched but haven't
+   * This count includes attempts which have been dispatched but haven't
    * received a response.
    * </pre>
    *
@@ -163,6 +349,8 @@ public interface TaskOrBuilder extends
   int getDispatchCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts which have received a response.
    * </pre>
@@ -172,30 +360,39 @@ public interface TaskOrBuilder extends
   int getResponseCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-   * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+   * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+   * is not retained by Cloud Tasks.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
    */
   boolean hasFirstAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-   * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+   * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+   * is not retained by Cloud Tasks.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
    */
   com.google.cloud.tasks.v2beta3.Attempt getFirstAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-   * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+   * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+   * is not retained by Cloud Tasks.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -203,6 +400,8 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta3.AttemptOrBuilder getFirstAttemptOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -211,6 +410,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasLastAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -219,6 +420,8 @@ public interface TaskOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.Attempt getLastAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -228,18 +431,22 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta3.AttemptOrBuilder getLastAttemptOrBuilder();
 
   /**
+   *
+   *
    * <pre>
-   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-   * been returned.
+   * Output only. The view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
    */
   int getViewValue();
   /**
+   *
+   *
    * <pre>
-   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-   * been returned.
+   * Output only. The view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>

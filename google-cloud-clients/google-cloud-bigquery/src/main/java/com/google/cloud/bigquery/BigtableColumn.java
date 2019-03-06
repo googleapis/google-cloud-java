@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigquery;
 
-import com.google.common.base.Function;
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Function;
 import java.io.Serializable;
 import javax.annotation.Nullable;
 
@@ -46,8 +46,8 @@ public abstract class BigtableColumn implements Serializable {
     /**
      * Qualifier of the column.
      *
-     * Columns in the parent column family that has this exact qualifier are exposed as . field. If
-     * the qualifier is valid UTF-8 string, it can be specified in the qualifier_string field.
+     * <p>Columns in the parent column family that has this exact qualifier are exposed as . field.
+     * If the qualifier is valid UTF-8 string, it can be specified in the qualifier_string field.
      * Otherwise, a base-64 encoded value must be set to qualifier_encoded. The column field name is
      * the same as the column qualifier. However, if the qualifier is not a valid BigQuery field
      * identifier, a valid identifier must be provided as field_name.
@@ -63,7 +63,7 @@ public abstract class BigtableColumn implements Serializable {
     /**
      * If this is set, only the latest version of value in this column are exposed.
      *
-     * 'onlyReadLatest' can also be set at the column family level. However, the setting at the
+     * <p>'onlyReadLatest' can also be set at the column family level. However, the setting at the
      * column level takes precedence if 'onlyReadLatest' is set at both levels.
      */
     public abstract Builder setOnlyReadLatest(Boolean onlyReadLatest);
@@ -73,20 +73,20 @@ public abstract class BigtableColumn implements Serializable {
      * - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using
      * HBase Bytes.toBytes family of functions.
      *
-     * Encoding can also be set at the column family level. However, the setting at the column level
-     * takes precedence if 'encoding' is set at both levels.
+     * <p>Encoding can also be set at the column family level. However, the setting at the column
+     * level takes precedence if 'encoding' is set at both levels.
      */
     public abstract Builder setEncoding(String encoding);
 
     /**
      * The type to convert the value in cells of this column.
      *
-     * The values are expected to be encoded using HBase Bytes.toBytes function when using the
+     * <p>The values are expected to be encoded using HBase Bytes.toBytes function when using the
      * BINARY encoding value. Following BigQuery types are allowed (case-sensitive): BYTES STRING
      * INTEGER FLOAT BOOLEAN Default type is BYTES.
      *
-     * 'type' can also be set at the column family level. However, the setting at the column level
-     * takes precedence if 'type' is set at both levels.
+     * <p>'type' can also be set at the column family level. However, the setting at the column
+     * level takes precedence if 'type' is set at both levels.
      */
     public abstract Builder setType(String type);
 
@@ -108,30 +108,32 @@ public abstract class BigtableColumn implements Serializable {
   }
 
   com.google.api.services.bigquery.model.BigtableColumn toPb() {
-    com.google.api.services.bigquery.model.BigtableColumn column = new com.google.api.services.bigquery.model.BigtableColumn()
-        .setQualifierEncoded(getQualifierEncoded())
-        .setFieldName(getFieldName())
-        .setOnlyReadLatest(getOnlyReadLatest())
-        .setEncoding(getEncoding())
-        .setType(getType());
+    com.google.api.services.bigquery.model.BigtableColumn column =
+        new com.google.api.services.bigquery.model.BigtableColumn()
+            .setQualifierEncoded(getQualifierEncoded())
+            .setFieldName(getFieldName())
+            .setOnlyReadLatest(getOnlyReadLatest())
+            .setEncoding(getEncoding())
+            .setType(getType());
     return column;
   }
 
-  static final Function<com.google.api.services.bigquery.model.BigtableColumn, BigtableColumn> FROM_PB_FUNCTION =
-      new Function<com.google.api.services.bigquery.model.BigtableColumn, BigtableColumn>() {
-        @Override
-        public BigtableColumn apply(
-            com.google.api.services.bigquery.model.BigtableColumn pb) {
-          return BigtableColumn.fromPb(pb);
-        }
-      };
+  static final Function<com.google.api.services.bigquery.model.BigtableColumn, BigtableColumn>
+      FROM_PB_FUNCTION =
+          new Function<com.google.api.services.bigquery.model.BigtableColumn, BigtableColumn>() {
+            @Override
+            public BigtableColumn apply(com.google.api.services.bigquery.model.BigtableColumn pb) {
+              return BigtableColumn.fromPb(pb);
+            }
+          };
 
-  static final Function<BigtableColumn, com.google.api.services.bigquery.model.BigtableColumn> TO_PB_FUNCTION =
-      new Function<BigtableColumn, com.google.api.services.bigquery.model.BigtableColumn>() {
-        @Override
-        public com.google.api.services.bigquery.model.BigtableColumn apply(
-            BigtableColumn column) {
-          return column.toPb();
-        }
-      };
+  static final Function<BigtableColumn, com.google.api.services.bigquery.model.BigtableColumn>
+      TO_PB_FUNCTION =
+          new Function<BigtableColumn, com.google.api.services.bigquery.model.BigtableColumn>() {
+            @Override
+            public com.google.api.services.bigquery.model.BigtableColumn apply(
+                BigtableColumn column) {
+              return column.toPb();
+            }
+          };
 }

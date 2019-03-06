@@ -4,21 +4,24 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * A Product contains ReferenceImages.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.Product}
  */
-public  final class Product extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Product extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.Product)
     ProductOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Product.newBuilder() to construct.
   private Product(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Product() {
     name_ = "";
     displayName_ = "";
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Product(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,53 +54,60 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            productCategory_ = s;
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              productLabels_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Product.KeyValue>();
-              mutable_bitField0_ |= 0x00000010;
+              name_ = s;
+              break;
             }
-            productLabels_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.Product.KeyValue.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              productCategory_ = s;
+              break;
+            }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                productLabels_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Product.KeyValue>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              productLabels_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.Product.KeyValue.parser(),
+                      extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         productLabels_ = java.util.Collections.unmodifiableList(productLabels_);
@@ -106,24 +116,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_Product_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_Product_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.Product.class, com.google.cloud.vision.v1p3beta1.Product.Builder.class);
+            com.google.cloud.vision.v1p3beta1.Product.class,
+            com.google.cloud.vision.v1p3beta1.Product.Builder.class);
   }
 
-  public interface KeyValueOrBuilder extends
+  public interface KeyValueOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.Product.KeyValue)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The key of the label attached to the product. Cannot be empty and cannot
      * exceed 128 bytes.
@@ -133,6 +149,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getKey();
     /**
+     *
+     *
      * <pre>
      * The key of the label attached to the product. Cannot be empty and cannot
      * exceed 128 bytes.
@@ -140,10 +158,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string key = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getKeyBytes();
+    com.google.protobuf.ByteString getKeyBytes();
 
     /**
+     *
+     *
      * <pre>
      * The value of the label attached to the product. Cannot be empty and
      * cannot exceed 128 bytes.
@@ -153,6 +172,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getValue();
     /**
+     *
+     *
      * <pre>
      * The value of the label attached to the product. Cannot be empty and
      * cannot exceed 128 bytes.
@@ -160,35 +181,37 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string value = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getValueBytes();
+    com.google.protobuf.ByteString getValueBytes();
   }
   /**
+   *
+   *
    * <pre>
    * A product label represented as a key-value pair.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.Product.KeyValue}
    */
-  public  static final class KeyValue extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class KeyValue extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.Product.KeyValue)
       KeyValueOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use KeyValue.newBuilder() to construct.
     private KeyValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private KeyValue() {
       key_ = "";
       value_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private KeyValue(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -208,53 +231,59 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              key_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              value_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                key_ = s;
+                break;
               }
-              break;
-            }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                value_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.Product.KeyValue.class, com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder.class);
+              com.google.cloud.vision.v1p3beta1.Product.KeyValue.class,
+              com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
+     *
+     *
      * <pre>
      * The key of the label attached to the product. Cannot be empty and cannot
      * exceed 128 bytes.
@@ -267,14 +296,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The key of the label attached to the product. Cannot be empty and cannot
      * exceed 128 bytes.
@@ -282,13 +312,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string key = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
+    public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         key_ = b;
         return b;
       } else {
@@ -299,6 +327,8 @@ private static final long serialVersionUID = 0L;
     public static final int VALUE_FIELD_NUMBER = 2;
     private volatile java.lang.Object value_;
     /**
+     *
+     *
      * <pre>
      * The value of the label attached to the product. Cannot be empty and
      * cannot exceed 128 bytes.
@@ -311,14 +341,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         value_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The value of the label attached to the product. Cannot be empty and
      * cannot exceed 128 bytes.
@@ -326,13 +357,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string value = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getValueBytes() {
+    public com.google.protobuf.ByteString getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         value_ = b;
         return b;
       } else {
@@ -341,6 +370,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -352,8 +382,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
@@ -383,18 +412,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.vision.v1p3beta1.Product.KeyValue)) {
         return super.equals(obj);
       }
-      com.google.cloud.vision.v1p3beta1.Product.KeyValue other = (com.google.cloud.vision.v1p3beta1.Product.KeyValue) obj;
+      com.google.cloud.vision.v1p3beta1.Product.KeyValue other =
+          (com.google.cloud.vision.v1p3beta1.Product.KeyValue) obj;
 
       boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && getValue()
-          .equals(other.getValue());
+      result = result && getKey().equals(other.getKey());
+      result = result && getValue().equals(other.getValue());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -416,87 +444,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.vision.v1p3beta1.Product.KeyValue parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.Product.KeyValue prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -506,27 +540,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * A product label represented as a key-value pair.
      * </pre>
      *
      * Protobuf type {@code google.cloud.vision.v1p3beta1.Product.KeyValue}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.Product.KeyValue)
         com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+            .internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_fieldAccessorTable
+        return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+            .internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.vision.v1p3beta1.Product.KeyValue.class, com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder.class);
+                com.google.cloud.vision.v1p3beta1.Product.KeyValue.class,
+                com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder.class);
       }
 
       // Construct using com.google.cloud.vision.v1p3beta1.Product.KeyValue.newBuilder()
@@ -534,16 +573,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -555,9 +593,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+            .internal_static_google_cloud_vision_v1p3beta1_Product_KeyValue_descriptor;
       }
 
       @java.lang.Override
@@ -576,7 +614,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.cloud.vision.v1p3beta1.Product.KeyValue buildPartial() {
-        com.google.cloud.vision.v1p3beta1.Product.KeyValue result = new com.google.cloud.vision.v1p3beta1.Product.KeyValue(this);
+        com.google.cloud.vision.v1p3beta1.Product.KeyValue result =
+            new com.google.cloud.vision.v1p3beta1.Product.KeyValue(this);
         result.key_ = key_;
         result.value_ = value_;
         onBuilt();
@@ -587,38 +626,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1p3beta1.Product.KeyValue) {
-          return mergeFrom((com.google.cloud.vision.v1p3beta1.Product.KeyValue)other);
+          return mergeFrom((com.google.cloud.vision.v1p3beta1.Product.KeyValue) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -626,7 +668,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.Product.KeyValue other) {
-        if (other == com.google.cloud.vision.v1p3beta1.Product.KeyValue.getDefaultInstance()) return this;
+        if (other == com.google.cloud.vision.v1p3beta1.Product.KeyValue.getDefaultInstance())
+          return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
@@ -654,7 +697,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.vision.v1p3beta1.Product.KeyValue) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.vision.v1p3beta1.Product.KeyValue) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -666,6 +710,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object key_ = "";
       /**
+       *
+       *
        * <pre>
        * The key of the label attached to the product. Cannot be empty and cannot
        * exceed 128 bytes.
@@ -676,8 +722,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           key_ = s;
           return s;
@@ -686,6 +731,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The key of the label attached to the product. Cannot be empty and cannot
        * exceed 128 bytes.
@@ -693,13 +740,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string key = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
+      public com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           key_ = b;
           return b;
         } else {
@@ -707,6 +752,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The key of the label attached to the product. Cannot be empty and cannot
        * exceed 128 bytes.
@@ -714,17 +761,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string key = 1;</code>
        */
-      public Builder setKey(
-          java.lang.String value) {
+      public Builder setKey(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         key_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The key of the label attached to the product. Cannot be empty and cannot
        * exceed 128 bytes.
@@ -733,12 +781,14 @@ private static final long serialVersionUID = 0L;
        * <code>string key = 1;</code>
        */
       public Builder clearKey() {
-        
+
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The key of the label attached to the product. Cannot be empty and cannot
        * exceed 128 bytes.
@@ -746,13 +796,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string key = 1;</code>
        */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setKeyBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         key_ = value;
         onChanged();
         return this;
@@ -760,6 +809,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object value_ = "";
       /**
+       *
+       *
        * <pre>
        * The value of the label attached to the product. Cannot be empty and
        * cannot exceed 128 bytes.
@@ -770,8 +821,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           value_ = s;
           return s;
@@ -780,6 +830,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The value of the label attached to the product. Cannot be empty and
        * cannot exceed 128 bytes.
@@ -787,13 +839,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string value = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
+      public com.google.protobuf.ByteString getValueBytes() {
         java.lang.Object ref = value_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           value_ = b;
           return b;
         } else {
@@ -801,6 +851,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The value of the label attached to the product. Cannot be empty and
        * cannot exceed 128 bytes.
@@ -808,17 +860,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string value = 2;</code>
        */
-      public Builder setValue(
-          java.lang.String value) {
+      public Builder setValue(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         value_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The value of the label attached to the product. Cannot be empty and
        * cannot exceed 128 bytes.
@@ -827,12 +880,14 @@ private static final long serialVersionUID = 0L;
        * <code>string value = 2;</code>
        */
       public Builder clearValue() {
-        
+
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The value of the label attached to the product. Cannot be empty and
        * cannot exceed 128 bytes.
@@ -840,17 +895,17 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string value = 2;</code>
        */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setValueBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         value_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -863,12 +918,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.Product.KeyValue)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.Product.KeyValue)
     private static final com.google.cloud.vision.v1p3beta1.Product.KeyValue DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.Product.KeyValue();
     }
@@ -877,16 +932,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<KeyValue>
-        PARSER = new com.google.protobuf.AbstractParser<KeyValue>() {
-      @java.lang.Override
-      public KeyValue parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KeyValue(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<KeyValue> PARSER =
+        new com.google.protobuf.AbstractParser<KeyValue>() {
+          @java.lang.Override
+          public KeyValue parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new KeyValue(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<KeyValue> parser() {
       return PARSER;
@@ -901,13 +956,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.Product.KeyValue getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The resource name of the product.
    * Format is:
@@ -922,14 +978,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource name of the product.
    * Format is:
@@ -939,13 +996,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -956,6 +1011,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * The user-provided name for this Product. Must not be empty. Must be at most
    * 4096 characters long.
@@ -968,14 +1025,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The user-provided name for this Product. Must not be empty. Must be at most
    * 4096 characters long.
@@ -983,13 +1041,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -1000,6 +1056,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * User-provided metadata to be stored with this product. Must be at most 4096
    * characters long.
@@ -1012,14 +1070,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * User-provided metadata to be stored with this product. Must be at most 4096
    * characters long.
@@ -1027,13 +1086,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -1044,6 +1101,8 @@ private static final long serialVersionUID = 0L;
   public static final int PRODUCT_CATEGORY_FIELD_NUMBER = 4;
   private volatile java.lang.Object productCategory_;
   /**
+   *
+   *
    * <pre>
    * The category for the product identified by the reference image. This should
    * be either "homegoods" or "apparel".
@@ -1057,14 +1116,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       productCategory_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The category for the product identified by the reference image. This should
    * be either "homegoods" or "apparel".
@@ -1073,13 +1133,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string product_category = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getProductCategoryBytes() {
+  public com.google.protobuf.ByteString getProductCategoryBytes() {
     java.lang.Object ref = productCategory_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       productCategory_ = b;
       return b;
     } else {
@@ -1090,6 +1148,8 @@ private static final long serialVersionUID = 0L;
   public static final int PRODUCT_LABELS_FIELD_NUMBER = 5;
   private java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue> productLabels_;
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -1106,6 +1166,8 @@ private static final long serialVersionUID = 0L;
     return productLabels_;
   }
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -1118,11 +1180,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>
       getProductLabelsOrBuilderList() {
     return productLabels_;
   }
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -1139,6 +1203,8 @@ private static final long serialVersionUID = 0L;
     return productLabels_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -1155,6 +1221,8 @@ private static final long serialVersionUID = 0L;
     return productLabels_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -1173,6 +1241,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1184,8 +1253,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1223,8 +1291,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, productCategory_);
     }
     for (int i = 0; i < productLabels_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, productLabels_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, productLabels_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1234,24 +1301,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.Product)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.Product other = (com.google.cloud.vision.v1p3beta1.Product) obj;
+    com.google.cloud.vision.v1p3beta1.Product other =
+        (com.google.cloud.vision.v1p3beta1.Product) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getProductCategory()
-        .equals(other.getProductCategory());
-    result = result && getProductLabelsList()
-        .equals(other.getProductLabelsList());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getProductCategory().equals(other.getProductCategory());
+    result = result && getProductLabelsList().equals(other.getProductLabelsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1280,118 +1343,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1p3beta1.Product parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.Product parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.Product parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.Product parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.Product prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Product contains ReferenceImages.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.Product}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.Product)
       com.google.cloud.vision.v1p3beta1.ProductOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_Product_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_Product_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.Product.class, com.google.cloud.vision.v1p3beta1.Product.Builder.class);
+              com.google.cloud.vision.v1p3beta1.Product.class,
+              com.google.cloud.vision.v1p3beta1.Product.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.Product.newBuilder()
@@ -1399,17 +1471,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getProductLabelsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1431,9 +1503,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_Product_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_Product_descriptor;
     }
 
     @java.lang.Override
@@ -1452,7 +1524,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.Product buildPartial() {
-      com.google.cloud.vision.v1p3beta1.Product result = new com.google.cloud.vision.v1p3beta1.Product(this);
+      com.google.cloud.vision.v1p3beta1.Product result =
+          new com.google.cloud.vision.v1p3beta1.Product(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -1477,38 +1550,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.Product) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.Product)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.Product) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1551,9 +1625,10 @@ private static final long serialVersionUID = 0L;
             productLabelsBuilder_ = null;
             productLabels_ = other.productLabels_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            productLabelsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getProductLabelsFieldBuilder() : null;
+            productLabelsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getProductLabelsFieldBuilder()
+                    : null;
           } else {
             productLabelsBuilder_.addAllMessages(other.productLabels_);
           }
@@ -1587,10 +1662,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource name of the product.
      * Format is:
@@ -1603,8 +1681,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1613,6 +1690,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the product.
      * Format is:
@@ -1622,13 +1701,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1636,6 +1713,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the product.
      * Format is:
@@ -1645,17 +1724,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the product.
      * Format is:
@@ -1666,12 +1746,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the product.
      * Format is:
@@ -1681,13 +1763,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1695,6 +1776,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * The user-provided name for this Product. Must not be empty. Must be at most
      * 4096 characters long.
@@ -1705,8 +1788,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1715,6 +1797,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The user-provided name for this Product. Must not be empty. Must be at most
      * 4096 characters long.
@@ -1722,13 +1806,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1736,6 +1818,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The user-provided name for this Product. Must not be empty. Must be at most
      * 4096 characters long.
@@ -1743,17 +1827,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The user-provided name for this Product. Must not be empty. Must be at most
      * 4096 characters long.
@@ -1762,12 +1847,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The user-provided name for this Product. Must not be empty. Must be at most
      * 4096 characters long.
@@ -1775,13 +1862,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -1789,6 +1875,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * User-provided metadata to be stored with this product. Must be at most 4096
      * characters long.
@@ -1799,8 +1887,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1809,6 +1896,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User-provided metadata to be stored with this product. Must be at most 4096
      * characters long.
@@ -1816,13 +1905,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1830,6 +1917,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User-provided metadata to be stored with this product. Must be at most 4096
      * characters long.
@@ -1837,17 +1926,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 3;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User-provided metadata to be stored with this product. Must be at most 4096
      * characters long.
@@ -1856,12 +1946,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 3;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User-provided metadata to be stored with this product. Must be at most 4096
      * characters long.
@@ -1869,13 +1961,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 3;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
@@ -1883,6 +1974,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object productCategory_ = "";
     /**
+     *
+     *
      * <pre>
      * The category for the product identified by the reference image. This should
      * be either "homegoods" or "apparel".
@@ -1894,8 +1987,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProductCategory() {
       java.lang.Object ref = productCategory_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         productCategory_ = s;
         return s;
@@ -1904,6 +1996,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The category for the product identified by the reference image. This should
      * be either "homegoods" or "apparel".
@@ -1912,13 +2006,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string product_category = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getProductCategoryBytes() {
+    public com.google.protobuf.ByteString getProductCategoryBytes() {
       java.lang.Object ref = productCategory_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         productCategory_ = b;
         return b;
       } else {
@@ -1926,6 +2018,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The category for the product identified by the reference image. This should
      * be either "homegoods" or "apparel".
@@ -1934,17 +2028,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string product_category = 4;</code>
      */
-    public Builder setProductCategory(
-        java.lang.String value) {
+    public Builder setProductCategory(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       productCategory_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The category for the product identified by the reference image. This should
      * be either "homegoods" or "apparel".
@@ -1954,12 +2049,14 @@ private static final long serialVersionUID = 0L;
      * <code>string product_category = 4;</code>
      */
     public Builder clearProductCategory() {
-      
+
       productCategory_ = getDefaultInstance().getProductCategory();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The category for the product identified by the reference image. This should
      * be either "homegoods" or "apparel".
@@ -1968,31 +2065,38 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string product_category = 4;</code>
      */
-    public Builder setProductCategoryBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProductCategoryBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       productCategory_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue> productLabels_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureProductLabelsIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        productLabels_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Product.KeyValue>(productLabels_);
+        productLabels_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.Product.KeyValue>(
+                productLabels_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.Product.KeyValue, com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder, com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder> productLabelsBuilder_;
+            com.google.cloud.vision.v1p3beta1.Product.KeyValue,
+            com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder,
+            com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>
+        productLabelsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2005,7 +2109,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue> getProductLabelsList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue>
+        getProductLabelsList() {
       if (productLabelsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(productLabels_);
       } else {
@@ -2013,6 +2118,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2033,6 +2140,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2053,6 +2162,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2080,6 +2191,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2104,6 +2217,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2130,6 +2245,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2157,6 +2274,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2181,6 +2300,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2205,6 +2326,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2221,8 +2344,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.Product.KeyValue> values) {
       if (productLabelsBuilder_ == null) {
         ensureProductLabelsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, productLabels_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productLabels_);
         onChanged();
       } else {
         productLabelsBuilder_.addAllMessages(values);
@@ -2230,6 +2352,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2253,6 +2377,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2276,6 +2402,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2293,6 +2421,8 @@ private static final long serialVersionUID = 0L;
       return getProductLabelsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2308,11 +2438,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder getProductLabelsOrBuilder(
         int index) {
       if (productLabelsBuilder_ == null) {
-        return productLabels_.get(index);  } else {
+        return productLabels_.get(index);
+      } else {
         return productLabelsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2325,8 +2458,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder> 
-         getProductLabelsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>
+        getProductLabelsOrBuilderList() {
       if (productLabelsBuilder_ != null) {
         return productLabelsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2334,6 +2467,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2347,10 +2482,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
      */
     public com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder addProductLabelsBuilder() {
-      return getProductLabelsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.Product.KeyValue.getDefaultInstance());
+      return getProductLabelsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.Product.KeyValue.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2365,10 +2502,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder addProductLabelsBuilder(
         int index) {
-      return getProductLabelsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.Product.KeyValue.getDefaultInstance());
+      return getProductLabelsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1p3beta1.Product.KeyValue.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
@@ -2381,16 +2521,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder> 
-         getProductLabelsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder>
+        getProductLabelsBuilderList() {
       return getProductLabelsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.Product.KeyValue, com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder, com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.Product.KeyValue,
+            com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder,
+            com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>
         getProductLabelsFieldBuilder() {
       if (productLabelsBuilder_ == null) {
-        productLabelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.Product.KeyValue, com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder, com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>(
+        productLabelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.Product.KeyValue,
+                com.google.cloud.vision.v1p3beta1.Product.KeyValue.Builder,
+                com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>(
                 productLabels_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -2399,9 +2545,9 @@ private static final long serialVersionUID = 0L;
       }
       return productLabelsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2411,12 +2557,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.Product)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.Product)
   private static final com.google.cloud.vision.v1p3beta1.Product DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.Product();
   }
@@ -2425,16 +2571,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Product>
-      PARSER = new com.google.protobuf.AbstractParser<Product>() {
-    @java.lang.Override
-    public Product parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Product(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Product> PARSER =
+      new com.google.protobuf.AbstractParser<Product>() {
+        @java.lang.Override
+        public Product parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Product(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Product> parser() {
     return PARSER;
@@ -2449,6 +2595,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1p3beta1.Product getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

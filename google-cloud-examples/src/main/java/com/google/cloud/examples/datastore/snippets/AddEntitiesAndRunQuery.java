@@ -45,11 +45,12 @@ public class AddEntitiesAndRunQuery {
     // Add an entity to Datastore
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Person");
     Key key = keyFactory.newKey("john.doe@gmail.com");
-    Entity entity = Entity.newBuilder(key)
-        .set("name", "John Doe")
-        .set("age", 51)
-        .set("favorite_food", "pizza")
-        .build();
+    Entity entity =
+        Entity.newBuilder(key)
+            .set("name", "John Doe")
+            .set("age", 51)
+            .set("favorite_food", "pizza")
+            .build();
     datastore.put(entity);
 
     // Get an entity from Datastore
@@ -57,24 +58,27 @@ public class AddEntitiesAndRunQuery {
 
     // Add a couple more entities to make the query results more interesting
     Key janeKey = keyFactory.newKey("jane.doe@gmail.com");
-    Entity janeEntity = Entity.newBuilder(janeKey)
-        .set("name", "Jane Doe")
-        .set("age", 44)
-        .set("favorite_food", "pizza")
-        .build();
+    Entity janeEntity =
+        Entity.newBuilder(janeKey)
+            .set("name", "Jane Doe")
+            .set("age", 44)
+            .set("favorite_food", "pizza")
+            .build();
     Key joeKey = keyFactory.newKey("joe.shmoe@gmail.com");
-    Entity joeEntity = Entity.newBuilder(joeKey)
-        .set("name", "Joe Shmoe")
-        .set("age", 27)
-        .set("favorite_food", "sushi")
-        .build();
+    Entity joeEntity =
+        Entity.newBuilder(joeKey)
+            .set("name", "Joe Shmoe")
+            .set("age", 27)
+            .set("favorite_food", "sushi")
+            .build();
     datastore.put(janeEntity, joeEntity);
 
     // Run a query
-    Query<Entity> query = Query.newEntityQueryBuilder()
-        .setKind("Person")
-        .setFilter(PropertyFilter.eq("favorite_food", "pizza"))
-        .build();
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind("Person")
+            .setFilter(PropertyFilter.eq("favorite_food", "pizza"))
+            .build();
     QueryResults<Entity> results = datastore.run(query);
     while (results.hasNext()) {
       Entity currentEntity = results.next();

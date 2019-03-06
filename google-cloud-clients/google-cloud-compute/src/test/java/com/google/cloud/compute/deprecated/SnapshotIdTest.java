@@ -33,8 +33,7 @@ public class SnapshotIdTest {
   private static final String URL =
       "https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {

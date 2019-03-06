@@ -4,21 +4,25 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
- * Node information for nodes appearing in a [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
+ * Node information for nodes appearing in a
+ * [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.PlanNode}
  */
-public  final class PlanNode extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.PlanNode)
     PlanNodeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PlanNode.newBuilder() to construct.
   private PlanNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PlanNode() {
     index_ = 0;
     kind_ = 0;
@@ -27,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PlanNode(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,85 +54,95 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 8:
+            {
+              index_ = input.readInt32();
+              break;
+            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            index_ = input.readInt32();
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
+              kind_ = rawValue;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            kind_ = rawValue;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              displayName_ = s;
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                childLinks_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              childLinks_.add(
+                  input.readMessage(
+                      com.google.spanner.v1.PlanNode.ChildLink.parser(), extensionRegistry));
+              break;
+            }
+          case 42:
+            {
+              com.google.spanner.v1.PlanNode.ShortRepresentation.Builder subBuilder = null;
+              if (shortRepresentation_ != null) {
+                subBuilder = shortRepresentation_.toBuilder();
+              }
+              shortRepresentation_ =
+                  input.readMessage(
+                      com.google.spanner.v1.PlanNode.ShortRepresentation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shortRepresentation_);
+                shortRepresentation_ = subBuilder.buildPartial();
+              }
 
-            displayName_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              childLinks_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            childLinks_.add(
-                input.readMessage(com.google.spanner.v1.PlanNode.ChildLink.parser(), extensionRegistry));
-            break;
-          }
-          case 42: {
-            com.google.spanner.v1.PlanNode.ShortRepresentation.Builder subBuilder = null;
-            if (shortRepresentation_ != null) {
-              subBuilder = shortRepresentation_.toBuilder();
-            }
-            shortRepresentation_ = input.readMessage(com.google.spanner.v1.PlanNode.ShortRepresentation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(shortRepresentation_);
-              shortRepresentation_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (metadata_ != null) {
-              subBuilder = metadata_.toBuilder();
+              break;
             }
-            metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(metadata_);
-              metadata_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (executionStats_ != null) {
+                subBuilder = executionStats_.toBuilder();
+              }
+              executionStats_ =
+                  input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(executionStats_);
+                executionStats_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (executionStats_ != null) {
-              subBuilder = executionStats_.toBuilder();
+              break;
             }
-            executionStats_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(executionStats_);
-              executionStats_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         childLinks_ = java.util.Collections.unmodifiableList(childLinks_);
@@ -137,30 +151,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.v1.QueryPlanProto
+        .internal_static_google_spanner_v1_PlanNode_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_fieldAccessorTable
+    return com.google.spanner.v1.QueryPlanProto
+        .internal_static_google_spanner_v1_PlanNode_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.spanner.v1.PlanNode.class, com.google.spanner.v1.PlanNode.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
-   * The kind of [PlanNode][google.spanner.v1.PlanNode]. Distinguishes between the two different kinds of
-   * nodes that can appear in a query plan.
+   * The kind of [PlanNode][google.spanner.v1.PlanNode]. Distinguishes between
+   * the two different kinds of nodes that can appear in a query plan.
    * </pre>
    *
    * Protobuf enum {@code google.spanner.v1.PlanNode.Kind}
    */
-  public enum Kind
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Kind implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -169,6 +188,8 @@ private static final long serialVersionUID = 0L;
      */
     KIND_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Denotes a Relational operator node in the expression tree. Relational
      * operators represent iterative processing of rows during query execution.
@@ -179,6 +200,8 @@ private static final long serialVersionUID = 0L;
      */
     RELATIONAL(1),
     /**
+     *
+     *
      * <pre>
      * Denotes a Scalar node in the expression tree. Scalar nodes represent
      * non-iterable entities in the query plan. For example, constants or
@@ -193,6 +216,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -201,6 +226,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int KIND_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Denotes a Relational operator node in the expression tree. Relational
      * operators represent iterative processing of rows during query execution.
@@ -211,6 +238,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RELATIONAL_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Denotes a Scalar node in the expression tree. Scalar nodes represent
      * non-iterable entities in the query plan. For example, constants or
@@ -222,7 +251,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SCALAR_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -231,9 +259,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Kind valueOf(int value) {
       return forNumber(value);
@@ -241,45 +267,45 @@ private static final long serialVersionUID = 0L;
 
     public static Kind forNumber(int value) {
       switch (value) {
-        case 0: return KIND_UNSPECIFIED;
-        case 1: return RELATIONAL;
-        case 2: return SCALAR;
-        default: return null;
+        case 0:
+          return KIND_UNSPECIFIED;
+        case 1:
+          return RELATIONAL;
+        case 2:
+          return SCALAR;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Kind>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Kind> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Kind> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Kind>() {
-            public Kind findValueByNumber(int number) {
-              return Kind.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Kind> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Kind>() {
+          public Kind findValueByNumber(int number) {
+            return Kind.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.spanner.v1.PlanNode.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Kind[] VALUES = values();
 
-    public static Kind valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Kind valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -296,11 +322,14 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.spanner.v1.PlanNode.Kind)
   }
 
-  public interface ChildLinkOrBuilder extends
+  public interface ChildLinkOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.spanner.v1.PlanNode.ChildLink)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The node to which the link points.
      * </pre>
@@ -310,6 +339,8 @@ private static final long serialVersionUID = 0L;
     int getChildIndex();
 
     /**
+     *
+     *
      * <pre>
      * The type of the link. For example, in Hash Joins this could be used to
      * distinguish between the build child and the probe child, or in the case
@@ -321,6 +352,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getType();
     /**
+     *
+     *
      * <pre>
      * The type of the link. For example, in Hash Joins this could be used to
      * distinguish between the build child and the probe child, or in the case
@@ -330,42 +363,46 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getTypeBytes();
+    com.google.protobuf.ByteString getTypeBytes();
 
     /**
+     *
+     *
      * <pre>
-     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-     * to an output variable of the parent node. The field carries the name of
-     * the output variable.
-     * For example, a `TableScan` operator that reads rows from a table will
-     * have child links to the `SCALAR` nodes representing the output variables
-     * created for each column that is read by the operator. The corresponding
-     * `variable` fields will be set to the variable names assigned to the
-     * columns.
+     * Only present if the child node is
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+     * output variable of the parent node. The field carries the name of the
+     * output variable. For example, a `TableScan` operator that reads rows from
+     * a table will have child links to the `SCALAR` nodes representing the
+     * output variables created for each column that is read by the operator.
+     * The corresponding `variable` fields will be set to the variable names
+     * assigned to the columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
      */
     java.lang.String getVariable();
     /**
+     *
+     *
      * <pre>
-     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-     * to an output variable of the parent node. The field carries the name of
-     * the output variable.
-     * For example, a `TableScan` operator that reads rows from a table will
-     * have child links to the `SCALAR` nodes representing the output variables
-     * created for each column that is read by the operator. The corresponding
-     * `variable` fields will be set to the variable names assigned to the
-     * columns.
+     * Only present if the child node is
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+     * output variable of the parent node. The field carries the name of the
+     * output variable. For example, a `TableScan` operator that reads rows from
+     * a table will have child links to the `SCALAR` nodes representing the
+     * output variables created for each column that is read by the operator.
+     * The corresponding `variable` fields will be set to the variable names
+     * assigned to the columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getVariableBytes();
+    com.google.protobuf.ByteString getVariableBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata associated with a parent-child relationship appearing in a
    * [PlanNode][google.spanner.v1.PlanNode].
@@ -373,15 +410,16 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.PlanNode.ChildLink}
    */
-  public  static final class ChildLink extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ChildLink extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.spanner.v1.PlanNode.ChildLink)
       ChildLinkOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ChildLink.newBuilder() to construct.
     private ChildLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ChildLink() {
       childIndex_ = 0;
       type_ = "";
@@ -389,10 +427,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ChildLink(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -412,58 +450,64 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-
-              childIndex_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              type_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              variable_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 8:
+              {
+                childIndex_ = input.readInt32();
+                break;
               }
-              break;
-            }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                type_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                variable_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ChildLink_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_PlanNode_ChildLink_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ChildLink_fieldAccessorTable
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_PlanNode_ChildLink_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.PlanNode.ChildLink.class, com.google.spanner.v1.PlanNode.ChildLink.Builder.class);
+              com.google.spanner.v1.PlanNode.ChildLink.class,
+              com.google.spanner.v1.PlanNode.ChildLink.Builder.class);
     }
 
     public static final int CHILD_INDEX_FIELD_NUMBER = 1;
     private int childIndex_;
     /**
+     *
+     *
      * <pre>
      * The node to which the link points.
      * </pre>
@@ -477,6 +521,8 @@ private static final long serialVersionUID = 0L;
     public static final int TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object type_;
     /**
+     *
+     *
      * <pre>
      * The type of the link. For example, in Hash Joins this could be used to
      * distinguish between the build child and the probe child, or in the case
@@ -491,14 +537,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of the link. For example, in Hash Joins this could be used to
      * distinguish between the build child and the probe child, or in the case
@@ -508,13 +555,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
+    public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -525,15 +570,17 @@ private static final long serialVersionUID = 0L;
     public static final int VARIABLE_FIELD_NUMBER = 3;
     private volatile java.lang.Object variable_;
     /**
+     *
+     *
      * <pre>
-     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-     * to an output variable of the parent node. The field carries the name of
-     * the output variable.
-     * For example, a `TableScan` operator that reads rows from a table will
-     * have child links to the `SCALAR` nodes representing the output variables
-     * created for each column that is read by the operator. The corresponding
-     * `variable` fields will be set to the variable names assigned to the
-     * columns.
+     * Only present if the child node is
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+     * output variable of the parent node. The field carries the name of the
+     * output variable. For example, a `TableScan` operator that reads rows from
+     * a table will have child links to the `SCALAR` nodes representing the
+     * output variables created for each column that is read by the operator.
+     * The corresponding `variable` fields will be set to the variable names
+     * assigned to the columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
@@ -543,34 +590,33 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         variable_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-     * to an output variable of the parent node. The field carries the name of
-     * the output variable.
-     * For example, a `TableScan` operator that reads rows from a table will
-     * have child links to the `SCALAR` nodes representing the output variables
-     * created for each column that is read by the operator. The corresponding
-     * `variable` fields will be set to the variable names assigned to the
-     * columns.
+     * Only present if the child node is
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+     * output variable of the parent node. The field carries the name of the
+     * output variable. For example, a `TableScan` operator that reads rows from
+     * a table will have child links to the `SCALAR` nodes representing the
+     * output variables created for each column that is read by the operator.
+     * The corresponding `variable` fields will be set to the variable names
+     * assigned to the columns.
      * </pre>
      *
      * <code>string variable = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getVariableBytes() {
+    public com.google.protobuf.ByteString getVariableBytes() {
       java.lang.Object ref = variable_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         variable_ = b;
         return b;
       } else {
@@ -579,6 +625,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -590,8 +637,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (childIndex_ != 0) {
         output.writeInt32(1, childIndex_);
       }
@@ -611,8 +657,7 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (childIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, childIndex_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, childIndex_);
       }
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
@@ -628,20 +673,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.spanner.v1.PlanNode.ChildLink)) {
         return super.equals(obj);
       }
-      com.google.spanner.v1.PlanNode.ChildLink other = (com.google.spanner.v1.PlanNode.ChildLink) obj;
+      com.google.spanner.v1.PlanNode.ChildLink other =
+          (com.google.spanner.v1.PlanNode.ChildLink) obj;
 
       boolean result = true;
-      result = result && (getChildIndex()
-          == other.getChildIndex());
-      result = result && getType()
-          .equals(other.getType());
-      result = result && getVariable()
-          .equals(other.getVariable());
+      result = result && (getChildIndex() == other.getChildIndex());
+      result = result && getType().equals(other.getType());
+      result = result && getVariable().equals(other.getVariable());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -664,88 +707,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
-        java.nio.ByteBuffer data)
+    public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.spanner.v1.PlanNode.ChildLink parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.spanner.v1.PlanNode.ChildLink parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.spanner.v1.PlanNode.ChildLink parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.spanner.v1.PlanNode.ChildLink prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -755,6 +804,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with a parent-child relationship appearing in a
      * [PlanNode][google.spanner.v1.PlanNode].
@@ -762,21 +813,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.spanner.v1.PlanNode.ChildLink}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.spanner.v1.PlanNode.ChildLink)
         com.google.spanner.v1.PlanNode.ChildLinkOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ChildLink_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.spanner.v1.QueryPlanProto
+            .internal_static_google_spanner_v1_PlanNode_ChildLink_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ChildLink_fieldAccessorTable
+        return com.google.spanner.v1.QueryPlanProto
+            .internal_static_google_spanner_v1_PlanNode_ChildLink_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.spanner.v1.PlanNode.ChildLink.class, com.google.spanner.v1.PlanNode.ChildLink.Builder.class);
+                com.google.spanner.v1.PlanNode.ChildLink.class,
+                com.google.spanner.v1.PlanNode.ChildLink.Builder.class);
       }
 
       // Construct using com.google.spanner.v1.PlanNode.ChildLink.newBuilder()
@@ -784,16 +838,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -807,9 +860,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ChildLink_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.spanner.v1.QueryPlanProto
+            .internal_static_google_spanner_v1_PlanNode_ChildLink_descriptor;
       }
 
       @java.lang.Override
@@ -828,7 +881,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.spanner.v1.PlanNode.ChildLink buildPartial() {
-        com.google.spanner.v1.PlanNode.ChildLink result = new com.google.spanner.v1.PlanNode.ChildLink(this);
+        com.google.spanner.v1.PlanNode.ChildLink result =
+            new com.google.spanner.v1.PlanNode.ChildLink(this);
         result.childIndex_ = childIndex_;
         result.type_ = type_;
         result.variable_ = variable_;
@@ -840,38 +894,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.spanner.v1.PlanNode.ChildLink) {
-          return mergeFrom((com.google.spanner.v1.PlanNode.ChildLink)other);
+          return mergeFrom((com.google.spanner.v1.PlanNode.ChildLink) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -920,8 +977,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private int childIndex_ ;
+      private int childIndex_;
       /**
+       *
+       *
        * <pre>
        * The node to which the link points.
        * </pre>
@@ -932,6 +991,8 @@ private static final long serialVersionUID = 0L;
         return childIndex_;
       }
       /**
+       *
+       *
        * <pre>
        * The node to which the link points.
        * </pre>
@@ -939,12 +1000,14 @@ private static final long serialVersionUID = 0L;
        * <code>int32 child_index = 1;</code>
        */
       public Builder setChildIndex(int value) {
-        
+
         childIndex_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The node to which the link points.
        * </pre>
@@ -952,7 +1015,7 @@ private static final long serialVersionUID = 0L;
        * <code>int32 child_index = 1;</code>
        */
       public Builder clearChildIndex() {
-        
+
         childIndex_ = 0;
         onChanged();
         return this;
@@ -960,6 +1023,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object type_ = "";
       /**
+       *
+       *
        * <pre>
        * The type of the link. For example, in Hash Joins this could be used to
        * distinguish between the build child and the probe child, or in the case
@@ -972,8 +1037,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getType() {
         java.lang.Object ref = type_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           type_ = s;
           return s;
@@ -982,6 +1046,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The type of the link. For example, in Hash Joins this could be used to
        * distinguish between the build child and the probe child, or in the case
@@ -991,13 +1057,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string type = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getTypeBytes() {
+      public com.google.protobuf.ByteString getTypeBytes() {
         java.lang.Object ref = type_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           type_ = b;
           return b;
         } else {
@@ -1005,6 +1069,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The type of the link. For example, in Hash Joins this could be used to
        * distinguish between the build child and the probe child, or in the case
@@ -1014,17 +1080,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string type = 2;</code>
        */
-      public Builder setType(
-          java.lang.String value) {
+      public Builder setType(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         type_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the link. For example, in Hash Joins this could be used to
        * distinguish between the build child and the probe child, or in the case
@@ -1035,12 +1102,14 @@ private static final long serialVersionUID = 0L;
        * <code>string type = 2;</code>
        */
       public Builder clearType() {
-        
+
         type_ = getDefaultInstance().getType();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the link. For example, in Hash Joins this could be used to
        * distinguish between the build child and the probe child, or in the case
@@ -1050,13 +1119,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string type = 2;</code>
        */
-      public Builder setTypeBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setTypeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         type_ = value;
         onChanged();
         return this;
@@ -1064,15 +1132,17 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object variable_ = "";
       /**
+       *
+       *
        * <pre>
-       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-       * to an output variable of the parent node. The field carries the name of
-       * the output variable.
-       * For example, a `TableScan` operator that reads rows from a table will
-       * have child links to the `SCALAR` nodes representing the output variables
-       * created for each column that is read by the operator. The corresponding
-       * `variable` fields will be set to the variable names assigned to the
-       * columns.
+       * Only present if the child node is
+       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+       * output variable of the parent node. The field carries the name of the
+       * output variable. For example, a `TableScan` operator that reads rows from
+       * a table will have child links to the `SCALAR` nodes representing the
+       * output variables created for each column that is read by the operator.
+       * The corresponding `variable` fields will be set to the variable names
+       * assigned to the columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
@@ -1080,8 +1150,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getVariable() {
         java.lang.Object ref = variable_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           variable_ = s;
           return s;
@@ -1090,26 +1159,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
-       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-       * to an output variable of the parent node. The field carries the name of
-       * the output variable.
-       * For example, a `TableScan` operator that reads rows from a table will
-       * have child links to the `SCALAR` nodes representing the output variables
-       * created for each column that is read by the operator. The corresponding
-       * `variable` fields will be set to the variable names assigned to the
-       * columns.
+       * Only present if the child node is
+       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+       * output variable of the parent node. The field carries the name of the
+       * output variable. For example, a `TableScan` operator that reads rows from
+       * a table will have child links to the `SCALAR` nodes representing the
+       * output variables created for each column that is read by the operator.
+       * The corresponding `variable` fields will be set to the variable names
+       * assigned to the columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getVariableBytes() {
+      public com.google.protobuf.ByteString getVariableBytes() {
         java.lang.Object ref = variable_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           variable_ = b;
           return b;
         } else {
@@ -1117,74 +1186,79 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
-       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-       * to an output variable of the parent node. The field carries the name of
-       * the output variable.
-       * For example, a `TableScan` operator that reads rows from a table will
-       * have child links to the `SCALAR` nodes representing the output variables
-       * created for each column that is read by the operator. The corresponding
-       * `variable` fields will be set to the variable names assigned to the
-       * columns.
+       * Only present if the child node is
+       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+       * output variable of the parent node. The field carries the name of the
+       * output variable. For example, a `TableScan` operator that reads rows from
+       * a table will have child links to the `SCALAR` nodes representing the
+       * output variables created for each column that is read by the operator.
+       * The corresponding `variable` fields will be set to the variable names
+       * assigned to the columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
        */
-      public Builder setVariable(
-          java.lang.String value) {
+      public Builder setVariable(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         variable_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
-       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-       * to an output variable of the parent node. The field carries the name of
-       * the output variable.
-       * For example, a `TableScan` operator that reads rows from a table will
-       * have child links to the `SCALAR` nodes representing the output variables
-       * created for each column that is read by the operator. The corresponding
-       * `variable` fields will be set to the variable names assigned to the
-       * columns.
+       * Only present if the child node is
+       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+       * output variable of the parent node. The field carries the name of the
+       * output variable. For example, a `TableScan` operator that reads rows from
+       * a table will have child links to the `SCALAR` nodes representing the
+       * output variables created for each column that is read by the operator.
+       * The corresponding `variable` fields will be set to the variable names
+       * assigned to the columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
        */
       public Builder clearVariable() {
-        
+
         variable_ = getDefaultInstance().getVariable();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
-       * Only present if the child node is [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds
-       * to an output variable of the parent node. The field carries the name of
-       * the output variable.
-       * For example, a `TableScan` operator that reads rows from a table will
-       * have child links to the `SCALAR` nodes representing the output variables
-       * created for each column that is read by the operator. The corresponding
-       * `variable` fields will be set to the variable names assigned to the
-       * columns.
+       * Only present if the child node is
+       * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] and corresponds to an
+       * output variable of the parent node. The field carries the name of the
+       * output variable. For example, a `TableScan` operator that reads rows from
+       * a table will have child links to the `SCALAR` nodes representing the
+       * output variables created for each column that is read by the operator.
+       * The corresponding `variable` fields will be set to the variable names
+       * assigned to the columns.
        * </pre>
        *
        * <code>string variable = 3;</code>
        */
-      public Builder setVariableBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setVariableBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         variable_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1197,12 +1271,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.spanner.v1.PlanNode.ChildLink)
     }
 
     // @@protoc_insertion_point(class_scope:google.spanner.v1.PlanNode.ChildLink)
     private static final com.google.spanner.v1.PlanNode.ChildLink DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.spanner.v1.PlanNode.ChildLink();
     }
@@ -1211,16 +1285,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ChildLink>
-        PARSER = new com.google.protobuf.AbstractParser<ChildLink>() {
-      @java.lang.Override
-      public ChildLink parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChildLink(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ChildLink> PARSER =
+        new com.google.protobuf.AbstractParser<ChildLink>() {
+          @java.lang.Override
+          public ChildLink parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ChildLink(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ChildLink> parser() {
       return PARSER;
@@ -1235,14 +1309,16 @@ private static final long serialVersionUID = 0L;
     public com.google.spanner.v1.PlanNode.ChildLink getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface ShortRepresentationOrBuilder extends
+  public interface ShortRepresentationOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.spanner.v1.PlanNode.ShortRepresentation)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * A string representation of the expression subtree rooted at this node.
      * </pre>
@@ -1251,16 +1327,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getDescription();
     /**
+     *
+     *
      * <pre>
      * A string representation of the expression subtree rooted at this node.
      * </pre>
      *
      * <code>string description = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getDescriptionBytes();
+    com.google.protobuf.ByteString getDescriptionBytes();
 
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1273,6 +1352,8 @@ private static final long serialVersionUID = 0L;
      */
     int getSubqueriesCount();
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1283,15 +1364,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-    boolean containsSubqueries(
-        java.lang.String key);
-    /**
-     * Use {@link #getSubqueriesMap()} instead.
-     */
+    boolean containsSubqueries(java.lang.String key);
+    /** Use {@link #getSubqueriesMap()} instead. */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.Integer>
-    getSubqueries();
+    java.util.Map<java.lang.String, java.lang.Integer> getSubqueries();
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1302,9 +1381,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-    java.util.Map<java.lang.String, java.lang.Integer>
-    getSubqueriesMap();
+    java.util.Map<java.lang.String, java.lang.Integer> getSubqueriesMap();
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1315,11 +1395,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-
-    int getSubqueriesOrDefault(
-        java.lang.String key,
-        int defaultValue);
+    int getSubqueriesOrDefault(java.lang.String key, int defaultValue);
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1330,11 +1409,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-
-    int getSubqueriesOrThrow(
-        java.lang.String key);
+    int getSubqueriesOrThrow(java.lang.String key);
   }
   /**
+   *
+   *
    * <pre>
    * Condensed representation of a node and its subtree. Only present for
    * `SCALAR` [PlanNode(s)][google.spanner.v1.PlanNode].
@@ -1342,24 +1421,25 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.PlanNode.ShortRepresentation}
    */
-  public  static final class ShortRepresentation extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ShortRepresentation extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.spanner.v1.PlanNode.ShortRepresentation)
       ShortRepresentationOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ShortRepresentation.newBuilder() to construct.
     private ShortRepresentation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ShortRepresentation() {
       description_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ShortRepresentation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1379,73 +1459,79 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              description_ = s;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                subqueries_ = com.google.protobuf.MapField.newMapField(
-                    SubqueriesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                description_ = s;
+                break;
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
-              subqueries__ = input.readMessage(
-                  SubqueriesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              subqueries_.getMutableMap().put(
-                  subqueries__.getKey(), subqueries__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 18:
+              {
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  subqueries_ =
+                      com.google.protobuf.MapField.newMapField(
+                          SubqueriesDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> subqueries__ =
+                    input.readMessage(
+                        SubqueriesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                subqueries_.getMutableMap().put(subqueries__.getKey(), subqueries__.getValue());
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ShortRepresentation_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_PlanNode_ShortRepresentation_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 2:
           return internalGetSubqueries();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ShortRepresentation_fieldAccessorTable
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_PlanNode_ShortRepresentation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.PlanNode.ShortRepresentation.class, com.google.spanner.v1.PlanNode.ShortRepresentation.Builder.class);
+              com.google.spanner.v1.PlanNode.ShortRepresentation.class,
+              com.google.spanner.v1.PlanNode.ShortRepresentation.Builder.class);
     }
 
     private int bitField0_;
     public static final int DESCRIPTION_FIELD_NUMBER = 1;
     private volatile java.lang.Object description_;
     /**
+     *
+     *
      * <pre>
      * A string representation of the expression subtree rooted at this node.
      * </pre>
@@ -1457,27 +1543,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A string representation of the expression subtree rooted at this node.
      * </pre>
      *
      * <code>string description = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1486,21 +1571,22 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int SUBQUERIES_FIELD_NUMBER = 2;
+
     private static final class SubqueriesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.Integer> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.Integer>newDefaultInstance(
-                  com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ShortRepresentation_SubqueriesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.INT32,
-                  0);
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.Integer>newDefaultInstance(
+              com.google.spanner.v1.QueryPlanProto
+                  .internal_static_google_spanner_v1_PlanNode_ShortRepresentation_SubqueriesEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.INT32,
+              0);
     }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.Integer> subqueries_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> subqueries_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-    internalGetSubqueries() {
+        internalGetSubqueries() {
       if (subqueries_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             SubqueriesDefaultEntryHolder.defaultEntry);
@@ -1512,6 +1598,8 @@ private static final long serialVersionUID = 0L;
       return internalGetSubqueries().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1522,20 +1610,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-
-    public boolean containsSubqueries(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsSubqueries(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetSubqueries().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getSubqueriesMap()} instead.
-     */
+    /** Use {@link #getSubqueriesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getSubqueries() {
       return getSubqueriesMap();
     }
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1546,11 +1634,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.Integer> getSubqueriesMap() {
       return internalGetSubqueries().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1561,16 +1650,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-
-    public int getSubqueriesOrDefault(
-        java.lang.String key,
-        int defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.Integer> map =
-          internalGetSubqueries().getMap();
+    public int getSubqueriesOrDefault(java.lang.String key, int defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSubqueries().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
      * where the `description` string of this node references a `SCALAR`
@@ -1581,12 +1670,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, int32&gt; subqueries = 2;</code>
      */
-
-    public int getSubqueriesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.Integer> map =
-          internalGetSubqueries().getMap();
+    public int getSubqueriesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSubqueries().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1594,6 +1682,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1605,17 +1694,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetSubqueries(),
-          SubqueriesDefaultEntryHolder.defaultEntry,
-          2);
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetSubqueries(), SubqueriesDefaultEntryHolder.defaultEntry, 2);
       unknownFields.writeTo(output);
     }
 
@@ -1628,15 +1712,15 @@ private static final long serialVersionUID = 0L;
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
-           : internalGetSubqueries().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
-        subqueries__ = SubqueriesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, subqueries__);
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry :
+          internalGetSubqueries().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> subqueries__ =
+            SubqueriesDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, subqueries__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1646,18 +1730,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.spanner.v1.PlanNode.ShortRepresentation)) {
         return super.equals(obj);
       }
-      com.google.spanner.v1.PlanNode.ShortRepresentation other = (com.google.spanner.v1.PlanNode.ShortRepresentation) obj;
+      com.google.spanner.v1.PlanNode.ShortRepresentation other =
+          (com.google.spanner.v1.PlanNode.ShortRepresentation) obj;
 
       boolean result = true;
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && internalGetSubqueries().equals(
-          other.internalGetSubqueries());
+      result = result && getDescription().equals(other.getDescription());
+      result = result && internalGetSubqueries().equals(other.internalGetSubqueries());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1681,87 +1764,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.spanner.v1.PlanNode.ShortRepresentation parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.spanner.v1.PlanNode.ShortRepresentation parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.spanner.v1.PlanNode.ShortRepresentation parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.spanner.v1.PlanNode.ShortRepresentation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1771,6 +1860,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Condensed representation of a node and its subtree. Only present for
      * `SCALAR` [PlanNode(s)][google.spanner.v1.PlanNode].
@@ -1778,43 +1869,44 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.spanner.v1.PlanNode.ShortRepresentation}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.spanner.v1.PlanNode.ShortRepresentation)
         com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ShortRepresentation_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.spanner.v1.QueryPlanProto
+            .internal_static_google_spanner_v1_PlanNode_ShortRepresentation_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
         switch (number) {
           case 2:
             return internalGetSubqueries();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
         switch (number) {
           case 2:
             return internalGetMutableSubqueries();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ShortRepresentation_fieldAccessorTable
+        return com.google.spanner.v1.QueryPlanProto
+            .internal_static_google_spanner_v1_PlanNode_ShortRepresentation_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.spanner.v1.PlanNode.ShortRepresentation.class, com.google.spanner.v1.PlanNode.ShortRepresentation.Builder.class);
+                com.google.spanner.v1.PlanNode.ShortRepresentation.class,
+                com.google.spanner.v1.PlanNode.ShortRepresentation.Builder.class);
       }
 
       // Construct using com.google.spanner.v1.PlanNode.ShortRepresentation.newBuilder()
@@ -1822,16 +1914,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1842,9 +1933,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_ShortRepresentation_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.spanner.v1.QueryPlanProto
+            .internal_static_google_spanner_v1_PlanNode_ShortRepresentation_descriptor;
       }
 
       @java.lang.Override
@@ -1863,7 +1954,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.spanner.v1.PlanNode.ShortRepresentation buildPartial() {
-        com.google.spanner.v1.PlanNode.ShortRepresentation result = new com.google.spanner.v1.PlanNode.ShortRepresentation(this);
+        com.google.spanner.v1.PlanNode.ShortRepresentation result =
+            new com.google.spanner.v1.PlanNode.ShortRepresentation(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.description_ = description_;
@@ -1878,38 +1970,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.spanner.v1.PlanNode.ShortRepresentation) {
-          return mergeFrom((com.google.spanner.v1.PlanNode.ShortRepresentation)other);
+          return mergeFrom((com.google.spanner.v1.PlanNode.ShortRepresentation) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1917,13 +2012,13 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.spanner.v1.PlanNode.ShortRepresentation other) {
-        if (other == com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance()) return this;
+        if (other == com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance())
+          return this;
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
         }
-        internalGetMutableSubqueries().mergeFrom(
-            other.internalGetSubqueries());
+        internalGetMutableSubqueries().mergeFrom(other.internalGetSubqueries());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1943,7 +2038,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.spanner.v1.PlanNode.ShortRepresentation) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.spanner.v1.PlanNode.ShortRepresentation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1952,10 +2048,13 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.lang.Object description_ = "";
       /**
+       *
+       *
        * <pre>
        * A string representation of the expression subtree rooted at this node.
        * </pre>
@@ -1965,8 +2064,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           description_ = s;
           return s;
@@ -1975,19 +2073,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * A string representation of the expression subtree rooted at this node.
        * </pre>
        *
        * <code>string description = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getDescriptionBytes() {
+      public com.google.protobuf.ByteString getDescriptionBytes() {
         java.lang.Object ref = description_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           description_ = b;
           return b;
         } else {
@@ -1995,23 +2093,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * A string representation of the expression subtree rooted at this node.
        * </pre>
        *
        * <code>string description = 1;</code>
        */
-      public Builder setDescription(
-          java.lang.String value) {
+      public Builder setDescription(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         description_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A string representation of the expression subtree rooted at this node.
        * </pre>
@@ -2019,46 +2120,49 @@ private static final long serialVersionUID = 0L;
        * <code>string description = 1;</code>
        */
       public Builder clearDescription() {
-        
+
         description_ = getDefaultInstance().getDescription();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A string representation of the expression subtree rooted at this node.
        * </pre>
        *
        * <code>string description = 1;</code>
        */
-      public Builder setDescriptionBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         description_ = value;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.Integer> subqueries_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> subqueries_;
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-      internalGetSubqueries() {
+          internalGetSubqueries() {
         if (subqueries_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SubqueriesDefaultEntryHolder.defaultEntry);
         }
         return subqueries_;
       }
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-      internalGetMutableSubqueries() {
-        onChanged();;
+          internalGetMutableSubqueries() {
+        onChanged();
+        ;
         if (subqueries_ == null) {
-          subqueries_ = com.google.protobuf.MapField.newMapField(
-              SubqueriesDefaultEntryHolder.defaultEntry);
+          subqueries_ =
+              com.google.protobuf.MapField.newMapField(SubqueriesDefaultEntryHolder.defaultEntry);
         }
         if (!subqueries_.isMutable()) {
           subqueries_ = subqueries_.copy();
@@ -2070,6 +2174,8 @@ private static final long serialVersionUID = 0L;
         return internalGetSubqueries().getMap().size();
       }
       /**
+       *
+       *
        * <pre>
        * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
        * where the `description` string of this node references a `SCALAR`
@@ -2080,20 +2186,20 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, int32&gt; subqueries = 2;</code>
        */
-
-      public boolean containsSubqueries(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+      public boolean containsSubqueries(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
         return internalGetSubqueries().getMap().containsKey(key);
       }
-      /**
-       * Use {@link #getSubqueriesMap()} instead.
-       */
+      /** Use {@link #getSubqueriesMap()} instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Integer> getSubqueries() {
         return getSubqueriesMap();
       }
       /**
+       *
+       *
        * <pre>
        * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
        * where the `description` string of this node references a `SCALAR`
@@ -2104,11 +2210,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, int32&gt; subqueries = 2;</code>
        */
-
       public java.util.Map<java.lang.String, java.lang.Integer> getSubqueriesMap() {
         return internalGetSubqueries().getMap();
       }
       /**
+       *
+       *
        * <pre>
        * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
        * where the `description` string of this node references a `SCALAR`
@@ -2119,16 +2226,16 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, int32&gt; subqueries = 2;</code>
        */
-
-      public int getSubqueriesOrDefault(
-          java.lang.String key,
-          int defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.Integer> map =
-            internalGetSubqueries().getMap();
+      public int getSubqueriesOrDefault(java.lang.String key, int defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSubqueries().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       *
+       *
        * <pre>
        * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
        * where the `description` string of this node references a `SCALAR`
@@ -2139,12 +2246,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, int32&gt; subqueries = 2;</code>
        */
-
-      public int getSubqueriesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.Integer> map =
-            internalGetSubqueries().getMap();
+      public int getSubqueriesOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.Integer> map = internalGetSubqueries().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -2152,11 +2258,12 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder clearSubqueries() {
-        internalGetMutableSubqueries().getMutableMap()
-            .clear();
+        internalGetMutableSubqueries().getMutableMap().clear();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
        * where the `description` string of this node references a `SCALAR`
@@ -2167,23 +2274,21 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, int32&gt; subqueries = 2;</code>
        */
-
-      public Builder removeSubqueries(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableSubqueries().getMutableMap()
-            .remove(key);
+      public Builder removeSubqueries(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableSubqueries().getMutableMap().remove(key);
         return this;
       }
-      /**
-       * Use alternate mutation accessors instead.
-       */
+      /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.Integer>
-      getMutableSubqueries() {
+      public java.util.Map<java.lang.String, java.lang.Integer> getMutableSubqueries() {
         return internalGetMutableSubqueries().getMutableMap();
       }
       /**
+       *
+       *
        * <pre>
        * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
        * where the `description` string of this node references a `SCALAR`
@@ -2194,16 +2299,17 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, int32&gt; subqueries = 2;</code>
        */
-      public Builder putSubqueries(
-          java.lang.String key,
-          int value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        
-        internalGetMutableSubqueries().getMutableMap()
-            .put(key, value);
+      public Builder putSubqueries(java.lang.String key, int value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+
+        internalGetMutableSubqueries().getMutableMap().put(key, value);
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A mapping of (subquery variable name) -&gt; (subquery node id) for cases
        * where the `description` string of this node references a `SCALAR`
@@ -2214,13 +2320,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, int32&gt; subqueries = 2;</code>
        */
-
-      public Builder putAllSubqueries(
-          java.util.Map<java.lang.String, java.lang.Integer> values) {
-        internalGetMutableSubqueries().getMutableMap()
-            .putAll(values);
+      public Builder putAllSubqueries(java.util.Map<java.lang.String, java.lang.Integer> values) {
+        internalGetMutableSubqueries().getMutableMap().putAll(values);
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2233,12 +2337,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.spanner.v1.PlanNode.ShortRepresentation)
     }
 
     // @@protoc_insertion_point(class_scope:google.spanner.v1.PlanNode.ShortRepresentation)
     private static final com.google.spanner.v1.PlanNode.ShortRepresentation DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.spanner.v1.PlanNode.ShortRepresentation();
     }
@@ -2247,16 +2351,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ShortRepresentation>
-        PARSER = new com.google.protobuf.AbstractParser<ShortRepresentation>() {
-      @java.lang.Override
-      public ShortRepresentation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ShortRepresentation(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ShortRepresentation> PARSER =
+        new com.google.protobuf.AbstractParser<ShortRepresentation>() {
+          @java.lang.Override
+          public ShortRepresentation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ShortRepresentation(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ShortRepresentation> parser() {
       return PARSER;
@@ -2271,15 +2375,17 @@ private static final long serialVersionUID = 0L;
     public com.google.spanner.v1.PlanNode.ShortRepresentation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_;
   /**
+   *
+   *
    * <pre>
-   * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
+   * The `PlanNode`'s index in [node
+   * list][google.spanner.v1.QueryPlan.plan_nodes].
    * </pre>
    *
    * <code>int32 index = 1;</code>
@@ -2291,12 +2397,14 @@ private static final long serialVersionUID = 0L;
   public static final int KIND_FIELD_NUMBER = 2;
   private int kind_;
   /**
+   *
+   *
    * <pre>
    * Used to determine the type of node. May be needed for visualizing
    * different kinds of nodes differently. For example, If the node is a
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-   * which can be used to directly embed a description of the node in its
-   * parent.
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+   * condensed representation which can be used to directly embed a description
+   * of the node in its parent.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -2305,12 +2413,14 @@ private static final long serialVersionUID = 0L;
     return kind_;
   }
   /**
+   *
+   *
    * <pre>
    * Used to determine the type of node. May be needed for visualizing
    * different kinds of nodes differently. For example, If the node is a
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-   * which can be used to directly embed a description of the node in its
-   * parent.
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+   * condensed representation which can be used to directly embed a description
+   * of the node in its parent.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -2324,6 +2434,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * The display name for the node.
    * </pre>
@@ -2335,27 +2447,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The display name for the node.
    * </pre>
    *
    * <code>string display_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -2366,6 +2477,8 @@ private static final long serialVersionUID = 0L;
   public static final int CHILD_LINKS_FIELD_NUMBER = 4;
   private java.util.List<com.google.spanner.v1.PlanNode.ChildLink> childLinks_;
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
@@ -2376,17 +2489,21 @@ private static final long serialVersionUID = 0L;
     return childLinks_;
   }
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
    */
-  public java.util.List<? extends com.google.spanner.v1.PlanNode.ChildLinkOrBuilder> 
+  public java.util.List<? extends com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>
       getChildLinksOrBuilderList() {
     return childLinks_;
   }
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
@@ -2397,6 +2514,8 @@ private static final long serialVersionUID = 0L;
     return childLinks_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
@@ -2407,22 +2526,26 @@ private static final long serialVersionUID = 0L;
     return childLinks_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
    */
-  public com.google.spanner.v1.PlanNode.ChildLinkOrBuilder getChildLinksOrBuilder(
-      int index) {
+  public com.google.spanner.v1.PlanNode.ChildLinkOrBuilder getChildLinksOrBuilder(int index) {
     return childLinks_.get(index);
   }
 
   public static final int SHORT_REPRESENTATION_FIELD_NUMBER = 5;
   private com.google.spanner.v1.PlanNode.ShortRepresentation shortRepresentation_;
   /**
+   *
+   *
    * <pre>
-   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -2431,29 +2554,40 @@ private static final long serialVersionUID = 0L;
     return shortRepresentation_ != null;
   }
   /**
+   *
+   *
    * <pre>
-   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
    */
   public com.google.spanner.v1.PlanNode.ShortRepresentation getShortRepresentation() {
-    return shortRepresentation_ == null ? com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance() : shortRepresentation_;
+    return shortRepresentation_ == null
+        ? com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance()
+        : shortRepresentation_;
   }
   /**
+   *
+   *
    * <pre>
-   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
    */
-  public com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder getShortRepresentationOrBuilder() {
+  public com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder
+      getShortRepresentationOrBuilder() {
     return getShortRepresentation();
   }
 
   public static final int METADATA_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct metadata_;
   /**
+   *
+   *
    * <pre>
    * Attributes relevant to the node contained in a group of key-value pairs.
    * For example, a Parameter Reference node could have the following
@@ -2470,6 +2604,8 @@ private static final long serialVersionUID = 0L;
     return metadata_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Attributes relevant to the node contained in a group of key-value pairs.
    * For example, a Parameter Reference node could have the following
@@ -2486,6 +2622,8 @@ private static final long serialVersionUID = 0L;
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
   /**
+   *
+   *
    * <pre>
    * Attributes relevant to the node contained in a group of key-value pairs.
    * For example, a Parameter Reference node could have the following
@@ -2505,6 +2643,8 @@ private static final long serialVersionUID = 0L;
   public static final int EXECUTION_STATS_FIELD_NUMBER = 7;
   private com.google.protobuf.Struct executionStats_;
   /**
+   *
+   *
    * <pre>
    * The execution statistics associated with the node, contained in a group of
    * key-value pairs. Only present if the plan was returned as a result of a
@@ -2518,6 +2658,8 @@ private static final long serialVersionUID = 0L;
     return executionStats_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The execution statistics associated with the node, contained in a group of
    * key-value pairs. Only present if the plan was returned as a result of a
@@ -2528,9 +2670,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct execution_stats = 7;</code>
    */
   public com.google.protobuf.Struct getExecutionStats() {
-    return executionStats_ == null ? com.google.protobuf.Struct.getDefaultInstance() : executionStats_;
+    return executionStats_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : executionStats_;
   }
   /**
+   *
+   *
    * <pre>
    * The execution statistics associated with the node, contained in a group of
    * key-value pairs. Only present if the plan was returned as a result of a
@@ -2545,6 +2691,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -2556,8 +2703,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (index_ != 0) {
       output.writeInt32(1, index_);
     }
@@ -2589,31 +2735,25 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (index_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, index_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, index_);
     }
     if (kind_ != com.google.spanner.v1.PlanNode.Kind.KIND_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, kind_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, kind_);
     }
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
     for (int i = 0; i < childLinks_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, childLinks_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, childLinks_.get(i));
     }
     if (shortRepresentation_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getShortRepresentation());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getShortRepresentation());
     }
     if (metadata_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getMetadata());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMetadata());
     }
     if (executionStats_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getExecutionStats());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getExecutionStats());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2623,7 +2763,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.PlanNode)) {
       return super.equals(obj);
@@ -2631,27 +2771,21 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.PlanNode other = (com.google.spanner.v1.PlanNode) obj;
 
     boolean result = true;
-    result = result && (getIndex()
-        == other.getIndex());
+    result = result && (getIndex() == other.getIndex());
     result = result && kind_ == other.kind_;
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getChildLinksList()
-        .equals(other.getChildLinksList());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getChildLinksList().equals(other.getChildLinksList());
     result = result && (hasShortRepresentation() == other.hasShortRepresentation());
     if (hasShortRepresentation()) {
-      result = result && getShortRepresentation()
-          .equals(other.getShortRepresentation());
+      result = result && getShortRepresentation().equals(other.getShortRepresentation());
     }
     result = result && (hasMetadata() == other.hasMetadata());
     if (hasMetadata()) {
-      result = result && getMetadata()
-          .equals(other.getMetadata());
+      result = result && getMetadata().equals(other.getMetadata());
     }
     result = result && (hasExecutionStats() == other.hasExecutionStats());
     if (hasExecutionStats()) {
-      result = result && getExecutionStats()
-          .equals(other.getExecutionStats());
+      result = result && getExecutionStats().equals(other.getExecutionStats());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -2691,116 +2825,124 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.PlanNode parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.PlanNode parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PlanNode parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.PlanNode parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.PlanNode parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PlanNode parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PlanNode parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PlanNode parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PlanNode parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PlanNode parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PlanNode parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PlanNode parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.spanner.v1.PlanNode parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.spanner.v1.PlanNode parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PlanNode parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.spanner.v1.PlanNode prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * Node information for nodes appearing in a [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
+   * Node information for nodes appearing in a
+   * [QueryPlan.plan_nodes][google.spanner.v1.QueryPlan.plan_nodes].
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.PlanNode}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.PlanNode)
       com.google.spanner.v1.PlanNodeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_PlanNode_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_fieldAccessorTable
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_PlanNode_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.spanner.v1.PlanNode.class, com.google.spanner.v1.PlanNode.Builder.class);
     }
@@ -2810,17 +2952,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getChildLinksFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -2858,9 +3000,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_PlanNode_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_PlanNode_descriptor;
     }
 
     @java.lang.Override
@@ -2918,38 +3060,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.PlanNode) {
-        return mergeFrom((com.google.spanner.v1.PlanNode)other);
+        return mergeFrom((com.google.spanner.v1.PlanNode) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -2986,9 +3129,10 @@ private static final long serialVersionUID = 0L;
             childLinksBuilder_ = null;
             childLinks_ = other.childLinks_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            childLinksBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getChildLinksFieldBuilder() : null;
+            childLinksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getChildLinksFieldBuilder()
+                    : null;
           } else {
             childLinksBuilder_.addAllMessages(other.childLinks_);
           }
@@ -3031,12 +3175,16 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private int index_ ;
+    private int index_;
     /**
+     *
+     *
      * <pre>
-     * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
+     * The `PlanNode`'s index in [node
+     * list][google.spanner.v1.QueryPlan.plan_nodes].
      * </pre>
      *
      * <code>int32 index = 1;</code>
@@ -3045,27 +3193,33 @@ private static final long serialVersionUID = 0L;
       return index_;
     }
     /**
+     *
+     *
      * <pre>
-     * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
+     * The `PlanNode`'s index in [node
+     * list][google.spanner.v1.QueryPlan.plan_nodes].
      * </pre>
      *
      * <code>int32 index = 1;</code>
      */
     public Builder setIndex(int value) {
-      
+
       index_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
+     * The `PlanNode`'s index in [node
+     * list][google.spanner.v1.QueryPlan.plan_nodes].
      * </pre>
      *
      * <code>int32 index = 1;</code>
      */
     public Builder clearIndex() {
-      
+
       index_ = 0;
       onChanged();
       return this;
@@ -3073,12 +3227,14 @@ private static final long serialVersionUID = 0L;
 
     private int kind_ = 0;
     /**
+     *
+     *
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-     * which can be used to directly embed a description of the node in its
-     * parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+     * condensed representation which can be used to directly embed a description
+     * of the node in its parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3087,12 +3243,14 @@ private static final long serialVersionUID = 0L;
       return kind_;
     }
     /**
+     *
+     *
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-     * which can be used to directly embed a description of the node in its
-     * parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+     * condensed representation which can be used to directly embed a description
+     * of the node in its parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3103,28 +3261,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-     * which can be used to directly embed a description of the node in its
-     * parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+     * condensed representation which can be used to directly embed a description
+     * of the node in its parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
      */
     public com.google.spanner.v1.PlanNode.Kind getKind() {
       @SuppressWarnings("deprecation")
-      com.google.spanner.v1.PlanNode.Kind result = com.google.spanner.v1.PlanNode.Kind.valueOf(kind_);
+      com.google.spanner.v1.PlanNode.Kind result =
+          com.google.spanner.v1.PlanNode.Kind.valueOf(kind_);
       return result == null ? com.google.spanner.v1.PlanNode.Kind.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-     * which can be used to directly embed a description of the node in its
-     * parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+     * condensed representation which can be used to directly embed a description
+     * of the node in its parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -3133,24 +3296,26 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       kind_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Used to determine the type of node. May be needed for visualizing
      * different kinds of nodes differently. For example, If the node is a
-     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-     * which can be used to directly embed a description of the node in its
-     * parent.
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+     * condensed representation which can be used to directly embed a description
+     * of the node in its parent.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
      */
     public Builder clearKind() {
-      
+
       kind_ = 0;
       onChanged();
       return this;
@@ -3158,6 +3323,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * The display name for the node.
      * </pre>
@@ -3167,8 +3334,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -3177,19 +3343,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The display name for the node.
      * </pre>
      *
      * <code>string display_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -3197,23 +3363,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The display name for the node.
      * </pre>
      *
      * <code>string display_name = 3;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The display name for the node.
      * </pre>
@@ -3221,43 +3390,51 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 3;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The display name for the node.
      * </pre>
      *
      * <code>string display_name = 3;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.spanner.v1.PlanNode.ChildLink> childLinks_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureChildLinksIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        childLinks_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>(childLinks_);
+        childLinks_ =
+            new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>(childLinks_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.PlanNode.ChildLink, com.google.spanner.v1.PlanNode.ChildLink.Builder, com.google.spanner.v1.PlanNode.ChildLinkOrBuilder> childLinksBuilder_;
+            com.google.spanner.v1.PlanNode.ChildLink,
+            com.google.spanner.v1.PlanNode.ChildLink.Builder,
+            com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>
+        childLinksBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3272,6 +3449,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3286,6 +3465,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3300,14 +3481,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public Builder setChildLinks(
-        int index, com.google.spanner.v1.PlanNode.ChildLink value) {
+    public Builder setChildLinks(int index, com.google.spanner.v1.PlanNode.ChildLink value) {
       if (childLinksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3321,6 +3503,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3339,6 +3523,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3359,14 +3545,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public Builder addChildLinks(
-        int index, com.google.spanner.v1.PlanNode.ChildLink value) {
+    public Builder addChildLinks(int index, com.google.spanner.v1.PlanNode.ChildLink value) {
       if (childLinksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3380,14 +3567,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public Builder addChildLinks(
-        com.google.spanner.v1.PlanNode.ChildLink.Builder builderForValue) {
+    public Builder addChildLinks(com.google.spanner.v1.PlanNode.ChildLink.Builder builderForValue) {
       if (childLinksBuilder_ == null) {
         ensureChildLinksIsMutable();
         childLinks_.add(builderForValue.build());
@@ -3398,6 +3586,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3416,6 +3606,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3426,8 +3618,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.spanner.v1.PlanNode.ChildLink> values) {
       if (childLinksBuilder_ == null) {
         ensureChildLinksIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, childLinks_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, childLinks_);
         onChanged();
       } else {
         childLinksBuilder_.addAllMessages(values);
@@ -3435,6 +3626,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3452,6 +3645,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3469,39 +3664,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public com.google.spanner.v1.PlanNode.ChildLink.Builder getChildLinksBuilder(
-        int index) {
+    public com.google.spanner.v1.PlanNode.ChildLink.Builder getChildLinksBuilder(int index) {
       return getChildLinksFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public com.google.spanner.v1.PlanNode.ChildLinkOrBuilder getChildLinksOrBuilder(
-        int index) {
+    public com.google.spanner.v1.PlanNode.ChildLinkOrBuilder getChildLinksOrBuilder(int index) {
       if (childLinksBuilder_ == null) {
-        return childLinks_.get(index);  } else {
+        return childLinks_.get(index);
+      } else {
         return childLinksBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public java.util.List<? extends com.google.spanner.v1.PlanNode.ChildLinkOrBuilder> 
-         getChildLinksOrBuilderList() {
+    public java.util.List<? extends com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>
+        getChildLinksOrBuilderList() {
       if (childLinksBuilder_ != null) {
         return childLinksBuilder_.getMessageOrBuilderList();
       } else {
@@ -3509,6 +3709,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
@@ -3516,38 +3718,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
     public com.google.spanner.v1.PlanNode.ChildLink.Builder addChildLinksBuilder() {
-      return getChildLinksFieldBuilder().addBuilder(
-          com.google.spanner.v1.PlanNode.ChildLink.getDefaultInstance());
+      return getChildLinksFieldBuilder()
+          .addBuilder(com.google.spanner.v1.PlanNode.ChildLink.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public com.google.spanner.v1.PlanNode.ChildLink.Builder addChildLinksBuilder(
-        int index) {
-      return getChildLinksFieldBuilder().addBuilder(
-          index, com.google.spanner.v1.PlanNode.ChildLink.getDefaultInstance());
+    public com.google.spanner.v1.PlanNode.ChildLink.Builder addChildLinksBuilder(int index) {
+      return getChildLinksFieldBuilder()
+          .addBuilder(index, com.google.spanner.v1.PlanNode.ChildLink.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of child node `index`es and their relationship to this parent.
      * </pre>
      *
      * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
      */
-    public java.util.List<com.google.spanner.v1.PlanNode.ChildLink.Builder> 
-         getChildLinksBuilderList() {
+    public java.util.List<com.google.spanner.v1.PlanNode.ChildLink.Builder>
+        getChildLinksBuilderList() {
       return getChildLinksFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.PlanNode.ChildLink, com.google.spanner.v1.PlanNode.ChildLink.Builder, com.google.spanner.v1.PlanNode.ChildLinkOrBuilder> 
+            com.google.spanner.v1.PlanNode.ChildLink,
+            com.google.spanner.v1.PlanNode.ChildLink.Builder,
+            com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>
         getChildLinksFieldBuilder() {
       if (childLinksBuilder_ == null) {
-        childLinksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.spanner.v1.PlanNode.ChildLink, com.google.spanner.v1.PlanNode.ChildLink.Builder, com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>(
+        childLinksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.spanner.v1.PlanNode.ChildLink,
+                com.google.spanner.v1.PlanNode.ChildLink.Builder,
+                com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>(
                 childLinks_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -3559,10 +3770,16 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.v1.PlanNode.ShortRepresentation shortRepresentation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.PlanNode.ShortRepresentation, com.google.spanner.v1.PlanNode.ShortRepresentation.Builder, com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder> shortRepresentationBuilder_;
+            com.google.spanner.v1.PlanNode.ShortRepresentation,
+            com.google.spanner.v1.PlanNode.ShortRepresentation.Builder,
+            com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder>
+        shortRepresentationBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3571,27 +3788,36 @@ private static final long serialVersionUID = 0L;
       return shortRepresentationBuilder_ != null || shortRepresentation_ != null;
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
      */
     public com.google.spanner.v1.PlanNode.ShortRepresentation getShortRepresentation() {
       if (shortRepresentationBuilder_ == null) {
-        return shortRepresentation_ == null ? com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance() : shortRepresentation_;
+        return shortRepresentation_ == null
+            ? com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance()
+            : shortRepresentation_;
       } else {
         return shortRepresentationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
      */
-    public Builder setShortRepresentation(com.google.spanner.v1.PlanNode.ShortRepresentation value) {
+    public Builder setShortRepresentation(
+        com.google.spanner.v1.PlanNode.ShortRepresentation value) {
       if (shortRepresentationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3605,8 +3831,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3623,17 +3852,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
      */
-    public Builder mergeShortRepresentation(com.google.spanner.v1.PlanNode.ShortRepresentation value) {
+    public Builder mergeShortRepresentation(
+        com.google.spanner.v1.PlanNode.ShortRepresentation value) {
       if (shortRepresentationBuilder_ == null) {
         if (shortRepresentation_ != null) {
           shortRepresentation_ =
-            com.google.spanner.v1.PlanNode.ShortRepresentation.newBuilder(shortRepresentation_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.PlanNode.ShortRepresentation.newBuilder(shortRepresentation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           shortRepresentation_ = value;
         }
@@ -3645,8 +3880,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -3663,48 +3901,63 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
      */
-    public com.google.spanner.v1.PlanNode.ShortRepresentation.Builder getShortRepresentationBuilder() {
-      
+    public com.google.spanner.v1.PlanNode.ShortRepresentation.Builder
+        getShortRepresentationBuilder() {
+
       onChanged();
       return getShortRepresentationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
      */
-    public com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder getShortRepresentationOrBuilder() {
+    public com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder
+        getShortRepresentationOrBuilder() {
       if (shortRepresentationBuilder_ != null) {
         return shortRepresentationBuilder_.getMessageOrBuilder();
       } else {
-        return shortRepresentation_ == null ?
-            com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance() : shortRepresentation_;
+        return shortRepresentation_ == null
+            ? com.google.spanner.v1.PlanNode.ShortRepresentation.getDefaultInstance()
+            : shortRepresentation_;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+     * Condensed representation for
+     * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
      * </pre>
      *
      * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.PlanNode.ShortRepresentation, com.google.spanner.v1.PlanNode.ShortRepresentation.Builder, com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder> 
+            com.google.spanner.v1.PlanNode.ShortRepresentation,
+            com.google.spanner.v1.PlanNode.ShortRepresentation.Builder,
+            com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder>
         getShortRepresentationFieldBuilder() {
       if (shortRepresentationBuilder_ == null) {
-        shortRepresentationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.PlanNode.ShortRepresentation, com.google.spanner.v1.PlanNode.ShortRepresentation.Builder, com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder>(
-                getShortRepresentation(),
-                getParentForChildren(),
-                isClean());
+        shortRepresentationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.PlanNode.ShortRepresentation,
+                com.google.spanner.v1.PlanNode.ShortRepresentation.Builder,
+                com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder>(
+                getShortRepresentation(), getParentForChildren(), isClean());
         shortRepresentation_ = null;
       }
       return shortRepresentationBuilder_;
@@ -3712,8 +3965,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Struct metadata_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        metadataBuilder_;
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3730,6 +3988,8 @@ private static final long serialVersionUID = 0L;
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3750,6 +4010,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3776,6 +4038,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3788,8 +4052,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct metadata = 6;</code>
      */
-    public Builder setMetadata(
-        com.google.protobuf.Struct.Builder builderForValue) {
+    public Builder setMetadata(com.google.protobuf.Struct.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
         onChanged();
@@ -3800,6 +4063,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3816,7 +4081,7 @@ private static final long serialVersionUID = 0L;
       if (metadataBuilder_ == null) {
         if (metadata_ != null) {
           metadata_ =
-            com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
         } else {
           metadata_ = value;
         }
@@ -3828,6 +4093,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3852,6 +4119,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3865,11 +4134,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct metadata = 6;</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataBuilder() {
-      
+
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3886,11 +4157,12 @@ private static final long serialVersionUID = 0L;
       if (metadataBuilder_ != null) {
         return metadataBuilder_.getMessageOrBuilder();
       } else {
-        return metadata_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Attributes relevant to the node contained in a group of key-value pairs.
      * For example, a Parameter Reference node could have the following
@@ -3904,14 +4176,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct metadata = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
         getMetadataFieldBuilder() {
       if (metadataBuilder_ == null) {
-        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getMetadata(),
-                getParentForChildren(),
-                isClean());
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
         metadata_ = null;
       }
       return metadataBuilder_;
@@ -3919,8 +4194,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Struct executionStats_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> executionStatsBuilder_;
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        executionStatsBuilder_;
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -3934,6 +4214,8 @@ private static final long serialVersionUID = 0L;
       return executionStatsBuilder_ != null || executionStats_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -3945,12 +4227,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Struct getExecutionStats() {
       if (executionStatsBuilder_ == null) {
-        return executionStats_ == null ? com.google.protobuf.Struct.getDefaultInstance() : executionStats_;
+        return executionStats_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : executionStats_;
       } else {
         return executionStatsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -3974,6 +4260,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -3983,8 +4271,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct execution_stats = 7;</code>
      */
-    public Builder setExecutionStats(
-        com.google.protobuf.Struct.Builder builderForValue) {
+    public Builder setExecutionStats(com.google.protobuf.Struct.Builder builderForValue) {
       if (executionStatsBuilder_ == null) {
         executionStats_ = builderForValue.build();
         onChanged();
@@ -3995,6 +4282,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -4008,7 +4297,9 @@ private static final long serialVersionUID = 0L;
       if (executionStatsBuilder_ == null) {
         if (executionStats_ != null) {
           executionStats_ =
-            com.google.protobuf.Struct.newBuilder(executionStats_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Struct.newBuilder(executionStats_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           executionStats_ = value;
         }
@@ -4020,6 +4311,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -4041,6 +4334,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -4051,11 +4346,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct execution_stats = 7;</code>
      */
     public com.google.protobuf.Struct.Builder getExecutionStatsBuilder() {
-      
+
       onChanged();
       return getExecutionStatsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -4069,11 +4366,14 @@ private static final long serialVersionUID = 0L;
       if (executionStatsBuilder_ != null) {
         return executionStatsBuilder_.getMessageOrBuilder();
       } else {
-        return executionStats_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : executionStats_;
+        return executionStats_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : executionStats_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The execution statistics associated with the node, contained in a group of
      * key-value pairs. Only present if the plan was returned as a result of a
@@ -4084,21 +4384,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct execution_stats = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
         getExecutionStatsFieldBuilder() {
       if (executionStatsBuilder_ == null) {
-        executionStatsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getExecutionStats(),
-                getParentForChildren(),
-                isClean());
+        executionStatsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getExecutionStats(), getParentForChildren(), isClean());
         executionStats_ = null;
       }
       return executionStatsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -4108,12 +4411,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.PlanNode)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.PlanNode)
   private static final com.google.spanner.v1.PlanNode DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.PlanNode();
   }
@@ -4122,16 +4425,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PlanNode>
-      PARSER = new com.google.protobuf.AbstractParser<PlanNode>() {
-    @java.lang.Override
-    public PlanNode parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PlanNode(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PlanNode> PARSER =
+      new com.google.protobuf.AbstractParser<PlanNode>() {
+        @java.lang.Override
+        public PlanNode parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PlanNode(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PlanNode> parser() {
     return PARSER;
@@ -4146,6 +4449,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.v1.PlanNode getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -41,14 +41,6 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.rules.Timeout;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,6 +58,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
 public class ITStorageSnippets {
 
@@ -194,6 +192,24 @@ public class ITStorageSnippets {
   public void testCreateCopyAndGetBlob() {
     String blobName = "test-create-copy-get-blob";
     Blob blob = storageSnippets.createBlobFromByteArray(BUCKET, blobName);
+    assertNotNull(blob);
+    Blob copiedBlob = storageSnippets.copyBlobInChunks(BUCKET, blobName, "copy-blob");
+    assertNotNull(copiedBlob);
+    try {
+      storageSnippets.getBlobFromIdWithMetageneration(BUCKET, blobName, -1);
+      fail("Expected StorageException to be thrown");
+    } catch (StorageException ex) {
+      // expected
+    }
+    assertTrue(
+        storageSnippets.deleteBlobFromIdWithGeneration(BUCKET, blobName, blob.getGeneration()));
+    copiedBlob.delete();
+  }
+
+  @Test
+  public void testCreateCopyAndGetBlobFromSubArray() {
+    String blobName = "test-create-copy-get-blob-from-sub-array";
+    Blob blob = storageSnippets.createBlobWithSubArrayFromByteArray(BUCKET, blobName, 7, 1);
     assertNotNull(blob);
     Blob copiedBlob = storageSnippets.copyBlobInChunks(BUCKET, blobName, "copy-blob");
     assertNotNull(copiedBlob);
@@ -460,18 +476,21 @@ public class ITStorageSnippets {
     assertTrue(snippetOutput.contains("ContentLanguage: " + remoteBlob.getContentLanguage()));
     assertTrue(snippetOutput.contains("ContentType: " + remoteBlob.getContentType()));
     assertTrue(snippetOutput.contains("Crc32c: " + remoteBlob.getCrc32c()));
+    assertTrue(snippetOutput.contains("Crc32cHexString: " + remoteBlob.getCrc32cToHexString()));
     assertTrue(snippetOutput.contains("ETag: " + remoteBlob.getEtag()));
     assertTrue(snippetOutput.contains("Generation: " + remoteBlob.getGeneration()));
     assertTrue(snippetOutput.contains("Id: " + remoteBlob.getBlobId()));
     assertTrue(snippetOutput.contains("KmsKeyName: " + remoteBlob.getKmsKeyName()));
     assertTrue(snippetOutput.contains("Md5Hash: " + remoteBlob.getMd5()));
+    assertTrue(snippetOutput.contains("Md5HexString: " + remoteBlob.getMd5ToHexString()));
     assertTrue(snippetOutput.contains("MediaLink: " + remoteBlob.getMediaLink()));
     assertTrue(snippetOutput.contains("Metageneration: " + remoteBlob.getMetageneration()));
     assertTrue(snippetOutput.contains("Name: " + remoteBlob.getName()));
     assertTrue(snippetOutput.contains("Size: " + remoteBlob.getSize()));
     assertTrue(snippetOutput.contains("StorageClass: " + remoteBlob.getStorageClass()));
     assertTrue(snippetOutput.contains("TimeCreated: " + new Date(remoteBlob.getCreateTime())));
-    assertTrue(snippetOutput.contains("Last Metadata Update: " + new Date(remoteBlob.getUpdateTime())));
+    assertTrue(
+        snippetOutput.contains("Last Metadata Update: " + new Date(remoteBlob.getUpdateTime())));
     assertTrue(snippetOutput.contains("temporaryHold: disabled"));
     assertTrue(snippetOutput.contains("eventBasedHold: disabled"));
     assertTrue(snippetOutput.contains("User metadata:"));
@@ -546,5 +565,20 @@ public class ITStorageSnippets {
     assertEquals(bucket.getRetentionPeriod(), RETENTION_PERIOD);
     bucket = storageSnippets.lockRetentionPolicy(tempBucket);
     assertTrue(bucket.retentionPolicyIsLocked());
+  }
+
+  @Test
+  public void testBucketPolicyOnly() {
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    Bucket bucket = storageSnippets.createBucket(tempBucket);
+    assertNotNull(bucket);
+    bucket = storageSnippets.enableBucketPolicyOnly(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+    bucket = storageSnippets.getBucketPolicyOnly(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+    bucket = storageSnippets.disableBucketPolicyOnly(tempBucket);
+    assertFalse(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
   }
 }

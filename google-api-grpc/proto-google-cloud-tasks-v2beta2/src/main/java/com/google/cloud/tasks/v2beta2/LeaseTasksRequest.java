@@ -4,21 +4,25 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
- * Request message for leasing tasks using [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
+ * Request message for leasing tasks using
+ * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.LeaseTasksRequest}
  */
-public  final class LeaseTasksRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.LeaseTasksRequest)
     LeaseTasksRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LeaseTasksRequest.newBuilder() to construct.
   private LeaseTasksRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LeaseTasksRequest() {
     parent_ = "";
     maxTasks_ = 0;
@@ -27,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LeaseTasksRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,77 +54,86 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 16: {
-
-            maxTasks_ = input.readInt32();
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (leaseDuration_ != null) {
-              subBuilder = leaseDuration_.toBuilder();
+              parent_ = s;
+              break;
             }
-            leaseDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(leaseDuration_);
-              leaseDuration_ = subBuilder.buildPartial();
+          case 16:
+            {
+              maxTasks_ = input.readInt32();
+              break;
             }
+          case 26:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (leaseDuration_ != null) {
+                subBuilder = leaseDuration_.toBuilder();
+              }
+              leaseDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(leaseDuration_);
+                leaseDuration_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            responseView_ = rawValue;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            filter_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              responseView_ = rawValue;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.CloudTasksProto
+        .internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.CloudTasksProto
+        .internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.LeaseTasksRequest.class, com.google.cloud.tasks.v2beta2.LeaseTasksRequest.Builder.class);
+            com.google.cloud.tasks.v2beta2.LeaseTasksRequest.class,
+            com.google.cloud.tasks.v2beta2.LeaseTasksRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -134,14 +147,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -150,13 +164,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -167,6 +179,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_TASKS_FIELD_NUMBER = 2;
   private int maxTasks_;
   /**
+   *
+   *
    * <pre>
    * The maximum number of tasks to lease.
    * The system will make a best effort to return as close to as
@@ -183,13 +197,16 @@ private static final long serialVersionUID = 0L;
   public static final int LEASE_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration leaseDuration_;
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
-   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-   * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-   * that another worker can retry it.
+   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   * Otherwise the task will be returned to a later
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+   * another worker can retry it.
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -200,13 +217,16 @@ private static final long serialVersionUID = 0L;
     return leaseDuration_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
-   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-   * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-   * that another worker can retry it.
+   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   * Otherwise the task will be returned to a later
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+   * another worker can retry it.
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -214,16 +234,21 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration lease_duration = 3;</code>
    */
   public com.google.protobuf.Duration getLeaseDuration() {
-    return leaseDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : leaseDuration_;
+    return leaseDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : leaseDuration_;
   }
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
-   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-   * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-   * that another worker can retry it.
+   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   * Otherwise the task will be returned to a later
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+   * another worker can retry it.
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -237,17 +262,20 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 4;
   private int responseView_;
   /**
+   *
+   *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-   * returned.
-   * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
-   * payloads, might be desirable to return only when needed because
-   * of its large size or because of the sensitivity of data that it
-   * contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   * By default response_view is
+   * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+   * retrieved by default because some data, such as payloads, might be
+   * desirable to return only when needed because of its large size or because
+   * of the sensitivity of data that it contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+   * requires `cloudtasks.tasks.fullView` [Google
+   * IAM](https://cloud.google.com/iam/) permission on the
+   * [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -256,39 +284,46 @@ private static final long serialVersionUID = 0L;
     return responseView_;
   }
   /**
+   *
+   *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-   * returned.
-   * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
-   * payloads, might be desirable to return only when needed because
-   * of its large size or because of the sensitivity of data that it
-   * contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   * By default response_view is
+   * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+   * retrieved by default because some data, such as payloads, might be
+   * desirable to return only when needed because of its large size or because
+   * of the sensitivity of data that it contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+   * requires `cloudtasks.tasks.fullView` [Google
+   * IAM](https://cloud.google.com/iam/) permission on the
+   * [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
    */
   public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.tasks.v2beta2.Task.View result = com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+    com.google.cloud.tasks.v2beta2.Task.View result =
+        com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
     return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
   }
 
   public static final int FILTER_FIELD_NUMBER = 5;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of tasks to lease.
    * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-   * less than 500 characters.
+   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+   * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+   * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
    * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
    * the same tag as the task with the oldest
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+   * returned.
    * Grammar Syntax:
    * * `filter = "tag=" tag | "tag_function=" function`
    * * `tag = string`
@@ -300,8 +335,9 @@ private static final long serialVersionUID = 0L;
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
    * aren't UTF-8 encoded can't be used in the
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+   * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+   * as empty in Cloud Tasks.
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -311,23 +347,25 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of tasks to lease.
    * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-   * less than 500 characters.
+   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+   * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+   * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
    * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
    * the same tag as the task with the oldest
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+   * returned.
    * Grammar Syntax:
    * * `filter = "tag=" tag | "tag_function=" function`
    * * `tag = string`
@@ -339,19 +377,18 @@ private static final long serialVersionUID = 0L;
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
    * aren't UTF-8 encoded can't be used in the
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+   * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+   * as empty in Cloud Tasks.
    * </pre>
    *
    * <code>string filter = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -360,6 +397,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -371,8 +409,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -401,16 +438,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (maxTasks_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, maxTasks_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxTasks_);
     }
     if (leaseDuration_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getLeaseDuration());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLeaseDuration());
     }
     if (responseView_ != com.google.cloud.tasks.v2beta2.Task.View.VIEW_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, responseView_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, responseView_);
     }
     if (!getFilterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
@@ -423,26 +457,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.LeaseTasksRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta2.LeaseTasksRequest other = (com.google.cloud.tasks.v2beta2.LeaseTasksRequest) obj;
+    com.google.cloud.tasks.v2beta2.LeaseTasksRequest other =
+        (com.google.cloud.tasks.v2beta2.LeaseTasksRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && (getMaxTasks()
-        == other.getMaxTasks());
+    result = result && getParent().equals(other.getParent());
+    result = result && (getMaxTasks() == other.getMaxTasks());
     result = result && (hasLeaseDuration() == other.hasLeaseDuration());
     if (hasLeaseDuration()) {
-      result = result && getLeaseDuration()
-          .equals(other.getLeaseDuration());
+      result = result && getLeaseDuration().equals(other.getLeaseDuration());
     }
     result = result && responseView_ == other.responseView_;
-    result = result && getFilter()
-        .equals(other.getFilter());
+    result = result && getFilter().equals(other.getFilter());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -471,118 +502,128 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta2.LeaseTasksRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * Request message for leasing tasks using [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
+   * Request message for leasing tasks using
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.LeaseTasksRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.LeaseTasksRequest)
       com.google.cloud.tasks.v2beta2.LeaseTasksRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.LeaseTasksRequest.class, com.google.cloud.tasks.v2beta2.LeaseTasksRequest.Builder.class);
+              com.google.cloud.tasks.v2beta2.LeaseTasksRequest.class,
+              com.google.cloud.tasks.v2beta2.LeaseTasksRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.LeaseTasksRequest.newBuilder()
@@ -590,16 +631,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -621,9 +661,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor;
     }
 
     @java.lang.Override
@@ -642,7 +682,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.LeaseTasksRequest buildPartial() {
-      com.google.cloud.tasks.v2beta2.LeaseTasksRequest result = new com.google.cloud.tasks.v2beta2.LeaseTasksRequest(this);
+      com.google.cloud.tasks.v2beta2.LeaseTasksRequest result =
+          new com.google.cloud.tasks.v2beta2.LeaseTasksRequest(this);
       result.parent_ = parent_;
       result.maxTasks_ = maxTasks_;
       if (leaseDurationBuilder_ == null) {
@@ -660,38 +701,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.LeaseTasksRequest) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.LeaseTasksRequest)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.LeaseTasksRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -699,7 +741,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.tasks.v2beta2.LeaseTasksRequest other) {
-      if (other == com.google.cloud.tasks.v2beta2.LeaseTasksRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.tasks.v2beta2.LeaseTasksRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -748,6 +791,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required.
      * The queue name. For example:
@@ -759,8 +804,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -769,6 +813,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The queue name. For example:
@@ -777,13 +823,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -791,6 +835,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The queue name. For example:
@@ -799,17 +845,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The queue name. For example:
@@ -819,12 +866,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The queue name. For example:
@@ -833,20 +882,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
     }
 
-    private int maxTasks_ ;
+    private int maxTasks_;
     /**
+     *
+     *
      * <pre>
      * The maximum number of tasks to lease.
      * The system will make a best effort to return as close to as
@@ -860,6 +910,8 @@ private static final long serialVersionUID = 0L;
       return maxTasks_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of tasks to lease.
      * The system will make a best effort to return as close to as
@@ -870,12 +922,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_tasks = 2;</code>
      */
     public Builder setMaxTasks(int value) {
-      
+
       maxTasks_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of tasks to lease.
      * The system will make a best effort to return as close to as
@@ -886,7 +940,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_tasks = 2;</code>
      */
     public Builder clearMaxTasks() {
-      
+
       maxTasks_ = 0;
       onChanged();
       return this;
@@ -894,15 +948,21 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration leaseDuration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> leaseDurationBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        leaseDurationBuilder_;
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -913,13 +973,16 @@ private static final long serialVersionUID = 0L;
       return leaseDurationBuilder_ != null || leaseDuration_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -928,19 +991,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getLeaseDuration() {
       if (leaseDurationBuilder_ == null) {
-        return leaseDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : leaseDuration_;
+        return leaseDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : leaseDuration_;
       } else {
         return leaseDurationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -961,21 +1029,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
      *
      * <code>.google.protobuf.Duration lease_duration = 3;</code>
      */
-    public Builder setLeaseDuration(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setLeaseDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (leaseDurationBuilder_ == null) {
         leaseDuration_ = builderForValue.build();
         onChanged();
@@ -986,13 +1056,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1003,7 +1076,9 @@ private static final long serialVersionUID = 0L;
       if (leaseDurationBuilder_ == null) {
         if (leaseDuration_ != null) {
           leaseDuration_ =
-            com.google.protobuf.Duration.newBuilder(leaseDuration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(leaseDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           leaseDuration_ = value;
         }
@@ -1015,13 +1090,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1040,13 +1118,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1054,18 +1135,21 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration lease_duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getLeaseDurationBuilder() {
-      
+
       onChanged();
       return getLeaseDurationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1076,18 +1160,22 @@ private static final long serialVersionUID = 0L;
       if (leaseDurationBuilder_ != null) {
         return leaseDurationBuilder_.getMessageOrBuilder();
       } else {
-        return leaseDuration_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : leaseDuration_;
+        return leaseDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : leaseDuration_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * After the worker has successfully finished the work associated
      * with the task, the worker must call via
-     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-     * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-     * that another worker can retry it.
+     * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+     * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+     * Otherwise the task will be returned to a later
+     * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+     * another worker can retry it.
      * The maximum lease duration is 1 week.
      * `lease_duration` will be truncated to the nearest second.
      * </pre>
@@ -1095,14 +1183,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration lease_duration = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getLeaseDurationFieldBuilder() {
       if (leaseDurationBuilder_ == null) {
-        leaseDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getLeaseDuration(),
-                getParentForChildren(),
-                isClean());
+        leaseDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getLeaseDuration(), getParentForChildren(), isClean());
         leaseDuration_ = null;
       }
       return leaseDurationBuilder_;
@@ -1110,17 +1201,20 @@ private static final long serialVersionUID = 0L;
 
     private int responseView_ = 0;
     /**
+     *
+     *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1129,17 +1223,20 @@ private static final long serialVersionUID = 0L;
       return responseView_;
     }
     /**
+     *
+     *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1150,38 +1247,45 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
      */
     public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.tasks.v2beta2.Task.View result = com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+      com.google.cloud.tasks.v2beta2.Task.View result =
+          com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
       return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1190,29 +1294,32 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       responseView_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
      */
     public Builder clearResponseView() {
-      
+
       responseView_ = 0;
       onChanged();
       return this;
@@ -1220,15 +1327,18 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * `filter` can be used to specify a subset of tasks to lease.
      * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-     * less than 500 characters.
+     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+     * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+     * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
      * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
      * the same tag as the task with the oldest
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+     * returned.
      * Grammar Syntax:
      * * `filter = "tag=" tag | "tag_function=" function`
      * * `tag = string`
@@ -1240,8 +1350,9 @@ private static final long serialVersionUID = 0L;
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+     * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+     * as empty in Cloud Tasks.
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -1249,8 +1360,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -1259,15 +1369,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * `filter` can be used to specify a subset of tasks to lease.
      * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-     * less than 500 characters.
+     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+     * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+     * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
      * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
      * the same tag as the task with the oldest
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+     * returned.
      * Grammar Syntax:
      * * `filter = "tag=" tag | "tag_function=" function`
      * * `tag = string`
@@ -1279,19 +1392,18 @@ private static final long serialVersionUID = 0L;
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+     * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+     * as empty in Cloud Tasks.
      * </pre>
      *
      * <code>string filter = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -1299,15 +1411,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * `filter` can be used to specify a subset of tasks to lease.
      * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-     * less than 500 characters.
+     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+     * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+     * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
      * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
      * the same tag as the task with the oldest
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+     * returned.
      * Grammar Syntax:
      * * `filter = "tag=" tag | "tag_function=" function`
      * * `tag = string`
@@ -1319,32 +1434,35 @@ private static final long serialVersionUID = 0L;
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+     * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+     * as empty in Cloud Tasks.
      * </pre>
      *
      * <code>string filter = 5;</code>
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * `filter` can be used to specify a subset of tasks to lease.
      * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-     * less than 500 characters.
+     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+     * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+     * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
      * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
      * the same tag as the task with the oldest
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+     * returned.
      * Grammar Syntax:
      * * `filter = "tag=" tag | "tag_function=" function`
      * * `tag = string`
@@ -1356,28 +1474,32 @@ private static final long serialVersionUID = 0L;
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+     * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+     * as empty in Cloud Tasks.
      * </pre>
      *
      * <code>string filter = 5;</code>
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * `filter` can be used to specify a subset of tasks to lease.
      * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-     * less than 500 characters.
+     * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+     * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+     * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
      * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
      * the same tag as the task with the oldest
-     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+     * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+     * returned.
      * Grammar Syntax:
      * * `filter = "tag=" tag | "tag_function=" function`
      * * `tag = string`
@@ -1389,26 +1511,26 @@ private static final long serialVersionUID = 0L;
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
      * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
      * aren't UTF-8 encoded can't be used in the
-     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-     * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+     * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+     * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+     * as empty in Cloud Tasks.
      * </pre>
      *
      * <code>string filter = 5;</code>
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1418,12 +1540,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.LeaseTasksRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.LeaseTasksRequest)
   private static final com.google.cloud.tasks.v2beta2.LeaseTasksRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.LeaseTasksRequest();
   }
@@ -1432,16 +1554,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LeaseTasksRequest>
-      PARSER = new com.google.protobuf.AbstractParser<LeaseTasksRequest>() {
-    @java.lang.Override
-    public LeaseTasksRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LeaseTasksRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LeaseTasksRequest> PARSER =
+      new com.google.protobuf.AbstractParser<LeaseTasksRequest>() {
+        @java.lang.Override
+        public LeaseTasksRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LeaseTasksRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LeaseTasksRequest> parser() {
     return PARSER;
@@ -1456,6 +1578,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta2.LeaseTasksRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

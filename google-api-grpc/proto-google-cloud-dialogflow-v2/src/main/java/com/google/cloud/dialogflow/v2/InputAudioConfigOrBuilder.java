@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface InputAudioConfigOrBuilder extends
+public interface InputAudioConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.InputAudioConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Audio encoding of the audio content to process.
    * </pre>
@@ -16,6 +19,8 @@ public interface InputAudioConfigOrBuilder extends
    */
   int getAudioEncodingValue();
   /**
+   *
+   *
    * <pre>
    * Required. Audio encoding of the audio content to process.
    * </pre>
@@ -25,6 +30,8 @@ public interface InputAudioConfigOrBuilder extends
   com.google.cloud.dialogflow.v2.AudioEncoding getAudioEncoding();
 
   /**
+   *
+   *
    * <pre>
    * Required. Sample rate (in Hertz) of the audio content sent in the query.
    * Refer to [Cloud Speech API documentation](/speech/docs/basics) for more
@@ -36,6 +43,8 @@ public interface InputAudioConfigOrBuilder extends
   int getSampleRateHertz();
 
   /**
+   *
+   *
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
@@ -48,6 +57,8 @@ public interface InputAudioConfigOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Required. The language of the supplied audio. Dialogflow does not do
    * translations. See [Language
@@ -58,10 +69,11 @@ public interface InputAudioConfigOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
@@ -71,9 +83,10 @@ public interface InputAudioConfigOrBuilder extends
    *
    * <code>repeated string phrase_hints = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getPhraseHintsList();
+  java.util.List<java.lang.String> getPhraseHintsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
@@ -85,6 +98,8 @@ public interface InputAudioConfigOrBuilder extends
    */
   int getPhraseHintsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
@@ -96,6 +111,8 @@ public interface InputAudioConfigOrBuilder extends
    */
   java.lang.String getPhraseHints(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of phrase hints which are used to boost accuracy
    * of speech recognition.
@@ -105,6 +122,5 @@ public interface InputAudioConfigOrBuilder extends
    *
    * <code>repeated string phrase_hints = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPhraseHintsBytes(int index);
+  com.google.protobuf.ByteString getPhraseHintsBytes(int index);
 }

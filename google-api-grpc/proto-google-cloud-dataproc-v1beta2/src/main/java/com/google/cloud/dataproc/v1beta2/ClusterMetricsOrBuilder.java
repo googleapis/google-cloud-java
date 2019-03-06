@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ClusterMetricsOrBuilder extends
+public interface ClusterMetricsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ClusterMetrics)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The HDFS metrics.
    * </pre>
@@ -16,52 +19,52 @@ public interface ClusterMetricsOrBuilder extends
    */
   int getHdfsMetricsCount();
   /**
+   *
+   *
    * <pre>
    * The HDFS metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
-  boolean containsHdfsMetrics(
-      java.lang.String key);
-  /**
-   * Use {@link #getHdfsMetricsMap()} instead.
-   */
+  boolean containsHdfsMetrics(java.lang.String key);
+  /** Use {@link #getHdfsMetricsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.Long>
-  getHdfsMetrics();
+  java.util.Map<java.lang.String, java.lang.Long> getHdfsMetrics();
   /**
+   *
+   *
    * <pre>
    * The HDFS metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
-  java.util.Map<java.lang.String, java.lang.Long>
-  getHdfsMetricsMap();
+  java.util.Map<java.lang.String, java.lang.Long> getHdfsMetricsMap();
   /**
+   *
+   *
    * <pre>
    * The HDFS metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
-
-  long getHdfsMetricsOrDefault(
-      java.lang.String key,
-      long defaultValue);
+  long getHdfsMetricsOrDefault(java.lang.String key, long defaultValue);
   /**
+   *
+   *
    * <pre>
    * The HDFS metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
-
-  long getHdfsMetricsOrThrow(
-      java.lang.String key);
+  long getHdfsMetricsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * The YARN metrics.
    * </pre>
@@ -70,48 +73,46 @@ public interface ClusterMetricsOrBuilder extends
    */
   int getYarnMetricsCount();
   /**
+   *
+   *
    * <pre>
    * The YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
-  boolean containsYarnMetrics(
-      java.lang.String key);
-  /**
-   * Use {@link #getYarnMetricsMap()} instead.
-   */
+  boolean containsYarnMetrics(java.lang.String key);
+  /** Use {@link #getYarnMetricsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.Long>
-  getYarnMetrics();
+  java.util.Map<java.lang.String, java.lang.Long> getYarnMetrics();
   /**
+   *
+   *
    * <pre>
    * The YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.Long>
-  getYarnMetricsMap();
+  java.util.Map<java.lang.String, java.lang.Long> getYarnMetricsMap();
   /**
+   *
+   *
    * <pre>
    * The YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
-
-  long getYarnMetricsOrDefault(
-      java.lang.String key,
-      long defaultValue);
+  long getYarnMetricsOrDefault(java.lang.String key, long defaultValue);
   /**
+   *
+   *
    * <pre>
    * The YARN metrics.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
-
-  long getYarnMetricsOrThrow(
-      java.lang.String key);
+  long getYarnMetricsOrThrow(java.lang.String key);
 }

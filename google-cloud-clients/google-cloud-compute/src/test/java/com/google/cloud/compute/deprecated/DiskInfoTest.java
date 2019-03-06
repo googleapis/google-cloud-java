@@ -21,10 +21,8 @@ import static org.junit.Assert.assertNull;
 
 import com.google.api.services.compute.model.Disk;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class DiskInfoTest {
 
@@ -35,11 +33,12 @@ public class DiskInfoTest {
   private static final String DESCRIPTION = "description";
   private static final Long SIZE_GB = 500L;
   private static final DiskTypeId TYPE = DiskTypeId.of("project", "zone", "disk");
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
-  private static final List<InstanceId> ATTACHED_INSTANCES = ImmutableList.of(
-      InstanceId.of("project", "zone", "instance1"),
-      InstanceId.of("project", "zone", "instance2"));
+  private static final List<LicenseId> LICENSES =
+      ImmutableList.of(LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final List<InstanceId> ATTACHED_INSTANCES =
+      ImmutableList.of(
+          InstanceId.of("project", "zone", "instance1"),
+          InstanceId.of("project", "zone", "instance2"));
   private static final SnapshotId SNAPSHOT = SnapshotId.of("project", "snapshot");
   private static final ImageId IMAGE = ImageId.of("project", "image");
   private static final String SNAPSHOT_ID = "snapshotId";
@@ -47,10 +46,7 @@ public class DiskInfoTest {
   private static final Long LAST_ATTACH_TIMESTAMP = 1453293600000L;
   private static final Long LAST_DETACH_TIMESTAMP = 1453293660000L;
   private static final StandardDiskConfiguration DISK_CONFIGURATION =
-      StandardDiskConfiguration.newBuilder()
-          .setSizeGb(SIZE_GB)
-          .setDiskType(TYPE)
-          .build();
+      StandardDiskConfiguration.newBuilder().setSizeGb(SIZE_GB).setDiskType(TYPE).build();
   private static final SnapshotDiskConfiguration SNAPSHOT_DISK_CONFIGURATION =
       SnapshotDiskConfiguration.newBuilder(SNAPSHOT)
           .setSizeGb(SIZE_GB)
@@ -63,16 +59,17 @@ public class DiskInfoTest {
           .setDiskType(TYPE)
           .setSourceImageId(IMAGE_ID)
           .build();
-  private static final DiskInfo DISK_INFO = DiskInfo.newBuilder(DISK_ID, DISK_CONFIGURATION)
-      .setGeneratedId(GENERATED_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setCreationStatus(CREATION_STATUS)
-      .setDescription(DESCRIPTION)
-      .setLicenses(LICENSES)
-      .setAttachedInstances(ATTACHED_INSTANCES)
-      .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-      .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
-      .build();
+  private static final DiskInfo DISK_INFO =
+      DiskInfo.newBuilder(DISK_ID, DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setCreationStatus(CREATION_STATUS)
+          .setDescription(DESCRIPTION)
+          .setLicenses(LICENSES)
+          .setAttachedInstances(ATTACHED_INSTANCES)
+          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+          .build();
   private static final DiskInfo SNAPSHOT_DISK_INFO =
       DiskInfo.newBuilder(DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
           .setGeneratedId(GENERATED_ID)
@@ -196,57 +193,72 @@ public class DiskInfoTest {
     compareDiskInfo(SNAPSHOT_DISK_INFO, diskInfo);
     diskInfo = DiskInfo.fromPb(IMAGE_DISK_INFO.toPb());
     compareDiskInfo(IMAGE_DISK_INFO, diskInfo);
-    Disk disk = new Disk()
-        .setSelfLink(DISK_ID.getSelfLink())
-        .setType(TYPE.getSelfLink())
-        .setSizeGb(SIZE_GB);
+    Disk disk =
+        new Disk()
+            .setSelfLink(DISK_ID.getSelfLink())
+            .setType(TYPE.getSelfLink())
+            .setSizeGb(SIZE_GB);
     diskInfo = DiskInfo.of(DISK_ID, DISK_CONFIGURATION);
     compareDiskInfo(diskInfo, DiskInfo.fromPb(disk));
-    disk = new Disk()
-        .setType(TYPE.getSelfLink())
-        .setSizeGb(SIZE_GB)
-        .setSelfLink(DISK_ID.getSelfLink())
-        .setSourceSnapshotId(SNAPSHOT_ID)
-        .setSourceSnapshot(SNAPSHOT.getSelfLink());
+    disk =
+        new Disk()
+            .setType(TYPE.getSelfLink())
+            .setSizeGb(SIZE_GB)
+            .setSelfLink(DISK_ID.getSelfLink())
+            .setSourceSnapshotId(SNAPSHOT_ID)
+            .setSourceSnapshot(SNAPSHOT.getSelfLink());
     diskInfo = DiskInfo.of(DISK_ID, SNAPSHOT_DISK_CONFIGURATION);
     compareDiskInfo(diskInfo, DiskInfo.fromPb(disk));
-    disk = new Disk()
-        .setType(TYPE.getSelfLink())
-        .setSizeGb(SIZE_GB)
-        .setSelfLink(DISK_ID.getSelfLink())
-        .setSourceImageId(IMAGE_ID)
-        .setSourceImage(IMAGE.getSelfLink());
+    disk =
+        new Disk()
+            .setType(TYPE.getSelfLink())
+            .setSizeGb(SIZE_GB)
+            .setSelfLink(DISK_ID.getSelfLink())
+            .setSourceImageId(IMAGE_ID)
+            .setSourceImage(IMAGE.getSelfLink());
     diskInfo = DiskInfo.of(DISK_ID, IMAGE_DISK_CONFIGURATION);
     compareDiskInfo(diskInfo, DiskInfo.fromPb(disk));
   }
 
   @Test
   public void testSetProjectId() {
-    StandardDiskConfiguration standardDiskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
-        .build();
-    DiskInfo diskInfo = DISK_INFO.toBuilder()
-        .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
-        .setConfiguration(standardDiskConfiguration)
-        .build();
+    StandardDiskConfiguration standardDiskConfiguration =
+        DISK_CONFIGURATION
+            .toBuilder()
+            .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
+            .build();
+    DiskInfo diskInfo =
+        DISK_INFO
+            .toBuilder()
+            .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
+            .setConfiguration(standardDiskConfiguration)
+            .build();
     compareDiskInfo(DISK_INFO, diskInfo.setProjectId("project"));
-    SnapshotDiskConfiguration snapshotDiskConfiguration = SNAPSHOT_DISK_CONFIGURATION.toBuilder()
-        .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
-        .setSourceSnapshot(SnapshotId.of(SNAPSHOT.getSnapshot()))
-        .build();
-    diskInfo = SNAPSHOT_DISK_INFO.toBuilder()
-        .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
-        .setConfiguration(snapshotDiskConfiguration)
-        .build();
+    SnapshotDiskConfiguration snapshotDiskConfiguration =
+        SNAPSHOT_DISK_CONFIGURATION
+            .toBuilder()
+            .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
+            .setSourceSnapshot(SnapshotId.of(SNAPSHOT.getSnapshot()))
+            .build();
+    diskInfo =
+        SNAPSHOT_DISK_INFO
+            .toBuilder()
+            .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
+            .setConfiguration(snapshotDiskConfiguration)
+            .build();
     compareDiskInfo(SNAPSHOT_DISK_INFO, diskInfo.setProjectId("project"));
-    ImageDiskConfiguration imageDiskConfiguration = IMAGE_DISK_CONFIGURATION.toBuilder()
-        .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
-        .setSourceImage(ImageId.of(IMAGE.getImage()))
-        .build();
-    diskInfo = IMAGE_DISK_INFO.toBuilder()
-        .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
-        .setConfiguration(imageDiskConfiguration)
-        .build();
+    ImageDiskConfiguration imageDiskConfiguration =
+        IMAGE_DISK_CONFIGURATION
+            .toBuilder()
+            .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
+            .setSourceImage(ImageId.of(IMAGE.getImage()))
+            .build();
+    diskInfo =
+        IMAGE_DISK_INFO
+            .toBuilder()
+            .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
+            .setConfiguration(imageDiskConfiguration)
+            .build();
     compareDiskInfo(IMAGE_DISK_INFO, diskInfo.setProjectId("project"));
   }
 

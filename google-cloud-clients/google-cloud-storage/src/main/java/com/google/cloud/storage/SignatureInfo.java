@@ -17,15 +17,16 @@
 package com.google.cloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
+
 import java.net.URI;
 import java.util.Map;
 
 /**
  * Signature Info holds payload components of the string that requires signing.
- * 
+ *
  * @see <a href=
- *      "https://cloud.google.com/storage/docs/access-control/signed-urls#string-components">
- *      Components</a>
+ *     "https://cloud.google.com/storage/docs/access-control/signed-urls#string-components">
+ *     Components</a>
  */
 public class SignatureInfo {
 
@@ -49,7 +50,7 @@ public class SignatureInfo {
 
   /**
    * Constructs payload to be signed.
-   * 
+   *
    * @return paylod to sign
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed URLs</a>
    */
@@ -61,19 +62,19 @@ public class SignatureInfo {
       payload.append(contentMd5);
     }
     payload.append(COMPONENT_SEPARATOR);
-    
+
     if (contentType != null) {
       payload.append(contentType);
     }
     payload.append(COMPONENT_SEPARATOR);
-    
+
     payload.append(expiration).append(COMPONENT_SEPARATOR);
-    
+
     if (canonicalizedExtensionHeaders != null) {
-      payload.append(new CanonicalExtensionHeadersSerializer()
-          .serialize(canonicalizedExtensionHeaders));
+      payload.append(
+          new CanonicalExtensionHeadersSerializer().serialize(canonicalizedExtensionHeaders));
     }
-    
+
     payload.append(canonicalizedResource);
 
     return payload.toString();
@@ -114,10 +115,10 @@ public class SignatureInfo {
 
     /**
      * Constructs builder.
-     * 
-     * @param httpVerb  the HTTP method
-     * @param expiration  the EPOX expiration date
-     * @param canonicalizedResource  the resource URI
+     *
+     * @param httpVerb the HTTP method
+     * @param expiration the EPOX expiration date
+     * @param canonicalizedResource the resource URI
      * @throws IllegalArgumentException if required field is not provided.
      */
     public Builder(HttpMethod httpVerb, long expiration, URI canonicalizedResource) {
@@ -154,14 +155,12 @@ public class SignatureInfo {
       return this;
     }
 
-    /**
-     * Creates an {@code SignatureInfo} object from this builder.
-     */
+    /** Creates an {@code SignatureInfo} object from this builder. */
     public SignatureInfo build() {
       checkArgument(httpVerb != null, "Required HTTP method");
       checkArgument(canonicalizedResource != null, "Required canonicalized resource");
       checkArgument(expiration >= 0, "Expiration must be greater than or equal to zero");
-      
+
       return new SignatureInfo(this);
     }
   }

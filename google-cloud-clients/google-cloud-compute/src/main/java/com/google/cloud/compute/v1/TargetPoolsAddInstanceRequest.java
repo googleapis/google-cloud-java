@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instances")) {
+    if ("instances".equals(fieldName)) {
       return instances;
     }
     return null;
@@ -52,10 +52,22 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * A full or partial URL to an instance to add to this target pool. This can be a full or partial
+   * URL. For example, the following are valid URLs: -
+   * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name -
+   * projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+   */
   public List<InstanceReference> getInstancesList() {
     return instances;
   }
@@ -99,10 +111,22 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
       this.instances = source.instances;
     }
 
+    /**
+     * A full or partial URL to an instance to add to this target pool. This can be a full or
+     * partial URL. For example, the following are valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name
+     * - projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+     */
     public List<InstanceReference> getInstancesList() {
       return instances;
     }
 
+    /**
+     * A full or partial URL to an instance to add to this target pool. This can be a full or
+     * partial URL. For example, the following are valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name
+     * - projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+     */
     public Builder addAllInstances(List<InstanceReference> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -111,6 +135,12 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * A full or partial URL to an instance to add to this target pool. This can be a full or
+     * partial URL. For example, the following are valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name
+     * - projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+     */
     public Builder addInstances(InstanceReference instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();

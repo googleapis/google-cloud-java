@@ -28,10 +28,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class DiskTest {
 
@@ -42,11 +40,12 @@ public class DiskTest {
   private static final String DESCRIPTION = "description";
   private static final Long SIZE_GB = 500L;
   private static final DiskTypeId TYPE = DiskTypeId.of("project", "zone", "disk");
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
-  private static final List<InstanceId> ATTACHED_INSTANCES = ImmutableList.of(
-      InstanceId.of("project", "zone", "instance1"),
-      InstanceId.of("project", "zone", "instance2"));
+  private static final List<LicenseId> LICENSES =
+      ImmutableList.of(LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final List<InstanceId> ATTACHED_INSTANCES =
+      ImmutableList.of(
+          InstanceId.of("project", "zone", "instance1"),
+          InstanceId.of("project", "zone", "instance2"));
   private static final SnapshotId SNAPSHOT = SnapshotId.of("project", "snapshot");
   private static final ImageId IMAGE = ImageId.of("project", "image");
   private static final String SNAPSHOT_ID = "snapshotId";
@@ -54,10 +53,7 @@ public class DiskTest {
   private static final Long LAST_ATTACH_TIMESTAMP = 1453293600000L;
   private static final Long LAST_DETACH_TIMESTAMP = 1453293660000L;
   private static final StandardDiskConfiguration DISK_CONFIGURATION =
-      StandardDiskConfiguration.newBuilder()
-          .setSizeGb(SIZE_GB)
-          .setDiskType(TYPE)
-          .build();
+      StandardDiskConfiguration.newBuilder().setSizeGb(SIZE_GB).setDiskType(TYPE).build();
   private static final SnapshotDiskConfiguration SNAPSHOT_DISK_CONFIGURATION =
       SnapshotDiskConfiguration.newBuilder(SNAPSHOT)
           .setSizeGb(SIZE_GB)
@@ -82,48 +78,52 @@ public class DiskTest {
   private void initializeExpectedDisk(int optionsCalls) {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    standardDisk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, DISK_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setCreationStatus(CREATION_STATUS)
-        .setDescription(DESCRIPTION)
-        .setLicenses(LICENSES)
-        .setAttachedInstances(ATTACHED_INSTANCES)
-        .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-        .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
-        .build();
-    snapshotDisk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setCreationStatus(CREATION_STATUS)
-        .setDescription(DESCRIPTION)
-        .setLicenses(LICENSES)
-        .setAttachedInstances(ATTACHED_INSTANCES)
-        .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-        .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
-        .build();
-    imageDisk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, IMAGE_DISK_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setCreationStatus(CREATION_STATUS)
-        .setDescription(DESCRIPTION)
-        .setLicenses(LICENSES)
-        .setAttachedInstances(ATTACHED_INSTANCES)
-        .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-        .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
-        .build();
+    standardDisk =
+        new Disk.Builder(serviceMockReturnsOptions, DISK_ID, DISK_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setCreationStatus(CREATION_STATUS)
+            .setDescription(DESCRIPTION)
+            .setLicenses(LICENSES)
+            .setAttachedInstances(ATTACHED_INSTANCES)
+            .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+            .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+            .build();
+    snapshotDisk =
+        new Disk.Builder(serviceMockReturnsOptions, DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setCreationStatus(CREATION_STATUS)
+            .setDescription(DESCRIPTION)
+            .setLicenses(LICENSES)
+            .setAttachedInstances(ATTACHED_INSTANCES)
+            .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+            .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+            .build();
+    imageDisk =
+        new Disk.Builder(serviceMockReturnsOptions, DISK_ID, IMAGE_DISK_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setCreationStatus(CREATION_STATUS)
+            .setDescription(DESCRIPTION)
+            .setLicenses(LICENSES)
+            .setAttachedInstances(ATTACHED_INSTANCES)
+            .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+            .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+            .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeDisk() {
-    disk = new Disk.Builder(compute, DISK_ID, DISK_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setCreationStatus(CREATION_STATUS)
-        .setDescription(DESCRIPTION)
-        .setLicenses(LICENSES)
-        .setAttachedInstances(ATTACHED_INSTANCES)
-        .build();
+    disk =
+        new Disk.Builder(compute, DISK_ID, DISK_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setCreationStatus(CREATION_STATUS)
+            .setDescription(DESCRIPTION)
+            .setLicenses(LICENSES)
+            .setAttachedInstances(ATTACHED_INSTANCES)
+            .build();
   }
 
   @Test
@@ -188,10 +188,11 @@ public class DiskTest {
     assertEquals(LAST_ATTACH_TIMESTAMP, snapshotDisk.getLastAttachTimestamp());
     assertEquals(LAST_DETACH_TIMESTAMP, snapshotDisk.getLastDetachTimestamp());
     assertSame(serviceMockReturnsOptions, snapshotDisk.getCompute());
-    Disk disk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, DISK_CONFIGURATION)
-        .setDiskId(DiskId.of("newProject", "newZone"))
-        .setConfiguration(SNAPSHOT_DISK_CONFIGURATION)
-        .build();
+    Disk disk =
+        new Disk.Builder(serviceMockReturnsOptions, DISK_ID, DISK_CONFIGURATION)
+            .setDiskId(DiskId.of("newProject", "newZone"))
+            .setConfiguration(SNAPSHOT_DISK_CONFIGURATION)
+            .build();
     assertEquals(DiskId.of("newProject", "newZone"), disk.getDiskId());
     assertNull(disk.getGeneratedId());
     assertEquals(SNAPSHOT_DISK_CONFIGURATION, disk.getConfiguration());
@@ -224,9 +225,10 @@ public class DiskTest {
   public void testDeleteOperation() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZoneOperationId.of("project", "zone", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(ZoneOperationId.of("project", "zone", "op"))
+            .build();
     expect(compute.deleteDisk(DISK_ID)).andReturn(operation);
     replay(compute);
     initializeDisk();
@@ -306,9 +308,10 @@ public class DiskTest {
   public void testCreateSnapshot() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZoneOperationId.of("project", "zone", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(ZoneOperationId.of("project", "zone", "op"))
+            .build();
     SnapshotId snapshotId = SnapshotId.of(SNAPSHOT.getSnapshot());
     SnapshotInfo snapshot = SnapshotInfo.newBuilder(snapshotId, DISK_ID).build();
     expect(compute.create(snapshot)).andReturn(operation);
@@ -321,13 +324,13 @@ public class DiskTest {
   public void testCreateSnapshotWithDescription() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZoneOperationId.of("project", "zone", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(ZoneOperationId.of("project", "zone", "op"))
+            .build();
     SnapshotId snapshotId = SnapshotId.of(SNAPSHOT.getSnapshot());
-    SnapshotInfo snapshot = SnapshotInfo.newBuilder(snapshotId, DISK_ID)
-        .setDescription("description")
-        .build();
+    SnapshotInfo snapshot =
+        SnapshotInfo.newBuilder(snapshotId, DISK_ID).setDescription("description").build();
     expect(compute.create(snapshot)).andReturn(operation);
     replay(compute);
     initializeDisk();
@@ -338,44 +341,47 @@ public class DiskTest {
   public void testCreateSnapshotWithOptions() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZoneOperationId.of("project", "zone", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(ZoneOperationId.of("project", "zone", "op"))
+            .build();
     SnapshotId snapshotId = SnapshotId.of(SNAPSHOT.getSnapshot());
     SnapshotInfo snapshot = SnapshotInfo.newBuilder(snapshotId, DISK_ID).build();
     expect(compute.create(snapshot, Compute.OperationOption.fields())).andReturn(operation);
     replay(compute);
     initializeDisk();
-    assertSame(operation,
-        disk.createSnapshot(SNAPSHOT.getSnapshot(), Compute.OperationOption.fields()));
+    assertSame(
+        operation, disk.createSnapshot(SNAPSHOT.getSnapshot(), Compute.OperationOption.fields()));
   }
 
   @Test
   public void testCreateSnapshotWithDescriptionAndOptions() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZoneOperationId.of("project", "zone", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(ZoneOperationId.of("project", "zone", "op"))
+            .build();
     SnapshotId snapshotId = SnapshotId.of(SNAPSHOT.getSnapshot());
-    SnapshotInfo snapshot = SnapshotInfo.newBuilder(snapshotId, DISK_ID)
-        .setDescription("description")
-        .build();
+    SnapshotInfo snapshot =
+        SnapshotInfo.newBuilder(snapshotId, DISK_ID).setDescription("description").build();
     expect(compute.create(snapshot, Compute.OperationOption.fields())).andReturn(operation);
     replay(compute);
     initializeDisk();
-    assertSame(operation,
-        disk.createSnapshot(SNAPSHOT.getSnapshot(), "description",
-            Compute.OperationOption.fields()));
+    assertSame(
+        operation,
+        disk.createSnapshot(
+            SNAPSHOT.getSnapshot(), "description", Compute.OperationOption.fields()));
   }
 
   @Test
   public void testCreateImage() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     ImageId imageId = ImageId.of(IMAGE.getImage());
     ImageInfo image = ImageInfo.of(imageId, DiskImageConfiguration.of(DISK_ID));
     expect(compute.create(image)).andReturn(operation);
@@ -388,13 +394,15 @@ public class DiskTest {
   public void testCreateImageWithDescription() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     ImageId imageId = ImageId.of(IMAGE.getImage());
-    ImageInfo image = ImageInfo.newBuilder(imageId, DiskImageConfiguration.of(DISK_ID))
-        .setDescription("description")
-        .build();
+    ImageInfo image =
+        ImageInfo.newBuilder(imageId, DiskImageConfiguration.of(DISK_ID))
+            .setDescription("description")
+            .build();
     expect(compute.create(image)).andReturn(operation);
     replay(compute);
     initializeDisk();
@@ -405,9 +413,10 @@ public class DiskTest {
   public void testCreateImageWithOptions() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     ImageId imageId = ImageId.of(IMAGE.getImage());
     ImageInfo image = ImageInfo.of(imageId, DiskImageConfiguration.of(DISK_ID));
     expect(compute.create(image, Compute.OperationOption.fields())).andReturn(operation);
@@ -420,17 +429,20 @@ public class DiskTest {
   public void testCreateImageWithDescriptionAndOptions() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     ImageId imageId = ImageId.of(IMAGE.getImage());
-    ImageInfo image = ImageInfo.newBuilder(imageId, DiskImageConfiguration.of(DISK_ID))
-        .setDescription("description")
-        .build();
+    ImageInfo image =
+        ImageInfo.newBuilder(imageId, DiskImageConfiguration.of(DISK_ID))
+            .setDescription("description")
+            .build();
     expect(compute.create(image, Compute.OperationOption.fields())).andReturn(operation);
     replay(compute);
     initializeDisk();
-    assertSame(operation,
+    assertSame(
+        operation,
         disk.createImage(IMAGE.getImage(), "description", Compute.OperationOption.fields()));
   }
 
@@ -438,9 +450,10 @@ public class DiskTest {
   public void testResizeOperation() {
     initializeExpectedDisk(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZoneOperationId.of("project", "zone", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(ZoneOperationId.of("project", "zone", "op"))
+            .build();
     expect(compute.resize(DISK_ID, 42L)).andReturn(operation);
     replay(compute);
     initializeDisk();

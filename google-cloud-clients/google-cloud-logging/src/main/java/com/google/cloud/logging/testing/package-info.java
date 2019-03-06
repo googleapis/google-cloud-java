@@ -20,17 +20,20 @@
  * <p>A simple usage example:
  *
  * <p>Before the test:
- * <pre> {@code
+ *
+ * <pre>{@code
  * RemoteLoggingHelper helper = RemoteLoggingHelper.create();
  * Logging logging = helper.getOptions().getService();
- * } </pre>
+ * }</pre>
  *
  * <p>Format resource names to avoid name clashes:
- * <pre> {@code
- * String metricName = RemoteLoggingHelper.formatForTest("test-metric");
- * } </pre>
  *
- * @see <a href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-logging">
+ * <pre>{@code
+ * String metricName = RemoteLoggingHelper.formatForTest("test-metric");
+ * }</pre>
+ *
+ * @see <a
+ *     href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-logging">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.logging.testing;

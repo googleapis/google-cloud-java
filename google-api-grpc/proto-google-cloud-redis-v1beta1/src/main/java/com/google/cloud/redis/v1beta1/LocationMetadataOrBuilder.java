@@ -3,11 +3,14 @@
 
 package com.google.cloud.redis.v1beta1;
 
-public interface LocationMetadataOrBuilder extends
+public interface LocationMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1beta1.LocationMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The set of available zones in the location. The map is keyed
    * by the lowercase ID of each zone, as defined by GCE. These keys can be
@@ -19,6 +22,8 @@ public interface LocationMetadataOrBuilder extends
    */
   int getAvailableZonesCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The set of available zones in the location. The map is keyed
    * by the lowercase ID of each zone, as defined by GCE. These keys can be
@@ -28,15 +33,13 @@ public interface LocationMetadataOrBuilder extends
    *
    * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
    */
-  boolean containsAvailableZones(
-      java.lang.String key);
-  /**
-   * Use {@link #getAvailableZonesMap()} instead.
-   */
+  boolean containsAvailableZones(java.lang.String key);
+  /** Use {@link #getAvailableZonesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
-  getAvailableZones();
+  java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata> getAvailableZones();
   /**
+   *
+   *
    * <pre>
    * Output only. The set of available zones in the location. The map is keyed
    * by the lowercase ID of each zone, as defined by GCE. These keys can be
@@ -47,8 +50,10 @@ public interface LocationMetadataOrBuilder extends
    * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.redis.v1beta1.ZoneMetadata>
-  getAvailableZonesMap();
+      getAvailableZonesMap();
   /**
+   *
+   *
    * <pre>
    * Output only. The set of available zones in the location. The map is keyed
    * by the lowercase ID of each zone, as defined by GCE. These keys can be
@@ -58,11 +63,11 @@ public interface LocationMetadataOrBuilder extends
    *
    * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
    */
-
   com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrDefault(
-      java.lang.String key,
-      com.google.cloud.redis.v1beta1.ZoneMetadata defaultValue);
+      java.lang.String key, com.google.cloud.redis.v1beta1.ZoneMetadata defaultValue);
   /**
+   *
+   *
    * <pre>
    * Output only. The set of available zones in the location. The map is keyed
    * by the lowercase ID of each zone, as defined by GCE. These keys can be
@@ -72,7 +77,5 @@ public interface LocationMetadataOrBuilder extends
    *
    * <code>map&lt;string, .google.cloud.redis.v1beta1.ZoneMetadata&gt; available_zones = 1;</code>
    */
-
-  com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrThrow(
-      java.lang.String key);
+  com.google.cloud.redis.v1beta1.ZoneMetadata getAvailableZonesOrThrow(java.lang.String key);
 }

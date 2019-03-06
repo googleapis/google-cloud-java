@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1beta1;
 
-public interface RecognitionConfigOrBuilder extends
+public interface RecognitionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1beta1.RecognitionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
    * </pre>
@@ -16,6 +19,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   int getEncodingValue();
   /**
+   *
+   *
    * <pre>
    * *Required* Encoding of audio data sent in all `RecognitionAudio` messages.
    * </pre>
@@ -25,6 +30,8 @@ public interface RecognitionConfigOrBuilder extends
   com.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding getEncoding();
 
   /**
+   *
+   *
    * <pre>
    * *Required* Sample rate in Hertz of the audio data sent in all
    * `RecognitionAudio` messages. Valid values are: 8000-48000.
@@ -38,6 +45,8 @@ public interface RecognitionConfigOrBuilder extends
   int getSampleRate();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* The language of the supplied audio as a BCP-47 language tag.
    * Example: "en-GB"  https://www.rfc-editor.org/rfc/bcp/bcp47.txt
@@ -50,6 +59,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * *Optional* The language of the supplied audio as a BCP-47 language tag.
    * Example: "en-GB"  https://www.rfc-editor.org/rfc/bcp/bcp47.txt
@@ -60,10 +71,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -78,6 +90,8 @@ public interface RecognitionConfigOrBuilder extends
   int getMaxAlternatives();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
@@ -90,6 +104,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getProfanityFilter();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
@@ -98,6 +114,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   boolean hasSpeechContext();
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
@@ -106,6 +124,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   com.google.cloud.speech.v1beta1.SpeechContext getSpeechContext();
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>

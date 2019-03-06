@@ -4,29 +4,31 @@
 package com.google.devtools.cloudtrace.v2;
 
 /**
+ *
+ *
  * <pre>
  * The allowed types for [VALUE] in a `[KEY]:[VALUE]` attribute.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudtrace.v2.AttributeValue}
  */
-public  final class AttributeValue extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.AttributeValue)
     AttributeValueOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AttributeValue.newBuilder() to construct.
   private AttributeValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private AttributeValue() {
-  }
+
+  private AttributeValue() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AttributeValue(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,77 +48,84 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.devtools.cloudtrace.v2.TruncatableString.Builder subBuilder = null;
-            if (valueCase_ == 1) {
-              subBuilder = ((com.google.devtools.cloudtrace.v2.TruncatableString) value_).toBuilder();
+          case 10:
+            {
+              com.google.devtools.cloudtrace.v2.TruncatableString.Builder subBuilder = null;
+              if (valueCase_ == 1) {
+                subBuilder =
+                    ((com.google.devtools.cloudtrace.v2.TruncatableString) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(
+                      com.google.devtools.cloudtrace.v2.TruncatableString.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.devtools.cloudtrace.v2.TruncatableString) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 1;
+              break;
             }
-            value_ =
-                input.readMessage(com.google.devtools.cloudtrace.v2.TruncatableString.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.devtools.cloudtrace.v2.TruncatableString) value_);
-              value_ = subBuilder.buildPartial();
+          case 16:
+            {
+              valueCase_ = 2;
+              value_ = input.readInt64();
+              break;
             }
-            valueCase_ = 1;
-            break;
-          }
-          case 16: {
-            valueCase_ = 2;
-            value_ = input.readInt64();
-            break;
-          }
-          case 24: {
-            valueCase_ = 3;
-            value_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 24:
+            {
+              valueCase_ = 3;
+              value_ = input.readBool();
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.cloudtrace.v2.TraceProto.internal_static_google_devtools_cloudtrace_v2_AttributeValue_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.cloudtrace.v2.TraceProto
+        .internal_static_google_devtools_cloudtrace_v2_AttributeValue_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.cloudtrace.v2.TraceProto.internal_static_google_devtools_cloudtrace_v2_AttributeValue_fieldAccessorTable
+    return com.google.devtools.cloudtrace.v2.TraceProto
+        .internal_static_google_devtools_cloudtrace_v2_AttributeValue_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.cloudtrace.v2.AttributeValue.class, com.google.devtools.cloudtrace.v2.AttributeValue.Builder.class);
+            com.google.devtools.cloudtrace.v2.AttributeValue.class,
+            com.google.devtools.cloudtrace.v2.AttributeValue.Builder.class);
   }
 
   private int valueCase_ = 0;
   private java.lang.Object value_;
-  public enum ValueCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum ValueCase implements com.google.protobuf.Internal.EnumLite {
     STRING_VALUE(1),
     INT_VALUE(2),
     BOOL_VALUE(3),
     VALUE_NOT_SET(0);
     private final int value;
+
     private ValueCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ValueCase valueOf(int value) {
       return forNumber(value);
@@ -124,26 +133,32 @@ private static final long serialVersionUID = 0L;
 
     public static ValueCase forNumber(int value) {
       switch (value) {
-        case 1: return STRING_VALUE;
-        case 2: return INT_VALUE;
-        case 3: return BOOL_VALUE;
-        case 0: return VALUE_NOT_SET;
-        default: return null;
+        case 1:
+          return STRING_VALUE;
+        case 2:
+          return INT_VALUE;
+        case 3:
+          return BOOL_VALUE;
+        case 0:
+          return VALUE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ValueCase
-  getValueCase() {
-    return ValueCase.forNumber(
-        valueCase_);
+  public ValueCase getValueCase() {
+    return ValueCase.forNumber(valueCase_);
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * A string up to 256 bytes long.
    * </pre>
@@ -154,6 +169,8 @@ private static final long serialVersionUID = 0L;
     return valueCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * A string up to 256 bytes long.
    * </pre>
@@ -162,11 +179,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.devtools.cloudtrace.v2.TruncatableString getStringValue() {
     if (valueCase_ == 1) {
-       return (com.google.devtools.cloudtrace.v2.TruncatableString) value_;
+      return (com.google.devtools.cloudtrace.v2.TruncatableString) value_;
     }
     return com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A string up to 256 bytes long.
    * </pre>
@@ -175,13 +194,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getStringValueOrBuilder() {
     if (valueCase_ == 1) {
-       return (com.google.devtools.cloudtrace.v2.TruncatableString) value_;
+      return (com.google.devtools.cloudtrace.v2.TruncatableString) value_;
     }
     return com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance();
   }
 
   public static final int INT_VALUE_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A 64-bit signed integer.
    * </pre>
@@ -197,6 +218,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * A Boolean value represented by `true` or `false`.
    * </pre>
@@ -211,6 +234,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -222,18 +246,15 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (valueCase_ == 1) {
       output.writeMessage(1, (com.google.devtools.cloudtrace.v2.TruncatableString) value_);
     }
     if (valueCase_ == 2) {
-      output.writeInt64(
-          2, (long)((java.lang.Long) value_));
+      output.writeInt64(2, (long) ((java.lang.Long) value_));
     }
     if (valueCase_ == 3) {
-      output.writeBool(
-          3, (boolean)((java.lang.Boolean) value_));
+      output.writeBool(3, (boolean) ((java.lang.Boolean) value_));
     }
     unknownFields.writeTo(output);
   }
@@ -245,18 +266,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (valueCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.devtools.cloudtrace.v2.TruncatableString) value_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.devtools.cloudtrace.v2.TruncatableString) value_);
     }
     if (valueCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(
-            2, (long)((java.lang.Long) value_));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              2, (long) ((java.lang.Long) value_));
     }
     if (valueCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(
-            3, (boolean)((java.lang.Boolean) value_));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              3, (boolean) ((java.lang.Boolean) value_));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -266,29 +288,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.cloudtrace.v2.AttributeValue)) {
       return super.equals(obj);
     }
-    com.google.devtools.cloudtrace.v2.AttributeValue other = (com.google.devtools.cloudtrace.v2.AttributeValue) obj;
+    com.google.devtools.cloudtrace.v2.AttributeValue other =
+        (com.google.devtools.cloudtrace.v2.AttributeValue) obj;
 
     boolean result = true;
-    result = result && getValueCase().equals(
-        other.getValueCase());
+    result = result && getValueCase().equals(other.getValueCase());
     if (!result) return false;
     switch (valueCase_) {
       case 1:
-        result = result && getStringValue()
-            .equals(other.getStringValue());
+        result = result && getStringValue().equals(other.getStringValue());
         break;
       case 2:
-        result = result && (getIntValue()
-            == other.getIntValue());
+        result = result && (getIntValue() == other.getIntValue());
         break;
       case 3:
-        result = result && (getBoolValue()
-            == other.getBoolValue());
+        result = result && (getBoolValue() == other.getBoolValue());
         break;
       case 0:
       default:
@@ -311,13 +330,11 @@ private static final long serialVersionUID = 0L;
         break;
       case 2:
         hash = (37 * hash) + INT_VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getIntValue());
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getIntValue());
         break;
       case 3:
         hash = (37 * hash) + BOOL_VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getBoolValue());
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBoolValue());
         break;
       case 0:
       default:
@@ -327,118 +344,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.cloudtrace.v2.AttributeValue parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.devtools.cloudtrace.v2.AttributeValue parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.cloudtrace.v2.AttributeValue parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.devtools.cloudtrace.v2.AttributeValue prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The allowed types for [VALUE] in a `[KEY]:[VALUE]` attribute.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudtrace.v2.AttributeValue}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.cloudtrace.v2.AttributeValue)
       com.google.devtools.cloudtrace.v2.AttributeValueOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.cloudtrace.v2.TraceProto.internal_static_google_devtools_cloudtrace_v2_AttributeValue_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.cloudtrace.v2.TraceProto
+          .internal_static_google_devtools_cloudtrace_v2_AttributeValue_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.cloudtrace.v2.TraceProto.internal_static_google_devtools_cloudtrace_v2_AttributeValue_fieldAccessorTable
+      return com.google.devtools.cloudtrace.v2.TraceProto
+          .internal_static_google_devtools_cloudtrace_v2_AttributeValue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.cloudtrace.v2.AttributeValue.class, com.google.devtools.cloudtrace.v2.AttributeValue.Builder.class);
+              com.google.devtools.cloudtrace.v2.AttributeValue.class,
+              com.google.devtools.cloudtrace.v2.AttributeValue.Builder.class);
     }
 
     // Construct using com.google.devtools.cloudtrace.v2.AttributeValue.newBuilder()
@@ -446,16 +472,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -465,9 +490,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.cloudtrace.v2.TraceProto.internal_static_google_devtools_cloudtrace_v2_AttributeValue_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.cloudtrace.v2.TraceProto
+          .internal_static_google_devtools_cloudtrace_v2_AttributeValue_descriptor;
     }
 
     @java.lang.Override
@@ -486,7 +511,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.cloudtrace.v2.AttributeValue buildPartial() {
-      com.google.devtools.cloudtrace.v2.AttributeValue result = new com.google.devtools.cloudtrace.v2.AttributeValue(this);
+      com.google.devtools.cloudtrace.v2.AttributeValue result =
+          new com.google.devtools.cloudtrace.v2.AttributeValue(this);
       if (valueCase_ == 1) {
         if (stringValueBuilder_ == null) {
           result.value_ = value_;
@@ -509,38 +535,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.cloudtrace.v2.AttributeValue) {
-        return mergeFrom((com.google.devtools.cloudtrace.v2.AttributeValue)other);
+        return mergeFrom((com.google.devtools.cloudtrace.v2.AttributeValue) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -548,23 +575,28 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.devtools.cloudtrace.v2.AttributeValue other) {
-      if (other == com.google.devtools.cloudtrace.v2.AttributeValue.getDefaultInstance()) return this;
+      if (other == com.google.devtools.cloudtrace.v2.AttributeValue.getDefaultInstance())
+        return this;
       switch (other.getValueCase()) {
-        case STRING_VALUE: {
-          mergeStringValue(other.getStringValue());
-          break;
-        }
-        case INT_VALUE: {
-          setIntValue(other.getIntValue());
-          break;
-        }
-        case BOOL_VALUE: {
-          setBoolValue(other.getBoolValue());
-          break;
-        }
-        case VALUE_NOT_SET: {
-          break;
-        }
+        case STRING_VALUE:
+          {
+            mergeStringValue(other.getStringValue());
+            break;
+          }
+        case INT_VALUE:
+          {
+            setIntValue(other.getIntValue());
+            break;
+          }
+        case BOOL_VALUE:
+          {
+            setBoolValue(other.getBoolValue());
+            break;
+          }
+        case VALUE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -594,12 +626,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int valueCase_ = 0;
     private java.lang.Object value_;
-    public ValueCase
-        getValueCase() {
-      return ValueCase.forNumber(
-          valueCase_);
+
+    public ValueCase getValueCase() {
+      return ValueCase.forNumber(valueCase_);
     }
 
     public Builder clearValue() {
@@ -609,10 +641,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.cloudtrace.v2.TruncatableString, com.google.devtools.cloudtrace.v2.TruncatableString.Builder, com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder> stringValueBuilder_;
+            com.google.devtools.cloudtrace.v2.TruncatableString,
+            com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
+            com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
+        stringValueBuilder_;
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -623,6 +659,8 @@ private static final long serialVersionUID = 0L;
       return valueCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -643,6 +681,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -663,6 +703,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -681,6 +723,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -689,10 +733,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStringValue(com.google.devtools.cloudtrace.v2.TruncatableString value) {
       if (stringValueBuilder_ == null) {
-        if (valueCase_ == 1 &&
-            value_ != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
-          value_ = com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder((com.google.devtools.cloudtrace.v2.TruncatableString) value_)
-              .mergeFrom(value).buildPartial();
+        if (valueCase_ == 1
+            && value_ != com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance()) {
+          value_ =
+              com.google.devtools.cloudtrace.v2.TruncatableString.newBuilder(
+                      (com.google.devtools.cloudtrace.v2.TruncatableString) value_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           value_ = value;
         }
@@ -707,6 +754,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -730,6 +779,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -740,6 +791,8 @@ private static final long serialVersionUID = 0L;
       return getStringValueFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -757,6 +810,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A string up to 256 bytes long.
      * </pre>
@@ -764,25 +819,33 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.cloudtrace.v2.TruncatableString string_value = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.cloudtrace.v2.TruncatableString, com.google.devtools.cloudtrace.v2.TruncatableString.Builder, com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder> 
+            com.google.devtools.cloudtrace.v2.TruncatableString,
+            com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
+            com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
         getStringValueFieldBuilder() {
       if (stringValueBuilder_ == null) {
         if (!(valueCase_ == 1)) {
           value_ = com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance();
         }
-        stringValueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.devtools.cloudtrace.v2.TruncatableString, com.google.devtools.cloudtrace.v2.TruncatableString.Builder, com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>(
+        stringValueBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.cloudtrace.v2.TruncatableString,
+                com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
+                com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>(
                 (com.google.devtools.cloudtrace.v2.TruncatableString) value_,
                 getParentForChildren(),
                 isClean());
         value_ = null;
       }
       valueCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return stringValueBuilder_;
     }
 
     /**
+     *
+     *
      * <pre>
      * A 64-bit signed integer.
      * </pre>
@@ -796,6 +859,8 @@ private static final long serialVersionUID = 0L;
       return 0L;
     }
     /**
+     *
+     *
      * <pre>
      * A 64-bit signed integer.
      * </pre>
@@ -809,6 +874,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A 64-bit signed integer.
      * </pre>
@@ -825,6 +892,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * A Boolean value represented by `true` or `false`.
      * </pre>
@@ -838,6 +907,8 @@ private static final long serialVersionUID = 0L;
       return false;
     }
     /**
+     *
+     *
      * <pre>
      * A Boolean value represented by `true` or `false`.
      * </pre>
@@ -851,6 +922,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A Boolean value represented by `true` or `false`.
      * </pre>
@@ -865,9 +938,9 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -877,12 +950,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.cloudtrace.v2.AttributeValue)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.cloudtrace.v2.AttributeValue)
   private static final com.google.devtools.cloudtrace.v2.AttributeValue DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.cloudtrace.v2.AttributeValue();
   }
@@ -891,16 +964,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AttributeValue>
-      PARSER = new com.google.protobuf.AbstractParser<AttributeValue>() {
-    @java.lang.Override
-    public AttributeValue parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AttributeValue(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AttributeValue> PARSER =
+      new com.google.protobuf.AbstractParser<AttributeValue>() {
+        @java.lang.Override
+        public AttributeValue parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AttributeValue(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AttributeValue> parser() {
     return PARSER;
@@ -915,6 +988,4 @@ private static final long serialVersionUID = 0L;
   public com.google.devtools.cloudtrace.v2.AttributeValue getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

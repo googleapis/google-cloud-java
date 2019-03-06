@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.compute.deprecated.Compute.AddressOption;
 import com.google.cloud.compute.deprecated.Compute.OperationOption;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
@@ -34,8 +33,8 @@ import java.util.Objects;
  * adds a layer of service-related functionality over {@link AddressInfo}. Objects of this class are
  * immutable. To get an {@code Address} object with the most recent information use {@link #reload}.
  *
- * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">
- *     Static external IP addresses</a>
+ * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">Static
+ *     external IP addresses</a>
  * @see <a href="https://cloud.google.com/compute/docs/load-balancing/http/">HTTP Load Balancing</a>
  */
 public class Address extends AddressInfo {
@@ -45,9 +44,7 @@ public class Address extends AddressInfo {
   private final ComputeOptions options;
   private transient Compute compute;
 
-  /**
-   * A builder for {@code Address} objects.
-   */
+  /** A builder for {@code Address} objects. */
   public static class Builder extends AddressInfo.Builder {
 
     private final Compute compute;
@@ -151,9 +148,7 @@ public class Address extends AddressInfo {
     return compute.deleteAddress(getAddressId(), options);
   }
 
-  /**
-   * Returns the address's {@code Compute} object used to issue requests.
-   */
+  /** Returns the address's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }

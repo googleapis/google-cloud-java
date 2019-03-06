@@ -3,20 +3,24 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface PredictResponseOrBuilder extends
+public interface PredictResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.PredictResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Prediction result.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
    */
-  java.util.List<com.google.cloud.automl.v1beta1.AnnotationPayload> 
-      getPayloadList();
+  java.util.List<com.google.cloud.automl.v1beta1.AnnotationPayload> getPayloadList();
   /**
+   *
+   *
    * <pre>
    * Prediction result.
    * </pre>
@@ -25,6 +29,8 @@ public interface PredictResponseOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.AnnotationPayload getPayload(int index);
   /**
+   *
+   *
    * <pre>
    * Prediction result.
    * </pre>
@@ -33,25 +39,30 @@ public interface PredictResponseOrBuilder extends
    */
   int getPayloadCount();
   /**
+   *
+   *
    * <pre>
    * Prediction result.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.automl.v1beta1.AnnotationPayloadOrBuilder> 
+  java.util.List<? extends com.google.cloud.automl.v1beta1.AnnotationPayloadOrBuilder>
       getPayloadOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Prediction result.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.AnnotationPayload payload = 1;</code>
    */
-  com.google.cloud.automl.v1beta1.AnnotationPayloadOrBuilder getPayloadOrBuilder(
-      int index);
+  com.google.cloud.automl.v1beta1.AnnotationPayloadOrBuilder getPayloadOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific prediction response metadata.
    * </pre>
@@ -60,48 +71,46 @@ public interface PredictResponseOrBuilder extends
    */
   int getMetadataCount();
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific prediction response metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
-  boolean containsMetadata(
-      java.lang.String key);
-  /**
-   * Use {@link #getMetadataMap()} instead.
-   */
+  boolean containsMetadata(java.lang.String key);
+  /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getMetadata();
+  java.util.Map<java.lang.String, java.lang.String> getMetadata();
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific prediction response metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getMetadataMap();
+  java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific prediction response metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
-
-  java.lang.String getMetadataOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific prediction response metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
-
-  java.lang.String getMetadataOrThrow(
-      java.lang.String key);
+  java.lang.String getMetadataOrThrow(java.lang.String key);
 }

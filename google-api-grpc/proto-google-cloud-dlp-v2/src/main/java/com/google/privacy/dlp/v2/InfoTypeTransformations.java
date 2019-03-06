@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * A type of transformation that will scan unstructured text and
  * apply various `PrimitiveTransformation`s to each finding, where the
@@ -13,24 +15,25 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.InfoTypeTransformations}
  */
-public  final class InfoTypeTransformations extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class InfoTypeTransformations extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeTransformations)
     InfoTypeTransformationsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use InfoTypeTransformations.newBuilder() to construct.
   private InfoTypeTransformations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private InfoTypeTransformations() {
     transformations_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private InfoTypeTransformations(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,29 +53,34 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              transformations_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                transformations_ =
+                    new java.util.ArrayList<
+                        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              transformations_.add(
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+                          .parser(),
+                      extensionRegistry));
+              break;
             }
-            transformations_.add(
-                input.readMessage(com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         transformations_ = java.util.Collections.unmodifiableList(transformations_);
@@ -81,24 +89,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.InfoTypeTransformations.class, com.google.privacy.dlp.v2.InfoTypeTransformations.Builder.class);
+            com.google.privacy.dlp.v2.InfoTypeTransformations.class,
+            com.google.privacy.dlp.v2.InfoTypeTransformations.Builder.class);
   }
 
-  public interface InfoTypeTransformationOrBuilder extends
+  public interface InfoTypeTransformationOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -107,9 +121,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
-    java.util.List<com.google.privacy.dlp.v2.InfoType> 
-        getInfoTypesList();
+    java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -120,6 +135,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -130,6 +147,8 @@ private static final long serialVersionUID = 0L;
      */
     int getInfoTypesCount();
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -138,9 +157,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
-    java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
+    java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         getInfoTypesOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -149,10 +170,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
-    com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(
-        int index);
+    com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index);
 
     /**
+     *
+     *
      * <pre>
      * Primitive transformation to apply to the infoType. [required]
      * </pre>
@@ -161,6 +183,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasPrimitiveTransformation();
     /**
+     *
+     *
      * <pre>
      * Primitive transformation to apply to the infoType. [required]
      * </pre>
@@ -169,15 +193,20 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
     /**
+     *
+     *
      * <pre>
      * Primitive transformation to apply to the infoType. [required]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
      */
-    com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder();
+    com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
+        getPrimitiveTransformationOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * A transformation to apply to text that is identified as a specific
    * info_type.
@@ -185,24 +214,25 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation}
    */
-  public  static final class InfoTypeTransformation extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class InfoTypeTransformation extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)
       InfoTypeTransformationOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use InfoTypeTransformation.newBuilder() to construct.
     private InfoTypeTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private InfoTypeTransformation() {
       infoTypes_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private InfoTypeTransformation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -222,42 +252,47 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>();
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                infoTypes_.add(
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry));
+                break;
               }
-              infoTypes_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              com.google.privacy.dlp.v2.PrimitiveTransformation.Builder subBuilder = null;
-              if (primitiveTransformation_ != null) {
-                subBuilder = primitiveTransformation_.toBuilder();
-              }
-              primitiveTransformation_ = input.readMessage(com.google.privacy.dlp.v2.PrimitiveTransformation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(primitiveTransformation_);
-                primitiveTransformation_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                com.google.privacy.dlp.v2.PrimitiveTransformation.Builder subBuilder = null;
+                if (primitiveTransformation_ != null) {
+                  subBuilder = primitiveTransformation_.toBuilder();
+                }
+                primitiveTransformation_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.PrimitiveTransformation.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(primitiveTransformation_);
+                  primitiveTransformation_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -266,23 +301,29 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.class, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder.class);
+              com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.class,
+              com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+                  .class);
     }
 
     private int bitField0_;
     public static final int INFO_TYPES_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_;
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -295,6 +336,8 @@ private static final long serialVersionUID = 0L;
       return infoTypes_;
     }
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -303,11 +346,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
+    public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         getInfoTypesOrBuilderList() {
       return infoTypes_;
     }
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -320,6 +365,8 @@ private static final long serialVersionUID = 0L;
       return infoTypes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -332,6 +379,8 @@ private static final long serialVersionUID = 0L;
       return infoTypes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * InfoTypes to apply the transformation to. An empty list will cause
      * this transformation to apply to all findings that correspond to
@@ -340,14 +389,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
       return infoTypes_.get(index);
     }
 
     public static final int PRIMITIVE_TRANSFORMATION_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.PrimitiveTransformation primitiveTransformation_;
     /**
+     *
+     *
      * <pre>
      * Primitive transformation to apply to the infoType. [required]
      * </pre>
@@ -358,6 +408,8 @@ private static final long serialVersionUID = 0L;
       return primitiveTransformation_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Primitive transformation to apply to the infoType. [required]
      * </pre>
@@ -365,20 +417,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
      */
     public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
-      return primitiveTransformation_ == null ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance() : primitiveTransformation_;
+      return primitiveTransformation_ == null
+          ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()
+          : primitiveTransformation_;
     }
     /**
+     *
+     *
      * <pre>
      * Primitive transformation to apply to the infoType. [required]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
      */
-    public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder() {
+    public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
+        getPrimitiveTransformationOrBuilder() {
       return getPrimitiveTransformation();
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -390,8 +448,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < infoTypes_.size(); i++) {
         output.writeMessage(1, infoTypes_.get(i));
       }
@@ -408,12 +465,12 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       for (int i = 0; i < infoTypes_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, infoTypes_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, infoTypes_.get(i));
       }
       if (primitiveTransformation_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getPrimitiveTransformation());
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getPrimitiveTransformation());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -423,20 +480,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)) {
+      if (!(obj
+          instanceof com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation other = (com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation) obj;
+      com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation other =
+          (com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation) obj;
 
       boolean result = true;
-      result = result && getInfoTypesList()
-          .equals(other.getInfoTypesList());
+      result = result && getInfoTypesList().equals(other.getInfoTypesList());
       result = result && (hasPrimitiveTransformation() == other.hasPrimitiveTransformation());
       if (hasPrimitiveTransformation()) {
-        result = result && getPrimitiveTransformation()
-            .equals(other.getPrimitiveTransformation());
+        result = result && getPrimitiveTransformation().equals(other.getPrimitiveTransformation());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -462,88 +519,101 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -553,6 +623,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * A transformation to apply to text that is identified as a specific
      * info_type.
@@ -560,39 +632,44 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)
         com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.class, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder.class);
+                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.class,
+                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+                    .class);
       }
 
-      // Construct using com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.newBuilder()
+      // Construct using
+      // com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getInfoTypesFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -612,19 +689,22 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_InfoTypeTransformation_descriptor;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getDefaultInstanceForType() {
-        return com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.getDefaultInstance();
+      public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation build() {
-        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation result = buildPartial();
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -632,8 +712,10 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation buildPartial() {
-        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation result = new com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation(this);
+      public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+          buildPartial() {
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation result =
+            new com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (infoTypesBuilder_ == null) {
@@ -659,46 +741,54 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation) {
-          return mergeFrom((com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)other);
+        if (other
+            instanceof com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation other) {
-        if (other == com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation other) {
+        if (other
+            == com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+                .getDefaultInstance()) return this;
         if (infoTypesBuilder_ == null) {
           if (!other.infoTypes_.isEmpty()) {
             if (infoTypes_.isEmpty()) {
@@ -717,9 +807,10 @@ private static final long serialVersionUID = 0L;
               infoTypesBuilder_ = null;
               infoTypes_ = other.infoTypes_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              infoTypesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getInfoTypesFieldBuilder() : null;
+              infoTypesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getInfoTypesFieldBuilder()
+                      : null;
             } else {
               infoTypesBuilder_.addAllMessages(other.infoTypes_);
             }
@@ -743,11 +834,14 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parsedMessage = null;
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation parsedMessage =
+            null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -756,21 +850,28 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.util.List<com.google.privacy.dlp.v2.InfoType> infoTypes_ =
-        java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
+
       private void ensureInfoTypesIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>(infoTypes_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> infoTypesBuilder_;
+              com.google.privacy.dlp.v2.InfoType,
+              com.google.privacy.dlp.v2.InfoType.Builder,
+              com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+          infoTypesBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -787,6 +888,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -803,6 +906,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -819,6 +924,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -827,8 +934,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public Builder setInfoTypes(
-          int index, com.google.privacy.dlp.v2.InfoType value) {
+      public Builder setInfoTypes(int index, com.google.privacy.dlp.v2.InfoType value) {
         if (infoTypesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -842,6 +948,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -862,6 +970,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -884,6 +994,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -892,8 +1004,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public Builder addInfoTypes(
-          int index, com.google.privacy.dlp.v2.InfoType value) {
+      public Builder addInfoTypes(int index, com.google.privacy.dlp.v2.InfoType value) {
         if (infoTypesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -907,6 +1018,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -915,8 +1028,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public Builder addInfoTypes(
-          com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
+      public Builder addInfoTypes(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
         if (infoTypesBuilder_ == null) {
           ensureInfoTypesIsMutable();
           infoTypes_.add(builderForValue.build());
@@ -927,6 +1039,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -947,6 +1061,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -959,8 +1075,7 @@ private static final long serialVersionUID = 0L;
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.InfoType> values) {
         if (infoTypesBuilder_ == null) {
           ensureInfoTypesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, infoTypes_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, infoTypes_);
           onChanged();
         } else {
           infoTypesBuilder_.addAllMessages(values);
@@ -968,6 +1083,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -987,6 +1104,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -1006,6 +1125,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -1014,11 +1135,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypesBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypesBuilder(int index) {
         return getInfoTypesFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -1027,14 +1149,16 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index) {
         if (infoTypesBuilder_ == null) {
-          return infoTypes_.get(index);  } else {
+          return infoTypes_.get(index);
+        } else {
           return infoTypesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -1043,8 +1167,8 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
-           getInfoTypesOrBuilderList() {
+      public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+          getInfoTypesOrBuilderList() {
         if (infoTypesBuilder_ != null) {
           return infoTypesBuilder_.getMessageOrBuilderList();
         } else {
@@ -1052,6 +1176,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -1061,10 +1187,12 @@ private static final long serialVersionUID = 0L;
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
       public com.google.privacy.dlp.v2.InfoType.Builder addInfoTypesBuilder() {
-        return getInfoTypesFieldBuilder().addBuilder(
-            com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
+        return getInfoTypesFieldBuilder()
+            .addBuilder(com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -1073,12 +1201,13 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public com.google.privacy.dlp.v2.InfoType.Builder addInfoTypesBuilder(
-          int index) {
-        return getInfoTypesFieldBuilder().addBuilder(
-            index, com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
+      public com.google.privacy.dlp.v2.InfoType.Builder addInfoTypesBuilder(int index) {
+        return getInfoTypesFieldBuilder()
+            .addBuilder(index, com.google.privacy.dlp.v2.InfoType.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * InfoTypes to apply the transformation to. An empty list will cause
        * this transformation to apply to all findings that correspond to
@@ -1087,16 +1216,21 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.InfoType.Builder> 
-           getInfoTypesBuilderList() {
+      public java.util.List<com.google.privacy.dlp.v2.InfoType.Builder> getInfoTypesBuilderList() {
         return getInfoTypesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
+              com.google.privacy.dlp.v2.InfoType,
+              com.google.privacy.dlp.v2.InfoType.Builder,
+              com.google.privacy.dlp.v2.InfoTypeOrBuilder>
           getInfoTypesFieldBuilder() {
         if (infoTypesBuilder_ == null) {
-          infoTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
+          infoTypesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.InfoType,
+                  com.google.privacy.dlp.v2.InfoType.Builder,
+                  com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
                   infoTypes_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -1108,8 +1242,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.PrimitiveTransformation primitiveTransformation_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder> primitiveTransformationBuilder_;
+              com.google.privacy.dlp.v2.PrimitiveTransformation,
+              com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
+              com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>
+          primitiveTransformationBuilder_;
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
@@ -1120,6 +1259,8 @@ private static final long serialVersionUID = 0L;
         return primitiveTransformationBuilder_ != null || primitiveTransformation_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
@@ -1128,19 +1269,24 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
         if (primitiveTransformationBuilder_ == null) {
-          return primitiveTransformation_ == null ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance() : primitiveTransformation_;
+          return primitiveTransformation_ == null
+              ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()
+              : primitiveTransformation_;
         } else {
           return primitiveTransformationBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
        */
-      public Builder setPrimitiveTransformation(com.google.privacy.dlp.v2.PrimitiveTransformation value) {
+      public Builder setPrimitiveTransformation(
+          com.google.privacy.dlp.v2.PrimitiveTransformation value) {
         if (primitiveTransformationBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1154,6 +1300,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
@@ -1172,17 +1320,23 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
        */
-      public Builder mergePrimitiveTransformation(com.google.privacy.dlp.v2.PrimitiveTransformation value) {
+      public Builder mergePrimitiveTransformation(
+          com.google.privacy.dlp.v2.PrimitiveTransformation value) {
         if (primitiveTransformationBuilder_ == null) {
           if (primitiveTransformation_ != null) {
             primitiveTransformation_ =
-              com.google.privacy.dlp.v2.PrimitiveTransformation.newBuilder(primitiveTransformation_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.PrimitiveTransformation.newBuilder(
+                        primitiveTransformation_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             primitiveTransformation_ = value;
           }
@@ -1194,6 +1348,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
@@ -1212,33 +1368,42 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
        */
-      public com.google.privacy.dlp.v2.PrimitiveTransformation.Builder getPrimitiveTransformationBuilder() {
-        
+      public com.google.privacy.dlp.v2.PrimitiveTransformation.Builder
+          getPrimitiveTransformationBuilder() {
+
         onChanged();
         return getPrimitiveTransformationFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
        */
-      public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder() {
+      public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
+          getPrimitiveTransformationOrBuilder() {
         if (primitiveTransformationBuilder_ != null) {
           return primitiveTransformationBuilder_.getMessageOrBuilder();
         } else {
-          return primitiveTransformation_ == null ?
-              com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance() : primitiveTransformation_;
+          return primitiveTransformation_ == null
+              ? com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()
+              : primitiveTransformation_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Primitive transformation to apply to the infoType. [required]
        * </pre>
@@ -1246,18 +1411,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder> 
+              com.google.privacy.dlp.v2.PrimitiveTransformation,
+              com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
+              com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>
           getPrimitiveTransformationFieldBuilder() {
         if (primitiveTransformationBuilder_ == null) {
-          primitiveTransformationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>(
-                  getPrimitiveTransformation(),
-                  getParentForChildren(),
-                  isClean());
+          primitiveTransformationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.PrimitiveTransformation,
+                  com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
+                  com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>(
+                  getPrimitiveTransformation(), getParentForChildren(), isClean());
           primitiveTransformation_ = null;
         }
         return primitiveTransformationBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1270,30 +1439,33 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation)
-    private static final com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation DEFAULT_INSTANCE;
+    private static final com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation();
+      DEFAULT_INSTANCE =
+          new com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation();
     }
 
-    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getDefaultInstance() {
+    public static com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<InfoTypeTransformation>
-        PARSER = new com.google.protobuf.AbstractParser<InfoTypeTransformation>() {
-      @java.lang.Override
-      public InfoTypeTransformation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InfoTypeTransformation(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<InfoTypeTransformation> PARSER =
+        new com.google.protobuf.AbstractParser<InfoTypeTransformation>() {
+          @java.lang.Override
+          public InfoTypeTransformation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new InfoTypeTransformation(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<InfoTypeTransformation> parser() {
       return PARSER;
@@ -1305,73 +1477,99 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getDefaultInstanceForType() {
+    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int TRANSFORMATIONS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> transformations_;
+  private java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
+      transformations_;
   /**
+   *
+   *
    * <pre>
    * Transformation for each infoType. Cannot specify more than one
    * for a given infoType. [required]
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * </code>
    */
-  public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> getTransformationsList() {
+  public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
+      getTransformationsList() {
     return transformations_;
   }
   /**
+   *
+   *
    * <pre>
    * Transformation for each infoType. Cannot specify more than one
    * for a given infoType. [required]
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * </code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder> 
+  public java.util.List<
+          ? extends
+              com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>
       getTransformationsOrBuilderList() {
     return transformations_;
   }
   /**
+   *
+   *
    * <pre>
    * Transformation for each infoType. Cannot specify more than one
    * for a given infoType. [required]
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * </code>
    */
   public int getTransformationsCount() {
     return transformations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Transformation for each infoType. Cannot specify more than one
    * for a given infoType. [required]
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getTransformations(int index) {
+  public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+      getTransformations(int index) {
     return transformations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Transformation for each infoType. Cannot specify more than one
    * for a given infoType. [required]
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder getTransformationsOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder
+      getTransformationsOrBuilder(int index) {
     return transformations_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1383,8 +1581,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < transformations_.size(); i++) {
       output.writeMessage(1, transformations_.get(i));
     }
@@ -1398,8 +1595,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < transformations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, transformations_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, transformations_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1409,16 +1605,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.InfoTypeTransformations)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.InfoTypeTransformations other = (com.google.privacy.dlp.v2.InfoTypeTransformations) obj;
+    com.google.privacy.dlp.v2.InfoTypeTransformations other =
+        (com.google.privacy.dlp.v2.InfoTypeTransformations) obj;
 
     boolean result = true;
-    result = result && getTransformationsList()
-        .equals(other.getTransformationsList());
+    result = result && getTransformationsList().equals(other.getTransformationsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1440,96 +1636,103 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.privacy.dlp.v2.InfoTypeTransformations parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.InfoTypeTransformations parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.InfoTypeTransformations parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.InfoTypeTransformations prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A type of transformation that will scan unstructured text and
    * apply various `PrimitiveTransformation`s to each finding, where the
@@ -1539,21 +1742,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.InfoTypeTransformations}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.InfoTypeTransformations)
       com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.InfoTypeTransformations.class, com.google.privacy.dlp.v2.InfoTypeTransformations.Builder.class);
+              com.google.privacy.dlp.v2.InfoTypeTransformations.class,
+              com.google.privacy.dlp.v2.InfoTypeTransformations.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.InfoTypeTransformations.newBuilder()
@@ -1561,17 +1766,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTransformationsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1585,9 +1790,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InfoTypeTransformations_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InfoTypeTransformations_descriptor;
     }
 
     @java.lang.Override
@@ -1606,7 +1811,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.InfoTypeTransformations buildPartial() {
-      com.google.privacy.dlp.v2.InfoTypeTransformations result = new com.google.privacy.dlp.v2.InfoTypeTransformations(this);
+      com.google.privacy.dlp.v2.InfoTypeTransformations result =
+          new com.google.privacy.dlp.v2.InfoTypeTransformations(this);
       int from_bitField0_ = bitField0_;
       if (transformationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1625,38 +1831,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.InfoTypeTransformations) {
-        return mergeFrom((com.google.privacy.dlp.v2.InfoTypeTransformations)other);
+        return mergeFrom((com.google.privacy.dlp.v2.InfoTypeTransformations) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1664,7 +1871,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.InfoTypeTransformations other) {
-      if (other == com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance())
+        return this;
       if (transformationsBuilder_ == null) {
         if (!other.transformations_.isEmpty()) {
           if (transformations_.isEmpty()) {
@@ -1683,9 +1891,10 @@ private static final long serialVersionUID = 0L;
             transformationsBuilder_ = null;
             transformations_ = other.transformations_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            transformationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTransformationsFieldBuilder() : null;
+            transformationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTransformationsFieldBuilder()
+                    : null;
           } else {
             transformationsBuilder_.addAllMessages(other.transformations_);
           }
@@ -1710,7 +1919,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.InfoTypeTransformations) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.privacy.dlp.v2.InfoTypeTransformations) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1719,29 +1929,42 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> transformations_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
+        transformations_ = java.util.Collections.emptyList();
+
     private void ensureTransformationsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        transformations_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>(transformations_);
+        transformations_ =
+            new java.util.ArrayList<
+                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>(
+                transformations_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder> transformationsBuilder_;
+            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation,
+            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder,
+            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>
+        transformationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> getTransformationsList() {
+    public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
+        getTransformationsList() {
       if (transformationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(transformations_);
       } else {
@@ -1749,12 +1972,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public int getTransformationsCount() {
       if (transformationsBuilder_ == null) {
@@ -1764,14 +1991,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getTransformations(int index) {
+    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+        getTransformations(int index) {
       if (transformationsBuilder_ == null) {
         return transformations_.get(index);
       } else {
@@ -1779,12 +2011,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder setTransformations(
         int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation value) {
@@ -1801,15 +2037,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder setTransformations(
-        int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder builderForValue) {
+        int index,
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+            builderForValue) {
       if (transformationsBuilder_ == null) {
         ensureTransformationsIsMutable();
         transformations_.set(index, builderForValue.build());
@@ -1820,14 +2062,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public Builder addTransformations(com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation value) {
+    public Builder addTransformations(
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation value) {
       if (transformationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1841,12 +2088,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder addTransformations(
         int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation value) {
@@ -1863,15 +2114,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder addTransformations(
-        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder builderForValue) {
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+            builderForValue) {
       if (transformationsBuilder_ == null) {
         ensureTransformationsIsMutable();
         transformations_.add(builderForValue.build());
@@ -1882,15 +2138,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder addTransformations(
-        int index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder builderForValue) {
+        int index,
+        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+            builderForValue) {
       if (transformationsBuilder_ == null) {
         ensureTransformationsIsMutable();
         transformations_.add(index, builderForValue.build());
@@ -1901,19 +2163,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder addAllTransformations(
-        java.lang.Iterable<? extends com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation> values) {
+        java.lang.Iterable<
+                ? extends com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
+            values) {
       if (transformationsBuilder_ == null) {
         ensureTransformationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, transformations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, transformations_);
         onChanged();
       } else {
         transformationsBuilder_.addAllMessages(values);
@@ -1921,12 +2188,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder clearTransformations() {
       if (transformationsBuilder_ == null) {
@@ -1939,12 +2210,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
     public Builder removeTransformations(int index) {
       if (transformationsBuilder_ == null) {
@@ -1957,42 +2232,57 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder getTransformationsBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+        getTransformationsBuilder(int index) {
       return getTransformationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder getTransformationsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder
+        getTransformationsOrBuilder(int index) {
       if (transformationsBuilder_ == null) {
-        return transformations_.get(index);  } else {
+        return transformations_.get(index);
+      } else {
         return transformationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder> 
-         getTransformationsOrBuilderList() {
+    public java.util.List<
+            ? extends
+                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>
+        getTransformationsOrBuilderList() {
       if (transformationsBuilder_ != null) {
         return transformationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2000,48 +2290,73 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder addTransformationsBuilder() {
-      return getTransformationsFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.getDefaultInstance());
+    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+        addTransformationsBuilder() {
+      return getTransformationsFieldBuilder()
+          .addBuilder(
+              com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder addTransformationsBuilder(
-        int index) {
-      return getTransformationsFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.getDefaultInstance());
+    public com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder
+        addTransformationsBuilder(int index) {
+      return getTransformationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Transformation for each infoType. Cannot specify more than one
      * for a given infoType. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation transformations = 1;
+     * </code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder> 
-         getTransformationsBuilderList() {
+    public java.util.List<
+            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder>
+        getTransformationsBuilderList() {
       return getTransformationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder> 
+            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation,
+            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder,
+            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>
         getTransformationsFieldBuilder() {
       if (transformationsBuilder_ == null) {
-        transformationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder, com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>(
+        transformationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation,
+                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder,
+                com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>(
                 transformations_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -2050,9 +2365,9 @@ private static final long serialVersionUID = 0L;
       }
       return transformationsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2062,12 +2377,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.InfoTypeTransformations)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.InfoTypeTransformations)
   private static final com.google.privacy.dlp.v2.InfoTypeTransformations DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.InfoTypeTransformations();
   }
@@ -2076,16 +2391,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InfoTypeTransformations>
-      PARSER = new com.google.protobuf.AbstractParser<InfoTypeTransformations>() {
-    @java.lang.Override
-    public InfoTypeTransformations parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new InfoTypeTransformations(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<InfoTypeTransformations> PARSER =
+      new com.google.protobuf.AbstractParser<InfoTypeTransformations>() {
+        @java.lang.Override
+        public InfoTypeTransformations parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new InfoTypeTransformations(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<InfoTypeTransformations> parser() {
     return PARSER;
@@ -2100,6 +2415,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.InfoTypeTransformations getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

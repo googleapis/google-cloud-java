@@ -30,30 +30,31 @@ import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BlobInfo.CustomerEncryption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class BlobInfoTest {
 
-  private static final List<Acl> ACL = ImmutableList.of(
-      Acl.of(User.ofAllAuthenticatedUsers(), READER),
-      Acl.of(new Project(VIEWERS, "p1"), WRITER));
+  private static final List<Acl> ACL =
+      ImmutableList.of(
+          Acl.of(User.ofAllAuthenticatedUsers(), READER),
+          Acl.of(new Project(VIEWERS, "p1"), WRITER));
   private static final Integer COMPONENT_COUNT = 2;
   private static final String CONTENT_TYPE = "text/html";
   private static final String CACHE_CONTROL = "cache";
   private static final String CONTENT_DISPOSITION = "content-disposition";
   private static final String CONTENT_ENCODING = "UTF-8";
   private static final String CONTENT_LANGUAGE = "En";
-  private static final String CRC32 = "0xFF00";
+  private static final String CRC32 = "FF00";
+  private static final String CRC32_HEX_STRING = "145d34";
   private static final Long DELETE_TIME = System.currentTimeMillis();
   private static final String ETAG = "0xFF00";
   private static final Long GENERATION = 1L;
   private static final String GENERATED_ID = "B/N:1";
-  private static final String MD5 = "0xFF00";
+  private static final String MD5 = "FF00";
+  private static final String MD5_HEX_STRING = "145d34";
   private static final String MEDIA_LINK = "http://media/b/n";
   private static final Map<String, String> METADATA = ImmutableMap.of("n1", "v1", "n2", "v2");
   private static final Long META_GENERATION = 10L;
@@ -66,44 +67,44 @@ public class BlobInfoTest {
   private static final String KEY_SHA256 = "keySha";
   private static final CustomerEncryption CUSTOMER_ENCRYPTION =
       new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
-  private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
+  private static final String KMS_KEY_NAME =
+      "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final StorageClass STORAGE_CLASS = StorageClass.COLDLINE;
   private static final Boolean EVENT_BASED_HOLD = true;
   private static final Boolean TEMPORARY_HOLD = true;
   private static final Long RETENTION_EXPIRATION_TIME = 10L;
 
-  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
-      .setAcl(ACL)
-      .setComponentCount(COMPONENT_COUNT)
-      .setContentType(CONTENT_TYPE)
-      .setCacheControl(CACHE_CONTROL)
-      .setContentDisposition(CONTENT_DISPOSITION)
-      .setContentEncoding(CONTENT_ENCODING)
-      .setContentLanguage(CONTENT_LANGUAGE)
-      .setCustomerEncryption(CUSTOMER_ENCRYPTION)
-      .setCrc32c(CRC32)
-      .setDeleteTime(DELETE_TIME)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setMd5(MD5)
-      .setMediaLink(MEDIA_LINK)
-      .setMetadata(METADATA)
-      .setMetageneration(META_GENERATION)
-      .setOwner(OWNER)
-      .setSelfLink(SELF_LINK)
-      .setSize(SIZE)
-      .setUpdateTime(UPDATE_TIME)
-      .setCreateTime(CREATE_TIME)
-      .setStorageClass(STORAGE_CLASS)
-      .setKmsKeyName(KMS_KEY_NAME)
-      .setEventBasedHold(EVENT_BASED_HOLD)
-      .setTemporaryHold(TEMPORARY_HOLD)
-      .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
-      .build();
-  private static final BlobInfo DIRECTORY_INFO = BlobInfo.newBuilder("b", "n/")
-      .setSize(0L)
-      .setIsDirectory(true)
-      .build();
+  private static final BlobInfo BLOB_INFO =
+      BlobInfo.newBuilder("b", "n", GENERATION)
+          .setAcl(ACL)
+          .setComponentCount(COMPONENT_COUNT)
+          .setContentType(CONTENT_TYPE)
+          .setCacheControl(CACHE_CONTROL)
+          .setContentDisposition(CONTENT_DISPOSITION)
+          .setContentEncoding(CONTENT_ENCODING)
+          .setContentLanguage(CONTENT_LANGUAGE)
+          .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+          .setCrc32c(CRC32)
+          .setDeleteTime(DELETE_TIME)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setMd5(MD5)
+          .setMediaLink(MEDIA_LINK)
+          .setMetadata(METADATA)
+          .setMetageneration(META_GENERATION)
+          .setOwner(OWNER)
+          .setSelfLink(SELF_LINK)
+          .setSize(SIZE)
+          .setUpdateTime(UPDATE_TIME)
+          .setCreateTime(CREATE_TIME)
+          .setStorageClass(STORAGE_CLASS)
+          .setKmsKeyName(KMS_KEY_NAME)
+          .setEventBasedHold(EVENT_BASED_HOLD)
+          .setTemporaryHold(TEMPORARY_HOLD)
+          .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
+          .build();
+  private static final BlobInfo DIRECTORY_INFO =
+      BlobInfo.newBuilder("b", "n/").setSize(0L).setIsDirectory(true).build();
 
   @Test
   public void testCustomerEncryption() {
@@ -114,18 +115,28 @@ public class BlobInfoTest {
   @Test
   public void testToBuilder() {
     compareBlobs(BLOB_INFO, BLOB_INFO.toBuilder().build());
-    BlobInfo blobInfo = BLOB_INFO.toBuilder()
-        .setBlobId(BlobId.of("b2", "n2"))
-        .setSize(200L)
-        .build();
+    BlobInfo blobInfo =
+        BLOB_INFO.toBuilder().setBlobId(BlobId.of("b2", "n2")).setSize(200L).build();
     assertEquals("n2", blobInfo.getName());
     assertEquals("b2", blobInfo.getBucket());
     assertEquals(Long.valueOf(200), blobInfo.getSize());
-    blobInfo = blobInfo.toBuilder()
-        .setBlobId(BlobId.of("b", "n", GENERATION))
-        .setSize(SIZE)
-        .build();
+    blobInfo =
+        blobInfo.toBuilder().setBlobId(BlobId.of("b", "n", GENERATION)).setSize(SIZE).build();
     compareBlobs(BLOB_INFO, blobInfo);
+  }
+
+  @Test
+  public void testToBuilderSetMd5FromHexString() {
+    BlobInfo blobInfo =
+        BlobInfo.newBuilder(BlobId.of("b2", "n2")).setMd5FromHexString(MD5_HEX_STRING).build();
+    assertEquals(MD5, blobInfo.getMd5());
+  }
+
+  @Test
+  public void testToBuilderSetCrc32cFromHexString() {
+    BlobInfo blobInfo =
+        BlobInfo.newBuilder(BlobId.of("b2", "n2")).setCrc32cFromHexString(CRC32_HEX_STRING).build();
+    assertEquals(CRC32, blobInfo.getCrc32c());
   }
 
   @Test
@@ -147,11 +158,13 @@ public class BlobInfoTest {
     assertEquals(CONTENT_LANGUAGE, BLOB_INFO.getContentLanguage());
     assertEquals(CUSTOMER_ENCRYPTION, BLOB_INFO.getCustomerEncryption());
     assertEquals(CRC32, BLOB_INFO.getCrc32c());
+    assertEquals(CRC32_HEX_STRING, BLOB_INFO.getCrc32cToHexString());
     assertEquals(DELETE_TIME, BLOB_INFO.getDeleteTime());
     assertEquals(ETAG, BLOB_INFO.getEtag());
     assertEquals(GENERATION, BLOB_INFO.getGeneration());
     assertEquals(GENERATED_ID, BLOB_INFO.getGeneratedId());
     assertEquals(MD5, BLOB_INFO.getMd5());
+    assertEquals(MD5_HEX_STRING, BLOB_INFO.getMd5ToHexString());
     assertEquals(MEDIA_LINK, BLOB_INFO.getMediaLink());
     assertEquals(METADATA, BLOB_INFO.getMetadata());
     assertEquals(META_GENERATION, BLOB_INFO.getMetageneration());
@@ -177,12 +190,14 @@ public class BlobInfoTest {
     assertNull(DIRECTORY_INFO.getContentLanguage());
     assertNull(DIRECTORY_INFO.getCustomerEncryption());
     assertNull(DIRECTORY_INFO.getCrc32c());
+    assertNull(DIRECTORY_INFO.getCrc32cToHexString());
     assertNull(DIRECTORY_INFO.getCreateTime());
     assertNull(DIRECTORY_INFO.getDeleteTime());
     assertNull(DIRECTORY_INFO.getEtag());
     assertNull(DIRECTORY_INFO.getGeneration());
     assertNull(DIRECTORY_INFO.getGeneratedId());
     assertNull(DIRECTORY_INFO.getMd5());
+    assertNull(DIRECTORY_INFO.getMd5ToHexString());
     assertNull(DIRECTORY_INFO.getMediaLink());
     assertNull(DIRECTORY_INFO.getMetadata());
     assertNull(DIRECTORY_INFO.getMetageneration());
@@ -206,12 +221,14 @@ public class BlobInfoTest {
     assertEquals(expected.getContentLanguage(), value.getContentLanguage());
     assertEquals(expected.getCustomerEncryption(), value.getCustomerEncryption());
     assertEquals(expected.getCrc32c(), value.getCrc32c());
+    assertEquals(expected.getCrc32cToHexString(), value.getCrc32cToHexString());
     assertEquals(expected.getCreateTime(), value.getCreateTime());
     assertEquals(expected.getDeleteTime(), value.getDeleteTime());
     assertEquals(expected.getEtag(), value.getEtag());
     assertEquals(expected.getGeneration(), value.getGeneration());
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getMd5(), value.getMd5());
+    assertEquals(expected.getMd5ToHexString(), value.getMd5ToHexString());
     assertEquals(expected.getMediaLink(), value.getMediaLink());
     assertEquals(expected.getMetadata(), value.getMetadata());
     assertEquals(expected.getMetageneration(), value.getMetageneration());
@@ -235,16 +252,17 @@ public class BlobInfoTest {
 
   @Test
   public void testToPbAndFromPb() {
-    compareCustomerEncryptions(CUSTOMER_ENCRYPTION,
-        CustomerEncryption.fromPb(CUSTOMER_ENCRYPTION.toPb()));
+    compareCustomerEncryptions(
+        CUSTOMER_ENCRYPTION, CustomerEncryption.fromPb(CUSTOMER_ENCRYPTION.toPb()));
     compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
     BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of("b", "n")).build();
     compareBlobs(blobInfo, BlobInfo.fromPb(blobInfo.toPb()));
-    StorageObject object = new StorageObject()
-        .setName("n/")
-        .setBucket("b")
-        .setSize(BigInteger.ZERO)
-        .set("isDirectory", true);
+    StorageObject object =
+        new StorageObject()
+            .setName("n/")
+            .setBucket("b")
+            .setSize(BigInteger.ZERO)
+            .set("isDirectory", true);
     blobInfo = BlobInfo.fromPb(object);
     assertEquals("b", blobInfo.getBucket());
     assertEquals("n/", blobInfo.getName());
@@ -257,12 +275,14 @@ public class BlobInfoTest {
     assertNull(blobInfo.getContentLanguage());
     assertNull(blobInfo.getCustomerEncryption());
     assertNull(blobInfo.getCrc32c());
+    assertNull(blobInfo.getCrc32cToHexString());
     assertNull(blobInfo.getCreateTime());
     assertNull(blobInfo.getDeleteTime());
     assertNull(blobInfo.getEtag());
     assertNull(blobInfo.getGeneration());
     assertNull(blobInfo.getGeneratedId());
     assertNull(blobInfo.getMd5());
+    assertNull(blobInfo.getMd5ToHexString());
     assertNull(blobInfo.getMediaLink());
     assertNull(blobInfo.getMetadata());
     assertNull(blobInfo.getMetageneration());

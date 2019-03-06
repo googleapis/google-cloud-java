@@ -16,6 +16,10 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
@@ -26,20 +30,15 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.Subscription;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 public class ITSubscriptionAdminClientSnippets {
 
@@ -50,16 +49,13 @@ public class ITSubscriptionAdminClientSnippets {
   private static SubscriptionAdminClientSnippets subscriptionAdminClientSnippets;
 
   private static String[] topics = {
-      formatForTest("topic-1"),
-      formatForTest("topic-2"),
+    formatForTest("topic-1"), formatForTest("topic-2"),
   };
   private static String[] subscriptions = {
-      formatForTest("subscription-1"),
-      formatForTest("subscription-2")
+    formatForTest("subscription-1"), formatForTest("subscription-2")
   };
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   private static String formatForTest(String resourceName) {
     return resourceName + "-" + NAME_SUFFIX;
@@ -83,9 +79,11 @@ public class ITSubscriptionAdminClientSnippets {
     createTopic(topicName);
     String endpoint = "https://" + projectId + ".appspot.com/push";
     Subscription subscription =
-        subscriptionAdminClientSnippets.createSubscriptionWithPushEndpoint(topicName, subscriptionName, endpoint);
+        subscriptionAdminClientSnippets.createSubscriptionWithPushEndpoint(
+            topicName, subscriptionName, endpoint);
     assertNotNull(subscription);
-    Subscription retrievedSubscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
+    Subscription retrievedSubscription =
+        subscriptionAdminClientSnippets.getSubscription(subscriptionName);
     assertNotNull(retrievedSubscription);
     assertEquals(subscription.getName(), retrievedSubscription.getName());
     assertEquals(subscription.getPushConfig().getPushEndpoint(), endpoint);
@@ -118,9 +116,9 @@ public class ITSubscriptionAdminClientSnippets {
     assertNotNull(response);
     Iterable<Subscription> subscriptions = response.iterateAll();
     for (int i = 0; i < 2; i++) {
-        if (!subFound[i]) {
-          subFound[i] = Iterables.contains(subscriptions, addedSubscriptions.get(i));
-        }
+      if (!subFound[i]) {
+        subFound[i] = Iterables.contains(subscriptions, addedSubscriptions.get(i));
+      }
     }
     assertTrue(subFound[0] && subFound[1]);
   }
@@ -131,7 +129,7 @@ public class ITSubscriptionAdminClientSnippets {
     String subscriptionName = subscriptions[0];
     createSubscription(topicName, subscriptionName);
     subscriptionAdminClientSnippets.deleteSubscription(subscriptionName);
-    //expected to throw exception on retrieval
+    // expected to throw exception on retrieval
     subscriptionAdminClientSnippets.getSubscription(subscriptionName);
   }
 
@@ -152,8 +150,11 @@ public class ITSubscriptionAdminClientSnippets {
     Policy policy = subscriptionAdminClientSnippets.replaceSubscriptionPolicy(subscriptionName);
     assertNotNull(policy.getBindingsCount());
     assertTrue(policy.getBindings(0).getRole().equalsIgnoreCase(Role.viewer().toString()));
-    assertTrue(policy.getBindings(0).getMembers(0)
-        .equalsIgnoreCase(Identity.allAuthenticatedUsers().toString()));
+    assertTrue(
+        policy
+            .getBindings(0)
+            .getMembers(0)
+            .equalsIgnoreCase(Identity.allAuthenticatedUsers().toString()));
     TestIamPermissionsResponse response =
         subscriptionAdminClientSnippets.testSubscriptionPermissions(subscriptionName);
     assertTrue(response.getPermissionsList().contains("pubsub.subscriptions.get"));
@@ -166,12 +167,13 @@ public class ITSubscriptionAdminClientSnippets {
   }
 
   private Subscription createSubscription(String topicName, String subscriptionName)
-          throws Exception {
+      throws Exception {
     createTopic(topicName);
     Subscription subscription =
         subscriptionAdminClientSnippets.createSubscription(topicName, subscriptionName);
     assertNotNull(subscription);
-    Subscription retrievedSubscription = subscriptionAdminClientSnippets.getSubscription(subscriptionName);
+    Subscription retrievedSubscription =
+        subscriptionAdminClientSnippets.getSubscription(subscriptionName);
     assertNotNull(retrievedSubscription);
     assertEquals(subscription.getName(), retrievedSubscription.getName());
     return subscription;

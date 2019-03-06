@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Generalization function that buckets values based on ranges. The ranges and
  * replacement values are dynamically provided by the user for custom behavior,
@@ -18,24 +20,25 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.BucketingConfig}
  */
-public  final class BucketingConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BucketingConfig)
     BucketingConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BucketingConfig.newBuilder() to construct.
   private BucketingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BucketingConfig() {
     buckets_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private BucketingConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -55,29 +58,32 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              buckets_ = new java.util.ArrayList<com.google.privacy.dlp.v2.BucketingConfig.Bucket>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                buckets_ =
+                    new java.util.ArrayList<com.google.privacy.dlp.v2.BucketingConfig.Bucket>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              buckets_.add(
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.BucketingConfig.Bucket.parser(),
+                      extensionRegistry));
+              break;
             }
-            buckets_.add(
-                input.readMessage(com.google.privacy.dlp.v2.BucketingConfig.Bucket.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         buckets_ = java.util.Collections.unmodifiableList(buckets_);
@@ -86,24 +92,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_BucketingConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_BucketingConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.BucketingConfig.class, com.google.privacy.dlp.v2.BucketingConfig.Builder.class);
+            com.google.privacy.dlp.v2.BucketingConfig.class,
+            com.google.privacy.dlp.v2.BucketingConfig.Builder.class);
   }
 
-  public interface BucketOrBuilder extends
+  public interface BucketOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.BucketingConfig.Bucket)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Lower bound of the range, inclusive. Type should be the same as max if
      * used.
@@ -113,6 +125,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasMin();
     /**
+     *
+     *
      * <pre>
      * Lower bound of the range, inclusive. Type should be the same as max if
      * used.
@@ -122,6 +136,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.Value getMin();
     /**
+     *
+     *
      * <pre>
      * Lower bound of the range, inclusive. Type should be the same as max if
      * used.
@@ -132,6 +148,8 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.ValueOrBuilder getMinOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Upper bound of the range, exclusive; type must match min.
      * </pre>
@@ -140,6 +158,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasMax();
     /**
+     *
+     *
      * <pre>
      * Upper bound of the range, exclusive; type must match min.
      * </pre>
@@ -148,6 +168,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.Value getMax();
     /**
+     *
+     *
      * <pre>
      * Upper bound of the range, exclusive; type must match min.
      * </pre>
@@ -157,6 +179,8 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.ValueOrBuilder getMaxOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Replacement value for this bucket. If not provided
      * the default behavior will be to hyphenate the min-max range.
@@ -166,6 +190,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasReplacementValue();
     /**
+     *
+     *
      * <pre>
      * Replacement value for this bucket. If not provided
      * the default behavior will be to hyphenate the min-max range.
@@ -175,6 +201,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.Value getReplacementValue();
     /**
+     *
+     *
      * <pre>
      * Replacement value for this bucket. If not provided
      * the default behavior will be to hyphenate the min-max range.
@@ -185,29 +213,31 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.ValueOrBuilder getReplacementValueOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * Bucket is represented as a range, along with replacement values.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.BucketingConfig.Bucket}
    */
-  public  static final class Bucket extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Bucket extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BucketingConfig.Bucket)
       BucketOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Bucket.newBuilder() to construct.
     private Bucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Bucket() {
-    }
+
+    private Bucket() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Bucket(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -227,80 +257,90 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.privacy.dlp.v2.Value.Builder subBuilder = null;
-              if (min_ != null) {
-                subBuilder = min_.toBuilder();
-              }
-              min_ = input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(min_);
-                min_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                com.google.privacy.dlp.v2.Value.Builder subBuilder = null;
+                if (min_ != null) {
+                  subBuilder = min_.toBuilder();
+                }
+                min_ =
+                    input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(min_);
+                  min_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 18: {
-              com.google.privacy.dlp.v2.Value.Builder subBuilder = null;
-              if (max_ != null) {
-                subBuilder = max_.toBuilder();
+                break;
               }
-              max_ = input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(max_);
-                max_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                com.google.privacy.dlp.v2.Value.Builder subBuilder = null;
+                if (max_ != null) {
+                  subBuilder = max_.toBuilder();
+                }
+                max_ =
+                    input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(max_);
+                  max_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 26: {
-              com.google.privacy.dlp.v2.Value.Builder subBuilder = null;
-              if (replacementValue_ != null) {
-                subBuilder = replacementValue_.toBuilder();
+                break;
               }
-              replacementValue_ = input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(replacementValue_);
-                replacementValue_ = subBuilder.buildPartial();
-              }
+            case 26:
+              {
+                com.google.privacy.dlp.v2.Value.Builder subBuilder = null;
+                if (replacementValue_ != null) {
+                  subBuilder = replacementValue_.toBuilder();
+                }
+                replacementValue_ =
+                    input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(replacementValue_);
+                  replacementValue_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.BucketingConfig.Bucket.class, com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder.class);
+              com.google.privacy.dlp.v2.BucketingConfig.Bucket.class,
+              com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder.class);
     }
 
     public static final int MIN_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.Value min_;
     /**
+     *
+     *
      * <pre>
      * Lower bound of the range, inclusive. Type should be the same as max if
      * used.
@@ -312,6 +352,8 @@ private static final long serialVersionUID = 0L;
       return min_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Lower bound of the range, inclusive. Type should be the same as max if
      * used.
@@ -323,6 +365,8 @@ private static final long serialVersionUID = 0L;
       return min_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
     }
     /**
+     *
+     *
      * <pre>
      * Lower bound of the range, inclusive. Type should be the same as max if
      * used.
@@ -337,6 +381,8 @@ private static final long serialVersionUID = 0L;
     public static final int MAX_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.Value max_;
     /**
+     *
+     *
      * <pre>
      * Upper bound of the range, exclusive; type must match min.
      * </pre>
@@ -347,6 +393,8 @@ private static final long serialVersionUID = 0L;
       return max_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Upper bound of the range, exclusive; type must match min.
      * </pre>
@@ -357,6 +405,8 @@ private static final long serialVersionUID = 0L;
       return max_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
     }
     /**
+     *
+     *
      * <pre>
      * Upper bound of the range, exclusive; type must match min.
      * </pre>
@@ -370,6 +420,8 @@ private static final long serialVersionUID = 0L;
     public static final int REPLACEMENT_VALUE_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.Value replacementValue_;
     /**
+     *
+     *
      * <pre>
      * Replacement value for this bucket. If not provided
      * the default behavior will be to hyphenate the min-max range.
@@ -381,6 +433,8 @@ private static final long serialVersionUID = 0L;
       return replacementValue_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Replacement value for this bucket. If not provided
      * the default behavior will be to hyphenate the min-max range.
@@ -389,9 +443,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
      */
     public com.google.privacy.dlp.v2.Value getReplacementValue() {
-      return replacementValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : replacementValue_;
+      return replacementValue_ == null
+          ? com.google.privacy.dlp.v2.Value.getDefaultInstance()
+          : replacementValue_;
     }
     /**
+     *
+     *
      * <pre>
      * Replacement value for this bucket. If not provided
      * the default behavior will be to hyphenate the min-max range.
@@ -404,6 +462,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -415,8 +474,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (min_ != null) {
         output.writeMessage(1, getMin());
       }
@@ -436,16 +494,13 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (min_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getMin());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMin());
       }
       if (max_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getMax());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMax());
       }
       if (replacementValue_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getReplacementValue());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getReplacementValue());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -455,28 +510,26 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.BucketingConfig.Bucket)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.BucketingConfig.Bucket other = (com.google.privacy.dlp.v2.BucketingConfig.Bucket) obj;
+      com.google.privacy.dlp.v2.BucketingConfig.Bucket other =
+          (com.google.privacy.dlp.v2.BucketingConfig.Bucket) obj;
 
       boolean result = true;
       result = result && (hasMin() == other.hasMin());
       if (hasMin()) {
-        result = result && getMin()
-            .equals(other.getMin());
+        result = result && getMin().equals(other.getMin());
       }
       result = result && (hasMax() == other.hasMax());
       if (hasMax()) {
-        result = result && getMax()
-            .equals(other.getMax());
+        result = result && getMax().equals(other.getMax());
       }
       result = result && (hasReplacementValue() == other.hasReplacementValue());
       if (hasReplacementValue()) {
-        result = result && getReplacementValue()
-            .equals(other.getReplacementValue());
+        result = result && getReplacementValue().equals(other.getReplacementValue());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -507,87 +560,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.BucketingConfig.Bucket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.privacy.dlp.v2.BucketingConfig.Bucket prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -597,27 +656,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Bucket is represented as a range, along with replacement values.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.BucketingConfig.Bucket}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.BucketingConfig.Bucket)
         com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.BucketingConfig.Bucket.class, com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder.class);
+                com.google.privacy.dlp.v2.BucketingConfig.Bucket.class,
+                com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.BucketingConfig.Bucket.newBuilder()
@@ -625,16 +689,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -660,9 +723,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_BucketingConfig_Bucket_descriptor;
       }
 
       @java.lang.Override
@@ -681,7 +744,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.BucketingConfig.Bucket buildPartial() {
-        com.google.privacy.dlp.v2.BucketingConfig.Bucket result = new com.google.privacy.dlp.v2.BucketingConfig.Bucket(this);
+        com.google.privacy.dlp.v2.BucketingConfig.Bucket result =
+            new com.google.privacy.dlp.v2.BucketingConfig.Bucket(this);
         if (minBuilder_ == null) {
           result.min_ = min_;
         } else {
@@ -705,38 +769,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.BucketingConfig.Bucket) {
-          return mergeFrom((com.google.privacy.dlp.v2.BucketingConfig.Bucket)other);
+          return mergeFrom((com.google.privacy.dlp.v2.BucketingConfig.Bucket) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -744,7 +811,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.BucketingConfig.Bucket other) {
-        if (other == com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance())
+          return this;
         if (other.hasMin()) {
           mergeMin(other.getMin());
         }
@@ -773,7 +841,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.BucketingConfig.Bucket) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.BucketingConfig.Bucket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -785,8 +854,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.Value min_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> minBuilder_;
+              com.google.privacy.dlp.v2.Value,
+              com.google.privacy.dlp.v2.Value.Builder,
+              com.google.privacy.dlp.v2.ValueOrBuilder>
+          minBuilder_;
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -798,6 +872,8 @@ private static final long serialVersionUID = 0L;
         return minBuilder_ != null || min_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -813,6 +889,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -834,6 +912,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -841,8 +921,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.Value min = 1;</code>
        */
-      public Builder setMin(
-          com.google.privacy.dlp.v2.Value.Builder builderForValue) {
+      public Builder setMin(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (minBuilder_ == null) {
           min_ = builderForValue.build();
           onChanged();
@@ -853,6 +932,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -863,8 +944,7 @@ private static final long serialVersionUID = 0L;
       public Builder mergeMin(com.google.privacy.dlp.v2.Value value) {
         if (minBuilder_ == null) {
           if (min_ != null) {
-            min_ =
-              com.google.privacy.dlp.v2.Value.newBuilder(min_).mergeFrom(value).buildPartial();
+            min_ = com.google.privacy.dlp.v2.Value.newBuilder(min_).mergeFrom(value).buildPartial();
           } else {
             min_ = value;
           }
@@ -876,6 +956,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -895,6 +977,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -903,11 +987,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.Value min = 1;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getMinBuilder() {
-        
+
         onChanged();
         return getMinFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -919,11 +1005,12 @@ private static final long serialVersionUID = 0L;
         if (minBuilder_ != null) {
           return minBuilder_.getMessageOrBuilder();
         } else {
-          return min_ == null ?
-              com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
+          return min_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : min_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Lower bound of the range, inclusive. Type should be the same as max if
        * used.
@@ -932,14 +1019,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.Value min = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> 
+              com.google.privacy.dlp.v2.Value,
+              com.google.privacy.dlp.v2.Value.Builder,
+              com.google.privacy.dlp.v2.ValueOrBuilder>
           getMinFieldBuilder() {
         if (minBuilder_ == null) {
-          minBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder>(
-                  getMin(),
-                  getParentForChildren(),
-                  isClean());
+          minBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.Value,
+                  com.google.privacy.dlp.v2.Value.Builder,
+                  com.google.privacy.dlp.v2.ValueOrBuilder>(
+                  getMin(), getParentForChildren(), isClean());
           min_ = null;
         }
         return minBuilder_;
@@ -947,8 +1037,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.Value max_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> maxBuilder_;
+              com.google.privacy.dlp.v2.Value,
+              com.google.privacy.dlp.v2.Value.Builder,
+              com.google.privacy.dlp.v2.ValueOrBuilder>
+          maxBuilder_;
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -959,6 +1054,8 @@ private static final long serialVersionUID = 0L;
         return maxBuilder_ != null || max_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -973,6 +1070,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -993,14 +1092,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Value max = 2;</code>
        */
-      public Builder setMax(
-          com.google.privacy.dlp.v2.Value.Builder builderForValue) {
+      public Builder setMax(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (maxBuilder_ == null) {
           max_ = builderForValue.build();
           onChanged();
@@ -1011,6 +1111,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -1020,8 +1122,7 @@ private static final long serialVersionUID = 0L;
       public Builder mergeMax(com.google.privacy.dlp.v2.Value value) {
         if (maxBuilder_ == null) {
           if (max_ != null) {
-            max_ =
-              com.google.privacy.dlp.v2.Value.newBuilder(max_).mergeFrom(value).buildPartial();
+            max_ = com.google.privacy.dlp.v2.Value.newBuilder(max_).mergeFrom(value).buildPartial();
           } else {
             max_ = value;
           }
@@ -1033,6 +1134,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -1051,6 +1154,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -1058,11 +1163,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.Value max = 2;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getMaxBuilder() {
-        
+
         onChanged();
         return getMaxFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -1073,11 +1180,12 @@ private static final long serialVersionUID = 0L;
         if (maxBuilder_ != null) {
           return maxBuilder_.getMessageOrBuilder();
         } else {
-          return max_ == null ?
-              com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
+          return max_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : max_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Upper bound of the range, exclusive; type must match min.
        * </pre>
@@ -1085,14 +1193,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.Value max = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> 
+              com.google.privacy.dlp.v2.Value,
+              com.google.privacy.dlp.v2.Value.Builder,
+              com.google.privacy.dlp.v2.ValueOrBuilder>
           getMaxFieldBuilder() {
         if (maxBuilder_ == null) {
-          maxBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder>(
-                  getMax(),
-                  getParentForChildren(),
-                  isClean());
+          maxBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.Value,
+                  com.google.privacy.dlp.v2.Value.Builder,
+                  com.google.privacy.dlp.v2.ValueOrBuilder>(
+                  getMax(), getParentForChildren(), isClean());
           max_ = null;
         }
         return maxBuilder_;
@@ -1100,8 +1211,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.Value replacementValue_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> replacementValueBuilder_;
+              com.google.privacy.dlp.v2.Value,
+              com.google.privacy.dlp.v2.Value.Builder,
+              com.google.privacy.dlp.v2.ValueOrBuilder>
+          replacementValueBuilder_;
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1113,6 +1229,8 @@ private static final long serialVersionUID = 0L;
         return replacementValueBuilder_ != null || replacementValue_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1122,12 +1240,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.Value getReplacementValue() {
         if (replacementValueBuilder_ == null) {
-          return replacementValue_ == null ? com.google.privacy.dlp.v2.Value.getDefaultInstance() : replacementValue_;
+          return replacementValue_ == null
+              ? com.google.privacy.dlp.v2.Value.getDefaultInstance()
+              : replacementValue_;
         } else {
           return replacementValueBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1149,6 +1271,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1156,8 +1280,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
        */
-      public Builder setReplacementValue(
-          com.google.privacy.dlp.v2.Value.Builder builderForValue) {
+      public Builder setReplacementValue(com.google.privacy.dlp.v2.Value.Builder builderForValue) {
         if (replacementValueBuilder_ == null) {
           replacementValue_ = builderForValue.build();
           onChanged();
@@ -1168,6 +1291,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1179,7 +1304,9 @@ private static final long serialVersionUID = 0L;
         if (replacementValueBuilder_ == null) {
           if (replacementValue_ != null) {
             replacementValue_ =
-              com.google.privacy.dlp.v2.Value.newBuilder(replacementValue_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.Value.newBuilder(replacementValue_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             replacementValue_ = value;
           }
@@ -1191,6 +1318,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1210,6 +1339,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1218,11 +1349,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
        */
       public com.google.privacy.dlp.v2.Value.Builder getReplacementValueBuilder() {
-        
+
         onChanged();
         return getReplacementValueFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1234,11 +1367,14 @@ private static final long serialVersionUID = 0L;
         if (replacementValueBuilder_ != null) {
           return replacementValueBuilder_.getMessageOrBuilder();
         } else {
-          return replacementValue_ == null ?
-              com.google.privacy.dlp.v2.Value.getDefaultInstance() : replacementValue_;
+          return replacementValue_ == null
+              ? com.google.privacy.dlp.v2.Value.getDefaultInstance()
+              : replacementValue_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Replacement value for this bucket. If not provided
        * the default behavior will be to hyphenate the min-max range.
@@ -1247,18 +1383,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.Value replacement_value = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder> 
+              com.google.privacy.dlp.v2.Value,
+              com.google.privacy.dlp.v2.Value.Builder,
+              com.google.privacy.dlp.v2.ValueOrBuilder>
           getReplacementValueFieldBuilder() {
         if (replacementValueBuilder_ == null) {
-          replacementValueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.Value, com.google.privacy.dlp.v2.Value.Builder, com.google.privacy.dlp.v2.ValueOrBuilder>(
-                  getReplacementValue(),
-                  getParentForChildren(),
-                  isClean());
+          replacementValueBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.Value,
+                  com.google.privacy.dlp.v2.Value.Builder,
+                  com.google.privacy.dlp.v2.ValueOrBuilder>(
+                  getReplacementValue(), getParentForChildren(), isClean());
           replacementValue_ = null;
         }
         return replacementValueBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1271,12 +1411,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.BucketingConfig.Bucket)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.BucketingConfig.Bucket)
     private static final com.google.privacy.dlp.v2.BucketingConfig.Bucket DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.BucketingConfig.Bucket();
     }
@@ -1285,16 +1425,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Bucket>
-        PARSER = new com.google.protobuf.AbstractParser<Bucket>() {
-      @java.lang.Override
-      public Bucket parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Bucket(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Bucket> PARSER =
+        new com.google.protobuf.AbstractParser<Bucket>() {
+          @java.lang.Override
+          public Bucket parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Bucket(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Bucket> parser() {
       return PARSER;
@@ -1309,12 +1449,13 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.BucketingConfig.Bucket getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int BUCKETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> buckets_;
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
@@ -1325,17 +1466,21 @@ private static final long serialVersionUID = 0L;
     return buckets_;
   }
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>
       getBucketsOrBuilderList() {
     return buckets_;
   }
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
@@ -1346,6 +1491,8 @@ private static final long serialVersionUID = 0L;
     return buckets_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
@@ -1356,18 +1503,20 @@ private static final long serialVersionUID = 0L;
     return buckets_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
-  public com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder getBucketsOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder getBucketsOrBuilder(int index) {
     return buckets_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1379,8 +1528,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < buckets_.size(); i++) {
       output.writeMessage(1, buckets_.get(i));
     }
@@ -1394,8 +1542,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < buckets_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, buckets_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, buckets_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1405,16 +1552,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.BucketingConfig)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.BucketingConfig other = (com.google.privacy.dlp.v2.BucketingConfig) obj;
+    com.google.privacy.dlp.v2.BucketingConfig other =
+        (com.google.privacy.dlp.v2.BucketingConfig) obj;
 
     boolean result = true;
-    result = result && getBucketsList()
-        .equals(other.getBucketsList());
+    result = result && getBucketsList().equals(other.getBucketsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1435,97 +1582,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.BucketingConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.BucketingConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.BucketingConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.BucketingConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Generalization function that buckets values based on ranges. The ranges and
    * replacement values are dynamically provided by the user for custom behavior,
@@ -1540,21 +1694,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.BucketingConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.BucketingConfig)
       com.google.privacy.dlp.v2.BucketingConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_BucketingConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_BucketingConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.BucketingConfig.class, com.google.privacy.dlp.v2.BucketingConfig.Builder.class);
+              com.google.privacy.dlp.v2.BucketingConfig.class,
+              com.google.privacy.dlp.v2.BucketingConfig.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.BucketingConfig.newBuilder()
@@ -1562,17 +1718,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBucketsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1586,9 +1742,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_BucketingConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_BucketingConfig_descriptor;
     }
 
     @java.lang.Override
@@ -1607,7 +1763,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.BucketingConfig buildPartial() {
-      com.google.privacy.dlp.v2.BucketingConfig result = new com.google.privacy.dlp.v2.BucketingConfig(this);
+      com.google.privacy.dlp.v2.BucketingConfig result =
+          new com.google.privacy.dlp.v2.BucketingConfig(this);
       int from_bitField0_ = bitField0_;
       if (bucketsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1626,38 +1783,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.BucketingConfig) {
-        return mergeFrom((com.google.privacy.dlp.v2.BucketingConfig)other);
+        return mergeFrom((com.google.privacy.dlp.v2.BucketingConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1684,9 +1842,10 @@ private static final long serialVersionUID = 0L;
             bucketsBuilder_ = null;
             buckets_ = other.buckets_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            bucketsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBucketsFieldBuilder() : null;
+            bucketsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getBucketsFieldBuilder()
+                    : null;
           } else {
             bucketsBuilder_.addAllMessages(other.buckets_);
           }
@@ -1720,21 +1879,29 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> buckets_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureBucketsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        buckets_ = new java.util.ArrayList<com.google.privacy.dlp.v2.BucketingConfig.Bucket>(buckets_);
+        buckets_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.BucketingConfig.Bucket>(buckets_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.BucketingConfig.Bucket, com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder, com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder> bucketsBuilder_;
+            com.google.privacy.dlp.v2.BucketingConfig.Bucket,
+            com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder,
+            com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>
+        bucketsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1749,6 +1916,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1763,6 +1932,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1777,14 +1948,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
      */
-    public Builder setBuckets(
-        int index, com.google.privacy.dlp.v2.BucketingConfig.Bucket value) {
+    public Builder setBuckets(int index, com.google.privacy.dlp.v2.BucketingConfig.Bucket value) {
       if (bucketsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1798,6 +1970,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1816,6 +1990,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1836,14 +2012,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
      */
-    public Builder addBuckets(
-        int index, com.google.privacy.dlp.v2.BucketingConfig.Bucket value) {
+    public Builder addBuckets(int index, com.google.privacy.dlp.v2.BucketingConfig.Bucket value) {
       if (bucketsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1857,6 +2034,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1875,6 +2054,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1893,6 +2074,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1903,8 +2086,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.BucketingConfig.Bucket> values) {
       if (bucketsBuilder_ == null) {
         ensureBucketsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, buckets_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, buckets_);
         onChanged();
       } else {
         bucketsBuilder_.addAllMessages(values);
@@ -1912,6 +2094,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1929,6 +2113,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1946,17 +2132,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
      */
-    public com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder getBucketsBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder getBucketsBuilder(int index) {
       return getBucketsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1966,19 +2155,22 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder getBucketsOrBuilder(
         int index) {
       if (bucketsBuilder_ == null) {
-        return buckets_.get(index);  } else {
+        return buckets_.get(index);
+      } else {
         return bucketsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder> 
-         getBucketsOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>
+        getBucketsOrBuilderList() {
       if (bucketsBuilder_ != null) {
         return bucketsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1986,6 +2178,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
@@ -1993,38 +2187,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
      */
     public com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder addBucketsBuilder() {
-      return getBucketsFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance());
+      return getBucketsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
      */
-    public com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder addBucketsBuilder(
-        int index) {
-      return getBucketsFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance());
+    public com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder addBucketsBuilder(int index) {
+      return getBucketsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.BucketingConfig.Bucket.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Set of buckets. Ranges must be non-overlapping.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder> 
-         getBucketsBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder>
+        getBucketsBuilderList() {
       return getBucketsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.BucketingConfig.Bucket, com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder, com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder> 
+            com.google.privacy.dlp.v2.BucketingConfig.Bucket,
+            com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder,
+            com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>
         getBucketsFieldBuilder() {
       if (bucketsBuilder_ == null) {
-        bucketsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.BucketingConfig.Bucket, com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder, com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>(
+        bucketsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.BucketingConfig.Bucket,
+                com.google.privacy.dlp.v2.BucketingConfig.Bucket.Builder,
+                com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>(
                 buckets_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -2033,9 +2236,9 @@ private static final long serialVersionUID = 0L;
       }
       return bucketsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2045,12 +2248,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.BucketingConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.BucketingConfig)
   private static final com.google.privacy.dlp.v2.BucketingConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.BucketingConfig();
   }
@@ -2059,16 +2262,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BucketingConfig>
-      PARSER = new com.google.protobuf.AbstractParser<BucketingConfig>() {
-    @java.lang.Override
-    public BucketingConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BucketingConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<BucketingConfig> PARSER =
+      new com.google.protobuf.AbstractParser<BucketingConfig>() {
+        @java.lang.Override
+        public BucketingConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BucketingConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<BucketingConfig> parser() {
     return PARSER;
@@ -2083,6 +2286,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.BucketingConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

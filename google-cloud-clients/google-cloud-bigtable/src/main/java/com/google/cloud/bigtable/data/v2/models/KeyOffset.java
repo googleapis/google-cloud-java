@@ -39,10 +39,10 @@ public abstract class KeyOffset implements Serializable {
    * <p>Note that row key may not have ever been written to or read from, and users should therefore
    * not make any assumptions about the row key structure that are specific to their use case.
    */
-  public abstract ByteString geyKey();
+  public abstract ByteString getKey();
 
   /**
-   * Approximate total storage space used by all rows in the table which precede {@link #geyKey()}.
+   * Approximate total storage space used by all rows in the table which precede {@link #getKey()}.
    * Buffering the contents of all rows between two subsequent samples would require space roughly
    * equal to the difference in their {@link #getOffsetBytes()} fields.
    */

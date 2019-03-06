@@ -4,29 +4,31 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * A server-stored registry credential used to validate device credentials.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iot.v1.RegistryCredential}
  */
-public  final class RegistryCredential extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RegistryCredential extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.RegistryCredential)
     RegistryCredentialOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RegistryCredential.newBuilder() to construct.
   private RegistryCredential(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private RegistryCredential() {
-  }
+
+  private RegistryCredential() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RegistryCredential(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,65 +48,69 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.iot.v1.PublicKeyCertificate.Builder subBuilder = null;
-            if (credentialCase_ == 1) {
-              subBuilder = ((com.google.cloud.iot.v1.PublicKeyCertificate) credential_).toBuilder();
+          case 10:
+            {
+              com.google.cloud.iot.v1.PublicKeyCertificate.Builder subBuilder = null;
+              if (credentialCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.iot.v1.PublicKeyCertificate) credential_).toBuilder();
+              }
+              credential_ =
+                  input.readMessage(
+                      com.google.cloud.iot.v1.PublicKeyCertificate.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.iot.v1.PublicKeyCertificate) credential_);
+                credential_ = subBuilder.buildPartial();
+              }
+              credentialCase_ = 1;
+              break;
             }
-            credential_ =
-                input.readMessage(com.google.cloud.iot.v1.PublicKeyCertificate.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.iot.v1.PublicKeyCertificate) credential_);
-              credential_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            credentialCase_ = 1;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_RegistryCredential_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_RegistryCredential_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_RegistryCredential_fieldAccessorTable
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_RegistryCredential_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.RegistryCredential.class, com.google.cloud.iot.v1.RegistryCredential.Builder.class);
+            com.google.cloud.iot.v1.RegistryCredential.class,
+            com.google.cloud.iot.v1.RegistryCredential.Builder.class);
   }
 
   private int credentialCase_ = 0;
   private java.lang.Object credential_;
-  public enum CredentialCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum CredentialCase implements com.google.protobuf.Internal.EnumLite {
     PUBLIC_KEY_CERTIFICATE(1),
     CREDENTIAL_NOT_SET(0);
     private final int value;
+
     private CredentialCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static CredentialCase valueOf(int value) {
       return forNumber(value);
@@ -112,24 +118,28 @@ private static final long serialVersionUID = 0L;
 
     public static CredentialCase forNumber(int value) {
       switch (value) {
-        case 1: return PUBLIC_KEY_CERTIFICATE;
-        case 0: return CREDENTIAL_NOT_SET;
-        default: return null;
+        case 1:
+          return PUBLIC_KEY_CERTIFICATE;
+        case 0:
+          return CREDENTIAL_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public CredentialCase
-  getCredentialCase() {
-    return CredentialCase.forNumber(
-        credentialCase_);
+  public CredentialCase getCredentialCase() {
+    return CredentialCase.forNumber(credentialCase_);
   }
 
   public static final int PUBLIC_KEY_CERTIFICATE_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * A public key certificate used to verify the device credentials.
    * </pre>
@@ -140,6 +150,8 @@ private static final long serialVersionUID = 0L;
     return credentialCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * A public key certificate used to verify the device credentials.
    * </pre>
@@ -148,11 +160,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate() {
     if (credentialCase_ == 1) {
-       return (com.google.cloud.iot.v1.PublicKeyCertificate) credential_;
+      return (com.google.cloud.iot.v1.PublicKeyCertificate) credential_;
     }
     return com.google.cloud.iot.v1.PublicKeyCertificate.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A public key certificate used to verify the device credentials.
    * </pre>
@@ -161,12 +175,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder getPublicKeyCertificateOrBuilder() {
     if (credentialCase_ == 1) {
-       return (com.google.cloud.iot.v1.PublicKeyCertificate) credential_;
+      return (com.google.cloud.iot.v1.PublicKeyCertificate) credential_;
     }
     return com.google.cloud.iot.v1.PublicKeyCertificate.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -178,8 +193,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (credentialCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.iot.v1.PublicKeyCertificate) credential_);
     }
@@ -193,8 +207,9 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (credentialCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.cloud.iot.v1.PublicKeyCertificate) credential_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.iot.v1.PublicKeyCertificate) credential_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -204,21 +219,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.iot.v1.RegistryCredential)) {
       return super.equals(obj);
     }
-    com.google.cloud.iot.v1.RegistryCredential other = (com.google.cloud.iot.v1.RegistryCredential) obj;
+    com.google.cloud.iot.v1.RegistryCredential other =
+        (com.google.cloud.iot.v1.RegistryCredential) obj;
 
     boolean result = true;
-    result = result && getCredentialCase().equals(
-        other.getCredentialCase());
+    result = result && getCredentialCase().equals(other.getCredentialCase());
     if (!result) return false;
     switch (credentialCase_) {
       case 1:
-        result = result && getPublicKeyCertificate()
-            .equals(other.getPublicKeyCertificate());
+        result = result && getPublicKeyCertificate().equals(other.getPublicKeyCertificate());
         break;
       case 0:
       default:
@@ -247,118 +261,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.iot.v1.RegistryCredential parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.RegistryCredential parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.iot.v1.RegistryCredential parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.RegistryCredential parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.iot.v1.RegistryCredential prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A server-stored registry credential used to validate device credentials.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iot.v1.RegistryCredential}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.RegistryCredential)
       com.google.cloud.iot.v1.RegistryCredentialOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_RegistryCredential_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_RegistryCredential_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_RegistryCredential_fieldAccessorTable
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_RegistryCredential_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.RegistryCredential.class, com.google.cloud.iot.v1.RegistryCredential.Builder.class);
+              com.google.cloud.iot.v1.RegistryCredential.class,
+              com.google.cloud.iot.v1.RegistryCredential.Builder.class);
     }
 
     // Construct using com.google.cloud.iot.v1.RegistryCredential.newBuilder()
@@ -366,16 +389,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -385,9 +407,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_RegistryCredential_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_RegistryCredential_descriptor;
     }
 
     @java.lang.Override
@@ -406,7 +428,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.iot.v1.RegistryCredential buildPartial() {
-      com.google.cloud.iot.v1.RegistryCredential result = new com.google.cloud.iot.v1.RegistryCredential(this);
+      com.google.cloud.iot.v1.RegistryCredential result =
+          new com.google.cloud.iot.v1.RegistryCredential(this);
       if (credentialCase_ == 1) {
         if (publicKeyCertificateBuilder_ == null) {
           result.credential_ = credential_;
@@ -423,38 +446,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.iot.v1.RegistryCredential) {
-        return mergeFrom((com.google.cloud.iot.v1.RegistryCredential)other);
+        return mergeFrom((com.google.cloud.iot.v1.RegistryCredential) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -464,13 +488,15 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.iot.v1.RegistryCredential other) {
       if (other == com.google.cloud.iot.v1.RegistryCredential.getDefaultInstance()) return this;
       switch (other.getCredentialCase()) {
-        case PUBLIC_KEY_CERTIFICATE: {
-          mergePublicKeyCertificate(other.getPublicKeyCertificate());
-          break;
-        }
-        case CREDENTIAL_NOT_SET: {
-          break;
-        }
+        case PUBLIC_KEY_CERTIFICATE:
+          {
+            mergePublicKeyCertificate(other.getPublicKeyCertificate());
+            break;
+          }
+        case CREDENTIAL_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -500,12 +526,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int credentialCase_ = 0;
     private java.lang.Object credential_;
-    public CredentialCase
-        getCredentialCase() {
-      return CredentialCase.forNumber(
-          credentialCase_);
+
+    public CredentialCase getCredentialCase() {
+      return CredentialCase.forNumber(credentialCase_);
     }
 
     public Builder clearCredential() {
@@ -515,10 +541,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.PublicKeyCertificate, com.google.cloud.iot.v1.PublicKeyCertificate.Builder, com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder> publicKeyCertificateBuilder_;
+            com.google.cloud.iot.v1.PublicKeyCertificate,
+            com.google.cloud.iot.v1.PublicKeyCertificate.Builder,
+            com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder>
+        publicKeyCertificateBuilder_;
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -529,6 +559,8 @@ private static final long serialVersionUID = 0L;
       return credentialCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -549,6 +581,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -569,6 +603,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -587,6 +623,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -595,10 +633,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePublicKeyCertificate(com.google.cloud.iot.v1.PublicKeyCertificate value) {
       if (publicKeyCertificateBuilder_ == null) {
-        if (credentialCase_ == 1 &&
-            credential_ != com.google.cloud.iot.v1.PublicKeyCertificate.getDefaultInstance()) {
-          credential_ = com.google.cloud.iot.v1.PublicKeyCertificate.newBuilder((com.google.cloud.iot.v1.PublicKeyCertificate) credential_)
-              .mergeFrom(value).buildPartial();
+        if (credentialCase_ == 1
+            && credential_ != com.google.cloud.iot.v1.PublicKeyCertificate.getDefaultInstance()) {
+          credential_ =
+              com.google.cloud.iot.v1.PublicKeyCertificate.newBuilder(
+                      (com.google.cloud.iot.v1.PublicKeyCertificate) credential_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           credential_ = value;
         }
@@ -613,6 +654,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -636,6 +679,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -646,13 +691,16 @@ private static final long serialVersionUID = 0L;
       return getPublicKeyCertificateFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
      *
      * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
      */
-    public com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder getPublicKeyCertificateOrBuilder() {
+    public com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder
+        getPublicKeyCertificateOrBuilder() {
       if ((credentialCase_ == 1) && (publicKeyCertificateBuilder_ != null)) {
         return publicKeyCertificateBuilder_.getMessageOrBuilder();
       } else {
@@ -663,6 +711,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A public key certificate used to verify the device credentials.
      * </pre>
@@ -670,26 +720,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.PublicKeyCertificate public_key_certificate = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.PublicKeyCertificate, com.google.cloud.iot.v1.PublicKeyCertificate.Builder, com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder> 
+            com.google.cloud.iot.v1.PublicKeyCertificate,
+            com.google.cloud.iot.v1.PublicKeyCertificate.Builder,
+            com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder>
         getPublicKeyCertificateFieldBuilder() {
       if (publicKeyCertificateBuilder_ == null) {
         if (!(credentialCase_ == 1)) {
           credential_ = com.google.cloud.iot.v1.PublicKeyCertificate.getDefaultInstance();
         }
-        publicKeyCertificateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.PublicKeyCertificate, com.google.cloud.iot.v1.PublicKeyCertificate.Builder, com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder>(
+        publicKeyCertificateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.PublicKeyCertificate,
+                com.google.cloud.iot.v1.PublicKeyCertificate.Builder,
+                com.google.cloud.iot.v1.PublicKeyCertificateOrBuilder>(
                 (com.google.cloud.iot.v1.PublicKeyCertificate) credential_,
                 getParentForChildren(),
                 isClean());
         credential_ = null;
       }
       credentialCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return publicKeyCertificateBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -699,12 +755,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.RegistryCredential)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.RegistryCredential)
   private static final com.google.cloud.iot.v1.RegistryCredential DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.iot.v1.RegistryCredential();
   }
@@ -713,16 +769,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RegistryCredential>
-      PARSER = new com.google.protobuf.AbstractParser<RegistryCredential>() {
-    @java.lang.Override
-    public RegistryCredential parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RegistryCredential(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RegistryCredential> PARSER =
+      new com.google.protobuf.AbstractParser<RegistryCredential>() {
+        @java.lang.Override
+        public RegistryCredential parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RegistryCredential(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RegistryCredential> parser() {
     return PARSER;
@@ -737,6 +793,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.iot.v1.RegistryCredential getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

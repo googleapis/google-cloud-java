@@ -40,8 +40,7 @@ public class Component {
         id,
         data.getAsJsonObject().get("checksum").getAsString(),
         new URL(baseUrl, data.getAsJsonObject().get("source").getAsString()),
-        data.getAsJsonObject().get("type").getAsString()
-    );
+        data.getAsJsonObject().get("type").getAsString());
   }
 
   static Component create(String id, String checksum, URL source, String fileType) {
@@ -80,10 +79,10 @@ public class Component {
       return false;
     }
     Component component = (Component) o;
-    return Objects.equals(id, component.id) &&
-        Objects.equals(checksum, component.checksum) &&
-        Objects.equals(source, component.source) &&
-        Objects.equals(fileType, component.fileType);
+    return Objects.equals(id, component.id)
+        && Objects.equals(checksum, component.checksum)
+        && Objects.equals(source, component.source)
+        && Objects.equals(fileType, component.fileType);
   }
 
   @Override

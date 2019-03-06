@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface GetAlertPolicyRequestOrBuilder extends
+public interface GetAlertPolicyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.GetAlertPolicyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The alerting policy to retrieve. The format is
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
@@ -17,6 +20,8 @@ public interface GetAlertPolicyRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The alerting policy to retrieve. The format is
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
@@ -24,6 +29,5 @@ public interface GetAlertPolicyRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

@@ -4,29 +4,31 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * The input content for the `ImportProductSets` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig}
  */
-public  final class ImportProductSetsInputConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ImportProductSetsInputConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig)
     ImportProductSetsInputConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ImportProductSetsInputConfig.newBuilder() to construct.
   private ImportProductSetsInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImportProductSetsInputConfig() {
-  }
+
+  private ImportProductSetsInputConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ImportProductSetsInputConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,65 +48,73 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder subBuilder = null;
-            if (sourceCase_ == 1) {
-              subBuilder = ((com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_).toBuilder();
+          case 10:
+            {
+              com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder subBuilder =
+                  null;
+              if (sourceCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_)
+                        .toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 1;
+              break;
             }
-            source_ =
-                input.readMessage(com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_);
-              source_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            sourceCase_ = 1;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.class, com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.Builder.class);
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.class,
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.Builder.class);
   }
 
   private int sourceCase_ = 0;
   private java.lang.Object source_;
-  public enum SourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     GCS_SOURCE(1),
     SOURCE_NOT_SET(0);
     private final int value;
+
     private SourceCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -112,24 +122,28 @@ private static final long serialVersionUID = 0L;
 
     public static SourceCase forNumber(int value) {
       switch (value) {
-        case 1: return GCS_SOURCE;
-        case 0: return SOURCE_NOT_SET;
-        default: return null;
+        case 1:
+          return GCS_SOURCE;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public SourceCase
-  getSourceCase() {
-    return SourceCase.forNumber(
-        sourceCase_);
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location for a csv file which preserves a list
    * of ImportProductSetRequests in each line.
@@ -141,6 +155,8 @@ private static final long serialVersionUID = 0L;
     return sourceCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location for a csv file which preserves a list
    * of ImportProductSetRequests in each line.
@@ -150,11 +166,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource getGcsSource() {
     if (sourceCase_ == 1) {
-       return (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_;
+      return (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_;
     }
     return com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location for a csv file which preserves a list
    * of ImportProductSetRequests in each line.
@@ -162,14 +180,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource gcs_source = 1;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder getGcsSourceOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder
+      getGcsSourceOrBuilder() {
     if (sourceCase_ == 1) {
-       return (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_;
+      return (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_;
     }
     return com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -181,10 +201,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (sourceCase_ == 1) {
-      output.writeMessage(1, (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_);
+      output.writeMessage(
+          1, (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_);
     }
     unknownFields.writeTo(output);
   }
@@ -196,8 +216,9 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (sourceCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -207,21 +228,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig other = (com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig) obj;
+    com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig other =
+        (com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig) obj;
 
     boolean result = true;
-    result = result && getSourceCase().equals(
-        other.getSourceCase());
+    result = result && getSourceCase().equals(other.getSourceCase());
     if (!result) return false;
     switch (sourceCase_) {
       case 1:
-        result = result && getGcsSource()
-            .equals(other.getGcsSource());
+        result = result && getGcsSource().equals(other.getGcsSource());
         break;
       case 0:
       default:
@@ -251,117 +271,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The input content for the `ImportProductSets` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig)
       com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.class, com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.Builder.class);
+              com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.class,
+              com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.newBuilder()
@@ -369,16 +399,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -388,13 +417,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImportProductSetsInputConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig getDefaultInstanceForType() {
+    public com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig
+        getDefaultInstanceForType() {
       return com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.getDefaultInstance();
     }
 
@@ -409,7 +439,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig buildPartial() {
-      com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig result = new com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig(this);
+      com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig result =
+          new com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig(this);
       if (sourceCase_ == 1) {
         if (gcsSourceBuilder_ == null) {
           result.source_ = source_;
@@ -426,38 +457,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -465,15 +497,19 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig other) {
-      if (other == com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig.getDefaultInstance())
+        return this;
       switch (other.getSourceCase()) {
-        case GCS_SOURCE: {
-          mergeGcsSource(other.getGcsSource());
-          break;
-        }
-        case SOURCE_NOT_SET: {
-          break;
-        }
+        case GCS_SOURCE:
+          {
+            mergeGcsSource(other.getGcsSource());
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -494,7 +530,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -503,12 +541,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int sourceCase_ = 0;
     private java.lang.Object source_;
-    public SourceCase
-        getSourceCase() {
-      return SourceCase.forNumber(
-          sourceCase_);
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
     }
 
     public Builder clearSource() {
@@ -518,10 +556,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource, com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder, com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder> gcsSourceBuilder_;
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource,
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder,
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder>
+        gcsSourceBuilder_;
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -533,6 +575,8 @@ private static final long serialVersionUID = 0L;
       return sourceCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -554,6 +598,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -561,7 +607,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource gcs_source = 1;</code>
      */
-    public Builder setGcsSource(com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource value) {
+    public Builder setGcsSource(
+        com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource value) {
       if (gcsSourceBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -575,6 +622,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -594,6 +643,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -601,12 +652,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource gcs_source = 1;</code>
      */
-    public Builder mergeGcsSource(com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource value) {
+    public Builder mergeGcsSource(
+        com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource value) {
       if (gcsSourceBuilder_ == null) {
-        if (sourceCase_ == 1 &&
-            source_ != com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.getDefaultInstance()) {
-          source_ = com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.newBuilder((com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_)
-              .mergeFrom(value).buildPartial();
+        if (sourceCase_ == 1
+            && source_
+                != com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.newBuilder(
+                      (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           source_ = value;
         }
@@ -621,6 +678,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -645,6 +704,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -652,10 +713,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource gcs_source = 1;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder getGcsSourceBuilder() {
+    public com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder
+        getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -663,7 +727,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource gcs_source = 1;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder getGcsSourceOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder
+        getGcsSourceOrBuilder() {
       if ((sourceCase_ == 1) && (gcsSourceBuilder_ != null)) {
         return gcsSourceBuilder_.getMessageOrBuilder();
       } else {
@@ -674,6 +739,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage location for a csv file which preserves a list
      * of ImportProductSetRequests in each line.
@@ -682,26 +749,33 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource gcs_source = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource, com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder, com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource,
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder,
+            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder>
         getGcsSourceFieldBuilder() {
       if (gcsSourceBuilder_ == null) {
         if (!(sourceCase_ == 1)) {
-          source_ = com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.getDefaultInstance();
+          source_ =
+              com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.getDefaultInstance();
         }
-        gcsSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource, com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder, com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder>(
+        gcsSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource,
+                com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder,
+                com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSourceOrBuilder>(
                 (com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource) source_,
                 getParentForChildren(),
                 isClean());
         source_ = null;
       }
       sourceCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return gcsSourceBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -711,30 +785,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig)
-  private static final com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig DEFAULT_INSTANCE;
+  private static final com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig();
   }
 
-  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig getDefaultInstance() {
+  public static com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImportProductSetsInputConfig>
-      PARSER = new com.google.protobuf.AbstractParser<ImportProductSetsInputConfig>() {
-    @java.lang.Override
-    public ImportProductSetsInputConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImportProductSetsInputConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ImportProductSetsInputConfig> PARSER =
+      new com.google.protobuf.AbstractParser<ImportProductSetsInputConfig>() {
+        @java.lang.Override
+        public ImportProductSetsInputConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ImportProductSetsInputConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ImportProductSetsInputConfig> parser() {
     return PARSER;
@@ -746,9 +822,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig getDefaultInstanceForType() {
+  public com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

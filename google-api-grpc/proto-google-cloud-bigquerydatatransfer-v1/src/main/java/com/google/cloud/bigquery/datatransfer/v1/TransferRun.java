@@ -4,21 +4,24 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
+ *
+ *
  * <pre>
  * Represents a data transfer run.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.TransferRun}
  */
-public  final class TransferRun extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.TransferRun)
     TransferRunOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use TransferRun.newBuilder() to construct.
   private TransferRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private TransferRun() {
     name_ = "";
     destinationDatasetId_ = "";
@@ -29,10 +32,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private TransferRun(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,167 +55,188 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            destinationDatasetId_ = s;
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (scheduleTime_ != null) {
-              subBuilder = scheduleTime_.toBuilder();
+              destinationDatasetId_ = s;
+              break;
             }
-            scheduleTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scheduleTime_);
-              scheduleTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (scheduleTime_ != null) {
+                subBuilder = scheduleTime_.toBuilder();
+              }
+              scheduleTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduleTime_);
+                scheduleTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            dataSourceId_ = s;
-            break;
-          }
-          case 64: {
-            int rawValue = input.readEnum();
-
-            state_ = rawValue;
-            break;
-          }
-          case 74: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (params_ != null) {
-              subBuilder = params_.toBuilder();
+              break;
             }
-            params_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(params_);
-              params_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 82: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (runTime_ != null) {
-              subBuilder = runTime_.toBuilder();
+              dataSourceId_ = s;
+              break;
             }
-            runTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(runTime_);
-              runTime_ = subBuilder.buildPartial();
-            }
+          case 64:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 88: {
-
-            userId_ = input.readInt64();
-            break;
-          }
-          case 98: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            schedule_ = s;
-            break;
-          }
-          case 170: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (errorStatus_ != null) {
-              subBuilder = errorStatus_.toBuilder();
+              state_ = rawValue;
+              break;
             }
-            errorStatus_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(errorStatus_);
-              errorStatus_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 82:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (runTime_ != null) {
+                subBuilder = runTime_.toBuilder();
+              }
+              runTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(runTime_);
+                runTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 88:
+            {
+              userId_ = input.readInt64();
+              break;
+            }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              schedule_ = s;
+              break;
+            }
+          case 170:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (errorStatus_ != null) {
+                subBuilder = errorStatus_.toBuilder();
+              }
+              errorStatus_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(errorStatus_);
+                errorStatus_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.bigquery.datatransfer.v1.TransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_fieldAccessorTable
+    return com.google.cloud.bigquery.datatransfer.v1.TransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.bigquery.datatransfer.v1.TransferRun.class, com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder.class);
+            com.google.cloud.bigquery.datatransfer.v1.TransferRun.class,
+            com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The resource name of the transfer run.
    * Transfer run names have the form
@@ -227,14 +251,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource name of the transfer run.
    * Transfer run names have the form
@@ -244,13 +269,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -261,6 +284,8 @@ private static final long serialVersionUID = 0L;
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
+   *
+   *
    * <pre>
    * Minimum time after which a transfer run can be started.
    * </pre>
@@ -271,6 +296,8 @@ private static final long serialVersionUID = 0L;
     return scheduleTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Minimum time after which a transfer run can be started.
    * </pre>
@@ -278,9 +305,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
-    return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Minimum time after which a transfer run can be started.
    * </pre>
@@ -294,6 +325,8 @@ private static final long serialVersionUID = 0L;
   public static final int RUN_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp runTime_;
   /**
+   *
+   *
    * <pre>
    * For batch transfer runs, specifies the date and time that
    * data should be ingested.
@@ -305,6 +338,8 @@ private static final long serialVersionUID = 0L;
     return runTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * For batch transfer runs, specifies the date and time that
    * data should be ingested.
@@ -316,6 +351,8 @@ private static final long serialVersionUID = 0L;
     return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
   }
   /**
+   *
+   *
    * <pre>
    * For batch transfer runs, specifies the date and time that
    * data should be ingested.
@@ -330,6 +367,8 @@ private static final long serialVersionUID = 0L;
   public static final int ERROR_STATUS_FIELD_NUMBER = 21;
   private com.google.rpc.Status errorStatus_;
   /**
+   *
+   *
    * <pre>
    * Status of the transfer run.
    * </pre>
@@ -340,6 +379,8 @@ private static final long serialVersionUID = 0L;
     return errorStatus_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Status of the transfer run.
    * </pre>
@@ -350,6 +391,8 @@ private static final long serialVersionUID = 0L;
     return errorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : errorStatus_;
   }
   /**
+   *
+   *
    * <pre>
    * Status of the transfer run.
    * </pre>
@@ -363,6 +406,8 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run was started.
    * Parameter ignored by server for input requests.
@@ -374,6 +419,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run was started.
    * Parameter ignored by server for input requests.
@@ -385,6 +432,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run was started.
    * Parameter ignored by server for input requests.
@@ -399,6 +448,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run ended.
    * Parameter ignored by server for input requests.
@@ -410,6 +461,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run ended.
    * Parameter ignored by server for input requests.
@@ -421,6 +474,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run ended.
    * Parameter ignored by server for input requests.
@@ -435,6 +490,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. Last time the data transfer run state was updated.
    * </pre>
@@ -445,6 +502,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Last time the data transfer run state was updated.
    * </pre>
@@ -455,6 +514,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Last time the data transfer run state was updated.
    * </pre>
@@ -468,6 +529,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARAMS_FIELD_NUMBER = 9;
   private com.google.protobuf.Struct params_;
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer specific parameters.
    * </pre>
@@ -478,6 +541,8 @@ private static final long serialVersionUID = 0L;
     return params_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer specific parameters.
    * </pre>
@@ -488,6 +553,8 @@ private static final long serialVersionUID = 0L;
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer specific parameters.
    * </pre>
@@ -501,6 +568,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESTINATION_DATASET_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object destinationDatasetId_;
   /**
+   *
+   *
    * <pre>
    * Output only. The BigQuery target dataset id.
    * </pre>
@@ -512,27 +581,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       destinationDatasetId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The BigQuery target dataset id.
    * </pre>
    *
    * <code>string destination_dataset_id = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDestinationDatasetIdBytes() {
+  public com.google.protobuf.ByteString getDestinationDatasetIdBytes() {
     java.lang.Object ref = destinationDatasetId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       destinationDatasetId_ = b;
       return b;
     } else {
@@ -543,6 +611,8 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_SOURCE_ID_FIELD_NUMBER = 7;
   private volatile java.lang.Object dataSourceId_;
   /**
+   *
+   *
    * <pre>
    * Output only. Data source id.
    * </pre>
@@ -554,27 +624,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       dataSourceId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Data source id.
    * </pre>
    *
    * <code>string data_source_id = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getDataSourceIdBytes() {
+  public com.google.protobuf.ByteString getDataSourceIdBytes() {
     java.lang.Object ref = dataSourceId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       dataSourceId_ = b;
       return b;
     } else {
@@ -585,6 +654,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Data transfer run state. Ignored for input requests.
    * </pre>
@@ -595,6 +666,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Data transfer run state. Ignored for input requests.
    * </pre>
@@ -603,13 +676,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferState getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.bigquery.datatransfer.v1.TransferState result = com.google.cloud.bigquery.datatransfer.v1.TransferState.valueOf(state_);
-    return result == null ? com.google.cloud.bigquery.datatransfer.v1.TransferState.UNRECOGNIZED : result;
+    com.google.cloud.bigquery.datatransfer.v1.TransferState result =
+        com.google.cloud.bigquery.datatransfer.v1.TransferState.valueOf(state_);
+    return result == null
+        ? com.google.cloud.bigquery.datatransfer.v1.TransferState.UNRECOGNIZED
+        : result;
   }
 
   public static final int USER_ID_FIELD_NUMBER = 11;
   private long userId_;
   /**
+   *
+   *
    * <pre>
    * Output only. Unique ID of the user on whose behalf transfer is done.
    * Applicable only to data sources that do not support service accounts.
@@ -627,6 +705,8 @@ private static final long serialVersionUID = 0L;
   public static final int SCHEDULE_FIELD_NUMBER = 12;
   private volatile java.lang.Object schedule_;
   /**
+   *
+   *
    * <pre>
    * Output only. Describes the schedule of this transfer run if it was
    * created as part of a regular schedule. For batch transfer runs that are
@@ -642,14 +722,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       schedule_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Describes the schedule of this transfer run if it was
    * created as part of a regular schedule. For batch transfer runs that are
@@ -660,13 +741,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string schedule = 12;</code>
    */
-  public com.google.protobuf.ByteString
-      getScheduleBytes() {
+  public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       schedule_ = b;
       return b;
     } else {
@@ -675,6 +754,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -686,8 +766,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -709,7 +788,9 @@ private static final long serialVersionUID = 0L;
     if (!getDataSourceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, dataSourceId_);
     }
-    if (state_ != com.google.cloud.bigquery.datatransfer.v1.TransferState.TRANSFER_STATE_UNSPECIFIED.getNumber()) {
+    if (state_
+        != com.google.cloud.bigquery.datatransfer.v1.TransferState.TRANSFER_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(8, state_);
     }
     if (params_ != null) {
@@ -743,46 +824,39 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, destinationDatasetId_);
     }
     if (scheduleTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getScheduleTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getScheduleTime());
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStartTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
     }
     if (!getDataSourceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, dataSourceId_);
     }
-    if (state_ != com.google.cloud.bigquery.datatransfer.v1.TransferState.TRANSFER_STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(8, state_);
+    if (state_
+        != com.google.cloud.bigquery.datatransfer.v1.TransferState.TRANSFER_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, state_);
     }
     if (params_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getParams());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getParams());
     }
     if (runTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getRunTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRunTime());
     }
     if (userId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(11, userId_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, userId_);
     }
     if (!getScheduleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, schedule_);
     }
     if (errorStatus_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(21, getErrorStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getErrorStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -792,60 +866,49 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.bigquery.datatransfer.v1.TransferRun)) {
       return super.equals(obj);
     }
-    com.google.cloud.bigquery.datatransfer.v1.TransferRun other = (com.google.cloud.bigquery.datatransfer.v1.TransferRun) obj;
+    com.google.cloud.bigquery.datatransfer.v1.TransferRun other =
+        (com.google.cloud.bigquery.datatransfer.v1.TransferRun) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasScheduleTime() == other.hasScheduleTime());
     if (hasScheduleTime()) {
-      result = result && getScheduleTime()
-          .equals(other.getScheduleTime());
+      result = result && getScheduleTime().equals(other.getScheduleTime());
     }
     result = result && (hasRunTime() == other.hasRunTime());
     if (hasRunTime()) {
-      result = result && getRunTime()
-          .equals(other.getRunTime());
+      result = result && getRunTime().equals(other.getRunTime());
     }
     result = result && (hasErrorStatus() == other.hasErrorStatus());
     if (hasErrorStatus()) {
-      result = result && getErrorStatus()
-          .equals(other.getErrorStatus());
+      result = result && getErrorStatus().equals(other.getErrorStatus());
     }
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
     result = result && (hasParams() == other.hasParams());
     if (hasParams()) {
-      result = result && getParams()
-          .equals(other.getParams());
+      result = result && getParams().equals(other.getParams());
     }
-    result = result && getDestinationDatasetId()
-        .equals(other.getDestinationDatasetId());
-    result = result && getDataSourceId()
-        .equals(other.getDataSourceId());
+    result = result && getDestinationDatasetId().equals(other.getDestinationDatasetId());
+    result = result && getDataSourceId().equals(other.getDataSourceId());
     result = result && state_ == other.state_;
-    result = result && (getUserId()
-        == other.getUserId());
-    result = result && getSchedule()
-        .equals(other.getSchedule());
+    result = result && (getUserId() == other.getUserId());
+    result = result && getSchedule().equals(other.getSchedule());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -894,8 +957,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUserId());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUserId());
     hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
     hash = (53 * hash) + getSchedule().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -904,117 +966,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.TransferRun parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.bigquery.datatransfer.v1.TransferRun prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.bigquery.datatransfer.v1.TransferRun prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents a data transfer run.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.TransferRun}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.datatransfer.v1.TransferRun)
       com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.datatransfer.v1.TransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_fieldAccessorTable
+      return com.google.cloud.bigquery.datatransfer.v1.TransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.datatransfer.v1.TransferRun.class, com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder.class);
+              com.google.cloud.bigquery.datatransfer.v1.TransferRun.class,
+              com.google.cloud.bigquery.datatransfer.v1.TransferRun.Builder.class);
     }
 
     // Construct using com.google.cloud.bigquery.datatransfer.v1.TransferRun.newBuilder()
@@ -1022,16 +1094,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1093,9 +1164,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.bigquery.datatransfer.v1.TransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
     }
 
     @java.lang.Override
@@ -1114,7 +1185,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun buildPartial() {
-      com.google.cloud.bigquery.datatransfer.v1.TransferRun result = new com.google.cloud.bigquery.datatransfer.v1.TransferRun(this);
+      com.google.cloud.bigquery.datatransfer.v1.TransferRun result =
+          new com.google.cloud.bigquery.datatransfer.v1.TransferRun(this);
       result.name_ = name_;
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
@@ -1164,38 +1236,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.bigquery.datatransfer.v1.TransferRun) {
-        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.TransferRun)other);
+        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.TransferRun) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1203,7 +1276,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.bigquery.datatransfer.v1.TransferRun other) {
-      if (other == com.google.cloud.bigquery.datatransfer.v1.TransferRun.getDefaultInstance()) return this;
+      if (other == com.google.cloud.bigquery.datatransfer.v1.TransferRun.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1266,7 +1340,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.bigquery.datatransfer.v1.TransferRun) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.bigquery.datatransfer.v1.TransferRun) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1278,6 +1353,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource name of the transfer run.
      * Transfer run names have the form
@@ -1290,8 +1367,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1300,6 +1376,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the transfer run.
      * Transfer run names have the form
@@ -1309,13 +1387,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1323,6 +1399,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the transfer run.
      * Transfer run names have the form
@@ -1332,17 +1410,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the transfer run.
      * Transfer run names have the form
@@ -1353,12 +1432,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the transfer run.
      * Transfer run names have the form
@@ -1368,13 +1449,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1382,8 +1462,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp scheduleTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scheduleTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        scheduleTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1394,6 +1479,8 @@ private static final long serialVersionUID = 0L;
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1402,12 +1489,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
-        return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       } else {
         return scheduleTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1428,14 +1519,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
      */
-    public Builder setScheduleTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
         onChanged();
@@ -1446,6 +1538,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1456,7 +1550,9 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ == null) {
         if (scheduleTime_ != null) {
           scheduleTime_ =
-            com.google.protobuf.Timestamp.newBuilder(scheduleTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           scheduleTime_ = value;
         }
@@ -1468,6 +1564,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1486,6 +1584,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1493,11 +1593,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      
+
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1508,11 +1610,14 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ != null) {
         return scheduleTimeBuilder_.getMessageOrBuilder();
       } else {
-        return scheduleTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Minimum time after which a transfer run can be started.
      * </pre>
@@ -1520,14 +1625,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getScheduleTimeFieldBuilder() {
       if (scheduleTimeBuilder_ == null) {
-        scheduleTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getScheduleTime(),
-                getParentForChildren(),
-                isClean());
+        scheduleTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getScheduleTime(), getParentForChildren(), isClean());
         scheduleTime_ = null;
       }
       return scheduleTimeBuilder_;
@@ -1535,8 +1643,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp runTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> runTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        runTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1548,6 +1661,8 @@ private static final long serialVersionUID = 0L;
       return runTimeBuilder_ != null || runTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1563,6 +1678,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1584,6 +1701,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1591,8 +1710,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
      */
-    public Builder setRunTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setRunTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (runTimeBuilder_ == null) {
         runTime_ = builderForValue.build();
         onChanged();
@@ -1603,6 +1721,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1614,7 +1734,7 @@ private static final long serialVersionUID = 0L;
       if (runTimeBuilder_ == null) {
         if (runTime_ != null) {
           runTime_ =
-            com.google.protobuf.Timestamp.newBuilder(runTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(runTime_).mergeFrom(value).buildPartial();
         } else {
           runTime_ = value;
         }
@@ -1626,6 +1746,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1645,6 +1767,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1653,11 +1777,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRunTimeBuilder() {
-      
+
       onChanged();
       return getRunTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1669,11 +1795,12 @@ private static final long serialVersionUID = 0L;
       if (runTimeBuilder_ != null) {
         return runTimeBuilder_.getMessageOrBuilder();
       } else {
-        return runTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
+        return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * For batch transfer runs, specifies the date and time that
      * data should be ingested.
@@ -1682,14 +1809,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getRunTimeFieldBuilder() {
       if (runTimeBuilder_ == null) {
-        runTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getRunTime(),
-                getParentForChildren(),
-                isClean());
+        runTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getRunTime(), getParentForChildren(), isClean());
         runTime_ = null;
       }
       return runTimeBuilder_;
@@ -1697,8 +1827,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status errorStatus_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> errorStatusBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorStatusBuilder_;
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1709,6 +1842,8 @@ private static final long serialVersionUID = 0L;
       return errorStatusBuilder_ != null || errorStatus_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1723,6 +1858,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1743,14 +1880,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
      *
      * <code>.google.rpc.Status error_status = 21;</code>
      */
-    public Builder setErrorStatus(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setErrorStatus(com.google.rpc.Status.Builder builderForValue) {
       if (errorStatusBuilder_ == null) {
         errorStatus_ = builderForValue.build();
         onChanged();
@@ -1761,6 +1899,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1771,7 +1911,7 @@ private static final long serialVersionUID = 0L;
       if (errorStatusBuilder_ == null) {
         if (errorStatus_ != null) {
           errorStatus_ =
-            com.google.rpc.Status.newBuilder(errorStatus_).mergeFrom(value).buildPartial();
+              com.google.rpc.Status.newBuilder(errorStatus_).mergeFrom(value).buildPartial();
         } else {
           errorStatus_ = value;
         }
@@ -1783,6 +1923,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1801,6 +1943,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1808,11 +1952,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error_status = 21;</code>
      */
     public com.google.rpc.Status.Builder getErrorStatusBuilder() {
-      
+
       onChanged();
       return getErrorStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1823,11 +1969,12 @@ private static final long serialVersionUID = 0L;
       if (errorStatusBuilder_ != null) {
         return errorStatusBuilder_.getMessageOrBuilder();
       } else {
-        return errorStatus_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : errorStatus_;
+        return errorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : errorStatus_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Status of the transfer run.
      * </pre>
@@ -1835,14 +1982,15 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error_status = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getErrorStatusFieldBuilder() {
       if (errorStatusBuilder_ == null) {
-        errorStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getErrorStatus(),
-                getParentForChildren(),
-                isClean());
+        errorStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                getErrorStatus(), getParentForChildren(), isClean());
         errorStatus_ = null;
       }
       return errorStatusBuilder_;
@@ -1850,8 +1998,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1863,6 +2016,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1878,6 +2033,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1899,6 +2056,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1906,8 +2065,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -1918,6 +2076,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1929,7 +2089,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -1941,6 +2101,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1960,6 +2122,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1968,11 +2132,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1984,11 +2150,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run was started.
      * Parameter ignored by server for input requests.
@@ -1997,14 +2164,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -2012,8 +2182,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2025,6 +2200,8 @@ private static final long serialVersionUID = 0L;
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2040,6 +2217,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2061,6 +2240,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2068,8 +2249,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -2080,6 +2260,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2091,7 +2273,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -2103,6 +2285,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2122,6 +2306,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2130,11 +2316,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2146,11 +2334,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when transfer run ended.
      * Parameter ignored by server for input requests.
@@ -2159,14 +2348,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
@@ -2174,8 +2366,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2186,6 +2383,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2194,12 +2393,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2220,14 +2423,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -2238,6 +2442,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2248,7 +2454,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -2260,6 +2466,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2278,6 +2486,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2285,11 +2495,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2300,11 +2512,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Last time the data transfer run state was updated.
      * </pre>
@@ -2312,14 +2527,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
@@ -2327,8 +2545,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Struct params_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> paramsBuilder_;
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        paramsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2339,6 +2562,8 @@ private static final long serialVersionUID = 0L;
       return paramsBuilder_ != null || params_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2353,6 +2578,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2373,14 +2600,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9;</code>
      */
-    public Builder setParams(
-        com.google.protobuf.Struct.Builder builderForValue) {
+    public Builder setParams(com.google.protobuf.Struct.Builder builderForValue) {
       if (paramsBuilder_ == null) {
         params_ = builderForValue.build();
         onChanged();
@@ -2391,6 +2619,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2400,8 +2630,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeParams(com.google.protobuf.Struct value) {
       if (paramsBuilder_ == null) {
         if (params_ != null) {
-          params_ =
-            com.google.protobuf.Struct.newBuilder(params_).mergeFrom(value).buildPartial();
+          params_ = com.google.protobuf.Struct.newBuilder(params_).mergeFrom(value).buildPartial();
         } else {
           params_ = value;
         }
@@ -2413,6 +2642,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2431,6 +2662,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2438,11 +2671,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct params = 9;</code>
      */
     public com.google.protobuf.Struct.Builder getParamsBuilder() {
-      
+
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2453,11 +2688,12 @@ private static final long serialVersionUID = 0L;
       if (paramsBuilder_ != null) {
         return paramsBuilder_.getMessageOrBuilder();
       } else {
-        return params_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : params_;
+        return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data transfer specific parameters.
      * </pre>
@@ -2465,14 +2701,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct params = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
         getParamsFieldBuilder() {
       if (paramsBuilder_ == null) {
-        paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getParams(),
-                getParentForChildren(),
-                isClean());
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
         params_ = null;
       }
       return paramsBuilder_;
@@ -2480,6 +2719,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object destinationDatasetId_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The BigQuery target dataset id.
      * </pre>
@@ -2489,8 +2730,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDestinationDatasetId() {
       java.lang.Object ref = destinationDatasetId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         destinationDatasetId_ = s;
         return s;
@@ -2499,19 +2739,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The BigQuery target dataset id.
      * </pre>
      *
      * <code>string destination_dataset_id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDestinationDatasetIdBytes() {
+    public com.google.protobuf.ByteString getDestinationDatasetIdBytes() {
       java.lang.Object ref = destinationDatasetId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         destinationDatasetId_ = b;
         return b;
       } else {
@@ -2519,23 +2759,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The BigQuery target dataset id.
      * </pre>
      *
      * <code>string destination_dataset_id = 2;</code>
      */
-    public Builder setDestinationDatasetId(
-        java.lang.String value) {
+    public Builder setDestinationDatasetId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       destinationDatasetId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The BigQuery target dataset id.
      * </pre>
@@ -2543,25 +2786,26 @@ private static final long serialVersionUID = 0L;
      * <code>string destination_dataset_id = 2;</code>
      */
     public Builder clearDestinationDatasetId() {
-      
+
       destinationDatasetId_ = getDefaultInstance().getDestinationDatasetId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The BigQuery target dataset id.
      * </pre>
      *
      * <code>string destination_dataset_id = 2;</code>
      */
-    public Builder setDestinationDatasetIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDestinationDatasetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       destinationDatasetId_ = value;
       onChanged();
       return this;
@@ -2569,6 +2813,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object dataSourceId_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. Data source id.
      * </pre>
@@ -2578,8 +2824,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDataSourceId() {
       java.lang.Object ref = dataSourceId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         dataSourceId_ = s;
         return s;
@@ -2588,19 +2833,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source id.
      * </pre>
      *
      * <code>string data_source_id = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getDataSourceIdBytes() {
+    public com.google.protobuf.ByteString getDataSourceIdBytes() {
       java.lang.Object ref = dataSourceId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         dataSourceId_ = b;
         return b;
       } else {
@@ -2608,23 +2853,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source id.
      * </pre>
      *
      * <code>string data_source_id = 7;</code>
      */
-    public Builder setDataSourceId(
-        java.lang.String value) {
+    public Builder setDataSourceId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       dataSourceId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source id.
      * </pre>
@@ -2632,25 +2880,26 @@ private static final long serialVersionUID = 0L;
      * <code>string data_source_id = 7;</code>
      */
     public Builder clearDataSourceId() {
-      
+
       dataSourceId_ = getDefaultInstance().getDataSourceId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source id.
      * </pre>
      *
      * <code>string data_source_id = 7;</code>
      */
-    public Builder setDataSourceIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDataSourceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       dataSourceId_ = value;
       onChanged();
       return this;
@@ -2658,6 +2907,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Data transfer run state. Ignored for input requests.
      * </pre>
@@ -2668,6 +2919,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer run state. Ignored for input requests.
      * </pre>
@@ -2680,6 +2933,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer run state. Ignored for input requests.
      * </pre>
@@ -2688,10 +2943,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferState getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.bigquery.datatransfer.v1.TransferState result = com.google.cloud.bigquery.datatransfer.v1.TransferState.valueOf(state_);
-      return result == null ? com.google.cloud.bigquery.datatransfer.v1.TransferState.UNRECOGNIZED : result;
+      com.google.cloud.bigquery.datatransfer.v1.TransferState result =
+          com.google.cloud.bigquery.datatransfer.v1.TransferState.valueOf(state_);
+      return result == null
+          ? com.google.cloud.bigquery.datatransfer.v1.TransferState.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer run state. Ignored for input requests.
      * </pre>
@@ -2702,12 +2962,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer run state. Ignored for input requests.
      * </pre>
@@ -2715,14 +2977,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferState state = 8;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
     }
 
-    private long userId_ ;
+    private long userId_;
     /**
+     *
+     *
      * <pre>
      * Output only. Unique ID of the user on whose behalf transfer is done.
      * Applicable only to data sources that do not support service accounts.
@@ -2737,6 +3001,8 @@ private static final long serialVersionUID = 0L;
       return userId_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Unique ID of the user on whose behalf transfer is done.
      * Applicable only to data sources that do not support service accounts.
@@ -2748,12 +3014,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 user_id = 11;</code>
      */
     public Builder setUserId(long value) {
-      
+
       userId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Unique ID of the user on whose behalf transfer is done.
      * Applicable only to data sources that do not support service accounts.
@@ -2765,7 +3033,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 user_id = 11;</code>
      */
     public Builder clearUserId() {
-      
+
       userId_ = 0L;
       onChanged();
       return this;
@@ -2773,6 +3041,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object schedule_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. Describes the schedule of this transfer run if it was
      * created as part of a regular schedule. For batch transfer runs that are
@@ -2786,8 +3056,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSchedule() {
       java.lang.Object ref = schedule_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         schedule_ = s;
         return s;
@@ -2796,6 +3065,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Describes the schedule of this transfer run if it was
      * created as part of a regular schedule. For batch transfer runs that are
@@ -2806,13 +3077,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string schedule = 12;</code>
      */
-    public com.google.protobuf.ByteString
-        getScheduleBytes() {
+    public com.google.protobuf.ByteString getScheduleBytes() {
       java.lang.Object ref = schedule_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         schedule_ = b;
         return b;
       } else {
@@ -2820,6 +3089,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Describes the schedule of this transfer run if it was
      * created as part of a regular schedule. For batch transfer runs that are
@@ -2830,17 +3101,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string schedule = 12;</code>
      */
-    public Builder setSchedule(
-        java.lang.String value) {
+    public Builder setSchedule(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       schedule_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Describes the schedule of this transfer run if it was
      * created as part of a regular schedule. For batch transfer runs that are
@@ -2852,12 +3124,14 @@ private static final long serialVersionUID = 0L;
      * <code>string schedule = 12;</code>
      */
     public Builder clearSchedule() {
-      
+
       schedule_ = getDefaultInstance().getSchedule();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Describes the schedule of this transfer run if it was
      * created as part of a regular schedule. For batch transfer runs that are
@@ -2868,20 +3142,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string schedule = 12;</code>
      */
-    public Builder setScheduleBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setScheduleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       schedule_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2891,12 +3164,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.datatransfer.v1.TransferRun)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.bigquery.datatransfer.v1.TransferRun)
   private static final com.google.cloud.bigquery.datatransfer.v1.TransferRun DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.bigquery.datatransfer.v1.TransferRun();
   }
@@ -2905,16 +3178,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TransferRun>
-      PARSER = new com.google.protobuf.AbstractParser<TransferRun>() {
-    @java.lang.Override
-    public TransferRun parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TransferRun(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<TransferRun> PARSER =
+      new com.google.protobuf.AbstractParser<TransferRun>() {
+        @java.lang.Override
+        public TransferRun parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TransferRun(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<TransferRun> parser() {
     return PARSER;
@@ -2929,6 +3202,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.bigquery.datatransfer.v1.TransferRun getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

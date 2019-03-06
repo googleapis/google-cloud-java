@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface JobTriggerOrBuilder extends
+public interface JobTriggerOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.JobTrigger)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Unique resource name for the triggeredJob, assigned by the service when the
    * triggeredJob is created, for example
@@ -18,6 +21,8 @@ public interface JobTriggerOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Unique resource name for the triggeredJob, assigned by the service when the
    * triggeredJob is created, for example
@@ -26,10 +31,11 @@ public interface JobTriggerOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Display name (max 100 chars)
    * </pre>
@@ -38,16 +44,19 @@ public interface JobTriggerOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Display name (max 100 chars)
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * User provided description (max 256 chars)
    * </pre>
@@ -56,29 +65,26 @@ public interface JobTriggerOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * User provided description (max 256 chars)
    * </pre>
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
-  /**
-   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
   boolean hasInspectJob();
-  /**
-   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
   com.google.privacy.dlp.v2.InspectJobConfig getInspectJob();
-  /**
-   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
   com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -87,9 +93,10 @@ public interface JobTriggerOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> 
-      getTriggersList();
+  java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> getTriggersList();
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -100,6 +107,8 @@ public interface JobTriggerOrBuilder extends
    */
   com.google.privacy.dlp.v2.JobTrigger.Trigger getTriggers(int index);
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -110,6 +119,8 @@ public interface JobTriggerOrBuilder extends
    */
   int getTriggersCount();
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -118,9 +129,11 @@ public interface JobTriggerOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>
       getTriggersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -129,10 +142,11 @@ public interface JobTriggerOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
-  com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder getTriggersOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder getTriggersOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -142,9 +156,10 @@ public interface JobTriggerOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.Error> 
-      getErrorsList();
+  java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -156,6 +171,8 @@ public interface JobTriggerOrBuilder extends
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -167,6 +184,8 @@ public interface JobTriggerOrBuilder extends
    */
   int getErrorsCount();
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -176,9 +195,10 @@ public interface JobTriggerOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
-      getErrorsOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -188,10 +208,11 @@ public interface JobTriggerOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
-  com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a triggeredJob, output only field.
    * </pre>
@@ -200,6 +221,8 @@ public interface JobTriggerOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a triggeredJob, output only field.
    * </pre>
@@ -208,6 +231,8 @@ public interface JobTriggerOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a triggeredJob, output only field.
    * </pre>
@@ -217,6 +242,8 @@ public interface JobTriggerOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a triggeredJob, output only field.
    * </pre>
@@ -225,6 +252,8 @@ public interface JobTriggerOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a triggeredJob, output only field.
    * </pre>
@@ -233,6 +262,8 @@ public interface JobTriggerOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a triggeredJob, output only field.
    * </pre>
@@ -242,6 +273,8 @@ public interface JobTriggerOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The timestamp of the last time this trigger executed, output only field.
    * </pre>
@@ -250,6 +283,8 @@ public interface JobTriggerOrBuilder extends
    */
   boolean hasLastRunTime();
   /**
+   *
+   *
    * <pre>
    * The timestamp of the last time this trigger executed, output only field.
    * </pre>
@@ -258,6 +293,8 @@ public interface JobTriggerOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastRunTime();
   /**
+   *
+   *
    * <pre>
    * The timestamp of the last time this trigger executed, output only field.
    * </pre>
@@ -267,6 +304,8 @@ public interface JobTriggerOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastRunTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A status for this trigger. [required]
    * </pre>
@@ -275,6 +314,8 @@ public interface JobTriggerOrBuilder extends
    */
   int getStatusValue();
   /**
+   *
+   *
    * <pre>
    * A status for this trigger. [required]
    * </pre>

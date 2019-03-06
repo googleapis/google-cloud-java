@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface ListDeviceConfigVersionsResponseOrBuilder extends
+public interface ListDeviceConfigVersionsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.ListDeviceConfigVersionsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The device configuration for the last few versions. Versions are listed
    * in decreasing order, starting from the most recent one.
@@ -15,9 +18,10 @@ public interface ListDeviceConfigVersionsResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
-  java.util.List<com.google.cloud.iot.v1.DeviceConfig> 
-      getDeviceConfigsList();
+  java.util.List<com.google.cloud.iot.v1.DeviceConfig> getDeviceConfigsList();
   /**
+   *
+   *
    * <pre>
    * The device configuration for the last few versions. Versions are listed
    * in decreasing order, starting from the most recent one.
@@ -27,6 +31,8 @@ public interface ListDeviceConfigVersionsResponseOrBuilder extends
    */
   com.google.cloud.iot.v1.DeviceConfig getDeviceConfigs(int index);
   /**
+   *
+   *
    * <pre>
    * The device configuration for the last few versions. Versions are listed
    * in decreasing order, starting from the most recent one.
@@ -36,6 +42,8 @@ public interface ListDeviceConfigVersionsResponseOrBuilder extends
    */
   int getDeviceConfigsCount();
   /**
+   *
+   *
    * <pre>
    * The device configuration for the last few versions. Versions are listed
    * in decreasing order, starting from the most recent one.
@@ -43,9 +51,11 @@ public interface ListDeviceConfigVersionsResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.iot.v1.DeviceConfigOrBuilder> 
+  java.util.List<? extends com.google.cloud.iot.v1.DeviceConfigOrBuilder>
       getDeviceConfigsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The device configuration for the last few versions. Versions are listed
    * in decreasing order, starting from the most recent one.
@@ -53,6 +63,5 @@ public interface ListDeviceConfigVersionsResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceConfig device_configs = 1;</code>
    */
-  com.google.cloud.iot.v1.DeviceConfigOrBuilder getDeviceConfigsOrBuilder(
-      int index);
+  com.google.cloud.iot.v1.DeviceConfigOrBuilder getDeviceConfigsOrBuilder(int index);
 }

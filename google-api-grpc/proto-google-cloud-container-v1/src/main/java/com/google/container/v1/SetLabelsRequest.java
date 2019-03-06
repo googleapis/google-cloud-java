@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * SetLabelsRequest sets the Google Cloud Platform labels on a Google Container
  * Engine cluster, which will in turn set them for Google Compute Engine
@@ -12,27 +14,29 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.SetLabelsRequest}
  */
-public  final class SetLabelsRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SetLabelsRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.SetLabelsRequest)
     SetLabelsRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SetLabelsRequest.newBuilder() to construct.
   private SetLabelsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SetLabelsRequest() {
     projectId_ = "";
     zone_ = "";
     clusterId_ = "";
     labelFingerprint_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SetLabelsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,125 +56,146 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            zone_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clusterId_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              resourceLabels_ = com.google.protobuf.MapField.newMapField(
-                  ResourceLabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              projectId_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            resourceLabels__ = input.readMessage(
-                ResourceLabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            resourceLabels_.getMutableMap().put(
-                resourceLabels__.getKey(), resourceLabels__.getValue());
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            labelFingerprint_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              zone_ = s;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterId_ = s;
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                resourceLabels_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ResourceLabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
+                  input.readMessage(
+                      ResourceLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              resourceLabels_
+                  .getMutableMap()
+                  .put(resourceLabels__.getKey(), resourceLabels__.getValue());
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              labelFingerprint_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetLabelsRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_SetLabelsRequest_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 4:
         return internalGetResourceLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetLabelsRequest_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_SetLabelsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.SetLabelsRequest.class, com.google.container.v1.SetLabelsRequest.Builder.class);
+            com.google.container.v1.SetLabelsRequest.class,
+            com.google.container.v1.SetLabelsRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -181,42 +206,47 @@ private static final long serialVersionUID = 0L;
   public static final int ZONE_FIELD_NUMBER = 2;
   private volatile java.lang.Object zone_;
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       zone_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getZoneBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       zone_ = b;
       return b;
     } else {
@@ -227,38 +257,43 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object clusterId_;
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster.
+   * Deprecated. The name of the cluster.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster.
+   * Deprecated. The name of the cluster.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterIdBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterId_ = b;
       return b;
     } else {
@@ -267,21 +302,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_LABELS_FIELD_NUMBER = 4;
+
   private static final class ResourceLabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetLabelsRequest_ResourceLabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.container.v1.ClusterServiceProto
+                .internal_static_google_container_v1_SetLabelsRequest_ResourceLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> resourceLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetResourceLabels() {
+      internalGetResourceLabels() {
     if (resourceLabels_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           ResourceLabelsDefaultEntryHolder.defaultEntry);
@@ -293,65 +329,68 @@ private static final long serialVersionUID = 0L;
     return internalGetResourceLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * The labels to set for that cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_labels = 4;</code>
    */
-
-  public boolean containsResourceLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsResourceLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetResourceLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getResourceLabelsMap()} instead.
-   */
+  /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
     return getResourceLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * The labels to set for that cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_labels = 4;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
     return internalGetResourceLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * The labels to set for that cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_labels = 4;</code>
    */
-
   public java.lang.String getResourceLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetResourceLabels().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * The labels to set for that cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_labels = 4;</code>
    */
-
-  public java.lang.String getResourceLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetResourceLabels().getMap();
+  public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -361,10 +400,12 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_FINGERPRINT_FIELD_NUMBER = 5;
   private volatile java.lang.Object labelFingerprint_;
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the previous set of labels for this resource,
    * used to detect conflicts. The fingerprint is initially generated by
-   * Container Engine and changes after every request to modify or update
+   * Kubernetes Engine and changes after every request to modify or update
    * labels. You must always provide an up-to-date fingerprint hash when
    * updating or changing labels. Make a &lt;code&gt;get()&lt;/code&gt; request to the
    * resource to get the latest fingerprint.
@@ -377,18 +418,19 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       labelFingerprint_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the previous set of labels for this resource,
    * used to detect conflicts. The fingerprint is initially generated by
-   * Container Engine and changes after every request to modify or update
+   * Kubernetes Engine and changes after every request to modify or update
    * labels. You must always provide an up-to-date fingerprint hash when
    * updating or changing labels. Make a &lt;code&gt;get()&lt;/code&gt; request to the
    * resource to get the latest fingerprint.
@@ -396,13 +438,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string label_fingerprint = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getLabelFingerprintBytes() {
+  public com.google.protobuf.ByteString getLabelFingerprintBytes() {
     java.lang.Object ref = labelFingerprint_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       labelFingerprint_ = b;
       return b;
     } else {
@@ -410,7 +450,53 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int NAME_FIELD_NUMBER = 7;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to set labels.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 7;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to set labels.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 7;</code>
+   */
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -422,8 +508,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
@@ -433,14 +518,13 @@ private static final long serialVersionUID = 0L;
     if (!getClusterIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterId_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetResourceLabels(),
-        ResourceLabelsDefaultEntryHolder.defaultEntry,
-        4);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 4);
     if (!getLabelFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, labelFingerprint_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -460,18 +544,21 @@ private static final long serialVersionUID = 0L;
     if (!getClusterIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterId_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetResourceLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      resourceLabels__ = ResourceLabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, resourceLabels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourceLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
+          ResourceLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, resourceLabels__);
     }
     if (!getLabelFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, labelFingerprint_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -481,7 +568,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.SetLabelsRequest)) {
       return super.equals(obj);
@@ -489,16 +576,12 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.SetLabelsRequest other = (com.google.container.v1.SetLabelsRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
-    result = result && getZone()
-        .equals(other.getZone());
-    result = result && getClusterId()
-        .equals(other.getClusterId());
-    result = result && internalGetResourceLabels().equals(
-        other.internalGetResourceLabels());
-    result = result && getLabelFingerprint()
-        .equals(other.getLabelFingerprint());
+    result = result && getProjectId().equals(other.getProjectId());
+    result = result && getZone().equals(other.getZone());
+    result = result && getClusterId().equals(other.getClusterId());
+    result = result && internalGetResourceLabels().equals(other.internalGetResourceLabels());
+    result = result && getLabelFingerprint().equals(other.getLabelFingerprint());
+    result = result && getName().equals(other.getName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -522,102 +605,111 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + LABEL_FINGERPRINT_FIELD_NUMBER;
     hash = (53 * hash) + getLabelFingerprint().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.container.v1.SetLabelsRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.SetLabelsRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.SetLabelsRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.SetLabelsRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.SetLabelsRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.SetLabelsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.SetLabelsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * SetLabelsRequest sets the Google Cloud Platform labels on a Google Container
    * Engine cluster, which will in turn set them for Google Compute Engine
@@ -626,43 +718,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.SetLabelsRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.SetLabelsRequest)
       com.google.container.v1.SetLabelsRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetLabelsRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetLabelsRequest_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 4:
           return internalGetResourceLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 4:
           return internalGetMutableResourceLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetLabelsRequest_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetLabelsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.SetLabelsRequest.class, com.google.container.v1.SetLabelsRequest.Builder.class);
+              com.google.container.v1.SetLabelsRequest.class,
+              com.google.container.v1.SetLabelsRequest.Builder.class);
     }
 
     // Construct using com.google.container.v1.SetLabelsRequest.newBuilder()
@@ -670,16 +762,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -692,13 +783,15 @@ private static final long serialVersionUID = 0L;
       internalGetMutableResourceLabels().clear();
       labelFingerprint_ = "";
 
+      name_ = "";
+
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetLabelsRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetLabelsRequest_descriptor;
     }
 
     @java.lang.Override
@@ -717,7 +810,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.SetLabelsRequest buildPartial() {
-      com.google.container.v1.SetLabelsRequest result = new com.google.container.v1.SetLabelsRequest(this);
+      com.google.container.v1.SetLabelsRequest result =
+          new com.google.container.v1.SetLabelsRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.projectId_ = projectId_;
@@ -726,6 +820,7 @@ private static final long serialVersionUID = 0L;
       result.resourceLabels_ = internalGetResourceLabels();
       result.resourceLabels_.makeImmutable();
       result.labelFingerprint_ = labelFingerprint_;
+      result.name_ = name_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -735,38 +830,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.SetLabelsRequest) {
-        return mergeFrom((com.google.container.v1.SetLabelsRequest)other);
+        return mergeFrom((com.google.container.v1.SetLabelsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -787,10 +883,13 @@ private static final long serialVersionUID = 0L;
         clusterId_ = other.clusterId_;
         onChanged();
       }
-      internalGetMutableResourceLabels().mergeFrom(
-          other.internalGetResourceLabels());
+      internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
       if (!other.getLabelFingerprint().isEmpty()) {
         labelFingerprint_ = other.labelFingerprint_;
+        onChanged();
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -821,22 +920,26 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -845,20 +948,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -866,52 +971,62 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://developers.google.com/console/help/new/#projectnumber).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -919,19 +1034,22 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object zone_ = "";
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         zone_ = s;
         return s;
@@ -940,21 +1058,23 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getZoneBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         zone_ = b;
         return b;
       } else {
@@ -962,55 +1082,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZone(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setZone(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       zone_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearZone() {
-      
+
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       zone_ = value;
       onChanged();
       return this;
@@ -1018,17 +1148,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterId_ = "";
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster.
+     * Deprecated. The name of the cluster.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getClusterId() {
       java.lang.Object ref = clusterId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterId_ = s;
         return s;
@@ -1037,19 +1170,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster.
+     * Deprecated. The name of the cluster.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterIdBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getClusterIdBytes() {
       java.lang.Object ref = clusterId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterId_ = b;
         return b;
       } else {
@@ -1057,70 +1192,82 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster.
+     * Deprecated. The name of the cluster.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public Builder setClusterId(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setClusterId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster.
+     * Deprecated. The name of the cluster.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearClusterId() {
-      
+
       clusterId_ = getDefaultInstance().getClusterId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster.
+     * Deprecated. The name of the cluster.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public Builder setClusterIdBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterId_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> resourceLabels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetResourceLabels() {
+        internalGetResourceLabels() {
       if (resourceLabels_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ResourceLabelsDefaultEntryHolder.defaultEntry);
       }
       return resourceLabels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableResourceLabels() {
-      onChanged();;
+        internalGetMutableResourceLabels() {
+      onChanged();
+      ;
       if (resourceLabels_ == null) {
-        resourceLabels_ = com.google.protobuf.MapField.newMapField(
-            ResourceLabelsDefaultEntryHolder.defaultEntry);
+        resourceLabels_ =
+            com.google.protobuf.MapField.newMapField(ResourceLabelsDefaultEntryHolder.defaultEntry);
       }
       if (!resourceLabels_.isMutable()) {
         resourceLabels_ = resourceLabels_.copy();
@@ -1132,65 +1279,68 @@ private static final long serialVersionUID = 0L;
       return internalGetResourceLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * The labels to set for that cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_labels = 4;</code>
      */
-
-    public boolean containsResourceLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetResourceLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getResourceLabelsMap()} instead.
-     */
+    /** Use {@link #getResourceLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
       return getResourceLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * The labels to set for that cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_labels = 4;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
       return internalGetResourceLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * The labels to set for that cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_labels = 4;</code>
      */
-
     public java.lang.String getResourceLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetResourceLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * The labels to set for that cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_labels = 4;</code>
      */
-
-    public java.lang.String getResourceLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetResourceLabels().getMap();
+    public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1198,70 +1348,71 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearResourceLabels() {
-      internalGetMutableResourceLabels().getMutableMap()
-          .clear();
+      internalGetMutableResourceLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The labels to set for that cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_labels = 4;</code>
      */
-
-    public Builder removeResourceLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableResourceLabels().getMutableMap()
-          .remove(key);
+    public Builder removeResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableResourceLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabels() {
       return internalGetMutableResourceLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * The labels to set for that cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_labels = 4;</code>
      */
-    public Builder putResourceLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableResourceLabels().getMutableMap()
-          .put(key, value);
+    public Builder putResourceLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The labels to set for that cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_labels = 4;</code>
      */
-
-    public Builder putAllResourceLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableResourceLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllResourceLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourceLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private java.lang.Object labelFingerprint_ = "";
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the previous set of labels for this resource,
      * used to detect conflicts. The fingerprint is initially generated by
-     * Container Engine and changes after every request to modify or update
+     * Kubernetes Engine and changes after every request to modify or update
      * labels. You must always provide an up-to-date fingerprint hash when
      * updating or changing labels. Make a &lt;code&gt;get()&lt;/code&gt; request to the
      * resource to get the latest fingerprint.
@@ -1272,8 +1423,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLabelFingerprint() {
       java.lang.Object ref = labelFingerprint_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         labelFingerprint_ = s;
         return s;
@@ -1282,10 +1432,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the previous set of labels for this resource,
      * used to detect conflicts. The fingerprint is initially generated by
-     * Container Engine and changes after every request to modify or update
+     * Kubernetes Engine and changes after every request to modify or update
      * labels. You must always provide an up-to-date fingerprint hash when
      * updating or changing labels. Make a &lt;code&gt;get()&lt;/code&gt; request to the
      * resource to get the latest fingerprint.
@@ -1293,13 +1445,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string label_fingerprint = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getLabelFingerprintBytes() {
+    public com.google.protobuf.ByteString getLabelFingerprintBytes() {
       java.lang.Object ref = labelFingerprint_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         labelFingerprint_ = b;
         return b;
       } else {
@@ -1307,10 +1457,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the previous set of labels for this resource,
      * used to detect conflicts. The fingerprint is initially generated by
-     * Container Engine and changes after every request to modify or update
+     * Kubernetes Engine and changes after every request to modify or update
      * labels. You must always provide an up-to-date fingerprint hash when
      * updating or changing labels. Make a &lt;code&gt;get()&lt;/code&gt; request to the
      * resource to get the latest fingerprint.
@@ -1318,21 +1470,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string label_fingerprint = 5;</code>
      */
-    public Builder setLabelFingerprint(
-        java.lang.String value) {
+    public Builder setLabelFingerprint(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       labelFingerprint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the previous set of labels for this resource,
      * used to detect conflicts. The fingerprint is initially generated by
-     * Container Engine and changes after every request to modify or update
+     * Kubernetes Engine and changes after every request to modify or update
      * labels. You must always provide an up-to-date fingerprint hash when
      * updating or changing labels. Make a &lt;code&gt;get()&lt;/code&gt; request to the
      * resource to get the latest fingerprint.
@@ -1341,16 +1494,18 @@ private static final long serialVersionUID = 0L;
      * <code>string label_fingerprint = 5;</code>
      */
     public Builder clearLabelFingerprint() {
-      
+
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the previous set of labels for this resource,
      * used to detect conflicts. The fingerprint is initially generated by
-     * Container Engine and changes after every request to modify or update
+     * Kubernetes Engine and changes after every request to modify or update
      * labels. You must always provide an up-to-date fingerprint hash when
      * updating or changing labels. Make a &lt;code&gt;get()&lt;/code&gt; request to the
      * resource to get the latest fingerprint.
@@ -1358,20 +1513,118 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string label_fingerprint = 5;</code>
      */
-    public Builder setLabelFingerprintBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLabelFingerprintBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       labelFingerprint_ = value;
       onChanged();
       return this;
     }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster id) of the cluster to set labels.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster id) of the cluster to set labels.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster id) of the cluster to set labels.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster id) of the cluster to set labels.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster id) of the cluster to set labels.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 7;</code>
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1381,12 +1634,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.SetLabelsRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.SetLabelsRequest)
   private static final com.google.container.v1.SetLabelsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.SetLabelsRequest();
   }
@@ -1395,16 +1648,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SetLabelsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<SetLabelsRequest>() {
-    @java.lang.Override
-    public SetLabelsRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SetLabelsRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SetLabelsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SetLabelsRequest>() {
+        @java.lang.Override
+        public SetLabelsRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SetLabelsRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SetLabelsRequest> parser() {
     return PARSER;
@@ -1419,6 +1672,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.SetLabelsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

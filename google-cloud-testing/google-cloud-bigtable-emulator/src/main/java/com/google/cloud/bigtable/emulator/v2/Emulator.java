@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.emulator.v2;
 
-
 import com.google.api.core.BetaApi;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -40,7 +39,6 @@ import java.util.logging.Logger;
  *
  * <p>This class will use the golang binaries embedded in this jar to launch the emulator as an
  * external process and redirect its output to a {@link Logger}.
- *
  */
 @BetaApi("Surface for Bigtable emulator is not yet stable")
 public class Emulator {
@@ -71,7 +69,8 @@ public class Emulator {
         FileOutputStream os = new FileOutputStream(tmpEmulator)) {
 
       if (is == null) {
-        throw new FileNotFoundException("Failed to find the bundled emulator binary: " + resourcePath);
+        throw new FileNotFoundException(
+            "Failed to find the bundled emulator binary: " + resourcePath);
       }
 
       byte[] buff = new byte[2048];
@@ -102,15 +101,16 @@ public class Emulator {
     pipeStreamToLog(process.getErrorStream(), Level.WARNING);
     isStopped = false;
 
-    shutdownHook = new Thread() {
-      @Override
-      public void run() {
-        if (!isStopped) {
-          isStopped = true;
-          process.destroy();
-        }
-      }
-    };
+    shutdownHook =
+        new Thread() {
+          @Override
+          public void run() {
+            if (!isStopped) {
+              isStopped = true;
+              process.destroy();
+            }
+          }
+        };
 
     Runtime.getRuntime().addShutdownHook(shutdownHook);
 
@@ -161,14 +161,12 @@ public class Emulator {
   }
 
   public synchronized ManagedChannel getDataChannel() {
-    if (isStopped){
+    if (isStopped) {
       throw new IllegalStateException("Emulator is not running");
     }
 
     if (dataChannel == null) {
-      dataChannel = newChannelBuilder(port)
-          .maxInboundMessageSize(256 * 1024 * 1024)
-          .build();
+      dataChannel = newChannelBuilder(port).maxInboundMessageSize(256 * 1024 * 1024).build();
     }
     return dataChannel;
   }
@@ -179,8 +177,7 @@ public class Emulator {
     }
 
     if (adminChannel == null) {
-      adminChannel = newChannelBuilder(port)
-          .build();
+      adminChannel = newChannelBuilder(port).build();
     }
     return adminChannel;
   }
@@ -250,8 +247,7 @@ public class Emulator {
   private static ManagedChannelBuilder<?> newChannelBuilder(int port) {
     // NOTE: usePlaintext is currently @ExperimentalAPI.
     // See https://github.com/grpc/grpc-java/issues/1772 for discussion
-    return ManagedChannelBuilder.forAddress("localhost", port)
-        .usePlaintext();
+    return ManagedChannelBuilder.forAddress("localhost", port).usePlaintext();
   }
 
   /** Creates a thread that will pipe an {@link java.io.InputStream} to this class' Logger. */

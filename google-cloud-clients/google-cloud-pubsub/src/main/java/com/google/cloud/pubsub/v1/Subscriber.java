@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiService;
 import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
@@ -33,6 +34,7 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
@@ -42,17 +44,13 @@ import com.google.common.base.Preconditions;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.google.api.gax.rpc.UnaryCallSettings;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
-import com.google.api.core.ApiFunction;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/subscriber">subscriber</a> that is
@@ -94,15 +92,12 @@ public class Subscriber extends AbstractApiService {
   @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
   @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
   private static final Duration UNARY_TIMEOUT = Duration.ofSeconds(60);
-
-  private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
-      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
+  private static final Duration ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
-  private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
   private final ScheduledExecutorService executor;
   @Nullable private final ScheduledExecutorService alarmsExecutor;
@@ -116,24 +111,14 @@ public class Subscriber extends AbstractApiService {
 
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
-      new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
-  private ScheduledFuture<?> ackDeadlineUpdater;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
 
-    Preconditions.checkArgument(
-        builder.ackExpirationPadding.compareTo(Duration.ZERO) > 0, "padding must be positive");
-    Preconditions.checkArgument(
-        builder.ackExpirationPadding.compareTo(Duration.ofSeconds(MIN_ACK_DEADLINE_SECONDS)) < 0,
-        "padding must be less than %s seconds",
-        MIN_ACK_DEADLINE_SECONDS);
-    ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
@@ -145,6 +130,8 @@ public class Subscriber extends AbstractApiService {
                 .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
                 .build());
 
+    this.numPullers = builder.parallelPullCount;
+
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
       closeables.add(
@@ -155,8 +142,16 @@ public class Subscriber extends AbstractApiService {
             }
           });
     }
-    alarmsExecutor = builder.systemExecutorProvider.getExecutor();
-    if (builder.systemExecutorProvider.shouldAutoClose()) {
+
+    ExecutorProvider systemExecutorProvider = builder.systemExecutorProvider;
+    if (systemExecutorProvider == null) {
+      systemExecutorProvider =
+          FixedExecutorProvider.create(
+              Executors.newScheduledThreadPool(Math.max(6, 2 * numPullers)));
+    }
+
+    alarmsExecutor = systemExecutorProvider.getExecutor();
+    if (systemExecutorProvider.shouldAutoClose()) {
       closeables.add(
           new AutoCloseable() {
             @Override
@@ -166,7 +161,6 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
-    this.numPullers = builder.parallelPullCount;
     TransportChannelProvider channelProvider = builder.channelProvider;
     if (channelProvider.acceptsPoolSize()) {
       channelProvider = channelProvider.withPoolSize(numPullers);
@@ -175,17 +169,18 @@ public class Subscriber extends AbstractApiService {
     try {
       this.subStubSettings =
           SubscriberStubSettings.newBuilder()
-              .setExecutorProvider(FixedExecutorProvider.create(alarmsExecutor))
+              .setExecutorProvider(systemExecutorProvider)
               .setCredentialsProvider(builder.credentialsProvider)
               .setTransportChannelProvider(channelProvider)
               .setHeaderProvider(builder.headerProvider)
-              .applyToAllUnaryMethods(new ApiFunction<UnaryCallSettings.Builder<?,?>, Void>() {
-                @Override
-                public Void apply(UnaryCallSettings.Builder<?,?> settingsBuilder) {
-                  settingsBuilder.setSimpleTimeoutNoRetries(UNARY_TIMEOUT);
-                  return null;
-                }
-              })
+              .applyToAllUnaryMethods(
+                  new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                    @Override
+                    public Void apply(UnaryCallSettings.Builder<?, ?> settingsBuilder) {
+                      settingsBuilder.setSimpleTimeoutNoRetries(UNARY_TIMEOUT);
+                      return null;
+                    }
+                  })
               .build();
       // TODO(pongad): what about internal header??
     } catch (Exception e) {
@@ -225,12 +220,6 @@ public class Subscriber extends AbstractApiService {
   /** Subscription which the subscriber is subscribed to. */
   public String getSubscriptionNameString() {
     return subscriptionName;
-  }
-
-  /** Acknowledgement expiration padding. See {@link Builder#setAckExpirationPadding}. */
-  @InternalApi
-  Duration getAckExpirationPadding() {
-    return ackExpirationPadding;
   }
 
   /** The flow control settings the Subscriber is configured with. */
@@ -330,20 +319,19 @@ public class Subscriber extends AbstractApiService {
         .start();
   }
 
-  private void startStreamingConnections() throws IOException {
+  private void startStreamingConnections() {
     synchronized (streamingSubscriberConnections) {
       for (int i = 0; i < numPullers; i++) {
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
                 receiver,
-                ackExpirationPadding,
+                ACK_EXPIRATION_PADDING,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
                 subStub,
                 i,
                 flowController,
-                outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
                 clock));
@@ -371,9 +359,6 @@ public class Subscriber extends AbstractApiService {
 
   private void stopAllStreamingConnections() {
     stopConnections(streamingSubscriberConnections);
-    if (ackDeadlineUpdater != null) {
-      ackDeadlineUpdater.cancel(true);
-    }
   }
 
   private void startConnections(
@@ -409,8 +394,6 @@ public class Subscriber extends AbstractApiService {
 
   /** Builder of {@link Subscriber Subscribers}. */
   public static final class Builder {
-    private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.ofMillis(100);
-    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
     private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
@@ -422,22 +405,19 @@ public class Subscriber extends AbstractApiService {
     String subscriptionName;
     MessageReceiver receiver;
 
-    Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
     Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
     FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    ExecutorProvider systemExecutorProvider = FixedExecutorProvider.create(SHARED_SYSTEM_EXECUTOR);
+    ExecutorProvider systemExecutorProvider = null;
     TransportChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
     HeaderProvider headerProvider = new NoHeaderProvider();
-    HeaderProvider internalHeaderProvider =
-        SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
@@ -478,21 +458,6 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Sets the static header provider for getting internal (library-defined) headers. The header
-     * provider will be called during client construction only once. The headers returned by the
-     * provider will be cached and supplied as is for each request issued by the constructed client.
-     * Some reserved headers can be overridden (e.g. Content-Type) or merged with the default value
-     * (e.g. User-Agent) by the underlying transport layer.
-     *
-     * @param internalHeaderProvider the internal header provider
-     * @return the builder
-     */
-    Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
-      this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
-      return this;
-    }
-
-    /**
      * Sets the flow control settings.
      *
      * <p>In the example below, the {@link Subscriber} will make sure that
@@ -519,25 +484,6 @@ public class Subscriber extends AbstractApiService {
      */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
-      return this;
-    }
-
-    /**
-     * Set acknowledgement expiration padding.
-     *
-     * <p>This is the time accounted before a message expiration is to happen, so the {@link
-     * Subscriber} is able to send an ack extension beforehand.
-     *
-     * <p>This padding duration is configurable so you can account for network latency. A reasonable
-     * number must be provided so messages don't expire because of network latency between when the
-     * ack extension is required and when it reaches the Pub/Sub service.
-     *
-     * @param ackExpirationPadding must be greater or equal to {@link #MIN_ACK_EXPIRATION_PADDING}
-     */
-    @InternalApi
-    Builder setAckExpirationPadding(Duration ackExpirationPadding) {
-      Preconditions.checkArgument(ackExpirationPadding.compareTo(MIN_ACK_EXPIRATION_PADDING) >= 0);
-      this.ackExpirationPadding = ackExpirationPadding;
       return this;
     }
 
@@ -577,9 +523,7 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
-    /**
-     * Sets the number of pullers used to pull messages from the subscription. Defaults to one.
-     */
+    /** Sets the number of pullers used to pull messages from the subscription. Defaults to one. */
     public Builder setParallelPullCount(int parallelPullCount) {
       this.parallelPullCount = parallelPullCount;
       return this;

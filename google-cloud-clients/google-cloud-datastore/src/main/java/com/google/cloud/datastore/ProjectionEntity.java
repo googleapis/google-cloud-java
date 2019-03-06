@@ -20,9 +20,9 @@ import com.google.cloud.Timestamp;
 import com.google.protobuf.ByteString;
 
 /**
- * A projection entity is a result of a Google Cloud Datastore projection query.
- * A projection entity holds one or more properties, represented by a name (as {@link String})
- * and a value (as {@link Value}), and may have a {@link Key}.
+ * A projection entity is a result of a Google Cloud Datastore projection query. A projection entity
+ * holds one or more properties, represented by a name (as {@link String}) and a value (as {@link
+ * Value}), and may have a {@link Key}.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/projectionqueries">Google Cloud
  *     Datastore projection queries</a>
@@ -35,8 +35,7 @@ public final class ProjectionEntity extends BaseEntity<Key> {
 
   public static final class Builder extends BaseEntity.Builder<Key, Builder> {
 
-    Builder() {
-    }
+    Builder() {}
 
     private Builder(ProjectionEntity entity) {
       super(entity);
@@ -75,7 +74,6 @@ public final class ProjectionEntity extends BaseEntity<Key> {
   static ProjectionEntity fromPb(com.google.datastore.v1.Entity entityPb) {
     return new Builder().fill(entityPb).build();
   }
-
 
   public static Builder newBuilder(ProjectionEntity copyFrom) {
     return new Builder(copyFrom);

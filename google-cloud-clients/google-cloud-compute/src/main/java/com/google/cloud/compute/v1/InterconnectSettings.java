@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,13 @@ public class InterconnectSettings extends ClientSettings<InterconnectSettings> {
   /** Returns the object with the settings used for calls to getInterconnect. */
   public UnaryCallSettings<GetInterconnectHttpRequest, Interconnect> getInterconnectSettings() {
     return ((InterconnectStubSettings) getStubSettings()).getInterconnectSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDiagnosticsInterconnect. */
+  public UnaryCallSettings<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectSettings() {
+    return ((InterconnectStubSettings) getStubSettings()).getDiagnosticsInterconnectSettings();
   }
 
   /** Returns the object with the settings used for calls to insertInterconnect. */
@@ -202,6 +209,13 @@ public class InterconnectSettings extends ClientSettings<InterconnectSettings> {
     public UnaryCallSettings.Builder<GetInterconnectHttpRequest, Interconnect>
         getInterconnectSettings() {
       return getStubSettingsBuilder().getInterconnectSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDiagnosticsInterconnect. */
+    public UnaryCallSettings.Builder<
+            GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+        getDiagnosticsInterconnectSettings() {
+      return getStubSettingsBuilder().getDiagnosticsInterconnectSettings();
     }
 
     /** Returns the builder for the settings used for calls to insertInterconnect. */

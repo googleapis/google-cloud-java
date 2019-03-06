@@ -14,20 +14,20 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ProjectRunName extends RunName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/transferConfigs/{transfer_config}/runs/{run}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/transferConfigs/{transfer_config}/runs/{run}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +62,16 @@ public class ProjectRunName extends RunName {
   }
 
   public static ProjectRunName of(String project, String transferConfig, String run) {
-    return newBuilder()
-      .setProject(project)
-      .setTransferConfig(transferConfig)
-      .setRun(run)
-      .build();
+    return newBuilder().setProject(project).setTransferConfig(transferConfig).setRun(run).build();
   }
 
   public static String format(String project, String transferConfig, String run) {
     return newBuilder()
-      .setProject(project)
-      .setTransferConfig(transferConfig)
-      .setRun(run)
-      .build()
-      .toString();
+        .setProject(project)
+        .setTransferConfig(transferConfig)
+        .setRun(run)
+        .build()
+        .toString();
   }
 
   public static ProjectRunName parse(String formattedString) {
@@ -83,7 +79,8 @@ public class ProjectRunName extends RunName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectRunName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectRunName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("transfer_config"), matchMap.get("run"));
   }
 
@@ -132,7 +129,8 @@ public class ProjectRunName extends RunName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "transfer_config", transferConfig, "run", run);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "transfer_config", transferConfig, "run", run);
   }
 
   /** Builder for ProjectRunName. */
@@ -169,8 +167,7 @@ public class ProjectRunName extends RunName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectRunName projectRunName) {
       project = projectRunName.project;
@@ -209,4 +206,3 @@ public class ProjectRunName extends RunName {
     return h;
   }
 }
-

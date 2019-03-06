@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Message representing a set of files in a Cloud Storage bucket. Regular
  * expressions are used to allow fine-grained control over which files in the
@@ -35,15 +37,16 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.CloudStorageRegexFileSet}
  */
-public  final class CloudStorageRegexFileSet extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CloudStorageRegexFileSet extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudStorageRegexFileSet)
     CloudStorageRegexFileSetOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CloudStorageRegexFileSet.newBuilder() to construct.
   private CloudStorageRegexFileSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CloudStorageRegexFileSet() {
     bucketName_ = "";
     includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -51,10 +54,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CloudStorageRegexFileSet(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -74,44 +77,46 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            bucketName_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              includeRegex_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              bucketName_ = s;
+              break;
             }
-            includeRegex_.add(s);
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              excludeRegex_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                includeRegex_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              includeRegex_.add(s);
+              break;
             }
-            excludeRegex_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                excludeRegex_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              excludeRegex_.add(s);
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         includeRegex_ = includeRegex_.getUnmodifiableView();
@@ -123,23 +128,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.CloudStorageRegexFileSet.class, com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder.class);
+            com.google.privacy.dlp.v2.CloudStorageRegexFileSet.class,
+            com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder.class);
   }
 
   private int bitField0_;
   public static final int BUCKET_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object bucketName_;
   /**
+   *
+   *
    * <pre>
    * The name of a Cloud Storage bucket. Required.
    * </pre>
@@ -151,27 +161,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       bucketName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of a Cloud Storage bucket. Required.
    * </pre>
    *
    * <code>string bucket_name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getBucketNameBytes() {
+  public com.google.protobuf.ByteString getBucketNameBytes() {
     java.lang.Object ref = bucketName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       bucketName_ = b;
       return b;
     } else {
@@ -182,6 +191,8 @@ private static final long serialVersionUID = 0L;
   public static final int INCLUDE_REGEX_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList includeRegex_;
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -195,11 +206,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string include_regex = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getIncludeRegexList() {
+  public com.google.protobuf.ProtocolStringList getIncludeRegexList() {
     return includeRegex_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -217,6 +229,8 @@ private static final long serialVersionUID = 0L;
     return includeRegex_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -234,6 +248,8 @@ private static final long serialVersionUID = 0L;
     return includeRegex_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -247,14 +263,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string include_regex = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getIncludeRegexBytes(int index) {
+  public com.google.protobuf.ByteString getIncludeRegexBytes(int index) {
     return includeRegex_.getByteString(index);
   }
 
   public static final int EXCLUDE_REGEX_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList excludeRegex_;
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -266,11 +283,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string exclude_regex = 3;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getExcludeRegexList() {
+  public com.google.protobuf.ProtocolStringList getExcludeRegexList() {
     return excludeRegex_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -286,6 +304,8 @@ private static final long serialVersionUID = 0L;
     return excludeRegex_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -301,6 +321,8 @@ private static final long serialVersionUID = 0L;
     return excludeRegex_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -312,12 +334,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string exclude_regex = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getExcludeRegexBytes(int index) {
+  public com.google.protobuf.ByteString getExcludeRegexBytes(int index) {
     return excludeRegex_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -329,8 +351,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getBucketNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucketName_);
     }
@@ -376,20 +397,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.CloudStorageRegexFileSet)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.CloudStorageRegexFileSet other = (com.google.privacy.dlp.v2.CloudStorageRegexFileSet) obj;
+    com.google.privacy.dlp.v2.CloudStorageRegexFileSet other =
+        (com.google.privacy.dlp.v2.CloudStorageRegexFileSet) obj;
 
     boolean result = true;
-    result = result && getBucketName()
-        .equals(other.getBucketName());
-    result = result && getIncludeRegexList()
-        .equals(other.getIncludeRegexList());
-    result = result && getExcludeRegexList()
-        .equals(other.getExcludeRegexList());
+    result = result && getBucketName().equals(other.getBucketName());
+    result = result && getIncludeRegexList().equals(other.getIncludeRegexList());
+    result = result && getExcludeRegexList().equals(other.getExcludeRegexList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -417,96 +436,103 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageRegexFileSet parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.CloudStorageRegexFileSet prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Message representing a set of files in a Cloud Storage bucket. Regular
    * expressions are used to allow fine-grained control over which files in the
@@ -538,21 +564,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CloudStorageRegexFileSet}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CloudStorageRegexFileSet)
       com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.class, com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder.class);
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.class,
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.CloudStorageRegexFileSet.newBuilder()
@@ -560,16 +588,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -583,9 +610,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageRegexFileSet_descriptor;
     }
 
     @java.lang.Override
@@ -604,7 +631,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSet buildPartial() {
-      com.google.privacy.dlp.v2.CloudStorageRegexFileSet result = new com.google.privacy.dlp.v2.CloudStorageRegexFileSet(this);
+      com.google.privacy.dlp.v2.CloudStorageRegexFileSet result =
+          new com.google.privacy.dlp.v2.CloudStorageRegexFileSet(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.bucketName_ = bucketName_;
@@ -627,38 +655,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.CloudStorageRegexFileSet) {
-        return mergeFrom((com.google.privacy.dlp.v2.CloudStorageRegexFileSet)other);
+        return mergeFrom((com.google.privacy.dlp.v2.CloudStorageRegexFileSet) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -666,7 +695,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.CloudStorageRegexFileSet other) {
-      if (other == com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance())
+        return this;
       if (!other.getBucketName().isEmpty()) {
         bucketName_ = other.bucketName_;
         onChanged();
@@ -710,7 +740,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.CloudStorageRegexFileSet) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.privacy.dlp.v2.CloudStorageRegexFileSet) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -719,10 +750,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object bucketName_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of a Cloud Storage bucket. Required.
      * </pre>
@@ -732,8 +766,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getBucketName() {
       java.lang.Object ref = bucketName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         bucketName_ = s;
         return s;
@@ -742,19 +775,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of a Cloud Storage bucket. Required.
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getBucketNameBytes() {
+    public com.google.protobuf.ByteString getBucketNameBytes() {
       java.lang.Object ref = bucketName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         bucketName_ = b;
         return b;
       } else {
@@ -762,23 +795,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of a Cloud Storage bucket. Required.
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
      */
-    public Builder setBucketName(
-        java.lang.String value) {
+    public Builder setBucketName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       bucketName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of a Cloud Storage bucket. Required.
      * </pre>
@@ -786,38 +822,43 @@ private static final long serialVersionUID = 0L;
      * <code>string bucket_name = 1;</code>
      */
     public Builder clearBucketName() {
-      
+
       bucketName_ = getDefaultInstance().getBucketName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of a Cloud Storage bucket. Required.
      * </pre>
      *
      * <code>string bucket_name = 1;</code>
      */
-    public Builder setBucketNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setBucketNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       bucketName_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList includeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList includeRegex_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureIncludeRegexIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         includeRegex_ = new com.google.protobuf.LazyStringArrayList(includeRegex_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -831,11 +872,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string include_regex = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getIncludeRegexList() {
+    public com.google.protobuf.ProtocolStringList getIncludeRegexList() {
       return includeRegex_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -853,6 +895,8 @@ private static final long serialVersionUID = 0L;
       return includeRegex_.size();
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -870,6 +914,8 @@ private static final long serialVersionUID = 0L;
       return includeRegex_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -883,11 +929,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string include_regex = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getIncludeRegexBytes(int index) {
+    public com.google.protobuf.ByteString getIncludeRegexBytes(int index) {
       return includeRegex_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -901,17 +948,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string include_regex = 2;</code>
      */
-    public Builder setIncludeRegex(
-        int index, java.lang.String value) {
+    public Builder setIncludeRegex(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureIncludeRegexIsMutable();
+        throw new NullPointerException();
+      }
+      ensureIncludeRegexIsMutable();
       includeRegex_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -925,17 +973,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string include_regex = 2;</code>
      */
-    public Builder addIncludeRegex(
-        java.lang.String value) {
+    public Builder addIncludeRegex(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureIncludeRegexIsMutable();
+        throw new NullPointerException();
+      }
+      ensureIncludeRegexIsMutable();
       includeRegex_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -949,15 +998,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string include_regex = 2;</code>
      */
-    public Builder addAllIncludeRegex(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllIncludeRegex(java.lang.Iterable<java.lang.String> values) {
       ensureIncludeRegexIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, includeRegex_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeRegex_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -978,6 +1027,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to include. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -991,26 +1042,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string include_regex = 2;</code>
      */
-    public Builder addIncludeRegexBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addIncludeRegexBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureIncludeRegexIsMutable();
       includeRegex_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList excludeRegex_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList excludeRegex_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureExcludeRegexIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         excludeRegex_ = new com.google.protobuf.LazyStringArrayList(excludeRegex_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1022,11 +1076,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string exclude_regex = 3;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getExcludeRegexList() {
+    public com.google.protobuf.ProtocolStringList getExcludeRegexList() {
       return excludeRegex_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1042,6 +1097,8 @@ private static final long serialVersionUID = 0L;
       return excludeRegex_.size();
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1057,6 +1114,8 @@ private static final long serialVersionUID = 0L;
       return excludeRegex_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1068,11 +1127,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string exclude_regex = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getExcludeRegexBytes(int index) {
+    public com.google.protobuf.ByteString getExcludeRegexBytes(int index) {
       return excludeRegex_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1084,17 +1144,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string exclude_regex = 3;</code>
      */
-    public Builder setExcludeRegex(
-        int index, java.lang.String value) {
+    public Builder setExcludeRegex(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureExcludeRegexIsMutable();
+        throw new NullPointerException();
+      }
+      ensureExcludeRegexIsMutable();
       excludeRegex_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1106,17 +1167,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string exclude_regex = 3;</code>
      */
-    public Builder addExcludeRegex(
-        java.lang.String value) {
+    public Builder addExcludeRegex(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureExcludeRegexIsMutable();
+        throw new NullPointerException();
+      }
+      ensureExcludeRegexIsMutable();
       excludeRegex_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1128,15 +1190,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string exclude_regex = 3;</code>
      */
-    public Builder addAllExcludeRegex(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllExcludeRegex(java.lang.Iterable<java.lang.String> values) {
       ensureExcludeRegexIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, excludeRegex_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeRegex_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1155,6 +1217,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of regular expressions matching file paths to exclude. All files in
      * the bucket that match at least one of these regular expressions will be
@@ -1166,20 +1230,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string exclude_regex = 3;</code>
      */
-    public Builder addExcludeRegexBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addExcludeRegexBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureExcludeRegexIsMutable();
       excludeRegex_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1189,12 +1252,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CloudStorageRegexFileSet)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CloudStorageRegexFileSet)
   private static final com.google.privacy.dlp.v2.CloudStorageRegexFileSet DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CloudStorageRegexFileSet();
   }
@@ -1203,16 +1266,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CloudStorageRegexFileSet>
-      PARSER = new com.google.protobuf.AbstractParser<CloudStorageRegexFileSet>() {
-    @java.lang.Override
-    public CloudStorageRegexFileSet parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CloudStorageRegexFileSet(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CloudStorageRegexFileSet> PARSER =
+      new com.google.protobuf.AbstractParser<CloudStorageRegexFileSet>() {
+        @java.lang.Override
+        public CloudStorageRegexFileSet parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CloudStorageRegexFileSet(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CloudStorageRegexFileSet> parser() {
     return PARSER;
@@ -1227,6 +1290,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.CloudStorageRegexFileSet getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

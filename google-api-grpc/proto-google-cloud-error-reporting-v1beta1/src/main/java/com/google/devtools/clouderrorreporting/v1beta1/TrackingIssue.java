@@ -4,30 +4,33 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Information related to tracking the progress on resolving the error.
  * </pre>
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.TrackingIssue}
  */
-public  final class TrackingIssue extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class TrackingIssue extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.TrackingIssue)
     TrackingIssueOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use TrackingIssue.newBuilder() to construct.
   private TrackingIssue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private TrackingIssue() {
     url_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private TrackingIssue(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,47 +50,52 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            url_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              url_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.class, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.class,
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder.class);
   }
 
   public static final int URL_FIELD_NUMBER = 1;
   private volatile java.lang.Object url_;
   /**
+   *
+   *
    * <pre>
    * A URL pointing to a related entry in an issue tracking system.
    * Example: https://github.com/user/project/issues/4
@@ -100,14 +108,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       url_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A URL pointing to a related entry in an issue tracking system.
    * Example: https://github.com/user/project/issues/4
@@ -115,13 +124,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string url = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getUrlBytes() {
+  public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       url_ = b;
       return b;
     } else {
@@ -130,6 +137,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -141,8 +149,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
     }
@@ -166,16 +173,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue other = (com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue other =
+        (com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue) obj;
 
     boolean result = true;
-    result = result && getUrl()
-        .equals(other.getUrl());
+    result = result && getUrl().equals(other.getUrl());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -195,117 +202,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue prototype) {
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Information related to tracking the progress on resolving the error.
    * </pre>
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.TrackingIssue}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.TrackingIssue)
       com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.class, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.class,
+              com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder.class);
     }
 
     // Construct using com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.newBuilder()
@@ -313,16 +330,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -332,13 +348,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_TrackingIssue_descriptor;
     }
 
     @java.lang.Override
-    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getDefaultInstanceForType() {
+    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue
+        getDefaultInstanceForType() {
       return com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.getDefaultInstance();
     }
 
@@ -353,7 +370,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue result = new com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue(this);
+      com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue result =
+          new com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue(this);
       result.url_ = url_;
       onBuilt();
       return result;
@@ -363,38 +381,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue)other);
+        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -402,7 +421,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.getDefaultInstance()) return this;
+      if (other
+          == com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.getDefaultInstance())
+        return this;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
         onChanged();
@@ -426,7 +447,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -438,6 +461,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object url_ = "";
     /**
+     *
+     *
      * <pre>
      * A URL pointing to a related entry in an issue tracking system.
      * Example: https://github.com/user/project/issues/4
@@ -448,8 +473,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         url_ = s;
         return s;
@@ -458,6 +482,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A URL pointing to a related entry in an issue tracking system.
      * Example: https://github.com/user/project/issues/4
@@ -465,13 +491,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
+    public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         url_ = b;
         return b;
       } else {
@@ -479,6 +503,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A URL pointing to a related entry in an issue tracking system.
      * Example: https://github.com/user/project/issues/4
@@ -486,17 +512,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 1;</code>
      */
-    public Builder setUrl(
-        java.lang.String value) {
+    public Builder setUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       url_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A URL pointing to a related entry in an issue tracking system.
      * Example: https://github.com/user/project/issues/4
@@ -505,12 +532,14 @@ private static final long serialVersionUID = 0L;
      * <code>string url = 1;</code>
      */
     public Builder clearUrl() {
-      
+
       url_ = getDefaultInstance().getUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A URL pointing to a related entry in an issue tracking system.
      * Example: https://github.com/user/project/issues/4
@@ -518,20 +547,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 1;</code>
      */
-    public Builder setUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       url_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -541,12 +569,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.TrackingIssue)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.TrackingIssue)
-  private static final com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue DEFAULT_INSTANCE;
+  private static final com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue();
   }
@@ -555,16 +584,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TrackingIssue>
-      PARSER = new com.google.protobuf.AbstractParser<TrackingIssue>() {
-    @java.lang.Override
-    public TrackingIssue parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TrackingIssue(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<TrackingIssue> PARSER =
+      new com.google.protobuf.AbstractParser<TrackingIssue>() {
+        @java.lang.Override
+        public TrackingIssue parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TrackingIssue(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<TrackingIssue> parser() {
     return PARSER;
@@ -579,6 +608,4 @@ private static final long serialVersionUID = 0L;
   public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

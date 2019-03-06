@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface SpeechTranscriptionOrBuilder extends
+public interface SpeechTranscriptionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.SpeechTranscription)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * May contain one or more recognition hypotheses (up to the maximum specified
    * in `max_alternatives`).  These alternatives are ordered in terms of
@@ -15,11 +18,15 @@ public interface SpeechTranscriptionOrBuilder extends
    * ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative> 
+  java.util.List<com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative>
       getAlternativesList();
   /**
+   *
+   *
    * <pre>
    * May contain one or more recognition hypotheses (up to the maximum specified
    * in `max_alternatives`).  These alternatives are ordered in terms of
@@ -27,10 +34,14 @@ public interface SpeechTranscriptionOrBuilder extends
    * ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
   com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative getAlternatives(int index);
   /**
+   *
+   *
    * <pre>
    * May contain one or more recognition hypotheses (up to the maximum specified
    * in `max_alternatives`).  These alternatives are ordered in terms of
@@ -38,10 +49,14 @@ public interface SpeechTranscriptionOrBuilder extends
    * ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
   int getAlternativesCount();
   /**
+   *
+   *
    * <pre>
    * May contain one or more recognition hypotheses (up to the maximum specified
    * in `max_alternatives`).  These alternatives are ordered in terms of
@@ -49,11 +64,16 @@ public interface SpeechTranscriptionOrBuilder extends
    * ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechRecognitionAlternativeOrBuilder> 
+  java.util.List<
+          ? extends com.google.cloud.videointelligence.v1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * May contain one or more recognition hypotheses (up to the maximum specified
    * in `max_alternatives`).  These alternatives are ordered in terms of
@@ -61,12 +81,16 @@ public interface SpeechTranscriptionOrBuilder extends
    * ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1.SpeechRecognitionAlternativeOrBuilder
+      getAlternativesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -78,6 +102,8 @@ public interface SpeechTranscriptionOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Output only. The
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -87,6 +113,5 @@ public interface SpeechTranscriptionOrBuilder extends
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

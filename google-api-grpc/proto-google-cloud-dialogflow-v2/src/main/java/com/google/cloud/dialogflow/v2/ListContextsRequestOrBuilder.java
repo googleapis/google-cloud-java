@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface ListContextsRequestOrBuilder extends
+public interface ListContextsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.ListContextsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session to list all contexts from.
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
@@ -17,6 +20,8 @@ public interface ListContextsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The session to list all contexts from.
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`.
@@ -24,10 +29,11 @@ public interface ListContextsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The maximum number of items to return in a single page. By
    * default 100 and at most 1000.
@@ -38,6 +44,8 @@ public interface ListContextsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The next_page_token value returned from a previous list request.
    * </pre>
@@ -46,12 +54,13 @@ public interface ListContextsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. The next_page_token value returned from a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

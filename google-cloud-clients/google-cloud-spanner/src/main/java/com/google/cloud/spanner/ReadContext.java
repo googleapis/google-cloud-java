@@ -42,8 +42,8 @@ public interface ReadContext extends AutoCloseable {
    * do not, the remote call will be initiated immediately but blocking on the response is deferred
    * to the first {@link ResultSet#next()} call. Regardless of blocking behavior, any {@link
    * SpannerException} is deferred to the first or subsequent {@link ResultSet#next()} call.
-   *
    * <!--SNIPPET read_context_read-->
+   *
    * <pre>{@code
    * ReadContext readContext = dbClient.singleUse();
    * ResultSet resultSet =
@@ -54,6 +54,7 @@ public interface ReadContext extends AutoCloseable {
    *         KeySet.all(),
    *         Arrays.asList("SingerId", "AlbumId", "AlbumTitle"));
    * }</pre>
+   *
    * <!--SNIPPET read_context_read-->
    *
    * @param table the name of the table to read
@@ -71,14 +72,15 @@ public interface ReadContext extends AutoCloseable {
    * do not, the remote call will be initiated immediately but blocking on the response is deferred
    * to the first {@link ResultSet#next()} call. Regardless of blocking behavior, any {@link
    * SpannerException} is deferred to the first or subsequent {@link ResultSet#next()} call.
-   *
    * <!--SNIPPET read_context_read_index-->
+   *
    * <pre>{@code
    * ReadContext readContext = dbClient.singleUse();
    * Struct row =
    *     readContext.readRowUsingIndex("Albums", "AlbumsByAlbumId", Key.of(1, "Green"),
    *         Arrays.asList("AlbumId", "AlbumTitle"));
    * }</pre>
+   *
    * <!--SNIPPET read_context_read_index-->
    *
    * @param table the name of the table to read
@@ -93,13 +95,14 @@ public interface ReadContext extends AutoCloseable {
 
   /**
    * Reads a single row from a database, returning {@code null} if the row does not exist.
-   *
    * <!--SNIPPET read_context_read_row-->
+   *
    * <pre>{@code
    * ReadContext readContext = dbClient.singleUse();
    * Struct row =
    *     readContext.readRow("Albums", Key.of(2, 1), Arrays.asList("MarketingBudget"));
    * }</pre>
+   *
    * <!--SNIPPET read_context_read_row-->
    *
    * @param table the name of the table to read
@@ -112,14 +115,15 @@ public interface ReadContext extends AutoCloseable {
   /**
    * Reads a single row from a database using an index, returning {@code null} if the row does not
    * exist.
-   *
    * <!--SNIPPET read_context_read_index-->
+   *
    * <pre>{@code
    * ReadContext readContext = dbClient.singleUse();
    * Struct row =
    *     readContext.readRowUsingIndex("Albums", "AlbumsByAlbumId", Key.of(1, "Green"),
    *         Arrays.asList("AlbumId", "AlbumTitle"));
    * }</pre>
+   *
    * <!--SNIPPET read_context_read_index-->
    *
    * @param table the name of the table to read
@@ -137,8 +141,8 @@ public interface ReadContext extends AutoCloseable {
    * those that do not, the remote call will be initiated immediately but blocking on the response
    * is deferred to the first {@link ResultSet#next()} call. Regardless of blocking behavior, any
    * {@link SpannerException} is deferred to the first or subsequent {@link ResultSet#next()} call.
-   *
    * <!--SNIPPET read_context_execute_query-->
+   *
    * <pre>{@code
    * // Rows without an explicit value for MarketingBudget will have a MarketingBudget equal to
    * // null.
@@ -148,6 +152,7 @@ public interface ReadContext extends AutoCloseable {
    *         Statement.of(
    *             "SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime FROM Albums"));
    * }</pre>
+   *
    * <!--SNIPPET read_context_execute_query-->
    *
    * @param statement the query statement to execute
@@ -161,8 +166,8 @@ public interface ReadContext extends AutoCloseable {
    * <p>The query plan and query statistics information is contained in {@link
    * com.google.spanner.v1.ResultSetStats} that can be accessed by calling {@link
    * ResultSet#getStats()} on the returned {@code ResultSet}.
-   *
    * <!--SNIPPET read_context_analyze_query-->
+   *
    * <pre>{@code
    * ReadContext rc = dbClient.singleUse();
    * ResultSet resultSet =
@@ -175,6 +180,7 @@ public interface ReadContext extends AutoCloseable {
    * }
    * ResultSetStats stats = resultSet.getStats();
    * }</pre>
+   *
    * <!--SNIPPET read_context_analyze_query-->
    *
    * @param statement the query statement to execute

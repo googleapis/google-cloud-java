@@ -23,10 +23,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.TransactionManager.TransactionState;
-import com.google.cloud.Timestamp;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -38,19 +37,19 @@ import org.mockito.Mockito;
 
 @RunWith(JUnit4.class)
 public class TransactionManagerImplTest {
-  
+
   @Rule public ExpectedException exception = ExpectedException.none();
 
   @Mock private SessionImpl session;
   @Mock SpannerImpl.TransactionContextImpl txn;
   private TransactionManagerImpl manager;
-  
+
   @Before
   public void setUp() {
     initMocks(this);
     manager = new TransactionManagerImpl(session);
   }
-  
+
   @Test
   public void beginCalledTwiceFails() {
     when(session.newTransaction()).thenReturn(txn);
@@ -59,25 +58,25 @@ public class TransactionManagerImplTest {
     exception.expect(IllegalStateException.class);
     manager.begin();
   }
-  
+
   @Test
   public void commitBeforeBeginFails() {
     exception.expect(IllegalStateException.class);
     manager.commit();
   }
-  
+
   @Test
   public void rollbackBeforeBeginFails() {
     exception.expect(IllegalStateException.class);
     manager.rollback();
   }
-  
+
   @Test
   public void resetBeforeBeginFails() {
     exception.expect(IllegalStateException.class);
     manager.resetForRetry();
   }
-  
+
   @Test
   public void transactionRolledBackOnClose() {
     when(session.newTransaction()).thenReturn(txn);
@@ -86,7 +85,7 @@ public class TransactionManagerImplTest {
     manager.close();
     verify(txn).rollback();
   }
-  
+
   @Test
   public void commitSucceeds() {
     when(session.newTransaction()).thenReturn(txn);
@@ -97,7 +96,7 @@ public class TransactionManagerImplTest {
     assertThat(manager.getState()).isEqualTo(TransactionState.COMMITTED);
     assertThat(manager.getCommitTimestamp()).isEqualTo(commitTimestamp);
   }
-  
+
   @Test
   public void resetAfterSuccessfulCommitFails() {
     when(session.newTransaction()).thenReturn(txn);
@@ -106,13 +105,12 @@ public class TransactionManagerImplTest {
     exception.expect(IllegalStateException.class);
     manager.resetForRetry();
   }
-  
+
   @Test
   public void resetAfterAbortSucceeds() {
     when(session.newTransaction()).thenReturn(txn);
     manager.begin();
-    doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, ""))
-      .when(txn).commit();
+    doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, "")).when(txn).commit();
     try {
       manager.commit();
       fail("Expected AbortedException");
@@ -124,13 +122,12 @@ public class TransactionManagerImplTest {
     assertThat(manager.resetForRetry()).isEqualTo(txn);
     assertThat(manager.getState()).isEqualTo(TransactionState.STARTED);
   }
-  
+
   @Test
   public void resetAfterErrorFails() {
     when(session.newTransaction()).thenReturn(txn);
     manager.begin();
-    doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.UNKNOWN, ""))
-      .when(txn).commit();
+    doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.UNKNOWN, "")).when(txn).commit();
     try {
       manager.commit();
       fail("Expected AbortedException");
@@ -140,7 +137,7 @@ public class TransactionManagerImplTest {
     exception.expect(IllegalStateException.class);
     manager.resetForRetry();
   }
-  
+
   @Test
   public void rollbackAfterCommitFails() {
     when(session.newTransaction()).thenReturn(txn);
@@ -149,7 +146,7 @@ public class TransactionManagerImplTest {
     exception.expect(IllegalStateException.class);
     manager.rollback();
   }
-  
+
   @Test
   public void commitAfterRollbackFails() {
     when(session.newTransaction()).thenReturn(txn);

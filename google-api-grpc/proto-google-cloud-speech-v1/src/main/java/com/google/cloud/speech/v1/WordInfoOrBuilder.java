@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface WordInfoOrBuilder extends
+public interface WordInfoOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.WordInfo)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
@@ -21,6 +24,8 @@ public interface WordInfoOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
@@ -34,6 +39,8 @@ public interface WordInfoOrBuilder extends
    */
   com.google.protobuf.Duration getStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the start of the spoken word.
@@ -48,6 +55,8 @@ public interface WordInfoOrBuilder extends
   com.google.protobuf.DurationOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
@@ -61,6 +70,8 @@ public interface WordInfoOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
@@ -74,6 +85,8 @@ public interface WordInfoOrBuilder extends
    */
   com.google.protobuf.Duration getEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio,
    * and corresponding to the end of the spoken word.
@@ -88,6 +101,8 @@ public interface WordInfoOrBuilder extends
   com.google.protobuf.DurationOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The word corresponding to this set of information.
    * </pre>
@@ -96,12 +111,13 @@ public interface WordInfoOrBuilder extends
    */
   java.lang.String getWord();
   /**
+   *
+   *
    * <pre>
    * Output only. The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getWordBytes();
+  com.google.protobuf.ByteString getWordBytes();
 }

@@ -19,7 +19,6 @@ package com.google.cloud.resourcemanager;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Policy;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -41,9 +40,7 @@ public class Project extends ProjectInfo {
   private final ResourceManagerOptions options;
   private transient ResourceManager resourceManager;
 
-  /**
-   * Builder for {@code Project}.
-   */
+  /** Builder for {@code Project}. */
   public static class Builder extends ProjectInfo.Builder {
     private final ResourceManager resourceManager;
     private final ProjectInfo.BuilderImpl infoBuilder;
@@ -53,13 +50,11 @@ public class Project extends ProjectInfo {
       this.infoBuilder = new ProjectInfo.BuilderImpl(project);
     }
 
-
     @Override
     public Builder setName(String name) {
       infoBuilder.setName(name);
       return this;
     }
-
 
     @Override
     public Builder setProjectId(String projectId) {
@@ -84,7 +79,6 @@ public class Project extends ProjectInfo {
       infoBuilder.clearLabels();
       return this;
     }
-
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
@@ -128,17 +122,13 @@ public class Project extends ProjectInfo {
     this.options = resourceManager.getOptions();
   }
 
-
-  /**
-   * Returns the {@link ResourceManager} service object associated with this Project.
-   */
+  /** Returns the {@link ResourceManager} service object associated with this Project. */
   public ResourceManager getResourceManager() {
     return resourceManager;
   }
 
   /**
-   * Fetches the project's latest information. Returns {@code null} if the project does not
-   * exist.
+   * Fetches the project's latest information. Returns {@code null} if the project does not exist.
    *
    * @return Project containing the project's updated metadata or {@code null} if not found
    * @throws ResourceManagerException upon failure
@@ -151,18 +141,20 @@ public class Project extends ProjectInfo {
    * Marks the project identified by the specified project ID for deletion.
    *
    * <p>This method will only affect the project if the following criteria are met:
+   *
    * <ul>
-   * <li>The project does not have a billing account associated with it.
-   * <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
+   *   <li>The project does not have a billing account associated with it.
+   *   <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
    * </ul>
+   *
    * This method changes the project's lifecycle state from {@link ProjectInfo.State#ACTIVE} to
    * {@link ProjectInfo.State#DELETE_REQUESTED}. The deletion starts at an unspecified time, at
    * which point the lifecycle state changes to {@link ProjectInfo.State#DELETE_IN_PROGRESS}. Until
    * the deletion completes, you can check the lifecycle state checked by retrieving the project
-   * with {@link ResourceManager#get}, and the project remains visible to
-   * {@link ResourceManager#list}. However, you cannot update the project. After the deletion
-   * completes, the project is not retrievable by the {@link ResourceManager#get} and
-   * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
+   * with {@link ResourceManager#get}, and the project remains visible to {@link
+   * ResourceManager#list}. However, you cannot update the project. After the deletion completes,
+   * the project is not retrievable by the {@link ResourceManager#get} and {@link
+   * ResourceManager#list} methods. The caller must have modify permissions for this project.
    *
    * @throws ResourceManagerException upon failure
    * @see <a href=
@@ -176,10 +168,10 @@ public class Project extends ProjectInfo {
   /**
    * Restores the project identified by the specified project ID.
    *
-   * <p>You can only use this method for a project that has a lifecycle state of
-   * {@link ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
-   * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
-   * caller must have modify permissions for this project.
+   * <p>You can only use this method for a project that has a lifecycle state of {@link
+   * ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle state
+   * of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The caller
+   * must have modify permissions for this project.
    *
    * @throws ResourceManagerException upon failure (including when the project can't be restored)
    * @see <a href=
@@ -239,7 +231,7 @@ public class Project extends ProjectInfo {
    * if you're using Google Cloud Platform directly to manage permissions. This method is intended
    * for integration with your proprietary software, such as a customized graphical user interface.
    * For example, the Cloud Platform Console tests IAM permissions internally to determine which UI
-   * should be available to the logged-in user.  Each service that supports IAM lists the possible
+   * should be available to the logged-in user. Each service that supports IAM lists the possible
    * permissions; see the <i>Supported Cloud Platform services</i> page below for links to these
    * lists.
    *
@@ -249,9 +241,8 @@ public class Project extends ProjectInfo {
    * @see <a href=
    *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/testIamPermissions">
    *     Resource Manager testIamPermissions</a>
-   * @see <a href=
-   *     "https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud Platform
-   *     Services</a>
+   * @see <a href= "https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud
+   *     Platform Services</a>
    */
   List<Boolean> testPermissions(List<String> permissions) {
     return resourceManager.testPermissions(getProjectId(), permissions);
@@ -271,8 +262,7 @@ public class Project extends ProjectInfo {
       return false;
     }
     Project other = (Project) obj;
-    return Objects.equals(toPb(), other.toPb())
-        && Objects.equals(options, other.options);
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override
@@ -285,7 +275,8 @@ public class Project extends ProjectInfo {
     this.resourceManager = options.getService();
   }
 
-  static Project fromPb(ResourceManager resourceManager,
+  static Project fromPb(
+      ResourceManager resourceManager,
       com.google.api.services.cloudresourcemanager.model.Project answer) {
     ProjectInfo info = ProjectInfo.fromPb(answer);
     return new Project(resourceManager, new ProjectInfo.BuilderImpl(info));

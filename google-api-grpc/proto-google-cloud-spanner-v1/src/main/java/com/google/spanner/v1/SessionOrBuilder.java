@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface SessionOrBuilder extends
+public interface SessionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.Session)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the session. This is always system-assigned; values provided
    * when creating a session are ignored.
@@ -17,6 +20,8 @@ public interface SessionOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the session. This is always system-assigned; values provided
    * when creating a session are ignored.
@@ -24,10 +29,11 @@ public interface SessionOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The labels for the session.
    *  * Label keys must be between 1 and 63 characters long and must conform to
@@ -42,6 +48,8 @@ public interface SessionOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * The labels for the session.
    *  * Label keys must be between 1 and 63 characters long and must conform to
@@ -54,15 +62,13 @@ public interface SessionOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * The labels for the session.
    *  * Label keys must be between 1 and 63 characters long and must conform to
@@ -75,9 +81,10 @@ public interface SessionOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * The labels for the session.
    *  * Label keys must be between 1 and 63 characters long and must conform to
@@ -90,11 +97,10 @@ public interface SessionOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * The labels for the session.
    *  * Label keys must be between 1 and 63 characters long and must conform to
@@ -107,11 +113,11 @@ public interface SessionOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The timestamp when the session is created.
    * </pre>
@@ -120,6 +126,8 @@ public interface SessionOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The timestamp when the session is created.
    * </pre>
@@ -128,6 +136,8 @@ public interface SessionOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The timestamp when the session is created.
    * </pre>
@@ -137,6 +147,8 @@ public interface SessionOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The approximate timestamp when the session is last used. It is
    * typically earlier than the actual last use time.
@@ -146,6 +158,8 @@ public interface SessionOrBuilder extends
    */
   boolean hasApproximateLastUseTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The approximate timestamp when the session is last used. It is
    * typically earlier than the actual last use time.
@@ -155,6 +169,8 @@ public interface SessionOrBuilder extends
    */
   com.google.protobuf.Timestamp getApproximateLastUseTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The approximate timestamp when the session is last used. It is
    * typically earlier than the actual last use time.

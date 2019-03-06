@@ -4,6 +4,8 @@
 package com.google.cloud.speech.v1;
 
 /**
+ *
+ *
  * <pre>
  * Provides information to the recognizer that specifies how to process the
  * request.
@@ -11,18 +13,21 @@ package com.google.cloud.speech.v1;
  *
  * Protobuf type {@code google.cloud.speech.v1.RecognitionConfig}
  */
-public  final class RecognitionConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RecognitionConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.RecognitionConfig)
     RecognitionConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RecognitionConfig.newBuilder() to construct.
   private RecognitionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RecognitionConfig() {
     encoding_ = 0;
     sampleRateHertz_ = 0;
+    audioChannelCount_ = 0;
+    enableSeparateRecognitionPerChannel_ = false;
     languageCode_ = "";
     maxAlternatives_ = 0;
     profanityFilter_ = false;
@@ -34,10 +39,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RecognitionConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -57,99 +62,119 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            encoding_ = rawValue;
-            break;
-          }
-          case 16: {
-
-            sampleRateHertz_ = input.readInt32();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            languageCode_ = s;
-            break;
-          }
-          case 32: {
-
-            maxAlternatives_ = input.readInt32();
-            break;
-          }
-          case 40: {
-
-            profanityFilter_ = input.readBool();
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              speechContexts_ = new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>();
-              mutable_bitField0_ |= 0x00000020;
+              encoding_ = rawValue;
+              break;
             }
-            speechContexts_.add(
-                input.readMessage(com.google.cloud.speech.v1.SpeechContext.parser(), extensionRegistry));
-            break;
-          }
-          case 64: {
-
-            enableWordTimeOffsets_ = input.readBool();
-            break;
-          }
-          case 88: {
-
-            enableAutomaticPunctuation_ = input.readBool();
-            break;
-          }
-          case 106: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            model_ = s;
-            break;
-          }
-          case 112: {
-
-            useEnhanced_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 16:
+            {
+              sampleRateHertz_ = input.readInt32();
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              languageCode_ = s;
+              break;
+            }
+          case 32:
+            {
+              maxAlternatives_ = input.readInt32();
+              break;
+            }
+          case 40:
+            {
+              profanityFilter_ = input.readBool();
+              break;
+            }
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                speechContexts_ =
+                    new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              speechContexts_.add(
+                  input.readMessage(
+                      com.google.cloud.speech.v1.SpeechContext.parser(), extensionRegistry));
+              break;
+            }
+          case 56:
+            {
+              audioChannelCount_ = input.readInt32();
+              break;
+            }
+          case 64:
+            {
+              enableWordTimeOffsets_ = input.readBool();
+              break;
+            }
+          case 88:
+            {
+              enableAutomaticPunctuation_ = input.readBool();
+              break;
+            }
+          case 96:
+            {
+              enableSeparateRecognitionPerChannel_ = input.readBool();
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              model_ = s;
+              break;
+            }
+          case 112:
+            {
+              useEnhanced_ = input.readBool();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.speech.v1.SpeechProto
+        .internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_fieldAccessorTable
+    return com.google.cloud.speech.v1.SpeechProto
+        .internal_static_google_cloud_speech_v1_RecognitionConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.speech.v1.RecognitionConfig.class, com.google.cloud.speech.v1.RecognitionConfig.Builder.class);
+            com.google.cloud.speech.v1.RecognitionConfig.class,
+            com.google.cloud.speech.v1.RecognitionConfig.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The encoding of the audio data sent in the request.
    * All encodings support only 1 channel (mono) audio.
@@ -167,14 +192,16 @@ private static final long serialVersionUID = 0L;
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
+   * code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1.RecognitionConfig.AudioEncoding}
    */
-  public enum AudioEncoding
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -183,6 +210,8 @@ private static final long serialVersionUID = 0L;
      */
     ENCODING_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Uncompressed 16-bit signed little-endian samples (Linear PCM).
      * </pre>
@@ -191,6 +220,8 @@ private static final long serialVersionUID = 0L;
      */
     LINEAR16(1),
     /**
+     *
+     *
      * <pre>
      * `FLAC` (Free Lossless Audio
      * Codec) is the recommended encoding because it is
@@ -204,6 +235,8 @@ private static final long serialVersionUID = 0L;
      */
     FLAC(2),
     /**
+     *
+     *
      * <pre>
      * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
      * </pre>
@@ -212,6 +245,8 @@ private static final long serialVersionUID = 0L;
      */
     MULAW(3),
     /**
+     *
+     *
      * <pre>
      * Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
      * </pre>
@@ -220,6 +255,8 @@ private static final long serialVersionUID = 0L;
      */
     AMR(4),
     /**
+     *
+     *
      * <pre>
      * Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
      * </pre>
@@ -228,6 +265,8 @@ private static final long serialVersionUID = 0L;
      */
     AMR_WB(5),
     /**
+     *
+     *
      * <pre>
      * Opus encoded audio frames in Ogg container
      * ([OggOpus](https://wiki.xiph.org/OggOpus)).
@@ -238,6 +277,8 @@ private static final long serialVersionUID = 0L;
      */
     OGG_OPUS(6),
     /**
+     *
+     *
      * <pre>
      * Although the use of lossy encodings is not recommended, if a very low
      * bitrate encoding is required, `OGG_OPUS` is highly preferred over
@@ -261,6 +302,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -269,6 +312,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ENCODING_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Uncompressed 16-bit signed little-endian samples (Linear PCM).
      * </pre>
@@ -277,6 +322,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int LINEAR16_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * `FLAC` (Free Lossless Audio
      * Codec) is the recommended encoding because it is
@@ -290,6 +337,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FLAC_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
      * </pre>
@@ -298,6 +347,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MULAW_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Adaptive Multi-Rate Narrowband codec. `sample_rate_hertz` must be 8000.
      * </pre>
@@ -306,6 +357,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AMR_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Adaptive Multi-Rate Wideband codec. `sample_rate_hertz` must be 16000.
      * </pre>
@@ -314,6 +367,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AMR_WB_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Opus encoded audio frames in Ogg container
      * ([OggOpus](https://wiki.xiph.org/OggOpus)).
@@ -324,6 +379,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int OGG_OPUS_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Although the use of lossy encodings is not recommended, if a very low
      * bitrate encoding is required, `OGG_OPUS` is highly preferred over
@@ -344,7 +401,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SPEEX_WITH_HEADER_BYTE_VALUE = 7;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -353,9 +409,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static AudioEncoding valueOf(int value) {
       return forNumber(value);
@@ -363,50 +417,55 @@ private static final long serialVersionUID = 0L;
 
     public static AudioEncoding forNumber(int value) {
       switch (value) {
-        case 0: return ENCODING_UNSPECIFIED;
-        case 1: return LINEAR16;
-        case 2: return FLAC;
-        case 3: return MULAW;
-        case 4: return AMR;
-        case 5: return AMR_WB;
-        case 6: return OGG_OPUS;
-        case 7: return SPEEX_WITH_HEADER_BYTE;
-        default: return null;
+        case 0:
+          return ENCODING_UNSPECIFIED;
+        case 1:
+          return LINEAR16;
+        case 2:
+          return FLAC;
+        case 3:
+          return MULAW;
+        case 4:
+          return AMR;
+        case 5:
+          return AMR_WB;
+        case 6:
+          return OGG_OPUS;
+        case 7:
+          return SPEEX_WITH_HEADER_BYTE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<AudioEncoding>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<AudioEncoding> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        AudioEncoding> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<AudioEncoding>() {
-            public AudioEncoding findValueByNumber(int number) {
-              return AudioEncoding.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<AudioEncoding> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AudioEncoding>() {
+          public AudioEncoding findValueByNumber(int number) {
+            return AudioEncoding.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.speech.v1.RecognitionConfig.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final AudioEncoding[] VALUES = values();
 
-    public static AudioEncoding valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static AudioEncoding valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -427,10 +486,13 @@ private static final long serialVersionUID = 0L;
   public static final int ENCODING_FIELD_NUMBER = 1;
   private int encoding_;
   /**
+   *
+   *
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -439,23 +501,31 @@ private static final long serialVersionUID = 0L;
     return encoding_;
   }
   /**
+   *
+   *
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
    */
   public com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding getEncoding() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result = com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
-    return result == null ? com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.UNRECOGNIZED : result;
+    com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result =
+        com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
+    return result == null
+        ? com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.UNRECOGNIZED
+        : result;
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
   private int sampleRateHertz_;
   /**
+   *
+   *
    * <pre>
    * Sample rate in Hertz of the audio data sent in all
    * `RecognitionAudio` messages. Valid values are: 8000-48000.
@@ -463,7 +533,8 @@ private static final long serialVersionUID = 0L;
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -472,9 +543,54 @@ private static final long serialVersionUID = 0L;
     return sampleRateHertz_;
   }
 
+  public static final int AUDIO_CHANNEL_COUNT_FIELD_NUMBER = 7;
+  private int audioChannelCount_;
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* The number of channels in the input audio data.
+   * ONLY set this for MULTI-CHANNEL recognition.
+   * Valid values for LINEAR16 and FLAC are `1`-`8`.
+   * Valid values for OGG_OPUS are '1'-'254'.
+   * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+   * If `0` or omitted, defaults to one channel (mono).
+   * Note: We only recognize the first channel by default.
+   * To perform independent recognition on each channel set
+   * `enable_separate_recognition_per_channel` to 'true'.
+   * </pre>
+   *
+   * <code>int32 audio_channel_count = 7;</code>
+   */
+  public int getAudioChannelCount() {
+    return audioChannelCount_;
+  }
+
+  public static final int ENABLE_SEPARATE_RECOGNITION_PER_CHANNEL_FIELD_NUMBER = 12;
+  private boolean enableSeparateRecognitionPerChannel_;
+  /**
+   *
+   *
+   * <pre>
+   * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
+   * to get each channel recognized separately. The recognition result will
+   * contain a `channel_tag` field to state which channel that result belongs
+   * to. If this is not true, we will only recognize the first channel. The
+   * request is billed cumulatively for all channels recognized:
+   * `audio_channel_count` multiplied by the length of the audio.
+   * </pre>
+   *
+   * <code>bool enable_separate_recognition_per_channel = 12;</code>
+   */
+  public boolean getEnableSeparateRecognitionPerChannel() {
+    return enableSeparateRecognitionPerChannel_;
+  }
+
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
   private volatile java.lang.Object languageCode_;
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -490,14 +606,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       languageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -508,13 +625,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string language_code = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       languageCode_ = b;
       return b;
     } else {
@@ -525,6 +640,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 4;
   private int maxAlternatives_;
   /**
+   *
+   *
    * <pre>
    * *Optional* Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -543,6 +660,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROFANITY_FILTER_FIELD_NUMBER = 5;
   private boolean profanityFilter_;
   /**
+   *
+   *
    * <pre>
    * *Optional* If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
@@ -559,6 +678,8 @@ private static final long serialVersionUID = 0L;
   public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 6;
   private java.util.List<com.google.cloud.speech.v1.SpeechContext> speechContexts_;
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -571,6 +692,8 @@ private static final long serialVersionUID = 0L;
     return speechContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -579,11 +702,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
-  public java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder> 
+  public java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList() {
     return speechContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -596,6 +721,8 @@ private static final long serialVersionUID = 0L;
     return speechContexts_.size();
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -608,6 +735,8 @@ private static final long serialVersionUID = 0L;
     return speechContexts_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -616,14 +745,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
-  public com.google.cloud.speech.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
-      int index) {
+  public com.google.cloud.speech.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(int index) {
     return speechContexts_.get(index);
   }
 
   public static final int ENABLE_WORD_TIME_OFFSETS_FIELD_NUMBER = 8;
   private boolean enableWordTimeOffsets_;
   /**
+   *
+   *
    * <pre>
    * *Optional* If `true`, the top result includes a list of words and
    * the start and end time offsets (timestamps) for those words. If
@@ -640,6 +770,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 11;
   private boolean enableAutomaticPunctuation_;
   /**
+   *
+   *
    * <pre>
    * *Optional* If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
@@ -659,6 +791,8 @@ private static final long serialVersionUID = 0L;
   public static final int MODEL_FIELD_NUMBER = 13;
   private volatile java.lang.Object model_;
   /**
+   *
+   *
    * <pre>
    * *Optional* Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
@@ -701,14 +835,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       model_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
@@ -746,13 +881,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string model = 13;</code>
    */
-  public com.google.protobuf.ByteString
-      getModelBytes() {
+  public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       model_ = b;
       return b;
     } else {
@@ -763,17 +896,22 @@ private static final long serialVersionUID = 0L;
   public static final int USE_ENHANCED_FIELD_NUMBER = 14;
   private boolean useEnhanced_;
   /**
+   *
+   *
    * <pre>
    * *Optional* Set to true to use an enhanced model for speech recognition.
-   * You must also set the `model` field to a valid, enhanced model. If
-   * `use_enhanced` is set to true and the `model` field is not set, then
-   * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
-   * version of the specified model does not exist, then the speech is
-   * recognized using the standard version of the specified model.
+   * If `use_enhanced` is set to true and the `model` field is not set, then
+   * an appropriate enhanced model is chosen if:
+   * 1. project is eligible for requesting enhanced models
+   * 2. an enhanced model exists for the audio
+   * If `use_enhanced` is true and an enhanced version of the specified model
+   * does not exist, then the speech is recognized using the standard version
+   * of the specified model.
    * Enhanced speech models require that you opt-in to data logging using
-   * instructions in the [documentation](/speech-to-text/enable-data-logging).
-   * If you set `use_enhanced` to true and you have not enabled audio logging,
-   * then you will receive an error.
+   * instructions in the
+   * [documentation](/speech-to-text/docs/enable-data-logging). If you set
+   * `use_enhanced` to true and you have not enabled audio logging, then you
+   * will receive an error.
    * </pre>
    *
    * <code>bool use_enhanced = 14;</code>
@@ -783,6 +921,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -794,9 +933,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (encoding_ != com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (encoding_
+        != com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, encoding_);
     }
     if (sampleRateHertz_ != 0) {
@@ -814,11 +954,17 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < speechContexts_.size(); i++) {
       output.writeMessage(6, speechContexts_.get(i));
     }
+    if (audioChannelCount_ != 0) {
+      output.writeInt32(7, audioChannelCount_);
+    }
     if (enableWordTimeOffsets_ != false) {
       output.writeBool(8, enableWordTimeOffsets_);
     }
     if (enableAutomaticPunctuation_ != false) {
       output.writeBool(11, enableAutomaticPunctuation_);
+    }
+    if (enableSeparateRecognitionPerChannel_ != false) {
+      output.writeBool(12, enableSeparateRecognitionPerChannel_);
     }
     if (!getModelBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, model_);
@@ -835,43 +981,46 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (encoding_ != com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, encoding_);
+    if (encoding_
+        != com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, encoding_);
     }
     if (sampleRateHertz_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, sampleRateHertz_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, sampleRateHertz_);
     }
     if (!getLanguageCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
     }
     if (maxAlternatives_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, maxAlternatives_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, maxAlternatives_);
     }
     if (profanityFilter_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, profanityFilter_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, profanityFilter_);
     }
     for (int i = 0; i < speechContexts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, speechContexts_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, speechContexts_.get(i));
+    }
+    if (audioChannelCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, audioChannelCount_);
     }
     if (enableWordTimeOffsets_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, enableWordTimeOffsets_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableWordTimeOffsets_);
     }
     if (enableAutomaticPunctuation_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(11, enableAutomaticPunctuation_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableAutomaticPunctuation_);
+    }
+    if (enableSeparateRecognitionPerChannel_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              12, enableSeparateRecognitionPerChannel_);
     }
     if (!getModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, model_);
     }
     if (useEnhanced_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(14, useEnhanced_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, useEnhanced_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -881,33 +1030,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.speech.v1.RecognitionConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.speech.v1.RecognitionConfig other = (com.google.cloud.speech.v1.RecognitionConfig) obj;
+    com.google.cloud.speech.v1.RecognitionConfig other =
+        (com.google.cloud.speech.v1.RecognitionConfig) obj;
 
     boolean result = true;
     result = result && encoding_ == other.encoding_;
-    result = result && (getSampleRateHertz()
-        == other.getSampleRateHertz());
-    result = result && getLanguageCode()
-        .equals(other.getLanguageCode());
-    result = result && (getMaxAlternatives()
-        == other.getMaxAlternatives());
-    result = result && (getProfanityFilter()
-        == other.getProfanityFilter());
-    result = result && getSpeechContextsList()
-        .equals(other.getSpeechContextsList());
-    result = result && (getEnableWordTimeOffsets()
-        == other.getEnableWordTimeOffsets());
-    result = result && (getEnableAutomaticPunctuation()
-        == other.getEnableAutomaticPunctuation());
-    result = result && getModel()
-        .equals(other.getModel());
-    result = result && (getUseEnhanced()
-        == other.getUseEnhanced());
+    result = result && (getSampleRateHertz() == other.getSampleRateHertz());
+    result = result && (getAudioChannelCount() == other.getAudioChannelCount());
+    result =
+        result
+            && (getEnableSeparateRecognitionPerChannel()
+                == other.getEnableSeparateRecognitionPerChannel());
+    result = result && getLanguageCode().equals(other.getLanguageCode());
+    result = result && (getMaxAlternatives() == other.getMaxAlternatives());
+    result = result && (getProfanityFilter() == other.getProfanityFilter());
+    result = result && getSpeechContextsList().equals(other.getSpeechContextsList());
+    result = result && (getEnableWordTimeOffsets() == other.getEnableWordTimeOffsets());
+    result = result && (getEnableAutomaticPunctuation() == other.getEnableAutomaticPunctuation());
+    result = result && getModel().equals(other.getModel());
+    result = result && (getUseEnhanced() == other.getUseEnhanced());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -923,124 +1069,133 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + encoding_;
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateHertz();
+    hash = (37 * hash) + AUDIO_CHANNEL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getAudioChannelCount();
+    hash = (37 * hash) + ENABLE_SEPARATE_RECOGNITION_PER_CHANNEL_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getEnableSeparateRecognitionPerChannel());
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (37 * hash) + MAX_ALTERNATIVES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxAlternatives();
     hash = (37 * hash) + PROFANITY_FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getProfanityFilter());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProfanityFilter());
     if (getSpeechContextsCount() > 0) {
       hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechContextsList().hashCode();
     }
     hash = (37 * hash) + ENABLE_WORD_TIME_OFFSETS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnableWordTimeOffsets());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWordTimeOffsets());
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnableAutomaticPunctuation());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
     hash = (37 * hash) + USE_ENHANCED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getUseEnhanced());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseEnhanced());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.speech.v1.RecognitionConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.speech.v1.RecognitionConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.speech.v1.RecognitionConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.speech.v1.RecognitionConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Provides information to the recognizer that specifies how to process the
    * request.
@@ -1048,21 +1203,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.speech.v1.RecognitionConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.speech.v1.RecognitionConfig)
       com.google.cloud.speech.v1.RecognitionConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.speech.v1.SpeechProto
+          .internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_fieldAccessorTable
+      return com.google.cloud.speech.v1.SpeechProto
+          .internal_static_google_cloud_speech_v1_RecognitionConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.speech.v1.RecognitionConfig.class, com.google.cloud.speech.v1.RecognitionConfig.Builder.class);
+              com.google.cloud.speech.v1.RecognitionConfig.class,
+              com.google.cloud.speech.v1.RecognitionConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.speech.v1.RecognitionConfig.newBuilder()
@@ -1070,23 +1227,27 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSpeechContextsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
       encoding_ = 0;
 
       sampleRateHertz_ = 0;
+
+      audioChannelCount_ = 0;
+
+      enableSeparateRecognitionPerChannel_ = false;
 
       languageCode_ = "";
 
@@ -1096,7 +1257,7 @@ private static final long serialVersionUID = 0L;
 
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         speechContextsBuilder_.clear();
       }
@@ -1112,9 +1273,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.speech.v1.SpeechProto.internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.speech.v1.SpeechProto
+          .internal_static_google_cloud_speech_v1_RecognitionConfig_descriptor;
     }
 
     @java.lang.Override
@@ -1133,18 +1294,21 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.speech.v1.RecognitionConfig buildPartial() {
-      com.google.cloud.speech.v1.RecognitionConfig result = new com.google.cloud.speech.v1.RecognitionConfig(this);
+      com.google.cloud.speech.v1.RecognitionConfig result =
+          new com.google.cloud.speech.v1.RecognitionConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.encoding_ = encoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
+      result.audioChannelCount_ = audioChannelCount_;
+      result.enableSeparateRecognitionPerChannel_ = enableSeparateRecognitionPerChannel_;
       result.languageCode_ = languageCode_;
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.speechContexts_ = speechContexts_;
       } else {
@@ -1163,38 +1327,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1.RecognitionConfig) {
-        return mergeFrom((com.google.cloud.speech.v1.RecognitionConfig)other);
+        return mergeFrom((com.google.cloud.speech.v1.RecognitionConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1208,6 +1373,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSampleRateHertz() != 0) {
         setSampleRateHertz(other.getSampleRateHertz());
+      }
+      if (other.getAudioChannelCount() != 0) {
+        setAudioChannelCount(other.getAudioChannelCount());
+      }
+      if (other.getEnableSeparateRecognitionPerChannel() != false) {
+        setEnableSeparateRecognitionPerChannel(other.getEnableSeparateRecognitionPerChannel());
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
@@ -1223,7 +1394,7 @@ private static final long serialVersionUID = 0L;
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -1236,10 +1407,11 @@ private static final long serialVersionUID = 0L;
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-            speechContextsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSpeechContextsFieldBuilder() : null;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            speechContextsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSpeechContextsFieldBuilder()
+                    : null;
           } else {
             speechContextsBuilder_.addAllMessages(other.speechContexts_);
           }
@@ -1286,14 +1458,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private int encoding_ = 0;
     /**
+     *
+     *
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1302,10 +1478,13 @@ private static final long serialVersionUID = 0L;
       return encoding_;
     }
     /**
+     *
+     *
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1316,24 +1495,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
      */
     public com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding getEncoding() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result = com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
-      return result == null ? com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.UNRECOGNIZED : result;
+      com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding result =
+          com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.valueOf(encoding_);
+      return result == null
+          ? com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1342,29 +1530,34 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       encoding_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1.RecognitionConfig.AudioEncoding encoding = 1;</code>
      */
     public Builder clearEncoding() {
-      
+
       encoding_ = 0;
       onChanged();
       return this;
     }
 
-    private int sampleRateHertz_ ;
+    private int sampleRateHertz_;
     /**
+     *
+     *
      * <pre>
      * Sample rate in Hertz of the audio data sent in all
      * `RecognitionAudio` messages. Valid values are: 8000-48000.
@@ -1372,7 +1565,8 @@ private static final long serialVersionUID = 0L;
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -1381,6 +1575,8 @@ private static final long serialVersionUID = 0L;
       return sampleRateHertz_;
     }
     /**
+     *
+     *
      * <pre>
      * Sample rate in Hertz of the audio data sent in all
      * `RecognitionAudio` messages. Valid values are: 8000-48000.
@@ -1388,18 +1584,21 @@ private static final long serialVersionUID = 0L;
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
      */
     public Builder setSampleRateHertz(int value) {
-      
+
       sampleRateHertz_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sample rate in Hertz of the audio data sent in all
      * `RecognitionAudio` messages. Valid values are: 8000-48000.
@@ -1407,20 +1606,150 @@ private static final long serialVersionUID = 0L;
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
      */
     public Builder clearSampleRateHertz() {
-      
+
       sampleRateHertz_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int audioChannelCount_;
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * Note: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * `enable_separate_recognition_per_channel` to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public int getAudioChannelCount() {
+      return audioChannelCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * Note: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * `enable_separate_recognition_per_channel` to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public Builder setAudioChannelCount(int value) {
+
+      audioChannelCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * Note: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * `enable_separate_recognition_per_channel` to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public Builder clearAudioChannelCount() {
+
+      audioChannelCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableSeparateRecognitionPerChannel_;
+    /**
+     *
+     *
+     * <pre>
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
+     * to get each channel recognized separately. The recognition result will
+     * contain a `channel_tag` field to state which channel that result belongs
+     * to. If this is not true, we will only recognize the first channel. The
+     * request is billed cumulatively for all channels recognized:
+     * `audio_channel_count` multiplied by the length of the audio.
+     * </pre>
+     *
+     * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     */
+    public boolean getEnableSeparateRecognitionPerChannel() {
+      return enableSeparateRecognitionPerChannel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
+     * to get each channel recognized separately. The recognition result will
+     * contain a `channel_tag` field to state which channel that result belongs
+     * to. If this is not true, we will only recognize the first channel. The
+     * request is billed cumulatively for all channels recognized:
+     * `audio_channel_count` multiplied by the length of the audio.
+     * </pre>
+     *
+     * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     */
+    public Builder setEnableSeparateRecognitionPerChannel(boolean value) {
+
+      enableSeparateRecognitionPerChannel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
+     * to get each channel recognized separately. The recognition result will
+     * contain a `channel_tag` field to state which channel that result belongs
+     * to. If this is not true, we will only recognize the first channel. The
+     * request is billed cumulatively for all channels recognized:
+     * `audio_channel_count` multiplied by the length of the audio.
+     * </pre>
+     *
+     * <code>bool enable_separate_recognition_per_channel = 12;</code>
+     */
+    public Builder clearEnableSeparateRecognitionPerChannel() {
+
+      enableSeparateRecognitionPerChannel_ = false;
       onChanged();
       return this;
     }
 
     private java.lang.Object languageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -1434,8 +1763,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         languageCode_ = s;
         return s;
@@ -1444,6 +1772,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -1454,13 +1784,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         languageCode_ = b;
         return b;
       } else {
@@ -1468,6 +1796,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -1478,17 +1808,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 3;</code>
      */
-    public Builder setLanguageCode(
-        java.lang.String value) {
+    public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       languageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -1500,12 +1831,14 @@ private static final long serialVersionUID = 0L;
      * <code>string language_code = 3;</code>
      */
     public Builder clearLanguageCode() {
-      
+
       languageCode_ = getDefaultInstance().getLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -1516,20 +1849,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 3;</code>
      */
-    public Builder setLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       languageCode_ = value;
       onChanged();
       return this;
     }
 
-    private int maxAlternatives_ ;
+    private int maxAlternatives_;
     /**
+     *
+     *
      * <pre>
      * *Optional* Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -1545,6 +1879,8 @@ private static final long serialVersionUID = 0L;
       return maxAlternatives_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -1557,12 +1893,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_alternatives = 4;</code>
      */
     public Builder setMaxAlternatives(int value) {
-      
+
       maxAlternatives_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -1575,14 +1913,16 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_alternatives = 4;</code>
      */
     public Builder clearMaxAlternatives() {
-      
+
       maxAlternatives_ = 0;
       onChanged();
       return this;
     }
 
-    private boolean profanityFilter_ ;
+    private boolean profanityFilter_;
     /**
+     *
+     *
      * <pre>
      * *Optional* If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
@@ -1596,6 +1936,8 @@ private static final long serialVersionUID = 0L;
       return profanityFilter_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
@@ -1606,12 +1948,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool profanity_filter = 5;</code>
      */
     public Builder setProfanityFilter(boolean value) {
-      
+
       profanityFilter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
@@ -1622,25 +1966,32 @@ private static final long serialVersionUID = 0L;
      * <code>bool profanity_filter = 5;</code>
      */
     public Builder clearProfanityFilter() {
-      
+
       profanityFilter_ = false;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.speech.v1.SpeechContext> speechContexts_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-        speechContexts_ = new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>(speechContexts_);
-        bitField0_ |= 0x00000020;
-       }
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        speechContexts_ =
+            new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>(speechContexts_);
+        bitField0_ |= 0x00000080;
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.speech.v1.SpeechContext, com.google.cloud.speech.v1.SpeechContext.Builder, com.google.cloud.speech.v1.SpeechContextOrBuilder> speechContextsBuilder_;
+            com.google.cloud.speech.v1.SpeechContext,
+            com.google.cloud.speech.v1.SpeechContext.Builder,
+            com.google.cloud.speech.v1.SpeechContextOrBuilder>
+        speechContextsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1657,6 +2008,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1673,6 +2026,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1689,6 +2044,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1697,8 +2054,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
-    public Builder setSpeechContexts(
-        int index, com.google.cloud.speech.v1.SpeechContext value) {
+    public Builder setSpeechContexts(int index, com.google.cloud.speech.v1.SpeechContext value) {
       if (speechContextsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1712,6 +2068,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1732,6 +2090,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1754,6 +2114,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1762,8 +2124,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
-    public Builder addSpeechContexts(
-        int index, com.google.cloud.speech.v1.SpeechContext value) {
+    public Builder addSpeechContexts(int index, com.google.cloud.speech.v1.SpeechContext value) {
       if (speechContextsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1777,6 +2138,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1797,6 +2160,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1817,6 +2182,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1829,8 +2196,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.speech.v1.SpeechContext> values) {
       if (speechContextsBuilder_ == null) {
         ensureSpeechContextsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, speechContexts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, speechContexts_);
         onChanged();
       } else {
         speechContextsBuilder_.addAllMessages(values);
@@ -1838,6 +2204,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1849,7 +2217,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -1857,6 +2225,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1876,6 +2246,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1884,11 +2256,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
-    public com.google.cloud.speech.v1.SpeechContext.Builder getSpeechContextsBuilder(
-        int index) {
+    public com.google.cloud.speech.v1.SpeechContext.Builder getSpeechContextsBuilder(int index) {
       return getSpeechContextsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1897,14 +2270,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
-    public com.google.cloud.speech.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
-        int index) {
+    public com.google.cloud.speech.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(int index) {
       if (speechContextsBuilder_ == null) {
-        return speechContexts_.get(index);  } else {
+        return speechContexts_.get(index);
+      } else {
         return speechContextsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1913,8 +2288,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
-    public java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder> 
-         getSpeechContextsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder>
+        getSpeechContextsOrBuilderList() {
       if (speechContextsBuilder_ != null) {
         return speechContextsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1922,6 +2297,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1931,10 +2308,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
     public com.google.cloud.speech.v1.SpeechContext.Builder addSpeechContextsBuilder() {
-      return getSpeechContextsFieldBuilder().addBuilder(
-          com.google.cloud.speech.v1.SpeechContext.getDefaultInstance());
+      return getSpeechContextsFieldBuilder()
+          .addBuilder(com.google.cloud.speech.v1.SpeechContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1943,12 +2322,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
-    public com.google.cloud.speech.v1.SpeechContext.Builder addSpeechContextsBuilder(
-        int index) {
-      return getSpeechContextsFieldBuilder().addBuilder(
-          index, com.google.cloud.speech.v1.SpeechContext.getDefaultInstance());
+    public com.google.cloud.speech.v1.SpeechContext.Builder addSpeechContextsBuilder(int index) {
+      return getSpeechContextsFieldBuilder()
+          .addBuilder(index, com.google.cloud.speech.v1.SpeechContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
      * A means to provide context to assist the speech recognition. For more
@@ -1957,18 +2337,24 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
-    public java.util.List<com.google.cloud.speech.v1.SpeechContext.Builder> 
-         getSpeechContextsBuilderList() {
+    public java.util.List<com.google.cloud.speech.v1.SpeechContext.Builder>
+        getSpeechContextsBuilderList() {
       return getSpeechContextsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.speech.v1.SpeechContext, com.google.cloud.speech.v1.SpeechContext.Builder, com.google.cloud.speech.v1.SpeechContextOrBuilder> 
+            com.google.cloud.speech.v1.SpeechContext,
+            com.google.cloud.speech.v1.SpeechContext.Builder,
+            com.google.cloud.speech.v1.SpeechContextOrBuilder>
         getSpeechContextsFieldBuilder() {
       if (speechContextsBuilder_ == null) {
-        speechContextsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.speech.v1.SpeechContext, com.google.cloud.speech.v1.SpeechContext.Builder, com.google.cloud.speech.v1.SpeechContextOrBuilder>(
+        speechContextsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.speech.v1.SpeechContext,
+                com.google.cloud.speech.v1.SpeechContext.Builder,
+                com.google.cloud.speech.v1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -1976,8 +2362,10 @@ private static final long serialVersionUID = 0L;
       return speechContextsBuilder_;
     }
 
-    private boolean enableWordTimeOffsets_ ;
+    private boolean enableWordTimeOffsets_;
     /**
+     *
+     *
      * <pre>
      * *Optional* If `true`, the top result includes a list of words and
      * the start and end time offsets (timestamps) for those words. If
@@ -1991,6 +2379,8 @@ private static final long serialVersionUID = 0L;
       return enableWordTimeOffsets_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If `true`, the top result includes a list of words and
      * the start and end time offsets (timestamps) for those words. If
@@ -2001,12 +2391,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_word_time_offsets = 8;</code>
      */
     public Builder setEnableWordTimeOffsets(boolean value) {
-      
+
       enableWordTimeOffsets_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If `true`, the top result includes a list of words and
      * the start and end time offsets (timestamps) for those words. If
@@ -2017,14 +2409,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_word_time_offsets = 8;</code>
      */
     public Builder clearEnableWordTimeOffsets() {
-      
+
       enableWordTimeOffsets_ = false;
       onChanged();
       return this;
     }
 
-    private boolean enableAutomaticPunctuation_ ;
+    private boolean enableAutomaticPunctuation_;
     /**
+     *
+     *
      * <pre>
      * *Optional* If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
@@ -2041,6 +2435,8 @@ private static final long serialVersionUID = 0L;
       return enableAutomaticPunctuation_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
@@ -2054,12 +2450,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_automatic_punctuation = 11;</code>
      */
     public Builder setEnableAutomaticPunctuation(boolean value) {
-      
+
       enableAutomaticPunctuation_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
@@ -2073,7 +2471,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_automatic_punctuation = 11;</code>
      */
     public Builder clearEnableAutomaticPunctuation() {
-      
+
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
@@ -2081,6 +2479,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object model_ = "";
     /**
+     *
+     *
      * <pre>
      * *Optional* Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
@@ -2121,8 +2521,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         model_ = s;
         return s;
@@ -2131,6 +2530,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
@@ -2168,13 +2569,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string model = 13;</code>
      */
-    public com.google.protobuf.ByteString
-        getModelBytes() {
+    public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         model_ = b;
         return b;
       } else {
@@ -2182,6 +2581,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
@@ -2219,17 +2620,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string model = 13;</code>
      */
-    public Builder setModel(
-        java.lang.String value) {
+    public Builder setModel(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       model_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
@@ -2268,12 +2670,14 @@ private static final long serialVersionUID = 0L;
      * <code>string model = 13;</code>
      */
     public Builder clearModel() {
-      
+
       model_ = getDefaultInstance().getModel();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Which model to select for the given request. Select the model
      * best suited to your domain to get best results. If a model is not
@@ -2311,31 +2715,35 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string model = 13;</code>
      */
-    public Builder setModelBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       model_ = value;
       onChanged();
       return this;
     }
 
-    private boolean useEnhanced_ ;
+    private boolean useEnhanced_;
     /**
+     *
+     *
      * <pre>
      * *Optional* Set to true to use an enhanced model for speech recognition.
-     * You must also set the `model` field to a valid, enhanced model. If
-     * `use_enhanced` is set to true and the `model` field is not set, then
-     * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
-     * version of the specified model does not exist, then the speech is
-     * recognized using the standard version of the specified model.
+     * If `use_enhanced` is set to true and the `model` field is not set, then
+     * an appropriate enhanced model is chosen if:
+     * 1. project is eligible for requesting enhanced models
+     * 2. an enhanced model exists for the audio
+     * If `use_enhanced` is true and an enhanced version of the specified model
+     * does not exist, then the speech is recognized using the standard version
+     * of the specified model.
      * Enhanced speech models require that you opt-in to data logging using
-     * instructions in the [documentation](/speech-to-text/enable-data-logging).
-     * If you set `use_enhanced` to true and you have not enabled audio logging,
-     * then you will receive an error.
+     * instructions in the
+     * [documentation](/speech-to-text/docs/enable-data-logging). If you set
+     * `use_enhanced` to true and you have not enabled audio logging, then you
+     * will receive an error.
      * </pre>
      *
      * <code>bool use_enhanced = 14;</code>
@@ -2344,52 +2752,62 @@ private static final long serialVersionUID = 0L;
       return useEnhanced_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Set to true to use an enhanced model for speech recognition.
-     * You must also set the `model` field to a valid, enhanced model. If
-     * `use_enhanced` is set to true and the `model` field is not set, then
-     * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
-     * version of the specified model does not exist, then the speech is
-     * recognized using the standard version of the specified model.
+     * If `use_enhanced` is set to true and the `model` field is not set, then
+     * an appropriate enhanced model is chosen if:
+     * 1. project is eligible for requesting enhanced models
+     * 2. an enhanced model exists for the audio
+     * If `use_enhanced` is true and an enhanced version of the specified model
+     * does not exist, then the speech is recognized using the standard version
+     * of the specified model.
      * Enhanced speech models require that you opt-in to data logging using
-     * instructions in the [documentation](/speech-to-text/enable-data-logging).
-     * If you set `use_enhanced` to true and you have not enabled audio logging,
-     * then you will receive an error.
+     * instructions in the
+     * [documentation](/speech-to-text/docs/enable-data-logging). If you set
+     * `use_enhanced` to true and you have not enabled audio logging, then you
+     * will receive an error.
      * </pre>
      *
      * <code>bool use_enhanced = 14;</code>
      */
     public Builder setUseEnhanced(boolean value) {
-      
+
       useEnhanced_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Set to true to use an enhanced model for speech recognition.
-     * You must also set the `model` field to a valid, enhanced model. If
-     * `use_enhanced` is set to true and the `model` field is not set, then
-     * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
-     * version of the specified model does not exist, then the speech is
-     * recognized using the standard version of the specified model.
+     * If `use_enhanced` is set to true and the `model` field is not set, then
+     * an appropriate enhanced model is chosen if:
+     * 1. project is eligible for requesting enhanced models
+     * 2. an enhanced model exists for the audio
+     * If `use_enhanced` is true and an enhanced version of the specified model
+     * does not exist, then the speech is recognized using the standard version
+     * of the specified model.
      * Enhanced speech models require that you opt-in to data logging using
-     * instructions in the [documentation](/speech-to-text/enable-data-logging).
-     * If you set `use_enhanced` to true and you have not enabled audio logging,
-     * then you will receive an error.
+     * instructions in the
+     * [documentation](/speech-to-text/docs/enable-data-logging). If you set
+     * `use_enhanced` to true and you have not enabled audio logging, then you
+     * will receive an error.
      * </pre>
      *
      * <code>bool use_enhanced = 14;</code>
      */
     public Builder clearUseEnhanced() {
-      
+
       useEnhanced_ = false;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2399,12 +2817,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.speech.v1.RecognitionConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.speech.v1.RecognitionConfig)
   private static final com.google.cloud.speech.v1.RecognitionConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.speech.v1.RecognitionConfig();
   }
@@ -2413,16 +2831,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RecognitionConfig>
-      PARSER = new com.google.protobuf.AbstractParser<RecognitionConfig>() {
-    @java.lang.Override
-    public RecognitionConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RecognitionConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RecognitionConfig> PARSER =
+      new com.google.protobuf.AbstractParser<RecognitionConfig>() {
+        @java.lang.Override
+        public RecognitionConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RecognitionConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RecognitionConfig> parser() {
     return PARSER;
@@ -2437,6 +2855,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.speech.v1.RecognitionConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

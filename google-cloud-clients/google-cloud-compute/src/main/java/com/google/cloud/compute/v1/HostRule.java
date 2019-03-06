@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * UrlMaps A host-matching rule for a URL. If matched, will use the named PathMatcher to select the
+ * BackendService.
+ */
 public final class HostRule implements ApiMessage {
   private final String description;
   private final List<String> hosts;
@@ -44,13 +48,13 @@ public final class HostRule implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("hosts")) {
+    if ("hosts".equals(fieldName)) {
       return hosts;
     }
-    if (fieldName.equals("pathMatcher")) {
+    if ("pathMatcher".equals(fieldName)) {
       return pathMatcher;
     }
     return null;
@@ -64,18 +68,36 @@ public final class HostRule implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+   * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+   * followed in the pattern by either - or ..
+   */
   public List<String> getHostsList() {
     return hosts;
   }
 
+  /**
+   * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches
+   * the URL's host portion.
+   */
   public String getPathMatcher() {
     return pathMatcher;
   }
@@ -129,19 +151,35 @@ public final class HostRule implements ApiMessage {
       this.pathMatcher = source.pathMatcher;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+     * followed in the pattern by either - or ..
+     */
     public List<String> getHostsList() {
       return hosts;
     }
 
+    /**
+     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+     * followed in the pattern by either - or ..
+     */
     public Builder addAllHosts(List<String> hosts) {
       if (this.hosts == null) {
         this.hosts = new LinkedList<>();
@@ -150,6 +188,11 @@ public final class HostRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+     * followed in the pattern by either - or ..
+     */
     public Builder addHosts(String hosts) {
       if (this.hosts == null) {
         this.hosts = new LinkedList<>();
@@ -158,10 +201,18 @@ public final class HostRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The name of the PathMatcher to use to match the path portion of the URL if the hostRule
+     * matches the URL's host portion.
+     */
     public String getPathMatcher() {
       return pathMatcher;
     }
 
+    /**
+     * The name of the PathMatcher to use to match the path portion of the URL if the hostRule
+     * matches the URL's host portion.
+     */
     public Builder setPathMatcher(String pathMatcher) {
       this.pathMatcher = pathMatcher;
       return this;

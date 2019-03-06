@@ -14,20 +14,21 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class EnvironmentSessionName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -67,23 +68,24 @@ public class EnvironmentSessionName implements ResourceName {
     session = Preconditions.checkNotNull(builder.getSession());
   }
 
-  public static EnvironmentSessionName of(String project, String environment, String user, String session) {
+  public static EnvironmentSessionName of(
+      String project, String environment, String user, String session) {
     return newBuilder()
-      .setProject(project)
-      .setEnvironment(environment)
-      .setUser(user)
-      .setSession(session)
-      .build();
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .build();
   }
 
   public static String format(String project, String environment, String user, String session) {
     return newBuilder()
-      .setProject(project)
-      .setEnvironment(environment)
-      .setUser(user)
-      .setSession(session)
-      .build()
-      .toString();
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .build()
+        .toString();
   }
 
   public static EnvironmentSessionName parse(String formattedString) {
@@ -91,8 +93,13 @@ public class EnvironmentSessionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "EnvironmentSessionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("environment"), matchMap.get("user"), matchMap.get("session"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "EnvironmentSessionName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("environment"),
+        matchMap.get("user"),
+        matchMap.get("session"));
   }
 
   public static List<EnvironmentSessionName> parseList(List<String> formattedStrings) {
@@ -141,7 +148,8 @@ public class EnvironmentSessionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "environment", environment, "user", user, "session", session);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "environment", environment, "user", user, "session", session);
   }
 
   /** Builder for EnvironmentSessionName. */
@@ -188,8 +196,7 @@ public class EnvironmentSessionName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(EnvironmentSessionName environmentSessionName) {
       project = environmentSessionName.project;
@@ -232,4 +239,3 @@ public class EnvironmentSessionName implements ResourceName {
     return h;
   }
 }
-

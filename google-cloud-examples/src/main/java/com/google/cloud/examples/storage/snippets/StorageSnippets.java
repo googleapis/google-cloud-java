@@ -24,10 +24,10 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.BatchResult;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
@@ -44,7 +44,6 @@ import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
@@ -57,17 +56,14 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-import java.util.Date;
-
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -133,6 +129,20 @@ public class StorageSnippets {
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8));
     // [END createBlobFromByteArray]
+    return blob;
+  }
+
+  /** Example of creating a blob with sub array from a byte array. */
+  // [TARGET create(BlobInfo, byte[], offset, length, BlobTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  public Blob createBlobWithSubArrayFromByteArray(
+      String bucketName, String blobName, int offset, int length) {
+    // [START createBlobWithSubArrayFromByteArray]
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+    Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8), offset, length);
+    // [END createBlobWithSubArrayFromByteArray]
     return blob;
   }
 
@@ -1140,11 +1150,13 @@ public class StorageSnippets {
     System.out.println("ContentLanguage: " + blob.getContentLanguage());
     System.out.println("ContentType: " + blob.getContentType());
     System.out.println("Crc32c: " + blob.getCrc32c());
+    System.out.println("Crc32cHexString: " + blob.getCrc32cToHexString());
     System.out.println("ETag: " + blob.getEtag());
     System.out.println("Generation: " + blob.getGeneration());
     System.out.println("Id: " + blob.getBlobId());
     System.out.println("KmsKeyName: " + blob.getKmsKeyName());
     System.out.println("Md5Hash: " + blob.getMd5());
+    System.out.println("Md5HexString: " + blob.getMd5ToHexString());
     System.out.println("MediaLink: " + blob.getMediaLink());
     System.out.println("Metageneration: " + blob.getMetageneration());
     System.out.println("Name: " + blob.getName());
@@ -1154,7 +1166,8 @@ public class StorageSnippets {
     System.out.println("Last Metadata Update: " + new Date(blob.getUpdateTime()));
     Boolean temporaryHoldIsEnabled = (blob.getTemporaryHold() != null && blob.getTemporaryHold());
     System.out.println("temporaryHold: " + (temporaryHoldIsEnabled ? "enabled" : "disabled"));
-    Boolean eventBasedHoldIsEnabled = (blob.getEventBasedHold() != null && blob.getEventBasedHold());
+    Boolean eventBasedHoldIsEnabled =
+        (blob.getEventBasedHold() != null && blob.getEventBasedHold());
     System.out.println("eventBasedHold: " + (eventBasedHoldIsEnabled ? "enabled" : "disabled"));
     if (blob.getRetentionExpirationTime() != null) {
       System.out.println("retentionExpirationTime: " + new Date(blob.getRetentionExpirationTime()));
@@ -1186,13 +1199,17 @@ public class StorageSnippets {
             BucketInfo.newBuilder(bucketName).setRetentionPeriod(retentionPeriod).build());
 
     System.out.println(
-        "Retention period for " + bucketName + " is now " + bucketWithRetentionPolicy.getRetentionPeriod());
+        "Retention period for "
+            + bucketName
+            + " is now "
+            + bucketWithRetentionPolicy.getRetentionPeriod());
     // [END storage_set_retention_policy]
     return bucketWithRetentionPolicy;
   }
 
   /** Example of removing a retention policy on a bucket */
-  public Bucket removeRetentionPolicy(String bucketName) throws StorageException, IllegalArgumentException {
+  public Bucket removeRetentionPolicy(String bucketName)
+      throws StorageException, IllegalArgumentException {
     // [START storage_remove_retention_policy]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1202,10 +1219,12 @@ public class StorageSnippets {
 
     Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.RETENTION_POLICY));
     if (bucket.retentionPolicyIsLocked() != null && bucket.retentionPolicyIsLocked()) {
-       throw new IllegalArgumentException("Unable to remove retention period as retention policy is locked.");
+      throw new IllegalArgumentException(
+          "Unable to remove retention period as retention policy is locked.");
     }
 
-    Bucket bucketWithoutRetentionPolicy = bucket.toBuilder().setRetentionPeriod(null).build().update();
+    Bucket bucketWithoutRetentionPolicy =
+        bucket.toBuilder().setRetentionPeriod(null).build().update();
 
     System.out.println("Retention period for " + bucketName + " has been removed");
     // [END storage_remove_retention_policy]
@@ -1389,5 +1408,70 @@ public class StorageSnippets {
     System.out.println("Temporary hold was released for " + blobName);
     // [END storage_release_temporary_hold]
     return blob;
+  }
+
+  /** Example of how to enable Bucket Policy Only for a bucket */
+  public Bucket enableBucketPolicyOnly(String bucketName) throws StorageException {
+    // [START storage_enable_bucket_policy_only]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    BucketInfo.IamConfiguration iamConfiguration =
+        BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build();
+    Bucket bucket =
+        storage.update(
+            BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
+
+    System.out.println("Bucket Policy Only was enabled for " + bucketName);
+    // [END storage_enable_bucket_policy_only]
+    return bucket;
+  }
+
+  /** Example of how to disable Bucket Policy Only for a bucket */
+  public Bucket disableBucketPolicyOnly(String bucketName) throws StorageException {
+    // [START storage_disable_bucket_policy_only]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    BucketInfo.IamConfiguration iamConfiguration =
+        BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(false).build();
+    Bucket bucket =
+        storage.update(
+            BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
+
+    System.out.println("Bucket Policy Only was disabled for " + bucketName);
+    // [END storage_disable_bucket_policy_only]
+    return bucket;
+  }
+
+  /** Example of how to get Bucket Policy Only metadata for a bucket */
+  public Bucket getBucketPolicyOnly(String bucketName) throws StorageException {
+    // [START storage_get_bucket_policy_only]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+    BucketInfo.IamConfiguration iamConfiguration = bucket.getIamConfiguration();
+
+    Boolean enabled = iamConfiguration.isBucketPolicyOnlyEnabled();
+    Date lockedTime = new Date(iamConfiguration.getBucketPolicyOnlyLockedTime());
+
+    if (enabled != null && enabled) {
+      System.out.println("Bucket Policy Only is enabled for " + bucketName);
+      System.out.println("Bucket will be locked on " + lockedTime);
+    } else {
+      System.out.println("Bucket Policy Only is disabled for " + bucketName);
+    }
+    // [END storage_get_bucket_policy_only]
+    return bucket;
   }
 }

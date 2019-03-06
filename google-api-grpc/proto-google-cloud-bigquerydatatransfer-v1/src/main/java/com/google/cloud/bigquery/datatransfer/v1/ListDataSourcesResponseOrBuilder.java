@@ -3,20 +3,24 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ListDataSourcesResponseOrBuilder extends
+public interface ListDataSourcesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
-  java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> 
-      getDataSourcesList();
+  java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> getDataSourcesList();
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListDataSourcesResponseOrBuilder extends
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSources(int index);
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListDataSourcesResponseOrBuilder extends
    */
   int getDataSourcesCount();
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder> 
+  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>
       getDataSourcesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
-  com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder getDataSourcesOrBuilder(
-      int index);
+  com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder getDataSourcesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -63,6 +74,8 @@ public interface ListDataSourcesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -72,6 +85,5 @@ public interface ListDataSourcesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

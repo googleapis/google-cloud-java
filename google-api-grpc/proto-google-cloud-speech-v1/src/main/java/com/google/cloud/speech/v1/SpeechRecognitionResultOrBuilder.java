@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface SpeechRecognitionResultOrBuilder extends
+public interface SpeechRecognitionResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.SpeechRecognitionResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -17,9 +20,10 @@ public interface SpeechRecognitionResultOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
-  java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> 
-      getAlternativesList();
+  java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> getAlternativesList();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -31,6 +35,8 @@ public interface SpeechRecognitionResultOrBuilder extends
    */
   com.google.cloud.speech.v1.SpeechRecognitionAlternative getAlternatives(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -42,6 +48,8 @@ public interface SpeechRecognitionResultOrBuilder extends
    */
   int getAlternativesCount();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -51,9 +59,11 @@ public interface SpeechRecognitionResultOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder> 
+  java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -65,4 +75,17 @@ public interface SpeechRecognitionResultOrBuilder extends
    */
   com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * For multi-channel audio, this is the channel number corresponding to the
+   * recognized result for the audio from that channel.
+   * For audio_channel_count = N, its output values can range from '1' to 'N'.
+   * </pre>
+   *
+   * <code>int32 channel_tag = 2;</code>
+   */
+  int getChannelTag();
 }

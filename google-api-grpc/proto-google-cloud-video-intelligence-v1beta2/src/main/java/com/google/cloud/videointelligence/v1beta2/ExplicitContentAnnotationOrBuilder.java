@@ -3,20 +3,24 @@
 
 package com.google.cloud.videointelligence.v1beta2;
 
-public interface ExplicitContentAnnotationOrBuilder extends
+public interface ExplicitContentAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta2.ExplicitContentAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.ExplicitContentFrame frames = 1;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta2.ExplicitContentFrame> 
-      getFramesList();
+  java.util.List<com.google.cloud.videointelligence.v1beta2.ExplicitContentFrame> getFramesList();
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
@@ -25,6 +29,8 @@ public interface ExplicitContentAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1beta2.ExplicitContentFrame getFrames(int index);
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
@@ -33,15 +39,19 @@ public interface ExplicitContentAnnotationOrBuilder extends
    */
   int getFramesCount();
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.ExplicitContentFrame frames = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta2.ExplicitContentFrameOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1beta2.ExplicitContentFrameOrBuilder>
       getFramesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>

@@ -16,36 +16,37 @@
 
 package com.google.cloud.notification;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.cloud.notification.NotificationInfo.PayloadFormat;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.pubsub.v1.ProjectTopicName;
-import org.junit.Test;
-
 import java.util.List;
 import java.util.Map;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 public class NotificationInfoTest {
 
   private static final String ETAG = "0xFF00";
   private static final String GENERATED_ID = "B/N:1";
   private static final String SELF_LINK = "http://storage/b/n";
-  private static final List<String> EVENT_TYPES = ImmutableList.of("OBJECT_FINALIZE", "OBJECT_METADATA_UPDATE");
+  private static final List<String> EVENT_TYPES =
+      ImmutableList.of("OBJECT_FINALIZE", "OBJECT_METADATA_UPDATE");
   private static final String OBJECT_NAME_PREFIX = "index.html";
   private static final PayloadFormat PAYLOAD_FORMAT = PayloadFormat.JSON_API_V1;
   private static final ProjectTopicName TOPIC = ProjectTopicName.of("myProject", "topic1");
   private static final Map<String, String> CUSTOM_ATTRIBUTES = ImmutableMap.of("label1", "value1");
-  private static final NotificationInfo NOTIFICATION_INFO = NotificationInfo.newBuilder(TOPIC)
-      .setEtag(ETAG)
-      .setCustomAttributes(CUSTOM_ATTRIBUTES)
-      .setSelfLink(SELF_LINK)
-      .setEventTypes(EVENT_TYPES)
-      .setObjectNamePrefix(OBJECT_NAME_PREFIX)
-      .setPayloadFormat(PAYLOAD_FORMAT)
-      .setGeneratedId(GENERATED_ID)
-      .build();
+  private static final NotificationInfo NOTIFICATION_INFO =
+      NotificationInfo.newBuilder(TOPIC)
+          .setEtag(ETAG)
+          .setCustomAttributes(CUSTOM_ATTRIBUTES)
+          .setSelfLink(SELF_LINK)
+          .setEventTypes(EVENT_TYPES)
+          .setObjectNamePrefix(OBJECT_NAME_PREFIX)
+          .setPayloadFormat(PAYLOAD_FORMAT)
+          .setGeneratedId(GENERATED_ID)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -58,7 +59,8 @@ public class NotificationInfoTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    NotificationInfo incompleteBucketInfo = NotificationInfo.newBuilder(ProjectTopicName.of("myProject", "topic1")).build();
+    NotificationInfo incompleteBucketInfo =
+        NotificationInfo.newBuilder(ProjectTopicName.of("myProject", "topic1")).build();
     compareBuckets(incompleteBucketInfo, incompleteBucketInfo.toBuilder().build());
   }
 
@@ -83,11 +85,11 @@ public class NotificationInfoTest {
   @Test
   public void testToPbAndFromPb() {
     compareBuckets(NOTIFICATION_INFO, NotificationInfo.fromPb(NOTIFICATION_INFO.toPb()));
-    NotificationInfo bucketInfo = NotificationInfo.of(
-        ProjectTopicName.of("myProject", "topic1"))
-        .toBuilder()
-        .setPayloadFormat(PayloadFormat.NONE)
-        .build();
+    NotificationInfo bucketInfo =
+        NotificationInfo.of(ProjectTopicName.of("myProject", "topic1"))
+            .toBuilder()
+            .setPayloadFormat(PayloadFormat.NONE)
+            .build();
     compareBuckets(bucketInfo, NotificationInfo.fromPb(bucketInfo.toPb()));
   }
 

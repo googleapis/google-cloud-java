@@ -27,7 +27,10 @@ import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.cloud.WriteChannel;
-
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.ClosedChannelException;
+import java.nio.channels.NonReadableChannelException;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -35,14 +38,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.ClosedChannelException;
-import java.nio.channels.NonReadableChannelException;
-
-/**
- * Unit tests for {@link CloudStorageWriteChannel}.
- */
+/** Unit tests for {@link CloudStorageWriteChannel}. */
 @RunWith(JUnit4.class)
 public class CloudStorageWriteChannelTest {
 

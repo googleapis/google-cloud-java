@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.discovery;
 
-public interface DetailsOrBuilder extends
+public interface DetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.discovery.Details)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Analysis status for the discovered resource.
    * </pre>
@@ -16,6 +19,8 @@ public interface DetailsOrBuilder extends
    */
   boolean hasDiscovered();
   /**
+   *
+   *
    * <pre>
    * Analysis status for the discovered resource.
    * </pre>
@@ -24,6 +29,8 @@ public interface DetailsOrBuilder extends
    */
   io.grafeas.v1beta1.discovery.Discovered getDiscovered();
   /**
+   *
+   *
    * <pre>
    * Analysis status for the discovered resource.
    * </pre>

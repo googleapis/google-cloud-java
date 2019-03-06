@@ -19,13 +19,10 @@ package com.google.cloud.storage.contrib.nio;
 import com.google.cloud.storage.Acl;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
-
 import java.nio.file.attribute.FileTime;
 import java.util.List;
 
-/**
- * Metadata for a Cloud Storage pseudo-directory.
- */
+/** Metadata for a Cloud Storage pseudo-directory. */
 final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAttributes {
 
   private final String id;

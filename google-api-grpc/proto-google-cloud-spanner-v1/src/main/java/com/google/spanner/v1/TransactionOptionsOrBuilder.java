@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface TransactionOptionsOrBuilder extends
+public interface TransactionOptionsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.TransactionOptions)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Transaction may write.
    * Authorization to begin a read-write transaction requires
@@ -19,6 +22,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   boolean hasReadWrite();
   /**
+   *
+   *
    * <pre>
    * Transaction may write.
    * Authorization to begin a read-write transaction requires
@@ -30,6 +35,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   com.google.spanner.v1.TransactionOptions.ReadWrite getReadWrite();
   /**
+   *
+   *
    * <pre>
    * Transaction may write.
    * Authorization to begin a read-write transaction requires
@@ -42,6 +49,8 @@ public interface TransactionOptionsOrBuilder extends
   com.google.spanner.v1.TransactionOptions.ReadWriteOrBuilder getReadWriteOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Partitioned DML transaction.
    * Authorization to begin a Partitioned DML transaction requires
@@ -53,6 +62,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   boolean hasPartitionedDml();
   /**
+   *
+   *
    * <pre>
    * Partitioned DML transaction.
    * Authorization to begin a Partitioned DML transaction requires
@@ -64,6 +75,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   com.google.spanner.v1.TransactionOptions.PartitionedDml getPartitionedDml();
   /**
+   *
+   *
    * <pre>
    * Partitioned DML transaction.
    * Authorization to begin a Partitioned DML transaction requires
@@ -76,6 +89,8 @@ public interface TransactionOptionsOrBuilder extends
   com.google.spanner.v1.TransactionOptions.PartitionedDmlOrBuilder getPartitionedDmlOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Transaction will not write.
    * Authorization to begin a read-only transaction requires
@@ -87,6 +102,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   boolean hasReadOnly();
   /**
+   *
+   *
    * <pre>
    * Transaction will not write.
    * Authorization to begin a read-only transaction requires
@@ -98,6 +115,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   com.google.spanner.v1.TransactionOptions.ReadOnly getReadOnly();
   /**
+   *
+   *
    * <pre>
    * Transaction will not write.
    * Authorization to begin a read-only transaction requires

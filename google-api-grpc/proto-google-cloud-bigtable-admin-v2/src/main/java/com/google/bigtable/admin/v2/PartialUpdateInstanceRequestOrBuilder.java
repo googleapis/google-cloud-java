@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface PartialUpdateInstanceRequestOrBuilder extends
+public interface PartialUpdateInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.PartialUpdateInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Instance which will (partially) replace the current value.
    * </pre>
@@ -16,6 +19,8 @@ public interface PartialUpdateInstanceRequestOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * The Instance which will (partially) replace the current value.
    * </pre>
@@ -24,6 +29,8 @@ public interface PartialUpdateInstanceRequestOrBuilder extends
    */
   com.google.bigtable.admin.v2.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * The Instance which will (partially) replace the current value.
    * </pre>
@@ -33,6 +40,8 @@ public interface PartialUpdateInstanceRequestOrBuilder extends
   com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The subset of Instance fields which should be replaced.
    * Must be explicitly set.
@@ -42,6 +51,8 @@ public interface PartialUpdateInstanceRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The subset of Instance fields which should be replaced.
    * Must be explicitly set.
@@ -51,6 +62,8 @@ public interface PartialUpdateInstanceRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The subset of Instance fields which should be replaced.
    * Must be explicitly set.

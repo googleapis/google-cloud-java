@@ -19,17 +19,20 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -37,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import java.util.Set;
@@ -61,7 +65,8 @@ import org.threeten.bp.Duration;
  *
  * <pre>{@code
  * BigtableDataSettings.Builder settingsBuilder = BigtableDataSettings.newBuilder()
- *   .setInstanceName(InstanceName.of("my-project", "my-instance-id"))
+ *   .setProjectId("my-project-id")
+ *   .setInstanceId("my-instance-id")
  *   .setAppProfileId("default");
  *
  * settingsBuilder.readRowsSettings()
@@ -99,7 +104,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>When the credentials provider contains any of these scopes (default behavior) and the
    * application default credentials point to a service account, then OAuth2 tokens will be replaced
-   * with JWT tokens. This removes the need for access token refreshes. */
+   * with JWT tokens. This removes the need for access token refreshes.
+   */
   private static final ImmutableList<String> JWT_ENABLED_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/bigtable.data")
@@ -107,10 +113,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private final InstanceName instanceName;
+  private final String projectId;
+  private final String instanceId;
   private final String appProfileId;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
+  private final UnaryCallSettings<Query, Row> readRowSettings;
   private final UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings;
   private final UnaryCallSettings<RowMutation, Void> mutateRowSettings;
   private final BatchingCallSettings<RowMutation, Void> bulkMutateRowsSettings;
@@ -119,11 +127,23 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
-    instanceName = builder.instanceName;
+
+    // Since point reads & streaming reads share the same base callable that converts grpc errors
+    // into ApiExceptions, they must have the same retry codes.
+    Preconditions.checkState(
+        builder
+            .readRowSettings
+            .getRetryableCodes()
+            .equals(builder.readRowsSettings.getRetryableCodes()),
+        "Single ReadRow retry codes must match ReadRows retry codes");
+
+    projectId = builder.projectId;
+    instanceId = builder.instanceId;
     appProfileId = builder.appProfileId;
 
     // Per method settings.
     readRowsSettings = builder.readRowsSettings.build();
+    readRowSettings = builder.readRowSettings.build();
     sampleRowKeysSettings = builder.sampleRowKeysSettings.build();
     mutateRowSettings = builder.mutateRowSettings.build();
     bulkMutateRowsSettings = builder.bulkMutateRowsSettings.build();
@@ -136,14 +156,32 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return new Builder();
   }
 
-  /** Returns the target instance */
-  public InstanceName getInstanceName() {
-    return instanceName;
+  /** Returns the project id of the target instance. */
+  public String getProjectId() {
+    return projectId;
+  }
+
+  /** Returns the target instance id. */
+  public String getInstanceId() {
+    return instanceId;
   }
 
   /** Returns the configured AppProfile to use */
   public String getAppProfileId() {
     return appProfileId;
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
+        // TODO: tune channels
+        .setChannelsPerCpu(2)
+        .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   /** Returns a builder for the default credentials for this service. */
@@ -160,6 +198,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns the object with the settings used for calls to SampleRowKeys. */
   public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
     return sampleRowKeysSettings;
+  }
+
+  /** Returns the object with the settings used for point reads via ReadRows. */
+  public UnaryCallSettings<Query, Row> readRowSettings() {
+    return readRowSettings;
   }
 
   /** Returns the object with the settings used for calls to MutateRow. */
@@ -195,10 +238,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   /** Builder for BigtableDataSettings. */
   public static class Builder extends StubSettings.Builder<EnhancedBigtableStubSettings, Builder> {
-    private InstanceName instanceName;
+
+    private String projectId;
+    private String instanceId;
     private String appProfileId;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
+    private final UnaryCallSettings.Builder<Query, Row> readRowSettings;
     private final UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings;
     private final UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings;
     private final BatchingCallSettings.Builder<RowMutation, Void> bulkMutateRowsSettings;
@@ -222,29 +268,40 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
       setEndpoint(baseDefaults.getEndpoint());
-      setTransportChannelProvider(
-          InstantiatingGrpcChannelProvider.newBuilder()
-              // TODO: tune channels
-              .setChannelsPerCpu(2)
-              .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
-              .build());
+      setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
 
+      setTracerFactory(
+          new OpencensusTracerFactory(
+              ImmutableMap.of(
+                  "gax", GaxGrpcProperties.getGaxGrpcVersion(),
+                  "grpc", GaxGrpcProperties.getGrpcVersion(),
+                  "gapic", GaxProperties.getLibraryVersion(EnhancedBigtableStubSettings.class))));
+
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
-      /* TODO: copy timeouts, retryCodes & retrySettings from baseSettings.readRows once it exists in GAPIC */
       readRowsSettings
-          .setRetryableCodes(DEFAULT_RETRY_CODES)
-          .setRetrySettings(
-              DEFAULT_RETRY_SETTINGS.toBuilder().setTotalTimeout(Duration.ofHours(1)).build())
+          .setRetryableCodes(baseDefaults.readRowsSettings().getRetryableCodes())
+          .setRetrySettings(baseDefaults.readRowsSettings().getRetrySettings())
           .setIdleTimeout(Duration.ofMinutes(5));
 
+      // Point reads should use same defaults as streaming reads, but with a shorter timeout
+      readRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      readRowSettings
+          .setRetryableCodes(baseDefaults.readRowsSettings().getRetryableCodes())
+          .setRetrySettings(
+              baseDefaults
+                  .readRowsSettings()
+                  .getRetrySettings()
+                  .toBuilder()
+                  .setTotalTimeout(DEFAULT_RETRY_SETTINGS.getTotalTimeout())
+                  .build());
+
       sampleRowKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      /* TODO: copy retryCodes & retrySettings from baseSettings.sampleRowKeysSettings once it exists in GAPIC */
       sampleRowKeysSettings
-          .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.ABORTED)
-          .setRetrySettings(DEFAULT_RETRY_SETTINGS);
+          .setRetryableCodes(baseDefaults.sampleRowKeysSettings().getRetryableCodes())
+          .setRetrySettings(baseDefaults.sampleRowKeysSettings().getRetrySettings());
 
       mutateRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
@@ -276,11 +333,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     private Builder(EnhancedBigtableStubSettings settings) {
       super(settings);
-      instanceName = settings.instanceName;
+      projectId = settings.projectId;
+      instanceId = settings.instanceId;
       appProfileId = settings.appProfileId;
 
       // Per method settings.
       readRowsSettings = settings.readRowsSettings.toBuilder();
+      readRowSettings = settings.readRowSettings.toBuilder();
       sampleRowKeysSettings = settings.sampleRowKeysSettings.toBuilder();
       mutateRowSettings = settings.mutateRowSettings.toBuilder();
       bulkMutateRowsSettings = settings.bulkMutateRowsSettings.toBuilder();
@@ -302,18 +361,33 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     // <editor-fold desc="Public API">
     /**
-     * Sets the target instance. This setting is required. All RPCs will be made in the context of
-     * this setting.
+     * Sets the project id of that target instance. This setting is required. All RPCs will be made
+     * in the context of this setting.
      */
-    public Builder setInstanceName(@Nonnull InstanceName instanceName) {
-      Preconditions.checkNotNull(instanceName);
-      this.instanceName = instanceName;
+    public Builder setProjectId(@Nonnull String projectId) {
+      Preconditions.checkNotNull(projectId);
+      this.projectId = projectId;
       return this;
     }
 
-    /** Gets the {@link InstanceName} that was previously set on this Builder. */
-    public InstanceName getInstanceName() {
-      return instanceName;
+    /** Gets the project id of the target instance that was previously set on this Builder. */
+    public String getProjectId() {
+      return projectId;
+    }
+
+    /**
+     * Sets the target instance id. This setting is required. All RPCs will be made in the context
+     * of this setting.
+     */
+    public Builder setInstanceId(@Nonnull String instanceId) {
+      Preconditions.checkNotNull(instanceId);
+      this.instanceId = instanceId;
+      return this;
+    }
+
+    /** Gets the target instance id that was previously set on this Builder. */
+    public String getInstanceId() {
+      return instanceId;
     }
 
     /**
@@ -336,6 +410,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return readRowsSettings;
+    }
+
+    /** Returns the builder for the settings used for point reads using readRow. */
+    public UnaryCallSettings.Builder<Query, Row> readRowSettings() {
+      return readRowSettings;
     }
 
     /** Returns the builder for the settings used for calls to SampleRowKeysSettings. */
@@ -365,7 +444,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     @SuppressWarnings("unchecked")
     public EnhancedBigtableStubSettings build() {
-      Preconditions.checkState(instanceName != null, "InstanceName must be set");
+      Preconditions.checkState(projectId != null, "Project id must be set");
+      Preconditions.checkState(instanceId != null, "Instance id must be set");
 
       return new EnhancedBigtableStubSettings(this);
     }

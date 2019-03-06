@@ -3,31 +3,41 @@
 
 package com.google.monitoring.v3;
 
-public interface NotificationChannelOrBuilder extends
+public interface NotificationChannelOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.NotificationChannel)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The type of the notification channel. This field matches the
-   * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+   * value of the
+   * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+   * field.
    * </pre>
    *
    * <code>string type = 1;</code>
    */
   java.lang.String getType();
   /**
+   *
+   *
    * <pre>
    * The type of the notification channel. This field matches the
-   * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
+   * value of the
+   * [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type]
+   * field.
    * </pre>
    *
    * <code>string type = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTypeBytes();
+  com.google.protobuf.ByteString getTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this channel. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -38,6 +48,8 @@ public interface NotificationChannelOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this channel. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -46,10 +58,11 @@ public interface NotificationChannelOrBuilder extends
    *
    * <code>string name = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * An optional human-readable name for this notification channel. It is
    * recommended that you specify a non-empty and unique name in order to
@@ -61,6 +74,8 @@ public interface NotificationChannelOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * An optional human-readable name for this notification channel. It is
    * recommended that you specify a non-empty and unique name in order to
@@ -70,10 +85,11 @@ public interface NotificationChannelOrBuilder extends
    *
    * <code>string display_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * An optional human-readable description of this notification channel. This
    * description may provide additional details, beyond the display
@@ -84,6 +100,8 @@ public interface NotificationChannelOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * An optional human-readable description of this notification channel. This
    * description may provide additional details, beyond the display
@@ -92,79 +110,80 @@ public interface NotificationChannelOrBuilder extends
    *
    * <code>string description = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
-   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels] of the
-   * `NotificationChannelDescriptor` corresponding to the `type` field.
+   * [NotificationChannelDescriptor.labels][google.monitoring.v3.NotificationChannelDescriptor.labels]
+   * of the `NotificationChannelDescriptor` corresponding to the `type` field.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -180,6 +199,8 @@ public interface NotificationChannelOrBuilder extends
    */
   int getUserLabelsCount();
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -193,15 +214,13 @@ public interface NotificationChannelOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-  boolean containsUserLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getUserLabelsMap()} instead.
-   */
+  boolean containsUserLabels(java.lang.String key);
+  /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getUserLabels();
+  java.util.Map<java.lang.String, java.lang.String> getUserLabels();
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -215,9 +234,10 @@ public interface NotificationChannelOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getUserLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -231,11 +251,10 @@ public interface NotificationChannelOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-
-  java.lang.String getUserLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getUserLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -249,11 +268,11 @@ public interface NotificationChannelOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-
-  java.lang.String getUserLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getUserLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Indicates whether this channel has been verified or not. On a
    * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -273,10 +292,13 @@ public interface NotificationChannelOrBuilder extends
    * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+   * </code>
    */
   int getVerificationStatusValue();
   /**
+   *
+   *
    * <pre>
    * Indicates whether this channel has been verified or not. On a
    * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -296,11 +318,14 @@ public interface NotificationChannelOrBuilder extends
    * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+   * </code>
    */
   com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus();
 
   /**
+   *
+   *
    * <pre>
    * Whether notifications are forwarded to the described channel. This makes
    * it possible to disable delivery of notifications to a particular channel
@@ -314,6 +339,8 @@ public interface NotificationChannelOrBuilder extends
    */
   boolean hasEnabled();
   /**
+   *
+   *
    * <pre>
    * Whether notifications are forwarded to the described channel. This makes
    * it possible to disable delivery of notifications to a particular channel
@@ -327,6 +354,8 @@ public interface NotificationChannelOrBuilder extends
    */
   com.google.protobuf.BoolValue getEnabled();
   /**
+   *
+   *
    * <pre>
    * Whether notifications are forwarded to the described channel. This makes
    * it possible to disable delivery of notifications to a particular channel

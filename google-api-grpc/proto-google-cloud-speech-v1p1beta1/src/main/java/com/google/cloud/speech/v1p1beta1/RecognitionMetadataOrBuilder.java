@@ -3,28 +3,37 @@
 
 package com.google.cloud.speech.v1p1beta1;
 
-public interface RecognitionMetadataOrBuilder extends
+public interface RecognitionMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.RecognitionMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The use case most closely describing the audio content to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;</code>
+   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
+   * </code>
    */
   int getInteractionTypeValue();
   /**
+   *
+   *
    * <pre>
    * The use case most closely describing the audio content to be recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;</code>
+   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType interaction_type = 1;
+   * </code>
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType getInteractionType();
 
   /**
+   *
+   *
    * <pre>
    * The industry vertical to which this speech recognition request most
    * closely applies. This is most indicative of the topics contained
@@ -37,57 +46,84 @@ public interface RecognitionMetadataOrBuilder extends
   int getIndustryNaicsCodeOfAudio();
 
   /**
+   *
+   *
    * <pre>
    * The audio type that most closely describes the audio being recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
+   * </code>
    */
   int getMicrophoneDistanceValue();
   /**
+   *
+   *
    * <pre>
    * The audio type that most closely describes the audio being recognized.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance microphone_distance = 4;
+   * </code>
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance getMicrophoneDistance();
 
   /**
+   *
+   *
    * <pre>
    * The original media the speech was recorded on.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
+   * </code>
    */
   int getOriginalMediaTypeValue();
   /**
+   *
+   *
    * <pre>
    * The original media the speech was recorded on.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType original_media_type = 5;
+   * </code>
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType getOriginalMediaType();
 
   /**
+   *
+   *
    * <pre>
    * The type of device the speech was recorded with.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
+   * </code>
    */
   int getRecordingDeviceTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of device the speech was recorded with.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;</code>
+   * <code>
+   * .google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType recording_device_type = 6;
+   * </code>
    */
-  com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType getRecordingDeviceType();
+  com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType
+      getRecordingDeviceType();
 
   /**
+   *
+   *
    * <pre>
    * The device used to make the recording.  Examples 'Nexus 5X' or
    * 'Polycom SoundStation IP 6000' or 'POTS' or 'VoIP' or
@@ -98,6 +134,8 @@ public interface RecognitionMetadataOrBuilder extends
    */
   java.lang.String getRecordingDeviceName();
   /**
+   *
+   *
    * <pre>
    * The device used to make the recording.  Examples 'Nexus 5X' or
    * 'Polycom SoundStation IP 6000' or 'POTS' or 'VoIP' or
@@ -106,10 +144,11 @@ public interface RecognitionMetadataOrBuilder extends
    *
    * <code>string recording_device_name = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getRecordingDeviceNameBytes();
+  com.google.protobuf.ByteString getRecordingDeviceNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Mime type of the original audio file.  For example `audio/m4a`,
    * `audio/x-alaw-basic`, `audio/mp3`, `audio/3gpp`.
@@ -121,6 +160,8 @@ public interface RecognitionMetadataOrBuilder extends
    */
   java.lang.String getOriginalMimeType();
   /**
+   *
+   *
    * <pre>
    * Mime type of the original audio file.  For example `audio/m4a`,
    * `audio/x-alaw-basic`, `audio/mp3`, `audio/3gpp`.
@@ -130,10 +171,11 @@ public interface RecognitionMetadataOrBuilder extends
    *
    * <code>string original_mime_type = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getOriginalMimeTypeBytes();
+  com.google.protobuf.ByteString getOriginalMimeTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Obfuscated (privacy-protected) ID of the user, to identify number of
    * unique users using the service.
@@ -144,6 +186,8 @@ public interface RecognitionMetadataOrBuilder extends
   long getObfuscatedId();
 
   /**
+   *
+   *
    * <pre>
    * Description of the content. Eg. "Recordings of federal supreme court
    * hearings from 2012".
@@ -153,6 +197,8 @@ public interface RecognitionMetadataOrBuilder extends
    */
   java.lang.String getAudioTopic();
   /**
+   *
+   *
    * <pre>
    * Description of the content. Eg. "Recordings of federal supreme court
    * hearings from 2012".
@@ -160,6 +206,5 @@ public interface RecognitionMetadataOrBuilder extends
    *
    * <code>string audio_topic = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getAudioTopicBytes();
+  com.google.protobuf.ByteString getAudioTopicBytes();
 }

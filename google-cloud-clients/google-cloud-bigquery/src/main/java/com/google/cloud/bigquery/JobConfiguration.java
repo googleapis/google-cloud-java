@@ -20,41 +20,36 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Base class for a BigQuery job configuration.
- */
+/** Base class for a BigQuery job configuration. */
 public abstract class JobConfiguration implements Serializable {
 
   private static final long serialVersionUID = -548132177415406526L;
 
   private final Type type;
 
-  /**
-   * Type of a BigQuery Job.
-   */
+  /** Type of a BigQuery Job. */
   public enum Type {
     /**
-     * A Copy Job copies an existing table to another new or existing table. Instances of
-     * {@code JobConfiguration} for this type are implemented by {@link CopyJobConfiguration}.
+     * A Copy Job copies an existing table to another new or existing table. Instances of {@code
+     * JobConfiguration} for this type are implemented by {@link CopyJobConfiguration}.
      */
     COPY,
     /**
-     * An Extract Job exports a BigQuery table to Google Cloud Storage. Instances of
-     * {@code JobConfiguration} for this type are implemented by {@link ExtractJobConfiguration}.
+     * An Extract Job exports a BigQuery table to Google Cloud Storage. Instances of {@code
+     * JobConfiguration} for this type are implemented by {@link ExtractJobConfiguration}.
      */
     EXTRACT,
     /**
-     * A Load Job loads data from one of several formats into a table.  Instances of
-     * {@code JobConfiguration} for this type are implemented by {@link LoadJobConfiguration}.
+     * A Load Job loads data from one of several formats into a table. Instances of {@code
+     * JobConfiguration} for this type are implemented by {@link LoadJobConfiguration}.
      */
     LOAD,
     /**
-     * A Query Job runs a query against BigQuery data.  Instances of
-     * {@code JobConfiguration} for this type are implemented by {@link QueryJobConfiguration}.
+     * A Query Job runs a query against BigQuery data. Instances of {@code JobConfiguration} for
+     * this type are implemented by {@link QueryJobConfiguration}.
      */
     QUERY
   }
@@ -83,9 +78,7 @@ public abstract class JobConfiguration implements Serializable {
       return self();
     }
 
-    /**
-     * Creates an object.
-     */
+    /** Creates an object. */
     public abstract T build();
   }
 
@@ -93,17 +86,12 @@ public abstract class JobConfiguration implements Serializable {
     this.type = builder.type;
   }
 
-
-  /**
-   * Returns the type of the job configuration.
-   */
+  /** Returns the type of the job configuration. */
   public Type getType() {
     return type;
   }
 
-  /**
-   * Returns a builder for the object.
-   */
+  /** Returns a builder for the object. */
   public abstract Builder toBuilder();
 
   ToStringHelper toStringHelper() {

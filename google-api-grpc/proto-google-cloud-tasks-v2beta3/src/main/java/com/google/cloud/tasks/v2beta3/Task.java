@@ -4,21 +4,24 @@
 package com.google.cloud.tasks.v2beta3;
 
 /**
+ *
+ *
  * <pre>
  * A unit of scheduled work.
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.Task}
  */
-public  final class Task extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Task extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.Task)
     TaskOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Task.newBuilder() to construct.
   private Task(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Task() {
     name_ = "";
     dispatchCount_ = 0;
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Task(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,129 +53,184 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 26: {
-            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder subBuilder = null;
-            if (payloadTypeCase_ == 3) {
-              subBuilder = ((com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_).toBuilder();
+              name_ = s;
+              break;
             }
-            payloadType_ =
-                input.readMessage(com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_);
-              payloadType_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder subBuilder = null;
+              if (payloadTypeCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_)
+                        .toBuilder();
+              }
+              payloadType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_);
+                payloadType_ = subBuilder.buildPartial();
+              }
+              payloadTypeCase_ = 3;
+              break;
             }
-            payloadTypeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (scheduleTime_ != null) {
-              subBuilder = scheduleTime_.toBuilder();
-            }
-            scheduleTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scheduleTime_);
-              scheduleTime_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (scheduleTime_ != null) {
+                subBuilder = scheduleTime_.toBuilder();
+              }
+              scheduleTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduleTime_);
+                scheduleTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 48: {
-
-            dispatchCount_ = input.readInt32();
-            break;
-          }
-          case 56: {
-
-            responseCount_ = input.readInt32();
-            break;
-          }
-          case 66: {
-            com.google.cloud.tasks.v2beta3.Attempt.Builder subBuilder = null;
-            if (firstAttempt_ != null) {
-              subBuilder = firstAttempt_.toBuilder();
+              break;
             }
-            firstAttempt_ = input.readMessage(com.google.cloud.tasks.v2beta3.Attempt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(firstAttempt_);
-              firstAttempt_ = subBuilder.buildPartial();
+          case 48:
+            {
+              dispatchCount_ = input.readInt32();
+              break;
             }
+          case 56:
+            {
+              responseCount_ = input.readInt32();
+              break;
+            }
+          case 66:
+            {
+              com.google.cloud.tasks.v2beta3.Attempt.Builder subBuilder = null;
+              if (firstAttempt_ != null) {
+                subBuilder = firstAttempt_.toBuilder();
+              }
+              firstAttempt_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.Attempt.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(firstAttempt_);
+                firstAttempt_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            com.google.cloud.tasks.v2beta3.Attempt.Builder subBuilder = null;
-            if (lastAttempt_ != null) {
-              subBuilder = lastAttempt_.toBuilder();
+              break;
             }
-            lastAttempt_ = input.readMessage(com.google.cloud.tasks.v2beta3.Attempt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastAttempt_);
-              lastAttempt_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.cloud.tasks.v2beta3.Attempt.Builder subBuilder = null;
+              if (lastAttempt_ != null) {
+                subBuilder = lastAttempt_.toBuilder();
+              }
+              lastAttempt_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.Attempt.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastAttempt_);
+                lastAttempt_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 80: {
-            int rawValue = input.readEnum();
-
-            view_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 80:
+            {
+              int rawValue = input.readEnum();
+
+              view_ = rawValue;
+              break;
+            }
+          case 90:
+            {
+              com.google.cloud.tasks.v2beta3.HttpRequest.Builder subBuilder = null;
+              if (payloadTypeCase_ == 11) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_).toBuilder();
+              }
+              payloadType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.HttpRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_);
+                payloadType_ = subBuilder.buildPartial();
+              }
+              payloadTypeCase_ = 11;
+              break;
+            }
+          case 98:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (dispatchDeadline_ != null) {
+                subBuilder = dispatchDeadline_.toBuilder();
+              }
+              dispatchDeadline_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dispatchDeadline_);
+                dispatchDeadline_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta3.TaskProto.internal_static_google_cloud_tasks_v2beta3_Task_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta3.TaskProto
+        .internal_static_google_cloud_tasks_v2beta3_Task_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta3.TaskProto.internal_static_google_cloud_tasks_v2beta3_Task_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta3.TaskProto
+        .internal_static_google_cloud_tasks_v2beta3_Task_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta3.Task.class, com.google.cloud.tasks.v2beta3.Task.Builder.class);
+            com.google.cloud.tasks.v2beta3.Task.class,
+            com.google.cloud.tasks.v2beta3.Task.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
-   * The view specifies a subset of [Task][google.cloud.tasks.v2beta3.Task] data.
+   * The view specifies a subset of [Task][google.cloud.tasks.v2beta3.Task]
+   * data.
    * When a task is returned in a response, not all
    * information is retrieved by default because some data, such as
    * payloads, might be desirable to return only when needed because
@@ -182,9 +240,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.cloud.tasks.v2beta3.Task.View}
    */
-  public enum View
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum View implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unspecified. Defaults to BASIC.
      * </pre>
@@ -193,11 +252,14 @@ private static final long serialVersionUID = 0L;
      */
     VIEW_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The basic view omits fields which can be large or can contain
      * sensitive data.
      * This view does not include the
-     * [body in AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body].
+     * [body in
+     * AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body].
      * Bodies are desirable to return only when needed, because they
      * can be large and because of the sensitivity of the data that you
      * choose to store in it.
@@ -207,11 +269,14 @@ private static final long serialVersionUID = 0L;
      */
     BASIC(1),
     /**
+     *
+     *
      * <pre>
      * All information is returned.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Queue][google.cloud.tasks.v2beta3.Queue] resource.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Queue][google.cloud.tasks.v2beta3.Queue] resource.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -221,6 +286,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unspecified. Defaults to BASIC.
      * </pre>
@@ -229,11 +296,14 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VIEW_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The basic view omits fields which can be large or can contain
      * sensitive data.
      * This view does not include the
-     * [body in AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body].
+     * [body in
+     * AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body].
      * Bodies are desirable to return only when needed, because they
      * can be large and because of the sensitivity of the data that you
      * choose to store in it.
@@ -243,17 +313,19 @@ private static final long serialVersionUID = 0L;
      */
     public static final int BASIC_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * All information is returned.
-     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Queue][google.cloud.tasks.v2beta3.Queue] resource.
+     * Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Queue][google.cloud.tasks.v2beta3.Queue] resource.
      * </pre>
      *
      * <code>FULL = 2;</code>
      */
     public static final int FULL_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -263,9 +335,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static View valueOf(int value) {
       return forNumber(value);
@@ -273,45 +343,45 @@ private static final long serialVersionUID = 0L;
 
     public static View forNumber(int value) {
       switch (value) {
-        case 0: return VIEW_UNSPECIFIED;
-        case 1: return BASIC;
-        case 2: return FULL;
-        default: return null;
+        case 0:
+          return VIEW_UNSPECIFIED;
+        case 1:
+          return BASIC;
+        case 2:
+          return FULL;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<View>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<View> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        View> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<View>() {
-            public View findValueByNumber(int number) {
-              return View.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<View> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<View>() {
+          public View findValueByNumber(int number) {
+            return View.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.tasks.v2beta3.Task.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final View[] VALUES = values();
 
-    public static View valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static View valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -330,17 +400,17 @@ private static final long serialVersionUID = 0L;
 
   private int payloadTypeCase_ = 0;
   private java.lang.Object payloadType_;
-  public enum PayloadTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum PayloadTypeCase implements com.google.protobuf.Internal.EnumLite {
     APP_ENGINE_HTTP_REQUEST(3),
+    HTTP_REQUEST(11),
     PAYLOADTYPE_NOT_SET(0);
     private final int value;
+
     private PayloadTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static PayloadTypeCase valueOf(int value) {
       return forNumber(value);
@@ -348,34 +418,42 @@ private static final long serialVersionUID = 0L;
 
     public static PayloadTypeCase forNumber(int value) {
       switch (value) {
-        case 3: return APP_ENGINE_HTTP_REQUEST;
-        case 0: return PAYLOADTYPE_NOT_SET;
-        default: return null;
+        case 3:
+          return APP_ENGINE_HTTP_REQUEST;
+        case 11:
+          return HTTP_REQUEST;
+        case 0:
+          return PAYLOADTYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public PayloadTypeCase
-  getPayloadTypeCase() {
-    return PayloadTypeCase.forNumber(
-        payloadTypeCase_);
+  public PayloadTypeCase getPayloadTypeCase() {
+    return PayloadTypeCase.forNumber(payloadTypeCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
-   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   * Optionally caller-specified in
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -393,23 +471,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+   * Optionally caller-specified in
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    * The task name.
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the task's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -422,13 +503,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -438,12 +517,13 @@ private static final long serialVersionUID = 0L;
 
   public static final int APP_ENGINE_HTTP_REQUEST_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+   * HTTP request that is sent to the App Engine app handler.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -452,43 +532,107 @@ private static final long serialVersionUID = 0L;
     return payloadTypeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+   * HTTP request that is sent to the App Engine app handler.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
    */
   public com.google.cloud.tasks.v2beta3.AppEngineHttpRequest getAppEngineHttpRequest() {
     if (payloadTypeCase_ == 3) {
-       return (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_;
+      return (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_;
     }
     return com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
-   * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+   * HTTP request that is sent to the App Engine app handler.
+   * An App Engine task is a task that has
+   * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+   * set.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
    */
-  public com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder getAppEngineHttpRequestOrBuilder() {
+  public com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder
+      getAppEngineHttpRequestOrBuilder() {
     if (payloadTypeCase_ == 3) {
-       return (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_;
+      return (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_;
     }
     return com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance();
+  }
+
+  public static final int HTTP_REQUEST_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  public boolean hasHttpRequest() {
+    return payloadTypeCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest() {
+    if (payloadTypeCase_ == 11) {
+      return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+   * feature. If you haven't already joined, you can [use this form to sign
+   * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+   */
+  public com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+    if (payloadTypeCase_ == 11) {
+      return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
   }
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -501,6 +645,8 @@ private static final long serialVersionUID = 0L;
     return scheduleTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -510,9 +656,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp schedule_time = 4;</code>
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
-    return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -528,6 +678,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -539,6 +691,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -550,6 +704,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -561,12 +717,139 @@ private static final long serialVersionUID = 0L;
     return getCreateTime();
   }
 
+  public static final int DISPATCH_DEADLINE_FIELD_NUMBER = 12;
+  private com.google.protobuf.Duration dispatchDeadline_;
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the
+   * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+   *   10 minutes.
+   *   The deadline must be in the interval [15 seconds, 30 minutes].
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+   * 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  public boolean hasDispatchDeadline() {
+    return dispatchDeadline_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the
+   * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+   *   10 minutes.
+   *   The deadline must be in the interval [15 seconds, 30 minutes].
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+   * 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  public com.google.protobuf.Duration getDispatchDeadline() {
+    return dispatchDeadline_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : dispatchDeadline_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the
+   * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+   *   10 minutes.
+   *   The deadline must be in the interval [15 seconds, 30 minutes].
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+   * 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling
+   *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  public com.google.protobuf.DurationOrBuilder getDispatchDeadlineOrBuilder() {
+    return getDispatchDeadline();
+  }
+
   public static final int DISPATCH_COUNT_FIELD_NUMBER = 6;
   private int dispatchCount_;
   /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts dispatched.
-   * This count includes tasks which have been dispatched but haven't
+   * This count includes attempts which have been dispatched but haven't
    * received a response.
    * </pre>
    *
@@ -579,6 +862,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSE_COUNT_FIELD_NUMBER = 7;
   private int responseCount_;
   /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts which have received a response.
    * </pre>
@@ -592,10 +877,13 @@ private static final long serialVersionUID = 0L;
   public static final int FIRST_ATTEMPT_FIELD_NUMBER = 8;
   private com.google.cloud.tasks.v2beta3.Attempt firstAttempt_;
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-   * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+   * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+   * is not retained by Cloud Tasks.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -604,22 +892,30 @@ private static final long serialVersionUID = 0L;
     return firstAttempt_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-   * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+   * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+   * is not retained by Cloud Tasks.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
    */
   public com.google.cloud.tasks.v2beta3.Attempt getFirstAttempt() {
-    return firstAttempt_ == null ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance() : firstAttempt_;
+    return firstAttempt_ == null
+        ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
+        : firstAttempt_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
-   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-   * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+   * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+   * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+   * is not retained by Cloud Tasks.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -631,6 +927,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_ATTEMPT_FIELD_NUMBER = 9;
   private com.google.cloud.tasks.v2beta3.Attempt lastAttempt_;
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -641,6 +939,8 @@ private static final long serialVersionUID = 0L;
     return lastAttempt_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -648,9 +948,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.tasks.v2beta3.Attempt last_attempt = 9;</code>
    */
   public com.google.cloud.tasks.v2beta3.Attempt getLastAttempt() {
-    return lastAttempt_ == null ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance() : lastAttempt_;
+    return lastAttempt_ == null
+        ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
+        : lastAttempt_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -664,9 +968,11 @@ private static final long serialVersionUID = 0L;
   public static final int VIEW_FIELD_NUMBER = 10;
   private int view_;
   /**
+   *
+   *
    * <pre>
-   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-   * been returned.
+   * Output only. The view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
@@ -675,20 +981,24 @@ private static final long serialVersionUID = 0L;
     return view_;
   }
   /**
+   *
+   *
    * <pre>
-   * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-   * been returned.
+   * Output only. The view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
    */
   public com.google.cloud.tasks.v2beta3.Task.View getView() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.tasks.v2beta3.Task.View result = com.google.cloud.tasks.v2beta3.Task.View.valueOf(view_);
+    com.google.cloud.tasks.v2beta3.Task.View result =
+        com.google.cloud.tasks.v2beta3.Task.View.valueOf(view_);
     return result == null ? com.google.cloud.tasks.v2beta3.Task.View.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -700,8 +1010,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -729,6 +1038,12 @@ private static final long serialVersionUID = 0L;
     if (view_ != com.google.cloud.tasks.v2beta3.Task.View.VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, view_);
     }
+    if (payloadTypeCase_ == 11) {
+      output.writeMessage(11, (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_);
+    }
+    if (dispatchDeadline_ != null) {
+      output.writeMessage(12, getDispatchDeadline());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -742,36 +1057,38 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (payloadTypeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_);
     }
     if (scheduleTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getScheduleTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getScheduleTime());
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCreateTime());
     }
     if (dispatchCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, dispatchCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, dispatchCount_);
     }
     if (responseCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, responseCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, responseCount_);
     }
     if (firstAttempt_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getFirstAttempt());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getFirstAttempt());
     }
     if (lastAttempt_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getLastAttempt());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLastAttempt());
     }
     if (view_ != com.google.cloud.tasks.v2beta3.Task.View.VIEW_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(10, view_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, view_);
+    }
+    if (payloadTypeCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_);
+    }
+    if (dispatchDeadline_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDispatchDeadline());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -781,7 +1098,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta3.Task)) {
       return super.equals(obj);
@@ -789,40 +1106,38 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.tasks.v2beta3.Task other = (com.google.cloud.tasks.v2beta3.Task) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasScheduleTime() == other.hasScheduleTime());
     if (hasScheduleTime()) {
-      result = result && getScheduleTime()
-          .equals(other.getScheduleTime());
+      result = result && getScheduleTime().equals(other.getScheduleTime());
     }
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
-    result = result && (getDispatchCount()
-        == other.getDispatchCount());
-    result = result && (getResponseCount()
-        == other.getResponseCount());
+    result = result && (hasDispatchDeadline() == other.hasDispatchDeadline());
+    if (hasDispatchDeadline()) {
+      result = result && getDispatchDeadline().equals(other.getDispatchDeadline());
+    }
+    result = result && (getDispatchCount() == other.getDispatchCount());
+    result = result && (getResponseCount() == other.getResponseCount());
     result = result && (hasFirstAttempt() == other.hasFirstAttempt());
     if (hasFirstAttempt()) {
-      result = result && getFirstAttempt()
-          .equals(other.getFirstAttempt());
+      result = result && getFirstAttempt().equals(other.getFirstAttempt());
     }
     result = result && (hasLastAttempt() == other.hasLastAttempt());
     if (hasLastAttempt()) {
-      result = result && getLastAttempt()
-          .equals(other.getLastAttempt());
+      result = result && getLastAttempt().equals(other.getLastAttempt());
     }
     result = result && view_ == other.view_;
-    result = result && getPayloadTypeCase().equals(
-        other.getPayloadTypeCase());
+    result = result && getPayloadTypeCase().equals(other.getPayloadTypeCase());
     if (!result) return false;
     switch (payloadTypeCase_) {
       case 3:
-        result = result && getAppEngineHttpRequest()
-            .equals(other.getAppEngineHttpRequest());
+        result = result && getAppEngineHttpRequest().equals(other.getAppEngineHttpRequest());
+        break;
+      case 11:
+        result = result && getHttpRequest().equals(other.getHttpRequest());
         break;
       case 0:
       default:
@@ -848,6 +1163,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    if (hasDispatchDeadline()) {
+      hash = (37 * hash) + DISPATCH_DEADLINE_FIELD_NUMBER;
+      hash = (53 * hash) + getDispatchDeadline().hashCode();
+    }
     hash = (37 * hash) + DISPATCH_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getDispatchCount();
     hash = (37 * hash) + RESPONSE_COUNT_FIELD_NUMBER;
@@ -867,6 +1186,10 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + APP_ENGINE_HTTP_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getAppEngineHttpRequest().hashCode();
         break;
+      case 11:
+        hash = (37 * hash) + HTTP_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpRequest().hashCode();
+        break;
       case 0:
       default:
     }
@@ -875,118 +1198,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta3.Task parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta3.Task parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta3.Task parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.tasks.v2beta3.Task parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta3.Task parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta3.Task prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A unit of scheduled work.
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.Task}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta3.Task)
       com.google.cloud.tasks.v2beta3.TaskOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta3.TaskProto.internal_static_google_cloud_tasks_v2beta3_Task_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta3.TaskProto
+          .internal_static_google_cloud_tasks_v2beta3_Task_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta3.TaskProto.internal_static_google_cloud_tasks_v2beta3_Task_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta3.TaskProto
+          .internal_static_google_cloud_tasks_v2beta3_Task_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta3.Task.class, com.google.cloud.tasks.v2beta3.Task.Builder.class);
+              com.google.cloud.tasks.v2beta3.Task.class,
+              com.google.cloud.tasks.v2beta3.Task.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta3.Task.newBuilder()
@@ -994,16 +1325,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1020,6 +1350,12 @@ private static final long serialVersionUID = 0L;
       } else {
         createTime_ = null;
         createTimeBuilder_ = null;
+      }
+      if (dispatchDeadlineBuilder_ == null) {
+        dispatchDeadline_ = null;
+      } else {
+        dispatchDeadline_ = null;
+        dispatchDeadlineBuilder_ = null;
       }
       dispatchCount_ = 0;
 
@@ -1045,9 +1381,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta3.TaskProto.internal_static_google_cloud_tasks_v2beta3_Task_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta3.TaskProto
+          .internal_static_google_cloud_tasks_v2beta3_Task_descriptor;
     }
 
     @java.lang.Override
@@ -1075,6 +1411,13 @@ private static final long serialVersionUID = 0L;
           result.payloadType_ = appEngineHttpRequestBuilder_.build();
         }
       }
+      if (payloadTypeCase_ == 11) {
+        if (httpRequestBuilder_ == null) {
+          result.payloadType_ = payloadType_;
+        } else {
+          result.payloadType_ = httpRequestBuilder_.build();
+        }
+      }
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
       } else {
@@ -1084,6 +1427,11 @@ private static final long serialVersionUID = 0L;
         result.createTime_ = createTime_;
       } else {
         result.createTime_ = createTimeBuilder_.build();
+      }
+      if (dispatchDeadlineBuilder_ == null) {
+        result.dispatchDeadline_ = dispatchDeadline_;
+      } else {
+        result.dispatchDeadline_ = dispatchDeadlineBuilder_.build();
       }
       result.dispatchCount_ = dispatchCount_;
       result.responseCount_ = responseCount_;
@@ -1107,38 +1455,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta3.Task) {
-        return mergeFrom((com.google.cloud.tasks.v2beta3.Task)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta3.Task) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1157,6 +1506,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasDispatchDeadline()) {
+        mergeDispatchDeadline(other.getDispatchDeadline());
+      }
       if (other.getDispatchCount() != 0) {
         setDispatchCount(other.getDispatchCount());
       }
@@ -1173,13 +1525,20 @@ private static final long serialVersionUID = 0L;
         setViewValue(other.getViewValue());
       }
       switch (other.getPayloadTypeCase()) {
-        case APP_ENGINE_HTTP_REQUEST: {
-          mergeAppEngineHttpRequest(other.getAppEngineHttpRequest());
-          break;
-        }
-        case PAYLOADTYPE_NOT_SET: {
-          break;
-        }
+        case APP_ENGINE_HTTP_REQUEST:
+          {
+            mergeAppEngineHttpRequest(other.getAppEngineHttpRequest());
+            break;
+          }
+        case HTTP_REQUEST:
+          {
+            mergeHttpRequest(other.getHttpRequest());
+            break;
+          }
+        case PAYLOADTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1209,12 +1568,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int payloadTypeCase_ = 0;
     private java.lang.Object payloadType_;
-    public PayloadTypeCase
-        getPayloadTypeCase() {
-      return PayloadTypeCase.forNumber(
-          payloadTypeCase_);
+
+    public PayloadTypeCase getPayloadTypeCase() {
+      return PayloadTypeCase.forNumber(payloadTypeCase_);
     }
 
     public Builder clearPayloadType() {
@@ -1224,18 +1583,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1251,8 +1613,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1261,15 +1622,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1282,13 +1647,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1296,15 +1659,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1317,26 +1684,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1350,21 +1720,25 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+     * Optionally caller-specified in
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
      * The task name.
      * The task name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the task's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1377,27 +1751,30 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.AppEngineHttpRequest, com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder, com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder> appEngineHttpRequestBuilder_;
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder>
+        appEngineHttpRequestBuilder_;
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1406,12 +1783,13 @@ private static final long serialVersionUID = 0L;
       return payloadTypeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1430,17 +1808,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
      */
-    public Builder setAppEngineHttpRequest(com.google.cloud.tasks.v2beta3.AppEngineHttpRequest value) {
+    public Builder setAppEngineHttpRequest(
+        com.google.cloud.tasks.v2beta3.AppEngineHttpRequest value) {
       if (appEngineHttpRequestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1454,12 +1834,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1476,22 +1857,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
      */
-    public Builder mergeAppEngineHttpRequest(com.google.cloud.tasks.v2beta3.AppEngineHttpRequest value) {
+    public Builder mergeAppEngineHttpRequest(
+        com.google.cloud.tasks.v2beta3.AppEngineHttpRequest value) {
       if (appEngineHttpRequestBuilder_ == null) {
-        if (payloadTypeCase_ == 3 &&
-            payloadType_ != com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance()) {
-          payloadType_ = com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.newBuilder((com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_)
-              .mergeFrom(value).buildPartial();
+        if (payloadTypeCase_ == 3
+            && payloadType_
+                != com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance()) {
+          payloadType_ =
+              com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.newBuilder(
+                      (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           payloadType_ = value;
         }
@@ -1506,12 +1893,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
@@ -1533,31 +1921,35 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
      */
-    public com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder getAppEngineHttpRequestBuilder() {
+    public com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder
+        getAppEngineHttpRequestBuilder() {
       return getAppEngineHttpRequestFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
      */
-    public com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder getAppEngineHttpRequestOrBuilder() {
+    public com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder
+        getAppEngineHttpRequestOrBuilder() {
       if ((payloadTypeCase_ == 3) && (appEngineHttpRequestBuilder_ != null)) {
         return appEngineHttpRequestBuilder_.getMessageOrBuilder();
       } else {
@@ -1568,39 +1960,298 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP request that is sent to the task's target. Can
-     * be set only if
-     * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-     * on the queue.
-     * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+     * HTTP request that is sent to the App Engine app handler.
+     * An App Engine task is a task that has
+     * [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+     * set.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpRequest app_engine_http_request = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.AppEngineHttpRequest, com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder, com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder> 
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder>
         getAppEngineHttpRequestFieldBuilder() {
       if (appEngineHttpRequestBuilder_ == null) {
         if (!(payloadTypeCase_ == 3)) {
           payloadType_ = com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance();
         }
-        appEngineHttpRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest, com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder, com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder>(
+        appEngineHttpRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.AppEngineHttpRequest,
+                com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder,
+                com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder>(
                 (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) payloadType_,
                 getParentForChildren(),
                 isClean());
         payloadType_ = null;
       }
       payloadTypeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return appEngineHttpRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.HttpRequest,
+            com.google.cloud.tasks.v2beta3.HttpRequest.Builder,
+            com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder>
+        httpRequestBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public boolean hasHttpRequest() {
+      return payloadTypeCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpRequest getHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 11) {
+          return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+      } else {
+        if (payloadTypeCase_ == 11) {
+          return httpRequestBuilder_.getMessage();
+        }
+        return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder setHttpRequest(com.google.cloud.tasks.v2beta3.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payloadType_ = value;
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(value);
+      }
+      payloadTypeCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder setHttpRequest(
+        com.google.cloud.tasks.v2beta3.HttpRequest.Builder builderForValue) {
+      if (httpRequestBuilder_ == null) {
+        payloadType_ = builderForValue.build();
+        onChanged();
+      } else {
+        httpRequestBuilder_.setMessage(builderForValue.build());
+      }
+      payloadTypeCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder mergeHttpRequest(com.google.cloud.tasks.v2beta3.HttpRequest value) {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 11
+            && payloadType_ != com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance()) {
+          payloadType_ =
+              com.google.cloud.tasks.v2beta3.HttpRequest.newBuilder(
+                      (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payloadType_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadTypeCase_ == 11) {
+          httpRequestBuilder_.mergeFrom(value);
+        }
+        httpRequestBuilder_.setMessage(value);
+      }
+      payloadTypeCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public Builder clearHttpRequest() {
+      if (httpRequestBuilder_ == null) {
+        if (payloadTypeCase_ == 11) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadTypeCase_ == 11) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+        }
+        httpRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpRequest.Builder getHttpRequestBuilder() {
+      return getHttpRequestFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder getHttpRequestOrBuilder() {
+      if ((payloadTypeCase_ == 11) && (httpRequestBuilder_ != null)) {
+        return httpRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadTypeCase_ == 11) {
+          return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HTTP request that is sent to the task's target.
+     * Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+     * feature. If you haven't already joined, you can [use this form to sign
+     * up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+     * An HTTP task is a task that has
+     * [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpRequest http_request = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.HttpRequest,
+            com.google.cloud.tasks.v2beta3.HttpRequest.Builder,
+            com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder>
+        getHttpRequestFieldBuilder() {
+      if (httpRequestBuilder_ == null) {
+        if (!(payloadTypeCase_ == 11)) {
+          payloadType_ = com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+        }
+        httpRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.HttpRequest,
+                com.google.cloud.tasks.v2beta3.HttpRequest.Builder,
+                com.google.cloud.tasks.v2beta3.HttpRequestOrBuilder>(
+                (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_,
+                getParentForChildren(),
+                isClean());
+        payloadType_ = null;
+      }
+      payloadTypeCase_ = 11;
+      onChanged();
+      ;
+      return httpRequestBuilder_;
     }
 
     private com.google.protobuf.Timestamp scheduleTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scheduleTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        scheduleTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1613,6 +2264,8 @@ private static final long serialVersionUID = 0L;
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1623,12 +2276,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
-        return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       } else {
         return scheduleTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1651,6 +2308,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1659,8 +2318,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp schedule_time = 4;</code>
      */
-    public Builder setScheduleTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
         onChanged();
@@ -1671,6 +2329,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1683,7 +2343,9 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ == null) {
         if (scheduleTime_ != null) {
           scheduleTime_ =
-            com.google.protobuf.Timestamp.newBuilder(scheduleTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           scheduleTime_ = value;
         }
@@ -1695,6 +2357,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1715,6 +2379,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1724,11 +2390,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      
+
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1741,11 +2409,14 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ != null) {
         return scheduleTimeBuilder_.getMessageOrBuilder();
       } else {
-        return scheduleTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time when the task is scheduled to be attempted.
      * For App Engine queues, this is when the task will be attempted or retried.
@@ -1755,14 +2426,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getScheduleTimeFieldBuilder() {
       if (scheduleTimeBuilder_ == null) {
-        scheduleTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getScheduleTime(),
-                getParentForChildren(),
-                isClean());
+        scheduleTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getScheduleTime(), getParentForChildren(), isClean());
         scheduleTime_ = null;
       }
       return scheduleTimeBuilder_;
@@ -1770,8 +2444,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1783,6 +2462,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1792,12 +2473,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1819,6 +2504,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1826,8 +2513,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -1838,6 +2524,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1849,7 +2537,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -1861,6 +2549,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1880,6 +2570,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1888,11 +2580,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1904,11 +2598,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that the task was created.
      * `create_time` will be truncated to the nearest second.
@@ -1917,24 +2614,462 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
     }
 
-    private int dispatchCount_ ;
+    private com.google.protobuf.Duration dispatchDeadline_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        dispatchDeadlineBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public boolean hasDispatchDeadline() {
+      return dispatchDeadlineBuilder_ != null || dispatchDeadline_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public com.google.protobuf.Duration getDispatchDeadline() {
+      if (dispatchDeadlineBuilder_ == null) {
+        return dispatchDeadline_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : dispatchDeadline_;
+      } else {
+        return dispatchDeadlineBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public Builder setDispatchDeadline(com.google.protobuf.Duration value) {
+      if (dispatchDeadlineBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dispatchDeadline_ = value;
+        onChanged();
+      } else {
+        dispatchDeadlineBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public Builder setDispatchDeadline(com.google.protobuf.Duration.Builder builderForValue) {
+      if (dispatchDeadlineBuilder_ == null) {
+        dispatchDeadline_ = builderForValue.build();
+        onChanged();
+      } else {
+        dispatchDeadlineBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public Builder mergeDispatchDeadline(com.google.protobuf.Duration value) {
+      if (dispatchDeadlineBuilder_ == null) {
+        if (dispatchDeadline_ != null) {
+          dispatchDeadline_ =
+              com.google.protobuf.Duration.newBuilder(dispatchDeadline_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dispatchDeadline_ = value;
+        }
+        onChanged();
+      } else {
+        dispatchDeadlineBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public Builder clearDispatchDeadline() {
+      if (dispatchDeadlineBuilder_ == null) {
+        dispatchDeadline_ = null;
+        onChanged();
+      } else {
+        dispatchDeadline_ = null;
+        dispatchDeadlineBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public com.google.protobuf.Duration.Builder getDispatchDeadlineBuilder() {
+
+      onChanged();
+      return getDispatchDeadlineFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDispatchDeadlineOrBuilder() {
+      if (dispatchDeadlineBuilder_ != null) {
+        return dispatchDeadlineBuilder_.getMessageOrBuilder();
+      } else {
+        return dispatchDeadline_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : dispatchDeadline_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deadline for requests sent to the worker. If the worker does not
+     * respond by this deadline then the request is cancelled and the attempt
+     * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+     * task according to the
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * Note that when the request is cancelled, Cloud Tasks will stop listing for
+     * the response, but whether the worker stops processing depends on the
+     * worker. For example, if the worker is stuck, it may not react to cancelled
+     * requests.
+     * The default and maximum values depend on the type of request:
+     * * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+     *   10 minutes.
+     *   The deadline must be in the interval [15 seconds, 30 minutes].
+     * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+     * 0 indicates that the
+     *   request has the default deadline. The default deadline depends on the
+     *   [scaling
+     *   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+     *   of the service: 10 minutes for standard apps with automatic scaling, 24
+     *   hours for standard apps with manual and basic scaling, and 60 minutes for
+     *   flex apps. If the request deadline is set, it must be in the interval [15
+     *   seconds, 24 hours 15 seconds]. Regardless of the task's
+     *   `dispatch_deadline`, the app handler will not run for longer than than
+     *   the service's timeout. We recommend setting the `dispatch_deadline` to
+     *   at most a few seconds more than the app handler's timeout. For more
+     *   information see
+     *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+     * `dispatch_deadline` will be truncated to the nearest millisecond. The
+     * deadline is an approximate deadline.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getDispatchDeadlineFieldBuilder() {
+      if (dispatchDeadlineBuilder_ == null) {
+        dispatchDeadlineBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getDispatchDeadline(), getParentForChildren(), isClean());
+        dispatchDeadline_ = null;
+      }
+      return dispatchDeadlineBuilder_;
+    }
+
+    private int dispatchCount_;
+    /**
+     *
+     *
      * <pre>
      * Output only. The number of attempts dispatched.
-     * This count includes tasks which have been dispatched but haven't
+     * This count includes attempts which have been dispatched but haven't
      * received a response.
      * </pre>
      *
@@ -1944,38 +3079,44 @@ private static final long serialVersionUID = 0L;
       return dispatchCount_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The number of attempts dispatched.
-     * This count includes tasks which have been dispatched but haven't
+     * This count includes attempts which have been dispatched but haven't
      * received a response.
      * </pre>
      *
      * <code>int32 dispatch_count = 6;</code>
      */
     public Builder setDispatchCount(int value) {
-      
+
       dispatchCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The number of attempts dispatched.
-     * This count includes tasks which have been dispatched but haven't
+     * This count includes attempts which have been dispatched but haven't
      * received a response.
      * </pre>
      *
      * <code>int32 dispatch_count = 6;</code>
      */
     public Builder clearDispatchCount() {
-      
+
       dispatchCount_ = 0;
       onChanged();
       return this;
     }
 
-    private int responseCount_ ;
+    private int responseCount_;
     /**
+     *
+     *
      * <pre>
      * Output only. The number of attempts which have received a response.
      * </pre>
@@ -1986,6 +3127,8 @@ private static final long serialVersionUID = 0L;
       return responseCount_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The number of attempts which have received a response.
      * </pre>
@@ -1993,12 +3136,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 response_count = 7;</code>
      */
     public Builder setResponseCount(int value) {
-      
+
       responseCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The number of attempts which have received a response.
      * </pre>
@@ -2006,7 +3151,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 response_count = 7;</code>
      */
     public Builder clearResponseCount() {
-      
+
       responseCount_ = 0;
       onChanged();
       return this;
@@ -2014,12 +3159,18 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.tasks.v2beta3.Attempt firstAttempt_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.Attempt, com.google.cloud.tasks.v2beta3.Attempt.Builder, com.google.cloud.tasks.v2beta3.AttemptOrBuilder> firstAttemptBuilder_;
+            com.google.cloud.tasks.v2beta3.Attempt,
+            com.google.cloud.tasks.v2beta3.Attempt.Builder,
+            com.google.cloud.tasks.v2beta3.AttemptOrBuilder>
+        firstAttemptBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -2028,26 +3179,34 @@ private static final long serialVersionUID = 0L;
       return firstAttemptBuilder_ != null || firstAttempt_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
      */
     public com.google.cloud.tasks.v2beta3.Attempt getFirstAttempt() {
       if (firstAttemptBuilder_ == null) {
-        return firstAttempt_ == null ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance() : firstAttempt_;
+        return firstAttempt_ == null
+            ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
+            : firstAttempt_;
       } else {
         return firstAttemptBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -2066,16 +3225,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
      */
-    public Builder setFirstAttempt(
-        com.google.cloud.tasks.v2beta3.Attempt.Builder builderForValue) {
+    public Builder setFirstAttempt(com.google.cloud.tasks.v2beta3.Attempt.Builder builderForValue) {
       if (firstAttemptBuilder_ == null) {
         firstAttempt_ = builderForValue.build();
         onChanged();
@@ -2086,10 +3247,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -2098,7 +3262,9 @@ private static final long serialVersionUID = 0L;
       if (firstAttemptBuilder_ == null) {
         if (firstAttempt_ != null) {
           firstAttempt_ =
-            com.google.cloud.tasks.v2beta3.Attempt.newBuilder(firstAttempt_).mergeFrom(value).buildPartial();
+              com.google.cloud.tasks.v2beta3.Attempt.newBuilder(firstAttempt_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           firstAttempt_ = value;
         }
@@ -2110,10 +3276,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -2130,24 +3299,30 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
      */
     public com.google.cloud.tasks.v2beta3.Attempt.Builder getFirstAttemptBuilder() {
-      
+
       onChanged();
       return getFirstAttemptFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
@@ -2156,28 +3331,35 @@ private static final long serialVersionUID = 0L;
       if (firstAttemptBuilder_ != null) {
         return firstAttemptBuilder_.getMessageOrBuilder();
       } else {
-        return firstAttempt_ == null ?
-            com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance() : firstAttempt_;
+        return firstAttempt_ == null
+            ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
+            : firstAttempt_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's first attempt.
-     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-     * The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+     * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+     * be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+     * is not retained by Cloud Tasks.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt first_attempt = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.Attempt, com.google.cloud.tasks.v2beta3.Attempt.Builder, com.google.cloud.tasks.v2beta3.AttemptOrBuilder> 
+            com.google.cloud.tasks.v2beta3.Attempt,
+            com.google.cloud.tasks.v2beta3.Attempt.Builder,
+            com.google.cloud.tasks.v2beta3.AttemptOrBuilder>
         getFirstAttemptFieldBuilder() {
       if (firstAttemptBuilder_ == null) {
-        firstAttemptBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta3.Attempt, com.google.cloud.tasks.v2beta3.Attempt.Builder, com.google.cloud.tasks.v2beta3.AttemptOrBuilder>(
-                getFirstAttempt(),
-                getParentForChildren(),
-                isClean());
+        firstAttemptBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.Attempt,
+                com.google.cloud.tasks.v2beta3.Attempt.Builder,
+                com.google.cloud.tasks.v2beta3.AttemptOrBuilder>(
+                getFirstAttempt(), getParentForChildren(), isClean());
         firstAttempt_ = null;
       }
       return firstAttemptBuilder_;
@@ -2185,8 +3367,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.tasks.v2beta3.Attempt lastAttempt_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.Attempt, com.google.cloud.tasks.v2beta3.Attempt.Builder, com.google.cloud.tasks.v2beta3.AttemptOrBuilder> lastAttemptBuilder_;
+            com.google.cloud.tasks.v2beta3.Attempt,
+            com.google.cloud.tasks.v2beta3.Attempt.Builder,
+            com.google.cloud.tasks.v2beta3.AttemptOrBuilder>
+        lastAttemptBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2197,6 +3384,8 @@ private static final long serialVersionUID = 0L;
       return lastAttemptBuilder_ != null || lastAttempt_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2205,12 +3394,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.tasks.v2beta3.Attempt getLastAttempt() {
       if (lastAttemptBuilder_ == null) {
-        return lastAttempt_ == null ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance() : lastAttempt_;
+        return lastAttempt_ == null
+            ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
+            : lastAttempt_;
       } else {
         return lastAttemptBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2231,14 +3424,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Attempt last_attempt = 9;</code>
      */
-    public Builder setLastAttempt(
-        com.google.cloud.tasks.v2beta3.Attempt.Builder builderForValue) {
+    public Builder setLastAttempt(com.google.cloud.tasks.v2beta3.Attempt.Builder builderForValue) {
       if (lastAttemptBuilder_ == null) {
         lastAttempt_ = builderForValue.build();
         onChanged();
@@ -2249,6 +3443,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2259,7 +3455,9 @@ private static final long serialVersionUID = 0L;
       if (lastAttemptBuilder_ == null) {
         if (lastAttempt_ != null) {
           lastAttempt_ =
-            com.google.cloud.tasks.v2beta3.Attempt.newBuilder(lastAttempt_).mergeFrom(value).buildPartial();
+              com.google.cloud.tasks.v2beta3.Attempt.newBuilder(lastAttempt_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastAttempt_ = value;
         }
@@ -2271,6 +3469,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2289,6 +3489,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2296,11 +3498,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta3.Attempt last_attempt = 9;</code>
      */
     public com.google.cloud.tasks.v2beta3.Attempt.Builder getLastAttemptBuilder() {
-      
+
       onChanged();
       return getLastAttemptFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2311,11 +3515,14 @@ private static final long serialVersionUID = 0L;
       if (lastAttemptBuilder_ != null) {
         return lastAttemptBuilder_.getMessageOrBuilder();
       } else {
-        return lastAttempt_ == null ?
-            com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance() : lastAttempt_;
+        return lastAttempt_ == null
+            ? com.google.cloud.tasks.v2beta3.Attempt.getDefaultInstance()
+            : lastAttempt_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The status of the task's last attempt.
      * </pre>
@@ -2323,14 +3530,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta3.Attempt last_attempt = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.Attempt, com.google.cloud.tasks.v2beta3.Attempt.Builder, com.google.cloud.tasks.v2beta3.AttemptOrBuilder> 
+            com.google.cloud.tasks.v2beta3.Attempt,
+            com.google.cloud.tasks.v2beta3.Attempt.Builder,
+            com.google.cloud.tasks.v2beta3.AttemptOrBuilder>
         getLastAttemptFieldBuilder() {
       if (lastAttemptBuilder_ == null) {
-        lastAttemptBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta3.Attempt, com.google.cloud.tasks.v2beta3.Attempt.Builder, com.google.cloud.tasks.v2beta3.AttemptOrBuilder>(
-                getLastAttempt(),
-                getParentForChildren(),
-                isClean());
+        lastAttemptBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.Attempt,
+                com.google.cloud.tasks.v2beta3.Attempt.Builder,
+                com.google.cloud.tasks.v2beta3.AttemptOrBuilder>(
+                getLastAttempt(), getParentForChildren(), isClean());
         lastAttempt_ = null;
       }
       return lastAttemptBuilder_;
@@ -2338,9 +3548,11 @@ private static final long serialVersionUID = 0L;
 
     private int view_ = 0;
     /**
+     *
+     *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
@@ -2349,9 +3561,11 @@ private static final long serialVersionUID = 0L;
       return view_;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
@@ -2362,22 +3576,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
      */
     public com.google.cloud.tasks.v2beta3.Task.View getView() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.tasks.v2beta3.Task.View result = com.google.cloud.tasks.v2beta3.Task.View.valueOf(view_);
+      com.google.cloud.tasks.v2beta3.Task.View result =
+          com.google.cloud.tasks.v2beta3.Task.View.valueOf(view_);
       return result == null ? com.google.cloud.tasks.v2beta3.Task.View.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
@@ -2386,28 +3605,30 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       view_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-     * been returned.
+     * Output only. The view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta3.Task] has been returned.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Task.View view = 10;</code>
      */
     public Builder clearView() {
-      
+
       view_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2417,12 +3638,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta3.Task)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta3.Task)
   private static final com.google.cloud.tasks.v2beta3.Task DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta3.Task();
   }
@@ -2431,16 +3652,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Task>
-      PARSER = new com.google.protobuf.AbstractParser<Task>() {
-    @java.lang.Override
-    public Task parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Task(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Task> PARSER =
+      new com.google.protobuf.AbstractParser<Task>() {
+        @java.lang.Override
+        public Task parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Task(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Task> parser() {
     return PARSER;
@@ -2455,6 +3676,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta3.Task getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

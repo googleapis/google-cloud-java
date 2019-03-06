@@ -73,8 +73,8 @@ import com.google.cloud.compute.deprecated.SubnetworkId;
 import com.google.cloud.compute.deprecated.SubnetworkInfo;
 import com.google.cloud.compute.deprecated.Zone;
 import com.google.cloud.compute.deprecated.ZoneOperationId;
-import com.google.cloud.compute.deprecated.testing.ResourceCleaner;
 import com.google.cloud.compute.deprecated.testing.RemoteComputeHelper;
+import com.google.cloud.compute.deprecated.testing.ResourceCleaner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -105,9 +105,7 @@ public class ITComputeTest {
   private static Compute compute;
   private static ResourceCleaner resourceCleaner;
 
-
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
@@ -135,8 +133,11 @@ public class ITComputeTest {
 
   @Test
   public void testGetDiskTypeWithSelectedFields() {
-    DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE,
-        Compute.DiskTypeOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
+    DiskType diskType =
+        compute.getDiskType(
+            ZONE,
+            DISK_TYPE,
+            Compute.DiskTypeOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
     // assertNotNull(diskType.getGeneratedId());
     assertEquals(ZONE, diskType.getDiskTypeId().getZone());
     assertEquals(DISK_TYPE, diskType.getDiskTypeId().getType());
@@ -165,8 +166,9 @@ public class ITComputeTest {
 
   @Test
   public void testListDiskTypesWithSelectedFields() {
-    Page<DiskType> diskPage = compute.listDiskTypes(ZONE,
-        Compute.DiskTypeListOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
+    Page<DiskType> diskPage =
+        compute.listDiskTypes(
+            ZONE, Compute.DiskTypeListOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
@@ -183,8 +185,11 @@ public class ITComputeTest {
 
   @Test
   public void testListDiskTypesWithFilter() {
-    Page<DiskType> diskPage = compute.listDiskTypes(ZONE, Compute.DiskTypeListOption.filter(
-        Compute.DiskTypeFilter.equals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
+    Page<DiskType> diskPage =
+        compute.listDiskTypes(
+            ZONE,
+            Compute.DiskTypeListOption.filter(
+                Compute.DiskTypeFilter.equals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
@@ -220,8 +225,10 @@ public class ITComputeTest {
   @Ignore("Aggregate list method returns region scope instead of zone scope #3312")
   @Test
   public void testAggregatedListDiskTypesWithFilter() {
-    Page<DiskType> diskPage = compute.listDiskTypes(Compute.DiskTypeAggregatedListOption.filter(
-        Compute.DiskTypeFilter.notEquals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
+    Page<DiskType> diskPage =
+        compute.listDiskTypes(
+            Compute.DiskTypeAggregatedListOption.filter(
+                Compute.DiskTypeFilter.notEquals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll().iterator();
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
@@ -252,8 +259,9 @@ public class ITComputeTest {
 
   @Test
   public void testGetMachineTypeWithSelectedFields() {
-    MachineType machineType = compute.getMachineType(ZONE, MACHINE_TYPE,
-        Compute.MachineTypeOption.fields(Compute.MachineTypeField.ID));
+    MachineType machineType =
+        compute.getMachineType(
+            ZONE, MACHINE_TYPE, Compute.MachineTypeOption.fields(Compute.MachineTypeField.ID));
     assertEquals(ZONE, machineType.getMachineTypeId().getZone());
     assertEquals(MACHINE_TYPE, machineType.getMachineTypeId().getType());
     assertNotNull(machineType.getGeneratedId());
@@ -286,8 +294,10 @@ public class ITComputeTest {
 
   @Test
   public void testListMachineTypesWithSelectedFields() {
-    Page<MachineType> machinePage = compute.listMachineTypes(ZONE,
-        Compute.MachineTypeListOption.fields(Compute.MachineTypeField.CREATION_TIMESTAMP));
+    Page<MachineType> machinePage =
+        compute.listMachineTypes(
+            ZONE,
+            Compute.MachineTypeListOption.fields(Compute.MachineTypeField.CREATION_TIMESTAMP));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
@@ -306,9 +316,11 @@ public class ITComputeTest {
 
   @Test
   public void testListMachineTypesWithFilter() {
-    Page<MachineType> machinePage = compute.listMachineTypes(ZONE,
-        Compute.MachineTypeListOption.filter(
-            Compute.MachineTypeFilter.equals(Compute.MachineTypeField.GUEST_CPUS, 2)));
+    Page<MachineType> machinePage =
+        compute.listMachineTypes(
+            ZONE,
+            Compute.MachineTypeListOption.filter(
+                Compute.MachineTypeFilter.equals(Compute.MachineTypeField.GUEST_CPUS, 2)));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
@@ -347,8 +359,9 @@ public class ITComputeTest {
   @Test
   public void testAggregatedListMachineTypesWithFilter() {
     Page<MachineType> machinePage =
-        compute.listMachineTypes(Compute.MachineTypeAggregatedListOption.filter(
-            Compute.MachineTypeFilter.notEquals(Compute.MachineTypeField.GUEST_CPUS, 2)));
+        compute.listMachineTypes(
+            Compute.MachineTypeAggregatedListOption.filter(
+                Compute.MachineTypeFilter.notEquals(Compute.MachineTypeField.GUEST_CPUS, 2)));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll().iterator();
     assertTrue(machineTypeIterator.hasNext());
     while (machineTypeIterator.hasNext()) {
@@ -438,8 +451,10 @@ public class ITComputeTest {
 
   @Test
   public void testListRegionsWithFilter() {
-    Page<Region> regionPage = compute.listRegions(Compute.RegionListOption.filter(
-        Compute.RegionFilter.equals(Compute.RegionField.NAME, REGION)));
+    Page<Region> regionPage =
+        compute.listRegions(
+            Compute.RegionListOption.filter(
+                Compute.RegionFilter.equals(Compute.RegionField.NAME, REGION)));
     Iterator<Region> regionIterator = regionPage.iterateAll().iterator();
     assertEquals(REGION, regionIterator.next().getRegionId().getRegion());
     assertFalse(regionIterator.hasNext());
@@ -484,8 +499,8 @@ public class ITComputeTest {
 
   @Test
   public void testListZonesWithSelectedFields() {
-    Page<Zone> zonePage = compute.listZones(
-        Compute.ZoneListOption.fields(Compute.ZoneField.CREATION_TIMESTAMP));
+    Page<Zone> zonePage =
+        compute.listZones(Compute.ZoneListOption.fields(Compute.ZoneField.CREATION_TIMESTAMP));
     Iterator<Zone> zoneIterator = zonePage.iterateAll().iterator();
     while (zoneIterator.hasNext()) {
       Zone zone = zoneIterator.next();
@@ -500,8 +515,9 @@ public class ITComputeTest {
 
   @Test
   public void testListZonesWithFilter() {
-    Page<Zone> zonePage = compute.listZones(
-        Compute.ZoneListOption.filter(Compute.ZoneFilter.equals(Compute.ZoneField.NAME, ZONE)));
+    Page<Zone> zonePage =
+        compute.listZones(
+            Compute.ZoneListOption.filter(Compute.ZoneFilter.equals(Compute.ZoneField.NAME, ZONE)));
     Iterator<Zone> zoneIterator = zonePage.iterateAll().iterator();
     assertEquals(ZONE, zoneIterator.next().getZoneId().getZone());
     assertFalse(zoneIterator.hasNext());
@@ -551,8 +567,10 @@ public class ITComputeTest {
 
   @Test
   public void testListGlobalOperationsWithFilter() {
-    Page<Operation> operationPage = compute.listGlobalOperations(Compute.OperationListOption.filter(
-        Compute.OperationFilter.equals(Compute.OperationField.STATUS, "DONE")));
+    Page<Operation> operationPage =
+        compute.listGlobalOperations(
+            Compute.OperationListOption.filter(
+                Compute.OperationFilter.equals(Compute.OperationField.STATUS, "DONE")));
     Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
@@ -585,8 +603,9 @@ public class ITComputeTest {
 
   @Test
   public void testListRegionOperationsWithSelectedFields() {
-    Page<Operation> operationPage = compute.listRegionOperations(REGION,
-        Compute.OperationListOption.fields(Compute.OperationField.ID));
+    Page<Operation> operationPage =
+        compute.listRegionOperations(
+            REGION, Compute.OperationListOption.fields(Compute.OperationField.ID));
     Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
@@ -612,9 +631,11 @@ public class ITComputeTest {
 
   @Test
   public void testListRegionOperationsWithFilter() {
-    Page<Operation> operationPage = compute.listRegionOperations(REGION,
-        Compute.OperationListOption.filter(Compute.OperationFilter.equals(
-            Compute.OperationField.STATUS, "DONE")));
+    Page<Operation> operationPage =
+        compute.listRegionOperations(
+            REGION,
+            Compute.OperationListOption.filter(
+                Compute.OperationFilter.equals(Compute.OperationField.STATUS, "DONE")));
     Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
@@ -648,8 +669,9 @@ public class ITComputeTest {
 
   @Test
   public void testListZoneOperationsWithSelectedFields() {
-    Page<Operation> operationPage = compute.listZoneOperations(ZONE,
-        Compute.OperationListOption.fields(Compute.OperationField.ID));
+    Page<Operation> operationPage =
+        compute.listZoneOperations(
+            ZONE, Compute.OperationListOption.fields(Compute.OperationField.ID));
     Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
@@ -675,9 +697,11 @@ public class ITComputeTest {
 
   @Test
   public void testListZoneOperationsWithFilter() {
-    Page<Operation> operationPage = compute.listZoneOperations(ZONE,
-        Compute.OperationListOption.filter(Compute.OperationFilter.equals(
-            Compute.OperationField.STATUS, "DONE")));
+    Page<Operation> operationPage =
+        compute.listZoneOperations(
+            ZONE,
+            Compute.OperationListOption.filter(
+                Compute.OperationFilter.equals(Compute.OperationField.STATUS, "DONE")));
     Iterator<Operation> operationIterator = operationPage.iterateAll().iterator();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
@@ -759,8 +783,11 @@ public class ITComputeTest {
     assertEquals(2, count);
     // test list with selected fields
     count = 0;
-    addressPage = compute.listRegionAddresses(REGION, Compute.AddressListOption.filter(filter),
-        Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
+    addressPage =
+        compute.listRegionAddresses(
+            REGION,
+            Compute.AddressListOption.filter(filter),
+            Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
     addressIterator = addressPage.iterateAll().iterator();
     while (addressIterator.hasNext()) {
       Address address = addressIterator.next();
@@ -872,8 +899,10 @@ public class ITComputeTest {
     assertEquals(2, count);
     // test list with selected fields
     count = 0;
-    addressPage = compute.listGlobalAddresses(Compute.AddressListOption.filter(filter),
-        Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
+    addressPage =
+        compute.listGlobalAddresses(
+            Compute.AddressListOption.filter(filter),
+            Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
     addressIterator = addressPage.iterateAll().iterator();
     while (addressIterator.hasNext()) {
       Address address = addressIterator.next();
@@ -999,8 +1028,9 @@ public class ITComputeTest {
     operation = remoteDisk.createSnapshot(snapshotName);
     operation.waitFor();
     // test get snapshot with selected fields
-    Snapshot snapshot = compute.getSnapshot(snapshotName,
-        Compute.SnapshotOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
+    Snapshot snapshot =
+        compute.getSnapshot(
+            snapshotName, Compute.SnapshotOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
     resourceCleaner.add(snapshot.getSnapshotId());
     assertNull(snapshot.getGeneratedId());
     assertNotNull(snapshot.getSnapshotId());
@@ -1115,8 +1145,11 @@ public class ITComputeTest {
     assertEquals(2, count);
     // test list disks with selected fields
     count = 0;
-    diskPage = compute.listDisks(ZONE, Compute.DiskListOption.filter(diskFilter),
-        Compute.DiskListOption.fields(Compute.DiskField.STATUS));
+    diskPage =
+        compute.listDisks(
+            ZONE,
+            Compute.DiskListOption.filter(diskFilter),
+            Compute.DiskListOption.fields(Compute.DiskField.STATUS));
     diskIterator = diskPage.iterateAll().iterator();
     while (diskIterator.hasNext()) {
       Disk remoteDisk = diskIterator.next();
@@ -1166,8 +1199,10 @@ public class ITComputeTest {
     }
     assertEquals(2, count);
     // test list snapshots with selected fields
-    snapshotPage = compute.listSnapshots(Compute.SnapshotListOption.filter(snapshotFilter),
-        Compute.SnapshotListOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
+    snapshotPage =
+        compute.listSnapshots(
+            Compute.SnapshotListOption.filter(snapshotFilter),
+            Compute.SnapshotListOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
     snapshotIterator = snapshotPage.iterateAll().iterator();
     count = 0;
     while (snapshotIterator.hasNext()) {
@@ -1234,15 +1269,16 @@ public class ITComputeTest {
     DiskInfo diskInfo =
         DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
     Operation operation = compute.create(diskInfo);
-operation.waitFor();
+    operation.waitFor();
     Disk remoteDisk = compute.getDisk(diskId);
     ImageInfo imageInfo = ImageInfo.of(imageId, DiskImageConfiguration.of(diskId));
     operation = compute.create(imageInfo);
-operation.waitFor();
+    operation.waitFor();
     resourceCleaner.add(diskId);
     // test get image with selected fields
-    Image image = compute.getImage(imageId,
-        Compute.ImageOption.fields(Compute.ImageField.CREATION_TIMESTAMP));
+    Image image =
+        compute.getImage(
+            imageId, Compute.ImageOption.fields(Compute.ImageField.CREATION_TIMESTAMP));
     resourceCleaner.add(imageId);
     assertNull(image.getGeneratedId());
     assertNotNull(image.getImageId());
@@ -1328,8 +1364,11 @@ operation.waitFor();
 
   @Test
   public void testListImagesWithFilter() {
-    Page<Image> imagePage = compute.listImages(IMAGE_PROJECT, Compute.ImageListOption.filter(
-        Compute.ImageFilter.equals(Compute.ImageField.ARCHIVE_SIZE_BYTES, 365056004L)));
+    Page<Image> imagePage =
+        compute.listImages(
+            IMAGE_PROJECT,
+            Compute.ImageListOption.filter(
+                Compute.ImageFilter.equals(Compute.ImageField.ARCHIVE_SIZE_BYTES, 365056004L)));
     Iterator<Image> imageIterator = imagePage.iterateAll().iterator();
     int count = 0;
     while (imageIterator.hasNext()) {
@@ -1341,7 +1380,8 @@ operation.waitFor();
       assertNotNull(image.getConfiguration());
       assertNotNull(image.getStatus());
       assertNotNull(image.getDiskSizeGb());
-      assertEquals(365056004L,
+      assertEquals(
+          365056004L,
           (long) image.<StorageImageConfiguration>getConfiguration().getArchiveSizeBytes());
     }
     assertTrue(count > 0);
@@ -1355,10 +1395,12 @@ operation.waitFor();
     NetworkInfo networkInfo =
         NetworkInfo.of(networkId, StandardNetworkConfiguration.of("192.168.0.0/16"));
     Operation operation = compute.create(networkInfo);
-operation.waitFor();
+    operation.waitFor();
     // test get network with selected fields
-    Network network = compute.getNetwork(networkId.getNetwork(),
-        Compute.NetworkOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
+    Network network =
+        compute.getNetwork(
+            networkId.getNetwork(),
+            Compute.NetworkOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
     resourceCleaner.add(networkId);
     assertEquals(networkId.getNetwork(), network.getNetworkId().getNetwork());
     assertNull(network.getGeneratedId());
@@ -1409,8 +1451,10 @@ operation.waitFor();
     assertEquals(1, count);
     // test list with selected fields
     count = 0;
-    networkPage = compute.listNetworks(Compute.NetworkListOption.filter(filter),
-        Compute.NetworkListOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
+    networkPage =
+        compute.listNetworks(
+            Compute.NetworkListOption.filter(filter),
+            Compute.NetworkListOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
     networkIterator = networkPage.iterateAll().iterator();
     while (networkIterator.hasNext()) {
       Network network = networkIterator.next();
@@ -1453,8 +1497,10 @@ operation.waitFor();
     operation = compute.create(subnetworkInfo);
     operation.waitFor();
     // test get subnetwork with selected fields
-    Subnetwork subnetwork = compute.getSubnetwork(subnetworkId,
-        Compute.SubnetworkOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
+    Subnetwork subnetwork =
+        compute.getSubnetwork(
+            subnetworkId,
+            Compute.SubnetworkOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
     resourceCleaner.add(subnetworkId);
     assertNull(subnetwork.getGeneratedId());
     assertEquals(subnetworkId.getSubnetwork(), subnetwork.getSubnetworkId().getSubnetwork());
@@ -1481,8 +1527,8 @@ operation.waitFor();
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();
       assertNotNull(remoteSubnetwork.getGeneratedId());
-      assertEquals(subnetworkId.getSubnetwork(),
-          remoteSubnetwork.getSubnetworkId().getSubnetwork());
+      assertEquals(
+          subnetworkId.getSubnetwork(), remoteSubnetwork.getSubnetworkId().getSubnetwork());
       assertNotNull(remoteSubnetwork.getCreationTimestamp());
       assertNotNull(remoteSubnetwork.getGatewayAddress());
       assertEquals(networkId.getNetwork(), remoteSubnetwork.getNetwork().getNetwork());
@@ -1491,15 +1537,18 @@ operation.waitFor();
     }
     assertEquals(1, count);
     // test list subnetworks with selected fields
-    subnetworkPage = compute.listSubnetworks(REGION, Compute.SubnetworkListOption.filter(filter),
-        Compute.SubnetworkListOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
+    subnetworkPage =
+        compute.listSubnetworks(
+            REGION,
+            Compute.SubnetworkListOption.filter(filter),
+            Compute.SubnetworkListOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
     subnetworkIterator = subnetworkPage.iterateAll().iterator();
     count = 0;
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();
       assertNull(remoteSubnetwork.getGeneratedId());
-      assertEquals(subnetworkId.getSubnetwork(),
-          remoteSubnetwork.getSubnetworkId().getSubnetwork());
+      assertEquals(
+          subnetworkId.getSubnetwork(), remoteSubnetwork.getSubnetworkId().getSubnetwork());
       assertNotNull(remoteSubnetwork.getCreationTimestamp());
       assertNull(remoteSubnetwork.getDescription());
       assertNull(remoteSubnetwork.getGatewayAddress());
@@ -1592,16 +1641,21 @@ operation.waitFor();
     // Create an instance
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
-    NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId)
-        .setAccessConfigurations(NetworkInterface.AccessConfig.newBuilder()
-            .setName("NAT")
-            .setNatIp(address.getAddress()).build())
-        .build();
-    AttachedDisk disk1 = AttachedDisk.of("dev0",
-        AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
+    NetworkInterface networkInterface =
+        NetworkInterface.newBuilder(networkId)
+            .setAccessConfigurations(
+                NetworkInterface.AccessConfig.newBuilder()
+                    .setName("NAT")
+                    .setNatIp(address.getAddress())
+                    .build())
+            .build();
+    AttachedDisk disk1 =
+        AttachedDisk.of(
+            "dev0",
+            AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
     AttachedDisk disk2 =
-        AttachedDisk.of("dev1",
-            AttachedDisk.ScratchDiskConfiguration.of(DiskTypeId.of(ZONE, DISK_TYPE)));
+        AttachedDisk.of(
+            "dev1", AttachedDisk.ScratchDiskConfiguration.of(DiskTypeId.of(ZONE, DISK_TYPE)));
     InstanceInfo instanceInfo =
         InstanceInfo.newBuilder(instanceId, MachineTypeId.of(ZONE, "n1-standard-1"))
             .setAttachedDisks(disk1, disk2)
@@ -1623,7 +1677,8 @@ operation.waitFor();
     for (AttachedDisk remoteAttachedDisk : remoteInstance.getAttachedDisks()) {
       assertTrue(deviceSet.contains(remoteAttachedDisk.getDeviceName()));
     }
-    assertEquals(AttachedDisk.AttachedDiskConfiguration.Type.PERSISTENT,
+    assertEquals(
+        AttachedDisk.AttachedDiskConfiguration.Type.PERSISTENT,
         remoteInstance.getAttachedDisks().get(0).getConfiguration().getType());
     AttachedDisk.PersistentDiskConfiguration remoteConfiguration =
         remoteInstance.getAttachedDisks().get(0).getConfiguration();
@@ -1645,8 +1700,9 @@ operation.waitFor();
     assertNotNull(remoteInstance.getMetadata());
     assertNotNull(remoteInstance.getTags());
     // test get with selected fields
-    remoteInstance = compute.getInstance(instanceId,
-        Compute.InstanceOption.fields(Compute.InstanceField.CREATION_TIMESTAMP));
+    remoteInstance =
+        compute.getInstance(
+            instanceId, Compute.InstanceOption.fields(Compute.InstanceField.CREATION_TIMESTAMP));
     assertEquals(instanceName, remoteInstance.getInstanceId().getInstance());
     assertEquals(ZONE, remoteInstance.getInstanceId().getZone());
     assertNull(remoteInstance.getMachineType());
@@ -1673,8 +1729,10 @@ operation.waitFor();
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
     NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId).build();
-    AttachedDisk disk = AttachedDisk.of("dev0",
-        AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
+    AttachedDisk disk =
+        AttachedDisk.of(
+            "dev0",
+            AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
     InstanceInfo instanceInfo =
         InstanceInfo.newBuilder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
             .setAttachedDisks(disk)
@@ -1682,24 +1740,28 @@ operation.waitFor();
             .build();
     Operation operation = compute.create(instanceInfo);
     operation.waitFor();
-    Instance remoteInstance = compute.getInstance(instanceId,
-        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    Instance remoteInstance =
+        compute.getInstance(
+            instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     resourceCleaner.add(instanceId);
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.getStatus());
     operation = remoteInstance.stop();
     operation.waitFor();
-    remoteInstance = compute.getInstance(instanceId,
-        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    remoteInstance =
+        compute.getInstance(
+            instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.TERMINATED, remoteInstance.getStatus());
     operation = remoteInstance.start();
     operation.waitFor();
-    remoteInstance = compute.getInstance(instanceId,
-        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    remoteInstance =
+        compute.getInstance(
+            instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.getStatus());
     operation = remoteInstance.reset();
     operation.waitFor();
-    remoteInstance = compute.getInstance(instanceId,
-        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    remoteInstance =
+        compute.getInstance(
+            instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.getStatus());
   }
 
@@ -1709,8 +1771,10 @@ operation.waitFor();
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
     NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId).build();
-    AttachedDisk disk = AttachedDisk.of("dev0",
-        AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
+    AttachedDisk disk =
+        AttachedDisk.of(
+            "dev0",
+            AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
     InstanceInfo instanceInfo =
         InstanceInfo.newBuilder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
             .setAttachedDisks(disk)
@@ -1756,8 +1820,10 @@ operation.waitFor();
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
     NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId).build();
-    AttachedDisk disk = AttachedDisk.of("dev0",
-        AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
+    AttachedDisk disk =
+        AttachedDisk.of(
+            "dev0",
+            AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
     InstanceInfo instanceInfo =
         InstanceInfo.newBuilder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
             .setAttachedDisks(disk)
@@ -1765,15 +1831,17 @@ operation.waitFor();
             .build();
     Operation instanceOperation = compute.create(instanceInfo);
     DiskId diskId = DiskId.of(ZONE, diskName);
-    Operation diskOperation = compute.create(DiskInfo.of(diskId,
-            StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"))));
+    Operation diskOperation =
+        compute.create(
+            DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"))));
     instanceOperation.waitFor();
     diskOperation.waitFor();
     resourceCleaner.add(diskId);
     Instance remoteInstance = compute.getInstance(instanceId);
     // test attach disk
-    instanceOperation = remoteInstance.attachDisk("dev1",
-        AttachedDisk.PersistentDiskConfiguration.newBuilder(diskId).build());
+    instanceOperation =
+        remoteInstance.attachDisk(
+            "dev1", AttachedDisk.PersistentDiskConfiguration.newBuilder(diskId).build());
     instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     resourceCleaner.add(instanceId);
@@ -1806,8 +1874,10 @@ operation.waitFor();
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
     NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId).build();
-    AttachedDisk disk = AttachedDisk.of("dev0",
-        AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
+    AttachedDisk disk =
+        AttachedDisk.of(
+            "dev0",
+            AttachedDisk.CreateDiskConfiguration.newBuilder(IMAGE_ID).setAutoDelete(true).build());
     InstanceInfo instanceInfo =
         InstanceInfo.newBuilder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
             .setAttachedDisks(disk)
@@ -1825,10 +1895,11 @@ operation.waitFor();
     resourceCleaner.add(instanceId);
     String networkInterfaceName = remoteInstance.getNetworkInterfaces().get(0).getName();
     // test add access config
-    NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.newBuilder()
-        .setNatIp(remoteAddress.getAddress())
-        .setName("NAT")
-        .build();
+    NetworkInterface.AccessConfig accessConfig =
+        NetworkInterface.AccessConfig.newBuilder()
+            .setNatIp(remoteAddress.getAddress())
+            .setName("NAT")
+            .build();
     instanceOperation = remoteInstance.addAccessConfig(networkInterfaceName, accessConfig);
     instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);

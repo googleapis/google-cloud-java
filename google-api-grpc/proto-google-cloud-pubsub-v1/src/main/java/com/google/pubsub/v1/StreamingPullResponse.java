@@ -4,6 +4,8 @@
 package com.google.pubsub.v1;
 
 /**
+ *
+ *
  * <pre>
  * Response for the `StreamingPull` method. This response is used to stream
  * messages from the server to the client.
@@ -11,24 +13,25 @@ package com.google.pubsub.v1;
  *
  * Protobuf type {@code google.pubsub.v1.StreamingPullResponse}
  */
-public  final class StreamingPullResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class StreamingPullResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.StreamingPullResponse)
     StreamingPullResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use StreamingPullResponse.newBuilder() to construct.
   private StreamingPullResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private StreamingPullResponse() {
     receivedMessages_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private StreamingPullResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,29 +51,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              receivedMessages_.add(
+                  input.readMessage(
+                      com.google.pubsub.v1.ReceivedMessage.parser(), extensionRegistry));
+              break;
             }
-            receivedMessages_.add(
-                input.readMessage(com.google.pubsub.v1.ReceivedMessage.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         receivedMessages_ = java.util.Collections.unmodifiableList(receivedMessages_);
@@ -79,22 +83,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_StreamingPullResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_StreamingPullResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_StreamingPullResponse_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_StreamingPullResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.StreamingPullResponse.class, com.google.pubsub.v1.StreamingPullResponse.Builder.class);
+            com.google.pubsub.v1.StreamingPullResponse.class,
+            com.google.pubsub.v1.StreamingPullResponse.Builder.class);
   }
 
   public static final int RECEIVED_MESSAGES_FIELD_NUMBER = 1;
   private java.util.List<com.google.pubsub.v1.ReceivedMessage> receivedMessages_;
   /**
+   *
+   *
    * <pre>
    * Received Pub/Sub messages. This will not be empty.
    * </pre>
@@ -105,17 +114,21 @@ private static final long serialVersionUID = 0L;
     return receivedMessages_;
   }
   /**
+   *
+   *
    * <pre>
    * Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
-  public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder> 
+  public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
       getReceivedMessagesOrBuilderList() {
     return receivedMessages_;
   }
   /**
+   *
+   *
    * <pre>
    * Received Pub/Sub messages. This will not be empty.
    * </pre>
@@ -126,6 +139,8 @@ private static final long serialVersionUID = 0L;
     return receivedMessages_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Received Pub/Sub messages. This will not be empty.
    * </pre>
@@ -136,18 +151,20 @@ private static final long serialVersionUID = 0L;
     return receivedMessages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Received Pub/Sub messages. This will not be empty.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
-  public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(
-      int index) {
+  public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index) {
     return receivedMessages_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -159,8 +176,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < receivedMessages_.size(); i++) {
       output.writeMessage(1, receivedMessages_.get(i));
     }
@@ -174,8 +190,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < receivedMessages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, receivedMessages_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, receivedMessages_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -185,16 +200,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.pubsub.v1.StreamingPullResponse)) {
       return super.equals(obj);
     }
-    com.google.pubsub.v1.StreamingPullResponse other = (com.google.pubsub.v1.StreamingPullResponse) obj;
+    com.google.pubsub.v1.StreamingPullResponse other =
+        (com.google.pubsub.v1.StreamingPullResponse) obj;
 
     boolean result = true;
-    result = result && getReceivedMessagesList()
-        .equals(other.getReceivedMessagesList());
+    result = result && getReceivedMessagesList().equals(other.getReceivedMessagesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -215,97 +230,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.StreamingPullResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.pubsub.v1.StreamingPullResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.pubsub.v1.StreamingPullResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.StreamingPullResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.pubsub.v1.StreamingPullResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response for the `StreamingPull` method. This response is used to stream
    * messages from the server to the client.
@@ -313,21 +335,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.pubsub.v1.StreamingPullResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.StreamingPullResponse)
       com.google.pubsub.v1.StreamingPullResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_StreamingPullResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_StreamingPullResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_StreamingPullResponse_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_StreamingPullResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.StreamingPullResponse.class, com.google.pubsub.v1.StreamingPullResponse.Builder.class);
+              com.google.pubsub.v1.StreamingPullResponse.class,
+              com.google.pubsub.v1.StreamingPullResponse.Builder.class);
     }
 
     // Construct using com.google.pubsub.v1.StreamingPullResponse.newBuilder()
@@ -335,17 +359,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getReceivedMessagesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -359,9 +383,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_StreamingPullResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_StreamingPullResponse_descriptor;
     }
 
     @java.lang.Override
@@ -380,7 +404,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.pubsub.v1.StreamingPullResponse buildPartial() {
-      com.google.pubsub.v1.StreamingPullResponse result = new com.google.pubsub.v1.StreamingPullResponse(this);
+      com.google.pubsub.v1.StreamingPullResponse result =
+          new com.google.pubsub.v1.StreamingPullResponse(this);
       int from_bitField0_ = bitField0_;
       if (receivedMessagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -399,38 +424,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.StreamingPullResponse) {
-        return mergeFrom((com.google.pubsub.v1.StreamingPullResponse)other);
+        return mergeFrom((com.google.pubsub.v1.StreamingPullResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -457,9 +483,10 @@ private static final long serialVersionUID = 0L;
             receivedMessagesBuilder_ = null;
             receivedMessages_ = other.receivedMessages_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            receivedMessagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getReceivedMessagesFieldBuilder() : null;
+            receivedMessagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getReceivedMessagesFieldBuilder()
+                    : null;
           } else {
             receivedMessagesBuilder_.addAllMessages(other.receivedMessages_);
           }
@@ -493,21 +520,29 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.pubsub.v1.ReceivedMessage> receivedMessages_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureReceivedMessagesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>(receivedMessages_);
+        receivedMessages_ =
+            new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>(receivedMessages_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.pubsub.v1.ReceivedMessage, com.google.pubsub.v1.ReceivedMessage.Builder, com.google.pubsub.v1.ReceivedMessageOrBuilder> receivedMessagesBuilder_;
+            com.google.pubsub.v1.ReceivedMessage,
+            com.google.pubsub.v1.ReceivedMessage.Builder,
+            com.google.pubsub.v1.ReceivedMessageOrBuilder>
+        receivedMessagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -522,6 +557,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -536,6 +573,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -550,14 +589,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public Builder setReceivedMessages(
-        int index, com.google.pubsub.v1.ReceivedMessage value) {
+    public Builder setReceivedMessages(int index, com.google.pubsub.v1.ReceivedMessage value) {
       if (receivedMessagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -571,6 +611,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -589,6 +631,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -609,14 +653,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public Builder addReceivedMessages(
-        int index, com.google.pubsub.v1.ReceivedMessage value) {
+    public Builder addReceivedMessages(int index, com.google.pubsub.v1.ReceivedMessage value) {
       if (receivedMessagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -630,6 +675,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -648,6 +695,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -666,6 +715,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -676,8 +727,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.pubsub.v1.ReceivedMessage> values) {
       if (receivedMessagesBuilder_ == null) {
         ensureReceivedMessagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, receivedMessages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, receivedMessages_);
         onChanged();
       } else {
         receivedMessagesBuilder_.addAllMessages(values);
@@ -685,6 +735,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -702,6 +754,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -719,39 +773,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public com.google.pubsub.v1.ReceivedMessage.Builder getReceivedMessagesBuilder(
-        int index) {
+    public com.google.pubsub.v1.ReceivedMessage.Builder getReceivedMessagesBuilder(int index) {
       return getReceivedMessagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(
-        int index) {
+    public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index) {
       if (receivedMessagesBuilder_ == null) {
-        return receivedMessages_.get(index);  } else {
+        return receivedMessages_.get(index);
+      } else {
         return receivedMessagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder> 
-         getReceivedMessagesOrBuilderList() {
+    public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
+        getReceivedMessagesOrBuilderList() {
       if (receivedMessagesBuilder_ != null) {
         return receivedMessagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -759,6 +818,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
@@ -766,38 +827,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
     public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder() {
-      return getReceivedMessagesFieldBuilder().addBuilder(
-          com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
+      return getReceivedMessagesFieldBuilder()
+          .addBuilder(com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder(
-        int index) {
-      return getReceivedMessagesFieldBuilder().addBuilder(
-          index, com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
+    public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder(int index) {
+      return getReceivedMessagesFieldBuilder()
+          .addBuilder(index, com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Received Pub/Sub messages. This will not be empty.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public java.util.List<com.google.pubsub.v1.ReceivedMessage.Builder> 
-         getReceivedMessagesBuilderList() {
+    public java.util.List<com.google.pubsub.v1.ReceivedMessage.Builder>
+        getReceivedMessagesBuilderList() {
       return getReceivedMessagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.pubsub.v1.ReceivedMessage, com.google.pubsub.v1.ReceivedMessage.Builder, com.google.pubsub.v1.ReceivedMessageOrBuilder> 
+            com.google.pubsub.v1.ReceivedMessage,
+            com.google.pubsub.v1.ReceivedMessage.Builder,
+            com.google.pubsub.v1.ReceivedMessageOrBuilder>
         getReceivedMessagesFieldBuilder() {
       if (receivedMessagesBuilder_ == null) {
-        receivedMessagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.pubsub.v1.ReceivedMessage, com.google.pubsub.v1.ReceivedMessage.Builder, com.google.pubsub.v1.ReceivedMessageOrBuilder>(
+        receivedMessagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.pubsub.v1.ReceivedMessage,
+                com.google.pubsub.v1.ReceivedMessage.Builder,
+                com.google.pubsub.v1.ReceivedMessageOrBuilder>(
                 receivedMessages_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -806,9 +876,9 @@ private static final long serialVersionUID = 0L;
       }
       return receivedMessagesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -818,12 +888,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.pubsub.v1.StreamingPullResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.pubsub.v1.StreamingPullResponse)
   private static final com.google.pubsub.v1.StreamingPullResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.pubsub.v1.StreamingPullResponse();
   }
@@ -832,16 +902,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StreamingPullResponse>
-      PARSER = new com.google.protobuf.AbstractParser<StreamingPullResponse>() {
-    @java.lang.Override
-    public StreamingPullResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StreamingPullResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<StreamingPullResponse> PARSER =
+      new com.google.protobuf.AbstractParser<StreamingPullResponse>() {
+        @java.lang.Override
+        public StreamingPullResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new StreamingPullResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<StreamingPullResponse> parser() {
     return PARSER;
@@ -856,6 +926,4 @@ private static final long serialVersionUID = 0L;
   public com.google.pubsub.v1.StreamingPullResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

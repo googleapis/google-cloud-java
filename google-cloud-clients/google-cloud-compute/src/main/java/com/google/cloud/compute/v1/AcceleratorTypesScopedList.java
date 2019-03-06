@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("acceleratorTypes")) {
+    if ("acceleratorTypes".equals(fieldName)) {
       return acceleratorTypes;
     }
-    if (fieldName.equals("warning")) {
+    if ("warning".equals(fieldName)) {
       return warning;
     }
     return null;
@@ -58,14 +58,24 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] A list of accelerator types contained in this scope. */
   public List<AcceleratorType> getAcceleratorTypesList() {
     return acceleratorTypes;
   }
 
+  /**
+   * [Output Only] An informational warning that appears when the accelerator types list is empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +124,12 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of accelerator types contained in this scope. */
     public List<AcceleratorType> getAcceleratorTypesList() {
       return acceleratorTypes;
     }
 
+    /** [Output Only] A list of accelerator types contained in this scope. */
     public Builder addAllAcceleratorTypes(List<AcceleratorType> acceleratorTypes) {
       if (this.acceleratorTypes == null) {
         this.acceleratorTypes = new LinkedList<>();
@@ -126,6 +138,7 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of accelerator types contained in this scope. */
     public Builder addAcceleratorTypes(AcceleratorType acceleratorTypes) {
       if (this.acceleratorTypes == null) {
         this.acceleratorTypes = new LinkedList<>();
@@ -134,10 +147,16 @@ public final class AcceleratorTypesScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] An informational warning that appears when the accelerator types list is empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] An informational warning that appears when the accelerator types list is empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

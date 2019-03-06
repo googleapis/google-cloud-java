@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,7 +319,9 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
 
             @Override
             public Iterable<ScanConfig> extractResources(ListScanConfigsResponse payload) {
-              return payload.getScanConfigsList();
+              return payload.getScanConfigsList() != null
+                  ? payload.getScanConfigsList()
+                  : ImmutableList.<ScanConfig>of();
             }
           };
 
@@ -353,7 +355,9 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
 
             @Override
             public Iterable<ScanRun> extractResources(ListScanRunsResponse payload) {
-              return payload.getScanRunsList();
+              return payload.getScanRunsList() != null
+                  ? payload.getScanRunsList()
+                  : ImmutableList.<ScanRun>of();
             }
           };
 
@@ -390,7 +394,9 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
 
             @Override
             public Iterable<CrawledUrl> extractResources(ListCrawledUrlsResponse payload) {
-              return payload.getCrawledUrlsList();
+              return payload.getCrawledUrlsList() != null
+                  ? payload.getCrawledUrlsList()
+                  : ImmutableList.<CrawledUrl>of();
             }
           };
 
@@ -424,7 +430,9 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
 
             @Override
             public Iterable<Finding> extractResources(ListFindingsResponse payload) {
-              return payload.getFindingsList();
+              return payload.getFindingsList() != null
+                  ? payload.getFindingsList()
+                  : ImmutableList.<Finding>of();
             }
           };
 

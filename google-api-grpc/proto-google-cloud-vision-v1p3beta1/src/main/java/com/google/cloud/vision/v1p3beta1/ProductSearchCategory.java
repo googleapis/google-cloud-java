@@ -4,15 +4,18 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Supported product search categories.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.vision.v1p3beta1.ProductSearchCategory}
  */
-public enum ProductSearchCategory
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum ProductSearchCategory implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Default value used when a category is not specified.
    * </pre>
@@ -21,6 +24,8 @@ public enum ProductSearchCategory
    */
   PRODUCT_SEARCH_CATEGORY_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Shoes category.
    * </pre>
@@ -29,6 +34,8 @@ public enum ProductSearchCategory
    */
   SHOES(1),
   /**
+   *
+   *
    * <pre>
    * Bags category.
    * </pre>
@@ -40,6 +47,8 @@ public enum ProductSearchCategory
   ;
 
   /**
+   *
+   *
    * <pre>
    * Default value used when a category is not specified.
    * </pre>
@@ -48,6 +57,8 @@ public enum ProductSearchCategory
    */
   public static final int PRODUCT_SEARCH_CATEGORY_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Shoes category.
    * </pre>
@@ -56,6 +67,8 @@ public enum ProductSearchCategory
    */
   public static final int SHOES_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Bags category.
    * </pre>
@@ -63,7 +76,6 @@ public enum ProductSearchCategory
    * <code>BAGS = 2;</code>
    */
   public static final int BAGS_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -73,9 +85,7 @@ public enum ProductSearchCategory
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static ProductSearchCategory valueOf(int value) {
     return forNumber(value);
@@ -83,10 +93,14 @@ public enum ProductSearchCategory
 
   public static ProductSearchCategory forNumber(int value) {
     switch (value) {
-      case 0: return PRODUCT_SEARCH_CATEGORY_UNSPECIFIED;
-      case 1: return SHOES;
-      case 2: return BAGS;
-      default: return null;
+      case 0:
+        return PRODUCT_SEARCH_CATEGORY_UNSPECIFIED;
+      case 1:
+        return SHOES;
+      case 2:
+        return BAGS;
+      default:
+        return null;
     }
   }
 
@@ -94,25 +108,27 @@ public enum ProductSearchCategory
       internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      ProductSearchCategory> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ProductSearchCategory>() {
-          public ProductSearchCategory findValueByNumber(int number) {
-            return ProductSearchCategory.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<ProductSearchCategory>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ProductSearchCategory>() {
+            public ProductSearchCategory findValueByNumber(int number) {
+              return ProductSearchCategory.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchProto.getDescriptor().getEnumTypes().get(0);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ProductSearchProto.getDescriptor()
+        .getEnumTypes()
+        .get(0);
   }
 
   private static final ProductSearchCategory[] VALUES = values();
@@ -120,8 +136,7 @@ public enum ProductSearchCategory
   public static ProductSearchCategory valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -137,4 +152,3 @@ public enum ProductSearchCategory
 
   // @@protoc_insertion_point(enum_scope:google.cloud.vision.v1p3beta1.ProductSearchCategory)
 }
-

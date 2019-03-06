@@ -4,29 +4,31 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * MaintenancePolicy defines the maintenance policy to be used for the cluster.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.MaintenancePolicy}
  */
-public  final class MaintenancePolicy extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.MaintenancePolicy)
     MaintenancePolicyOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use MaintenancePolicy.newBuilder() to construct.
   private MaintenancePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private MaintenancePolicy() {
-  }
+
+  private MaintenancePolicy() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private MaintenancePolicy(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,54 +48,61 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.container.v1.MaintenanceWindow.Builder subBuilder = null;
-            if (window_ != null) {
-              subBuilder = window_.toBuilder();
-            }
-            window_ = input.readMessage(com.google.container.v1.MaintenanceWindow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(window_);
-              window_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.container.v1.MaintenanceWindow.Builder subBuilder = null;
+              if (window_ != null) {
+                subBuilder = window_.toBuilder();
+              }
+              window_ =
+                  input.readMessage(
+                      com.google.container.v1.MaintenanceWindow.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(window_);
+                window_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MaintenancePolicy_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_MaintenancePolicy_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MaintenancePolicy_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_MaintenancePolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.MaintenancePolicy.class, com.google.container.v1.MaintenancePolicy.Builder.class);
+            com.google.container.v1.MaintenancePolicy.class,
+            com.google.container.v1.MaintenancePolicy.Builder.class);
   }
 
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.container.v1.MaintenanceWindow window_;
   /**
+   *
+   *
    * <pre>
    * Specifies the maintenance window in which maintenance may be performed.
    * </pre>
@@ -104,6 +113,8 @@ private static final long serialVersionUID = 0L;
     return window_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the maintenance window in which maintenance may be performed.
    * </pre>
@@ -111,9 +122,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
    */
   public com.google.container.v1.MaintenanceWindow getWindow() {
-    return window_ == null ? com.google.container.v1.MaintenanceWindow.getDefaultInstance() : window_;
+    return window_ == null
+        ? com.google.container.v1.MaintenanceWindow.getDefaultInstance()
+        : window_;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the maintenance window in which maintenance may be performed.
    * </pre>
@@ -125,6 +140,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -136,8 +152,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (window_ != null) {
       output.writeMessage(1, getWindow());
     }
@@ -151,8 +166,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (window_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getWindow());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWindow());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -162,18 +176,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.MaintenancePolicy)) {
       return super.equals(obj);
     }
-    com.google.container.v1.MaintenancePolicy other = (com.google.container.v1.MaintenancePolicy) obj;
+    com.google.container.v1.MaintenancePolicy other =
+        (com.google.container.v1.MaintenancePolicy) obj;
 
     boolean result = true;
     result = result && (hasWindow() == other.hasWindow());
     if (hasWindow()) {
-      result = result && getWindow()
-          .equals(other.getWindow());
+      result = result && getWindow().equals(other.getWindow());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -195,118 +209,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.MaintenancePolicy parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.MaintenancePolicy parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.MaintenancePolicy parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.MaintenancePolicy parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.MaintenancePolicy parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.MaintenancePolicy parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.MaintenancePolicy prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * MaintenancePolicy defines the maintenance policy to be used for the cluster.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.MaintenancePolicy}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.MaintenancePolicy)
       com.google.container.v1.MaintenancePolicyOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MaintenancePolicy_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MaintenancePolicy_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MaintenancePolicy_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MaintenancePolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.MaintenancePolicy.class, com.google.container.v1.MaintenancePolicy.Builder.class);
+              com.google.container.v1.MaintenancePolicy.class,
+              com.google.container.v1.MaintenancePolicy.Builder.class);
     }
 
     // Construct using com.google.container.v1.MaintenancePolicy.newBuilder()
@@ -314,16 +337,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -337,9 +359,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MaintenancePolicy_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MaintenancePolicy_descriptor;
     }
 
     @java.lang.Override
@@ -358,7 +380,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.MaintenancePolicy buildPartial() {
-      com.google.container.v1.MaintenancePolicy result = new com.google.container.v1.MaintenancePolicy(this);
+      com.google.container.v1.MaintenancePolicy result =
+          new com.google.container.v1.MaintenancePolicy(this);
       if (windowBuilder_ == null) {
         result.window_ = window_;
       } else {
@@ -372,38 +395,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.MaintenancePolicy) {
-        return mergeFrom((com.google.container.v1.MaintenancePolicy)other);
+        return mergeFrom((com.google.container.v1.MaintenancePolicy) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -446,8 +470,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.MaintenanceWindow window_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MaintenanceWindow, com.google.container.v1.MaintenanceWindow.Builder, com.google.container.v1.MaintenanceWindowOrBuilder> windowBuilder_;
+            com.google.container.v1.MaintenanceWindow,
+            com.google.container.v1.MaintenanceWindow.Builder,
+            com.google.container.v1.MaintenanceWindowOrBuilder>
+        windowBuilder_;
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -458,6 +487,8 @@ private static final long serialVersionUID = 0L;
       return windowBuilder_ != null || window_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -466,12 +497,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.MaintenanceWindow getWindow() {
       if (windowBuilder_ == null) {
-        return window_ == null ? com.google.container.v1.MaintenanceWindow.getDefaultInstance() : window_;
+        return window_ == null
+            ? com.google.container.v1.MaintenanceWindow.getDefaultInstance()
+            : window_;
       } else {
         return windowBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -492,14 +527,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
      *
      * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
      */
-    public Builder setWindow(
-        com.google.container.v1.MaintenanceWindow.Builder builderForValue) {
+    public Builder setWindow(com.google.container.v1.MaintenanceWindow.Builder builderForValue) {
       if (windowBuilder_ == null) {
         window_ = builderForValue.build();
         onChanged();
@@ -510,6 +546,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -520,7 +558,9 @@ private static final long serialVersionUID = 0L;
       if (windowBuilder_ == null) {
         if (window_ != null) {
           window_ =
-            com.google.container.v1.MaintenanceWindow.newBuilder(window_).mergeFrom(value).buildPartial();
+              com.google.container.v1.MaintenanceWindow.newBuilder(window_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           window_ = value;
         }
@@ -532,6 +572,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -550,6 +592,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -557,11 +601,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
      */
     public com.google.container.v1.MaintenanceWindow.Builder getWindowBuilder() {
-      
+
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -572,11 +618,14 @@ private static final long serialVersionUID = 0L;
       if (windowBuilder_ != null) {
         return windowBuilder_.getMessageOrBuilder();
       } else {
-        return window_ == null ?
-            com.google.container.v1.MaintenanceWindow.getDefaultInstance() : window_;
+        return window_ == null
+            ? com.google.container.v1.MaintenanceWindow.getDefaultInstance()
+            : window_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the maintenance window in which maintenance may be performed.
      * </pre>
@@ -584,21 +633,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MaintenanceWindow window = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MaintenanceWindow, com.google.container.v1.MaintenanceWindow.Builder, com.google.container.v1.MaintenanceWindowOrBuilder> 
+            com.google.container.v1.MaintenanceWindow,
+            com.google.container.v1.MaintenanceWindow.Builder,
+            com.google.container.v1.MaintenanceWindowOrBuilder>
         getWindowFieldBuilder() {
       if (windowBuilder_ == null) {
-        windowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.MaintenanceWindow, com.google.container.v1.MaintenanceWindow.Builder, com.google.container.v1.MaintenanceWindowOrBuilder>(
-                getWindow(),
-                getParentForChildren(),
-                isClean());
+        windowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MaintenanceWindow,
+                com.google.container.v1.MaintenanceWindow.Builder,
+                com.google.container.v1.MaintenanceWindowOrBuilder>(
+                getWindow(), getParentForChildren(), isClean());
         window_ = null;
       }
       return windowBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -608,12 +660,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.MaintenancePolicy)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.MaintenancePolicy)
   private static final com.google.container.v1.MaintenancePolicy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.MaintenancePolicy();
   }
@@ -622,16 +674,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MaintenancePolicy>
-      PARSER = new com.google.protobuf.AbstractParser<MaintenancePolicy>() {
-    @java.lang.Override
-    public MaintenancePolicy parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MaintenancePolicy(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<MaintenancePolicy> PARSER =
+      new com.google.protobuf.AbstractParser<MaintenancePolicy>() {
+        @java.lang.Override
+        public MaintenancePolicy parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MaintenancePolicy(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<MaintenancePolicy> parser() {
     return PARSER;
@@ -646,6 +698,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.MaintenancePolicy getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

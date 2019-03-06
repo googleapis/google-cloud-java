@@ -19,7 +19,6 @@ package com.google.cloud.translate;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.services.translate.model.DetectionsResourceItems;
-
 import org.junit.Test;
 
 public class DetectionTest {
@@ -36,7 +35,6 @@ public class DetectionTest {
     assertEquals(CONFIDENCE, DETECTION.getConfidence(), 0);
     compareDetection(DETECTION, Detection.fromPb(DETECTION_PB));
   }
-
 
   private void compareDetection(Detection expected, Detection value) {
     assertEquals(expected, value);

@@ -33,11 +33,12 @@ public class HttpTransportOptionsTest {
 
   private static final HttpTransportFactory MOCK_HTTP_TRANSPORT_FACTORY =
       EasyMock.createMock(HttpTransportFactory.class);
-  private static final HttpTransportOptions OPTIONS = HttpTransportOptions.newBuilder()
-      .setConnectTimeout(1234)
-      .setHttpTransportFactory(MOCK_HTTP_TRANSPORT_FACTORY)
-      .setReadTimeout(5678)
-      .build();
+  private static final HttpTransportOptions OPTIONS =
+      HttpTransportOptions.newBuilder()
+          .setConnectTimeout(1234)
+          .setHttpTransportFactory(MOCK_HTTP_TRANSPORT_FACTORY)
+          .setReadTimeout(5678)
+          .build();
   private static final HttpTransportOptions DEFAULT_OPTIONS =
       HttpTransportOptions.newBuilder().build();
   private static final HttpTransportOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
@@ -68,11 +69,13 @@ public class HttpTransportOptionsTest {
   public void testHeader() {
     String expectedHeaderPattern = "^gl-java/.+ gccl/.* gax/.+";
     ServiceOptions<?, ?> serviceOptions = EasyMock.createMock(ServiceOptions.class);
-    HeaderProvider headerProvider = OPTIONS.getInternalHeaderProviderBuilder(serviceOptions).build();
+    HeaderProvider headerProvider =
+        OPTIONS.getInternalHeaderProviderBuilder(serviceOptions).build();
 
     assertEquals(1, headerProvider.getHeaders().size());
-    assertTrue(Pattern.compile(expectedHeaderPattern)
-        .matcher(headerProvider.getHeaders().values().iterator().next())
-        .find());
+    assertTrue(
+        Pattern.compile(expectedHeaderPattern)
+            .matcher(headerProvider.getHeaders().values().iterator().next())
+            .find());
   }
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface DeleteDeviceRegistryRequestOrBuilder extends
+public interface DeleteDeviceRegistryRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.DeleteDeviceRegistryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the device registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -17,6 +20,8 @@ public interface DeleteDeviceRegistryRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the device registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -24,6 +29,5 @@ public interface DeleteDeviceRegistryRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

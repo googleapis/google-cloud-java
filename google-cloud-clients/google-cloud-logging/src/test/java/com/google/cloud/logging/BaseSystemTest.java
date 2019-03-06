@@ -53,11 +53,9 @@ import org.junit.rules.Timeout;
  */
 public abstract class BaseSystemTest {
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   /**
    * Returns the Logging service used to issue requests. This service can be such that it interacts
@@ -86,10 +84,11 @@ public abstract class BaseSystemTest {
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
     String name = formatForTest("test-create-get-update-sink");
-    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
-        .setFilter("severity>=ERROR")
-        .setVersionFormat(SinkInfo.VersionFormat.V2)
-        .build();
+    SinkInfo sinkInfo =
+        SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
+            .setFilter("severity>=ERROR")
+            .setVersionFormat(SinkInfo.VersionFormat.V2)
+            .build();
     Sink sink = logging().create(sinkInfo);
     assertEquals(name, sink.getName());
     assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
@@ -98,10 +97,7 @@ public abstract class BaseSystemTest {
     assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
     assertEquals("dataset", datasetDestination.getDataset());
     assertEquals(sink, logging().getSink(name));
-    sink = sink.toBuilder()
-        .setFilter("severity<=ERROR")
-        .build()
-        .update();
+    sink = sink.toBuilder().setFilter("severity<=ERROR").build().update();
     assertEquals(name, sink.getName());
     assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
     assertEquals("severity<=ERROR", sink.getFilter());
@@ -112,10 +108,11 @@ public abstract class BaseSystemTest {
   @Test
   public void testUpdateNonExistingSink() {
     String name = formatForTest("test-update-non-existing-sink");
-    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
-        .setFilter("severity>=ERROR")
-        .setVersionFormat(SinkInfo.VersionFormat.V2)
-        .build();
+    SinkInfo sinkInfo =
+        SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
+            .setFilter("severity>=ERROR")
+            .setVersionFormat(SinkInfo.VersionFormat.V2)
+            .build();
     assertNull(logging().getSink(name));
     thrown.expect(LoggingException.class);
     thrown.expectMessage("NOT_FOUND");
@@ -142,7 +139,10 @@ public abstract class BaseSystemTest {
   @Test
   public void testListMonitoredResourceDescriptors() {
     Iterator<MonitoredResourceDescriptor> iterator =
-        logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(100)).iterateAll().iterator();
+        logging()
+            .listMonitoredResourceDescriptors(Logging.ListOption.pageSize(100))
+            .iterateAll()
+            .iterator();
     int count = 0;
     while (iterator.hasNext()) {
       assertNotNull(iterator.next().getType());
@@ -154,19 +154,20 @@ public abstract class BaseSystemTest {
   @Test
   public void testCreateGetUpdateAndDeleteMetric() {
     String name = formatForTest("test-create-get-update-metric");
-    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
-        .setDescription("description")
-        .build();
+    MetricInfo metricInfo =
+        MetricInfo.newBuilder(name, "severity>=ERROR").setDescription("description").build();
     Metric metric = logging().create(metricInfo);
     assertEquals(name, metric.getName());
     assertEquals("severity>=ERROR", metric.getFilter());
     assertEquals("description", metric.getDescription());
     assertEquals(metric, logging().getMetric(name));
-    metric = metric.toBuilder()
-        .setDescription("newDescription")
-        .setFilter("severity>=WARNING")
-        .build()
-        .update();
+    metric =
+        metric
+            .toBuilder()
+            .setDescription("newDescription")
+            .setFilter("severity>=WARNING")
+            .build()
+            .update();
     assertEquals(name, metric.getName());
     assertEquals("severity>=WARNING", metric.getFilter());
     assertEquals("newDescription", metric.getDescription());
@@ -177,9 +178,8 @@ public abstract class BaseSystemTest {
   @Test
   public void testUpdateNonExistingMetric() {
     String name = formatForTest("test-update-non-existing-metric");
-    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
-        .setDescription("description")
-        .build();
+    MetricInfo metricInfo =
+        MetricInfo.newBuilder(name, "severity>=ERROR").setDescription("description").build();
     assertNull(logging().getMetric(name));
     Metric metric = logging().update(metricInfo);
     assertEquals(name, metric.getName());
@@ -211,22 +211,25 @@ public abstract class BaseSystemTest {
     LoggingOptions loggingOptions = logging().getOptions();
     LogName logName = ProjectLogName.of(loggingOptions.getProjectId(), logId);
     StringPayload firstPayload = StringPayload.of("stringPayload");
-    LogEntry firstEntry = LogEntry.newBuilder(firstPayload)
-        .addLabel("key1", "value1")
-        .setLogName(logId)
-        .setHttpRequest(HttpRequest.newBuilder().setStatus(500).build())
-        .setResource(MonitoredResource.newBuilder("global").build())
-        .build();
+    LogEntry firstEntry =
+        LogEntry.newBuilder(firstPayload)
+            .addLabel("key1", "value1")
+            .setLogName(logId)
+            .setHttpRequest(HttpRequest.newBuilder().setStatus(500).build())
+            .setResource(MonitoredResource.newBuilder("global").build())
+            .build();
     JsonPayload secondPayload =
         JsonPayload.of(ImmutableMap.<String, Object>of("jsonKey", "jsonValue"));
-    LogEntry secondEntry = LogEntry.newBuilder(secondPayload)
-        .addLabel("key2", "value2")
-        .setLogName(logId)
-        .setOperation(Operation.of("operationId", "operationProducer"))
-        .setResource(MonitoredResource.newBuilder("cloudsql_database").build())
-        .build();
+    LogEntry secondEntry =
+        LogEntry.newBuilder(secondPayload)
+            .addLabel("key2", "value2")
+            .setLogName(logId)
+            .setOperation(Operation.of("operationId", "operationProducer"))
+            .setResource(MonitoredResource.newBuilder("cloudsql_database").build())
+            .build();
     logging().write(ImmutableList.of(firstEntry));
     logging().write(ImmutableList.of(secondEntry));
+    logging().flush();
     String filter = createEqualityFilter("logName", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     Page<LogEntry> page = logging().listLogEntries(options);
@@ -257,8 +260,11 @@ public abstract class BaseSystemTest {
     assertNull(entry.getHttpRequest());
     assertNotNull(entry.getInsertId());
     assertNotNull(entry.getTimestamp());
-    options = new EntryListOption[]{EntryListOption.filter(filter),
-        EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING)};
+    options =
+        new EntryListOption[] {
+          EntryListOption.filter(filter),
+          EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING)
+        };
     page = logging().listLogEntries(options);
     while (Iterators.size(page.iterateAll().iterator()) < 2) {
       Thread.sleep(500);
@@ -302,8 +308,7 @@ public abstract class BaseSystemTest {
         logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
-      iterator =
-          logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
+      iterator = logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
     assertThat(iterator.hasNext()).isTrue();
     LogEntry entry = iterator.next();
@@ -332,10 +337,16 @@ public abstract class BaseSystemTest {
     String logId = formatForTest("test-sync-logging-handler");
     LoggingOptions options = logging().getOptions();
     LogName logName = ProjectLogName.of(options.getProjectId(), logId);
-    MonitoredResource resource = MonitoredResource.of("gce_instance",
-        ImmutableMap.of("project_id", options.getProjectId(),
-            "instance_id", "instance",
-            "zone", "us-central1-a"));
+    MonitoredResource resource =
+        MonitoredResource.of(
+            "gce_instance",
+            ImmutableMap.of(
+                "project_id",
+                options.getProjectId(),
+                "instance_id",
+                "instance",
+                "zone",
+                "us-central1-a"));
     LoggingHandler handler = new LoggingHandler(logId, options, resource);
     handler.setLevel(Level.WARNING);
     handler.setSynchronicity(Synchronicity.SYNC);
@@ -348,16 +359,17 @@ public abstract class BaseSystemTest {
         logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     while (!iterator.hasNext()) {
       Thread.sleep(500L);
-      iterator =
-          logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
+      iterator = logging().listLogEntries(EntryListOption.filter(filter)).iterateAll().iterator();
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
     assertTrue(entry.getPayload() instanceof StringPayload);
     assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
     assertEquals(logId, entry.getLogName());
-    assertEquals(ImmutableMap.of("levelName", "WARNING",
-        "levelValue", String.valueOf(Level.WARNING.intValue())), entry.getLabels());
+    assertEquals(
+        ImmutableMap.of(
+            "levelName", "WARNING", "levelValue", String.valueOf(Level.WARNING.intValue())),
+        entry.getLabels());
     assertEquals(resource, entry.getResource());
     assertNull(entry.getHttpRequest());
     assertEquals(Severity.WARNING, entry.getSeverity());

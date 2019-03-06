@@ -19,14 +19,10 @@ package com.google.cloud.nio.examples;
 import java.io.IOException;
 import java.nio.file.spi.FileSystemProvider;
 
-/**
- * ListFilesystems is a super-simple program that lists the available NIO filesystems.
- */
+/** ListFilesystems is a super-simple program that lists the available NIO filesystems. */
 public class ListFilesystems {
 
-  /**
-   * See the class documentation.
-   */
+  /** See the class documentation. */
   public static void main(String[] args) throws IOException {
     listFilesystems();
   }
@@ -37,5 +33,4 @@ public class ListFilesystems {
       System.out.println("  " + p.getScheme());
     }
   }
-
 }

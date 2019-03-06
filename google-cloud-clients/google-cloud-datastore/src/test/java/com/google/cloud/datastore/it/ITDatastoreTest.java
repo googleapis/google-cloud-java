@@ -170,9 +170,9 @@ public class ITDatastoreTest {
   }
 
   private <T> Iterator<T> getStronglyConsistentResults(Query scQuery, Query query)
-          throws InterruptedException {
-    //scQuery is equivalent to query, but with an ancestor filter in it
-    //this makes scQuery strongly consistent
+      throws InterruptedException {
+    // scQuery is equivalent to query, but with an ancestor filter in it
+    // this makes scQuery strongly consistent
     QueryResults<T> scResults = DATASTORE.run(scQuery);
     List<T> scResultsCopy = makeResultsCopy(scResults);
     Set<T> scResultsSet = new HashSet<>(scResultsCopy);
@@ -190,7 +190,7 @@ public class ITDatastoreTest {
     }
 
     throw new RuntimeException(
-            "reached max number of attempts to get strongly consistent results.");
+        "reached max number of attempts to get strongly consistent results.");
   }
 
   private <T> List<T> makeResultsCopy(QueryResults<T> scResults) {
@@ -850,5 +850,12 @@ public class ITDatastoreTest {
     } catch (DatastoreException expected) {
       assertEquals(3, ((DatastoreException) expected.getCause()).getCode());
     }
+  }
+
+  @Test
+  public void testSkippedResults() {
+    Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
+    int numberOfEntities = DATASTORE.run(query).getSkippedResults();
+    assertEquals(2, numberOfEntities);
   }
 }

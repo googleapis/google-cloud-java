@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface MutationRecordOrBuilder extends
+public interface MutationRecordOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.MutationRecord)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * When the change occurred.
    * </pre>
@@ -16,6 +19,8 @@ public interface MutationRecordOrBuilder extends
    */
   boolean hasMutateTime();
   /**
+   *
+   *
    * <pre>
    * When the change occurred.
    * </pre>
@@ -24,6 +29,8 @@ public interface MutationRecordOrBuilder extends
    */
   com.google.protobuf.Timestamp getMutateTime();
   /**
+   *
+   *
    * <pre>
    * When the change occurred.
    * </pre>
@@ -33,6 +40,8 @@ public interface MutationRecordOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getMutateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The email address of the user making the change.
    * </pre>
@@ -41,12 +50,13 @@ public interface MutationRecordOrBuilder extends
    */
   java.lang.String getMutatedBy();
   /**
+   *
+   *
    * <pre>
    * The email address of the user making the change.
    * </pre>
    *
    * <code>string mutated_by = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getMutatedByBytes();
+  com.google.protobuf.ByteString getMutatedByBytes();
 }

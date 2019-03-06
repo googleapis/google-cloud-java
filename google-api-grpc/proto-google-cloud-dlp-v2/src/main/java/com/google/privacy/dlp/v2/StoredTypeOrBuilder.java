@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface StoredTypeOrBuilder extends
+public interface StoredTypeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.StoredType)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the requested `StoredInfoType`, for example
    * `organizations/433245324/storedInfoTypes/432452342` or
@@ -18,6 +21,8 @@ public interface StoredTypeOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of the requested `StoredInfoType`, for example
    * `organizations/433245324/storedInfoTypes/432452342` or
@@ -26,10 +31,11 @@ public interface StoredTypeOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Timestamp indicating when the version of the `StoredInfoType` used for
    * inspection was created. Output-only field, populated by the system.
@@ -39,6 +45,8 @@ public interface StoredTypeOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp indicating when the version of the `StoredInfoType` used for
    * inspection was created. Output-only field, populated by the system.
@@ -48,6 +56,8 @@ public interface StoredTypeOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp indicating when the version of the `StoredInfoType` used for
    * inspection was created. Output-only field, populated by the system.

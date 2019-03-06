@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1beta1;
 
-public interface StreamingRecognizeRequestOrBuilder extends
+public interface StreamingRecognizeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1beta1.StreamingRecognizeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Provides information to the recognizer that specifies how to process the
    * request. The first `StreamingRecognizeRequest` message must contain a
@@ -18,6 +21,8 @@ public interface StreamingRecognizeRequestOrBuilder extends
    */
   boolean hasStreamingConfig();
   /**
+   *
+   *
    * <pre>
    * Provides information to the recognizer that specifies how to process the
    * request. The first `StreamingRecognizeRequest` message must contain a
@@ -28,6 +33,8 @@ public interface StreamingRecognizeRequestOrBuilder extends
    */
   com.google.cloud.speech.v1beta1.StreamingRecognitionConfig getStreamingConfig();
   /**
+   *
+   *
    * <pre>
    * Provides information to the recognizer that specifies how to process the
    * request. The first `StreamingRecognizeRequest` message must contain a
@@ -39,6 +46,8 @@ public interface StreamingRecognizeRequestOrBuilder extends
   com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder getStreamingConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The audio data to be recognized. Sequential chunks of audio data are sent
    * in sequential `StreamingRecognizeRequest` messages. The first
@@ -54,5 +63,6 @@ public interface StreamingRecognizeRequestOrBuilder extends
    */
   com.google.protobuf.ByteString getAudioContent();
 
-  public com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.StreamingRequestCase getStreamingRequestCase();
+  public com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.StreamingRequestCase
+      getStreamingRequestCase();
 }

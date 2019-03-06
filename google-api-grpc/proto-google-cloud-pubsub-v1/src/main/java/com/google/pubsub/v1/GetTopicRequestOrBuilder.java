@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface GetTopicRequestOrBuilder extends
+public interface GetTopicRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.GetTopicRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the topic to get.
    * Format is `projects/{project}/topics/{topic}`.
@@ -17,6 +20,8 @@ public interface GetTopicRequestOrBuilder extends
    */
   java.lang.String getTopic();
   /**
+   *
+   *
    * <pre>
    * The name of the topic to get.
    * Format is `projects/{project}/topics/{topic}`.
@@ -24,6 +29,5 @@ public interface GetTopicRequestOrBuilder extends
    *
    * <code>string topic = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTopicBytes();
+  com.google.protobuf.ByteString getTopicBytes();
 }

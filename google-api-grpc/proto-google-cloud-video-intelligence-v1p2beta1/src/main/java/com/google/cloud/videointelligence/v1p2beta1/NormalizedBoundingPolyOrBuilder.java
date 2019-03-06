@@ -3,20 +3,24 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface NormalizedBoundingPolyOrBuilder extends
+public interface NormalizedBoundingPolyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Normalized vertices of the bounding polygon.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.NormalizedVertex vertices = 1;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex> 
-      getVerticesList();
+  java.util.List<com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex> getVerticesList();
   /**
+   *
+   *
    * <pre>
    * Normalized vertices of the bounding polygon.
    * </pre>
@@ -25,6 +29,8 @@ public interface NormalizedBoundingPolyOrBuilder extends
    */
   com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex getVertices(int index);
   /**
+   *
+   *
    * <pre>
    * Normalized vertices of the bounding polygon.
    * </pre>
@@ -33,15 +39,19 @@ public interface NormalizedBoundingPolyOrBuilder extends
    */
   int getVerticesCount();
   /**
+   *
+   *
    * <pre>
    * Normalized vertices of the bounding polygon.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.NormalizedVertex vertices = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.NormalizedVertexOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.NormalizedVertexOrBuilder>
       getVerticesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Normalized vertices of the bounding polygon.
    * </pre>

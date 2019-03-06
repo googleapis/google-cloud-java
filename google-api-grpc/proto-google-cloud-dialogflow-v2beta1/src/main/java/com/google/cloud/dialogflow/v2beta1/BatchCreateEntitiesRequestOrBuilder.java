@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface BatchCreateEntitiesRequestOrBuilder extends
+public interface BatchCreateEntitiesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity type to create entities in. Format:
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -17,6 +20,8 @@ public interface BatchCreateEntitiesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity type to create entities in. Format:
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -24,19 +29,21 @@ public interface BatchCreateEntitiesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> 
-      getEntitiesList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList();
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
@@ -45,6 +52,8 @@ public interface BatchCreateEntitiesRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index);
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
@@ -53,25 +62,30 @@ public interface BatchCreateEntitiesRequestOrBuilder extends
    */
   int getEntitiesCount();
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
    */
-  com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
@@ -84,6 +98,8 @@ public interface BatchCreateEntitiesRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
@@ -94,6 +110,5 @@ public interface BatchCreateEntitiesRequestOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

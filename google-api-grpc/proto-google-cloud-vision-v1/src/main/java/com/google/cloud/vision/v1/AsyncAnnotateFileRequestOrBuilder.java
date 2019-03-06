@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface AsyncAnnotateFileRequestOrBuilder extends
+public interface AsyncAnnotateFileRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.AsyncAnnotateFileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Information about the input file.
    * </pre>
@@ -16,6 +19,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   boolean hasInputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. Information about the input file.
    * </pre>
@@ -24,6 +29,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   com.google.cloud.vision.v1.InputConfig getInputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. Information about the input file.
    * </pre>
@@ -33,15 +40,18 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
   com.google.cloud.vision.v1.InputConfigOrBuilder getInputConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.Feature> 
-      getFeaturesList();
+  java.util.List<com.google.cloud.vision.v1.Feature> getFeaturesList();
   /**
+   *
+   *
    * <pre>
    * Required. Requested features.
    * </pre>
@@ -50,6 +60,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   com.google.cloud.vision.v1.Feature getFeatures(int index);
   /**
+   *
+   *
    * <pre>
    * Required. Requested features.
    * </pre>
@@ -58,25 +70,29 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   int getFeaturesCount();
   /**
+   *
+   *
    * <pre>
    * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.FeatureOrBuilder> 
-      getFeaturesOrBuilderList();
+  java.util.List<? extends com.google.cloud.vision.v1.FeatureOrBuilder> getFeaturesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Required. Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Feature features = 2;</code>
    */
-  com.google.cloud.vision.v1.FeatureOrBuilder getFeaturesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.FeatureOrBuilder getFeaturesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Additional context that may accompany the image(s) in the file.
    * </pre>
@@ -85,6 +101,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   boolean hasImageContext();
   /**
+   *
+   *
    * <pre>
    * Additional context that may accompany the image(s) in the file.
    * </pre>
@@ -93,6 +111,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   com.google.cloud.vision.v1.ImageContext getImageContext();
   /**
+   *
+   *
    * <pre>
    * Additional context that may accompany the image(s) in the file.
    * </pre>
@@ -102,6 +122,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
   com.google.cloud.vision.v1.ImageContextOrBuilder getImageContextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
@@ -110,6 +132,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   boolean hasOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The desired output location and metadata (e.g. format).
    * </pre>
@@ -118,6 +142,8 @@ public interface AsyncAnnotateFileRequestOrBuilder extends
    */
   com.google.cloud.vision.v1.OutputConfig getOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The desired output location and metadata (e.g. format).
    * </pre>

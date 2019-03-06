@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface AllocateIdsRequestOrBuilder extends
+public interface AllocateIdsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.AllocateIdsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -16,16 +19,19 @@ public interface AllocateIdsRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
@@ -33,9 +39,10 @@ public interface AllocateIdsRequestOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  java.util.List<com.google.datastore.v1.Key> 
-      getKeysList();
+  java.util.List<com.google.datastore.v1.Key> getKeysList();
   /**
+   *
+   *
    * <pre>
    * A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
@@ -45,6 +52,8 @@ public interface AllocateIdsRequestOrBuilder extends
    */
   com.google.datastore.v1.Key getKeys(int index);
   /**
+   *
+   *
    * <pre>
    * A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
@@ -54,6 +63,8 @@ public interface AllocateIdsRequestOrBuilder extends
    */
   int getKeysCount();
   /**
+   *
+   *
    * <pre>
    * A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
@@ -61,9 +72,10 @@ public interface AllocateIdsRequestOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-      getKeysOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
@@ -71,6 +83,5 @@ public interface AllocateIdsRequestOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(
-      int index);
+  com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index);
 }

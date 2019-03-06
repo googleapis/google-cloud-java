@@ -3,89 +3,147 @@
 
 package com.google.container.v1;
 
-public interface UpdateMasterRequestOrBuilder extends
+public interface UpdateMasterRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.UpdateMasterRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by Kubernetes Engine or
+   * version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string master_version = 4;</code>
    */
   java.lang.String getMasterVersion();
   /**
+   *
+   *
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by Kubernetes Engine or
+   * version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string master_version = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getMasterVersionBytes();
+  com.google.protobuf.ByteString getMasterVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster) of the cluster to update.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 7;</code>
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster) of the cluster to update.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 7;</code>
+   */
+  com.google.protobuf.ByteString getNameBytes();
 }

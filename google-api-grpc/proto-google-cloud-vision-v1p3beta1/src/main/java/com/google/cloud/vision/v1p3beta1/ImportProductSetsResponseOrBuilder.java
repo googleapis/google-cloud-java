@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ImportProductSetsResponseOrBuilder extends
+public interface ImportProductSetsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ImportProductSetsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> 
-      getReferenceImagesList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> getReferenceImagesList();
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
@@ -25,6 +29,8 @@ public interface ImportProductSetsResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImages(int index);
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
@@ -33,25 +39,30 @@ public interface ImportProductSetsResponseOrBuilder extends
    */
   int getReferenceImagesCount();
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
       getReferenceImagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of reference_images that are imported successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ReferenceImage reference_images = 1;</code>
    */
-  com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImagesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder getReferenceImagesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -62,9 +73,10 @@ public interface ImportProductSetsResponseOrBuilder extends
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
-  java.util.List<com.google.rpc.Status> 
-      getStatusesList();
+  java.util.List<com.google.rpc.Status> getStatusesList();
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -77,6 +89,8 @@ public interface ImportProductSetsResponseOrBuilder extends
    */
   com.google.rpc.Status getStatuses(int index);
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -89,6 +103,8 @@ public interface ImportProductSetsResponseOrBuilder extends
    */
   int getStatusesCount();
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -99,9 +115,10 @@ public interface ImportProductSetsResponseOrBuilder extends
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
-  java.util.List<? extends com.google.rpc.StatusOrBuilder> 
-      getStatusesOrBuilderList();
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getStatusesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
@@ -112,6 +129,5 @@ public interface ImportProductSetsResponseOrBuilder extends
    *
    * <code>repeated .google.rpc.Status statuses = 2;</code>
    */
-  com.google.rpc.StatusOrBuilder getStatusesOrBuilder(
-      int index);
+  com.google.rpc.StatusOrBuilder getStatusesOrBuilder(int index);
 }

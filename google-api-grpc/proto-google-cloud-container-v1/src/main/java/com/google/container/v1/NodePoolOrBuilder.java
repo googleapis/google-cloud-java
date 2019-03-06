@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface NodePoolOrBuilder extends
+public interface NodePoolOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.NodePool)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the node pool.
    * </pre>
@@ -16,16 +19,19 @@ public interface NodePoolOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the node pool.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The node configuration of the pool.
    * </pre>
@@ -34,6 +40,8 @@ public interface NodePoolOrBuilder extends
    */
   boolean hasConfig();
   /**
+   *
+   *
    * <pre>
    * The node configuration of the pool.
    * </pre>
@@ -42,6 +50,8 @@ public interface NodePoolOrBuilder extends
    */
   com.google.container.v1.NodeConfig getConfig();
   /**
+   *
+   *
    * <pre>
    * The node configuration of the pool.
    * </pre>
@@ -51,6 +61,8 @@ public interface NodePoolOrBuilder extends
   com.google.container.v1.NodeConfigOrBuilder getConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The initial node count for the pool. You must ensure that your
    * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -63,6 +75,8 @@ public interface NodePoolOrBuilder extends
   int getInitialNodeCount();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
@@ -71,16 +85,19 @@ public interface NodePoolOrBuilder extends
    */
   java.lang.String getSelfLink();
   /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>string self_link = 100;</code>
    */
-  com.google.protobuf.ByteString
-      getSelfLinkBytes();
+  com.google.protobuf.ByteString getSelfLinkBytes();
 
   /**
+   *
+   *
    * <pre>
    * The version of the Kubernetes of this node.
    * </pre>
@@ -89,16 +106,19 @@ public interface NodePoolOrBuilder extends
    */
   java.lang.String getVersion();
   /**
+   *
+   *
    * <pre>
    * The version of the Kubernetes of this node.
    * </pre>
    *
    * <code>string version = 101;</code>
    */
-  com.google.protobuf.ByteString
-      getVersionBytes();
+  com.google.protobuf.ByteString getVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -107,9 +127,10 @@ public interface NodePoolOrBuilder extends
    *
    * <code>repeated string instance_group_urls = 102;</code>
    */
-  java.util.List<java.lang.String>
-      getInstanceGroupUrlsList();
+  java.util.List<java.lang.String> getInstanceGroupUrlsList();
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -120,6 +141,8 @@ public interface NodePoolOrBuilder extends
    */
   int getInstanceGroupUrlsCount();
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -130,6 +153,8 @@ public interface NodePoolOrBuilder extends
    */
   java.lang.String getInstanceGroupUrls(int index);
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -138,10 +163,11 @@ public interface NodePoolOrBuilder extends
    *
    * <code>repeated string instance_group_urls = 102;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceGroupUrlsBytes(int index);
+  com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The status of the nodes in this pool instance.
    * </pre>
@@ -150,6 +176,8 @@ public interface NodePoolOrBuilder extends
    */
   int getStatusValue();
   /**
+   *
+   *
    * <pre>
    * [Output only] The status of the nodes in this pool instance.
    * </pre>
@@ -159,6 +187,8 @@ public interface NodePoolOrBuilder extends
   com.google.container.v1.NodePool.Status getStatus();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * node pool instance, if available.
@@ -168,6 +198,8 @@ public interface NodePoolOrBuilder extends
    */
   java.lang.String getStatusMessage();
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * node pool instance, if available.
@@ -175,10 +207,11 @@ public interface NodePoolOrBuilder extends
    *
    * <code>string status_message = 104;</code>
    */
-  com.google.protobuf.ByteString
-      getStatusMessageBytes();
+  com.google.protobuf.ByteString getStatusMessageBytes();
 
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for this NodePool. Autoscaler is enabled
    * only if a valid configuration is present.
@@ -188,6 +221,8 @@ public interface NodePoolOrBuilder extends
    */
   boolean hasAutoscaling();
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for this NodePool. Autoscaler is enabled
    * only if a valid configuration is present.
@@ -197,6 +232,8 @@ public interface NodePoolOrBuilder extends
    */
   com.google.container.v1.NodePoolAutoscaling getAutoscaling();
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for this NodePool. Autoscaler is enabled
    * only if a valid configuration is present.
@@ -207,6 +244,8 @@ public interface NodePoolOrBuilder extends
   com.google.container.v1.NodePoolAutoscalingOrBuilder getAutoscalingOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * NodeManagement configuration for this NodePool.
    * </pre>
@@ -215,6 +254,8 @@ public interface NodePoolOrBuilder extends
    */
   boolean hasManagement();
   /**
+   *
+   *
    * <pre>
    * NodeManagement configuration for this NodePool.
    * </pre>
@@ -223,6 +264,8 @@ public interface NodePoolOrBuilder extends
    */
   com.google.container.v1.NodeManagement getManagement();
   /**
+   *
+   *
    * <pre>
    * NodeManagement configuration for this NodePool.
    * </pre>

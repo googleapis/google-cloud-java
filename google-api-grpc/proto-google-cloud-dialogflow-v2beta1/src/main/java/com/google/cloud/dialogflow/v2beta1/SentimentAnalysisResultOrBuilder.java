@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface SentimentAnalysisResultOrBuilder extends
+public interface SentimentAnalysisResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.SentimentAnalysisResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The sentiment analysis result for `query_text`.
    * </pre>
@@ -16,6 +19,8 @@ public interface SentimentAnalysisResultOrBuilder extends
    */
   boolean hasQueryTextSentiment();
   /**
+   *
+   *
    * <pre>
    * The sentiment analysis result for `query_text`.
    * </pre>
@@ -24,6 +29,8 @@ public interface SentimentAnalysisResultOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.Sentiment getQueryTextSentiment();
   /**
+   *
+   *
    * <pre>
    * The sentiment analysis result for `query_text`.
    * </pre>

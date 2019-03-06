@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface DeleteTransferRunRequestOrBuilder extends
+public interface DeleteTransferRunRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
@@ -17,6 +20,8 @@ public interface DeleteTransferRunRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The field will contain name of the resource requested, for example:
    * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
@@ -24,6 +29,5 @@ public interface DeleteTransferRunRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

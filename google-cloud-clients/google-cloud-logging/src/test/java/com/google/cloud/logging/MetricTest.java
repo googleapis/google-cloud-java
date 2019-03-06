@@ -40,9 +40,8 @@ public class MetricTest {
   private static final String NEW_NAME = "newName";
   private static final String NEW_FILTER = "logName=projects/my-projectid/logs/newSyslog";
   private static final String NEW_DESCRIPTION = "newDescription";
-  private static final MetricInfo METRIC_INFO = MetricInfo.newBuilder(NAME, FILTER)
-      .setDescription(DESCRIPTION)
-      .build();
+  private static final MetricInfo METRIC_INFO =
+      MetricInfo.newBuilder(NAME, FILTER).setDescription(DESCRIPTION).build();
   private final Logging serviceMockReturnsOptions = createStrictMock(Logging.class);
   private final LoggingOptions mockOptions = createMock(LoggingOptions.class);
   private Logging logging;
@@ -69,17 +68,18 @@ public class MetricTest {
   public void testBuilder() {
     initializeExpectedMetric(2);
     replay(logging);
-    Metric builtMetric = expectedMetric.toBuilder()
-        .setName(NEW_NAME)
-        .setFilter(NEW_FILTER)
-        .setDescription(NEW_DESCRIPTION)
-        .build();
+    Metric builtMetric =
+        expectedMetric
+            .toBuilder()
+            .setName(NEW_NAME)
+            .setFilter(NEW_FILTER)
+            .setDescription(NEW_DESCRIPTION)
+            .build();
     assertEquals(NEW_NAME, builtMetric.getName());
     assertEquals(NEW_DESCRIPTION, builtMetric.getDescription());
     assertEquals(NEW_FILTER, builtMetric.getFilter());
     assertSame(serviceMockReturnsOptions, builtMetric.getLogging());
   }
-
 
   @Test
   public void testToBuilder() {
@@ -116,10 +116,10 @@ public class MetricTest {
   public void testReloadAsync() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(2);
     MetricInfo updatedInfo = METRIC_INFO.toBuilder().setFilter(NEW_FILTER).build();
-    Metric expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
+    Metric expectedMetric =
+        new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.getMetricAsync(NAME))
-        .andReturn(ApiFutures.immediateFuture(expectedMetric));
+    expect(logging.getMetricAsync(NAME)).andReturn(ApiFutures.immediateFuture(expectedMetric));
     replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.reloadAsync().get();
@@ -157,7 +157,8 @@ public class MetricTest {
     Metric expectedMetric =
         new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions).times(2);
-    expect(logging.updateAsync(expectedMetric)).andReturn(ApiFutures.immediateFuture(expectedMetric));
+    expect(logging.updateAsync(expectedMetric))
+        .andReturn(ApiFutures.immediateFuture(expectedMetric));
     replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.toBuilder().setFilter(NEW_FILTER).build().updateAsync().get();

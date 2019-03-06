@@ -18,19 +18,23 @@
  * A testing helper for Google Cloud Datastore.
  *
  * <p>A simple usage example:
+ *
  * <p>Before the test:
- * <pre> {@code
+ *
+ * <pre>{@code
  * LocalDatastoreHelper helper = LocalDatastoreHelper.create();
  * helper.start();
  * Datastore localDatastore = helper.getOptions().getService();
- * } </pre>
+ * }</pre>
  *
  * <p>After the test:
- * <pre> {@code
- * helper.stop();
- * } </pre>
  *
- * @see <a href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore">
+ * <pre>{@code
+ * helper.stop();
+ * }</pre>
+ *
+ * @see <a
+ *     href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.datastore.testing;

@@ -4,30 +4,33 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Image context and/or feature-specific parameters.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.ImageContext}
  */
-public  final class ImageContext extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ImageContext extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ImageContext)
     ImageContextOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ImageContext.newBuilder() to construct.
   private ImageContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ImageContext() {
     languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ImageContext(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,81 +50,96 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.vision.v1p3beta1.LatLongRect.Builder subBuilder = null;
-            if (latLongRect_ != null) {
-              subBuilder = latLongRect_.toBuilder();
-            }
-            latLongRect_ = input.readMessage(com.google.cloud.vision.v1p3beta1.LatLongRect.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(latLongRect_);
-              latLongRect_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.vision.v1p3beta1.LatLongRect.Builder subBuilder = null;
+              if (latLongRect_ != null) {
+                subBuilder = latLongRect_.toBuilder();
+              }
+              latLongRect_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.LatLongRect.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(latLongRect_);
+                latLongRect_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              languageHints_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              break;
             }
-            languageHints_.add(s);
-            break;
-          }
-          case 34: {
-            com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder subBuilder = null;
-            if (cropHintsParams_ != null) {
-              subBuilder = cropHintsParams_.toBuilder();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                languageHints_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              languageHints_.add(s);
+              break;
             }
-            cropHintsParams_ = input.readMessage(com.google.cloud.vision.v1p3beta1.CropHintsParams.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(cropHintsParams_);
-              cropHintsParams_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder subBuilder = null;
+              if (cropHintsParams_ != null) {
+                subBuilder = cropHintsParams_.toBuilder();
+              }
+              cropHintsParams_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.CropHintsParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cropHintsParams_);
+                cropHintsParams_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder subBuilder = null;
-            if (productSearchParams_ != null) {
-              subBuilder = productSearchParams_.toBuilder();
+              break;
             }
-            productSearchParams_ = input.readMessage(com.google.cloud.vision.v1p3beta1.ProductSearchParams.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(productSearchParams_);
-              productSearchParams_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder subBuilder = null;
+              if (productSearchParams_ != null) {
+                subBuilder = productSearchParams_.toBuilder();
+              }
+              productSearchParams_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ProductSearchParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(productSearchParams_);
+                productSearchParams_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder subBuilder = null;
-            if (webDetectionParams_ != null) {
-              subBuilder = webDetectionParams_.toBuilder();
+              break;
             }
-            webDetectionParams_ = input.readMessage(com.google.cloud.vision.v1p3beta1.WebDetectionParams.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(webDetectionParams_);
-              webDetectionParams_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder subBuilder = null;
+              if (webDetectionParams_ != null) {
+                subBuilder = webDetectionParams_.toBuilder();
+              }
+              webDetectionParams_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.WebDetectionParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(webDetectionParams_);
+                webDetectionParams_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         languageHints_ = languageHints_.getUnmodifiableView();
@@ -130,23 +148,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_ImageContext_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1p3beta1_ImageContext_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_ImageContext_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1p3beta1_ImageContext_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.ImageContext.class, com.google.cloud.vision.v1p3beta1.ImageContext.Builder.class);
+            com.google.cloud.vision.v1p3beta1.ImageContext.class,
+            com.google.cloud.vision.v1p3beta1.ImageContext.Builder.class);
   }
 
   private int bitField0_;
   public static final int LAT_LONG_RECT_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p3beta1.LatLongRect latLongRect_;
   /**
+   *
+   *
    * <pre>
    * Not used.
    * </pre>
@@ -157,6 +180,8 @@ private static final long serialVersionUID = 0L;
     return latLongRect_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Not used.
    * </pre>
@@ -164,9 +189,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.LatLongRect lat_long_rect = 1;</code>
    */
   public com.google.cloud.vision.v1p3beta1.LatLongRect getLatLongRect() {
-    return latLongRect_ == null ? com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance() : latLongRect_;
+    return latLongRect_ == null
+        ? com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance()
+        : latLongRect_;
   }
   /**
+   *
+   *
    * <pre>
    * Not used.
    * </pre>
@@ -180,6 +209,8 @@ private static final long serialVersionUID = 0L;
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList languageHints_;
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -193,11 +224,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string language_hints = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getLanguageHintsList() {
+  public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
     return languageHints_;
   }
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -215,6 +247,8 @@ private static final long serialVersionUID = 0L;
     return languageHints_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -232,6 +266,8 @@ private static final long serialVersionUID = 0L;
     return languageHints_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -245,14 +281,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string language_hints = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getLanguageHintsBytes(int index) {
+  public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
     return languageHints_.getByteString(index);
   }
 
   public static final int CROP_HINTS_PARAMS_FIELD_NUMBER = 4;
   private com.google.cloud.vision.v1p3beta1.CropHintsParams cropHintsParams_;
   /**
+   *
+   *
    * <pre>
    * Parameters for crop hints annotation request.
    * </pre>
@@ -263,6 +300,8 @@ private static final long serialVersionUID = 0L;
     return cropHintsParams_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters for crop hints annotation request.
    * </pre>
@@ -270,9 +309,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.CropHintsParams crop_hints_params = 4;</code>
    */
   public com.google.cloud.vision.v1p3beta1.CropHintsParams getCropHintsParams() {
-    return cropHintsParams_ == null ? com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance() : cropHintsParams_;
+    return cropHintsParams_ == null
+        ? com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance()
+        : cropHintsParams_;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters for crop hints annotation request.
    * </pre>
@@ -286,6 +329,8 @@ private static final long serialVersionUID = 0L;
   public static final int PRODUCT_SEARCH_PARAMS_FIELD_NUMBER = 5;
   private com.google.cloud.vision.v1p3beta1.ProductSearchParams productSearchParams_;
   /**
+   *
+   *
    * <pre>
    * Parameters for product search.
    * </pre>
@@ -296,6 +341,8 @@ private static final long serialVersionUID = 0L;
     return productSearchParams_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters for product search.
    * </pre>
@@ -303,22 +350,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
    */
   public com.google.cloud.vision.v1p3beta1.ProductSearchParams getProductSearchParams() {
-    return productSearchParams_ == null ? com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+    return productSearchParams_ == null
+        ? com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance()
+        : productSearchParams_;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters for product search.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder
+      getProductSearchParamsOrBuilder() {
     return getProductSearchParams();
   }
 
   public static final int WEB_DETECTION_PARAMS_FIELD_NUMBER = 6;
   private com.google.cloud.vision.v1p3beta1.WebDetectionParams webDetectionParams_;
   /**
+   *
+   *
    * <pre>
    * Parameters for web detection.
    * </pre>
@@ -329,6 +383,8 @@ private static final long serialVersionUID = 0L;
     return webDetectionParams_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters for web detection.
    * </pre>
@@ -336,20 +392,26 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
    */
   public com.google.cloud.vision.v1p3beta1.WebDetectionParams getWebDetectionParams() {
-    return webDetectionParams_ == null ? com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance() : webDetectionParams_;
+    return webDetectionParams_ == null
+        ? com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance()
+        : webDetectionParams_;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters for web detection.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder getWebDetectionParamsOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder
+      getWebDetectionParamsOrBuilder() {
     return getWebDetectionParams();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -361,8 +423,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (latLongRect_ != null) {
       output.writeMessage(1, getLatLongRect());
     }
@@ -388,8 +449,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (latLongRect_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getLatLongRect());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getLatLongRect());
     }
     {
       int dataSize = 0;
@@ -400,16 +460,13 @@ private static final long serialVersionUID = 0L;
       size += 1 * getLanguageHintsList().size();
     }
     if (cropHintsParams_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getCropHintsParams());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCropHintsParams());
     }
     if (productSearchParams_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getProductSearchParams());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getProductSearchParams());
     }
     if (webDetectionParams_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getWebDetectionParams());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getWebDetectionParams());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -419,35 +476,31 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.ImageContext)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.ImageContext other = (com.google.cloud.vision.v1p3beta1.ImageContext) obj;
+    com.google.cloud.vision.v1p3beta1.ImageContext other =
+        (com.google.cloud.vision.v1p3beta1.ImageContext) obj;
 
     boolean result = true;
     result = result && (hasLatLongRect() == other.hasLatLongRect());
     if (hasLatLongRect()) {
-      result = result && getLatLongRect()
-          .equals(other.getLatLongRect());
+      result = result && getLatLongRect().equals(other.getLatLongRect());
     }
-    result = result && getLanguageHintsList()
-        .equals(other.getLanguageHintsList());
+    result = result && getLanguageHintsList().equals(other.getLanguageHintsList());
     result = result && (hasCropHintsParams() == other.hasCropHintsParams());
     if (hasCropHintsParams()) {
-      result = result && getCropHintsParams()
-          .equals(other.getCropHintsParams());
+      result = result && getCropHintsParams().equals(other.getCropHintsParams());
     }
     result = result && (hasProductSearchParams() == other.hasProductSearchParams());
     if (hasProductSearchParams()) {
-      result = result && getProductSearchParams()
-          .equals(other.getProductSearchParams());
+      result = result && getProductSearchParams().equals(other.getProductSearchParams());
     }
     result = result && (hasWebDetectionParams() == other.hasWebDetectionParams());
     if (hasWebDetectionParams()) {
-      result = result && getWebDetectionParams()
-          .equals(other.getWebDetectionParams());
+      result = result && getWebDetectionParams().equals(other.getWebDetectionParams());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -485,118 +538,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.ImageContext parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.ImageContext parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.ImageContext parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.ImageContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Image context and/or feature-specific parameters.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.ImageContext}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.ImageContext)
       com.google.cloud.vision.v1p3beta1.ImageContextOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_ImageContext_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImageContext_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_ImageContext_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImageContext_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.ImageContext.class, com.google.cloud.vision.v1p3beta1.ImageContext.Builder.class);
+              com.google.cloud.vision.v1p3beta1.ImageContext.class,
+              com.google.cloud.vision.v1p3beta1.ImageContext.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.ImageContext.newBuilder()
@@ -604,16 +666,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -647,9 +708,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_ImageContext_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_ImageContext_descriptor;
     }
 
     @java.lang.Override
@@ -668,7 +729,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.ImageContext buildPartial() {
-      com.google.cloud.vision.v1p3beta1.ImageContext result = new com.google.cloud.vision.v1p3beta1.ImageContext(this);
+      com.google.cloud.vision.v1p3beta1.ImageContext result =
+          new com.google.cloud.vision.v1p3beta1.ImageContext(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (latLongRectBuilder_ == null) {
@@ -705,38 +767,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.ImageContext) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.ImageContext)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.ImageContext) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -795,12 +858,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.cloud.vision.v1p3beta1.LatLongRect latLongRect_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.LatLongRect, com.google.cloud.vision.v1p3beta1.LatLongRect.Builder, com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder> latLongRectBuilder_;
+            com.google.cloud.vision.v1p3beta1.LatLongRect,
+            com.google.cloud.vision.v1p3beta1.LatLongRect.Builder,
+            com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder>
+        latLongRectBuilder_;
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -811,6 +880,8 @@ private static final long serialVersionUID = 0L;
       return latLongRectBuilder_ != null || latLongRect_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -819,12 +890,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.LatLongRect getLatLongRect() {
       if (latLongRectBuilder_ == null) {
-        return latLongRect_ == null ? com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance() : latLongRect_;
+        return latLongRect_ == null
+            ? com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance()
+            : latLongRect_;
       } else {
         return latLongRectBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -845,6 +920,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -863,6 +940,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -873,7 +952,9 @@ private static final long serialVersionUID = 0L;
       if (latLongRectBuilder_ == null) {
         if (latLongRect_ != null) {
           latLongRect_ =
-            com.google.cloud.vision.v1p3beta1.LatLongRect.newBuilder(latLongRect_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.LatLongRect.newBuilder(latLongRect_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           latLongRect_ = value;
         }
@@ -885,6 +966,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -903,6 +986,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -910,11 +995,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.LatLongRect lat_long_rect = 1;</code>
      */
     public com.google.cloud.vision.v1p3beta1.LatLongRect.Builder getLatLongRectBuilder() {
-      
+
       onChanged();
       return getLatLongRectFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -925,11 +1012,14 @@ private static final long serialVersionUID = 0L;
       if (latLongRectBuilder_ != null) {
         return latLongRectBuilder_.getMessageOrBuilder();
       } else {
-        return latLongRect_ == null ?
-            com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance() : latLongRect_;
+        return latLongRect_ == null
+            ? com.google.cloud.vision.v1p3beta1.LatLongRect.getDefaultInstance()
+            : latLongRect_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Not used.
      * </pre>
@@ -937,27 +1027,34 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.LatLongRect lat_long_rect = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.LatLongRect, com.google.cloud.vision.v1p3beta1.LatLongRect.Builder, com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.LatLongRect,
+            com.google.cloud.vision.v1p3beta1.LatLongRect.Builder,
+            com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder>
         getLatLongRectFieldBuilder() {
       if (latLongRectBuilder_ == null) {
-        latLongRectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.LatLongRect, com.google.cloud.vision.v1p3beta1.LatLongRect.Builder, com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder>(
-                getLatLongRect(),
-                getParentForChildren(),
-                isClean());
+        latLongRectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.LatLongRect,
+                com.google.cloud.vision.v1p3beta1.LatLongRect.Builder,
+                com.google.cloud.vision.v1p3beta1.LatLongRectOrBuilder>(
+                getLatLongRect(), getParentForChildren(), isClean());
         latLongRect_ = null;
       }
       return latLongRectBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList languageHints_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureLanguageHintsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -971,11 +1068,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string language_hints = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getLanguageHintsList() {
+    public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
       return languageHints_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -993,6 +1091,8 @@ private static final long serialVersionUID = 0L;
       return languageHints_.size();
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -1010,6 +1110,8 @@ private static final long serialVersionUID = 0L;
       return languageHints_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -1023,11 +1125,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string language_hints = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageHintsBytes(int index) {
+    public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
       return languageHints_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -1041,17 +1144,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string language_hints = 2;</code>
      */
-    public Builder setLanguageHints(
-        int index, java.lang.String value) {
+    public Builder setLanguageHints(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureLanguageHintsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureLanguageHintsIsMutable();
       languageHints_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -1065,17 +1169,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string language_hints = 2;</code>
      */
-    public Builder addLanguageHints(
-        java.lang.String value) {
+    public Builder addLanguageHints(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureLanguageHintsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureLanguageHintsIsMutable();
       languageHints_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -1089,15 +1194,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string language_hints = 2;</code>
      */
-    public Builder addAllLanguageHints(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllLanguageHints(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageHintsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, languageHints_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageHints_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -1118,6 +1223,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of languages to use for TEXT_DETECTION. In most cases, an empty value
      * yields the best results since it enables automatic language detection. For
@@ -1131,12 +1238,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string language_hints = 2;</code>
      */
-    public Builder addLanguageHintsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addLanguageHintsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureLanguageHintsIsMutable();
       languageHints_.add(value);
       onChanged();
@@ -1145,8 +1251,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.CropHintsParams cropHintsParams_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.CropHintsParams, com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder, com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder> cropHintsParamsBuilder_;
+            com.google.cloud.vision.v1p3beta1.CropHintsParams,
+            com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder,
+            com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder>
+        cropHintsParamsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1157,6 +1268,8 @@ private static final long serialVersionUID = 0L;
       return cropHintsParamsBuilder_ != null || cropHintsParams_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1165,12 +1278,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.CropHintsParams getCropHintsParams() {
       if (cropHintsParamsBuilder_ == null) {
-        return cropHintsParams_ == null ? com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance() : cropHintsParams_;
+        return cropHintsParams_ == null
+            ? com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance()
+            : cropHintsParams_;
       } else {
         return cropHintsParamsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1191,6 +1308,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1209,6 +1328,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1219,7 +1340,9 @@ private static final long serialVersionUID = 0L;
       if (cropHintsParamsBuilder_ == null) {
         if (cropHintsParams_ != null) {
           cropHintsParams_ =
-            com.google.cloud.vision.v1p3beta1.CropHintsParams.newBuilder(cropHintsParams_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.CropHintsParams.newBuilder(cropHintsParams_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           cropHintsParams_ = value;
         }
@@ -1231,6 +1354,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1249,6 +1374,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1256,26 +1383,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.CropHintsParams crop_hints_params = 4;</code>
      */
     public com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder getCropHintsParamsBuilder() {
-      
+
       onChanged();
       return getCropHintsParamsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.CropHintsParams crop_hints_params = 4;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder getCropHintsParamsOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder
+        getCropHintsParamsOrBuilder() {
       if (cropHintsParamsBuilder_ != null) {
         return cropHintsParamsBuilder_.getMessageOrBuilder();
       } else {
-        return cropHintsParams_ == null ?
-            com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance() : cropHintsParams_;
+        return cropHintsParams_ == null
+            ? com.google.cloud.vision.v1p3beta1.CropHintsParams.getDefaultInstance()
+            : cropHintsParams_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for crop hints annotation request.
      * </pre>
@@ -1283,14 +1416,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.CropHintsParams crop_hints_params = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.CropHintsParams, com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder, com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.CropHintsParams,
+            com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder,
+            com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder>
         getCropHintsParamsFieldBuilder() {
       if (cropHintsParamsBuilder_ == null) {
-        cropHintsParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.CropHintsParams, com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder, com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder>(
-                getCropHintsParams(),
-                getParentForChildren(),
-                isClean());
+        cropHintsParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.CropHintsParams,
+                com.google.cloud.vision.v1p3beta1.CropHintsParams.Builder,
+                com.google.cloud.vision.v1p3beta1.CropHintsParamsOrBuilder>(
+                getCropHintsParams(), getParentForChildren(), isClean());
         cropHintsParams_ = null;
       }
       return cropHintsParamsBuilder_;
@@ -1298,8 +1434,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.ProductSearchParams productSearchParams_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ProductSearchParams, com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder, com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder> productSearchParamsBuilder_;
+            com.google.cloud.vision.v1p3beta1.ProductSearchParams,
+            com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder,
+            com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder>
+        productSearchParamsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
@@ -1310,6 +1451,8 @@ private static final long serialVersionUID = 0L;
       return productSearchParamsBuilder_ != null || productSearchParams_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
@@ -1318,19 +1461,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.ProductSearchParams getProductSearchParams() {
       if (productSearchParamsBuilder_ == null) {
-        return productSearchParams_ == null ? com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+        return productSearchParams_ == null
+            ? com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance()
+            : productSearchParams_;
       } else {
         return productSearchParamsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
      */
-    public Builder setProductSearchParams(com.google.cloud.vision.v1p3beta1.ProductSearchParams value) {
+    public Builder setProductSearchParams(
+        com.google.cloud.vision.v1p3beta1.ProductSearchParams value) {
       if (productSearchParamsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1344,6 +1492,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
@@ -1362,17 +1512,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
      */
-    public Builder mergeProductSearchParams(com.google.cloud.vision.v1p3beta1.ProductSearchParams value) {
+    public Builder mergeProductSearchParams(
+        com.google.cloud.vision.v1p3beta1.ProductSearchParams value) {
       if (productSearchParamsBuilder_ == null) {
         if (productSearchParams_ != null) {
           productSearchParams_ =
-            com.google.cloud.vision.v1p3beta1.ProductSearchParams.newBuilder(productSearchParams_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.ProductSearchParams.newBuilder(productSearchParams_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           productSearchParams_ = value;
         }
@@ -1384,6 +1539,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
@@ -1402,33 +1559,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder getProductSearchParamsBuilder() {
-      
+    public com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder
+        getProductSearchParamsBuilder() {
+
       onChanged();
       return getProductSearchParamsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder
+        getProductSearchParamsOrBuilder() {
       if (productSearchParamsBuilder_ != null) {
         return productSearchParamsBuilder_.getMessageOrBuilder();
       } else {
-        return productSearchParams_ == null ?
-            com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+        return productSearchParams_ == null
+            ? com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance()
+            : productSearchParams_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for product search.
      * </pre>
@@ -1436,14 +1602,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchParams product_search_params = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ProductSearchParams, com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder, com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.ProductSearchParams,
+            com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder,
+            com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder>
         getProductSearchParamsFieldBuilder() {
       if (productSearchParamsBuilder_ == null) {
-        productSearchParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ProductSearchParams, com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder, com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder>(
-                getProductSearchParams(),
-                getParentForChildren(),
-                isClean());
+        productSearchParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ProductSearchParams,
+                com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder,
+                com.google.cloud.vision.v1p3beta1.ProductSearchParamsOrBuilder>(
+                getProductSearchParams(), getParentForChildren(), isClean());
         productSearchParams_ = null;
       }
       return productSearchParamsBuilder_;
@@ -1451,8 +1620,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.WebDetectionParams webDetectionParams_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.WebDetectionParams, com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder, com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder> webDetectionParamsBuilder_;
+            com.google.cloud.vision.v1p3beta1.WebDetectionParams,
+            com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder,
+            com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder>
+        webDetectionParamsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
@@ -1463,6 +1637,8 @@ private static final long serialVersionUID = 0L;
       return webDetectionParamsBuilder_ != null || webDetectionParams_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
@@ -1471,19 +1647,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.WebDetectionParams getWebDetectionParams() {
       if (webDetectionParamsBuilder_ == null) {
-        return webDetectionParams_ == null ? com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance() : webDetectionParams_;
+        return webDetectionParams_ == null
+            ? com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance()
+            : webDetectionParams_;
       } else {
         return webDetectionParamsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
      */
-    public Builder setWebDetectionParams(com.google.cloud.vision.v1p3beta1.WebDetectionParams value) {
+    public Builder setWebDetectionParams(
+        com.google.cloud.vision.v1p3beta1.WebDetectionParams value) {
       if (webDetectionParamsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1497,6 +1678,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
@@ -1515,17 +1698,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
      */
-    public Builder mergeWebDetectionParams(com.google.cloud.vision.v1p3beta1.WebDetectionParams value) {
+    public Builder mergeWebDetectionParams(
+        com.google.cloud.vision.v1p3beta1.WebDetectionParams value) {
       if (webDetectionParamsBuilder_ == null) {
         if (webDetectionParams_ != null) {
           webDetectionParams_ =
-            com.google.cloud.vision.v1p3beta1.WebDetectionParams.newBuilder(webDetectionParams_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.WebDetectionParams.newBuilder(webDetectionParams_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           webDetectionParams_ = value;
         }
@@ -1537,6 +1725,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
@@ -1555,33 +1745,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder getWebDetectionParamsBuilder() {
-      
+    public com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder
+        getWebDetectionParamsBuilder() {
+
       onChanged();
       return getWebDetectionParamsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder getWebDetectionParamsOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder
+        getWebDetectionParamsOrBuilder() {
       if (webDetectionParamsBuilder_ != null) {
         return webDetectionParamsBuilder_.getMessageOrBuilder();
       } else {
-        return webDetectionParams_ == null ?
-            com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance() : webDetectionParams_;
+        return webDetectionParams_ == null
+            ? com.google.cloud.vision.v1p3beta1.WebDetectionParams.getDefaultInstance()
+            : webDetectionParams_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters for web detection.
      * </pre>
@@ -1589,21 +1788,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.WebDetectionParams web_detection_params = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.WebDetectionParams, com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder, com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.WebDetectionParams,
+            com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder,
+            com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder>
         getWebDetectionParamsFieldBuilder() {
       if (webDetectionParamsBuilder_ == null) {
-        webDetectionParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.WebDetectionParams, com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder, com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder>(
-                getWebDetectionParams(),
-                getParentForChildren(),
-                isClean());
+        webDetectionParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.WebDetectionParams,
+                com.google.cloud.vision.v1p3beta1.WebDetectionParams.Builder,
+                com.google.cloud.vision.v1p3beta1.WebDetectionParamsOrBuilder>(
+                getWebDetectionParams(), getParentForChildren(), isClean());
         webDetectionParams_ = null;
       }
       return webDetectionParamsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1613,12 +1815,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.ImageContext)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.ImageContext)
   private static final com.google.cloud.vision.v1p3beta1.ImageContext DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.ImageContext();
   }
@@ -1627,16 +1829,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImageContext>
-      PARSER = new com.google.protobuf.AbstractParser<ImageContext>() {
-    @java.lang.Override
-    public ImageContext parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImageContext(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ImageContext> PARSER =
+      new com.google.protobuf.AbstractParser<ImageContext>() {
+        @java.lang.Override
+        public ImageContext parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ImageContext(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ImageContext> parser() {
     return PARSER;
@@ -1651,6 +1853,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1p3beta1.ImageContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

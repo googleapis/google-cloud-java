@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface ClusterOrBuilder extends
+public interface ClusterOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.Cluster)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of this cluster. The name must be unique within this project
    * and zone, and can be up to 40 characters with the following restrictions:
@@ -20,6 +23,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of this cluster. The name must be unique within this project
    * and zone, and can be up to 40 characters with the following restrictions:
@@ -30,10 +35,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * An optional description of this cluster.
    * </pre>
@@ -42,16 +48,19 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * An optional description of this cluster.
    * </pre>
    *
    * <code>string description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The number of nodes to create in this cluster. You must ensure that your
    * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -68,6 +77,8 @@ public interface ClusterOrBuilder extends
   int getInitialNodeCount();
 
   /**
+   *
+   *
    * <pre>
    * Parameters used in creating the cluster's nodes.
    * See `nodeConfig` for the description of its properties.
@@ -84,6 +95,8 @@ public interface ClusterOrBuilder extends
    */
   boolean hasNodeConfig();
   /**
+   *
+   *
    * <pre>
    * Parameters used in creating the cluster's nodes.
    * See `nodeConfig` for the description of its properties.
@@ -100,6 +113,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.NodeConfig getNodeConfig();
   /**
+   *
+   *
    * <pre>
    * Parameters used in creating the cluster's nodes.
    * See `nodeConfig` for the description of its properties.
@@ -117,6 +132,8 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.NodeConfigOrBuilder getNodeConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The authentication information for accessing the master endpoint.
    * </pre>
@@ -125,6 +142,8 @@ public interface ClusterOrBuilder extends
    */
   boolean hasMasterAuth();
   /**
+   *
+   *
    * <pre>
    * The authentication information for accessing the master endpoint.
    * </pre>
@@ -133,6 +152,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.MasterAuth getMasterAuth();
   /**
+   *
+   *
    * <pre>
    * The authentication information for accessing the master endpoint.
    * </pre>
@@ -142,6 +163,8 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.MasterAuthOrBuilder getMasterAuthOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
@@ -154,6 +177,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getLoggingService();
   /**
+   *
+   *
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
@@ -164,10 +189,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string logging_service = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getLoggingServiceBytes();
+  com.google.protobuf.ByteString getLoggingServiceBytes();
 
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -180,6 +206,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getMonitoringService();
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -190,10 +218,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string monitoring_service = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getMonitoringServiceBytes();
+  com.google.protobuf.ByteString getMonitoringServiceBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -205,6 +234,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getNetwork();
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -214,10 +245,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string network = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getNetworkBytes();
+  com.google.protobuf.ByteString getNetworkBytes();
 
   /**
+   *
+   *
    * <pre>
    * The IP address range of the container pods in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -229,6 +261,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getClusterIpv4Cidr();
   /**
+   *
+   *
    * <pre>
    * The IP address range of the container pods in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -238,10 +272,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string cluster_ipv4_cidr = 9;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIpv4CidrBytes();
+  com.google.protobuf.ByteString getClusterIpv4CidrBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -250,6 +285,8 @@ public interface ClusterOrBuilder extends
    */
   boolean hasAddonsConfig();
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -258,6 +295,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.AddonsConfig getAddonsConfig();
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -267,6 +306,8 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.AddonsConfigOrBuilder getAddonsConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [subnetwork](/compute/docs/subnetworks) to which the
@@ -277,6 +318,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getSubnetwork();
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [subnetwork](/compute/docs/subnetworks) to which the
@@ -285,10 +328,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string subnetwork = 11;</code>
    */
-  com.google.protobuf.ByteString
-      getSubnetworkBytes();
+  com.google.protobuf.ByteString getSubnetworkBytes();
 
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -297,9 +341,10 @@ public interface ClusterOrBuilder extends
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
-  java.util.List<com.google.container.v1.NodePool> 
-      getNodePoolsList();
+  java.util.List<com.google.container.v1.NodePool> getNodePoolsList();
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -310,6 +355,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.NodePool getNodePools(int index);
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -320,6 +367,8 @@ public interface ClusterOrBuilder extends
    */
   int getNodePoolsCount();
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -328,9 +377,10 @@ public interface ClusterOrBuilder extends
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
-  java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> 
-      getNodePoolsOrBuilderList();
+  java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> getNodePoolsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -339,10 +389,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
-  com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(
-      int index);
+  com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -351,9 +402,10 @@ public interface ClusterOrBuilder extends
    *
    * <code>repeated string locations = 13;</code>
    */
-  java.util.List<java.lang.String>
-      getLocationsList();
+  java.util.List<java.lang.String> getLocationsList();
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -364,6 +416,8 @@ public interface ClusterOrBuilder extends
    */
   int getLocationsCount();
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -374,6 +428,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getLocations(int index);
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -382,10 +438,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>repeated string locations = 13;</code>
    */
-  com.google.protobuf.ByteString
-      getLocationsBytes(int index);
+  com.google.protobuf.ByteString getLocationsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Kubernetes alpha features are enabled on this cluster. This includes alpha
    * API groups (e.g. v1alpha1) and features that may not be production ready in
@@ -400,6 +457,8 @@ public interface ClusterOrBuilder extends
   boolean getEnableKubernetesAlpha();
 
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -409,6 +468,8 @@ public interface ClusterOrBuilder extends
    */
   int getResourceLabelsCount();
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -416,15 +477,13 @@ public interface ClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-  boolean containsResourceLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getResourceLabelsMap()} instead.
-   */
+  boolean containsResourceLabels(java.lang.String key);
+  /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getResourceLabels();
+  java.util.Map<java.lang.String, java.lang.String> getResourceLabels();
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -432,9 +491,10 @@ public interface ClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getResourceLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap();
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -442,11 +502,10 @@ public interface ClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-
-  java.lang.String getResourceLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getResourceLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -454,11 +513,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-
-  java.lang.String getResourceLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getResourceLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the set of labels for this cluster.
    * </pre>
@@ -467,16 +526,19 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getLabelFingerprint();
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the set of labels for this cluster.
    * </pre>
    *
    * <code>string label_fingerprint = 16;</code>
    */
-  com.google.protobuf.ByteString
-      getLabelFingerprintBytes();
+  com.google.protobuf.ByteString getLabelFingerprintBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the legacy ABAC authorization mode.
    * </pre>
@@ -485,6 +547,8 @@ public interface ClusterOrBuilder extends
    */
   boolean hasLegacyAbac();
   /**
+   *
+   *
    * <pre>
    * Configuration for the legacy ABAC authorization mode.
    * </pre>
@@ -493,6 +557,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.LegacyAbac getLegacyAbac();
   /**
+   *
+   *
    * <pre>
    * Configuration for the legacy ABAC authorization mode.
    * </pre>
@@ -502,6 +568,8 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.LegacyAbacOrBuilder getLegacyAbacOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration options for the NetworkPolicy feature.
    * </pre>
@@ -510,6 +578,8 @@ public interface ClusterOrBuilder extends
    */
   boolean hasNetworkPolicy();
   /**
+   *
+   *
    * <pre>
    * Configuration options for the NetworkPolicy feature.
    * </pre>
@@ -518,6 +588,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.NetworkPolicy getNetworkPolicy();
   /**
+   *
+   *
    * <pre>
    * Configuration options for the NetworkPolicy feature.
    * </pre>
@@ -527,6 +599,8 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.NetworkPolicyOrBuilder getNetworkPolicyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for cluster IP allocation.
    * </pre>
@@ -535,6 +609,8 @@ public interface ClusterOrBuilder extends
    */
   boolean hasIpAllocationPolicy();
   /**
+   *
+   *
    * <pre>
    * Configuration for cluster IP allocation.
    * </pre>
@@ -543,6 +619,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.IPAllocationPolicy getIpAllocationPolicy();
   /**
+   *
+   *
    * <pre>
    * Configuration for cluster IP allocation.
    * </pre>
@@ -552,34 +630,46 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.IPAllocationPolicyOrBuilder getIpAllocationPolicyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * </code>
    */
   boolean hasMasterAuthorizedNetworksConfig();
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * </code>
    */
   com.google.container.v1.MasterAuthorizedNetworksConfig getMasterAuthorizedNetworksConfig();
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * </code>
    */
-  com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder getMasterAuthorizedNetworksConfigOrBuilder();
+  com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
+      getMasterAuthorizedNetworksConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configure the maintenance policy for this cluster.
    * </pre>
@@ -588,6 +678,8 @@ public interface ClusterOrBuilder extends
    */
   boolean hasMaintenancePolicy();
   /**
+   *
+   *
    * <pre>
    * Configure the maintenance policy for this cluster.
    * </pre>
@@ -596,6 +688,8 @@ public interface ClusterOrBuilder extends
    */
   com.google.container.v1.MaintenancePolicy getMaintenancePolicy();
   /**
+   *
+   *
    * <pre>
    * Configure the maintenance policy for this cluster.
    * </pre>
@@ -605,6 +699,70 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  boolean hasNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  com.google.container.v1.NetworkConfig getNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  com.google.container.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  boolean hasPrivateClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  com.google.container.v1.PrivateClusterConfig getPrivateClusterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  com.google.container.v1.PrivateClusterConfigOrBuilder getPrivateClusterConfigOrBuilder();
+
+  /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
@@ -613,38 +771,48 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getSelfLink();
   /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>string self_link = 100;</code>
    */
-  com.google.protobuf.ByteString
-      getSelfLinkBytes();
+  com.google.protobuf.ByteString getSelfLinkBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
@@ -657,6 +825,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getEndpoint();
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
@@ -667,34 +837,52 @@ public interface ClusterOrBuilder extends
    *
    * <code>string endpoint = 102;</code>
    */
-  com.google.protobuf.ByteString
-      getEndpointBytes();
+  com.google.protobuf.ByteString getEndpointBytes();
 
   /**
+   *
+   *
    * <pre>
    * The initial Kubernetes version for this cluster.  Valid versions are those
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
    */
   java.lang.String getInitialClusterVersion();
   /**
+   *
+   *
    * <pre>
    * The initial Kubernetes version for this cluster.  Valid versions are those
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
    */
-  com.google.protobuf.ByteString
-      getInitialClusterVersionBytes();
+  com.google.protobuf.ByteString getInitialClusterVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The current software version of the master endpoint.
    * </pre>
@@ -703,38 +891,50 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getCurrentMasterVersion();
   /**
+   *
+   *
    * <pre>
    * [Output only] The current software version of the master endpoint.
    * </pre>
    *
    * <code>string current_master_version = 104;</code>
    */
-  com.google.protobuf.ByteString
-      getCurrentMasterVersionBytes();
+  com.google.protobuf.ByteString getCurrentMasterVersionBytes();
 
   /**
+   *
+   *
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getCurrentNodeVersion();
   /**
+   *
+   *
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getCurrentNodeVersionBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getCurrentNodeVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster was created, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -744,6 +944,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getCreateTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster was created, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -751,10 +953,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string create_time = 106;</code>
    */
-  com.google.protobuf.ByteString
-      getCreateTimeBytes();
+  com.google.protobuf.ByteString getCreateTimeBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The current status of this cluster.
    * </pre>
@@ -763,6 +966,8 @@ public interface ClusterOrBuilder extends
    */
   int getStatusValue();
   /**
+   *
+   *
    * <pre>
    * [Output only] The current status of this cluster.
    * </pre>
@@ -772,6 +977,8 @@ public interface ClusterOrBuilder extends
   com.google.container.v1.Cluster.Status getStatus();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * cluster, if available.
@@ -781,6 +988,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getStatusMessage();
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * cluster, if available.
@@ -788,10 +997,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string status_message = 108;</code>
    */
-  com.google.protobuf.ByteString
-      getStatusMessageBytes();
+  com.google.protobuf.ByteString getStatusMessageBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The size of the address space on each node for hosting
    * containers. This is provisioned from within the `container_ipv4_cidr`
@@ -803,6 +1013,8 @@ public interface ClusterOrBuilder extends
   int getNodeIpv4CidrSize();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address range of the Kubernetes services in
    * this cluster, in
@@ -815,6 +1027,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getServicesIpv4Cidr();
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address range of the Kubernetes services in
    * this cluster, in
@@ -825,45 +1039,56 @@ public interface ClusterOrBuilder extends
    *
    * <code>string services_ipv4_cidr = 110;</code>
    */
-  com.google.protobuf.ByteString
-      getServicesIpv4CidrBytes();
+  com.google.protobuf.ByteString getServicesIpv4CidrBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  java.util.List<java.lang.String>
-      getInstanceGroupUrlsList();
+  @java.lang.Deprecated
+  java.util.List<java.lang.String> getInstanceGroupUrlsList();
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getInstanceGroupUrlsCount();
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getInstanceGroupUrls(int index);
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceGroupUrlsBytes(int index);
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The number of nodes currently in the cluster.
    * </pre>
@@ -873,6 +1098,8 @@ public interface ClusterOrBuilder extends
   int getCurrentNodeCount();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster will be automatically
    * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -882,6 +1109,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getExpireTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster will be automatically
    * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -889,6 +1118,32 @@ public interface ClusterOrBuilder extends
    *
    * <code>string expire_time = 113;</code>
    */
-  com.google.protobuf.ByteString
-      getExpireTimeBytes();
+  com.google.protobuf.ByteString getExpireTimeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  com.google.protobuf.ByteString getLocationBytes();
 }

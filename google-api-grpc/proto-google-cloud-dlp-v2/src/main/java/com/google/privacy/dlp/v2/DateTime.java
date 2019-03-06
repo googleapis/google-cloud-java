@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Message for a date time object.
  * e.g. 2018-01-01, 5th August.
@@ -11,24 +13,25 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.DateTime}
  */
-public  final class DateTime extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DateTime extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DateTime)
     DateTimeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DateTime.newBuilder() to construct.
   private DateTime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DateTime() {
     dayOfWeek_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DateTime(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,88 +51,99 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.type.Date.Builder subBuilder = null;
-            if (date_ != null) {
-              subBuilder = date_.toBuilder();
-            }
-            date_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(date_);
-              date_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.type.Date.Builder subBuilder = null;
+              if (date_ != null) {
+                subBuilder = date_.toBuilder();
+              }
+              date_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(date_);
+                date_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
+              break;
+            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            dayOfWeek_ = rawValue;
-            break;
-          }
-          case 26: {
-            com.google.type.TimeOfDay.Builder subBuilder = null;
-            if (time_ != null) {
-              subBuilder = time_.toBuilder();
+              dayOfWeek_ = rawValue;
+              break;
             }
-            time_ = input.readMessage(com.google.type.TimeOfDay.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(time_);
-              time_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.type.TimeOfDay.Builder subBuilder = null;
+              if (time_ != null) {
+                subBuilder = time_.toBuilder();
+              }
+              time_ = input.readMessage(com.google.type.TimeOfDay.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(time_);
+                time_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.privacy.dlp.v2.DateTime.TimeZone.Builder subBuilder = null;
-            if (timeZone_ != null) {
-              subBuilder = timeZone_.toBuilder();
+              break;
             }
-            timeZone_ = input.readMessage(com.google.privacy.dlp.v2.DateTime.TimeZone.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timeZone_);
-              timeZone_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.privacy.dlp.v2.DateTime.TimeZone.Builder subBuilder = null;
+              if (timeZone_ != null) {
+                subBuilder = timeZone_.toBuilder();
+              }
+              timeZone_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.DateTime.TimeZone.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeZone_);
+                timeZone_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_DateTime_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_DateTime_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.DateTime.class, com.google.privacy.dlp.v2.DateTime.Builder.class);
+            com.google.privacy.dlp.v2.DateTime.class,
+            com.google.privacy.dlp.v2.DateTime.Builder.class);
   }
 
-  public interface TimeZoneOrBuilder extends
+  public interface TimeZoneOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DateTime.TimeZone)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Set only if the offset can be determined. Positive for time ahead of UTC.
      * E.g. For "UTC-9", this value is -540.
@@ -139,27 +153,26 @@ private static final long serialVersionUID = 0L;
      */
     int getOffsetMinutes();
   }
-  /**
-   * Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone}
-   */
-  public  static final class TimeZone extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone} */
+  public static final class TimeZone extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DateTime.TimeZone)
       TimeZoneOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TimeZone.newBuilder() to construct.
     private TimeZone(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private TimeZone() {
       offsetMinutes_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TimeZone(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -179,46 +192,50 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-
-              offsetMinutes_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 8:
+              {
+                offsetMinutes_ = input.readInt32();
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_TimeZone_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DateTime_TimeZone_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_TimeZone_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DateTime_TimeZone_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.DateTime.TimeZone.class, com.google.privacy.dlp.v2.DateTime.TimeZone.Builder.class);
+              com.google.privacy.dlp.v2.DateTime.TimeZone.class,
+              com.google.privacy.dlp.v2.DateTime.TimeZone.Builder.class);
     }
 
     public static final int OFFSET_MINUTES_FIELD_NUMBER = 1;
     private int offsetMinutes_;
     /**
+     *
+     *
      * <pre>
      * Set only if the offset can be determined. Positive for time ahead of UTC.
      * E.g. For "UTC-9", this value is -540.
@@ -231,6 +248,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -242,8 +260,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (offsetMinutes_ != 0) {
         output.writeInt32(1, offsetMinutes_);
       }
@@ -257,8 +274,7 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (offsetMinutes_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, offsetMinutes_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, offsetMinutes_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -268,16 +284,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.DateTime.TimeZone)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.DateTime.TimeZone other = (com.google.privacy.dlp.v2.DateTime.TimeZone) obj;
+      com.google.privacy.dlp.v2.DateTime.TimeZone other =
+          (com.google.privacy.dlp.v2.DateTime.TimeZone) obj;
 
       boolean result = true;
-      result = result && (getOffsetMinutes()
-          == other.getOffsetMinutes());
+      result = result && (getOffsetMinutes() == other.getOffsetMinutes());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -296,88 +312,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
-        java.nio.ByteBuffer data)
+    public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.DateTime.TimeZone parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.DateTime.TimeZone parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.DateTime.TimeZone parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.privacy.dlp.v2.DateTime.TimeZone prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -386,24 +408,25 @@ private static final long serialVersionUID = 0L;
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code google.privacy.dlp.v2.DateTime.TimeZone} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DateTime.TimeZone)
         com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_TimeZone_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DateTime_TimeZone_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_TimeZone_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DateTime_TimeZone_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.DateTime.TimeZone.class, com.google.privacy.dlp.v2.DateTime.TimeZone.Builder.class);
+                com.google.privacy.dlp.v2.DateTime.TimeZone.class,
+                com.google.privacy.dlp.v2.DateTime.TimeZone.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.DateTime.TimeZone.newBuilder()
@@ -411,16 +434,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -430,9 +452,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_TimeZone_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_DateTime_TimeZone_descriptor;
       }
 
       @java.lang.Override
@@ -451,7 +473,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.DateTime.TimeZone buildPartial() {
-        com.google.privacy.dlp.v2.DateTime.TimeZone result = new com.google.privacy.dlp.v2.DateTime.TimeZone(this);
+        com.google.privacy.dlp.v2.DateTime.TimeZone result =
+            new com.google.privacy.dlp.v2.DateTime.TimeZone(this);
         result.offsetMinutes_ = offsetMinutes_;
         onBuilt();
         return result;
@@ -461,38 +484,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.DateTime.TimeZone) {
-          return mergeFrom((com.google.privacy.dlp.v2.DateTime.TimeZone)other);
+          return mergeFrom((com.google.privacy.dlp.v2.DateTime.TimeZone) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -533,8 +559,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private int offsetMinutes_ ;
+      private int offsetMinutes_;
       /**
+       *
+       *
        * <pre>
        * Set only if the offset can be determined. Positive for time ahead of UTC.
        * E.g. For "UTC-9", this value is -540.
@@ -546,6 +574,8 @@ private static final long serialVersionUID = 0L;
         return offsetMinutes_;
       }
       /**
+       *
+       *
        * <pre>
        * Set only if the offset can be determined. Positive for time ahead of UTC.
        * E.g. For "UTC-9", this value is -540.
@@ -554,12 +584,14 @@ private static final long serialVersionUID = 0L;
        * <code>int32 offset_minutes = 1;</code>
        */
       public Builder setOffsetMinutes(int value) {
-        
+
         offsetMinutes_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set only if the offset can be determined. Positive for time ahead of UTC.
        * E.g. For "UTC-9", this value is -540.
@@ -568,11 +600,12 @@ private static final long serialVersionUID = 0L;
        * <code>int32 offset_minutes = 1;</code>
        */
       public Builder clearOffsetMinutes() {
-        
+
         offsetMinutes_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -585,12 +618,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DateTime.TimeZone)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DateTime.TimeZone)
     private static final com.google.privacy.dlp.v2.DateTime.TimeZone DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.DateTime.TimeZone();
     }
@@ -599,16 +632,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TimeZone>
-        PARSER = new com.google.protobuf.AbstractParser<TimeZone>() {
-      @java.lang.Override
-      public TimeZone parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TimeZone(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TimeZone> PARSER =
+        new com.google.protobuf.AbstractParser<TimeZone>() {
+          @java.lang.Override
+          public TimeZone parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TimeZone(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TimeZone> parser() {
       return PARSER;
@@ -623,12 +656,13 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.DateTime.TimeZone getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int DATE_FIELD_NUMBER = 1;
   private com.google.type.Date date_;
   /**
+   *
+   *
    * <pre>
    * One or more of the following must be set. All fields are optional, but
    * when set must be valid date or time values.
@@ -640,6 +674,8 @@ private static final long serialVersionUID = 0L;
     return date_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * One or more of the following must be set. All fields are optional, but
    * when set must be valid date or time values.
@@ -651,6 +687,8 @@ private static final long serialVersionUID = 0L;
     return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
   /**
+   *
+   *
    * <pre>
    * One or more of the following must be set. All fields are optional, but
    * when set must be valid date or time values.
@@ -664,15 +702,11 @@ private static final long serialVersionUID = 0L;
 
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
   private int dayOfWeek_;
-  /**
-   * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-   */
+  /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
   public int getDayOfWeekValue() {
     return dayOfWeek_;
   }
-  /**
-   * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-   */
+  /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
   public com.google.type.DayOfWeek getDayOfWeek() {
     @SuppressWarnings("deprecation")
     com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
@@ -681,47 +715,38 @@ private static final long serialVersionUID = 0L;
 
   public static final int TIME_FIELD_NUMBER = 3;
   private com.google.type.TimeOfDay time_;
-  /**
-   * <code>.google.type.TimeOfDay time = 3;</code>
-   */
+  /** <code>.google.type.TimeOfDay time = 3;</code> */
   public boolean hasTime() {
     return time_ != null;
   }
-  /**
-   * <code>.google.type.TimeOfDay time = 3;</code>
-   */
+  /** <code>.google.type.TimeOfDay time = 3;</code> */
   public com.google.type.TimeOfDay getTime() {
     return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
   }
-  /**
-   * <code>.google.type.TimeOfDay time = 3;</code>
-   */
+  /** <code>.google.type.TimeOfDay time = 3;</code> */
   public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
     return getTime();
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.DateTime.TimeZone timeZone_;
-  /**
-   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
   public boolean hasTimeZone() {
     return timeZone_ != null;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
   public com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone() {
-    return timeZone_ == null ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance() : timeZone_;
+    return timeZone_ == null
+        ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()
+        : timeZone_;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
   public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
     return getTimeZone();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -733,8 +758,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (date_ != null) {
       output.writeMessage(1, getDate());
     }
@@ -757,20 +781,16 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (date_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getDate());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDate());
     }
     if (dayOfWeek_ != com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, dayOfWeek_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, dayOfWeek_);
     }
     if (time_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTime());
     }
     if (timeZone_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getTimeZone());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeZone());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -780,7 +800,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.DateTime)) {
       return super.equals(obj);
@@ -790,19 +810,16 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasDate() == other.hasDate());
     if (hasDate()) {
-      result = result && getDate()
-          .equals(other.getDate());
+      result = result && getDate().equals(other.getDate());
     }
     result = result && dayOfWeek_ == other.dayOfWeek_;
     result = result && (hasTime() == other.hasTime());
     if (hasTime()) {
-      result = result && getTime()
-          .equals(other.getTime());
+      result = result && getTime().equals(other.getTime());
     }
     result = result && (hasTimeZone() == other.hasTimeZone());
     if (hasTimeZone()) {
-      result = result && getTimeZone()
-          .equals(other.getTimeZone());
+      result = result && getTimeZone().equals(other.getTimeZone());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -834,97 +851,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.DateTime parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.DateTime parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.DateTime parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.privacy.dlp.v2.DateTime parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.DateTime parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.DateTime prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Message for a date time object.
    * e.g. 2018-01-01, 5th August.
@@ -932,21 +955,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.DateTime}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DateTime)
       com.google.privacy.dlp.v2.DateTimeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DateTime_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DateTime_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.DateTime.class, com.google.privacy.dlp.v2.DateTime.Builder.class);
+              com.google.privacy.dlp.v2.DateTime.class,
+              com.google.privacy.dlp.v2.DateTime.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.DateTime.newBuilder()
@@ -954,16 +979,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -991,9 +1015,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DateTime_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DateTime_descriptor;
     }
 
     @java.lang.Override
@@ -1037,38 +1061,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.DateTime) {
-        return mergeFrom((com.google.privacy.dlp.v2.DateTime)other);
+        return mergeFrom((com.google.privacy.dlp.v2.DateTime) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1120,8 +1145,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.type.Date date_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> dateBuilder_;
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        dateBuilder_;
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1133,6 +1161,8 @@ private static final long serialVersionUID = 0L;
       return dateBuilder_ != null || date_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1148,6 +1178,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1169,6 +1201,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1176,8 +1210,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.type.Date date = 1;</code>
      */
-    public Builder setDate(
-        com.google.type.Date.Builder builderForValue) {
+    public Builder setDate(com.google.type.Date.Builder builderForValue) {
       if (dateBuilder_ == null) {
         date_ = builderForValue.build();
         onChanged();
@@ -1188,6 +1221,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1198,8 +1233,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeDate(com.google.type.Date value) {
       if (dateBuilder_ == null) {
         if (date_ != null) {
-          date_ =
-            com.google.type.Date.newBuilder(date_).mergeFrom(value).buildPartial();
+          date_ = com.google.type.Date.newBuilder(date_).mergeFrom(value).buildPartial();
         } else {
           date_ = value;
         }
@@ -1211,6 +1245,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1230,6 +1266,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1238,11 +1276,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.type.Date date = 1;</code>
      */
     public com.google.type.Date.Builder getDateBuilder() {
-      
+
       onChanged();
       return getDateFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1254,11 +1294,12 @@ private static final long serialVersionUID = 0L;
       if (dateBuilder_ != null) {
         return dateBuilder_.getMessageOrBuilder();
       } else {
-        return date_ == null ?
-            com.google.type.Date.getDefaultInstance() : date_;
+        return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * One or more of the following must be set. All fields are optional, but
      * when set must be valid date or time values.
@@ -1267,59 +1308,48 @@ private static final long serialVersionUID = 0L;
      * <code>.google.type.Date date = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> 
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         getDateFieldBuilder() {
       if (dateBuilder_ == null) {
-        dateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
-                getDate(),
-                getParentForChildren(),
-                isClean());
+        dateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getDate(), getParentForChildren(), isClean());
         date_ = null;
       }
       return dateBuilder_;
     }
 
     private int dayOfWeek_ = 0;
-    /**
-     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-     */
+    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
-    /**
-     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-     */
+    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
     public Builder setDayOfWeekValue(int value) {
       dayOfWeek_ = value;
       onChanged();
       return this;
     }
-    /**
-     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-     */
+    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
     public com.google.type.DayOfWeek getDayOfWeek() {
       @SuppressWarnings("deprecation")
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.valueOf(dayOfWeek_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
-    /**
-     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-     */
+    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
     public Builder setDayOfWeek(com.google.type.DayOfWeek value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       dayOfWeek_ = value.getNumber();
       onChanged();
       return this;
     }
-    /**
-     * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-     */
+    /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
     public Builder clearDayOfWeek() {
-      
+
       dayOfWeek_ = 0;
       onChanged();
       return this;
@@ -1327,16 +1357,15 @@ private static final long serialVersionUID = 0L;
 
     private com.google.type.TimeOfDay time_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.type.TimeOfDay, com.google.type.TimeOfDay.Builder, com.google.type.TimeOfDayOrBuilder> timeBuilder_;
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+            com.google.type.TimeOfDay,
+            com.google.type.TimeOfDay.Builder,
+            com.google.type.TimeOfDayOrBuilder>
+        timeBuilder_;
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     public boolean hasTime() {
       return timeBuilder_ != null || time_ != null;
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     public com.google.type.TimeOfDay getTime() {
       if (timeBuilder_ == null) {
         return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
@@ -1344,9 +1373,7 @@ private static final long serialVersionUID = 0L;
         return timeBuilder_.getMessage();
       }
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     public Builder setTime(com.google.type.TimeOfDay value) {
       if (timeBuilder_ == null) {
         if (value == null) {
@@ -1360,11 +1387,8 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
-    public Builder setTime(
-        com.google.type.TimeOfDay.Builder builderForValue) {
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
+    public Builder setTime(com.google.type.TimeOfDay.Builder builderForValue) {
       if (timeBuilder_ == null) {
         time_ = builderForValue.build();
         onChanged();
@@ -1374,14 +1398,11 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     public Builder mergeTime(com.google.type.TimeOfDay value) {
       if (timeBuilder_ == null) {
         if (time_ != null) {
-          time_ =
-            com.google.type.TimeOfDay.newBuilder(time_).mergeFrom(value).buildPartial();
+          time_ = com.google.type.TimeOfDay.newBuilder(time_).mergeFrom(value).buildPartial();
         } else {
           time_ = value;
         }
@@ -1392,9 +1413,7 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     public Builder clearTime() {
       if (timeBuilder_ == null) {
         time_ = null;
@@ -1406,37 +1425,32 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     public com.google.type.TimeOfDay.Builder getTimeBuilder() {
-      
+
       onChanged();
       return getTimeFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     public com.google.type.TimeOfDayOrBuilder getTimeOrBuilder() {
       if (timeBuilder_ != null) {
         return timeBuilder_.getMessageOrBuilder();
       } else {
-        return time_ == null ?
-            com.google.type.TimeOfDay.getDefaultInstance() : time_;
+        return time_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : time_;
       }
     }
-    /**
-     * <code>.google.type.TimeOfDay time = 3;</code>
-     */
+    /** <code>.google.type.TimeOfDay time = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.type.TimeOfDay, com.google.type.TimeOfDay.Builder, com.google.type.TimeOfDayOrBuilder> 
+            com.google.type.TimeOfDay,
+            com.google.type.TimeOfDay.Builder,
+            com.google.type.TimeOfDayOrBuilder>
         getTimeFieldBuilder() {
       if (timeBuilder_ == null) {
-        timeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.type.TimeOfDay, com.google.type.TimeOfDay.Builder, com.google.type.TimeOfDayOrBuilder>(
-                getTime(),
-                getParentForChildren(),
-                isClean());
+        timeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.TimeOfDay,
+                com.google.type.TimeOfDay.Builder,
+                com.google.type.TimeOfDayOrBuilder>(getTime(), getParentForChildren(), isClean());
         time_ = null;
       }
       return timeBuilder_;
@@ -1444,26 +1458,25 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.DateTime.TimeZone timeZone_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DateTime.TimeZone, com.google.privacy.dlp.v2.DateTime.TimeZone.Builder, com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder> timeZoneBuilder_;
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+            com.google.privacy.dlp.v2.DateTime.TimeZone,
+            com.google.privacy.dlp.v2.DateTime.TimeZone.Builder,
+            com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder>
+        timeZoneBuilder_;
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public boolean hasTimeZone() {
       return timeZoneBuilder_ != null || timeZone_ != null;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone() {
       if (timeZoneBuilder_ == null) {
-        return timeZone_ == null ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance() : timeZone_;
+        return timeZone_ == null
+            ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()
+            : timeZone_;
       } else {
         return timeZoneBuilder_.getMessage();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public Builder setTimeZone(com.google.privacy.dlp.v2.DateTime.TimeZone value) {
       if (timeZoneBuilder_ == null) {
         if (value == null) {
@@ -1477,9 +1490,7 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public Builder setTimeZone(
         com.google.privacy.dlp.v2.DateTime.TimeZone.Builder builderForValue) {
       if (timeZoneBuilder_ == null) {
@@ -1491,14 +1502,14 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public Builder mergeTimeZone(com.google.privacy.dlp.v2.DateTime.TimeZone value) {
       if (timeZoneBuilder_ == null) {
         if (timeZone_ != null) {
           timeZone_ =
-            com.google.privacy.dlp.v2.DateTime.TimeZone.newBuilder(timeZone_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.DateTime.TimeZone.newBuilder(timeZone_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           timeZone_ = value;
         }
@@ -1509,9 +1520,7 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public Builder clearTimeZone() {
       if (timeZoneBuilder_ == null) {
         timeZone_ = null;
@@ -1523,44 +1532,42 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public com.google.privacy.dlp.v2.DateTime.TimeZone.Builder getTimeZoneBuilder() {
-      
+
       onChanged();
       return getTimeZoneFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     public com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder() {
       if (timeZoneBuilder_ != null) {
         return timeZoneBuilder_.getMessageOrBuilder();
       } else {
-        return timeZone_ == null ?
-            com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance() : timeZone_;
+        return timeZone_ == null
+            ? com.google.privacy.dlp.v2.DateTime.TimeZone.getDefaultInstance()
+            : timeZone_;
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DateTime.TimeZone, com.google.privacy.dlp.v2.DateTime.TimeZone.Builder, com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder> 
+            com.google.privacy.dlp.v2.DateTime.TimeZone,
+            com.google.privacy.dlp.v2.DateTime.TimeZone.Builder,
+            com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder>
         getTimeZoneFieldBuilder() {
       if (timeZoneBuilder_ == null) {
-        timeZoneBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.DateTime.TimeZone, com.google.privacy.dlp.v2.DateTime.TimeZone.Builder, com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder>(
-                getTimeZone(),
-                getParentForChildren(),
-                isClean());
+        timeZoneBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DateTime.TimeZone,
+                com.google.privacy.dlp.v2.DateTime.TimeZone.Builder,
+                com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder>(
+                getTimeZone(), getParentForChildren(), isClean());
         timeZone_ = null;
       }
       return timeZoneBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1570,12 +1577,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DateTime)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DateTime)
   private static final com.google.privacy.dlp.v2.DateTime DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.DateTime();
   }
@@ -1584,16 +1591,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DateTime>
-      PARSER = new com.google.protobuf.AbstractParser<DateTime>() {
-    @java.lang.Override
-    public DateTime parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DateTime(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DateTime> PARSER =
+      new com.google.protobuf.AbstractParser<DateTime>() {
+        @java.lang.Override
+        public DateTime parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DateTime(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DateTime> parser() {
     return PARSER;
@@ -1608,6 +1615,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.DateTime getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

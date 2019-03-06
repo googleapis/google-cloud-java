@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface LookupResponseOrBuilder extends
+public interface LookupResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.LookupResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -16,9 +19,10 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
-  java.util.List<com.google.datastore.v1.EntityResult> 
-      getFoundList();
+  java.util.List<com.google.datastore.v1.EntityResult> getFoundList();
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -29,6 +33,8 @@ public interface LookupResponseOrBuilder extends
    */
   com.google.datastore.v1.EntityResult getFound(int index);
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -39,6 +45,8 @@ public interface LookupResponseOrBuilder extends
    */
   int getFoundCount();
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -47,9 +55,10 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> 
-      getFoundOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> getFoundOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -58,10 +67,11 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
-  com.google.datastore.v1.EntityResultOrBuilder getFoundOrBuilder(
-      int index);
+  com.google.datastore.v1.EntityResultOrBuilder getFoundOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -70,9 +80,10 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
-  java.util.List<com.google.datastore.v1.EntityResult> 
-      getMissingList();
+  java.util.List<com.google.datastore.v1.EntityResult> getMissingList();
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -83,6 +94,8 @@ public interface LookupResponseOrBuilder extends
    */
   com.google.datastore.v1.EntityResult getMissing(int index);
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -93,6 +106,8 @@ public interface LookupResponseOrBuilder extends
    */
   int getMissingCount();
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -101,9 +116,10 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> 
-      getMissingOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> getMissingOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -112,10 +128,11 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
-  com.google.datastore.v1.EntityResultOrBuilder getMissingOrBuilder(
-      int index);
+  com.google.datastore.v1.EntityResultOrBuilder getMissingOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -124,9 +141,10 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
-  java.util.List<com.google.datastore.v1.Key> 
-      getDeferredList();
+  java.util.List<com.google.datastore.v1.Key> getDeferredList();
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -137,6 +155,8 @@ public interface LookupResponseOrBuilder extends
    */
   com.google.datastore.v1.Key getDeferred(int index);
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -147,6 +167,8 @@ public interface LookupResponseOrBuilder extends
    */
   int getDeferredCount();
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -155,9 +177,10 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-      getDeferredOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getDeferredOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -166,6 +189,5 @@ public interface LookupResponseOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
-  com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(
-      int index);
+  com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(int index);
 }

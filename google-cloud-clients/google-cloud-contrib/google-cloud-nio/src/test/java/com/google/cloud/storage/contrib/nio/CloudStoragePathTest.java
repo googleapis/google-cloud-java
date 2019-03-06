@@ -22,14 +22,6 @@ import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.collect.Iterables;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLDecoder;
@@ -37,10 +29,14 @@ import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.ProviderMismatchException;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link CloudStoragePath}.
- */
+/** Unit tests for {@link CloudStoragePath}. */
 @RunWith(JUnit4.class)
 public class CloudStoragePathTest {
 
@@ -83,8 +79,10 @@ public class CloudStoragePathTest {
   }
 
   @Test
-  public void testGetGcsFilename_overrideStripPrefixSlash_doesntStripPrefixSlash() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", stripPrefixSlash(false))) {
+  public void testGetGcsFilename_overrideStripPrefixSlash_doesntStripPrefixSlash()
+      throws IOException {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", stripPrefixSlash(false))) {
       assertThat(fs.getPath("/hi").getBlobId().getName()).isEqualTo("/hi");
     }
   }
@@ -99,7 +97,8 @@ public class CloudStoragePathTest {
 
   @Test
   public void testGetGcsFilename_overridepermitEmptyPathComponents() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", permitEmptyPathComponents(true))) {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", permitEmptyPathComponents(true))) {
       assertThat(fs.getPath("a//b").getBlobId().getName()).isEqualTo("a//b");
     }
   }
@@ -231,8 +230,10 @@ public class CloudStoragePathTest {
   }
 
   @Test
-  public void testToRealPath_overridePermitEmptyPathComponents_extraSlashes_slashesRemain() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", permitEmptyPathComponents(true))) {
+  public void testToRealPath_overridePermitEmptyPathComponents_extraSlashes_slashesRemain()
+      throws IOException {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", permitEmptyPathComponents(true))) {
       assertThat(fs.getPath("/life///b/./good/").toRealPath().toString())
           .isEqualTo("life///b/./good/");
     }
@@ -240,7 +241,8 @@ public class CloudStoragePathTest {
 
   @Test
   public void testToRealPath_permitEmptyPathComponents_doesNotNormalize() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", permitEmptyPathComponents(true))) {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", permitEmptyPathComponents(true))) {
       assertThat(fs.getPath("a").toRealPath().toString()).isEqualTo("a");
       assertThat(fs.getPath("a//b").toRealPath().toString()).isEqualTo("a//b");
       assertThat(fs.getPath("a//./b//..").toRealPath().toString()).isEqualTo("a//./b//..");
@@ -249,14 +251,16 @@ public class CloudStoragePathTest {
 
   @Test
   public void testToRealPath_withWorkingDirectory_makesAbsolute() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", workingDirectory("/lol"))) {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", workingDirectory("/lol"))) {
       assertThat(fs.getPath("a").toRealPath().toString()).isEqualTo("lol/a");
     }
   }
 
   @Test
   public void testToRealPath_disableStripPrefixSlash_makesPathAbsolute() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", stripPrefixSlash(false))) {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", stripPrefixSlash(false))) {
       assertThat(fs.getPath("a").toRealPath().toString()).isEqualTo("/a");
       assertThat(fs.getPath("/a").toRealPath().toString()).isEqualTo("/a");
     }
@@ -364,7 +368,8 @@ public class CloudStoragePathTest {
 
   @Test
   public void testToAbsolutePath_withWorkingDirectory() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", workingDirectory("/lol"))) {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", workingDirectory("/lol"))) {
       assertThat(fs.getPath("a").toAbsolutePath().toString()).isEqualTo("/lol/a");
     }
   }
@@ -467,7 +472,8 @@ public class CloudStoragePathTest {
 
   @Test
   public void testEquals_currentDirectoryIsTakenIntoConsideration() throws IOException {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", workingDirectory("/hello"))) {
+    try (CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket("doodle", workingDirectory("/hello"))) {
       new EqualsTester()
           .addEqualityGroup(fs.getPath("cat"), fs.getPath("/hello/cat"))
           .addEqualityGroup(fs.getPath(""), fs.getPath("/hello"))

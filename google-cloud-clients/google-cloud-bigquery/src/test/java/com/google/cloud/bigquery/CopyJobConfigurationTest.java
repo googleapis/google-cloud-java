@@ -22,18 +22,19 @@ import static org.junit.Assert.assertNull;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
+import com.google.common.collect.Lists;
 import java.util.List;
+import org.junit.Test;
 
 public class CopyJobConfigurationTest {
 
+  private static final String TEST_PROJECT_ID = "test-project-id";
   private static final TableId SOURCE_TABLE = TableId.of("dataset", "sourceTable");
-  private static final List<TableId> SOURCE_TABLES = ImmutableList.of(
-      TableId.of("dataset", "sourceTable1"),
-      TableId.of("dataset", "sourceTable2"));
+  private static final List<TableId> SOURCE_TABLES =
+      ImmutableList.of(
+          TableId.of("dataset", "sourceTable1"), TableId.of("dataset", "sourceTable2"));
   private static final TableId DESTINATION_TABLE = TableId.of("dataset", "destinationTable");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
@@ -54,11 +55,14 @@ public class CopyJobConfigurationTest {
   @Test
   public void testToBuilder() {
     compareCopyJobConfiguration(COPY_JOB_CONFIGURATION, COPY_JOB_CONFIGURATION.toBuilder().build());
-    compareCopyJobConfiguration(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
+    compareCopyJobConfiguration(
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
         COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toBuilder().build());
-    CopyJobConfiguration jobConfiguration = COPY_JOB_CONFIGURATION.toBuilder()
-        .setDestinationTable(TableId.of("dataset", "newTable"))
-        .build();
+    CopyJobConfiguration jobConfiguration =
+        COPY_JOB_CONFIGURATION
+            .toBuilder()
+            .setDestinationTable(TableId.of("dataset", "newTable"))
+            .build();
     assertEquals("newTable", jobConfiguration.getDestinationTable().getTable());
     jobConfiguration = jobConfiguration.toBuilder().setDestinationTable(DESTINATION_TABLE).build();
     compareCopyJobConfiguration(COPY_JOB_CONFIGURATION, jobConfiguration);
@@ -93,7 +97,6 @@ public class CopyJobConfigurationTest {
     assertEquals(WRITE_DISPOSITION, COPY_JOB_CONFIGURATION.getWriteDisposition());
   }
 
-
   @Test
   public void testToPbAndFromPb() {
     assertNotNull(COPY_JOB_CONFIGURATION.toPb().getCopy());
@@ -102,9 +105,10 @@ public class CopyJobConfigurationTest {
     assertNull(COPY_JOB_CONFIGURATION.toPb().getQuery());
     assertNull(COPY_JOB_CONFIGURATION.toPb().getCopy().getSourceTables());
     assertNull(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toPb().getCopy().getSourceTable());
-    compareCopyJobConfiguration(COPY_JOB_CONFIGURATION,
-        CopyJobConfiguration.fromPb(COPY_JOB_CONFIGURATION.toPb()));
-    compareCopyJobConfiguration(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
+    compareCopyJobConfiguration(
+        COPY_JOB_CONFIGURATION, CopyJobConfiguration.fromPb(COPY_JOB_CONFIGURATION.toPb()));
+    compareCopyJobConfiguration(
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
         CopyJobConfiguration.fromPb(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toPb()));
     CopyJobConfiguration jobConfiguration =
         CopyJobConfiguration.of(DESTINATION_TABLE, SOURCE_TABLES);
@@ -114,10 +118,34 @@ public class CopyJobConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    CopyJobConfiguration configuration = COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.setProjectId("p");
-    assertEquals("p", configuration.getDestinationTable().getProject());
+    CopyJobConfiguration configuration =
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.setProjectId(TEST_PROJECT_ID);
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
     for (TableId sourceTable : configuration.getSourceTables()) {
-      assertEquals("p", sourceTable.getProject());
+      assertEquals(TEST_PROJECT_ID, sourceTable.getProject());
+    }
+  }
+
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    CopyJobConfiguration configuration =
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES
+            .toBuilder()
+            .setSourceTables(
+                Lists.transform(
+                    SOURCE_TABLES,
+                    new Function<TableId, TableId>() {
+                      @Override
+                      public TableId apply(TableId tableId) {
+                        return tableId.setProjectId(TEST_PROJECT_ID);
+                      }
+                    }))
+            .setDestinationTable(DESTINATION_TABLE.setProjectId(TEST_PROJECT_ID))
+            .build()
+            .setProjectId("do-not-update");
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
+    for (TableId sourceTable : configuration.getSourceTables()) {
+      assertEquals(TEST_PROJECT_ID, sourceTable.getProject());
     }
   }
 
@@ -127,8 +155,8 @@ public class CopyJobConfigurationTest {
     assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.getType());
   }
 
-  private void compareCopyJobConfiguration(CopyJobConfiguration expected,
-      CopyJobConfiguration value) {
+  private void compareCopyJobConfiguration(
+      CopyJobConfiguration expected, CopyJobConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
@@ -136,6 +164,8 @@ public class CopyJobConfigurationTest {
     assertEquals(expected.getSourceTables(), value.getSourceTables());
     assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
-    assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
+    assertEquals(
+        expected.getDestinationEncryptionConfiguration(),
+        value.getDestinationEncryptionConfiguration());
   }
 }

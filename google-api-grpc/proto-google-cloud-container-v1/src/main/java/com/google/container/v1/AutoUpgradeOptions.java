@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * AutoUpgradeOptions defines the set of options for the user to control how
  * the Auto Upgrades will proceed.
@@ -11,25 +13,26 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.AutoUpgradeOptions}
  */
-public  final class AutoUpgradeOptions extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AutoUpgradeOptions extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.AutoUpgradeOptions)
     AutoUpgradeOptionsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AutoUpgradeOptions.newBuilder() to construct.
   private AutoUpgradeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AutoUpgradeOptions() {
     autoUpgradeStartTime_ = "";
     description_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AutoUpgradeOptions(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,53 +52,59 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            autoUpgradeStartTime_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              autoUpgradeStartTime_ = s;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AutoUpgradeOptions_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_AutoUpgradeOptions_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AutoUpgradeOptions_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_AutoUpgradeOptions_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.AutoUpgradeOptions.class, com.google.container.v1.AutoUpgradeOptions.Builder.class);
+            com.google.container.v1.AutoUpgradeOptions.class,
+            com.google.container.v1.AutoUpgradeOptions.Builder.class);
   }
 
   public static final int AUTO_UPGRADE_START_TIME_FIELD_NUMBER = 1;
   private volatile java.lang.Object autoUpgradeStartTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] This field is set when upgrades are about to commence
    * with the approximate start time for the upgrades, in
@@ -109,14 +118,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       autoUpgradeStartTime_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] This field is set when upgrades are about to commence
    * with the approximate start time for the upgrades, in
@@ -125,13 +135,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string auto_upgrade_start_time = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getAutoUpgradeStartTimeBytes() {
+  public com.google.protobuf.ByteString getAutoUpgradeStartTimeBytes() {
     java.lang.Object ref = autoUpgradeStartTime_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       autoUpgradeStartTime_ = b;
       return b;
     } else {
@@ -142,6 +150,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * [Output only] This field is set when upgrades are about to commence
    * with the description of the upgrade.
@@ -154,14 +164,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] This field is set when upgrades are about to commence
    * with the description of the upgrade.
@@ -169,13 +180,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -184,6 +193,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -195,8 +205,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getAutoUpgradeStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, autoUpgradeStartTime_);
     }
@@ -226,18 +235,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.AutoUpgradeOptions)) {
       return super.equals(obj);
     }
-    com.google.container.v1.AutoUpgradeOptions other = (com.google.container.v1.AutoUpgradeOptions) obj;
+    com.google.container.v1.AutoUpgradeOptions other =
+        (com.google.container.v1.AutoUpgradeOptions) obj;
 
     boolean result = true;
-    result = result && getAutoUpgradeStartTime()
-        .equals(other.getAutoUpgradeStartTime());
-    result = result && getDescription()
-        .equals(other.getDescription());
+    result = result && getAutoUpgradeStartTime().equals(other.getAutoUpgradeStartTime());
+    result = result && getDescription().equals(other.getDescription());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -258,97 +266,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.AutoUpgradeOptions parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.AutoUpgradeOptions parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.AutoUpgradeOptions parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.AutoUpgradeOptions parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.AutoUpgradeOptions parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.AutoUpgradeOptions parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.AutoUpgradeOptions prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * AutoUpgradeOptions defines the set of options for the user to control how
    * the Auto Upgrades will proceed.
@@ -356,21 +371,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.AutoUpgradeOptions}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.AutoUpgradeOptions)
       com.google.container.v1.AutoUpgradeOptionsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AutoUpgradeOptions_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_AutoUpgradeOptions_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AutoUpgradeOptions_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_AutoUpgradeOptions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.AutoUpgradeOptions.class, com.google.container.v1.AutoUpgradeOptions.Builder.class);
+              com.google.container.v1.AutoUpgradeOptions.class,
+              com.google.container.v1.AutoUpgradeOptions.Builder.class);
     }
 
     // Construct using com.google.container.v1.AutoUpgradeOptions.newBuilder()
@@ -378,16 +395,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -399,9 +415,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AutoUpgradeOptions_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_AutoUpgradeOptions_descriptor;
     }
 
     @java.lang.Override
@@ -420,7 +436,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.AutoUpgradeOptions buildPartial() {
-      com.google.container.v1.AutoUpgradeOptions result = new com.google.container.v1.AutoUpgradeOptions(this);
+      com.google.container.v1.AutoUpgradeOptions result =
+          new com.google.container.v1.AutoUpgradeOptions(this);
       result.autoUpgradeStartTime_ = autoUpgradeStartTime_;
       result.description_ = description_;
       onBuilt();
@@ -431,38 +448,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.AutoUpgradeOptions) {
-        return mergeFrom((com.google.container.v1.AutoUpgradeOptions)other);
+        return mergeFrom((com.google.container.v1.AutoUpgradeOptions) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -510,6 +528,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object autoUpgradeStartTime_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
@@ -521,8 +541,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAutoUpgradeStartTime() {
       java.lang.Object ref = autoUpgradeStartTime_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         autoUpgradeStartTime_ = s;
         return s;
@@ -531,6 +550,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
@@ -539,13 +560,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string auto_upgrade_start_time = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getAutoUpgradeStartTimeBytes() {
+    public com.google.protobuf.ByteString getAutoUpgradeStartTimeBytes() {
       java.lang.Object ref = autoUpgradeStartTime_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         autoUpgradeStartTime_ = b;
         return b;
       } else {
@@ -553,6 +572,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
@@ -561,17 +582,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string auto_upgrade_start_time = 1;</code>
      */
-    public Builder setAutoUpgradeStartTime(
-        java.lang.String value) {
+    public Builder setAutoUpgradeStartTime(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       autoUpgradeStartTime_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
@@ -581,12 +603,14 @@ private static final long serialVersionUID = 0L;
      * <code>string auto_upgrade_start_time = 1;</code>
      */
     public Builder clearAutoUpgradeStartTime() {
-      
+
       autoUpgradeStartTime_ = getDefaultInstance().getAutoUpgradeStartTime();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the approximate start time for the upgrades, in
@@ -595,13 +619,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string auto_upgrade_start_time = 1;</code>
      */
-    public Builder setAutoUpgradeStartTimeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAutoUpgradeStartTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       autoUpgradeStartTime_ = value;
       onChanged();
       return this;
@@ -609,6 +632,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the description of the upgrade.
@@ -619,8 +644,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -629,6 +653,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the description of the upgrade.
@@ -636,13 +662,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -650,6 +674,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the description of the upgrade.
@@ -657,17 +683,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the description of the upgrade.
@@ -676,12 +703,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 2;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] This field is set when upgrades are about to commence
      * with the description of the upgrade.
@@ -689,20 +718,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -712,12 +740,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.AutoUpgradeOptions)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.AutoUpgradeOptions)
   private static final com.google.container.v1.AutoUpgradeOptions DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.AutoUpgradeOptions();
   }
@@ -726,16 +754,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AutoUpgradeOptions>
-      PARSER = new com.google.protobuf.AbstractParser<AutoUpgradeOptions>() {
-    @java.lang.Override
-    public AutoUpgradeOptions parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AutoUpgradeOptions(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AutoUpgradeOptions> PARSER =
+      new com.google.protobuf.AbstractParser<AutoUpgradeOptions>() {
+        @java.lang.Override
+        public AutoUpgradeOptions parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AutoUpgradeOptions(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AutoUpgradeOptions> parser() {
     return PARSER;
@@ -750,6 +778,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.AutoUpgradeOptions getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

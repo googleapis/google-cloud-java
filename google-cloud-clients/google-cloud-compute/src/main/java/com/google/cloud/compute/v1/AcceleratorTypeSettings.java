@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class AcceleratorTypeSettings extends ClientSettings<AcceleratorTypeSettings> {
   /** Returns the object with the settings used for calls to aggregatedListAcceleratorTypes. */
   public PagedCallSettings<
-          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+          AggregatedListAcceleratorTypesHttpRequest,
+          AcceleratorTypeAggregatedList,
           AggregatedListAcceleratorTypesPagedResponse>
       aggregatedListAcceleratorTypesSettings() {
     return ((AcceleratorTypeStubSettings) getStubSettings())
@@ -190,7 +191,8 @@ public class AcceleratorTypeSettings extends ClientSettings<AcceleratorTypeSetti
 
     /** Returns the builder for the settings used for calls to aggregatedListAcceleratorTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
+            AggregatedListAcceleratorTypesHttpRequest,
+            AcceleratorTypeAggregatedList,
             AggregatedListAcceleratorTypesPagedResponse>
         aggregatedListAcceleratorTypesSettings() {
       return getStubSettingsBuilder().aggregatedListAcceleratorTypesSettings();

@@ -3,20 +3,24 @@
 
 package com.google.logging.v2;
 
-public interface ListExclusionsResponseOrBuilder extends
+public interface ListExclusionsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListExclusionsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of exclusions.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
-  java.util.List<com.google.logging.v2.LogExclusion> 
-      getExclusionsList();
+  java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList();
   /**
+   *
+   *
    * <pre>
    * A list of exclusions.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListExclusionsResponseOrBuilder extends
    */
   com.google.logging.v2.LogExclusion getExclusions(int index);
   /**
+   *
+   *
    * <pre>
    * A list of exclusions.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListExclusionsResponseOrBuilder extends
    */
   int getExclusionsCount();
   /**
+   *
+   *
    * <pre>
    * A list of exclusions.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
-  java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder> 
+  java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder>
       getExclusionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of exclusions.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
-  com.google.logging.v2.LogExclusionOrBuilder getExclusionsOrBuilder(
-      int index);
+  com.google.logging.v2.LogExclusionOrBuilder getExclusionsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call the same
@@ -62,6 +73,8 @@ public interface ListExclusionsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call the same
@@ -70,6 +83,5 @@ public interface ListExclusionsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

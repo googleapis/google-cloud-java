@@ -17,8 +17,8 @@
 package com.google.cloud.firestore;
 
 import com.google.common.base.Preconditions;
-import com.google.firestore.v1beta1.ArrayValue;
-import com.google.firestore.v1beta1.DocumentTransform.FieldTransform;
+import com.google.firestore.v1.ArrayValue;
+import com.google.firestore.v1.DocumentTransform.FieldTransform;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -104,7 +104,7 @@ public abstract class FieldValue {
       FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
       fieldTransform.setFieldPath(path.getEncodedPath());
       fieldTransform.setIncrement(
-          UserDataConverter.encodeValue(FieldPath.of(""), operand, UserDataConverter.ARGUMENT));
+          UserDataConverter.encodeValue(path, operand, UserDataConverter.ARGUMENT));
       return fieldTransform.build();
     }
 

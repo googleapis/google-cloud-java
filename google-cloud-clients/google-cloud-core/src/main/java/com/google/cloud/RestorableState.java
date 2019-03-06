@@ -27,8 +27,6 @@ package com.google.cloud;
  */
 public interface RestorableState<T extends Restorable<T>> {
 
-  /**
-   * Returns an object whose internal state reflects the one saved in the invocation object.
-   */
+  /** Returns an object whose internal state reflects the one saved in the invocation object. */
   T restore();
 }

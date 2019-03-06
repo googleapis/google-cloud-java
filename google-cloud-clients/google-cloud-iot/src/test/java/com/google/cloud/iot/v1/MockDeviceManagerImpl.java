@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -291,6 +291,54 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext((TestIamPermissionsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void sendCommandToDevice(
+      SendCommandToDeviceRequest request,
+      StreamObserver<SendCommandToDeviceResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof SendCommandToDeviceResponse) {
+      requests.add(request);
+      responseObserver.onNext((SendCommandToDeviceResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void bindDeviceToGateway(
+      BindDeviceToGatewayRequest request,
+      StreamObserver<BindDeviceToGatewayResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof BindDeviceToGatewayResponse) {
+      requests.add(request);
+      responseObserver.onNext((BindDeviceToGatewayResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void unbindDeviceFromGateway(
+      UnbindDeviceFromGatewayRequest request,
+      StreamObserver<UnbindDeviceFromGatewayResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof UnbindDeviceFromGatewayResponse) {
+      requests.add(request);
+      responseObserver.onNext((UnbindDeviceFromGatewayResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

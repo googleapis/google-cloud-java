@@ -14,20 +14,20 @@
 
 package com.google.privacy.dlp.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/deidentifyTemplates/{deidentify_template}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/deidentifyTemplates/{deidentify_template}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +56,15 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
   }
 
   public static ProjectDeidentifyTemplateName of(String project, String deidentifyTemplate) {
-    return newBuilder()
-      .setProject(project)
-      .setDeidentifyTemplate(deidentifyTemplate)
-      .build();
+    return newBuilder().setProject(project).setDeidentifyTemplate(deidentifyTemplate).build();
   }
 
   public static String format(String project, String deidentifyTemplate) {
     return newBuilder()
-      .setProject(project)
-      .setDeidentifyTemplate(deidentifyTemplate)
-      .build()
-      .toString();
+        .setProject(project)
+        .setDeidentifyTemplate(deidentifyTemplate)
+        .build()
+        .toString();
   }
 
   public static ProjectDeidentifyTemplateName parse(String formattedString) {
@@ -75,7 +72,9 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectDeidentifyTemplateName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectDeidentifyTemplateName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("deidentify_template"));
   }
 
@@ -150,8 +149,7 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectDeidentifyTemplateName projectDeidentifyTemplateName) {
       project = projectDeidentifyTemplateName.project;
@@ -186,4 +184,3 @@ public class ProjectDeidentifyTemplateName extends DeidentifyTemplateName {
     return h;
   }
 }
-

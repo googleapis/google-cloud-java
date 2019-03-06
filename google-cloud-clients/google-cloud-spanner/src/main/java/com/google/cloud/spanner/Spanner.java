@@ -52,8 +52,8 @@ public interface Spanner extends Service<SpannerOptions> {
   /**
    * Returns a {@code DatabaseClient} for the given database. It uses a pool of sessions to talk to
    * the database.
-   *
    * <!--SNIPPET get_db_client-->
+   *
    * <pre>{@code
    * SpannerOptions options = SpannerOptions.newBuilder().build();
    * Spanner spanner = options.getService();
@@ -64,20 +64,21 @@ public interface Spanner extends Service<SpannerOptions> {
    *     DatabaseId.of(project, instance, database);
    * DatabaseClient dbClient = spanner.getDatabaseClient(db);
    * }</pre>
+   *
    * <!--SNIPPET get_db_client-->
    */
   DatabaseClient getDatabaseClient(DatabaseId db);
 
   /**
    * Returns a {@code BatchClient} to do batch operations on Cloud Spanner databases. Batch client
-   * is useful when one wants to read/query a large amount of data from Cloud
-   * Spanner across multiple processes, even across different machines. It allows to create
-   * partitions of Cloud Spanner database and then read/query over each partition independently
-   * yet at the same snapshot.
+   * is useful when one wants to read/query a large amount of data from Cloud Spanner across
+   * multiple processes, even across different machines. It allows to create partitions of Cloud
+   * Spanner database and then read/query over each partition independently yet at the same
+   * snapshot.
    *
-   * <p> For all other use cases, {@code DatabaseClient} is more appropriate and performant.
-   *
+   * <p>For all other use cases, {@code DatabaseClient} is more appropriate and performant.
    * <!--SNIPPET get_batch_client-->
+   *
    * <pre>{@code
    * SpannerOptions options = SpannerOptions.newBuilder().build();
    * Spanner spanner = options.getService();
@@ -88,6 +89,7 @@ public interface Spanner extends Service<SpannerOptions> {
    *     DatabaseId.of(project, instance, database);
    * BatchClient batchClient = spanner.getBatchClient(db);
    * }</pre>
+   *
    * <!--SNIPPET get_batch_client-->
    */
   BatchClient getBatchClient(DatabaseId db);

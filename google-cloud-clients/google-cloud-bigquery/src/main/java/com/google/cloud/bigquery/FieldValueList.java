@@ -25,12 +25,12 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Google BigQuery Table Field Values class, which represents a row in returned query result
- * (table row). Tables rows can be retrieved as a result of a query or when listing table data.
+ * Google BigQuery Table Field Values class, which represents a row in returned query result (table
+ * row). Tables rows can be retrieved as a result of a query or when listing table data.
  *
- * Depending on how a corresponding query was executed, each row (an instance of {@code FieldValueList})
- * may or may not contain related schema. If schema is not provided, the individual cells of the row
- * will still be accessible by index but not by name.
+ * <p>Depending on how a corresponding query was executed, each row (an instance of {@code
+ * FieldValueList}) may or may not contain related schema. If schema is not provided, the individual
+ * cells of the row will still be accessible by index but not by name.
  */
 public class FieldValueList extends AbstractList<FieldValue> implements Serializable {
 
@@ -49,6 +49,7 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
 
   /**
    * Gets field value by index.
+   *
    * @param index field value index
    */
   @Override
@@ -58,9 +59,10 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
 
   /**
    * Gets field value by index.
+   *
    * @param name field name (defined in schema)
-   * @throws IllegalArgumentException if schema is not provided or if {@code name} was not found
-   *    in the schema
+   * @throws IllegalArgumentException if schema is not provided or if {@code name} was not found in
+   *     the schema
    */
   public FieldValue get(String name) {
     if (schema == null) {
@@ -70,16 +72,12 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
     return get(schema.getIndex(name));
   }
 
-  /**
-   * Returns {@code true} if schema is provided, {@code false} otherwise.
-   */
+  /** Returns {@code true} if schema is provided, {@code false} otherwise. */
   public boolean hasSchema() {
     return schema != null;
   }
 
-  /**
-   * Returns the total number of field values in the row.
-   */
+  /** Returns the total number of field values in the row. */
   @Override
   public int size() {
     return row.size();
@@ -89,8 +87,8 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
    * Creates an instance of {@code FieldValueList}, useful for testing.
    *
    * <p>This method is unstable. See <a
-   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a>
-   * for more context.
+   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a> for more
+   * context.
    */
   @BetaApi
   public static FieldValueList of(List<FieldValue> row, FieldList schema) {
@@ -101,8 +99,8 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
    * Creates an instance of {@code FieldValueList}, useful for testing.
    *
    * <p>This method is unstable. See <a
-   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a>
-   * for more context.
+   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a> for more
+   * context.
    */
   @BetaApi
   public static FieldValueList of(List<FieldValue> row, Field... schema) {

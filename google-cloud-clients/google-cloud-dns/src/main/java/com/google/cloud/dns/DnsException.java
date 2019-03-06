@@ -24,19 +24,18 @@ import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
 
-/**
- * DNS service exception.
- */
+/** DNS service exception. */
 public final class DnsException extends BaseHttpServiceException {
 
   // see: https://cloud.google.com/dns/troubleshooting
-  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(429, null, true),
-      new Error(500, null, false),
-      new Error(502, null, false),
-      new Error(503, null, false),
-      new Error(null, "userRateLimitExceeded", true),
-      new Error(null, "rateLimitExceeded", true));
+  private static final Set<Error> RETRYABLE_ERRORS =
+      ImmutableSet.of(
+          new Error(429, null, true),
+          new Error(500, null, false),
+          new Error(502, null, false),
+          new Error(503, null, false),
+          new Error(null, "userRateLimitExceeded", true),
+          new Error(null, "rateLimitExceeded", true));
   private static final long serialVersionUID = 490302380416260252L;
 
   public DnsException(IOException exception, boolean idempotent) {

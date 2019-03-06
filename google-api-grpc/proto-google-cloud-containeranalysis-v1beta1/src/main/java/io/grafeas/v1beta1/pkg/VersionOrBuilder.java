@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.pkg;
 
-public interface VersionOrBuilder extends
+public interface VersionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.package.Version)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Used to correct mistakes in the version numbering scheme.
    * </pre>
@@ -17,6 +20,8 @@ public interface VersionOrBuilder extends
   int getEpoch();
 
   /**
+   *
+   *
    * <pre>
    * The main part of the version name.
    * </pre>
@@ -25,16 +30,19 @@ public interface VersionOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The main part of the version name.
    * </pre>
    *
    * <code>string name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The iteration of the package build from the above version.
    * </pre>
@@ -43,16 +51,19 @@ public interface VersionOrBuilder extends
    */
   java.lang.String getRevision();
   /**
+   *
+   *
    * <pre>
    * The iteration of the package build from the above version.
    * </pre>
    *
    * <code>string revision = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getRevisionBytes();
+  com.google.protobuf.ByteString getRevisionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Distinguish between sentinel MIN/MAX versions and normal versions. If
    * kind is not NORMAL, then the other fields are ignored.
@@ -62,6 +73,8 @@ public interface VersionOrBuilder extends
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * Distinguish between sentinel MIN/MAX versions and normal versions. If
    * kind is not NORMAL, then the other fields are ignored.

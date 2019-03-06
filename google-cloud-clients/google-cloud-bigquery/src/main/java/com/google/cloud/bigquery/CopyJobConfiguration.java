@@ -21,9 +21,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.bigquery.model.JobConfigurationTableCopy;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -78,33 +78,28 @@ public final class CopyJobConfiguration extends JobConfiguration {
             JobInfo.CreateDisposition.valueOf(copyConfigurationPb.getCreateDisposition());
       }
       if (copyConfigurationPb.getWriteDisposition() != null) {
-        this.writeDisposition = JobInfo.WriteDisposition.valueOf(
-            copyConfigurationPb.getWriteDisposition());
+        this.writeDisposition =
+            JobInfo.WriteDisposition.valueOf(copyConfigurationPb.getWriteDisposition());
       }
       if (copyConfigurationPb.getDestinationEncryptionConfiguration() != null) {
-        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
-            copyConfigurationPb.getDestinationEncryptionConfiguration()).build();
+        this.destinationEncryptionConfiguration =
+            new EncryptionConfiguration.Builder(
+                    copyConfigurationPb.getDestinationEncryptionConfiguration())
+                .build();
       }
     }
 
-
-    /**
-     * Sets the source tables to copy.
-     */
+    /** Sets the source tables to copy. */
     public Builder setSourceTables(List<TableId> sourceTables) {
       this.sourceTables = sourceTables != null ? ImmutableList.copyOf(sourceTables) : null;
       return this;
     }
 
-
-    /**
-     * Sets the destination table of the copy job.
-     */
+    /** Sets the destination table of the copy job. */
     public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
       return this;
     }
-
 
     public Builder setDestinationEncryptionConfiguration(
         EncryptionConfiguration encryptionConfiguration) {
@@ -112,11 +107,11 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-
     /**
      * Sets whether the job is allowed to create new tables.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
      *     Create Disposition</a>
      */
     public Builder setCreateDisposition(JobInfo.CreateDisposition createDisposition) {
@@ -124,11 +119,11 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-
     /**
      * Sets the action that should occur if the destination table already exists.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
      *     Write Disposition</a>
      */
     public Builder setWriteDisposition(JobInfo.WriteDisposition writeDisposition) {
@@ -150,43 +145,36 @@ public final class CopyJobConfiguration extends JobConfiguration {
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
   }
 
-
-  /**
-   * Returns the source tables to copy.
-   */
+  /** Returns the source tables to copy. */
   public List<TableId> getSourceTables() {
     return sourceTables;
   }
 
-
-  /**
-   * Returns the destination table to load the data into.
-   */
+  /** Returns the destination table to load the data into. */
   public TableId getDestinationTable() {
     return destinationTable;
   }
-
 
   public EncryptionConfiguration getDestinationEncryptionConfiguration() {
     return destinationEncryptionConfiguration;
   }
 
-
   /**
    * Returns whether the job is allowed to create new tables.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
    *     Create Disposition</a>
    */
   public JobInfo.CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
 
-
   /**
    * Returns the action that should occur if the destination table already exists.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
    *     Write Disposition</a>
    */
   public JobInfo.WriteDisposition getWriteDisposition() {
@@ -211,27 +199,33 @@ public final class CopyJobConfiguration extends JobConfiguration {
   @Override
   public boolean equals(Object obj) {
     return obj == this
-        || obj instanceof CopyJobConfiguration
-        && baseEquals((CopyJobConfiguration) obj);
+        || obj instanceof CopyJobConfiguration && baseEquals((CopyJobConfiguration) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), sourceTables, destinationTable, createDisposition,
-        writeDisposition);
+    return Objects.hash(
+        baseHashCode(), sourceTables, destinationTable, createDisposition, writeDisposition);
   }
 
   @Override
   CopyJobConfiguration setProjectId(final String projectId) {
     Builder builder = toBuilder();
     builder.setSourceTables(
-        Lists.transform(getSourceTables(), new Function<TableId, TableId>() {
-          @Override
-          public TableId apply(TableId tableId) {
-            return tableId.setProjectId(projectId);
-          }
-        }));
-    builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
+        Lists.transform(
+            getSourceTables(),
+            new Function<TableId, TableId>() {
+              @Override
+              public TableId apply(TableId tableId) {
+                if (Strings.isNullOrEmpty(tableId.getProject())) {
+                  return tableId.setProjectId(projectId);
+                }
+                return tableId;
+              }
+            }));
+    if (Strings.isNullOrEmpty(getDestinationTable().getProject())) {
+      builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
+    }
     return builder.build();
   }
 
@@ -257,14 +251,10 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return new com.google.api.services.bigquery.model.JobConfiguration().setCopy(configurationPb);
   }
 
-
-  /**
-   * Creates a builder for a BigQuery Copy Job configuration given destination and source table.
-   */
+  /** Creates a builder for a BigQuery Copy Job configuration given destination and source table. */
   public static Builder newBuilder(TableId destinationTable, TableId sourceTable) {
     return newBuilder(destinationTable, ImmutableList.of(checkNotNull(sourceTable)));
   }
-
 
   /**
    * Creates a builder for a BigQuery Copy Job configuration given destination and source tables.
@@ -273,16 +263,12 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return new Builder().setDestinationTable(destinationTable).setSourceTables(sourceTables);
   }
 
-  /**
-   * Returns a BigQuery Copy Job configuration for the given destination and source table.
-   */
+  /** Returns a BigQuery Copy Job configuration for the given destination and source table. */
   public static CopyJobConfiguration of(TableId destinationTable, TableId sourceTable) {
     return newBuilder(destinationTable, sourceTable).build();
   }
 
-  /**
-   * Returns a BigQuery Copy Job configuration for the given destination and source tables.
-   */
+  /** Returns a BigQuery Copy Job configuration for the given destination and source tables. */
   public static CopyJobConfiguration of(TableId destinationTable, List<TableId> sourceTables) {
     return newBuilder(destinationTable, sourceTables).build();
   }

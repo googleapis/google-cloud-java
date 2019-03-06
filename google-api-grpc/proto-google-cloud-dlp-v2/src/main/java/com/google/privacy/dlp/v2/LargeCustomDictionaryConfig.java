@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Configuration for a custom dictionary created from a data source of any size
  * up to the maximum size defined in the
@@ -15,23 +17,23 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.LargeCustomDictionaryConfig}
  */
-public  final class LargeCustomDictionaryConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LargeCustomDictionaryConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.LargeCustomDictionaryConfig)
     LargeCustomDictionaryConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LargeCustomDictionaryConfig.newBuilder() to construct.
   private LargeCustomDictionaryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LargeCustomDictionaryConfig() {
-  }
+
+  private LargeCustomDictionaryConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LargeCustomDictionaryConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,93 +53,101 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.privacy.dlp.v2.CloudStoragePath.Builder subBuilder = null;
-            if (outputPath_ != null) {
-              subBuilder = outputPath_.toBuilder();
-            }
-            outputPath_ = input.readMessage(com.google.privacy.dlp.v2.CloudStoragePath.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(outputPath_);
-              outputPath_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.privacy.dlp.v2.CloudStoragePath.Builder subBuilder = null;
+              if (outputPath_ != null) {
+                subBuilder = outputPath_.toBuilder();
+              }
+              outputPath_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CloudStoragePath.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputPath_);
+                outputPath_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.CloudStorageFileSet.Builder subBuilder = null;
-            if (sourceCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.CloudStorageFileSet) source_).toBuilder();
+              break;
             }
-            source_ =
-                input.readMessage(com.google.privacy.dlp.v2.CloudStorageFileSet.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.CloudStorageFileSet) source_);
-              source_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.CloudStorageFileSet.Builder subBuilder = null;
+              if (sourceCase_ == 2) {
+                subBuilder = ((com.google.privacy.dlp.v2.CloudStorageFileSet) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CloudStorageFileSet.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CloudStorageFileSet) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 2;
+              break;
             }
-            sourceCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.BigQueryField.Builder subBuilder = null;
-            if (sourceCase_ == 3) {
-              subBuilder = ((com.google.privacy.dlp.v2.BigQueryField) source_).toBuilder();
+          case 26:
+            {
+              com.google.privacy.dlp.v2.BigQueryField.Builder subBuilder = null;
+              if (sourceCase_ == 3) {
+                subBuilder = ((com.google.privacy.dlp.v2.BigQueryField) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.BigQueryField.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.BigQueryField) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 3;
+              break;
             }
-            source_ =
-                input.readMessage(com.google.privacy.dlp.v2.BigQueryField.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.BigQueryField) source_);
-              source_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            sourceCase_ = 3;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.class, com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.Builder.class);
+            com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.class,
+            com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.Builder.class);
   }
 
   private int sourceCase_ = 0;
   private java.lang.Object source_;
-  public enum SourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     CLOUD_STORAGE_FILE_SET(2),
     BIG_QUERY_FIELD(3),
     SOURCE_NOT_SET(0);
     private final int value;
+
     private SourceCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -145,26 +155,31 @@ private static final long serialVersionUID = 0L;
 
     public static SourceCase forNumber(int value) {
       switch (value) {
-        case 2: return CLOUD_STORAGE_FILE_SET;
-        case 3: return BIG_QUERY_FIELD;
-        case 0: return SOURCE_NOT_SET;
-        default: return null;
+        case 2:
+          return CLOUD_STORAGE_FILE_SET;
+        case 3:
+          return BIG_QUERY_FIELD;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public SourceCase
-  getSourceCase() {
-    return SourceCase.forNumber(
-        sourceCase_);
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
   }
 
   public static final int OUTPUT_PATH_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CloudStoragePath outputPath_;
   /**
+   *
+   *
    * <pre>
    * Location to store dictionary artifacts in Google Cloud Storage. These files
    * will only be accessible by project owners and the DLP API. If any of these
@@ -178,6 +193,8 @@ private static final long serialVersionUID = 0L;
     return outputPath_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Location to store dictionary artifacts in Google Cloud Storage. These files
    * will only be accessible by project owners and the DLP API. If any of these
@@ -188,9 +205,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
    */
   public com.google.privacy.dlp.v2.CloudStoragePath getOutputPath() {
-    return outputPath_ == null ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance() : outputPath_;
+    return outputPath_ == null
+        ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()
+        : outputPath_;
   }
   /**
+   *
+   *
    * <pre>
    * Location to store dictionary artifacts in Google Cloud Storage. These files
    * will only be accessible by project owners and the DLP API. If any of these
@@ -206,6 +227,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int CLOUD_STORAGE_FILE_SET_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Set of files containing newline-delimited lists of dictionary phrases.
    * </pre>
@@ -216,6 +239,8 @@ private static final long serialVersionUID = 0L;
     return sourceCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * Set of files containing newline-delimited lists of dictionary phrases.
    * </pre>
@@ -224,11 +249,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CloudStorageFileSet getCloudStorageFileSet() {
     if (sourceCase_ == 2) {
-       return (com.google.privacy.dlp.v2.CloudStorageFileSet) source_;
+      return (com.google.privacy.dlp.v2.CloudStorageFileSet) source_;
     }
     return com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Set of files containing newline-delimited lists of dictionary phrases.
    * </pre>
@@ -237,13 +264,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder getCloudStorageFileSetOrBuilder() {
     if (sourceCase_ == 2) {
-       return (com.google.privacy.dlp.v2.CloudStorageFileSet) source_;
+      return (com.google.privacy.dlp.v2.CloudStorageFileSet) source_;
     }
     return com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance();
   }
 
   public static final int BIG_QUERY_FIELD_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * Field in a BigQuery table where each cell represents a dictionary phrase.
    * </pre>
@@ -254,6 +283,8 @@ private static final long serialVersionUID = 0L;
     return sourceCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * Field in a BigQuery table where each cell represents a dictionary phrase.
    * </pre>
@@ -262,11 +293,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.BigQueryField getBigQueryField() {
     if (sourceCase_ == 3) {
-       return (com.google.privacy.dlp.v2.BigQueryField) source_;
+      return (com.google.privacy.dlp.v2.BigQueryField) source_;
     }
     return com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Field in a BigQuery table where each cell represents a dictionary phrase.
    * </pre>
@@ -275,12 +308,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.BigQueryFieldOrBuilder getBigQueryFieldOrBuilder() {
     if (sourceCase_ == 3) {
-       return (com.google.privacy.dlp.v2.BigQueryField) source_;
+      return (com.google.privacy.dlp.v2.BigQueryField) source_;
     }
     return com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -292,8 +326,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (outputPath_ != null) {
       output.writeMessage(1, getOutputPath());
     }
@@ -313,16 +346,17 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (outputPath_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getOutputPath());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOutputPath());
     }
     if (sourceCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.CloudStorageFileSet) source_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.CloudStorageFileSet) source_);
     }
     if (sourceCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.privacy.dlp.v2.BigQueryField) source_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.BigQueryField) source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -332,30 +366,27 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.LargeCustomDictionaryConfig)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.LargeCustomDictionaryConfig other = (com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) obj;
+    com.google.privacy.dlp.v2.LargeCustomDictionaryConfig other =
+        (com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) obj;
 
     boolean result = true;
     result = result && (hasOutputPath() == other.hasOutputPath());
     if (hasOutputPath()) {
-      result = result && getOutputPath()
-          .equals(other.getOutputPath());
+      result = result && getOutputPath().equals(other.getOutputPath());
     }
-    result = result && getSourceCase().equals(
-        other.getSourceCase());
+    result = result && getSourceCase().equals(other.getSourceCase());
     if (!result) return false;
     switch (sourceCase_) {
       case 2:
-        result = result && getCloudStorageFileSet()
-            .equals(other.getCloudStorageFileSet());
+        result = result && getCloudStorageFileSet().equals(other.getCloudStorageFileSet());
         break;
       case 3:
-        result = result && getBigQueryField()
-            .equals(other.getBigQueryField());
+        result = result && getBigQueryField().equals(other.getBigQueryField());
         break;
       case 0:
       default:
@@ -393,96 +424,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.LargeCustomDictionaryConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.privacy.dlp.v2.LargeCustomDictionaryConfig prototype) {
+
+  public static Builder newBuilder(
+      com.google.privacy.dlp.v2.LargeCustomDictionaryConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for a custom dictionary created from a data source of any size
    * up to the maximum size defined in the
@@ -494,21 +533,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.LargeCustomDictionaryConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.LargeCustomDictionaryConfig)
       com.google.privacy.dlp.v2.LargeCustomDictionaryConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.class, com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.Builder.class);
+              com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.class,
+              com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.newBuilder()
@@ -516,16 +557,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -541,9 +581,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_LargeCustomDictionaryConfig_descriptor;
     }
 
     @java.lang.Override
@@ -562,7 +602,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig buildPartial() {
-      com.google.privacy.dlp.v2.LargeCustomDictionaryConfig result = new com.google.privacy.dlp.v2.LargeCustomDictionaryConfig(this);
+      com.google.privacy.dlp.v2.LargeCustomDictionaryConfig result =
+          new com.google.privacy.dlp.v2.LargeCustomDictionaryConfig(this);
       if (outputPathBuilder_ == null) {
         result.outputPath_ = outputPath_;
       } else {
@@ -591,38 +632,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) {
-        return mergeFrom((com.google.privacy.dlp.v2.LargeCustomDictionaryConfig)other);
+        return mergeFrom((com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -630,22 +672,26 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.LargeCustomDictionaryConfig other) {
-      if (other == com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.getDefaultInstance())
+        return this;
       if (other.hasOutputPath()) {
         mergeOutputPath(other.getOutputPath());
       }
       switch (other.getSourceCase()) {
-        case CLOUD_STORAGE_FILE_SET: {
-          mergeCloudStorageFileSet(other.getCloudStorageFileSet());
-          break;
-        }
-        case BIG_QUERY_FIELD: {
-          mergeBigQueryField(other.getBigQueryField());
-          break;
-        }
-        case SOURCE_NOT_SET: {
-          break;
-        }
+        case CLOUD_STORAGE_FILE_SET:
+          {
+            mergeCloudStorageFileSet(other.getCloudStorageFileSet());
+            break;
+          }
+        case BIG_QUERY_FIELD:
+          {
+            mergeBigQueryField(other.getBigQueryField());
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -666,7 +712,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -675,12 +722,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int sourceCase_ = 0;
     private java.lang.Object source_;
-    public SourceCase
-        getSourceCase() {
-      return SourceCase.forNumber(
-          sourceCase_);
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
     }
 
     public Builder clearSource() {
@@ -690,11 +737,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.privacy.dlp.v2.CloudStoragePath outputPath_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStoragePath, com.google.privacy.dlp.v2.CloudStoragePath.Builder, com.google.privacy.dlp.v2.CloudStoragePathOrBuilder> outputPathBuilder_;
+            com.google.privacy.dlp.v2.CloudStoragePath,
+            com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+            com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>
+        outputPathBuilder_;
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -708,6 +759,8 @@ private static final long serialVersionUID = 0L;
       return outputPathBuilder_ != null || outputPath_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -719,12 +772,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CloudStoragePath getOutputPath() {
       if (outputPathBuilder_ == null) {
-        return outputPath_ == null ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance() : outputPath_;
+        return outputPath_ == null
+            ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()
+            : outputPath_;
       } else {
         return outputPathBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -748,6 +805,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -769,6 +828,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -782,7 +843,9 @@ private static final long serialVersionUID = 0L;
       if (outputPathBuilder_ == null) {
         if (outputPath_ != null) {
           outputPath_ =
-            com.google.privacy.dlp.v2.CloudStoragePath.newBuilder(outputPath_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.CloudStoragePath.newBuilder(outputPath_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           outputPath_ = value;
         }
@@ -794,6 +857,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -815,6 +880,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -825,11 +892,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
      */
     public com.google.privacy.dlp.v2.CloudStoragePath.Builder getOutputPathBuilder() {
-      
+
       onChanged();
       return getOutputPathFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -843,11 +912,14 @@ private static final long serialVersionUID = 0L;
       if (outputPathBuilder_ != null) {
         return outputPathBuilder_.getMessageOrBuilder();
       } else {
-        return outputPath_ == null ?
-            com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance() : outputPath_;
+        return outputPath_ == null
+            ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()
+            : outputPath_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location to store dictionary artifacts in Google Cloud Storage. These files
      * will only be accessible by project owners and the DLP API. If any of these
@@ -858,22 +930,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CloudStoragePath output_path = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStoragePath, com.google.privacy.dlp.v2.CloudStoragePath.Builder, com.google.privacy.dlp.v2.CloudStoragePathOrBuilder> 
+            com.google.privacy.dlp.v2.CloudStoragePath,
+            com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+            com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>
         getOutputPathFieldBuilder() {
       if (outputPathBuilder_ == null) {
-        outputPathBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CloudStoragePath, com.google.privacy.dlp.v2.CloudStoragePath.Builder, com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>(
-                getOutputPath(),
-                getParentForChildren(),
-                isClean());
+        outputPathBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CloudStoragePath,
+                com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+                com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>(
+                getOutputPath(), getParentForChildren(), isClean());
         outputPath_ = null;
       }
       return outputPathBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStorageFileSet, com.google.privacy.dlp.v2.CloudStorageFileSet.Builder, com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder> cloudStorageFileSetBuilder_;
+            com.google.privacy.dlp.v2.CloudStorageFileSet,
+            com.google.privacy.dlp.v2.CloudStorageFileSet.Builder,
+            com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder>
+        cloudStorageFileSetBuilder_;
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -884,6 +964,8 @@ private static final long serialVersionUID = 0L;
       return sourceCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -904,6 +986,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -924,6 +1008,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -942,6 +1028,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -950,10 +1038,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCloudStorageFileSet(com.google.privacy.dlp.v2.CloudStorageFileSet value) {
       if (cloudStorageFileSetBuilder_ == null) {
-        if (sourceCase_ == 2 &&
-            source_ != com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance()) {
-          source_ = com.google.privacy.dlp.v2.CloudStorageFileSet.newBuilder((com.google.privacy.dlp.v2.CloudStorageFileSet) source_)
-              .mergeFrom(value).buildPartial();
+        if (sourceCase_ == 2
+            && source_ != com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance()) {
+          source_ =
+              com.google.privacy.dlp.v2.CloudStorageFileSet.newBuilder(
+                      (com.google.privacy.dlp.v2.CloudStorageFileSet) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           source_ = value;
         }
@@ -968,6 +1059,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -991,6 +1084,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -1001,13 +1096,16 @@ private static final long serialVersionUID = 0L;
       return getCloudStorageFileSetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
      */
-    public com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder getCloudStorageFileSetOrBuilder() {
+    public com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder
+        getCloudStorageFileSetOrBuilder() {
       if ((sourceCase_ == 2) && (cloudStorageFileSetBuilder_ != null)) {
         return cloudStorageFileSetBuilder_.getMessageOrBuilder();
       } else {
@@ -1018,6 +1116,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of files containing newline-delimited lists of dictionary phrases.
      * </pre>
@@ -1025,27 +1125,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CloudStorageFileSet cloud_storage_file_set = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStorageFileSet, com.google.privacy.dlp.v2.CloudStorageFileSet.Builder, com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder> 
+            com.google.privacy.dlp.v2.CloudStorageFileSet,
+            com.google.privacy.dlp.v2.CloudStorageFileSet.Builder,
+            com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder>
         getCloudStorageFileSetFieldBuilder() {
       if (cloudStorageFileSetBuilder_ == null) {
         if (!(sourceCase_ == 2)) {
           source_ = com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance();
         }
-        cloudStorageFileSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CloudStorageFileSet, com.google.privacy.dlp.v2.CloudStorageFileSet.Builder, com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder>(
+        cloudStorageFileSetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CloudStorageFileSet,
+                com.google.privacy.dlp.v2.CloudStorageFileSet.Builder,
+                com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder>(
                 (com.google.privacy.dlp.v2.CloudStorageFileSet) source_,
                 getParentForChildren(),
                 isClean());
         source_ = null;
       }
       sourceCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return cloudStorageFileSetBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.BigQueryField, com.google.privacy.dlp.v2.BigQueryField.Builder, com.google.privacy.dlp.v2.BigQueryFieldOrBuilder> bigQueryFieldBuilder_;
+            com.google.privacy.dlp.v2.BigQueryField,
+            com.google.privacy.dlp.v2.BigQueryField.Builder,
+            com.google.privacy.dlp.v2.BigQueryFieldOrBuilder>
+        bigQueryFieldBuilder_;
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1056,6 +1167,8 @@ private static final long serialVersionUID = 0L;
       return sourceCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1076,6 +1189,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1096,6 +1211,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1114,6 +1231,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1122,10 +1241,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBigQueryField(com.google.privacy.dlp.v2.BigQueryField value) {
       if (bigQueryFieldBuilder_ == null) {
-        if (sourceCase_ == 3 &&
-            source_ != com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance()) {
-          source_ = com.google.privacy.dlp.v2.BigQueryField.newBuilder((com.google.privacy.dlp.v2.BigQueryField) source_)
-              .mergeFrom(value).buildPartial();
+        if (sourceCase_ == 3
+            && source_ != com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance()) {
+          source_ =
+              com.google.privacy.dlp.v2.BigQueryField.newBuilder(
+                      (com.google.privacy.dlp.v2.BigQueryField) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           source_ = value;
         }
@@ -1140,6 +1262,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1163,6 +1287,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1173,6 +1299,8 @@ private static final long serialVersionUID = 0L;
       return getBigQueryFieldFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1190,6 +1318,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Field in a BigQuery table where each cell represents a dictionary phrase.
      * </pre>
@@ -1197,26 +1327,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.BigQueryField big_query_field = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.BigQueryField, com.google.privacy.dlp.v2.BigQueryField.Builder, com.google.privacy.dlp.v2.BigQueryFieldOrBuilder> 
+            com.google.privacy.dlp.v2.BigQueryField,
+            com.google.privacy.dlp.v2.BigQueryField.Builder,
+            com.google.privacy.dlp.v2.BigQueryFieldOrBuilder>
         getBigQueryFieldFieldBuilder() {
       if (bigQueryFieldBuilder_ == null) {
         if (!(sourceCase_ == 3)) {
           source_ = com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance();
         }
-        bigQueryFieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.BigQueryField, com.google.privacy.dlp.v2.BigQueryField.Builder, com.google.privacy.dlp.v2.BigQueryFieldOrBuilder>(
+        bigQueryFieldBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.BigQueryField,
+                com.google.privacy.dlp.v2.BigQueryField.Builder,
+                com.google.privacy.dlp.v2.BigQueryFieldOrBuilder>(
                 (com.google.privacy.dlp.v2.BigQueryField) source_,
                 getParentForChildren(),
                 isClean());
         source_ = null;
       }
       sourceCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return bigQueryFieldBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1226,12 +1362,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.LargeCustomDictionaryConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.LargeCustomDictionaryConfig)
   private static final com.google.privacy.dlp.v2.LargeCustomDictionaryConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.LargeCustomDictionaryConfig();
   }
@@ -1240,16 +1376,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LargeCustomDictionaryConfig>
-      PARSER = new com.google.protobuf.AbstractParser<LargeCustomDictionaryConfig>() {
-    @java.lang.Override
-    public LargeCustomDictionaryConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LargeCustomDictionaryConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LargeCustomDictionaryConfig> PARSER =
+      new com.google.protobuf.AbstractParser<LargeCustomDictionaryConfig>() {
+        @java.lang.Override
+        public LargeCustomDictionaryConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LargeCustomDictionaryConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LargeCustomDictionaryConfig> parser() {
     return PARSER;
@@ -1264,6 +1400,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

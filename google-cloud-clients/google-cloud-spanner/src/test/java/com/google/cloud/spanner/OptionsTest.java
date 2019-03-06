@@ -82,12 +82,19 @@ public class OptionsTest {
     int pageSize = 3;
     String pageToken = "ptok";
     String filter = "env";
-    Options opts = Options
-        .fromListOptions(
+    Options opts =
+        Options.fromListOptions(
             Options.pageSize(pageSize), Options.pageToken(pageToken), Options.filter(filter));
 
-    assertThat(opts.toString()).isEqualTo("pageSize: " + Integer.toString(pageSize)
-        + " pageToken: " + pageToken + " filter: " + filter + " ");
+    assertThat(opts.toString())
+        .isEqualTo(
+            "pageSize: "
+                + Integer.toString(pageSize)
+                + " pageToken: "
+                + pageToken
+                + " filter: "
+                + filter
+                + " ");
 
     assertThat(opts.hasPageSize()).isTrue();
     assertThat(opts.hasPageToken()).isTrue();
@@ -172,8 +179,7 @@ public class OptionsTest {
   public void queryOptTest() {
     int chunks = 3;
     Options opts = Options.fromQueryOptions(Options.prefetchChunks(chunks));
-    assertThat(opts.toString())
-        .isEqualTo("prefetchChunks: " + Integer.toString(chunks) + " ");
+    assertThat(opts.toString()).isEqualTo("prefetchChunks: " + Integer.toString(chunks) + " ");
     assertThat(opts.prefetchChunks()).isEqualTo(chunks);
     assertThat(opts.hashCode()).isEqualTo(964);
   }

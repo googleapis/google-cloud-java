@@ -19,9 +19,7 @@ package com.google.cloud.compute.deprecated;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine global address.
- */
+/** Identity for a Google Compute Engine global address. */
 public final class GlobalAddressId extends AddressId {
 
   private static final String REGEX = ResourceId.REGEX + "global/addresses/([^/]+)";
@@ -62,10 +60,10 @@ public final class GlobalAddressId extends AddressId {
 
   /**
    * Returns an address identity given the address name. The address name must be 1-63 characters
-   * long and comply with RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * long and comply with RFC1035. Specifically, the name must match the regular expression {@code
+   * [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

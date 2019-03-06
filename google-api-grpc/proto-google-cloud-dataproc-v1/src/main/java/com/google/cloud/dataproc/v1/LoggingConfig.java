@@ -4,29 +4,31 @@
 package com.google.cloud.dataproc.v1;
 
 /**
+ *
+ *
  * <pre>
  * The runtime logging config of the job.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.LoggingConfig}
  */
-public  final class LoggingConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.LoggingConfig)
     LoggingConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LoggingConfig.newBuilder() to construct.
   private LoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LoggingConfig() {
-  }
+
+  private LoggingConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LoggingConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,64 +48,71 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              driverLogLevels_ = com.google.protobuf.MapField.newMapField(
-                  DriverLogLevelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                driverLogLevels_ =
+                    com.google.protobuf.MapField.newMapField(
+                        DriverLogLevelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> driverLogLevels__ =
+                  input.readMessage(
+                      DriverLogLevelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              driverLogLevels_
+                  .getMutableMap()
+                  .put(driverLogLevels__.getKey(), driverLogLevels__.getValue());
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
-            driverLogLevels__ = input.readMessage(
-                DriverLogLevelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            driverLogLevels_.getMutableMap().put(
-                driverLogLevels__.getKey(), driverLogLevels__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_LoggingConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1.JobsProto
+        .internal_static_google_cloud_dataproc_v1_LoggingConfig_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 2:
         return internalGetDriverLogLevels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_LoggingConfig_fieldAccessorTable
+    return com.google.cloud.dataproc.v1.JobsProto
+        .internal_static_google_cloud_dataproc_v1_LoggingConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1.LoggingConfig.class, com.google.cloud.dataproc.v1.LoggingConfig.Builder.class);
+            com.google.cloud.dataproc.v1.LoggingConfig.class,
+            com.google.cloud.dataproc.v1.LoggingConfig.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The Log4j level for job execution. When running an
    * [Apache Hive](http://hive.apache.org/) job, Cloud
@@ -112,9 +121,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.cloud.dataproc.v1.LoggingConfig.Level}
    */
-  public enum Level
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Level implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Level is unspecified. Use default level for log4j.
      * </pre>
@@ -123,6 +133,8 @@ private static final long serialVersionUID = 0L;
      */
     LEVEL_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Use ALL level for log4j.
      * </pre>
@@ -131,6 +143,8 @@ private static final long serialVersionUID = 0L;
      */
     ALL(1),
     /**
+     *
+     *
      * <pre>
      * Use TRACE level for log4j.
      * </pre>
@@ -139,6 +153,8 @@ private static final long serialVersionUID = 0L;
      */
     TRACE(2),
     /**
+     *
+     *
      * <pre>
      * Use DEBUG level for log4j.
      * </pre>
@@ -147,6 +163,8 @@ private static final long serialVersionUID = 0L;
      */
     DEBUG(3),
     /**
+     *
+     *
      * <pre>
      * Use INFO level for log4j.
      * </pre>
@@ -155,6 +173,8 @@ private static final long serialVersionUID = 0L;
      */
     INFO(4),
     /**
+     *
+     *
      * <pre>
      * Use WARN level for log4j.
      * </pre>
@@ -163,6 +183,8 @@ private static final long serialVersionUID = 0L;
      */
     WARN(5),
     /**
+     *
+     *
      * <pre>
      * Use ERROR level for log4j.
      * </pre>
@@ -171,6 +193,8 @@ private static final long serialVersionUID = 0L;
      */
     ERROR(6),
     /**
+     *
+     *
      * <pre>
      * Use FATAL level for log4j.
      * </pre>
@@ -179,6 +203,8 @@ private static final long serialVersionUID = 0L;
      */
     FATAL(7),
     /**
+     *
+     *
      * <pre>
      * Turn off log4j.
      * </pre>
@@ -190,6 +216,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Level is unspecified. Use default level for log4j.
      * </pre>
@@ -198,6 +226,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int LEVEL_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Use ALL level for log4j.
      * </pre>
@@ -206,6 +236,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALL_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Use TRACE level for log4j.
      * </pre>
@@ -214,6 +246,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TRACE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Use DEBUG level for log4j.
      * </pre>
@@ -222,6 +256,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DEBUG_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Use INFO level for log4j.
      * </pre>
@@ -230,6 +266,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int INFO_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Use WARN level for log4j.
      * </pre>
@@ -238,6 +276,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int WARN_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Use ERROR level for log4j.
      * </pre>
@@ -246,6 +286,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ERROR_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Use FATAL level for log4j.
      * </pre>
@@ -254,6 +296,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FATAL_VALUE = 7;
     /**
+     *
+     *
      * <pre>
      * Turn off log4j.
      * </pre>
@@ -261,7 +305,6 @@ private static final long serialVersionUID = 0L;
      * <code>OFF = 8;</code>
      */
     public static final int OFF_VALUE = 8;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -271,9 +314,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Level valueOf(int value) {
       return forNumber(value);
@@ -281,51 +322,57 @@ private static final long serialVersionUID = 0L;
 
     public static Level forNumber(int value) {
       switch (value) {
-        case 0: return LEVEL_UNSPECIFIED;
-        case 1: return ALL;
-        case 2: return TRACE;
-        case 3: return DEBUG;
-        case 4: return INFO;
-        case 5: return WARN;
-        case 6: return ERROR;
-        case 7: return FATAL;
-        case 8: return OFF;
-        default: return null;
+        case 0:
+          return LEVEL_UNSPECIFIED;
+        case 1:
+          return ALL;
+        case 2:
+          return TRACE;
+        case 3:
+          return DEBUG;
+        case 4:
+          return INFO;
+        case 5:
+          return WARN;
+        case 6:
+          return ERROR;
+        case 7:
+          return FATAL;
+        case 8:
+          return OFF;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Level>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Level> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Level> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Level>() {
-            public Level findValueByNumber(int number) {
-              return Level.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Level> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Level>() {
+          public Level findValueByNumber(int number) {
+            return Level.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.dataproc.v1.LoggingConfig.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Level[] VALUES = values();
 
-    public static Level valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Level valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -343,45 +390,50 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DRIVER_LOG_LEVELS_FIELD_NUMBER = 2;
+
   private static final class DriverLogLevelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.Integer> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.Integer>newDefaultInstance(
-                com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_LoggingConfig_DriverLogLevelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.ENUM,
-                com.google.cloud.dataproc.v1.LoggingConfig.Level.LEVEL_UNSPECIFIED.getNumber());
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Integer>newDefaultInstance(
+            com.google.cloud.dataproc.v1.JobsProto
+                .internal_static_google_cloud_dataproc_v1_LoggingConfig_DriverLogLevelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.ENUM,
+            com.google.cloud.dataproc.v1.LoggingConfig.Level.LEVEL_UNSPECIFIED.getNumber());
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.Integer> driverLogLevels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> driverLogLevels_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-  internalGetDriverLogLevels() {
+      internalGetDriverLogLevels() {
     if (driverLogLevels_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           DriverLogLevelsDefaultEntryHolder.defaultEntry);
     }
     return driverLogLevels_;
   }
-  private static final
-  com.google.protobuf.Internal.MapAdapter.Converter<
-      java.lang.Integer, com.google.cloud.dataproc.v1.LoggingConfig.Level> driverLogLevelsValueConverter =
+
+  private static final com.google.protobuf.Internal.MapAdapter.Converter<
+          java.lang.Integer, com.google.cloud.dataproc.v1.LoggingConfig.Level>
+      driverLogLevelsValueConverter =
           com.google.protobuf.Internal.MapAdapter.newEnumConverter(
               com.google.cloud.dataproc.v1.LoggingConfig.Level.internalGetValueMap(),
               com.google.cloud.dataproc.v1.LoggingConfig.Level.UNRECOGNIZED);
-  private static final java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
-  internalGetAdaptedDriverLogLevelsMap(
-      java.util.Map<java.lang.String, java.lang.Integer> map) {
+
+  private static final java.util.Map<
+          java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
+      internalGetAdaptedDriverLogLevelsMap(java.util.Map<java.lang.String, java.lang.Integer> map) {
     return new com.google.protobuf.Internal.MapAdapter<
         java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level, java.lang.Integer>(
-            map, driverLogLevelsValueConverter);
+        map, driverLogLevelsValueConverter);
   }
 
   public int getDriverLogLevelsCount() {
     return internalGetDriverLogLevels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
@@ -389,23 +441,24 @@ private static final long serialVersionUID = 0L;
    *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+   * </code>
    */
-
-  public boolean containsDriverLogLevels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsDriverLogLevels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetDriverLogLevels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getDriverLogLevelsMap()} instead.
-   */
+  /** Use {@link #getDriverLogLevelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
-  getDriverLogLevels() {
+      getDriverLogLevels() {
     return getDriverLogLevelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
@@ -413,35 +466,16 @@ private static final long serialVersionUID = 0L;
    *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+   * </code>
    */
-
   public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
-  getDriverLogLevelsMap() {
-    return internalGetAdaptedDriverLogLevelsMap(
-        internalGetDriverLogLevels().getMap());}
-  /**
-   * <pre>
-   * The per-package log levels for the driver. This may include
-   * "root" package name to configure rootLogger.
-   * Examples:
-   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
-   * </pre>
-   *
-   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
-   */
-
-  public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrDefault(
-      java.lang.String key,
-      com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.Integer> map =
-        internalGetDriverLogLevels().getMap();
-    return map.containsKey(key)
-           ? driverLogLevelsValueConverter.doForward(map.get(key))
-           : defaultValue;
+      getDriverLogLevelsMap() {
+    return internalGetAdaptedDriverLogLevelsMap(internalGetDriverLogLevels().getMap());
   }
   /**
+   *
+   *
    * <pre>
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
@@ -449,28 +483,51 @@ private static final long serialVersionUID = 0L;
    *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+   * </code>
    */
-
+  public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrDefault(
+      java.lang.String key, com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
+    return map.containsKey(key)
+        ? driverLogLevelsValueConverter.doForward(map.get(key))
+        : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The per-package log levels for the driver. This may include
+   * "root" package name to configure rootLogger.
+   * Examples:
+   *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+   * </code>
+   */
   public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.Integer> map =
-        internalGetDriverLogLevels().getMap();
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
     return driverLogLevelsValueConverter.doForward(map.get(key));
   }
-  /**
-   * Use {@link #getDriverLogLevelsValueMap()} instead.
-   */
+  /** Use {@link #getDriverLogLevelsValueMap()} instead. */
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.Integer>
-  getDriverLogLevelsValue() {
+  public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValue() {
     return getDriverLogLevelsValueMap();
   }
   /**
+   *
+   *
    * <pre>
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
@@ -478,14 +535,15 @@ private static final long serialVersionUID = 0L;
    *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+   * </code>
    */
-
-  public java.util.Map<java.lang.String, java.lang.Integer>
-  getDriverLogLevelsValueMap() {
+  public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValueMap() {
     return internalGetDriverLogLevels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
@@ -493,18 +551,19 @@ private static final long serialVersionUID = 0L;
    *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+   * </code>
    */
-
-  public int getDriverLogLevelsValueOrDefault(
-      java.lang.String key,
-      int defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.Integer> map =
-        internalGetDriverLogLevels().getMap();
+  public int getDriverLogLevelsValueOrDefault(java.lang.String key, int defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * The per-package log levels for the driver. This may include
    * "root" package name to configure rootLogger.
@@ -512,14 +571,14 @@ private static final long serialVersionUID = 0L;
    *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+   * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+   * </code>
    */
-
-  public int getDriverLogLevelsValueOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.Integer> map =
-        internalGetDriverLogLevels().getMap();
+  public int getDriverLogLevelsValueOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -527,6 +586,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -538,14 +598,9 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetDriverLogLevels(),
-        DriverLogLevelsDefaultEntryHolder.defaultEntry,
-        2);
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetDriverLogLevels(), DriverLogLevelsDefaultEntryHolder.defaultEntry, 2);
     unknownFields.writeTo(output);
   }
 
@@ -555,15 +610,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
-         : internalGetDriverLogLevels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
-      driverLogLevels__ = DriverLogLevelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, driverLogLevels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry :
+        internalGetDriverLogLevels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> driverLogLevels__ =
+          DriverLogLevelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, driverLogLevels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -573,16 +628,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1.LoggingConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1.LoggingConfig other = (com.google.cloud.dataproc.v1.LoggingConfig) obj;
+    com.google.cloud.dataproc.v1.LoggingConfig other =
+        (com.google.cloud.dataproc.v1.LoggingConfig) obj;
 
     boolean result = true;
-    result = result && internalGetDriverLogLevels().equals(
-        other.internalGetDriverLogLevels());
+    result = result && internalGetDriverLogLevels().equals(other.internalGetDriverLogLevels());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -603,140 +658,147 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1.LoggingConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1.LoggingConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.LoggingConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1.LoggingConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The runtime logging config of the job.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.LoggingConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.LoggingConfig)
       com.google.cloud.dataproc.v1.LoggingConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_LoggingConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_LoggingConfig_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 2:
           return internalGetDriverLogLevels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 2:
           return internalGetMutableDriverLogLevels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_LoggingConfig_fieldAccessorTable
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_LoggingConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1.LoggingConfig.class, com.google.cloud.dataproc.v1.LoggingConfig.Builder.class);
+              com.google.cloud.dataproc.v1.LoggingConfig.class,
+              com.google.cloud.dataproc.v1.LoggingConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1.LoggingConfig.newBuilder()
@@ -744,16 +806,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -762,9 +823,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_LoggingConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_LoggingConfig_descriptor;
     }
 
     @java.lang.Override
@@ -783,7 +844,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1.LoggingConfig buildPartial() {
-      com.google.cloud.dataproc.v1.LoggingConfig result = new com.google.cloud.dataproc.v1.LoggingConfig(this);
+      com.google.cloud.dataproc.v1.LoggingConfig result =
+          new com.google.cloud.dataproc.v1.LoggingConfig(this);
       int from_bitField0_ = bitField0_;
       result.driverLogLevels_ = internalGetDriverLogLevels();
       result.driverLogLevels_.makeImmutable();
@@ -795,38 +857,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1.LoggingConfig) {
-        return mergeFrom((com.google.cloud.dataproc.v1.LoggingConfig)other);
+        return mergeFrom((com.google.cloud.dataproc.v1.LoggingConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -835,8 +898,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1.LoggingConfig other) {
       if (other == com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()) return this;
-      internalGetMutableDriverLogLevels().mergeFrom(
-          other.internalGetDriverLogLevels());
+      internalGetMutableDriverLogLevels().mergeFrom(other.internalGetDriverLogLevels());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -865,24 +927,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.Integer> driverLogLevels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> driverLogLevels_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-    internalGetDriverLogLevels() {
+        internalGetDriverLogLevels() {
       if (driverLogLevels_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             DriverLogLevelsDefaultEntryHolder.defaultEntry);
       }
       return driverLogLevels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
-    internalGetMutableDriverLogLevels() {
-      onChanged();;
+        internalGetMutableDriverLogLevels() {
+      onChanged();
+      ;
       if (driverLogLevels_ == null) {
-        driverLogLevels_ = com.google.protobuf.MapField.newMapField(
-            DriverLogLevelsDefaultEntryHolder.defaultEntry);
+        driverLogLevels_ =
+            com.google.protobuf.MapField.newMapField(
+                DriverLogLevelsDefaultEntryHolder.defaultEntry);
       }
       if (!driverLogLevels_.isMutable()) {
         driverLogLevels_ = driverLogLevels_.copy();
@@ -894,6 +960,8 @@ private static final long serialVersionUID = 0L;
       return internalGetDriverLogLevels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -901,23 +969,24 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
-    public boolean containsDriverLogLevels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsDriverLogLevels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetDriverLogLevels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getDriverLogLevelsMap()} instead.
-     */
+    /** Use {@link #getDriverLogLevelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
-    getDriverLogLevels() {
+        getDriverLogLevels() {
       return getDriverLogLevelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -925,14 +994,16 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
     public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
-    getDriverLogLevelsMap() {
-      return internalGetAdaptedDriverLogLevelsMap(
-          internalGetDriverLogLevels().getMap());}
+        getDriverLogLevelsMap() {
+      return internalGetAdaptedDriverLogLevelsMap(internalGetDriverLogLevels().getMap());
+    }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -940,20 +1011,23 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
     public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrDefault(
-        java.lang.String key,
-        com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        java.lang.String key, com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
       return map.containsKey(key)
-             ? driverLogLevelsValueConverter.doForward(map.get(key))
-             : defaultValue;
+          ? driverLogLevelsValueConverter.doForward(map.get(key))
+          : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -961,12 +1035,14 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
     public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
       if (!map.containsKey(key)) {
@@ -974,15 +1050,14 @@ private static final long serialVersionUID = 0L;
       }
       return driverLogLevelsValueConverter.doForward(map.get(key));
     }
-    /**
-     * Use {@link #getDriverLogLevelsValueMap()} instead.
-     */
+    /** Use {@link #getDriverLogLevelsValueMap()} instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.Integer>
-    getDriverLogLevelsValue() {
+    public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValue() {
       return getDriverLogLevelsValueMap();
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -990,14 +1065,15 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
-    public java.util.Map<java.lang.String, java.lang.Integer>
-    getDriverLogLevelsValueMap() {
+    public java.util.Map<java.lang.String, java.lang.Integer> getDriverLogLevelsValueMap() {
       return internalGetDriverLogLevels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -1005,18 +1081,20 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
-    public int getDriverLogLevelsValueOrDefault(
-        java.lang.String key,
-        int defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public int getDriverLogLevelsValueOrDefault(java.lang.String key, int defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -1024,12 +1102,13 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
-    public int getDriverLogLevelsValueOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public int getDriverLogLevelsValueOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
       if (!map.containsKey(key)) {
@@ -1039,11 +1118,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearDriverLogLevels() {
-      internalGetMutableDriverLogLevels().getMutableMap()
-          .clear();
+      internalGetMutableDriverLogLevels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -1051,26 +1131,26 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
-
-    public Builder removeDriverLogLevels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableDriverLogLevels().getMutableMap()
-          .remove(key);
+    public Builder removeDriverLogLevels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableDriverLogLevels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
-    getMutableDriverLogLevels() {
+        getMutableDriverLogLevels() {
       return internalGetAdaptedDriverLogLevelsMap(
-           internalGetMutableDriverLogLevels().getMutableMap());
+          internalGetMutableDriverLogLevels().getMutableMap());
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -1078,18 +1158,25 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
     public Builder putDriverLogLevels(
-        java.lang.String key,
-        com.google.cloud.dataproc.v1.LoggingConfig.Level value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableDriverLogLevels().getMutableMap()
+        java.lang.String key, com.google.cloud.dataproc.v1.LoggingConfig.Level value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableDriverLogLevels()
+          .getMutableMap()
           .put(key, driverLogLevelsValueConverter.doBackward(value));
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The per-package log levels for the driver. This may include
      * "root" package name to configure rootLogger.
@@ -1097,60 +1184,61 @@ private static final long serialVersionUID = 0L;
      *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
      */
     public Builder putAllDriverLogLevels(
         java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level> values) {
-      internalGetAdaptedDriverLogLevelsMap(
-          internalGetMutableDriverLogLevels().getMutableMap())
-              .putAll(values);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.Integer>
-    getMutableDriverLogLevelsValue() {
-      return internalGetMutableDriverLogLevels().getMutableMap();
-    }
-    /**
-     * <pre>
-     * The per-package log levels for the driver. This may include
-     * "root" package name to configure rootLogger.
-     * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
-     * </pre>
-     *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
-     */
-    public Builder putDriverLogLevelsValue(
-        java.lang.String key,
-        int value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableDriverLogLevels().getMutableMap()
-          .put(key, value);
-      return this;
-    }
-    /**
-     * <pre>
-     * The per-package log levels for the driver. This may include
-     * "root" package name to configure rootLogger.
-     * Examples:
-     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
-     * </pre>
-     *
-     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;</code>
-     */
-    public Builder putAllDriverLogLevelsValue(
-        java.util.Map<java.lang.String, java.lang.Integer> values) {
-      internalGetMutableDriverLogLevels().getMutableMap()
+      internalGetAdaptedDriverLogLevelsMap(internalGetMutableDriverLogLevels().getMutableMap())
           .putAll(values);
       return this;
     }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getMutableDriverLogLevelsValue() {
+      return internalGetMutableDriverLogLevels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The per-package log levels for the driver. This may include
+     * "root" package name to configure rootLogger.
+     * Examples:
+     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
+     */
+    public Builder putDriverLogLevelsValue(java.lang.String key, int value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableDriverLogLevels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The per-package log levels for the driver. This may include
+     * "root" package name to configure rootLogger.
+     * Examples:
+     *   'com.google = FATAL', 'root = INFO', 'org.apache = DEBUG'
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
+     * </code>
+     */
+    public Builder putAllDriverLogLevelsValue(
+        java.util.Map<java.lang.String, java.lang.Integer> values) {
+      internalGetMutableDriverLogLevels().getMutableMap().putAll(values);
+      return this;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1160,12 +1248,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.LoggingConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.LoggingConfig)
   private static final com.google.cloud.dataproc.v1.LoggingConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1.LoggingConfig();
   }
@@ -1174,16 +1262,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LoggingConfig>
-      PARSER = new com.google.protobuf.AbstractParser<LoggingConfig>() {
-    @java.lang.Override
-    public LoggingConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LoggingConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LoggingConfig> PARSER =
+      new com.google.protobuf.AbstractParser<LoggingConfig>() {
+        @java.lang.Override
+        public LoggingConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LoggingConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LoggingConfig> parser() {
     return PARSER;
@@ -1198,6 +1286,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1.LoggingConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

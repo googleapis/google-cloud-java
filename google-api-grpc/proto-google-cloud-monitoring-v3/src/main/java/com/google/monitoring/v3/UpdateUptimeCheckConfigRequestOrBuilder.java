@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface UpdateUptimeCheckConfigRequestOrBuilder extends
+public interface UpdateUptimeCheckConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UpdateUptimeCheckConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. If present, only the listed fields in the current uptime check
    * configuration are updated with values from the new configuration. If this
@@ -19,6 +22,8 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. If present, only the listed fields in the current uptime check
    * configuration are updated with values from the new configuration. If this
@@ -30,6 +35,8 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. If present, only the listed fields in the current uptime check
    * configuration are updated with values from the new configuration. If this
@@ -42,6 +49,8 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. If an `"updateMask"` has been specified, this field gives
    * the values for the set of fields mentioned in the `"updateMask"`. If an
@@ -59,6 +68,8 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder extends
    */
   boolean hasUptimeCheckConfig();
   /**
+   *
+   *
    * <pre>
    * Required. If an `"updateMask"` has been specified, this field gives
    * the values for the set of fields mentioned in the `"updateMask"`. If an
@@ -76,6 +87,8 @@ public interface UpdateUptimeCheckConfigRequestOrBuilder extends
    */
   com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig();
   /**
+   *
+   *
    * <pre>
    * Required. If an `"updateMask"` has been specified, this field gives
    * the values for the set of fields mentioned in the `"updateMask"`. If an

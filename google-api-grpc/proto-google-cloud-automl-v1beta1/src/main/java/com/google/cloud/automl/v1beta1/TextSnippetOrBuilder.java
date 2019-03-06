@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface TextSnippetOrBuilder extends
+public interface TextSnippetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.TextSnippet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The content of the text snippet as a string. Up to 250000
    * characters long.
@@ -17,6 +20,8 @@ public interface TextSnippetOrBuilder extends
    */
   java.lang.String getContent();
   /**
+   *
+   *
    * <pre>
    * Required. The content of the text snippet as a string. Up to 250000
    * characters long.
@@ -24,10 +29,11 @@ public interface TextSnippetOrBuilder extends
    *
    * <code>string content = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getContentBytes();
+  com.google.protobuf.ByteString getContentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The format of the source text. For example, "text/html" or
    * "text/plain". If left blank the format is automatically determined from
@@ -39,6 +45,8 @@ public interface TextSnippetOrBuilder extends
    */
   java.lang.String getMimeType();
   /**
+   *
+   *
    * <pre>
    * The format of the source text. For example, "text/html" or
    * "text/plain". If left blank the format is automatically determined from
@@ -48,10 +56,11 @@ public interface TextSnippetOrBuilder extends
    *
    * <code>string mime_type = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getMimeTypeBytes();
+  com.google.protobuf.ByteString getMimeTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. HTTP URI where you can download the content.
    * </pre>
@@ -60,12 +69,13 @@ public interface TextSnippetOrBuilder extends
    */
   java.lang.String getContentUri();
   /**
+   *
+   *
    * <pre>
    * Output only. HTTP URI where you can download the content.
    * </pre>
    *
    * <code>string content_uri = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getContentUriBytes();
+  com.google.protobuf.ByteString getContentUriBytes();
 }

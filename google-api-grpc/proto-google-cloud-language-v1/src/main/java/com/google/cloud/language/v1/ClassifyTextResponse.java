@@ -4,30 +4,33 @@
 package com.google.cloud.language.v1;
 
 /**
+ *
+ *
  * <pre>
  * The document classification response message.
  * </pre>
  *
  * Protobuf type {@code google.cloud.language.v1.ClassifyTextResponse}
  */
-public  final class ClassifyTextResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ClassifyTextResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1.ClassifyTextResponse)
     ClassifyTextResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ClassifyTextResponse.newBuilder() to construct.
   private ClassifyTextResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ClassifyTextResponse() {
     categories_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ClassifyTextResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,32 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              categories_ = new java.util.ArrayList<com.google.cloud.language.v1.ClassificationCategory>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                categories_ =
+                    new java.util.ArrayList<com.google.cloud.language.v1.ClassificationCategory>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              categories_.add(
+                  input.readMessage(
+                      com.google.cloud.language.v1.ClassificationCategory.parser(),
+                      extensionRegistry));
+              break;
             }
-            categories_.add(
-                input.readMessage(com.google.cloud.language.v1.ClassificationCategory.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         categories_ = java.util.Collections.unmodifiableList(categories_);
@@ -78,22 +84,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_ClassifyTextResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.language.v1.LanguageServiceProto
+        .internal_static_google_cloud_language_v1_ClassifyTextResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_ClassifyTextResponse_fieldAccessorTable
+    return com.google.cloud.language.v1.LanguageServiceProto
+        .internal_static_google_cloud_language_v1_ClassifyTextResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.language.v1.ClassifyTextResponse.class, com.google.cloud.language.v1.ClassifyTextResponse.Builder.class);
+            com.google.cloud.language.v1.ClassifyTextResponse.class,
+            com.google.cloud.language.v1.ClassifyTextResponse.Builder.class);
   }
 
   public static final int CATEGORIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.language.v1.ClassificationCategory> categories_;
   /**
+   *
+   *
    * <pre>
    * Categories representing the input document.
    * </pre>
@@ -104,17 +115,21 @@ private static final long serialVersionUID = 0L;
     return categories_;
   }
   /**
+   *
+   *
    * <pre>
    * Categories representing the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.language.v1.ClassificationCategoryOrBuilder> 
+  public java.util.List<? extends com.google.cloud.language.v1.ClassificationCategoryOrBuilder>
       getCategoriesOrBuilderList() {
     return categories_;
   }
   /**
+   *
+   *
    * <pre>
    * Categories representing the input document.
    * </pre>
@@ -125,6 +140,8 @@ private static final long serialVersionUID = 0L;
     return categories_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Categories representing the input document.
    * </pre>
@@ -135,6 +152,8 @@ private static final long serialVersionUID = 0L;
     return categories_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Categories representing the input document.
    * </pre>
@@ -147,6 +166,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -158,8 +178,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < categories_.size(); i++) {
       output.writeMessage(1, categories_.get(i));
     }
@@ -173,8 +192,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < categories_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, categories_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, categories_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,16 +202,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.language.v1.ClassifyTextResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.language.v1.ClassifyTextResponse other = (com.google.cloud.language.v1.ClassifyTextResponse) obj;
+    com.google.cloud.language.v1.ClassifyTextResponse other =
+        (com.google.cloud.language.v1.ClassifyTextResponse) obj;
 
     boolean result = true;
-    result = result && getCategoriesList()
-        .equals(other.getCategoriesList());
+    result = result && getCategoriesList().equals(other.getCategoriesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -215,117 +233,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.language.v1.ClassifyTextResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.language.v1.ClassifyTextResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1.ClassifyTextResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.language.v1.ClassifyTextResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The document classification response message.
    * </pre>
    *
    * Protobuf type {@code google.cloud.language.v1.ClassifyTextResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.language.v1.ClassifyTextResponse)
       com.google.cloud.language.v1.ClassifyTextResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_ClassifyTextResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.language.v1.LanguageServiceProto
+          .internal_static_google_cloud_language_v1_ClassifyTextResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_ClassifyTextResponse_fieldAccessorTable
+      return com.google.cloud.language.v1.LanguageServiceProto
+          .internal_static_google_cloud_language_v1_ClassifyTextResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.language.v1.ClassifyTextResponse.class, com.google.cloud.language.v1.ClassifyTextResponse.Builder.class);
+              com.google.cloud.language.v1.ClassifyTextResponse.class,
+              com.google.cloud.language.v1.ClassifyTextResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.language.v1.ClassifyTextResponse.newBuilder()
@@ -333,17 +360,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCategoriesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -357,9 +384,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_ClassifyTextResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.language.v1.LanguageServiceProto
+          .internal_static_google_cloud_language_v1_ClassifyTextResponse_descriptor;
     }
 
     @java.lang.Override
@@ -378,7 +405,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.language.v1.ClassifyTextResponse buildPartial() {
-      com.google.cloud.language.v1.ClassifyTextResponse result = new com.google.cloud.language.v1.ClassifyTextResponse(this);
+      com.google.cloud.language.v1.ClassifyTextResponse result =
+          new com.google.cloud.language.v1.ClassifyTextResponse(this);
       int from_bitField0_ = bitField0_;
       if (categoriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -397,38 +425,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1.ClassifyTextResponse) {
-        return mergeFrom((com.google.cloud.language.v1.ClassifyTextResponse)other);
+        return mergeFrom((com.google.cloud.language.v1.ClassifyTextResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -436,7 +465,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.language.v1.ClassifyTextResponse other) {
-      if (other == com.google.cloud.language.v1.ClassifyTextResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.language.v1.ClassifyTextResponse.getDefaultInstance())
+        return this;
       if (categoriesBuilder_ == null) {
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
@@ -455,9 +485,10 @@ private static final long serialVersionUID = 0L;
             categoriesBuilder_ = null;
             categories_ = other.categories_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            categoriesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getCategoriesFieldBuilder() : null;
+            categoriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCategoriesFieldBuilder()
+                    : null;
           } else {
             categoriesBuilder_.addAllMessages(other.categories_);
           }
@@ -482,7 +513,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.language.v1.ClassifyTextResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.language.v1.ClassifyTextResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -491,21 +523,30 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.language.v1.ClassificationCategory> categories_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureCategoriesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        categories_ = new java.util.ArrayList<com.google.cloud.language.v1.ClassificationCategory>(categories_);
+        categories_ =
+            new java.util.ArrayList<com.google.cloud.language.v1.ClassificationCategory>(
+                categories_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1.ClassificationCategory, com.google.cloud.language.v1.ClassificationCategory.Builder, com.google.cloud.language.v1.ClassificationCategoryOrBuilder> categoriesBuilder_;
+            com.google.cloud.language.v1.ClassificationCategory,
+            com.google.cloud.language.v1.ClassificationCategory.Builder,
+            com.google.cloud.language.v1.ClassificationCategoryOrBuilder>
+        categoriesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -520,6 +561,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -534,6 +577,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -548,6 +593,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -569,6 +616,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -587,6 +636,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -607,6 +658,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -628,6 +681,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -646,6 +701,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -664,6 +721,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -674,8 +733,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.language.v1.ClassificationCategory> values) {
       if (categoriesBuilder_ == null) {
         ensureCategoriesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, categories_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, categories_);
         onChanged();
       } else {
         categoriesBuilder_.addAllMessages(values);
@@ -683,6 +741,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -700,6 +760,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -717,6 +779,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -728,6 +792,8 @@ private static final long serialVersionUID = 0L;
       return getCategoriesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -737,19 +803,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.language.v1.ClassificationCategoryOrBuilder getCategoriesOrBuilder(
         int index) {
       if (categoriesBuilder_ == null) {
-        return categories_.get(index);  } else {
+        return categories_.get(index);
+      } else {
         return categoriesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.language.v1.ClassificationCategoryOrBuilder> 
-         getCategoriesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.language.v1.ClassificationCategoryOrBuilder>
+        getCategoriesOrBuilderList() {
       if (categoriesBuilder_ != null) {
         return categoriesBuilder_.getMessageOrBuilderList();
       } else {
@@ -757,6 +826,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -764,10 +835,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
      */
     public com.google.cloud.language.v1.ClassificationCategory.Builder addCategoriesBuilder() {
-      return getCategoriesFieldBuilder().addBuilder(
-          com.google.cloud.language.v1.ClassificationCategory.getDefaultInstance());
+      return getCategoriesFieldBuilder()
+          .addBuilder(com.google.cloud.language.v1.ClassificationCategory.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
@@ -776,26 +849,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.ClassificationCategory.Builder addCategoriesBuilder(
         int index) {
-      return getCategoriesFieldBuilder().addBuilder(
-          index, com.google.cloud.language.v1.ClassificationCategory.getDefaultInstance());
+      return getCategoriesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.language.v1.ClassificationCategory.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Categories representing the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1.ClassificationCategory categories = 1;</code>
      */
-    public java.util.List<com.google.cloud.language.v1.ClassificationCategory.Builder> 
-         getCategoriesBuilderList() {
+    public java.util.List<com.google.cloud.language.v1.ClassificationCategory.Builder>
+        getCategoriesBuilderList() {
       return getCategoriesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1.ClassificationCategory, com.google.cloud.language.v1.ClassificationCategory.Builder, com.google.cloud.language.v1.ClassificationCategoryOrBuilder> 
+            com.google.cloud.language.v1.ClassificationCategory,
+            com.google.cloud.language.v1.ClassificationCategory.Builder,
+            com.google.cloud.language.v1.ClassificationCategoryOrBuilder>
         getCategoriesFieldBuilder() {
       if (categoriesBuilder_ == null) {
-        categoriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.language.v1.ClassificationCategory, com.google.cloud.language.v1.ClassificationCategory.Builder, com.google.cloud.language.v1.ClassificationCategoryOrBuilder>(
+        categoriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.language.v1.ClassificationCategory,
+                com.google.cloud.language.v1.ClassificationCategory.Builder,
+                com.google.cloud.language.v1.ClassificationCategoryOrBuilder>(
                 categories_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -804,9 +886,9 @@ private static final long serialVersionUID = 0L;
       }
       return categoriesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -816,12 +898,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.language.v1.ClassifyTextResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.language.v1.ClassifyTextResponse)
   private static final com.google.cloud.language.v1.ClassifyTextResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.language.v1.ClassifyTextResponse();
   }
@@ -830,16 +912,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ClassifyTextResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ClassifyTextResponse>() {
-    @java.lang.Override
-    public ClassifyTextResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ClassifyTextResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ClassifyTextResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ClassifyTextResponse>() {
+        @java.lang.Override
+        public ClassifyTextResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClassifyTextResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ClassifyTextResponse> parser() {
     return PARSER;
@@ -854,6 +936,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.language.v1.ClassifyTextResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -4,30 +4,33 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
  * The request for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.RunQueryRequest}
  */
-public  final class RunQueryRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.RunQueryRequest)
     RunQueryRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RunQueryRequest.newBuilder() to construct.
   private RunQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RunQueryRequest() {
     projectId_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RunQueryRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,112 +50,122 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.datastore.v1.ReadOptions.Builder subBuilder = null;
-            if (readOptions_ != null) {
-              subBuilder = readOptions_.toBuilder();
-            }
-            readOptions_ = input.readMessage(com.google.datastore.v1.ReadOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(readOptions_);
-              readOptions_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.datastore.v1.ReadOptions.Builder subBuilder = null;
+              if (readOptions_ != null) {
+                subBuilder = readOptions_.toBuilder();
+              }
+              readOptions_ =
+                  input.readMessage(
+                      com.google.datastore.v1.ReadOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readOptions_);
+                readOptions_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.datastore.v1.PartitionId.Builder subBuilder = null;
-            if (partitionId_ != null) {
-              subBuilder = partitionId_.toBuilder();
+              break;
             }
-            partitionId_ = input.readMessage(com.google.datastore.v1.PartitionId.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(partitionId_);
-              partitionId_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.datastore.v1.PartitionId.Builder subBuilder = null;
+              if (partitionId_ != null) {
+                subBuilder = partitionId_.toBuilder();
+              }
+              partitionId_ =
+                  input.readMessage(
+                      com.google.datastore.v1.PartitionId.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(partitionId_);
+                partitionId_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.datastore.v1.Query.Builder subBuilder = null;
-            if (queryTypeCase_ == 3) {
-              subBuilder = ((com.google.datastore.v1.Query) queryType_).toBuilder();
+              break;
             }
-            queryType_ =
-                input.readMessage(com.google.datastore.v1.Query.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.datastore.v1.Query) queryType_);
-              queryType_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.datastore.v1.Query.Builder subBuilder = null;
+              if (queryTypeCase_ == 3) {
+                subBuilder = ((com.google.datastore.v1.Query) queryType_).toBuilder();
+              }
+              queryType_ =
+                  input.readMessage(com.google.datastore.v1.Query.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.datastore.v1.Query) queryType_);
+                queryType_ = subBuilder.buildPartial();
+              }
+              queryTypeCase_ = 3;
+              break;
             }
-            queryTypeCase_ = 3;
-            break;
-          }
-          case 58: {
-            com.google.datastore.v1.GqlQuery.Builder subBuilder = null;
-            if (queryTypeCase_ == 7) {
-              subBuilder = ((com.google.datastore.v1.GqlQuery) queryType_).toBuilder();
+          case 58:
+            {
+              com.google.datastore.v1.GqlQuery.Builder subBuilder = null;
+              if (queryTypeCase_ == 7) {
+                subBuilder = ((com.google.datastore.v1.GqlQuery) queryType_).toBuilder();
+              }
+              queryType_ =
+                  input.readMessage(com.google.datastore.v1.GqlQuery.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.datastore.v1.GqlQuery) queryType_);
+                queryType_ = subBuilder.buildPartial();
+              }
+              queryTypeCase_ = 7;
+              break;
             }
-            queryType_ =
-                input.readMessage(com.google.datastore.v1.GqlQuery.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.datastore.v1.GqlQuery) queryType_);
-              queryType_ = subBuilder.buildPartial();
-            }
-            queryTypeCase_ = 7;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              projectId_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.datastore.v1.DatastoreProto
+        .internal_static_google_datastore_v1_RunQueryRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_fieldAccessorTable
+    return com.google.datastore.v1.DatastoreProto
+        .internal_static_google_datastore_v1_RunQueryRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.RunQueryRequest.class, com.google.datastore.v1.RunQueryRequest.Builder.class);
+            com.google.datastore.v1.RunQueryRequest.class,
+            com.google.datastore.v1.RunQueryRequest.Builder.class);
   }
 
   private int queryTypeCase_ = 0;
   private java.lang.Object queryType_;
-  public enum QueryTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum QueryTypeCase implements com.google.protobuf.Internal.EnumLite {
     QUERY(3),
     GQL_QUERY(7),
     QUERYTYPE_NOT_SET(0);
     private final int value;
+
     private QueryTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static QueryTypeCase valueOf(int value) {
       return forNumber(value);
@@ -160,26 +173,31 @@ private static final long serialVersionUID = 0L;
 
     public static QueryTypeCase forNumber(int value) {
       switch (value) {
-        case 3: return QUERY;
-        case 7: return GQL_QUERY;
-        case 0: return QUERYTYPE_NOT_SET;
-        default: return null;
+        case 3:
+          return QUERY;
+        case 7:
+          return GQL_QUERY;
+        case 0:
+          return QUERYTYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public QueryTypeCase
-  getQueryTypeCase() {
-    return QueryTypeCase.forNumber(
-        queryTypeCase_);
+  public QueryTypeCase getQueryTypeCase() {
+    return QueryTypeCase.forNumber(queryTypeCase_);
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -191,27 +209,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -222,6 +239,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARTITION_ID_FIELD_NUMBER = 2;
   private com.google.datastore.v1.PartitionId partitionId_;
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, identified by a partition ID.
    * Queries are scoped to a single partition.
@@ -235,6 +254,8 @@ private static final long serialVersionUID = 0L;
     return partitionId_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, identified by a partition ID.
    * Queries are scoped to a single partition.
@@ -245,9 +266,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
    */
   public com.google.datastore.v1.PartitionId getPartitionId() {
-    return partitionId_ == null ? com.google.datastore.v1.PartitionId.getDefaultInstance() : partitionId_;
+    return partitionId_ == null
+        ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+        : partitionId_;
   }
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, identified by a partition ID.
    * Queries are scoped to a single partition.
@@ -264,6 +289,8 @@ private static final long serialVersionUID = 0L;
   public static final int READ_OPTIONS_FIELD_NUMBER = 1;
   private com.google.datastore.v1.ReadOptions readOptions_;
   /**
+   *
+   *
    * <pre>
    * The options for this query.
    * </pre>
@@ -274,6 +301,8 @@ private static final long serialVersionUID = 0L;
     return readOptions_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The options for this query.
    * </pre>
@@ -281,9 +310,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
    */
   public com.google.datastore.v1.ReadOptions getReadOptions() {
-    return readOptions_ == null ? com.google.datastore.v1.ReadOptions.getDefaultInstance() : readOptions_;
+    return readOptions_ == null
+        ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
+        : readOptions_;
   }
   /**
+   *
+   *
    * <pre>
    * The options for this query.
    * </pre>
@@ -296,6 +329,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int QUERY_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * The query to run.
    * </pre>
@@ -306,6 +341,8 @@ private static final long serialVersionUID = 0L;
     return queryTypeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * The query to run.
    * </pre>
@@ -314,11 +351,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.datastore.v1.Query getQuery() {
     if (queryTypeCase_ == 3) {
-       return (com.google.datastore.v1.Query) queryType_;
+      return (com.google.datastore.v1.Query) queryType_;
     }
     return com.google.datastore.v1.Query.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The query to run.
    * </pre>
@@ -327,13 +366,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder() {
     if (queryTypeCase_ == 3) {
-       return (com.google.datastore.v1.Query) queryType_;
+      return (com.google.datastore.v1.Query) queryType_;
     }
     return com.google.datastore.v1.Query.getDefaultInstance();
   }
 
   public static final int GQL_QUERY_FIELD_NUMBER = 7;
   /**
+   *
+   *
    * <pre>
    * The GQL query to run.
    * </pre>
@@ -344,6 +385,8 @@ private static final long serialVersionUID = 0L;
     return queryTypeCase_ == 7;
   }
   /**
+   *
+   *
    * <pre>
    * The GQL query to run.
    * </pre>
@@ -352,11 +395,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.datastore.v1.GqlQuery getGqlQuery() {
     if (queryTypeCase_ == 7) {
-       return (com.google.datastore.v1.GqlQuery) queryType_;
+      return (com.google.datastore.v1.GqlQuery) queryType_;
     }
     return com.google.datastore.v1.GqlQuery.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The GQL query to run.
    * </pre>
@@ -365,12 +410,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.datastore.v1.GqlQueryOrBuilder getGqlQueryOrBuilder() {
     if (queryTypeCase_ == 7) {
-       return (com.google.datastore.v1.GqlQuery) queryType_;
+      return (com.google.datastore.v1.GqlQuery) queryType_;
     }
     return com.google.datastore.v1.GqlQuery.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -382,8 +428,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (readOptions_ != null) {
       output.writeMessage(1, getReadOptions());
     }
@@ -409,20 +454,20 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (readOptions_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getReadOptions());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getReadOptions());
     }
     if (partitionId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getPartitionId());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPartitionId());
     }
     if (queryTypeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.datastore.v1.Query) queryType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.datastore.v1.Query) queryType_);
     }
     if (queryTypeCase_ == 7) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.google.datastore.v1.GqlQuery) queryType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.datastore.v1.GqlQuery) queryType_);
     }
     if (!getProjectIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectId_);
@@ -435,7 +480,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.RunQueryRequest)) {
       return super.equals(obj);
@@ -443,29 +488,23 @@ private static final long serialVersionUID = 0L;
     com.google.datastore.v1.RunQueryRequest other = (com.google.datastore.v1.RunQueryRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
+    result = result && getProjectId().equals(other.getProjectId());
     result = result && (hasPartitionId() == other.hasPartitionId());
     if (hasPartitionId()) {
-      result = result && getPartitionId()
-          .equals(other.getPartitionId());
+      result = result && getPartitionId().equals(other.getPartitionId());
     }
     result = result && (hasReadOptions() == other.hasReadOptions());
     if (hasReadOptions()) {
-      result = result && getReadOptions()
-          .equals(other.getReadOptions());
+      result = result && getReadOptions().equals(other.getReadOptions());
     }
-    result = result && getQueryTypeCase().equals(
-        other.getQueryTypeCase());
+    result = result && getQueryTypeCase().equals(other.getQueryTypeCase());
     if (!result) return false;
     switch (queryTypeCase_) {
       case 3:
-        result = result && getQuery()
-            .equals(other.getQuery());
+        result = result && getQuery().equals(other.getQuery());
         break;
       case 7:
-        result = result && getGqlQuery()
-            .equals(other.getGqlQuery());
+        result = result && getGqlQuery().equals(other.getGqlQuery());
         break;
       case 0:
       default:
@@ -508,118 +547,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.RunQueryRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.RunQueryRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.datastore.v1.RunQueryRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.datastore.v1.RunQueryRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.datastore.v1.RunQueryRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.RunQueryRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.datastore.v1.RunQueryRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.RunQueryRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.RunQueryRequest)
       com.google.datastore.v1.RunQueryRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_RunQueryRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_fieldAccessorTable
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_RunQueryRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.RunQueryRequest.class, com.google.datastore.v1.RunQueryRequest.Builder.class);
+              com.google.datastore.v1.RunQueryRequest.class,
+              com.google.datastore.v1.RunQueryRequest.Builder.class);
     }
 
     // Construct using com.google.datastore.v1.RunQueryRequest.newBuilder()
@@ -627,16 +675,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -660,9 +707,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_RunQueryRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_RunQueryRequest_descriptor;
     }
 
     @java.lang.Override
@@ -681,7 +728,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.datastore.v1.RunQueryRequest buildPartial() {
-      com.google.datastore.v1.RunQueryRequest result = new com.google.datastore.v1.RunQueryRequest(this);
+      com.google.datastore.v1.RunQueryRequest result =
+          new com.google.datastore.v1.RunQueryRequest(this);
       result.projectId_ = projectId_;
       if (partitionIdBuilder_ == null) {
         result.partitionId_ = partitionId_;
@@ -716,38 +764,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.RunQueryRequest) {
-        return mergeFrom((com.google.datastore.v1.RunQueryRequest)other);
+        return mergeFrom((com.google.datastore.v1.RunQueryRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -767,17 +816,20 @@ private static final long serialVersionUID = 0L;
         mergeReadOptions(other.getReadOptions());
       }
       switch (other.getQueryTypeCase()) {
-        case QUERY: {
-          mergeQuery(other.getQuery());
-          break;
-        }
-        case GQL_QUERY: {
-          mergeGqlQuery(other.getGqlQuery());
-          break;
-        }
-        case QUERYTYPE_NOT_SET: {
-          break;
-        }
+        case QUERY:
+          {
+            mergeQuery(other.getQuery());
+            break;
+          }
+        case GQL_QUERY:
+          {
+            mergeGqlQuery(other.getGqlQuery());
+            break;
+          }
+        case QUERYTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -807,12 +859,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int queryTypeCase_ = 0;
     private java.lang.Object queryType_;
-    public QueryTypeCase
-        getQueryTypeCase() {
-      return QueryTypeCase.forNumber(
-          queryTypeCase_);
+
+    public QueryTypeCase getQueryTypeCase() {
+      return QueryTypeCase.forNumber(queryTypeCase_);
     }
 
     public Builder clearQueryType() {
@@ -822,9 +874,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
@@ -834,8 +887,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -844,19 +896,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
      *
      * <code>string project_id = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -864,23 +916,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
      *
      * <code>string project_id = 8;</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
@@ -888,25 +943,26 @@ private static final long serialVersionUID = 0L;
      * <code>string project_id = 8;</code>
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
      *
      * <code>string project_id = 8;</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -914,8 +970,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.datastore.v1.PartitionId partitionId_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.PartitionId, com.google.datastore.v1.PartitionId.Builder, com.google.datastore.v1.PartitionIdOrBuilder> partitionIdBuilder_;
+            com.google.datastore.v1.PartitionId,
+            com.google.datastore.v1.PartitionId.Builder,
+            com.google.datastore.v1.PartitionIdOrBuilder>
+        partitionIdBuilder_;
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -929,6 +990,8 @@ private static final long serialVersionUID = 0L;
       return partitionIdBuilder_ != null || partitionId_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -940,12 +1003,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.datastore.v1.PartitionId getPartitionId() {
       if (partitionIdBuilder_ == null) {
-        return partitionId_ == null ? com.google.datastore.v1.PartitionId.getDefaultInstance() : partitionId_;
+        return partitionId_ == null
+            ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+            : partitionId_;
       } else {
         return partitionIdBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -969,6 +1036,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -978,8 +1047,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
      */
-    public Builder setPartitionId(
-        com.google.datastore.v1.PartitionId.Builder builderForValue) {
+    public Builder setPartitionId(com.google.datastore.v1.PartitionId.Builder builderForValue) {
       if (partitionIdBuilder_ == null) {
         partitionId_ = builderForValue.build();
         onChanged();
@@ -990,6 +1058,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -1003,7 +1073,9 @@ private static final long serialVersionUID = 0L;
       if (partitionIdBuilder_ == null) {
         if (partitionId_ != null) {
           partitionId_ =
-            com.google.datastore.v1.PartitionId.newBuilder(partitionId_).mergeFrom(value).buildPartial();
+              com.google.datastore.v1.PartitionId.newBuilder(partitionId_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           partitionId_ = value;
         }
@@ -1015,6 +1087,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -1036,6 +1110,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -1046,11 +1122,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
      */
     public com.google.datastore.v1.PartitionId.Builder getPartitionIdBuilder() {
-      
+
       onChanged();
       return getPartitionIdFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -1064,11 +1142,14 @@ private static final long serialVersionUID = 0L;
       if (partitionIdBuilder_ != null) {
         return partitionIdBuilder_.getMessageOrBuilder();
       } else {
-        return partitionId_ == null ?
-            com.google.datastore.v1.PartitionId.getDefaultInstance() : partitionId_;
+        return partitionId_ == null
+            ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+            : partitionId_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, identified by a partition ID.
      * Queries are scoped to a single partition.
@@ -1079,14 +1160,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.PartitionId, com.google.datastore.v1.PartitionId.Builder, com.google.datastore.v1.PartitionIdOrBuilder> 
+            com.google.datastore.v1.PartitionId,
+            com.google.datastore.v1.PartitionId.Builder,
+            com.google.datastore.v1.PartitionIdOrBuilder>
         getPartitionIdFieldBuilder() {
       if (partitionIdBuilder_ == null) {
-        partitionIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.PartitionId, com.google.datastore.v1.PartitionId.Builder, com.google.datastore.v1.PartitionIdOrBuilder>(
-                getPartitionId(),
-                getParentForChildren(),
-                isClean());
+        partitionIdBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PartitionId,
+                com.google.datastore.v1.PartitionId.Builder,
+                com.google.datastore.v1.PartitionIdOrBuilder>(
+                getPartitionId(), getParentForChildren(), isClean());
         partitionId_ = null;
       }
       return partitionIdBuilder_;
@@ -1094,8 +1178,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.datastore.v1.ReadOptions readOptions_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.ReadOptions, com.google.datastore.v1.ReadOptions.Builder, com.google.datastore.v1.ReadOptionsOrBuilder> readOptionsBuilder_;
+            com.google.datastore.v1.ReadOptions,
+            com.google.datastore.v1.ReadOptions.Builder,
+            com.google.datastore.v1.ReadOptionsOrBuilder>
+        readOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1106,6 +1195,8 @@ private static final long serialVersionUID = 0L;
       return readOptionsBuilder_ != null || readOptions_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1114,12 +1205,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.datastore.v1.ReadOptions getReadOptions() {
       if (readOptionsBuilder_ == null) {
-        return readOptions_ == null ? com.google.datastore.v1.ReadOptions.getDefaultInstance() : readOptions_;
+        return readOptions_ == null
+            ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
+            : readOptions_;
       } else {
         return readOptionsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1140,14 +1235,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
      *
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
      */
-    public Builder setReadOptions(
-        com.google.datastore.v1.ReadOptions.Builder builderForValue) {
+    public Builder setReadOptions(com.google.datastore.v1.ReadOptions.Builder builderForValue) {
       if (readOptionsBuilder_ == null) {
         readOptions_ = builderForValue.build();
         onChanged();
@@ -1158,6 +1254,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1168,7 +1266,9 @@ private static final long serialVersionUID = 0L;
       if (readOptionsBuilder_ == null) {
         if (readOptions_ != null) {
           readOptions_ =
-            com.google.datastore.v1.ReadOptions.newBuilder(readOptions_).mergeFrom(value).buildPartial();
+              com.google.datastore.v1.ReadOptions.newBuilder(readOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           readOptions_ = value;
         }
@@ -1180,6 +1280,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1198,6 +1300,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1205,11 +1309,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
      */
     public com.google.datastore.v1.ReadOptions.Builder getReadOptionsBuilder() {
-      
+
       onChanged();
       return getReadOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1220,11 +1326,14 @@ private static final long serialVersionUID = 0L;
       if (readOptionsBuilder_ != null) {
         return readOptionsBuilder_.getMessageOrBuilder();
       } else {
-        return readOptions_ == null ?
-            com.google.datastore.v1.ReadOptions.getDefaultInstance() : readOptions_;
+        return readOptions_ == null
+            ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
+            : readOptions_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The options for this query.
      * </pre>
@@ -1232,22 +1341,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.ReadOptions, com.google.datastore.v1.ReadOptions.Builder, com.google.datastore.v1.ReadOptionsOrBuilder> 
+            com.google.datastore.v1.ReadOptions,
+            com.google.datastore.v1.ReadOptions.Builder,
+            com.google.datastore.v1.ReadOptionsOrBuilder>
         getReadOptionsFieldBuilder() {
       if (readOptionsBuilder_ == null) {
-        readOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.ReadOptions, com.google.datastore.v1.ReadOptions.Builder, com.google.datastore.v1.ReadOptionsOrBuilder>(
-                getReadOptions(),
-                getParentForChildren(),
-                isClean());
+        readOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.ReadOptions,
+                com.google.datastore.v1.ReadOptions.Builder,
+                com.google.datastore.v1.ReadOptionsOrBuilder>(
+                getReadOptions(), getParentForChildren(), isClean());
         readOptions_ = null;
       }
       return readOptionsBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.Query, com.google.datastore.v1.Query.Builder, com.google.datastore.v1.QueryOrBuilder> queryBuilder_;
+            com.google.datastore.v1.Query,
+            com.google.datastore.v1.Query.Builder,
+            com.google.datastore.v1.QueryOrBuilder>
+        queryBuilder_;
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1258,6 +1375,8 @@ private static final long serialVersionUID = 0L;
       return queryTypeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1278,6 +1397,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1298,14 +1419,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
      *
      * <code>.google.datastore.v1.Query query = 3;</code>
      */
-    public Builder setQuery(
-        com.google.datastore.v1.Query.Builder builderForValue) {
+    public Builder setQuery(com.google.datastore.v1.Query.Builder builderForValue) {
       if (queryBuilder_ == null) {
         queryType_ = builderForValue.build();
         onChanged();
@@ -1316,6 +1438,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1324,10 +1448,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeQuery(com.google.datastore.v1.Query value) {
       if (queryBuilder_ == null) {
-        if (queryTypeCase_ == 3 &&
-            queryType_ != com.google.datastore.v1.Query.getDefaultInstance()) {
-          queryType_ = com.google.datastore.v1.Query.newBuilder((com.google.datastore.v1.Query) queryType_)
-              .mergeFrom(value).buildPartial();
+        if (queryTypeCase_ == 3
+            && queryType_ != com.google.datastore.v1.Query.getDefaultInstance()) {
+          queryType_ =
+              com.google.datastore.v1.Query.newBuilder((com.google.datastore.v1.Query) queryType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           queryType_ = value;
         }
@@ -1342,6 +1468,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1365,6 +1493,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1375,6 +1505,8 @@ private static final long serialVersionUID = 0L;
       return getQueryFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1392,6 +1524,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The query to run.
      * </pre>
@@ -1399,27 +1533,36 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.Query query = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.Query, com.google.datastore.v1.Query.Builder, com.google.datastore.v1.QueryOrBuilder> 
+            com.google.datastore.v1.Query,
+            com.google.datastore.v1.Query.Builder,
+            com.google.datastore.v1.QueryOrBuilder>
         getQueryFieldBuilder() {
       if (queryBuilder_ == null) {
         if (!(queryTypeCase_ == 3)) {
           queryType_ = com.google.datastore.v1.Query.getDefaultInstance();
         }
-        queryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.Query, com.google.datastore.v1.Query.Builder, com.google.datastore.v1.QueryOrBuilder>(
-                (com.google.datastore.v1.Query) queryType_,
-                getParentForChildren(),
-                isClean());
+        queryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.Query,
+                com.google.datastore.v1.Query.Builder,
+                com.google.datastore.v1.QueryOrBuilder>(
+                (com.google.datastore.v1.Query) queryType_, getParentForChildren(), isClean());
         queryType_ = null;
       }
       queryTypeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return queryBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.GqlQuery, com.google.datastore.v1.GqlQuery.Builder, com.google.datastore.v1.GqlQueryOrBuilder> gqlQueryBuilder_;
+            com.google.datastore.v1.GqlQuery,
+            com.google.datastore.v1.GqlQuery.Builder,
+            com.google.datastore.v1.GqlQueryOrBuilder>
+        gqlQueryBuilder_;
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1430,6 +1573,8 @@ private static final long serialVersionUID = 0L;
       return queryTypeCase_ == 7;
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1450,6 +1595,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1470,14 +1617,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
      *
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
      */
-    public Builder setGqlQuery(
-        com.google.datastore.v1.GqlQuery.Builder builderForValue) {
+    public Builder setGqlQuery(com.google.datastore.v1.GqlQuery.Builder builderForValue) {
       if (gqlQueryBuilder_ == null) {
         queryType_ = builderForValue.build();
         onChanged();
@@ -1488,6 +1636,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1496,10 +1646,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeGqlQuery(com.google.datastore.v1.GqlQuery value) {
       if (gqlQueryBuilder_ == null) {
-        if (queryTypeCase_ == 7 &&
-            queryType_ != com.google.datastore.v1.GqlQuery.getDefaultInstance()) {
-          queryType_ = com.google.datastore.v1.GqlQuery.newBuilder((com.google.datastore.v1.GqlQuery) queryType_)
-              .mergeFrom(value).buildPartial();
+        if (queryTypeCase_ == 7
+            && queryType_ != com.google.datastore.v1.GqlQuery.getDefaultInstance()) {
+          queryType_ =
+              com.google.datastore.v1.GqlQuery.newBuilder(
+                      (com.google.datastore.v1.GqlQuery) queryType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           queryType_ = value;
         }
@@ -1514,6 +1667,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1537,6 +1692,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1547,6 +1704,8 @@ private static final long serialVersionUID = 0L;
       return getGqlQueryFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1564,6 +1723,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The GQL query to run.
      * </pre>
@@ -1571,26 +1732,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.GqlQuery, com.google.datastore.v1.GqlQuery.Builder, com.google.datastore.v1.GqlQueryOrBuilder> 
+            com.google.datastore.v1.GqlQuery,
+            com.google.datastore.v1.GqlQuery.Builder,
+            com.google.datastore.v1.GqlQueryOrBuilder>
         getGqlQueryFieldBuilder() {
       if (gqlQueryBuilder_ == null) {
         if (!(queryTypeCase_ == 7)) {
           queryType_ = com.google.datastore.v1.GqlQuery.getDefaultInstance();
         }
-        gqlQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.GqlQuery, com.google.datastore.v1.GqlQuery.Builder, com.google.datastore.v1.GqlQueryOrBuilder>(
-                (com.google.datastore.v1.GqlQuery) queryType_,
-                getParentForChildren(),
-                isClean());
+        gqlQueryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.GqlQuery,
+                com.google.datastore.v1.GqlQuery.Builder,
+                com.google.datastore.v1.GqlQueryOrBuilder>(
+                (com.google.datastore.v1.GqlQuery) queryType_, getParentForChildren(), isClean());
         queryType_ = null;
       }
       queryTypeCase_ = 7;
-      onChanged();;
+      onChanged();
+      ;
       return gqlQueryBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1600,12 +1765,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.RunQueryRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.RunQueryRequest)
   private static final com.google.datastore.v1.RunQueryRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.RunQueryRequest();
   }
@@ -1614,16 +1779,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RunQueryRequest>
-      PARSER = new com.google.protobuf.AbstractParser<RunQueryRequest>() {
-    @java.lang.Override
-    public RunQueryRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RunQueryRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RunQueryRequest> PARSER =
+      new com.google.protobuf.AbstractParser<RunQueryRequest>() {
+        @java.lang.Override
+        public RunQueryRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RunQueryRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RunQueryRequest> parser() {
     return PARSER;
@@ -1638,6 +1803,4 @@ private static final long serialVersionUID = 0L;
   public com.google.datastore.v1.RunQueryRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

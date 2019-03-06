@@ -49,7 +49,8 @@ public class SpannerMetadataProviderTest {
     assertEquals("projects/p", getResourceHeaderValue(metadataProvider, "garbage"));
     assertEquals("projects/p", getResourceHeaderValue(metadataProvider, "projects/p"));
     assertEquals(
-        "projects/p/instances/i", getResourceHeaderValue(metadataProvider, "projects/p/instances/i"));
+        "projects/p/instances/i",
+        getResourceHeaderValue(metadataProvider, "projects/p/instances/i"));
     assertEquals(
         "projects/p/instances/i/databases/d",
         getResourceHeaderValue(metadataProvider, "projects/p/instances/i/databases/d"));
@@ -61,7 +62,8 @@ public class SpannerMetadataProviderTest {
         getResourceHeaderValue(metadataProvider, "projects/p/instances/i/operations/op"));
     assertEquals(
         "projects/p/instances/i/databases/d",
-        getResourceHeaderValue(metadataProvider, "projects/p/instances/i/databases/d/operations/op"));
+        getResourceHeaderValue(
+            metadataProvider, "projects/p/instances/i/databases/d/operations/op"));
     assertEquals(
         "projects/p/instances/i",
         getResourceHeaderValue(metadataProvider, "projects/p/instances/i/operations"));

@@ -4,15 +4,18 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Audio encoding of the output audio format in Text-To-Speech.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.dialogflow.v2beta1.OutputAudioEncoding}
  */
-public enum OutputAudioEncoding
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Not specified.
    * </pre>
@@ -21,6 +24,8 @@ public enum OutputAudioEncoding
    */
   OUTPUT_AUDIO_ENCODING_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
    * Audio content returned as LINEAR16 also contains a WAV header.
@@ -30,6 +35,8 @@ public enum OutputAudioEncoding
    */
   OUTPUT_AUDIO_ENCODING_LINEAR_16(1),
   /**
+   *
+   *
    * <pre>
    * MP3 audio.
    * </pre>
@@ -38,6 +45,8 @@ public enum OutputAudioEncoding
    */
   OUTPUT_AUDIO_ENCODING_MP3(2),
   /**
+   *
+   *
    * <pre>
    * Opus encoded audio wrapped in an ogg container. The result will be a
    * file which can be played natively on Android, and in browsers (at least
@@ -52,6 +61,8 @@ public enum OutputAudioEncoding
   ;
 
   /**
+   *
+   *
    * <pre>
    * Not specified.
    * </pre>
@@ -60,6 +71,8 @@ public enum OutputAudioEncoding
    */
   public static final int OUTPUT_AUDIO_ENCODING_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Uncompressed 16-bit signed little-endian samples (Linear PCM).
    * Audio content returned as LINEAR16 also contains a WAV header.
@@ -69,6 +82,8 @@ public enum OutputAudioEncoding
    */
   public static final int OUTPUT_AUDIO_ENCODING_LINEAR_16_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * MP3 audio.
    * </pre>
@@ -77,6 +92,8 @@ public enum OutputAudioEncoding
    */
   public static final int OUTPUT_AUDIO_ENCODING_MP3_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Opus encoded audio wrapped in an ogg container. The result will be a
    * file which can be played natively on Android, and in browsers (at least
@@ -88,7 +105,6 @@ public enum OutputAudioEncoding
    */
   public static final int OUTPUT_AUDIO_ENCODING_OGG_OPUS_VALUE = 3;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -97,9 +113,7 @@ public enum OutputAudioEncoding
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static OutputAudioEncoding valueOf(int value) {
     return forNumber(value);
@@ -107,11 +121,16 @@ public enum OutputAudioEncoding
 
   public static OutputAudioEncoding forNumber(int value) {
     switch (value) {
-      case 0: return OUTPUT_AUDIO_ENCODING_UNSPECIFIED;
-      case 1: return OUTPUT_AUDIO_ENCODING_LINEAR_16;
-      case 2: return OUTPUT_AUDIO_ENCODING_MP3;
-      case 3: return OUTPUT_AUDIO_ENCODING_OGG_OPUS;
-      default: return null;
+      case 0:
+        return OUTPUT_AUDIO_ENCODING_UNSPECIFIED;
+      case 1:
+        return OUTPUT_AUDIO_ENCODING_LINEAR_16;
+      case 2:
+        return OUTPUT_AUDIO_ENCODING_MP3;
+      case 3:
+        return OUTPUT_AUDIO_ENCODING_OGG_OPUS;
+      default:
+        return null;
     }
   }
 
@@ -119,25 +138,27 @@ public enum OutputAudioEncoding
       internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      OutputAudioEncoding> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<OutputAudioEncoding>() {
-          public OutputAudioEncoding findValueByNumber(int number) {
-            return OutputAudioEncoding.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<OutputAudioEncoding>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OutputAudioEncoding>() {
+            public OutputAudioEncoding findValueByNumber(int number) {
+              return OutputAudioEncoding.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor().getEnumTypes().get(1);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor()
+        .getEnumTypes()
+        .get(1);
   }
 
   private static final OutputAudioEncoding[] VALUES = values();
@@ -145,8 +166,7 @@ public enum OutputAudioEncoding
   public static OutputAudioEncoding valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -162,4 +182,3 @@ public enum OutputAudioEncoding
 
   // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.OutputAudioEncoding)
 }
-

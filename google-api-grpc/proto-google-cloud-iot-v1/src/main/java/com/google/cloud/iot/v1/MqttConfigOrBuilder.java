@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface MqttConfigOrBuilder extends
+public interface MqttConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.MqttConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * If enabled, allows connections using the MQTT protocol. Otherwise, MQTT
    * connections to this registry will fail.
@@ -17,6 +20,8 @@ public interface MqttConfigOrBuilder extends
    */
   int getMqttEnabledStateValue();
   /**
+   *
+   *
    * <pre>
    * If enabled, allows connections using the MQTT protocol. Otherwise, MQTT
    * connections to this registry will fail.

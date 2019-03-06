@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1beta1;
 
-public interface SpeechRecognitionAlternativeOrBuilder extends
+public interface SpeechRecognitionAlternativeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1beta1.SpeechRecognitionAlternative)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * *Output-only* Transcript text representing the words that the user spoke.
    * </pre>
@@ -16,16 +19,19 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
    */
   java.lang.String getTranscript();
   /**
+   *
+   *
    * <pre>
    * *Output-only* Transcript text representing the words that the user spoke.
    * </pre>
    *
    * <code>string transcript = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTranscriptBytes();
+  com.google.protobuf.ByteString getTranscriptBytes();
 
   /**
+   *
+   *
    * <pre>
    * *Output-only* The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are

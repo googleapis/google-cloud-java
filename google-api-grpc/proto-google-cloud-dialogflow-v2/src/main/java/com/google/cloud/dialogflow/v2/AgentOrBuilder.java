@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface AgentOrBuilder extends
+public interface AgentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.Agent)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The project of this agent.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -17,6 +20,8 @@ public interface AgentOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The project of this agent.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -24,10 +29,11 @@ public interface AgentOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of this agent.
    * </pre>
@@ -36,16 +42,19 @@ public interface AgentOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of this agent.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The default language of the agent as a language tag. See
    * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -57,6 +66,8 @@ public interface AgentOrBuilder extends
    */
   java.lang.String getDefaultLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Required. The default language of the agent as a language tag. See
    * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -66,10 +77,11 @@ public interface AgentOrBuilder extends
    *
    * <code>string default_language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDefaultLanguageCodeBytes();
+  com.google.protobuf.ByteString getDefaultLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -77,9 +89,10 @@ public interface AgentOrBuilder extends
    *
    * <code>repeated string supported_language_codes = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getSupportedLanguageCodesList();
+  java.util.List<java.lang.String> getSupportedLanguageCodesList();
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -89,6 +102,8 @@ public interface AgentOrBuilder extends
    */
   int getSupportedLanguageCodesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -98,6 +113,8 @@ public interface AgentOrBuilder extends
    */
   java.lang.String getSupportedLanguageCodes(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -105,10 +122,11 @@ public interface AgentOrBuilder extends
    *
    * <code>repeated string supported_language_codes = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getSupportedLanguageCodesBytes(int index);
+  com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Required. The time zone of this agent from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -119,6 +137,8 @@ public interface AgentOrBuilder extends
    */
   java.lang.String getTimeZone();
   /**
+   *
+   *
    * <pre>
    * Required. The time zone of this agent from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -127,10 +147,11 @@ public interface AgentOrBuilder extends
    *
    * <code>string time_zone = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getTimeZoneBytes();
+  com.google.protobuf.ByteString getTimeZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The description of this agent.
    * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -140,6 +161,8 @@ public interface AgentOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Optional. The description of this agent.
    * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -147,10 +170,11 @@ public interface AgentOrBuilder extends
    *
    * <code>string description = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -161,6 +185,8 @@ public interface AgentOrBuilder extends
    */
   java.lang.String getAvatarUri();
   /**
+   *
+   *
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -169,10 +195,11 @@ public interface AgentOrBuilder extends
    *
    * <code>string avatar_uri = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getAvatarUriBytes();
+  com.google.protobuf.ByteString getAvatarUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Determines whether this agent should log conversation queries.
    * </pre>
@@ -182,6 +209,8 @@ public interface AgentOrBuilder extends
   boolean getEnableLogging();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Determines how intents are detected from user queries.
    * </pre>
@@ -190,6 +219,8 @@ public interface AgentOrBuilder extends
    */
   int getMatchModeValue();
   /**
+   *
+   *
    * <pre>
    * Optional. Determines how intents are detected from user queries.
    * </pre>
@@ -199,6 +230,8 @@ public interface AgentOrBuilder extends
   com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode();
 
   /**
+   *
+   *
    * <pre>
    * Optional. To filter out false positive results and still get variety in
    * matched natural language inputs for your agent, you can tune the machine

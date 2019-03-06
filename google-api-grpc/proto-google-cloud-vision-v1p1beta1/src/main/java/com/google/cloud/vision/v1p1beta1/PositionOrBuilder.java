@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p1beta1;
 
-public interface PositionOrBuilder extends
+public interface PositionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p1beta1.Position)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * X coordinate.
    * </pre>
@@ -17,6 +20,8 @@ public interface PositionOrBuilder extends
   float getX();
 
   /**
+   *
+   *
    * <pre>
    * Y coordinate.
    * </pre>
@@ -26,6 +31,8 @@ public interface PositionOrBuilder extends
   float getY();
 
   /**
+   *
+   *
    * <pre>
    * Z coordinate (or depth).
    * </pre>

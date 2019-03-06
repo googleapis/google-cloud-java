@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,7 +270,9 @@ public class HttpHealthCheckStubSettings extends StubSettings<HttpHealthCheckStu
 
             @Override
             public Iterable<HttpHealthCheck2> extractResources(HttpHealthCheckList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<HttpHealthCheck2>of();
             }
           };
 
@@ -278,7 +280,8 @@ public class HttpHealthCheckStubSettings extends StubSettings<HttpHealthCheckStu
           ListHttpHealthChecksHttpRequest, HttpHealthCheckList, ListHttpHealthChecksPagedResponse>
       LIST_HTTP_HEALTH_CHECKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListHttpHealthChecksHttpRequest, HttpHealthCheckList,
+              ListHttpHealthChecksHttpRequest,
+              HttpHealthCheckList,
               ListHttpHealthChecksPagedResponse>() {
             @Override
             public ApiFuture<ListHttpHealthChecksPagedResponse> getFuturePagedResponse(

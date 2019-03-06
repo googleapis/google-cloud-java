@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface SpeechTranscriptionConfigOrBuilder extends
+public interface SpeechTranscriptionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.SpeechTranscriptionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -20,6 +23,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -30,10 +35,11 @@ public interface SpeechTranscriptionConfigOrBuilder extends
    *
    * <code>string language_code = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -47,6 +53,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
   int getMaxAlternatives();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
@@ -59,15 +67,18 @@ public interface SpeechTranscriptionConfigOrBuilder extends
   boolean getFilterProfanity();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.SpeechContext speech_contexts = 4;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.SpeechContext> 
-      getSpeechContextsList();
+  java.util.List<com.google.cloud.videointelligence.v1.SpeechContext> getSpeechContextsList();
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
@@ -76,6 +87,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.SpeechContext getSpeechContexts(int index);
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
@@ -84,15 +97,19 @@ public interface SpeechTranscriptionConfigOrBuilder extends
    */
   int getSpeechContextsCount();
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.SpeechContext speech_contexts = 4;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechContextOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
@@ -103,6 +120,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
@@ -117,6 +136,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
   boolean getEnableAutomaticPunctuation();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
@@ -126,6 +147,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
    */
   java.util.List<java.lang.Integer> getAudioTracksList();
   /**
+   *
+   *
    * <pre>
    * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
@@ -135,6 +158,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
    */
   int getAudioTracksCount();
   /**
+   *
+   *
    * <pre>
    * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
@@ -145,6 +170,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
   int getAudioTracks(int index);
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
@@ -160,6 +187,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
   boolean getEnableSpeakerDiarization();
 
   /**
+   *
+   *
    * <pre>
    * *Optional*
    * If set, specifies the estimated number of speakers in the conversation.
@@ -172,6 +201,8 @@ public interface SpeechTranscriptionConfigOrBuilder extends
   int getDiarizationSpeakerCount();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If `true`, the top result includes a list of words and the
    * confidence for those words. If `false`, no word-level confidence

@@ -38,6 +38,7 @@ import org.junit.rules.ExpectedException;
 public class BaseWriteChannelTest {
 
   private abstract static class CustomService implements Service<CustomServiceOptions> {}
+
   private abstract static class CustomServiceOptions
       extends ServiceOptions<CustomService, CustomServiceOptions> {
 
@@ -59,25 +60,25 @@ public class BaseWriteChannelTest {
   private static final Random RANDOM = new Random();
   private static BaseWriteChannel channel;
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
-    channel = new BaseWriteChannel<CustomServiceOptions, Serializable>(null, ENTITY, UPLOAD_ID) {
-      @Override
-      public RestorableState<WriteChannel> capture() {
-        return null;
-      }
+    channel =
+        new BaseWriteChannel<CustomServiceOptions, Serializable>(null, ENTITY, UPLOAD_ID) {
+          @Override
+          public RestorableState<WriteChannel> capture() {
+            return null;
+          }
 
-      @Override
-      protected void flushBuffer(int length, boolean last) {}
+          @Override
+          protected void flushBuffer(int length, boolean last) {}
 
-      @Override
-      protected BaseState.Builder<CustomServiceOptions, Serializable> stateBuilder() {
-        return null;
-      }
-    };
+          @Override
+          protected BaseState.Builder<CustomServiceOptions, Serializable> stateBuilder() {
+            return null;
+          }
+        };
   }
 
   @Test
@@ -91,7 +92,6 @@ public class BaseWriteChannelTest {
     assertArrayEquals(new byte[0], channel.getBuffer());
     assertEquals(DEFAULT_CHUNK_SIZE, channel.getChunkSize());
   }
-
 
   @Test
   public void testClose() throws IOException {

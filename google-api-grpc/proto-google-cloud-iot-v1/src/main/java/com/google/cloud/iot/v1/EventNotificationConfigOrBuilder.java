@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface EventNotificationConfigOrBuilder extends
+public interface EventNotificationConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.EventNotificationConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * If the subfolder name matches this string exactly, this configuration will
    * be used. The string must not include the leading '/' character. If empty,
@@ -19,6 +22,8 @@ public interface EventNotificationConfigOrBuilder extends
    */
   java.lang.String getSubfolderMatches();
   /**
+   *
+   *
    * <pre>
    * If the subfolder name matches this string exactly, this configuration will
    * be used. The string must not include the leading '/' character. If empty,
@@ -28,10 +33,11 @@ public interface EventNotificationConfigOrBuilder extends
    *
    * <code>string subfolder_matches = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getSubfolderMatchesBytes();
+  com.google.protobuf.ByteString getSubfolderMatchesBytes();
 
   /**
+   *
+   *
    * <pre>
    * A Cloud Pub/Sub topic name. For example,
    * `projects/myProject/topics/deviceEvents`.
@@ -41,6 +47,8 @@ public interface EventNotificationConfigOrBuilder extends
    */
   java.lang.String getPubsubTopicName();
   /**
+   *
+   *
    * <pre>
    * A Cloud Pub/Sub topic name. For example,
    * `projects/myProject/topics/deviceEvents`.
@@ -48,6 +56,5 @@ public interface EventNotificationConfigOrBuilder extends
    *
    * <code>string pubsub_topic_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPubsubTopicNameBytes();
+  com.google.protobuf.ByteString getPubsubTopicNameBytes();
 }

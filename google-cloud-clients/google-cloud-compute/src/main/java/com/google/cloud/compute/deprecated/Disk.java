@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.compute.deprecated.Compute.DiskOption;
 import com.google.cloud.compute.deprecated.Compute.OperationOption;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -41,9 +40,7 @@ public class Disk extends DiskInfo {
   private final ComputeOptions options;
   private transient Compute compute;
 
-  /**
-   * A builder for {@code Disk} objects.
-   */
+  /** A builder for {@code Disk} objects. */
   public static class Builder extends DiskInfo.Builder {
 
     private final Compute compute;
@@ -180,9 +177,10 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Operation createSnapshot(String snapshot, String description, OperationOption... options) {
-    SnapshotInfo snapshotInfo = SnapshotInfo.newBuilder(SnapshotId.of(snapshot), getDiskId())
-        .setDescription(description)
-        .build();
+    SnapshotInfo snapshotInfo =
+        SnapshotInfo.newBuilder(SnapshotId.of(snapshot), getDiskId())
+            .setDescription(description)
+            .build();
     return compute.create(snapshotInfo, options);
   }
 
@@ -222,9 +220,7 @@ public class Disk extends DiskInfo {
     return compute.resize(getDiskId(), sizeGb, options);
   }
 
-  /**
-   * Returns the disk's {@code Compute} object used to issue requests.
-   */
+  /** Returns the disk's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }

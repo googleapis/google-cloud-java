@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface CreateClusterRequestOrBuilder extends
+public interface CreateClusterRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.CreateClusterRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the cluster
    * belongs to.
@@ -17,6 +20,8 @@ public interface CreateClusterRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the cluster
    * belongs to.
@@ -24,10 +29,11 @@ public interface CreateClusterRequestOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -36,16 +42,19 @@ public interface CreateClusterRequestOrBuilder extends
    */
   java.lang.String getRegion();
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getRegionBytes();
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The cluster to create.
    * </pre>
@@ -54,6 +63,8 @@ public interface CreateClusterRequestOrBuilder extends
    */
   boolean hasCluster();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster to create.
    * </pre>
@@ -62,6 +73,8 @@ public interface CreateClusterRequestOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.Cluster getCluster();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster to create.
    * </pre>
@@ -71,12 +84,15 @@ public interface CreateClusterRequestOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterOrBuilder getClusterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [CreateClusterRequest][google.cloud.dataproc.v1beta2.CreateClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
-   * is returned.
+   * receives two
+   * [CreateClusterRequest][google.cloud.dataproc.v1beta2.CreateClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -87,12 +103,15 @@ public interface CreateClusterRequestOrBuilder extends
    */
   java.lang.String getRequestId();
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [CreateClusterRequest][google.cloud.dataproc.v1beta2.CreateClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the backend
-   * is returned.
+   * receives two
+   * [CreateClusterRequest][google.cloud.dataproc.v1beta2.CreateClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -101,6 +120,5 @@ public interface CreateClusterRequestOrBuilder extends
    *
    * <code>string request_id = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getRequestIdBytes();
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

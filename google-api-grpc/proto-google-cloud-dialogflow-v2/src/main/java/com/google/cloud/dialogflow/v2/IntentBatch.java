@@ -4,30 +4,33 @@
 package com.google.cloud.dialogflow.v2;
 
 /**
+ *
+ *
  * <pre>
  * This message is a wrapper around a collection of intents.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.IntentBatch}
  */
-public  final class IntentBatch extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class IntentBatch extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.IntentBatch)
     IntentBatchOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use IntentBatch.newBuilder() to construct.
   private IntentBatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private IntentBatch() {
     intents_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private IntentBatch(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              intents_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.Intent.parser(), extensionRegistry));
+              break;
             }
-            intents_.add(
-                input.readMessage(com.google.cloud.dialogflow.v2.Intent.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         intents_ = java.util.Collections.unmodifiableList(intents_);
@@ -78,22 +82,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_IntentBatch_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2.IntentProto
+        .internal_static_google_cloud_dialogflow_v2_IntentBatch_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_IntentBatch_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2.IntentProto
+        .internal_static_google_cloud_dialogflow_v2_IntentBatch_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2.IntentBatch.class, com.google.cloud.dialogflow.v2.IntentBatch.Builder.class);
+            com.google.cloud.dialogflow.v2.IntentBatch.class,
+            com.google.cloud.dialogflow.v2.IntentBatch.Builder.class);
   }
 
   public static final int INTENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_;
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
@@ -104,17 +113,21 @@ private static final long serialVersionUID = 0L;
     return intents_;
   }
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder>
       getIntentsOrBuilderList() {
     return intents_;
   }
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
@@ -125,6 +138,8 @@ private static final long serialVersionUID = 0L;
     return intents_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
@@ -135,18 +150,20 @@ private static final long serialVersionUID = 0L;
     return intents_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
    */
-  public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(
-      int index) {
+  public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(int index) {
     return intents_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -158,8 +175,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < intents_.size(); i++) {
       output.writeMessage(1, intents_.get(i));
     }
@@ -173,8 +189,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < intents_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, intents_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, intents_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,16 +199,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2.IntentBatch)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2.IntentBatch other = (com.google.cloud.dialogflow.v2.IntentBatch) obj;
+    com.google.cloud.dialogflow.v2.IntentBatch other =
+        (com.google.cloud.dialogflow.v2.IntentBatch) obj;
 
     boolean result = true;
-    result = result && getIntentsList()
-        .equals(other.getIntentsList());
+    result = result && getIntentsList().equals(other.getIntentsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -214,118 +229,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2.IntentBatch parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2.IntentBatch parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2.IntentBatch parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dialogflow.v2.IntentBatch prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * This message is a wrapper around a collection of intents.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.IntentBatch}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.IntentBatch)
       com.google.cloud.dialogflow.v2.IntentBatchOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_IntentBatch_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.IntentProto
+          .internal_static_google_cloud_dialogflow_v2_IntentBatch_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_IntentBatch_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2.IntentProto
+          .internal_static_google_cloud_dialogflow_v2_IntentBatch_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2.IntentBatch.class, com.google.cloud.dialogflow.v2.IntentBatch.Builder.class);
+              com.google.cloud.dialogflow.v2.IntentBatch.class,
+              com.google.cloud.dialogflow.v2.IntentBatch.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2.IntentBatch.newBuilder()
@@ -333,17 +357,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getIntentsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -357,9 +381,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_IntentBatch_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2.IntentProto
+          .internal_static_google_cloud_dialogflow_v2_IntentBatch_descriptor;
     }
 
     @java.lang.Override
@@ -378,7 +402,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.IntentBatch buildPartial() {
-      com.google.cloud.dialogflow.v2.IntentBatch result = new com.google.cloud.dialogflow.v2.IntentBatch(this);
+      com.google.cloud.dialogflow.v2.IntentBatch result =
+          new com.google.cloud.dialogflow.v2.IntentBatch(this);
       int from_bitField0_ = bitField0_;
       if (intentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -397,38 +422,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2.IntentBatch) {
-        return mergeFrom((com.google.cloud.dialogflow.v2.IntentBatch)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2.IntentBatch) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -455,9 +481,10 @@ private static final long serialVersionUID = 0L;
             intentsBuilder_ = null;
             intents_ = other.intents_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            intentsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getIntentsFieldBuilder() : null;
+            intentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getIntentsFieldBuilder()
+                    : null;
           } else {
             intentsBuilder_.addAllMessages(other.intents_);
           }
@@ -491,21 +518,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureIntentsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>(intents_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2.Intent, com.google.cloud.dialogflow.v2.Intent.Builder, com.google.cloud.dialogflow.v2.IntentOrBuilder> intentsBuilder_;
+            com.google.cloud.dialogflow.v2.Intent,
+            com.google.cloud.dialogflow.v2.Intent.Builder,
+            com.google.cloud.dialogflow.v2.IntentOrBuilder>
+        intentsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -520,6 +554,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -534,6 +570,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -548,14 +586,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public Builder setIntents(
-        int index, com.google.cloud.dialogflow.v2.Intent value) {
+    public Builder setIntents(int index, com.google.cloud.dialogflow.v2.Intent value) {
       if (intentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -569,6 +608,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -587,6 +628,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -607,14 +650,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public Builder addIntents(
-        int index, com.google.cloud.dialogflow.v2.Intent value) {
+    public Builder addIntents(int index, com.google.cloud.dialogflow.v2.Intent value) {
       if (intentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -628,14 +672,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public Builder addIntents(
-        com.google.cloud.dialogflow.v2.Intent.Builder builderForValue) {
+    public Builder addIntents(com.google.cloud.dialogflow.v2.Intent.Builder builderForValue) {
       if (intentsBuilder_ == null) {
         ensureIntentsIsMutable();
         intents_.add(builderForValue.build());
@@ -646,6 +691,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -664,6 +711,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -674,8 +723,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent> values) {
       if (intentsBuilder_ == null) {
         ensureIntentsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, intents_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, intents_);
         onChanged();
       } else {
         intentsBuilder_.addAllMessages(values);
@@ -683,6 +731,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -700,6 +750,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -717,39 +769,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public com.google.cloud.dialogflow.v2.Intent.Builder getIntentsBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2.Intent.Builder getIntentsBuilder(int index) {
       return getIntentsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(int index) {
       if (intentsBuilder_ == null) {
-        return intents_.get(index);  } else {
+        return intents_.get(index);
+      } else {
         return intentsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder> 
-         getIntentsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder>
+        getIntentsOrBuilderList() {
       if (intentsBuilder_ != null) {
         return intentsBuilder_.getMessageOrBuilderList();
       } else {
@@ -757,6 +814,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
@@ -764,38 +823,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Builder addIntentsBuilder() {
-      return getIntentsFieldBuilder().addBuilder(
-          com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
+      return getIntentsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public com.google.cloud.dialogflow.v2.Intent.Builder addIntentsBuilder(
-        int index) {
-      return getIntentsFieldBuilder().addBuilder(
-          index, com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
+    public com.google.cloud.dialogflow.v2.Intent.Builder addIntentsBuilder(int index) {
+      return getIntentsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A collection of intents.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 1;</code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2.Intent.Builder> 
-         getIntentsBuilderList() {
+    public java.util.List<com.google.cloud.dialogflow.v2.Intent.Builder> getIntentsBuilderList() {
       return getIntentsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2.Intent, com.google.cloud.dialogflow.v2.Intent.Builder, com.google.cloud.dialogflow.v2.IntentOrBuilder> 
+            com.google.cloud.dialogflow.v2.Intent,
+            com.google.cloud.dialogflow.v2.Intent.Builder,
+            com.google.cloud.dialogflow.v2.IntentOrBuilder>
         getIntentsFieldBuilder() {
       if (intentsBuilder_ == null) {
-        intentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.v2.Intent, com.google.cloud.dialogflow.v2.Intent.Builder, com.google.cloud.dialogflow.v2.IntentOrBuilder>(
+        intentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.Intent,
+                com.google.cloud.dialogflow.v2.Intent.Builder,
+                com.google.cloud.dialogflow.v2.IntentOrBuilder>(
                 intents_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -804,9 +871,9 @@ private static final long serialVersionUID = 0L;
       }
       return intentsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -816,12 +883,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.IntentBatch)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.IntentBatch)
   private static final com.google.cloud.dialogflow.v2.IntentBatch DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.IntentBatch();
   }
@@ -830,16 +897,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IntentBatch>
-      PARSER = new com.google.protobuf.AbstractParser<IntentBatch>() {
-    @java.lang.Override
-    public IntentBatch parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new IntentBatch(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<IntentBatch> PARSER =
+      new com.google.protobuf.AbstractParser<IntentBatch>() {
+        @java.lang.Override
+        public IntentBatch parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new IntentBatch(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<IntentBatch> parser() {
     return PARSER;
@@ -854,6 +921,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dialogflow.v2.IntentBatch getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

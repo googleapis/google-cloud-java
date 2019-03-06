@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,13 +84,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -453,7 +453,7 @@ public class AgentsClient implements BackgroundResource {
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Empty response = agentsClient.trainAgentAsync(parent).get();
+   *   agentsClient.trainAgentAsync(parent).get();
    * }
    * </code></pre>
    *
@@ -482,7 +482,7 @@ public class AgentsClient implements BackgroundResource {
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Empty response = agentsClient.trainAgentAsync(parent.toString()).get();
+   *   agentsClient.trainAgentAsync(parent.toString()).get();
    * }
    * </code></pre>
    *
@@ -513,7 +513,7 @@ public class AgentsClient implements BackgroundResource {
    *   TrainAgentRequest request = TrainAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   Empty response = agentsClient.trainAgentAsync(request).get();
+   *   agentsClient.trainAgentAsync(request).get();
    * }
    * </code></pre>
    *
@@ -541,9 +541,9 @@ public class AgentsClient implements BackgroundResource {
    *   TrainAgentRequest request = TrainAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.trainAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.trainAgentOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -684,7 +684,7 @@ public class AgentsClient implements BackgroundResource {
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.exportAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;ExportAgentResponse, Struct&gt; future = agentsClient.exportAgentOperationCallable().futureCall(request);
    *   // Do something
    *   ExportAgentResponse response = future.get();
    * }
@@ -740,7 +740,7 @@ public class AgentsClient implements BackgroundResource {
    *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   Empty response = agentsClient.importAgentAsync(request).get();
+   *   agentsClient.importAgentAsync(request).get();
    * }
    * </code></pre>
    *
@@ -771,9 +771,9 @@ public class AgentsClient implements BackgroundResource {
    *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.importAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.importAgentOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -828,7 +828,7 @@ public class AgentsClient implements BackgroundResource {
    *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   Empty response = agentsClient.restoreAgentAsync(request).get();
+   *   agentsClient.restoreAgentAsync(request).get();
    * }
    * </code></pre>
    *
@@ -859,9 +859,9 @@ public class AgentsClient implements BackgroundResource {
    *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.restoreAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.restoreAgentOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -931,7 +931,10 @@ public class AgentsClient implements BackgroundResource {
 
   public static class SearchAgentsPagedResponse
       extends AbstractPagedListResponse<
-          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsRequest,
+          SearchAgentsResponse,
+          Agent,
+          SearchAgentsPage,
           SearchAgentsFixedSizeCollection> {
 
     public static ApiFuture<SearchAgentsPagedResponse> createAsync(
@@ -984,7 +987,10 @@ public class AgentsClient implements BackgroundResource {
 
   public static class SearchAgentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsRequest,
+          SearchAgentsResponse,
+          Agent,
+          SearchAgentsPage,
           SearchAgentsFixedSizeCollection> {
 
     private SearchAgentsFixedSizeCollection(List<SearchAgentsPage> pages, int collectionSize) {

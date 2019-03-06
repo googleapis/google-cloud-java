@@ -21,9 +21,8 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import org.junit.Test;
-
 import java.util.concurrent.TimeUnit;
+import org.junit.Test;
 
 public class RecordSetTest {
 
@@ -32,9 +31,8 @@ public class RecordSetTest {
   private static final TimeUnit UNIT = TimeUnit.HOURS;
   private static final Integer UNIT_TTL = 1;
   private static final RecordSet.Type TYPE = RecordSet.Type.AAAA;
-  private static final RecordSet RECORD_SET = RecordSet.newBuilder(NAME, TYPE)
-      .setTtl(UNIT_TTL, UNIT)
-      .build();
+  private static final RecordSet RECORD_SET =
+      RecordSet.newBuilder(NAME, TYPE).setTtl(UNIT_TTL, UNIT).build();
 
   @Test
   public void testDefaultDnsRecord() {
@@ -43,7 +41,6 @@ public class RecordSetTest {
     assertEquals(TYPE, recordSet.getType());
     assertEquals(NAME, recordSet.getName());
   }
-
 
   @Test
   public void testBuilder() {
@@ -54,15 +51,12 @@ public class RecordSetTest {
     // verify that one can add records to the record set
     String testingRecord = "Testing recordSet";
     String anotherTestingRecord = "Another recordSet 123";
-    RecordSet anotherRecord = RECORD_SET.toBuilder()
-        .addRecord(testingRecord)
-        .addRecord(anotherTestingRecord)
-        .build();
+    RecordSet anotherRecord =
+        RECORD_SET.toBuilder().addRecord(testingRecord).addRecord(anotherTestingRecord).build();
     assertEquals(2, anotherRecord.getRecords().size());
     assertTrue(anotherRecord.getRecords().contains(testingRecord));
     assertTrue(anotherRecord.getRecords().contains(anotherTestingRecord));
   }
-
 
   @Test
   public void testValidTtl() {
@@ -83,7 +77,6 @@ public class RecordSetTest {
     RecordSet record = RecordSet.newBuilder(NAME, TYPE).setTtl(UNIT_TTL, UNIT).build();
     assertEquals(TTL, record.getTtl());
   }
-
 
   @Test
   public void testEqualsAndNotEquals() {
@@ -132,8 +125,7 @@ public class RecordSetTest {
   @Test
   public void clearRecordSet() {
     // make sure that we are starting not empty
-    RecordSet clone =
-        RECORD_SET.toBuilder().addRecord("record").addRecord("another").build();
+    RecordSet clone = RECORD_SET.toBuilder().addRecord("record").addRecord("another").build();
     assertNotEquals(0, clone.getRecords().size());
     clone = clone.toBuilder().clearRecords().build();
     assertEquals(0, clone.getRecords().size());

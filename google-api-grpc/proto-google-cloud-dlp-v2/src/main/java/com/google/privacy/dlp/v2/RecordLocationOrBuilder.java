@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface RecordLocationOrBuilder extends
+public interface RecordLocationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.RecordLocation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Key of the finding.
    * </pre>
@@ -16,6 +19,8 @@ public interface RecordLocationOrBuilder extends
    */
   boolean hasRecordKey();
   /**
+   *
+   *
    * <pre>
    * Key of the finding.
    * </pre>
@@ -24,6 +29,8 @@ public interface RecordLocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.RecordKey getRecordKey();
   /**
+   *
+   *
    * <pre>
    * Key of the finding.
    * </pre>
@@ -33,6 +40,8 @@ public interface RecordLocationOrBuilder extends
   com.google.privacy.dlp.v2.RecordKeyOrBuilder getRecordKeyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Field id of the field containing the finding.
    * </pre>
@@ -41,6 +50,8 @@ public interface RecordLocationOrBuilder extends
    */
   boolean hasFieldId();
   /**
+   *
+   *
    * <pre>
    * Field id of the field containing the finding.
    * </pre>
@@ -49,6 +60,8 @@ public interface RecordLocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getFieldId();
   /**
+   *
+   *
    * <pre>
    * Field id of the field containing the finding.
    * </pre>
@@ -58,6 +71,8 @@ public interface RecordLocationOrBuilder extends
   com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Location within a `ContentItem.Table`.
    * </pre>
@@ -66,6 +81,8 @@ public interface RecordLocationOrBuilder extends
    */
   boolean hasTableLocation();
   /**
+   *
+   *
    * <pre>
    * Location within a `ContentItem.Table`.
    * </pre>
@@ -74,6 +91,8 @@ public interface RecordLocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.TableLocation getTableLocation();
   /**
+   *
+   *
    * <pre>
    * Location within a `ContentItem.Table`.
    * </pre>

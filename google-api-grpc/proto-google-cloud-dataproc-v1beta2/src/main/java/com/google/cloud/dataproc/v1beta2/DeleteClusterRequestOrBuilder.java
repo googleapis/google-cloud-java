@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface DeleteClusterRequestOrBuilder extends
+public interface DeleteClusterRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.DeleteClusterRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the cluster
    * belongs to.
@@ -17,6 +20,8 @@ public interface DeleteClusterRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the cluster
    * belongs to.
@@ -24,10 +29,11 @@ public interface DeleteClusterRequestOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -36,16 +42,19 @@ public interface DeleteClusterRequestOrBuilder extends
    */
   java.lang.String getRegion();
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getRegionBytes();
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name.
    * </pre>
@@ -54,16 +63,19 @@ public interface DeleteClusterRequestOrBuilder extends
    */
   java.lang.String getClusterName();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name.
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterNameBytes();
+  com.google.protobuf.ByteString getClusterNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Specifying the `cluster_uuid` means the RPC should fail
    * (with error NOT_FOUND) if cluster with specified UUID does not exist.
@@ -73,6 +85,8 @@ public interface DeleteClusterRequestOrBuilder extends
    */
   java.lang.String getClusterUuid();
   /**
+   *
+   *
    * <pre>
    * Optional. Specifying the `cluster_uuid` means the RPC should fail
    * (with error NOT_FOUND) if cluster with specified UUID does not exist.
@@ -80,16 +94,18 @@ public interface DeleteClusterRequestOrBuilder extends
    *
    * <code>string cluster_uuid = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterUuidBytes();
+  com.google.protobuf.ByteString getClusterUuidBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -100,12 +116,15 @@ public interface DeleteClusterRequestOrBuilder extends
    */
   java.lang.String getRequestId();
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
-   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest] requests  with the same
-   * id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * receives two
+   * [DeleteClusterRequest][google.cloud.dataproc.v1beta2.DeleteClusterRequest]
+   * requests  with the same id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * It is recommended to always set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -114,6 +133,5 @@ public interface DeleteClusterRequestOrBuilder extends
    *
    * <code>string request_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getRequestIdBytes();
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

@@ -14,20 +14,21 @@
 
 package com.google.cloud.kms.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class CryptoKeyPathName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key_path=**}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key_path=**}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -67,23 +68,25 @@ public class CryptoKeyPathName implements ResourceName {
     cryptoKeyPath = Preconditions.checkNotNull(builder.getCryptoKeyPath());
   }
 
-  public static CryptoKeyPathName of(String project, String location, String keyRing, String cryptoKeyPath) {
+  public static CryptoKeyPathName of(
+      String project, String location, String keyRing, String cryptoKeyPath) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setKeyRing(keyRing)
-      .setCryptoKeyPath(cryptoKeyPath)
-      .build();
+        .setProject(project)
+        .setLocation(location)
+        .setKeyRing(keyRing)
+        .setCryptoKeyPath(cryptoKeyPath)
+        .build();
   }
 
-  public static String format(String project, String location, String keyRing, String cryptoKeyPath) {
+  public static String format(
+      String project, String location, String keyRing, String cryptoKeyPath) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setKeyRing(keyRing)
-      .setCryptoKeyPath(cryptoKeyPath)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setKeyRing(keyRing)
+        .setCryptoKeyPath(cryptoKeyPath)
+        .build()
+        .toString();
   }
 
   public static CryptoKeyPathName parse(String formattedString) {
@@ -91,8 +94,13 @@ public class CryptoKeyPathName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "CryptoKeyPathName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("key_ring"), matchMap.get("crypto_key_path"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "CryptoKeyPathName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("key_ring"),
+        matchMap.get("crypto_key_path"));
   }
 
   public static List<CryptoKeyPathName> parseList(List<String> formattedStrings) {
@@ -141,7 +149,15 @@ public class CryptoKeyPathName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "key_ring", keyRing, "crypto_key_path", cryptoKeyPath);
+    return PATH_TEMPLATE.instantiate(
+        "project",
+        project,
+        "location",
+        location,
+        "key_ring",
+        keyRing,
+        "crypto_key_path",
+        cryptoKeyPath);
   }
 
   /** Builder for CryptoKeyPathName. */
@@ -188,8 +204,7 @@ public class CryptoKeyPathName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(CryptoKeyPathName cryptoKeyPathName) {
       project = cryptoKeyPathName.project;
@@ -232,4 +247,3 @@ public class CryptoKeyPathName implements ResourceName {
     return h;
   }
 }
-

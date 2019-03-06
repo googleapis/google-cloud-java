@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CreateStoredInfoTypeRequestOrBuilder extends
+public interface CreateStoredInfoTypeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CreateStoredInfoTypeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -17,6 +20,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -24,10 +29,11 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configuration of the storedInfoType to create.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    */
   boolean hasConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration of the storedInfoType to create.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration of the storedInfoType to create.
    * </pre>
@@ -53,6 +63,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
   com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The storedInfoType ID can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -64,6 +76,8 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    */
   java.lang.String getStoredInfoTypeId();
   /**
+   *
+   *
    * <pre>
    * The storedInfoType ID can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -73,6 +87,5 @@ public interface CreateStoredInfoTypeRequestOrBuilder extends
    *
    * <code>string stored_info_type_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getStoredInfoTypeIdBytes();
+  com.google.protobuf.ByteString getStoredInfoTypeIdBytes();
 }

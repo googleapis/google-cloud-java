@@ -3,51 +3,72 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface AnnotateVideoProgressOrBuilder extends
+public interface AnnotateVideoProgressOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.AnnotateVideoProgress)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Progress metadata for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;
+   * </code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.VideoAnnotationProgress> 
+  java.util.List<com.google.cloud.videointelligence.v1.VideoAnnotationProgress>
       getAnnotationProgressList();
   /**
+   *
+   *
    * <pre>
    * Progress metadata for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;
+   * </code>
    */
   com.google.cloud.videointelligence.v1.VideoAnnotationProgress getAnnotationProgress(int index);
   /**
+   *
+   *
    * <pre>
    * Progress metadata for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;
+   * </code>
    */
   int getAnnotationProgressCount();
   /**
+   *
+   *
    * <pre>
    * Progress metadata for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.VideoAnnotationProgressOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1.VideoAnnotationProgressOrBuilder>
       getAnnotationProgressOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Progress metadata for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.VideoAnnotationProgress annotation_progress = 1;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1.VideoAnnotationProgressOrBuilder getAnnotationProgressOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1.VideoAnnotationProgressOrBuilder
+      getAnnotationProgressOrBuilder(int index);
 }

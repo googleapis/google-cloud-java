@@ -4,31 +4,34 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * ListOperationsResponse is the result of ListOperationsRequest.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.ListOperationsResponse}
  */
-public  final class ListOperationsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListOperationsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.ListOperationsResponse)
     ListOperationsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListOperationsResponse.newBuilder() to construct.
   private ListOperationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListOperationsResponse() {
     operations_ = java.util.Collections.emptyList();
     missingZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListOperationsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,38 +51,39 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              operations_ = new java.util.ArrayList<com.google.container.v1.Operation>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                operations_ = new java.util.ArrayList<com.google.container.v1.Operation>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              operations_.add(
+                  input.readMessage(com.google.container.v1.Operation.parser(), extensionRegistry));
+              break;
             }
-            operations_.add(
-                input.readMessage(com.google.container.v1.Operation.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              missingZones_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                missingZones_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              missingZones_.add(s);
+              break;
             }
-            missingZones_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         operations_ = java.util.Collections.unmodifiableList(operations_);
@@ -91,22 +95,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListOperationsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ListOperationsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListOperationsResponse_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ListOperationsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.ListOperationsResponse.class, com.google.container.v1.ListOperationsResponse.Builder.class);
+            com.google.container.v1.ListOperationsResponse.class,
+            com.google.container.v1.ListOperationsResponse.Builder.class);
   }
 
   public static final int OPERATIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.container.v1.Operation> operations_;
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
@@ -117,17 +126,21 @@ private static final long serialVersionUID = 0L;
     return operations_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
-  public java.util.List<? extends com.google.container.v1.OperationOrBuilder> 
+  public java.util.List<? extends com.google.container.v1.OperationOrBuilder>
       getOperationsOrBuilderList() {
     return operations_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
@@ -138,6 +151,8 @@ private static final long serialVersionUID = 0L;
     return operations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
@@ -148,20 +163,23 @@ private static final long serialVersionUID = 0L;
     return operations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
-  public com.google.container.v1.OperationOrBuilder getOperationsOrBuilder(
-      int index) {
+  public com.google.container.v1.OperationOrBuilder getOperationsOrBuilder(int index) {
     return operations_.get(index);
   }
 
   public static final int MISSING_ZONES_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList missingZones_;
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -169,11 +187,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string missing_zones = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getMissingZonesList() {
+  public com.google.protobuf.ProtocolStringList getMissingZonesList() {
     return missingZones_;
   }
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -185,6 +204,8 @@ private static final long serialVersionUID = 0L;
     return missingZones_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -196,6 +217,8 @@ private static final long serialVersionUID = 0L;
     return missingZones_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -203,12 +226,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string missing_zones = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getMissingZonesBytes(int index) {
+  public com.google.protobuf.ByteString getMissingZonesBytes(int index) {
     return missingZones_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -220,8 +243,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < operations_.size(); i++) {
       output.writeMessage(1, operations_.get(i));
     }
@@ -238,8 +260,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < operations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, operations_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, operations_.get(i));
     }
     {
       int dataSize = 0;
@@ -257,18 +278,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.ListOperationsResponse)) {
       return super.equals(obj);
     }
-    com.google.container.v1.ListOperationsResponse other = (com.google.container.v1.ListOperationsResponse) obj;
+    com.google.container.v1.ListOperationsResponse other =
+        (com.google.container.v1.ListOperationsResponse) obj;
 
     boolean result = true;
-    result = result && getOperationsList()
-        .equals(other.getOperationsList());
-    result = result && getMissingZonesList()
-        .equals(other.getMissingZonesList());
+    result = result && getOperationsList().equals(other.getOperationsList());
+    result = result && getMissingZonesList().equals(other.getMissingZonesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -293,118 +313,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.ListOperationsResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.ListOperationsResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.ListOperationsResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.ListOperationsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.ListOperationsResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ListOperationsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.ListOperationsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * ListOperationsResponse is the result of ListOperationsRequest.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.ListOperationsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.ListOperationsResponse)
       com.google.container.v1.ListOperationsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListOperationsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ListOperationsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListOperationsResponse_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ListOperationsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.ListOperationsResponse.class, com.google.container.v1.ListOperationsResponse.Builder.class);
+              com.google.container.v1.ListOperationsResponse.class,
+              com.google.container.v1.ListOperationsResponse.Builder.class);
     }
 
     // Construct using com.google.container.v1.ListOperationsResponse.newBuilder()
@@ -412,17 +441,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getOperationsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -438,9 +467,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListOperationsResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ListOperationsResponse_descriptor;
     }
 
     @java.lang.Override
@@ -459,7 +488,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.ListOperationsResponse buildPartial() {
-      com.google.container.v1.ListOperationsResponse result = new com.google.container.v1.ListOperationsResponse(this);
+      com.google.container.v1.ListOperationsResponse result =
+          new com.google.container.v1.ListOperationsResponse(this);
       int from_bitField0_ = bitField0_;
       if (operationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -483,38 +513,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.ListOperationsResponse) {
-        return mergeFrom((com.google.container.v1.ListOperationsResponse)other);
+        return mergeFrom((com.google.container.v1.ListOperationsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -541,9 +572,10 @@ private static final long serialVersionUID = 0L;
             operationsBuilder_ = null;
             operations_ = other.operations_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            operationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getOperationsFieldBuilder() : null;
+            operationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOperationsFieldBuilder()
+                    : null;
           } else {
             operationsBuilder_.addAllMessages(other.operations_);
           }
@@ -587,21 +619,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.container.v1.Operation> operations_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureOperationsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         operations_ = new java.util.ArrayList<com.google.container.v1.Operation>(operations_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.Operation, com.google.container.v1.Operation.Builder, com.google.container.v1.OperationOrBuilder> operationsBuilder_;
+            com.google.container.v1.Operation,
+            com.google.container.v1.Operation.Builder,
+            com.google.container.v1.OperationOrBuilder>
+        operationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -616,6 +655,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -630,6 +671,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -644,14 +687,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public Builder setOperations(
-        int index, com.google.container.v1.Operation value) {
+    public Builder setOperations(int index, com.google.container.v1.Operation value) {
       if (operationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -665,6 +709,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -683,6 +729,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -703,14 +751,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public Builder addOperations(
-        int index, com.google.container.v1.Operation value) {
+    public Builder addOperations(int index, com.google.container.v1.Operation value) {
       if (operationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -724,14 +773,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public Builder addOperations(
-        com.google.container.v1.Operation.Builder builderForValue) {
+    public Builder addOperations(com.google.container.v1.Operation.Builder builderForValue) {
       if (operationsBuilder_ == null) {
         ensureOperationsIsMutable();
         operations_.add(builderForValue.build());
@@ -742,6 +792,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -760,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -770,8 +824,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.container.v1.Operation> values) {
       if (operationsBuilder_ == null) {
         ensureOperationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, operations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, operations_);
         onChanged();
       } else {
         operationsBuilder_.addAllMessages(values);
@@ -779,6 +832,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -796,6 +851,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -813,39 +870,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public com.google.container.v1.Operation.Builder getOperationsBuilder(
-        int index) {
+    public com.google.container.v1.Operation.Builder getOperationsBuilder(int index) {
       return getOperationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public com.google.container.v1.OperationOrBuilder getOperationsOrBuilder(
-        int index) {
+    public com.google.container.v1.OperationOrBuilder getOperationsOrBuilder(int index) {
       if (operationsBuilder_ == null) {
-        return operations_.get(index);  } else {
+        return operations_.get(index);
+      } else {
         return operationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public java.util.List<? extends com.google.container.v1.OperationOrBuilder> 
-         getOperationsOrBuilderList() {
+    public java.util.List<? extends com.google.container.v1.OperationOrBuilder>
+        getOperationsOrBuilderList() {
       if (operationsBuilder_ != null) {
         return operationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -853,6 +915,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
@@ -860,38 +924,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
     public com.google.container.v1.Operation.Builder addOperationsBuilder() {
-      return getOperationsFieldBuilder().addBuilder(
-          com.google.container.v1.Operation.getDefaultInstance());
+      return getOperationsFieldBuilder()
+          .addBuilder(com.google.container.v1.Operation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public com.google.container.v1.Operation.Builder addOperationsBuilder(
-        int index) {
-      return getOperationsFieldBuilder().addBuilder(
-          index, com.google.container.v1.Operation.getDefaultInstance());
+    public com.google.container.v1.Operation.Builder addOperationsBuilder(int index) {
+      return getOperationsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.Operation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of operations in the project in the specified zone.
      * </pre>
      *
      * <code>repeated .google.container.v1.Operation operations = 1;</code>
      */
-    public java.util.List<com.google.container.v1.Operation.Builder> 
-         getOperationsBuilderList() {
+    public java.util.List<com.google.container.v1.Operation.Builder> getOperationsBuilderList() {
       return getOperationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.Operation, com.google.container.v1.Operation.Builder, com.google.container.v1.OperationOrBuilder> 
+            com.google.container.v1.Operation,
+            com.google.container.v1.Operation.Builder,
+            com.google.container.v1.OperationOrBuilder>
         getOperationsFieldBuilder() {
       if (operationsBuilder_ == null) {
-        operationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.container.v1.Operation, com.google.container.v1.Operation.Builder, com.google.container.v1.OperationOrBuilder>(
+        operationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.Operation,
+                com.google.container.v1.Operation.Builder,
+                com.google.container.v1.OperationOrBuilder>(
                 operations_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -901,14 +973,18 @@ private static final long serialVersionUID = 0L;
       return operationsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList missingZones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList missingZones_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureMissingZonesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         missingZones_ = new com.google.protobuf.LazyStringArrayList(missingZones_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -916,11 +992,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string missing_zones = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getMissingZonesList() {
+    public com.google.protobuf.ProtocolStringList getMissingZonesList() {
       return missingZones_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -932,6 +1009,8 @@ private static final long serialVersionUID = 0L;
       return missingZones_.size();
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -943,6 +1022,8 @@ private static final long serialVersionUID = 0L;
       return missingZones_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -950,11 +1031,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string missing_zones = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getMissingZonesBytes(int index) {
+    public com.google.protobuf.ByteString getMissingZonesBytes(int index) {
       return missingZones_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -962,17 +1044,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string missing_zones = 2;</code>
      */
-    public Builder setMissingZones(
-        int index, java.lang.String value) {
+    public Builder setMissingZones(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMissingZonesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureMissingZonesIsMutable();
       missingZones_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -980,17 +1063,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string missing_zones = 2;</code>
      */
-    public Builder addMissingZones(
-        java.lang.String value) {
+    public Builder addMissingZones(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMissingZonesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureMissingZonesIsMutable();
       missingZones_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -998,15 +1082,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string missing_zones = 2;</code>
      */
-    public Builder addAllMissingZones(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllMissingZones(java.lang.Iterable<java.lang.String> values) {
       ensureMissingZonesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, missingZones_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, missingZones_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -1021,6 +1105,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If any zones are listed here, the list of operations returned
      * may be missing the operations from those zones.
@@ -1028,20 +1114,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string missing_zones = 2;</code>
      */
-    public Builder addMissingZonesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addMissingZonesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureMissingZonesIsMutable();
       missingZones_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1051,12 +1136,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.ListOperationsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.ListOperationsResponse)
   private static final com.google.container.v1.ListOperationsResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.ListOperationsResponse();
   }
@@ -1065,16 +1150,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListOperationsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListOperationsResponse>() {
-    @java.lang.Override
-    public ListOperationsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListOperationsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListOperationsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListOperationsResponse>() {
+        @java.lang.Override
+        public ListOperationsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListOperationsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListOperationsResponse> parser() {
     return PARSER;
@@ -1089,6 +1174,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.ListOperationsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

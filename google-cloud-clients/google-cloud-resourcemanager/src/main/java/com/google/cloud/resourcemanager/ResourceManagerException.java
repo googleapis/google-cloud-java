@@ -27,23 +27,24 @@ import java.util.Set;
  * Resource Manager service exception.
  *
  * @see <a href="https://cloud.google.com/resource-manager/v1/errors/core_errors">Google Cloud
- *      Resource Manager error codes</a>
+ *     Resource Manager error codes</a>
  */
 public final class ResourceManagerException extends BaseHttpServiceException {
 
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
-  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(503, null),
-      new Error(500, null),
-      new Error(429, null),
-      new Error(403, "concurrentLimitExceeded"),
-      new Error(403, "limitExceeded"),
-      new Error(403, "rateLimitExceeded"),
-      new Error(403, "rateLimitExceededUnreg"),
-      new Error(403, "servingLimitExceeded"),
-      new Error(403, "userRateLimitExceeded"),
-      new Error(403, "userRateLimitExceededUnreg"),
-      new Error(403, "variableTermLimitExceeded"));
+  private static final Set<Error> RETRYABLE_ERRORS =
+      ImmutableSet.of(
+          new Error(503, null),
+          new Error(500, null),
+          new Error(429, null),
+          new Error(403, "concurrentLimitExceeded"),
+          new Error(403, "limitExceeded"),
+          new Error(403, "rateLimitExceeded"),
+          new Error(403, "rateLimitExceededUnreg"),
+          new Error(403, "servingLimitExceeded"),
+          new Error(403, "userRateLimitExceeded"),
+          new Error(403, "userRateLimitExceededUnreg"),
+          new Error(403, "variableTermLimitExceeded"));
   private static final long serialVersionUID = -9207194488966554136L;
 
   public ResourceManagerException(int code, String message) {
@@ -63,7 +64,7 @@ public final class ResourceManagerException extends BaseHttpServiceException {
    * method will always throw an exception.
    *
    * @throws ResourceManagerException when {@code ex} was caused by a {@code
-   * ResourceManagerException}
+   *     ResourceManagerException}
    */
   static ResourceManagerException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translate(ex);

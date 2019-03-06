@@ -3,11 +3,14 @@
 
 package com.google.containeranalysis.v1beta1;
 
-public interface GetScanConfigRequestOrBuilder extends
+public interface GetScanConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.containeranalysis.v1beta1.GetScanConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
@@ -17,6 +20,8 @@ public interface GetScanConfigRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
@@ -24,6 +29,5 @@ public interface GetScanConfigRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

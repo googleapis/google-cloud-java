@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Configuration parameters of autoscaling based on load balancing. */
 public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessage {
   private final Double utilizationTarget;
 
@@ -37,7 +38,7 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("utilizationTarget")) {
+    if ("utilizationTarget".equals(fieldName)) {
       return utilizationTarget;
     }
     return null;
@@ -51,10 +52,20 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that
+   * autoscaler should maintain. Must be a positive float value. If not defined, the default is 0.8.
+   */
   public Double getUtilizationTarget() {
     return utilizationTarget;
   }
@@ -98,10 +109,20 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
       this.utilizationTarget = source.utilizationTarget;
     }
 
+    /**
+     * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that
+     * autoscaler should maintain. Must be a positive float value. If not defined, the default is
+     * 0.8.
+     */
     public Double getUtilizationTarget() {
       return utilizationTarget;
     }
 
+    /**
+     * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that
+     * autoscaler should maintain. Must be a positive float value. If not defined, the default is
+     * 0.8.
+     */
     public Builder setUtilizationTarget(Double utilizationTarget) {
       this.utilizationTarget = utilizationTarget;
       return this;

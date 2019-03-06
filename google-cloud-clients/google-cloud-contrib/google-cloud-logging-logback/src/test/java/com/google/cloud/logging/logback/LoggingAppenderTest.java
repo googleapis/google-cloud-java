@@ -86,8 +86,7 @@ public class LoggingAppenderTest {
             .build();
     logging.setFlushSeverity(Severity.WARNING);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
-    logging.write(
-        capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
@@ -114,8 +113,7 @@ public class LoggingAppenderTest {
             .build();
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
-    logging.write(
-        capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
     expectLastCall().once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
@@ -151,8 +149,7 @@ public class LoggingAppenderTest {
             .build();
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
-    logging.write(
-        capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
     expectLastCall().once();
     replay(logging);
     loggingAppender.addEnhancer("com.example.enhancers.TestLoggingEnhancer");
@@ -181,7 +178,7 @@ public class LoggingAppenderTest {
 
     assertThat(logNameArg.getValue()).isEqualTo(defaultWriteOptions[0]);
     // TODO(chingor): Fix this test to work on GCE and locally
-    //assertThat(resourceArg.getValue()).isEqualTo(defaultWriteOptions[1]);
+    // assertThat(resourceArg.getValue()).isEqualTo(defaultWriteOptions[1]);
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {

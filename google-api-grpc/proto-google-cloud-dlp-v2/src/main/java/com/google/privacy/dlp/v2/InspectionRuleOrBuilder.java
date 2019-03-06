@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InspectionRuleOrBuilder extends
+public interface InspectionRuleOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectionRule)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Hotword-based detection rule.
    * </pre>
@@ -16,6 +19,8 @@ public interface InspectionRuleOrBuilder extends
    */
   boolean hasHotwordRule();
   /**
+   *
+   *
    * <pre>
    * Hotword-based detection rule.
    * </pre>
@@ -24,15 +29,20 @@ public interface InspectionRuleOrBuilder extends
    */
   com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule();
   /**
+   *
+   *
    * <pre>
    * Hotword-based detection rule.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
    */
-  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder getHotwordRuleOrBuilder();
+  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder
+      getHotwordRuleOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Exclusion rule.
    * </pre>
@@ -41,6 +51,8 @@ public interface InspectionRuleOrBuilder extends
    */
   boolean hasExclusionRule();
   /**
+   *
+   *
    * <pre>
    * Exclusion rule.
    * </pre>
@@ -49,6 +61,8 @@ public interface InspectionRuleOrBuilder extends
    */
   com.google.privacy.dlp.v2.ExclusionRule getExclusionRule();
   /**
+   *
+   *
    * <pre>
    * Exclusion rule.
    * </pre>

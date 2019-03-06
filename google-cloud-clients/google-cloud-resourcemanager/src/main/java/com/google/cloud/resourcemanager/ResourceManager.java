@@ -16,14 +16,13 @@
 
 package com.google.cloud.resourcemanager;
 
+import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
 import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.common.collect.ImmutableList;
-
 import java.util.List;
 
 /**
@@ -58,16 +57,13 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
       this.selector = selector;
     }
 
-
     @Override
     public String getSelector() {
       return selector;
     }
   }
 
-  /**
-   * Class for specifying project get options.
-   */
+  /** Class for specifying project get options. */
   class ProjectGetOption extends Option {
 
     private static final long serialVersionUID = 270185129961146874L;
@@ -79,20 +75,18 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     /**
      * Returns an option to specify the project's fields to be returned by the RPC call.
      *
-     * <p>If this option is not provided all project fields are returned.
-     * {@code ProjectGetOption.fields} can be used to specify only the fields of interest. Project
-     * ID is always returned, even if not specified. {@link ProjectField} provides a list of fields
-     * that can be used.
+     * <p>If this option is not provided all project fields are returned. {@code
+     * ProjectGetOption.fields} can be used to specify only the fields of interest. Project ID is
+     * always returned, even if not specified. {@link ProjectField} provides a list of fields that
+     * can be used.
      */
     public static ProjectGetOption fields(ProjectField... fields) {
-      return new ProjectGetOption(ResourceManagerRpc.Option.FIELDS,
-          Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
+      return new ProjectGetOption(
+          ResourceManagerRpc.Option.FIELDS, Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying project list options.
-   */
+  /** Class for specifying project list options. */
   class ProjectListOption extends Option {
 
     private static final long serialVersionUID = 7888768979702012328L;
@@ -105,25 +99,27 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * Returns an option to specify a filter.
      *
      * <p>Filter rules are case insensitive. The fields eligible for filtering are:
+     *
      * <ul>
-     * <li>name
-     * <li>project ID
-     * <li>labels.key, where key is the name of a label
+     *   <li>name
+     *   <li>project ID
+     *   <li>labels.key, where key is the name of a label
      * </ul>
      *
      * <p>You can specify multiple filters by adding a space between each filter. Multiple filters
      * are composed using "and".
      *
      * <p>Some examples of filters:
+     *
      * <ul>
-     * <li> name:*  The project has a name.
-     * <li> name:Howl   The project's name is Howl or howl.
-     * <li> name:HOWL   Equivalent to above.
-     * <li> NAME:howl   Equivalent to above.
-     * <li> labels.color:*  The project has the label color.
-     * <li> labels.color:red    The project's label color has the value red.
-     * <li> labels.color:red label.size:big  The project's label color has the value red and its
-     *     label size has the value big.
+     *   <li>name:* The project has a name.
+     *   <li>name:Howl The project's name is Howl or howl.
+     *   <li>name:HOWL Equivalent to above.
+     *   <li>NAME:howl Equivalent to above.
+     *   <li>labels.color:* The project has the label color.
+     *   <li>labels.color:red The project's label color has the value red.
+     *   <li>labels.color:red label.size:big The project's label color has the value red and its
+     *       label size has the value big.
      * </ul>
      */
     public static ProjectListOption filter(String filter) {
@@ -153,13 +149,14 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     /**
      * Returns an option to specify the project's fields to be returned by the RPC call.
      *
-     * <p>If this option is not provided all project fields are returned.
-     * {@code ProjectListOption.fields} can be used to specify only the fields of interest. Project
-     * ID is always returned, even if not specified. {@link ProjectField} provides a list of fields
-     * that can be used.
+     * <p>If this option is not provided all project fields are returned. {@code
+     * ProjectListOption.fields} can be used to specify only the fields of interest. Project ID is
+     * always returned, even if not specified. {@link ProjectField} provides a list of fields that
+     * can be used.
      */
     public static ProjectListOption fields(ProjectField... fields) {
-      return new ProjectListOption(ResourceManagerRpc.Option.FIELDS,
+      return new ProjectListOption(
+          ResourceManagerRpc.Option.FIELDS,
           Helper.listSelector("projects", ProjectField.REQUIRED_FIELDS, fields));
     }
   }
@@ -185,18 +182,20 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * Marks the project identified by the specified project ID for deletion.
    *
    * <p>This method will only affect the project if the following criteria are met:
+   *
    * <ul>
-   * <li>The project does not have a billing account associated with it.
-   * <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
+   *   <li>The project does not have a billing account associated with it.
+   *   <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
    * </ul>
+   *
    * This method changes the project's lifecycle state from {@link ProjectInfo.State#ACTIVE} to
    * {@link ProjectInfo.State#DELETE_REQUESTED}. The deletion starts at an unspecified time, at
    * which point the lifecycle state changes to {@link ProjectInfo.State#DELETE_IN_PROGRESS}. Until
    * the deletion completes, you can check the lifecycle state checked by retrieving the project
-   * with {@link ResourceManager#get}, and the project remains visible to
-   * {@link ResourceManager#list}. However, you cannot update the project. After the deletion
-   * completes, the project is not retrievable by the {@link ResourceManager#get} and
-   * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
+   * with {@link ResourceManager#get}, and the project remains visible to {@link
+   * ResourceManager#list}. However, you cannot update the project. After the deletion completes,
+   * the project is not retrievable by the {@link ResourceManager#get} and {@link
+   * ResourceManager#list} methods. The caller must have modify permissions for this project.
    *
    * @throws ResourceManagerException upon failure
    * @see <a href=
@@ -248,10 +247,10 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Restores the project identified by the specified project ID.
    *
-   * <p>You can only use this method for a project that has a lifecycle state of
-   * {@link ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
-   * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
-   * caller must have modify permissions for this project.
+   * <p>You can only use this method for a project that has a lifecycle state of {@link
+   * ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle state
+   * of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The caller
+   * must have modify permissions for this project.
    *
    * @throws ResourceManagerException upon failure
    * @see <a href=
@@ -275,17 +274,19 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Sets the IAM access control policy for the specified project. Replaces any existing policy. The
    * following constraints apply:
+   *
    * <ul>
-   * <li>Projects currently support only <i>user:{emailid}</i> and <i>serviceAccount:{emailid}</i>
-   *     members in a binding of a policy.
-   * <li>To be added as an owner, a user must be invited via Cloud Platform console and must accept
-   *     the invitation.
-   * <li>Members cannot be added to more than one role in the same policy.
-   * <li>There must be at least one owner who has accepted the Terms of Service (ToS) agreement in
-   *     the policy. An attempt to set a policy that removes the last ToS-accepted owner from the
-   *     policy will fail.
-   * <li>Calling this method requires enabling the App Engine Admin API.
+   *   <li>Projects currently support only <i>user:{emailid}</i> and <i>serviceAccount:{emailid}</i>
+   *       members in a binding of a policy.
+   *   <li>To be added as an owner, a user must be invited via Cloud Platform console and must
+   *       accept the invitation.
+   *   <li>Members cannot be added to more than one role in the same policy.
+   *   <li>There must be at least one owner who has accepted the Terms of Service (ToS) agreement in
+   *       the policy. An attempt to set a policy that removes the last ToS-accepted owner from the
+   *       policy will fail.
+   *   <li>Calling this method requires enabling the App Engine Admin API.
    * </ul>
+   *
    * Note: Removing service accounts from policies or changing their roles can render services
    * completely inoperable. It is important to understand how the service account is being used
    * before removing or updating its roles.
@@ -301,14 +302,14 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * aborted update. If an etag is not provided, the policy is overwritten blindly.
    *
    * <p>An example of using the read-write-modify pattern is as follows:
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Policy currentPolicy = resourceManager.getPolicy("my-project-id");
    * Policy modifiedPolicy = current.toBuilder()
    *     .removeIdentity(Role.viewer(), Identity.user("user@gmail.com"))
    *     .build();
    * Policy newPolicy = resourceManager.replacePolicy("my-project-id", modified);
-   * }
-   * </pre>
+   * }</pre>
    *
    * @throws ResourceManagerException upon failure
    * @see <a href=
@@ -332,9 +333,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a href=
    *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/testIamPermissions">
    *     Resource Manager testIamPermissions</a>
-   * @see <a href=
-   *     "https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud Platform
-   *     Services</a>
+   * @see <a href= "https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud
+   *     Platform Services</a>
    */
   List<Boolean> testPermissions(String projectId, List<String> permissions);
 }

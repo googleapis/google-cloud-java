@@ -19,6 +19,7 @@ package com.google.cloud.spanner.it;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.spanner.AbortedException;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.ErrorCode;
@@ -30,6 +31,7 @@ import com.google.cloud.spanner.KeySet;
 import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TransactionContext;
@@ -59,6 +61,8 @@ public final class ITDMLTest {
   private static final String DELETE_DML = "DELETE FROM T WHERE T.K like 'boo%';";
   private static final long DML_COUNT = 4;
 
+  private static boolean throwAbortOnce = false;
+
   @BeforeClass
   public static void setUpDatabase() {
     db =
@@ -82,6 +86,12 @@ public final class ITDMLTest {
           public Long run(TransactionContext transaction) {
             long rowCount = 0;
             for (String stmt : stmts) {
+              if (throwAbortOnce) {
+                throwAbortOnce = false;
+                throw SpannerExceptionFactory.newSpannerException(
+                    ErrorCode.ABORTED, "Abort in test");
+              }
+
               rowCount += transaction.executeUpdate(Statement.of(stmt));
             }
             return rowCount;
@@ -90,6 +100,17 @@ public final class ITDMLTest {
     TransactionRunner runner = client.readWriteTransaction();
     Long rowCount = runner.run(callable);
     assertThat(rowCount).isEqualTo(expectedCount);
+  }
+
+  @Test
+  public void abortOnceShouldSucceedAfterRetry() {
+    try {
+      throwAbortOnce = true;
+      executeUpdate(DML_COUNT, INSERT_DML);
+      assertThat(throwAbortOnce).isFalse();
+    } catch (AbortedException e) {
+      fail("Abort Exception not caught and retried");
+    }
   }
 
   @Test

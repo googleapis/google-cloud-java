@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -509,7 +509,7 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   Empty response = autoMlClient.deleteDatasetAsync(name).get();
+   *   autoMlClient.deleteDatasetAsync(name).get();
    * }
    * </code></pre>
    *
@@ -536,7 +536,7 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
-   *   Empty response = autoMlClient.deleteDatasetAsync(name.toString()).get();
+   *   autoMlClient.deleteDatasetAsync(name.toString()).get();
    * }
    * </code></pre>
    *
@@ -565,7 +565,7 @@ public class AutoMlClient implements BackgroundResource {
    *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Empty response = autoMlClient.deleteDatasetAsync(request).get();
+   *   autoMlClient.deleteDatasetAsync(request).get();
    * }
    * </code></pre>
    *
@@ -593,9 +593,9 @@ public class AutoMlClient implements BackgroundResource {
    *   DeleteDatasetRequest request = DeleteDatasetRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = autoMlClient.deleteDatasetOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deleteDatasetOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -640,7 +640,7 @@ public class AutoMlClient implements BackgroundResource {
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   Empty response = autoMlClient.importDataAsync(name, inputConfig).get();
+   *   autoMlClient.importDataAsync(name, inputConfig).get();
    * }
    * </code></pre>
    *
@@ -673,7 +673,7 @@ public class AutoMlClient implements BackgroundResource {
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
    *   InputConfig inputConfig = InputConfig.newBuilder().build();
-   *   Empty response = autoMlClient.importDataAsync(name.toString(), inputConfig).get();
+   *   autoMlClient.importDataAsync(name.toString(), inputConfig).get();
    * }
    * </code></pre>
    *
@@ -707,7 +707,7 @@ public class AutoMlClient implements BackgroundResource {
    *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .build();
-   *   Empty response = autoMlClient.importDataAsync(request).get();
+   *   autoMlClient.importDataAsync(request).get();
    * }
    * </code></pre>
    *
@@ -736,9 +736,9 @@ public class AutoMlClient implements BackgroundResource {
    *     .setName(name.toString())
    *     .setInputConfig(inputConfig)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = autoMlClient.importDataOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.importDataOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -784,7 +784,7 @@ public class AutoMlClient implements BackgroundResource {
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   Empty response = autoMlClient.exportDataAsync(name, outputConfig).get();
+   *   autoMlClient.exportDataAsync(name, outputConfig).get();
    * }
    * </code></pre>
    *
@@ -816,7 +816,7 @@ public class AutoMlClient implements BackgroundResource {
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
    *   OutputConfig outputConfig = OutputConfig.newBuilder().build();
-   *   Empty response = autoMlClient.exportDataAsync(name.toString(), outputConfig).get();
+   *   autoMlClient.exportDataAsync(name.toString(), outputConfig).get();
    * }
    * </code></pre>
    *
@@ -849,7 +849,7 @@ public class AutoMlClient implements BackgroundResource {
    *     .setName(name.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
-   *   Empty response = autoMlClient.exportDataAsync(request).get();
+   *   autoMlClient.exportDataAsync(request).get();
    * }
    * </code></pre>
    *
@@ -878,9 +878,9 @@ public class AutoMlClient implements BackgroundResource {
    *     .setName(name.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = autoMlClient.exportDataOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.exportDataOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1024,7 +1024,7 @@ public class AutoMlClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setModel(model)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = autoMlClient.createModelOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Model, OperationMetadata&gt; future = autoMlClient.createModelOperationCallable().futureCall(request);
    *   // Do something
    *   Model response = future.get();
    * }
@@ -1291,7 +1291,7 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Empty response = autoMlClient.deleteModelAsync(name).get();
+   *   autoMlClient.deleteModelAsync(name).get();
    * }
    * </code></pre>
    *
@@ -1319,7 +1319,7 @@ public class AutoMlClient implements BackgroundResource {
    * <pre><code>
    * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
    *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
-   *   Empty response = autoMlClient.deleteModelAsync(name.toString()).get();
+   *   autoMlClient.deleteModelAsync(name.toString()).get();
    * }
    * </code></pre>
    *
@@ -1349,7 +1349,7 @@ public class AutoMlClient implements BackgroundResource {
    *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Empty response = autoMlClient.deleteModelAsync(request).get();
+   *   autoMlClient.deleteModelAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1378,9 +1378,9 @@ public class AutoMlClient implements BackgroundResource {
    *   DeleteModelRequest request = DeleteModelRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = autoMlClient.deleteModelOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = autoMlClient.deleteModelOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1864,7 +1864,10 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListDatasetsPagedResponse
       extends AbstractPagedListResponse<
-          ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage,
+          ListDatasetsRequest,
+          ListDatasetsResponse,
+          Dataset,
+          ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
     public static ApiFuture<ListDatasetsPagedResponse> createAsync(
@@ -1917,7 +1920,10 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListDatasetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage,
+          ListDatasetsRequest,
+          ListDatasetsResponse,
+          Dataset,
+          ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
     private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
@@ -1937,7 +1943,10 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelsPagedResponse
       extends AbstractPagedListResponse<
-          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
+          ListModelsRequest,
+          ListModelsResponse,
+          Model,
+          ListModelsPage,
           ListModelsFixedSizeCollection> {
 
     public static ApiFuture<ListModelsPagedResponse> createAsync(
@@ -1990,7 +1999,10 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
+          ListModelsRequest,
+          ListModelsResponse,
+          Model,
+          ListModelsPage,
           ListModelsFixedSizeCollection> {
 
     private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
@@ -2010,8 +2022,11 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelEvaluationsPagedResponse
       extends AbstractPagedListResponse<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
-          ListModelEvaluationsPage, ListModelEvaluationsFixedSizeCollection> {
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
+          ModelEvaluation,
+          ListModelEvaluationsPage,
+          ListModelEvaluationsFixedSizeCollection> {
 
     public static ApiFuture<ListModelEvaluationsPagedResponse> createAsync(
         PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
@@ -2036,7 +2051,9 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelEvaluationsPage
       extends AbstractPage<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
+          ModelEvaluation,
           ListModelEvaluationsPage> {
 
     private ListModelEvaluationsPage(
@@ -2069,8 +2086,11 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelEvaluationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
-          ListModelEvaluationsPage, ListModelEvaluationsFixedSizeCollection> {
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
+          ModelEvaluation,
+          ListModelEvaluationsPage,
+          ListModelEvaluationsFixedSizeCollection> {
 
     private ListModelEvaluationsFixedSizeCollection(
         List<ListModelEvaluationsPage> pages, int collectionSize) {

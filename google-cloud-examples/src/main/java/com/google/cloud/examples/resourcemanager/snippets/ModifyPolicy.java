@@ -29,9 +29,7 @@ import com.google.cloud.resourcemanager.Project;
 import com.google.cloud.resourcemanager.ResourceManager;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 
-/**
- * A snippet for Google Cloud Resource Manager showing how to modify a project's IAM policy.
- */
+/** A snippet for Google Cloud Resource Manager showing how to modify a project's IAM policy. */
 public class ModifyPolicy {
 
   public static void main(String... args) {

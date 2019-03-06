@@ -56,7 +56,7 @@ public class FieldValueListTest {
   private final Map<String, String> stringPb = ImmutableMap.of("v", "string");
   private final Map<String, String> timestampPb = ImmutableMap.of("v", "42");
   private final Map<String, String> bytesPb = ImmutableMap.of("v", BYTES_BASE64);
-  private final Map<String, Object> nullPb = ImmutableMap.of("v", Data.nullOf(String.class));
+  private final Map<String, String> nullPb = ImmutableMap.of("v", Data.nullOf(String.class));
   private final Map<String, Object> repeatedPb =
       ImmutableMap.<String, Object>of("v", ImmutableList.<Object>of(integerPb, integerPb));
   private final Map<String, Object> recordPb =
@@ -158,18 +158,19 @@ public class FieldValueListTest {
 
   @Test
   public void testNullSchema() {
-    FieldValueList fieldValuesNoSchema = FieldValueList.of(
-        ImmutableList.of(
-            booleanFv,
-            integerFv,
-            floatFv,
-            stringFv,
-            timestampFv,
-            bytesFv,
-            nullFv,
-            repeatedFv,
-            recordFv,
-            numericFv));
+    FieldValueList fieldValuesNoSchema =
+        FieldValueList.of(
+            ImmutableList.of(
+                booleanFv,
+                integerFv,
+                floatFv,
+                stringFv,
+                timestampFv,
+                bytesFv,
+                nullFv,
+                repeatedFv,
+                recordFv,
+                numericFv));
 
     assertEquals(fieldValues, fieldValuesNoSchema);
 

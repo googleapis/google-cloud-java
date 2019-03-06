@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface HttpConfigOrBuilder extends
+public interface HttpConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.HttpConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * If enabled, allows devices to use DeviceService via the HTTP protocol.
    * Otherwise, any requests to DeviceService will fail for this registry.
@@ -17,6 +20,8 @@ public interface HttpConfigOrBuilder extends
    */
   int getHttpEnabledStateValue();
   /**
+   *
+   *
    * <pre>
    * If enabled, allows devices to use DeviceService via the HTTP protocol.
    * Otherwise, any requests to DeviceService will fail for this registry.

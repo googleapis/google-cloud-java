@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("fingerprint")) {
+    if ("fingerprint".equals(fieldName)) {
       return fingerprint;
     }
-    if (fieldName.equals("targetPools")) {
+    if ("targetPools".equals(fieldName)) {
       return targetPools;
     }
     return null;
@@ -58,14 +58,32 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The fingerprint of the target pools information. Use this optional property to prevent
+   * conflicts when multiple users change the target pools settings concurrently. Obtain the
+   * fingerprint with the instanceGroupManagers.get method. Then, include the fingerprint in your
+   * request to ensure that you do not overwrite changes that were applied from another concurrent
+   * request.
+   */
   public String getFingerprint() {
     return fingerprint;
   }
 
+  /**
+   * The list of target pool URLs that instances in this managed instance group belong to. The
+   * managed instance group applies these target pools to all of the instances in the group.
+   * Existing instances and new instances in the group all receive these target pool settings.
+   */
   public List<String> getTargetPoolsList() {
     return targetPools;
   }
@@ -114,19 +132,43 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
       this.targetPools = source.targetPools;
     }
 
+    /**
+     * The fingerprint of the target pools information. Use this optional property to prevent
+     * conflicts when multiple users change the target pools settings concurrently. Obtain the
+     * fingerprint with the instanceGroupManagers.get method. Then, include the fingerprint in your
+     * request to ensure that you do not overwrite changes that were applied from another concurrent
+     * request.
+     */
     public String getFingerprint() {
       return fingerprint;
     }
 
+    /**
+     * The fingerprint of the target pools information. Use this optional property to prevent
+     * conflicts when multiple users change the target pools settings concurrently. Obtain the
+     * fingerprint with the instanceGroupManagers.get method. Then, include the fingerprint in your
+     * request to ensure that you do not overwrite changes that were applied from another concurrent
+     * request.
+     */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
+    /**
+     * The list of target pool URLs that instances in this managed instance group belong to. The
+     * managed instance group applies these target pools to all of the instances in the group.
+     * Existing instances and new instances in the group all receive these target pool settings.
+     */
     public List<String> getTargetPoolsList() {
       return targetPools;
     }
 
+    /**
+     * The list of target pool URLs that instances in this managed instance group belong to. The
+     * managed instance group applies these target pools to all of the instances in the group.
+     * Existing instances and new instances in the group all receive these target pool settings.
+     */
     public Builder addAllTargetPools(List<String> targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -135,6 +177,11 @@ public final class InstanceGroupManagersSetTargetPoolsRequest implements ApiMess
       return this;
     }
 
+    /**
+     * The list of target pool URLs that instances in this managed instance group belong to. The
+     * managed instance group applies these target pools to all of the instances in the group.
+     * Existing instances and new instances in the group all receive these target pool settings.
+     */
     public Builder addTargetPools(String targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();

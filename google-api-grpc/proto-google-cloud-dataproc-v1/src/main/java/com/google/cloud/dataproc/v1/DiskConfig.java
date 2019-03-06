@@ -4,31 +4,35 @@
 package com.google.cloud.dataproc.v1;
 
 /**
+ *
+ *
  * <pre>
  * Specifies the config of disk options for a group of VM instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.DiskConfig}
  */
-public  final class DiskConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.DiskConfig)
     DiskConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DiskConfig.newBuilder() to construct.
   private DiskConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DiskConfig() {
+    bootDiskType_ = "";
     bootDiskSizeGb_ = 0;
     numLocalSsds_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DiskConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,51 +52,109 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            bootDiskSizeGb_ = input.readInt32();
-            break;
-          }
-          case 16: {
-
-            numLocalSsds_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              bootDiskSizeGb_ = input.readInt32();
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              numLocalSsds_ = input.readInt32();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bootDiskType_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1.ClustersProto
+        .internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_DiskConfig_fieldAccessorTable
+    return com.google.cloud.dataproc.v1.ClustersProto
+        .internal_static_google_cloud_dataproc_v1_DiskConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1.DiskConfig.class, com.google.cloud.dataproc.v1.DiskConfig.Builder.class);
+            com.google.cloud.dataproc.v1.DiskConfig.class,
+            com.google.cloud.dataproc.v1.DiskConfig.Builder.class);
+  }
+
+  public static final int BOOT_DISK_TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object bootDiskType_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the boot disk (default is "pd-standard").
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * </pre>
+   *
+   * <code>string boot_disk_type = 3;</code>
+   */
+  public java.lang.String getBootDiskType() {
+    java.lang.Object ref = bootDiskType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bootDiskType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the boot disk (default is "pd-standard").
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * </pre>
+   *
+   * <code>string boot_disk_type = 3;</code>
+   */
+  public com.google.protobuf.ByteString getBootDiskTypeBytes() {
+    java.lang.Object ref = bootDiskType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bootDiskType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int BOOT_DISK_SIZE_GB_FIELD_NUMBER = 1;
   private int bootDiskSizeGb_;
   /**
+   *
+   *
    * <pre>
    * Optional. Size in GB of the boot disk (default is 500GB).
    * </pre>
@@ -106,6 +168,8 @@ private static final long serialVersionUID = 0L;
   public static final int NUM_LOCAL_SSDS_FIELD_NUMBER = 2;
   private int numLocalSsds_;
   /**
+   *
+   *
    * <pre>
    * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
    * If SSDs are not attached, the boot disk is used to store runtime logs and
@@ -122,6 +186,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -133,13 +198,15 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (bootDiskSizeGb_ != 0) {
       output.writeInt32(1, bootDiskSizeGb_);
     }
     if (numLocalSsds_ != 0) {
       output.writeInt32(2, numLocalSsds_);
+    }
+    if (!getBootDiskTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bootDiskType_);
     }
     unknownFields.writeTo(output);
   }
@@ -151,12 +218,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (bootDiskSizeGb_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, bootDiskSizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, bootDiskSizeGb_);
     }
     if (numLocalSsds_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, numLocalSsds_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, numLocalSsds_);
+    }
+    if (!getBootDiskTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bootDiskType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -166,7 +234,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1.DiskConfig)) {
       return super.equals(obj);
@@ -174,10 +242,9 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dataproc.v1.DiskConfig other = (com.google.cloud.dataproc.v1.DiskConfig) obj;
 
     boolean result = true;
-    result = result && (getBootDiskSizeGb()
-        == other.getBootDiskSizeGb());
-    result = result && (getNumLocalSsds()
-        == other.getNumLocalSsds());
+    result = result && getBootDiskType().equals(other.getBootDiskType());
+    result = result && (getBootDiskSizeGb() == other.getBootDiskSizeGb());
+    result = result && (getNumLocalSsds() == other.getNumLocalSsds());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -189,6 +256,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + BOOT_DISK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getBootDiskType().hashCode();
     hash = (37 * hash) + BOOT_DISK_SIZE_GB_FIELD_NUMBER;
     hash = (53 * hash) + getBootDiskSizeGb();
     hash = (37 * hash) + NUM_LOCAL_SSDS_FIELD_NUMBER;
@@ -198,118 +267,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1.DiskConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1.DiskConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.DiskConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1.DiskConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the config of disk options for a group of VM instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.DiskConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.DiskConfig)
       com.google.cloud.dataproc.v1.DiskConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_DiskConfig_fieldAccessorTable
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_DiskConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1.DiskConfig.class, com.google.cloud.dataproc.v1.DiskConfig.Builder.class);
+              com.google.cloud.dataproc.v1.DiskConfig.class,
+              com.google.cloud.dataproc.v1.DiskConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1.DiskConfig.newBuilder()
@@ -317,19 +395,20 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bootDiskType_ = "";
+
       bootDiskSizeGb_ = 0;
 
       numLocalSsds_ = 0;
@@ -338,9 +417,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor;
     }
 
     @java.lang.Override
@@ -359,7 +438,9 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1.DiskConfig buildPartial() {
-      com.google.cloud.dataproc.v1.DiskConfig result = new com.google.cloud.dataproc.v1.DiskConfig(this);
+      com.google.cloud.dataproc.v1.DiskConfig result =
+          new com.google.cloud.dataproc.v1.DiskConfig(this);
+      result.bootDiskType_ = bootDiskType_;
       result.bootDiskSizeGb_ = bootDiskSizeGb_;
       result.numLocalSsds_ = numLocalSsds_;
       onBuilt();
@@ -370,38 +451,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1.DiskConfig) {
-        return mergeFrom((com.google.cloud.dataproc.v1.DiskConfig)other);
+        return mergeFrom((com.google.cloud.dataproc.v1.DiskConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -410,6 +492,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1.DiskConfig other) {
       if (other == com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()) return this;
+      if (!other.getBootDiskType().isEmpty()) {
+        bootDiskType_ = other.bootDiskType_;
+        onChanged();
+      }
       if (other.getBootDiskSizeGb() != 0) {
         setBootDiskSizeGb(other.getBootDiskSizeGb());
       }
@@ -445,8 +531,114 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int bootDiskSizeGb_ ;
+    private java.lang.Object bootDiskType_ = "";
     /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public java.lang.String getBootDiskType() {
+      java.lang.Object ref = bootDiskType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bootDiskType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public com.google.protobuf.ByteString getBootDiskTypeBytes() {
+      java.lang.Object ref = bootDiskType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bootDiskType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public Builder setBootDiskType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      bootDiskType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public Builder clearBootDiskType() {
+
+      bootDiskType_ = getDefaultInstance().getBootDiskType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public Builder setBootDiskTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      bootDiskType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int bootDiskSizeGb_;
+    /**
+     *
+     *
      * <pre>
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
@@ -457,6 +649,8 @@ private static final long serialVersionUID = 0L;
       return bootDiskSizeGb_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
@@ -464,12 +658,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 boot_disk_size_gb = 1;</code>
      */
     public Builder setBootDiskSizeGb(int value) {
-      
+
       bootDiskSizeGb_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Size in GB of the boot disk (default is 500GB).
      * </pre>
@@ -477,14 +673,16 @@ private static final long serialVersionUID = 0L;
      * <code>int32 boot_disk_size_gb = 1;</code>
      */
     public Builder clearBootDiskSizeGb() {
-      
+
       bootDiskSizeGb_ = 0;
       onChanged();
       return this;
     }
 
-    private int numLocalSsds_ ;
+    private int numLocalSsds_;
     /**
+     *
+     *
      * <pre>
      * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
      * If SSDs are not attached, the boot disk is used to store runtime logs and
@@ -500,6 +698,8 @@ private static final long serialVersionUID = 0L;
       return numLocalSsds_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
      * If SSDs are not attached, the boot disk is used to store runtime logs and
@@ -512,12 +712,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 num_local_ssds = 2;</code>
      */
     public Builder setNumLocalSsds(int value) {
-      
+
       numLocalSsds_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
      * If SSDs are not attached, the boot disk is used to store runtime logs and
@@ -530,14 +732,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 num_local_ssds = 2;</code>
      */
     public Builder clearNumLocalSsds() {
-      
+
       numLocalSsds_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -547,12 +749,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.DiskConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.DiskConfig)
   private static final com.google.cloud.dataproc.v1.DiskConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1.DiskConfig();
   }
@@ -561,16 +763,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DiskConfig>
-      PARSER = new com.google.protobuf.AbstractParser<DiskConfig>() {
-    @java.lang.Override
-    public DiskConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DiskConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DiskConfig> PARSER =
+      new com.google.protobuf.AbstractParser<DiskConfig>() {
+        @java.lang.Override
+        public DiskConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DiskConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DiskConfig> parser() {
     return PARSER;
@@ -585,6 +787,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1.DiskConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

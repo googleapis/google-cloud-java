@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("googleSystemId")) {
+    if ("googleSystemId".equals(fieldName)) {
       return googleSystemId;
     }
-    if (fieldName.equals("neighborSystemId")) {
+    if ("neighborSystemId".equals(fieldName)) {
       return neighborSystemId;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
     return null;
@@ -64,14 +64,22 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** System ID of the port on Google?s side of the LACP exchange. */
   public String getGoogleSystemId() {
     return googleSystemId;
   }
 
+  /** System ID of the port on the neighbor?s side of the LACP exchange. */
   public String getNeighborSystemId() {
     return neighborSystemId;
   }
@@ -129,19 +137,23 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
       this.state = source.state;
     }
 
+    /** System ID of the port on Google?s side of the LACP exchange. */
     public String getGoogleSystemId() {
       return googleSystemId;
     }
 
+    /** System ID of the port on Google?s side of the LACP exchange. */
     public Builder setGoogleSystemId(String googleSystemId) {
       this.googleSystemId = googleSystemId;
       return this;
     }
 
+    /** System ID of the port on the neighbor?s side of the LACP exchange. */
     public String getNeighborSystemId() {
       return neighborSystemId;
     }
 
+    /** System ID of the port on the neighbor?s side of the LACP exchange. */
     public Builder setNeighborSystemId(String neighborSystemId) {
       this.neighborSystemId = neighborSystemId;
       return this;

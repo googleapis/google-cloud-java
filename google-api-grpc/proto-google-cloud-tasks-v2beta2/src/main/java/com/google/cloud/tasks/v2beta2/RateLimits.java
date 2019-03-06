@@ -4,25 +4,30 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
  * Rate limits.
  * This message determines the maximum rate that tasks can be dispatched by a
  * queue, regardless of whether the dispatch is a first task attempt or a retry.
- * Note: The debugging command, [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask], will run a task
- * even if the queue has reached its [RateLimits][google.cloud.tasks.v2beta2.RateLimits].
+ * Note: The debugging command,
+ * [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask], will run a task
+ * even if the queue has reached its
+ * [RateLimits][google.cloud.tasks.v2beta2.RateLimits].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.RateLimits}
  */
-public  final class RateLimits extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RateLimits extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.RateLimits)
     RateLimitsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RateLimits.newBuilder() to construct.
   private RateLimits(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RateLimits() {
     maxTasksDispatchedPerSecond_ = 0D;
     maxBurstSize_ = 0;
@@ -30,10 +35,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RateLimits(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,67 +58,75 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 9: {
-
-            maxTasksDispatchedPerSecond_ = input.readDouble();
-            break;
-          }
-          case 16: {
-
-            maxBurstSize_ = input.readInt32();
-            break;
-          }
-          case 24: {
-
-            maxConcurrentTasks_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 9:
+            {
+              maxTasksDispatchedPerSecond_ = input.readDouble();
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              maxBurstSize_ = input.readInt32();
+              break;
+            }
+          case 24:
+            {
+              maxConcurrentTasks_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RateLimits_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.QueueProto
+        .internal_static_google_cloud_tasks_v2beta2_RateLimits_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RateLimits_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.QueueProto
+        .internal_static_google_cloud_tasks_v2beta2_RateLimits_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.RateLimits.class, com.google.cloud.tasks.v2beta2.RateLimits.Builder.class);
+            com.google.cloud.tasks.v2beta2.RateLimits.class,
+            com.google.cloud.tasks.v2beta2.RateLimits.Builder.class);
   }
 
   public static final int MAX_TASKS_DISPATCHED_PER_SECOND_FIELD_NUMBER = 1;
   private double maxTasksDispatchedPerSecond_;
   /**
+   *
+   *
    * <pre>
    * The maximum rate at which tasks are dispatched from this queue.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum allowed value
+   * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget],
+   * the maximum allowed value
    *   is 500.
-   * * This field is output only   for [pull queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
+   * * This field is output only   for [pull
+   * queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
    *   `max_tasks_dispatched_per_second` limit, a maximum of 10 QPS of
-   *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests are allowed per pull queue.
+   *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests
+   *   are allowed per pull queue.
    * This field has the same meaning as
-   * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+   * [rate in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
    * </pre>
    *
    * <code>double max_tasks_dispatched_per_second = 1;</code>
@@ -125,6 +138,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_BURST_SIZE_FIELD_NUMBER = 2;
   private int maxBurstSize_;
   /**
+   *
+   *
    * <pre>
    * Output only. The max burst size.
    * Max burst size limits how fast tasks in queue are processed when
@@ -147,9 +162,9 @@ private static final long serialVersionUID = 0L;
    * `queue.yaml/xml`, `max_burst_size` is equal to
    * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
    * Since `max_burst_size` is output only, if
-   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called on a queue
-   * created by `queue.yaml/xml`, `max_burst_size` will be reset based
-   * on the value of
+   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called
+   * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
+   * based on the value of
    * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second],
    * regardless of whether
    * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second]
@@ -165,6 +180,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_CONCURRENT_TASKS_FIELD_NUMBER = 3;
   private int maxConcurrentTasks_;
   /**
+   *
+   *
    * <pre>
    * The maximum number of concurrent tasks that Cloud Tasks allows
    * to be dispatched for this queue. After this threshold has been
@@ -174,10 +191,12 @@ private static final long serialVersionUID = 0L;
    * default.
    * The maximum allowed value is 5,000.
    * This field is output only for
-   * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which indicates no limit. No other
-   * queue types can have `max_concurrent_tasks` set to -1.
+   * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which
+   * indicates no limit. No other queue types can have `max_concurrent_tasks`
+   * set to -1.
    * This field has the same meaning as
-   * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+   * [max_concurrent_requests in
+   * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
    * </pre>
    *
    * <code>int32 max_concurrent_tasks = 3;</code>
@@ -187,6 +206,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -198,8 +218,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (maxTasksDispatchedPerSecond_ != 0D) {
       output.writeDouble(1, maxTasksDispatchedPerSecond_);
     }
@@ -219,16 +238,14 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (maxTasksDispatchedPerSecond_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(1, maxTasksDispatchedPerSecond_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeDoubleSize(1, maxTasksDispatchedPerSecond_);
     }
     if (maxBurstSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, maxBurstSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxBurstSize_);
     }
     if (maxConcurrentTasks_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, maxConcurrentTasks_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxConcurrentTasks_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -238,22 +255,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.RateLimits)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta2.RateLimits other = (com.google.cloud.tasks.v2beta2.RateLimits) obj;
+    com.google.cloud.tasks.v2beta2.RateLimits other =
+        (com.google.cloud.tasks.v2beta2.RateLimits) obj;
 
     boolean result = true;
-    result = result && (
-        java.lang.Double.doubleToLongBits(getMaxTasksDispatchedPerSecond())
-        == java.lang.Double.doubleToLongBits(
-            other.getMaxTasksDispatchedPerSecond()));
-    result = result && (getMaxBurstSize()
-        == other.getMaxBurstSize());
-    result = result && (getMaxConcurrentTasks()
-        == other.getMaxConcurrentTasks());
+    result =
+        result
+            && (java.lang.Double.doubleToLongBits(getMaxTasksDispatchedPerSecond())
+                == java.lang.Double.doubleToLongBits(other.getMaxTasksDispatchedPerSecond()));
+    result = result && (getMaxBurstSize() == other.getMaxBurstSize());
+    result = result && (getMaxConcurrentTasks() == other.getMaxConcurrentTasks());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -266,8 +282,10 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MAX_TASKS_DISPATCHED_PER_SECOND_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getMaxTasksDispatchedPerSecond()));
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getMaxTasksDispatchedPerSecond()));
     hash = (37 * hash) + MAX_BURST_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getMaxBurstSize();
     hash = (37 * hash) + MAX_CONCURRENT_TASKS_FIELD_NUMBER;
@@ -277,122 +295,133 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.RateLimits parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta2.RateLimits parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.RateLimits parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta2.RateLimits prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Rate limits.
    * This message determines the maximum rate that tasks can be dispatched by a
    * queue, regardless of whether the dispatch is a first task attempt or a retry.
-   * Note: The debugging command, [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask], will run a task
-   * even if the queue has reached its [RateLimits][google.cloud.tasks.v2beta2.RateLimits].
+   * Note: The debugging command,
+   * [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask], will run a task
+   * even if the queue has reached its
+   * [RateLimits][google.cloud.tasks.v2beta2.RateLimits].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.RateLimits}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.RateLimits)
       com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RateLimits_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_RateLimits_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RateLimits_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_RateLimits_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.RateLimits.class, com.google.cloud.tasks.v2beta2.RateLimits.Builder.class);
+              com.google.cloud.tasks.v2beta2.RateLimits.class,
+              com.google.cloud.tasks.v2beta2.RateLimits.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.RateLimits.newBuilder()
@@ -400,16 +429,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -423,9 +451,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RateLimits_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_RateLimits_descriptor;
     }
 
     @java.lang.Override
@@ -444,7 +472,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.RateLimits buildPartial() {
-      com.google.cloud.tasks.v2beta2.RateLimits result = new com.google.cloud.tasks.v2beta2.RateLimits(this);
+      com.google.cloud.tasks.v2beta2.RateLimits result =
+          new com.google.cloud.tasks.v2beta2.RateLimits(this);
       result.maxTasksDispatchedPerSecond_ = maxTasksDispatchedPerSecond_;
       result.maxBurstSize_ = maxBurstSize_;
       result.maxConcurrentTasks_ = maxConcurrentTasks_;
@@ -456,38 +485,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.RateLimits) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.RateLimits)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.RateLimits) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -534,19 +564,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double maxTasksDispatchedPerSecond_ ;
+    private double maxTasksDispatchedPerSecond_;
     /**
+     *
+     *
      * <pre>
      * The maximum rate at which tasks are dispatched from this queue.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum allowed value
+     * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget],
+     * the maximum allowed value
      *   is 500.
-     * * This field is output only   for [pull queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
+     * * This field is output only   for [pull
+     * queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
      *   `max_tasks_dispatched_per_second` limit, a maximum of 10 QPS of
-     *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests are allowed per pull queue.
+     *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests
+     *   are allowed per pull queue.
      * This field has the same meaning as
-     * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+     * [rate in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
      * </pre>
      *
      * <code>double max_tasks_dispatched_per_second = 1;</code>
@@ -555,52 +591,66 @@ private static final long serialVersionUID = 0L;
       return maxTasksDispatchedPerSecond_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum rate at which tasks are dispatched from this queue.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum allowed value
+     * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget],
+     * the maximum allowed value
      *   is 500.
-     * * This field is output only   for [pull queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
+     * * This field is output only   for [pull
+     * queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
      *   `max_tasks_dispatched_per_second` limit, a maximum of 10 QPS of
-     *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests are allowed per pull queue.
+     *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests
+     *   are allowed per pull queue.
      * This field has the same meaning as
-     * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+     * [rate in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
      * </pre>
      *
      * <code>double max_tasks_dispatched_per_second = 1;</code>
      */
     public Builder setMaxTasksDispatchedPerSecond(double value) {
-      
+
       maxTasksDispatchedPerSecond_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum rate at which tasks are dispatched from this queue.
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget], the maximum allowed value
+     * * For [App Engine queues][google.cloud.tasks.v2beta2.AppEngineHttpTarget],
+     * the maximum allowed value
      *   is 500.
-     * * This field is output only   for [pull queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
+     * * This field is output only   for [pull
+     * queues][google.cloud.tasks.v2beta2.PullTarget]. In addition to the
      *   `max_tasks_dispatched_per_second` limit, a maximum of 10 QPS of
-     *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests are allowed per pull queue.
+     *   [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] requests
+     *   are allowed per pull queue.
      * This field has the same meaning as
-     * [rate in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
+     * [rate in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#rate).
      * </pre>
      *
      * <code>double max_tasks_dispatched_per_second = 1;</code>
      */
     public Builder clearMaxTasksDispatchedPerSecond() {
-      
+
       maxTasksDispatchedPerSecond_ = 0D;
       onChanged();
       return this;
     }
 
-    private int maxBurstSize_ ;
+    private int maxBurstSize_;
     /**
+     *
+     *
      * <pre>
      * Output only. The max burst size.
      * Max burst size limits how fast tasks in queue are processed when
@@ -623,9 +673,9 @@ private static final long serialVersionUID = 0L;
      * `queue.yaml/xml`, `max_burst_size` is equal to
      * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
      * Since `max_burst_size` is output only, if
-     * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called on a queue
-     * created by `queue.yaml/xml`, `max_burst_size` will be reset based
-     * on the value of
+     * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called
+     * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
+     * based on the value of
      * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second],
      * regardless of whether
      * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second]
@@ -638,6 +688,8 @@ private static final long serialVersionUID = 0L;
       return maxBurstSize_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The max burst size.
      * Max burst size limits how fast tasks in queue are processed when
@@ -660,9 +712,9 @@ private static final long serialVersionUID = 0L;
      * `queue.yaml/xml`, `max_burst_size` is equal to
      * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
      * Since `max_burst_size` is output only, if
-     * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called on a queue
-     * created by `queue.yaml/xml`, `max_burst_size` will be reset based
-     * on the value of
+     * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called
+     * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
+     * based on the value of
      * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second],
      * regardless of whether
      * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second]
@@ -672,12 +724,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_burst_size = 2;</code>
      */
     public Builder setMaxBurstSize(int value) {
-      
+
       maxBurstSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The max burst size.
      * Max burst size limits how fast tasks in queue are processed when
@@ -700,9 +754,9 @@ private static final long serialVersionUID = 0L;
      * `queue.yaml/xml`, `max_burst_size` is equal to
      * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
      * Since `max_burst_size` is output only, if
-     * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called on a queue
-     * created by `queue.yaml/xml`, `max_burst_size` will be reset based
-     * on the value of
+     * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called
+     * on a queue created by `queue.yaml/xml`, `max_burst_size` will be reset
+     * based on the value of
      * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second],
      * regardless of whether
      * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second]
@@ -712,14 +766,16 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_burst_size = 2;</code>
      */
     public Builder clearMaxBurstSize() {
-      
+
       maxBurstSize_ = 0;
       onChanged();
       return this;
     }
 
-    private int maxConcurrentTasks_ ;
+    private int maxConcurrentTasks_;
     /**
+     *
+     *
      * <pre>
      * The maximum number of concurrent tasks that Cloud Tasks allows
      * to be dispatched for this queue. After this threshold has been
@@ -729,10 +785,12 @@ private static final long serialVersionUID = 0L;
      * default.
      * The maximum allowed value is 5,000.
      * This field is output only for
-     * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which indicates no limit. No other
-     * queue types can have `max_concurrent_tasks` set to -1.
+     * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which
+     * indicates no limit. No other queue types can have `max_concurrent_tasks`
+     * set to -1.
      * This field has the same meaning as
-     * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+     * [max_concurrent_requests in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
      * </pre>
      *
      * <code>int32 max_concurrent_tasks = 3;</code>
@@ -741,6 +799,8 @@ private static final long serialVersionUID = 0L;
       return maxConcurrentTasks_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of concurrent tasks that Cloud Tasks allows
      * to be dispatched for this queue. After this threshold has been
@@ -750,21 +810,25 @@ private static final long serialVersionUID = 0L;
      * default.
      * The maximum allowed value is 5,000.
      * This field is output only for
-     * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which indicates no limit. No other
-     * queue types can have `max_concurrent_tasks` set to -1.
+     * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which
+     * indicates no limit. No other queue types can have `max_concurrent_tasks`
+     * set to -1.
      * This field has the same meaning as
-     * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+     * [max_concurrent_requests in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
      * </pre>
      *
      * <code>int32 max_concurrent_tasks = 3;</code>
      */
     public Builder setMaxConcurrentTasks(int value) {
-      
+
       maxConcurrentTasks_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of concurrent tasks that Cloud Tasks allows
      * to be dispatched for this queue. After this threshold has been
@@ -774,23 +838,25 @@ private static final long serialVersionUID = 0L;
      * default.
      * The maximum allowed value is 5,000.
      * This field is output only for
-     * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which indicates no limit. No other
-     * queue types can have `max_concurrent_tasks` set to -1.
+     * [pull queues][google.cloud.tasks.v2beta2.PullTarget] and always -1, which
+     * indicates no limit. No other queue types can have `max_concurrent_tasks`
+     * set to -1.
      * This field has the same meaning as
-     * [max_concurrent_requests in queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
+     * [max_concurrent_requests in
+     * queue.yaml/xml](https://cloud.google.com/appengine/docs/standard/python/config/queueref#max_concurrent_requests).
      * </pre>
      *
      * <code>int32 max_concurrent_tasks = 3;</code>
      */
     public Builder clearMaxConcurrentTasks() {
-      
+
       maxConcurrentTasks_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -800,12 +866,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.RateLimits)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.RateLimits)
   private static final com.google.cloud.tasks.v2beta2.RateLimits DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.RateLimits();
   }
@@ -814,16 +880,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RateLimits>
-      PARSER = new com.google.protobuf.AbstractParser<RateLimits>() {
-    @java.lang.Override
-    public RateLimits parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RateLimits(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RateLimits> PARSER =
+      new com.google.protobuf.AbstractParser<RateLimits>() {
+        @java.lang.Override
+        public RateLimits parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RateLimits(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RateLimits> parser() {
     return PARSER;
@@ -838,6 +904,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta2.RateLimits getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

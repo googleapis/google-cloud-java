@@ -87,10 +87,12 @@ public class SubnetworkInfoTest {
 
   @Test
   public void testSetProjectId() {
-    SubnetworkInfo subnetworkInfo = SUBNETWORK_INFO.toBuilder()
-        .setSubnetworkId(SubnetworkId.of("region", "subnetwork"))
-        .setNetwork(NetworkId.of("network"))
-        .build();
+    SubnetworkInfo subnetworkInfo =
+        SUBNETWORK_INFO
+            .toBuilder()
+            .setSubnetworkId(SubnetworkId.of("region", "subnetwork"))
+            .setNetwork(NetworkId.of("network"))
+            .build();
     compareSubnetworkInfo(SUBNETWORK_INFO, subnetworkInfo.setProjectId("project"));
   }
 

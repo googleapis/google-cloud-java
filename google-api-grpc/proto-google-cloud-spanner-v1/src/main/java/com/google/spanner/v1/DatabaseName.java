@@ -14,20 +14,21 @@
 
 package com.google.spanner.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class DatabaseName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/instances/{instance}/databases/{database}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/instances/{instance}/databases/{database}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class DatabaseName implements ResourceName {
   }
 
   public static DatabaseName of(String project, String instance, String database) {
-    return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .setDatabase(database)
-      .build();
+    return newBuilder().setProject(project).setInstance(instance).setDatabase(database).build();
   }
 
   public static String format(String project, String instance, String database) {
     return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .setDatabase(database)
-      .build()
-      .toString();
+        .setProject(project)
+        .setInstance(instance)
+        .setDatabase(database)
+        .build()
+        .toString();
   }
 
   public static DatabaseName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class DatabaseName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "DatabaseName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "DatabaseName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("instance"), matchMap.get("database"));
   }
 
@@ -132,7 +130,8 @@ public class DatabaseName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "instance", instance, "database", database);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "instance", instance, "database", database);
   }
 
   /** Builder for DatabaseName. */
@@ -169,8 +168,7 @@ public class DatabaseName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(DatabaseName databaseName) {
       project = databaseName.project;
@@ -209,4 +207,3 @@ public class DatabaseName implements ResourceName {
     return h;
   }
 }
-

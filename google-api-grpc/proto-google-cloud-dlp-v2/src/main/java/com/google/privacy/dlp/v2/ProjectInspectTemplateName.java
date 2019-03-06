@@ -14,20 +14,20 @@
 
 package com.google.privacy.dlp.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ProjectInspectTemplateName extends InspectTemplateName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/inspectTemplates/{inspect_template}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/inspectTemplates/{inspect_template}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +56,11 @@ public class ProjectInspectTemplateName extends InspectTemplateName {
   }
 
   public static ProjectInspectTemplateName of(String project, String inspectTemplate) {
-    return newBuilder()
-      .setProject(project)
-      .setInspectTemplate(inspectTemplate)
-      .build();
+    return newBuilder().setProject(project).setInspectTemplate(inspectTemplate).build();
   }
 
   public static String format(String project, String inspectTemplate) {
-    return newBuilder()
-      .setProject(project)
-      .setInspectTemplate(inspectTemplate)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setInspectTemplate(inspectTemplate).build().toString();
   }
 
   public static ProjectInspectTemplateName parse(String formattedString) {
@@ -75,7 +68,9 @@ public class ProjectInspectTemplateName extends InspectTemplateName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectInspectTemplateName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "ProjectInspectTemplateName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("inspect_template"));
   }
 
@@ -150,8 +145,7 @@ public class ProjectInspectTemplateName extends InspectTemplateName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectInspectTemplateName projectInspectTemplateName) {
       project = projectInspectTemplateName.project;
@@ -186,4 +180,3 @@ public class ProjectInspectTemplateName extends InspectTemplateName {
     return h;
   }
 }
-

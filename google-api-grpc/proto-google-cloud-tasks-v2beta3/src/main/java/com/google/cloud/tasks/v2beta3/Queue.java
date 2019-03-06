@@ -4,6 +4,8 @@
 package com.google.cloud.tasks.v2beta3;
 
 /**
+ *
+ *
  * <pre>
  * A queue is a container of related tasks. Queues are configured to manage
  * how those tasks are dispatched. Configurable properties include rate limits,
@@ -12,25 +14,26 @@ package com.google.cloud.tasks.v2beta3;
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.Queue}
  */
-public  final class Queue extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Queue extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.Queue)
     QueueOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Queue.newBuilder() to construct.
   private Queue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Queue() {
     name_ = "";
     state_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Queue(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,113 +53,133 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 26: {
-            com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder subBuilder = null;
-            if (queueTypeCase_ == 3) {
-              subBuilder = ((com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_).toBuilder();
+              name_ = s;
+              break;
             }
-            queueType_ =
-                input.readMessage(com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_);
-              queueType_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder subBuilder = null;
+              if (queueTypeCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_).toBuilder();
+              }
+              queueType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_);
+                queueType_ = subBuilder.buildPartial();
+              }
+              queueTypeCase_ = 3;
+              break;
             }
-            queueTypeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.cloud.tasks.v2beta3.RateLimits.Builder subBuilder = null;
-            if (rateLimits_ != null) {
-              subBuilder = rateLimits_.toBuilder();
-            }
-            rateLimits_ = input.readMessage(com.google.cloud.tasks.v2beta3.RateLimits.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(rateLimits_);
-              rateLimits_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.cloud.tasks.v2beta3.RateLimits.Builder subBuilder = null;
+              if (rateLimits_ != null) {
+                subBuilder = rateLimits_.toBuilder();
+              }
+              rateLimits_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.RateLimits.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rateLimits_);
+                rateLimits_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.cloud.tasks.v2beta3.RetryConfig.Builder subBuilder = null;
-            if (retryConfig_ != null) {
-              subBuilder = retryConfig_.toBuilder();
+              break;
             }
-            retryConfig_ = input.readMessage(com.google.cloud.tasks.v2beta3.RetryConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(retryConfig_);
-              retryConfig_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.cloud.tasks.v2beta3.RetryConfig.Builder subBuilder = null;
+              if (retryConfig_ != null) {
+                subBuilder = retryConfig_.toBuilder();
+              }
+              retryConfig_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.RetryConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(retryConfig_);
+                retryConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
+              break;
+            }
+          case 48:
+            {
+              int rawValue = input.readEnum();
 
-            state_ = rawValue;
-            break;
-          }
-          case 58: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (purgeTime_ != null) {
-              subBuilder = purgeTime_.toBuilder();
+              state_ = rawValue;
+              break;
             }
-            purgeTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(purgeTime_);
-              purgeTime_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (purgeTime_ != null) {
+                subBuilder = purgeTime_.toBuilder();
+              }
+              purgeTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(purgeTime_);
+                purgeTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta3.QueueProto.internal_static_google_cloud_tasks_v2beta3_Queue_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta3.QueueProto
+        .internal_static_google_cloud_tasks_v2beta3_Queue_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta3.QueueProto.internal_static_google_cloud_tasks_v2beta3_Queue_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta3.QueueProto
+        .internal_static_google_cloud_tasks_v2beta3_Queue_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta3.Queue.class, com.google.cloud.tasks.v2beta3.Queue.Builder.class);
+            com.google.cloud.tasks.v2beta3.Queue.class,
+            com.google.cloud.tasks.v2beta3.Queue.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * State of the queue.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.tasks.v2beta3.Queue.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unspecified state.
      * </pre>
@@ -165,6 +188,8 @@ private static final long serialVersionUID = 0L;
      */
     STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The queue is running. Tasks can be dispatched.
      * If the queue was created using Cloud Tasks and the queue has
@@ -179,6 +204,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING(1),
     /**
+     *
+     *
      * <pre>
      * Tasks are paused by the user. If the queue is paused then Cloud
      * Tasks will stop delivering tasks from it, but more tasks can
@@ -189,12 +216,16 @@ private static final long serialVersionUID = 0L;
      */
     PAUSED(2),
     /**
+     *
+     *
      * <pre>
      * The queue is disabled.
      * A queue becomes `DISABLED` when
-     * [queue.yaml](https://cloud.google.com/appengine/docs/python/config/queueref) or
-     * [queue.xml](https://cloud.google.com/appengine/docs/standard/java/config/queueref) is uploaded
-     * which does not contain the queue. You cannot directly disable a queue.
+     * [queue.yaml](https://cloud.google.com/appengine/docs/python/config/queueref)
+     * or
+     * [queue.xml](https://cloud.google.com/appengine/docs/standard/java/config/queueref)
+     * is uploaded which does not contain the queue. You cannot directly disable
+     * a queue.
      * When a queue is disabled, tasks can still be added to a queue
      * but the tasks are not dispatched.
      * To permanently delete this queue and all of its tasks, call
@@ -208,6 +239,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unspecified state.
      * </pre>
@@ -216,6 +249,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The queue is running. Tasks can be dispatched.
      * If the queue was created using Cloud Tasks and the queue has
@@ -230,6 +265,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Tasks are paused by the user. If the queue is paused then Cloud
      * Tasks will stop delivering tasks from it, but more tasks can
@@ -240,12 +277,16 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PAUSED_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The queue is disabled.
      * A queue becomes `DISABLED` when
-     * [queue.yaml](https://cloud.google.com/appengine/docs/python/config/queueref) or
-     * [queue.xml](https://cloud.google.com/appengine/docs/standard/java/config/queueref) is uploaded
-     * which does not contain the queue. You cannot directly disable a queue.
+     * [queue.yaml](https://cloud.google.com/appengine/docs/python/config/queueref)
+     * or
+     * [queue.xml](https://cloud.google.com/appengine/docs/standard/java/config/queueref)
+     * is uploaded which does not contain the queue. You cannot directly disable
+     * a queue.
      * When a queue is disabled, tasks can still be added to a queue
      * but the tasks are not dispatched.
      * To permanently delete this queue and all of its tasks, call
@@ -256,7 +297,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DISABLED_VALUE = 3;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -265,9 +305,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -275,46 +313,47 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return STATE_UNSPECIFIED;
-        case 1: return RUNNING;
-        case 2: return PAUSED;
-        case 3: return DISABLED;
-        default: return null;
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return RUNNING;
+        case 2:
+          return PAUSED;
+        case 3:
+          return DISABLED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.tasks.v2beta3.Queue.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -333,17 +372,16 @@ private static final long serialVersionUID = 0L;
 
   private int queueTypeCase_ = 0;
   private java.lang.Object queueType_;
-  public enum QueueTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum QueueTypeCase implements com.google.protobuf.Internal.EnumLite {
     APP_ENGINE_HTTP_QUEUE(3),
     QUEUETYPE_NOT_SET(0);
     private final int value;
+
     private QueueTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static QueueTypeCase valueOf(int value) {
       return forNumber(value);
@@ -351,35 +389,41 @@ private static final long serialVersionUID = 0L;
 
     public static QueueTypeCase forNumber(int value) {
       switch (value) {
-        case 3: return APP_ENGINE_HTTP_QUEUE;
-        case 0: return QUEUETYPE_NOT_SET;
-        default: return null;
+        case 3:
+          return APP_ENGINE_HTTP_QUEUE;
+        case 0:
+          return QUEUETYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public QueueTypeCase
-  getQueueTypeCase() {
-    return QueueTypeCase.forNumber(
-        queueTypeCase_);
+  public QueueTypeCase getQueueTypeCase() {
+    return QueueTypeCase.forNumber(queueTypeCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
-   * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
-   * after which it becomes output only.
+   * Caller-specified and required in
+   * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
+   * which it becomes output only.
    * The queue name.
    * The queue name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the queue's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -395,24 +439,27 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
-   * after which it becomes output only.
+   * Caller-specified and required in
+   * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
+   * which it becomes output only.
    * The queue name.
    * The queue name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the queue's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -423,13 +470,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -439,9 +484,14 @@ private static final long serialVersionUID = 0L;
 
   public static final int APP_ENGINE_HTTP_QUEUE_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+   * settings apply only to [App Engine
+   * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+   * this proto.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -450,30 +500,41 @@ private static final long serialVersionUID = 0L;
     return queueTypeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+   * settings apply only to [App Engine
+   * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+   * this proto.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
    */
   public com.google.cloud.tasks.v2beta3.AppEngineHttpQueue getAppEngineHttpQueue() {
     if (queueTypeCase_ == 3) {
-       return (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_;
+      return (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_;
     }
     return com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+   * settings apply only to [App Engine
+   * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+   * this proto.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
    */
-  public com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder getAppEngineHttpQueueOrBuilder() {
+  public com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder
+      getAppEngineHttpQueueOrBuilder() {
     if (queueTypeCase_ == 3) {
-       return (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_;
+      return (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_;
     }
     return com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.getDefaultInstance();
   }
@@ -481,20 +542,32 @@ private static final long serialVersionUID = 0L;
   public static final int RATE_LIMITS_FIELD_NUMBER = 4;
   private com.google.cloud.tasks.v2beta3.RateLimits rateLimits_;
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
-   * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+   * because they both control task attempts. However they control task attempts
+   * in different ways:
+   * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+   * total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
    *   attempt or a retry).
-   * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+   * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+   * what happens to
    *   particular a task after its first attempt fails. That is,
-   *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-   *   second attempt, third attempt, etc).
+   *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+   *   task retries (the second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -503,42 +576,68 @@ private static final long serialVersionUID = 0L;
     return rateLimits_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
-   * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+   * because they both control task attempts. However they control task attempts
+   * in different ways:
+   * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+   * total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
    *   attempt or a retry).
-   * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+   * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+   * what happens to
    *   particular a task after its first attempt fails. That is,
-   *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-   *   second attempt, third attempt, etc).
+   *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+   *   task retries (the second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
    */
   public com.google.cloud.tasks.v2beta3.RateLimits getRateLimits() {
-    return rateLimits_ == null ? com.google.cloud.tasks.v2beta3.RateLimits.getDefaultInstance() : rateLimits_;
+    return rateLimits_ == null
+        ? com.google.cloud.tasks.v2beta3.RateLimits.getDefaultInstance()
+        : rateLimits_;
   }
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
-   * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+   * because they both control task attempts. However they control task attempts
+   * in different ways:
+   * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+   * total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
    *   attempt or a retry).
-   * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+   * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+   * what happens to
    *   particular a task after its first attempt fails. That is,
-   *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-   *   second attempt, third attempt, etc).
+   *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+   *   task retries (the second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -550,6 +649,8 @@ private static final long serialVersionUID = 0L;
   public static final int RETRY_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.tasks.v2beta3.RetryConfig retryConfig_;
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -558,7 +659,8 @@ private static final long serialVersionUID = 0L;
    * * For tasks created using the App Engine SDK: the queue-level retry
    *   settings apply to all tasks in the queue which do not have retry settings
    *   explicitly set on the task and were created by the App Engine SDK. See
-   *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+   *   [App Engine
+   *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -567,6 +669,8 @@ private static final long serialVersionUID = 0L;
     return retryConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -575,15 +679,20 @@ private static final long serialVersionUID = 0L;
    * * For tasks created using the App Engine SDK: the queue-level retry
    *   settings apply to all tasks in the queue which do not have retry settings
    *   explicitly set on the task and were created by the App Engine SDK. See
-   *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+   *   [App Engine
+   *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
    */
   public com.google.cloud.tasks.v2beta3.RetryConfig getRetryConfig() {
-    return retryConfig_ == null ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance() : retryConfig_;
+    return retryConfig_ == null
+        ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()
+        : retryConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -592,7 +701,8 @@ private static final long serialVersionUID = 0L;
    * * For tasks created using the App Engine SDK: the queue-level retry
    *   settings apply to all tasks in the queue which do not have retry settings
    *   explicitly set on the task and were created by the App Engine SDK. See
-   *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+   *   [App Engine
+   *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -604,13 +714,17 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
-   * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
+   * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
+   * uploading
    * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
-   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be used to change `state`.
+   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be
+   * used to change `state`.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
@@ -619,32 +733,41 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
-   * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
+   * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
+   * uploading
    * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
-   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be used to change `state`.
+   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be
+   * used to change `state`.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
    */
   public com.google.cloud.tasks.v2beta3.Queue.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.tasks.v2beta3.Queue.State result = com.google.cloud.tasks.v2beta3.Queue.State.valueOf(state_);
+    com.google.cloud.tasks.v2beta3.Queue.State result =
+        com.google.cloud.tasks.v2beta3.Queue.State.valueOf(state_);
     return result == null ? com.google.cloud.tasks.v2beta3.Queue.State.UNRECOGNIZED : result;
   }
 
   public static final int PURGE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp purgeTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
-   * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-   * were purged.
-   * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-   * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+   * before this time were purged.
+   * A queue can be purged using
+   * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+   * Engine Task Queue SDK, or the Cloud
+   * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -655,12 +778,16 @@ private static final long serialVersionUID = 0L;
     return purgeTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
-   * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-   * were purged.
-   * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-   * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+   * before this time were purged.
+   * A queue can be purged using
+   * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+   * Engine Task Queue SDK, or the Cloud
+   * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -671,12 +798,16 @@ private static final long serialVersionUID = 0L;
     return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
-   * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-   * were purged.
-   * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-   * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+   * before this time were purged.
+   * A queue can be purged using
+   * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+   * Engine Task Queue SDK, or the Cloud
+   * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -688,6 +819,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -699,8 +831,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -732,24 +863,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (queueTypeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_);
     }
     if (rateLimits_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getRateLimits());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRateLimits());
     }
     if (retryConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getRetryConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRetryConfig());
     }
     if (state_ != com.google.cloud.tasks.v2beta3.Queue.State.STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, state_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, state_);
     }
     if (purgeTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getPurgeTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getPurgeTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -759,7 +887,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta3.Queue)) {
       return super.equals(obj);
@@ -767,31 +895,25 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.tasks.v2beta3.Queue other = (com.google.cloud.tasks.v2beta3.Queue) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasRateLimits() == other.hasRateLimits());
     if (hasRateLimits()) {
-      result = result && getRateLimits()
-          .equals(other.getRateLimits());
+      result = result && getRateLimits().equals(other.getRateLimits());
     }
     result = result && (hasRetryConfig() == other.hasRetryConfig());
     if (hasRetryConfig()) {
-      result = result && getRetryConfig()
-          .equals(other.getRetryConfig());
+      result = result && getRetryConfig().equals(other.getRetryConfig());
     }
     result = result && state_ == other.state_;
     result = result && (hasPurgeTime() == other.hasPurgeTime());
     if (hasPurgeTime()) {
-      result = result && getPurgeTime()
-          .equals(other.getPurgeTime());
+      result = result && getPurgeTime().equals(other.getPurgeTime());
     }
-    result = result && getQueueTypeCase().equals(
-        other.getQueueTypeCase());
+    result = result && getQueueTypeCase().equals(other.getQueueTypeCase());
     if (!result) return false;
     switch (queueTypeCase_) {
       case 3:
-        result = result && getAppEngineHttpQueue()
-            .equals(other.getAppEngineHttpQueue());
+        result = result && getAppEngineHttpQueue().equals(other.getAppEngineHttpQueue());
         break;
       case 0:
       default:
@@ -836,97 +958,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta3.Queue parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.tasks.v2beta3.Queue parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta3.Queue parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta3.Queue prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A queue is a container of related tasks. Queues are configured to manage
    * how those tasks are dispatched. Configurable properties include rate limits,
@@ -935,21 +1063,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.Queue}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta3.Queue)
       com.google.cloud.tasks.v2beta3.QueueOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta3.QueueProto.internal_static_google_cloud_tasks_v2beta3_Queue_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta3.QueueProto
+          .internal_static_google_cloud_tasks_v2beta3_Queue_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta3.QueueProto.internal_static_google_cloud_tasks_v2beta3_Queue_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta3.QueueProto
+          .internal_static_google_cloud_tasks_v2beta3_Queue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta3.Queue.class, com.google.cloud.tasks.v2beta3.Queue.Builder.class);
+              com.google.cloud.tasks.v2beta3.Queue.class,
+              com.google.cloud.tasks.v2beta3.Queue.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta3.Queue.newBuilder()
@@ -957,16 +1087,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -998,9 +1127,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta3.QueueProto.internal_static_google_cloud_tasks_v2beta3_Queue_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta3.QueueProto
+          .internal_static_google_cloud_tasks_v2beta3_Queue_descriptor;
     }
 
     @java.lang.Override
@@ -1053,38 +1182,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta3.Queue) {
-        return mergeFrom((com.google.cloud.tasks.v2beta3.Queue)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta3.Queue) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1110,13 +1240,15 @@ private static final long serialVersionUID = 0L;
         mergePurgeTime(other.getPurgeTime());
       }
       switch (other.getQueueTypeCase()) {
-        case APP_ENGINE_HTTP_QUEUE: {
-          mergeAppEngineHttpQueue(other.getAppEngineHttpQueue());
-          break;
-        }
-        case QUEUETYPE_NOT_SET: {
-          break;
-        }
+        case APP_ENGINE_HTTP_QUEUE:
+          {
+            mergeAppEngineHttpQueue(other.getAppEngineHttpQueue());
+            break;
+          }
+        case QUEUETYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1146,12 +1278,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int queueTypeCase_ = 0;
     private java.lang.Object queueType_;
-    public QueueTypeCase
-        getQueueTypeCase() {
-      return QueueTypeCase.forNumber(
-          queueTypeCase_);
+
+    public QueueTypeCase getQueueTypeCase() {
+      return QueueTypeCase.forNumber(queueTypeCase_);
     }
 
     public Builder clearQueueType() {
@@ -1161,19 +1293,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
-     * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
-     * after which it becomes output only.
+     * Caller-specified and required in
+     * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
+     * which it becomes output only.
      * The queue name.
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the queue's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1187,8 +1322,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1197,16 +1331,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
-     * after which it becomes output only.
+     * Caller-specified and required in
+     * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
+     * which it becomes output only.
      * The queue name.
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the queue's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1217,13 +1355,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1231,16 +1367,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
-     * after which it becomes output only.
+     * Caller-specified and required in
+     * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
+     * which it becomes output only.
      * The queue name.
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the queue's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1251,27 +1391,30 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
-     * after which it becomes output only.
+     * Caller-specified and required in
+     * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
+     * which it becomes output only.
      * The queue name.
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the queue's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1283,22 +1426,26 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
-     * after which it becomes output only.
+     * Caller-specified and required in
+     * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
+     * which it becomes output only.
      * The queue name.
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
-     *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+     *    [Identifying
+     *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
      * * `LOCATION_ID` is the canonical ID for the queue's location.
      *    The list of available locations can be obtained by calling
      *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -1309,24 +1456,31 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.AppEngineHttpQueue, com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder, com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder> appEngineHttpQueueBuilder_;
+            com.google.cloud.tasks.v2beta3.AppEngineHttpQueue,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder>
+        appEngineHttpQueueBuilder_;
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1335,9 +1489,14 @@ private static final long serialVersionUID = 0L;
       return queueTypeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1356,9 +1515,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1377,9 +1541,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1396,19 +1565,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
      */
-    public Builder mergeAppEngineHttpQueue(com.google.cloud.tasks.v2beta3.AppEngineHttpQueue value) {
+    public Builder mergeAppEngineHttpQueue(
+        com.google.cloud.tasks.v2beta3.AppEngineHttpQueue value) {
       if (appEngineHttpQueueBuilder_ == null) {
-        if (queueTypeCase_ == 3 &&
-            queueType_ != com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.getDefaultInstance()) {
-          queueType_ = com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.newBuilder((com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_)
-              .mergeFrom(value).buildPartial();
+        if (queueTypeCase_ == 3
+            && queueType_
+                != com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.getDefaultInstance()) {
+          queueType_ =
+              com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.newBuilder(
+                      (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           queueType_ = value;
         }
@@ -1423,9 +1602,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1447,25 +1631,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
      */
-    public com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder getAppEngineHttpQueueBuilder() {
+    public com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder
+        getAppEngineHttpQueueBuilder() {
       return getAppEngineHttpQueueFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
      */
-    public com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder getAppEngineHttpQueueOrBuilder() {
+    public com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder
+        getAppEngineHttpQueueOrBuilder() {
       if ((queueTypeCase_ == 3) && (appEngineHttpQueueBuilder_ != null)) {
         return appEngineHttpQueueBuilder_.getMessageOrBuilder();
       } else {
@@ -1476,50 +1672,76 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * App Engine HTTP queue.
-     * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+     * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue]
+     * settings apply only to [App Engine
+     * tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by
+     * this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.AppEngineHttpQueue, com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder, com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder> 
+            com.google.cloud.tasks.v2beta3.AppEngineHttpQueue,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder>
         getAppEngineHttpQueueFieldBuilder() {
       if (appEngineHttpQueueBuilder_ == null) {
         if (!(queueTypeCase_ == 3)) {
           queueType_ = com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.getDefaultInstance();
         }
-        appEngineHttpQueueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta3.AppEngineHttpQueue, com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder, com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder>(
+        appEngineHttpQueueBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.AppEngineHttpQueue,
+                com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.Builder,
+                com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder>(
                 (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) queueType_,
                 getParentForChildren(),
                 isClean());
         queueType_ = null;
       }
       queueTypeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return appEngineHttpQueueBuilder_;
     }
 
     private com.google.cloud.tasks.v2beta3.RateLimits rateLimits_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.RateLimits, com.google.cloud.tasks.v2beta3.RateLimits.Builder, com.google.cloud.tasks.v2beta3.RateLimitsOrBuilder> rateLimitsBuilder_;
+            com.google.cloud.tasks.v2beta3.RateLimits,
+            com.google.cloud.tasks.v2beta3.RateLimits.Builder,
+            com.google.cloud.tasks.v2beta3.RateLimitsOrBuilder>
+        rateLimitsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -1528,46 +1750,72 @@ private static final long serialVersionUID = 0L;
       return rateLimitsBuilder_ != null || rateLimits_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
      */
     public com.google.cloud.tasks.v2beta3.RateLimits getRateLimits() {
       if (rateLimitsBuilder_ == null) {
-        return rateLimits_ == null ? com.google.cloud.tasks.v2beta3.RateLimits.getDefaultInstance() : rateLimits_;
+        return rateLimits_ == null
+            ? com.google.cloud.tasks.v2beta3.RateLimits.getDefaultInstance()
+            : rateLimits_;
       } else {
         return rateLimitsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -1586,20 +1834,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -1616,20 +1876,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -1638,7 +1910,9 @@ private static final long serialVersionUID = 0L;
       if (rateLimitsBuilder_ == null) {
         if (rateLimits_ != null) {
           rateLimits_ =
-            com.google.cloud.tasks.v2beta3.RateLimits.newBuilder(rateLimits_).mergeFrom(value).buildPartial();
+              com.google.cloud.tasks.v2beta3.RateLimits.newBuilder(rateLimits_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           rateLimits_ = value;
         }
@@ -1650,20 +1924,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -1680,44 +1966,68 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
      */
     public com.google.cloud.tasks.v2beta3.RateLimits.Builder getRateLimitsBuilder() {
-      
+
       onChanged();
       return getRateLimitsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -1726,38 +2036,54 @@ private static final long serialVersionUID = 0L;
       if (rateLimitsBuilder_ != null) {
         return rateLimitsBuilder_.getMessageOrBuilder();
       } else {
-        return rateLimits_ == null ?
-            com.google.cloud.tasks.v2beta3.RateLimits.getDefaultInstance() : rateLimits_;
+        return rateLimits_ == null
+            ? com.google.cloud.tasks.v2beta3.RateLimits.getDefaultInstance()
+            : rateLimits_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-     * control task attempts however they control how tasks are
-     * attempted in different ways:
-     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
+     * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
+     * because they both control task attempts. However they control task attempts
+     * in different ways:
+     * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
+     * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
      *   queue, regardless of whether the dispatch is from a first
      *   attempt or a retry).
-     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls what happens to
+     * * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     * what happens to
      *   particular a task after its first attempt fails. That is,
-     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
-     *   second attempt, third attempt, etc).
+     *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
+     *   task retries (the second attempt, third attempt, etc).
+     * The queue's actual dispatch rate is the result of:
+     * * Number of tasks in the queue
+     * * User-specified throttling: [rate limits][Queue.RateLimits]
+     *   [retry configuration][Queue.RetryConfig], and the
+     *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+     * * System throttling due to `429` (Too Many Requests) or `503` (Service
+     *   Unavailable) responses from the worker, high error rates, or to smooth
+     *   sudden large traffic spikes.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.RateLimits, com.google.cloud.tasks.v2beta3.RateLimits.Builder, com.google.cloud.tasks.v2beta3.RateLimitsOrBuilder> 
+            com.google.cloud.tasks.v2beta3.RateLimits,
+            com.google.cloud.tasks.v2beta3.RateLimits.Builder,
+            com.google.cloud.tasks.v2beta3.RateLimitsOrBuilder>
         getRateLimitsFieldBuilder() {
       if (rateLimitsBuilder_ == null) {
-        rateLimitsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta3.RateLimits, com.google.cloud.tasks.v2beta3.RateLimits.Builder, com.google.cloud.tasks.v2beta3.RateLimitsOrBuilder>(
-                getRateLimits(),
-                getParentForChildren(),
-                isClean());
+        rateLimitsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.RateLimits,
+                com.google.cloud.tasks.v2beta3.RateLimits.Builder,
+                com.google.cloud.tasks.v2beta3.RateLimitsOrBuilder>(
+                getRateLimits(), getParentForChildren(), isClean());
         rateLimits_ = null;
       }
       return rateLimitsBuilder_;
@@ -1765,8 +2091,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.tasks.v2beta3.RetryConfig retryConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.RetryConfig, com.google.cloud.tasks.v2beta3.RetryConfig.Builder, com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder> retryConfigBuilder_;
+            com.google.cloud.tasks.v2beta3.RetryConfig,
+            com.google.cloud.tasks.v2beta3.RetryConfig.Builder,
+            com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder>
+        retryConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1775,7 +2106,8 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -1784,6 +2116,8 @@ private static final long serialVersionUID = 0L;
       return retryConfigBuilder_ != null || retryConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1792,19 +2126,24 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
      */
     public com.google.cloud.tasks.v2beta3.RetryConfig getRetryConfig() {
       if (retryConfigBuilder_ == null) {
-        return retryConfig_ == null ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance() : retryConfig_;
+        return retryConfig_ == null
+            ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()
+            : retryConfig_;
       } else {
         return retryConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1813,7 +2152,8 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -1832,6 +2172,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1840,7 +2182,8 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -1857,6 +2200,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1865,7 +2210,8 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -1874,7 +2220,9 @@ private static final long serialVersionUID = 0L;
       if (retryConfigBuilder_ == null) {
         if (retryConfig_ != null) {
           retryConfig_ =
-            com.google.cloud.tasks.v2beta3.RetryConfig.newBuilder(retryConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.tasks.v2beta3.RetryConfig.newBuilder(retryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           retryConfig_ = value;
         }
@@ -1886,6 +2234,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1894,7 +2244,8 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -1911,6 +2262,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1919,17 +2272,20 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
      */
     public com.google.cloud.tasks.v2beta3.RetryConfig.Builder getRetryConfigBuilder() {
-      
+
       onChanged();
       return getRetryConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1938,7 +2294,8 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
@@ -1947,11 +2304,14 @@ private static final long serialVersionUID = 0L;
       if (retryConfigBuilder_ != null) {
         return retryConfigBuilder_.getMessageOrBuilder();
       } else {
-        return retryConfig_ == null ?
-            com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance() : retryConfig_;
+        return retryConfig_ == null
+            ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()
+            : retryConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -1960,20 +2320,24 @@ private static final long serialVersionUID = 0L;
      * * For tasks created using the App Engine SDK: the queue-level retry
      *   settings apply to all tasks in the queue which do not have retry settings
      *   explicitly set on the task and were created by the App Engine SDK. See
-     *   [App Engine documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
+     *   [App Engine
+     *   documentation](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/retrying-tasks).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.RetryConfig, com.google.cloud.tasks.v2beta3.RetryConfig.Builder, com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder> 
+            com.google.cloud.tasks.v2beta3.RetryConfig,
+            com.google.cloud.tasks.v2beta3.RetryConfig.Builder,
+            com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder>
         getRetryConfigFieldBuilder() {
       if (retryConfigBuilder_ == null) {
-        retryConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta3.RetryConfig, com.google.cloud.tasks.v2beta3.RetryConfig.Builder, com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder>(
-                getRetryConfig(),
-                getParentForChildren(),
-                isClean());
+        retryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.RetryConfig,
+                com.google.cloud.tasks.v2beta3.RetryConfig.Builder,
+                com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder>(
+                getRetryConfig(), getParentForChildren(), isClean());
         retryConfig_ = null;
       }
       return retryConfigBuilder_;
@@ -1981,13 +2345,17 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
-     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
+     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
+     * uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be used to change `state`.
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be
+     * used to change `state`.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
@@ -1996,13 +2364,17 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
-     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
+     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
+     * uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be used to change `state`.
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be
+     * used to change `state`.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
@@ -2013,30 +2385,39 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
-     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
+     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
+     * uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be used to change `state`.
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be
+     * used to change `state`.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
      */
     public com.google.cloud.tasks.v2beta3.Queue.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.tasks.v2beta3.Queue.State result = com.google.cloud.tasks.v2beta3.Queue.State.valueOf(state_);
+      com.google.cloud.tasks.v2beta3.Queue.State result =
+          com.google.cloud.tasks.v2beta3.Queue.State.valueOf(state_);
       return result == null ? com.google.cloud.tasks.v2beta3.Queue.State.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
-     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
+     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
+     * uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be used to change `state`.
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be
+     * used to change `state`.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
@@ -2045,25 +2426,29 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
-     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or uploading
+     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
+     * uploading
      * [queue.yaml/xml](https://cloud.google.com/appengine/docs/python/config/queueref).
-     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be used to change `state`.
+     * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] cannot be
+     * used to change `state`.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue.State state = 6;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -2071,14 +2456,21 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp purgeTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> purgeTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        purgeTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2089,12 +2481,16 @@ private static final long serialVersionUID = 0L;
       return purgeTimeBuilder_ != null || purgeTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2109,12 +2505,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2135,20 +2535,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp purge_time = 7;</code>
      */
-    public Builder setPurgeTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setPurgeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (purgeTimeBuilder_ == null) {
         purgeTime_ = builderForValue.build();
         onChanged();
@@ -2159,12 +2562,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2175,7 +2582,7 @@ private static final long serialVersionUID = 0L;
       if (purgeTimeBuilder_ == null) {
         if (purgeTime_ != null) {
           purgeTime_ =
-            com.google.protobuf.Timestamp.newBuilder(purgeTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(purgeTime_).mergeFrom(value).buildPartial();
         } else {
           purgeTime_ = value;
         }
@@ -2187,12 +2594,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2211,12 +2622,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2224,17 +2639,21 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp purge_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPurgeTimeBuilder() {
-      
+
       onChanged();
       return getPurgeTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2245,17 +2664,20 @@ private static final long serialVersionUID = 0L;
       if (purgeTimeBuilder_ != null) {
         return purgeTimeBuilder_.getMessageOrBuilder();
       } else {
-        return purgeTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
+        return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
-     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
-     * were purged.
-     * A queue can be purged using [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the
-     * [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
+     * before this time were purged.
+     * A queue can be purged using
+     * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
+     * Engine Task Queue SDK, or the Cloud
+     * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -2263,21 +2685,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp purge_time = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getPurgeTimeFieldBuilder() {
       if (purgeTimeBuilder_ == null) {
-        purgeTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getPurgeTime(),
-                getParentForChildren(),
-                isClean());
+        purgeTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getPurgeTime(), getParentForChildren(), isClean());
         purgeTime_ = null;
       }
       return purgeTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2287,12 +2712,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta3.Queue)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta3.Queue)
   private static final com.google.cloud.tasks.v2beta3.Queue DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta3.Queue();
   }
@@ -2301,16 +2726,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Queue>
-      PARSER = new com.google.protobuf.AbstractParser<Queue>() {
-    @java.lang.Override
-    public Queue parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Queue(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Queue> PARSER =
+      new com.google.protobuf.AbstractParser<Queue>() {
+        @java.lang.Override
+        public Queue parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Queue(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Queue> parser() {
     return PARSER;
@@ -2325,6 +2750,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta3.Queue getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

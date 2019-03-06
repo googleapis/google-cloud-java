@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface PartitionOptionsOrBuilder extends
+public interface PartitionOptionsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.PartitionOptions)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * **Note:** This hint is currently ignored by PartitionQuery and
    * PartitionRead requests.
@@ -21,6 +24,8 @@ public interface PartitionOptionsOrBuilder extends
   long getPartitionSizeBytes();
 
   /**
+   *
+   *
    * <pre>
    * **Note:** This hint is currently ignored by PartitionQuery and
    * PartitionRead requests.

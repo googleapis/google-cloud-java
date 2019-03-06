@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class CommitmentsScopedList implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("commitments")) {
+    if ("commitments".equals(fieldName)) {
       return commitments;
     }
-    if (fieldName.equals("warning")) {
+    if ("warning".equals(fieldName)) {
       return warning;
     }
     return null;
@@ -58,14 +58,25 @@ public final class CommitmentsScopedList implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] A list of commitments contained in this scope. */
   public List<Commitment> getCommitmentsList() {
     return commitments;
   }
 
+  /**
+   * [Output Only] Informational warning which replaces the list of commitments when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +125,12 @@ public final class CommitmentsScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of commitments contained in this scope. */
     public List<Commitment> getCommitmentsList() {
       return commitments;
     }
 
+    /** [Output Only] A list of commitments contained in this scope. */
     public Builder addAllCommitments(List<Commitment> commitments) {
       if (this.commitments == null) {
         this.commitments = new LinkedList<>();
@@ -126,6 +139,7 @@ public final class CommitmentsScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of commitments contained in this scope. */
     public Builder addCommitments(Commitment commitments) {
       if (this.commitments == null) {
         this.commitments = new LinkedList<>();
@@ -134,10 +148,18 @@ public final class CommitmentsScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of commitments when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of commitments when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

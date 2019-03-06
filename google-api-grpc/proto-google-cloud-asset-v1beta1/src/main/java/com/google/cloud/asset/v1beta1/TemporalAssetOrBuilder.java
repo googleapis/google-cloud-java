@@ -3,11 +3,14 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface TemporalAssetOrBuilder extends
+public interface TemporalAssetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.TemporalAsset)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The time window when the asset data and state was observed.
    * </pre>
@@ -16,6 +19,8 @@ public interface TemporalAssetOrBuilder extends
    */
   boolean hasWindow();
   /**
+   *
+   *
    * <pre>
    * The time window when the asset data and state was observed.
    * </pre>
@@ -24,6 +29,8 @@ public interface TemporalAssetOrBuilder extends
    */
   com.google.cloud.asset.v1beta1.TimeWindow getWindow();
   /**
+   *
+   *
    * <pre>
    * The time window when the asset data and state was observed.
    * </pre>
@@ -33,6 +40,8 @@ public interface TemporalAssetOrBuilder extends
   com.google.cloud.asset.v1beta1.TimeWindowOrBuilder getWindowOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If the asset is deleted or not.
    * </pre>
@@ -42,6 +51,8 @@ public interface TemporalAssetOrBuilder extends
   boolean getDeleted();
 
   /**
+   *
+   *
    * <pre>
    * Asset.
    * </pre>
@@ -50,6 +61,8 @@ public interface TemporalAssetOrBuilder extends
    */
   boolean hasAsset();
   /**
+   *
+   *
    * <pre>
    * Asset.
    * </pre>
@@ -58,6 +71,8 @@ public interface TemporalAssetOrBuilder extends
    */
   com.google.cloud.asset.v1beta1.Asset getAsset();
   /**
+   *
+   *
    * <pre>
    * Asset.
    * </pre>

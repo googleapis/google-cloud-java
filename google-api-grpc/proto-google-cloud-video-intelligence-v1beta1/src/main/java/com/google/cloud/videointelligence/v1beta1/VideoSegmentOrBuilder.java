@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta1;
 
-public interface VideoSegmentOrBuilder extends
+public interface VideoSegmentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta1.VideoSegment)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Start offset in microseconds (inclusive). Unset means 0.
    * </pre>
@@ -17,6 +20,8 @@ public interface VideoSegmentOrBuilder extends
   long getStartTimeOffset();
 
   /**
+   *
+   *
    * <pre>
    * End offset in microseconds (inclusive). Unset means 0.
    * </pre>

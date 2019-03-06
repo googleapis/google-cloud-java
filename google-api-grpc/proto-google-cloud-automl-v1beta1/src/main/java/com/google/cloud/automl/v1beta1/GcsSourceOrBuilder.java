@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface GcsSourceOrBuilder extends
+public interface GcsSourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.GcsSource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
@@ -16,9 +19,10 @@ public interface GcsSourceOrBuilder extends
    *
    * <code>repeated string input_uris = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getInputUrisList();
+  java.util.List<java.lang.String> getInputUrisList();
   /**
+   *
+   *
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
@@ -29,6 +33,8 @@ public interface GcsSourceOrBuilder extends
    */
   int getInputUrisCount();
   /**
+   *
+   *
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
@@ -39,6 +45,8 @@ public interface GcsSourceOrBuilder extends
    */
   java.lang.String getInputUris(int index);
   /**
+   *
+   *
    * <pre>
    * Required. Google Cloud Storage URIs to input files, up to 2000 characters
    * long. Accepted forms:
@@ -47,6 +55,5 @@ public interface GcsSourceOrBuilder extends
    *
    * <code>repeated string input_uris = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getInputUrisBytes(int index);
+  com.google.protobuf.ByteString getInputUrisBytes(int index);
 }

@@ -4,32 +4,54 @@
 package com.google.cloud.tasks.v2beta3;
 
 /**
+ *
+ *
  * <pre>
  * App Engine HTTP request.
  * The message defines the HTTP request that is sent to an App Engine app when
  * the task is dispatched.
  * This proto can only be used for tasks in a queue which has
- * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] set.
- * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] requires
+ * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue]
+ * set.
+ * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+ * requires
  * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
  * Google IAM permission for the project
  * and the following scope:
  * `https://www.googleapis.com/auth/cloud-platform`
  * The task will be delivered to the App Engine app which belongs to the same
  * project as the queue. For more information, see
- * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+ * [How Requests are
+ * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
  * and how routing is affected by
- * [dispatch files](https://cloud.google.com/appengine/docs/python/config/dispatchref).
- * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to construct the URL that the task is
- * delivered to can be set at the queue-level or task-level:
+ * [dispatch
+ * files](https://cloud.google.com/appengine/docs/python/config/dispatchref).
+ * Traffic is encrypted during transport and never leaves Google datacenters.
+ * Because this traffic is carried over a communication mechanism internal to
+ * Google, you cannot explicitly set the protocol (for example, HTTP or HTTPS).
+ * The request to the handler, however, will appear to have used the HTTP
+ * protocol.
+ * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to
+ * construct the URL that the task is delivered to can be set at the queue-level
+ * or task-level:
  * * If set,
  *    [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
  *    is used for all tasks in the queue, no matter what the setting
  *    is for the
- *    [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+ *    [task-level
+ *    app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
  * The `url` that the task will be sent to is:
  * * `url =` [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] `+`
  *   [relative_uri][google.cloud.tasks.v2beta3.AppEngineHttpRequest.relative_uri]
+ * Tasks can be dispatched to secure app handlers, unsecure app handlers, and
+ * URIs restricted with
+ * [`login:
+ * admin`](https://cloud.google.com/appengine/docs/standard/python/config/appref).
+ * Because tasks are not run as any user, they cannot be dispatched to URIs
+ * restricted with
+ * [`login:
+ * required`](https://cloud.google.com/appengine/docs/standard/python/config/appref)
+ * Task dispatches also do not follow redirects.
  * The task attempt has succeeded if the app's request handler returns
  * an HTTP response code in the range [`200` - `299`]. `503` is
  * considered an App Engine system error instead of an application
@@ -41,15 +63,16 @@ package com.google.cloud.tasks.v2beta3;
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.AppEngineHttpRequest}
  */
-public  final class AppEngineHttpRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.AppEngineHttpRequest)
     AppEngineHttpRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AppEngineHttpRequest.newBuilder() to construct.
   private AppEngineHttpRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AppEngineHttpRequest() {
     httpMethod_ = 0;
     relativeUri_ = "";
@@ -57,10 +80,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AppEngineHttpRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -80,106 +103,117 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            httpMethod_ = rawValue;
-            break;
-          }
-          case 18: {
-            com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder subBuilder = null;
-            if (appEngineRouting_ != null) {
-              subBuilder = appEngineRouting_.toBuilder();
+              httpMethod_ = rawValue;
+              break;
             }
-            appEngineRouting_ = input.readMessage(com.google.cloud.tasks.v2beta3.AppEngineRouting.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(appEngineRouting_);
-              appEngineRouting_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder subBuilder = null;
+              if (appEngineRouting_ != null) {
+                subBuilder = appEngineRouting_.toBuilder();
+              }
+              appEngineRouting_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.AppEngineRouting.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(appEngineRouting_);
+                appEngineRouting_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            relativeUri_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              headers_ = com.google.protobuf.MapField.newMapField(
-                  HeadersDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            headers__ = input.readMessage(
-                HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            headers_.getMutableMap().put(
-                headers__.getKey(), headers__.getValue());
-            break;
-          }
-          case 42: {
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            body_ = input.readBytes();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              relativeUri_ = s;
+              break;
             }
-            break;
-          }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                headers_ =
+                    com.google.protobuf.MapField.newMapField(
+                        HeadersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+                  input.readMessage(
+                      HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              headers_.getMutableMap().put(headers__.getKey(), headers__.getValue());
+              break;
+            }
+          case 42:
+            {
+              body_ = input.readBytes();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta3.TargetProto.internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta3.TargetProto
+        .internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 4:
         return internalGetHeaders();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta3.TargetProto.internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta3.TargetProto
+        .internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.class, com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder.class);
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.class,
+            com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
   private int httpMethod_;
   /**
+   *
+   *
    * <pre>
    * The HTTP method to use for the request. The default is POST.
    * The app's request handler for the task's target URL must be able to handle
    * HTTP requests with this http_method, otherwise the task attempt will fail
    * with error code 405 (Method Not Allowed). See
-   * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+   * [Writing a push task request
+   * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
    * and the documentation for the request handlers in the language your app is
    * written in e.g.
-   * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+   * [Python Request
+   * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
@@ -188,34 +222,42 @@ private static final long serialVersionUID = 0L;
     return httpMethod_;
   }
   /**
+   *
+   *
    * <pre>
    * The HTTP method to use for the request. The default is POST.
    * The app's request handler for the task's target URL must be able to handle
    * HTTP requests with this http_method, otherwise the task attempt will fail
    * with error code 405 (Method Not Allowed). See
-   * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+   * [Writing a push task request
+   * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
    * and the documentation for the request handlers in the language your app is
    * written in e.g.
-   * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+   * [Python Request
+   * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
    */
   public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.tasks.v2beta3.HttpMethod result = com.google.cloud.tasks.v2beta3.HttpMethod.valueOf(httpMethod_);
+    com.google.cloud.tasks.v2beta3.HttpMethod result =
+        com.google.cloud.tasks.v2beta3.HttpMethod.valueOf(httpMethod_);
     return result == null ? com.google.cloud.tasks.v2beta3.HttpMethod.UNRECOGNIZED : result;
   }
 
   public static final int APP_ENGINE_ROUTING_FIELD_NUMBER = 2;
   private com.google.cloud.tasks.v2beta3.AppEngineRouting appEngineRouting_;
   /**
+   *
+   *
    * <pre>
    * Task-level setting for App Engine routing.
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -224,26 +266,34 @@ private static final long serialVersionUID = 0L;
     return appEngineRouting_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Task-level setting for App Engine routing.
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
    */
   public com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRouting() {
-    return appEngineRouting_ == null ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance() : appEngineRouting_;
+    return appEngineRouting_ == null
+        ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()
+        : appEngineRouting_;
   }
   /**
+   *
+   *
    * <pre>
    * Task-level setting for App Engine routing.
    * If set,
    * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    * is used for all tasks in the queue, no matter what the setting is for the
-   * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   * [task-level
+   * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -255,6 +305,8 @@ private static final long serialVersionUID = 0L;
   public static final int RELATIVE_URI_FIELD_NUMBER = 3;
   private volatile java.lang.Object relativeUri_;
   /**
+   *
+   *
    * <pre>
    * The relative URI.
    * The relative URI must begin with "/" and must be a valid HTTP relative URI.
@@ -270,14 +322,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       relativeUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The relative URI.
    * The relative URI must begin with "/" and must be a valid HTTP relative URI.
@@ -288,13 +341,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string relative_uri = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getRelativeUriBytes() {
+  public com.google.protobuf.ByteString getRelativeUriBytes() {
     java.lang.Object ref = relativeUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       relativeUri_ = b;
       return b;
     } else {
@@ -303,24 +354,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HEADERS_FIELD_NUMBER = 4;
+
   private static final class HeadersDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.tasks.v2beta3.TargetProto.internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_HeadersEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.tasks.v2beta3.TargetProto
+                .internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_HeadersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> headers_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetHeaders() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
     if (headers_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          HeadersDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
     }
     return headers_;
   }
@@ -329,6 +379,8 @@ private static final long serialVersionUID = 0L;
     return internalGetHeaders().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -341,8 +393,9 @@ private static final long serialVersionUID = 0L;
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-   * Tasks sets the following headers:
+   * If the task has a
+   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+   * sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -356,30 +409,33 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+   * the size, there is a limit on the maximum size of the
+   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+   * documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  public boolean containsHeaders(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsHeaders(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetHeaders().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getHeadersMap()} instead.
-   */
+  /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -392,8 +448,9 @@ private static final long serialVersionUID = 0L;
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-   * Tasks sets the following headers:
+   * If the task has a
+   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+   * sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -407,21 +464,25 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+   * the size, there is a limit on the maximum size of the
+   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+   * documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -434,8 +495,9 @@ private static final long serialVersionUID = 0L;
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-   * Tasks sets the following headers:
+   * If the task has a
+   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+   * sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -449,26 +511,29 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+   * the size, there is a limit on the maximum size of the
+   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+   * documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  public java.lang.String getHeadersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetHeaders().getMap();
+  public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -481,8 +546,9 @@ private static final long serialVersionUID = 0L;
    *   This header can be modified, but Cloud Tasks will append
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
-   * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-   * Tasks sets the following headers:
+   * If the task has a
+   * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+   * sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explicitly
    *   setting `Content-Type` to a particular media type when the
@@ -496,22 +562,24 @@ private static final long serialVersionUID = 0L;
    * * `X-AppEngine-*`
    * In addition, Cloud Tasks sets some headers when the task is dispatched,
    * such as headers containing information about the task; see
-   * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+   * [request
+   * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * These headers are set only when the task is dispatched, so they are not
    * visible when the task is returned in a Cloud Tasks response.
    * Although there is no specific limit for the maximum number of headers or
-   * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-   * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+   * the size, there is a limit on the maximum size of the
+   * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+   * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+   * documentation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  public java.lang.String getHeadersOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetHeaders().getMap();
+  public java.lang.String getHeadersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -521,10 +589,13 @@ private static final long serialVersionUID = 0L;
   public static final int BODY_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString body_;
   /**
+   *
+   *
    * <pre>
    * HTTP request body.
    * A request body is allowed only if the HTTP method is POST or PUT. It is
-   * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+   * an error to set a body on a task with an incompatible
+   * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 5;</code>
@@ -534,6 +605,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -545,9 +617,9 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (httpMethod_ != com.google.cloud.tasks.v2beta3.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (httpMethod_
+        != com.google.cloud.tasks.v2beta3.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, httpMethod_);
     }
     if (appEngineRouting_ != null) {
@@ -556,12 +628,8 @@ private static final long serialVersionUID = 0L;
     if (!getRelativeUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, relativeUri_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetHeaders(),
-        HeadersDefaultEntryHolder.defaultEntry,
-        4);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 4);
     if (!body_.isEmpty()) {
       output.writeBytes(5, body_);
     }
@@ -574,30 +642,28 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (httpMethod_ != com.google.cloud.tasks.v2beta3.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, httpMethod_);
+    if (httpMethod_
+        != com.google.cloud.tasks.v2beta3.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, httpMethod_);
     }
     if (appEngineRouting_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getAppEngineRouting());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAppEngineRouting());
     }
     if (!getRelativeUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, relativeUri_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetHeaders().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, headers__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetHeaders().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+          HeadersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, headers__);
     }
     if (!body_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(5, body_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, body_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -607,26 +673,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta3.AppEngineHttpRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta3.AppEngineHttpRequest other = (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) obj;
+    com.google.cloud.tasks.v2beta3.AppEngineHttpRequest other =
+        (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) obj;
 
     boolean result = true;
     result = result && httpMethod_ == other.httpMethod_;
     result = result && (hasAppEngineRouting() == other.hasAppEngineRouting());
     if (hasAppEngineRouting()) {
-      result = result && getAppEngineRouting()
-          .equals(other.getAppEngineRouting());
+      result = result && getAppEngineRouting().equals(other.getAppEngineRouting());
     }
-    result = result && getRelativeUri()
-        .equals(other.getRelativeUri());
-    result = result && internalGetHeaders().equals(
-        other.internalGetHeaders());
-    result = result && getBody()
-        .equals(other.getBody());
+    result = result && getRelativeUri().equals(other.getRelativeUri());
+    result = result && internalGetHeaders().equals(other.internalGetHeaders());
+    result = result && getBody().equals(other.getBody());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -658,122 +721,149 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta3.AppEngineHttpRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta3.AppEngineHttpRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP request.
    * The message defines the HTTP request that is sent to an App Engine app when
    * the task is dispatched.
    * This proto can only be used for tasks in a queue which has
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] set.
-   * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] requires
+   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue]
+   * set.
+   * Using [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+   * requires
    * [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control)
    * Google IAM permission for the project
    * and the following scope:
    * `https://www.googleapis.com/auth/cloud-platform`
    * The task will be delivered to the App Engine app which belongs to the same
    * project as the queue. For more information, see
-   * [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
+   * [How Requests are
+   * Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed)
    * and how routing is affected by
-   * [dispatch files](https://cloud.google.com/appengine/docs/python/config/dispatchref).
-   * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to construct the URL that the task is
-   * delivered to can be set at the queue-level or task-level:
+   * [dispatch
+   * files](https://cloud.google.com/appengine/docs/python/config/dispatchref).
+   * Traffic is encrypted during transport and never leaves Google datacenters.
+   * Because this traffic is carried over a communication mechanism internal to
+   * Google, you cannot explicitly set the protocol (for example, HTTP or HTTPS).
+   * The request to the handler, however, will appear to have used the HTTP
+   * protocol.
+   * The [AppEngineRouting][google.cloud.tasks.v2beta3.AppEngineRouting] used to
+   * construct the URL that the task is delivered to can be set at the queue-level
+   * or task-level:
    * * If set,
    *    [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
    *    is used for all tasks in the queue, no matter what the setting
    *    is for the
-   *    [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+   *    [task-level
+   *    app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
    * The `url` that the task will be sent to is:
    * * `url =` [host][google.cloud.tasks.v2beta3.AppEngineRouting.host] `+`
    *   [relative_uri][google.cloud.tasks.v2beta3.AppEngineHttpRequest.relative_uri]
+   * Tasks can be dispatched to secure app handlers, unsecure app handlers, and
+   * URIs restricted with
+   * [`login:
+   * admin`](https://cloud.google.com/appengine/docs/standard/python/config/appref).
+   * Because tasks are not run as any user, they cannot be dispatched to URIs
+   * restricted with
+   * [`login:
+   * required`](https://cloud.google.com/appengine/docs/standard/python/config/appref)
+   * Task dispatches also do not follow redirects.
    * The task attempt has succeeded if the app's request handler returns
    * an HTTP response code in the range [`200` - `299`]. `503` is
    * considered an App Engine system error instead of an application
@@ -785,43 +875,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.AppEngineHttpRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta3.AppEngineHttpRequest)
       com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta3.TargetProto.internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta3.TargetProto
+          .internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 4:
           return internalGetHeaders();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 4:
           return internalGetMutableHeaders();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta3.TargetProto.internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta3.TargetProto
+          .internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.class, com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder.class);
+              com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.class,
+              com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.newBuilder()
@@ -829,16 +919,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -859,9 +948,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta3.TargetProto.internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta3.TargetProto
+          .internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor;
     }
 
     @java.lang.Override
@@ -880,7 +969,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.tasks.v2beta3.AppEngineHttpRequest buildPartial() {
-      com.google.cloud.tasks.v2beta3.AppEngineHttpRequest result = new com.google.cloud.tasks.v2beta3.AppEngineHttpRequest(this);
+      com.google.cloud.tasks.v2beta3.AppEngineHttpRequest result =
+          new com.google.cloud.tasks.v2beta3.AppEngineHttpRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.httpMethod_ = httpMethod_;
@@ -902,38 +992,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) {
-        return mergeFrom((com.google.cloud.tasks.v2beta3.AppEngineHttpRequest)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -941,7 +1032,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.tasks.v2beta3.AppEngineHttpRequest other) {
-      if (other == com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.tasks.v2beta3.AppEngineHttpRequest.getDefaultInstance())
+        return this;
       if (other.httpMethod_ != 0) {
         setHttpMethodValue(other.getHttpMethodValue());
       }
@@ -952,8 +1044,7 @@ private static final long serialVersionUID = 0L;
         relativeUri_ = other.relativeUri_;
         onChanged();
       }
-      internalGetMutableHeaders().mergeFrom(
-          other.internalGetHeaders());
+      internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
       if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
         setBody(other.getBody());
       }
@@ -976,7 +1067,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.tasks.v2beta3.AppEngineHttpRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -985,19 +1077,24 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private int httpMethod_ = 0;
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. The default is POST.
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request
+     * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request
+     * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
@@ -1006,15 +1103,19 @@ private static final long serialVersionUID = 0L;
       return httpMethod_;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. The default is POST.
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request
+     * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request
+     * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
@@ -1025,34 +1126,43 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. The default is POST.
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request
+     * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request
+     * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
      */
     public com.google.cloud.tasks.v2beta3.HttpMethod getHttpMethod() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.tasks.v2beta3.HttpMethod result = com.google.cloud.tasks.v2beta3.HttpMethod.valueOf(httpMethod_);
+      com.google.cloud.tasks.v2beta3.HttpMethod result =
+          com.google.cloud.tasks.v2beta3.HttpMethod.valueOf(httpMethod_);
       return result == null ? com.google.cloud.tasks.v2beta3.HttpMethod.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. The default is POST.
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request
+     * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request
+     * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
@@ -1061,27 +1171,31 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       httpMethod_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. The default is POST.
      * The app's request handler for the task's target URL must be able to handle
      * HTTP requests with this http_method, otherwise the task attempt will fail
      * with error code 405 (Method Not Allowed). See
-     * [Writing a push task request handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
+     * [Writing a push task request
+     * handler](https://cloud.google.com/appengine/docs/java/taskqueue/push/creating-handlers#writing_a_push_task_request_handler)
      * and the documentation for the request handlers in the language your app is
      * written in e.g.
-     * [Python Request Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
+     * [Python Request
+     * Handler](https://cloud.google.com/appengine/docs/python/tools/webapp/requesthandlerclass).
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.HttpMethod http_method = 1;</code>
      */
     public Builder clearHttpMethod() {
-      
+
       httpMethod_ = 0;
       onChanged();
       return this;
@@ -1089,14 +1203,20 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.tasks.v2beta3.AppEngineRouting appEngineRouting_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.AppEngineRouting, com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder, com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder> appEngineRoutingBuilder_;
+            com.google.cloud.tasks.v2beta3.AppEngineRouting,
+            com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder,
+            com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder>
+        appEngineRoutingBuilder_;
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1105,30 +1225,38 @@ private static final long serialVersionUID = 0L;
       return appEngineRoutingBuilder_ != null || appEngineRouting_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
      */
     public com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRouting() {
       if (appEngineRoutingBuilder_ == null) {
-        return appEngineRouting_ == null ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance() : appEngineRouting_;
+        return appEngineRouting_ == null
+            ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()
+            : appEngineRouting_;
       } else {
         return appEngineRoutingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1147,12 +1275,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1169,12 +1300,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1183,7 +1317,9 @@ private static final long serialVersionUID = 0L;
       if (appEngineRoutingBuilder_ == null) {
         if (appEngineRouting_ != null) {
           appEngineRouting_ =
-            com.google.cloud.tasks.v2beta3.AppEngineRouting.newBuilder(appEngineRouting_).mergeFrom(value).buildPartial();
+              com.google.cloud.tasks.v2beta3.AppEngineRouting.newBuilder(appEngineRouting_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           appEngineRouting_ = value;
         }
@@ -1195,12 +1331,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1217,28 +1356,34 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
      */
     public com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder getAppEngineRoutingBuilder() {
-      
+
       onChanged();
       return getAppEngineRoutingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
@@ -1247,30 +1392,37 @@ private static final long serialVersionUID = 0L;
       if (appEngineRoutingBuilder_ != null) {
         return appEngineRoutingBuilder_.getMessageOrBuilder();
       } else {
-        return appEngineRouting_ == null ?
-            com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance() : appEngineRouting_;
+        return appEngineRouting_ == null
+            ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()
+            : appEngineRouting_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Task-level setting for App Engine routing.
      * If set,
      * [app_engine_routing_override][google.cloud.tasks.v2beta3.AppEngineHttpQueue.app_engine_routing_override]
      * is used for all tasks in the queue, no matter what the setting is for the
-     * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
+     * [task-level
+     * app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta3.AppEngineRouting, com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder, com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder> 
+            com.google.cloud.tasks.v2beta3.AppEngineRouting,
+            com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder,
+            com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder>
         getAppEngineRoutingFieldBuilder() {
       if (appEngineRoutingBuilder_ == null) {
-        appEngineRoutingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta3.AppEngineRouting, com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder, com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder>(
-                getAppEngineRouting(),
-                getParentForChildren(),
-                isClean());
+        appEngineRoutingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.AppEngineRouting,
+                com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder,
+                com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder>(
+                getAppEngineRouting(), getParentForChildren(), isClean());
         appEngineRouting_ = null;
       }
       return appEngineRoutingBuilder_;
@@ -1278,6 +1430,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object relativeUri_ = "";
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URI must begin with "/" and must be a valid HTTP relative URI.
@@ -1291,8 +1445,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getRelativeUri() {
       java.lang.Object ref = relativeUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         relativeUri_ = s;
         return s;
@@ -1301,6 +1454,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URI must begin with "/" and must be a valid HTTP relative URI.
@@ -1311,13 +1466,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string relative_uri = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getRelativeUriBytes() {
+    public com.google.protobuf.ByteString getRelativeUriBytes() {
       java.lang.Object ref = relativeUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         relativeUri_ = b;
         return b;
       } else {
@@ -1325,6 +1478,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URI must begin with "/" and must be a valid HTTP relative URI.
@@ -1335,17 +1490,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string relative_uri = 3;</code>
      */
-    public Builder setRelativeUri(
-        java.lang.String value) {
+    public Builder setRelativeUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       relativeUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URI must begin with "/" and must be a valid HTTP relative URI.
@@ -1357,12 +1513,14 @@ private static final long serialVersionUID = 0L;
      * <code>string relative_uri = 3;</code>
      */
     public Builder clearRelativeUri() {
-      
+
       relativeUri_ = getDefaultInstance().getRelativeUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URI must begin with "/" and must be a valid HTTP relative URI.
@@ -1373,34 +1531,32 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string relative_uri = 3;</code>
      */
-    public Builder setRelativeUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRelativeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       relativeUri_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> headers_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetHeaders() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
       if (headers_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       return headers_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableHeaders() {
-      onChanged();;
+        internalGetMutableHeaders() {
+      onChanged();
+      ;
       if (headers_ == null) {
-        headers_ = com.google.protobuf.MapField.newMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
+        headers_ = com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       if (!headers_.isMutable()) {
         headers_ = headers_.copy();
@@ -1412,6 +1568,8 @@ private static final long serialVersionUID = 0L;
       return internalGetHeaders().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values.
@@ -1424,8 +1582,9 @@ private static final long serialVersionUID = 0L;
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-     * Tasks sets the following headers:
+     * If the task has a
+     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+     * sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1439,30 +1598,33 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request
+     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+     * the size, there is a limit on the maximum size of the
+     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+     * documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public boolean containsHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetHeaders().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values.
@@ -1475,8 +1637,9 @@ private static final long serialVersionUID = 0L;
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-     * Tasks sets the following headers:
+     * If the task has a
+     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+     * sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1490,21 +1653,25 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request
+     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+     * the size, there is a limit on the maximum size of the
+     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+     * documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values.
@@ -1517,8 +1684,9 @@ private static final long serialVersionUID = 0L;
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-     * Tasks sets the following headers:
+     * If the task has a
+     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+     * sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1532,26 +1700,30 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request
+     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+     * the size, there is a limit on the maximum size of the
+     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+     * documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
     public java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values.
@@ -1564,8 +1736,9 @@ private static final long serialVersionUID = 0L;
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-     * Tasks sets the following headers:
+     * If the task has a
+     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+     * sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1579,22 +1752,24 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request
+     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+     * the size, there is a limit on the maximum size of the
+     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+     * documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public java.lang.String getHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+    public java.lang.String getHeadersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1602,11 +1777,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearHeaders() {
-      internalGetMutableHeaders().getMutableMap()
-          .clear();
+      internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values.
@@ -1619,8 +1795,9 @@ private static final long serialVersionUID = 0L;
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-     * Tasks sets the following headers:
+     * If the task has a
+     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+     * sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1634,33 +1811,34 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request
+     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+     * the size, there is a limit on the maximum size of the
+     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+     * documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public Builder removeHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableHeaders().getMutableMap()
-          .remove(key);
+    public Builder removeHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableHeaders() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
       return internalGetMutableHeaders().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values.
@@ -1673,8 +1851,9 @@ private static final long serialVersionUID = 0L;
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-     * Tasks sets the following headers:
+     * If the task has a
+     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+     * sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1688,26 +1867,32 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request
+     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+     * the size, there is a limit on the maximum size of the
+     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+     * documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-    public Builder putHeaders(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableHeaders().getMutableMap()
-          .put(key, value);
+    public Builder putHeaders(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableHeaders().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values.
@@ -1720,8 +1905,9 @@ private static final long serialVersionUID = 0L;
      *   This header can be modified, but Cloud Tasks will append
      *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
      *   modified `User-Agent`.
-     * If the task has a [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud
-     * Tasks sets the following headers:
+     * If the task has a
+     * [body][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body], Cloud Tasks
+     * sets the following headers:
      * * `Content-Type`: By default, the `Content-Type` header is set to
      *   `"application/octet-stream"`. The default can be overridden by explicitly
      *   setting `Content-Type` to a particular media type when the
@@ -1735,30 +1921,33 @@ private static final long serialVersionUID = 0L;
      * * `X-AppEngine-*`
      * In addition, Cloud Tasks sets some headers when the task is dispatched,
      * such as headers containing information about the task; see
-     * [request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
+     * [request
+     * headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
      * These headers are set only when the task is dispatched, so they are not
      * visible when the task is returned in a Cloud Tasks response.
      * Although there is no specific limit for the maximum number of headers or
-     * the size, there is a limit on the maximum size of the [Task][google.cloud.tasks.v2beta3.Task]. For more
-     * information, see the [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] documentation.
+     * the size, there is a limit on the maximum size of the
+     * [Task][google.cloud.tasks.v2beta3.Task]. For more information, see the
+     * [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask]
+     * documentation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public Builder putAllHeaders(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableHeaders().getMutableMap()
-          .putAll(values);
+    public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableHeaders().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the HTTP method is POST or PUT. It is
-     * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * an error to set a body on a task with an incompatible
+     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
@@ -1767,41 +1956,47 @@ private static final long serialVersionUID = 0L;
       return body_;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the HTTP method is POST or PUT. It is
-     * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * an error to set a body on a task with an incompatible
+     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
      */
     public Builder setBody(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       body_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the HTTP method is POST or PUT. It is
-     * an error to set a body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * an error to set a body on a task with an incompatible
+     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 5;</code>
      */
     public Builder clearBody() {
-      
+
       body_ = getDefaultInstance().getBody();
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1811,12 +2006,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta3.AppEngineHttpRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta3.AppEngineHttpRequest)
   private static final com.google.cloud.tasks.v2beta3.AppEngineHttpRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta3.AppEngineHttpRequest();
   }
@@ -1825,16 +2020,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AppEngineHttpRequest>
-      PARSER = new com.google.protobuf.AbstractParser<AppEngineHttpRequest>() {
-    @java.lang.Override
-    public AppEngineHttpRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AppEngineHttpRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AppEngineHttpRequest> PARSER =
+      new com.google.protobuf.AbstractParser<AppEngineHttpRequest>() {
+        @java.lang.Override
+        public AppEngineHttpRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AppEngineHttpRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AppEngineHttpRequest> parser() {
     return PARSER;
@@ -1849,6 +2044,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta3.AppEngineHttpRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

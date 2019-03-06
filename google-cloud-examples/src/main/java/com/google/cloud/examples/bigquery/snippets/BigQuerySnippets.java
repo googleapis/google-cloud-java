@@ -59,8 +59,6 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
-import org.joda.time.DateTime;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
@@ -72,10 +70,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeoutException;
+import org.threeten.bp.Instant;
+import org.threeten.bp.temporal.ChronoUnit;
 
-/**
- * This class contains a number of snippets for the {@link BigQuery} interface.
- */
+/** This class contains a number of snippets for the {@link BigQuery} interface. */
 public class BigQuerySnippets {
 
   private final BigQuery bigquery;
@@ -84,9 +82,7 @@ public class BigQuerySnippets {
     this.bigquery = bigquery;
   }
 
-  /**
-   * Example of creating a dataset.
-   */
+  /** Example of creating a dataset. */
   // [TARGET create(DatasetInfo, DatasetOption...)]
   // [VARIABLE "my_dataset_name"]
   public Dataset createDataset(String datasetName) {
@@ -103,9 +99,7 @@ public class BigQuerySnippets {
     return dataset;
   }
 
-  /**
-   * Example of updating a dataset by changing its description.
-   */
+  /** Example of updating a dataset by changing its description. */
   // [TARGET update(DatasetInfo, DatasetOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "some_new_description"]
@@ -118,9 +112,7 @@ public class BigQuerySnippets {
     return newDataset;
   }
 
-  /**
-   * Example of updating a table by changing its description.
-   */
+  /** Example of updating a table by changing its description. */
   public Table updateTableDescription(String datasetName, String tableName, String newDescription) {
     // [START bigquery_update_table_description]
     // String datasetName = "my_dataset_name";
@@ -128,17 +120,13 @@ public class BigQuerySnippets {
     // String newDescription = "new_description";
 
     Table beforeTable = bigquery.getTable(datasetName, tableName);
-    TableInfo tableInfo = beforeTable.toBuilder()
-        .setDescription(newDescription)
-        .build();
+    TableInfo tableInfo = beforeTable.toBuilder().setDescription(newDescription).build();
     Table afterTable = bigquery.update(tableInfo);
     // [END bigquery_update_table_description]
     return afterTable;
   }
 
-  /**
-   * Example of updating a table by changing its expiration.
-   */
+  /** Example of updating a table by changing its expiration. */
   // [TARGET update(TableInfo, TableOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -147,18 +135,14 @@ public class BigQuerySnippets {
     Table beforeTable = bigquery.getTable(datasetName, tableName);
 
     // Set table to expire 5 days from now.
-    long expirationMillis = DateTime.now().plusDays(5).getMillis();
-    TableInfo tableInfo = beforeTable.toBuilder()
-            .setExpirationTime(expirationMillis)
-            .build();
+    long expirationMillis = Instant.now().plus(5, ChronoUnit.DAYS).toEpochMilli();
+    TableInfo tableInfo = beforeTable.toBuilder().setExpirationTime(expirationMillis).build();
     Table afterTable = bigquery.update(tableInfo);
     // [END bigquery_update_table_expiration]
     return afterTable;
   }
 
-  /**
-   * Example of listing datasets, specifying the page size.
-   */
+  /** Example of listing datasets, specifying the page size. */
   // [TARGET listDatasets(DatasetListOption...)]
   public Page<Dataset> listDatasets() {
     // [START bigquery_list_datasets]
@@ -171,9 +155,7 @@ public class BigQuerySnippets {
     return datasets;
   }
 
-  /**
-   * Example of listing datasets in a project, specifying the page size.
-   */
+  /** Example of listing datasets in a project, specifying the page size. */
   // [TARGET listDatasets(String, DatasetListOption...)]
   // [VARIABLE "my_project_id"]
   public Page<Dataset> listDatasets(String projectId) {
@@ -187,9 +169,7 @@ public class BigQuerySnippets {
     return datasets;
   }
 
-  /**
-   * Example of deleting a dataset from its id, even if non-empty.
-   */
+  /** Example of deleting a dataset from its id, even if non-empty. */
   // [TARGET delete(String, DatasetDeleteOption...)]
   // [VARIABLE "my_dataset_name"]
   public boolean deleteDataset(String datasetName) {
@@ -204,9 +184,7 @@ public class BigQuerySnippets {
     return deleted;
   }
 
-  /**
-   * Example of deleting a dataset, even if non-empty.
-   */
+  /** Example of deleting a dataset, even if non-empty. */
   // [TARGET delete(DatasetId, DatasetDeleteOption...)]
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
@@ -223,9 +201,7 @@ public class BigQuerySnippets {
     return deleted;
   }
 
-  /**
-   * Example of deleting a table.
-   */
+  /** Example of deleting a table. */
   // [TARGET delete(String, String)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -241,9 +217,7 @@ public class BigQuerySnippets {
     return deleted;
   }
 
-  /**
-   * Example of deleting a table.
-   */
+  /** Example of deleting a table. */
   // [TARGET delete(TableId)]
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
@@ -261,9 +235,7 @@ public class BigQuerySnippets {
     return deleted;
   }
 
-  /**
-   * Example of listing the tables in a dataset, specifying the page size.
-   */
+  /** Example of listing the tables in a dataset, specifying the page size. */
   // [TARGET listTables(String, TableListOption...)]
   // [VARIABLE "my_dataset_name"]
   public Page<Table> listTables(String datasetName) {
@@ -276,9 +248,7 @@ public class BigQuerySnippets {
     return tables;
   }
 
-  /**
-   * Example of listing the tables in a dataset.
-   */
+  /** Example of listing the tables in a dataset. */
   // [TARGET listTables(DatasetId, TableListOption...)]
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
@@ -293,9 +263,7 @@ public class BigQuerySnippets {
     return tables;
   }
 
-  /**
-   * Example of getting a dataset.
-   */
+  /** Example of getting a dataset. */
   // [TARGET getDataset(String, DatasetOption...)]
   // [VARIABLE "my_dataset"]
   public Dataset getDataset(String datasetName) {
@@ -305,9 +273,7 @@ public class BigQuerySnippets {
     return dataset;
   }
 
-  /**
-   * Example of getting a dataset.
-   */
+  /** Example of getting a dataset. */
   // [TARGET getDataset(DatasetId, DatasetOption...)]
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
@@ -319,9 +285,7 @@ public class BigQuerySnippets {
     return dataset;
   }
 
-  /**
-   * Example of getting a table.
-   */
+  /** Example of getting a table. */
   // [TARGET getTable(String, String, TableOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -332,9 +296,7 @@ public class BigQuerySnippets {
     return table;
   }
 
-  /**
-   * Example of getting a table.
-   */
+  /** Example of getting a table. */
   // [TARGET getTable(TableId, TableOption...)]
   // [VARIABLE "my_project_id"]
   // [VARIABLE "my_dataset_name"]
@@ -347,9 +309,7 @@ public class BigQuerySnippets {
     return table;
   }
 
-  /**
-   * Example of creating a channel with which to write to a table.
-   */
+  /** Example of creating a channel with which to write to a table. */
   // [TARGET writer(WriteChannelConfiguration)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -375,9 +335,7 @@ public class BigQuerySnippets {
     // [END ]
   }
 
-  /**
-   * Example of creating a channel with which to write to a table.
-   */
+  /** Example of creating a channel with which to write to a table. */
   // [TARGET writer(JobId, WriteChannelConfiguration)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -407,9 +365,7 @@ public class BigQuerySnippets {
     // [END ]
   }
 
-  /**
-   * Example of writing a local file to a table.
-   */
+  /** Example of writing a local file to a table. */
   // [TARGET writer(WriteChannelConfiguration)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -436,9 +392,7 @@ public class BigQuerySnippets {
     // [END bigquery_load_from_file]
   }
 
-  /**
-   * Example of loading a newline-delimited-json file with textual fields from GCS to a table.
-   */
+  /** Example of loading a newline-delimited-json file with textual fields from GCS to a table. */
   // [TARGET create(JobInfo, JobOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -470,9 +424,7 @@ public class BigQuerySnippets {
     // [END bigquery_load_table_gcs_json]
   }
 
-  /**
-   * Example of inserting rows into a table without running a load job.
-   */
+  /** Example of inserting rows into a table without running a load job. */
   // [TARGET insertAll(InsertAllRequest)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -504,9 +456,7 @@ public class BigQuerySnippets {
     return response;
   }
 
-  /**
-   * Example of creating a table.
-   */
+  /** Example of creating a table. */
   // [TARGET create(TableInfo, TableOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -525,9 +475,7 @@ public class BigQuerySnippets {
     return table;
   }
 
-  /**
-   * Example of listing table rows, specifying the page size.
-   */
+  /** Example of listing table rows, specifying the page size. */
   // [TARGET listTableData(String, String, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -544,9 +492,7 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /**
-   * Example of listing table rows, specifying the page size.
-   */
+  /** Example of listing table rows, specifying the page size. */
   // [TARGET listTableData(TableId, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -564,9 +510,7 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /**
-   * Example of listing table rows with schema.
-   */
+  /** Example of listing table rows with schema. */
   // [TARGET listTableData(String, String, Schema, TableDataListOption...)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
@@ -583,9 +527,7 @@ public class BigQuerySnippets {
     return tableData;
   }
 
-  /**
-   * Example of listing table rows with schema.
-   */
+  /** Example of listing table rows with schema. */
   // [TARGET listTableData(TableId, Schema, TableDataListOption...)]
   public FieldValueList listTableDataSchemaId() {
     // [START ]
@@ -604,9 +546,7 @@ public class BigQuerySnippets {
     return row;
   }
 
-  /**
-   * Example of creating a query job.
-   */
+  /** Example of creating a query job. */
   // [TARGET create(JobInfo, JobOption...)]
   // [VARIABLE "SELECT field FROM my_dataset_name.my_table_name"]
   public Job createJob(String query) {
@@ -623,9 +563,7 @@ public class BigQuerySnippets {
     return job;
   }
 
-  /**
-   * Example of listing jobs, specifying the page size.
-   */
+  /** Example of listing jobs, specifying the page size. */
   // [TARGET listJobs(JobListOption...)]
   public Page<Job> listJobs() {
     // [START bigquery_list_jobs]
@@ -637,9 +575,7 @@ public class BigQuerySnippets {
     return jobs;
   }
 
-  /**
-   * Example of getting a job.
-   */
+  /** Example of getting a job. */
   // [TARGET getJob(String, JobOption...)]
   // [VARIABLE "my_job_name"]
   public Job getJob(String jobName) {
@@ -652,9 +588,7 @@ public class BigQuerySnippets {
     return job;
   }
 
-  /**
-   * Example of getting a job.
-   */
+  /** Example of getting a job. */
   // [TARGET getJob(JobId, JobOption...)]
   // [VARIABLE "my_job_name"]
   public Job getJobFromId(String jobName) {
@@ -668,9 +602,7 @@ public class BigQuerySnippets {
     return job;
   }
 
-  /**
-   * Example of cancelling a job.
-   */
+  /** Example of cancelling a job. */
   // [TARGET cancel(String)]
   // [VARIABLE "my_job_name"]
   public boolean cancelJob(String jobName) {
@@ -685,9 +617,7 @@ public class BigQuerySnippets {
     return success;
   }
 
-  /**
-   * Example of cancelling a job.
-   */
+  /** Example of cancelling a job. */
   // [TARGET cancel(JobId)]
   // [VARIABLE "my_job_name"]
   public boolean cancelJobFromId(String jobName) {
@@ -703,9 +633,7 @@ public class BigQuerySnippets {
     return success;
   }
 
-  /**
-   * Example of running a query.
-   */
+  /** Example of running a query. */
   // [TARGET query(QueryJobConfiguration, JobOption...)]
   public void runQuery() throws InterruptedException {
     // [START bigquery_query]

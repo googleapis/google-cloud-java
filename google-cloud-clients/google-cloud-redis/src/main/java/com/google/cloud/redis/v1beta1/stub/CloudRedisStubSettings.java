@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -264,7 +264,9 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
-              return payload.getInstancesList();
+              return payload.getInstancesList() != null
+                  ? payload.getInstancesList()
+                  : ImmutableList.<Instance>of();
             }
           };
 

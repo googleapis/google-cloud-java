@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InspectConfigOrBuilder extends
+public interface InspectConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
@@ -23,9 +26,10 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.InfoType> 
-      getInfoTypesList();
+  java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
   /**
+   *
+   *
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
@@ -43,6 +47,8 @@ public interface InspectConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
   /**
+   *
+   *
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
@@ -60,6 +66,8 @@ public interface InspectConfigOrBuilder extends
    */
   int getInfoTypesCount();
   /**
+   *
+   *
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
@@ -75,9 +83,10 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
-      getInfoTypesOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> getInfoTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
@@ -93,10 +102,11 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Only returns findings equal or above this threshold. The default is
    * POSSIBLE.
@@ -107,6 +117,8 @@ public interface InspectConfigOrBuilder extends
    */
   int getMinLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Only returns findings equal or above this threshold. The default is
    * POSSIBLE.
@@ -117,20 +129,16 @@ public interface InspectConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.Likelihood getMinLikelihood();
 
-  /**
-   * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
   boolean hasLimits();
-  /**
-   * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
   com.google.privacy.dlp.v2.InspectConfig.FindingLimits getLimits();
-  /**
-   * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code> */
   com.google.privacy.dlp.v2.InspectConfig.FindingLimitsOrBuilder getLimitsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * When true, a contextual quote from the data that triggered a finding is
    * included in the response; see Finding.quote.
@@ -141,6 +149,8 @@ public interface InspectConfigOrBuilder extends
   boolean getIncludeQuote();
 
   /**
+   *
+   *
    * <pre>
    * When true, excludes type information of the findings.
    * </pre>
@@ -150,6 +160,8 @@ public interface InspectConfigOrBuilder extends
   boolean getExcludeInfoTypes();
 
   /**
+   *
+   *
    * <pre>
    * CustomInfoTypes provided by the user. See
    * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
@@ -157,9 +169,10 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.CustomInfoType> 
-      getCustomInfoTypesList();
+  java.util.List<com.google.privacy.dlp.v2.CustomInfoType> getCustomInfoTypesList();
   /**
+   *
+   *
    * <pre>
    * CustomInfoTypes provided by the user. See
    * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
@@ -169,6 +182,8 @@ public interface InspectConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CustomInfoType getCustomInfoTypes(int index);
   /**
+   *
+   *
    * <pre>
    * CustomInfoTypes provided by the user. See
    * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
@@ -178,6 +193,8 @@ public interface InspectConfigOrBuilder extends
    */
   int getCustomInfoTypesCount();
   /**
+   *
+   *
    * <pre>
    * CustomInfoTypes provided by the user. See
    * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
@@ -185,9 +202,11 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder>
       getCustomInfoTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * CustomInfoTypes provided by the user. See
    * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
@@ -195,10 +214,11 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
    */
-  com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder getCustomInfoTypesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder getCustomInfoTypesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * List of options defining data content to scan.
    * If empty, text, images, and other content will be included.
@@ -208,6 +228,8 @@ public interface InspectConfigOrBuilder extends
    */
   java.util.List<com.google.privacy.dlp.v2.ContentOption> getContentOptionsList();
   /**
+   *
+   *
    * <pre>
    * List of options defining data content to scan.
    * If empty, text, images, and other content will be included.
@@ -217,6 +239,8 @@ public interface InspectConfigOrBuilder extends
    */
   int getContentOptionsCount();
   /**
+   *
+   *
    * <pre>
    * List of options defining data content to scan.
    * If empty, text, images, and other content will be included.
@@ -226,6 +250,8 @@ public interface InspectConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.ContentOption getContentOptions(int index);
   /**
+   *
+   *
    * <pre>
    * List of options defining data content to scan.
    * If empty, text, images, and other content will be included.
@@ -233,9 +259,10 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
    */
-  java.util.List<java.lang.Integer>
-  getContentOptionsValueList();
+  java.util.List<java.lang.Integer> getContentOptionsValueList();
   /**
+   *
+   *
    * <pre>
    * List of options defining data content to scan.
    * If empty, text, images, and other content will be included.
@@ -246,6 +273,8 @@ public interface InspectConfigOrBuilder extends
   int getContentOptionsValue(int index);
 
   /**
+   *
+   *
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
@@ -254,9 +283,10 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> 
-      getRuleSetList();
+  java.util.List<com.google.privacy.dlp.v2.InspectionRuleSet> getRuleSetList();
   /**
+   *
+   *
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
@@ -267,6 +297,8 @@ public interface InspectConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectionRuleSet getRuleSet(int index);
   /**
+   *
+   *
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
@@ -277,6 +309,8 @@ public interface InspectConfigOrBuilder extends
    */
   int getRuleSetCount();
   /**
+   *
+   *
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
@@ -285,9 +319,11 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder>
       getRuleSetOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Set of rules to apply to the findings for this InspectConfig.
    * Exclusion rules, contained in the set are executed in the end, other
@@ -296,6 +332,5 @@ public interface InspectConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRuleSet rule_set = 10;</code>
    */
-  com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder getRuleSetOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder getRuleSetOrBuilder(int index);
 }

@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface BeginTransactionResponseOrBuilder extends
+public interface BeginTransactionResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.BeginTransactionResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The transaction that was started.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface EntityAnnotationOrBuilder extends
+public interface EntityAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.EntityAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Opaque entity ID. Some IDs may be available in
    * [Google Knowledge Graph Search
@@ -18,6 +21,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   java.lang.String getMid();
   /**
+   *
+   *
    * <pre>
    * Opaque entity ID. Some IDs may be available in
    * [Google Knowledge Graph Search
@@ -26,10 +31,11 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>string mid = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getMidBytes();
+  com.google.protobuf.ByteString getMidBytes();
 
   /**
+   *
+   *
    * <pre>
    * The language code for the locale in which the entity textual
    * `description` is expressed.
@@ -39,6 +45,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   java.lang.String getLocale();
   /**
+   *
+   *
    * <pre>
    * The language code for the locale in which the entity textual
    * `description` is expressed.
@@ -46,10 +54,11 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>string locale = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLocaleBytes();
+  com.google.protobuf.ByteString getLocaleBytes();
 
   /**
+   *
+   *
    * <pre>
    * Entity textual description, expressed in its `locale` language.
    * </pre>
@@ -58,16 +67,19 @@ public interface EntityAnnotationOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Entity textual description, expressed in its `locale` language.
    * </pre>
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Overall score of the result. Range [0, 1].
    * </pre>
@@ -77,6 +89,8 @@ public interface EntityAnnotationOrBuilder extends
   float getScore();
 
   /**
+   *
+   *
    * <pre>
    * **Deprecated. Use `score` instead.**
    * The accuracy of the entity detection in an image.
@@ -87,9 +101,12 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>float confidence = 5 [deprecated = true];</code>
    */
-  @java.lang.Deprecated float getConfidence();
+  @java.lang.Deprecated
+  float getConfidence();
 
   /**
+   *
+   *
    * <pre>
    * The relevancy of the ICA (Image Content Annotation) label to the
    * image. For example, the relevancy of "tower" is likely higher to an image
@@ -103,6 +120,8 @@ public interface EntityAnnotationOrBuilder extends
   float getTopicality();
 
   /**
+   *
+   *
    * <pre>
    * Image region to which this entity belongs. Not produced
    * for `LABEL_DETECTION` features.
@@ -112,6 +131,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   boolean hasBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * Image region to which this entity belongs. Not produced
    * for `LABEL_DETECTION` features.
@@ -121,6 +142,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * Image region to which this entity belongs. Not produced
    * for `LABEL_DETECTION` features.
@@ -131,6 +154,8 @@ public interface EntityAnnotationOrBuilder extends
   com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The location information for the detected entity. Multiple
    * `LocationInfo` elements can be present because one location may
@@ -141,9 +166,10 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.LocationInfo locations = 8;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.LocationInfo> 
-      getLocationsList();
+  java.util.List<com.google.cloud.vision.v1.LocationInfo> getLocationsList();
   /**
+   *
+   *
    * <pre>
    * The location information for the detected entity. Multiple
    * `LocationInfo` elements can be present because one location may
@@ -156,6 +182,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1.LocationInfo getLocations(int index);
   /**
+   *
+   *
    * <pre>
    * The location information for the detected entity. Multiple
    * `LocationInfo` elements can be present because one location may
@@ -168,6 +196,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   int getLocationsCount();
   /**
+   *
+   *
    * <pre>
    * The location information for the detected entity. Multiple
    * `LocationInfo` elements can be present because one location may
@@ -178,9 +208,11 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.LocationInfo locations = 8;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.LocationInfoOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.LocationInfoOrBuilder>
       getLocationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The location information for the detected entity. Multiple
    * `LocationInfo` elements can be present because one location may
@@ -191,10 +223,11 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.LocationInfo locations = 8;</code>
    */
-  com.google.cloud.vision.v1.LocationInfoOrBuilder getLocationsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.LocationInfoOrBuilder getLocationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Some entities may have optional user-supplied `Property` (name/value)
    * fields, such a score or string that qualifies the entity.
@@ -202,9 +235,10 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.Property properties = 9;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.Property> 
-      getPropertiesList();
+  java.util.List<com.google.cloud.vision.v1.Property> getPropertiesList();
   /**
+   *
+   *
    * <pre>
    * Some entities may have optional user-supplied `Property` (name/value)
    * fields, such a score or string that qualifies the entity.
@@ -214,6 +248,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1.Property getProperties(int index);
   /**
+   *
+   *
    * <pre>
    * Some entities may have optional user-supplied `Property` (name/value)
    * fields, such a score or string that qualifies the entity.
@@ -223,6 +259,8 @@ public interface EntityAnnotationOrBuilder extends
    */
   int getPropertiesCount();
   /**
+   *
+   *
    * <pre>
    * Some entities may have optional user-supplied `Property` (name/value)
    * fields, such a score or string that qualifies the entity.
@@ -230,9 +268,11 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.Property properties = 9;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.PropertyOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.PropertyOrBuilder>
       getPropertiesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Some entities may have optional user-supplied `Property` (name/value)
    * fields, such a score or string that qualifies the entity.
@@ -240,6 +280,5 @@ public interface EntityAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.Property properties = 9;</code>
    */
-  com.google.cloud.vision.v1.PropertyOrBuilder getPropertiesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.PropertyOrBuilder getPropertiesOrBuilder(int index);
 }

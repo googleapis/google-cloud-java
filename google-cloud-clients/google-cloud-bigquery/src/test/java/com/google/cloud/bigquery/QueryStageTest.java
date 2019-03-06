@@ -21,10 +21,8 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.services.bigquery.model.ExplainQueryStep;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class QueryStageTest {
 
@@ -39,7 +37,7 @@ public class QueryStageTest {
   private static final double COMPUTE_RATIO_MAX = 2.2;
   private static final long END_MS = 1522540860000L;
   private static final long ID = 42L;
-  private static final List<Long> INPUT_STAGES = ImmutableList.of(Long.valueOf(7),Long.valueOf(9));
+  private static final List<Long> INPUT_STAGES = ImmutableList.of(Long.valueOf(7), Long.valueOf(9));
   private static final String NAME = "StageName";
   private static final long PARALLEL_INPUTS = 4;
   private static final long READ_MS_AVG = 3456;
@@ -61,37 +59,38 @@ public class QueryStageTest {
   private static final long WRITE_MS_MAX = 50;
   private static final double WRITE_RATIO_AVG = 9.9;
   private static final double WRITE_RATIO_MAX = 10.10;
-  private static final QueryStage QUERY_STAGE = QueryStage.newBuilder()
-      .setCompletedParallelInputs(COMPLETED_PARALLEL_INPUTS)
-      .setComputeMsAvg(COMPUTE_MS_AVG)
-      .setComputeMsMax(COMPUTE_MS_MAX)
-      .setComputeRatioAvg(COMPUTE_RATIO_AVG)
-      .setComputeRatioMax(COMPUTE_RATIO_MAX)
-      .setEndMs(END_MS)
-      .setGeneratedId(ID)
-      .setInputStages(INPUT_STAGES)
-      .setName(NAME)
-      .setParallelInputs(PARALLEL_INPUTS)
-      .setReadMsAvg(READ_MS_AVG)
-      .setReadMsMax(READ_MS_MAX)
-      .setReadRatioAvg(READ_RATIO_AVG)
-      .setReadRatioMax(READ_RATIO_MAX)
-      .setRecordsRead(RECORDS_READ)
-      .setRecordsWritten(RECORDS_WRITTEN)
-      .setShuffleOutputBytes(SHUFFLE_OUTPUT_BYTES)
-      .setShuffleOutputBytesSpilled(SHUFFLE_OUTPUT_BYTES_SPILLED)
-      .setStartMs(START_MS)
-      .setStatus(STATUS)
-      .setSteps(STEPS)
-      .setWaitMsAvg(WAIT_MS_AVG)
-      .setWaitMsMax(WAIT_MS_MAX)
-      .setWaitRatioAvg(WAIT_RATIO_AVG)
-      .setWaitRatioMax(WAIT_RATIO_MAX)
-      .setWriteMsAvg(WRITE_MS_AVG)
-      .setWriteMsMax(WRITE_MS_MAX)
-      .setWriteRatioAvg(WRITE_RATIO_AVG)
-      .setWriteRatioMax(WRITE_RATIO_MAX)
-      .build();
+  private static final QueryStage QUERY_STAGE =
+      QueryStage.newBuilder()
+          .setCompletedParallelInputs(COMPLETED_PARALLEL_INPUTS)
+          .setComputeMsAvg(COMPUTE_MS_AVG)
+          .setComputeMsMax(COMPUTE_MS_MAX)
+          .setComputeRatioAvg(COMPUTE_RATIO_AVG)
+          .setComputeRatioMax(COMPUTE_RATIO_MAX)
+          .setEndMs(END_MS)
+          .setGeneratedId(ID)
+          .setInputStages(INPUT_STAGES)
+          .setName(NAME)
+          .setParallelInputs(PARALLEL_INPUTS)
+          .setReadMsAvg(READ_MS_AVG)
+          .setReadMsMax(READ_MS_MAX)
+          .setReadRatioAvg(READ_RATIO_AVG)
+          .setReadRatioMax(READ_RATIO_MAX)
+          .setRecordsRead(RECORDS_READ)
+          .setRecordsWritten(RECORDS_WRITTEN)
+          .setShuffleOutputBytes(SHUFFLE_OUTPUT_BYTES)
+          .setShuffleOutputBytesSpilled(SHUFFLE_OUTPUT_BYTES_SPILLED)
+          .setStartMs(START_MS)
+          .setStatus(STATUS)
+          .setSteps(STEPS)
+          .setWaitMsAvg(WAIT_MS_AVG)
+          .setWaitMsMax(WAIT_MS_MAX)
+          .setWaitRatioAvg(WAIT_RATIO_AVG)
+          .setWaitRatioMax(WAIT_RATIO_MAX)
+          .setWriteMsAvg(WRITE_MS_AVG)
+          .setWriteMsMax(WRITE_MS_MAX)
+          .setWriteRatioAvg(WRITE_RATIO_AVG)
+          .setWriteRatioMax(WRITE_RATIO_MAX)
+          .build();
 
   @Test
   public void testQueryStepConstructor() {
@@ -100,7 +99,6 @@ public class QueryStageTest {
     assertEquals(SUBSTEPS1, QUERY_STEP1.getSubsteps());
     assertEquals(SUBSTEPS2, QUERY_STEP2.getSubsteps());
   }
-
 
   @Test
   public void testBuilder() {
@@ -132,7 +130,6 @@ public class QueryStageTest {
     assertEquals(WRITE_RATIO_AVG, QUERY_STAGE.getWriteRatioAvg(), 0);
     assertEquals(WRITE_RATIO_MAX, QUERY_STAGE.getWriteRatioMax(), 0);
   }
-
 
   @Test
   public void testToAndFromPb() {

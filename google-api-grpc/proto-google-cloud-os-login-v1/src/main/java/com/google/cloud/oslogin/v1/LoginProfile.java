@@ -4,6 +4,8 @@
 package com.google.cloud.oslogin.v1;
 
 /**
+ *
+ *
  * <pre>
  * The user profile information used for logging in to a virtual machine on
  * Google Compute Engine.
@@ -11,15 +13,16 @@ package com.google.cloud.oslogin.v1;
  *
  * Protobuf type {@code google.cloud.oslogin.v1.LoginProfile}
  */
-public  final class LoginProfile extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.oslogin.v1.LoginProfile)
     LoginProfileOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LoginProfile.newBuilder() to construct.
   private LoginProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LoginProfile() {
     name_ = "";
     posixAccounts_ = java.util.Collections.emptyList();
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LoginProfile(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,53 +53,64 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              posixAccounts_ = new java.util.ArrayList<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>();
-              mutable_bitField0_ |= 0x00000002;
+              name_ = s;
+              break;
             }
-            posixAccounts_.add(
-                input.readMessage(com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              sshPublicKeys_ = com.google.protobuf.MapField.newMapField(
-                  SshPublicKeysDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                posixAccounts_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              posixAccounts_.add(
+                  input.readMessage(
+                      com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.parser(),
+                      extensionRegistry));
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-            sshPublicKeys__ = input.readMessage(
-                SshPublicKeysDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            sshPublicKeys_.getMutableMap().put(
-                sshPublicKeys__.getKey(), sshPublicKeys__.getValue());
-            break;
-          }
-          case 32: {
-
-            suspended_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                sshPublicKeys_ =
+                    com.google.protobuf.MapField.newMapField(
+                        SshPublicKeysDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+                  sshPublicKeys__ =
+                      input.readMessage(
+                          SshPublicKeysDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              sshPublicKeys_
+                  .getMutableMap()
+                  .put(sshPublicKeys__.getKey(), sshPublicKeys__.getValue());
+              break;
             }
-            break;
-          }
+          case 32:
+            {
+              suspended_ = input.readBool();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         posixAccounts_ = java.util.Collections.unmodifiableList(posixAccounts_);
@@ -105,35 +119,39 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.oslogin.v1.OsLoginProto.internal_static_google_cloud_oslogin_v1_LoginProfile_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.oslogin.v1.OsLoginProto
+        .internal_static_google_cloud_oslogin_v1_LoginProfile_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 3:
         return internalGetSshPublicKeys();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.oslogin.v1.OsLoginProto.internal_static_google_cloud_oslogin_v1_LoginProfile_fieldAccessorTable
+    return com.google.cloud.oslogin.v1.OsLoginProto
+        .internal_static_google_cloud_oslogin_v1_LoginProfile_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.oslogin.v1.LoginProfile.class, com.google.cloud.oslogin.v1.LoginProfile.Builder.class);
+            com.google.cloud.oslogin.v1.LoginProfile.class,
+            com.google.cloud.oslogin.v1.LoginProfile.Builder.class);
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The primary email address that uniquely identifies the user.
    * </pre>
@@ -145,27 +163,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The primary email address that uniquely identifies the user.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -176,27 +193,35 @@ private static final long serialVersionUID = 0L;
   public static final int POSIX_ACCOUNTS_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> posixAccounts_;
   /**
+   *
+   *
    * <pre>
    * The list of POSIX accounts associated with the user.
    * </pre>
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
-  public java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> getPosixAccountsList() {
+  public java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>
+      getPosixAccountsList() {
     return posixAccounts_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of POSIX accounts associated with the user.
    * </pre>
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>
       getPosixAccountsOrBuilderList() {
     return posixAccounts_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of POSIX accounts associated with the user.
    * </pre>
@@ -207,6 +232,8 @@ private static final long serialVersionUID = 0L;
     return posixAccounts_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of POSIX accounts associated with the user.
    * </pre>
@@ -217,33 +244,44 @@ private static final long serialVersionUID = 0L;
     return posixAccounts_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of POSIX accounts associated with the user.
    * </pre>
    *
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
-  public com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder getPosixAccountsOrBuilder(
-      int index) {
+  public com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder
+      getPosixAccountsOrBuilder(int index) {
     return posixAccounts_.get(index);
   }
 
   public static final int SSH_PUBLIC_KEYS_FIELD_NUMBER = 3;
+
   private static final class SshPublicKeysDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> defaultEntry =
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>newDefaultInstance(
-                com.google.cloud.oslogin.v1.OsLoginProto.internal_static_google_cloud_oslogin_v1_LoginProfile_SshPublicKeysEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance());
+                .<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+                    newDefaultInstance(
+                        com.google.cloud.oslogin.v1.OsLoginProto
+                            .internal_static_google_cloud_oslogin_v1_LoginProfile_SshPublicKeysEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey
+                            .getDefaultInstance());
   }
+
   private com.google.protobuf.MapField<
-      java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> sshPublicKeys_;
-  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-  internalGetSshPublicKeys() {
+          java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+      sshPublicKeys_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+      internalGetSshPublicKeys() {
     if (sshPublicKeys_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           SshPublicKeysDefaultEntryHolder.defaultEntry);
@@ -255,63 +293,72 @@ private static final long serialVersionUID = 0L;
     return internalGetSshPublicKeys().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * A map from SSH public key fingerprint to the associated key object.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
-
-  public boolean containsSshPublicKeys(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsSshPublicKeys(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetSshPublicKeys().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getSshPublicKeysMap()} instead.
-   */
+  /** Use {@link #getSshPublicKeysMap()} instead. */
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> getSshPublicKeys() {
+  public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+      getSshPublicKeys() {
     return getSshPublicKeysMap();
   }
   /**
+   *
+   *
    * <pre>
    * A map from SSH public key fingerprint to the associated key object.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
-
-  public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> getSshPublicKeysMap() {
+  public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+      getSshPublicKeysMap() {
     return internalGetSshPublicKeys().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * A map from SSH public key fingerprint to the associated key object.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
-
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrDefault(
       java.lang.String key,
       com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> map =
         internalGetSshPublicKeys().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * A map from SSH public key fingerprint to the associated key object.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
-
   public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> map =
         internalGetSshPublicKeys().getMap();
     if (!map.containsKey(key)) {
@@ -323,6 +370,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUSPENDED_FIELD_NUMBER = 4;
   private boolean suspended_;
   /**
+   *
+   *
    * <pre>
    * Indicates if the user is suspended. A suspended user cannot log in but
    * their profile information is retained.
@@ -335,6 +384,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -346,20 +396,15 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     for (int i = 0; i < posixAccounts_.size(); i++) {
       output.writeMessage(2, posixAccounts_.get(i));
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetSshPublicKeys(),
-        SshPublicKeysDefaultEntryHolder.defaultEntry,
-        3);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetSshPublicKeys(), SshPublicKeysDefaultEntryHolder.defaultEntry, 3);
     if (suspended_ != false) {
       output.writeBool(4, suspended_);
     }
@@ -376,22 +421,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     for (int i = 0; i < posixAccounts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, posixAccounts_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, posixAccounts_.get(i));
     }
-    for (java.util.Map.Entry<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> entry
-         : internalGetSshPublicKeys().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-      sshPublicKeys__ = SshPublicKeysDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, sshPublicKeys__);
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        entry : internalGetSshPublicKeys().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+          sshPublicKeys__ =
+              SshPublicKeysDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, sshPublicKeys__);
     }
     if (suspended_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(4, suspended_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, suspended_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -401,7 +447,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.oslogin.v1.LoginProfile)) {
       return super.equals(obj);
@@ -409,14 +455,10 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.oslogin.v1.LoginProfile other = (com.google.cloud.oslogin.v1.LoginProfile) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getPosixAccountsList()
-        .equals(other.getPosixAccountsList());
-    result = result && internalGetSshPublicKeys().equals(
-        other.internalGetSshPublicKeys());
-    result = result && (getSuspended()
-        == other.getSuspended());
+    result = result && getName().equals(other.getName());
+    result = result && getPosixAccountsList().equals(other.getPosixAccountsList());
+    result = result && internalGetSshPublicKeys().equals(other.internalGetSshPublicKeys());
+    result = result && (getSuspended() == other.getSuspended());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -439,104 +481,110 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + internalGetSshPublicKeys().hashCode();
     }
     hash = (37 * hash) + SUSPENDED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getSuspended());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSuspended());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.oslogin.v1.LoginProfile parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.oslogin.v1.LoginProfile parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.oslogin.v1.LoginProfile parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.oslogin.v1.LoginProfile prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The user profile information used for logging in to a virtual machine on
    * Google Compute Engine.
@@ -544,43 +592,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.oslogin.v1.LoginProfile}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.oslogin.v1.LoginProfile)
       com.google.cloud.oslogin.v1.LoginProfileOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.oslogin.v1.OsLoginProto.internal_static_google_cloud_oslogin_v1_LoginProfile_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.oslogin.v1.OsLoginProto
+          .internal_static_google_cloud_oslogin_v1_LoginProfile_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 3:
           return internalGetSshPublicKeys();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 3:
           return internalGetMutableSshPublicKeys();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.oslogin.v1.OsLoginProto.internal_static_google_cloud_oslogin_v1_LoginProfile_fieldAccessorTable
+      return com.google.cloud.oslogin.v1.OsLoginProto
+          .internal_static_google_cloud_oslogin_v1_LoginProfile_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.oslogin.v1.LoginProfile.class, com.google.cloud.oslogin.v1.LoginProfile.Builder.class);
+              com.google.cloud.oslogin.v1.LoginProfile.class,
+              com.google.cloud.oslogin.v1.LoginProfile.Builder.class);
     }
 
     // Construct using com.google.cloud.oslogin.v1.LoginProfile.newBuilder()
@@ -588,17 +636,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPosixAccountsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -617,9 +665,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.oslogin.v1.OsLoginProto.internal_static_google_cloud_oslogin_v1_LoginProfile_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.oslogin.v1.OsLoginProto
+          .internal_static_google_cloud_oslogin_v1_LoginProfile_descriptor;
     }
 
     @java.lang.Override
@@ -638,7 +686,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.oslogin.v1.LoginProfile buildPartial() {
-      com.google.cloud.oslogin.v1.LoginProfile result = new com.google.cloud.oslogin.v1.LoginProfile(this);
+      com.google.cloud.oslogin.v1.LoginProfile result =
+          new com.google.cloud.oslogin.v1.LoginProfile(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -663,38 +712,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.oslogin.v1.LoginProfile) {
-        return mergeFrom((com.google.cloud.oslogin.v1.LoginProfile)other);
+        return mergeFrom((com.google.cloud.oslogin.v1.LoginProfile) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -725,16 +775,16 @@ private static final long serialVersionUID = 0L;
             posixAccountsBuilder_ = null;
             posixAccounts_ = other.posixAccounts_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            posixAccountsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPosixAccountsFieldBuilder() : null;
+            posixAccountsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPosixAccountsFieldBuilder()
+                    : null;
           } else {
             posixAccountsBuilder_.addAllMessages(other.posixAccounts_);
           }
         }
       }
-      internalGetMutableSshPublicKeys().mergeFrom(
-          other.internalGetSshPublicKeys());
+      internalGetMutableSshPublicKeys().mergeFrom(other.internalGetSshPublicKeys());
       if (other.getSuspended() != false) {
         setSuspended(other.getSuspended());
       }
@@ -766,10 +816,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The primary email address that uniquely identifies the user.
      * </pre>
@@ -779,8 +832,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -789,19 +841,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The primary email address that uniquely identifies the user.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -809,23 +861,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The primary email address that uniquely identifies the user.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The primary email address that uniquely identifies the user.
      * </pre>
@@ -833,50 +888,60 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The primary email address that uniquely identifies the user.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> posixAccounts_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>
+        posixAccounts_ = java.util.Collections.emptyList();
+
     private void ensurePosixAccountsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        posixAccounts_ = new java.util.ArrayList<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>(posixAccounts_);
+        posixAccounts_ =
+            new java.util.ArrayList<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>(
+                posixAccounts_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder, com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder> posixAccountsBuilder_;
+            com.google.cloud.oslogin.common.OsLoginProto.PosixAccount,
+            com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder,
+            com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>
+        posixAccountsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> getPosixAccountsList() {
+    public java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>
+        getPosixAccountsList() {
       if (posixAccountsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(posixAccounts_);
       } else {
@@ -884,6 +949,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -898,6 +965,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -912,6 +981,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -933,6 +1004,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -940,7 +1013,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
     public Builder setPosixAccounts(
-        int index, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder builderForValue) {
+        int index,
+        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder builderForValue) {
       if (posixAccountsBuilder_ == null) {
         ensurePosixAccountsIsMutable();
         posixAccounts_.set(index, builderForValue.build());
@@ -951,13 +1025,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public Builder addPosixAccounts(com.google.cloud.oslogin.common.OsLoginProto.PosixAccount value) {
+    public Builder addPosixAccounts(
+        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount value) {
       if (posixAccountsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -971,6 +1048,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -992,6 +1071,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -1010,6 +1091,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -1017,7 +1100,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
     public Builder addPosixAccounts(
-        int index, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder builderForValue) {
+        int index,
+        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder builderForValue) {
       if (posixAccountsBuilder_ == null) {
         ensurePosixAccountsIsMutable();
         posixAccounts_.add(index, builderForValue.build());
@@ -1028,6 +1112,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -1035,11 +1121,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
     public Builder addAllPosixAccounts(
-        java.lang.Iterable<? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> values) {
+        java.lang.Iterable<? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>
+            values) {
       if (posixAccountsBuilder_ == null) {
         ensurePosixAccountsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, posixAccounts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, posixAccounts_);
         onChanged();
       } else {
         posixAccountsBuilder_.addAllMessages(values);
@@ -1047,6 +1133,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -1064,6 +1152,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
@@ -1081,39 +1171,47 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder getPosixAccountsBuilder(
-        int index) {
+    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder
+        getPosixAccountsBuilder(int index) {
       return getPosixAccountsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder getPosixAccountsOrBuilder(
-        int index) {
+    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder
+        getPosixAccountsOrBuilder(int index) {
       if (posixAccountsBuilder_ == null) {
-        return posixAccounts_.get(index);  } else {
+        return posixAccounts_.get(index);
+      } else {
         return posixAccountsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder> 
-         getPosixAccountsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>
+        getPosixAccountsOrBuilderList() {
       if (posixAccountsBuilder_ != null) {
         return posixAccountsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1121,45 +1219,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder addPosixAccountsBuilder() {
-      return getPosixAccountsFieldBuilder().addBuilder(
-          com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance());
+    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder
+        addPosixAccountsBuilder() {
+      return getPosixAccountsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder addPosixAccountsBuilder(
-        int index) {
-      return getPosixAccountsFieldBuilder().addBuilder(
-          index, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance());
+    public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder
+        addPosixAccountsBuilder(int index) {
+      return getPosixAccountsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of POSIX accounts associated with the user.
      * </pre>
      *
      * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
      */
-    public java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder> 
-         getPosixAccountsBuilderList() {
+    public java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder>
+        getPosixAccountsBuilderList() {
       return getPosixAccountsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder, com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder> 
+            com.google.cloud.oslogin.common.OsLoginProto.PosixAccount,
+            com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder,
+            com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>
         getPosixAccountsFieldBuilder() {
       if (posixAccountsBuilder_ == null) {
-        posixAccountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.oslogin.common.OsLoginProto.PosixAccount, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder, com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>(
+        posixAccountsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.oslogin.common.OsLoginProto.PosixAccount,
+                com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder,
+                com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>(
                 posixAccounts_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1170,21 +1284,27 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> sshPublicKeys_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-    internalGetSshPublicKeys() {
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        sshPublicKeys_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        internalGetSshPublicKeys() {
       if (sshPublicKeys_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             SshPublicKeysDefaultEntryHolder.defaultEntry);
       }
       return sshPublicKeys_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-    internalGetMutableSshPublicKeys() {
-      onChanged();;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        internalGetMutableSshPublicKeys() {
+      onChanged();
+      ;
       if (sshPublicKeys_ == null) {
-        sshPublicKeys_ = com.google.protobuf.MapField.newMapField(
-            SshPublicKeysDefaultEntryHolder.defaultEntry);
+        sshPublicKeys_ =
+            com.google.protobuf.MapField.newMapField(SshPublicKeysDefaultEntryHolder.defaultEntry);
       }
       if (!sshPublicKeys_.isMutable()) {
         sshPublicKeys_ = sshPublicKeys_.copy();
@@ -1196,65 +1316,80 @@ private static final long serialVersionUID = 0L;
       return internalGetSshPublicKeys().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * A map from SSH public key fingerprint to the associated key object.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
+     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
+     * </code>
      */
-
-    public boolean containsSshPublicKeys(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsSshPublicKeys(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetSshPublicKeys().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getSshPublicKeysMap()} instead.
-     */
+    /** Use {@link #getSshPublicKeysMap()} instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> getSshPublicKeys() {
+    public java.util.Map<
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        getSshPublicKeys() {
       return getSshPublicKeysMap();
     }
     /**
+     *
+     *
      * <pre>
      * A map from SSH public key fingerprint to the associated key object.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
+     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
+     * </code>
      */
-
-    public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> getSshPublicKeysMap() {
+    public java.util.Map<
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        getSshPublicKeysMap() {
       return internalGetSshPublicKeys().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * A map from SSH public key fingerprint to the associated key object.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
+     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
+     * </code>
      */
-
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrDefault(
         java.lang.String key,
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> map =
-          internalGetSshPublicKeys().getMap();
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+          map = internalGetSshPublicKeys().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * A map from SSH public key fingerprint to the associated key object.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
+     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
+     * </code>
      */
-
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKeysOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> map =
-          internalGetSshPublicKeys().getMap();
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+          map = internalGetSshPublicKeys().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1262,66 +1397,75 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearSshPublicKeys() {
-      internalGetMutableSshPublicKeys().getMutableMap()
-          .clear();
+      internalGetMutableSshPublicKeys().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A map from SSH public key fingerprint to the associated key object.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
+     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
+     * </code>
      */
-
-    public Builder removeSshPublicKeys(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableSshPublicKeys().getMutableMap()
-          .remove(key);
+    public Builder removeSshPublicKeys(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableSshPublicKeys().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-    getMutableSshPublicKeys() {
+    public java.util.Map<
+            java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+        getMutableSshPublicKeys() {
       return internalGetMutableSshPublicKeys().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * A map from SSH public key fingerprint to the associated key object.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
+     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
+     * </code>
      */
     public Builder putSshPublicKeys(
-        java.lang.String key,
-        com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableSshPublicKeys().getMutableMap()
-          .put(key, value);
+        java.lang.String key, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableSshPublicKeys().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A map from SSH public key fingerprint to the associated key object.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
+     * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;
+     * </code>
      */
-
     public Builder putAllSshPublicKeys(
-        java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey> values) {
-      internalGetMutableSshPublicKeys().getMutableMap()
-          .putAll(values);
+        java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+            values) {
+      internalGetMutableSshPublicKeys().getMutableMap().putAll(values);
       return this;
     }
 
-    private boolean suspended_ ;
+    private boolean suspended_;
     /**
+     *
+     *
      * <pre>
      * Indicates if the user is suspended. A suspended user cannot log in but
      * their profile information is retained.
@@ -1333,6 +1477,8 @@ private static final long serialVersionUID = 0L;
       return suspended_;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates if the user is suspended. A suspended user cannot log in but
      * their profile information is retained.
@@ -1341,12 +1487,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool suspended = 4;</code>
      */
     public Builder setSuspended(boolean value) {
-      
+
       suspended_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates if the user is suspended. A suspended user cannot log in but
      * their profile information is retained.
@@ -1355,14 +1503,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool suspended = 4;</code>
      */
     public Builder clearSuspended() {
-      
+
       suspended_ = false;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1372,12 +1520,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.oslogin.v1.LoginProfile)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.oslogin.v1.LoginProfile)
   private static final com.google.cloud.oslogin.v1.LoginProfile DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.oslogin.v1.LoginProfile();
   }
@@ -1386,16 +1534,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LoginProfile>
-      PARSER = new com.google.protobuf.AbstractParser<LoginProfile>() {
-    @java.lang.Override
-    public LoginProfile parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LoginProfile(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LoginProfile> PARSER =
+      new com.google.protobuf.AbstractParser<LoginProfile>() {
+        @java.lang.Override
+        public LoginProfile parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LoginProfile(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LoginProfile> parser() {
     return PARSER;
@@ -1410,6 +1558,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.oslogin.v1.LoginProfile getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

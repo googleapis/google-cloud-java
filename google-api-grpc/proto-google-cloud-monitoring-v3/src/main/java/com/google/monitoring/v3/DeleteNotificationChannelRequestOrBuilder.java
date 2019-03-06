@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface DeleteNotificationChannelRequestOrBuilder extends
+public interface DeleteNotificationChannelRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.DeleteNotificationChannelRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The channel for which to execute the request. The format is
    * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
@@ -17,6 +20,8 @@ public interface DeleteNotificationChannelRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The channel for which to execute the request. The format is
    * `projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]`.
@@ -24,10 +29,11 @@ public interface DeleteNotificationChannelRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * If true, the notification channel will be deleted regardless of its
    * use in alert policies (the policies will be updated to remove the

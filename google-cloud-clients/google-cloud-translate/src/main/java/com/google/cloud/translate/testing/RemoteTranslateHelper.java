@@ -20,24 +20,21 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.translate.TranslateOptions;
-import org.threeten.bp.Duration;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote translate configuration for testing. Translate options can be obtained
- * via the {@link #getOptions()} ()} method. Returned options have custom
- * {@link TranslateOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is
- * {@code 10},
- * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
- * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
- * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link HttpTransportOptions#getConnectTimeout()} and
- * {@link HttpTransportOptions#getReadTimeout()} are both
- * both set to {@code 60000}.
+ * via the {@link #getOptions()} ()} method. Returned options have custom {@link
+ * TranslateOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is {@code 10},
+ * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000}, {@link
+ * RetrySettings#getTotalTimeout()} is {@code 120000} and {@link
+ * RetrySettings#getInitialRetryDelay()} is {@code 250}. {@link
+ * HttpTransportOptions#getConnectTimeout()} and {@link HttpTransportOptions#getReadTimeout()} are
+ * both both set to {@code 60000}.
  */
 public class RemoteTranslateHelper {
   private static final Logger logger = Logger.getLogger(RemoteTranslateHelper.class.getName());
@@ -48,10 +45,7 @@ public class RemoteTranslateHelper {
     this.options = options;
   }
 
-
-  /**
-   * Returns a {@link TranslateOptions} object to be used for testing.
-   */
+  /** Returns a {@link TranslateOptions} object to be used for testing. */
   public TranslateOptions getOptions() {
     return options;
   }
@@ -70,14 +64,15 @@ public class RemoteTranslateHelper {
       throws TranslateHelperException {
     try {
       HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
-      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-          .build();
-      TranslateOptions translateOptions = TranslateOptions.newBuilder()
-          .setCredentials(GoogleCredentials.fromStream(keyStream))
-          .setProjectId(projectId)
-          .setRetrySettings(retryParams())
-          .setTransportOptions(transportOptions)
-          .build();
+      transportOptions =
+          transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
+      TranslateOptions translateOptions =
+          TranslateOptions.newBuilder()
+              .setCredentials(GoogleCredentials.fromStream(keyStream))
+              .setProjectId(projectId)
+              .setRetrySettings(retryParams())
+              .setTransportOptions(transportOptions)
+              .build();
       return new RemoteTranslateHelper(translateOptions);
     } catch (IOException ex) {
       if (logger.isLoggable(Level.WARNING)) {
@@ -95,13 +90,14 @@ public class RemoteTranslateHelper {
   @Deprecated
   public static RemoteTranslateHelper create(String apiKey) {
     HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
-    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-        .build();
-    TranslateOptions translateOptions = TranslateOptions.newBuilder()
-        .setApiKey(apiKey)
-        .setRetrySettings(retryParams())
-        .setTransportOptions(transportOptions)
-        .build();
+    transportOptions =
+        transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
+    TranslateOptions translateOptions =
+        TranslateOptions.newBuilder()
+            .setApiKey(apiKey)
+            .setRetrySettings(retryParams())
+            .setTransportOptions(transportOptions)
+            .build();
     return new RemoteTranslateHelper(translateOptions);
   }
 
@@ -111,17 +107,19 @@ public class RemoteTranslateHelper {
    */
   public static RemoteTranslateHelper create() {
     HttpTransportOptions transportOptions = TranslateOptions.getDefaultHttpTransportOptions();
-    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-        .build();
-    TranslateOptions translateOption = TranslateOptions.newBuilder()
-        .setRetrySettings(retryParams())
-        .setTransportOptions(transportOptions)
-        .build();
+    transportOptions =
+        transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
+    TranslateOptions translateOption =
+        TranslateOptions.newBuilder()
+            .setRetrySettings(retryParams())
+            .setTransportOptions(transportOptions)
+            .build();
     return new RemoteTranslateHelper(translateOption);
   }
 
   private static RetrySettings retryParams() {
-    return RetrySettings.newBuilder().setMaxAttempts(10)
+    return RetrySettings.newBuilder()
+        .setMaxAttempts(10)
         .setMaxRetryDelay(Duration.ofMillis(30000L))
         .setTotalTimeout(Duration.ofMillis(120000L))
         .setInitialRetryDelay(Duration.ofMillis(250L))

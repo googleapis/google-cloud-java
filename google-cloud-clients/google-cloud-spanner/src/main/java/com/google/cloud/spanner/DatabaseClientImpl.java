@@ -17,9 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
-
 import com.google.common.util.concurrent.ListenableFuture;
-
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
@@ -30,11 +28,11 @@ class DatabaseClientImpl implements DatabaseClient {
   private static final String READ_ONLY_TRANSACTION = "CloudSpanner.ReadOnlyTransaction";
   private static final String PARTITION_DML_TRANSACTION = "CloudSpanner.PartitionDMLTransaction";
   private static final Tracer tracer = Tracing.getTracer();
-  
+
   static {
     TraceUtil.exportSpans(READ_WRITE_TRANSACTION, READ_ONLY_TRANSACTION, PARTITION_DML_TRANSACTION);
   }
-  
+
   private final SessionPool pool;
 
   DatabaseClientImpl(SessionPool pool) {
@@ -76,7 +74,6 @@ class DatabaseClientImpl implements DatabaseClient {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
     }
-    
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,8 @@ public class GlobalForwardingRuleSettings extends ClientSettings<GlobalForwardin
 
   /** Returns the object with the settings used for calls to listGlobalForwardingRules. */
   public PagedCallSettings<
-          ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+          ListGlobalForwardingRulesHttpRequest,
+          ForwardingRuleList,
           ListGlobalForwardingRulesPagedResponse>
       listGlobalForwardingRulesSettings() {
     return ((GlobalForwardingRuleStubSettings) getStubSettings())
@@ -222,7 +223,8 @@ public class GlobalForwardingRuleSettings extends ClientSettings<GlobalForwardin
 
     /** Returns the builder for the settings used for calls to listGlobalForwardingRules. */
     public PagedCallSettings.Builder<
-            ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+            ListGlobalForwardingRulesHttpRequest,
+            ForwardingRuleList,
             ListGlobalForwardingRulesPagedResponse>
         listGlobalForwardingRulesSettings() {
       return getStubSettingsBuilder().listGlobalForwardingRulesSettings();

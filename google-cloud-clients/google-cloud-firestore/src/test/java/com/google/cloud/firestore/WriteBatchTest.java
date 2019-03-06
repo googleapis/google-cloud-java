@@ -28,10 +28,10 @@ import static org.mockito.Mockito.doReturn;
 
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.CommitRequest;
-import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.Write;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.Write;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -52,10 +52,7 @@ public class WriteBatchTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
@@ -76,14 +73,14 @@ public class WriteBatchTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    List<com.google.firestore.v1beta1.Precondition> preconditions =
+    List<com.google.firestore.v1.Precondition> preconditions =
         Arrays.asList(
-            com.google.firestore.v1beta1.Precondition.newBuilder().setExists(true).build(),
-            com.google.firestore.v1beta1.Precondition.newBuilder().setExists(true).build(),
-            com.google.firestore.v1beta1.Precondition.newBuilder()
+            com.google.firestore.v1.Precondition.newBuilder().setExists(true).build(),
+            com.google.firestore.v1.Precondition.newBuilder().setExists(true).build(),
+            com.google.firestore.v1.Precondition.newBuilder()
                 .setUpdateTime(com.google.protobuf.Timestamp.getDefaultInstance())
                 .build(),
-            com.google.firestore.v1beta1.Precondition.newBuilder()
+            com.google.firestore.v1.Precondition.newBuilder()
                 .setUpdateTime(com.google.protobuf.Timestamp.getDefaultInstance())
                 .build());
 
@@ -93,6 +90,8 @@ public class WriteBatchTest {
     batch.update(documentReference, "foo", "bar");
     batch.update(documentReference, updateTime, "foo", "bar");
     batch.update(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP, updateTime);
+
+    assertEquals(4, batch.getMutationsSize());
 
     List<WriteResult> writeResults = batch.commit().get();
     List<Write> writes = new ArrayList<>();
@@ -129,6 +128,8 @@ public class WriteBatchTest {
     writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO, Arrays.asList("foo")));
     writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO, Arrays.asList("foo")));
 
+    assertEquals(4, batch.getMutationsSize());
+
     List<WriteResult> writeResults = batch.commit().get();
     for (int i = 0; i < writeResults.size(); ++i) {
       assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
@@ -147,6 +148,8 @@ public class WriteBatchTest {
 
     batch.set(documentReference, map("time", FieldValue.serverTimestamp()));
 
+    assertEquals(1, batch.getMutationsSize());
+
     List<WriteResult> writeResults = batch.commit().get();
     assertEquals(1, writeResults.size());
   }
@@ -161,6 +164,8 @@ public class WriteBatchTest {
     batch
         .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP)
         .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_OBJECT);
+
+    assertEquals(2, batch.getMutationsSize());
 
     List<WriteResult> writeResults = batch.commit().get();
     List<Write> writes = new ArrayList<>();
@@ -186,10 +191,12 @@ public class WriteBatchTest {
     writes.add(delete());
 
     batch.delete(documentReference, Precondition.updatedAt(Timestamp.ofTimeSecondsAndNanos(1, 2)));
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(1).setNanos(2);
     writes.add(delete(precondition.build()));
+
+    assertEquals(2, batch.getMutationsSize());
 
     List<WriteResult> writeResults = batch.commit().get();
 

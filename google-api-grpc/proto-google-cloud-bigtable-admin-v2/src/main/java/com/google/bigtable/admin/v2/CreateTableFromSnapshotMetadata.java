@@ -4,6 +4,8 @@
 package com.google.bigtable.admin.v2;
 
 /**
+ *
+ *
  * <pre>
  * The metadata for the Operation returned by CreateTableFromSnapshot.
  * Note: This is a private alpha release of Cloud Bigtable snapshots. This
@@ -14,23 +16,24 @@ package com.google.bigtable.admin.v2;
  *
  * Protobuf type {@code google.bigtable.admin.v2.CreateTableFromSnapshotMetadata}
  */
-public  final class CreateTableFromSnapshotMetadata extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateTableFromSnapshotMetadata extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.CreateTableFromSnapshotMetadata)
     CreateTableFromSnapshotMetadataOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateTableFromSnapshotMetadata.newBuilder() to construct.
-  private CreateTableFromSnapshotMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private CreateTableFromSnapshotMetadata(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CreateTableFromSnapshotMetadata() {
-  }
+
+  private CreateTableFromSnapshotMetadata() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateTableFromSnapshotMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,80 +53,92 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder subBuilder = null;
-            if (originalRequest_ != null) {
-              subBuilder = originalRequest_.toBuilder();
-            }
-            originalRequest_ = input.readMessage(com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(originalRequest_);
-              originalRequest_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder subBuilder = null;
+              if (originalRequest_ != null) {
+                subBuilder = originalRequest_.toBuilder();
+              }
+              originalRequest_ =
+                  input.readMessage(
+                      com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(originalRequest_);
+                originalRequest_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (requestTime_ != null) {
-              subBuilder = requestTime_.toBuilder();
+              break;
             }
-            requestTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(requestTime_);
-              requestTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (requestTime_ != null) {
+                subBuilder = requestTime_.toBuilder();
+              }
+              requestTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(requestTime_);
+                requestTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (finishTime_ != null) {
-              subBuilder = finishTime_.toBuilder();
+              break;
             }
-            finishTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(finishTime_);
-              finishTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (finishTime_ != null) {
+                subBuilder = finishTime_.toBuilder();
+              }
+              finishTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(finishTime_);
+                finishTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.bigtable.admin.v2.BigtableTableAdminProto
+        .internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_fieldAccessorTable
+    return com.google.bigtable.admin.v2.BigtableTableAdminProto
+        .internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.class, com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.Builder.class);
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.class,
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.Builder.class);
   }
 
   public static final int ORIGINAL_REQUEST_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest originalRequest_;
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateTableFromSnapshot
    * operation.
@@ -135,6 +150,8 @@ private static final long serialVersionUID = 0L;
     return originalRequest_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateTableFromSnapshot
    * operation.
@@ -143,9 +160,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
    */
   public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest getOriginalRequest() {
-    return originalRequest_ == null ? com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.getDefaultInstance() : originalRequest_;
+    return originalRequest_ == null
+        ? com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.getDefaultInstance()
+        : originalRequest_;
   }
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateTableFromSnapshot
    * operation.
@@ -153,13 +174,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
    */
-  public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder getOriginalRequestOrBuilder() {
+  public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder
+      getOriginalRequestOrBuilder() {
     return getOriginalRequest();
   }
 
   public static final int REQUEST_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp requestTime_;
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -170,6 +194,8 @@ private static final long serialVersionUID = 0L;
     return requestTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -180,6 +206,8 @@ private static final long serialVersionUID = 0L;
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -193,6 +221,8 @@ private static final long serialVersionUID = 0L;
   public static final int FINISH_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp finishTime_;
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>
@@ -203,6 +233,8 @@ private static final long serialVersionUID = 0L;
     return finishTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>
@@ -213,6 +245,8 @@ private static final long serialVersionUID = 0L;
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>
@@ -224,6 +258,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -235,8 +270,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (originalRequest_ != null) {
       output.writeMessage(1, getOriginalRequest());
     }
@@ -256,16 +290,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (originalRequest_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getOriginalRequest());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOriginalRequest());
     }
     if (requestTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getRequestTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRequestTime());
     }
     if (finishTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getFinishTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFinishTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -275,28 +306,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata)) {
       return super.equals(obj);
     }
-    com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata other = (com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata) obj;
+    com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata other =
+        (com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata) obj;
 
     boolean result = true;
     result = result && (hasOriginalRequest() == other.hasOriginalRequest());
     if (hasOriginalRequest()) {
-      result = result && getOriginalRequest()
-          .equals(other.getOriginalRequest());
+      result = result && getOriginalRequest().equals(other.getOriginalRequest());
     }
     result = result && (hasRequestTime() == other.hasRequestTime());
     if (hasRequestTime()) {
-      result = result && getRequestTime()
-          .equals(other.getRequestTime());
+      result = result && getRequestTime().equals(other.getRequestTime());
     }
     result = result && (hasFinishTime() == other.hasFinishTime());
     if (hasFinishTime()) {
-      result = result && getFinishTime()
-          .equals(other.getFinishTime());
+      result = result && getFinishTime().equals(other.getFinishTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -327,96 +356,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata prototype) {
+
+  public static Builder newBuilder(
+      com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The metadata for the Operation returned by CreateTableFromSnapshot.
    * Note: This is a private alpha release of Cloud Bigtable snapshots. This
@@ -427,21 +464,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.bigtable.admin.v2.CreateTableFromSnapshotMetadata}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.CreateTableFromSnapshotMetadata)
       com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadataOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_fieldAccessorTable
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.class, com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.Builder.class);
+              com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.class,
+              com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.Builder.class);
     }
 
     // Construct using com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.newBuilder()
@@ -449,16 +488,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -484,13 +522,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_CreateTableFromSnapshotMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata getDefaultInstanceForType() {
+    public com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata
+        getDefaultInstanceForType() {
       return com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.getDefaultInstance();
     }
 
@@ -505,7 +544,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata buildPartial() {
-      com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata result = new com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata(this);
+      com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata result =
+          new com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata(this);
       if (originalRequestBuilder_ == null) {
         result.originalRequest_ = originalRequest_;
       } else {
@@ -529,38 +569,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata) {
-        return mergeFrom((com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata)other);
+        return mergeFrom((com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -568,7 +609,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata other) {
-      if (other == com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.getDefaultInstance()) return this;
+      if (other
+          == com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata.getDefaultInstance())
+        return this;
       if (other.hasOriginalRequest()) {
         mergeOriginalRequest(other.getOriginalRequest());
       }
@@ -597,7 +640,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -609,8 +653,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest originalRequest_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest, com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder, com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder> originalRequestBuilder_;
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest,
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder,
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder>
+        originalRequestBuilder_;
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -622,6 +671,8 @@ private static final long serialVersionUID = 0L;
       return originalRequestBuilder_ != null || originalRequest_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -631,12 +682,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest getOriginalRequest() {
       if (originalRequestBuilder_ == null) {
-        return originalRequest_ == null ? com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.getDefaultInstance() : originalRequest_;
+        return originalRequest_ == null
+            ? com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.getDefaultInstance()
+            : originalRequest_;
       } else {
         return originalRequestBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -644,7 +699,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
      */
-    public Builder setOriginalRequest(com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest value) {
+    public Builder setOriginalRequest(
+        com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest value) {
       if (originalRequestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -658,6 +714,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -677,6 +735,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -684,11 +744,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
      */
-    public Builder mergeOriginalRequest(com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest value) {
+    public Builder mergeOriginalRequest(
+        com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest value) {
       if (originalRequestBuilder_ == null) {
         if (originalRequest_ != null) {
           originalRequest_ =
-            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.newBuilder(originalRequest_).mergeFrom(value).buildPartial();
+              com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.newBuilder(
+                      originalRequest_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           originalRequest_ = value;
         }
@@ -700,6 +764,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -719,6 +785,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -726,12 +794,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
      */
-    public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder getOriginalRequestBuilder() {
-      
+    public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder
+        getOriginalRequestBuilder() {
+
       onChanged();
       return getOriginalRequestFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -739,15 +810,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
      */
-    public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder getOriginalRequestOrBuilder() {
+    public com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder
+        getOriginalRequestOrBuilder() {
       if (originalRequestBuilder_ != null) {
         return originalRequestBuilder_.getMessageOrBuilder();
       } else {
-        return originalRequest_ == null ?
-            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.getDefaultInstance() : originalRequest_;
+        return originalRequest_ == null
+            ? com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.getDefaultInstance()
+            : originalRequest_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The request that prompted the initiation of this CreateTableFromSnapshot
      * operation.
@@ -756,14 +831,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest, com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder, com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder> 
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest,
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder,
+            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder>
         getOriginalRequestFieldBuilder() {
       if (originalRequestBuilder_ == null) {
-        originalRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest, com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder, com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder>(
-                getOriginalRequest(),
-                getParentForChildren(),
-                isClean());
+        originalRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest,
+                com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest.Builder,
+                com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder>(
+                getOriginalRequest(), getParentForChildren(), isClean());
         originalRequest_ = null;
       }
       return originalRequestBuilder_;
@@ -771,8 +849,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp requestTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> requestTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        requestTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -783,6 +866,8 @@ private static final long serialVersionUID = 0L;
       return requestTimeBuilder_ != null || requestTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -791,12 +876,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getRequestTime() {
       if (requestTimeBuilder_ == null) {
-        return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
+        return requestTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : requestTime_;
       } else {
         return requestTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -817,14 +906,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp request_time = 2;</code>
      */
-    public Builder setRequestTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setRequestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (requestTimeBuilder_ == null) {
         requestTime_ = builderForValue.build();
         onChanged();
@@ -835,6 +925,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -845,7 +937,9 @@ private static final long serialVersionUID = 0L;
       if (requestTimeBuilder_ == null) {
         if (requestTime_ != null) {
           requestTime_ =
-            com.google.protobuf.Timestamp.newBuilder(requestTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(requestTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           requestTime_ = value;
         }
@@ -857,6 +951,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -875,6 +971,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -882,11 +980,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp request_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRequestTimeBuilder() {
-      
+
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -897,11 +997,14 @@ private static final long serialVersionUID = 0L;
       if (requestTimeBuilder_ != null) {
         return requestTimeBuilder_.getMessageOrBuilder();
       } else {
-        return requestTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
+        return requestTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : requestTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the original request was received.
      * </pre>
@@ -909,14 +1012,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp request_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getRequestTimeFieldBuilder() {
       if (requestTimeBuilder_ == null) {
-        requestTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getRequestTime(),
-                getParentForChildren(),
-                isClean());
+        requestTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getRequestTime(), getParentForChildren(), isClean());
         requestTime_ = null;
       }
       return requestTimeBuilder_;
@@ -924,8 +1030,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp finishTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> finishTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        finishTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -936,6 +1047,8 @@ private static final long serialVersionUID = 0L;
       return finishTimeBuilder_ != null || finishTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -944,12 +1057,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getFinishTime() {
       if (finishTimeBuilder_ == null) {
-        return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
+        return finishTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : finishTime_;
       } else {
         return finishTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -970,14 +1087,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp finish_time = 3;</code>
      */
-    public Builder setFinishTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setFinishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (finishTimeBuilder_ == null) {
         finishTime_ = builderForValue.build();
         onChanged();
@@ -988,6 +1106,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -998,7 +1118,7 @@ private static final long serialVersionUID = 0L;
       if (finishTimeBuilder_ == null) {
         if (finishTime_ != null) {
           finishTime_ =
-            com.google.protobuf.Timestamp.newBuilder(finishTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(finishTime_).mergeFrom(value).buildPartial();
         } else {
           finishTime_ = value;
         }
@@ -1010,6 +1130,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -1028,6 +1150,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -1035,11 +1159,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp finish_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getFinishTimeBuilder() {
-      
+
       onChanged();
       return getFinishTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -1050,11 +1176,14 @@ private static final long serialVersionUID = 0L;
       if (finishTimeBuilder_ != null) {
         return finishTimeBuilder_.getMessageOrBuilder();
       } else {
-        return finishTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
+        return finishTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : finishTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the operation failed or was completed successfully.
      * </pre>
@@ -1062,21 +1191,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp finish_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getFinishTimeFieldBuilder() {
       if (finishTimeBuilder_ == null) {
-        finishTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getFinishTime(),
-                getParentForChildren(),
-                isClean());
+        finishTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getFinishTime(), getParentForChildren(), isClean());
         finishTime_ = null;
       }
       return finishTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1086,12 +1218,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.CreateTableFromSnapshotMetadata)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.CreateTableFromSnapshotMetadata)
-  private static final com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata DEFAULT_INSTANCE;
+  private static final com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata();
   }
@@ -1100,16 +1233,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateTableFromSnapshotMetadata>
-      PARSER = new com.google.protobuf.AbstractParser<CreateTableFromSnapshotMetadata>() {
-    @java.lang.Override
-    public CreateTableFromSnapshotMetadata parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateTableFromSnapshotMetadata(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateTableFromSnapshotMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<CreateTableFromSnapshotMetadata>() {
+        @java.lang.Override
+        public CreateTableFromSnapshotMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateTableFromSnapshotMetadata(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateTableFromSnapshotMetadata> parser() {
     return PARSER;
@@ -1124,6 +1257,4 @@ private static final long serialVersionUID = 0L;
   public com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ErrorGroupStatsOrBuilder extends
+public interface ErrorGroupStatsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Group data that is independent of the filter criteria.
    * </pre>
@@ -16,6 +19,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   boolean hasGroup();
   /**
+   *
+   *
    * <pre>
    * Group data that is independent of the filter criteria.
    * </pre>
@@ -24,6 +29,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup();
   /**
+   *
+   *
    * <pre>
    * Group data that is independent of the filter criteria.
    * </pre>
@@ -33,6 +40,8 @@ public interface ErrorGroupStatsOrBuilder extends
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder getGroupOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Approximate total number of events in the given group that match
    * the filter criteria.
@@ -43,6 +52,8 @@ public interface ErrorGroupStatsOrBuilder extends
   long getCount();
 
   /**
+   *
+   *
    * <pre>
    * Approximate number of affected users in the given group that
    * match the filter criteria.
@@ -63,6 +74,8 @@ public interface ErrorGroupStatsOrBuilder extends
   long getAffectedUsersCount();
 
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -73,9 +86,10 @@ public interface ErrorGroupStatsOrBuilder extends
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
-  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> 
-      getTimedCountsList();
+  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> getTimedCountsList();
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -88,6 +102,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.TimedCount getTimedCounts(int index);
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -100,6 +116,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   int getTimedCountsCount();
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -110,9 +128,11 @@ public interface ErrorGroupStatsOrBuilder extends
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
-  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder> 
+  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>
       getTimedCountsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -127,6 +147,8 @@ public interface ErrorGroupStatsOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Approximate first occurrence that was ever seen for this group
    * and which matches the given filter criteria, ignoring the
@@ -137,6 +159,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   boolean hasFirstSeenTime();
   /**
+   *
+   *
    * <pre>
    * Approximate first occurrence that was ever seen for this group
    * and which matches the given filter criteria, ignoring the
@@ -147,6 +171,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   com.google.protobuf.Timestamp getFirstSeenTime();
   /**
+   *
+   *
    * <pre>
    * Approximate first occurrence that was ever seen for this group
    * and which matches the given filter criteria, ignoring the
@@ -158,6 +184,8 @@ public interface ErrorGroupStatsOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getFirstSeenTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Approximate last occurrence that was ever seen for this group and
    * which matches the given filter criteria, ignoring the time_range
@@ -168,6 +196,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   boolean hasLastSeenTime();
   /**
+   *
+   *
    * <pre>
    * Approximate last occurrence that was ever seen for this group and
    * which matches the given filter criteria, ignoring the time_range
@@ -178,6 +208,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastSeenTime();
   /**
+   *
+   *
    * <pre>
    * Approximate last occurrence that was ever seen for this group and
    * which matches the given filter criteria, ignoring the time_range
@@ -189,60 +221,82 @@ public interface ErrorGroupStatsOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastSeenTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
-  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext> 
+  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
       getAffectedServicesList();
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getAffectedServices(int index);
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
   int getAffectedServicesCount();
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
-  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder> 
+  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
       getAffectedServicesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
-  com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder getAffectedServicesOrBuilder(
-      int index);
+  com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder
+      getAffectedServicesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The total number of services with a non-zero error count for the given
    * filter criteria.
@@ -253,6 +307,8 @@ public interface ErrorGroupStatsOrBuilder extends
   int getNumAffectedServices();
 
   /**
+   *
+   *
    * <pre>
    * An arbitrary event that is chosen as representative for the whole group.
    * The representative event is intended to be used as a quick preview for
@@ -265,6 +321,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   boolean hasRepresentative();
   /**
+   *
+   *
    * <pre>
    * An arbitrary event that is chosen as representative for the whole group.
    * The representative event is intended to be used as a quick preview for
@@ -277,6 +335,8 @@ public interface ErrorGroupStatsOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getRepresentative();
   /**
+   *
+   *
    * <pre>
    * An arbitrary event that is chosen as representative for the whole group.
    * The representative event is intended to be used as a quick preview for

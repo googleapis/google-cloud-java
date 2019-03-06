@@ -19,7 +19,6 @@ package com.google.cloud.logging.it;
 import com.google.cloud.logging.BaseSystemTest;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.testing.RemoteLoggingHelper;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -27,8 +26,7 @@ import org.junit.rules.Timeout;
 
 public class ITLoggingTest extends BaseSystemTest {
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   private static Logging logging;
 

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface QuasiIdOrBuilder extends
+public interface QuasiIdOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.QuasiId)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Identifies the column. [required]
    * </pre>
@@ -16,6 +19,8 @@ public interface QuasiIdOrBuilder extends
    */
   boolean hasField();
   /**
+   *
+   *
    * <pre>
    * Identifies the column. [required]
    * </pre>
@@ -24,6 +29,8 @@ public interface QuasiIdOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getField();
   /**
+   *
+   *
    * <pre>
    * Identifies the column. [required]
    * </pre>
@@ -33,6 +40,8 @@ public interface QuasiIdOrBuilder extends
   com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a InfoType to use the relevant public
    * dataset as a statistical model of population, if available. We
@@ -45,6 +54,8 @@ public interface QuasiIdOrBuilder extends
    */
   boolean hasInfoType();
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a InfoType to use the relevant public
    * dataset as a statistical model of population, if available. We
@@ -57,6 +68,8 @@ public interface QuasiIdOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a InfoType to use the relevant public
    * dataset as a statistical model of population, if available. We
@@ -70,6 +83,8 @@ public interface QuasiIdOrBuilder extends
   com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a custom tag. In this case, the user must
    * indicate an auxiliary table that contains statistical information on
@@ -80,6 +95,8 @@ public interface QuasiIdOrBuilder extends
    */
   java.lang.String getCustomTag();
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a custom tag. In this case, the user must
    * indicate an auxiliary table that contains statistical information on
@@ -88,10 +105,11 @@ public interface QuasiIdOrBuilder extends
    *
    * <code>string custom_tag = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getCustomTagBytes();
+  com.google.protobuf.ByteString getCustomTagBytes();
 
   /**
+   *
+   *
    * <pre>
    * If no semantic tag is indicated, we infer the statistical model from
    * the distribution of values in the input data
@@ -101,6 +119,8 @@ public interface QuasiIdOrBuilder extends
    */
   boolean hasInferred();
   /**
+   *
+   *
    * <pre>
    * If no semantic tag is indicated, we infer the statistical model from
    * the distribution of values in the input data
@@ -110,6 +130,8 @@ public interface QuasiIdOrBuilder extends
    */
   com.google.protobuf.Empty getInferred();
   /**
+   *
+   *
    * <pre>
    * If no semantic tag is indicated, we infer the statistical model from
    * the distribution of values in the input data

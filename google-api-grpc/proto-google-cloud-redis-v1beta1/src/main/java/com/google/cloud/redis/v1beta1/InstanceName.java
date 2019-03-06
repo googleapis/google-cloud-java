@@ -14,20 +14,21 @@
 
 package com.google.cloud.redis.v1beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class InstanceName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/instances/{instance}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/instances/{instance}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class InstanceName implements ResourceName {
   }
 
   public static InstanceName of(String project, String location, String instance) {
-    return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setInstance(instance)
-      .build();
+    return newBuilder().setProject(project).setLocation(location).setInstance(instance).build();
   }
 
   public static String format(String project, String location, String instance) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setInstance(instance)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setInstance(instance)
+        .build()
+        .toString();
   }
 
   public static InstanceName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class InstanceName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "InstanceName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "InstanceName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("instance"));
   }
 
@@ -132,7 +130,8 @@ public class InstanceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "instance", instance);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "instance", instance);
   }
 
   /** Builder for InstanceName. */
@@ -169,8 +168,7 @@ public class InstanceName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(InstanceName instanceName) {
       project = instanceName.project;
@@ -209,4 +207,3 @@ public class InstanceName implements ResourceName {
     return h;
   }
 }
-

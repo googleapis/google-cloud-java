@@ -4,30 +4,33 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * The transformation to apply to the field.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.FieldTransformation}
  */
-public  final class FieldTransformation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class FieldTransformation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FieldTransformation)
     FieldTransformationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use FieldTransformation.newBuilder() to construct.
   private FieldTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private FieldTransformation() {
     fields_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private FieldTransformation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,70 +50,85 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              fields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                fields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fields_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
+              break;
             }
-            fields_.add(
-                input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.RecordCondition.Builder subBuilder = null;
-            if (condition_ != null) {
-              subBuilder = condition_.toBuilder();
-            }
-            condition_ = input.readMessage(com.google.privacy.dlp.v2.RecordCondition.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(condition_);
-              condition_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.privacy.dlp.v2.RecordCondition.Builder subBuilder = null;
+              if (condition_ != null) {
+                subBuilder = condition_.toBuilder();
+              }
+              condition_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.RecordCondition.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(condition_);
+                condition_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.privacy.dlp.v2.PrimitiveTransformation.Builder subBuilder = null;
-            if (transformationCase_ == 4) {
-              subBuilder = ((com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_).toBuilder();
+              break;
             }
-            transformation_ =
-                input.readMessage(com.google.privacy.dlp.v2.PrimitiveTransformation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_);
-              transformation_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.privacy.dlp.v2.PrimitiveTransformation.Builder subBuilder = null;
+              if (transformationCase_ == 4) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_)
+                        .toBuilder();
+              }
+              transformation_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.PrimitiveTransformation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_);
+                transformation_ = subBuilder.buildPartial();
+              }
+              transformationCase_ = 4;
+              break;
             }
-            transformationCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.privacy.dlp.v2.InfoTypeTransformations.Builder subBuilder = null;
-            if (transformationCase_ == 5) {
-              subBuilder = ((com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_).toBuilder();
+          case 42:
+            {
+              com.google.privacy.dlp.v2.InfoTypeTransformations.Builder subBuilder = null;
+              if (transformationCase_ == 5) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_)
+                        .toBuilder();
+              }
+              transformation_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InfoTypeTransformations.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_);
+                transformation_ = subBuilder.buildPartial();
+              }
+              transformationCase_ = 5;
+              break;
             }
-            transformation_ =
-                input.readMessage(com.google.privacy.dlp.v2.InfoTypeTransformations.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_);
-              transformation_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            transformationCase_ = 5;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         fields_ = java.util.Collections.unmodifiableList(fields_);
@@ -119,34 +137,36 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_FieldTransformation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_FieldTransformation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_FieldTransformation_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_FieldTransformation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.FieldTransformation.class, com.google.privacy.dlp.v2.FieldTransformation.Builder.class);
+            com.google.privacy.dlp.v2.FieldTransformation.class,
+            com.google.privacy.dlp.v2.FieldTransformation.Builder.class);
   }
 
   private int bitField0_;
   private int transformationCase_ = 0;
   private java.lang.Object transformation_;
-  public enum TransformationCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TransformationCase implements com.google.protobuf.Internal.EnumLite {
     PRIMITIVE_TRANSFORMATION(4),
     INFO_TYPE_TRANSFORMATIONS(5),
     TRANSFORMATION_NOT_SET(0);
     private final int value;
+
     private TransformationCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TransformationCase valueOf(int value) {
       return forNumber(value);
@@ -154,26 +174,31 @@ private static final long serialVersionUID = 0L;
 
     public static TransformationCase forNumber(int value) {
       switch (value) {
-        case 4: return PRIMITIVE_TRANSFORMATION;
-        case 5: return INFO_TYPE_TRANSFORMATIONS;
-        case 0: return TRANSFORMATION_NOT_SET;
-        default: return null;
+        case 4:
+          return PRIMITIVE_TRANSFORMATION;
+        case 5:
+          return INFO_TYPE_TRANSFORMATIONS;
+        case 0:
+          return TRANSFORMATION_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TransformationCase
-  getTransformationCase() {
-    return TransformationCase.forNumber(
-        transformationCase_);
+  public TransformationCase getTransformationCase() {
+    return TransformationCase.forNumber(transformationCase_);
   }
 
   public static final int FIELDS_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.FieldId> fields_;
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
@@ -184,17 +209,21 @@ private static final long serialVersionUID = 0L;
     return fields_;
   }
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getFieldsOrBuilderList() {
     return fields_;
   }
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
@@ -205,6 +234,8 @@ private static final long serialVersionUID = 0L;
     return fields_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
@@ -215,20 +246,23 @@ private static final long serialVersionUID = 0L;
     return fields_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
    */
-  public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(int index) {
     return fields_.get(index);
   }
 
   public static final int CONDITION_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.RecordCondition condition_;
   /**
+   *
+   *
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
@@ -245,6 +279,8 @@ private static final long serialVersionUID = 0L;
     return condition_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
@@ -258,9 +294,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
    */
   public com.google.privacy.dlp.v2.RecordCondition getCondition() {
-    return condition_ == null ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance() : condition_;
+    return condition_ == null
+        ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
+        : condition_;
   }
   /**
+   *
+   *
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
@@ -279,6 +319,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int PRIMITIVE_TRANSFORMATION_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * Apply the transformation to the entire field.
    * </pre>
@@ -289,6 +331,8 @@ private static final long serialVersionUID = 0L;
     return transformationCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * Apply the transformation to the entire field.
    * </pre>
@@ -297,26 +341,31 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation() {
     if (transformationCase_ == 4) {
-       return (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_;
+      return (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_;
     }
     return com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Apply the transformation to the entire field.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
    */
-  public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder() {
+  public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
+      getPrimitiveTransformationOrBuilder() {
     if (transformationCase_ == 4) {
-       return (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_;
+      return (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_;
     }
     return com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance();
   }
 
   public static final int INFO_TYPE_TRANSFORMATIONS_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * Treat the contents of the field as free text, and selectively
    * transform content that matches an `InfoType`.
@@ -328,6 +377,8 @@ private static final long serialVersionUID = 0L;
     return transformationCase_ == 5;
   }
   /**
+   *
+   *
    * <pre>
    * Treat the contents of the field as free text, and selectively
    * transform content that matches an `InfoType`.
@@ -337,11 +388,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations() {
     if (transformationCase_ == 5) {
-       return (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_;
+      return (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_;
     }
     return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Treat the contents of the field as free text, and selectively
    * transform content that matches an `InfoType`.
@@ -349,14 +402,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
    */
-  public com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder getInfoTypeTransformationsOrBuilder() {
+  public com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder
+      getInfoTypeTransformationsOrBuilder() {
     if (transformationCase_ == 5) {
-       return (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_;
+      return (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_;
     }
     return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -368,8 +423,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < fields_.size(); i++) {
       output.writeMessage(1, fields_.get(i));
     }
@@ -392,20 +446,20 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < fields_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, fields_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, fields_.get(i));
     }
     if (condition_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getCondition());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCondition());
     }
     if (transformationCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_);
     }
     if (transformationCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -415,32 +469,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.FieldTransformation)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.FieldTransformation other = (com.google.privacy.dlp.v2.FieldTransformation) obj;
+    com.google.privacy.dlp.v2.FieldTransformation other =
+        (com.google.privacy.dlp.v2.FieldTransformation) obj;
 
     boolean result = true;
-    result = result && getFieldsList()
-        .equals(other.getFieldsList());
+    result = result && getFieldsList().equals(other.getFieldsList());
     result = result && (hasCondition() == other.hasCondition());
     if (hasCondition()) {
-      result = result && getCondition()
-          .equals(other.getCondition());
+      result = result && getCondition().equals(other.getCondition());
     }
-    result = result && getTransformationCase().equals(
-        other.getTransformationCase());
+    result = result && getTransformationCase().equals(other.getTransformationCase());
     if (!result) return false;
     switch (transformationCase_) {
       case 4:
-        result = result && getPrimitiveTransformation()
-            .equals(other.getPrimitiveTransformation());
+        result = result && getPrimitiveTransformation().equals(other.getPrimitiveTransformation());
         break;
       case 5:
-        result = result && getInfoTypeTransformations()
-            .equals(other.getInfoTypeTransformations());
+        result = result && getInfoTypeTransformations().equals(other.getInfoTypeTransformations());
         break;
       case 0:
       default:
@@ -481,118 +531,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.FieldTransformation parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.FieldTransformation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.FieldTransformation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.FieldTransformation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The transformation to apply to the field.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.FieldTransformation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.FieldTransformation)
       com.google.privacy.dlp.v2.FieldTransformationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_FieldTransformation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_FieldTransformation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_FieldTransformation_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_FieldTransformation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.FieldTransformation.class, com.google.privacy.dlp.v2.FieldTransformation.Builder.class);
+              com.google.privacy.dlp.v2.FieldTransformation.class,
+              com.google.privacy.dlp.v2.FieldTransformation.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.FieldTransformation.newBuilder()
@@ -600,17 +659,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFieldsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -632,9 +691,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_FieldTransformation_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_FieldTransformation_descriptor;
     }
 
     @java.lang.Override
@@ -653,7 +712,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.FieldTransformation buildPartial() {
-      com.google.privacy.dlp.v2.FieldTransformation result = new com.google.privacy.dlp.v2.FieldTransformation(this);
+      com.google.privacy.dlp.v2.FieldTransformation result =
+          new com.google.privacy.dlp.v2.FieldTransformation(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (fieldsBuilder_ == null) {
@@ -694,38 +754,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.FieldTransformation) {
-        return mergeFrom((com.google.privacy.dlp.v2.FieldTransformation)other);
+        return mergeFrom((com.google.privacy.dlp.v2.FieldTransformation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -752,9 +813,10 @@ private static final long serialVersionUID = 0L;
             fieldsBuilder_ = null;
             fields_ = other.fields_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            fieldsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFieldsFieldBuilder() : null;
+            fieldsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFieldsFieldBuilder()
+                    : null;
           } else {
             fieldsBuilder_.addAllMessages(other.fields_);
           }
@@ -764,17 +826,20 @@ private static final long serialVersionUID = 0L;
         mergeCondition(other.getCondition());
       }
       switch (other.getTransformationCase()) {
-        case PRIMITIVE_TRANSFORMATION: {
-          mergePrimitiveTransformation(other.getPrimitiveTransformation());
-          break;
-        }
-        case INFO_TYPE_TRANSFORMATIONS: {
-          mergeInfoTypeTransformations(other.getInfoTypeTransformations());
-          break;
-        }
-        case TRANSFORMATION_NOT_SET: {
-          break;
-        }
+        case PRIMITIVE_TRANSFORMATION:
+          {
+            mergePrimitiveTransformation(other.getPrimitiveTransformation());
+            break;
+          }
+        case INFO_TYPE_TRANSFORMATIONS:
+          {
+            mergeInfoTypeTransformations(other.getInfoTypeTransformations());
+            break;
+          }
+        case TRANSFORMATION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -804,12 +869,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int transformationCase_ = 0;
     private java.lang.Object transformation_;
-    public TransformationCase
-        getTransformationCase() {
-      return TransformationCase.forNumber(
-          transformationCase_);
+
+    public TransformationCase getTransformationCase() {
+      return TransformationCase.forNumber(transformationCase_);
     }
 
     public Builder clearTransformation() {
@@ -822,18 +887,24 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     private java.util.List<com.google.privacy.dlp.v2.FieldId> fields_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFieldsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         fields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>(fields_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldsBuilder_;
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
+        fieldsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -848,6 +919,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -862,6 +935,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -876,14 +951,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public Builder setFields(
-        int index, com.google.privacy.dlp.v2.FieldId value) {
+    public Builder setFields(int index, com.google.privacy.dlp.v2.FieldId value) {
       if (fieldsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -897,14 +973,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public Builder setFields(
-        int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+    public Builder setFields(int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldsBuilder_ == null) {
         ensureFieldsIsMutable();
         fields_.set(index, builderForValue.build());
@@ -915,6 +992,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -935,14 +1014,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public Builder addFields(
-        int index, com.google.privacy.dlp.v2.FieldId value) {
+    public Builder addFields(int index, com.google.privacy.dlp.v2.FieldId value) {
       if (fieldsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -956,14 +1036,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public Builder addFields(
-        com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+    public Builder addFields(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldsBuilder_ == null) {
         ensureFieldsIsMutable();
         fields_.add(builderForValue.build());
@@ -974,14 +1055,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public Builder addFields(
-        int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+    public Builder addFields(int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldsBuilder_ == null) {
         ensureFieldsIsMutable();
         fields_.add(index, builderForValue.build());
@@ -992,6 +1074,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -1002,8 +1086,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
       if (fieldsBuilder_ == null) {
         ensureFieldsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fields_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fields_);
         onChanged();
       } else {
         fieldsBuilder_.addAllMessages(values);
@@ -1011,6 +1094,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -1028,6 +1113,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -1045,39 +1132,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public com.google.privacy.dlp.v2.FieldId.Builder getFieldsBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.FieldId.Builder getFieldsBuilder(int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(int index) {
       if (fieldsBuilder_ == null) {
-        return fields_.get(index);  } else {
+        return fields_.get(index);
+      } else {
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
-         getFieldsOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
+        getFieldsOrBuilderList() {
       if (fieldsBuilder_ != null) {
         return fieldsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1085,6 +1177,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
@@ -1092,38 +1186,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder addFieldsBuilder() {
-      return getFieldsFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+      return getFieldsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public com.google.privacy.dlp.v2.FieldId.Builder addFieldsBuilder(
-        int index) {
-      return getFieldsFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+    public com.google.privacy.dlp.v2.FieldId.Builder addFieldsBuilder(int index) {
+      return getFieldsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Input field(s) to apply the transformation to. [required]
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> 
-         getFieldsBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> getFieldsBuilderList() {
       return getFieldsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getFieldsFieldBuilder() {
       if (fieldsBuilder_ == null) {
-        fieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+        fieldsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>(
                 fields_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1135,8 +1237,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.RecordCondition condition_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.RecordCondition, com.google.privacy.dlp.v2.RecordCondition.Builder, com.google.privacy.dlp.v2.RecordConditionOrBuilder> conditionBuilder_;
+            com.google.privacy.dlp.v2.RecordCondition,
+            com.google.privacy.dlp.v2.RecordCondition.Builder,
+            com.google.privacy.dlp.v2.RecordConditionOrBuilder>
+        conditionBuilder_;
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1153,6 +1260,8 @@ private static final long serialVersionUID = 0L;
       return conditionBuilder_ != null || condition_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1167,12 +1276,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.RecordCondition getCondition() {
       if (conditionBuilder_ == null) {
-        return condition_ == null ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance() : condition_;
+        return condition_ == null
+            ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
+            : condition_;
       } else {
         return conditionBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1199,6 +1312,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1211,8 +1326,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
      */
-    public Builder setCondition(
-        com.google.privacy.dlp.v2.RecordCondition.Builder builderForValue) {
+    public Builder setCondition(com.google.privacy.dlp.v2.RecordCondition.Builder builderForValue) {
       if (conditionBuilder_ == null) {
         condition_ = builderForValue.build();
         onChanged();
@@ -1223,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1239,7 +1355,9 @@ private static final long serialVersionUID = 0L;
       if (conditionBuilder_ == null) {
         if (condition_ != null) {
           condition_ =
-            com.google.privacy.dlp.v2.RecordCondition.newBuilder(condition_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.RecordCondition.newBuilder(condition_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           condition_ = value;
         }
@@ -1251,6 +1369,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1275,6 +1395,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1288,11 +1410,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
      */
     public com.google.privacy.dlp.v2.RecordCondition.Builder getConditionBuilder() {
-      
+
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1309,11 +1433,14 @@ private static final long serialVersionUID = 0L;
       if (conditionBuilder_ != null) {
         return conditionBuilder_.getMessageOrBuilder();
       } else {
-        return condition_ == null ?
-            com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance() : condition_;
+        return condition_ == null
+            ? com.google.privacy.dlp.v2.RecordCondition.getDefaultInstance()
+            : condition_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
@@ -1327,22 +1454,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.RecordCondition condition = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.RecordCondition, com.google.privacy.dlp.v2.RecordCondition.Builder, com.google.privacy.dlp.v2.RecordConditionOrBuilder> 
+            com.google.privacy.dlp.v2.RecordCondition,
+            com.google.privacy.dlp.v2.RecordCondition.Builder,
+            com.google.privacy.dlp.v2.RecordConditionOrBuilder>
         getConditionFieldBuilder() {
       if (conditionBuilder_ == null) {
-        conditionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.RecordCondition, com.google.privacy.dlp.v2.RecordCondition.Builder, com.google.privacy.dlp.v2.RecordConditionOrBuilder>(
-                getCondition(),
-                getParentForChildren(),
-                isClean());
+        conditionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.RecordCondition,
+                com.google.privacy.dlp.v2.RecordCondition.Builder,
+                com.google.privacy.dlp.v2.RecordConditionOrBuilder>(
+                getCondition(), getParentForChildren(), isClean());
         condition_ = null;
       }
       return conditionBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder> primitiveTransformationBuilder_;
+            com.google.privacy.dlp.v2.PrimitiveTransformation,
+            com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
+            com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>
+        primitiveTransformationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
@@ -1353,6 +1488,8 @@ private static final long serialVersionUID = 0L;
       return transformationCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
@@ -1373,13 +1510,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
      */
-    public Builder setPrimitiveTransformation(com.google.privacy.dlp.v2.PrimitiveTransformation value) {
+    public Builder setPrimitiveTransformation(
+        com.google.privacy.dlp.v2.PrimitiveTransformation value) {
       if (primitiveTransformationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1393,6 +1533,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
@@ -1411,18 +1553,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
      */
-    public Builder mergePrimitiveTransformation(com.google.privacy.dlp.v2.PrimitiveTransformation value) {
+    public Builder mergePrimitiveTransformation(
+        com.google.privacy.dlp.v2.PrimitiveTransformation value) {
       if (primitiveTransformationBuilder_ == null) {
-        if (transformationCase_ == 4 &&
-            transformation_ != com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()) {
-          transformation_ = com.google.privacy.dlp.v2.PrimitiveTransformation.newBuilder((com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_)
-              .mergeFrom(value).buildPartial();
+        if (transformationCase_ == 4
+            && transformation_
+                != com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance()) {
+          transformation_ =
+              com.google.privacy.dlp.v2.PrimitiveTransformation.newBuilder(
+                      (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           transformation_ = value;
         }
@@ -1437,6 +1586,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
@@ -1460,23 +1611,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
      */
-    public com.google.privacy.dlp.v2.PrimitiveTransformation.Builder getPrimitiveTransformationBuilder() {
+    public com.google.privacy.dlp.v2.PrimitiveTransformation.Builder
+        getPrimitiveTransformationBuilder() {
       return getPrimitiveTransformationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
      */
-    public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder() {
+    public com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder
+        getPrimitiveTransformationOrBuilder() {
       if ((transformationCase_ == 4) && (primitiveTransformationBuilder_ != null)) {
         return primitiveTransformationBuilder_.getMessageOrBuilder();
       } else {
@@ -1487,6 +1644,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Apply the transformation to the entire field.
      * </pre>
@@ -1494,27 +1653,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.PrimitiveTransformation primitive_transformation = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder> 
+            com.google.privacy.dlp.v2.PrimitiveTransformation,
+            com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
+            com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>
         getPrimitiveTransformationFieldBuilder() {
       if (primitiveTransformationBuilder_ == null) {
         if (!(transformationCase_ == 4)) {
           transformation_ = com.google.privacy.dlp.v2.PrimitiveTransformation.getDefaultInstance();
         }
-        primitiveTransformationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrimitiveTransformation, com.google.privacy.dlp.v2.PrimitiveTransformation.Builder, com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>(
+        primitiveTransformationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.PrimitiveTransformation,
+                com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
+                com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder>(
                 (com.google.privacy.dlp.v2.PrimitiveTransformation) transformation_,
                 getParentForChildren(),
                 isClean());
         transformation_ = null;
       }
       transformationCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return primitiveTransformationBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoTypeTransformations, com.google.privacy.dlp.v2.InfoTypeTransformations.Builder, com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder> infoTypeTransformationsBuilder_;
+            com.google.privacy.dlp.v2.InfoTypeTransformations,
+            com.google.privacy.dlp.v2.InfoTypeTransformations.Builder,
+            com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder>
+        infoTypeTransformationsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1526,6 +1696,8 @@ private static final long serialVersionUID = 0L;
       return transformationCase_ == 5;
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1547,6 +1719,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1554,7 +1728,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
      */
-    public Builder setInfoTypeTransformations(com.google.privacy.dlp.v2.InfoTypeTransformations value) {
+    public Builder setInfoTypeTransformations(
+        com.google.privacy.dlp.v2.InfoTypeTransformations value) {
       if (infoTypeTransformationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1568,6 +1743,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1587,6 +1764,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1594,12 +1773,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
      */
-    public Builder mergeInfoTypeTransformations(com.google.privacy.dlp.v2.InfoTypeTransformations value) {
+    public Builder mergeInfoTypeTransformations(
+        com.google.privacy.dlp.v2.InfoTypeTransformations value) {
       if (infoTypeTransformationsBuilder_ == null) {
-        if (transformationCase_ == 5 &&
-            transformation_ != com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance()) {
-          transformation_ = com.google.privacy.dlp.v2.InfoTypeTransformations.newBuilder((com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_)
-              .mergeFrom(value).buildPartial();
+        if (transformationCase_ == 5
+            && transformation_
+                != com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance()) {
+          transformation_ =
+              com.google.privacy.dlp.v2.InfoTypeTransformations.newBuilder(
+                      (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           transformation_ = value;
         }
@@ -1614,6 +1798,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1638,6 +1824,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1645,10 +1833,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeTransformations.Builder getInfoTypeTransformationsBuilder() {
+    public com.google.privacy.dlp.v2.InfoTypeTransformations.Builder
+        getInfoTypeTransformationsBuilder() {
       return getInfoTypeTransformationsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1656,7 +1847,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder getInfoTypeTransformationsOrBuilder() {
+    public com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder
+        getInfoTypeTransformationsOrBuilder() {
       if ((transformationCase_ == 5) && (infoTypeTransformationsBuilder_ != null)) {
         return infoTypeTransformationsBuilder_.getMessageOrBuilder();
       } else {
@@ -1667,6 +1859,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Treat the contents of the field as free text, and selectively
      * transform content that matches an `InfoType`.
@@ -1675,26 +1869,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InfoTypeTransformations info_type_transformations = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoTypeTransformations, com.google.privacy.dlp.v2.InfoTypeTransformations.Builder, com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder> 
+            com.google.privacy.dlp.v2.InfoTypeTransformations,
+            com.google.privacy.dlp.v2.InfoTypeTransformations.Builder,
+            com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder>
         getInfoTypeTransformationsFieldBuilder() {
       if (infoTypeTransformationsBuilder_ == null) {
         if (!(transformationCase_ == 5)) {
           transformation_ = com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
         }
-        infoTypeTransformationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoTypeTransformations, com.google.privacy.dlp.v2.InfoTypeTransformations.Builder, com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder>(
+        infoTypeTransformationsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InfoTypeTransformations,
+                com.google.privacy.dlp.v2.InfoTypeTransformations.Builder,
+                com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder>(
                 (com.google.privacy.dlp.v2.InfoTypeTransformations) transformation_,
                 getParentForChildren(),
                 isClean());
         transformation_ = null;
       }
       transformationCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return infoTypeTransformationsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1704,12 +1904,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.FieldTransformation)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.FieldTransformation)
   private static final com.google.privacy.dlp.v2.FieldTransformation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.FieldTransformation();
   }
@@ -1718,16 +1918,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FieldTransformation>
-      PARSER = new com.google.protobuf.AbstractParser<FieldTransformation>() {
-    @java.lang.Override
-    public FieldTransformation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FieldTransformation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<FieldTransformation> PARSER =
+      new com.google.protobuf.AbstractParser<FieldTransformation>() {
+        @java.lang.Override
+        public FieldTransformation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new FieldTransformation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<FieldTransformation> parser() {
     return PARSER;
@@ -1742,6 +1942,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.FieldTransformation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

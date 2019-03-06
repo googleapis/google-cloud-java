@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface PartitionIdOrBuilder extends
+public interface PartitionIdOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PartitionId)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project to which the entities belong.
    * </pre>
@@ -16,16 +19,19 @@ public interface PartitionIdOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project to which the entities belong.
    * </pre>
    *
    * <code>string project_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * If not empty, the ID of the namespace to which the entities belong.
    * </pre>
@@ -34,12 +40,13 @@ public interface PartitionIdOrBuilder extends
    */
   java.lang.String getNamespaceId();
   /**
+   *
+   *
    * <pre>
    * If not empty, the ID of the namespace to which the entities belong.
    * </pre>
    *
    * <code>string namespace_id = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getNamespaceIdBytes();
+  com.google.protobuf.ByteString getNamespaceIdBytes();
 }

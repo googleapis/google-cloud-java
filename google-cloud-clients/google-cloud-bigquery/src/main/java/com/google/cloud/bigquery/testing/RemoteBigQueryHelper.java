@@ -31,15 +31,12 @@ import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote BigQuery configuration for testing. BigQuery options can be obtained
- * via the {@link #getOptions()} method. Returned options have custom
- * {@link BigQueryOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is
- * {@code 10},
- * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
- * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
- * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link HttpTransportOptions#getConnectTimeout()} and
- * {@link HttpTransportOptions#getReadTimeout()} are both
- * set to {@code 60000}.
+ * via the {@link #getOptions()} method. Returned options have custom {@link
+ * BigQueryOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is {@code 10}, {@link
+ * RetrySettings#getMaxRetryDelay()} is {@code 30000}, {@link RetrySettings#getTotalTimeout()} is
+ * {@code 120000} and {@link RetrySettings#getInitialRetryDelay()} is {@code 250}. {@link
+ * HttpTransportOptions#getConnectTimeout()} and {@link HttpTransportOptions#getReadTimeout()} are
+ * both set to {@code 60000}.
  */
 public class RemoteBigQueryHelper {
 
@@ -52,10 +49,7 @@ public class RemoteBigQueryHelper {
     this.options = options;
   }
 
-
-  /**
-   * Returns a {@link BigQueryOptions} object to be used for testing.
-   */
+  /** Returns a {@link BigQueryOptions} object to be used for testing. */
   public BigQueryOptions getOptions() {
     return options;
   }
@@ -72,9 +66,7 @@ public class RemoteBigQueryHelper {
     return bigquery.delete(dataset, BigQuery.DatasetDeleteOption.deleteContents());
   }
 
-  /**
-   * Returns a dataset name generated using a random UUID.
-   */
+  /** Returns a dataset name generated using a random UUID. */
   public static String generateDatasetName() {
     return DATASET_NAME_PREFIX + UUID.randomUUID().toString().replace('-', '_');
   }
@@ -92,14 +84,19 @@ public class RemoteBigQueryHelper {
       throws BigQueryHelperException {
     try {
       HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
-      transportOptions = transportOptions.toBuilder().setConnectTimeout(connectTimeout).setReadTimeout(connectTimeout)
-          .build();
-      BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
-          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
-          .setProjectId(projectId)
-          .setRetrySettings(retrySettings())
-          .setTransportOptions(transportOptions)
-          .build();
+      transportOptions =
+          transportOptions
+              .toBuilder()
+              .setConnectTimeout(connectTimeout)
+              .setReadTimeout(connectTimeout)
+              .build();
+      BigQueryOptions bigqueryOptions =
+          BigQueryOptions.newBuilder()
+              .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
+              .setProjectId(projectId)
+              .setRetrySettings(retrySettings())
+              .setTransportOptions(transportOptions)
+              .build();
       return new RemoteBigQueryHelper(bigqueryOptions);
     } catch (IOException ex) {
       if (log.isLoggable(Level.WARNING)) {
@@ -115,12 +112,17 @@ public class RemoteBigQueryHelper {
    */
   public static RemoteBigQueryHelper create() {
     HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
-    transportOptions = transportOptions.toBuilder().setConnectTimeout(connectTimeout).setReadTimeout(connectTimeout)
-        .build();
-    BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
-        .setRetrySettings(retrySettings())
-        .setTransportOptions(transportOptions)
-        .build();
+    transportOptions =
+        transportOptions
+            .toBuilder()
+            .setConnectTimeout(connectTimeout)
+            .setReadTimeout(connectTimeout)
+            .build();
+    BigQueryOptions bigqueryOptions =
+        BigQueryOptions.newBuilder()
+            .setRetrySettings(retrySettings())
+            .setTransportOptions(transportOptions)
+            .build();
     return new RemoteBigQueryHelper(bigqueryOptions);
   }
 
@@ -130,7 +132,8 @@ public class RemoteBigQueryHelper {
     long initialRetryDelay = 250L;
     long maxRetryDelay = 30000L;
     long totalTimeOut = 120000L;
-    return RetrySettings.newBuilder().setMaxAttempts(maxAttempts)
+    return RetrySettings.newBuilder()
+        .setMaxAttempts(maxAttempts)
         .setMaxRetryDelay(Duration.ofMillis(maxRetryDelay))
         .setTotalTimeout(Duration.ofMillis(totalTimeOut))
         .setInitialRetryDelay(Duration.ofMillis(initialRetryDelay))

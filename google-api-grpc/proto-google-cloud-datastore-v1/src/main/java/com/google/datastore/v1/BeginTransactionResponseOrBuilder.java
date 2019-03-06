@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface BeginTransactionResponseOrBuilder extends
+public interface BeginTransactionResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.BeginTransactionResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The transaction identifier (always present).
    * </pre>

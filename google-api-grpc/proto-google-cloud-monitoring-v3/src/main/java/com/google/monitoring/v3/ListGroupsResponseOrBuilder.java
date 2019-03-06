@@ -3,20 +3,24 @@
 
 package com.google.monitoring.v3;
 
-public interface ListGroupsResponseOrBuilder extends
+public interface ListGroupsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListGroupsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The groups that match the specified filters.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
-  java.util.List<com.google.monitoring.v3.Group> 
-      getGroupList();
+  java.util.List<com.google.monitoring.v3.Group> getGroupList();
   /**
+   *
+   *
    * <pre>
    * The groups that match the specified filters.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListGroupsResponseOrBuilder extends
    */
   com.google.monitoring.v3.Group getGroup(int index);
   /**
+   *
+   *
    * <pre>
    * The groups that match the specified filters.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListGroupsResponseOrBuilder extends
    */
   int getGroupCount();
   /**
+   *
+   *
    * <pre>
    * The groups that match the specified filters.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.GroupOrBuilder> 
-      getGroupOrBuilderList();
+  java.util.List<? extends com.google.monitoring.v3.GroupOrBuilder> getGroupOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The groups that match the specified filters.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
-  com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder(
-      int index);
+  com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -62,6 +72,8 @@ public interface ListGroupsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -70,6 +82,5 @@ public interface ListGroupsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

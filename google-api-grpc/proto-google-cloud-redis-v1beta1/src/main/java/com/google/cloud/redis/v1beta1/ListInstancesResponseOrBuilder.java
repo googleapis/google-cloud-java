@@ -3,11 +3,14 @@
 
 package com.google.cloud.redis.v1beta1;
 
-public interface ListInstancesResponseOrBuilder extends
+public interface ListInstancesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1beta1.ListInstancesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -22,9 +25,10 @@ public interface ListInstancesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
    */
-  java.util.List<com.google.cloud.redis.v1beta1.Instance> 
-      getInstancesList();
+  java.util.List<com.google.cloud.redis.v1beta1.Instance> getInstancesList();
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -41,6 +45,8 @@ public interface ListInstancesResponseOrBuilder extends
    */
   com.google.cloud.redis.v1beta1.Instance getInstances(int index);
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -57,6 +63,8 @@ public interface ListInstancesResponseOrBuilder extends
    */
   int getInstancesCount();
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -71,9 +79,11 @@ public interface ListInstancesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.redis.v1beta1.InstanceOrBuilder> 
+  java.util.List<? extends com.google.cloud.redis.v1beta1.InstanceOrBuilder>
       getInstancesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -88,10 +98,11 @@ public interface ListInstancesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
    */
-  com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstancesOrBuilder(
-      int index);
+  com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstancesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
@@ -101,6 +112,8 @@ public interface ListInstancesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
@@ -108,6 +121,5 @@ public interface ListInstancesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

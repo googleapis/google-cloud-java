@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** CPU utilization policy. */
 public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
   private final Double utilizationTarget;
 
@@ -37,7 +38,7 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("utilizationTarget")) {
+    if ("utilizationTarget".equals(fieldName)) {
       return utilizationTarget;
     }
     return null;
@@ -51,10 +52,28 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The target CPU utilization that the autoscaler should maintain. Must be a float value in the
+   * range (0, 1]. If not specified, the default is 0.6.
+   *
+   * <p>If the CPU level is below the target utilization, the autoscaler scales down the number of
+   * instances until it reaches the minimum number of instances you specified or until the average
+   * CPU of your instances reaches the target utilization.
+   *
+   * <p>If the average CPU is above the target utilization, the autoscaler scales up until it
+   * reaches the maximum number of instances you specified or until the average utilization reaches
+   * the target utilization.
+   */
   public Double getUtilizationTarget() {
     return utilizationTarget;
   }
@@ -98,10 +117,34 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
       this.utilizationTarget = source.utilizationTarget;
     }
 
+    /**
+     * The target CPU utilization that the autoscaler should maintain. Must be a float value in the
+     * range (0, 1]. If not specified, the default is 0.6.
+     *
+     * <p>If the CPU level is below the target utilization, the autoscaler scales down the number of
+     * instances until it reaches the minimum number of instances you specified or until the average
+     * CPU of your instances reaches the target utilization.
+     *
+     * <p>If the average CPU is above the target utilization, the autoscaler scales up until it
+     * reaches the maximum number of instances you specified or until the average utilization
+     * reaches the target utilization.
+     */
     public Double getUtilizationTarget() {
       return utilizationTarget;
     }
 
+    /**
+     * The target CPU utilization that the autoscaler should maintain. Must be a float value in the
+     * range (0, 1]. If not specified, the default is 0.6.
+     *
+     * <p>If the CPU level is below the target utilization, the autoscaler scales down the number of
+     * instances until it reaches the minimum number of instances you specified or until the average
+     * CPU of your instances reaches the target utilization.
+     *
+     * <p>If the average CPU is above the target utilization, the autoscaler scales up until it
+     * reaches the maximum number of instances you specified or until the average utilization
+     * reaches the target utilization.
+     */
     public Builder setUtilizationTarget(Double utilizationTarget) {
       this.utilizationTarget = utilizationTarget;
       return this;

@@ -20,12 +20,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.compute.model.Image;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
 /**
- * A Google Compute Engine image configuration used to create images from a Google Cloud Storage
- * URL where the disk image is stored.
+ * A Google Compute Engine image configuration used to create images from a Google Cloud Storage URL
+ * where the disk image is stored.
  */
 public class StorageImageConfiguration extends ImageConfiguration {
 
@@ -36,16 +35,14 @@ public class StorageImageConfiguration extends ImageConfiguration {
   private final String source;
 
   /**
-   * The format used to encode and transmit the block device. The only supported value is
-   * {@code TAR}. This is just a container and transmission format, not a runtime format.
+   * The format used to encode and transmit the block device. The only supported value is {@code
+   * TAR}. This is just a container and transmission format, not a runtime format.
    */
   public enum ContainerType {
     TAR
   }
 
-  /**
-   * A builder for {@code StorageImageConfiguration} objects.
-   */
+  /** A builder for {@code StorageImageConfiguration} objects. */
   public static final class Builder
       extends ImageConfiguration.Builder<StorageImageConfiguration, Builder> {
 
@@ -82,26 +79,22 @@ public class StorageImageConfiguration extends ImageConfiguration {
       return this;
     }
 
-    /**
-     * Sets the SHA1 checksum of the disk image before unpackaging.
-     */
+    /** Sets the SHA1 checksum of the disk image before unpackaging. */
     public Builder setSha1(String sha1) {
       this.sha1 = sha1;
       return this;
     }
 
     /**
-     * Sets the full Google Cloud Storage URL where the disk image is stored (e.g.
-     * {@code gs://bucket/file}).
+     * Sets the full Google Cloud Storage URL where the disk image is stored (e.g. {@code
+     * gs://bucket/file}).
      */
     public Builder setSource(String source) {
       this.source = checkNotNull(source);
       return this;
     }
 
-    /**
-     * Creates a {@code StorageImageConfiguration} object.
-     */
+    /** Creates a {@code StorageImageConfiguration} object. */
     @Override
     public StorageImageConfiguration build() {
       return new StorageImageConfiguration(this);
@@ -123,16 +116,14 @@ public class StorageImageConfiguration extends ImageConfiguration {
     return containerType;
   }
 
-  /**
-   * Returns the SHA1 checksum of the disk image before unpackaging.
-   */
+  /** Returns the SHA1 checksum of the disk image before unpackaging. */
   public String getSha1() {
     return sha1;
   }
 
   /**
-   * Returns the full Google Cloud Storage URL where the disk image is stored (e.g.
-   * {@code gs://bucket/file}).
+   * Returns the full Google Cloud Storage URL where the disk image is stored (e.g. {@code
+   * gs://bucket/file}).
    */
   public String getSource() {
     return source;
@@ -160,8 +151,8 @@ public class StorageImageConfiguration extends ImageConfiguration {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(StorageImageConfiguration.class)
-        && Objects.equals(toPb(), ((StorageImageConfiguration) obj).toPb());
+            && obj.getClass().equals(StorageImageConfiguration.class)
+            && Objects.equals(toPb(), ((StorageImageConfiguration) obj).toPb());
   }
 
   @Override

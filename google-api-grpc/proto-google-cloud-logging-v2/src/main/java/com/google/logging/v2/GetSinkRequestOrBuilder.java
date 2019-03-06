@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface GetSinkRequestOrBuilder extends
+public interface GetSinkRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.GetSinkRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the sink:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
@@ -21,6 +24,8 @@ public interface GetSinkRequestOrBuilder extends
    */
   java.lang.String getSinkName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the sink:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
@@ -32,6 +37,5 @@ public interface GetSinkRequestOrBuilder extends
    *
    * <code>string sink_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSinkNameBytes();
+  com.google.protobuf.ByteString getSinkNameBytes();
 }

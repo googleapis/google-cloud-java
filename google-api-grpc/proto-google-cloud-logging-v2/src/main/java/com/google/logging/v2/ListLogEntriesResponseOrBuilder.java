@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface ListLogEntriesResponseOrBuilder extends
+public interface ListLogEntriesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListLogEntriesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of log entries.  If `entries` is empty, `nextPageToken` may still be
    * returned, indicating that more entries may exist.  See `nextPageToken` for
@@ -16,9 +19,10 @@ public interface ListLogEntriesResponseOrBuilder extends
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
-  java.util.List<com.google.logging.v2.LogEntry> 
-      getEntriesList();
+  java.util.List<com.google.logging.v2.LogEntry> getEntriesList();
   /**
+   *
+   *
    * <pre>
    * A list of log entries.  If `entries` is empty, `nextPageToken` may still be
    * returned, indicating that more entries may exist.  See `nextPageToken` for
@@ -29,6 +33,8 @@ public interface ListLogEntriesResponseOrBuilder extends
    */
   com.google.logging.v2.LogEntry getEntries(int index);
   /**
+   *
+   *
    * <pre>
    * A list of log entries.  If `entries` is empty, `nextPageToken` may still be
    * returned, indicating that more entries may exist.  See `nextPageToken` for
@@ -39,6 +45,8 @@ public interface ListLogEntriesResponseOrBuilder extends
    */
   int getEntriesCount();
   /**
+   *
+   *
    * <pre>
    * A list of log entries.  If `entries` is empty, `nextPageToken` may still be
    * returned, indicating that more entries may exist.  See `nextPageToken` for
@@ -47,9 +55,10 @@ public interface ListLogEntriesResponseOrBuilder extends
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
-  java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> 
-      getEntriesOrBuilderList();
+  java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> getEntriesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of log entries.  If `entries` is empty, `nextPageToken` may still be
    * returned, indicating that more entries may exist.  See `nextPageToken` for
@@ -58,10 +67,11 @@ public interface ListLogEntriesResponseOrBuilder extends
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
-  com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(
-      int index);
+  com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there might be more results than those appearing in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -78,6 +88,8 @@ public interface ListLogEntriesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there might be more results than those appearing in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -92,6 +104,5 @@ public interface ListLogEntriesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -14,13 +14,13 @@
 
 package com.google.cloud.oslogin.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class FingerprintName implements ResourceName {
   }
 
   public static FingerprintName of(String user, String fingerprint) {
-    return newBuilder()
-      .setUser(user)
-      .setFingerprint(fingerprint)
-      .build();
+    return newBuilder().setUser(user).setFingerprint(fingerprint).build();
   }
 
   public static String format(String user, String fingerprint) {
-    return newBuilder()
-      .setUser(user)
-      .setFingerprint(fingerprint)
-      .build()
-      .toString();
+    return newBuilder().setUser(user).setFingerprint(fingerprint).build().toString();
   }
 
   public static FingerprintName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class FingerprintName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "FingerprintName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "FingerprintName.parse: formattedString not in valid format");
     return of(matchMap.get("user"), matchMap.get("fingerprint"));
   }
 
@@ -150,8 +144,7 @@ public class FingerprintName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(FingerprintName fingerprintName) {
       user = fingerprintName.user;
@@ -170,8 +163,7 @@ public class FingerprintName implements ResourceName {
     }
     if (o instanceof FingerprintName) {
       FingerprintName that = (FingerprintName) o;
-      return (this.user.equals(that.user))
-          && (this.fingerprint.equals(that.fingerprint));
+      return (this.user.equals(that.user)) && (this.fingerprint.equals(that.fingerprint));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class FingerprintName implements ResourceName {
     return h;
   }
 }
-

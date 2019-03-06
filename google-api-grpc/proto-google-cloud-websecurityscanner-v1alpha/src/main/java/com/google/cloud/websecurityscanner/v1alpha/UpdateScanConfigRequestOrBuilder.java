@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface UpdateScanConfigRequestOrBuilder extends
+public interface UpdateScanConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be updated. The name field must be set to identify the
@@ -19,6 +22,8 @@ public interface UpdateScanConfigRequestOrBuilder extends
    */
   boolean hasScanConfig();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be updated. The name field must be set to identify the
@@ -30,6 +35,8 @@ public interface UpdateScanConfigRequestOrBuilder extends
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be updated. The name field must be set to identify the
@@ -42,6 +49,8 @@ public interface UpdateScanConfigRequestOrBuilder extends
   com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder getScanConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The update mask applies to the resource. For the `FieldMask` definition,
@@ -53,6 +62,8 @@ public interface UpdateScanConfigRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The update mask applies to the resource. For the `FieldMask` definition,
@@ -64,6 +75,8 @@ public interface UpdateScanConfigRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The update mask applies to the resource. For the `FieldMask` definition,

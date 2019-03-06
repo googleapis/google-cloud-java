@@ -25,7 +25,6 @@ import com.google.common.base.Joiner;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Value;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -282,7 +281,9 @@ public final class Key implements Serializable {
       } else if (part instanceof ByteArray) {
         builder.addValuesBuilder().setStringValue(((ByteArray) part).toBase64());
       } else if (part instanceof Timestamp) {
-        builder.addValuesBuilder().setStringValue(((Timestamp) part).toString());
+        builder.addValuesBuilder().setStringValue(part.toString());
+      } else if (part instanceof Date) {
+        builder.addValuesBuilder().setStringValue(part.toString());
       } else {
         throw new AssertionError("Illegal key part: " + part.getClass());
       }

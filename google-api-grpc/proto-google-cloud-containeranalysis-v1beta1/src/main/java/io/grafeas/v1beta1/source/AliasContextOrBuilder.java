@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.source;
 
-public interface AliasContextOrBuilder extends
+public interface AliasContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.source.AliasContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The alias kind.
    * </pre>
@@ -16,6 +19,8 @@ public interface AliasContextOrBuilder extends
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * The alias kind.
    * </pre>
@@ -25,6 +30,8 @@ public interface AliasContextOrBuilder extends
   io.grafeas.v1beta1.source.AliasContext.Kind getKind();
 
   /**
+   *
+   *
    * <pre>
    * The alias name.
    * </pre>
@@ -33,12 +40,13 @@ public interface AliasContextOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The alias name.
    * </pre>
    *
    * <code>string name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

@@ -19,7 +19,6 @@ package com.google.cloud.compute.deprecated;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
@@ -35,21 +34,21 @@ public final class ServiceAccount implements Serializable {
 
   static final Function<com.google.api.services.compute.model.ServiceAccount, ServiceAccount>
       FROM_PB_FUNCTION =
-      new Function<com.google.api.services.compute.model.ServiceAccount, ServiceAccount>() {
-        @Override
-        public ServiceAccount apply(com.google.api.services.compute.model.ServiceAccount pb) {
-          return ServiceAccount.fromPb(pb);
-        }
-      };
+          new Function<com.google.api.services.compute.model.ServiceAccount, ServiceAccount>() {
+            @Override
+            public ServiceAccount apply(com.google.api.services.compute.model.ServiceAccount pb) {
+              return ServiceAccount.fromPb(pb);
+            }
+          };
   static final Function<ServiceAccount, com.google.api.services.compute.model.ServiceAccount>
       TO_PB_FUNCTION =
-      new Function<ServiceAccount, com.google.api.services.compute.model.ServiceAccount>() {
-        @Override
-        public com.google.api.services.compute.model.ServiceAccount apply(
-            ServiceAccount metadata) {
-          return metadata.toPb();
-        }
-      };
+          new Function<ServiceAccount, com.google.api.services.compute.model.ServiceAccount>() {
+            @Override
+            public com.google.api.services.compute.model.ServiceAccount apply(
+                ServiceAccount metadata) {
+              return metadata.toPb();
+            }
+          };
 
   private static final long serialVersionUID = 4199610694227857331L;
 
@@ -61,26 +60,19 @@ public final class ServiceAccount implements Serializable {
     this.scopes = ImmutableList.copyOf(scopes);
   }
 
-  /**
-   * Returns the email address of the service account.
-   */
+  /** Returns the email address of the service account. */
   public String getEmail() {
     return email;
   }
 
-  /**
-   * Returns the list of scopes to be made available for this service account.
-   */
+  /** Returns the list of scopes to be made available for this service account. */
   public List<String> getScopes() {
     return scopes;
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("email", email)
-        .add("scopes", scopes)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("email", email).add("scopes", scopes).toString();
   }
 
   @Override
@@ -91,8 +83,7 @@ public final class ServiceAccount implements Serializable {
   @Override
   public boolean equals(Object obj) {
     return obj == this
-        || obj instanceof ServiceAccount
-        && Objects.equals(toPb(), ((ServiceAccount) obj).toPb());
+        || obj instanceof ServiceAccount && Objects.equals(toPb(), ((ServiceAccount) obj).toPb());
   }
 
   com.google.api.services.compute.model.ServiceAccount toPb() {
@@ -103,16 +94,12 @@ public final class ServiceAccount implements Serializable {
     return serviceAccountPb;
   }
 
-  /**
-   * Returns a {@code ServiceAccount} object for the provided email and scopes.
-   */
+  /** Returns a {@code ServiceAccount} object for the provided email and scopes. */
   public static ServiceAccount of(String email, List<String> scopes) {
     return new ServiceAccount(email, scopes);
   }
 
-  /**
-   * Returns a {@code ServiceAccount} object for the provided email and scopes.
-   */
+  /** Returns a {@code ServiceAccount} object for the provided email and scopes. */
   public static ServiceAccount of(String email, String... scopes) {
     return of(email, Arrays.asList(scopes));
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Represents a Firewall resource. */
 public final class Firewall implements ApiMessage {
   private final List<Allowed> allowed;
   private final String creationTimestamp;
@@ -35,6 +36,7 @@ public final class Firewall implements ApiMessage {
   private final Boolean disabled;
   private final String id;
   private final String kind;
+  private final FirewallLogConfig logConfig;
   private final String name;
   private final String network;
   private final Integer priority;
@@ -55,6 +57,7 @@ public final class Firewall implements ApiMessage {
     this.disabled = null;
     this.id = null;
     this.kind = null;
+    this.logConfig = null;
     this.name = null;
     this.network = null;
     this.priority = null;
@@ -76,6 +79,7 @@ public final class Firewall implements ApiMessage {
       Boolean disabled,
       String id,
       String kind,
+      FirewallLogConfig logConfig,
       String name,
       String network,
       Integer priority,
@@ -94,6 +98,7 @@ public final class Firewall implements ApiMessage {
     this.disabled = disabled;
     this.id = id;
     this.kind = kind;
+    this.logConfig = logConfig;
     this.name = name;
     this.network = network;
     this.priority = priority;
@@ -107,58 +112,61 @@ public final class Firewall implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("allowed")) {
+    if ("allowed".equals(fieldName)) {
       return allowed;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("denied")) {
+    if ("denied".equals(fieldName)) {
       return denied;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("destinationRanges")) {
+    if ("destinationRanges".equals(fieldName)) {
       return destinationRanges;
     }
-    if (fieldName.equals("direction")) {
+    if ("direction".equals(fieldName)) {
       return direction;
     }
-    if (fieldName.equals("disabled")) {
+    if ("disabled".equals(fieldName)) {
       return disabled;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("logConfig".equals(fieldName)) {
+      return logConfig;
+    }
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("priority")) {
+    if ("priority".equals(fieldName)) {
       return priority;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("sourceRanges")) {
+    if ("sourceRanges".equals(fieldName)) {
       return sourceRanges;
     }
-    if (fieldName.equals("sourceServiceAccounts")) {
+    if ("sourceServiceAccounts".equals(fieldName)) {
       return sourceServiceAccounts;
     }
-    if (fieldName.equals("sourceTags")) {
+    if ("sourceTags".equals(fieldName)) {
       return sourceTags;
     }
-    if (fieldName.equals("targetServiceAccounts")) {
+    if ("targetServiceAccounts".equals(fieldName)) {
       return targetServiceAccounts;
     }
-    if (fieldName.equals("targetTags")) {
+    if ("targetTags".equals(fieldName)) {
       return targetTags;
     }
     return null;
@@ -172,78 +180,186 @@ public final class Firewall implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and
+   * port-range tuple that describes a permitted connection.
+   */
   public List<Allowed> getAllowedList() {
     return allowed;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * The list of DENY rules specified by this firewall. Each rule specifies a protocol and
+   * port-range tuple that describes a denied connection.
+   */
   public List<Denied> getDeniedList() {
     return denied;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * If destination ranges are specified, the firewall will apply only to traffic that has
+   * destination IP address in these ranges. These ranges must be expressed in CIDR format. Only
+   * IPv4 is supported.
+   */
   public List<String> getDestinationRangesList() {
     return destinationRanges;
   }
 
+  /**
+   * Direction of traffic to which this firewall applies; default is INGRESS. Note: For INGRESS
+   * traffic, it is NOT supported to specify destinationRanges; For EGRESS traffic, it is NOT
+   * supported to specify sourceRanges OR sourceTags.
+   */
   public String getDirection() {
     return direction;
   }
 
+  /**
+   * Denotes whether the firewall rule is disabled, i.e not applied to the network it is associated
+   * with. When set to true, the firewall rule is not enforced and the network behaves as if it did
+   * not exist. If this is unspecified, the firewall rule will be enabled.
+   */
   public Boolean getDisabled() {
     return disabled;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#firewall for firewall rules. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * This field denotes the logging options for a particular firewall rule. If logging is enabled,
+   * logs will be exported to Stackdriver.
+   */
+  public FirewallLogConfig getLogConfig() {
+    return logConfig;
+  }
+
+  /**
+   * Name of the resource; provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * URL of the network resource for this firewall rule. If not specified when creating a firewall
+   * rule, the default network is used: global/networks/default If you choose to specify this
+   * property, you can specify the network as a full or partial URL. For example, the following are
+   * all valid URLs: -
+   * https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network -
+   * projects/myproject/global/networks/my-network - global/networks/default
+   */
   public String getNetwork() {
     return network;
   }
 
+  /**
+   * Priority for this rule. This is an integer between 0 and 65535, both inclusive. When not
+   * specified, the value assumed is 1000. Relative priorities determine precedence of conflicting
+   * rules. Lower value of priority implies higher precedence (eg, a rule with priority 0 has higher
+   * precedence than a rule with priority 1). DENY rules take precedence over ALLOW rules having
+   * equal priority.
+   */
   public Integer getPriority() {
     return priority;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * If source ranges are specified, the firewall will apply only to traffic that has source IP
+   * address in these ranges. These ranges must be expressed in CIDR format. One or both of
+   * sourceRanges and sourceTags may be set. If both properties are set, the firewall will apply to
+   * traffic that has source IP address within sourceRanges OR the source IP that belongs to a tag
+   * listed in the sourceTags property. The connection does not need to match both properties for
+   * the firewall to apply. Only IPv4 is supported.
+   */
   public List<String> getSourceRangesList() {
     return sourceRanges;
   }
 
+  /**
+   * If source service accounts are specified, the firewall will apply only to traffic originating
+   * from an instance with a service account in this list. Source service accounts cannot be used to
+   * control traffic to an instance's external IP address because service accounts are associated
+   * with an instance, not an IP address. sourceRanges can be set at the same time as
+   * sourceServiceAccounts. If both are set, the firewall will apply to traffic that has source IP
+   * address within sourceRanges OR the source IP belongs to an instance with service account listed
+   * in sourceServiceAccount. The connection does not need to match both properties for the firewall
+   * to apply. sourceServiceAccounts cannot be used at the same time as sourceTags or targetTags.
+   */
   public List<String> getSourceServiceAccountsList() {
     return sourceServiceAccounts;
   }
 
+  /**
+   * If source tags are specified, the firewall rule applies only to traffic with source IPs that
+   * match the primary network interfaces of VM instances that have the tag and are in the same VPC
+   * network. Source tags cannot be used to control traffic to an instance's external IP address, it
+   * only applies to traffic between instances in the same virtual network. Because tags are
+   * associated with instances, not IP addresses. One or both of sourceRanges and sourceTags may be
+   * set. If both properties are set, the firewall will apply to traffic that has source IP address
+   * within sourceRanges OR the source IP that belongs to a tag listed in the sourceTags property.
+   * The connection does not need to match both properties for the firewall to apply.
+   */
   public List<String> getSourceTagsList() {
     return sourceTags;
   }
 
+  /**
+   * A list of service accounts indicating sets of instances located in the network that may make
+   * network connections as specified in allowed[]. targetServiceAccounts cannot be used at the same
+   * time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are
+   * specified, the firewall rule applies to all instances on the specified network.
+   */
   public List<String> getTargetServiceAccountsList() {
     return targetServiceAccounts;
   }
 
+  /**
+   * A list of tags that controls which instances the firewall rule applies to. If targetTags are
+   * specified, then the firewall rule applies only to instances in the VPC network that have one of
+   * those tags. If no targetTags are specified, the firewall rule applies to all instances on the
+   * specified network.
+   */
   public List<String> getTargetTagsList() {
     return targetTags;
   }
@@ -280,6 +396,7 @@ public final class Firewall implements ApiMessage {
     private Boolean disabled;
     private String id;
     private String kind;
+    private FirewallLogConfig logConfig;
     private String name;
     private String network;
     private Integer priority;
@@ -321,6 +438,9 @@ public final class Firewall implements ApiMessage {
       if (other.getKind() != null) {
         this.kind = other.kind;
       }
+      if (other.getLogConfig() != null) {
+        this.logConfig = other.logConfig;
+      }
       if (other.getName() != null) {
         this.name = other.name;
       }
@@ -361,6 +481,7 @@ public final class Firewall implements ApiMessage {
       this.disabled = source.disabled;
       this.id = source.id;
       this.kind = source.kind;
+      this.logConfig = source.logConfig;
       this.name = source.name;
       this.network = source.network;
       this.priority = source.priority;
@@ -372,10 +493,18 @@ public final class Firewall implements ApiMessage {
       this.targetTags = source.targetTags;
     }
 
+    /**
+     * The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and
+     * port-range tuple that describes a permitted connection.
+     */
     public List<Allowed> getAllowedList() {
       return allowed;
     }
 
+    /**
+     * The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and
+     * port-range tuple that describes a permitted connection.
+     */
     public Builder addAllAllowed(List<Allowed> allowed) {
       if (this.allowed == null) {
         this.allowed = new LinkedList<>();
@@ -384,6 +513,10 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and
+     * port-range tuple that describes a permitted connection.
+     */
     public Builder addAllowed(Allowed allowed) {
       if (this.allowed == null) {
         this.allowed = new LinkedList<>();
@@ -392,19 +525,29 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * The list of DENY rules specified by this firewall. Each rule specifies a protocol and
+     * port-range tuple that describes a denied connection.
+     */
     public List<Denied> getDeniedList() {
       return denied;
     }
 
+    /**
+     * The list of DENY rules specified by this firewall. Each rule specifies a protocol and
+     * port-range tuple that describes a denied connection.
+     */
     public Builder addAllDenied(List<Denied> denied) {
       if (this.denied == null) {
         this.denied = new LinkedList<>();
@@ -413,6 +556,10 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of DENY rules specified by this firewall. Each rule specifies a protocol and
+     * port-range tuple that describes a denied connection.
+     */
     public Builder addDenied(Denied denied) {
       if (this.denied == null) {
         this.denied = new LinkedList<>();
@@ -421,19 +568,35 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * If destination ranges are specified, the firewall will apply only to traffic that has
+     * destination IP address in these ranges. These ranges must be expressed in CIDR format. Only
+     * IPv4 is supported.
+     */
     public List<String> getDestinationRangesList() {
       return destinationRanges;
     }
 
+    /**
+     * If destination ranges are specified, the firewall will apply only to traffic that has
+     * destination IP address in these ranges. These ranges must be expressed in CIDR format. Only
+     * IPv4 is supported.
+     */
     public Builder addAllDestinationRanges(List<String> destinationRanges) {
       if (this.destinationRanges == null) {
         this.destinationRanges = new LinkedList<>();
@@ -442,6 +605,11 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * If destination ranges are specified, the firewall will apply only to traffic that has
+     * destination IP address in these ranges. These ranges must be expressed in CIDR format. Only
+     * IPv4 is supported.
+     */
     public Builder addDestinationRanges(String destinationRanges) {
       if (this.destinationRanges == null) {
         this.destinationRanges = new LinkedList<>();
@@ -450,82 +618,191 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * Direction of traffic to which this firewall applies; default is INGRESS. Note: For INGRESS
+     * traffic, it is NOT supported to specify destinationRanges; For EGRESS traffic, it is NOT
+     * supported to specify sourceRanges OR sourceTags.
+     */
     public String getDirection() {
       return direction;
     }
 
+    /**
+     * Direction of traffic to which this firewall applies; default is INGRESS. Note: For INGRESS
+     * traffic, it is NOT supported to specify destinationRanges; For EGRESS traffic, it is NOT
+     * supported to specify sourceRanges OR sourceTags.
+     */
     public Builder setDirection(String direction) {
       this.direction = direction;
       return this;
     }
 
+    /**
+     * Denotes whether the firewall rule is disabled, i.e not applied to the network it is
+     * associated with. When set to true, the firewall rule is not enforced and the network behaves
+     * as if it did not exist. If this is unspecified, the firewall rule will be enabled.
+     */
     public Boolean getDisabled() {
       return disabled;
     }
 
+    /**
+     * Denotes whether the firewall rule is disabled, i.e not applied to the network it is
+     * associated with. When set to true, the firewall rule is not enforced and the network behaves
+     * as if it did not exist. If this is unspecified, the firewall rule will be enabled.
+     */
     public Builder setDisabled(Boolean disabled) {
       this.disabled = disabled;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#firewall for firewall rules. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#firewall for firewall rules. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * This field denotes the logging options for a particular firewall rule. If logging is enabled,
+     * logs will be exported to Stackdriver.
+     */
+    public FirewallLogConfig getLogConfig() {
+      return logConfig;
+    }
+
+    /**
+     * This field denotes the logging options for a particular firewall rule. If logging is enabled,
+     * logs will be exported to Stackdriver.
+     */
+    public Builder setLogConfig(FirewallLogConfig logConfig) {
+      this.logConfig = logConfig;
+      return this;
+    }
+
+    /**
+     * Name of the resource; provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource; provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall
+     * rule, the default network is used: global/networks/default If you choose to specify this
+     * property, you can specify the network as a full or partial URL. For example, the following
+     * are all valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network -
+     * projects/myproject/global/networks/my-network - global/networks/default
+     */
     public String getNetwork() {
       return network;
     }
 
+    /**
+     * URL of the network resource for this firewall rule. If not specified when creating a firewall
+     * rule, the default network is used: global/networks/default If you choose to specify this
+     * property, you can specify the network as a full or partial URL. For example, the following
+     * are all valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/myproject/global/networks/my-network -
+     * projects/myproject/global/networks/my-network - global/networks/default
+     */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
     }
 
+    /**
+     * Priority for this rule. This is an integer between 0 and 65535, both inclusive. When not
+     * specified, the value assumed is 1000. Relative priorities determine precedence of conflicting
+     * rules. Lower value of priority implies higher precedence (eg, a rule with priority 0 has
+     * higher precedence than a rule with priority 1). DENY rules take precedence over ALLOW rules
+     * having equal priority.
+     */
     public Integer getPriority() {
       return priority;
     }
 
+    /**
+     * Priority for this rule. This is an integer between 0 and 65535, both inclusive. When not
+     * specified, the value assumed is 1000. Relative priorities determine precedence of conflicting
+     * rules. Lower value of priority implies higher precedence (eg, a rule with priority 0 has
+     * higher precedence than a rule with priority 1). DENY rules take precedence over ALLOW rules
+     * having equal priority.
+     */
     public Builder setPriority(Integer priority) {
       this.priority = priority;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * If source ranges are specified, the firewall will apply only to traffic that has source IP
+     * address in these ranges. These ranges must be expressed in CIDR format. One or both of
+     * sourceRanges and sourceTags may be set. If both properties are set, the firewall will apply
+     * to traffic that has source IP address within sourceRanges OR the source IP that belongs to a
+     * tag listed in the sourceTags property. The connection does not need to match both properties
+     * for the firewall to apply. Only IPv4 is supported.
+     */
     public List<String> getSourceRangesList() {
       return sourceRanges;
     }
 
+    /**
+     * If source ranges are specified, the firewall will apply only to traffic that has source IP
+     * address in these ranges. These ranges must be expressed in CIDR format. One or both of
+     * sourceRanges and sourceTags may be set. If both properties are set, the firewall will apply
+     * to traffic that has source IP address within sourceRanges OR the source IP that belongs to a
+     * tag listed in the sourceTags property. The connection does not need to match both properties
+     * for the firewall to apply. Only IPv4 is supported.
+     */
     public Builder addAllSourceRanges(List<String> sourceRanges) {
       if (this.sourceRanges == null) {
         this.sourceRanges = new LinkedList<>();
@@ -534,6 +811,14 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * If source ranges are specified, the firewall will apply only to traffic that has source IP
+     * address in these ranges. These ranges must be expressed in CIDR format. One or both of
+     * sourceRanges and sourceTags may be set. If both properties are set, the firewall will apply
+     * to traffic that has source IP address within sourceRanges OR the source IP that belongs to a
+     * tag listed in the sourceTags property. The connection does not need to match both properties
+     * for the firewall to apply. Only IPv4 is supported.
+     */
     public Builder addSourceRanges(String sourceRanges) {
       if (this.sourceRanges == null) {
         this.sourceRanges = new LinkedList<>();
@@ -542,10 +827,32 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * If source service accounts are specified, the firewall will apply only to traffic originating
+     * from an instance with a service account in this list. Source service accounts cannot be used
+     * to control traffic to an instance's external IP address because service accounts are
+     * associated with an instance, not an IP address. sourceRanges can be set at the same time as
+     * sourceServiceAccounts. If both are set, the firewall will apply to traffic that has source IP
+     * address within sourceRanges OR the source IP belongs to an instance with service account
+     * listed in sourceServiceAccount. The connection does not need to match both properties for the
+     * firewall to apply. sourceServiceAccounts cannot be used at the same time as sourceTags or
+     * targetTags.
+     */
     public List<String> getSourceServiceAccountsList() {
       return sourceServiceAccounts;
     }
 
+    /**
+     * If source service accounts are specified, the firewall will apply only to traffic originating
+     * from an instance with a service account in this list. Source service accounts cannot be used
+     * to control traffic to an instance's external IP address because service accounts are
+     * associated with an instance, not an IP address. sourceRanges can be set at the same time as
+     * sourceServiceAccounts. If both are set, the firewall will apply to traffic that has source IP
+     * address within sourceRanges OR the source IP belongs to an instance with service account
+     * listed in sourceServiceAccount. The connection does not need to match both properties for the
+     * firewall to apply. sourceServiceAccounts cannot be used at the same time as sourceTags or
+     * targetTags.
+     */
     public Builder addAllSourceServiceAccounts(List<String> sourceServiceAccounts) {
       if (this.sourceServiceAccounts == null) {
         this.sourceServiceAccounts = new LinkedList<>();
@@ -554,6 +861,17 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * If source service accounts are specified, the firewall will apply only to traffic originating
+     * from an instance with a service account in this list. Source service accounts cannot be used
+     * to control traffic to an instance's external IP address because service accounts are
+     * associated with an instance, not an IP address. sourceRanges can be set at the same time as
+     * sourceServiceAccounts. If both are set, the firewall will apply to traffic that has source IP
+     * address within sourceRanges OR the source IP belongs to an instance with service account
+     * listed in sourceServiceAccount. The connection does not need to match both properties for the
+     * firewall to apply. sourceServiceAccounts cannot be used at the same time as sourceTags or
+     * targetTags.
+     */
     public Builder addSourceServiceAccounts(String sourceServiceAccounts) {
       if (this.sourceServiceAccounts == null) {
         this.sourceServiceAccounts = new LinkedList<>();
@@ -562,10 +880,32 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * If source tags are specified, the firewall rule applies only to traffic with source IPs that
+     * match the primary network interfaces of VM instances that have the tag and are in the same
+     * VPC network. Source tags cannot be used to control traffic to an instance's external IP
+     * address, it only applies to traffic between instances in the same virtual network. Because
+     * tags are associated with instances, not IP addresses. One or both of sourceRanges and
+     * sourceTags may be set. If both properties are set, the firewall will apply to traffic that
+     * has source IP address within sourceRanges OR the source IP that belongs to a tag listed in
+     * the sourceTags property. The connection does not need to match both properties for the
+     * firewall to apply.
+     */
     public List<String> getSourceTagsList() {
       return sourceTags;
     }
 
+    /**
+     * If source tags are specified, the firewall rule applies only to traffic with source IPs that
+     * match the primary network interfaces of VM instances that have the tag and are in the same
+     * VPC network. Source tags cannot be used to control traffic to an instance's external IP
+     * address, it only applies to traffic between instances in the same virtual network. Because
+     * tags are associated with instances, not IP addresses. One or both of sourceRanges and
+     * sourceTags may be set. If both properties are set, the firewall will apply to traffic that
+     * has source IP address within sourceRanges OR the source IP that belongs to a tag listed in
+     * the sourceTags property. The connection does not need to match both properties for the
+     * firewall to apply.
+     */
     public Builder addAllSourceTags(List<String> sourceTags) {
       if (this.sourceTags == null) {
         this.sourceTags = new LinkedList<>();
@@ -574,6 +914,17 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * If source tags are specified, the firewall rule applies only to traffic with source IPs that
+     * match the primary network interfaces of VM instances that have the tag and are in the same
+     * VPC network. Source tags cannot be used to control traffic to an instance's external IP
+     * address, it only applies to traffic between instances in the same virtual network. Because
+     * tags are associated with instances, not IP addresses. One or both of sourceRanges and
+     * sourceTags may be set. If both properties are set, the firewall will apply to traffic that
+     * has source IP address within sourceRanges OR the source IP that belongs to a tag listed in
+     * the sourceTags property. The connection does not need to match both properties for the
+     * firewall to apply.
+     */
     public Builder addSourceTags(String sourceTags) {
       if (this.sourceTags == null) {
         this.sourceTags = new LinkedList<>();
@@ -582,10 +933,22 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of service accounts indicating sets of instances located in the network that may make
+     * network connections as specified in allowed[]. targetServiceAccounts cannot be used at the
+     * same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are
+     * specified, the firewall rule applies to all instances on the specified network.
+     */
     public List<String> getTargetServiceAccountsList() {
       return targetServiceAccounts;
     }
 
+    /**
+     * A list of service accounts indicating sets of instances located in the network that may make
+     * network connections as specified in allowed[]. targetServiceAccounts cannot be used at the
+     * same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are
+     * specified, the firewall rule applies to all instances on the specified network.
+     */
     public Builder addAllTargetServiceAccounts(List<String> targetServiceAccounts) {
       if (this.targetServiceAccounts == null) {
         this.targetServiceAccounts = new LinkedList<>();
@@ -594,6 +957,12 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of service accounts indicating sets of instances located in the network that may make
+     * network connections as specified in allowed[]. targetServiceAccounts cannot be used at the
+     * same time as targetTags or sourceTags. If neither targetServiceAccounts nor targetTags are
+     * specified, the firewall rule applies to all instances on the specified network.
+     */
     public Builder addTargetServiceAccounts(String targetServiceAccounts) {
       if (this.targetServiceAccounts == null) {
         this.targetServiceAccounts = new LinkedList<>();
@@ -602,10 +971,22 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of tags that controls which instances the firewall rule applies to. If targetTags are
+     * specified, then the firewall rule applies only to instances in the VPC network that have one
+     * of those tags. If no targetTags are specified, the firewall rule applies to all instances on
+     * the specified network.
+     */
     public List<String> getTargetTagsList() {
       return targetTags;
     }
 
+    /**
+     * A list of tags that controls which instances the firewall rule applies to. If targetTags are
+     * specified, then the firewall rule applies only to instances in the VPC network that have one
+     * of those tags. If no targetTags are specified, the firewall rule applies to all instances on
+     * the specified network.
+     */
     public Builder addAllTargetTags(List<String> targetTags) {
       if (this.targetTags == null) {
         this.targetTags = new LinkedList<>();
@@ -614,6 +995,12 @@ public final class Firewall implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of tags that controls which instances the firewall rule applies to. If targetTags are
+     * specified, then the firewall rule applies only to instances in the VPC network that have one
+     * of those tags. If no targetTags are specified, the firewall rule applies to all instances on
+     * the specified network.
+     */
     public Builder addTargetTags(String targetTags) {
       if (this.targetTags == null) {
         this.targetTags = new LinkedList<>();
@@ -634,6 +1021,7 @@ public final class Firewall implements ApiMessage {
           disabled,
           id,
           kind,
+          logConfig,
           name,
           network,
           priority,
@@ -656,6 +1044,7 @@ public final class Firewall implements ApiMessage {
       newBuilder.setDisabled(this.disabled);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
+      newBuilder.setLogConfig(this.logConfig);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setPriority(this.priority);
@@ -698,6 +1087,9 @@ public final class Firewall implements ApiMessage {
         + ", "
         + "kind="
         + kind
+        + ", "
+        + "logConfig="
+        + logConfig
         + ", "
         + "name="
         + name
@@ -744,6 +1136,7 @@ public final class Firewall implements ApiMessage {
           && Objects.equals(this.disabled, that.getDisabled())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.priority, that.getPriority())
@@ -769,6 +1162,7 @@ public final class Firewall implements ApiMessage {
         disabled,
         id,
         kind,
+        logConfig,
         name,
         network,
         priority,

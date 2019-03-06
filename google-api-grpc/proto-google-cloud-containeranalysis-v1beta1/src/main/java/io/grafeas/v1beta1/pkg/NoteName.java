@@ -14,13 +14,12 @@
 
 package io.grafeas.v1beta1.pkg;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class NoteName extends IamResourceName {
   }
 
   public static NoteName of(String project, String note) {
-    return newBuilder()
-      .setProject(project)
-      .setNote(note)
-      .build();
+    return newBuilder().setProject(project).setNote(note).build();
   }
 
   public static String format(String project, String note) {
-    return newBuilder()
-      .setProject(project)
-      .setNote(note)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setNote(note).build().toString();
   }
 
   public static NoteName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class NoteName extends IamResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "NoteName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "NoteName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("note"));
   }
 
@@ -150,8 +143,7 @@ public class NoteName extends IamResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(NoteName noteName) {
       project = noteName.project;
@@ -170,8 +162,7 @@ public class NoteName extends IamResourceName {
     }
     if (o instanceof NoteName) {
       NoteName that = (NoteName) o;
-      return (this.project.equals(that.project))
-          && (this.note.equals(that.note));
+      return (this.project.equals(that.project)) && (this.note.equals(that.note));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class NoteName extends IamResourceName {
     return h;
   }
 }
-

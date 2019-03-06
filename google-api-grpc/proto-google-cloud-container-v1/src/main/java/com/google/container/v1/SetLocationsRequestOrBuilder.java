@@ -3,71 +3,95 @@
 
 package com.google.container.v1;
 
-public interface SetLocationsRequestOrBuilder extends
+public interface SetLocationsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.SetLocationsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -79,9 +103,10 @@ public interface SetLocationsRequestOrBuilder extends
    *
    * <code>repeated string locations = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getLocationsList();
+  java.util.List<java.lang.String> getLocationsList();
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -95,6 +120,8 @@ public interface SetLocationsRequestOrBuilder extends
    */
   int getLocationsCount();
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -108,6 +135,8 @@ public interface SetLocationsRequestOrBuilder extends
    */
   java.lang.String getLocations(int index);
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -119,6 +148,28 @@ public interface SetLocationsRequestOrBuilder extends
    *
    * <code>repeated string locations = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getLocationsBytes(int index);
+  com.google.protobuf.ByteString getLocationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster) of the cluster to set locations.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster) of the cluster to set locations.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  com.google.protobuf.ByteString getNameBytes();
 }

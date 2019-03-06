@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.database.v1;
 
-public interface UpdateDatabaseDdlMetadataOrBuilder extends
+public interface UpdateDatabaseDdlMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The database being modified.
    * </pre>
@@ -16,16 +19,19 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * The database being modified.
    * </pre>
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 
   /**
+   *
+   *
    * <pre>
    * For an update this list contains all the statements. For an
    * individual statement, this list contains only that statement.
@@ -33,9 +39,10 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    *
    * <code>repeated string statements = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getStatementsList();
+  java.util.List<java.lang.String> getStatementsList();
   /**
+   *
+   *
    * <pre>
    * For an update this list contains all the statements. For an
    * individual statement, this list contains only that statement.
@@ -45,6 +52,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    */
   int getStatementsCount();
   /**
+   *
+   *
    * <pre>
    * For an update this list contains all the statements. For an
    * individual statement, this list contains only that statement.
@@ -54,6 +63,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    */
   java.lang.String getStatements(int index);
   /**
+   *
+   *
    * <pre>
    * For an update this list contains all the statements. For an
    * individual statement, this list contains only that statement.
@@ -61,10 +72,11 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    *
    * <code>repeated string statements = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getStatementsBytes(int index);
+  com.google.protobuf.ByteString getStatementsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Reports the commit timestamps of all statements that have
    * succeeded so far, where `commit_timestamps[i]` is the commit
@@ -73,9 +85,10 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    *
    * <code>repeated .google.protobuf.Timestamp commit_timestamps = 3;</code>
    */
-  java.util.List<com.google.protobuf.Timestamp> 
-      getCommitTimestampsList();
+  java.util.List<com.google.protobuf.Timestamp> getCommitTimestampsList();
   /**
+   *
+   *
    * <pre>
    * Reports the commit timestamps of all statements that have
    * succeeded so far, where `commit_timestamps[i]` is the commit
@@ -86,6 +99,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getCommitTimestamps(int index);
   /**
+   *
+   *
    * <pre>
    * Reports the commit timestamps of all statements that have
    * succeeded so far, where `commit_timestamps[i]` is the commit
@@ -96,6 +111,8 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    */
   int getCommitTimestampsCount();
   /**
+   *
+   *
    * <pre>
    * Reports the commit timestamps of all statements that have
    * succeeded so far, where `commit_timestamps[i]` is the commit
@@ -104,9 +121,11 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    *
    * <code>repeated .google.protobuf.Timestamp commit_timestamps = 3;</code>
    */
-  java.util.List<? extends com.google.protobuf.TimestampOrBuilder> 
+  java.util.List<? extends com.google.protobuf.TimestampOrBuilder>
       getCommitTimestampsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Reports the commit timestamps of all statements that have
    * succeeded so far, where `commit_timestamps[i]` is the commit
@@ -115,6 +134,5 @@ public interface UpdateDatabaseDdlMetadataOrBuilder extends
    *
    * <code>repeated .google.protobuf.Timestamp commit_timestamps = 3;</code>
    */
-  com.google.protobuf.TimestampOrBuilder getCommitTimestampsOrBuilder(
-      int index);
+  com.google.protobuf.TimestampOrBuilder getCommitTimestampsOrBuilder(int index);
 }

@@ -4,8 +4,9 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
- * Master authorized networks is a Beta feature.
  * Configuration options for the master authorized networks feature. Enabled
  * master authorized networks will disallow all external traffic to access
  * Kubernetes master through HTTPS except traffic from the given CIDR blocks,
@@ -14,25 +15,27 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.MasterAuthorizedNetworksConfig}
  */
-public  final class MasterAuthorizedNetworksConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.MasterAuthorizedNetworksConfig)
     MasterAuthorizedNetworksConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use MasterAuthorizedNetworksConfig.newBuilder() to construct.
-  private MasterAuthorizedNetworksConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private MasterAuthorizedNetworksConfig(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private MasterAuthorizedNetworksConfig() {
     enabled_ = false;
     cidrBlocks_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private MasterAuthorizedNetworksConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,34 +55,38 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            enabled_ = input.readBool();
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              cidrBlocks_ = new java.util.ArrayList<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>();
-              mutable_bitField0_ |= 0x00000002;
+          case 8:
+            {
+              enabled_ = input.readBool();
+              break;
             }
-            cidrBlocks_.add(
-                input.readMessage(com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                cidrBlocks_ =
+                    new java.util.ArrayList<
+                        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              cidrBlocks_.add(
+                  input.readMessage(
+                      com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         cidrBlocks_ = java.util.Collections.unmodifiableList(cidrBlocks_);
@@ -88,24 +95,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.MasterAuthorizedNetworksConfig.class, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder.class);
+            com.google.container.v1.MasterAuthorizedNetworksConfig.class,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.Builder.class);
   }
 
-  public interface CidrBlockOrBuilder extends
+  public interface CidrBlockOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * display_name is an optional field for users to identify CIDR blocks.
      * </pre>
@@ -114,16 +127,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getDisplayName();
     /**
+     *
+     *
      * <pre>
      * display_name is an optional field for users to identify CIDR blocks.
      * </pre>
      *
      * <code>string display_name = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getDisplayNameBytes();
+    com.google.protobuf.ByteString getDisplayNameBytes();
 
     /**
+     *
+     *
      * <pre>
      * cidr_block must be specified in CIDR notation.
      * </pre>
@@ -132,41 +148,45 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getCidrBlock();
     /**
+     *
+     *
      * <pre>
      * cidr_block must be specified in CIDR notation.
      * </pre>
      *
      * <code>string cidr_block = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getCidrBlockBytes();
+    com.google.protobuf.ByteString getCidrBlockBytes();
   }
   /**
+   *
+   *
    * <pre>
    * CidrBlock contains an optional name and one CIDR block.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock}
    */
-  public  static final class CidrBlock extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class CidrBlock extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)
       CidrBlockOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use CidrBlock.newBuilder() to construct.
     private CidrBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private CidrBlock() {
       displayName_ = "";
       cidrBlock_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private CidrBlock(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -186,53 +206,59 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              displayName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cidrBlock_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                displayName_ = s;
+                break;
               }
-              break;
-            }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                cidrBlock_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.class, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder.class);
+              com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.class,
+              com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder.class);
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object displayName_;
     /**
+     *
+     *
      * <pre>
      * display_name is an optional field for users to identify CIDR blocks.
      * </pre>
@@ -244,27 +270,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * display_name is an optional field for users to identify CIDR blocks.
      * </pre>
      *
      * <code>string display_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -275,6 +300,8 @@ private static final long serialVersionUID = 0L;
     public static final int CIDR_BLOCK_FIELD_NUMBER = 2;
     private volatile java.lang.Object cidrBlock_;
     /**
+     *
+     *
      * <pre>
      * cidr_block must be specified in CIDR notation.
      * </pre>
@@ -286,27 +313,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         cidrBlock_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * cidr_block must be specified in CIDR notation.
      * </pre>
      *
      * <code>string cidr_block = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getCidrBlockBytes() {
+    public com.google.protobuf.ByteString getCidrBlockBytes() {
       java.lang.Object ref = cidrBlock_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         cidrBlock_ = b;
         return b;
       } else {
@@ -315,6 +341,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -326,8 +353,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getDisplayNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayName_);
       }
@@ -357,18 +383,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)) {
         return super.equals(obj);
       }
-      com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock other = (com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock) obj;
+      com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock other =
+          (com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock) obj;
 
       boolean result = true;
-      result = result && getDisplayName()
-          .equals(other.getDisplayName());
-      result = result && getCidrBlock()
-          .equals(other.getCidrBlock());
+      result = result && getDisplayName().equals(other.getDisplayName());
+      result = result && getCidrBlock().equals(other.getCidrBlock());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -390,87 +415,95 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
+
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
+    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
     public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock prototype) {
+
+    public static Builder newBuilder(
+        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -480,44 +513,49 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * CidrBlock contains an optional name and one CIDR block.
      * </pre>
      *
      * Protobuf type {@code google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)
         com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_fieldAccessorTable
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.class, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder.class);
+                com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.class,
+                com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder.class);
       }
 
-      // Construct using com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.newBuilder()
+      // Construct using
+      // com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -529,14 +567,16 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor;
       }
 
       @java.lang.Override
-      public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock getDefaultInstanceForType() {
-        return com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.getDefaultInstance();
+      public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+          getDefaultInstanceForType() {
+        return com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+            .getDefaultInstance();
       }
 
       @java.lang.Override
@@ -550,7 +590,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock buildPartial() {
-        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock result = new com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock(this);
+        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock result =
+            new com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock(this);
         result.displayName_ = displayName_;
         result.cidrBlock_ = cidrBlock_;
         onBuilt();
@@ -561,46 +602,53 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock) {
-          return mergeFrom((com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)other);
+          return mergeFrom(
+              (com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock other) {
-        if (other == com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock other) {
+        if (other
+            == com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+                .getDefaultInstance()) return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
           onChanged();
@@ -628,7 +676,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -640,6 +690,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object displayName_ = "";
       /**
+       *
+       *
        * <pre>
        * display_name is an optional field for users to identify CIDR blocks.
        * </pre>
@@ -649,8 +701,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getDisplayName() {
         java.lang.Object ref = displayName_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           displayName_ = s;
           return s;
@@ -659,19 +710,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * display_name is an optional field for users to identify CIDR blocks.
        * </pre>
        *
        * <code>string display_name = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getDisplayNameBytes() {
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
         java.lang.Object ref = displayName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           displayName_ = b;
           return b;
         } else {
@@ -679,23 +730,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * display_name is an optional field for users to identify CIDR blocks.
        * </pre>
        *
        * <code>string display_name = 1;</code>
        */
-      public Builder setDisplayName(
-          java.lang.String value) {
+      public Builder setDisplayName(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         displayName_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * display_name is an optional field for users to identify CIDR blocks.
        * </pre>
@@ -703,25 +757,26 @@ private static final long serialVersionUID = 0L;
        * <code>string display_name = 1;</code>
        */
       public Builder clearDisplayName() {
-        
+
         displayName_ = getDefaultInstance().getDisplayName();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * display_name is an optional field for users to identify CIDR blocks.
        * </pre>
        *
        * <code>string display_name = 1;</code>
        */
-      public Builder setDisplayNameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         displayName_ = value;
         onChanged();
         return this;
@@ -729,6 +784,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object cidrBlock_ = "";
       /**
+       *
+       *
        * <pre>
        * cidr_block must be specified in CIDR notation.
        * </pre>
@@ -738,8 +795,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getCidrBlock() {
         java.lang.Object ref = cidrBlock_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           cidrBlock_ = s;
           return s;
@@ -748,19 +804,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * cidr_block must be specified in CIDR notation.
        * </pre>
        *
        * <code>string cidr_block = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getCidrBlockBytes() {
+      public com.google.protobuf.ByteString getCidrBlockBytes() {
         java.lang.Object ref = cidrBlock_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           cidrBlock_ = b;
           return b;
         } else {
@@ -768,23 +824,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * cidr_block must be specified in CIDR notation.
        * </pre>
        *
        * <code>string cidr_block = 2;</code>
        */
-      public Builder setCidrBlock(
-          java.lang.String value) {
+      public Builder setCidrBlock(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         cidrBlock_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * cidr_block must be specified in CIDR notation.
        * </pre>
@@ -792,29 +851,31 @@ private static final long serialVersionUID = 0L;
        * <code>string cidr_block = 2;</code>
        */
       public Builder clearCidrBlock() {
-        
+
         cidrBlock_ = getDefaultInstance().getCidrBlock();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * cidr_block must be specified in CIDR notation.
        * </pre>
        *
        * <code>string cidr_block = 2;</code>
        */
-      public Builder setCidrBlockBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setCidrBlockBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         cidrBlock_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -827,30 +888,32 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)
     }
 
     // @@protoc_insertion_point(class_scope:google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock)
-    private static final com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock DEFAULT_INSTANCE;
+    private static final com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock();
     }
 
-    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock getDefaultInstance() {
+    public static com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CidrBlock>
-        PARSER = new com.google.protobuf.AbstractParser<CidrBlock>() {
-      @java.lang.Override
-      public CidrBlock parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CidrBlock(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<CidrBlock> PARSER =
+        new com.google.protobuf.AbstractParser<CidrBlock>() {
+          @java.lang.Override
+          public CidrBlock parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new CidrBlock(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<CidrBlock> parser() {
       return PARSER;
@@ -862,16 +925,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock getDefaultInstanceForType() {
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_;
   /**
+   *
+   *
    * <pre>
    * Whether or not master authorized networks is enabled.
    * </pre>
@@ -883,66 +948,85 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CIDR_BLOCKS_FIELD_NUMBER = 2;
-  private java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock> cidrBlocks_;
+  private java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>
+      cidrBlocks_;
   /**
+   *
+   *
    * <pre>
    * cidr_blocks define up to 10 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
-   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+   * </code>
    */
-  public java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock> getCidrBlocksList() {
+  public java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>
+      getCidrBlocksList() {
     return cidrBlocks_;
   }
   /**
+   *
+   *
    * <pre>
    * cidr_blocks define up to 10 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
-   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+   * </code>
    */
-  public java.util.List<? extends com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder> 
+  public java.util.List<
+          ? extends com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>
       getCidrBlocksOrBuilderList() {
     return cidrBlocks_;
   }
   /**
+   *
+   *
    * <pre>
    * cidr_blocks define up to 10 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
-   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+   * </code>
    */
   public int getCidrBlocksCount() {
     return cidrBlocks_.size();
   }
   /**
+   *
+   *
    * <pre>
    * cidr_blocks define up to 10 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
-   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+   * </code>
    */
   public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock getCidrBlocks(int index) {
     return cidrBlocks_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * cidr_blocks define up to 10 external networks that could access
    * Kubernetes master through HTTPS.
    * </pre>
    *
-   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+   * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+   * </code>
    */
-  public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder getCidrBlocksOrBuilder(
-      int index) {
+  public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder
+      getCidrBlocksOrBuilder(int index) {
     return cidrBlocks_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -954,8 +1038,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (enabled_ != false) {
       output.writeBool(1, enabled_);
     }
@@ -972,12 +1055,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (enabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, enabled_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
     }
     for (int i = 0; i < cidrBlocks_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, cidrBlocks_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, cidrBlocks_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -987,18 +1068,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.MasterAuthorizedNetworksConfig)) {
       return super.equals(obj);
     }
-    com.google.container.v1.MasterAuthorizedNetworksConfig other = (com.google.container.v1.MasterAuthorizedNetworksConfig) obj;
+    com.google.container.v1.MasterAuthorizedNetworksConfig other =
+        (com.google.container.v1.MasterAuthorizedNetworksConfig) obj;
 
     boolean result = true;
-    result = result && (getEnabled()
-        == other.getEnabled());
-    result = result && getCidrBlocksList()
-        .equals(other.getCidrBlocksList());
+    result = result && (getEnabled() == other.getEnabled());
+    result = result && getCidrBlocksList().equals(other.getCidrBlocksList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1011,8 +1091,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnabled());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
     if (getCidrBlocksCount() > 0) {
       hash = (37 * hash) + CIDR_BLOCKS_FIELD_NUMBER;
       hash = (53 * hash) + getCidrBlocksList().hashCode();
@@ -1023,98 +1102,105 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.container.v1.MasterAuthorizedNetworksConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.MasterAuthorizedNetworksConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.MasterAuthorizedNetworksConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.container.v1.MasterAuthorizedNetworksConfig prototype) {
+
+  public static Builder newBuilder(
+      com.google.container.v1.MasterAuthorizedNetworksConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * Configuration options for the master authorized networks feature. Enabled
    * master authorized networks will disallow all external traffic to access
    * Kubernetes master through HTTPS except traffic from the given CIDR blocks,
@@ -1123,21 +1209,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.MasterAuthorizedNetworksConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.MasterAuthorizedNetworksConfig)
       com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.MasterAuthorizedNetworksConfig.class, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder.class);
+              com.google.container.v1.MasterAuthorizedNetworksConfig.class,
+              com.google.container.v1.MasterAuthorizedNetworksConfig.Builder.class);
     }
 
     // Construct using com.google.container.v1.MasterAuthorizedNetworksConfig.newBuilder()
@@ -1145,17 +1233,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCidrBlocksFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1171,9 +1259,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuthorizedNetworksConfig_descriptor;
     }
 
     @java.lang.Override
@@ -1192,7 +1280,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.MasterAuthorizedNetworksConfig buildPartial() {
-      com.google.container.v1.MasterAuthorizedNetworksConfig result = new com.google.container.v1.MasterAuthorizedNetworksConfig(this);
+      com.google.container.v1.MasterAuthorizedNetworksConfig result =
+          new com.google.container.v1.MasterAuthorizedNetworksConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.enabled_ = enabled_;
@@ -1214,38 +1303,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.MasterAuthorizedNetworksConfig) {
-        return mergeFrom((com.google.container.v1.MasterAuthorizedNetworksConfig)other);
+        return mergeFrom((com.google.container.v1.MasterAuthorizedNetworksConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1253,7 +1343,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.container.v1.MasterAuthorizedNetworksConfig other) {
-      if (other == com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()) return this;
+      if (other == com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance())
+        return this;
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
       }
@@ -1275,9 +1366,10 @@ private static final long serialVersionUID = 0L;
             cidrBlocksBuilder_ = null;
             cidrBlocks_ = other.cidrBlocks_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            cidrBlocksBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getCidrBlocksFieldBuilder() : null;
+            cidrBlocksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCidrBlocksFieldBuilder()
+                    : null;
           } else {
             cidrBlocksBuilder_.addAllMessages(other.cidrBlocks_);
           }
@@ -1302,7 +1394,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1.MasterAuthorizedNetworksConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.container.v1.MasterAuthorizedNetworksConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1311,10 +1404,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private boolean enabled_ ;
+    private boolean enabled_;
     /**
+     *
+     *
      * <pre>
      * Whether or not master authorized networks is enabled.
      * </pre>
@@ -1325,6 +1421,8 @@ private static final long serialVersionUID = 0L;
       return enabled_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether or not master authorized networks is enabled.
      * </pre>
@@ -1332,12 +1430,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enabled = 1;</code>
      */
     public Builder setEnabled(boolean value) {
-      
+
       enabled_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether or not master authorized networks is enabled.
      * </pre>
@@ -1345,33 +1445,43 @@ private static final long serialVersionUID = 0L;
      * <code>bool enabled = 1;</code>
      */
     public Builder clearEnabled() {
-      
+
       enabled_ = false;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock> cidrBlocks_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>
+        cidrBlocks_ = java.util.Collections.emptyList();
+
     private void ensureCidrBlocksIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        cidrBlocks_ = new java.util.ArrayList<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>(cidrBlocks_);
+        cidrBlocks_ =
+            new java.util.ArrayList<
+                com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>(cidrBlocks_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder> cidrBlocksBuilder_;
+            com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>
+        cidrBlocksBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock> getCidrBlocksList() {
+    public java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>
+        getCidrBlocksList() {
       if (cidrBlocksBuilder_ == null) {
         return java.util.Collections.unmodifiableList(cidrBlocks_);
       } else {
@@ -1379,12 +1489,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public int getCidrBlocksCount() {
       if (cidrBlocksBuilder_ == null) {
@@ -1394,14 +1507,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock getCidrBlocks(int index) {
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock getCidrBlocks(
+        int index) {
       if (cidrBlocksBuilder_ == null) {
         return cidrBlocks_.get(index);
       } else {
@@ -1409,12 +1526,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder setCidrBlocks(
         int index, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock value) {
@@ -1431,15 +1551,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder setCidrBlocks(
-        int index, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder builderForValue) {
+        int index,
+        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder builderForValue) {
       if (cidrBlocksBuilder_ == null) {
         ensureCidrBlocksIsMutable();
         cidrBlocks_.set(index, builderForValue.build());
@@ -1450,14 +1574,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public Builder addCidrBlocks(com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock value) {
+    public Builder addCidrBlocks(
+        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock value) {
       if (cidrBlocksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1471,12 +1599,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder addCidrBlocks(
         int index, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock value) {
@@ -1493,12 +1624,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder addCidrBlocks(
         com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder builderForValue) {
@@ -1512,15 +1646,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder addCidrBlocks(
-        int index, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder builderForValue) {
+        int index,
+        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder builderForValue) {
       if (cidrBlocksBuilder_ == null) {
         ensureCidrBlocksIsMutable();
         cidrBlocks_.add(index, builderForValue.build());
@@ -1531,19 +1669,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder addAllCidrBlocks(
-        java.lang.Iterable<? extends com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock> values) {
+        java.lang.Iterable<
+                ? extends com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>
+            values) {
       if (cidrBlocksBuilder_ == null) {
         ensureCidrBlocksIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, cidrBlocks_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cidrBlocks_);
         onChanged();
       } else {
         cidrBlocksBuilder_.addAllMessages(values);
@@ -1551,12 +1693,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder clearCidrBlocks() {
       if (cidrBlocksBuilder_ == null) {
@@ -1569,12 +1714,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
     public Builder removeCidrBlocks(int index) {
       if (cidrBlocksBuilder_ == null) {
@@ -1587,42 +1735,53 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder getCidrBlocksBuilder(
-        int index) {
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder
+        getCidrBlocksBuilder(int index) {
       return getCidrBlocksFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder getCidrBlocksOrBuilder(
-        int index) {
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder
+        getCidrBlocksOrBuilder(int index) {
       if (cidrBlocksBuilder_ == null) {
-        return cidrBlocks_.get(index);  } else {
+        return cidrBlocks_.get(index);
+      } else {
         return cidrBlocksBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public java.util.List<? extends com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder> 
-         getCidrBlocksOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>
+        getCidrBlocksOrBuilderList() {
       if (cidrBlocksBuilder_ != null) {
         return cidrBlocksBuilder_.getMessageOrBuilderList();
       } else {
@@ -1630,48 +1789,69 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder addCidrBlocksBuilder() {
-      return getCidrBlocksFieldBuilder().addBuilder(
-          com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.getDefaultInstance());
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder
+        addCidrBlocksBuilder() {
+      return getCidrBlocksFieldBuilder()
+          .addBuilder(
+              com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder addCidrBlocksBuilder(
-        int index) {
-      return getCidrBlocksFieldBuilder().addBuilder(
-          index, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.getDefaultInstance());
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder
+        addCidrBlocksBuilder(int index) {
+      return getCidrBlocksFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * cidr_blocks define up to 10 external networks that could access
      * Kubernetes master through HTTPS.
      * </pre>
      *
-     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;</code>
+     * <code>repeated .google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock cidr_blocks = 2;
+     * </code>
      */
-    public java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder> 
-         getCidrBlocksBuilderList() {
+    public java.util.List<com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder>
+        getCidrBlocksBuilderList() {
       return getCidrBlocksFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder> 
+            com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>
         getCidrBlocksFieldBuilder() {
       if (cidrBlocksBuilder_ == null) {
-        cidrBlocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder, com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>(
+        cidrBlocksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock,
+                com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder,
+                com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>(
                 cidrBlocks_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1680,9 +1860,9 @@ private static final long serialVersionUID = 0L;
       }
       return cidrBlocksBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1692,12 +1872,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.MasterAuthorizedNetworksConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.MasterAuthorizedNetworksConfig)
   private static final com.google.container.v1.MasterAuthorizedNetworksConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.MasterAuthorizedNetworksConfig();
   }
@@ -1706,16 +1886,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MasterAuthorizedNetworksConfig>
-      PARSER = new com.google.protobuf.AbstractParser<MasterAuthorizedNetworksConfig>() {
-    @java.lang.Override
-    public MasterAuthorizedNetworksConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MasterAuthorizedNetworksConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<MasterAuthorizedNetworksConfig> PARSER =
+      new com.google.protobuf.AbstractParser<MasterAuthorizedNetworksConfig>() {
+        @java.lang.Override
+        public MasterAuthorizedNetworksConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MasterAuthorizedNetworksConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<MasterAuthorizedNetworksConfig> parser() {
     return PARSER;
@@ -1730,6 +1910,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.MasterAuthorizedNetworksConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

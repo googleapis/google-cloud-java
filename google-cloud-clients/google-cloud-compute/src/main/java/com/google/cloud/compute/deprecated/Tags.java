@@ -22,7 +22,6 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
@@ -30,8 +29,8 @@ import java.util.Objects;
 
 /**
  * A list of tags for a Google Compute Engine Instance; with associated fingerprint. Tags are used
- * to identify valid sources or targets for network firewalls and are specified by the client
- * during instance creation. Each tag within the list must comply with RFC1035.
+ * to identify valid sources or targets for network firewalls and are specified by the client during
+ * instance creation. Each tag within the list must comply with RFC1035.
  *
  * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
  */
@@ -57,9 +56,7 @@ public final class Tags implements Serializable {
   private final List<String> values;
   private final String fingerprint;
 
-  /**
-   * A builder for {@code Tags} objects.
-   */
+  /** A builder for {@code Tags} objects. */
   public static final class Builder {
 
     private List<String> values;
@@ -70,8 +67,8 @@ public final class Tags implements Serializable {
     }
 
     private Builder(Tags tags) {
-      this.values = tags.values != null ? Lists.newArrayList(tags.values)
-          : Lists.<String>newArrayList();
+      this.values =
+          tags.values != null ? Lists.newArrayList(tags.values) : Lists.<String>newArrayList();
       this.fingerprint = tags.fingerprint;
     }
 
@@ -108,17 +105,13 @@ public final class Tags implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the fingerprint for the tags. This value is needed to update instance's tags.
-     */
+    /** Sets the fingerprint for the tags. This value is needed to update instance's tags. */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
-    /**
-     * Creates a {@code Tags} object.
-     */
+    /** Creates a {@code Tags} object. */
     public Tags build() {
       return new Tags(this);
     }
@@ -139,16 +132,12 @@ public final class Tags implements Serializable {
     return values;
   }
 
-  /**
-   * Returns the fingerprint for the tags. This value is needed to update instance's tags.
-   */
+  /** Returns the fingerprint for the tags. This value is needed to update instance's tags. */
   public String getFingerprint() {
     return fingerprint;
   }
 
-  /**
-   * Returns a builder for the current instance tags.
-   */
+  /** Returns a builder for the current instance tags. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -200,8 +189,8 @@ public final class Tags implements Serializable {
   }
 
   /**
-   * Returns a {@code Tags} object given the tags to apply to the instance. Each tag within the
-   * list must comply with RFC1035.
+   * Returns a {@code Tags} object given the tags to apply to the instance. Each tag within the list
+   * must comply with RFC1035.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -210,8 +199,8 @@ public final class Tags implements Serializable {
   }
 
   /**
-   * Returns a {@code Tags} object given the tags to apply to the instance. Each tag within the
-   * list must comply with RFC1035.
+   * Returns a {@code Tags} object given the tags to apply to the instance. Each tag within the list
+   * must comply with RFC1035.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

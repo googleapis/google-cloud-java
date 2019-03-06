@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2018 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,6 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 syntax = "proto3";
 
@@ -28,7 +29,6 @@ option java_outer_classname = "AlertServiceProto";
 option java_package = "com.google.monitoring.v3";
 option php_namespace = "Google\\Cloud\\Monitoring\\V3";
 
-
 // The AlertPolicyService API is used to manage (list, create, delete,
 // edit) alert policies in Stackdriver Monitoring. An alerting policy is
 // a description of the conditions under which some aspect of your
@@ -40,7 +40,8 @@ option php_namespace = "Google\\Cloud\\Monitoring\\V3";
 // [Cloud Console](https://console.cloud.google.com/).
 service AlertPolicyService {
   // Lists the existing alerting policies for the project.
-  rpc ListAlertPolicies(ListAlertPoliciesRequest) returns (ListAlertPoliciesResponse) {
+  rpc ListAlertPolicies(ListAlertPoliciesRequest)
+      returns (ListAlertPoliciesResponse) {
     option (google.api.http) = {
       get: "/v3/{name=projects/*}/alertPolicies"
     };
@@ -62,7 +63,8 @@ service AlertPolicyService {
   }
 
   // Deletes an alerting policy.
-  rpc DeleteAlertPolicy(DeleteAlertPolicyRequest) returns (google.protobuf.Empty) {
+  rpc DeleteAlertPolicy(DeleteAlertPolicyRequest)
+      returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v3/{name=projects/*/alertPolicies/*}"
     };

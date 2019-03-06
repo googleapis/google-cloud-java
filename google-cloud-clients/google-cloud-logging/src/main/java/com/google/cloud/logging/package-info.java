@@ -18,10 +18,11 @@
  * A client for Stackdriver Logging - Real-time log management and analysis.
  *
  * <p>Here's a simple usage example for using google-cloud from Compute Engine/App Engine Flexible.
- * This example shows how to write and list log entries. For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java">
+ * This example shows how to write and list log entries. For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java">
  * WriteAndListLogEntries.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * LoggingOptions options = LoggingOptions.getDefaultInstance();
  * try(Logging logging = options.getService()) {
  *
@@ -39,19 +40,23 @@
  *   while (entryIterator.hasNext()) {
  *     System.out.println(entryIterator.next());
  *   }
- * }}</pre>
+ * }
+ * }</pre>
  *
  * <p>This second example shows how to use a {@link java.util.logging.Logger} to write log entries
- * to Stackdriver Logging. The snippet installs a Stackdriver Logging handler using
- * {@code LoggingHandler.addHandler(Logger, LoggingHandler)}. Notice that this could also be done
- * through the {@code logging.properties} file, adding the following line:
+ * to Stackdriver Logging. The snippet installs a Stackdriver Logging handler using {@code
+ * LoggingHandler.addHandler(Logger, LoggingHandler)}. Notice that this could also be done through
+ * the {@code logging.properties} file, adding the following line:
+ *
  * <pre>
  * {@code com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler}
  * </pre>
- * For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java">
+ *
+ * For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java">
  * AddLoggingHandler.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * Logger logger = Logger.getLogger(AddLoggingHandler.class.getName());
  * LoggingHandler.addHandler(logger, new LoggingHandler());
  * logger.warning("test warning");

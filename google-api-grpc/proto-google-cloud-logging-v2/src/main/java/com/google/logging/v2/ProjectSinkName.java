@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class ProjectSinkName extends SinkName {
   }
 
   public static ProjectSinkName of(String project, String sink) {
-    return newBuilder()
-      .setProject(project)
-      .setSink(sink)
-      .build();
+    return newBuilder().setProject(project).setSink(sink).build();
   }
 
   public static String format(String project, String sink) {
-    return newBuilder()
-      .setProject(project)
-      .setSink(sink)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setSink(sink).build().toString();
   }
 
   public static ProjectSinkName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class ProjectSinkName extends SinkName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectSinkName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectSinkName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("sink"));
   }
 
@@ -150,8 +143,7 @@ public class ProjectSinkName extends SinkName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectSinkName projectSinkName) {
       project = projectSinkName.project;
@@ -170,8 +162,7 @@ public class ProjectSinkName extends SinkName {
     }
     if (o instanceof ProjectSinkName) {
       ProjectSinkName that = (ProjectSinkName) o;
-      return (this.project.equals(that.project))
-          && (this.sink.equals(that.sink));
+      return (this.project.equals(that.project)) && (this.sink.equals(that.sink));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class ProjectSinkName extends SinkName {
     return h;
   }
 }
-

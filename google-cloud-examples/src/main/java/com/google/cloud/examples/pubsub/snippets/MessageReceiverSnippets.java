@@ -28,7 +28,6 @@ import com.google.pubsub.v1.PubsubMessage;
 import java.util.concurrent.BlockingQueue;
 
 /** This class contains snippets for the {@link MessageReceiver} interface. */
-
 public class MessageReceiverSnippets {
   private final BlockingQueue<PubsubMessage> blockingQueue;
 

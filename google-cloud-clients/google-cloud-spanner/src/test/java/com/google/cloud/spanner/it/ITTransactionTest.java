@@ -396,9 +396,7 @@ public class ITTransactionTest {
               new TransactionCallable<Void>() {
                 @Override
                 public Void run(TransactionContext transaction) throws SpannerException {
-                  client
-                      .readOnlyTransaction()
-                      .getReadTimestamp();
+                  client.readOnlyTransaction().getReadTimestamp();
 
                   return null;
                 }
@@ -420,8 +418,8 @@ public class ITTransactionTest {
                 @Override
                 public Void run(TransactionContext transaction) throws SpannerException {
                   BatchClient batchClient = env.getTestHelper().getBatchClient(db);
-                  BatchReadOnlyTransaction batchTxn = batchClient
-                      .batchReadOnlyTransaction(TimestampBound.strong());
+                  BatchReadOnlyTransaction batchTxn =
+                      batchClient.batchReadOnlyTransaction(TimestampBound.strong());
                   batchTxn.partitionReadUsingIndex(
                       PartitionOptions.getDefaultInstance(),
                       "Test",

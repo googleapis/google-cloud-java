@@ -24,19 +24,17 @@ import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.primitives.Primitives;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ValueTest {
 
   private static final Key KEY = Key.newBuilder("ds", "kind", 1).build();
-  private static final Blob BLOB = Blob.copyFrom(new byte[]{});
+  private static final Blob BLOB = Blob.copyFrom(new byte[] {});
   private static final Timestamp TIMESTAMP = Timestamp.now();
   private static final Entity ENTITY = Entity.newBuilder(KEY).set("FOO", "BAR").build();
   private static final NullValue NULL_VALUE = NullValue.of();
@@ -53,8 +51,9 @@ public class ValueTest {
           .put(ValueType.TIMESTAMP, new Object[] {TimestampValue.class, TIMESTAMP})
           .put(ValueType.DOUBLE, new Object[] {DoubleValue.class, 1.25D})
           .put(ValueType.ENTITY, new Object[] {EntityValue.class, ENTITY})
-          .put(ValueType.LIST, new Object[] {
-              ListValue.class, ImmutableList.of(NULL_VALUE, STRING_VALUE, RAW_VALUE)})
+          .put(
+              ValueType.LIST,
+              new Object[] {ListValue.class, ImmutableList.of(NULL_VALUE, STRING_VALUE, RAW_VALUE)})
           .put(ValueType.LONG, new Object[] {LongValue.class, 123L})
           .put(ValueType.RAW_VALUE, new Object[] {RawValue.class, RAW_VALUE.get()})
           .put(ValueType.LAT_LNG, new Object[] {LatLngValue.class, LAT_LNG_VALUE.get()})
@@ -121,7 +120,6 @@ public class ValueTest {
     }
   }
 
-
   @Test
   public void testExcludeFromIndexes() throws Exception {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
@@ -133,14 +131,12 @@ public class ValueTest {
     assertFalse(builder.setExcludeFromIndexes(false).build().excludeFromIndexes());
   }
 
-
   @SuppressWarnings("deprecation")
   @Test
   public void testMeaning() throws Exception {
     TestBuilder builder = new TestBuilder();
     assertEquals(10, builder.setMeaning(10).build().getMeaning());
   }
-
 
   @Test
   public void testGet() throws Exception {

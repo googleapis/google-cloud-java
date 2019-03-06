@@ -4,6 +4,8 @@
 package com.google.spanner.admin.database.v1;
 
 /**
+ *
+ *
  * <pre>
  * Enqueues the given DDL statements to be applied, in order but not
  * necessarily all at once, to the database schema at some point (or
@@ -18,21 +20,22 @@ package com.google.spanner.admin.database.v1;
  * Each batch of statements is assigned a name which can be used with
  * the [Operations][google.longrunning.Operations] API to monitor
  * progress. See the
- * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id] field for more
- * details.
+ * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id]
+ * field for more details.
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.UpdateDatabaseDdlRequest}
  */
-public  final class UpdateDatabaseDdlRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateDatabaseDdlRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)
     UpdateDatabaseDdlRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateDatabaseDdlRequest.newBuilder() to construct.
   private UpdateDatabaseDdlRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private UpdateDatabaseDdlRequest() {
     database_ = "";
     statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -40,10 +43,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateDatabaseDdlRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -63,41 +66,43 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            database_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              statements_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              database_ = s;
+              break;
             }
-            statements_.add(s);
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                statements_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              statements_.add(s);
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            operationId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              operationId_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         statements_ = statements_.getUnmodifiableView();
@@ -106,23 +111,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+        .internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_fieldAccessorTable
+    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+        .internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.class, com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.Builder.class);
+            com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.class,
+            com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int DATABASE_FIELD_NUMBER = 1;
   private volatile java.lang.Object database_;
   /**
+   *
+   *
    * <pre>
    * Required. The database to update.
    * </pre>
@@ -134,27 +144,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       database_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The database to update.
    * </pre>
    *
    * <code>string database = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getDatabaseBytes() {
+  public com.google.protobuf.ByteString getDatabaseBytes() {
     java.lang.Object ref = database_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       database_ = b;
       return b;
     } else {
@@ -165,17 +174,20 @@ private static final long serialVersionUID = 0L;
   public static final int STATEMENTS_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList statements_;
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getStatementsList() {
+  public com.google.protobuf.ProtocolStringList getStatementsList() {
     return statements_;
   }
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
@@ -186,6 +198,8 @@ private static final long serialVersionUID = 0L;
     return statements_.size();
   }
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
@@ -196,20 +210,23 @@ private static final long serialVersionUID = 0L;
     return statements_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getStatementsBytes(int index) {
+  public com.google.protobuf.ByteString getStatementsBytes(int index) {
     return statements_.getByteString(index);
   }
 
   public static final int OPERATION_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object operationId_;
   /**
+   *
+   *
    * <pre>
    * If empty, the new update request is assigned an
    * automatically-generated operation ID. Otherwise, `operation_id`
@@ -217,17 +234,19 @@ private static final long serialVersionUID = 0L;
    * [Operation][google.longrunning.Operation].
    * Specifying an explicit operation ID simplifies determining
    * whether the statements were executed in the event that the
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-   * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-   * `operation_id` fields can be combined to form the
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * call is replayed, or the return value is otherwise lost: the
+   * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+   * and `operation_id` fields can be combined to form the
    * [name][google.longrunning.Operation.name] of the resulting
-   * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+   * [longrunning.Operation][google.longrunning.Operation]:
+   * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
    * `operation_id` should be unique within the database, and must be
    * a valid identifier: `[a-z][a-z0-9_]*`. Note that
    * automatically-generated operation IDs always begin with an
    * underscore. If the named operation already exists,
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-   * `ALREADY_EXISTS`.
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * returns `ALREADY_EXISTS`.
    * </pre>
    *
    * <code>string operation_id = 3;</code>
@@ -237,14 +256,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       operationId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If empty, the new update request is assigned an
    * automatically-generated operation ID. Otherwise, `operation_id`
@@ -252,28 +272,28 @@ private static final long serialVersionUID = 0L;
    * [Operation][google.longrunning.Operation].
    * Specifying an explicit operation ID simplifies determining
    * whether the statements were executed in the event that the
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-   * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-   * `operation_id` fields can be combined to form the
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * call is replayed, or the return value is otherwise lost: the
+   * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+   * and `operation_id` fields can be combined to form the
    * [name][google.longrunning.Operation.name] of the resulting
-   * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+   * [longrunning.Operation][google.longrunning.Operation]:
+   * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
    * `operation_id` should be unique within the database, and must be
    * a valid identifier: `[a-z][a-z0-9_]*`. Note that
    * automatically-generated operation IDs always begin with an
    * underscore. If the named operation already exists,
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-   * `ALREADY_EXISTS`.
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * returns `ALREADY_EXISTS`.
    * </pre>
    *
    * <code>string operation_id = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getOperationIdBytes() {
+  public com.google.protobuf.ByteString getOperationIdBytes() {
     java.lang.Object ref = operationId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       operationId_ = b;
       return b;
     } else {
@@ -282,6 +302,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -293,8 +314,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getDatabaseBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
     }
@@ -335,20 +355,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)) {
       return super.equals(obj);
     }
-    com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest other = (com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest) obj;
+    com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest other =
+        (com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest) obj;
 
     boolean result = true;
-    result = result && getDatabase()
-        .equals(other.getDatabase());
-    result = result && getStatementsList()
-        .equals(other.getStatementsList());
-    result = result && getOperationId()
-        .equals(other.getOperationId());
+    result = result && getDatabase().equals(other.getDatabase());
+    result = result && getStatementsList().equals(other.getStatementsList());
+    result = result && getOperationId().equals(other.getOperationId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -374,96 +392,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Enqueues the given DDL statements to be applied, in order but not
    * necessarily all at once, to the database schema at some point (or
@@ -478,27 +504,29 @@ private static final long serialVersionUID = 0L;
    * Each batch of statements is assigned a name which can be used with
    * the [Operations][google.longrunning.Operations] API to monitor
    * progress. See the
-   * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id] field for more
-   * details.
+   * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id]
+   * field for more details.
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.UpdateDatabaseDdlRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)
       com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+          .internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_fieldAccessorTable
+      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+          .internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.class, com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.Builder.class);
+              com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.class,
+              com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.Builder.class);
     }
 
     // Construct using com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.newBuilder()
@@ -506,16 +534,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -529,13 +556,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+          .internal_static_google_spanner_admin_database_v1_UpdateDatabaseDdlRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest getDefaultInstanceForType() {
+    public com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest
+        getDefaultInstanceForType() {
       return com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.getDefaultInstance();
     }
 
@@ -550,7 +578,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest buildPartial() {
-      com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest result = new com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest(this);
+      com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest result =
+          new com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.database_ = database_;
@@ -569,38 +598,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest) {
-        return mergeFrom((com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)other);
+        return mergeFrom((com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -608,7 +638,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest other) {
-      if (other == com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.getDefaultInstance()) return this;
+      if (other
+          == com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.getDefaultInstance())
+        return this;
       if (!other.getDatabase().isEmpty()) {
         database_ = other.database_;
         onChanged();
@@ -646,7 +678,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -655,10 +689,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object database_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The database to update.
      * </pre>
@@ -668,8 +705,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDatabase() {
       java.lang.Object ref = database_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         database_ = s;
         return s;
@@ -678,19 +714,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The database to update.
      * </pre>
      *
      * <code>string database = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getDatabaseBytes() {
+    public com.google.protobuf.ByteString getDatabaseBytes() {
       java.lang.Object ref = database_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         database_ = b;
         return b;
       } else {
@@ -698,23 +734,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The database to update.
      * </pre>
      *
      * <code>string database = 1;</code>
      */
-    public Builder setDatabase(
-        java.lang.String value) {
+    public Builder setDatabase(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       database_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The database to update.
      * </pre>
@@ -722,49 +761,55 @@ private static final long serialVersionUID = 0L;
      * <code>string database = 1;</code>
      */
     public Builder clearDatabase() {
-      
+
       database_ = getDefaultInstance().getDatabase();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The database to update.
      * </pre>
      *
      * <code>string database = 1;</code>
      */
-    public Builder setDatabaseBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDatabaseBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       database_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList statements_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList statements_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureStatementsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         statements_ = new com.google.protobuf.LazyStringArrayList(statements_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
      *
      * <code>repeated string statements = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getStatementsList() {
+    public com.google.protobuf.ProtocolStringList getStatementsList() {
       return statements_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
@@ -775,6 +820,8 @@ private static final long serialVersionUID = 0L;
       return statements_.size();
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
@@ -785,66 +832,71 @@ private static final long serialVersionUID = 0L;
       return statements_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
      *
      * <code>repeated string statements = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatementsBytes(int index) {
+    public com.google.protobuf.ByteString getStatementsBytes(int index) {
       return statements_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
      *
      * <code>repeated string statements = 2;</code>
      */
-    public Builder setStatements(
-        int index, java.lang.String value) {
+    public Builder setStatements(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureStatementsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureStatementsIsMutable();
       statements_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
      *
      * <code>repeated string statements = 2;</code>
      */
-    public Builder addStatements(
-        java.lang.String value) {
+    public Builder addStatements(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureStatementsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureStatementsIsMutable();
       statements_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
      *
      * <code>repeated string statements = 2;</code>
      */
-    public Builder addAllStatements(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllStatements(java.lang.Iterable<java.lang.String> values) {
       ensureStatementsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, statements_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, statements_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
@@ -858,18 +910,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * DDL statements to be applied to the database.
      * </pre>
      *
      * <code>repeated string statements = 2;</code>
      */
-    public Builder addStatementsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addStatementsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureStatementsIsMutable();
       statements_.add(value);
       onChanged();
@@ -878,6 +931,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object operationId_ = "";
     /**
+     *
+     *
      * <pre>
      * If empty, the new update request is assigned an
      * automatically-generated operation ID. Otherwise, `operation_id`
@@ -885,17 +940,19 @@ private static final long serialVersionUID = 0L;
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
@@ -903,8 +960,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getOperationId() {
       java.lang.Object ref = operationId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         operationId_ = s;
         return s;
@@ -913,6 +969,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If empty, the new update request is assigned an
      * automatically-generated operation ID. Otherwise, `operation_id`
@@ -920,28 +978,28 @@ private static final long serialVersionUID = 0L;
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getOperationIdBytes() {
+    public com.google.protobuf.ByteString getOperationIdBytes() {
       java.lang.Object ref = operationId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         operationId_ = b;
         return b;
       } else {
@@ -949,6 +1007,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If empty, the new update request is assigned an
      * automatically-generated operation ID. Otherwise, `operation_id`
@@ -956,32 +1016,35 @@ private static final long serialVersionUID = 0L;
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
      */
-    public Builder setOperationId(
-        java.lang.String value) {
+    public Builder setOperationId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       operationId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If empty, the new update request is assigned an
      * automatically-generated operation ID. Otherwise, `operation_id`
@@ -989,28 +1052,32 @@ private static final long serialVersionUID = 0L;
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
      */
     public Builder clearOperationId() {
-      
+
       operationId_ = getDefaultInstance().getOperationId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If empty, the new update request is assigned an
      * automatically-generated operation ID. Otherwise, `operation_id`
@@ -1018,35 +1085,36 @@ private static final long serialVersionUID = 0L;
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
      */
-    public Builder setOperationIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setOperationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       operationId_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1056,12 +1124,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)
-  private static final com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest DEFAULT_INSTANCE;
+  private static final com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest();
   }
@@ -1070,16 +1139,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateDatabaseDdlRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateDatabaseDdlRequest>() {
-    @java.lang.Override
-    public UpdateDatabaseDdlRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateDatabaseDdlRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateDatabaseDdlRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateDatabaseDdlRequest>() {
+        @java.lang.Override
+        public UpdateDatabaseDdlRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateDatabaseDdlRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateDatabaseDdlRequest> parser() {
     return PARSER;
@@ -1094,6 +1163,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

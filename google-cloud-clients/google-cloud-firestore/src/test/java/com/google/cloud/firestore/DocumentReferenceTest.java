@@ -66,13 +66,13 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.collect.ImmutableList;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
-import com.google.firestore.v1beta1.CommitRequest;
-import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.BatchGetDocumentsResponse;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.Value;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -95,10 +95,7 @@ public class DocumentReferenceTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
@@ -304,8 +301,8 @@ public class DocumentReferenceTest {
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(commit(delete()), commitRequests.get(0));
 
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(479978400).setNanos(123000000);
     assertCommitEquals(commit(delete(precondition.build())), commitRequests.get(1));
   }
@@ -413,24 +410,6 @@ public class DocumentReferenceTest {
   }
 
   @Test
-  public void setWithArrayUnion() throws Exception {
-    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
-        .when(firestoreMock)
-        .sendRequest(
-            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
-
-    documentReference.set(map("foo", FieldValue.arrayUnion("bar", map("foo", "baz")))).get();
-
-    CommitRequest set =
-        commit(
-            set(Collections.<String, Value>emptyMap()),
-            transform("foo", arrayUnion(string("bar"), object("foo", string("baz")))));
-
-    CommitRequest commitRequest = commitCapture.getValue();
-    assertCommitEquals(set, commitRequest);
-  }
-
-  @Test
   public void setWithIncrement() throws Exception {
     doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
         .when(firestoreMock)
@@ -449,6 +428,24 @@ public class DocumentReferenceTest {
                 increment(Value.newBuilder().setIntegerValue(1).build()),
                 "double",
                 increment(Value.newBuilder().setDoubleValue(1.1).build())));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
+  }
+
+  @Test
+  public void setWithArrayUnion() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference.set(map("foo", FieldValue.arrayUnion("bar", map("foo", "baz")))).get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.<String, Value>emptyMap()),
+            transform("foo", arrayUnion(string("bar"), object("foo", string("baz")))));
 
     CommitRequest commitRequest = commitCapture.getValue();
     assertCommitEquals(set, commitRequest);
@@ -954,8 +951,8 @@ public class DocumentReferenceTest {
     documentReference.update(SINGLE_FIELD_MAP, options).get();
     documentReference.update(options, "foo", "bar").get();
 
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(479978400).setNanos(123000000);
 
     CommitRequest expectedCommit =

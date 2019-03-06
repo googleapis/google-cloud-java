@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface GetNotificationChannelDescriptorRequestOrBuilder extends
+public interface GetNotificationChannelDescriptorRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.GetNotificationChannelDescriptorRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The channel type for which to execute the request. The format is
    * `projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}`.
@@ -17,6 +20,8 @@ public interface GetNotificationChannelDescriptorRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The channel type for which to execute the request. The format is
    * `projects/[PROJECT_ID]/notificationChannelDescriptors/{channel_type}`.
@@ -24,6 +29,5 @@ public interface GetNotificationChannelDescriptorRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

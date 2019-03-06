@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v2;
 
-public interface TruncatableStringOrBuilder extends
+public interface TruncatableStringOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v2.TruncatableString)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The shortened string. For example, if the original string is 500
    * bytes long and the limit of the string is 128 bytes, then
@@ -21,6 +24,8 @@ public interface TruncatableStringOrBuilder extends
    */
   java.lang.String getValue();
   /**
+   *
+   *
    * <pre>
    * The shortened string. For example, if the original string is 500
    * bytes long and the limit of the string is 128 bytes, then
@@ -32,10 +37,11 @@ public interface TruncatableStringOrBuilder extends
    *
    * <code>string value = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getValueBytes();
+  com.google.protobuf.ByteString getValueBytes();
 
   /**
+   *
+   *
    * <pre>
    * The number of bytes removed from the original string. If this
    * value is 0, then the string was not shortened.

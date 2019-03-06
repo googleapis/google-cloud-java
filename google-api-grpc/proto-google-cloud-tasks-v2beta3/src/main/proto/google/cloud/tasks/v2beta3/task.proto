@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC.
+// Copyright 2019 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package google.cloud.tasks.v2beta3;
 
 import "google/api/annotations.proto";
 import "google/cloud/tasks/v2beta3/target.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
 
@@ -27,10 +28,10 @@ option java_multiple_files = true;
 option java_outer_classname = "TaskProto";
 option java_package = "com.google.cloud.tasks.v2beta3";
 
-
 // A unit of scheduled work.
 message Task {
-  // The view specifies a subset of [Task][google.cloud.tasks.v2beta3.Task] data.
+  // The view specifies a subset of [Task][google.cloud.tasks.v2beta3.Task]
+  // data.
   //
   // When a task is returned in a response, not all
   // information is retrieved by default because some data, such as
@@ -45,7 +46,8 @@ message Task {
     // sensitive data.
     //
     // This view does not include the
-    // [body in AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body].
+    // [body in
+    // AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest.body].
     // Bodies are desirable to return only when needed, because they
     // can be large and because of the sensitivity of the data that you
     // choose to store in it.
@@ -53,13 +55,15 @@ message Task {
 
     // All information is returned.
     //
-    // Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL] requires
-    // `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-    // permission on the [Queue][google.cloud.tasks.v2beta3.Queue] resource.
+    // Authorization for [FULL][google.cloud.tasks.v2beta3.Task.View.FULL]
+    // requires `cloudtasks.tasks.fullView` [Google
+    // IAM](https://cloud.google.com/iam/) permission on the
+    // [Queue][google.cloud.tasks.v2beta3.Queue] resource.
     FULL = 2;
   }
 
-  // Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
+  // Optionally caller-specified in
+  // [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
   //
   // The task name.
   //
@@ -69,7 +73,8 @@ message Task {
   // * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
   //    hyphens (-), colons (:), or periods (.).
   //    For more information, see
-  //    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+  //    [Identifying
+  //    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
   // * `LOCATION_ID` is the canonical ID for the task's location.
   //    The list of available locations can be obtained by calling
   //    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -80,18 +85,24 @@ message Task {
   //   hyphens (-), or underscores (_). The maximum length is 500 characters.
   string name = 1;
 
-  // Required.
-  //
-  // The task's payload is used by the task's target to process the task.
-  // A payload is valid only if it is compatible with the queue's target.
+  // Required. The message to send to the worker.
   oneof payload_type {
-    // App Engine HTTP request that is sent to the task's target. Can
-    // be set only if
-    // [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-    // on the queue.
+    // HTTP request that is sent to the App Engine app handler.
     //
-    // An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
+    // An App Engine task is a task that has
+    // [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest]
+    // set.
     AppEngineHttpRequest app_engine_http_request = 3;
+
+    // HTTP request that is sent to the task's target.
+    //
+    // Warning: This is an [alpha](https://cloud.google.com/terms/launch-stages)
+    // feature. If you haven't already joined, you can [use this form to sign
+    // up](https://docs.google.com/forms/d/e/1FAIpQLSfc4uEy9CBHKYUSdnY1hdhKDCX7julVZHy3imOiR-XrU7bUNQ/viewform?usp=sf_link).
+    //
+    // An HTTP task is a task that has
+    // [HttpRequest][google.cloud.tasks.v2beta3.HttpRequest] set.
+    HttpRequest http_request = 11;
   }
 
   // The time when the task is scheduled to be attempted.
@@ -106,9 +117,45 @@ message Task {
   // `create_time` will be truncated to the nearest second.
   google.protobuf.Timestamp create_time = 5;
 
+  // The deadline for requests sent to the worker. If the worker does not
+  // respond by this deadline then the request is cancelled and the attempt
+  // is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+  // task according to the
+  // [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+  //
+  // Note that when the request is cancelled, Cloud Tasks will stop listing for
+  // the response, but whether the worker stops processing depends on the
+  // worker. For example, if the worker is stuck, it may not react to cancelled
+  // requests.
+  //
+  // The default and maximum values depend on the type of request:
+  //
+  // * For [HTTP tasks][google.cloud.tasks.v2beta3.HttpRequest], the default is
+  //   10 minutes.
+  //   The deadline must be in the interval [15 seconds, 30 minutes].
+  //
+  // * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest],
+  // 0 indicates that the
+  //   request has the default deadline. The default deadline depends on the
+  //   [scaling
+  //   type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+  //   of the service: 10 minutes for standard apps with automatic scaling, 24
+  //   hours for standard apps with manual and basic scaling, and 60 minutes for
+  //   flex apps. If the request deadline is set, it must be in the interval [15
+  //   seconds, 24 hours 15 seconds]. Regardless of the task's
+  //   `dispatch_deadline`, the app handler will not run for longer than than
+  //   the service's timeout. We recommend setting the `dispatch_deadline` to
+  //   at most a few seconds more than the app handler's timeout. For more
+  //   information see
+  //   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+  //
+  // `dispatch_deadline` will be truncated to the nearest millisecond. The
+  // deadline is an approximate deadline.
+  google.protobuf.Duration dispatch_deadline = 12;
+
   // Output only. The number of attempts dispatched.
   //
-  // This count includes tasks which have been dispatched but haven't
+  // This count includes attempts which have been dispatched but haven't
   // received a response.
   int32 dispatch_count = 6;
 
@@ -117,15 +164,16 @@ message Task {
 
   // Output only. The status of the task's first attempt.
   //
-  // Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
-  // The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information is not retained by Cloud Tasks.
+  // Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will
+  // be set. The other [Attempt][google.cloud.tasks.v2beta3.Attempt] information
+  // is not retained by Cloud Tasks.
   Attempt first_attempt = 8;
 
   // Output only. The status of the task's last attempt.
   Attempt last_attempt = 9;
 
-  // Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
-  // been returned.
+  // Output only. The view specifies which subset of the
+  // [Task][google.cloud.tasks.v2beta3.Task] has been returned.
   View view = 10;
 }
 
@@ -146,7 +194,7 @@ message Attempt {
   // `response_time` will be truncated to the nearest microsecond.
   google.protobuf.Timestamp response_time = 3;
 
-  // Output only. The response from the target for this attempt.
+  // Output only. The response from the worker for this attempt.
   //
   // If `response_time` is unset, then the task has not been attempted or is
   // currently running and the `response_status` field is meaningless.

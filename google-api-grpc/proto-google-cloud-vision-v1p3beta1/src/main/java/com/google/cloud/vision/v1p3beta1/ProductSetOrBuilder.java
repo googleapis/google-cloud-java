@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ProductSetOrBuilder extends
+public interface ProductSetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ProductSet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the ProductSet.
    * Format is:
@@ -19,6 +22,8 @@ public interface ProductSetOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the ProductSet.
    * Format is:
@@ -28,10 +33,11 @@ public interface ProductSetOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The user-provided name for this ProductSet. Must not be empty. Must be at
    * most 4096 characters long.
@@ -41,6 +47,8 @@ public interface ProductSetOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * The user-provided name for this ProductSet. Must not be empty. Must be at
    * most 4096 characters long.
@@ -48,10 +56,11 @@ public interface ProductSetOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this ProductSet was last indexed. Query
    * results will reflect all updates before this time. If this ProductSet has
@@ -63,6 +72,8 @@ public interface ProductSetOrBuilder extends
    */
   boolean hasIndexTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this ProductSet was last indexed. Query
    * results will reflect all updates before this time. If this ProductSet has
@@ -74,6 +85,8 @@ public interface ProductSetOrBuilder extends
    */
   com.google.protobuf.Timestamp getIndexTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this ProductSet was last indexed. Query
    * results will reflect all updates before this time. If this ProductSet has
@@ -86,6 +99,8 @@ public interface ProductSetOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
@@ -96,6 +111,8 @@ public interface ProductSetOrBuilder extends
    */
   boolean hasIndexError();
   /**
+   *
+   *
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
@@ -106,6 +123,8 @@ public interface ProductSetOrBuilder extends
    */
   com.google.rpc.Status getIndexError();
   /**
+   *
+   *
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.

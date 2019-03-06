@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface QueryResultOrBuilder extends
+public interface QueryResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.QueryResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The original conversational query text:
    * - If natural language text was provided as input, `query_text` contains
@@ -22,6 +25,8 @@ public interface QueryResultOrBuilder extends
    */
   java.lang.String getQueryText();
   /**
+   *
+   *
    * <pre>
    * The original conversational query text:
    * - If natural language text was provided as input, `query_text` contains
@@ -34,10 +39,11 @@ public interface QueryResultOrBuilder extends
    *
    * <code>string query_text = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getQueryTextBytes();
+  com.google.protobuf.ByteString getQueryTextBytes();
 
   /**
+   *
+   *
    * <pre>
    * The language that was triggered during intent detection.
    * See [Language Support](https://dialogflow.com/docs/reference/language)
@@ -48,6 +54,8 @@ public interface QueryResultOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * The language that was triggered during intent detection.
    * See [Language Support](https://dialogflow.com/docs/reference/language)
@@ -56,10 +64,11 @@ public interface QueryResultOrBuilder extends
    *
    * <code>string language_code = 15;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * The Speech recognition confidence between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
@@ -76,6 +85,8 @@ public interface QueryResultOrBuilder extends
   float getSpeechRecognitionConfidence();
 
   /**
+   *
+   *
    * <pre>
    * The action name from the matched intent.
    * </pre>
@@ -84,16 +95,19 @@ public interface QueryResultOrBuilder extends
    */
   java.lang.String getAction();
   /**
+   *
+   *
    * <pre>
    * The action name from the matched intent.
    * </pre>
    *
    * <code>string action = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getActionBytes();
+  com.google.protobuf.ByteString getActionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The collection of extracted parameters.
    * </pre>
@@ -102,6 +116,8 @@ public interface QueryResultOrBuilder extends
    */
   boolean hasParameters();
   /**
+   *
+   *
    * <pre>
    * The collection of extracted parameters.
    * </pre>
@@ -110,6 +126,8 @@ public interface QueryResultOrBuilder extends
    */
   com.google.protobuf.Struct getParameters();
   /**
+   *
+   *
    * <pre>
    * The collection of extracted parameters.
    * </pre>
@@ -119,6 +137,8 @@ public interface QueryResultOrBuilder extends
   com.google.protobuf.StructOrBuilder getParametersOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * This field is set to:
    * - `false` if the matched intent has required parameters and not all of
@@ -132,6 +152,8 @@ public interface QueryResultOrBuilder extends
   boolean getAllRequiredParamsPresent();
 
   /**
+   *
+   *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
    * </pre>
@@ -140,25 +162,29 @@ public interface QueryResultOrBuilder extends
    */
   java.lang.String getFulfillmentText();
   /**
+   *
+   *
    * <pre>
    * The text to be pronounced to the user or shown on the screen.
    * </pre>
    *
    * <code>string fulfillment_text = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getFulfillmentTextBytes();
+  com.google.protobuf.ByteString getFulfillmentTextBytes();
 
   /**
+   *
+   *
    * <pre>
    * The collection of rich messages to present to the user.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 7;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> 
-      getFulfillmentMessagesList();
+  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getFulfillmentMessagesList();
   /**
+   *
+   *
    * <pre>
    * The collection of rich messages to present to the user.
    * </pre>
@@ -167,6 +193,8 @@ public interface QueryResultOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent.Message getFulfillmentMessages(int index);
   /**
+   *
+   *
    * <pre>
    * The collection of rich messages to present to the user.
    * </pre>
@@ -175,25 +203,30 @@ public interface QueryResultOrBuilder extends
    */
   int getFulfillmentMessagesCount();
   /**
+   *
+   *
    * <pre>
    * The collection of rich messages to present to the user.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 7;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getFulfillmentMessagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The collection of rich messages to present to the user.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 7;</code>
    */
-  com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getFulfillmentMessagesOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getFulfillmentMessagesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If the query was fulfilled by a webhook call, this field is set to the
    * value of the `source` field returned in the webhook response.
@@ -203,6 +236,8 @@ public interface QueryResultOrBuilder extends
    */
   java.lang.String getWebhookSource();
   /**
+   *
+   *
    * <pre>
    * If the query was fulfilled by a webhook call, this field is set to the
    * value of the `source` field returned in the webhook response.
@@ -210,10 +245,11 @@ public interface QueryResultOrBuilder extends
    *
    * <code>string webhook_source = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getWebhookSourceBytes();
+  com.google.protobuf.ByteString getWebhookSourceBytes();
 
   /**
+   *
+   *
    * <pre>
    * If the query was fulfilled by a webhook call, this field is set to the
    * value of the `payload` field returned in the webhook response.
@@ -223,6 +259,8 @@ public interface QueryResultOrBuilder extends
    */
   boolean hasWebhookPayload();
   /**
+   *
+   *
    * <pre>
    * If the query was fulfilled by a webhook call, this field is set to the
    * value of the `payload` field returned in the webhook response.
@@ -232,6 +270,8 @@ public interface QueryResultOrBuilder extends
    */
   com.google.protobuf.Struct getWebhookPayload();
   /**
+   *
+   *
    * <pre>
    * If the query was fulfilled by a webhook call, this field is set to the
    * value of the `payload` field returned in the webhook response.
@@ -242,6 +282,8 @@ public interface QueryResultOrBuilder extends
   com.google.protobuf.StructOrBuilder getWebhookPayloadOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The collection of output contexts. If applicable,
    * `output_contexts.parameters` contains entries with name
@@ -251,9 +293,10 @@ public interface QueryResultOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 10;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Context> 
-      getOutputContextsList();
+  java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList();
   /**
+   *
+   *
    * <pre>
    * The collection of output contexts. If applicable,
    * `output_contexts.parameters` contains entries with name
@@ -265,6 +308,8 @@ public interface QueryResultOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Context getOutputContexts(int index);
   /**
+   *
+   *
    * <pre>
    * The collection of output contexts. If applicable,
    * `output_contexts.parameters` contains entries with name
@@ -276,6 +321,8 @@ public interface QueryResultOrBuilder extends
    */
   int getOutputContextsCount();
   /**
+   *
+   *
    * <pre>
    * The collection of output contexts. If applicable,
    * `output_contexts.parameters` contains entries with name
@@ -285,9 +332,11 @@ public interface QueryResultOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 10;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The collection of output contexts. If applicable,
    * `output_contexts.parameters` contains entries with name
@@ -297,10 +346,11 @@ public interface QueryResultOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 10;</code>
    */
-  com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
@@ -311,6 +361,8 @@ public interface QueryResultOrBuilder extends
    */
   boolean hasIntent();
   /**
+   *
+   *
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
@@ -321,6 +373,8 @@ public interface QueryResultOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent getIntent();
   /**
+   *
+   *
    * <pre>
    * The intent that matched the conversational query. Some, not
    * all fields are filled in this message, including but not limited to:
@@ -332,6 +386,8 @@ public interface QueryResultOrBuilder extends
   com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The intent detection confidence. Values range from 0.0
    * (completely uncertain) to 1.0 (completely certain).
@@ -342,6 +398,8 @@ public interface QueryResultOrBuilder extends
   float getIntentDetectionConfidence();
 
   /**
+   *
+   *
    * <pre>
    * The free-form diagnostic info. For example, this field
    * could contain webhook call latency.
@@ -351,6 +409,8 @@ public interface QueryResultOrBuilder extends
    */
   boolean hasDiagnosticInfo();
   /**
+   *
+   *
    * <pre>
    * The free-form diagnostic info. For example, this field
    * could contain webhook call latency.
@@ -360,6 +420,8 @@ public interface QueryResultOrBuilder extends
    */
   com.google.protobuf.Struct getDiagnosticInfo();
   /**
+   *
+   *
    * <pre>
    * The free-form diagnostic info. For example, this field
    * could contain webhook call latency.

@@ -21,7 +21,6 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ListValue;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashSet;
@@ -58,8 +57,8 @@ public final class Mutation implements Serializable {
   public enum Op {
     /**
      * Inserts a new row in a table. If the row already exists, the write or transaction fails with
-     * {@link ErrorCode#ALREADY_EXISTS}. When inserting a row, all NOT NULL columns in the table must
-     * be given a value.
+     * {@link ErrorCode#ALREADY_EXISTS}. When inserting a row, all NOT NULL columns in the table
+     * must be given a value.
      */
     INSERT,
 
@@ -71,9 +70,9 @@ public final class Mutation implements Serializable {
 
     /**
      * Like {@link #INSERT}, except that if the row already exists, then its column values are
-     * overwritten with the ones provided. All NOT NUll columns in the table must be give a value and
-     * this holds true even when the row already exists and will actually be updated. Values for all NULL
-     * columns not explicitly written are preserved.
+     * overwritten with the ones provided. All NOT NUll columns in the table must be give a value
+     * and this holds true even when the row already exists and will actually be updated. Values for
+     * all NULL columns not explicitly written are preserved.
      */
     INSERT_OR_UPDATE,
 
@@ -197,7 +196,7 @@ public final class Mutation implements Serializable {
      * Returns a newly created {@code Mutation} based on the contents of the {@code Builder}.
      *
      * @throws IllegalStateException if any duplicate columns are present. Duplicate detection is
-     * case-insensitive.
+     *     case-insensitive.
      */
     public Mutation build() {
       checkBindingInProgress(false);

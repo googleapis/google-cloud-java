@@ -23,13 +23,10 @@
 package com.google.cloud.examples.logging.snippets;
 
 import com.google.cloud.logging.Sink;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/**
- * This class contains a number of snippets for the {@link Sink} class.
- */
+/** This class contains a number of snippets for the {@link Sink} class. */
 public class SinkSnippets {
 
   private final Sink sink;
@@ -38,9 +35,7 @@ public class SinkSnippets {
     this.sink = sink;
   }
 
-  /**
-   * Example of getting the sink's latest information.
-   */
+  /** Example of getting the sink's latest information. */
   // [TARGET reload()]
   public Sink reload() {
     // [START reload]
@@ -52,9 +47,7 @@ public class SinkSnippets {
     return latestSink;
   }
 
-  /**
-   * Example of asynchronously getting the sink's latest information.
-   */
+  /** Example of asynchronously getting the sink's latest information. */
   // [TARGET reloadAsync()]
   public Sink reloadAsync() throws ExecutionException, InterruptedException {
     // [START reloadAsync]
@@ -68,39 +61,27 @@ public class SinkSnippets {
     return latestSink;
   }
 
-  /**
-   * Example of updating the sink's information.
-   */
+  /** Example of updating the sink's information. */
   // [TARGET update()]
   public Sink update() {
     // [START update]
-    Sink updatedSink = sink.toBuilder()
-        .setFilter("severity<=ERROR")
-        .build()
-        .update();
+    Sink updatedSink = sink.toBuilder().setFilter("severity<=ERROR").build().update();
     // [END update]
     return updatedSink;
   }
 
-  /**
-   * Example of asynchronously updating the sink's information.
-   */
+  /** Example of asynchronously updating the sink's information. */
   // [TARGET updateAsync()]
   public Sink updateAsync() throws ExecutionException, InterruptedException {
     // [START updateAsync]
-    Future<Sink> future = sink.toBuilder()
-        .setFilter("severity<=ERROR")
-        .build()
-        .updateAsync();
+    Future<Sink> future = sink.toBuilder().setFilter("severity<=ERROR").build().updateAsync();
     // ...
     Sink updatedSink = future.get();
     // [END updateAsync]
     return updatedSink;
   }
 
-  /**
-   * Example of deleting the sink.
-   */
+  /** Example of deleting the sink. */
   // [TARGET delete()]
   public boolean delete() {
     // [START delete]
@@ -114,9 +95,7 @@ public class SinkSnippets {
     return deleted;
   }
 
-  /**
-   * Example of asynchronously deleting the sink.
-   */
+  /** Example of asynchronously deleting the sink. */
   // [TARGET deleteAsync()]
   public boolean deleteAsync() throws ExecutionException, InterruptedException {
     // [START deleteAsync]

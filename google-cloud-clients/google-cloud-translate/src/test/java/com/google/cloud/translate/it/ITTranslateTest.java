@@ -39,13 +39,14 @@ public class ITTranslateTest {
 
   private static final Translate TRANSLATE =
       RemoteTranslateHelper.create().getOptions().getService();
-  private static final String[] LANGUAGES = {"af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs",
-      "bg", "ca", "ceb", "ny", "zh-TW", "hr", "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr",
-      "gl", "ka", "de", "el", "gu", "ht", "ha", "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga",
-      "it", "ja", "jw", "kn", "kk", "km", "ko", "lo", "la", "lv", "lt", "mk", "mg", "ms", "ml",
-      "mt", "mi", "mr", "mn", "my", "ne", "no", "fa", "pl", "pt", "ro", "ru", "sr", "st", "si",
-      "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te", "th", "tr", "uk", "ur", "uz",
-      "vi", "cy", "yi", "yo", "zu"};
+  private static final String[] LANGUAGES = {
+    "af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "ny", "zh-TW", "hr",
+    "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr", "gl", "ka", "de", "el", "gu", "ht", "ha",
+    "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jw", "kn", "kk", "km", "ko", "lo",
+    "la", "lv", "lt", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "fa", "pl",
+    "pt", "ro", "ru", "sr", "st", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te",
+    "th", "tr", "uk", "ur", "uz", "vi", "cy", "yi", "yo", "zu"
+  };
   private static final String API_KEY = "api_key";
 
   @Test
@@ -64,8 +65,8 @@ public class ITTranslateTest {
   @Test
   public void testListSupportedLanguagesWithOptions() {
     Set<String> supportedLanguages = new HashSet<>();
-    List<Language> languages = TRANSLATE.listSupportedLanguages(
-        LanguageListOption.targetLanguage("es"));
+    List<Language> languages =
+        TRANSLATE.listSupportedLanguages(LanguageListOption.targetLanguage("es"));
     for (Language language : languages) {
       supportedLanguages.add(language.getCode());
       assertNotNull(language.getName());
@@ -112,8 +113,8 @@ public class ITTranslateTest {
 
   @Test
   public void testTranslateTextListWithModel() {
-    List<Translation> translations = TRANSLATE.translate(ImmutableList.of("Hola", "Hallo"),
-        TranslateOption.model("nmt"));
+    List<Translation> translations =
+        TRANSLATE.translate(ImmutableList.of("Hola", "Hallo"), TranslateOption.model("nmt"));
     Translation translation = translations.get(0);
     assertEquals("Hello", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());
@@ -133,8 +134,9 @@ public class ITTranslateTest {
 
   @Test
   public void testTranslateTextWithOptions() {
-    Translation translation = TRANSLATE.translate("Hola",
-        TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
+    Translation translation =
+        TRANSLATE.translate(
+            "Hola", TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
     assertEquals("Hallo", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());
   }

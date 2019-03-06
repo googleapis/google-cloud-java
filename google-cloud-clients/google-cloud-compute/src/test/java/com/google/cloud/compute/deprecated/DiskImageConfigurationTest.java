@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class DiskImageConfigurationTest {
 
-  private static final DiskId SOURCE_DISK =  DiskId.of("project", "zone", "disk");
+  private static final DiskId SOURCE_DISK = DiskId.of("project", "zone", "disk");
   private static final String SOURCE_DISK_ID = "diskId";
   private static final Long ARCHIVE_SIZE_BYTES = 42L;
   private static final ImageConfiguration.SourceType SOURCE_TYPE =
@@ -41,16 +41,16 @@ public class DiskImageConfigurationTest {
     compareDiskImageConfiguration(CONFIGURATION, CONFIGURATION.toBuilder().build());
     DiskId newDisk = DiskId.of("newProject", "newZone", "newDisk");
     String newDiskId = "newDiskId";
-    DiskImageConfiguration configuration = CONFIGURATION.toBuilder()
-        .setSourceDisk(newDisk)
-        .setSourceDiskId(newDiskId)
-        .build();
+    DiskImageConfiguration configuration =
+        CONFIGURATION.toBuilder().setSourceDisk(newDisk).setSourceDiskId(newDiskId).build();
     assertEquals(newDisk, configuration.getSourceDisk());
     assertEquals(newDiskId, configuration.getSourceDiskId());
-    configuration = configuration.toBuilder()
-        .setSourceDiskId(SOURCE_DISK_ID)
-        .setSourceDisk(SOURCE_DISK)
-        .build();
+    configuration =
+        configuration
+            .toBuilder()
+            .setSourceDiskId(SOURCE_DISK_ID)
+            .setSourceDisk(SOURCE_DISK)
+            .build();
     compareDiskImageConfiguration(CONFIGURATION, configuration);
   }
 
@@ -72,11 +72,11 @@ public class DiskImageConfigurationTest {
   @Test
   public void testToAndFromPb() {
     assertTrue(ImageConfiguration.fromPb(CONFIGURATION.toPb()) instanceof DiskImageConfiguration);
-    compareDiskImageConfiguration(CONFIGURATION,
-        ImageConfiguration.<DiskImageConfiguration>fromPb(CONFIGURATION.toPb()));
+    compareDiskImageConfiguration(
+        CONFIGURATION, ImageConfiguration.<DiskImageConfiguration>fromPb(CONFIGURATION.toPb()));
     DiskImageConfiguration configuration = DiskImageConfiguration.of(SOURCE_DISK);
-    compareDiskImageConfiguration(configuration,
-        DiskImageConfiguration.fromPb(configuration.toPb()));
+    compareDiskImageConfiguration(
+        configuration, DiskImageConfiguration.fromPb(configuration.toPb()));
   }
 
   @Test
@@ -91,14 +91,13 @@ public class DiskImageConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    DiskImageConfiguration configuration = CONFIGURATION.toBuilder()
-        .setSourceDisk(DiskId.of("zone", "disk"))
-        .build();
+    DiskImageConfiguration configuration =
+        CONFIGURATION.toBuilder().setSourceDisk(DiskId.of("zone", "disk")).build();
     compareDiskImageConfiguration(CONFIGURATION, configuration.setProjectId("project"));
   }
 
-  private void compareDiskImageConfiguration(DiskImageConfiguration expected,
-      DiskImageConfiguration value) {
+  private void compareDiskImageConfiguration(
+      DiskImageConfiguration expected, DiskImageConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getArchiveSizeBytes(), value.getArchiveSizeBytes());

@@ -21,7 +21,6 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -31,7 +30,6 @@ import java.util.Set;
  * select only desired fields from a returned Google Cloud resource.
  */
 public interface FieldSelector {
-
 
   /**
    * Returns a string selector. This selector is passed to a Google Cloud service (possibly with
@@ -58,7 +56,9 @@ public interface FieldSelector {
           }
         };
 
-    private static String selector(List<? extends FieldSelector> required, FieldSelector[] others,
+    private static String selector(
+        List<? extends FieldSelector> required,
+        FieldSelector[] others,
         String... extraResourceFields) {
       Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(required.size() + others.length);
       fieldStrings.addAll(Lists.transform(required, FIELD_TO_STRING_FUNCTION));
@@ -73,16 +73,16 @@ public interface FieldSelector {
      * This method is not supposed to be used directly by users.
      */
     public static String selector(List<? extends FieldSelector> required, FieldSelector... others) {
-      return selector(required, others, new String[]{});
+      return selector(required, others, new String[] {});
     }
 
     /**
      * Returns a composite selector given a number of resource fields and a container name. The
      * string selector returned by this method can be used for field selection in API calls that
-     * return a  list of resources. This method is not supposed to be used directly by users.
+     * return a list of resources. This method is not supposed to be used directly by users.
      */
-    public static String listSelector(String containerName, List<? extends FieldSelector> required,
-        FieldSelector... others) {
+    public static String listSelector(
+        String containerName, List<? extends FieldSelector> required, FieldSelector... others) {
       return "nextPageToken," + containerName + '(' + selector(required, others) + ')';
     }
 
@@ -93,25 +93,35 @@ public interface FieldSelector {
      * selection in API calls that return a list of resources. This method is not supposed to be
      * used directly by users.
      */
-    public static String listSelector(String containerName, List<? extends FieldSelector> required,
-        FieldSelector[] others, String... extraResourceFields) {
+    public static String listSelector(
+        String containerName,
+        List<? extends FieldSelector> required,
+        FieldSelector[] others,
+        String... extraResourceFields) {
       return listSelector(EMPTY_FIELDS, containerName, required, others, extraResourceFields);
     }
 
     /**
      * Returns a composite selector given a number of top level fields as strings, a number of
      * resource fields and a container name. This method also takes an {@code extraResourceFields}
-     * parameter  to specify some extra resource fields as strings. The string selector returned by
+     * parameter to specify some extra resource fields as strings. The string selector returned by
      * this method can be used for field selection in API calls that return a list of resources.
      * This method is not supposed to be used directly by users.
      */
-    public static String listSelector(String[] topLevelFields, String containerName,
-        List<? extends FieldSelector> required, FieldSelector[] others,
+    public static String listSelector(
+        String[] topLevelFields,
+        String containerName,
+        List<? extends FieldSelector> required,
+        FieldSelector[] others,
         String... extraResourceFields) {
       Set<String> topLevelStrings = Sets.newHashSetWithExpectedSize(topLevelFields.length + 1);
       topLevelStrings.addAll(Lists.asList("nextPageToken", topLevelFields));
-      return Joiner.on(',').join(topLevelStrings) + "," + containerName + '('
-          + selector(required, others, extraResourceFields) + ')';
+      return Joiner.on(',').join(topLevelStrings)
+          + ","
+          + containerName
+          + '('
+          + selector(required, others, extraResourceFields)
+          + ')';
     }
   }
 }

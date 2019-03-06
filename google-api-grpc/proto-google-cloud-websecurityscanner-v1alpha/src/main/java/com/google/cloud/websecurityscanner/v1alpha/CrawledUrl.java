@@ -4,6 +4,8 @@
 package com.google.cloud.websecurityscanner.v1alpha;
 
 /**
+ *
+ *
  * <pre>
  * A CrawledUrl resource represents a URL that was crawled during a ScanRun. Web
  * Security Scanner Service crawls the web applications, following all links
@@ -12,15 +14,16 @@ package com.google.cloud.websecurityscanner.v1alpha;
  *
  * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.CrawledUrl}
  */
-public  final class CrawledUrl extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CrawledUrl extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.CrawledUrl)
     CrawledUrlOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CrawledUrl.newBuilder() to construct.
   private CrawledUrl(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CrawledUrl() {
     httpMethod_ = "";
     url_ = "";
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CrawledUrl(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,59 +54,66 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            httpMethod_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            url_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            body_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              httpMethod_ = s;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              body_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto.internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto.internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_fieldAccessorTable
+    return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.class, com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.Builder.class);
+            com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.class,
+            com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.Builder.class);
   }
 
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
   private volatile java.lang.Object httpMethod_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The http method of the request that was used to visit the URL, in
@@ -117,14 +127,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       httpMethod_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The http method of the request that was used to visit the URL, in
@@ -133,13 +144,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string http_method = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getHttpMethodBytes() {
+  public com.google.protobuf.ByteString getHttpMethodBytes() {
     java.lang.Object ref = httpMethod_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       httpMethod_ = b;
       return b;
     } else {
@@ -150,6 +159,8 @@ private static final long serialVersionUID = 0L;
   public static final int URL_FIELD_NUMBER = 2;
   private volatile java.lang.Object url_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL that was crawled.
@@ -162,14 +173,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       url_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL that was crawled.
@@ -177,13 +189,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string url = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getUrlBytes() {
+  public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       url_ = b;
       return b;
     } else {
@@ -194,6 +204,8 @@ private static final long serialVersionUID = 0L;
   public static final int BODY_FIELD_NUMBER = 3;
   private volatile java.lang.Object body_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The body of the request that was used to visit the URL.
@@ -206,14 +218,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       body_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The body of the request that was used to visit the URL.
@@ -221,13 +234,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string body = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getBodyBytes() {
+  public com.google.protobuf.ByteString getBodyBytes() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       body_ = b;
       return b;
     } else {
@@ -236,6 +247,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -247,8 +259,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getHttpMethodBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, httpMethod_);
     }
@@ -284,20 +295,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.CrawledUrl)) {
       return super.equals(obj);
     }
-    com.google.cloud.websecurityscanner.v1alpha.CrawledUrl other = (com.google.cloud.websecurityscanner.v1alpha.CrawledUrl) obj;
+    com.google.cloud.websecurityscanner.v1alpha.CrawledUrl other =
+        (com.google.cloud.websecurityscanner.v1alpha.CrawledUrl) obj;
 
     boolean result = true;
-    result = result && getHttpMethod()
-        .equals(other.getHttpMethod());
-    result = result && getUrl()
-        .equals(other.getUrl());
-    result = result && getBody()
-        .equals(other.getBody());
+    result = result && getHttpMethod().equals(other.getHttpMethod());
+    result = result && getUrl().equals(other.getUrl());
+    result = result && getBody().equals(other.getBody());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -321,96 +330,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.CrawledUrl parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.CrawledUrl prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.websecurityscanner.v1alpha.CrawledUrl prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A CrawledUrl resource represents a URL that was crawled during a ScanRun. Web
    * Security Scanner Service crawls the web applications, following all links
@@ -419,21 +436,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.CrawledUrl}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.CrawledUrl)
       com.google.cloud.websecurityscanner.v1alpha.CrawledUrlOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto.internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto.internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.class, com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.class,
+              com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.Builder.class);
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.newBuilder()
@@ -441,16 +460,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -464,9 +482,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto.internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.CrawledUrlProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_CrawledUrl_descriptor;
     }
 
     @java.lang.Override
@@ -485,7 +503,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.CrawledUrl buildPartial() {
-      com.google.cloud.websecurityscanner.v1alpha.CrawledUrl result = new com.google.cloud.websecurityscanner.v1alpha.CrawledUrl(this);
+      com.google.cloud.websecurityscanner.v1alpha.CrawledUrl result =
+          new com.google.cloud.websecurityscanner.v1alpha.CrawledUrl(this);
       result.httpMethod_ = httpMethod_;
       result.url_ = url_;
       result.body_ = body_;
@@ -497,38 +516,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.websecurityscanner.v1alpha.CrawledUrl) {
-        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.CrawledUrl)other);
+        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.CrawledUrl) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -536,7 +556,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.CrawledUrl other) {
-      if (other == com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.getDefaultInstance()) return this;
+      if (other == com.google.cloud.websecurityscanner.v1alpha.CrawledUrl.getDefaultInstance())
+        return this;
       if (!other.getHttpMethod().isEmpty()) {
         httpMethod_ = other.httpMethod_;
         onChanged();
@@ -568,7 +589,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.CrawledUrl) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.websecurityscanner.v1alpha.CrawledUrl) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -580,6 +602,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object httpMethod_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that was used to visit the URL, in
@@ -591,8 +615,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getHttpMethod() {
       java.lang.Object ref = httpMethod_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         httpMethod_ = s;
         return s;
@@ -601,6 +624,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that was used to visit the URL, in
@@ -609,13 +634,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string http_method = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getHttpMethodBytes() {
+    public com.google.protobuf.ByteString getHttpMethodBytes() {
       java.lang.Object ref = httpMethod_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         httpMethod_ = b;
         return b;
       } else {
@@ -623,6 +646,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that was used to visit the URL, in
@@ -631,17 +656,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string http_method = 1;</code>
      */
-    public Builder setHttpMethod(
-        java.lang.String value) {
+    public Builder setHttpMethod(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       httpMethod_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that was used to visit the URL, in
@@ -651,12 +677,14 @@ private static final long serialVersionUID = 0L;
      * <code>string http_method = 1;</code>
      */
     public Builder clearHttpMethod() {
-      
+
       httpMethod_ = getDefaultInstance().getHttpMethod();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that was used to visit the URL, in
@@ -665,13 +693,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string http_method = 1;</code>
      */
-    public Builder setHttpMethodBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setHttpMethodBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       httpMethod_ = value;
       onChanged();
       return this;
@@ -679,6 +706,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object url_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL that was crawled.
@@ -689,8 +718,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         url_ = s;
         return s;
@@ -699,6 +727,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL that was crawled.
@@ -706,13 +736,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
+    public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         url_ = b;
         return b;
       } else {
@@ -720,6 +748,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL that was crawled.
@@ -727,17 +757,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 2;</code>
      */
-    public Builder setUrl(
-        java.lang.String value) {
+    public Builder setUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       url_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL that was crawled.
@@ -746,12 +777,14 @@ private static final long serialVersionUID = 0L;
      * <code>string url = 2;</code>
      */
     public Builder clearUrl() {
-      
+
       url_ = getDefaultInstance().getUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL that was crawled.
@@ -759,13 +792,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 2;</code>
      */
-    public Builder setUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       url_ = value;
       onChanged();
       return this;
@@ -773,6 +805,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object body_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that was used to visit the URL.
@@ -783,8 +817,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getBody() {
       java.lang.Object ref = body_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         body_ = s;
         return s;
@@ -793,6 +826,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that was used to visit the URL.
@@ -800,13 +835,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string body = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getBodyBytes() {
+    public com.google.protobuf.ByteString getBodyBytes() {
       java.lang.Object ref = body_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         body_ = b;
         return b;
       } else {
@@ -814,6 +847,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that was used to visit the URL.
@@ -821,17 +856,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string body = 3;</code>
      */
-    public Builder setBody(
-        java.lang.String value) {
+    public Builder setBody(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       body_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that was used to visit the URL.
@@ -840,12 +876,14 @@ private static final long serialVersionUID = 0L;
      * <code>string body = 3;</code>
      */
     public Builder clearBody() {
-      
+
       body_ = getDefaultInstance().getBody();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that was used to visit the URL.
@@ -853,20 +891,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string body = 3;</code>
      */
-    public Builder setBodyBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setBodyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       body_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -876,12 +913,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.CrawledUrl)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.CrawledUrl)
   private static final com.google.cloud.websecurityscanner.v1alpha.CrawledUrl DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.CrawledUrl();
   }
@@ -890,16 +927,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CrawledUrl>
-      PARSER = new com.google.protobuf.AbstractParser<CrawledUrl>() {
-    @java.lang.Override
-    public CrawledUrl parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CrawledUrl(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CrawledUrl> PARSER =
+      new com.google.protobuf.AbstractParser<CrawledUrl>() {
+        @java.lang.Override
+        public CrawledUrl parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CrawledUrl(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CrawledUrl> parser() {
     return PARSER;
@@ -914,6 +951,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.websecurityscanner.v1alpha.CrawledUrl getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,20 +3,24 @@
 
 package com.google.firestore.v1beta1;
 
-public interface ListDocumentsResponseOrBuilder extends
+public interface ListDocumentsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.ListDocumentsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Documents found.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Document documents = 1;</code>
    */
-  java.util.List<com.google.firestore.v1beta1.Document> 
-      getDocumentsList();
+  java.util.List<com.google.firestore.v1beta1.Document> getDocumentsList();
   /**
+   *
+   *
    * <pre>
    * The Documents found.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListDocumentsResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.Document getDocuments(int index);
   /**
+   *
+   *
    * <pre>
    * The Documents found.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListDocumentsResponseOrBuilder extends
    */
   int getDocumentsCount();
   /**
+   *
+   *
    * <pre>
    * The Documents found.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Document documents = 1;</code>
    */
-  java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder> 
+  java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder>
       getDocumentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The Documents found.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Document documents = 1;</code>
    */
-  com.google.firestore.v1beta1.DocumentOrBuilder getDocumentsOrBuilder(
-      int index);
+  com.google.firestore.v1beta1.DocumentOrBuilder getDocumentsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The next page token.
    * </pre>
@@ -60,12 +71,13 @@ public interface ListDocumentsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * The next page token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

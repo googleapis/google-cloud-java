@@ -20,14 +20,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Base class for Storage operation option.
- */
-abstract class Option implements Serializable {
+/** Base class for Storage operation option. */
+public abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -73199088766477208L;
 
@@ -53,8 +50,7 @@ abstract class Option implements Serializable {
       return false;
     }
     Option other = (Option) obj;
-    return Objects.equals(rpcOption, other.rpcOption)
-        && Objects.equals(value, other.value);
+    return Objects.equals(rpcOption, other.rpcOption) && Objects.equals(value, other.value);
   }
 
   @Override

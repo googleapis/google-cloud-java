@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message for the expected URL mappings. */
 public final class UrlMapTest implements ApiMessage {
   private final String description;
   private final String host;
@@ -46,16 +47,16 @@ public final class UrlMapTest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("host")) {
+    if ("host".equals(fieldName)) {
       return host;
     }
-    if (fieldName.equals("path")) {
+    if ("path".equals(fieldName)) {
       return path;
     }
-    if (fieldName.equals("service")) {
+    if ("service".equals(fieldName)) {
       return service;
     }
     return null;
@@ -69,22 +70,32 @@ public final class UrlMapTest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Description of this test case. */
   public String getDescription() {
     return description;
   }
 
+  /** Host portion of the URL. */
   public String getHost() {
     return host;
   }
 
+  /** Path portion of the URL. */
   public String getPath() {
     return path;
   }
 
+  /** Expected BackendService resource the given URL should be mapped to. */
   public String getService() {
     return service;
   }
@@ -143,37 +154,45 @@ public final class UrlMapTest implements ApiMessage {
       this.service = source.service;
     }
 
+    /** Description of this test case. */
     public String getDescription() {
       return description;
     }
 
+    /** Description of this test case. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** Host portion of the URL. */
     public String getHost() {
       return host;
     }
 
+    /** Host portion of the URL. */
     public Builder setHost(String host) {
       this.host = host;
       return this;
     }
 
+    /** Path portion of the URL. */
     public String getPath() {
       return path;
     }
 
+    /** Path portion of the URL. */
     public Builder setPath(String path) {
       this.path = path;
       return this;
     }
 
+    /** Expected BackendService resource the given URL should be mapped to. */
     public String getService() {
       return service;
     }
 
+    /** Expected BackendService resource the given URL should be mapped to. */
     public Builder setService(String service) {
       this.service = service;
       return this;

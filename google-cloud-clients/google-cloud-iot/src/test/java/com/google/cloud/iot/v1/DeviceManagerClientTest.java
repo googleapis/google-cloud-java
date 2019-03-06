@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -776,6 +776,143 @@ public class DeviceManagerClientTest {
       List<String> permissions = new ArrayList<>();
 
       client.testIamPermissions(resource, permissions);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceTest() {
+    SendCommandToDeviceResponse expectedResponse = SendCommandToDeviceResponse.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ByteString binaryData = ByteString.copyFromUtf8("40");
+    String subfolder = "subfolder153561774";
+
+    SendCommandToDeviceResponse actualResponse =
+        client.sendCommandToDevice(name, binaryData, subfolder);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SendCommandToDeviceRequest actualRequest = (SendCommandToDeviceRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, DeviceName.parse(actualRequest.getName()));
+    Assert.assertEquals(binaryData, actualRequest.getBinaryData());
+    Assert.assertEquals(subfolder, actualRequest.getSubfolder());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void sendCommandToDeviceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ByteString binaryData = ByteString.copyFromUtf8("40");
+      String subfolder = "subfolder153561774";
+
+      client.sendCommandToDevice(name, binaryData, subfolder);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void bindDeviceToGatewayTest() {
+    BindDeviceToGatewayResponse expectedResponse = BindDeviceToGatewayResponse.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    String gatewayId = "gatewayId955798774";
+    String deviceId = "deviceId25209764";
+
+    BindDeviceToGatewayResponse actualResponse =
+        client.bindDeviceToGateway(parent, gatewayId, deviceId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BindDeviceToGatewayRequest actualRequest = (BindDeviceToGatewayRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, RegistryName.parse(actualRequest.getParent()));
+    Assert.assertEquals(gatewayId, actualRequest.getGatewayId());
+    Assert.assertEquals(deviceId, actualRequest.getDeviceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void bindDeviceToGatewayExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      String gatewayId = "gatewayId955798774";
+      String deviceId = "deviceId25209764";
+
+      client.bindDeviceToGateway(parent, gatewayId, deviceId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void unbindDeviceFromGatewayTest() {
+    UnbindDeviceFromGatewayResponse expectedResponse =
+        UnbindDeviceFromGatewayResponse.newBuilder().build();
+    mockDeviceManager.addResponse(expectedResponse);
+
+    RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+    String gatewayId = "gatewayId955798774";
+    String deviceId = "deviceId25209764";
+
+    UnbindDeviceFromGatewayResponse actualResponse =
+        client.unbindDeviceFromGateway(parent, gatewayId, deviceId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockDeviceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UnbindDeviceFromGatewayRequest actualRequest =
+        (UnbindDeviceFromGatewayRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, RegistryName.parse(actualRequest.getParent()));
+    Assert.assertEquals(gatewayId, actualRequest.getGatewayId());
+    Assert.assertEquals(deviceId, actualRequest.getDeviceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void unbindDeviceFromGatewayExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockDeviceManager.addException(exception);
+
+    try {
+      RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+      String gatewayId = "gatewayId955798774";
+      String deviceId = "deviceId25209764";
+
+      client.unbindDeviceFromGateway(parent, gatewayId, deviceId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

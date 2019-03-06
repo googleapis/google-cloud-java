@@ -36,7 +36,6 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageException;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -46,9 +45,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/**
- * This class contains a number of snippets for the {@link Blob} class.
- */
+/** This class contains a number of snippets for the {@link Blob} class. */
 public class BlobSnippets {
 
   private final Blob blob;
@@ -57,9 +54,7 @@ public class BlobSnippets {
     this.blob = blob;
   }
 
-  /**
-   * Example of checking if the blob exists.
-   */
+  /** Example of checking if the blob exists. */
   // [TARGET exists(BlobSourceOption...)]
   public boolean exists() {
     // [START exists]
@@ -74,8 +69,8 @@ public class BlobSnippets {
   }
 
   /**
-   * Example of reading all bytes of the blob, if its generation matches the
-   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
+   * Example of reading all bytes of the blob, if its generation matches the {@link
+   * Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET getContent(BlobSourceOption...)]
   public byte[] getContent() {
@@ -86,8 +81,8 @@ public class BlobSnippets {
   }
 
   /**
-   * Example of getting the blob's latest information, if its generation does not match the
-   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
+   * Example of getting the blob's latest information, if its generation does not match the {@link
+   * Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET reload(BlobSourceOption...)]
   public Blob reload() {
@@ -100,9 +95,7 @@ public class BlobSnippets {
     return latestBlob;
   }
 
-  /**
-   * Example of replacing blob's metadata.
-   */
+  /** Example of replacing blob's metadata. */
   // [TARGET update(BlobTargetOption...)]
   public Blob update() {
     // [START update]
@@ -131,9 +124,7 @@ public class BlobSnippets {
     return deleted;
   }
 
-  /**
-   * Example of copying the blob to a different bucket with a different name.
-   */
+  /** Example of copying the blob to a different bucket with a different name. */
   // [TARGET copyTo(BlobId, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "copy_blob_name"]
@@ -145,9 +136,7 @@ public class BlobSnippets {
     return copiedBlob;
   }
 
-  /**
-   * Example of copying the blob to a different bucket, keeping the original name.
-   */
+  /** Example of copying the blob to a different bucket, keeping the original name. */
   // [TARGET copyTo(String, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   public Blob copyToBucket(String bucketName) {
@@ -158,9 +147,7 @@ public class BlobSnippets {
     return copiedBlob;
   }
 
-  /**
-   * Example of copying the blob to a different bucket with a different name.
-   */
+  /** Example of copying the blob to a different bucket with a different name. */
   // [TARGET copyTo(String, String, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "copy_blob_name"]
@@ -172,9 +159,7 @@ public class BlobSnippets {
     return copiedBlob;
   }
 
-  /**
-   * Example of moving a blob to a different bucket with a different name.
-   */
+  /** Example of moving a blob to a different bucket with a different name. */
   // [TARGET copyTo(String, String, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "move_blob_name"]
@@ -191,9 +176,7 @@ public class BlobSnippets {
     }
   }
 
-  /**
-   * Example of reading the blob's content through a reader.
-   */
+  /** Example of reading the blob's content through a reader. */
   // [TARGET reader(BlobSourceOption...)]
   public void reader() throws IOException {
     // [START reader]
@@ -208,9 +191,7 @@ public class BlobSnippets {
     // [END reader]
   }
 
-  /**
-   * Example of reading just a portion of the blob's content.
-   */
+  /** Example of reading just a portion of the blob's content. */
   // [TARGET reader(BlobSourceOption...)]
   // [VARIABLE 1]
   // [VARIABLE 8]
@@ -225,9 +206,7 @@ public class BlobSnippets {
     // [END readContentRange]
   }
 
-  /**
-   * Example of writing the blob's content through a writer.
-   */
+  /** Example of writing the blob's content through a writer. */
   // [TARGET writer(BlobWriteOption...)]
   public void writer() throws IOException {
     // [START writer]
@@ -255,22 +234,24 @@ public class BlobSnippets {
   }
 
   /**
-   * Example of creating a signed URL for the blob passing the
-   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used to sign the URL.
+   * Example of creating a signed URL for the blob passing the {@link
+   * SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used to sign the URL.
    */
   // [TARGET signUrl(long, TimeUnit, SignUrlOption...)]
   // [VARIABLE "/path/to/key.json"]
   public URL signUrlWithSigner(String keyPath) throws IOException {
     // [START signUrlWithSigner]
-    URL signedUrl = blob.signUrl(14, TimeUnit.DAYS, SignUrlOption.signWith(
-        ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
+    URL signedUrl =
+        blob.signUrl(
+            14,
+            TimeUnit.DAYS,
+            SignUrlOption.signWith(
+                ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
     // [END signUrlWithSigner]
     return signedUrl;
   }
 
-  /**
-   * Example of getting the ACL entry for an entity.
-   */
+  /** Example of getting the ACL entry for an entity. */
   // [TARGET getAcl(Entity)]
   public Acl getAcl() {
     // [START getAcl]
@@ -279,9 +260,7 @@ public class BlobSnippets {
     return acl;
   }
 
-  /**
-   * Example of deleting the ACL entry for an entity.
-   */
+  /** Example of deleting the ACL entry for an entity. */
   // [TARGET deleteAcl(Entity)]
   public boolean deleteAcl() {
     // [START deleteAcl]
@@ -295,9 +274,7 @@ public class BlobSnippets {
     return deleted;
   }
 
-  /**
-   * Example of creating a new ACL entry.
-   */
+  /** Example of creating a new ACL entry. */
   // [TARGET createAcl(Acl)]
   public Acl createAcl() {
     // [START createAcl]
@@ -306,9 +283,7 @@ public class BlobSnippets {
     return acl;
   }
 
-  /**
-   * Example of updating a new ACL entry.
-   */
+  /** Example of updating a new ACL entry. */
   // [TARGET updateAcl(Acl)]
   public Acl updateAcl() {
     // [START updateAcl]
@@ -317,9 +292,7 @@ public class BlobSnippets {
     return acl;
   }
 
-  /**
-   * Example of listing the ACL entries.
-   */
+  /** Example of listing the ACL entries. */
   // [TARGET listAcls()]
   public List<Acl> listAcls() {
     // [START listAcls]

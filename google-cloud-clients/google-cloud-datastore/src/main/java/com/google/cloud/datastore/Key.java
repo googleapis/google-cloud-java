@@ -21,18 +21,16 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.TextFormat;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 /**
- * A key that is guaranteed to be complete and could be used to reference a
- * Google Cloud Datastore {@link Entity}.
- * This class is immutable.
+ * A key that is guaranteed to be complete and could be used to reference a Google Cloud Datastore
+ * {@link Entity}. This class is immutable.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
- *    Entities, Properties, and Keys</a>
+ *     Entities, Properties, and Keys</a>
  */
 public final class Key extends IncompleteKey {
 
@@ -72,20 +70,14 @@ public final class Key extends IncompleteKey {
       }
     }
 
-
-    /**
-     * Sets the name of this key.
-     */
+    /** Sets the name of this key. */
     public Builder setName(String name) {
       this.name = name;
       id = null;
       return this;
     }
 
-
-    /**
-     * Sets the ID of this key.
-     */
+    /** Sets the ID of this key. */
     public Builder setId(long id) {
       this.id = id;
       name = null;
@@ -114,10 +106,7 @@ public final class Key extends IncompleteKey {
     return getLeaf().hasId();
   }
 
-
-  /**
-   * Returns the key's id or {@code null} if it has a name instead.
-   */
+  /** Returns the key's id or {@code null} if it has a name instead. */
   public Long getId() {
     return getLeaf().getId();
   }
@@ -126,25 +115,17 @@ public final class Key extends IncompleteKey {
     return getLeaf().hasName();
   }
 
-
-  /**
-   * Returns the key's name or {@code null} if it has an id instead.
-   */
+  /** Returns the key's name or {@code null} if it has an id instead. */
   public String getName() {
     return getLeaf().getName();
   }
 
-
-  /**
-   * Returns the key's ID (as {@link Long}) or name (as {@link String}). Never {@code null}.
-   */
+  /** Returns the key's ID (as {@link Long}) or name (as {@link String}). Never {@code null}. */
   public Object getNameOrId() {
     return getLeaf().getNameOrId();
   }
 
-  /**
-   * Returns the key in an encoded form that can be used as part of a URL.
-   */
+  /** Returns the key in an encoded form that can be used as part of a URL. */
   public String toUrlSafe() {
     try {
       return URLEncoder.encode(TextFormat.printToString(toPb()), UTF_8.name());
@@ -177,38 +158,31 @@ public final class Key extends IncompleteKey {
     return (Key) key;
   }
 
-
   public static Builder newBuilder(String projectId, String kind, String name) {
     return new Builder(projectId, kind, name);
   }
-
 
   public static Builder newBuilder(String projectId, String kind, long id) {
     return new Builder(projectId, kind, id);
   }
 
-
   public static Builder newBuilder(Key copyFrom) {
     return new Builder(copyFrom);
   }
-
 
   public static Builder newBuilder(IncompleteKey copyFrom, String name) {
     return new Builder(copyFrom, name);
   }
 
-
   public static Builder newBuilder(IncompleteKey copyFrom, long id) {
     return new Builder(copyFrom, id);
   }
-
 
   public static Builder newBuilder(Key parent, String kind, String name) {
     Builder builder = newBuilder(parent.getProjectId(), kind, name);
     addParentToBuilder(parent, builder);
     return builder;
   }
-
 
   public static Builder newBuilder(Key parent, String kind, long id) {
     Builder builder = newBuilder(parent.getProjectId(), kind, id);

@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface LeaseTasksRequestOrBuilder extends
+public interface LeaseTasksRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.LeaseTasksRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -18,6 +21,8 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -26,10 +31,11 @@ public interface LeaseTasksRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of tasks to lease.
    * The system will make a best effort to return as close to as
@@ -42,13 +48,16 @@ public interface LeaseTasksRequestOrBuilder extends
   int getMaxTasks();
 
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
-   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-   * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-   * that another worker can retry it.
+   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   * Otherwise the task will be returned to a later
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+   * another worker can retry it.
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -57,13 +66,16 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   boolean hasLeaseDuration();
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
-   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-   * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-   * that another worker can retry it.
+   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   * Otherwise the task will be returned to a later
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+   * another worker can retry it.
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -72,13 +84,16 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   com.google.protobuf.Duration getLeaseDuration();
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
-   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask] before the
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time]. Otherwise the task will be
-   * returned to a later [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so
-   * that another worker can retry it.
+   * [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask]
+   * before the [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
+   * Otherwise the task will be returned to a later
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] call so that
+   * another worker can retry it.
    * The maximum lease duration is 1 week.
    * `lease_duration` will be truncated to the nearest second.
    * </pre>
@@ -88,34 +103,40 @@ public interface LeaseTasksRequestOrBuilder extends
   com.google.protobuf.DurationOrBuilder getLeaseDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-   * returned.
-   * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
-   * payloads, might be desirable to return only when needed because
-   * of its large size or because of the sensitivity of data that it
-   * contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   * By default response_view is
+   * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+   * retrieved by default because some data, such as payloads, might be
+   * desirable to return only when needed because of its large size or because
+   * of the sensitivity of data that it contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+   * requires `cloudtasks.tasks.fullView` [Google
+   * IAM](https://cloud.google.com/iam/) permission on the
+   * [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
    */
   int getResponseViewValue();
   /**
+   *
+   *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-   * returned.
-   * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
-   * payloads, might be desirable to return only when needed because
-   * of its large size or because of the sensitivity of data that it
-   * contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   * By default response_view is
+   * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+   * retrieved by default because some data, such as payloads, might be
+   * desirable to return only when needed because of its large size or because
+   * of the sensitivity of data that it contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+   * requires `cloudtasks.tasks.fullView` [Google
+   * IAM](https://cloud.google.com/iam/) permission on the
+   * [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -123,15 +144,18 @@ public interface LeaseTasksRequestOrBuilder extends
   com.google.cloud.tasks.v2beta2.Task.View getResponseView();
 
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of tasks to lease.
    * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-   * less than 500 characters.
+   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+   * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+   * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
    * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
    * the same tag as the task with the oldest
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+   * returned.
    * Grammar Syntax:
    * * `filter = "tag=" tag | "tag_function=" function`
    * * `tag = string`
@@ -143,23 +167,27 @@ public interface LeaseTasksRequestOrBuilder extends
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
    * aren't UTF-8 encoded can't be used in the
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+   * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+   * as empty in Cloud Tasks.
    * </pre>
    *
    * <code>string filter = 5;</code>
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of tasks to lease.
    * When `filter` is set to `tag=&lt;my-tag&gt;` then the
-   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only tasks whose
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be
-   * less than 500 characters.
+   * [response][google.cloud.tasks.v2beta2.LeaseTasksResponse] will contain only
+   * tasks whose [tag][google.cloud.tasks.v2beta2.PullMessage.tag] is equal to
+   * `&lt;my-tag&gt;`. `&lt;my-tag&gt;` must be less than 500 characters.
    * When `filter` is set to `tag_function=oldest_tag()`, only tasks which have
    * the same tag as the task with the oldest
-   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be returned.
+   * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] will be
+   * returned.
    * Grammar Syntax:
    * * `filter = "tag=" tag | "tag_function=" function`
    * * `tag = string`
@@ -171,12 +199,12 @@ public interface LeaseTasksRequestOrBuilder extends
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
    * only UTF-8 encoded tags can be used in Cloud Tasks. Tag which
    * aren't UTF-8 encoded can't be used in the
-   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the task's
-   * [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed as empty in Cloud Tasks.
+   * [filter][google.cloud.tasks.v2beta2.LeaseTasksRequest.filter] and the
+   * task's [tag][google.cloud.tasks.v2beta2.PullMessage.tag] will be displayed
+   * as empty in Cloud Tasks.
    * </pre>
    *
    * <code>string filter = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 }
