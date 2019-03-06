@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.GlobalForwardingRuleStub;
 import com.google.cloud.compute.v1.stub.GlobalForwardingRuleStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -792,7 +793,8 @@ public class GlobalForwardingRuleClient implements BackgroundResource {
                 ListGlobalForwardingRulesPage input) {
               return new ListGlobalForwardingRulesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListGlobalForwardingRulesPagedResponse(ListGlobalForwardingRulesPage page) {

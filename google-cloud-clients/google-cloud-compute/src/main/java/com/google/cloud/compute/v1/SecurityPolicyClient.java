@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.SecurityPolicyStub;
 import com.google.cloud.compute.v1.stub.SecurityPolicyStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1250,7 +1251,8 @@ public class SecurityPolicyClient implements BackgroundResource {
             public ListSecurityPoliciesPagedResponse apply(ListSecurityPoliciesPage input) {
               return new ListSecurityPoliciesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSecurityPoliciesPagedResponse(ListSecurityPoliciesPage page) {

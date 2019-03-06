@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceGroupManagerStub;
 import com.google.cloud.compute.v1.stub.InstanceGroupManagerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -2074,7 +2075,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 AggregatedListInstanceGroupManagersPage input) {
               return new AggregatedListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInstanceGroupManagersPagedResponse(
@@ -2176,7 +2178,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 ListInstanceGroupManagersPage input) {
               return new ListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstanceGroupManagersPagedResponse(ListInstanceGroupManagersPage page) {

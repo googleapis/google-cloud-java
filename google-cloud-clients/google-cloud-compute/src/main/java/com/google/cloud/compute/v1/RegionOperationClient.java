@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionOperationStub;
 import com.google.cloud.compute.v1.stub.RegionOperationStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -537,7 +538,8 @@ public class RegionOperationClient implements BackgroundResource {
             public ListRegionOperationsPagedResponse apply(ListRegionOperationsPage input) {
               return new ListRegionOperationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionOperationsPagedResponse(ListRegionOperationsPage page) {

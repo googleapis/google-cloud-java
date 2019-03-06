@@ -16,15 +16,20 @@
 package com.google.cloud.compute.v1.stub;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.ApiMessage;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
+import javax.annotation.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -34,7 +39,8 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator")
 @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-public class HttpJsonZoneCallableFactory implements HttpJsonStubCallableFactory {
+public class HttpJsonZoneCallableFactory
+    implements HttpJsonStubCallableFactory<ApiMessage, BackgroundResource> {
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
       HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
@@ -42,6 +48,19 @@ public class HttpJsonZoneCallableFactory implements HttpJsonStubCallableFactory 
       ClientContext clientContext) {
     return HttpJsonCallableFactory.createUnaryCallable(
         httpJsonCallSettings, callSettings, clientContext);
+  }
+
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  @Override
+  @Nullable
+  public <RequestT, ResponseT, MetadataT>
+      OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(
+          HttpJsonCallSettings<RequestT, ApiMessage> httpJsonCallSettings,
+          OperationCallSettings<RequestT, ResponseT, MetadataT> operationCallSettings,
+          ClientContext clientContext,
+          BackgroundResource operationsStub) {
+    return null;
   }
 
   @Override

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.NetworkStub;
 import com.google.cloud.compute.v1.stub.NetworkStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1101,7 +1102,8 @@ public class NetworkClient implements BackgroundResource {
             public ListNetworksPagedResponse apply(ListNetworksPage input) {
               return new ListNetworksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNetworksPagedResponse(ListNetworksPage page) {

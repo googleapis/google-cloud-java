@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.NodeTypeStub;
 import com.google.cloud.compute.v1.stub.NodeTypeStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -576,7 +577,8 @@ public class NodeTypeClient implements BackgroundResource {
             public AggregatedListNodeTypesPagedResponse apply(AggregatedListNodeTypesPage input) {
               return new AggregatedListNodeTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListNodeTypesPagedResponse(AggregatedListNodeTypesPage page) {
@@ -663,7 +665,8 @@ public class NodeTypeClient implements BackgroundResource {
             public ListNodeTypesPagedResponse apply(ListNodeTypesPage input) {
               return new ListNodeTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNodeTypesPagedResponse(ListNodeTypesPage page) {

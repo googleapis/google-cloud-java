@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionStub;
 import com.google.cloud.compute.v1.stub.RegionStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -436,7 +437,8 @@ public class RegionClient implements BackgroundResource {
             public ListRegionsPagedResponse apply(ListRegionsPage input) {
               return new ListRegionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionsPagedResponse(ListRegionsPage page) {

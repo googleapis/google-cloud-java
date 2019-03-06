@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RouteStub;
 import com.google.cloud.compute.v1.stub.RouteStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -658,7 +659,8 @@ public class RouteClient implements BackgroundResource {
             public ListRoutesPagedResponse apply(ListRoutesPage input) {
               return new ListRoutesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRoutesPagedResponse(ListRoutesPage page) {

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.TargetHttpsProxyStub;
 import com.google.cloud.compute.v1.stub.TargetHttpsProxyStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1142,7 +1143,8 @@ public class TargetHttpsProxyClient implements BackgroundResource {
             public ListTargetHttpsProxiesPagedResponse apply(ListTargetHttpsProxiesPage input) {
               return new ListTargetHttpsProxiesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTargetHttpsProxiesPagedResponse(ListTargetHttpsProxiesPage page) {
