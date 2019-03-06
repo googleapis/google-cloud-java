@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.AcceleratorTypeStub;
 import com.google.cloud.compute.v1.stub.AcceleratorTypeStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -588,7 +589,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
                 AggregatedListAcceleratorTypesPage input) {
               return new AggregatedListAcceleratorTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListAcceleratorTypesPagedResponse(AggregatedListAcceleratorTypesPage page) {
@@ -684,7 +686,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
             public ListAcceleratorTypesPagedResponse apply(ListAcceleratorTypesPage input) {
               return new ListAcceleratorTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAcceleratorTypesPagedResponse(ListAcceleratorTypesPage page) {

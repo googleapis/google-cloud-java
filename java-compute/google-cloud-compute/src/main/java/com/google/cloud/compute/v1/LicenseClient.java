@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.LicenseStub;
 import com.google.cloud.compute.v1.stub.LicenseStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -985,7 +986,8 @@ public class LicenseClient implements BackgroundResource {
             public ListLicensesPagedResponse apply(ListLicensesPage input) {
               return new ListLicensesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListLicensesPagedResponse(ListLicensesPage page) {

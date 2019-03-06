@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.BackendServiceStub;
 import com.google.cloud.compute.v1.stub.BackendServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1565,7 +1566,8 @@ public class BackendServiceClient implements BackgroundResource {
                 AggregatedListBackendServicesPage input) {
               return new AggregatedListBackendServicesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListBackendServicesPagedResponse(AggregatedListBackendServicesPage page) {
@@ -1661,7 +1663,8 @@ public class BackendServiceClient implements BackgroundResource {
             public ListBackendServicesPagedResponse apply(ListBackendServicesPage input) {
               return new ListBackendServicesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListBackendServicesPagedResponse(ListBackendServicesPage page) {

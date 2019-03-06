@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionInstanceGroupStub;
 import com.google.cloud.compute.v1.stub.RegionInstanceGroupStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -732,7 +733,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
             public ListRegionInstanceGroupsPagedResponse apply(ListRegionInstanceGroupsPage input) {
               return new ListRegionInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionInstanceGroupsPagedResponse(ListRegionInstanceGroupsPage page) {
@@ -827,7 +829,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
                 ListInstancesRegionInstanceGroupsPage input) {
               return new ListInstancesRegionInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstancesRegionInstanceGroupsPagedResponse(

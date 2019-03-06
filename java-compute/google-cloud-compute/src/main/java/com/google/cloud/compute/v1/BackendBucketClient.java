@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.BackendBucketStub;
 import com.google.cloud.compute.v1.stub.BackendBucketStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1157,7 +1158,8 @@ public class BackendBucketClient implements BackgroundResource {
             public ListBackendBucketsPagedResponse apply(ListBackendBucketsPage input) {
               return new ListBackendBucketsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListBackendBucketsPagedResponse(ListBackendBucketsPage page) {

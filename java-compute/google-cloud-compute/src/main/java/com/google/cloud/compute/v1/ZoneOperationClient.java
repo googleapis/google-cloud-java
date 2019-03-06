@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ZoneOperationStub;
 import com.google.cloud.compute.v1.stub.ZoneOperationStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -534,7 +535,8 @@ public class ZoneOperationClient implements BackgroundResource {
             public ListZoneOperationsPagedResponse apply(ListZoneOperationsPage input) {
               return new ListZoneOperationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListZoneOperationsPagedResponse(ListZoneOperationsPage page) {

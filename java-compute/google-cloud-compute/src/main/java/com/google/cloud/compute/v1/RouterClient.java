@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RouterStub;
 import com.google.cloud.compute.v1.stub.RouterStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1395,7 +1396,8 @@ public class RouterClient implements BackgroundResource {
             public AggregatedListRoutersPagedResponse apply(AggregatedListRoutersPage input) {
               return new AggregatedListRoutersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListRoutersPagedResponse(AggregatedListRoutersPage page) {
@@ -1486,7 +1488,8 @@ public class RouterClient implements BackgroundResource {
             public GetNatMappingInfoRoutersPagedResponse apply(GetNatMappingInfoRoutersPage input) {
               return new GetNatMappingInfoRoutersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private GetNatMappingInfoRoutersPagedResponse(GetNatMappingInfoRoutersPage page) {
@@ -1582,7 +1585,8 @@ public class RouterClient implements BackgroundResource {
             public ListRoutersPagedResponse apply(ListRoutersPage input) {
               return new ListRoutersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRoutersPagedResponse(ListRoutersPage page) {

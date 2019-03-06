@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.GlobalOperationStub;
 import com.google.cloud.compute.v1.stub.GlobalOperationStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -689,7 +690,8 @@ public class GlobalOperationClient implements BackgroundResource {
                 AggregatedListGlobalOperationsPage input) {
               return new AggregatedListGlobalOperationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListGlobalOperationsPagedResponse(AggregatedListGlobalOperationsPage page) {
@@ -785,7 +787,8 @@ public class GlobalOperationClient implements BackgroundResource {
             public ListGlobalOperationsPagedResponse apply(ListGlobalOperationsPage input) {
               return new ListGlobalOperationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListGlobalOperationsPagedResponse(ListGlobalOperationsPage page) {
