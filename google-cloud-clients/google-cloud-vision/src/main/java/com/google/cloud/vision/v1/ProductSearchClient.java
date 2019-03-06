@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.vision.v1.stub.ProductSearchStub;
 import com.google.cloud.vision.v1.stub.ProductSearchStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -2826,7 +2827,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductsPagedResponse apply(ListProductsPage input) {
               return new ListProductsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListProductsPagedResponse(ListProductsPage page) {
@@ -2906,7 +2908,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListReferenceImagesPagedResponse apply(ListReferenceImagesPage input) {
               return new ListReferenceImagesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListReferenceImagesPagedResponse(ListReferenceImagesPage page) {
@@ -2993,7 +2996,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductSetsPagedResponse apply(ListProductSetsPage input) {
               return new ListProductSetsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListProductSetsPagedResponse(ListProductSetsPage page) {
@@ -3075,7 +3079,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductsInProductSetPagedResponse apply(ListProductsInProductSetPage input) {
               return new ListProductsInProductSetPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListProductsInProductSetPagedResponse(ListProductsInProductSetPage page) {
