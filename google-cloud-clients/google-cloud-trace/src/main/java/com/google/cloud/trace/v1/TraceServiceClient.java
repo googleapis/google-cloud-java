@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.trace.v1.stub.TraceServiceStub;
 import com.google.cloud.trace.v1.stub.TraceServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -472,7 +473,8 @@ public class TraceServiceClient implements BackgroundResource {
             public ListTracesPagedResponse apply(ListTracesPage input) {
               return new ListTracesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTracesPagedResponse(ListTracesPage page) {
