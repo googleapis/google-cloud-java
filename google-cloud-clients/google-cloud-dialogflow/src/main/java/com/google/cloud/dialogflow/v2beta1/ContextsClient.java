@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.ContextsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.ContextsStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -831,7 +832,8 @@ public class ContextsClient implements BackgroundResource {
             public ListContextsPagedResponse apply(ListContextsPage input) {
               return new ListContextsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListContextsPagedResponse(ListContextsPage page) {

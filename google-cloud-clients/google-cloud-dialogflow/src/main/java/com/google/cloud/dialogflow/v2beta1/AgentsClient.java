@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.AgentsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.AgentsStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -949,7 +950,8 @@ public class AgentsClient implements BackgroundResource {
             public SearchAgentsPagedResponse apply(SearchAgentsPage input) {
               return new SearchAgentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private SearchAgentsPagedResponse(SearchAgentsPage page) {

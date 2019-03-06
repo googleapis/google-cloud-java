@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.stub.IntentsStub;
 import com.google.cloud.dialogflow.v2.stub.IntentsStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -1211,7 +1212,8 @@ public class IntentsClient implements BackgroundResource {
             public ListIntentsPagedResponse apply(ListIntentsPage input) {
               return new ListIntentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListIntentsPagedResponse(ListIntentsPage page) {
