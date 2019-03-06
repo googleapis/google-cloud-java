@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.ContainerAnalysisV1Beta1Stub;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.ContainerAnalysisV1Beta1StubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.containeranalysis.v1beta1.GetScanConfigRequest;
 import com.google.containeranalysis.v1beta1.IamResourceName;
 import com.google.containeranalysis.v1beta1.ListScanConfigsRequest;
@@ -942,7 +943,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
             public ListScanConfigsPagedResponse apply(ListScanConfigsPage input) {
               return new ListScanConfigsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListScanConfigsPagedResponse(ListScanConfigsPage page) {
