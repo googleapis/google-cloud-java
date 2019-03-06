@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionAutoscalerStub;
 import com.google.cloud.compute.v1.stub.RegionAutoscalerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -958,7 +959,8 @@ public class RegionAutoscalerClient implements BackgroundResource {
             public ListRegionAutoscalersPagedResponse apply(ListRegionAutoscalersPage input) {
               return new ListRegionAutoscalersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionAutoscalersPagedResponse(ListRegionAutoscalersPage page) {

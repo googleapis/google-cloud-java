@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceTemplateStub;
 import com.google.cloud.compute.v1.stub.InstanceTemplateStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1012,7 +1013,8 @@ public class InstanceTemplateClient implements BackgroundResource {
             public ListInstanceTemplatesPagedResponse apply(ListInstanceTemplatesPage input) {
               return new ListInstanceTemplatesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstanceTemplatesPagedResponse(ListInstanceTemplatesPage page) {

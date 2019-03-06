@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.SubnetworkStub;
 import com.google.cloud.compute.v1.stub.SubnetworkStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1632,7 +1633,8 @@ public class SubnetworkClient implements BackgroundResource {
                 AggregatedListSubnetworksPage input) {
               return new AggregatedListSubnetworksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListSubnetworksPagedResponse(AggregatedListSubnetworksPage page) {
@@ -1728,7 +1730,8 @@ public class SubnetworkClient implements BackgroundResource {
             public ListSubnetworksPagedResponse apply(ListSubnetworksPage input) {
               return new ListSubnetworksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSubnetworksPagedResponse(ListSubnetworksPage page) {
@@ -1811,7 +1814,8 @@ public class SubnetworkClient implements BackgroundResource {
             public ListUsableSubnetworksPagedResponse apply(ListUsableSubnetworksPage input) {
               return new ListUsableSubnetworksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListUsableSubnetworksPagedResponse(ListUsableSubnetworksPage page) {

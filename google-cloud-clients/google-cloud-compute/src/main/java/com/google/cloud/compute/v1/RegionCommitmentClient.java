@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionCommitmentStub;
 import com.google.cloud.compute.v1.stub.RegionCommitmentStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -716,7 +717,8 @@ public class RegionCommitmentClient implements BackgroundResource {
                 AggregatedListRegionCommitmentsPage input) {
               return new AggregatedListRegionCommitmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListRegionCommitmentsPagedResponse(AggregatedListRegionCommitmentsPage page) {
@@ -812,7 +814,8 @@ public class RegionCommitmentClient implements BackgroundResource {
             public ListRegionCommitmentsPagedResponse apply(ListRegionCommitmentsPage input) {
               return new ListRegionCommitmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionCommitmentsPagedResponse(ListRegionCommitmentsPage page) {

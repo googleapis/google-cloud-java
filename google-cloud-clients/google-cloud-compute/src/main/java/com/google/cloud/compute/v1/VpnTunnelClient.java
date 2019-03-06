@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.VpnTunnelStub;
 import com.google.cloud.compute.v1.stub.VpnTunnelStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -790,7 +791,8 @@ public class VpnTunnelClient implements BackgroundResource {
             public AggregatedListVpnTunnelsPagedResponse apply(AggregatedListVpnTunnelsPage input) {
               return new AggregatedListVpnTunnelsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListVpnTunnelsPagedResponse(AggregatedListVpnTunnelsPage page) {
@@ -880,7 +882,8 @@ public class VpnTunnelClient implements BackgroundResource {
             public ListVpnTunnelsPagedResponse apply(ListVpnTunnelsPage input) {
               return new ListVpnTunnelsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListVpnTunnelsPagedResponse(ListVpnTunnelsPage page) {

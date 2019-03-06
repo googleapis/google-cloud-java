@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.DiskStub;
 import com.google.cloud.compute.v1.stub.DiskStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1467,7 +1468,8 @@ public class DiskClient implements BackgroundResource {
             public AggregatedListDisksPagedResponse apply(AggregatedListDisksPage input) {
               return new AggregatedListDisksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListDisksPagedResponse(AggregatedListDisksPage page) {
@@ -1547,7 +1549,8 @@ public class DiskClient implements BackgroundResource {
             public ListDisksPagedResponse apply(ListDisksPage input) {
               return new ListDisksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDisksPagedResponse(ListDisksPage page) {

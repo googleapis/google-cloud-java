@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.NodeGroupStub;
 import com.google.cloud.compute.v1.stub.NodeGroupStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1613,7 +1614,8 @@ public class NodeGroupClient implements BackgroundResource {
             public AggregatedListNodeGroupsPagedResponse apply(AggregatedListNodeGroupsPage input) {
               return new AggregatedListNodeGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListNodeGroupsPagedResponse(AggregatedListNodeGroupsPage page) {
@@ -1703,7 +1705,8 @@ public class NodeGroupClient implements BackgroundResource {
             public ListNodeGroupsPagedResponse apply(ListNodeGroupsPage input) {
               return new ListNodeGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNodeGroupsPagedResponse(ListNodeGroupsPage page) {
@@ -1783,7 +1786,8 @@ public class NodeGroupClient implements BackgroundResource {
             public ListNodesNodeGroupsPagedResponse apply(ListNodesNodeGroupsPage input) {
               return new ListNodesNodeGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNodesNodeGroupsPagedResponse(ListNodesNodeGroupsPage page) {

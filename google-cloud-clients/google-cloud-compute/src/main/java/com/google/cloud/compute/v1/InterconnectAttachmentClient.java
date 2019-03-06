@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InterconnectAttachmentStub;
 import com.google.cloud.compute.v1.stub.InterconnectAttachmentStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -965,7 +966,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
                 AggregatedListInterconnectAttachmentsPage input) {
               return new AggregatedListInterconnectAttachmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInterconnectAttachmentsPagedResponse(
@@ -1070,7 +1072,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
                 ListInterconnectAttachmentsPage input) {
               return new ListInterconnectAttachmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInterconnectAttachmentsPagedResponse(ListInterconnectAttachmentsPage page) {
