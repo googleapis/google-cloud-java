@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ZoneStub;
 import com.google.cloud.compute.v1.stub.ZoneStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -425,7 +426,8 @@ public class ZoneClient implements BackgroundResource {
             public ListZonesPagedResponse apply(ListZonesPage input) {
               return new ListZonesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListZonesPagedResponse(ListZonesPage page) {

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.RegionDiskTypeStub;
 import com.google.cloud.compute.v1.stub.RegionDiskTypeStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -441,7 +442,8 @@ public class RegionDiskTypeClient implements BackgroundResource {
             public ListRegionDiskTypesPagedResponse apply(ListRegionDiskTypesPage input) {
               return new ListRegionDiskTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListRegionDiskTypesPagedResponse(ListRegionDiskTypesPage page) {

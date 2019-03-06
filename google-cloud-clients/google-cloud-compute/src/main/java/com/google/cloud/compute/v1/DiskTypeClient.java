@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.DiskTypeStub;
 import com.google.cloud.compute.v1.stub.DiskTypeStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -576,7 +577,8 @@ public class DiskTypeClient implements BackgroundResource {
             public AggregatedListDiskTypesPagedResponse apply(AggregatedListDiskTypesPage input) {
               return new AggregatedListDiskTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListDiskTypesPagedResponse(AggregatedListDiskTypesPage page) {
@@ -663,7 +665,8 @@ public class DiskTypeClient implements BackgroundResource {
             public ListDiskTypesPagedResponse apply(ListDiskTypesPage input) {
               return new ListDiskTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDiskTypesPagedResponse(ListDiskTypesPage page) {

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InterconnectLocationStub;
 import com.google.cloud.compute.v1.stub.InterconnectLocationStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -455,7 +456,8 @@ public class InterconnectLocationClient implements BackgroundResource {
                 ListInterconnectLocationsPage input) {
               return new ListInterconnectLocationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInterconnectLocationsPagedResponse(ListInterconnectLocationsPage page) {

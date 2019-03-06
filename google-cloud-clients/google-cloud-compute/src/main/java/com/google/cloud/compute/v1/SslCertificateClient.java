@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.SslCertificateStub;
 import com.google.cloud.compute.v1.stub.SslCertificateStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -660,7 +661,8 @@ public class SslCertificateClient implements BackgroundResource {
             public ListSslCertificatesPagedResponse apply(ListSslCertificatesPage input) {
               return new ListSslCertificatesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSslCertificatesPagedResponse(ListSslCertificatesPage page) {

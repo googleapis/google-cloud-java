@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.AddressStub;
 import com.google.cloud.compute.v1.stub.AddressStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -782,7 +783,8 @@ public class AddressClient implements BackgroundResource {
             public AggregatedListAddressesPagedResponse apply(AggregatedListAddressesPage input) {
               return new AggregatedListAddressesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListAddressesPagedResponse(AggregatedListAddressesPage page) {
@@ -869,7 +871,8 @@ public class AddressClient implements BackgroundResource {
             public ListAddressesPagedResponse apply(ListAddressesPage input) {
               return new ListAddressesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAddressesPagedResponse(ListAddressesPage page) {

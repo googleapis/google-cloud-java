@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceStub;
 import com.google.cloud.compute.v1.stub.InstanceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -3849,7 +3850,8 @@ public class InstanceClient implements BackgroundResource {
             public AggregatedListInstancesPagedResponse apply(AggregatedListInstancesPage input) {
               return new AggregatedListInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInstancesPagedResponse(AggregatedListInstancesPage page) {
@@ -3936,7 +3938,8 @@ public class InstanceClient implements BackgroundResource {
             public ListInstancesPagedResponse apply(ListInstancesPage input) {
               return new ListInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstancesPagedResponse(ListInstancesPage page) {
@@ -4015,7 +4018,8 @@ public class InstanceClient implements BackgroundResource {
             public ListReferrersInstancesPagedResponse apply(ListReferrersInstancesPage input) {
               return new ListReferrersInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListReferrersInstancesPagedResponse(ListReferrersInstancesPage page) {
