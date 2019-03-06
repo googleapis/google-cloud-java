@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.NotificationChannelServiceStub;
 import com.google.cloud.monitoring.v3.stub.NotificationChannelServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.CreateNotificationChannelRequest;
 import com.google.monitoring.v3.DeleteNotificationChannelRequest;
 import com.google.monitoring.v3.GetNotificationChannelDescriptorRequest;
@@ -1043,7 +1044,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
                 ListNotificationChannelDescriptorsPage input) {
               return new ListNotificationChannelDescriptorsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNotificationChannelDescriptorsPagedResponse(
@@ -1144,7 +1146,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
             public ListNotificationChannelsPagedResponse apply(ListNotificationChannelsPage input) {
               return new ListNotificationChannelsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNotificationChannelsPagedResponse(ListNotificationChannelsPage page) {

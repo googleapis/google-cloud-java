@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.UptimeCheckServiceStub;
 import com.google.cloud.monitoring.v3.stub.UptimeCheckServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.DeleteUptimeCheckConfigRequest;
 import com.google.monitoring.v3.GetUptimeCheckConfigRequest;
@@ -714,7 +715,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
             public ListUptimeCheckConfigsPagedResponse apply(ListUptimeCheckConfigsPage input) {
               return new ListUptimeCheckConfigsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListUptimeCheckConfigsPagedResponse(ListUptimeCheckConfigsPage page) {
@@ -804,7 +806,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
             public ListUptimeCheckIpsPagedResponse apply(ListUptimeCheckIpsPage input) {
               return new ListUptimeCheckIpsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListUptimeCheckIpsPagedResponse(ListUptimeCheckIpsPage page) {
