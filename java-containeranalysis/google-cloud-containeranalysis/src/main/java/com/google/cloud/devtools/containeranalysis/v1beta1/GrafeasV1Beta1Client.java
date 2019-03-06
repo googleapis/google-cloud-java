@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.GrafeasV1Beta1Stub;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.GrafeasV1Beta1StubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.containeranalysis.v1beta1.NoteName;
 import com.google.containeranalysis.v1beta1.OccurrenceName;
 import com.google.containeranalysis.v1beta1.ProjectName;
@@ -1895,7 +1896,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
             public ListOccurrencesPagedResponse apply(ListOccurrencesPage input) {
               return new ListOccurrencesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListOccurrencesPagedResponse(ListOccurrencesPage page) {
@@ -1972,7 +1974,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
             public ListNotesPagedResponse apply(ListNotesPage input) {
               return new ListNotesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNotesPagedResponse(ListNotesPage page) {
@@ -2047,7 +2050,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
             public ListNoteOccurrencesPagedResponse apply(ListNoteOccurrencesPage input) {
               return new ListNoteOccurrencesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListNoteOccurrencesPagedResponse(ListNoteOccurrencesPage page) {
