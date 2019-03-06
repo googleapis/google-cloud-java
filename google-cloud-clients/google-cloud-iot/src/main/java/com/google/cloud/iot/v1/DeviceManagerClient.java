@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.iot.v1.stub.DeviceManagerStub;
 import com.google.cloud.iot.v1.stub.DeviceManagerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -2289,7 +2290,8 @@ public class DeviceManagerClient implements BackgroundResource {
             public ListDeviceRegistriesPagedResponse apply(ListDeviceRegistriesPage input) {
               return new ListDeviceRegistriesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDeviceRegistriesPagedResponse(ListDeviceRegistriesPage page) {
@@ -2376,7 +2378,8 @@ public class DeviceManagerClient implements BackgroundResource {
             public ListDevicesPagedResponse apply(ListDevicesPage input) {
               return new ListDevicesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDevicesPagedResponse(ListDevicesPage page) {
