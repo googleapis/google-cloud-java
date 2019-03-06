@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dlp.v2.stub.DlpServiceStub;
 import com.google.cloud.dlp.v2.stub.DlpServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -1915,7 +1916,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListInspectTemplatesPagedResponse apply(ListInspectTemplatesPage input) {
               return new ListInspectTemplatesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInspectTemplatesPagedResponse(ListInspectTemplatesPage page) {
@@ -2004,7 +2006,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListDeidentifyTemplatesPagedResponse apply(ListDeidentifyTemplatesPage input) {
               return new ListDeidentifyTemplatesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDeidentifyTemplatesPagedResponse(ListDeidentifyTemplatesPage page) {
@@ -2094,7 +2097,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListDlpJobsPagedResponse apply(ListDlpJobsPage input) {
               return new ListDlpJobsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDlpJobsPagedResponse(ListDlpJobsPage page) {
@@ -2173,7 +2177,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListJobTriggersPagedResponse apply(ListJobTriggersPage input) {
               return new ListJobTriggersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListJobTriggersPagedResponse(ListJobTriggersPage page) {
@@ -2255,7 +2260,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListStoredInfoTypesPagedResponse apply(ListStoredInfoTypesPage input) {
               return new ListStoredInfoTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListStoredInfoTypesPagedResponse(ListStoredInfoTypesPage page) {
