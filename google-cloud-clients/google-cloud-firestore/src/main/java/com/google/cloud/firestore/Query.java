@@ -34,6 +34,7 @@ import com.google.firestore.v1.Document;
 import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.RunQueryResponse;
 import com.google.firestore.v1.StructuredQuery;
+import com.google.firestore.v1.StructuredQuery.CollectionSelector;
 import com.google.firestore.v1.StructuredQuery.CompositeFilter;
 import com.google.firestore.v1.StructuredQuery.FieldReference;
 import com.google.firestore.v1.StructuredQuery.Filter;
@@ -58,7 +59,6 @@ import javax.annotation.Nullable;
  */
 public class Query {
 
-  final ResourcePath path;
   final FirestoreImpl firestore;
   final QueryOptions options;
 
@@ -178,25 +178,36 @@ public class Query {
   }
 
   /** Options that define a Firestore Query. */
-  private static class QueryOptions {
+  protected static class QueryOptions {
 
-    private int limit;
-    private int offset;
-    private Cursor startCursor;
-    private Cursor endCursor;
-    private List<FieldFilter> fieldFilters;
-    private List<FieldOrder> fieldOrders;
-    private List<FieldReference> fieldProjections;
+    ResourcePath parentPath;
+    String collectionId;
+    boolean allDescendants;
+    int limit;
+    int offset;
+    @Nullable Cursor startCursor;
+    @Nullable Cursor endCursor;
+    List<FieldFilter> fieldFilters;
+    List<FieldOrder> fieldOrders;
+    List<FieldReference> fieldProjections;
 
-    QueryOptions() {
-      limit = -1;
-      offset = -1;
-      fieldFilters = new ArrayList<>();
-      fieldOrders = new ArrayList<>();
-      fieldProjections = new ArrayList<>();
+    private QueryOptions(ResourcePath parentPath, String collectionId) {
+      this.parentPath = parentPath;
+      this.collectionId = collectionId;
+      this.allDescendants = false;
+      this.limit = -1;
+      this.offset = -1;
+      this.startCursor = null;
+      this.endCursor = null;
+      this.fieldFilters = new ArrayList<>();
+      this.fieldOrders = new ArrayList<>();
+      this.fieldProjections = new ArrayList<>();
     }
 
-    QueryOptions(QueryOptions options) {
+    private QueryOptions(QueryOptions options) {
+      parentPath = options.parentPath;
+      allDescendants = options.allDescendants;
+      collectionId = options.collectionId;
       limit = options.limit;
       offset = options.offset;
       startCursor = options.startCursor;
@@ -217,10 +228,19 @@ public class Query {
 
       QueryOptions that = (QueryOptions) o;
 
+      if (allDescendants != that.allDescendants) {
+        return false;
+      }
       if (limit != that.limit) {
         return false;
       }
       if (offset != that.offset) {
+        return false;
+      }
+      if (!parentPath.equals(that.parentPath)) {
+        return false;
+      }
+      if (!collectionId.equals(that.collectionId)) {
         return false;
       }
       if (startCursor != null ? !startCursor.equals(that.startCursor) : that.startCursor != null) {
@@ -240,7 +260,10 @@ public class Query {
 
     @Override
     public int hashCode() {
-      int result = limit;
+      int result = parentPath.hashCode();
+      result = 31 * result + collectionId.hashCode();
+      result = 31 * result + (allDescendants ? 1 : 0);
+      result = 31 * result + limit;
       result = 31 * result + offset;
       result = 31 * result + (startCursor != null ? startCursor.hashCode() : 0);
       result = 31 * result + (endCursor != null ? endCursor.hashCode() : 0);
@@ -252,18 +275,20 @@ public class Query {
   }
 
   Query(FirestoreImpl firestore, ResourcePath path) {
-    this(firestore, path, new QueryOptions());
+    this.firestore = firestore;
+    this.options = new QueryOptions(path.getParent(), path.getId());
   }
 
-  protected Query(
-      FirestoreImpl firestore,
-      ResourcePath path,
-      QueryOptions queryOptions) { // Elevated access level for mocking.
-    Preconditions.checkArgument(
-        path.isCollection(), "Invalid path specified. Path should point to a collection");
+  Query(FirestoreImpl firestore, String collectionId) {
+    QueryOptions queryOptions = new QueryOptions(firestore.getResourcePath(), collectionId);
+    queryOptions.allDescendants = true;
 
     this.firestore = firestore;
-    this.path = path;
+    this.options = queryOptions;
+  }
+
+  private Query(FirestoreImpl firestore, QueryOptions queryOptions) {
+    this.firestore = firestore;
     this.options = queryOptions;
   }
 
@@ -378,9 +403,14 @@ public class Query {
    * a DocumentReference that can directly be used in the Query.
    */
   private Object convertReference(Object fieldValue) {
+    ResourcePath basePath =
+        options.allDescendants
+            ? options.parentPath
+            : options.parentPath.append(options.collectionId);
+
     DocumentReference reference;
     if (fieldValue instanceof String) {
-      reference = new DocumentReference(firestore, path.append((String) fieldValue));
+      reference = new DocumentReference(firestore, basePath.append((String) fieldValue));
     } else if (fieldValue instanceof DocumentReference) {
       reference = (DocumentReference) fieldValue;
     } else {
@@ -389,13 +419,14 @@ public class Query {
               + "DocumentReference.");
     }
 
-    if (!this.path.isPrefixOf(reference.getResourcePath())) {
+    if (!basePath.isPrefixOf(reference.getResourcePath())) {
       throw new IllegalArgumentException(
           String.format(
               "'%s' is not part of the query result set and cannot be used as a query boundary.",
               reference.getPath()));
     }
-    if (!reference.getParent().getResourcePath().equals(this.path)) {
+
+    if (!options.allDescendants && !reference.getParent().getResourcePath().equals(basePath)) {
       throw new IllegalArgumentException(
           String.format(
               "Only a direct child can be used as a query boundary. Found: '%s'",
@@ -432,18 +463,14 @@ public class Query {
         options.startCursor == null && options.endCursor == null,
         "Cannot call whereEqualTo() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    QueryOptions newOptions = new QueryOptions(options);
 
     if (isUnaryComparison(value)) {
+      QueryOptions newOptions = new QueryOptions(options);
       newOptions.fieldFilters.add(new UnaryFilter(fieldPath, value));
+      return new Query(firestore, newOptions);
     } else {
-      if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
-        value = this.convertReference(value);
-      }
-      newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, EQUAL, value));
+      return whereHelper(fieldPath, EQUAL, value);
     }
-
-    return new Query(firestore, path, newOptions);
   }
 
   /**
@@ -473,9 +500,7 @@ public class Query {
         options.startCursor == null && options.endCursor == null,
         "Cannot call whereLessThan() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN, value));
-    return new Query(firestore, path, newOptions);
+    return whereHelper(fieldPath, LESS_THAN, value);
   }
 
   /**
@@ -505,9 +530,7 @@ public class Query {
         options.startCursor == null && options.endCursor == null,
         "Cannot call whereLessThanOrEqualTo() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, LESS_THAN_OR_EQUAL, value));
-    return new Query(firestore, path, newOptions);
+    return whereHelper(fieldPath, LESS_THAN_OR_EQUAL, value);
   }
 
   /**
@@ -537,9 +560,7 @@ public class Query {
         options.startCursor == null && options.endCursor == null,
         "Cannot call whereGreaterThan() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN, value));
-    return new Query(firestore, path, newOptions);
+    return whereHelper(fieldPath, GREATER_THAN, value);
   }
 
   /**
@@ -569,9 +590,7 @@ public class Query {
         options.startCursor == null && options.endCursor == null,
         "Cannot call whereGreaterThanOrEqualTo() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, GREATER_THAN_OR_EQUAL, value));
-    return new Query(firestore, path, newOptions);
+    return whereHelper(fieldPath, GREATER_THAN_OR_EQUAL, value);
   }
 
   /**
@@ -607,9 +626,19 @@ public class Query {
         options.startCursor == null && options.endCursor == null,
         "Cannot call whereArrayContains() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
+    return whereHelper(fieldPath, ARRAY_CONTAINS, value);
+  }
+
+  private Query whereHelper(
+      FieldPath fieldPath, StructuredQuery.FieldFilter.Operator operator, Object value) {
     QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, ARRAY_CONTAINS, value));
-    return new Query(firestore, path, newOptions);
+
+    if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
+      value = this.convertReference(value);
+    }
+
+    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, operator, value));
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -665,7 +694,7 @@ public class Query {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders.add(new FieldOrder(fieldPath, direction));
 
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -679,7 +708,7 @@ public class Query {
   public Query limit(int limit) {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.limit = limit;
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -692,7 +721,7 @@ public class Query {
   public Query offset(int offset) {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.offset = offset;
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -708,7 +737,7 @@ public class Query {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders = createImplicitOrderBy();
     newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, true);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -722,7 +751,7 @@ public class Query {
   public Query startAt(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -767,7 +796,7 @@ public class Query {
       newOptions.fieldProjections.add(fieldReference);
     }
 
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -783,7 +812,7 @@ public class Query {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders = createImplicitOrderBy();
     newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, false);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -798,7 +827,7 @@ public class Query {
   public Query startAfter(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -814,7 +843,7 @@ public class Query {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders = createImplicitOrderBy();
     newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, true);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -829,7 +858,7 @@ public class Query {
   public Query endBefore(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -843,7 +872,7 @@ public class Query {
   public Query endAt(Object... fieldValues) {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /**
@@ -859,14 +888,16 @@ public class Query {
     QueryOptions newOptions = new QueryOptions(options);
     newOptions.fieldOrders = createImplicitOrderBy();
     newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, false);
-    return new Query(firestore, path, newOptions);
+    return new Query(firestore, newOptions);
   }
 
   /** Build the final Firestore query. */
   StructuredQuery.Builder buildQuery() {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
-    structuredQuery.addFrom(
-        StructuredQuery.CollectionSelector.newBuilder().setCollectionId(path.getId()));
+    CollectionSelector.Builder collectionSelector = CollectionSelector.newBuilder();
+    collectionSelector.setCollectionId(options.collectionId);
+    collectionSelector.setAllDescendants(options.allDescendants);
+    structuredQuery.addFrom(collectionSelector);
 
     if (options.fieldFilters.size() == 1) {
       Filter filter = options.fieldFilters.get(0).toProto();
@@ -963,7 +994,7 @@ public class Query {
   private void stream(
       final QuerySnapshotObserver documentObserver, @Nullable ByteString transactionId) {
     RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
-    request.setStructuredQuery(buildQuery()).setParent(path.getParent().toString());
+    request.setStructuredQuery(buildQuery()).setParent(options.parentPath.toString());
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
@@ -1135,10 +1166,6 @@ public class Query {
     };
   }
 
-  ResourcePath getResourcePath() {
-    return path;
-  }
-
   /**
    * Returns true if this Query is equal to the provided object.
    *
@@ -1154,13 +1181,11 @@ public class Query {
       return false;
     }
     Query query = (Query) obj;
-    return Objects.equals(path, query.path)
-        && Objects.equals(firestore, query.firestore)
-        && Objects.equals(options, query.options);
+    return Objects.equals(firestore, query.firestore) && Objects.equals(options, query.options);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(path, firestore, options);
+    return Objects.hash(firestore, options);
   }
 }
