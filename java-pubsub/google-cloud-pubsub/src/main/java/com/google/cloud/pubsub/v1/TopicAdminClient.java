@@ -29,6 +29,7 @@ import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -1193,7 +1194,8 @@ public class TopicAdminClient implements BackgroundResource {
             public ListTopicsPagedResponse apply(ListTopicsPage input) {
               return new ListTopicsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTopicsPagedResponse(ListTopicsPage page) {
@@ -1272,7 +1274,8 @@ public class TopicAdminClient implements BackgroundResource {
             public ListTopicSubscriptionsPagedResponse apply(ListTopicSubscriptionsPage input) {
               return new ListTopicSubscriptionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTopicSubscriptionsPagedResponse(ListTopicSubscriptionsPage page) {

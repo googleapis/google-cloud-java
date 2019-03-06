@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -2256,7 +2257,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
             public ListSubscriptionsPagedResponse apply(ListSubscriptionsPage input) {
               return new ListSubscriptionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSubscriptionsPagedResponse(ListSubscriptionsPage page) {
@@ -2340,7 +2342,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
             public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
               return new ListSnapshotsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSnapshotsPagedResponse(ListSnapshotsPage page) {
