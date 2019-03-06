@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStub;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -790,7 +791,8 @@ public class GroupServiceClient implements BackgroundResource {
             public ListGroupsPagedResponse apply(ListGroupsPage input) {
               return new ListGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListGroupsPagedResponse(ListGroupsPage page) {
@@ -869,7 +871,8 @@ public class GroupServiceClient implements BackgroundResource {
             public ListGroupMembersPagedResponse apply(ListGroupMembersPage input) {
               return new ListGroupMembersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListGroupMembersPagedResponse(ListGroupMembersPage page) {
