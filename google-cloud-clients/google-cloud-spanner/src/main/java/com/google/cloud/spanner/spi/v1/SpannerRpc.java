@@ -216,7 +216,7 @@ public interface SpannerRpc extends ServiceRpc {
   StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
 
-  ExecuteBatchDmlResponse executeBatchDml(ExecuteBatchDmlRequest build, Map<Option,?> options);
+  ExecuteBatchDmlResponse executeBatchDml(ExecuteBatchDmlRequest build, Map<Option, ?> options);
 
   Transaction beginTransaction(BeginTransactionRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;

@@ -108,11 +108,11 @@ public interface TransactionContext extends ReadContext {
    * loop. This method returns an array of long integers, each representing the number of rows
    * modified by each statement.
    *
-   * If an individual statement fails, execution stops and a {@code
-   * SpannerBatchUpdateException} is returned, which includes the error and the number of rows
-   * affected by the statements that are run prior to the error.
+   * <p>If an individual statement fails, execution stops and a {@code SpannerBatchUpdateException}
+   * is returned, which includes the error and the number of rows affected by the statements that
+   * are run prior to the error.
    *
-   * For example, if statements contains 3 statements, and the 2nd one is not a valid DML. This
+   * <p>For example, if statements contains 3 statements, and the 2nd one is not a valid DML. This
    * method throws a {@code SpannerBatchUpdateException} that contains the error message from the
    * 2nd statement, and an array of length 1 that contains the number of rows modified by the 1st
    * statement. The 3rd statement will not run.

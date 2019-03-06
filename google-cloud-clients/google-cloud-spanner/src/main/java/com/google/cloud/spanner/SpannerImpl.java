@@ -1085,19 +1085,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     ExecuteBatchDmlRequest.Builder getExecuteBatchDmlRequestBuilder(
         Iterable<Statement> statements) {
       ExecuteBatchDmlRequest.Builder builder =
-          ExecuteBatchDmlRequest.newBuilder()
-              .setSession(session.name);
+          ExecuteBatchDmlRequest.newBuilder().setSession(session.name);
       int idx = 0;
       for (Statement stmt : statements) {
         builder.addStatementsBuilder();
         builder.getStatementsBuilder(idx).setSql(stmt.getSql());
         Map<String, Value> stmtParameters = stmt.getParameters();
         if (!stmtParameters.isEmpty()) {
-          com.google.protobuf.Struct.Builder paramsBuilder = builder.getStatementsBuilder(idx)
-              .getParamsBuilder();
+          com.google.protobuf.Struct.Builder paramsBuilder =
+              builder.getStatementsBuilder(idx).getParamsBuilder();
           for (Map.Entry<String, Value> param : stmtParameters.entrySet()) {
             paramsBuilder.putFields(param.getKey(), param.getValue().toProto());
-            builder.getStatementsBuilder(idx)
+            builder
+                .getStatementsBuilder(idx)
                 .putParamTypes(param.getKey(), param.getValue().getType().toProto());
           }
         }
@@ -1696,8 +1696,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public long[] batchUpdate(Iterable<Statement> statements) {
       beforeReadOrQuery();
-      final ExecuteBatchDmlRequest.Builder builder =
-          getExecuteBatchDmlRequestBuilder(statements);
+      final ExecuteBatchDmlRequest.Builder builder = getExecuteBatchDmlRequestBuilder(statements);
       com.google.spanner.v1.ExecuteBatchDmlResponse response =
           runWithRetries(
               new Callable<com.google.spanner.v1.ExecuteBatchDmlResponse>() {
@@ -1713,8 +1712,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
       if (response.getStatus().getCode() != 0) {
         throw newSpannerBatchUpdateException(
-            ErrorCode.fromRpcStatus(
-                response.getStatus()), response.getStatus().getMessage(), results);
+            ErrorCode.fromRpcStatus(response.getStatus()),
+            response.getStatus().getMessage(),
+            results);
       }
       return results;
     }
