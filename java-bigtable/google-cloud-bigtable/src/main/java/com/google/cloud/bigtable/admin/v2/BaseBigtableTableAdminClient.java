@@ -54,6 +54,7 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -1851,7 +1852,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
             public ListTablesPagedResponse apply(ListTablesPage input) {
               return new ListTablesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTablesPagedResponse(ListTablesPage page) {
@@ -1930,7 +1932,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
             public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
               return new ListSnapshotsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSnapshotsPagedResponse(ListSnapshotsPage page) {
