@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.DocumentsStub;
 import com.google.cloud.dialogflow.v2beta1.stub.DocumentsStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -735,7 +736,8 @@ public class DocumentsClient implements BackgroundResource {
             public ListDocumentsPagedResponse apply(ListDocumentsPage input) {
               return new ListDocumentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDocumentsPagedResponse(ListDocumentsPage page) {
