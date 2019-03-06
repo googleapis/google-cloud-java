@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.stub.ClusterControllerStub;
 import com.google.cloud.dataproc.v1beta2.stub.ClusterControllerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -991,7 +992,8 @@ public class ClusterControllerClient implements BackgroundResource {
             public ListClustersPagedResponse apply(ListClustersPage input) {
               return new ListClustersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListClustersPagedResponse(ListClustersPage page) {
