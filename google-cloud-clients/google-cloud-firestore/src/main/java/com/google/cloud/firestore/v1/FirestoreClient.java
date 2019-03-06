@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.firestore.v1.stub.FirestoreStub;
 import com.google.cloud.firestore.v1.stub.FirestoreStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.BeginTransactionRequest;
@@ -1143,7 +1144,8 @@ public class FirestoreClient implements BackgroundResource {
             public ListDocumentsPagedResponse apply(ListDocumentsPage input) {
               return new ListDocumentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDocumentsPagedResponse(ListDocumentsPage page) {
@@ -1223,7 +1225,8 @@ public class FirestoreClient implements BackgroundResource {
             public ListCollectionIdsPagedResponse apply(ListCollectionIdsPage input) {
               return new ListCollectionIdsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListCollectionIdsPagedResponse(ListCollectionIdsPage page) {
