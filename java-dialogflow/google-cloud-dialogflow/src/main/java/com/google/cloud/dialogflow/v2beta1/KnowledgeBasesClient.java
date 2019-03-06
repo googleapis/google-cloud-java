@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.KnowledgeBasesStub;
 import com.google.cloud.dialogflow.v2beta1.stub.KnowledgeBasesStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -635,7 +636,8 @@ public class KnowledgeBasesClient implements BackgroundResource {
             public ListKnowledgeBasesPagedResponse apply(ListKnowledgeBasesPage input) {
               return new ListKnowledgeBasesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListKnowledgeBasesPagedResponse(ListKnowledgeBasesPage page) {
