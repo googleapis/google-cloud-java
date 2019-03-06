@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -1239,7 +1240,8 @@ public class MetricServiceClient implements BackgroundResource {
                 ListMonitoredResourceDescriptorsPage input) {
               return new ListMonitoredResourceDescriptorsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListMonitoredResourceDescriptorsPagedResponse(
@@ -1337,7 +1339,8 @@ public class MetricServiceClient implements BackgroundResource {
             public ListMetricDescriptorsPagedResponse apply(ListMetricDescriptorsPage input) {
               return new ListMetricDescriptorsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListMetricDescriptorsPagedResponse(ListMetricDescriptorsPage page) {
@@ -1424,7 +1427,8 @@ public class MetricServiceClient implements BackgroundResource {
             public ListTimeSeriesPagedResponse apply(ListTimeSeriesPage input) {
               return new ListTimeSeriesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTimeSeriesPagedResponse(ListTimeSeriesPage page) {

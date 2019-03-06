@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStub;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.AlertPolicy;
 import com.google.monitoring.v3.AlertPolicyName;
 import com.google.monitoring.v3.CreateAlertPolicyRequest;
@@ -758,7 +759,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
             public ListAlertPoliciesPagedResponse apply(ListAlertPoliciesPage input) {
               return new ListAlertPoliciesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAlertPoliciesPagedResponse(ListAlertPoliciesPage page) {
