@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-03-06T08:50:50.672265Z",
+  "updateTime": "2019-03-07T21:20:30.007235Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "856117505ff9075b3e9c0b5674113667b6cf9e00",
-        "internalRef": "236931378"
+        "sha": "6df9a80f147c4349949f6573b5275deebddd3ba8",
+        "internalRef": "237262681"
       }
     }
   ],
@@ -26,6 +26,16 @@
         "language": "java",
         "generator": "gapic",
         "config": "google/cloud/securitycenter/artman_securitycenter_v1beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "securitycenter",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/securitycenter/artman_securitycenter_v1.yaml"
       }
     }
   ]
