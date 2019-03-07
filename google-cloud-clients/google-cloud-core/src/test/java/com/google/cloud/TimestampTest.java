@@ -178,10 +178,10 @@ public class TimestampTest {
 
   @Test
   public void parseTimestamp() {
-    assertThat(Timestamp.parseTimestamp("0001-01-01T00:00:00Z")).isEqualTo(Timestamp.MIN_VALUE);
-    assertThat(Timestamp.parseTimestamp("9999-12-31T23:59:59.999999999Z"))
+    assertThat(Timestamp.parseTimestamp("0001-01-01T00:00:00")).isEqualTo(Timestamp.MIN_VALUE);
+    assertThat(Timestamp.parseTimestamp("9999-12-31T23:59:59.999999999"))
         .isEqualTo(Timestamp.MAX_VALUE);
-    assertThat(Timestamp.parseTimestamp(TEST_TIME_ISO))
+    assertThat(Timestamp.parseTimestamp("2015-10-12T15:14:54"))
         .isEqualTo(Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 0));
   }
 
@@ -217,6 +217,6 @@ public class TimestampTest {
 
   @Test
   public void serialization() throws Exception {
-    reserializeAndAssert(Timestamp.parseTimestamp("9999-12-31T23:59:59.999999999Z"));
+    reserializeAndAssert(Timestamp.parseTimestamp("9999-12-31T23:59:59.999999999"));
   }
 }

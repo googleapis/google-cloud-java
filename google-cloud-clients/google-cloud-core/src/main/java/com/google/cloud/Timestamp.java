@@ -26,7 +26,9 @@ import java.util.concurrent.TimeUnit;
 import org.threeten.bp.Instant;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.ZonedDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.temporal.TemporalAccessor;
 
 /**
  * Represents a timestamp with nanosecond precision. Timestamps cover the range [0001-01-01,
@@ -166,12 +168,14 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   }
 
   /**
-   * Creates a Timestamp instance from the given string. String is in the RFC 3339 format with
+   * Creates a Timestamp instance from the given string. String is in the RFC 3339 format without
    * the timezone offset (always ends in "Z").
-   * {@code 2007-12-03T10:15:30.000Z}
    */
   public static Timestamp parseTimestamp(String timestamp) {
-    Instant instant = Instant.parse(timestamp);
+    TemporalAccessor temporalAccessor = DateTimeFormatter.ISO_LOCAL_DATE_TIME.parse(timestamp);
+    LocalDateTime localDateTime = LocalDateTime.from(temporalAccessor);
+    ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTime, ZoneOffset.UTC);
+    Instant instant = Instant.from(zonedDateTime);
     return ofTimeSecondsAndNanos(instant.getEpochSecond(), instant.getNano());
   }
 
