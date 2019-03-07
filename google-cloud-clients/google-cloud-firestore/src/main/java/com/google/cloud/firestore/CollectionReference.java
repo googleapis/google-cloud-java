@@ -59,7 +59,7 @@ public class CollectionReference extends Query {
    */
   @Nonnull
   public String getId() {
-    return options.collectionId;
+    return options.getCollectionId();
   }
 
   /**
@@ -69,7 +69,7 @@ public class CollectionReference extends Query {
    */
   @Nullable
   public DocumentReference getParent() {
-    ResourcePath parent = options.parentPath;
+    ResourcePath parent = options.getParentPath();
     return parent.isDocument() ? new DocumentReference(firestore, parent) : null;
   }
 
@@ -124,8 +124,8 @@ public class CollectionReference extends Query {
   @Nonnull
   public Iterable<DocumentReference> listDocuments() {
     ListDocumentsRequest.Builder request = ListDocumentsRequest.newBuilder();
-    request.setParent(options.parentPath.toString());
-    request.setCollectionId(options.collectionId);
+    request.setParent(options.getParentPath().toString());
+    request.setCollectionId(options.getCollectionId());
     request.setMask(DocumentMask.getDefaultInstance());
     request.setShowMissing(true);
 
@@ -209,6 +209,6 @@ public class CollectionReference extends Query {
 
   /** Returns a resource path pointing to this collection. */
   ResourcePath getResourcePath() {
-    return options.parentPath.append(options.collectionId);
+    return options.getParentPath().append(options.getCollectionId());
   }
 }

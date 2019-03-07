@@ -26,8 +26,11 @@ import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.LESS_
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.auto.value.AutoValue;
 import com.google.cloud.Timestamp;
+import com.google.cloud.firestore.Query.QueryOptions.Builder;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1.Cursor;
 import com.google.firestore.v1.Document;
@@ -78,7 +81,7 @@ public class Query {
     }
   }
 
-  private abstract static class FieldFilter {
+  abstract static class FieldFilter {
     final FieldPath fieldPath;
     final Object value;
 
@@ -160,7 +163,7 @@ public class Query {
     }
   }
 
-  private static class FieldOrder {
+  static class FieldOrder {
     final FieldPath fieldPath;
     final Direction direction;
 
@@ -178,113 +181,87 @@ public class Query {
   }
 
   /** Options that define a Firestore Query. */
-  protected static class QueryOptions {
+  @AutoValue
+  protected abstract static class QueryOptions {
 
-    ResourcePath parentPath;
-    String collectionId;
-    boolean allDescendants;
-    int limit;
-    int offset;
-    @Nullable Cursor startCursor;
-    @Nullable Cursor endCursor;
-    List<FieldFilter> fieldFilters;
-    List<FieldOrder> fieldOrders;
-    List<FieldReference> fieldProjections;
+    abstract ResourcePath getParentPath();
 
-    private QueryOptions(ResourcePath parentPath, String collectionId) {
-      this.parentPath = parentPath;
-      this.collectionId = collectionId;
-      this.allDescendants = false;
-      this.limit = -1;
-      this.offset = -1;
-      this.startCursor = null;
-      this.endCursor = null;
-      this.fieldFilters = new ArrayList<>();
-      this.fieldOrders = new ArrayList<>();
-      this.fieldProjections = new ArrayList<>();
+    abstract String getCollectionId();
+
+    abstract boolean getAllDescendants();
+
+    abstract @Nullable Integer getLimit();
+
+    abstract @Nullable Integer getOffset();
+
+    abstract @Nullable Cursor getStartCursor();
+
+    abstract @Nullable Cursor getEndCursor();
+
+    abstract ImmutableList<FieldFilter> getFieldFilters();
+
+    abstract ImmutableList<FieldOrder> getFieldOrders();
+
+    abstract ImmutableList<FieldReference> getFieldProjections();
+
+    static Builder builder() {
+      return new AutoValue_Query_QueryOptions.Builder()
+          .setAllDescendants(false)
+          .setFieldOrders(ImmutableList.<FieldOrder>of())
+          .setFieldFilters(ImmutableList.<FieldFilter>of())
+          .setFieldProjections(ImmutableList.<FieldReference>of());
     }
 
-    private QueryOptions(QueryOptions options) {
-      parentPath = options.parentPath;
-      allDescendants = options.allDescendants;
-      collectionId = options.collectionId;
-      limit = options.limit;
-      offset = options.offset;
-      startCursor = options.startCursor;
-      endCursor = options.endCursor;
-      fieldFilters = new ArrayList<>(options.fieldFilters);
-      fieldOrders = new ArrayList<>(options.fieldOrders);
-      fieldProjections = options.fieldProjections;
-    }
+    abstract Builder toBuilder();
 
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) {
-        return true;
-      }
-      if (o == null || getClass() != o.getClass()) {
-        return false;
-      }
+    @AutoValue.Builder
+    abstract static class Builder {
+      abstract Builder setParentPath(ResourcePath value);
 
-      QueryOptions that = (QueryOptions) o;
+      abstract Builder setCollectionId(String value);
 
-      if (allDescendants != that.allDescendants) {
-        return false;
-      }
-      if (limit != that.limit) {
-        return false;
-      }
-      if (offset != that.offset) {
-        return false;
-      }
-      if (!parentPath.equals(that.parentPath)) {
-        return false;
-      }
-      if (!collectionId.equals(that.collectionId)) {
-        return false;
-      }
-      if (startCursor != null ? !startCursor.equals(that.startCursor) : that.startCursor != null) {
-        return false;
-      }
-      if (endCursor != null ? !endCursor.equals(that.endCursor) : that.endCursor != null) {
-        return false;
-      }
-      if (!fieldFilters.equals(that.fieldFilters)) {
-        return false;
-      }
-      if (!fieldOrders.equals(that.fieldOrders)) {
-        return false;
-      }
-      return fieldProjections.equals(that.fieldProjections);
-    }
+      abstract Builder setAllDescendants(boolean value);
 
-    @Override
-    public int hashCode() {
-      int result = parentPath.hashCode();
-      result = 31 * result + collectionId.hashCode();
-      result = 31 * result + (allDescendants ? 1 : 0);
-      result = 31 * result + limit;
-      result = 31 * result + offset;
-      result = 31 * result + (startCursor != null ? startCursor.hashCode() : 0);
-      result = 31 * result + (endCursor != null ? endCursor.hashCode() : 0);
-      result = 31 * result + fieldFilters.hashCode();
-      result = 31 * result + fieldOrders.hashCode();
-      result = 31 * result + fieldProjections.hashCode();
-      return result;
+      abstract Builder setLimit(Integer value);
+
+      abstract Builder setOffset(Integer value);
+
+      abstract Builder setStartCursor(@Nullable Cursor value);
+
+      abstract Builder setEndCursor(@Nullable Cursor value);
+
+      abstract Builder setFieldFilters(ImmutableList<FieldFilter> value);
+
+      abstract Builder setFieldOrders(ImmutableList<FieldOrder> value);
+
+      abstract Builder setFieldProjections(ImmutableList<FieldReference> value);
+
+      abstract QueryOptions build();
     }
   }
 
+  /** Creates a query for documents in a single collection */
   Query(FirestoreImpl firestore, ResourcePath path) {
-    this.firestore = firestore;
-    this.options = new QueryOptions(path.getParent(), path.getId());
+    this(
+        firestore,
+        QueryOptions.builder()
+            .setParentPath(path.getParent())
+            .setCollectionId(path.getId())
+            .build());
   }
 
+  /**
+   * Creates a Collection Group query that matches all documents directly nested under a
+   * specifically named collection
+   */
   Query(FirestoreImpl firestore, String collectionId) {
-    QueryOptions queryOptions = new QueryOptions(firestore.getResourcePath(), collectionId);
-    queryOptions.allDescendants = true;
-
-    this.firestore = firestore;
-    this.options = queryOptions;
+    this(
+        firestore,
+        QueryOptions.builder()
+            .setParentPath(firestore.getResourcePath())
+            .setCollectionId(collectionId)
+            .setAllDescendants(true)
+            .build());
   }
 
   private Query(FirestoreImpl firestore, QueryOptions queryOptions) {
@@ -308,20 +285,20 @@ public class Query {
   }
 
   /** Computes the backend ordering semantics for DocumentSnapshot cursors. */
-  private List<FieldOrder> createImplicitOrderBy() {
-    List<FieldOrder> implicitOrders = new ArrayList<>(options.fieldOrders);
+  private ImmutableList<FieldOrder> createImplicitOrderBy() {
+    List<FieldOrder> implicitOrders = new ArrayList<>(options.getFieldOrders());
     boolean hasDocumentId = false;
 
     if (implicitOrders.isEmpty()) {
       // If no explicit ordering is specified, use the first inequality to define an implicit order.
-      for (FieldFilter fieldFilter : options.fieldFilters) {
+      for (FieldFilter fieldFilter : options.getFieldFilters()) {
         if (!fieldFilter.isEqualsFilter()) {
           implicitOrders.add(new FieldOrder(fieldFilter.fieldPath, Direction.ASCENDING));
           break;
         }
       }
     } else {
-      for (FieldOrder fieldOrder : options.fieldOrders) {
+      for (FieldOrder fieldOrder : options.getFieldOrders()) {
         if (fieldOrder.fieldPath.equals(FieldPath.DOCUMENT_ID)) {
           hasDocumentId = true;
         }
@@ -337,11 +314,12 @@ public class Query {
 
       implicitOrders.add(new FieldOrder(FieldPath.documentId(), lastDirection));
     }
-    return implicitOrders;
+
+    return ImmutableList.<FieldOrder>builder().addAll(implicitOrders).build();
   }
 
   private Cursor createCursor(
-      List<FieldOrder> order, DocumentSnapshot documentSnapshot, boolean before) {
+      ImmutableList<FieldOrder> order, DocumentSnapshot documentSnapshot, boolean before) {
     List<Object> fieldValues = new ArrayList<>();
 
     for (FieldOrder fieldOrder : order) {
@@ -404,9 +382,9 @@ public class Query {
    */
   private Object convertReference(Object fieldValue) {
     ResourcePath basePath =
-        options.allDescendants
-            ? options.parentPath
-            : options.parentPath.append(options.collectionId);
+        options.getAllDescendants()
+            ? options.getParentPath()
+            : options.getParentPath().append(options.getCollectionId());
 
     DocumentReference reference;
     if (fieldValue instanceof String) {
@@ -426,7 +404,7 @@ public class Query {
               reference.getPath()));
     }
 
-    if (!options.allDescendants && !reference.getParent().getResourcePath().equals(basePath)) {
+    if (!options.getAllDescendants() && !reference.getParent().getResourcePath().equals(basePath)) {
       throw new IllegalArgumentException(
           String.format(
               "Only a direct child can be used as a query boundary. Found: '%s'",
@@ -460,14 +438,20 @@ public class Query {
   @Nonnull
   public Query whereEqualTo(@Nonnull FieldPath fieldPath, @Nullable Object value) {
     Preconditions.checkState(
-        options.startCursor == null && options.endCursor == null,
+        options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereEqualTo() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
 
     if (isUnaryComparison(value)) {
-      QueryOptions newOptions = new QueryOptions(options);
-      newOptions.fieldFilters.add(new UnaryFilter(fieldPath, value));
-      return new Query(firestore, newOptions);
+      Builder newOptions = options.toBuilder();
+      UnaryFilter newFieldFilter = new UnaryFilter(fieldPath, value);
+      ImmutableList<FieldFilter> newFieldFilters =
+          ImmutableList.<FieldFilter>builder()
+              .addAll(options.getFieldFilters())
+              .add(newFieldFilter)
+              .build();
+      newOptions.setFieldFilters(newFieldFilters);
+      return new Query(firestore, newOptions.build());
     } else {
       return whereHelper(fieldPath, EQUAL, value);
     }
@@ -497,7 +481,7 @@ public class Query {
   @Nonnull
   public Query whereLessThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
-        options.startCursor == null && options.endCursor == null,
+        options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereLessThan() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
     return whereHelper(fieldPath, LESS_THAN, value);
@@ -527,7 +511,7 @@ public class Query {
   @Nonnull
   public Query whereLessThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
-        options.startCursor == null && options.endCursor == null,
+        options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereLessThanOrEqualTo() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
     return whereHelper(fieldPath, LESS_THAN_OR_EQUAL, value);
@@ -557,7 +541,7 @@ public class Query {
   @Nonnull
   public Query whereGreaterThan(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
-        options.startCursor == null && options.endCursor == null,
+        options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereGreaterThan() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
     return whereHelper(fieldPath, GREATER_THAN, value);
@@ -587,7 +571,7 @@ public class Query {
   @Nonnull
   public Query whereGreaterThanOrEqualTo(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
-        options.startCursor == null && options.endCursor == null,
+        options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereGreaterThanOrEqualTo() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
     return whereHelper(fieldPath, GREATER_THAN_OR_EQUAL, value);
@@ -623,7 +607,7 @@ public class Query {
   @Nonnull
   public Query whereArrayContains(@Nonnull FieldPath fieldPath, @Nonnull Object value) {
     Preconditions.checkState(
-        options.startCursor == null && options.endCursor == null,
+        options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot call whereArrayContains() after defining a boundary with startAt(), "
             + "startAfter(), endBefore() or endAt().");
     return whereHelper(fieldPath, ARRAY_CONTAINS, value);
@@ -631,14 +615,19 @@ public class Query {
 
   private Query whereHelper(
       FieldPath fieldPath, StructuredQuery.FieldFilter.Operator operator, Object value) {
-    QueryOptions newOptions = new QueryOptions(options);
-
     if (fieldPath.equals(FieldPath.DOCUMENT_ID)) {
       value = this.convertReference(value);
     }
 
-    newOptions.fieldFilters.add(new ComparisonFilter(fieldPath, operator, value));
-    return new Query(firestore, newOptions);
+    Builder newOptions = options.toBuilder();
+    ComparisonFilter newFieldFilter = new ComparisonFilter(fieldPath, operator, value);
+    ImmutableList<FieldFilter> newFieldFilters =
+        ImmutableList.<FieldFilter>builder()
+            .addAll(options.getFieldFilters())
+            .add(newFieldFilter)
+            .build();
+    newOptions.setFieldFilters(newFieldFilters);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -687,14 +676,20 @@ public class Query {
   @Nonnull
   public Query orderBy(@Nonnull FieldPath fieldPath, @Nonnull Direction direction) {
     Preconditions.checkState(
-        options.startCursor == null && options.endCursor == null,
+        options.getStartCursor() == null && options.getEndCursor() == null,
         "Cannot specify an orderBy() constraint after calling startAt(), "
             + "startAfter(), endBefore() or endAt().");
 
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders.add(new FieldOrder(fieldPath, direction));
+    Builder newOptions = options.toBuilder();
+    FieldOrder newFieldOrder = new FieldOrder(fieldPath, direction);
+    ImmutableList<FieldOrder> newFieldOrders =
+        ImmutableList.<FieldOrder>builder()
+            .addAll(options.getFieldOrders())
+            .add(newFieldOrder)
+            .build();
+    newOptions.setFieldOrders(newFieldOrders);
 
-    return new Query(firestore, newOptions);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -706,9 +701,7 @@ public class Query {
    */
   @Nonnull
   public Query limit(int limit) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.limit = limit;
-    return new Query(firestore, newOptions);
+    return new Query(firestore, options.toBuilder().setLimit(limit).build());
   }
 
   /**
@@ -719,9 +712,7 @@ public class Query {
    */
   @Nonnull
   public Query offset(int offset) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.offset = offset;
-    return new Query(firestore, newOptions);
+    return new Query(firestore, options.toBuilder().setOffset(offset).build());
   }
 
   /**
@@ -734,10 +725,13 @@ public class Query {
    */
   @Nonnull
   public Query startAt(@Nonnull DocumentSnapshot snapshot) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders = createImplicitOrderBy();
-    newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, true);
-    return new Query(firestore, newOptions);
+    ImmutableList<FieldOrder> fieldOrders = createImplicitOrderBy();
+    Cursor cursor = createCursor(fieldOrders, snapshot, true);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setFieldOrders(fieldOrders);
+    newOptions.setStartCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -749,9 +743,11 @@ public class Query {
    */
   @Nonnull
   public Query startAt(Object... fieldValues) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
-    return new Query(firestore, newOptions);
+    Cursor cursor = createCursor(options.getFieldOrders(), fieldValues, true);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setStartCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -783,8 +779,7 @@ public class Query {
    */
   @Nonnull
   public Query select(FieldPath... fieldPaths) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldProjections = new ArrayList<>();
+    ImmutableList.Builder<FieldReference> fieldProjections = ImmutableList.builder();
 
     if (fieldPaths.length == 0) {
       fieldPaths = new FieldPath[] {FieldPath.DOCUMENT_ID};
@@ -793,10 +788,11 @@ public class Query {
     for (FieldPath path : fieldPaths) {
       FieldReference fieldReference =
           FieldReference.newBuilder().setFieldPath(path.getEncodedPath()).build();
-      newOptions.fieldProjections.add(fieldReference);
+      fieldProjections.add(fieldReference);
     }
 
-    return new Query(firestore, newOptions);
+    Builder newOptions = options.toBuilder().setFieldProjections(fieldProjections.build());
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -809,10 +805,13 @@ public class Query {
    */
   @Nonnull
   public Query startAfter(@Nonnull DocumentSnapshot snapshot) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders = createImplicitOrderBy();
-    newOptions.startCursor = createCursor(newOptions.fieldOrders, snapshot, false);
-    return new Query(firestore, newOptions);
+    ImmutableList<FieldOrder> fieldOrders = createImplicitOrderBy();
+    Cursor cursor = createCursor(fieldOrders, snapshot, false);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setFieldOrders(fieldOrders);
+    newOptions.setStartCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -825,9 +824,11 @@ public class Query {
    * @return The created Query.
    */
   public Query startAfter(Object... fieldValues) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.startCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
-    return new Query(firestore, newOptions);
+    Cursor cursor = createCursor(options.getFieldOrders(), fieldValues, false);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setStartCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -840,10 +841,13 @@ public class Query {
    */
   @Nonnull
   public Query endBefore(@Nonnull DocumentSnapshot snapshot) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders = createImplicitOrderBy();
-    newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, true);
-    return new Query(firestore, newOptions);
+    ImmutableList<FieldOrder> fieldOrders = createImplicitOrderBy();
+    Cursor cursor = createCursor(fieldOrders, snapshot, true);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setFieldOrders(fieldOrders);
+    newOptions.setEndCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -856,9 +860,11 @@ public class Query {
    */
   @Nonnull
   public Query endBefore(Object... fieldValues) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, true);
-    return new Query(firestore, newOptions);
+    Cursor cursor = createCursor(options.getFieldOrders(), fieldValues, true);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setEndCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -870,9 +876,11 @@ public class Query {
    */
   @Nonnull
   public Query endAt(Object... fieldValues) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.endCursor = createCursor(newOptions.fieldOrders, fieldValues, false);
-    return new Query(firestore, newOptions);
+    Cursor cursor = createCursor(options.getFieldOrders(), fieldValues, false);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setEndCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /**
@@ -885,22 +893,25 @@ public class Query {
    */
   @Nonnull
   public Query endAt(@Nonnull DocumentSnapshot snapshot) {
-    QueryOptions newOptions = new QueryOptions(options);
-    newOptions.fieldOrders = createImplicitOrderBy();
-    newOptions.endCursor = createCursor(newOptions.fieldOrders, snapshot, false);
-    return new Query(firestore, newOptions);
+    ImmutableList<FieldOrder> fieldOrders = createImplicitOrderBy();
+    Cursor cursor = createCursor(fieldOrders, snapshot, false);
+
+    Builder newOptions = options.toBuilder();
+    newOptions.setFieldOrders(fieldOrders);
+    newOptions.setEndCursor(cursor);
+    return new Query(firestore, newOptions.build());
   }
 
   /** Build the final Firestore query. */
   StructuredQuery.Builder buildQuery() {
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
     CollectionSelector.Builder collectionSelector = CollectionSelector.newBuilder();
-    collectionSelector.setCollectionId(options.collectionId);
-    collectionSelector.setAllDescendants(options.allDescendants);
+    collectionSelector.setCollectionId(options.getCollectionId());
+    collectionSelector.setAllDescendants(options.getAllDescendants());
     structuredQuery.addFrom(collectionSelector);
 
-    if (options.fieldFilters.size() == 1) {
-      Filter filter = options.fieldFilters.get(0).toProto();
+    if (options.getFieldFilters().size() == 1) {
+      Filter filter = options.getFieldFilters().get(0).toProto();
       if (filter.hasFieldFilter()) {
         structuredQuery.getWhereBuilder().setFieldFilter(filter.getFieldFilter());
       } else {
@@ -908,42 +919,42 @@ public class Query {
             filter.hasUnaryFilter(), "Expected a UnaryFilter or a FieldFilter.");
         structuredQuery.getWhereBuilder().setUnaryFilter(filter.getUnaryFilter());
       }
-    } else if (options.fieldFilters.size() > 1) {
+    } else if (options.getFieldFilters().size() > 1) {
       Filter.Builder filter = Filter.newBuilder();
       StructuredQuery.CompositeFilter.Builder compositeFilter =
           StructuredQuery.CompositeFilter.newBuilder();
       compositeFilter.setOp(CompositeFilter.Operator.AND);
-      for (FieldFilter fieldFilter : options.fieldFilters) {
+      for (FieldFilter fieldFilter : options.getFieldFilters()) {
         compositeFilter.addFilters(fieldFilter.toProto());
       }
       filter.setCompositeFilter(compositeFilter.build());
       structuredQuery.setWhere(filter.build());
     }
 
-    if (!options.fieldOrders.isEmpty()) {
-      for (FieldOrder order : options.fieldOrders) {
+    if (!options.getFieldOrders().isEmpty()) {
+      for (FieldOrder order : options.getFieldOrders()) {
         structuredQuery.addOrderBy(order.toProto());
       }
     }
 
-    if (!options.fieldProjections.isEmpty()) {
-      structuredQuery.getSelectBuilder().addAllFields(options.fieldProjections);
+    if (!options.getFieldProjections().isEmpty()) {
+      structuredQuery.getSelectBuilder().addAllFields(options.getFieldProjections());
     }
 
-    if (options.limit != -1) {
-      structuredQuery.setLimit(Int32Value.newBuilder().setValue(options.limit));
+    if (options.getLimit() != null) {
+      structuredQuery.setLimit(Int32Value.newBuilder().setValue(options.getLimit()));
     }
 
-    if (options.offset != -1) {
-      structuredQuery.setOffset(options.offset);
+    if (options.getOffset() != null) {
+      structuredQuery.setOffset(options.getOffset());
     }
 
-    if (options.startCursor != null) {
-      structuredQuery.setStartAt(options.startCursor);
+    if (options.getStartCursor() != null) {
+      structuredQuery.setStartAt(options.getStartCursor());
     }
 
-    if (options.endCursor != null) {
-      structuredQuery.setEndAt(options.endCursor);
+    if (options.getEndCursor() != null) {
+      structuredQuery.setEndAt(options.getEndCursor());
     }
 
     return structuredQuery;
@@ -994,7 +1005,7 @@ public class Query {
   private void stream(
       final QuerySnapshotObserver documentObserver, @Nullable ByteString transactionId) {
     RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
-    request.setStructuredQuery(buildQuery()).setParent(options.parentPath.toString());
+    request.setStructuredQuery(buildQuery()).setParent(options.getParentPath().toString());
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
@@ -1127,13 +1138,13 @@ public class Query {
       @Override
       public int compare(QueryDocumentSnapshot doc1, QueryDocumentSnapshot doc2) {
         // Add implicit sorting by name, using the last specified direction.
+        ImmutableList<FieldOrder> fieldOrders = options.getFieldOrders();
         Direction lastDirection =
-            options.fieldOrders.isEmpty()
+            fieldOrders.isEmpty()
                 ? Direction.ASCENDING
-                : options.fieldOrders.get(options.fieldOrders.size() - 1).direction;
+                : fieldOrders.get(fieldOrders.size() - 1).direction;
 
-        List<FieldOrder> orderBys = new ArrayList<>();
-        orderBys.addAll(options.fieldOrders);
+        List<FieldOrder> orderBys = new ArrayList<>(fieldOrders);
         orderBys.add(new FieldOrder(FieldPath.DOCUMENT_ID, lastDirection));
 
         for (FieldOrder orderBy : orderBys) {
