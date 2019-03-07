@@ -163,7 +163,7 @@ public class Query {
     }
   }
 
-  static class FieldOrder {
+  static final class FieldOrder {
     final FieldPath fieldPath;
     final Direction direction;
 
@@ -182,7 +182,7 @@ public class Query {
 
   /** Options that define a Firestore Query. */
   @AutoValue
-  protected abstract static class QueryOptions {
+  abstract static class QueryOptions {
 
     abstract ResourcePath getParentPath();
 
@@ -445,12 +445,7 @@ public class Query {
     if (isUnaryComparison(value)) {
       Builder newOptions = options.toBuilder();
       UnaryFilter newFieldFilter = new UnaryFilter(fieldPath, value);
-      ImmutableList<FieldFilter> newFieldFilters =
-          ImmutableList.<FieldFilter>builder()
-              .addAll(options.getFieldFilters())
-              .add(newFieldFilter)
-              .build();
-      newOptions.setFieldFilters(newFieldFilters);
+      newOptions.setFieldFilters(append(options.getFieldFilters(), newFieldFilter));
       return new Query(firestore, newOptions.build());
     } else {
       return whereHelper(fieldPath, EQUAL, value);
@@ -621,12 +616,7 @@ public class Query {
 
     Builder newOptions = options.toBuilder();
     ComparisonFilter newFieldFilter = new ComparisonFilter(fieldPath, operator, value);
-    ImmutableList<FieldFilter> newFieldFilters =
-        ImmutableList.<FieldFilter>builder()
-            .addAll(options.getFieldFilters())
-            .add(newFieldFilter)
-            .build();
-    newOptions.setFieldFilters(newFieldFilters);
+    newOptions.setFieldFilters(append(options.getFieldFilters(), newFieldFilter));
     return new Query(firestore, newOptions.build());
   }
 
@@ -682,12 +672,7 @@ public class Query {
 
     Builder newOptions = options.toBuilder();
     FieldOrder newFieldOrder = new FieldOrder(fieldPath, direction);
-    ImmutableList<FieldOrder> newFieldOrders =
-        ImmutableList.<FieldOrder>builder()
-            .addAll(options.getFieldOrders())
-            .add(newFieldOrder)
-            .build();
-    newOptions.setFieldOrders(newFieldOrders);
+    newOptions.setFieldOrders(append(options.getFieldOrders(), newFieldOrder));
 
     return new Query(firestore, newOptions.build());
   }
@@ -1175,6 +1160,17 @@ public class Query {
         return 0;
       }
     };
+  }
+
+  /**
+   * Helper method to append an element to an existing ImmutableList. Returns the newly created
+   * list.
+   */
+  private <T> ImmutableList<T> append(ImmutableList<T> existingList, T newElement) {
+    ImmutableList.Builder<T> builder = ImmutableList.builder();
+    builder.addAll(existingList);
+    builder.add(newElement);
+    return builder.build();
   }
 
   /**
