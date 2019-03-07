@@ -26,7 +26,6 @@ import java.util.concurrent.TimeUnit;
 import org.threeten.bp.Instant;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneOffset;
-import org.threeten.bp.ZonedDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.DateTimeFormatterBuilder;
 import org.threeten.bp.temporal.TemporalAccessor;
@@ -50,13 +49,14 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
 
   private static final DateTimeFormatter format = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
-  private static final DateTimeFormatter timestampFormatter =
+  private static final DateTimeFormatter timestampParser =
       new DateTimeFormatterBuilder()
           .appendOptional(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
           .optionalStart()
           .appendOffsetId()
           .optionalEnd()
-          .toFormatter();
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
 
   private final long seconds;
   private final int nanos;
@@ -181,10 +181,8 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    * the timezone offset (always ends in "Z").
    */
   public static Timestamp parseTimestamp(String timestamp) {
-    TemporalAccessor temporalAccessor = timestampFormatter.parse(timestamp);
-    LocalDateTime localDateTime = LocalDateTime.from(temporalAccessor);
-    ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTime, ZoneOffset.UTC);
-    Instant instant = Instant.from(zonedDateTime);
+    TemporalAccessor temporalAccessor = timestampParser.parse(timestamp);
+    Instant instant = Instant.from(temporalAccessor);
     return ofTimeSecondsAndNanos(instant.getEpochSecond(), instant.getNano());
   }
 
