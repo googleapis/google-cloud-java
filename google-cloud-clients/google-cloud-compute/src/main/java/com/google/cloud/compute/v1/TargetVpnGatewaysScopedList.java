@@ -68,7 +68,7 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
     return null;
   }
 
-  /** [Output Only] A list of target vpn gateways contained in this scope. */
+  /** [Output Only] A list of target VPN gateways contained in this scope. */
   public List<TargetVpnGateway> getTargetVpnGatewaysList() {
     return targetVpnGateways;
   }
@@ -125,12 +125,12 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
-    /** [Output Only] A list of target vpn gateways contained in this scope. */
+    /** [Output Only] A list of target VPN gateways contained in this scope. */
     public List<TargetVpnGateway> getTargetVpnGatewaysList() {
       return targetVpnGateways;
     }
 
-    /** [Output Only] A list of target vpn gateways contained in this scope. */
+    /** [Output Only] A list of target VPN gateways contained in this scope. */
     public Builder addAllTargetVpnGateways(List<TargetVpnGateway> targetVpnGateways) {
       if (this.targetVpnGateways == null) {
         this.targetVpnGateways = new LinkedList<>();
@@ -139,7 +139,7 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] A list of target vpn gateways contained in this scope. */
+    /** [Output Only] A list of target VPN gateways contained in this scope. */
     public Builder addTargetVpnGateways(TargetVpnGateway targetVpnGateways) {
       if (this.targetVpnGateways == null) {
         this.targetVpnGateways = new LinkedList<>();

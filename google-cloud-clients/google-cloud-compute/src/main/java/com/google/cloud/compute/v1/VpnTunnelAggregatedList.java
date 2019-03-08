@@ -105,7 +105,7 @@ public final class VpnTunnelAggregatedList implements ApiMessage {
 
   /**
    * A list of VpnTunnelsScopedList resources. The key for the map is: Name of the scope containing
-   * this set of vpn tunnels.
+   * this set of VPN tunnels.
    */
   public Map<String, VpnTunnelsScopedList> getItemsMap() {
     return items;
@@ -213,7 +213,7 @@ public final class VpnTunnelAggregatedList implements ApiMessage {
 
     /**
      * A list of VpnTunnelsScopedList resources. The key for the map is: Name of the scope
-     * containing this set of vpn tunnels.
+     * containing this set of VPN tunnels.
      */
     public Map<String, VpnTunnelsScopedList> getItemsMap() {
       return items;
@@ -221,7 +221,7 @@ public final class VpnTunnelAggregatedList implements ApiMessage {
 
     /**
      * A list of VpnTunnelsScopedList resources. The key for the map is: Name of the scope
-     * containing this set of vpn tunnels.
+     * containing this set of VPN tunnels.
      */
     public Builder putAllItems(Map<String, VpnTunnelsScopedList> items) {
       this.items = items;
