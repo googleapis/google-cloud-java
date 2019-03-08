@@ -604,7 +604,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       if (stateChange_
           != com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange
-              .UNUSED.getNumber()) {
+              .UNUSED
+              .getNumber()) {
         output.writeEnum(2, stateChange_);
       }
       unknownFields.writeTo(output);
@@ -621,7 +622,8 @@ public final class ListFindingsResponse extends com.google.protobuf.GeneratedMes
       }
       if (stateChange_
           != com.google.cloud.securitycenter.v1.ListFindingsResponse.ListFindingsResult.StateChange
-              .UNUSED.getNumber()) {
+              .UNUSED
+              .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, stateChange_);
       }
       size += unknownFields.getSerializedSize();

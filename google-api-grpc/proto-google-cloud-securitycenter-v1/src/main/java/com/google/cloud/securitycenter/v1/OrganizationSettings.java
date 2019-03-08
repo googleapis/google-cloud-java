@@ -568,7 +568,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       }
       if (inclusionMode_
           != com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
-              .InclusionMode.INCLUSION_MODE_UNSPECIFIED.getNumber()) {
+              .InclusionMode.INCLUSION_MODE_UNSPECIFIED
+              .getNumber()) {
         output.writeEnum(2, inclusionMode_);
       }
       unknownFields.writeTo(output);
@@ -590,7 +591,8 @@ public final class OrganizationSettings extends com.google.protobuf.GeneratedMes
       }
       if (inclusionMode_
           != com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig
-              .InclusionMode.INCLUSION_MODE_UNSPECIFIED.getNumber()) {
+              .InclusionMode.INCLUSION_MODE_UNSPECIFIED
+              .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, inclusionMode_);
       }
       size += unknownFields.getSerializedSize();
