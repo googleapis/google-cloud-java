@@ -96,6 +96,11 @@ public class Partition implements Serializable {
     return partitionToken;
   }
 
+  @GoogleInternal
+  public ByteString getPartitionTokenForTest() {
+    return partitionToken;
+  }
+
   String getTable() {
     return table;
   }
