@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
-/** Status of a NAT contained in this router. */
+/** Status of a NAT contained in this router. Next tag: 9 */
 public final class RouterStatusNatStatus implements ApiMessage {
   private final List<String> autoAllocatedNatIps;
   private final Integer minExtraNatIpsNeeded;

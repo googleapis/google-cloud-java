@@ -33,6 +33,7 @@ public final class HealthCheck implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
   private final Integer healthyThreshold;
+  private final Http2HealthCheck http2HealthCheck;
   private final HttpHealthCheck httpHealthCheck;
   private final HttpSHealthCheck httpsHealthCheck;
   private final String id;
@@ -50,6 +51,7 @@ public final class HealthCheck implements ApiMessage {
     this.creationTimestamp = null;
     this.description = null;
     this.healthyThreshold = null;
+    this.http2HealthCheck = null;
     this.httpHealthCheck = null;
     this.httpsHealthCheck = null;
     this.id = null;
@@ -68,6 +70,7 @@ public final class HealthCheck implements ApiMessage {
       String creationTimestamp,
       String description,
       Integer healthyThreshold,
+      Http2HealthCheck http2HealthCheck,
       HttpHealthCheck httpHealthCheck,
       HttpSHealthCheck httpsHealthCheck,
       String id,
@@ -83,6 +86,7 @@ public final class HealthCheck implements ApiMessage {
     this.creationTimestamp = creationTimestamp;
     this.description = description;
     this.healthyThreshold = healthyThreshold;
+    this.http2HealthCheck = http2HealthCheck;
     this.httpHealthCheck = httpHealthCheck;
     this.httpsHealthCheck = httpsHealthCheck;
     this.id = id;
@@ -109,6 +113,9 @@ public final class HealthCheck implements ApiMessage {
     }
     if ("healthyThreshold".equals(fieldName)) {
       return healthyThreshold;
+    }
+    if ("http2HealthCheck".equals(fieldName)) {
+      return http2HealthCheck;
     }
     if ("httpHealthCheck".equals(fieldName)) {
       return httpHealthCheck;
@@ -187,6 +194,10 @@ public final class HealthCheck implements ApiMessage {
    */
   public Integer getHealthyThreshold() {
     return healthyThreshold;
+  }
+
+  public Http2HealthCheck getHttp2HealthCheck() {
+    return http2HealthCheck;
   }
 
   public HttpHealthCheck getHttpHealthCheck() {
@@ -285,6 +296,7 @@ public final class HealthCheck implements ApiMessage {
     private String creationTimestamp;
     private String description;
     private Integer healthyThreshold;
+    private Http2HealthCheck http2HealthCheck;
     private HttpHealthCheck httpHealthCheck;
     private HttpSHealthCheck httpsHealthCheck;
     private String id;
@@ -312,6 +324,9 @@ public final class HealthCheck implements ApiMessage {
       }
       if (other.getHealthyThreshold() != null) {
         this.healthyThreshold = other.healthyThreshold;
+      }
+      if (other.getHttp2HealthCheck() != null) {
+        this.http2HealthCheck = other.http2HealthCheck;
       }
       if (other.getHttpHealthCheck() != null) {
         this.httpHealthCheck = other.httpHealthCheck;
@@ -354,6 +369,7 @@ public final class HealthCheck implements ApiMessage {
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
       this.healthyThreshold = source.healthyThreshold;
+      this.http2HealthCheck = source.http2HealthCheck;
       this.httpHealthCheck = source.httpHealthCheck;
       this.httpsHealthCheck = source.httpsHealthCheck;
       this.id = source.id;
@@ -418,6 +434,15 @@ public final class HealthCheck implements ApiMessage {
      */
     public Builder setHealthyThreshold(Integer healthyThreshold) {
       this.healthyThreshold = healthyThreshold;
+      return this;
+    }
+
+    public Http2HealthCheck getHttp2HealthCheck() {
+      return http2HealthCheck;
+    }
+
+    public Builder setHttp2HealthCheck(Http2HealthCheck http2HealthCheck) {
+      this.http2HealthCheck = http2HealthCheck;
       return this;
     }
 
@@ -579,6 +604,7 @@ public final class HealthCheck implements ApiMessage {
           creationTimestamp,
           description,
           healthyThreshold,
+          http2HealthCheck,
           httpHealthCheck,
           httpsHealthCheck,
           id,
@@ -598,6 +624,7 @@ public final class HealthCheck implements ApiMessage {
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
       newBuilder.setHealthyThreshold(this.healthyThreshold);
+      newBuilder.setHttp2HealthCheck(this.http2HealthCheck);
       newBuilder.setHttpHealthCheck(this.httpHealthCheck);
       newBuilder.setHttpsHealthCheck(this.httpsHealthCheck);
       newBuilder.setId(this.id);
@@ -627,6 +654,9 @@ public final class HealthCheck implements ApiMessage {
         + ", "
         + "healthyThreshold="
         + healthyThreshold
+        + ", "
+        + "http2HealthCheck="
+        + http2HealthCheck
         + ", "
         + "httpHealthCheck="
         + httpHealthCheck
@@ -674,6 +704,7 @@ public final class HealthCheck implements ApiMessage {
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.healthyThreshold, that.getHealthyThreshold())
+          && Objects.equals(this.http2HealthCheck, that.getHttp2HealthCheck())
           && Objects.equals(this.httpHealthCheck, that.getHttpHealthCheck())
           && Objects.equals(this.httpsHealthCheck, that.getHttpsHealthCheck())
           && Objects.equals(this.id, that.getId())
@@ -696,6 +727,7 @@ public final class HealthCheck implements ApiMessage {
         creationTimestamp,
         description,
         healthyThreshold,
+        http2HealthCheck,
         httpHealthCheck,
         httpsHealthCheck,
         id,
