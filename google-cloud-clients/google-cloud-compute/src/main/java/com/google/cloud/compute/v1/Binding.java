@@ -103,7 +103,7 @@ public final class Binding implements ApiMessage {
    * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
    * `admins{@literal @}example.com`.
    *
-   * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
+   * <p>&#42; `domain:{domain}`: The G Suite domain (primary) that represents all the users of that
    * domain. For example, `google.com` or `example.com`.
    */
   public List<String> getMembersList() {
@@ -205,8 +205,8 @@ public final class Binding implements ApiMessage {
      * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
      * `admins{@literal @}example.com`.
      *
-     * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
-     * domain. For example, `google.com` or `example.com`.
+     * <p>&#42; `domain:{domain}`: The G Suite domain (primary) that represents all the users of
+     * that domain. For example, `google.com` or `example.com`.
      */
     public List<String> getMembersList() {
       return members;
@@ -231,8 +231,8 @@ public final class Binding implements ApiMessage {
      * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
      * `admins{@literal @}example.com`.
      *
-     * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
-     * domain. For example, `google.com` or `example.com`.
+     * <p>&#42; `domain:{domain}`: The G Suite domain (primary) that represents all the users of
+     * that domain. For example, `google.com` or `example.com`.
      */
     public Builder addAllMembers(List<String> members) {
       if (this.members == null) {
@@ -261,8 +261,8 @@ public final class Binding implements ApiMessage {
      * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
      * `admins{@literal @}example.com`.
      *
-     * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
-     * domain. For example, `google.com` or `example.com`.
+     * <p>&#42; `domain:{domain}`: The G Suite domain (primary) that represents all the users of
+     * that domain. For example, `google.com` or `example.com`.
      */
     public Builder addMembers(String members) {
       if (this.members == null) {

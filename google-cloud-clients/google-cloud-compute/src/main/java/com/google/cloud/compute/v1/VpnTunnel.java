@@ -201,8 +201,8 @@ public final class VpnTunnel implements ApiMessage {
   }
 
   /**
-   * IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway. Acceptable
-   * IKE versions are 1 or 2. Default version is 2.
+   * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway.
+   * Acceptable IKE versions are 1 or 2. The default version is 2.
    */
   public Integer getIkeVersion() {
     return ikeVersion;
@@ -214,9 +214,9 @@ public final class VpnTunnel implements ApiMessage {
   }
 
   /**
-   * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The value
-   * should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint.
-   * Only IPv4 is supported.
+   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The
+   * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be
+   * disjoint. Only IPv4 is supported.
    */
   public List<String> getLocalTrafficSelectorList() {
     return localTrafficSelector;
@@ -247,7 +247,7 @@ public final class VpnTunnel implements ApiMessage {
   }
 
   /**
-   * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
+   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The
    * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
    * disjoint. Only IPv4 is supported.
    */
@@ -255,7 +255,7 @@ public final class VpnTunnel implements ApiMessage {
     return remoteTrafficSelector;
   }
 
-  /** URL of router resource to be used for dynamic routing. */
+  /** URL of the router resource to be used for dynamic routing. */
   public String getRouter() {
     return router;
   }
@@ -278,7 +278,17 @@ public final class VpnTunnel implements ApiMessage {
     return sharedSecretHash;
   }
 
-  /** [Output Only] The status of the VPN tunnel. */
+  /**
+   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING:
+   * Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive
+   * all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule,
+   * and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first
+   * handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the
+   * peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR:
+   * Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. -
+   * DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation
+   * has failed and the tunnel is not ready to be used.
+   */
   public String getStatus() {
     return status;
   }
@@ -465,16 +475,16 @@ public final class VpnTunnel implements ApiMessage {
     }
 
     /**
-     * IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway.
-     * Acceptable IKE versions are 1 or 2. Default version is 2.
+     * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway.
+     * Acceptable IKE versions are 1 or 2. The default version is 2.
      */
     public Integer getIkeVersion() {
       return ikeVersion;
     }
 
     /**
-     * IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway.
-     * Acceptable IKE versions are 1 or 2. Default version is 2.
+     * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway.
+     * Acceptable IKE versions are 1 or 2. The default version is 2.
      */
     public Builder setIkeVersion(Integer ikeVersion) {
       this.ikeVersion = ikeVersion;
@@ -493,8 +503,8 @@ public final class VpnTunnel implements ApiMessage {
     }
 
     /**
-     * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The
-     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be
      * disjoint. Only IPv4 is supported.
      */
     public List<String> getLocalTrafficSelectorList() {
@@ -502,8 +512,8 @@ public final class VpnTunnel implements ApiMessage {
     }
 
     /**
-     * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The
-     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be
      * disjoint. Only IPv4 is supported.
      */
     public Builder addAllLocalTrafficSelector(List<String> localTrafficSelector) {
@@ -515,8 +525,8 @@ public final class VpnTunnel implements ApiMessage {
     }
 
     /**
-     * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The
-     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be
      * disjoint. Only IPv4 is supported.
      */
     public Builder addLocalTrafficSelector(String localTrafficSelector) {
@@ -579,18 +589,18 @@ public final class VpnTunnel implements ApiMessage {
     }
 
     /**
-     * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
-     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
-     * disjoint. Only IPv4 is supported.
+     * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway.
+     * The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should
+     * be disjoint. Only IPv4 is supported.
      */
     public List<String> getRemoteTrafficSelectorList() {
       return remoteTrafficSelector;
     }
 
     /**
-     * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
-     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
-     * disjoint. Only IPv4 is supported.
+     * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway.
+     * The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should
+     * be disjoint. Only IPv4 is supported.
      */
     public Builder addAllRemoteTrafficSelector(List<String> remoteTrafficSelector) {
       if (this.remoteTrafficSelector == null) {
@@ -601,9 +611,9 @@ public final class VpnTunnel implements ApiMessage {
     }
 
     /**
-     * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
-     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
-     * disjoint. Only IPv4 is supported.
+     * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway.
+     * The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should
+     * be disjoint. Only IPv4 is supported.
      */
     public Builder addRemoteTrafficSelector(String remoteTrafficSelector) {
       if (this.remoteTrafficSelector == null) {
@@ -613,12 +623,12 @@ public final class VpnTunnel implements ApiMessage {
       return this;
     }
 
-    /** URL of router resource to be used for dynamic routing. */
+    /** URL of the router resource to be used for dynamic routing. */
     public String getRouter() {
       return router;
     }
 
-    /** URL of router resource to be used for dynamic routing. */
+    /** URL of the router resource to be used for dynamic routing. */
     public Builder setRouter(String router) {
       this.router = router;
       return this;
@@ -663,12 +673,32 @@ public final class VpnTunnel implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] The status of the VPN tunnel. */
+    /**
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: -
+     * PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG:
+     * Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway,
+     * VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. -
+     * FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session
+     * is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by
+     * NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). -
+     * NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for
+     * the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
+     */
     public String getStatus() {
       return status;
     }
 
-    /** [Output Only] The status of the VPN tunnel. */
+    /**
+     * [Output Only] The status of the VPN tunnel, which can be one of the following: -
+     * PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG:
+     * Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway,
+     * VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. -
+     * FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session
+     * is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by
+     * NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). -
+     * NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for
+     * the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;

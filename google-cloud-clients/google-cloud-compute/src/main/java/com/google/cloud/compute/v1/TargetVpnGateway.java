@@ -151,7 +151,7 @@ public final class TargetVpnGateway implements ApiMessage {
 
   /**
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using
-   * compute.forwardingRules.insert and associated to a VPN gateway.
+   * compute.forwardingRules.insert and associated with a VPN gateway.
    */
   public List<String> getForwardingRulesList() {
     return forwardingRules;
@@ -201,14 +201,17 @@ public final class TargetVpnGateway implements ApiMessage {
     return selfLink;
   }
 
-  /** [Output Only] The status of the VPN gateway. */
+  /**
+   * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING,
+   * READY, FAILED, or DELETING.
+   */
   public String getStatus() {
     return status;
   }
 
   /**
-   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using
-   * compute.vpntunnels.insert method and associated to a VPN gateway.
+   * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the
+   * compute.vpntunnels.insert method and associated with a VPN gateway.
    */
   public List<String> getTunnelsList() {
     return tunnels;
@@ -331,7 +334,7 @@ public final class TargetVpnGateway implements ApiMessage {
 
     /**
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created
-     * using compute.forwardingRules.insert and associated to a VPN gateway.
+     * using compute.forwardingRules.insert and associated with a VPN gateway.
      */
     public List<String> getForwardingRulesList() {
       return forwardingRules;
@@ -339,7 +342,7 @@ public final class TargetVpnGateway implements ApiMessage {
 
     /**
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created
-     * using compute.forwardingRules.insert and associated to a VPN gateway.
+     * using compute.forwardingRules.insert and associated with a VPN gateway.
      */
     public Builder addAllForwardingRules(List<String> forwardingRules) {
       if (this.forwardingRules == null) {
@@ -351,7 +354,7 @@ public final class TargetVpnGateway implements ApiMessage {
 
     /**
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created
-     * using compute.forwardingRules.insert and associated to a VPN gateway.
+     * using compute.forwardingRules.insert and associated with a VPN gateway.
      */
     public Builder addForwardingRules(String forwardingRules) {
       if (this.forwardingRules == null) {
@@ -457,28 +460,34 @@ public final class TargetVpnGateway implements ApiMessage {
       return this;
     }
 
-    /** [Output Only] The status of the VPN gateway. */
+    /**
+     * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING,
+     * READY, FAILED, or DELETING.
+     */
     public String getStatus() {
       return status;
     }
 
-    /** [Output Only] The status of the VPN gateway. */
+    /**
+     * [Output Only] The status of the VPN gateway, which can be one of the following: CREATING,
+     * READY, FAILED, or DELETING.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
     /**
-     * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using
-     * compute.vpntunnels.insert method and associated to a VPN gateway.
+     * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the
+     * compute.vpntunnels.insert method and associated with a VPN gateway.
      */
     public List<String> getTunnelsList() {
       return tunnels;
     }
 
     /**
-     * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using
-     * compute.vpntunnels.insert method and associated to a VPN gateway.
+     * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the
+     * compute.vpntunnels.insert method and associated with a VPN gateway.
      */
     public Builder addAllTunnels(List<String> tunnels) {
       if (this.tunnels == null) {
@@ -489,8 +498,8 @@ public final class TargetVpnGateway implements ApiMessage {
     }
 
     /**
-     * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using
-     * compute.vpntunnels.insert method and associated to a VPN gateway.
+     * [Output Only] A list of URLs to VpnTunnel resources. VpnTunnels are created using the
+     * compute.vpntunnels.insert method and associated with a VPN gateway.
      */
     public Builder addTunnels(String tunnels) {
       if (this.tunnels == null) {
