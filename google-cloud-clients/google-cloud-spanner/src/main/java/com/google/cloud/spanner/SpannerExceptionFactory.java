@@ -16,10 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.TimeoutException;
-import javax.annotation.Nullable;
-import javax.net.ssl.SSLHandshakeException;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.spanner.SpannerException.DoNotConstructDirectly;
@@ -28,6 +24,10 @@ import com.google.common.base.Predicate;
 import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeoutException;
+import javax.annotation.Nullable;
+import javax.net.ssl.SSLHandshakeException;
 
 /**
  * A factory for creating instances of {@link SpannerException} and its subtypes. All creation of
@@ -213,11 +213,12 @@ public final class SpannerExceptionFactory {
             return false;
           }
         };
-    static final Predicate<Throwable> isSSLHandshakeException = new Predicate<Throwable>() {
-      @Override
-      public boolean apply(Throwable input) {
-        return input instanceof SSLHandshakeException;
-      }
-    };
+    static final Predicate<Throwable> isSSLHandshakeException =
+        new Predicate<Throwable>() {
+          @Override
+          public boolean apply(Throwable input) {
+            return input instanceof SSLHandshakeException;
+          }
+        };
   }
 }

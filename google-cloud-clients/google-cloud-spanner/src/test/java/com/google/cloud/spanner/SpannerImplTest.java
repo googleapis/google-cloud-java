@@ -20,6 +20,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
+
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -33,8 +36,6 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
 
 /** Unit tests for {@link SpannerImpl}. */
 @RunWith(JUnit4.class)
@@ -142,14 +143,16 @@ public class SpannerImplTest {
     // retryable.
     boolean gotExpectedException = false;
     try {
-      SpannerImpl.runWithRetries(new Callable<Object>() {
-        @Override
-        public Void call() throws Exception {
-          throw SpannerExceptionFactory.newSpannerException(ErrorCode.UNAVAILABLE,
-              "This exception should not be retryable",
-              new SSLHandshakeException("some SSL handshake exception"));
-        }
-      });
+      SpannerImpl.runWithRetries(
+          new Callable<Object>() {
+            @Override
+            public Void call() throws Exception {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE,
+                  "This exception should not be retryable",
+                  new SSLHandshakeException("some SSL handshake exception"));
+            }
+          });
     } catch (SpannerException e) {
       gotExpectedException = true;
       assertThat(e.isRetryable(), is(false));
@@ -159,20 +162,23 @@ public class SpannerImplTest {
     assertThat(gotExpectedException, is(true));
 
     // Verify that any other SpannerException with code UNAVAILABLE is retryable.
-    SpannerImpl.runWithRetries(new Callable<Object>() {
-      private boolean firstTime = true;
+    SpannerImpl.runWithRetries(
+        new Callable<Object>() {
+          private boolean firstTime = true;
 
-      @Override
-      public Void call() throws Exception {
-        // Keep track of whethr this is the first call or a subsequent call to avoid an infinite
-        // loop.
-        if (firstTime) {
-          firstTime = false;
-          throw SpannerExceptionFactory.newSpannerException(ErrorCode.UNAVAILABLE,
-              "This exception should be retryable", new Exception("some other exception"));
-        }
-        return null;
-      }
-    });
+          @Override
+          public Void call() throws Exception {
+            // Keep track of whethr this is the first call or a subsequent call to avoid an infinite
+            // loop.
+            if (firstTime) {
+              firstTime = false;
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE,
+                  "This exception should be retryable",
+                  new Exception("some other exception"));
+            }
+            return null;
+          }
+        });
   }
 }
