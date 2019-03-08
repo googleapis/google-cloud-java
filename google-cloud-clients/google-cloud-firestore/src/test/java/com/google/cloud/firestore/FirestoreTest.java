@@ -157,4 +157,16 @@ public class FirestoreTest {
     assertNotEquals(arrayRemove1, arrayRemove3);
     assertNotEquals(arrayRemove1, arrayUnion);
   }
+
+  @Test
+  public void incrementEquals() {
+    FieldValue increment1 = FieldValue.increment(42);
+    FieldValue increment2 = FieldValue.increment(42);
+    FieldValue increment3 = FieldValue.increment(42.0);
+    FieldValue increment4 = FieldValue.increment(42.0);
+    assertEquals(increment1, increment2);
+    assertEquals(increment3, increment4);
+    assertNotEquals(increment1, increment3);
+    assertNotEquals(increment2, increment4);
+  }
 }

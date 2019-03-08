@@ -44,6 +44,7 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.create;
 import static com.google.cloud.firestore.LocalFirestoreHelper.delete;
 import static com.google.cloud.firestore.LocalFirestoreHelper.get;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
+import static com.google.cloud.firestore.LocalFirestoreHelper.increment;
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
 import static com.google.cloud.firestore.LocalFirestoreHelper.object;
 import static com.google.cloud.firestore.LocalFirestoreHelper.serverTimestamp;
@@ -406,6 +407,30 @@ public class DocumentReferenceTest {
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(set, commitRequests.get(0));
     assertCommitEquals(set, commitRequests.get(1));
+  }
+
+  @Test
+  public void setWithIncrement() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference
+        .set(map("integer", FieldValue.increment(1), "double", FieldValue.increment(1.1)))
+        .get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.<String, Value>emptyMap()),
+            transform(
+                "integer",
+                increment(Value.newBuilder().setIntegerValue(1).build()),
+                "double",
+                increment(Value.newBuilder().setDoubleValue(1.1).build())));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
   }
 
   @Test
