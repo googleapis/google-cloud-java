@@ -611,6 +611,11 @@
         <version>0.47.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-securitycenter</artifactId>
+        <version>0.82.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-v1beta1</artifactId>
         <version>0.47.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1beta1:current} -->
@@ -619,6 +624,16 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-securitycenter-v1beta1</artifactId>
         <version>0.47.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-securitycenter-v1</artifactId>
+        <version>0.47.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-securitycenter-v1</artifactId>
+        <version>0.47.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
