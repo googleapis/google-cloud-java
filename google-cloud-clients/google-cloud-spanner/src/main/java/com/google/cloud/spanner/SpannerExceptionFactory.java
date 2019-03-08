@@ -16,18 +16,18 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.spanner.SpannerException.DoNotConstructDirectly;
-
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeoutException;
+import javax.annotation.Nullable;
+import javax.net.ssl.SSLHandshakeException;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
+import com.google.cloud.spanner.SpannerException.DoNotConstructDirectly;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
 import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.TimeoutException;
-import javax.annotation.Nullable;
 
 /**
  * A factory for creating instances of {@link SpannerException} and its subtypes. All creation of
@@ -168,7 +168,9 @@ public final class SpannerExceptionFactory {
       case INTERNAL:
         return hasCauseMatching(cause, Matchers.isRetryableInternalError);
       case UNAVAILABLE:
-        return true;
+        // SSLHandshakeException is (probably) not retryable, as it is an indication that the server
+        // certificate was not accepted by the client.
+        return !hasCauseMatching(cause, Matchers.isSSLHandshakeException);
       case RESOURCE_EXHAUSTED:
         return SpannerException.extractRetryDelay(cause) > 0;
       default:
@@ -211,5 +213,11 @@ public final class SpannerExceptionFactory {
             return false;
           }
         };
+    static final Predicate<Throwable> isSSLHandshakeException = new Predicate<Throwable>() {
+      @Override
+      public boolean apply(Throwable input) {
+        return input instanceof SSLHandshakeException;
+      }
+    };
   }
 }
