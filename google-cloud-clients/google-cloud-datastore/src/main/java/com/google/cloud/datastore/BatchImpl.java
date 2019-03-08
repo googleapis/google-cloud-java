@@ -34,7 +34,6 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
       this.numAutoAllocatedIds = numAutoAllocatedIds;
     }
 
-
     @Override
     public List<Key> getGeneratedKeys() {
       Iterator<com.google.datastore.v1.MutationResult> results =
@@ -64,7 +63,6 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
     deactivate();
     return new ResponseImpl(responsePb, toAddAutoId().size());
   }
-
 
   @Override
   public Datastore getDatastore() {

@@ -14,20 +14,21 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class TaskName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/queues/{queue}/tasks/{task}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/queues/{queue}/tasks/{task}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -69,21 +70,21 @@ public class TaskName implements ResourceName {
 
   public static TaskName of(String project, String location, String queue, String task) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setQueue(queue)
-      .setTask(task)
-      .build();
+        .setProject(project)
+        .setLocation(location)
+        .setQueue(queue)
+        .setTask(task)
+        .build();
   }
 
   public static String format(String project, String location, String queue, String task) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setQueue(queue)
-      .setTask(task)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setQueue(queue)
+        .setTask(task)
+        .build()
+        .toString();
   }
 
   public static TaskName parse(String formattedString) {
@@ -91,8 +92,13 @@ public class TaskName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "TaskName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("queue"), matchMap.get("task"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "TaskName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("queue"),
+        matchMap.get("task"));
   }
 
   public static List<TaskName> parseList(List<String> formattedStrings) {
@@ -141,7 +147,8 @@ public class TaskName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "queue", queue, "task", task);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "queue", queue, "task", task);
   }
 
   /** Builder for TaskName. */
@@ -188,8 +195,7 @@ public class TaskName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(TaskName taskName) {
       project = taskName.project;
@@ -232,4 +238,3 @@ public class TaskName implements ResourceName {
     return h;
   }
 }
-

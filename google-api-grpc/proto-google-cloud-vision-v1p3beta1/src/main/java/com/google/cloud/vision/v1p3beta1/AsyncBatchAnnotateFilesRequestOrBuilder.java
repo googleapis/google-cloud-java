@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface AsyncBatchAnnotateFilesRequestOrBuilder extends
+public interface AsyncBatchAnnotateFilesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.AsyncBatchAnnotateFilesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Individual async file annotation requests for this batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest requests = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest> 
-      getRequestsList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest> getRequestsList();
   /**
+   *
+   *
    * <pre>
    * Individual async file annotation requests for this batch.
    * </pre>
@@ -25,6 +29,8 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest getRequests(int index);
   /**
+   *
+   *
    * <pre>
    * Individual async file annotation requests for this batch.
    * </pre>
@@ -33,15 +39,19 @@ public interface AsyncBatchAnnotateFilesRequestOrBuilder extends
    */
   int getRequestsCount();
   /**
+   *
+   *
    * <pre>
    * Individual async file annotation requests for this batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequest requests = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequestOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequestOrBuilder>
       getRequestsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Individual async file annotation requests for this batch.
    * </pre>

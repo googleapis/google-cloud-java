@@ -4,6 +4,8 @@
 package com.google.cloud.language.v1;
 
 /**
+ *
+ *
  * <pre>
  * Represents part of speech information for a token. Parts of speech
  * are as defined in
@@ -12,15 +14,16 @@ package com.google.cloud.language.v1;
  *
  * Protobuf type {@code google.cloud.language.v1.PartOfSpeech}
  */
-public  final class PartOfSpeech extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1.PartOfSpeech)
     PartOfSpeechOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PartOfSpeech.newBuilder() to construct.
   private PartOfSpeech(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PartOfSpeech() {
     tag_ = 0;
     aspect_ = 0;
@@ -37,10 +40,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PartOfSpeech(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -60,120 +63,137 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            tag_ = rawValue;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            aspect_ = rawValue;
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            case_ = rawValue;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            form_ = rawValue;
-            break;
-          }
-          case 40: {
-            int rawValue = input.readEnum();
-
-            gender_ = rawValue;
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
-
-            mood_ = rawValue;
-            break;
-          }
-          case 56: {
-            int rawValue = input.readEnum();
-
-            number_ = rawValue;
-            break;
-          }
-          case 64: {
-            int rawValue = input.readEnum();
-
-            person_ = rawValue;
-            break;
-          }
-          case 72: {
-            int rawValue = input.readEnum();
-
-            proper_ = rawValue;
-            break;
-          }
-          case 80: {
-            int rawValue = input.readEnum();
-
-            reciprocity_ = rawValue;
-            break;
-          }
-          case 88: {
-            int rawValue = input.readEnum();
-
-            tense_ = rawValue;
-            break;
-          }
-          case 96: {
-            int rawValue = input.readEnum();
-
-            voice_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              tag_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              int rawValue = input.readEnum();
+
+              aspect_ = rawValue;
+              break;
+            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              case_ = rawValue;
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              form_ = rawValue;
+              break;
+            }
+          case 40:
+            {
+              int rawValue = input.readEnum();
+
+              gender_ = rawValue;
+              break;
+            }
+          case 48:
+            {
+              int rawValue = input.readEnum();
+
+              mood_ = rawValue;
+              break;
+            }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+
+              number_ = rawValue;
+              break;
+            }
+          case 64:
+            {
+              int rawValue = input.readEnum();
+
+              person_ = rawValue;
+              break;
+            }
+          case 72:
+            {
+              int rawValue = input.readEnum();
+
+              proper_ = rawValue;
+              break;
+            }
+          case 80:
+            {
+              int rawValue = input.readEnum();
+
+              reciprocity_ = rawValue;
+              break;
+            }
+          case 88:
+            {
+              int rawValue = input.readEnum();
+
+              tense_ = rawValue;
+              break;
+            }
+          case 96:
+            {
+              int rawValue = input.readEnum();
+
+              voice_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_PartOfSpeech_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.language.v1.LanguageServiceProto
+        .internal_static_google_cloud_language_v1_PartOfSpeech_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_PartOfSpeech_fieldAccessorTable
+    return com.google.cloud.language.v1.LanguageServiceProto
+        .internal_static_google_cloud_language_v1_PartOfSpeech_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.language.v1.PartOfSpeech.class, com.google.cloud.language.v1.PartOfSpeech.Builder.class);
+            com.google.cloud.language.v1.PartOfSpeech.class,
+            com.google.cloud.language.v1.PartOfSpeech.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The part of speech tags enum.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Tag}
    */
-  public enum Tag
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Tag implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unknown
      * </pre>
@@ -182,6 +202,8 @@ private static final long serialVersionUID = 0L;
      */
     UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Adjective
      * </pre>
@@ -190,6 +212,8 @@ private static final long serialVersionUID = 0L;
      */
     ADJ(1),
     /**
+     *
+     *
      * <pre>
      * Adposition (preposition and postposition)
      * </pre>
@@ -198,6 +222,8 @@ private static final long serialVersionUID = 0L;
      */
     ADP(2),
     /**
+     *
+     *
      * <pre>
      * Adverb
      * </pre>
@@ -206,6 +232,8 @@ private static final long serialVersionUID = 0L;
      */
     ADV(3),
     /**
+     *
+     *
      * <pre>
      * Conjunction
      * </pre>
@@ -214,6 +242,8 @@ private static final long serialVersionUID = 0L;
      */
     CONJ(4),
     /**
+     *
+     *
      * <pre>
      * Determiner
      * </pre>
@@ -222,6 +252,8 @@ private static final long serialVersionUID = 0L;
      */
     DET(5),
     /**
+     *
+     *
      * <pre>
      * Noun (common and proper)
      * </pre>
@@ -230,6 +262,8 @@ private static final long serialVersionUID = 0L;
      */
     NOUN(6),
     /**
+     *
+     *
      * <pre>
      * Cardinal number
      * </pre>
@@ -238,6 +272,8 @@ private static final long serialVersionUID = 0L;
      */
     NUM(7),
     /**
+     *
+     *
      * <pre>
      * Pronoun
      * </pre>
@@ -246,6 +282,8 @@ private static final long serialVersionUID = 0L;
      */
     PRON(8),
     /**
+     *
+     *
      * <pre>
      * Particle or other function word
      * </pre>
@@ -254,6 +292,8 @@ private static final long serialVersionUID = 0L;
      */
     PRT(9),
     /**
+     *
+     *
      * <pre>
      * Punctuation
      * </pre>
@@ -262,6 +302,8 @@ private static final long serialVersionUID = 0L;
      */
     PUNCT(10),
     /**
+     *
+     *
      * <pre>
      * Verb (all tenses and modes)
      * </pre>
@@ -270,6 +312,8 @@ private static final long serialVersionUID = 0L;
      */
     VERB(11),
     /**
+     *
+     *
      * <pre>
      * Other: foreign words, typos, abbreviations
      * </pre>
@@ -278,6 +322,8 @@ private static final long serialVersionUID = 0L;
      */
     X(12),
     /**
+     *
+     *
      * <pre>
      * Affix
      * </pre>
@@ -289,6 +335,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unknown
      * </pre>
@@ -297,6 +345,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Adjective
      * </pre>
@@ -305,6 +355,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADJ_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Adposition (preposition and postposition)
      * </pre>
@@ -313,6 +365,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADP_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Adverb
      * </pre>
@@ -321,6 +375,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADV_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Conjunction
      * </pre>
@@ -329,6 +385,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CONJ_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Determiner
      * </pre>
@@ -337,6 +395,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DET_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Noun (common and proper)
      * </pre>
@@ -345,6 +405,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NOUN_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Cardinal number
      * </pre>
@@ -353,6 +415,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NUM_VALUE = 7;
     /**
+     *
+     *
      * <pre>
      * Pronoun
      * </pre>
@@ -361,6 +425,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PRON_VALUE = 8;
     /**
+     *
+     *
      * <pre>
      * Particle or other function word
      * </pre>
@@ -369,6 +435,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PRT_VALUE = 9;
     /**
+     *
+     *
      * <pre>
      * Punctuation
      * </pre>
@@ -377,6 +445,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PUNCT_VALUE = 10;
     /**
+     *
+     *
      * <pre>
      * Verb (all tenses and modes)
      * </pre>
@@ -385,6 +455,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VERB_VALUE = 11;
     /**
+     *
+     *
      * <pre>
      * Other: foreign words, typos, abbreviations
      * </pre>
@@ -393,6 +465,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int X_VALUE = 12;
     /**
+     *
+     *
      * <pre>
      * Affix
      * </pre>
@@ -400,7 +474,6 @@ private static final long serialVersionUID = 0L;
      * <code>AFFIX = 13;</code>
      */
     public static final int AFFIX_VALUE = 13;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -410,9 +483,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Tag valueOf(int value) {
       return forNumber(value);
@@ -420,56 +491,67 @@ private static final long serialVersionUID = 0L;
 
     public static Tag forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return ADJ;
-        case 2: return ADP;
-        case 3: return ADV;
-        case 4: return CONJ;
-        case 5: return DET;
-        case 6: return NOUN;
-        case 7: return NUM;
-        case 8: return PRON;
-        case 9: return PRT;
-        case 10: return PUNCT;
-        case 11: return VERB;
-        case 12: return X;
-        case 13: return AFFIX;
-        default: return null;
+        case 0:
+          return UNKNOWN;
+        case 1:
+          return ADJ;
+        case 2:
+          return ADP;
+        case 3:
+          return ADV;
+        case 4:
+          return CONJ;
+        case 5:
+          return DET;
+        case 6:
+          return NOUN;
+        case 7:
+          return NUM;
+        case 8:
+          return PRON;
+        case 9:
+          return PRT;
+        case 10:
+          return PUNCT;
+        case 11:
+          return VERB;
+        case 12:
+          return X;
+        case 13:
+          return AFFIX;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Tag>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Tag> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Tag> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Tag>() {
-            public Tag findValueByNumber(int number) {
-              return Tag.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Tag> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Tag>() {
+          public Tag findValueByNumber(int number) {
+            return Tag.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Tag[] VALUES = values();
 
-    public static Tag valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Tag valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -487,15 +569,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * The characteristic of a verb that expresses time flow during an event.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Aspect}
    */
-  public enum Aspect
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Aspect implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Aspect is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -504,6 +589,8 @@ private static final long serialVersionUID = 0L;
      */
     ASPECT_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Perfective
      * </pre>
@@ -512,6 +599,8 @@ private static final long serialVersionUID = 0L;
      */
     PERFECTIVE(1),
     /**
+     *
+     *
      * <pre>
      * Imperfective
      * </pre>
@@ -520,6 +609,8 @@ private static final long serialVersionUID = 0L;
      */
     IMPERFECTIVE(2),
     /**
+     *
+     *
      * <pre>
      * Progressive
      * </pre>
@@ -531,6 +622,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Aspect is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -539,6 +632,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ASPECT_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Perfective
      * </pre>
@@ -547,6 +642,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PERFECTIVE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Imperfective
      * </pre>
@@ -555,6 +652,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int IMPERFECTIVE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Progressive
      * </pre>
@@ -562,7 +661,6 @@ private static final long serialVersionUID = 0L;
      * <code>PROGRESSIVE = 3;</code>
      */
     public static final int PROGRESSIVE_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -572,9 +670,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Aspect valueOf(int value) {
       return forNumber(value);
@@ -582,46 +678,47 @@ private static final long serialVersionUID = 0L;
 
     public static Aspect forNumber(int value) {
       switch (value) {
-        case 0: return ASPECT_UNKNOWN;
-        case 1: return PERFECTIVE;
-        case 2: return IMPERFECTIVE;
-        case 3: return PROGRESSIVE;
-        default: return null;
+        case 0:
+          return ASPECT_UNKNOWN;
+        case 1:
+          return PERFECTIVE;
+        case 2:
+          return IMPERFECTIVE;
+        case 3:
+          return PROGRESSIVE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Aspect>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Aspect> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Aspect> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Aspect>() {
-            public Aspect findValueByNumber(int number) {
-              return Aspect.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Aspect> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Aspect>() {
+          public Aspect findValueByNumber(int number) {
+            return Aspect.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final Aspect[] VALUES = values();
 
-    public static Aspect valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Aspect valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -639,6 +736,8 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * The grammatical function performed by a noun or pronoun in a phrase,
    * clause, or sentence. In some languages, other parts of speech, such as
@@ -647,9 +746,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Case}
    */
-  public enum Case
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Case implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Case is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -658,6 +758,8 @@ private static final long serialVersionUID = 0L;
      */
     CASE_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Accusative
      * </pre>
@@ -666,6 +768,8 @@ private static final long serialVersionUID = 0L;
      */
     ACCUSATIVE(1),
     /**
+     *
+     *
      * <pre>
      * Adverbial
      * </pre>
@@ -674,6 +778,8 @@ private static final long serialVersionUID = 0L;
      */
     ADVERBIAL(2),
     /**
+     *
+     *
      * <pre>
      * Complementive
      * </pre>
@@ -682,6 +788,8 @@ private static final long serialVersionUID = 0L;
      */
     COMPLEMENTIVE(3),
     /**
+     *
+     *
      * <pre>
      * Dative
      * </pre>
@@ -690,6 +798,8 @@ private static final long serialVersionUID = 0L;
      */
     DATIVE(4),
     /**
+     *
+     *
      * <pre>
      * Genitive
      * </pre>
@@ -698,6 +808,8 @@ private static final long serialVersionUID = 0L;
      */
     GENITIVE(5),
     /**
+     *
+     *
      * <pre>
      * Instrumental
      * </pre>
@@ -706,6 +818,8 @@ private static final long serialVersionUID = 0L;
      */
     INSTRUMENTAL(6),
     /**
+     *
+     *
      * <pre>
      * Locative
      * </pre>
@@ -714,6 +828,8 @@ private static final long serialVersionUID = 0L;
      */
     LOCATIVE(7),
     /**
+     *
+     *
      * <pre>
      * Nominative
      * </pre>
@@ -722,6 +838,8 @@ private static final long serialVersionUID = 0L;
      */
     NOMINATIVE(8),
     /**
+     *
+     *
      * <pre>
      * Oblique
      * </pre>
@@ -730,6 +848,8 @@ private static final long serialVersionUID = 0L;
      */
     OBLIQUE(9),
     /**
+     *
+     *
      * <pre>
      * Partitive
      * </pre>
@@ -738,6 +858,8 @@ private static final long serialVersionUID = 0L;
      */
     PARTITIVE(10),
     /**
+     *
+     *
      * <pre>
      * Prepositional
      * </pre>
@@ -746,6 +868,8 @@ private static final long serialVersionUID = 0L;
      */
     PREPOSITIONAL(11),
     /**
+     *
+     *
      * <pre>
      * Reflexive
      * </pre>
@@ -754,6 +878,8 @@ private static final long serialVersionUID = 0L;
      */
     REFLEXIVE_CASE(12),
     /**
+     *
+     *
      * <pre>
      * Relative
      * </pre>
@@ -762,6 +888,8 @@ private static final long serialVersionUID = 0L;
      */
     RELATIVE_CASE(13),
     /**
+     *
+     *
      * <pre>
      * Vocative
      * </pre>
@@ -773,6 +901,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Case is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -781,6 +911,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CASE_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Accusative
      * </pre>
@@ -789,6 +921,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ACCUSATIVE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Adverbial
      * </pre>
@@ -797,6 +931,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADVERBIAL_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Complementive
      * </pre>
@@ -805,6 +941,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int COMPLEMENTIVE_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Dative
      * </pre>
@@ -813,6 +951,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DATIVE_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Genitive
      * </pre>
@@ -821,6 +961,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GENITIVE_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Instrumental
      * </pre>
@@ -829,6 +971,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int INSTRUMENTAL_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Locative
      * </pre>
@@ -837,6 +981,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int LOCATIVE_VALUE = 7;
     /**
+     *
+     *
      * <pre>
      * Nominative
      * </pre>
@@ -845,6 +991,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NOMINATIVE_VALUE = 8;
     /**
+     *
+     *
      * <pre>
      * Oblique
      * </pre>
@@ -853,6 +1001,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int OBLIQUE_VALUE = 9;
     /**
+     *
+     *
      * <pre>
      * Partitive
      * </pre>
@@ -861,6 +1011,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PARTITIVE_VALUE = 10;
     /**
+     *
+     *
      * <pre>
      * Prepositional
      * </pre>
@@ -869,6 +1021,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PREPOSITIONAL_VALUE = 11;
     /**
+     *
+     *
      * <pre>
      * Reflexive
      * </pre>
@@ -877,6 +1031,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REFLEXIVE_CASE_VALUE = 12;
     /**
+     *
+     *
      * <pre>
      * Relative
      * </pre>
@@ -885,6 +1041,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RELATIVE_CASE_VALUE = 13;
     /**
+     *
+     *
      * <pre>
      * Vocative
      * </pre>
@@ -892,7 +1050,6 @@ private static final long serialVersionUID = 0L;
      * <code>VOCATIVE = 14;</code>
      */
     public static final int VOCATIVE_VALUE = 14;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -902,9 +1059,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Case valueOf(int value) {
       return forNumber(value);
@@ -912,57 +1067,69 @@ private static final long serialVersionUID = 0L;
 
     public static Case forNumber(int value) {
       switch (value) {
-        case 0: return CASE_UNKNOWN;
-        case 1: return ACCUSATIVE;
-        case 2: return ADVERBIAL;
-        case 3: return COMPLEMENTIVE;
-        case 4: return DATIVE;
-        case 5: return GENITIVE;
-        case 6: return INSTRUMENTAL;
-        case 7: return LOCATIVE;
-        case 8: return NOMINATIVE;
-        case 9: return OBLIQUE;
-        case 10: return PARTITIVE;
-        case 11: return PREPOSITIONAL;
-        case 12: return REFLEXIVE_CASE;
-        case 13: return RELATIVE_CASE;
-        case 14: return VOCATIVE;
-        default: return null;
+        case 0:
+          return CASE_UNKNOWN;
+        case 1:
+          return ACCUSATIVE;
+        case 2:
+          return ADVERBIAL;
+        case 3:
+          return COMPLEMENTIVE;
+        case 4:
+          return DATIVE;
+        case 5:
+          return GENITIVE;
+        case 6:
+          return INSTRUMENTAL;
+        case 7:
+          return LOCATIVE;
+        case 8:
+          return NOMINATIVE;
+        case 9:
+          return OBLIQUE;
+        case 10:
+          return PARTITIVE;
+        case 11:
+          return PREPOSITIONAL;
+        case 12:
+          return REFLEXIVE_CASE;
+        case 13:
+          return RELATIVE_CASE;
+        case 14:
+          return VOCATIVE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Case>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Case> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Case> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Case>() {
-            public Case findValueByNumber(int number) {
-              return Case.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Case> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Case>() {
+          public Case findValueByNumber(int number) {
+            return Case.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final Case[] VALUES = values();
 
-    public static Case valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Case valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -980,6 +1147,8 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Depending on the language, Form can be categorizing different forms of
    * verbs, adjectives, adverbs, etc. For example, categorizing inflected
@@ -989,9 +1158,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Form}
    */
-  public enum Form
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Form implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Form is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1000,6 +1170,8 @@ private static final long serialVersionUID = 0L;
      */
     FORM_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Adnomial
      * </pre>
@@ -1008,6 +1180,8 @@ private static final long serialVersionUID = 0L;
      */
     ADNOMIAL(1),
     /**
+     *
+     *
      * <pre>
      * Auxiliary
      * </pre>
@@ -1016,6 +1190,8 @@ private static final long serialVersionUID = 0L;
      */
     AUXILIARY(2),
     /**
+     *
+     *
      * <pre>
      * Complementizer
      * </pre>
@@ -1024,6 +1200,8 @@ private static final long serialVersionUID = 0L;
      */
     COMPLEMENTIZER(3),
     /**
+     *
+     *
      * <pre>
      * Final ending
      * </pre>
@@ -1032,6 +1210,8 @@ private static final long serialVersionUID = 0L;
      */
     FINAL_ENDING(4),
     /**
+     *
+     *
      * <pre>
      * Gerund
      * </pre>
@@ -1040,6 +1220,8 @@ private static final long serialVersionUID = 0L;
      */
     GERUND(5),
     /**
+     *
+     *
      * <pre>
      * Realis
      * </pre>
@@ -1048,6 +1230,8 @@ private static final long serialVersionUID = 0L;
      */
     REALIS(6),
     /**
+     *
+     *
      * <pre>
      * Irrealis
      * </pre>
@@ -1056,6 +1240,8 @@ private static final long serialVersionUID = 0L;
      */
     IRREALIS(7),
     /**
+     *
+     *
      * <pre>
      * Short form
      * </pre>
@@ -1064,6 +1250,8 @@ private static final long serialVersionUID = 0L;
      */
     SHORT(8),
     /**
+     *
+     *
      * <pre>
      * Long form
      * </pre>
@@ -1072,6 +1260,8 @@ private static final long serialVersionUID = 0L;
      */
     LONG(9),
     /**
+     *
+     *
      * <pre>
      * Order form
      * </pre>
@@ -1080,6 +1270,8 @@ private static final long serialVersionUID = 0L;
      */
     ORDER(10),
     /**
+     *
+     *
      * <pre>
      * Specific form
      * </pre>
@@ -1091,6 +1283,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Form is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1099,6 +1293,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FORM_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Adnomial
      * </pre>
@@ -1107,6 +1303,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADNOMIAL_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Auxiliary
      * </pre>
@@ -1115,6 +1313,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUXILIARY_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Complementizer
      * </pre>
@@ -1123,6 +1323,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int COMPLEMENTIZER_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Final ending
      * </pre>
@@ -1131,6 +1333,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FINAL_ENDING_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Gerund
      * </pre>
@@ -1139,6 +1343,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GERUND_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Realis
      * </pre>
@@ -1147,6 +1353,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REALIS_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Irrealis
      * </pre>
@@ -1155,6 +1363,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int IRREALIS_VALUE = 7;
     /**
+     *
+     *
      * <pre>
      * Short form
      * </pre>
@@ -1163,6 +1373,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SHORT_VALUE = 8;
     /**
+     *
+     *
      * <pre>
      * Long form
      * </pre>
@@ -1171,6 +1383,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int LONG_VALUE = 9;
     /**
+     *
+     *
      * <pre>
      * Order form
      * </pre>
@@ -1179,6 +1393,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ORDER_VALUE = 10;
     /**
+     *
+     *
      * <pre>
      * Specific form
      * </pre>
@@ -1186,7 +1402,6 @@ private static final long serialVersionUID = 0L;
      * <code>SPECIFIC = 11;</code>
      */
     public static final int SPECIFIC_VALUE = 11;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1196,9 +1411,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Form valueOf(int value) {
       return forNumber(value);
@@ -1206,54 +1419,63 @@ private static final long serialVersionUID = 0L;
 
     public static Form forNumber(int value) {
       switch (value) {
-        case 0: return FORM_UNKNOWN;
-        case 1: return ADNOMIAL;
-        case 2: return AUXILIARY;
-        case 3: return COMPLEMENTIZER;
-        case 4: return FINAL_ENDING;
-        case 5: return GERUND;
-        case 6: return REALIS;
-        case 7: return IRREALIS;
-        case 8: return SHORT;
-        case 9: return LONG;
-        case 10: return ORDER;
-        case 11: return SPECIFIC;
-        default: return null;
+        case 0:
+          return FORM_UNKNOWN;
+        case 1:
+          return ADNOMIAL;
+        case 2:
+          return AUXILIARY;
+        case 3:
+          return COMPLEMENTIZER;
+        case 4:
+          return FINAL_ENDING;
+        case 5:
+          return GERUND;
+        case 6:
+          return REALIS;
+        case 7:
+          return IRREALIS;
+        case 8:
+          return SHORT;
+        case 9:
+          return LONG;
+        case 10:
+          return ORDER;
+        case 11:
+          return SPECIFIC;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Form>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Form> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Form> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Form>() {
-            public Form findValueByNumber(int number) {
-              return Form.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Form> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Form>() {
+          public Form findValueByNumber(int number) {
+            return Form.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final Form[] VALUES = values();
 
-    public static Form valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Form valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -1271,15 +1493,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Gender classes of nouns reflected in the behaviour of associated words.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Gender}
    */
-  public enum Gender
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Gender implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Gender is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1288,6 +1513,8 @@ private static final long serialVersionUID = 0L;
      */
     GENDER_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Feminine
      * </pre>
@@ -1296,6 +1523,8 @@ private static final long serialVersionUID = 0L;
      */
     FEMININE(1),
     /**
+     *
+     *
      * <pre>
      * Masculine
      * </pre>
@@ -1304,6 +1533,8 @@ private static final long serialVersionUID = 0L;
      */
     MASCULINE(2),
     /**
+     *
+     *
      * <pre>
      * Neuter
      * </pre>
@@ -1315,6 +1546,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Gender is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1323,6 +1556,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GENDER_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Feminine
      * </pre>
@@ -1331,6 +1566,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FEMININE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Masculine
      * </pre>
@@ -1339,6 +1576,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MASCULINE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Neuter
      * </pre>
@@ -1346,7 +1585,6 @@ private static final long serialVersionUID = 0L;
      * <code>NEUTER = 3;</code>
      */
     public static final int NEUTER_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1356,9 +1594,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Gender valueOf(int value) {
       return forNumber(value);
@@ -1366,46 +1602,47 @@ private static final long serialVersionUID = 0L;
 
     public static Gender forNumber(int value) {
       switch (value) {
-        case 0: return GENDER_UNKNOWN;
-        case 1: return FEMININE;
-        case 2: return MASCULINE;
-        case 3: return NEUTER;
-        default: return null;
+        case 0:
+          return GENDER_UNKNOWN;
+        case 1:
+          return FEMININE;
+        case 2:
+          return MASCULINE;
+        case 3:
+          return NEUTER;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Gender>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Gender> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Gender> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Gender>() {
-            public Gender findValueByNumber(int number) {
-              return Gender.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Gender> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Gender>() {
+          public Gender findValueByNumber(int number) {
+            return Gender.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final Gender[] VALUES = values();
 
-    public static Gender valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Gender valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -1423,15 +1660,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * The grammatical feature of verbs, used for showing modality and attitude.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Mood}
    */
-  public enum Mood
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Mood implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Mood is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1440,6 +1680,8 @@ private static final long serialVersionUID = 0L;
      */
     MOOD_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Conditional
      * </pre>
@@ -1448,6 +1690,8 @@ private static final long serialVersionUID = 0L;
      */
     CONDITIONAL_MOOD(1),
     /**
+     *
+     *
      * <pre>
      * Imperative
      * </pre>
@@ -1456,6 +1700,8 @@ private static final long serialVersionUID = 0L;
      */
     IMPERATIVE(2),
     /**
+     *
+     *
      * <pre>
      * Indicative
      * </pre>
@@ -1464,6 +1710,8 @@ private static final long serialVersionUID = 0L;
      */
     INDICATIVE(3),
     /**
+     *
+     *
      * <pre>
      * Interrogative
      * </pre>
@@ -1472,6 +1720,8 @@ private static final long serialVersionUID = 0L;
      */
     INTERROGATIVE(4),
     /**
+     *
+     *
      * <pre>
      * Jussive
      * </pre>
@@ -1480,6 +1730,8 @@ private static final long serialVersionUID = 0L;
      */
     JUSSIVE(5),
     /**
+     *
+     *
      * <pre>
      * Subjunctive
      * </pre>
@@ -1491,6 +1743,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Mood is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1499,6 +1753,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MOOD_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Conditional
      * </pre>
@@ -1507,6 +1763,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CONDITIONAL_MOOD_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Imperative
      * </pre>
@@ -1515,6 +1773,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int IMPERATIVE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Indicative
      * </pre>
@@ -1523,6 +1783,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int INDICATIVE_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Interrogative
      * </pre>
@@ -1531,6 +1793,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int INTERROGATIVE_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Jussive
      * </pre>
@@ -1539,6 +1803,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int JUSSIVE_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Subjunctive
      * </pre>
@@ -1546,7 +1812,6 @@ private static final long serialVersionUID = 0L;
      * <code>SUBJUNCTIVE = 6;</code>
      */
     public static final int SUBJUNCTIVE_VALUE = 6;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1556,9 +1821,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Mood valueOf(int value) {
       return forNumber(value);
@@ -1566,49 +1829,53 @@ private static final long serialVersionUID = 0L;
 
     public static Mood forNumber(int value) {
       switch (value) {
-        case 0: return MOOD_UNKNOWN;
-        case 1: return CONDITIONAL_MOOD;
-        case 2: return IMPERATIVE;
-        case 3: return INDICATIVE;
-        case 4: return INTERROGATIVE;
-        case 5: return JUSSIVE;
-        case 6: return SUBJUNCTIVE;
-        default: return null;
+        case 0:
+          return MOOD_UNKNOWN;
+        case 1:
+          return CONDITIONAL_MOOD;
+        case 2:
+          return IMPERATIVE;
+        case 3:
+          return INDICATIVE;
+        case 4:
+          return INTERROGATIVE;
+        case 5:
+          return JUSSIVE;
+        case 6:
+          return SUBJUNCTIVE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Mood>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Mood> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Mood> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Mood>() {
-            public Mood findValueByNumber(int number) {
-              return Mood.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Mood> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Mood>() {
+          public Mood findValueByNumber(int number) {
+            return Mood.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final Mood[] VALUES = values();
 
-    public static Mood valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Mood valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -1626,15 +1893,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Count distinctions.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Number}
    */
-  public enum Number
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Number implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Number is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1643,6 +1913,8 @@ private static final long serialVersionUID = 0L;
      */
     NUMBER_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Singular
      * </pre>
@@ -1651,6 +1923,8 @@ private static final long serialVersionUID = 0L;
      */
     SINGULAR(1),
     /**
+     *
+     *
      * <pre>
      * Plural
      * </pre>
@@ -1659,6 +1933,8 @@ private static final long serialVersionUID = 0L;
      */
     PLURAL(2),
     /**
+     *
+     *
      * <pre>
      * Dual
      * </pre>
@@ -1670,6 +1946,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Number is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1678,6 +1956,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NUMBER_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Singular
      * </pre>
@@ -1686,6 +1966,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SINGULAR_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Plural
      * </pre>
@@ -1694,6 +1976,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PLURAL_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Dual
      * </pre>
@@ -1701,7 +1985,6 @@ private static final long serialVersionUID = 0L;
      * <code>DUAL = 3;</code>
      */
     public static final int DUAL_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1711,9 +1994,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Number valueOf(int value) {
       return forNumber(value);
@@ -1721,46 +2002,47 @@ private static final long serialVersionUID = 0L;
 
     public static Number forNumber(int value) {
       switch (value) {
-        case 0: return NUMBER_UNKNOWN;
-        case 1: return SINGULAR;
-        case 2: return PLURAL;
-        case 3: return DUAL;
-        default: return null;
+        case 0:
+          return NUMBER_UNKNOWN;
+        case 1:
+          return SINGULAR;
+        case 2:
+          return PLURAL;
+        case 3:
+          return DUAL;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Number>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Number> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Number> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Number>() {
-            public Number findValueByNumber(int number) {
-              return Number.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Number> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Number>() {
+          public Number findValueByNumber(int number) {
+            return Number.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final Number[] VALUES = values();
 
-    public static Number valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Number valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -1778,15 +2060,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * The distinction between the speaker, second person, third person, etc.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Person}
    */
-  public enum Person
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Person implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Person is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1795,6 +2080,8 @@ private static final long serialVersionUID = 0L;
      */
     PERSON_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * First
      * </pre>
@@ -1803,6 +2090,8 @@ private static final long serialVersionUID = 0L;
      */
     FIRST(1),
     /**
+     *
+     *
      * <pre>
      * Second
      * </pre>
@@ -1811,6 +2100,8 @@ private static final long serialVersionUID = 0L;
      */
     SECOND(2),
     /**
+     *
+     *
      * <pre>
      * Third
      * </pre>
@@ -1819,6 +2110,8 @@ private static final long serialVersionUID = 0L;
      */
     THIRD(3),
     /**
+     *
+     *
      * <pre>
      * Reflexive
      * </pre>
@@ -1830,6 +2123,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Person is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1838,6 +2133,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PERSON_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * First
      * </pre>
@@ -1846,6 +2143,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FIRST_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Second
      * </pre>
@@ -1854,6 +2153,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SECOND_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Third
      * </pre>
@@ -1862,6 +2163,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int THIRD_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Reflexive
      * </pre>
@@ -1869,7 +2172,6 @@ private static final long serialVersionUID = 0L;
      * <code>REFLEXIVE_PERSON = 4;</code>
      */
     public static final int REFLEXIVE_PERSON_VALUE = 4;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1879,9 +2181,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Person valueOf(int value) {
       return forNumber(value);
@@ -1889,47 +2189,49 @@ private static final long serialVersionUID = 0L;
 
     public static Person forNumber(int value) {
       switch (value) {
-        case 0: return PERSON_UNKNOWN;
-        case 1: return FIRST;
-        case 2: return SECOND;
-        case 3: return THIRD;
-        case 4: return REFLEXIVE_PERSON;
-        default: return null;
+        case 0:
+          return PERSON_UNKNOWN;
+        case 1:
+          return FIRST;
+        case 2:
+          return SECOND;
+        case 3:
+          return THIRD;
+        case 4:
+          return REFLEXIVE_PERSON;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Person>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Person> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Person> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Person>() {
-            public Person findValueByNumber(int number) {
-              return Person.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Person> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Person>() {
+          public Person findValueByNumber(int number) {
+            return Person.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final Person[] VALUES = values();
 
-    public static Person valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Person valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -1947,15 +2249,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * This category shows if the token is part of a proper name.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Proper}
    */
-  public enum Proper
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Proper implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Proper is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1964,6 +2269,8 @@ private static final long serialVersionUID = 0L;
      */
     PROPER_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Proper
      * </pre>
@@ -1972,6 +2279,8 @@ private static final long serialVersionUID = 0L;
      */
     PROPER(1),
     /**
+     *
+     *
      * <pre>
      * Not proper
      * </pre>
@@ -1983,6 +2292,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Proper is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -1991,6 +2302,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PROPER_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Proper
      * </pre>
@@ -1999,6 +2312,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PROPER_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Not proper
      * </pre>
@@ -2006,7 +2321,6 @@ private static final long serialVersionUID = 0L;
      * <code>NOT_PROPER = 2;</code>
      */
     public static final int NOT_PROPER_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -2016,9 +2330,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Proper valueOf(int value) {
       return forNumber(value);
@@ -2026,45 +2338,45 @@ private static final long serialVersionUID = 0L;
 
     public static Proper forNumber(int value) {
       switch (value) {
-        case 0: return PROPER_UNKNOWN;
-        case 1: return PROPER;
-        case 2: return NOT_PROPER;
-        default: return null;
+        case 0:
+          return PROPER_UNKNOWN;
+        case 1:
+          return PROPER;
+        case 2:
+          return NOT_PROPER;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Proper>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Proper> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Proper> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Proper>() {
-            public Proper findValueByNumber(int number) {
-              return Proper.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Proper> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Proper>() {
+          public Proper findValueByNumber(int number) {
+            return Proper.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final Proper[] VALUES = values();
 
-    public static Proper valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Proper valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -2082,15 +2394,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Reciprocal features of a pronoun.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Reciprocity}
    */
-  public enum Reciprocity
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Reciprocity implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Reciprocity is not applicable in the analyzed language or is not
      * predicted.
@@ -2100,6 +2415,8 @@ private static final long serialVersionUID = 0L;
      */
     RECIPROCITY_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Reciprocal
      * </pre>
@@ -2108,6 +2425,8 @@ private static final long serialVersionUID = 0L;
      */
     RECIPROCAL(1),
     /**
+     *
+     *
      * <pre>
      * Non-reciprocal
      * </pre>
@@ -2119,6 +2438,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Reciprocity is not applicable in the analyzed language or is not
      * predicted.
@@ -2128,6 +2449,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RECIPROCITY_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Reciprocal
      * </pre>
@@ -2136,6 +2459,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RECIPROCAL_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Non-reciprocal
      * </pre>
@@ -2143,7 +2468,6 @@ private static final long serialVersionUID = 0L;
      * <code>NON_RECIPROCAL = 2;</code>
      */
     public static final int NON_RECIPROCAL_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -2153,9 +2477,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Reciprocity valueOf(int value) {
       return forNumber(value);
@@ -2163,45 +2485,45 @@ private static final long serialVersionUID = 0L;
 
     public static Reciprocity forNumber(int value) {
       switch (value) {
-        case 0: return RECIPROCITY_UNKNOWN;
-        case 1: return RECIPROCAL;
-        case 2: return NON_RECIPROCAL;
-        default: return null;
+        case 0:
+          return RECIPROCITY_UNKNOWN;
+        case 1:
+          return RECIPROCAL;
+        case 2:
+          return NON_RECIPROCAL;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Reciprocity>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Reciprocity> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Reciprocity> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Reciprocity>() {
-            public Reciprocity findValueByNumber(int number) {
-              return Reciprocity.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Reciprocity> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Reciprocity>() {
+          public Reciprocity findValueByNumber(int number) {
+            return Reciprocity.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final Reciprocity[] VALUES = values();
 
-    public static Reciprocity valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Reciprocity valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -2219,15 +2541,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Time reference.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Tense}
    */
-  public enum Tense
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Tense implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Tense is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -2236,6 +2561,8 @@ private static final long serialVersionUID = 0L;
      */
     TENSE_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Conditional
      * </pre>
@@ -2244,6 +2571,8 @@ private static final long serialVersionUID = 0L;
      */
     CONDITIONAL_TENSE(1),
     /**
+     *
+     *
      * <pre>
      * Future
      * </pre>
@@ -2252,6 +2581,8 @@ private static final long serialVersionUID = 0L;
      */
     FUTURE(2),
     /**
+     *
+     *
      * <pre>
      * Past
      * </pre>
@@ -2260,6 +2591,8 @@ private static final long serialVersionUID = 0L;
      */
     PAST(3),
     /**
+     *
+     *
      * <pre>
      * Present
      * </pre>
@@ -2268,6 +2601,8 @@ private static final long serialVersionUID = 0L;
      */
     PRESENT(4),
     /**
+     *
+     *
      * <pre>
      * Imperfect
      * </pre>
@@ -2276,6 +2611,8 @@ private static final long serialVersionUID = 0L;
      */
     IMPERFECT(5),
     /**
+     *
+     *
      * <pre>
      * Pluperfect
      * </pre>
@@ -2287,6 +2624,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Tense is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -2295,6 +2634,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TENSE_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Conditional
      * </pre>
@@ -2303,6 +2644,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CONDITIONAL_TENSE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Future
      * </pre>
@@ -2311,6 +2654,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FUTURE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Past
      * </pre>
@@ -2319,6 +2664,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PAST_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Present
      * </pre>
@@ -2327,6 +2674,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PRESENT_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Imperfect
      * </pre>
@@ -2335,6 +2684,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int IMPERFECT_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Pluperfect
      * </pre>
@@ -2342,7 +2693,6 @@ private static final long serialVersionUID = 0L;
      * <code>PLUPERFECT = 6;</code>
      */
     public static final int PLUPERFECT_VALUE = 6;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -2352,9 +2702,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Tense valueOf(int value) {
       return forNumber(value);
@@ -2362,49 +2710,53 @@ private static final long serialVersionUID = 0L;
 
     public static Tense forNumber(int value) {
       switch (value) {
-        case 0: return TENSE_UNKNOWN;
-        case 1: return CONDITIONAL_TENSE;
-        case 2: return FUTURE;
-        case 3: return PAST;
-        case 4: return PRESENT;
-        case 5: return IMPERFECT;
-        case 6: return PLUPERFECT;
-        default: return null;
+        case 0:
+          return TENSE_UNKNOWN;
+        case 1:
+          return CONDITIONAL_TENSE;
+        case 2:
+          return FUTURE;
+        case 3:
+          return PAST;
+        case 4:
+          return PRESENT;
+        case 5:
+          return IMPERFECT;
+        case 6:
+          return PLUPERFECT;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Tense>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Tense> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Tense> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Tense>() {
-            public Tense findValueByNumber(int number) {
-              return Tense.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Tense> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Tense>() {
+          public Tense findValueByNumber(int number) {
+            return Tense.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(10);
     }
 
     private static final Tense[] VALUES = values();
 
-    public static Tense valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Tense valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -2422,6 +2774,8 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * The relationship between the action that a verb expresses and the
    * participants identified by its arguments.
@@ -2429,9 +2783,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.cloud.language.v1.PartOfSpeech.Voice}
    */
-  public enum Voice
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Voice implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Voice is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -2440,6 +2795,8 @@ private static final long serialVersionUID = 0L;
      */
     VOICE_UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Active
      * </pre>
@@ -2448,6 +2805,8 @@ private static final long serialVersionUID = 0L;
      */
     ACTIVE(1),
     /**
+     *
+     *
      * <pre>
      * Causative
      * </pre>
@@ -2456,6 +2815,8 @@ private static final long serialVersionUID = 0L;
      */
     CAUSATIVE(2),
     /**
+     *
+     *
      * <pre>
      * Passive
      * </pre>
@@ -2467,6 +2828,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Voice is not applicable in the analyzed language or is not predicted.
      * </pre>
@@ -2475,6 +2838,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VOICE_UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Active
      * </pre>
@@ -2483,6 +2848,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ACTIVE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Causative
      * </pre>
@@ -2491,6 +2858,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CAUSATIVE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Passive
      * </pre>
@@ -2498,7 +2867,6 @@ private static final long serialVersionUID = 0L;
      * <code>PASSIVE = 3;</code>
      */
     public static final int PASSIVE_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -2508,9 +2876,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Voice valueOf(int value) {
       return forNumber(value);
@@ -2518,46 +2884,47 @@ private static final long serialVersionUID = 0L;
 
     public static Voice forNumber(int value) {
       switch (value) {
-        case 0: return VOICE_UNKNOWN;
-        case 1: return ACTIVE;
-        case 2: return CAUSATIVE;
-        case 3: return PASSIVE;
-        default: return null;
+        case 0:
+          return VOICE_UNKNOWN;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return CAUSATIVE;
+        case 3:
+          return PASSIVE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Voice>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Voice> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Voice> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Voice>() {
-            public Voice findValueByNumber(int number) {
-              return Voice.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Voice> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Voice>() {
+          public Voice findValueByNumber(int number) {
+            return Voice.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1.PartOfSpeech.getDescriptor().getEnumTypes().get(11);
     }
 
     private static final Voice[] VALUES = values();
 
-    public static Voice valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Voice valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -2577,6 +2944,8 @@ private static final long serialVersionUID = 0L;
   public static final int TAG_FIELD_NUMBER = 1;
   private int tag_;
   /**
+   *
+   *
    * <pre>
    * The part of speech tag.
    * </pre>
@@ -2587,6 +2956,8 @@ private static final long serialVersionUID = 0L;
     return tag_;
   }
   /**
+   *
+   *
    * <pre>
    * The part of speech tag.
    * </pre>
@@ -2595,13 +2966,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Tag getTag() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Tag result = com.google.cloud.language.v1.PartOfSpeech.Tag.valueOf(tag_);
+    com.google.cloud.language.v1.PartOfSpeech.Tag result =
+        com.google.cloud.language.v1.PartOfSpeech.Tag.valueOf(tag_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Tag.UNRECOGNIZED : result;
   }
 
   public static final int ASPECT_FIELD_NUMBER = 2;
   private int aspect_;
   /**
+   *
+   *
    * <pre>
    * The grammatical aspect.
    * </pre>
@@ -2612,6 +2986,8 @@ private static final long serialVersionUID = 0L;
     return aspect_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical aspect.
    * </pre>
@@ -2620,13 +2996,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Aspect getAspect() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Aspect result = com.google.cloud.language.v1.PartOfSpeech.Aspect.valueOf(aspect_);
+    com.google.cloud.language.v1.PartOfSpeech.Aspect result =
+        com.google.cloud.language.v1.PartOfSpeech.Aspect.valueOf(aspect_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Aspect.UNRECOGNIZED : result;
   }
 
   public static final int CASE_FIELD_NUMBER = 3;
   private int case_;
   /**
+   *
+   *
    * <pre>
    * The grammatical case.
    * </pre>
@@ -2637,6 +3016,8 @@ private static final long serialVersionUID = 0L;
     return case_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical case.
    * </pre>
@@ -2645,13 +3026,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Case getCase() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Case result = com.google.cloud.language.v1.PartOfSpeech.Case.valueOf(case_);
+    com.google.cloud.language.v1.PartOfSpeech.Case result =
+        com.google.cloud.language.v1.PartOfSpeech.Case.valueOf(case_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Case.UNRECOGNIZED : result;
   }
 
   public static final int FORM_FIELD_NUMBER = 4;
   private int form_;
   /**
+   *
+   *
    * <pre>
    * The grammatical form.
    * </pre>
@@ -2662,6 +3046,8 @@ private static final long serialVersionUID = 0L;
     return form_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical form.
    * </pre>
@@ -2670,13 +3056,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Form getForm() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Form result = com.google.cloud.language.v1.PartOfSpeech.Form.valueOf(form_);
+    com.google.cloud.language.v1.PartOfSpeech.Form result =
+        com.google.cloud.language.v1.PartOfSpeech.Form.valueOf(form_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Form.UNRECOGNIZED : result;
   }
 
   public static final int GENDER_FIELD_NUMBER = 5;
   private int gender_;
   /**
+   *
+   *
    * <pre>
    * The grammatical gender.
    * </pre>
@@ -2687,6 +3076,8 @@ private static final long serialVersionUID = 0L;
     return gender_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical gender.
    * </pre>
@@ -2695,13 +3086,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Gender getGender() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Gender result = com.google.cloud.language.v1.PartOfSpeech.Gender.valueOf(gender_);
+    com.google.cloud.language.v1.PartOfSpeech.Gender result =
+        com.google.cloud.language.v1.PartOfSpeech.Gender.valueOf(gender_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Gender.UNRECOGNIZED : result;
   }
 
   public static final int MOOD_FIELD_NUMBER = 6;
   private int mood_;
   /**
+   *
+   *
    * <pre>
    * The grammatical mood.
    * </pre>
@@ -2712,6 +3106,8 @@ private static final long serialVersionUID = 0L;
     return mood_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical mood.
    * </pre>
@@ -2720,13 +3116,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Mood getMood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Mood result = com.google.cloud.language.v1.PartOfSpeech.Mood.valueOf(mood_);
+    com.google.cloud.language.v1.PartOfSpeech.Mood result =
+        com.google.cloud.language.v1.PartOfSpeech.Mood.valueOf(mood_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Mood.UNRECOGNIZED : result;
   }
 
   public static final int NUMBER_FIELD_NUMBER = 7;
   private int number_;
   /**
+   *
+   *
    * <pre>
    * The grammatical number.
    * </pre>
@@ -2737,6 +3136,8 @@ private static final long serialVersionUID = 0L;
     return number_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical number.
    * </pre>
@@ -2745,13 +3146,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Number getNumber() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Number result = com.google.cloud.language.v1.PartOfSpeech.Number.valueOf(number_);
+    com.google.cloud.language.v1.PartOfSpeech.Number result =
+        com.google.cloud.language.v1.PartOfSpeech.Number.valueOf(number_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Number.UNRECOGNIZED : result;
   }
 
   public static final int PERSON_FIELD_NUMBER = 8;
   private int person_;
   /**
+   *
+   *
    * <pre>
    * The grammatical person.
    * </pre>
@@ -2762,6 +3166,8 @@ private static final long serialVersionUID = 0L;
     return person_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical person.
    * </pre>
@@ -2770,13 +3176,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Person getPerson() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Person result = com.google.cloud.language.v1.PartOfSpeech.Person.valueOf(person_);
+    com.google.cloud.language.v1.PartOfSpeech.Person result =
+        com.google.cloud.language.v1.PartOfSpeech.Person.valueOf(person_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Person.UNRECOGNIZED : result;
   }
 
   public static final int PROPER_FIELD_NUMBER = 9;
   private int proper_;
   /**
+   *
+   *
    * <pre>
    * The grammatical properness.
    * </pre>
@@ -2787,6 +3196,8 @@ private static final long serialVersionUID = 0L;
     return proper_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical properness.
    * </pre>
@@ -2795,13 +3206,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Proper getProper() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Proper result = com.google.cloud.language.v1.PartOfSpeech.Proper.valueOf(proper_);
+    com.google.cloud.language.v1.PartOfSpeech.Proper result =
+        com.google.cloud.language.v1.PartOfSpeech.Proper.valueOf(proper_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Proper.UNRECOGNIZED : result;
   }
 
   public static final int RECIPROCITY_FIELD_NUMBER = 10;
   private int reciprocity_;
   /**
+   *
+   *
    * <pre>
    * The grammatical reciprocity.
    * </pre>
@@ -2812,6 +3226,8 @@ private static final long serialVersionUID = 0L;
     return reciprocity_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical reciprocity.
    * </pre>
@@ -2820,13 +3236,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Reciprocity getReciprocity() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Reciprocity result = com.google.cloud.language.v1.PartOfSpeech.Reciprocity.valueOf(reciprocity_);
-    return result == null ? com.google.cloud.language.v1.PartOfSpeech.Reciprocity.UNRECOGNIZED : result;
+    com.google.cloud.language.v1.PartOfSpeech.Reciprocity result =
+        com.google.cloud.language.v1.PartOfSpeech.Reciprocity.valueOf(reciprocity_);
+    return result == null
+        ? com.google.cloud.language.v1.PartOfSpeech.Reciprocity.UNRECOGNIZED
+        : result;
   }
 
   public static final int TENSE_FIELD_NUMBER = 11;
   private int tense_;
   /**
+   *
+   *
    * <pre>
    * The grammatical tense.
    * </pre>
@@ -2837,6 +3258,8 @@ private static final long serialVersionUID = 0L;
     return tense_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical tense.
    * </pre>
@@ -2845,13 +3268,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Tense getTense() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Tense result = com.google.cloud.language.v1.PartOfSpeech.Tense.valueOf(tense_);
+    com.google.cloud.language.v1.PartOfSpeech.Tense result =
+        com.google.cloud.language.v1.PartOfSpeech.Tense.valueOf(tense_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Tense.UNRECOGNIZED : result;
   }
 
   public static final int VOICE_FIELD_NUMBER = 12;
   private int voice_;
   /**
+   *
+   *
    * <pre>
    * The grammatical voice.
    * </pre>
@@ -2862,6 +3288,8 @@ private static final long serialVersionUID = 0L;
     return voice_;
   }
   /**
+   *
+   *
    * <pre>
    * The grammatical voice.
    * </pre>
@@ -2870,11 +3298,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1.PartOfSpeech.Voice getVoice() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1.PartOfSpeech.Voice result = com.google.cloud.language.v1.PartOfSpeech.Voice.valueOf(voice_);
+    com.google.cloud.language.v1.PartOfSpeech.Voice result =
+        com.google.cloud.language.v1.PartOfSpeech.Voice.valueOf(voice_);
     return result == null ? com.google.cloud.language.v1.PartOfSpeech.Voice.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -2886,8 +3316,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (tag_ != com.google.cloud.language.v1.PartOfSpeech.Tag.UNKNOWN.getNumber()) {
       output.writeEnum(1, tag_);
     }
@@ -2915,7 +3344,8 @@ private static final long serialVersionUID = 0L;
     if (proper_ != com.google.cloud.language.v1.PartOfSpeech.Proper.PROPER_UNKNOWN.getNumber()) {
       output.writeEnum(9, proper_);
     }
-    if (reciprocity_ != com.google.cloud.language.v1.PartOfSpeech.Reciprocity.RECIPROCITY_UNKNOWN.getNumber()) {
+    if (reciprocity_
+        != com.google.cloud.language.v1.PartOfSpeech.Reciprocity.RECIPROCITY_UNKNOWN.getNumber()) {
       output.writeEnum(10, reciprocity_);
     }
     if (tense_ != com.google.cloud.language.v1.PartOfSpeech.Tense.TENSE_UNKNOWN.getNumber()) {
@@ -2934,52 +3364,41 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (tag_ != com.google.cloud.language.v1.PartOfSpeech.Tag.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, tag_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, tag_);
     }
     if (aspect_ != com.google.cloud.language.v1.PartOfSpeech.Aspect.ASPECT_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, aspect_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, aspect_);
     }
     if (case_ != com.google.cloud.language.v1.PartOfSpeech.Case.CASE_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, case_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, case_);
     }
     if (form_ != com.google.cloud.language.v1.PartOfSpeech.Form.FORM_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, form_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, form_);
     }
     if (gender_ != com.google.cloud.language.v1.PartOfSpeech.Gender.GENDER_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, gender_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, gender_);
     }
     if (mood_ != com.google.cloud.language.v1.PartOfSpeech.Mood.MOOD_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, mood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, mood_);
     }
     if (number_ != com.google.cloud.language.v1.PartOfSpeech.Number.NUMBER_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(7, number_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, number_);
     }
     if (person_ != com.google.cloud.language.v1.PartOfSpeech.Person.PERSON_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(8, person_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, person_);
     }
     if (proper_ != com.google.cloud.language.v1.PartOfSpeech.Proper.PROPER_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, proper_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, proper_);
     }
-    if (reciprocity_ != com.google.cloud.language.v1.PartOfSpeech.Reciprocity.RECIPROCITY_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(10, reciprocity_);
+    if (reciprocity_
+        != com.google.cloud.language.v1.PartOfSpeech.Reciprocity.RECIPROCITY_UNKNOWN.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, reciprocity_);
     }
     if (tense_ != com.google.cloud.language.v1.PartOfSpeech.Tense.TENSE_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(11, tense_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, tense_);
     }
     if (voice_ != com.google.cloud.language.v1.PartOfSpeech.Voice.VOICE_UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(12, voice_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, voice_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2989,12 +3408,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.language.v1.PartOfSpeech)) {
       return super.equals(obj);
     }
-    com.google.cloud.language.v1.PartOfSpeech other = (com.google.cloud.language.v1.PartOfSpeech) obj;
+    com.google.cloud.language.v1.PartOfSpeech other =
+        (com.google.cloud.language.v1.PartOfSpeech) obj;
 
     boolean result = true;
     result = result && tag_ == other.tag_;
@@ -3049,97 +3469,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.language.v1.PartOfSpeech parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.language.v1.PartOfSpeech parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.language.v1.PartOfSpeech parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1.PartOfSpeech parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.language.v1.PartOfSpeech prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents part of speech information for a token. Parts of speech
    * are as defined in
@@ -3148,21 +3575,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.language.v1.PartOfSpeech}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.language.v1.PartOfSpeech)
       com.google.cloud.language.v1.PartOfSpeechOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_PartOfSpeech_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.language.v1.LanguageServiceProto
+          .internal_static_google_cloud_language_v1_PartOfSpeech_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_PartOfSpeech_fieldAccessorTable
+      return com.google.cloud.language.v1.LanguageServiceProto
+          .internal_static_google_cloud_language_v1_PartOfSpeech_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.language.v1.PartOfSpeech.class, com.google.cloud.language.v1.PartOfSpeech.Builder.class);
+              com.google.cloud.language.v1.PartOfSpeech.class,
+              com.google.cloud.language.v1.PartOfSpeech.Builder.class);
     }
 
     // Construct using com.google.cloud.language.v1.PartOfSpeech.newBuilder()
@@ -3170,16 +3599,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -3211,9 +3639,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.language.v1.LanguageServiceProto.internal_static_google_cloud_language_v1_PartOfSpeech_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.language.v1.LanguageServiceProto
+          .internal_static_google_cloud_language_v1_PartOfSpeech_descriptor;
     }
 
     @java.lang.Override
@@ -3232,7 +3660,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.language.v1.PartOfSpeech buildPartial() {
-      com.google.cloud.language.v1.PartOfSpeech result = new com.google.cloud.language.v1.PartOfSpeech(this);
+      com.google.cloud.language.v1.PartOfSpeech result =
+          new com.google.cloud.language.v1.PartOfSpeech(this);
       result.tag_ = tag_;
       result.aspect_ = aspect_;
       result.case_ = case_;
@@ -3253,38 +3682,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1.PartOfSpeech) {
-        return mergeFrom((com.google.cloud.language.v1.PartOfSpeech)other);
+        return mergeFrom((com.google.cloud.language.v1.PartOfSpeech) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -3360,6 +3790,8 @@ private static final long serialVersionUID = 0L;
 
     private int tag_ = 0;
     /**
+     *
+     *
      * <pre>
      * The part of speech tag.
      * </pre>
@@ -3370,6 +3802,8 @@ private static final long serialVersionUID = 0L;
       return tag_;
     }
     /**
+     *
+     *
      * <pre>
      * The part of speech tag.
      * </pre>
@@ -3382,6 +3816,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The part of speech tag.
      * </pre>
@@ -3390,10 +3826,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Tag getTag() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Tag result = com.google.cloud.language.v1.PartOfSpeech.Tag.valueOf(tag_);
+      com.google.cloud.language.v1.PartOfSpeech.Tag result =
+          com.google.cloud.language.v1.PartOfSpeech.Tag.valueOf(tag_);
       return result == null ? com.google.cloud.language.v1.PartOfSpeech.Tag.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The part of speech tag.
      * </pre>
@@ -3404,12 +3843,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       tag_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The part of speech tag.
      * </pre>
@@ -3417,7 +3858,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Tag tag = 1;</code>
      */
     public Builder clearTag() {
-      
+
       tag_ = 0;
       onChanged();
       return this;
@@ -3425,6 +3866,8 @@ private static final long serialVersionUID = 0L;
 
     private int aspect_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical aspect.
      * </pre>
@@ -3435,6 +3878,8 @@ private static final long serialVersionUID = 0L;
       return aspect_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical aspect.
      * </pre>
@@ -3447,6 +3892,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical aspect.
      * </pre>
@@ -3455,10 +3902,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Aspect getAspect() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Aspect result = com.google.cloud.language.v1.PartOfSpeech.Aspect.valueOf(aspect_);
-      return result == null ? com.google.cloud.language.v1.PartOfSpeech.Aspect.UNRECOGNIZED : result;
+      com.google.cloud.language.v1.PartOfSpeech.Aspect result =
+          com.google.cloud.language.v1.PartOfSpeech.Aspect.valueOf(aspect_);
+      return result == null
+          ? com.google.cloud.language.v1.PartOfSpeech.Aspect.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical aspect.
      * </pre>
@@ -3469,12 +3921,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       aspect_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical aspect.
      * </pre>
@@ -3482,7 +3936,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Aspect aspect = 2;</code>
      */
     public Builder clearAspect() {
-      
+
       aspect_ = 0;
       onChanged();
       return this;
@@ -3490,6 +3944,8 @@ private static final long serialVersionUID = 0L;
 
     private int case_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical case.
      * </pre>
@@ -3500,6 +3956,8 @@ private static final long serialVersionUID = 0L;
       return case_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical case.
      * </pre>
@@ -3512,6 +3970,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical case.
      * </pre>
@@ -3520,10 +3980,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Case getCase() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Case result = com.google.cloud.language.v1.PartOfSpeech.Case.valueOf(case_);
+      com.google.cloud.language.v1.PartOfSpeech.Case result =
+          com.google.cloud.language.v1.PartOfSpeech.Case.valueOf(case_);
       return result == null ? com.google.cloud.language.v1.PartOfSpeech.Case.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical case.
      * </pre>
@@ -3534,12 +3997,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       case_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical case.
      * </pre>
@@ -3547,7 +4012,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Case case = 3;</code>
      */
     public Builder clearCase() {
-      
+
       case_ = 0;
       onChanged();
       return this;
@@ -3555,6 +4020,8 @@ private static final long serialVersionUID = 0L;
 
     private int form_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical form.
      * </pre>
@@ -3565,6 +4032,8 @@ private static final long serialVersionUID = 0L;
       return form_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical form.
      * </pre>
@@ -3577,6 +4046,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical form.
      * </pre>
@@ -3585,10 +4056,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Form getForm() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Form result = com.google.cloud.language.v1.PartOfSpeech.Form.valueOf(form_);
+      com.google.cloud.language.v1.PartOfSpeech.Form result =
+          com.google.cloud.language.v1.PartOfSpeech.Form.valueOf(form_);
       return result == null ? com.google.cloud.language.v1.PartOfSpeech.Form.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical form.
      * </pre>
@@ -3599,12 +4073,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       form_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical form.
      * </pre>
@@ -3612,7 +4088,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Form form = 4;</code>
      */
     public Builder clearForm() {
-      
+
       form_ = 0;
       onChanged();
       return this;
@@ -3620,6 +4096,8 @@ private static final long serialVersionUID = 0L;
 
     private int gender_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical gender.
      * </pre>
@@ -3630,6 +4108,8 @@ private static final long serialVersionUID = 0L;
       return gender_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical gender.
      * </pre>
@@ -3642,6 +4122,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical gender.
      * </pre>
@@ -3650,10 +4132,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Gender getGender() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Gender result = com.google.cloud.language.v1.PartOfSpeech.Gender.valueOf(gender_);
-      return result == null ? com.google.cloud.language.v1.PartOfSpeech.Gender.UNRECOGNIZED : result;
+      com.google.cloud.language.v1.PartOfSpeech.Gender result =
+          com.google.cloud.language.v1.PartOfSpeech.Gender.valueOf(gender_);
+      return result == null
+          ? com.google.cloud.language.v1.PartOfSpeech.Gender.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical gender.
      * </pre>
@@ -3664,12 +4151,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       gender_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical gender.
      * </pre>
@@ -3677,7 +4166,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Gender gender = 5;</code>
      */
     public Builder clearGender() {
-      
+
       gender_ = 0;
       onChanged();
       return this;
@@ -3685,6 +4174,8 @@ private static final long serialVersionUID = 0L;
 
     private int mood_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical mood.
      * </pre>
@@ -3695,6 +4186,8 @@ private static final long serialVersionUID = 0L;
       return mood_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical mood.
      * </pre>
@@ -3707,6 +4200,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical mood.
      * </pre>
@@ -3715,10 +4210,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Mood getMood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Mood result = com.google.cloud.language.v1.PartOfSpeech.Mood.valueOf(mood_);
+      com.google.cloud.language.v1.PartOfSpeech.Mood result =
+          com.google.cloud.language.v1.PartOfSpeech.Mood.valueOf(mood_);
       return result == null ? com.google.cloud.language.v1.PartOfSpeech.Mood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical mood.
      * </pre>
@@ -3729,12 +4227,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       mood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical mood.
      * </pre>
@@ -3742,7 +4242,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Mood mood = 6;</code>
      */
     public Builder clearMood() {
-      
+
       mood_ = 0;
       onChanged();
       return this;
@@ -3750,6 +4250,8 @@ private static final long serialVersionUID = 0L;
 
     private int number_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical number.
      * </pre>
@@ -3760,6 +4262,8 @@ private static final long serialVersionUID = 0L;
       return number_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical number.
      * </pre>
@@ -3772,6 +4276,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical number.
      * </pre>
@@ -3780,10 +4286,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Number getNumber() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Number result = com.google.cloud.language.v1.PartOfSpeech.Number.valueOf(number_);
-      return result == null ? com.google.cloud.language.v1.PartOfSpeech.Number.UNRECOGNIZED : result;
+      com.google.cloud.language.v1.PartOfSpeech.Number result =
+          com.google.cloud.language.v1.PartOfSpeech.Number.valueOf(number_);
+      return result == null
+          ? com.google.cloud.language.v1.PartOfSpeech.Number.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical number.
      * </pre>
@@ -3794,12 +4305,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       number_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical number.
      * </pre>
@@ -3807,7 +4320,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Number number = 7;</code>
      */
     public Builder clearNumber() {
-      
+
       number_ = 0;
       onChanged();
       return this;
@@ -3815,6 +4328,8 @@ private static final long serialVersionUID = 0L;
 
     private int person_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical person.
      * </pre>
@@ -3825,6 +4340,8 @@ private static final long serialVersionUID = 0L;
       return person_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical person.
      * </pre>
@@ -3837,6 +4354,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical person.
      * </pre>
@@ -3845,10 +4364,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Person getPerson() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Person result = com.google.cloud.language.v1.PartOfSpeech.Person.valueOf(person_);
-      return result == null ? com.google.cloud.language.v1.PartOfSpeech.Person.UNRECOGNIZED : result;
+      com.google.cloud.language.v1.PartOfSpeech.Person result =
+          com.google.cloud.language.v1.PartOfSpeech.Person.valueOf(person_);
+      return result == null
+          ? com.google.cloud.language.v1.PartOfSpeech.Person.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical person.
      * </pre>
@@ -3859,12 +4383,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       person_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical person.
      * </pre>
@@ -3872,7 +4398,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Person person = 8;</code>
      */
     public Builder clearPerson() {
-      
+
       person_ = 0;
       onChanged();
       return this;
@@ -3880,6 +4406,8 @@ private static final long serialVersionUID = 0L;
 
     private int proper_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical properness.
      * </pre>
@@ -3890,6 +4418,8 @@ private static final long serialVersionUID = 0L;
       return proper_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical properness.
      * </pre>
@@ -3902,6 +4432,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical properness.
      * </pre>
@@ -3910,10 +4442,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Proper getProper() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Proper result = com.google.cloud.language.v1.PartOfSpeech.Proper.valueOf(proper_);
-      return result == null ? com.google.cloud.language.v1.PartOfSpeech.Proper.UNRECOGNIZED : result;
+      com.google.cloud.language.v1.PartOfSpeech.Proper result =
+          com.google.cloud.language.v1.PartOfSpeech.Proper.valueOf(proper_);
+      return result == null
+          ? com.google.cloud.language.v1.PartOfSpeech.Proper.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical properness.
      * </pre>
@@ -3924,12 +4461,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       proper_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical properness.
      * </pre>
@@ -3937,7 +4476,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Proper proper = 9;</code>
      */
     public Builder clearProper() {
-      
+
       proper_ = 0;
       onChanged();
       return this;
@@ -3945,6 +4484,8 @@ private static final long serialVersionUID = 0L;
 
     private int reciprocity_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical reciprocity.
      * </pre>
@@ -3955,6 +4496,8 @@ private static final long serialVersionUID = 0L;
       return reciprocity_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical reciprocity.
      * </pre>
@@ -3967,6 +4510,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical reciprocity.
      * </pre>
@@ -3975,10 +4520,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Reciprocity getReciprocity() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Reciprocity result = com.google.cloud.language.v1.PartOfSpeech.Reciprocity.valueOf(reciprocity_);
-      return result == null ? com.google.cloud.language.v1.PartOfSpeech.Reciprocity.UNRECOGNIZED : result;
+      com.google.cloud.language.v1.PartOfSpeech.Reciprocity result =
+          com.google.cloud.language.v1.PartOfSpeech.Reciprocity.valueOf(reciprocity_);
+      return result == null
+          ? com.google.cloud.language.v1.PartOfSpeech.Reciprocity.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical reciprocity.
      * </pre>
@@ -3989,12 +4539,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       reciprocity_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical reciprocity.
      * </pre>
@@ -4002,7 +4554,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Reciprocity reciprocity = 10;</code>
      */
     public Builder clearReciprocity() {
-      
+
       reciprocity_ = 0;
       onChanged();
       return this;
@@ -4010,6 +4562,8 @@ private static final long serialVersionUID = 0L;
 
     private int tense_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical tense.
      * </pre>
@@ -4020,6 +4574,8 @@ private static final long serialVersionUID = 0L;
       return tense_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical tense.
      * </pre>
@@ -4032,6 +4588,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical tense.
      * </pre>
@@ -4040,10 +4598,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Tense getTense() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Tense result = com.google.cloud.language.v1.PartOfSpeech.Tense.valueOf(tense_);
+      com.google.cloud.language.v1.PartOfSpeech.Tense result =
+          com.google.cloud.language.v1.PartOfSpeech.Tense.valueOf(tense_);
       return result == null ? com.google.cloud.language.v1.PartOfSpeech.Tense.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical tense.
      * </pre>
@@ -4054,12 +4615,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       tense_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical tense.
      * </pre>
@@ -4067,7 +4630,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Tense tense = 11;</code>
      */
     public Builder clearTense() {
-      
+
       tense_ = 0;
       onChanged();
       return this;
@@ -4075,6 +4638,8 @@ private static final long serialVersionUID = 0L;
 
     private int voice_ = 0;
     /**
+     *
+     *
      * <pre>
      * The grammatical voice.
      * </pre>
@@ -4085,6 +4650,8 @@ private static final long serialVersionUID = 0L;
       return voice_;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical voice.
      * </pre>
@@ -4097,6 +4664,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical voice.
      * </pre>
@@ -4105,10 +4674,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1.PartOfSpeech.Voice getVoice() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1.PartOfSpeech.Voice result = com.google.cloud.language.v1.PartOfSpeech.Voice.valueOf(voice_);
+      com.google.cloud.language.v1.PartOfSpeech.Voice result =
+          com.google.cloud.language.v1.PartOfSpeech.Voice.valueOf(voice_);
       return result == null ? com.google.cloud.language.v1.PartOfSpeech.Voice.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical voice.
      * </pre>
@@ -4119,12 +4691,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       voice_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The grammatical voice.
      * </pre>
@@ -4132,14 +4706,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1.PartOfSpeech.Voice voice = 12;</code>
      */
     public Builder clearVoice() {
-      
+
       voice_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -4149,12 +4723,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.language.v1.PartOfSpeech)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.language.v1.PartOfSpeech)
   private static final com.google.cloud.language.v1.PartOfSpeech DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.language.v1.PartOfSpeech();
   }
@@ -4163,16 +4737,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PartOfSpeech>
-      PARSER = new com.google.protobuf.AbstractParser<PartOfSpeech>() {
-    @java.lang.Override
-    public PartOfSpeech parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PartOfSpeech(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PartOfSpeech> PARSER =
+      new com.google.protobuf.AbstractParser<PartOfSpeech>() {
+        @java.lang.Override
+        public PartOfSpeech parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PartOfSpeech(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PartOfSpeech> parser() {
     return PARSER;
@@ -4187,6 +4761,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.language.v1.PartOfSpeech getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

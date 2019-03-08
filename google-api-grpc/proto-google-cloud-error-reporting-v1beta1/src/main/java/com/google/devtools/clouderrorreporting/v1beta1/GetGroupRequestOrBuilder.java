@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface GetGroupRequestOrBuilder extends
+public interface GetGroupRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.GetGroupRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Required] The group resource name. Written as
    * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
@@ -22,6 +25,8 @@ public interface GetGroupRequestOrBuilder extends
    */
   java.lang.String getGroupName();
   /**
+   *
+   *
    * <pre>
    * [Required] The group resource name. Written as
    * &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
@@ -34,6 +39,5 @@ public interface GetGroupRequestOrBuilder extends
    *
    * <code>string group_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getGroupNameBytes();
+  com.google.protobuf.ByteString getGroupNameBytes();
 }

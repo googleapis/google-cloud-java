@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Represents a customer-supplied Signing Key used by Cloud CDN Signed URLs */
 public final class SignedUrlKey implements ApiMessage {
   private final String keyName;
   private final String keyValue;
@@ -40,10 +41,10 @@ public final class SignedUrlKey implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("keyName")) {
+    if ("keyName".equals(fieldName)) {
       return keyName;
     }
-    if (fieldName.equals("keyValue")) {
+    if ("keyValue".equals(fieldName)) {
       return keyValue;
     }
     return null;
@@ -57,14 +58,31 @@ public final class SignedUrlKey implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically,
+   * the name must be 1-63 characters long and match the regular expression
+   * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+   * and all following characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
+   */
   public String getKeyName() {
     return keyName;
   }
 
+  /**
+   * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5
+   * base64url encoded string.
+   */
   public String getKeyValue() {
     return keyValue;
   }
@@ -113,19 +131,41 @@ public final class SignedUrlKey implements ApiMessage {
       this.keyValue = source.keyValue;
     }
 
+    /**
+     * Name of the key. The name must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public String getKeyName() {
       return keyName;
     }
 
+    /**
+     * Name of the key. The name must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public Builder setKeyName(String keyName) {
       this.keyName = keyName;
       return this;
     }
 
+    /**
+     * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5
+     * base64url encoded string.
+     */
     public String getKeyValue() {
       return keyValue;
     }
 
+    /**
+     * 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5
+     * base64url encoded string.
+     */
     public Builder setKeyValue(String keyValue) {
       this.keyValue = keyValue;
       return this;

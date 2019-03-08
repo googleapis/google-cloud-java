@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p1beta1;
 
-public interface ExplicitContentDetectionConfigOrBuilder extends
+public interface ExplicitContentDetectionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Model to use for explicit content detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -18,6 +21,8 @@ public interface ExplicitContentDetectionConfigOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * Model to use for explicit content detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -26,6 +31,5 @@ public interface ExplicitContentDetectionConfigOrBuilder extends
    *
    * <code>string model = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 }

@@ -14,13 +14,13 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class RegionName implements ResourceName {
   }
 
   public static RegionName of(String project, String region) {
-    return newBuilder()
-      .setProject(project)
-      .setRegion(region)
-      .build();
+    return newBuilder().setProject(project).setRegion(region).build();
   }
 
   public static String format(String project, String region) {
-    return newBuilder()
-      .setProject(project)
-      .setRegion(region)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setRegion(region).build().toString();
   }
 
   public static RegionName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class RegionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "RegionName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "RegionName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("region"));
   }
 
@@ -150,8 +144,7 @@ public class RegionName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(RegionName regionName) {
       project = regionName.project;
@@ -170,8 +163,7 @@ public class RegionName implements ResourceName {
     }
     if (o instanceof RegionName) {
       RegionName that = (RegionName) o;
-      return (this.project.equals(that.project))
-          && (this.region.equals(that.region));
+      return (this.project.equals(that.project)) && (this.region.equals(that.region));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class RegionName implements ResourceName {
     return h;
   }
 }
-

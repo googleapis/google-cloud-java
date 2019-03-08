@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v2;
 
-public interface AttributeValueOrBuilder extends
+public interface AttributeValueOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v2.AttributeValue)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A string up to 256 bytes long.
    * </pre>
@@ -16,6 +19,8 @@ public interface AttributeValueOrBuilder extends
    */
   boolean hasStringValue();
   /**
+   *
+   *
    * <pre>
    * A string up to 256 bytes long.
    * </pre>
@@ -24,6 +29,8 @@ public interface AttributeValueOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getStringValue();
   /**
+   *
+   *
    * <pre>
    * A string up to 256 bytes long.
    * </pre>
@@ -33,6 +40,8 @@ public interface AttributeValueOrBuilder extends
   com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getStringValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A 64-bit signed integer.
    * </pre>
@@ -42,6 +51,8 @@ public interface AttributeValueOrBuilder extends
   long getIntValue();
 
   /**
+   *
+   *
    * <pre>
    * A Boolean value represented by `true` or `false`.
    * </pre>

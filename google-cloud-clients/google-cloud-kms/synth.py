@@ -16,16 +16,25 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
 
-library = gapic.java_library(
-    service='kms',
-    version='v1',
-    config_path='/google/cloud/kms/artman_cloudkms.yaml',
-    artman_output_name='')
+service = 'kms'
+versions = ['v1']
+config_pattern = '/google/cloud/kms/artman_cloudkms.yaml'
 
-s.copy(library / 'gapic-google-cloud-kms-v1/src', 'src')
-s.copy(library / 'grpc-google-cloud-kms-v1/src', '../../google-api-grpc/grpc-google-cloud-kms-v1/src')
-s.copy(library / 'proto-google-cloud-kms-v1/src', '../../google-api-grpc/proto-google-cloud-kms-v1/src')
+for version in versions:
+  library = gapic.java_library(
+      service=service,
+      version=version,
+      config_path=config_pattern.format(version=version),
+      artman_output_name='')
+
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
+  java.format_code('./src')
+  java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')

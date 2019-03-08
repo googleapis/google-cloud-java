@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v1;
 
-public interface PatchTracesRequestOrBuilder extends
+public interface PatchTracesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v1.PatchTracesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * ID of the Cloud project where the trace data is stored.
    * </pre>
@@ -16,16 +19,19 @@ public interface PatchTracesRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * ID of the Cloud project where the trace data is stored.
    * </pre>
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The body of the message.
    * </pre>
@@ -34,6 +40,8 @@ public interface PatchTracesRequestOrBuilder extends
    */
   boolean hasTraces();
   /**
+   *
+   *
    * <pre>
    * The body of the message.
    * </pre>
@@ -42,6 +50,8 @@ public interface PatchTracesRequestOrBuilder extends
    */
   com.google.devtools.cloudtrace.v1.Traces getTraces();
   /**
+   *
+   *
    * <pre>
    * The body of the message.
    * </pre>

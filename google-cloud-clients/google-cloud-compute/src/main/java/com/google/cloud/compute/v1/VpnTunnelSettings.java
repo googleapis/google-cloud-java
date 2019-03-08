@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class VpnTunnelSettings extends ClientSettings<VpnTunnelSettings> {
   /** Returns the object with the settings used for calls to aggregatedListVpnTunnels. */
   public PagedCallSettings<
-          AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+          AggregatedListVpnTunnelsHttpRequest,
+          VpnTunnelAggregatedList,
           AggregatedListVpnTunnelsPagedResponse>
       aggregatedListVpnTunnelsSettings() {
     return ((VpnTunnelStubSettings) getStubSettings()).aggregatedListVpnTunnelsSettings();
@@ -196,7 +197,8 @@ public class VpnTunnelSettings extends ClientSettings<VpnTunnelSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListVpnTunnels. */
     public PagedCallSettings.Builder<
-            AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+            AggregatedListVpnTunnelsHttpRequest,
+            VpnTunnelAggregatedList,
             AggregatedListVpnTunnelsPagedResponse>
         aggregatedListVpnTunnelsSettings() {
       return getStubSettingsBuilder().aggregatedListVpnTunnelsSettings();

@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface GroupFindingsResponseOrBuilder extends
+public interface GroupFindingsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.GroupFindingsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Group results. There exists an element for each existing unique
    * combination of property/values. The element contains a count for the number
@@ -16,9 +19,10 @@ public interface GroupFindingsResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.GroupResult group_by_results = 1;</code>
    */
-  java.util.List<com.google.cloud.securitycenter.v1beta1.GroupResult> 
-      getGroupByResultsList();
+  java.util.List<com.google.cloud.securitycenter.v1beta1.GroupResult> getGroupByResultsList();
   /**
+   *
+   *
    * <pre>
    * Group results. There exists an element for each existing unique
    * combination of property/values. The element contains a count for the number
@@ -29,6 +33,8 @@ public interface GroupFindingsResponseOrBuilder extends
    */
   com.google.cloud.securitycenter.v1beta1.GroupResult getGroupByResults(int index);
   /**
+   *
+   *
    * <pre>
    * Group results. There exists an element for each existing unique
    * combination of property/values. The element contains a count for the number
@@ -39,6 +45,8 @@ public interface GroupFindingsResponseOrBuilder extends
    */
   int getGroupByResultsCount();
   /**
+   *
+   *
    * <pre>
    * Group results. There exists an element for each existing unique
    * combination of property/values. The element contains a count for the number
@@ -47,9 +55,11 @@ public interface GroupFindingsResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.securitycenter.v1beta1.GroupResult group_by_results = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.securitycenter.v1beta1.GroupResultOrBuilder> 
+  java.util.List<? extends com.google.cloud.securitycenter.v1beta1.GroupResultOrBuilder>
       getGroupByResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Group results. There exists an element for each existing unique
    * combination of property/values. The element contains a count for the number
@@ -62,6 +72,8 @@ public interface GroupFindingsResponseOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Time used for executing the groupBy request.
    * </pre>
@@ -70,6 +82,8 @@ public interface GroupFindingsResponseOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used for executing the groupBy request.
    * </pre>
@@ -78,6 +92,8 @@ public interface GroupFindingsResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used for executing the groupBy request.
    * </pre>
@@ -87,6 +103,8 @@ public interface GroupFindingsResponseOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results.
@@ -96,6 +114,8 @@ public interface GroupFindingsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results.
@@ -103,6 +123,5 @@ public interface GroupFindingsResponseOrBuilder extends
    *
    * <code>string next_page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

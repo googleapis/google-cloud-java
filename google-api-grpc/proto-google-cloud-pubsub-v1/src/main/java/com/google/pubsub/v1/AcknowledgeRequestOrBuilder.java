@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface AcknowledgeRequestOrBuilder extends
+public interface AcknowledgeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.AcknowledgeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -17,6 +20,8 @@ public interface AcknowledgeRequestOrBuilder extends
    */
   java.lang.String getSubscription();
   /**
+   *
+   *
    * <pre>
    * The subscription whose message is being acknowledged.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -24,10 +29,11 @@ public interface AcknowledgeRequestOrBuilder extends
    *
    * <code>string subscription = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionBytes();
+  com.google.protobuf.ByteString getSubscriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
@@ -35,9 +41,10 @@ public interface AcknowledgeRequestOrBuilder extends
    *
    * <code>repeated string ack_ids = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getAckIdsList();
+  java.util.List<java.lang.String> getAckIdsList();
   /**
+   *
+   *
    * <pre>
    * The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
@@ -47,6 +54,8 @@ public interface AcknowledgeRequestOrBuilder extends
    */
   int getAckIdsCount();
   /**
+   *
+   *
    * <pre>
    * The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
@@ -56,6 +65,8 @@ public interface AcknowledgeRequestOrBuilder extends
    */
   java.lang.String getAckIds(int index);
   /**
+   *
+   *
    * <pre>
    * The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
@@ -63,6 +74,5 @@ public interface AcknowledgeRequestOrBuilder extends
    *
    * <code>repeated string ack_ids = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAckIdsBytes(int index);
+  com.google.protobuf.ByteString getAckIdsBytes(int index);
 }

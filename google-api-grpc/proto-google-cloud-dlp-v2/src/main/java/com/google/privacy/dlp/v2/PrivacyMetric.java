@@ -4,29 +4,31 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Privacy metric to compute for reidentification risk analysis.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric}
  */
-public  final class PrivacyMetric extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric)
     PrivacyMetricOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PrivacyMetric.newBuilder() to construct.
   private PrivacyMetric(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PrivacyMetric() {
-  }
+
+  private PrivacyMetric() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PrivacyMetric(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,127 +48,171 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder subBuilder = null;
-            if (typeCase_ == 1) {
-              subBuilder = ((com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_).toBuilder();
+          case 10:
+            {
+              com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder subBuilder =
+                  null;
+              if (typeCase_ == 1) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_)
+                        .toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 1;
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_);
-              type_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder subBuilder =
+                  null;
+              if (typeCase_ == 2) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_)
+                        .toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 2;
+              break;
             }
-            typeCase_ = 1;
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder subBuilder = null;
-            if (typeCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_).toBuilder();
+          case 26:
+            {
+              com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder subBuilder = null;
+              if (typeCase_ == 3) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 3;
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_);
-              type_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder subBuilder = null;
+              if (typeCase_ == 4) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 4;
+              break;
             }
-            typeCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder subBuilder = null;
-            if (typeCase_ == 3) {
-              subBuilder = ((com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_).toBuilder();
+          case 42:
+            {
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder subBuilder =
+                  null;
+              if (typeCase_ == 5) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_)
+                        .toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 5;
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_);
-              type_ = subBuilder.buildPartial();
+          case 50:
+            {
+              com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder
+                  subBuilder = null;
+              if (typeCase_ == 6) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_)
+                        .toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 6;
+              break;
             }
-            typeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder subBuilder = null;
-            if (typeCase_ == 4) {
-              subBuilder = ((com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_).toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_);
-              type_ = subBuilder.buildPartial();
-            }
-            typeCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder subBuilder = null;
-            if (typeCase_ == 5) {
-              subBuilder = ((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_).toBuilder();
-            }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_);
-              type_ = subBuilder.buildPartial();
-            }
-            typeCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder subBuilder = null;
-            if (typeCase_ == 6) {
-              subBuilder = ((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_).toBuilder();
-            }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
-              type_ = subBuilder.buildPartial();
-            }
-            typeCase_ = 6;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_PrivacyMetric_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_PrivacyMetric_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.PrivacyMetric.class, com.google.privacy.dlp.v2.PrivacyMetric.Builder.class);
+            com.google.privacy.dlp.v2.PrivacyMetric.class,
+            com.google.privacy.dlp.v2.PrivacyMetric.Builder.class);
   }
 
-  public interface NumericalStatsConfigOrBuilder extends
+  public interface NumericalStatsConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Field to compute numerical stats on. Supported types are
      * integer, float, date, datetime, timestamp, time.
@@ -176,6 +222,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasField();
     /**
+     *
+     *
      * <pre>
      * Field to compute numerical stats on. Supported types are
      * integer, float, date, datetime, timestamp, time.
@@ -185,6 +233,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.FieldId getField();
     /**
+     *
+     *
      * <pre>
      * Field to compute numerical stats on. Supported types are
      * integer, float, date, datetime, timestamp, time.
@@ -195,6 +245,8 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * Compute numerical stats over an individual column, including
    * min, max, and quantiles.
@@ -202,23 +254,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig}
    */
-  public  static final class NumericalStatsConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class NumericalStatsConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)
       NumericalStatsConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use NumericalStatsConfig.newBuilder() to construct.
     private NumericalStatsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private NumericalStatsConfig() {
-    }
+
+    private NumericalStatsConfig() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private NumericalStatsConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -238,54 +290,61 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-              if (field_ != null) {
-                subBuilder = field_.toBuilder();
-              }
-              field_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(field_);
-                field_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+                if (field_ != null) {
+                  subBuilder = field_.toBuilder();
+                }
+                field_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(field_);
+                  field_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder.class);
+              com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.class,
+              com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder.class);
     }
 
     public static final int FIELD_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.FieldId field_;
     /**
+     *
+     *
      * <pre>
      * Field to compute numerical stats on. Supported types are
      * integer, float, date, datetime, timestamp, time.
@@ -297,6 +356,8 @@ private static final long serialVersionUID = 0L;
       return field_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Field to compute numerical stats on. Supported types are
      * integer, float, date, datetime, timestamp, time.
@@ -308,6 +369,8 @@ private static final long serialVersionUID = 0L;
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
     /**
+     *
+     *
      * <pre>
      * Field to compute numerical stats on. Supported types are
      * integer, float, date, datetime, timestamp, time.
@@ -320,6 +383,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -331,8 +395,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (field_ != null) {
         output.writeMessage(1, getField());
       }
@@ -346,8 +409,7 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (field_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getField());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getField());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -357,18 +419,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig other = (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) obj;
+      com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig other =
+          (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) obj;
 
       boolean result = true;
       result = result && (hasField() == other.hasField());
       if (hasField()) {
-        result = result && getField()
-            .equals(other.getField());
+        result = result && getField().equals(other.getField());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -391,87 +453,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -481,6 +550,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Compute numerical stats over an individual column, including
      * min, max, and quantiles.
@@ -488,21 +559,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)
         com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.newBuilder()
@@ -510,16 +584,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -533,13 +606,14 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_NumericalStatsConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig
+          getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance();
       }
 
@@ -554,7 +628,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig buildPartial() {
-        com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig(this);
+        com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig result =
+            new com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig(this);
         if (fieldBuilder_ == null) {
           result.field_ = field_;
         } else {
@@ -568,38 +643,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) {
-          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)other);
+          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -607,7 +685,9 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig other) {
-        if (other == com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance()) return this;
+        if (other
+            == com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance())
+          return this;
         if (other.hasField()) {
           mergeField(other.getField());
         }
@@ -630,7 +710,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -642,8 +724,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.FieldId field_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          fieldBuilder_;
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -655,6 +742,8 @@ private static final long serialVersionUID = 0L;
         return fieldBuilder_ != null || field_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -670,6 +759,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -691,6 +782,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -698,8 +791,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
-      public Builder setField(
-          com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
           onChanged();
@@ -710,6 +802,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -721,7 +815,9 @@ private static final long serialVersionUID = 0L;
         if (fieldBuilder_ == null) {
           if (field_ != null) {
             field_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(field_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.FieldId.newBuilder(field_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             field_ = value;
           }
@@ -733,6 +829,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -752,6 +850,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -760,11 +860,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-        
+
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -776,11 +878,12 @@ private static final long serialVersionUID = 0L;
         if (fieldBuilder_ != null) {
           return fieldBuilder_.getMessageOrBuilder();
         } else {
-          return field_ == null ?
-              com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
+          return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute numerical stats on. Supported types are
        * integer, float, date, datetime, timestamp, time.
@@ -789,18 +892,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
           getFieldFieldBuilder() {
         if (fieldBuilder_ == null) {
-          fieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                  getField(),
-                  getParentForChildren(),
-                  isClean());
+          fieldBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                  getField(), getParentForChildren(), isClean());
           field_ = null;
         }
         return fieldBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -813,30 +920,32 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig)
-    private static final com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig DEFAULT_INSTANCE;
+    private static final com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig();
     }
 
-    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getDefaultInstance() {
+    public static com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<NumericalStatsConfig>
-        PARSER = new com.google.protobuf.AbstractParser<NumericalStatsConfig>() {
-      @java.lang.Override
-      public NumericalStatsConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NumericalStatsConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<NumericalStatsConfig> PARSER =
+        new com.google.protobuf.AbstractParser<NumericalStatsConfig>() {
+          @java.lang.Override
+          public NumericalStatsConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new NumericalStatsConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<NumericalStatsConfig> parser() {
       return PARSER;
@@ -848,17 +957,20 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getDefaultInstanceForType() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface CategoricalStatsConfigOrBuilder extends
+  public interface CategoricalStatsConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Field to compute categorical stats on. All column types are
      * supported except for arrays and structs. However, it may be more
@@ -870,6 +982,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasField();
     /**
+     *
+     *
      * <pre>
      * Field to compute categorical stats on. All column types are
      * supported except for arrays and structs. However, it may be more
@@ -881,6 +995,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.FieldId getField();
     /**
+     *
+     *
      * <pre>
      * Field to compute categorical stats on. All column types are
      * supported except for arrays and structs. However, it may be more
@@ -893,6 +1009,8 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * Compute numerical stats over an individual column, including
    * number of distinct values and value count distribution.
@@ -900,23 +1018,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig}
    */
-  public  static final class CategoricalStatsConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class CategoricalStatsConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)
       CategoricalStatsConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use CategoricalStatsConfig.newBuilder() to construct.
     private CategoricalStatsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CategoricalStatsConfig() {
-    }
+
+    private CategoricalStatsConfig() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private CategoricalStatsConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -936,54 +1054,61 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-              if (field_ != null) {
-                subBuilder = field_.toBuilder();
-              }
-              field_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(field_);
-                field_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+                if (field_ != null) {
+                  subBuilder = field_.toBuilder();
+                }
+                field_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(field_);
+                  field_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder.class);
+              com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.class,
+              com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder.class);
     }
 
     public static final int FIELD_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.FieldId field_;
     /**
+     *
+     *
      * <pre>
      * Field to compute categorical stats on. All column types are
      * supported except for arrays and structs. However, it may be more
@@ -997,6 +1122,8 @@ private static final long serialVersionUID = 0L;
       return field_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Field to compute categorical stats on. All column types are
      * supported except for arrays and structs. However, it may be more
@@ -1010,6 +1137,8 @@ private static final long serialVersionUID = 0L;
       return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
     }
     /**
+     *
+     *
      * <pre>
      * Field to compute categorical stats on. All column types are
      * supported except for arrays and structs. However, it may be more
@@ -1024,6 +1153,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1035,8 +1165,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (field_ != null) {
         output.writeMessage(1, getField());
       }
@@ -1050,8 +1179,7 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (field_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getField());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getField());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1061,18 +1189,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig other = (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) obj;
+      com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig other =
+          (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) obj;
 
       boolean result = true;
       result = result && (hasField() == other.hasField());
       if (hasField()) {
-        result = result && getField()
-            .equals(other.getField());
+        result = result && getField().equals(other.getField());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -1095,87 +1223,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1185,6 +1320,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Compute numerical stats over an individual column, including
      * number of distinct values and value count distribution.
@@ -1192,21 +1329,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)
         com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.newBuilder()
@@ -1214,16 +1354,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1237,13 +1376,14 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_CategoricalStatsConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
+          getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance();
       }
 
@@ -1258,7 +1398,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig buildPartial() {
-        com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig(this);
+        com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig result =
+            new com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig(this);
         if (fieldBuilder_ == null) {
           result.field_ = field_;
         } else {
@@ -1272,46 +1413,52 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) {
-          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)other);
+          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig other) {
-        if (other == com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig other) {
+        if (other
+            == com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance())
+          return this;
         if (other.hasField()) {
           mergeField(other.getField());
         }
@@ -1334,7 +1481,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1346,8 +1495,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.FieldId field_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          fieldBuilder_;
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1361,6 +1515,8 @@ private static final long serialVersionUID = 0L;
         return fieldBuilder_ != null || field_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1378,6 +1534,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1401,6 +1559,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1410,8 +1570,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
-      public Builder setField(
-          com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (fieldBuilder_ == null) {
           field_ = builderForValue.build();
           onChanged();
@@ -1422,6 +1581,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1435,7 +1596,9 @@ private static final long serialVersionUID = 0L;
         if (fieldBuilder_ == null) {
           if (field_ != null) {
             field_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(field_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.FieldId.newBuilder(field_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             field_ = value;
           }
@@ -1447,6 +1610,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1468,6 +1633,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1478,11 +1645,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-        
+
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1496,11 +1665,12 @@ private static final long serialVersionUID = 0L;
         if (fieldBuilder_ != null) {
           return fieldBuilder_.getMessageOrBuilder();
         } else {
-          return field_ == null ?
-              com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
+          return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Field to compute categorical stats on. All column types are
        * supported except for arrays and structs. However, it may be more
@@ -1511,18 +1681,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
           getFieldFieldBuilder() {
         if (fieldBuilder_ == null) {
-          fieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                  getField(),
-                  getParentForChildren(),
-                  isClean());
+          fieldBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                  getField(), getParentForChildren(), isClean());
           field_ = null;
         }
         return fieldBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1535,30 +1709,32 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig)
-    private static final com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig DEFAULT_INSTANCE;
+    private static final com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig();
     }
 
-    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getDefaultInstance() {
+    public static com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CategoricalStatsConfig>
-        PARSER = new com.google.protobuf.AbstractParser<CategoricalStatsConfig>() {
-      @java.lang.Override
-      public CategoricalStatsConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CategoricalStatsConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<CategoricalStatsConfig> PARSER =
+        new com.google.protobuf.AbstractParser<CategoricalStatsConfig>() {
+          @java.lang.Override
+          public CategoricalStatsConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new CategoricalStatsConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<CategoricalStatsConfig> parser() {
       return PARSER;
@@ -1570,17 +1746,20 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getDefaultInstanceForType() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface KAnonymityConfigOrBuilder extends
+  public interface KAnonymityConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1591,9 +1770,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    java.util.List<com.google.privacy.dlp.v2.FieldId> 
-        getQuasiIdsList();
+    java.util.List<com.google.privacy.dlp.v2.FieldId> getQuasiIdsList();
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1606,6 +1786,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.FieldId getQuasiIds(int index);
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1618,6 +1800,8 @@ private static final long serialVersionUID = 0L;
      */
     int getQuasiIdsCount();
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1628,9 +1812,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
-        getQuasiIdsOrBuilderList();
+    java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> getQuasiIdsOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1641,10 +1826,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(
-        int index);
+    com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index);
 
     /**
+     *
+     *
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
@@ -1661,6 +1847,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasEntityId();
     /**
+     *
+     *
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
@@ -1677,6 +1865,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.EntityId getEntityId();
     /**
+     *
+     *
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
@@ -1694,30 +1884,33 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.EntityIdOrBuilder getEntityIdOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * k-anonymity metric, used for analysis of reidentification risk.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig}
    */
-  public  static final class KAnonymityConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class KAnonymityConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig)
       KAnonymityConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use KAnonymityConfig.newBuilder() to construct.
     private KAnonymityConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private KAnonymityConfig() {
       quasiIds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private KAnonymityConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1737,42 +1930,46 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                quasiIds_.add(
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
+                break;
               }
-              quasiIds_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              com.google.privacy.dlp.v2.EntityId.Builder subBuilder = null;
-              if (entityId_ != null) {
-                subBuilder = entityId_.toBuilder();
-              }
-              entityId_ = input.readMessage(com.google.privacy.dlp.v2.EntityId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(entityId_);
-                entityId_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                com.google.privacy.dlp.v2.EntityId.Builder subBuilder = null;
+                if (entityId_ != null) {
+                  subBuilder = entityId_.toBuilder();
+                }
+                entityId_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.EntityId.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(entityId_);
+                  entityId_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -1781,23 +1978,28 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder.class);
+              com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.class,
+              com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder.class);
     }
 
     private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.FieldId> quasiIds_;
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1812,6 +2014,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1822,11 +2026,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getQuasiIdsOrBuilderList() {
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1841,6 +2047,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1855,6 +2063,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Set of fields to compute k-anonymity over. When multiple fields are
      * specified, they are considered a single composite key. Structs and
@@ -1865,14 +2075,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.EntityId entityId_;
     /**
+     *
+     *
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
@@ -1891,6 +2102,8 @@ private static final long serialVersionUID = 0L;
       return entityId_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
@@ -1906,9 +2119,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
      */
     public com.google.privacy.dlp.v2.EntityId getEntityId() {
-      return entityId_ == null ? com.google.privacy.dlp.v2.EntityId.getDefaultInstance() : entityId_;
+      return entityId_ == null
+          ? com.google.privacy.dlp.v2.EntityId.getDefaultInstance()
+          : entityId_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
@@ -1928,6 +2145,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1939,8 +2157,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
@@ -1957,12 +2174,10 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       for (int i = 0; i < quasiIds_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, quasiIds_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIds_.get(i));
       }
       if (entityId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getEntityId());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEntityId());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1972,20 +2187,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig other = (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) obj;
+      com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig other =
+          (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) obj;
 
       boolean result = true;
-      result = result && getQuasiIdsList()
-          .equals(other.getQuasiIdsList());
+      result = result && getQuasiIdsList().equals(other.getQuasiIdsList());
       result = result && (hasEntityId() == other.hasEntityId());
       if (hasEntityId()) {
-        result = result && getEntityId()
-            .equals(other.getEntityId());
+        result = result && getEntityId().equals(other.getEntityId());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -2012,87 +2226,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2102,27 +2323,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * k-anonymity metric, used for analysis of reidentification risk.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig)
         com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.newBuilder()
@@ -2130,17 +2356,17 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getQuasiIdsFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -2160,9 +2386,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KAnonymityConfig_descriptor;
       }
 
       @java.lang.Override
@@ -2181,7 +2407,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig buildPartial() {
-        com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig(this);
+        com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig result =
+            new com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
@@ -2207,38 +2434,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) {
-          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig)other);
+          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2246,7 +2476,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig other) {
-        if (other == com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance())
+          return this;
         if (quasiIdsBuilder_ == null) {
           if (!other.quasiIds_.isEmpty()) {
             if (quasiIds_.isEmpty()) {
@@ -2265,9 +2496,10 @@ private static final long serialVersionUID = 0L;
               quasiIdsBuilder_ = null;
               quasiIds_ = other.quasiIds_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              quasiIdsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getQuasiIdsFieldBuilder() : null;
+              quasiIdsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getQuasiIdsFieldBuilder()
+                      : null;
             } else {
               quasiIdsBuilder_.addAllMessages(other.quasiIds_);
             }
@@ -2295,7 +2527,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2304,21 +2537,28 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.util.List<com.google.privacy.dlp.v2.FieldId> quasiIds_ =
-        java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
+
       private void ensureQuasiIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>(quasiIds_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> quasiIdsBuilder_;
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          quasiIdsBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2337,6 +2577,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2355,6 +2597,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2373,6 +2617,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2383,8 +2629,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public Builder setQuasiIds(
-          int index, com.google.privacy.dlp.v2.FieldId value) {
+      public Builder setQuasiIds(int index, com.google.privacy.dlp.v2.FieldId value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2398,6 +2643,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2420,6 +2667,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2444,6 +2693,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2454,8 +2705,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public Builder addQuasiIds(
-          int index, com.google.privacy.dlp.v2.FieldId value) {
+      public Builder addQuasiIds(int index, com.google.privacy.dlp.v2.FieldId value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2469,6 +2719,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2479,8 +2731,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public Builder addQuasiIds(
-          com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      public Builder addQuasiIds(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
           quasiIds_.add(builderForValue.build());
@@ -2491,6 +2742,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2513,6 +2766,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2527,8 +2782,7 @@ private static final long serialVersionUID = 0L;
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, quasiIds_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, quasiIds_);
           onChanged();
         } else {
           quasiIdsBuilder_.addAllMessages(values);
@@ -2536,6 +2790,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2557,6 +2813,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2578,6 +2836,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2588,11 +2848,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.FieldId.Builder getQuasiIdsBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.FieldId.Builder getQuasiIdsBuilder(int index) {
         return getQuasiIdsFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2603,14 +2864,16 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index) {
         if (quasiIdsBuilder_ == null) {
-          return quasiIds_.get(index);  } else {
+          return quasiIds_.get(index);
+        } else {
           return quasiIdsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2621,8 +2884,8 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
-           getQuasiIdsOrBuilderList() {
+      public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          getQuasiIdsOrBuilderList() {
         if (quasiIdsBuilder_ != null) {
           return quasiIdsBuilder_.getMessageOrBuilderList();
         } else {
@@ -2630,6 +2893,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2641,10 +2906,12 @@ private static final long serialVersionUID = 0L;
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder addQuasiIdsBuilder() {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2655,12 +2922,13 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.FieldId.Builder addQuasiIdsBuilder(
-          int index) {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+      public com.google.privacy.dlp.v2.FieldId.Builder addQuasiIdsBuilder(int index) {
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Set of fields to compute k-anonymity over. When multiple fields are
        * specified, they are considered a single composite key. Structs and
@@ -2671,16 +2939,21 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> 
-           getQuasiIdsBuilderList() {
+      public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> getQuasiIdsBuilderList() {
         return getQuasiIdsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
           getQuasiIdsFieldBuilder() {
         if (quasiIdsBuilder_ == null) {
-          quasiIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+          quasiIdsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>(
                   quasiIds_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -2692,8 +2965,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.EntityId entityId_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.EntityId, com.google.privacy.dlp.v2.EntityId.Builder, com.google.privacy.dlp.v2.EntityIdOrBuilder> entityIdBuilder_;
+              com.google.privacy.dlp.v2.EntityId,
+              com.google.privacy.dlp.v2.EntityId.Builder,
+              com.google.privacy.dlp.v2.EntityIdOrBuilder>
+          entityIdBuilder_;
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2712,6 +2990,8 @@ private static final long serialVersionUID = 0L;
         return entityIdBuilder_ != null || entityId_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2728,12 +3008,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.EntityId getEntityId() {
         if (entityIdBuilder_ == null) {
-          return entityId_ == null ? com.google.privacy.dlp.v2.EntityId.getDefaultInstance() : entityId_;
+          return entityId_ == null
+              ? com.google.privacy.dlp.v2.EntityId.getDefaultInstance()
+              : entityId_;
         } else {
           return entityIdBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2762,6 +3046,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2776,8 +3062,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
        */
-      public Builder setEntityId(
-          com.google.privacy.dlp.v2.EntityId.Builder builderForValue) {
+      public Builder setEntityId(com.google.privacy.dlp.v2.EntityId.Builder builderForValue) {
         if (entityIdBuilder_ == null) {
           entityId_ = builderForValue.build();
           onChanged();
@@ -2788,6 +3073,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2806,7 +3093,9 @@ private static final long serialVersionUID = 0L;
         if (entityIdBuilder_ == null) {
           if (entityId_ != null) {
             entityId_ =
-              com.google.privacy.dlp.v2.EntityId.newBuilder(entityId_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.EntityId.newBuilder(entityId_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             entityId_ = value;
           }
@@ -2818,6 +3107,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2844,6 +3135,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2859,11 +3152,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
        */
       public com.google.privacy.dlp.v2.EntityId.Builder getEntityIdBuilder() {
-        
+
         onChanged();
         return getEntityIdFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2882,11 +3177,14 @@ private static final long serialVersionUID = 0L;
         if (entityIdBuilder_ != null) {
           return entityIdBuilder_.getMessageOrBuilder();
         } else {
-          return entityId_ == null ?
-              com.google.privacy.dlp.v2.EntityId.getDefaultInstance() : entityId_;
+          return entityId_ == null
+              ? com.google.privacy.dlp.v2.EntityId.getDefaultInstance()
+              : entityId_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
@@ -2902,18 +3200,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.EntityId entity_id = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.EntityId, com.google.privacy.dlp.v2.EntityId.Builder, com.google.privacy.dlp.v2.EntityIdOrBuilder> 
+              com.google.privacy.dlp.v2.EntityId,
+              com.google.privacy.dlp.v2.EntityId.Builder,
+              com.google.privacy.dlp.v2.EntityIdOrBuilder>
           getEntityIdFieldBuilder() {
         if (entityIdBuilder_ == null) {
-          entityIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.EntityId, com.google.privacy.dlp.v2.EntityId.Builder, com.google.privacy.dlp.v2.EntityIdOrBuilder>(
-                  getEntityId(),
-                  getParentForChildren(),
-                  isClean());
+          entityIdBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.EntityId,
+                  com.google.privacy.dlp.v2.EntityId.Builder,
+                  com.google.privacy.dlp.v2.EntityIdOrBuilder>(
+                  getEntityId(), getParentForChildren(), isClean());
           entityId_ = null;
         }
         return entityIdBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2926,12 +3228,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig)
     private static final com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig();
     }
@@ -2940,16 +3242,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<KAnonymityConfig>
-        PARSER = new com.google.protobuf.AbstractParser<KAnonymityConfig>() {
-      @java.lang.Override
-      public KAnonymityConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KAnonymityConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<KAnonymityConfig> PARSER =
+        new com.google.protobuf.AbstractParser<KAnonymityConfig>() {
+          @java.lang.Override
+          public KAnonymityConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new KAnonymityConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<KAnonymityConfig> parser() {
       return PARSER;
@@ -2964,14 +3266,16 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface LDiversityConfigOrBuilder extends
+  public interface LDiversityConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -2980,9 +3284,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    java.util.List<com.google.privacy.dlp.v2.FieldId> 
-        getQuasiIdsList();
+    java.util.List<com.google.privacy.dlp.v2.FieldId> getQuasiIdsList();
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -2993,6 +3298,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.FieldId getQuasiIds(int index);
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3003,6 +3310,8 @@ private static final long serialVersionUID = 0L;
      */
     int getQuasiIdsCount();
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3011,9 +3320,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
-        getQuasiIdsOrBuilderList();
+    java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> getQuasiIdsOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3022,10 +3332,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(
-        int index);
+    com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index);
 
     /**
+     *
+     *
      * <pre>
      * Sensitive field for computing the l-value.
      * </pre>
@@ -3034,6 +3345,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasSensitiveAttribute();
     /**
+     *
+     *
      * <pre>
      * Sensitive field for computing the l-value.
      * </pre>
@@ -3042,6 +3355,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.FieldId getSensitiveAttribute();
     /**
+     *
+     *
      * <pre>
      * Sensitive field for computing the l-value.
      * </pre>
@@ -3051,30 +3366,33 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.FieldIdOrBuilder getSensitiveAttributeOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * l-diversity metric, used for analysis of reidentification risk.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig}
    */
-  public  static final class LDiversityConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class LDiversityConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig)
       LDiversityConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use LDiversityConfig.newBuilder() to construct.
     private LDiversityConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private LDiversityConfig() {
       quasiIds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private LDiversityConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3094,42 +3412,46 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                quasiIds_.add(
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
+                break;
               }
-              quasiIds_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-              if (sensitiveAttribute_ != null) {
-                subBuilder = sensitiveAttribute_.toBuilder();
-              }
-              sensitiveAttribute_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sensitiveAttribute_);
-                sensitiveAttribute_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+                if (sensitiveAttribute_ != null) {
+                  subBuilder = sensitiveAttribute_.toBuilder();
+                }
+                sensitiveAttribute_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(sensitiveAttribute_);
+                  sensitiveAttribute_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -3138,23 +3460,28 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder.class);
+              com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.class,
+              com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder.class);
     }
 
     private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.FieldId> quasiIds_;
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3167,6 +3494,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3175,11 +3504,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getQuasiIdsOrBuilderList() {
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3192,6 +3523,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3204,6 +3537,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Set of quasi-identifiers indicating how equivalence classes are
      * defined for the l-diversity computation. When multiple fields are
@@ -3212,14 +3547,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
      */
-    public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
     }
 
     public static final int SENSITIVE_ATTRIBUTE_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.FieldId sensitiveAttribute_;
     /**
+     *
+     *
      * <pre>
      * Sensitive field for computing the l-value.
      * </pre>
@@ -3230,6 +3566,8 @@ private static final long serialVersionUID = 0L;
       return sensitiveAttribute_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Sensitive field for computing the l-value.
      * </pre>
@@ -3237,9 +3575,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
      */
     public com.google.privacy.dlp.v2.FieldId getSensitiveAttribute() {
-      return sensitiveAttribute_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : sensitiveAttribute_;
+      return sensitiveAttribute_ == null
+          ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+          : sensitiveAttribute_;
     }
     /**
+     *
+     *
      * <pre>
      * Sensitive field for computing the l-value.
      * </pre>
@@ -3251,6 +3593,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3262,8 +3605,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
@@ -3280,12 +3622,11 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       for (int i = 0; i < quasiIds_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, quasiIds_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIds_.get(i));
       }
       if (sensitiveAttribute_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getSensitiveAttribute());
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSensitiveAttribute());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3295,20 +3636,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig other = (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) obj;
+      com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig other =
+          (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) obj;
 
       boolean result = true;
-      result = result && getQuasiIdsList()
-          .equals(other.getQuasiIdsList());
+      result = result && getQuasiIdsList().equals(other.getQuasiIdsList());
       result = result && (hasSensitiveAttribute() == other.hasSensitiveAttribute());
       if (hasSensitiveAttribute()) {
-        result = result && getSensitiveAttribute()
-            .equals(other.getSensitiveAttribute());
+        result = result && getSensitiveAttribute().equals(other.getSensitiveAttribute());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -3335,87 +3675,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -3425,27 +3772,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * l-diversity metric, used for analysis of reidentification risk.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig)
         com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.newBuilder()
@@ -3453,17 +3805,17 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getQuasiIdsFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -3483,9 +3835,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_LDiversityConfig_descriptor;
       }
 
       @java.lang.Override
@@ -3504,7 +3856,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig buildPartial() {
-        com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig(this);
+        com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig result =
+            new com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
@@ -3530,38 +3883,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) {
-          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig)other);
+          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -3569,7 +3925,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig other) {
-        if (other == com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance())
+          return this;
         if (quasiIdsBuilder_ == null) {
           if (!other.quasiIds_.isEmpty()) {
             if (quasiIds_.isEmpty()) {
@@ -3588,9 +3945,10 @@ private static final long serialVersionUID = 0L;
               quasiIdsBuilder_ = null;
               quasiIds_ = other.quasiIds_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              quasiIdsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getQuasiIdsFieldBuilder() : null;
+              quasiIdsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getQuasiIdsFieldBuilder()
+                      : null;
             } else {
               quasiIdsBuilder_.addAllMessages(other.quasiIds_);
             }
@@ -3618,7 +3976,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3627,21 +3986,28 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.util.List<com.google.privacy.dlp.v2.FieldId> quasiIds_ =
-        java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
+
       private void ensureQuasiIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>(quasiIds_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> quasiIdsBuilder_;
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          quasiIdsBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3658,6 +4024,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3674,6 +4042,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3690,6 +4060,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3698,8 +4070,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public Builder setQuasiIds(
-          int index, com.google.privacy.dlp.v2.FieldId value) {
+      public Builder setQuasiIds(int index, com.google.privacy.dlp.v2.FieldId value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3713,6 +4084,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3733,6 +4106,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3755,6 +4130,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3763,8 +4140,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public Builder addQuasiIds(
-          int index, com.google.privacy.dlp.v2.FieldId value) {
+      public Builder addQuasiIds(int index, com.google.privacy.dlp.v2.FieldId value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3778,6 +4154,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3786,8 +4164,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public Builder addQuasiIds(
-          com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      public Builder addQuasiIds(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
           quasiIds_.add(builderForValue.build());
@@ -3798,6 +4175,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3818,6 +4197,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3830,8 +4211,7 @@ private static final long serialVersionUID = 0L;
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, quasiIds_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, quasiIds_);
           onChanged();
         } else {
           quasiIdsBuilder_.addAllMessages(values);
@@ -3839,6 +4219,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3858,6 +4240,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3877,6 +4261,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3885,11 +4271,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.FieldId.Builder getQuasiIdsBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.FieldId.Builder getQuasiIdsBuilder(int index) {
         return getQuasiIdsFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3898,14 +4285,16 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.FieldIdOrBuilder getQuasiIdsOrBuilder(int index) {
         if (quasiIdsBuilder_ == null) {
-          return quasiIds_.get(index);  } else {
+          return quasiIds_.get(index);
+        } else {
           return quasiIdsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3914,8 +4303,8 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
-           getQuasiIdsOrBuilderList() {
+      public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          getQuasiIdsOrBuilderList() {
         if (quasiIdsBuilder_ != null) {
           return quasiIdsBuilder_.getMessageOrBuilderList();
         } else {
@@ -3923,6 +4312,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3932,10 +4323,12 @@ private static final long serialVersionUID = 0L;
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder addQuasiIdsBuilder() {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3944,12 +4337,13 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.FieldId.Builder addQuasiIdsBuilder(
-          int index) {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+      public com.google.privacy.dlp.v2.FieldId.Builder addQuasiIdsBuilder(int index) {
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Set of quasi-identifiers indicating how equivalence classes are
        * defined for the l-diversity computation. When multiple fields are
@@ -3958,16 +4352,21 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.FieldId quasi_ids = 1;</code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> 
-           getQuasiIdsBuilderList() {
+      public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> getQuasiIdsBuilderList() {
         return getQuasiIdsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
           getQuasiIdsFieldBuilder() {
         if (quasiIdsBuilder_ == null) {
-          quasiIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+          quasiIdsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>(
                   quasiIds_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -3979,8 +4378,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.FieldId sensitiveAttribute_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> sensitiveAttributeBuilder_;
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          sensitiveAttributeBuilder_;
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -3991,6 +4395,8 @@ private static final long serialVersionUID = 0L;
         return sensitiveAttributeBuilder_ != null || sensitiveAttribute_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -3999,12 +4405,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.FieldId getSensitiveAttribute() {
         if (sensitiveAttributeBuilder_ == null) {
-          return sensitiveAttribute_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : sensitiveAttribute_;
+          return sensitiveAttribute_ == null
+              ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+              : sensitiveAttribute_;
         } else {
           return sensitiveAttributeBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -4025,6 +4435,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -4043,6 +4455,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -4053,7 +4467,9 @@ private static final long serialVersionUID = 0L;
         if (sensitiveAttributeBuilder_ == null) {
           if (sensitiveAttribute_ != null) {
             sensitiveAttribute_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(sensitiveAttribute_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.FieldId.newBuilder(sensitiveAttribute_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             sensitiveAttribute_ = value;
           }
@@ -4065,6 +4481,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -4083,6 +4501,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -4090,11 +4510,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getSensitiveAttributeBuilder() {
-        
+
         onChanged();
         return getSensitiveAttributeFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -4105,11 +4527,14 @@ private static final long serialVersionUID = 0L;
         if (sensitiveAttributeBuilder_ != null) {
           return sensitiveAttributeBuilder_.getMessageOrBuilder();
         } else {
-          return sensitiveAttribute_ == null ?
-              com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : sensitiveAttribute_;
+          return sensitiveAttribute_ == null
+              ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+              : sensitiveAttribute_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Sensitive field for computing the l-value.
        * </pre>
@@ -4117,18 +4542,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId sensitive_attribute = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
           getSensitiveAttributeFieldBuilder() {
         if (sensitiveAttributeBuilder_ == null) {
-          sensitiveAttributeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                  getSensitiveAttribute(),
-                  getParentForChildren(),
-                  isClean());
+          sensitiveAttributeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                  getSensitiveAttribute(), getParentForChildren(), isClean());
           sensitiveAttribute_ = null;
         }
         return sensitiveAttributeBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4141,12 +4570,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig)
     private static final com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig();
     }
@@ -4155,16 +4584,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<LDiversityConfig>
-        PARSER = new com.google.protobuf.AbstractParser<LDiversityConfig>() {
-      @java.lang.Override
-      public LDiversityConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LDiversityConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<LDiversityConfig> PARSER =
+        new com.google.protobuf.AbstractParser<LDiversityConfig>() {
+          @java.lang.Override
+          public LDiversityConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new LDiversityConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<LDiversityConfig> parser() {
       return PARSER;
@@ -4179,63 +4608,87 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface KMapEstimationConfigOrBuilder extends
+  public interface KMapEstimationConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
-    java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> 
+    java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
         getQuasiIdsList();
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
     com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(int index);
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
     int getQuasiIdsCount();
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
-    java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> 
+    java.util.List<
+            ? extends
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder>
         getQuasiIdsOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
-    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder getQuasiIdsOrBuilder(
-        int index);
+    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder
+        getQuasiIdsOrBuilder(int index);
 
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -4246,6 +4699,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getRegionCode();
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -4254,64 +4709,89 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string region_code = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getRegionCodeBytes();
+    com.google.protobuf.ByteString getRegionCodeBytes();
 
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable> 
+    java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>
         getAuxiliaryTablesList();
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable getAuxiliaryTables(int index);
+    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable getAuxiliaryTables(
+        int index);
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
     int getAuxiliaryTablesCount();
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder> 
+    java.util.List<
+            ? extends
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                    .AuxiliaryTableOrBuilder>
         getAuxiliaryTablesOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder getAuxiliaryTablesOrBuilder(
-        int index);
+    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder
+        getAuxiliaryTablesOrBuilder(int index);
   }
   /**
+   *
+   *
    * <pre>
    * Reidentifiability metric. This corresponds to a risk model similar to what
    * is called "journalist risk" in the literature, except the attack dataset is
@@ -4324,15 +4804,16 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
    */
-  public  static final class KMapEstimationConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class KMapEstimationConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)
       KMapEstimationConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use KMapEstimationConfig.newBuilder() to construct.
     private KMapEstimationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private KMapEstimationConfig() {
       quasiIds_ = java.util.Collections.emptyList();
       regionCode_ = "";
@@ -4340,10 +4821,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private KMapEstimationConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4363,44 +4844,58 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>();
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  quasiIds_ =
+                      new java.util.ArrayList<
+                          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                              .TaggedField>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                quasiIds_.add(
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+                            .parser(),
+                        extensionRegistry));
+                break;
               }
-              quasiIds_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              regionCode_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>();
-                mutable_bitField0_ |= 0x00000004;
+                regionCode_ = s;
+                break;
               }
-              auxiliaryTables_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 26:
+              {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  auxiliaryTables_ =
+                      new java.util.ArrayList<
+                          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                              .AuxiliaryTable>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                auxiliaryTables_.add(
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                            .parser(),
+                        extensionRegistry));
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -4412,24 +4907,30 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder.class);
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.class,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder.class);
     }
 
-    public interface TaggedFieldOrBuilder extends
+    public interface TaggedFieldOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Identifies the column. [required]
        * </pre>
@@ -4438,6 +4939,8 @@ private static final long serialVersionUID = 0L;
        */
       boolean hasField();
       /**
+       *
+       *
        * <pre>
        * Identifies the column. [required]
        * </pre>
@@ -4446,6 +4949,8 @@ private static final long serialVersionUID = 0L;
        */
       com.google.privacy.dlp.v2.FieldId getField();
       /**
+       *
+       *
        * <pre>
        * Identifies the column. [required]
        * </pre>
@@ -4455,6 +4960,8 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a InfoType to use the relevant public
        * dataset as a statistical model of population, if available. We
@@ -4467,6 +4974,8 @@ private static final long serialVersionUID = 0L;
        */
       boolean hasInfoType();
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a InfoType to use the relevant public
        * dataset as a statistical model of population, if available. We
@@ -4479,6 +4988,8 @@ private static final long serialVersionUID = 0L;
        */
       com.google.privacy.dlp.v2.InfoType getInfoType();
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a InfoType to use the relevant public
        * dataset as a statistical model of population, if available. We
@@ -4492,6 +5003,8 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
 
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
@@ -4502,6 +5015,8 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getCustomTag();
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
@@ -4510,10 +5025,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string custom_tag = 3;</code>
        */
-      com.google.protobuf.ByteString
-          getCustomTagBytes();
+      com.google.protobuf.ByteString getCustomTagBytes();
 
       /**
+       *
+       *
        * <pre>
        * If no semantic tag is indicated, we infer the statistical model from
        * the distribution of values in the input data
@@ -4523,6 +5039,8 @@ private static final long serialVersionUID = 0L;
        */
       boolean hasInferred();
       /**
+       *
+       *
        * <pre>
        * If no semantic tag is indicated, we infer the statistical model from
        * the distribution of values in the input data
@@ -4532,6 +5050,8 @@ private static final long serialVersionUID = 0L;
        */
       com.google.protobuf.Empty getInferred();
       /**
+       *
+       *
        * <pre>
        * If no semantic tag is indicated, we infer the statistical model from
        * the distribution of values in the input data
@@ -4541,28 +5061,29 @@ private static final long serialVersionUID = 0L;
        */
       com.google.protobuf.EmptyOrBuilder getInferredOrBuilder();
 
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.TagCase getTagCase();
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.TagCase
+          getTagCase();
     }
     /**
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
      */
-    public  static final class TaggedField extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class TaggedField extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)
         TaggedFieldOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use TaggedField.newBuilder() to construct.
       private TaggedField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private TaggedField() {
-      }
+
+      private TaggedField() {}
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private TaggedField(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4582,100 +5103,109 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-                if (field_ != null) {
-                  subBuilder = field_.toBuilder();
-                }
-                field_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(field_);
-                  field_ = subBuilder.buildPartial();
-                }
+              case 10:
+                {
+                  com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+                  if (field_ != null) {
+                    subBuilder = field_.toBuilder();
+                  }
+                  field_ =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(field_);
+                    field_ = subBuilder.buildPartial();
+                  }
 
-                break;
-              }
-              case 18: {
-                com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
-                if (tagCase_ == 2) {
-                  subBuilder = ((com.google.privacy.dlp.v2.InfoType) tag_).toBuilder();
+                  break;
                 }
-                tag_ =
-                    input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.privacy.dlp.v2.InfoType) tag_);
-                  tag_ = subBuilder.buildPartial();
+              case 18:
+                {
+                  com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
+                  if (tagCase_ == 2) {
+                    subBuilder = ((com.google.privacy.dlp.v2.InfoType) tag_).toBuilder();
+                  }
+                  tag_ =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom((com.google.privacy.dlp.v2.InfoType) tag_);
+                    tag_ = subBuilder.buildPartial();
+                  }
+                  tagCase_ = 2;
+                  break;
                 }
-                tagCase_ = 2;
-                break;
-              }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-                tagCase_ = 3;
-                tag_ = s;
-                break;
-              }
-              case 34: {
-                com.google.protobuf.Empty.Builder subBuilder = null;
-                if (tagCase_ == 4) {
-                  subBuilder = ((com.google.protobuf.Empty) tag_).toBuilder();
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  tagCase_ = 3;
+                  tag_ = s;
+                  break;
                 }
-                tag_ =
-                    input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.protobuf.Empty) tag_);
-                  tag_ = subBuilder.buildPartial();
+              case 34:
+                {
+                  com.google.protobuf.Empty.Builder subBuilder = null;
+                  if (tagCase_ == 4) {
+                    subBuilder = ((com.google.protobuf.Empty) tag_).toBuilder();
+                  }
+                  tag_ = input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom((com.google.protobuf.Empty) tag_);
+                    tag_ = subBuilder.buildPartial();
+                  }
+                  tagCase_ = 4;
+                  break;
                 }
-                tagCase_ = 4;
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
                 }
-                break;
-              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+                    .class);
       }
 
       private int tagCase_ = 0;
       private java.lang.Object tag_;
-      public enum TagCase
-          implements com.google.protobuf.Internal.EnumLite {
+
+      public enum TagCase implements com.google.protobuf.Internal.EnumLite {
         INFO_TYPE(2),
         CUSTOM_TAG(3),
         INFERRED(4),
         TAG_NOT_SET(0);
         private final int value;
+
         private TagCase(int value) {
           this.value = value;
         }
-        /**
-         * @deprecated Use {@link #forNumber(int)} instead.
-         */
+        /** @deprecated Use {@link #forNumber(int)} instead. */
         @java.lang.Deprecated
         public static TagCase valueOf(int value) {
           return forNumber(value);
@@ -4683,27 +5213,33 @@ private static final long serialVersionUID = 0L;
 
         public static TagCase forNumber(int value) {
           switch (value) {
-            case 2: return INFO_TYPE;
-            case 3: return CUSTOM_TAG;
-            case 4: return INFERRED;
-            case 0: return TAG_NOT_SET;
-            default: return null;
+            case 2:
+              return INFO_TYPE;
+            case 3:
+              return CUSTOM_TAG;
+            case 4:
+              return INFERRED;
+            case 0:
+              return TAG_NOT_SET;
+            default:
+              return null;
           }
         }
+
         public int getNumber() {
           return this.value;
         }
       };
 
-      public TagCase
-      getTagCase() {
-        return TagCase.forNumber(
-            tagCase_);
+      public TagCase getTagCase() {
+        return TagCase.forNumber(tagCase_);
       }
 
       public static final int FIELD_FIELD_NUMBER = 1;
       private com.google.privacy.dlp.v2.FieldId field_;
       /**
+       *
+       *
        * <pre>
        * Identifies the column. [required]
        * </pre>
@@ -4714,6 +5250,8 @@ private static final long serialVersionUID = 0L;
         return field_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Identifies the column. [required]
        * </pre>
@@ -4724,6 +5262,8 @@ private static final long serialVersionUID = 0L;
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
       /**
+       *
+       *
        * <pre>
        * Identifies the column. [required]
        * </pre>
@@ -4736,6 +5276,8 @@ private static final long serialVersionUID = 0L;
 
       public static final int INFO_TYPE_FIELD_NUMBER = 2;
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a InfoType to use the relevant public
        * dataset as a statistical model of population, if available. We
@@ -4750,6 +5292,8 @@ private static final long serialVersionUID = 0L;
         return tagCase_ == 2;
       }
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a InfoType to use the relevant public
        * dataset as a statistical model of population, if available. We
@@ -4762,11 +5306,13 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.InfoType getInfoType() {
         if (tagCase_ == 2) {
-           return (com.google.privacy.dlp.v2.InfoType) tag_;
+          return (com.google.privacy.dlp.v2.InfoType) tag_;
         }
         return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
       }
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a InfoType to use the relevant public
        * dataset as a statistical model of population, if available. We
@@ -4779,13 +5325,15 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
         if (tagCase_ == 2) {
-           return (com.google.privacy.dlp.v2.InfoType) tag_;
+          return (com.google.privacy.dlp.v2.InfoType) tag_;
         }
         return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
       }
 
       public static final int CUSTOM_TAG_FIELD_NUMBER = 3;
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
@@ -4802,8 +5350,7 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (tagCase_ == 3) {
             tag_ = s;
@@ -4812,6 +5359,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
@@ -4820,16 +5369,14 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string custom_tag = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getCustomTagBytes() {
+      public com.google.protobuf.ByteString getCustomTagBytes() {
         java.lang.Object ref = "";
         if (tagCase_ == 3) {
           ref = tag_;
         }
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           if (tagCase_ == 3) {
             tag_ = b;
           }
@@ -4841,6 +5388,8 @@ private static final long serialVersionUID = 0L;
 
       public static final int INFERRED_FIELD_NUMBER = 4;
       /**
+       *
+       *
        * <pre>
        * If no semantic tag is indicated, we infer the statistical model from
        * the distribution of values in the input data
@@ -4852,6 +5401,8 @@ private static final long serialVersionUID = 0L;
         return tagCase_ == 4;
       }
       /**
+       *
+       *
        * <pre>
        * If no semantic tag is indicated, we infer the statistical model from
        * the distribution of values in the input data
@@ -4861,11 +5412,13 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.protobuf.Empty getInferred() {
         if (tagCase_ == 4) {
-           return (com.google.protobuf.Empty) tag_;
+          return (com.google.protobuf.Empty) tag_;
         }
         return com.google.protobuf.Empty.getDefaultInstance();
       }
       /**
+       *
+       *
        * <pre>
        * If no semantic tag is indicated, we infer the statistical model from
        * the distribution of values in the input data
@@ -4875,12 +5428,13 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.protobuf.EmptyOrBuilder getInferredOrBuilder() {
         if (tagCase_ == 4) {
-           return (com.google.protobuf.Empty) tag_;
+          return (com.google.protobuf.Empty) tag_;
         }
         return com.google.protobuf.Empty.getDefaultInstance();
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -4892,8 +5446,7 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (field_ != null) {
           output.writeMessage(1, getField());
         }
@@ -4916,19 +5469,20 @@ private static final long serialVersionUID = 0L;
 
         size = 0;
         if (field_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, getField());
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getField());
         }
         if (tagCase_ == 2) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, (com.google.privacy.dlp.v2.InfoType) tag_);
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.privacy.dlp.v2.InfoType) tag_);
         }
         if (tagCase_ == 3) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tag_);
         }
         if (tagCase_ == 4) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, (com.google.protobuf.Empty) tag_);
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  4, (com.google.protobuf.Empty) tag_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -4938,34 +5492,31 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)) {
+        if (!(obj
+            instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)) {
           return super.equals(obj);
         }
-        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField other = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField) obj;
+        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField other =
+            (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField) obj;
 
         boolean result = true;
         result = result && (hasField() == other.hasField());
         if (hasField()) {
-          result = result && getField()
-              .equals(other.getField());
+          result = result && getField().equals(other.getField());
         }
-        result = result && getTagCase().equals(
-            other.getTagCase());
+        result = result && getTagCase().equals(other.getTagCase());
         if (!result) return false;
         switch (tagCase_) {
           case 2:
-            result = result && getInfoType()
-                .equals(other.getInfoType());
+            result = result && getInfoType().equals(other.getInfoType());
             break;
           case 3:
-            result = result && getCustomTag()
-                .equals(other.getCustomTag());
+            result = result && getCustomTag().equals(other.getCustomTag());
             break;
           case 4:
-            result = result && getInferred()
-                .equals(other.getInferred());
+            result = result && getInferred().equals(other.getInferred());
             break;
           case 0:
           default:
@@ -5006,88 +5557,103 @@ private static final long serialVersionUID = 0L;
         return hash;
       }
 
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField prototype) {
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -5099,38 +5665,42 @@ private static final long serialVersionUID = 0L;
       /**
        * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)
           com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_descriptor;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_fieldAccessorTable
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder.class);
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.class,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+                      .class);
         }
 
-        // Construct using com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.newBuilder()
+        // Construct using
+        // com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -5146,19 +5716,22 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_TaggedField_descriptor;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getDefaultInstanceForType() {
-          return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.getDefaultInstance();
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+              .getDefaultInstance();
         }
 
         @java.lang.Override
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField build() {
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField result = buildPartial();
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField result =
+              buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -5166,8 +5739,10 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField buildPartial() {
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField result = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField(this);
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+            buildPartial() {
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField result =
+              new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField(this);
           if (fieldBuilder_ == null) {
             result.field_ = field_;
           } else {
@@ -5199,67 +5774,79 @@ private static final long serialVersionUID = 0L;
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField) {
-            return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)other);
+          if (other
+              instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField) {
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField) other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField other) {
-          if (other == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField other) {
+          if (other
+              == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+                  .getDefaultInstance()) return this;
           if (other.hasField()) {
             mergeField(other.getField());
           }
           switch (other.getTagCase()) {
-            case INFO_TYPE: {
-              mergeInfoType(other.getInfoType());
-              break;
-            }
-            case CUSTOM_TAG: {
-              tagCase_ = 3;
-              tag_ = other.tag_;
-              onChanged();
-              break;
-            }
-            case INFERRED: {
-              mergeInferred(other.getInferred());
-              break;
-            }
-            case TAG_NOT_SET: {
-              break;
-            }
+            case INFO_TYPE:
+              {
+                mergeInfoType(other.getInfoType());
+                break;
+              }
+            case CUSTOM_TAG:
+              {
+                tagCase_ = 3;
+                tag_ = other.tag_;
+                onChanged();
+                break;
+              }
+            case INFERRED:
+              {
+                mergeInferred(other.getInferred());
+                break;
+              }
+            case TAG_NOT_SET:
+              {
+                break;
+              }
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -5276,11 +5863,14 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parsedMessage = null;
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField parsedMessage =
+              null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -5289,12 +5879,12 @@ private static final long serialVersionUID = 0L;
           }
           return this;
         }
+
         private int tagCase_ = 0;
         private java.lang.Object tag_;
-        public TagCase
-            getTagCase() {
-          return TagCase.forNumber(
-              tagCase_);
+
+        public TagCase getTagCase() {
+          return TagCase.forNumber(tagCase_);
         }
 
         public Builder clearTag() {
@@ -5304,11 +5894,15 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
-
         private com.google.privacy.dlp.v2.FieldId field_ = null;
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>
+            fieldBuilder_;
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5319,6 +5913,8 @@ private static final long serialVersionUID = 0L;
           return fieldBuilder_ != null || field_ != null;
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5333,6 +5929,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5353,14 +5951,15 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          */
-        public Builder setField(
-            com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+        public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
           if (fieldBuilder_ == null) {
             field_ = builderForValue.build();
             onChanged();
@@ -5371,6 +5970,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5381,7 +5982,9 @@ private static final long serialVersionUID = 0L;
           if (fieldBuilder_ == null) {
             if (field_ != null) {
               field_ =
-                com.google.privacy.dlp.v2.FieldId.newBuilder(field_).mergeFrom(value).buildPartial();
+                  com.google.privacy.dlp.v2.FieldId.newBuilder(field_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               field_ = value;
             }
@@ -5393,6 +5996,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5411,6 +6016,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5418,11 +6025,13 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          */
         public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-          
+
           onChanged();
           return getFieldFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5433,11 +6042,12 @@ private static final long serialVersionUID = 0L;
           if (fieldBuilder_ != null) {
             return fieldBuilder_.getMessageOrBuilder();
           } else {
-            return field_ == null ?
-                com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
+            return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Identifies the column. [required]
          * </pre>
@@ -5445,22 +6055,30 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>
             getFieldFieldBuilder() {
           if (fieldBuilder_ == null) {
-            fieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                    getField(),
-                    getParentForChildren(),
-                    isClean());
+            fieldBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.FieldId,
+                    com.google.privacy.dlp.v2.FieldId.Builder,
+                    com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                    getField(), getParentForChildren(), isClean());
             field_ = null;
           }
           return fieldBuilder_;
         }
 
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> infoTypeBuilder_;
+                com.google.privacy.dlp.v2.InfoType,
+                com.google.privacy.dlp.v2.InfoType.Builder,
+                com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+            infoTypeBuilder_;
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5475,6 +6093,8 @@ private static final long serialVersionUID = 0L;
           return tagCase_ == 2;
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5499,6 +6119,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5523,6 +6145,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5533,8 +6157,7 @@ private static final long serialVersionUID = 0L;
          *
          * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
          */
-        public Builder setInfoType(
-            com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
+        public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
           if (infoTypeBuilder_ == null) {
             tag_ = builderForValue.build();
             onChanged();
@@ -5545,6 +6168,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5557,10 +6182,12 @@ private static final long serialVersionUID = 0L;
          */
         public Builder mergeInfoType(com.google.privacy.dlp.v2.InfoType value) {
           if (infoTypeBuilder_ == null) {
-            if (tagCase_ == 2 &&
-                tag_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
-              tag_ = com.google.privacy.dlp.v2.InfoType.newBuilder((com.google.privacy.dlp.v2.InfoType) tag_)
-                  .mergeFrom(value).buildPartial();
+            if (tagCase_ == 2 && tag_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+              tag_ =
+                  com.google.privacy.dlp.v2.InfoType.newBuilder(
+                          (com.google.privacy.dlp.v2.InfoType) tag_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               tag_ = value;
             }
@@ -5575,6 +6202,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5602,6 +6231,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5616,6 +6247,8 @@ private static final long serialVersionUID = 0L;
           return getInfoTypeFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5637,6 +6270,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a InfoType to use the relevant public
          * dataset as a statistical model of population, if available. We
@@ -5648,25 +6283,31 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
+                com.google.privacy.dlp.v2.InfoType,
+                com.google.privacy.dlp.v2.InfoType.Builder,
+                com.google.privacy.dlp.v2.InfoTypeOrBuilder>
             getInfoTypeFieldBuilder() {
           if (infoTypeBuilder_ == null) {
             if (!(tagCase_ == 2)) {
               tag_ = com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
             }
-            infoTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
-                    (com.google.privacy.dlp.v2.InfoType) tag_,
-                    getParentForChildren(),
-                    isClean());
+            infoTypeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.InfoType,
+                    com.google.privacy.dlp.v2.InfoType.Builder,
+                    com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
+                    (com.google.privacy.dlp.v2.InfoType) tag_, getParentForChildren(), isClean());
             tag_ = null;
           }
           tagCase_ = 2;
-          onChanged();;
+          onChanged();
+          ;
           return infoTypeBuilder_;
         }
 
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
@@ -5681,8 +6322,7 @@ private static final long serialVersionUID = 0L;
             ref = tag_;
           }
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             if (tagCase_ == 3) {
               tag_ = s;
@@ -5693,6 +6333,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
@@ -5701,16 +6343,14 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string custom_tag = 3;</code>
          */
-        public com.google.protobuf.ByteString
-            getCustomTagBytes() {
+        public com.google.protobuf.ByteString getCustomTagBytes() {
           java.lang.Object ref = "";
           if (tagCase_ == 3) {
             ref = tag_;
           }
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             if (tagCase_ == 3) {
               tag_ = b;
             }
@@ -5720,6 +6360,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
@@ -5728,17 +6370,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string custom_tag = 3;</code>
          */
-        public Builder setCustomTag(
-            java.lang.String value) {
+        public Builder setCustomTag(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  tagCase_ = 3;
+            throw new NullPointerException();
+          }
+          tagCase_ = 3;
           tag_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
@@ -5756,6 +6399,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
@@ -5764,12 +6409,11 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string custom_tag = 3;</code>
          */
-        public Builder setCustomTagBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setCustomTagBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
           tagCase_ = 3;
           tag_ = value;
           onChanged();
@@ -5777,8 +6421,13 @@ private static final long serialVersionUID = 0L;
         }
 
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> inferredBuilder_;
+                com.google.protobuf.Empty,
+                com.google.protobuf.Empty.Builder,
+                com.google.protobuf.EmptyOrBuilder>
+            inferredBuilder_;
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5790,6 +6439,8 @@ private static final long serialVersionUID = 0L;
           return tagCase_ == 4;
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5811,6 +6462,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5832,6 +6485,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5839,8 +6494,7 @@ private static final long serialVersionUID = 0L;
          *
          * <code>.google.protobuf.Empty inferred = 4;</code>
          */
-        public Builder setInferred(
-            com.google.protobuf.Empty.Builder builderForValue) {
+        public Builder setInferred(com.google.protobuf.Empty.Builder builderForValue) {
           if (inferredBuilder_ == null) {
             tag_ = builderForValue.build();
             onChanged();
@@ -5851,6 +6505,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5860,10 +6516,11 @@ private static final long serialVersionUID = 0L;
          */
         public Builder mergeInferred(com.google.protobuf.Empty value) {
           if (inferredBuilder_ == null) {
-            if (tagCase_ == 4 &&
-                tag_ != com.google.protobuf.Empty.getDefaultInstance()) {
-              tag_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) tag_)
-                  .mergeFrom(value).buildPartial();
+            if (tagCase_ == 4 && tag_ != com.google.protobuf.Empty.getDefaultInstance()) {
+              tag_ =
+                  com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) tag_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               tag_ = value;
             }
@@ -5878,6 +6535,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5902,6 +6561,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5913,6 +6574,8 @@ private static final long serialVersionUID = 0L;
           return getInferredFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5931,6 +6594,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * If no semantic tag is indicated, we infer the statistical model from
          * the distribution of values in the input data
@@ -5939,23 +6604,28 @@ private static final long serialVersionUID = 0L;
          * <code>.google.protobuf.Empty inferred = 4;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> 
+                com.google.protobuf.Empty,
+                com.google.protobuf.Empty.Builder,
+                com.google.protobuf.EmptyOrBuilder>
             getInferredFieldBuilder() {
           if (inferredBuilder_ == null) {
             if (!(tagCase_ == 4)) {
               tag_ = com.google.protobuf.Empty.getDefaultInstance();
             }
-            inferredBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
-                    (com.google.protobuf.Empty) tag_,
-                    getParentForChildren(),
-                    isClean());
+            inferredBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Empty,
+                    com.google.protobuf.Empty.Builder,
+                    com.google.protobuf.EmptyOrBuilder>(
+                    (com.google.protobuf.Empty) tag_, getParentForChildren(), isClean());
             tag_ = null;
           }
           tagCase_ = 4;
-          onChanged();;
+          onChanged();
+          ;
           return inferredBuilder_;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5968,30 +6638,33 @@ private static final long serialVersionUID = 0L;
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)
       }
 
       // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField)
-      private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField DEFAULT_INSTANCE;
+      private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField();
+        DEFAULT_INSTANCE =
+            new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField();
       }
 
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getDefaultInstance() {
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<TaggedField>
-          PARSER = new com.google.protobuf.AbstractParser<TaggedField>() {
-        @java.lang.Override
-        public TaggedField parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TaggedField(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<TaggedField> PARSER =
+          new com.google.protobuf.AbstractParser<TaggedField>() {
+            @java.lang.Override
+            public TaggedField parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new TaggedField(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<TaggedField> parser() {
         return PARSER;
@@ -6003,17 +6676,20 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
-    public interface AuxiliaryTableOrBuilder extends
+    public interface AuxiliaryTableOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Auxiliary table location. [required]
        * </pre>
@@ -6022,6 +6698,8 @@ private static final long serialVersionUID = 0L;
        */
       boolean hasTable();
       /**
+       *
+       *
        * <pre>
        * Auxiliary table location. [required]
        * </pre>
@@ -6030,6 +6708,8 @@ private static final long serialVersionUID = 0L;
        */
       com.google.privacy.dlp.v2.BigQueryTable getTable();
       /**
+       *
+       *
        * <pre>
        * Auxiliary table location. [required]
        * </pre>
@@ -6039,50 +6719,79 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> 
+      java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField>
           getQuasiIdsList();
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getQuasiIds(int index);
+      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+          getQuasiIds(int index);
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
       int getQuasiIdsCount();
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> 
+      java.util.List<
+              ? extends
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .QuasiIdFieldOrBuilder>
           getQuasiIdsOrBuilderList();
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder getQuasiIdsOrBuilder(
-          int index);
+      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+              .QuasiIdFieldOrBuilder
+          getQuasiIdsOrBuilder(int index);
 
       /**
+       *
+       *
        * <pre>
        * The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -6093,6 +6802,8 @@ private static final long serialVersionUID = 0L;
        */
       boolean hasRelativeFrequency();
       /**
+       *
+       *
        * <pre>
        * The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -6103,6 +6814,8 @@ private static final long serialVersionUID = 0L;
        */
       com.google.privacy.dlp.v2.FieldId getRelativeFrequency();
       /**
+       *
+       *
        * <pre>
        * The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -6114,6 +6827,8 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.FieldIdOrBuilder getRelativeFrequencyOrBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * An auxiliary table contains statistical information on the relative
      * frequency of different quasi-identifiers values. It has one or several
@@ -6126,24 +6841,25 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable}
      */
-    public  static final class AuxiliaryTable extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class AuxiliaryTable extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)
         AuxiliaryTableOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use AuxiliaryTable.newBuilder() to construct.
       private AuxiliaryTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private AuxiliaryTable() {
         quasiIds_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private AuxiliaryTable(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6163,55 +6879,68 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField>();
-                  mutable_bitField0_ |= 0x00000002;
+              case 10:
+                {
+                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                    quasiIds_ =
+                        new java.util.ArrayList<
+                            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                                .AuxiliaryTable.QuasiIdField>();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  quasiIds_.add(
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                              .AuxiliaryTable.QuasiIdField.parser(),
+                          extensionRegistry));
+                  break;
                 }
-                quasiIds_.add(
-                    input.readMessage(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.parser(), extensionRegistry));
-                break;
-              }
-              case 18: {
-                com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-                if (relativeFrequency_ != null) {
-                  subBuilder = relativeFrequency_.toBuilder();
-                }
-                relativeFrequency_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(relativeFrequency_);
-                  relativeFrequency_ = subBuilder.buildPartial();
-                }
+              case 18:
+                {
+                  com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+                  if (relativeFrequency_ != null) {
+                    subBuilder = relativeFrequency_.toBuilder();
+                  }
+                  relativeFrequency_ =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(relativeFrequency_);
+                    relativeFrequency_ = subBuilder.buildPartial();
+                  }
 
-                break;
-              }
-              case 26: {
-                com.google.privacy.dlp.v2.BigQueryTable.Builder subBuilder = null;
-                if (table_ != null) {
-                  subBuilder = table_.toBuilder();
+                  break;
                 }
-                table_ = input.readMessage(com.google.privacy.dlp.v2.BigQueryTable.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(table_);
-                  table_ = subBuilder.buildPartial();
-                }
+              case 26:
+                {
+                  com.google.privacy.dlp.v2.BigQueryTable.Builder subBuilder = null;
+                  if (table_ != null) {
+                    subBuilder = table_.toBuilder();
+                  }
+                  table_ =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.BigQueryTable.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(table_);
+                    table_ = subBuilder.buildPartial();
+                  }
 
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+                  break;
                 }
-                break;
-              }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
             quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -6220,72 +6949,70 @@ private static final long serialVersionUID = 0L;
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder
+                    .class);
       }
 
-      public interface QuasiIdFieldOrBuilder extends
+      public interface QuasiIdFieldOrBuilder
+          extends
           // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField)
           com.google.protobuf.MessageOrBuilder {
 
-        /**
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-         */
+        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
         boolean hasField();
-        /**
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-         */
+        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
         com.google.privacy.dlp.v2.FieldId getField();
-        /**
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-         */
+        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
         com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder();
 
-        /**
-         * <code>string custom_tag = 2;</code>
-         */
+        /** <code>string custom_tag = 2;</code> */
         java.lang.String getCustomTag();
-        /**
-         * <code>string custom_tag = 2;</code>
-         */
-        com.google.protobuf.ByteString
-            getCustomTagBytes();
+        /** <code>string custom_tag = 2;</code> */
+        com.google.protobuf.ByteString getCustomTagBytes();
       }
       /**
+       *
+       *
        * <pre>
        * A quasi-identifier column has a custom_tag, used to know which column
        * in the data corresponds to which column in the statistical model.
        * </pre>
        *
-       * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField}
+       * Protobuf type {@code
+       * google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField}
        */
-      public  static final class QuasiIdField extends
-          com.google.protobuf.GeneratedMessageV3 implements
+      public static final class QuasiIdField extends com.google.protobuf.GeneratedMessageV3
+          implements
           // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField)
           QuasiIdFieldOrBuilder {
-      private static final long serialVersionUID = 0L;
+        private static final long serialVersionUID = 0L;
         // Use QuasiIdField.newBuilder() to construct.
         private QuasiIdField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
         }
+
         private QuasiIdField() {
           customTag_ = "";
         }
 
         @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
+
         private QuasiIdField(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6305,105 +7032,101 @@ private static final long serialVersionUID = 0L;
                 case 0:
                   done = true;
                   break;
-                case 10: {
-                  com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-                  if (field_ != null) {
-                    subBuilder = field_.toBuilder();
-                  }
-                  field_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(field_);
-                    field_ = subBuilder.buildPartial();
-                  }
+                case 10:
+                  {
+                    com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+                    if (field_ != null) {
+                      subBuilder = field_.toBuilder();
+                    }
+                    field_ =
+                        input.readMessage(
+                            com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                    if (subBuilder != null) {
+                      subBuilder.mergeFrom(field_);
+                      field_ = subBuilder.buildPartial();
+                    }
 
-                  break;
-                }
-                case 18: {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  customTag_ = s;
-                  break;
-                }
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
+                    break;
                   }
-                  break;
-                }
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+
+                    customTag_ = s;
+                    break;
+                  }
+                default:
+                  {
+                    if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
               }
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
           } finally {
             this.unknownFields = unknownFields.build();
             makeExtensionsImmutable();
           }
         }
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_descriptor;
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_fieldAccessorTable
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder.class);
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .QuasiIdField.class,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .QuasiIdField.Builder.class);
         }
 
         public static final int FIELD_FIELD_NUMBER = 1;
         private com.google.privacy.dlp.v2.FieldId field_;
-        /**
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-         */
+        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
         public boolean hasField() {
           return field_ != null;
         }
-        /**
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-         */
+        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
         public com.google.privacy.dlp.v2.FieldId getField() {
           return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
         }
-        /**
-         * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-         */
+        /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
         public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
           return getField();
         }
 
         public static final int CUSTOM_TAG_FIELD_NUMBER = 2;
         private volatile java.lang.Object customTag_;
-        /**
-         * <code>string custom_tag = 2;</code>
-         */
+        /** <code>string custom_tag = 2;</code> */
         public java.lang.String getCustomTag() {
           java.lang.Object ref = customTag_;
           if (ref instanceof java.lang.String) {
             return (java.lang.String) ref;
           } else {
-            com.google.protobuf.ByteString bs = 
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             customTag_ = s;
             return s;
           }
         }
-        /**
-         * <code>string custom_tag = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-            getCustomTagBytes() {
+        /** <code>string custom_tag = 2;</code> */
+        public com.google.protobuf.ByteString getCustomTagBytes() {
           java.lang.Object ref = customTag_;
           if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             customTag_ = b;
             return b;
           } else {
@@ -6412,6 +7135,7 @@ private static final long serialVersionUID = 0L;
         }
 
         private byte memoizedIsInitialized = -1;
+
         @java.lang.Override
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
@@ -6424,7 +7148,7 @@ private static final long serialVersionUID = 0L;
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
+            throws java.io.IOException {
           if (field_ != null) {
             output.writeMessage(1, getField());
           }
@@ -6441,8 +7165,7 @@ private static final long serialVersionUID = 0L;
 
           size = 0;
           if (field_ != null) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(1, getField());
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getField());
           }
           if (!getCustomTagBytes().isEmpty()) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customTag_);
@@ -6455,21 +7178,26 @@ private static final long serialVersionUID = 0L;
         @java.lang.Override
         public boolean equals(final java.lang.Object obj) {
           if (obj == this) {
-           return true;
+            return true;
           }
-          if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField)) {
+          if (!(obj
+              instanceof
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField)) {
             return super.equals(obj);
           }
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField other = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField) obj;
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+              other =
+                  (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                          .QuasiIdField)
+                      obj;
 
           boolean result = true;
           result = result && (hasField() == other.hasField());
           if (hasField()) {
-            result = result && getField()
-                .equals(other.getField());
+            result = result && getField().equals(other.getField());
           }
-          result = result && getCustomTag()
-              .equals(other.getCustomTag());
+          result = result && getCustomTag().equals(other.getCustomTag());
           result = result && unknownFields.equals(other.unknownFields);
           return result;
         }
@@ -6492,88 +7220,118 @@ private static final long serialVersionUID = 0L;
           return hash;
         }
 
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            java.nio.ByteBuffer data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input);
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
         }
 
         @java.lang.Override
-        public Builder newBuilderForType() { return newBuilder(); }
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
         }
-        public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField prototype) {
+
+        public static Builder newBuilder(
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+
         @java.lang.Override
         public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
         @java.lang.Override
@@ -6583,45 +7341,54 @@ private static final long serialVersionUID = 0L;
           return builder;
         }
         /**
+         *
+         *
          * <pre>
          * A quasi-identifier column has a custom_tag, used to know which column
          * in the data corresponds to which column in the statistical model.
          * </pre>
          *
-         * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField}
+         * Protobuf type {@code
+         * google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField}
          */
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
             // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField)
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_descriptor;
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdFieldOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.privacy.dlp.v2.DlpProto
+                .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_fieldAccessorTable
+            return com.google.privacy.dlp.v2.DlpProto
+                .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
-                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder.class);
+                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdField.class,
+                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdField.Builder.class);
           }
 
-          // Construct using com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.newBuilder()
+          // Construct using
+          // com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.newBuilder()
           private Builder() {
             maybeForceBuilderInitialization();
           }
 
-          private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
             maybeForceBuilderInitialization();
           }
+
           private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
+
           @java.lang.Override
           public Builder clear() {
             super.clear();
@@ -6637,19 +7404,25 @@ private static final long serialVersionUID = 0L;
           }
 
           @java.lang.Override
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_descriptor;
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.privacy.dlp.v2.DlpProto
+                .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_QuasiIdField_descriptor;
           }
 
           @java.lang.Override
-          public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getDefaultInstanceForType() {
-            return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.getDefaultInstance();
+          public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField
+              getDefaultInstanceForType() {
+            return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField.getDefaultInstance();
           }
 
           @java.lang.Override
-          public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField build() {
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField result = buildPartial();
+          public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField
+              build() {
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                result = buildPartial();
             if (!result.isInitialized()) {
               throw newUninitializedMessageException(result);
             }
@@ -6657,8 +7430,13 @@ private static final long serialVersionUID = 0L;
           }
 
           @java.lang.Override
-          public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField buildPartial() {
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField result = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField(this);
+          public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField
+              buildPartial() {
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                result =
+                    new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdField(this);
             if (fieldBuilder_ == null) {
               result.field_ = field_;
             } else {
@@ -6673,46 +7451,60 @@ private static final long serialVersionUID = 0L;
           public Builder clone() {
             return (Builder) super.clone();
           }
+
           @java.lang.Override
           public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
             return (Builder) super.setField(field, value);
           }
+
           @java.lang.Override
-          public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
             return (Builder) super.clearField(field);
           }
+
           @java.lang.Override
-          public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return (Builder) super.clearOneof(oneof);
           }
+
           @java.lang.Override
           public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
+              int index,
+              java.lang.Object value) {
             return (Builder) super.setRepeatedField(field, index, value);
           }
+
           @java.lang.Override
           public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
             return (Builder) super.addRepeatedField(field, value);
           }
+
           @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField) {
-              return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField)other);
+            if (other
+                instanceof
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField) {
+              return mergeFrom(
+                  (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                          .QuasiIdField)
+                      other);
             } else {
               super.mergeFrom(other);
               return this;
             }
           }
 
-          public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField other) {
-            if (other == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.getDefaultInstance()) return this;
+          public Builder mergeFrom(
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .QuasiIdField
+                  other) {
+            if (other
+                == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField.getDefaultInstance()) return this;
             if (other.hasField()) {
               mergeField(other.getField());
             }
@@ -6735,11 +7527,15 @@ private static final long serialVersionUID = 0L;
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField parsedMessage = null;
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                parsedMessage = null;
             try {
               parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField) e.getUnfinishedMessage();
+              parsedMessage =
+                  (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                          .QuasiIdField)
+                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
               if (parsedMessage != null) {
@@ -6751,26 +7547,25 @@ private static final long serialVersionUID = 0L;
 
           private com.google.privacy.dlp.v2.FieldId field_ = null;
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>
+              fieldBuilder_;
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           public boolean hasField() {
             return fieldBuilder_ != null || field_ != null;
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           public com.google.privacy.dlp.v2.FieldId getField() {
             if (fieldBuilder_ == null) {
-              return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
+              return field_ == null
+                  ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+                  : field_;
             } else {
               return fieldBuilder_.getMessage();
             }
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           public Builder setField(com.google.privacy.dlp.v2.FieldId value) {
             if (fieldBuilder_ == null) {
               if (value == null) {
@@ -6784,11 +7579,8 @@ private static final long serialVersionUID = 0L;
 
             return this;
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
-          public Builder setField(
-              com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
+          public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
             if (fieldBuilder_ == null) {
               field_ = builderForValue.build();
               onChanged();
@@ -6798,14 +7590,14 @@ private static final long serialVersionUID = 0L;
 
             return this;
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           public Builder mergeField(com.google.privacy.dlp.v2.FieldId value) {
             if (fieldBuilder_ == null) {
               if (field_ != null) {
                 field_ =
-                  com.google.privacy.dlp.v2.FieldId.newBuilder(field_).mergeFrom(value).buildPartial();
+                    com.google.privacy.dlp.v2.FieldId.newBuilder(field_)
+                        .mergeFrom(value)
+                        .buildPartial();
               } else {
                 field_ = value;
               }
@@ -6816,9 +7608,7 @@ private static final long serialVersionUID = 0L;
 
             return this;
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           public Builder clearField() {
             if (fieldBuilder_ == null) {
               field_ = null;
@@ -6830,51 +7620,46 @@ private static final long serialVersionUID = 0L;
 
             return this;
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-            
+
             onChanged();
             return getFieldFieldBuilder().getBuilder();
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           public com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldOrBuilder() {
             if (fieldBuilder_ != null) {
               return fieldBuilder_.getMessageOrBuilder();
             } else {
-              return field_ == null ?
-                  com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
+              return field_ == null
+                  ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+                  : field_;
             }
           }
-          /**
-           * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
-           */
+          /** <code>.google.privacy.dlp.v2.FieldId field = 1;</code> */
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>
               getFieldFieldBuilder() {
             if (fieldBuilder_ == null) {
-              fieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                      getField(),
-                      getParentForChildren(),
-                      isClean());
+              fieldBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.privacy.dlp.v2.FieldId,
+                      com.google.privacy.dlp.v2.FieldId.Builder,
+                      com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                      getField(), getParentForChildren(), isClean());
               field_ = null;
             }
             return fieldBuilder_;
           }
 
           private java.lang.Object customTag_ = "";
-          /**
-           * <code>string custom_tag = 2;</code>
-           */
+          /** <code>string custom_tag = 2;</code> */
           public java.lang.String getCustomTag() {
             java.lang.Object ref = customTag_;
             if (!(ref instanceof java.lang.String)) {
-              com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
               java.lang.String s = bs.toStringUtf8();
               customTag_ = s;
               return s;
@@ -6882,58 +7667,47 @@ private static final long serialVersionUID = 0L;
               return (java.lang.String) ref;
             }
           }
-          /**
-           * <code>string custom_tag = 2;</code>
-           */
-          public com.google.protobuf.ByteString
-              getCustomTagBytes() {
+          /** <code>string custom_tag = 2;</code> */
+          public com.google.protobuf.ByteString getCustomTagBytes() {
             java.lang.Object ref = customTag_;
             if (ref instanceof String) {
-              com.google.protobuf.ByteString b = 
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
               customTag_ = b;
               return b;
             } else {
               return (com.google.protobuf.ByteString) ref;
             }
           }
-          /**
-           * <code>string custom_tag = 2;</code>
-           */
-          public Builder setCustomTag(
-              java.lang.String value) {
+          /** <code>string custom_tag = 2;</code> */
+          public Builder setCustomTag(java.lang.String value) {
             if (value == null) {
-    throw new NullPointerException();
-  }
-  
+              throw new NullPointerException();
+            }
+
             customTag_ = value;
             onChanged();
             return this;
           }
-          /**
-           * <code>string custom_tag = 2;</code>
-           */
+          /** <code>string custom_tag = 2;</code> */
           public Builder clearCustomTag() {
-            
+
             customTag_ = getDefaultInstance().getCustomTag();
             onChanged();
             return this;
           }
-          /**
-           * <code>string custom_tag = 2;</code>
-           */
-          public Builder setCustomTagBytes(
-              com.google.protobuf.ByteString value) {
+          /** <code>string custom_tag = 2;</code> */
+          public Builder setCustomTagBytes(com.google.protobuf.ByteString value) {
             if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-            
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
             customTag_ = value;
             onChanged();
             return this;
           }
+
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6946,30 +7720,36 @@ private static final long serialVersionUID = 0L;
             return super.mergeUnknownFields(unknownFields);
           }
 
-
           // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField)
         }
 
         // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField)
-        private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField DEFAULT_INSTANCE;
+        private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                .AuxiliaryTable.QuasiIdField
+            DEFAULT_INSTANCE;
+
         static {
-          DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField();
+          DEFAULT_INSTANCE =
+              new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField();
         }
 
-        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getDefaultInstance() {
+        public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
-        private static final com.google.protobuf.Parser<QuasiIdField>
-            PARSER = new com.google.protobuf.AbstractParser<QuasiIdField>() {
-          @java.lang.Override
-          public QuasiIdField parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new QuasiIdField(input, extensionRegistry);
-          }
-        };
+        private static final com.google.protobuf.Parser<QuasiIdField> PARSER =
+            new com.google.protobuf.AbstractParser<QuasiIdField>() {
+              @java.lang.Override
+              public QuasiIdField parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new QuasiIdField(input, extensionRegistry);
+              }
+            };
 
         public static com.google.protobuf.Parser<QuasiIdField> parser() {
           return PARSER;
@@ -6981,16 +7761,19 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getDefaultInstanceForType() {
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
-
       }
 
       private int bitField0_;
       public static final int TABLE_FIELD_NUMBER = 3;
       private com.google.privacy.dlp.v2.BigQueryTable table_;
       /**
+       *
+       *
        * <pre>
        * Auxiliary table location. [required]
        * </pre>
@@ -7001,6 +7784,8 @@ private static final long serialVersionUID = 0L;
         return table_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Auxiliary table location. [required]
        * </pre>
@@ -7008,9 +7793,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
        */
       public com.google.privacy.dlp.v2.BigQueryTable getTable() {
-        return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
+        return table_ == null
+            ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+            : table_;
       }
       /**
+       *
+       *
        * <pre>
        * Auxiliary table location. [required]
        * </pre>
@@ -7022,63 +7811,97 @@ private static final long serialVersionUID = 0L;
       }
 
       public static final int QUASI_IDS_FIELD_NUMBER = 1;
-      private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> quasiIds_;
+      private java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField>
+          quasiIds_;
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> getQuasiIdsList() {
+      public java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .QuasiIdField>
+          getQuasiIdsList() {
         return quasiIds_;
       }
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> 
+      public java.util.List<
+              ? extends
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .QuasiIdFieldOrBuilder>
           getQuasiIdsOrBuilderList() {
         return quasiIds_;
       }
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
       public int getQuasiIdsCount() {
         return quasiIds_.size();
       }
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getQuasiIds(int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+              .QuasiIdField
+          getQuasiIds(int index) {
         return quasiIds_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * Quasi-identifier columns. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder getQuasiIdsOrBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+              .QuasiIdFieldOrBuilder
+          getQuasiIdsOrBuilder(int index) {
         return quasiIds_.get(index);
       }
 
       public static final int RELATIVE_FREQUENCY_FIELD_NUMBER = 2;
       private com.google.privacy.dlp.v2.FieldId relativeFrequency_;
       /**
+       *
+       *
        * <pre>
        * The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -7091,6 +7914,8 @@ private static final long serialVersionUID = 0L;
         return relativeFrequency_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -7100,9 +7925,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
        */
       public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
-        return relativeFrequency_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : relativeFrequency_;
+        return relativeFrequency_ == null
+            ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+            : relativeFrequency_;
       }
       /**
+       *
+       *
        * <pre>
        * The relative frequency column must contain a floating-point number
        * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -7116,6 +7945,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -7127,8 +7957,7 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         for (int i = 0; i < quasiIds_.size(); i++) {
           output.writeMessage(1, quasiIds_.get(i));
         }
@@ -7148,16 +7977,14 @@ private static final long serialVersionUID = 0L;
 
         size = 0;
         for (int i = 0; i < quasiIds_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, quasiIds_.get(i));
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIds_.get(i));
         }
         if (relativeFrequency_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, getRelativeFrequency());
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRelativeFrequency());
         }
         if (table_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getTable());
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTable());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -7167,25 +7994,25 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)) {
+        if (!(obj
+            instanceof
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)) {
           return super.equals(obj);
         }
-        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable other = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable) obj;
+        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable other =
+            (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable) obj;
 
         boolean result = true;
         result = result && (hasTable() == other.hasTable());
         if (hasTable()) {
-          result = result && getTable()
-              .equals(other.getTable());
+          result = result && getTable().equals(other.getTable());
         }
-        result = result && getQuasiIdsList()
-            .equals(other.getQuasiIdsList());
+        result = result && getQuasiIdsList().equals(other.getQuasiIdsList());
         result = result && (hasRelativeFrequency() == other.hasRelativeFrequency());
         if (hasRelativeFrequency()) {
-          result = result && getRelativeFrequency()
-              .equals(other.getRelativeFrequency());
+          result = result && getRelativeFrequency().equals(other.getRelativeFrequency());
         }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
@@ -7215,88 +8042,103 @@ private static final long serialVersionUID = 0L;
         return hash;
       }
 
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable prototype) {
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -7306,6 +8148,8 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * An auxiliary table contains statistical information on the relative
        * frequency of different quasi-identifiers values. It has one or several
@@ -7316,41 +8160,47 @@ private static final long serialVersionUID = 0L;
        * tuple is highly reidentifiable).
        * </pre>
        *
-       * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable}
+       * Protobuf type {@code
+       * google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)
           com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_descriptor;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_fieldAccessorTable
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder.class);
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.class,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .Builder.class);
         }
 
-        // Construct using com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.newBuilder()
+        // Construct using
+        // com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
             getQuasiIdsFieldBuilder();
           }
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -7376,19 +8226,22 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpProto
+              .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_AuxiliaryTable_descriptor;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable getDefaultInstanceForType() {
-          return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.getDefaultInstance();
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+              .getDefaultInstance();
         }
 
         @java.lang.Override
         public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable build() {
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable result = buildPartial();
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable result =
+              buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -7396,8 +8249,10 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable buildPartial() {
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable result = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable(this);
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+            buildPartial() {
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable result =
+              new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable(this);
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (tableBuilder_ == null) {
@@ -7428,46 +8283,56 @@ private static final long serialVersionUID = 0L;
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable) {
-            return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)other);
+          if (other
+              instanceof
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable) {
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)
+                    other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable other) {
-          if (other == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable other) {
+          if (other
+              == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                  .getDefaultInstance()) return this;
           if (other.hasTable()) {
             mergeTable(other.getTable());
           }
@@ -7489,9 +8354,10 @@ private static final long serialVersionUID = 0L;
                 quasiIdsBuilder_ = null;
                 quasiIds_ = other.quasiIds_;
                 bitField0_ = (bitField0_ & ~0x00000002);
-                quasiIdsBuilder_ = 
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getQuasiIdsFieldBuilder() : null;
+                quasiIdsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getQuasiIdsFieldBuilder()
+                        : null;
               } else {
                 quasiIdsBuilder_.addAllMessages(other.quasiIds_);
               }
@@ -7515,11 +8381,14 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable parsedMessage = null;
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+              parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -7528,12 +8397,18 @@ private static final long serialVersionUID = 0L;
           }
           return this;
         }
+
         private int bitField0_;
 
         private com.google.privacy.dlp.v2.BigQueryTable table_ = null;
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.BigQueryTable, com.google.privacy.dlp.v2.BigQueryTable.Builder, com.google.privacy.dlp.v2.BigQueryTableOrBuilder> tableBuilder_;
+                com.google.privacy.dlp.v2.BigQueryTable,
+                com.google.privacy.dlp.v2.BigQueryTable.Builder,
+                com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
+            tableBuilder_;
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7544,6 +8419,8 @@ private static final long serialVersionUID = 0L;
           return tableBuilder_ != null || table_ != null;
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7552,12 +8429,16 @@ private static final long serialVersionUID = 0L;
          */
         public com.google.privacy.dlp.v2.BigQueryTable getTable() {
           if (tableBuilder_ == null) {
-            return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
+            return table_ == null
+                ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+                : table_;
           } else {
             return tableBuilder_.getMessage();
           }
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7578,14 +8459,15 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
          */
-        public Builder setTable(
-            com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
+        public Builder setTable(com.google.privacy.dlp.v2.BigQueryTable.Builder builderForValue) {
           if (tableBuilder_ == null) {
             table_ = builderForValue.build();
             onChanged();
@@ -7596,6 +8478,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7606,7 +8490,9 @@ private static final long serialVersionUID = 0L;
           if (tableBuilder_ == null) {
             if (table_ != null) {
               table_ =
-                com.google.privacy.dlp.v2.BigQueryTable.newBuilder(table_).mergeFrom(value).buildPartial();
+                  com.google.privacy.dlp.v2.BigQueryTable.newBuilder(table_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               table_ = value;
             }
@@ -7618,6 +8504,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7636,6 +8524,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7643,11 +8533,13 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
          */
         public com.google.privacy.dlp.v2.BigQueryTable.Builder getTableBuilder() {
-          
+
           onChanged();
           return getTableFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7658,11 +8550,14 @@ private static final long serialVersionUID = 0L;
           if (tableBuilder_ != null) {
             return tableBuilder_.getMessageOrBuilder();
           } else {
-            return table_ == null ?
-                com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
+            return table_ == null
+                ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
+                : table_;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Auxiliary table location. [required]
          * </pre>
@@ -7670,39 +8565,61 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.BigQueryTable table = 3;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.BigQueryTable, com.google.privacy.dlp.v2.BigQueryTable.Builder, com.google.privacy.dlp.v2.BigQueryTableOrBuilder> 
+                com.google.privacy.dlp.v2.BigQueryTable,
+                com.google.privacy.dlp.v2.BigQueryTable.Builder,
+                com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
             getTableFieldBuilder() {
           if (tableBuilder_ == null) {
-            tableBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.privacy.dlp.v2.BigQueryTable, com.google.privacy.dlp.v2.BigQueryTable.Builder, com.google.privacy.dlp.v2.BigQueryTableOrBuilder>(
-                    getTable(),
-                    getParentForChildren(),
-                    isClean());
+            tableBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.BigQueryTable,
+                    com.google.privacy.dlp.v2.BigQueryTable.Builder,
+                    com.google.privacy.dlp.v2.BigQueryTableOrBuilder>(
+                    getTable(), getParentForChildren(), isClean());
             table_ = null;
           }
           return tableBuilder_;
         }
 
-        private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> quasiIds_ =
-          java.util.Collections.emptyList();
+        private java.util.List<
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField>
+            quasiIds_ = java.util.Collections.emptyList();
+
         private void ensureQuasiIdsIsMutable() {
           if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField>(quasiIds_);
+            quasiIds_ =
+                new java.util.ArrayList<
+                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdField>(quasiIds_);
             bitField0_ |= 0x00000002;
-           }
+          }
         }
 
         private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> quasiIdsBuilder_;
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdFieldOrBuilder>
+            quasiIdsBuilder_;
 
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> getQuasiIdsList() {
+        public java.util.List<
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField>
+            getQuasiIdsList() {
           if (quasiIdsBuilder_ == null) {
             return java.util.Collections.unmodifiableList(quasiIds_);
           } else {
@@ -7710,11 +8627,15 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public int getQuasiIdsCount() {
           if (quasiIdsBuilder_ == null) {
@@ -7724,13 +8645,19 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField getQuasiIds(int index) {
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField
+            getQuasiIds(int index) {
           if (quasiIdsBuilder_ == null) {
             return quasiIds_.get(index);
           } else {
@@ -7738,14 +8665,20 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder setQuasiIds(
-            int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField value) {
+            int index,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                value) {
           if (quasiIdsBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -7759,14 +8692,21 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder setQuasiIds(
-            int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder builderForValue) {
+            int index,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                    .Builder
+                builderForValue) {
           if (quasiIdsBuilder_ == null) {
             ensureQuasiIdsIsMutable();
             quasiIds_.set(index, builderForValue.build());
@@ -7777,13 +8717,19 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public Builder addQuasiIds(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField value) {
+        public Builder addQuasiIds(
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                value) {
           if (quasiIdsBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -7797,14 +8743,20 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder addQuasiIds(
-            int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField value) {
+            int index,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                value) {
           if (quasiIdsBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -7818,14 +8770,20 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder addQuasiIds(
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder builderForValue) {
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                    .Builder
+                builderForValue) {
           if (quasiIdsBuilder_ == null) {
             ensureQuasiIdsIsMutable();
             quasiIds_.add(builderForValue.build());
@@ -7836,14 +8794,21 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder addQuasiIds(
-            int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder builderForValue) {
+            int index,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField
+                    .Builder
+                builderForValue) {
           if (quasiIdsBuilder_ == null) {
             ensureQuasiIdsIsMutable();
             quasiIds_.add(index, builderForValue.build());
@@ -7854,18 +8819,25 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder addAllQuasiIds(
-            java.lang.Iterable<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField> values) {
+            java.lang.Iterable<
+                    ? extends
+                        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                            .QuasiIdField>
+                values) {
           if (quasiIdsBuilder_ == null) {
             ensureQuasiIdsIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, quasiIds_);
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, quasiIds_);
             onChanged();
           } else {
             quasiIdsBuilder_.addAllMessages(values);
@@ -7873,11 +8845,15 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder clearQuasiIds() {
           if (quasiIdsBuilder_ == null) {
@@ -7890,11 +8866,15 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
         public Builder removeQuasiIds(int index) {
           if (quasiIdsBuilder_ == null) {
@@ -7907,39 +8887,57 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder getQuasiIdsBuilder(
-            int index) {
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField.Builder
+            getQuasiIdsBuilder(int index) {
           return getQuasiIdsFieldBuilder().getBuilder(index);
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder getQuasiIdsOrBuilder(
-            int index) {
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdFieldOrBuilder
+            getQuasiIdsOrBuilder(int index) {
           if (quasiIdsBuilder_ == null) {
-            return quasiIds_.get(index);  } else {
+            return quasiIds_.get(index);
+          } else {
             return quasiIdsBuilder_.getMessageOrBuilder(index);
           }
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> 
-             getQuasiIdsOrBuilderList() {
+        public java.util.List<
+                ? extends
+                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdFieldOrBuilder>
+            getQuasiIdsOrBuilderList() {
           if (quasiIdsBuilder_ != null) {
             return quasiIdsBuilder_.getMessageOrBuilderList();
           } else {
@@ -7947,45 +8945,79 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder addQuasiIdsBuilder() {
-          return getQuasiIdsFieldBuilder().addBuilder(
-              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.getDefaultInstance());
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField.Builder
+            addQuasiIdsBuilder() {
+          return getQuasiIdsFieldBuilder()
+              .addBuilder(
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .QuasiIdField.getDefaultInstance());
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder addQuasiIdsBuilder(
-            int index) {
-          return getQuasiIdsFieldBuilder().addBuilder(
-              index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.getDefaultInstance());
+        public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                .QuasiIdField.Builder
+            addQuasiIdsBuilder(int index) {
+          return getQuasiIdsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .QuasiIdField.getDefaultInstance());
         }
         /**
+         *
+         *
          * <pre>
          * Quasi-identifier columns. [required]
          * </pre>
          *
-         * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;</code>
+         * <code>
+         * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField quasi_ids = 1;
+         * </code>
          */
-        public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder> 
-             getQuasiIdsBuilderList() {
+        public java.util.List<
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField.Builder>
+            getQuasiIdsBuilderList() {
           return getQuasiIdsFieldBuilder().getBuilderList();
         }
+
         private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder> 
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdField.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .QuasiIdFieldOrBuilder>
             getQuasiIdsFieldBuilder() {
           if (quasiIdsBuilder_ == null) {
-            quasiIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdField.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.QuasiIdFieldOrBuilder>(
+            quasiIdsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdField,
+                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdField.Builder,
+                    com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                        .QuasiIdFieldOrBuilder>(
                     quasiIds_,
                     ((bitField0_ & 0x00000002) == 0x00000002),
                     getParentForChildren(),
@@ -7997,8 +9029,13 @@ private static final long serialVersionUID = 0L;
 
         private com.google.privacy.dlp.v2.FieldId relativeFrequency_ = null;
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> relativeFrequencyBuilder_;
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>
+            relativeFrequencyBuilder_;
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8011,6 +9048,8 @@ private static final long serialVersionUID = 0L;
           return relativeFrequencyBuilder_ != null || relativeFrequency_ != null;
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8021,12 +9060,16 @@ private static final long serialVersionUID = 0L;
          */
         public com.google.privacy.dlp.v2.FieldId getRelativeFrequency() {
           if (relativeFrequencyBuilder_ == null) {
-            return relativeFrequency_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : relativeFrequency_;
+            return relativeFrequency_ == null
+                ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+                : relativeFrequency_;
           } else {
             return relativeFrequencyBuilder_.getMessage();
           }
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8049,6 +9092,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8069,6 +9114,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8081,7 +9128,9 @@ private static final long serialVersionUID = 0L;
           if (relativeFrequencyBuilder_ == null) {
             if (relativeFrequency_ != null) {
               relativeFrequency_ =
-                com.google.privacy.dlp.v2.FieldId.newBuilder(relativeFrequency_).mergeFrom(value).buildPartial();
+                  com.google.privacy.dlp.v2.FieldId.newBuilder(relativeFrequency_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               relativeFrequency_ = value;
             }
@@ -8093,6 +9142,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8113,6 +9164,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8122,11 +9175,13 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
          */
         public com.google.privacy.dlp.v2.FieldId.Builder getRelativeFrequencyBuilder() {
-          
+
           onChanged();
           return getRelativeFrequencyFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8139,11 +9194,14 @@ private static final long serialVersionUID = 0L;
           if (relativeFrequencyBuilder_ != null) {
             return relativeFrequencyBuilder_.getMessageOrBuilder();
           } else {
-            return relativeFrequency_ == null ?
-                com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : relativeFrequency_;
+            return relativeFrequency_ == null
+                ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+                : relativeFrequency_;
           }
         }
         /**
+         *
+         *
          * <pre>
          * The relative frequency column must contain a floating-point number
          * between 0 and 1 (inclusive). Null values are assumed to be zero.
@@ -8153,18 +9211,22 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>
             getRelativeFrequencyFieldBuilder() {
           if (relativeFrequencyBuilder_ == null) {
-            relativeFrequencyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                    getRelativeFrequency(),
-                    getParentForChildren(),
-                    isClean());
+            relativeFrequencyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.FieldId,
+                    com.google.privacy.dlp.v2.FieldId.Builder,
+                    com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                    getRelativeFrequency(), getParentForChildren(), isClean());
             relativeFrequency_ = null;
           }
           return relativeFrequencyBuilder_;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8177,30 +9239,34 @@ private static final long serialVersionUID = 0L;
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)
       }
 
       // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable)
-      private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable DEFAULT_INSTANCE;
+      private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+              .AuxiliaryTable
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable();
+        DEFAULT_INSTANCE =
+            new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable();
       }
 
-      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable getDefaultInstance() {
+      public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<AuxiliaryTable>
-          PARSER = new com.google.protobuf.AbstractParser<AuxiliaryTable>() {
-        @java.lang.Override
-        public AuxiliaryTable parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AuxiliaryTable(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<AuxiliaryTable> PARSER =
+          new com.google.protobuf.AbstractParser<AuxiliaryTable>() {
+            @java.lang.Override
+            public AuxiliaryTable parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new AuxiliaryTable(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<AuxiliaryTable> parser() {
         return PARSER;
@@ -8212,76 +9278,103 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
     private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
-    private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> quasiIds_;
+    private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
+        quasiIds_;
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> getQuasiIdsList() {
+    public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
+        getQuasiIdsList() {
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> 
+    public java.util.List<
+            ? extends
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder>
         getQuasiIdsOrBuilderList() {
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
     public int getQuasiIdsCount() {
       return quasiIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(int index) {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(
+        int index) {
       return quasiIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two columns can have the
      * same tag. [required]
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder getQuasiIdsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder
+        getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
     }
 
     public static final int REGION_CODE_FIELD_NUMBER = 2;
     private volatile java.lang.Object regionCode_;
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -8295,14 +9388,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         regionCode_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -8311,13 +9405,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string region_code = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getRegionCodeBytes() {
+    public com.google.protobuf.ByteString getRegionCodeBytes() {
       java.lang.Object ref = regionCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         regionCode_ = b;
         return b;
       } else {
@@ -8326,71 +9418,100 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int AUXILIARY_TABLES_FIELD_NUMBER = 3;
-    private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable> auxiliaryTables_;
+    private java.util.List<
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>
+        auxiliaryTables_;
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable> getAuxiliaryTablesList() {
+    public java.util.List<
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>
+        getAuxiliaryTablesList() {
       return auxiliaryTables_;
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder> 
+    public java.util.List<
+            ? extends
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                    .AuxiliaryTableOrBuilder>
         getAuxiliaryTablesOrBuilderList() {
       return auxiliaryTables_;
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
     public int getAuxiliaryTablesCount() {
       return auxiliaryTables_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable getAuxiliaryTables(int index) {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+        getAuxiliaryTables(int index) {
       return auxiliaryTables_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers column must appear in exactly one column
      * of one auxiliary table.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder getAuxiliaryTablesOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder
+        getAuxiliaryTablesOrBuilder(int index) {
       return auxiliaryTables_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -8402,8 +9523,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
@@ -8423,15 +9543,14 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       for (int i = 0; i < quasiIds_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, quasiIds_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIds_.get(i));
       }
       if (!getRegionCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, auxiliaryTables_.get(i));
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, auxiliaryTables_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8441,20 +9560,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig other = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) obj;
+      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig other =
+          (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) obj;
 
       boolean result = true;
-      result = result && getQuasiIdsList()
-          .equals(other.getQuasiIdsList());
-      result = result && getRegionCode()
-          .equals(other.getRegionCode());
-      result = result && getAuxiliaryTablesList()
-          .equals(other.getAuxiliaryTablesList());
+      result = result && getQuasiIdsList().equals(other.getQuasiIdsList());
+      result = result && getRegionCode().equals(other.getRegionCode());
+      result = result && getAuxiliaryTablesList().equals(other.getAuxiliaryTablesList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -8482,87 +9599,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -8572,6 +9696,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Reidentifiability metric. This corresponds to a risk model similar to what
      * is called "journalist risk" in the literature, except the attack dataset is
@@ -8584,21 +9710,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)
         com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.newBuilder()
@@ -8606,18 +9735,18 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getQuasiIdsFieldBuilder();
           getAuxiliaryTablesFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -8639,13 +9768,14 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_KMapEstimationConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+          getDefaultInstanceForType() {
         return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance();
       }
 
@@ -8660,7 +9790,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig buildPartial() {
-        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig(this);
+        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig result =
+            new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
@@ -8691,38 +9822,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) {
-          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)other);
+          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -8730,7 +9864,9 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig other) {
-        if (other == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance()) return this;
+        if (other
+            == com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance())
+          return this;
         if (quasiIdsBuilder_ == null) {
           if (!other.quasiIds_.isEmpty()) {
             if (quasiIds_.isEmpty()) {
@@ -8749,9 +9885,10 @@ private static final long serialVersionUID = 0L;
               quasiIdsBuilder_ = null;
               quasiIds_ = other.quasiIds_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              quasiIdsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getQuasiIdsFieldBuilder() : null;
+              quasiIdsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getQuasiIdsFieldBuilder()
+                      : null;
             } else {
               quasiIdsBuilder_.addAllMessages(other.quasiIds_);
             }
@@ -8779,9 +9916,10 @@ private static final long serialVersionUID = 0L;
               auxiliaryTablesBuilder_ = null;
               auxiliaryTables_ = other.auxiliaryTables_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              auxiliaryTablesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAuxiliaryTablesFieldBuilder() : null;
+              auxiliaryTablesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getAuxiliaryTablesFieldBuilder()
+                      : null;
             } else {
               auxiliaryTablesBuilder_.addAllMessages(other.auxiliaryTables_);
             }
@@ -8806,7 +9944,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8815,29 +9955,44 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
-      private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> quasiIds_ =
-        java.util.Collections.emptyList();
+      private java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
+          quasiIds_ = java.util.Collections.emptyList();
+
       private void ensureQuasiIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>(quasiIds_);
+          quasiIds_ =
+              new java.util.ArrayList<
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>(
+                  quasiIds_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> quasiIdsBuilder_;
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder>
+          quasiIdsBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> getQuasiIdsList() {
+      public java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
+          getQuasiIdsList() {
         if (quasiIdsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(quasiIds_);
         } else {
@@ -8845,12 +10000,16 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public int getQuasiIdsCount() {
         if (quasiIdsBuilder_ == null) {
@@ -8860,14 +10019,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField getQuasiIds(
+          int index) {
         if (quasiIdsBuilder_ == null) {
           return quasiIds_.get(index);
         } else {
@@ -8875,15 +10039,20 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder setQuasiIds(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8897,15 +10066,21 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder setQuasiIds(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder builderForValue) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+              builderForValue) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
           quasiIds_.set(index, builderForValue.build());
@@ -8916,14 +10091,19 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public Builder addQuasiIds(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
+      public Builder addQuasiIds(
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8937,15 +10117,20 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder addQuasiIds(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8959,15 +10144,20 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder addQuasiIds(
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder builderForValue) {
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+              builderForValue) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
           quasiIds_.add(builderForValue.build());
@@ -8978,15 +10168,21 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder addQuasiIds(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder builderForValue) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+              builderForValue) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
           quasiIds_.add(index, builderForValue.build());
@@ -8997,19 +10193,25 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder addAllQuasiIds(
-          java.lang.Iterable<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField> values) {
+          java.lang.Iterable<
+                  ? extends
+                      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField>
+              values) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, quasiIds_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, quasiIds_);
           onChanged();
         } else {
           quasiIdsBuilder_.addAllMessages(values);
@@ -9017,12 +10219,16 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder clearQuasiIds() {
         if (quasiIdsBuilder_ == null) {
@@ -9035,12 +10241,16 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
       public Builder removeQuasiIds(int index) {
         if (quasiIdsBuilder_ == null) {
@@ -9053,42 +10263,57 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder getQuasiIdsBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+          getQuasiIdsBuilder(int index) {
         return getQuasiIdsFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder getQuasiIdsOrBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder
+          getQuasiIdsOrBuilder(int index) {
         if (quasiIdsBuilder_ == null) {
-          return quasiIds_.get(index);  } else {
+          return quasiIds_.get(index);
+        } else {
           return quasiIdsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> 
-           getQuasiIdsOrBuilderList() {
+      public java.util.List<
+              ? extends
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder>
+          getQuasiIdsOrBuilderList() {
         if (quasiIdsBuilder_ != null) {
           return quasiIdsBuilder_.getMessageOrBuilderList();
         } else {
@@ -9096,48 +10321,74 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder addQuasiIdsBuilder() {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.getDefaultInstance());
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+          addQuasiIdsBuilder() {
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+                    .getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder addQuasiIdsBuilder(
-          int index) {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.getDefaultInstance());
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder
+          addQuasiIdsBuilder(int index) {
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField
+                    .getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two columns can have the
        * same tag. [required]
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField quasi_ids = 1;
+       * </code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder> 
-           getQuasiIdsBuilderList() {
+      public java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder>
+          getQuasiIdsBuilderList() {
         return getQuasiIdsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder> 
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder>
           getQuasiIdsFieldBuilder() {
         if (quasiIdsBuilder_ == null) {
-          quasiIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedFieldOrBuilder>(
+          quasiIdsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.TaggedField.Builder,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                      .TaggedFieldOrBuilder>(
                   quasiIds_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -9149,6 +10400,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object regionCode_ = "";
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -9160,8 +10413,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getRegionCode() {
         java.lang.Object ref = regionCode_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           regionCode_ = s;
           return s;
@@ -9170,6 +10422,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -9178,13 +10432,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string region_code = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getRegionCodeBytes() {
+      public com.google.protobuf.ByteString getRegionCodeBytes() {
         java.lang.Object ref = regionCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           regionCode_ = b;
           return b;
         } else {
@@ -9192,6 +10444,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -9200,17 +10454,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string region_code = 2;</code>
        */
-      public Builder setRegionCode(
-          java.lang.String value) {
+      public Builder setRegionCode(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         regionCode_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -9220,12 +10475,14 @@ private static final long serialVersionUID = 0L;
        * <code>string region_code = 2;</code>
        */
       public Builder clearRegionCode() {
-        
+
         regionCode_ = getDefaultInstance().getRegionCode();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -9234,40 +10491,53 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string region_code = 2;</code>
        */
-      public Builder setRegionCodeBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         regionCode_ = value;
         onChanged();
         return this;
       }
 
-      private java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable> auxiliaryTables_ =
-        java.util.Collections.emptyList();
+      private java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>
+          auxiliaryTables_ = java.util.Collections.emptyList();
+
       private void ensureAuxiliaryTablesIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>(auxiliaryTables_);
+          auxiliaryTables_ =
+              new java.util.ArrayList<
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>(
+                  auxiliaryTables_);
           bitField0_ |= 0x00000004;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder> auxiliaryTablesBuilder_;
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder>
+          auxiliaryTablesBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable> getAuxiliaryTablesList() {
+      public java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>
+          getAuxiliaryTablesList() {
         if (auxiliaryTablesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(auxiliaryTables_);
         } else {
@@ -9275,13 +10545,17 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public int getAuxiliaryTablesCount() {
         if (auxiliaryTablesBuilder_ == null) {
@@ -9291,15 +10565,20 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable getAuxiliaryTables(int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+          getAuxiliaryTables(int index) {
         if (auxiliaryTablesBuilder_ == null) {
           return auxiliaryTables_.get(index);
         } else {
@@ -9307,16 +10586,21 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder setAuxiliaryTables(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable value) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable value) {
         if (auxiliaryTablesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9330,16 +10614,22 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder setAuxiliaryTables(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder builderForValue) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder
+              builderForValue) {
         if (auxiliaryTablesBuilder_ == null) {
           ensureAuxiliaryTablesIsMutable();
           auxiliaryTables_.set(index, builderForValue.build());
@@ -9350,15 +10640,20 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public Builder addAuxiliaryTables(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable value) {
+      public Builder addAuxiliaryTables(
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable value) {
         if (auxiliaryTablesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9372,16 +10667,21 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder addAuxiliaryTables(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable value) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable value) {
         if (auxiliaryTablesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9395,16 +10695,21 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder addAuxiliaryTables(
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder builderForValue) {
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder
+              builderForValue) {
         if (auxiliaryTablesBuilder_ == null) {
           ensureAuxiliaryTablesIsMutable();
           auxiliaryTables_.add(builderForValue.build());
@@ -9415,16 +10720,22 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder addAuxiliaryTables(
-          int index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder builderForValue) {
+          int index,
+          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder
+              builderForValue) {
         if (auxiliaryTablesBuilder_ == null) {
           ensureAuxiliaryTablesIsMutable();
           auxiliaryTables_.add(index, builderForValue.build());
@@ -9435,20 +10746,26 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder addAllAuxiliaryTables(
-          java.lang.Iterable<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable> values) {
+          java.lang.Iterable<
+                  ? extends
+                      com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable>
+              values) {
         if (auxiliaryTablesBuilder_ == null) {
           ensureAuxiliaryTablesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, auxiliaryTables_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, auxiliaryTables_);
           onChanged();
         } else {
           auxiliaryTablesBuilder_.addAllMessages(values);
@@ -9456,13 +10773,17 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder clearAuxiliaryTables() {
         if (auxiliaryTablesBuilder_ == null) {
@@ -9475,13 +10796,17 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
       public Builder removeAuxiliaryTables(int index) {
         if (auxiliaryTablesBuilder_ == null) {
@@ -9494,45 +10819,61 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder getAuxiliaryTablesBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder
+          getAuxiliaryTablesBuilder(int index) {
         return getAuxiliaryTablesFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder getAuxiliaryTablesOrBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder
+          getAuxiliaryTablesOrBuilder(int index) {
         if (auxiliaryTablesBuilder_ == null) {
-          return auxiliaryTables_.get(index);  } else {
+          return auxiliaryTables_.get(index);
+        } else {
           return auxiliaryTablesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder> 
-           getAuxiliaryTablesOrBuilderList() {
+      public java.util.List<
+              ? extends
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                      .AuxiliaryTableOrBuilder>
+          getAuxiliaryTablesOrBuilderList() {
         if (auxiliaryTablesBuilder_ != null) {
           return auxiliaryTablesBuilder_.getMessageOrBuilderList();
         } else {
@@ -9540,51 +10881,78 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder addAuxiliaryTablesBuilder() {
-        return getAuxiliaryTablesFieldBuilder().addBuilder(
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.getDefaultInstance());
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder
+          addAuxiliaryTablesBuilder() {
+        return getAuxiliaryTablesFieldBuilder()
+            .addBuilder(
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder addAuxiliaryTablesBuilder(
-          int index) {
-        return getAuxiliaryTablesFieldBuilder().addBuilder(
-            index, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.getDefaultInstance());
+      public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder
+          addAuxiliaryTablesBuilder(int index) {
+        return getAuxiliaryTablesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                    .getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers column must appear in exactly one column
        * of one auxiliary table.
        * </pre>
        *
-       * <code>repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;</code>
+       * <code>
+       * repeated .google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable auxiliary_tables = 3;
+       * </code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder> 
-           getAuxiliaryTablesBuilderList() {
+      public java.util.List<
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder>
+          getAuxiliaryTablesBuilderList() {
         return getAuxiliaryTablesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder> 
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder,
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder>
           getAuxiliaryTablesFieldBuilder() {
         if (auxiliaryTablesBuilder_ == null) {
-          auxiliaryTablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTableOrBuilder>(
+          auxiliaryTablesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.AuxiliaryTable
+                      .Builder,
+                  com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                      .AuxiliaryTableOrBuilder>(
                   auxiliaryTables_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -9593,6 +10961,7 @@ private static final long serialVersionUID = 0L;
         }
         return auxiliaryTablesBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9605,30 +10974,32 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig)
-    private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig DEFAULT_INSTANCE;
+    private static final com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig();
     }
 
-    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getDefaultInstance() {
+    public static com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<KMapEstimationConfig>
-        PARSER = new com.google.protobuf.AbstractParser<KMapEstimationConfig>() {
-      @java.lang.Override
-      public KMapEstimationConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KMapEstimationConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<KMapEstimationConfig> PARSER =
+        new com.google.protobuf.AbstractParser<KMapEstimationConfig>() {
+          @java.lang.Override
+          public KMapEstimationConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new KMapEstimationConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<KMapEstimationConfig> parser() {
       return PARSER;
@@ -9640,17 +11011,20 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getDefaultInstanceForType() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface DeltaPresenceEstimationConfigOrBuilder extends
+  public interface DeltaPresenceEstimationConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9658,9 +11032,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
      */
-    java.util.List<com.google.privacy.dlp.v2.QuasiId> 
-        getQuasiIdsList();
+    java.util.List<com.google.privacy.dlp.v2.QuasiId> getQuasiIdsList();
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9670,6 +11045,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.QuasiId getQuasiIds(int index);
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9679,6 +11056,8 @@ private static final long serialVersionUID = 0L;
      */
     int getQuasiIdsCount();
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9686,9 +11065,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
      */
-    java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
-        getQuasiIdsOrBuilderList();
+    java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> getQuasiIdsOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9696,10 +11076,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
      */
-    com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
-        int index);
+    com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(int index);
 
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -9710,6 +11091,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getRegionCode();
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -9718,10 +11101,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string region_code = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getRegionCodeBytes();
+    com.google.protobuf.ByteString getRegionCodeBytes();
 
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -9730,9 +11114,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
-    java.util.List<com.google.privacy.dlp.v2.StatisticalTable> 
-        getAuxiliaryTablesList();
+    java.util.List<com.google.privacy.dlp.v2.StatisticalTable> getAuxiliaryTablesList();
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -9743,6 +11128,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.StatisticalTable getAuxiliaryTables(int index);
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -9753,6 +11140,8 @@ private static final long serialVersionUID = 0L;
      */
     int getAuxiliaryTablesCount();
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -9761,9 +11150,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
-    java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
+    java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder>
         getAuxiliaryTablesOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -9772,10 +11163,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
-    com.google.privacy.dlp.v2.StatisticalTableOrBuilder getAuxiliaryTablesOrBuilder(
-        int index);
+    com.google.privacy.dlp.v2.StatisticalTableOrBuilder getAuxiliaryTablesOrBuilder(int index);
   }
   /**
+   *
+   *
    * <pre>
    * δ-presence metric, used to estimate how likely it is for an attacker to
    * figure out that one given individual appears in a de-identified dataset.
@@ -9785,15 +11177,18 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig}
    */
-  public  static final class DeltaPresenceEstimationConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class DeltaPresenceEstimationConfig
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
       DeltaPresenceEstimationConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use DeltaPresenceEstimationConfig.newBuilder() to construct.
-    private DeltaPresenceEstimationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private DeltaPresenceEstimationConfig(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private DeltaPresenceEstimationConfig() {
       quasiIds_ = java.util.Collections.emptyList();
       regionCode_ = "";
@@ -9801,10 +11196,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private DeltaPresenceEstimationConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9824,44 +11219,49 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.QuasiId>();
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.QuasiId>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                quasiIds_.add(
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.QuasiId.parser(), extensionRegistry));
+                break;
               }
-              quasiIds_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.QuasiId.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              regionCode_ = s;
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>();
-                mutable_bitField0_ |= 0x00000004;
+                regionCode_ = s;
+                break;
               }
-              auxiliaryTables_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.StatisticalTable.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 26:
+              {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  auxiliaryTables_ =
+                      new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                auxiliaryTables_.add(
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.StatisticalTable.parser(), extensionRegistry));
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           quasiIds_ = java.util.Collections.unmodifiableList(quasiIds_);
@@ -9873,23 +11273,28 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder.class);
+              com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.class,
+              com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder.class);
     }
 
     private int bitField0_;
     public static final int QUASI_IDS_FIELD_NUMBER = 1;
     private java.util.List<com.google.privacy.dlp.v2.QuasiId> quasiIds_;
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9901,6 +11306,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9908,11 +11315,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
+    public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder>
         getQuasiIdsOrBuilderList() {
       return quasiIds_;
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9924,6 +11333,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9935,6 +11346,8 @@ private static final long serialVersionUID = 0L;
       return quasiIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Fields considered to be quasi-identifiers. No two fields can have the
      * same tag. [required]
@@ -9942,14 +11355,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
      */
-    public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(int index) {
       return quasiIds_.get(index);
     }
 
     public static final int REGION_CODE_FIELD_NUMBER = 2;
     private volatile java.lang.Object regionCode_;
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -9963,14 +11377,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         regionCode_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
      * Required if no column is tagged with a region-specific InfoType (like
@@ -9979,13 +11394,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string region_code = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getRegionCodeBytes() {
+    public com.google.protobuf.ByteString getRegionCodeBytes() {
       java.lang.Object ref = regionCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         regionCode_ = b;
         return b;
       } else {
@@ -9996,6 +11409,8 @@ private static final long serialVersionUID = 0L;
     public static final int AUXILIARY_TABLES_FIELD_NUMBER = 3;
     private java.util.List<com.google.privacy.dlp.v2.StatisticalTable> auxiliaryTables_;
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -10008,6 +11423,8 @@ private static final long serialVersionUID = 0L;
       return auxiliaryTables_;
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -10016,11 +11433,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
+    public java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder>
         getAuxiliaryTablesOrBuilderList() {
       return auxiliaryTables_;
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -10033,6 +11452,8 @@ private static final long serialVersionUID = 0L;
       return auxiliaryTables_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -10045,6 +11466,8 @@ private static final long serialVersionUID = 0L;
       return auxiliaryTables_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Several auxiliary tables can be used in the analysis. Each custom_tag
      * used to tag a quasi-identifiers field must appear in exactly one
@@ -10059,6 +11482,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -10070,8 +11494,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < quasiIds_.size(); i++) {
         output.writeMessage(1, quasiIds_.get(i));
       }
@@ -10091,15 +11514,14 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       for (int i = 0; i < quasiIds_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, quasiIds_.get(i));
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quasiIds_.get(i));
       }
       if (!getRegionCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, regionCode_);
       }
       for (int i = 0; i < auxiliaryTables_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, auxiliaryTables_.get(i));
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, auxiliaryTables_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10109,20 +11531,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig other = (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) obj;
+      com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig other =
+          (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) obj;
 
       boolean result = true;
-      result = result && getQuasiIdsList()
-          .equals(other.getQuasiIdsList());
-      result = result && getRegionCode()
-          .equals(other.getRegionCode());
-      result = result && getAuxiliaryTablesList()
-          .equals(other.getAuxiliaryTablesList());
+      result = result && getQuasiIdsList().equals(other.getQuasiIdsList());
+      result = result && getRegionCode().equals(other.getRegionCode());
+      result = result && getAuxiliaryTablesList().equals(other.getAuxiliaryTablesList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -10150,87 +11570,95 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
     public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -10240,6 +11668,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * δ-presence metric, used to estimate how likely it is for an attacker to
      * figure out that one given individual appears in a de-identified dataset.
@@ -10249,40 +11679,45 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
         com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.class, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder.class);
+                com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.class,
+                com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder
+                    .class);
       }
 
-      // Construct using com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.newBuilder()
+      // Construct using
+      // com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getQuasiIdsFieldBuilder();
           getAuxiliaryTablesFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -10304,19 +11739,22 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_PrivacyMetric_DeltaPresenceEstimationConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDefaultInstanceForType() {
-        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+      public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig build() {
-        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig result = buildPartial();
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10325,7 +11763,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig buildPartial() {
-        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig result = new com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig(this);
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig result =
+            new com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (quasiIdsBuilder_ == null) {
@@ -10356,46 +11795,54 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) {
-          return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)other);
+        if (other
+            instanceof com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig other) {
-        if (other == com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig other) {
+        if (other
+            == com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+                .getDefaultInstance()) return this;
         if (quasiIdsBuilder_ == null) {
           if (!other.quasiIds_.isEmpty()) {
             if (quasiIds_.isEmpty()) {
@@ -10414,9 +11861,10 @@ private static final long serialVersionUID = 0L;
               quasiIdsBuilder_ = null;
               quasiIds_ = other.quasiIds_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              quasiIdsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getQuasiIdsFieldBuilder() : null;
+              quasiIdsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getQuasiIdsFieldBuilder()
+                      : null;
             } else {
               quasiIdsBuilder_.addAllMessages(other.quasiIds_);
             }
@@ -10444,9 +11892,10 @@ private static final long serialVersionUID = 0L;
               auxiliaryTablesBuilder_ = null;
               auxiliaryTables_ = other.auxiliaryTables_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              auxiliaryTablesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAuxiliaryTablesFieldBuilder() : null;
+              auxiliaryTablesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getAuxiliaryTablesFieldBuilder()
+                      : null;
             } else {
               auxiliaryTablesBuilder_.addAllMessages(other.auxiliaryTables_);
             }
@@ -10471,7 +11920,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10480,21 +11931,28 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.util.List<com.google.privacy.dlp.v2.QuasiId> quasiIds_ =
-        java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
+
       private void ensureQuasiIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           quasiIds_ = new java.util.ArrayList<com.google.privacy.dlp.v2.QuasiId>(quasiIds_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.QuasiId, com.google.privacy.dlp.v2.QuasiId.Builder, com.google.privacy.dlp.v2.QuasiIdOrBuilder> quasiIdsBuilder_;
+              com.google.privacy.dlp.v2.QuasiId,
+              com.google.privacy.dlp.v2.QuasiId.Builder,
+              com.google.privacy.dlp.v2.QuasiIdOrBuilder>
+          quasiIdsBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10510,6 +11968,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10525,6 +11985,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10540,6 +12002,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10547,8 +12011,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public Builder setQuasiIds(
-          int index, com.google.privacy.dlp.v2.QuasiId value) {
+      public Builder setQuasiIds(int index, com.google.privacy.dlp.v2.QuasiId value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10562,6 +12025,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10581,6 +12046,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10602,6 +12069,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10609,8 +12078,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public Builder addQuasiIds(
-          int index, com.google.privacy.dlp.v2.QuasiId value) {
+      public Builder addQuasiIds(int index, com.google.privacy.dlp.v2.QuasiId value) {
         if (quasiIdsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10624,6 +12092,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10631,8 +12101,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public Builder addQuasiIds(
-          com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
+      public Builder addQuasiIds(com.google.privacy.dlp.v2.QuasiId.Builder builderForValue) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
           quasiIds_.add(builderForValue.build());
@@ -10643,6 +12112,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10662,6 +12133,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10673,8 +12146,7 @@ private static final long serialVersionUID = 0L;
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.QuasiId> values) {
         if (quasiIdsBuilder_ == null) {
           ensureQuasiIdsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, quasiIds_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, quasiIds_);
           onChanged();
         } else {
           quasiIdsBuilder_.addAllMessages(values);
@@ -10682,6 +12154,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10700,6 +12174,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10718,6 +12194,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10725,11 +12203,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.QuasiId.Builder getQuasiIdsBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.QuasiId.Builder getQuasiIdsBuilder(int index) {
         return getQuasiIdsFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10737,14 +12216,16 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(
-          int index) {
+      public com.google.privacy.dlp.v2.QuasiIdOrBuilder getQuasiIdsOrBuilder(int index) {
         if (quasiIdsBuilder_ == null) {
-          return quasiIds_.get(index);  } else {
+          return quasiIds_.get(index);
+        } else {
           return quasiIdsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10752,8 +12233,8 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
-           getQuasiIdsOrBuilderList() {
+      public java.util.List<? extends com.google.privacy.dlp.v2.QuasiIdOrBuilder>
+          getQuasiIdsOrBuilderList() {
         if (quasiIdsBuilder_ != null) {
           return quasiIdsBuilder_.getMessageOrBuilderList();
         } else {
@@ -10761,6 +12242,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10769,10 +12252,12 @@ private static final long serialVersionUID = 0L;
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
       public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder() {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            com.google.privacy.dlp.v2.QuasiId.getDefaultInstance());
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(com.google.privacy.dlp.v2.QuasiId.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10780,12 +12265,13 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder(
-          int index) {
-        return getQuasiIdsFieldBuilder().addBuilder(
-            index, com.google.privacy.dlp.v2.QuasiId.getDefaultInstance());
+      public com.google.privacy.dlp.v2.QuasiId.Builder addQuasiIdsBuilder(int index) {
+        return getQuasiIdsFieldBuilder()
+            .addBuilder(index, com.google.privacy.dlp.v2.QuasiId.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Fields considered to be quasi-identifiers. No two fields can have the
        * same tag. [required]
@@ -10793,16 +12279,21 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.QuasiId quasi_ids = 1;</code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.QuasiId.Builder> 
-           getQuasiIdsBuilderList() {
+      public java.util.List<com.google.privacy.dlp.v2.QuasiId.Builder> getQuasiIdsBuilderList() {
         return getQuasiIdsFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.QuasiId, com.google.privacy.dlp.v2.QuasiId.Builder, com.google.privacy.dlp.v2.QuasiIdOrBuilder> 
+              com.google.privacy.dlp.v2.QuasiId,
+              com.google.privacy.dlp.v2.QuasiId.Builder,
+              com.google.privacy.dlp.v2.QuasiIdOrBuilder>
           getQuasiIdsFieldBuilder() {
         if (quasiIdsBuilder_ == null) {
-          quasiIdsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.privacy.dlp.v2.QuasiId, com.google.privacy.dlp.v2.QuasiId.Builder, com.google.privacy.dlp.v2.QuasiIdOrBuilder>(
+          quasiIdsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.QuasiId,
+                  com.google.privacy.dlp.v2.QuasiId.Builder,
+                  com.google.privacy.dlp.v2.QuasiIdOrBuilder>(
                   quasiIds_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -10814,6 +12305,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object regionCode_ = "";
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -10825,8 +12318,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getRegionCode() {
         java.lang.Object ref = regionCode_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           regionCode_ = s;
           return s;
@@ -10835,6 +12327,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -10843,13 +12337,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string region_code = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getRegionCodeBytes() {
+      public com.google.protobuf.ByteString getRegionCodeBytes() {
         java.lang.Object ref = regionCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           regionCode_ = b;
           return b;
         } else {
@@ -10857,6 +12349,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -10865,17 +12359,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string region_code = 2;</code>
        */
-      public Builder setRegionCode(
-          java.lang.String value) {
+      public Builder setRegionCode(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         regionCode_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -10885,12 +12380,14 @@ private static final long serialVersionUID = 0L;
        * <code>string region_code = 2;</code>
        */
       public Builder clearRegionCode() {
-        
+
         regionCode_ = getDefaultInstance().getRegionCode();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * ISO 3166-1 alpha-2 region code to use in the statistical modeling.
        * Required if no column is tagged with a region-specific InfoType (like
@@ -10899,31 +12396,37 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string region_code = 2;</code>
        */
-      public Builder setRegionCodeBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         regionCode_ = value;
         onChanged();
         return this;
       }
 
       private java.util.List<com.google.privacy.dlp.v2.StatisticalTable> auxiliaryTables_ =
-        java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
+
       private void ensureAuxiliaryTablesIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          auxiliaryTables_ = new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>(auxiliaryTables_);
+          auxiliaryTables_ =
+              new java.util.ArrayList<com.google.privacy.dlp.v2.StatisticalTable>(auxiliaryTables_);
           bitField0_ |= 0x00000004;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.StatisticalTable, com.google.privacy.dlp.v2.StatisticalTable.Builder, com.google.privacy.dlp.v2.StatisticalTableOrBuilder> auxiliaryTablesBuilder_;
+              com.google.privacy.dlp.v2.StatisticalTable,
+              com.google.privacy.dlp.v2.StatisticalTable.Builder,
+              com.google.privacy.dlp.v2.StatisticalTableOrBuilder>
+          auxiliaryTablesBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -10940,6 +12443,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -10956,6 +12461,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -10972,6 +12479,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -10995,6 +12504,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11015,6 +12526,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11037,6 +12550,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11060,6 +12575,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11080,6 +12597,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11100,6 +12619,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11112,8 +12633,7 @@ private static final long serialVersionUID = 0L;
           java.lang.Iterable<? extends com.google.privacy.dlp.v2.StatisticalTable> values) {
         if (auxiliaryTablesBuilder_ == null) {
           ensureAuxiliaryTablesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, auxiliaryTables_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, auxiliaryTables_);
           onChanged();
         } else {
           auxiliaryTablesBuilder_.addAllMessages(values);
@@ -11121,6 +12641,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11140,6 +12662,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11159,6 +12683,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11172,6 +12698,8 @@ private static final long serialVersionUID = 0L;
         return getAuxiliaryTablesFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11183,11 +12711,14 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.StatisticalTableOrBuilder getAuxiliaryTablesOrBuilder(
           int index) {
         if (auxiliaryTablesBuilder_ == null) {
-          return auxiliaryTables_.get(index);  } else {
+          return auxiliaryTables_.get(index);
+        } else {
           return auxiliaryTablesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11196,8 +12727,8 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
        */
-      public java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
-           getAuxiliaryTablesOrBuilderList() {
+      public java.util.List<? extends com.google.privacy.dlp.v2.StatisticalTableOrBuilder>
+          getAuxiliaryTablesOrBuilderList() {
         if (auxiliaryTablesBuilder_ != null) {
           return auxiliaryTablesBuilder_.getMessageOrBuilderList();
         } else {
@@ -11205,6 +12736,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11214,10 +12747,12 @@ private static final long serialVersionUID = 0L;
        * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
        */
       public com.google.privacy.dlp.v2.StatisticalTable.Builder addAuxiliaryTablesBuilder() {
-        return getAuxiliaryTablesFieldBuilder().addBuilder(
-            com.google.privacy.dlp.v2.StatisticalTable.getDefaultInstance());
+        return getAuxiliaryTablesFieldBuilder()
+            .addBuilder(com.google.privacy.dlp.v2.StatisticalTable.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11228,10 +12763,12 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.StatisticalTable.Builder addAuxiliaryTablesBuilder(
           int index) {
-        return getAuxiliaryTablesFieldBuilder().addBuilder(
-            index, com.google.privacy.dlp.v2.StatisticalTable.getDefaultInstance());
+        return getAuxiliaryTablesFieldBuilder()
+            .addBuilder(index, com.google.privacy.dlp.v2.StatisticalTable.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Several auxiliary tables can be used in the analysis. Each custom_tag
        * used to tag a quasi-identifiers field must appear in exactly one
@@ -11240,16 +12777,22 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated .google.privacy.dlp.v2.StatisticalTable auxiliary_tables = 3;</code>
        */
-      public java.util.List<com.google.privacy.dlp.v2.StatisticalTable.Builder> 
-           getAuxiliaryTablesBuilderList() {
+      public java.util.List<com.google.privacy.dlp.v2.StatisticalTable.Builder>
+          getAuxiliaryTablesBuilderList() {
         return getAuxiliaryTablesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.privacy.dlp.v2.StatisticalTable, com.google.privacy.dlp.v2.StatisticalTable.Builder, com.google.privacy.dlp.v2.StatisticalTableOrBuilder> 
+              com.google.privacy.dlp.v2.StatisticalTable,
+              com.google.privacy.dlp.v2.StatisticalTable.Builder,
+              com.google.privacy.dlp.v2.StatisticalTableOrBuilder>
           getAuxiliaryTablesFieldBuilder() {
         if (auxiliaryTablesBuilder_ == null) {
-          auxiliaryTablesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.privacy.dlp.v2.StatisticalTable, com.google.privacy.dlp.v2.StatisticalTable.Builder, com.google.privacy.dlp.v2.StatisticalTableOrBuilder>(
+          auxiliaryTablesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.privacy.dlp.v2.StatisticalTable,
+                  com.google.privacy.dlp.v2.StatisticalTable.Builder,
+                  com.google.privacy.dlp.v2.StatisticalTableOrBuilder>(
                   auxiliaryTables_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -11258,6 +12801,7 @@ private static final long serialVersionUID = 0L;
         }
         return auxiliaryTablesBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11270,30 +12814,33 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig)
-    private static final com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig DEFAULT_INSTANCE;
+    private static final com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig();
+      DEFAULT_INSTANCE =
+          new com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig();
     }
 
-    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDefaultInstance() {
+    public static com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DeltaPresenceEstimationConfig>
-        PARSER = new com.google.protobuf.AbstractParser<DeltaPresenceEstimationConfig>() {
-      @java.lang.Override
-      public DeltaPresenceEstimationConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeltaPresenceEstimationConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<DeltaPresenceEstimationConfig> PARSER =
+        new com.google.protobuf.AbstractParser<DeltaPresenceEstimationConfig>() {
+          @java.lang.Override
+          public DeltaPresenceEstimationConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DeltaPresenceEstimationConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<DeltaPresenceEstimationConfig> parser() {
       return PARSER;
@@ -11305,16 +12852,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDefaultInstanceForType() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int typeCase_ = 0;
   private java.lang.Object type_;
-  public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
     NUMERICAL_STATS_CONFIG(1),
     CATEGORICAL_STATS_CONFIG(2),
     K_ANONYMITY_CONFIG(3),
@@ -11323,12 +12870,11 @@ private static final long serialVersionUID = 0L;
     DELTA_PRESENCE_ESTIMATION_CONFIG(6),
     TYPE_NOT_SET(0);
     private final int value;
+
     private TypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -11336,184 +12882,205 @@ private static final long serialVersionUID = 0L;
 
     public static TypeCase forNumber(int value) {
       switch (value) {
-        case 1: return NUMERICAL_STATS_CONFIG;
-        case 2: return CATEGORICAL_STATS_CONFIG;
-        case 3: return K_ANONYMITY_CONFIG;
-        case 4: return L_DIVERSITY_CONFIG;
-        case 5: return K_MAP_ESTIMATION_CONFIG;
-        case 6: return DELTA_PRESENCE_ESTIMATION_CONFIG;
-        case 0: return TYPE_NOT_SET;
-        default: return null;
+        case 1:
+          return NUMERICAL_STATS_CONFIG;
+        case 2:
+          return CATEGORICAL_STATS_CONFIG;
+        case 3:
+          return K_ANONYMITY_CONFIG;
+        case 4:
+          return L_DIVERSITY_CONFIG;
+        case 5:
+          return K_MAP_ESTIMATION_CONFIG;
+        case 6:
+          return DELTA_PRESENCE_ESTIMATION_CONFIG;
+        case 0:
+          return TYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TypeCase
-  getTypeCase() {
-    return TypeCase.forNumber(
-        typeCase_);
+  public TypeCase getTypeCase() {
+    return TypeCase.forNumber(typeCase_);
   }
 
   public static final int NUMERICAL_STATS_CONFIG_FIELD_NUMBER = 1;
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+   * </code>
    */
   public boolean hasNumericalStatsConfig() {
     return typeCase_ == 1;
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+   * </code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig() {
     if (typeCase_ == 1) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance();
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder getNumericalStatsConfigOrBuilder() {
+  public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder
+      getNumericalStatsConfigOrBuilder() {
     if (typeCase_ == 1) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance();
   }
 
   public static final int CATEGORICAL_STATS_CONFIG_FIELD_NUMBER = 2;
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+   * </code>
    */
   public boolean hasCategoricalStatsConfig() {
     return typeCase_ == 2;
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getCategoricalStatsConfig() {
+  public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
+      getCategoricalStatsConfig() {
     if (typeCase_ == 2) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance();
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder getCategoricalStatsConfigOrBuilder() {
+  public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder
+      getCategoricalStatsConfigOrBuilder() {
     if (typeCase_ == 2) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance();
   }
 
   public static final int K_ANONYMITY_CONFIG_FIELD_NUMBER = 3;
-  /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
   public boolean hasKAnonymityConfig() {
     return typeCase_ == 3;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
   public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig getKAnonymityConfig() {
     if (typeCase_ == 3) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance();
   }
-  /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
-   */
-  public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder getKAnonymityConfigOrBuilder() {
+  /** <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code> */
+  public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder
+      getKAnonymityConfigOrBuilder() {
     if (typeCase_ == 3) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance();
   }
 
   public static final int L_DIVERSITY_CONFIG_FIELD_NUMBER = 4;
-  /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
   public boolean hasLDiversityConfig() {
     return typeCase_ == 4;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
   public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig getLDiversityConfig() {
     if (typeCase_ == 4) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance();
   }
-  /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
-   */
-  public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder getLDiversityConfigOrBuilder() {
+  /** <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code> */
+  public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder
+      getLDiversityConfigOrBuilder() {
     if (typeCase_ == 4) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance();
   }
 
   public static final int K_MAP_ESTIMATION_CONFIG_FIELD_NUMBER = 5;
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+   * </code>
    */
   public boolean hasKMapEstimationConfig() {
     return typeCase_ == 5;
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+   * </code>
    */
   public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig() {
     if (typeCase_ == 5) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance();
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+   * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder getKMapEstimationConfigOrBuilder() {
+  public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder
+      getKMapEstimationConfigOrBuilder() {
     if (typeCase_ == 5) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_;
     }
     return com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance();
   }
 
   public static final int DELTA_PRESENCE_ESTIMATION_CONFIG_FIELD_NUMBER = 6;
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   * <code>
+   * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+   * </code>
    */
   public boolean hasDeltaPresenceEstimationConfig() {
     return typeCase_ == 6;
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   * <code>
+   * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDeltaPresenceEstimationConfig() {
+  public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+      getDeltaPresenceEstimationConfig() {
     if (typeCase_ == 6) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
     }
-    return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+    return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        .getDefaultInstance();
   }
   /**
-   * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+   * <code>
+   * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder getDeltaPresenceEstimationConfigOrBuilder() {
+  public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder
+      getDeltaPresenceEstimationConfigOrBuilder() {
     if (typeCase_ == 6) {
-       return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
+      return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
     }
-    return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+    return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        .getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -11525,13 +13092,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (typeCase_ == 1) {
       output.writeMessage(1, (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_);
     }
     if (typeCase_ == 2) {
-      output.writeMessage(2, (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_);
+      output.writeMessage(
+          2, (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_);
     }
     if (typeCase_ == 3) {
       output.writeMessage(3, (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_);
@@ -11543,7 +13110,8 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(5, (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_);
     }
     if (typeCase_ == 6) {
-      output.writeMessage(6, (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
+      output.writeMessage(
+          6, (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
     }
     unknownFields.writeTo(output);
   }
@@ -11555,28 +13123,34 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (typeCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_);
     }
     if (typeCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_);
     }
     if (typeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_);
     }
     if (typeCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_);
     }
     if (typeCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_);
     }
     if (typeCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -11586,7 +13160,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.PrivacyMetric)) {
       return super.equals(obj);
@@ -11594,33 +13168,29 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.PrivacyMetric other = (com.google.privacy.dlp.v2.PrivacyMetric) obj;
 
     boolean result = true;
-    result = result && getTypeCase().equals(
-        other.getTypeCase());
+    result = result && getTypeCase().equals(other.getTypeCase());
     if (!result) return false;
     switch (typeCase_) {
       case 1:
-        result = result && getNumericalStatsConfig()
-            .equals(other.getNumericalStatsConfig());
+        result = result && getNumericalStatsConfig().equals(other.getNumericalStatsConfig());
         break;
       case 2:
-        result = result && getCategoricalStatsConfig()
-            .equals(other.getCategoricalStatsConfig());
+        result = result && getCategoricalStatsConfig().equals(other.getCategoricalStatsConfig());
         break;
       case 3:
-        result = result && getKAnonymityConfig()
-            .equals(other.getKAnonymityConfig());
+        result = result && getKAnonymityConfig().equals(other.getKAnonymityConfig());
         break;
       case 4:
-        result = result && getLDiversityConfig()
-            .equals(other.getLDiversityConfig());
+        result = result && getLDiversityConfig().equals(other.getLDiversityConfig());
         break;
       case 5:
-        result = result && getKMapEstimationConfig()
-            .equals(other.getKMapEstimationConfig());
+        result = result && getKMapEstimationConfig().equals(other.getKMapEstimationConfig());
         break;
       case 6:
-        result = result && getDeltaPresenceEstimationConfig()
-            .equals(other.getDeltaPresenceEstimationConfig());
+        result =
+            result
+                && getDeltaPresenceEstimationConfig()
+                    .equals(other.getDeltaPresenceEstimationConfig());
         break;
       case 0:
       default:
@@ -11669,118 +13239,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.PrivacyMetric parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.PrivacyMetric parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.PrivacyMetric parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.PrivacyMetric prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Privacy metric to compute for reidentification risk analysis.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.PrivacyMetric}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.PrivacyMetric)
       com.google.privacy.dlp.v2.PrivacyMetricOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.PrivacyMetric.class, com.google.privacy.dlp.v2.PrivacyMetric.Builder.class);
+              com.google.privacy.dlp.v2.PrivacyMetric.class,
+              com.google.privacy.dlp.v2.PrivacyMetric.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.PrivacyMetric.newBuilder()
@@ -11788,16 +13367,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -11807,9 +13385,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_PrivacyMetric_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_PrivacyMetric_descriptor;
     }
 
     @java.lang.Override
@@ -11828,7 +13406,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.PrivacyMetric buildPartial() {
-      com.google.privacy.dlp.v2.PrivacyMetric result = new com.google.privacy.dlp.v2.PrivacyMetric(this);
+      com.google.privacy.dlp.v2.PrivacyMetric result =
+          new com.google.privacy.dlp.v2.PrivacyMetric(this);
       if (typeCase_ == 1) {
         if (numericalStatsConfigBuilder_ == null) {
           result.type_ = type_;
@@ -11880,38 +13459,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.PrivacyMetric) {
-        return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric)other);
+        return mergeFrom((com.google.privacy.dlp.v2.PrivacyMetric) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -11921,33 +13501,40 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.privacy.dlp.v2.PrivacyMetric other) {
       if (other == com.google.privacy.dlp.v2.PrivacyMetric.getDefaultInstance()) return this;
       switch (other.getTypeCase()) {
-        case NUMERICAL_STATS_CONFIG: {
-          mergeNumericalStatsConfig(other.getNumericalStatsConfig());
-          break;
-        }
-        case CATEGORICAL_STATS_CONFIG: {
-          mergeCategoricalStatsConfig(other.getCategoricalStatsConfig());
-          break;
-        }
-        case K_ANONYMITY_CONFIG: {
-          mergeKAnonymityConfig(other.getKAnonymityConfig());
-          break;
-        }
-        case L_DIVERSITY_CONFIG: {
-          mergeLDiversityConfig(other.getLDiversityConfig());
-          break;
-        }
-        case K_MAP_ESTIMATION_CONFIG: {
-          mergeKMapEstimationConfig(other.getKMapEstimationConfig());
-          break;
-        }
-        case DELTA_PRESENCE_ESTIMATION_CONFIG: {
-          mergeDeltaPresenceEstimationConfig(other.getDeltaPresenceEstimationConfig());
-          break;
-        }
-        case TYPE_NOT_SET: {
-          break;
-        }
+        case NUMERICAL_STATS_CONFIG:
+          {
+            mergeNumericalStatsConfig(other.getNumericalStatsConfig());
+            break;
+          }
+        case CATEGORICAL_STATS_CONFIG:
+          {
+            mergeCategoricalStatsConfig(other.getCategoricalStatsConfig());
+            break;
+          }
+        case K_ANONYMITY_CONFIG:
+          {
+            mergeKAnonymityConfig(other.getKAnonymityConfig());
+            break;
+          }
+        case L_DIVERSITY_CONFIG:
+          {
+            mergeLDiversityConfig(other.getLDiversityConfig());
+            break;
+          }
+        case K_MAP_ESTIMATION_CONFIG:
+          {
+            mergeKMapEstimationConfig(other.getKMapEstimationConfig());
+            break;
+          }
+        case DELTA_PRESENCE_ESTIMATION_CONFIG:
+          {
+            mergeDeltaPresenceEstimationConfig(other.getDeltaPresenceEstimationConfig());
+            break;
+          }
+        case TYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -11977,12 +13564,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int typeCase_ = 0;
     private java.lang.Object type_;
-    public TypeCase
-        getTypeCase() {
-      return TypeCase.forNumber(
-          typeCase_);
+
+    public TypeCase getTypeCase() {
+      return TypeCase.forNumber(typeCase_);
     }
 
     public Builder clearType() {
@@ -11992,17 +13579,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder> numericalStatsConfigBuilder_;
+            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder>
+        numericalStatsConfigBuilder_;
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
     public boolean hasNumericalStatsConfig() {
       return typeCase_ == 1;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig getNumericalStatsConfig() {
       if (numericalStatsConfigBuilder_ == null) {
@@ -12018,9 +13609,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
-    public Builder setNumericalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig value) {
+    public Builder setNumericalStatsConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig value) {
       if (numericalStatsConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -12034,7 +13627,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
     public Builder setNumericalStatsConfig(
         com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder builderForValue) {
@@ -12048,14 +13642,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
-    public Builder mergeNumericalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig value) {
+    public Builder mergeNumericalStatsConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig value) {
       if (numericalStatsConfigBuilder_ == null) {
-        if (typeCase_ == 1 &&
-            type_ != com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.newBuilder((com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 1
+            && type_
+                != com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -12070,7 +13671,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
     public Builder clearNumericalStatsConfig() {
       if (numericalStatsConfigBuilder_ == null) {
@@ -12089,15 +13691,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder getNumericalStatsConfigBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder
+        getNumericalStatsConfigBuilder() {
       return getNumericalStatsConfigFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder getNumericalStatsConfigOrBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder
+        getNumericalStatsConfigOrBuilder() {
       if ((typeCase_ == 1) && (numericalStatsConfigBuilder_ != null)) {
         return numericalStatsConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -12108,39 +13714,54 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig numerical_stats_config = 1;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder> 
+            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder>
         getNumericalStatsConfigFieldBuilder() {
       if (numericalStatsConfigBuilder_ == null) {
         if (!(typeCase_ == 1)) {
           type_ = com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.getDefaultInstance();
         }
-        numericalStatsConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder>(
+        numericalStatsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig,
+                com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfigOrBuilder>(
                 (com.google.privacy.dlp.v2.PrivacyMetric.NumericalStatsConfig) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return numericalStatsConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder> categoricalStatsConfigBuilder_;
+            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder>
+        categoricalStatsConfigBuilder_;
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
     public boolean hasCategoricalStatsConfig() {
       return typeCase_ == 2;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig getCategoricalStatsConfig() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
+        getCategoricalStatsConfig() {
       if (categoricalStatsConfigBuilder_ == null) {
         if (typeCase_ == 2) {
           return (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_;
@@ -12154,9 +13775,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
-    public Builder setCategoricalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig value) {
+    public Builder setCategoricalStatsConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig value) {
       if (categoricalStatsConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -12170,7 +13794,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
     public Builder setCategoricalStatsConfig(
         com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder builderForValue) {
@@ -12184,14 +13810,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
-    public Builder mergeCategoricalStatsConfig(com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig value) {
+    public Builder mergeCategoricalStatsConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig value) {
       if (categoricalStatsConfigBuilder_ == null) {
-        if (typeCase_ == 2 &&
-            type_ != com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.newBuilder((com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 2
+            && type_
+                != com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -12206,7 +13840,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
     public Builder clearCategoricalStatsConfig() {
       if (categoricalStatsConfigBuilder_ == null) {
@@ -12225,15 +13861,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder getCategoricalStatsConfigBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder
+        getCategoricalStatsConfigBuilder() {
       return getCategoricalStatsConfigFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder getCategoricalStatsConfigOrBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder
+        getCategoricalStatsConfigOrBuilder() {
       if ((typeCase_ == 2) && (categoricalStatsConfigBuilder_ != null)) {
         return categoricalStatsConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -12244,29 +13886,41 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig categorical_stats_config = 2;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder> 
+            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder>
         getCategoricalStatsConfigFieldBuilder() {
       if (categoricalStatsConfigBuilder_ == null) {
         if (!(typeCase_ == 2)) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance();
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.getDefaultInstance();
         }
-        categoricalStatsConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder>(
+        categoricalStatsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig,
+                com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfigOrBuilder>(
                 (com.google.privacy.dlp.v2.PrivacyMetric.CategoricalStatsConfig) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return categoricalStatsConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder> kAnonymityConfigBuilder_;
+            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder>
+        kAnonymityConfigBuilder_;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
@@ -12292,7 +13946,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
-    public Builder setKAnonymityConfig(com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig value) {
+    public Builder setKAnonymityConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig value) {
       if (kAnonymityConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -12322,12 +13977,17 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
-    public Builder mergeKAnonymityConfig(com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig value) {
+    public Builder mergeKAnonymityConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig value) {
       if (kAnonymityConfigBuilder_ == null) {
-        if (typeCase_ == 3 &&
-            type_ != com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.newBuilder((com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 3
+            && type_
+                != com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -12363,13 +14023,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder getKAnonymityConfigBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder
+        getKAnonymityConfigBuilder() {
       return getKAnonymityConfigFieldBuilder().getBuilder();
     }
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder getKAnonymityConfigOrBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder
+        getKAnonymityConfigOrBuilder() {
       if ((typeCase_ == 3) && (kAnonymityConfigBuilder_ != null)) {
         return kAnonymityConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -12383,26 +14045,35 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig k_anonymity_config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder> 
+            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder>
         getKAnonymityConfigFieldBuilder() {
       if (kAnonymityConfigBuilder_ == null) {
         if (!(typeCase_ == 3)) {
           type_ = com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.getDefaultInstance();
         }
-        kAnonymityConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder>(
+        kAnonymityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig,
+                com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfigOrBuilder>(
                 (com.google.privacy.dlp.v2.PrivacyMetric.KAnonymityConfig) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return kAnonymityConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder> lDiversityConfigBuilder_;
+            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder>
+        lDiversityConfigBuilder_;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
@@ -12428,7 +14099,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
-    public Builder setLDiversityConfig(com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig value) {
+    public Builder setLDiversityConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig value) {
       if (lDiversityConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -12458,12 +14130,17 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
-    public Builder mergeLDiversityConfig(com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig value) {
+    public Builder mergeLDiversityConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig value) {
       if (lDiversityConfigBuilder_ == null) {
-        if (typeCase_ == 4 &&
-            type_ != com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.newBuilder((com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 4
+            && type_
+                != com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -12499,13 +14176,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder getLDiversityConfigBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder
+        getLDiversityConfigBuilder() {
       return getLDiversityConfigFieldBuilder().getBuilder();
     }
     /**
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder getLDiversityConfigOrBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder
+        getLDiversityConfigOrBuilder() {
       if ((typeCase_ == 4) && (lDiversityConfigBuilder_ != null)) {
         return lDiversityConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -12519,34 +14198,45 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig l_diversity_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder> 
+            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder>
         getLDiversityConfigFieldBuilder() {
       if (lDiversityConfigBuilder_ == null) {
         if (!(typeCase_ == 4)) {
           type_ = com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.getDefaultInstance();
         }
-        lDiversityConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder>(
+        lDiversityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig,
+                com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfigOrBuilder>(
                 (com.google.privacy.dlp.v2.PrivacyMetric.LDiversityConfig) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return lDiversityConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder> kMapEstimationConfigBuilder_;
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder>
+        kMapEstimationConfigBuilder_;
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
     public boolean hasKMapEstimationConfig() {
       return typeCase_ == 5;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
     public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig getKMapEstimationConfig() {
       if (kMapEstimationConfigBuilder_ == null) {
@@ -12562,9 +14252,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
-    public Builder setKMapEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig value) {
+    public Builder setKMapEstimationConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig value) {
       if (kMapEstimationConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -12578,7 +14270,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
     public Builder setKMapEstimationConfig(
         com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder builderForValue) {
@@ -12592,14 +14285,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
-    public Builder mergeKMapEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig value) {
+    public Builder mergeKMapEstimationConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig value) {
       if (kMapEstimationConfigBuilder_ == null) {
-        if (typeCase_ == 5 &&
-            type_ != com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.newBuilder((com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 5
+            && type_
+                != com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -12614,7 +14314,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
     public Builder clearKMapEstimationConfig() {
       if (kMapEstimationConfigBuilder_ == null) {
@@ -12633,15 +14334,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder getKMapEstimationConfigBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder
+        getKMapEstimationConfigBuilder() {
       return getKMapEstimationConfigFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder getKMapEstimationConfigOrBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder
+        getKMapEstimationConfigOrBuilder() {
       if ((typeCase_ == 5) && (kMapEstimationConfigBuilder_ != null)) {
         return kMapEstimationConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -12652,55 +14357,75 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;</code>
+     * <code>.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig k_map_estimation_config = 5;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder> 
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder>
         getKMapEstimationConfigFieldBuilder() {
       if (kMapEstimationConfigBuilder_ == null) {
         if (!(typeCase_ == 5)) {
           type_ = com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.getDefaultInstance();
         }
-        kMapEstimationConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder>(
+        kMapEstimationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfigOrBuilder>(
                 (com.google.privacy.dlp.v2.PrivacyMetric.KMapEstimationConfig) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return kMapEstimationConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder> deltaPresenceEstimationConfigBuilder_;
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder>
+        deltaPresenceEstimationConfigBuilder_;
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
     public boolean hasDeltaPresenceEstimationConfig() {
       return typeCase_ == 6;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig getDeltaPresenceEstimationConfig() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+        getDeltaPresenceEstimationConfig() {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
         if (typeCase_ == 6) {
           return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
         }
-        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+            .getDefaultInstance();
       } else {
         if (typeCase_ == 6) {
           return deltaPresenceEstimationConfigBuilder_.getMessage();
         }
-        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+            .getDefaultInstance();
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
-    public Builder setDeltaPresenceEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
+    public Builder setDeltaPresenceEstimationConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -12714,10 +14439,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
     public Builder setDeltaPresenceEstimationConfig(
-        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder builderForValue) {
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder
+            builderForValue) {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -12728,14 +14456,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
-    public Builder mergeDeltaPresenceEstimationConfig(com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
+    public Builder mergeDeltaPresenceEstimationConfig(
+        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig value) {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
-        if (typeCase_ == 6 &&
-            type_ != com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.newBuilder((com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 6
+            && type_
+                != com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -12750,7 +14486,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
     public Builder clearDeltaPresenceEstimationConfig() {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
@@ -12769,48 +14507,65 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder getDeltaPresenceEstimationConfigBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder
+        getDeltaPresenceEstimationConfigBuilder() {
       return getDeltaPresenceEstimationConfigFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder getDeltaPresenceEstimationConfigOrBuilder() {
+    public com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder
+        getDeltaPresenceEstimationConfigOrBuilder() {
       if ((typeCase_ == 6) && (deltaPresenceEstimationConfigBuilder_ != null)) {
         return deltaPresenceEstimationConfigBuilder_.getMessageOrBuilder();
       } else {
         if (typeCase_ == 6) {
           return (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_;
         }
-        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+        return com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+            .getDefaultInstance();
       }
     }
     /**
-     * <code>.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;</code>
+     * <code>
+     * .google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig delta_presence_estimation_config = 6;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder> 
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig,
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder,
+            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder>
         getDeltaPresenceEstimationConfigFieldBuilder() {
       if (deltaPresenceEstimationConfigBuilder_ == null) {
         if (!(typeCase_ == 6)) {
-          type_ = com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.getDefaultInstance();
+          type_ =
+              com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig
+                  .getDefaultInstance();
         }
-        deltaPresenceEstimationConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder, com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder>(
+        deltaPresenceEstimationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig,
+                com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig.Builder,
+                com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfigOrBuilder>(
                 (com.google.privacy.dlp.v2.PrivacyMetric.DeltaPresenceEstimationConfig) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return deltaPresenceEstimationConfigBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -12820,12 +14575,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.PrivacyMetric)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.PrivacyMetric)
   private static final com.google.privacy.dlp.v2.PrivacyMetric DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.PrivacyMetric();
   }
@@ -12834,16 +14589,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PrivacyMetric>
-      PARSER = new com.google.protobuf.AbstractParser<PrivacyMetric>() {
-    @java.lang.Override
-    public PrivacyMetric parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PrivacyMetric(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PrivacyMetric> PARSER =
+      new com.google.protobuf.AbstractParser<PrivacyMetric>() {
+        @java.lang.Override
+        public PrivacyMetric parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PrivacyMetric(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PrivacyMetric> parser() {
     return PARSER;
@@ -12858,6 +14613,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.PrivacyMetric getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

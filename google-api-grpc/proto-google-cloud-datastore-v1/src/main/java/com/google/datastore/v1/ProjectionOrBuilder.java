@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface ProjectionOrBuilder extends
+public interface ProjectionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.Projection)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The property to project.
    * </pre>
@@ -16,6 +19,8 @@ public interface ProjectionOrBuilder extends
    */
   boolean hasProperty();
   /**
+   *
+   *
    * <pre>
    * The property to project.
    * </pre>
@@ -24,6 +29,8 @@ public interface ProjectionOrBuilder extends
    */
   com.google.datastore.v1.PropertyReference getProperty();
   /**
+   *
+   *
    * <pre>
    * The property to project.
    * </pre>

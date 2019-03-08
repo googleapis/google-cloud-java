@@ -4,21 +4,24 @@
 package com.google.cloud.dialogflow.v2;
 
 /**
+ *
+ *
  * <pre>
  * Represents a conversational agent.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.Agent}
  */
-public  final class Agent extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Agent extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.Agent)
     AgentOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Agent.newBuilder() to construct.
   private Agent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Agent() {
     parent_ = "";
     displayName_ = "";
@@ -33,10 +36,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Agent(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -56,81 +59,88 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            defaultLanguageCode_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              supportedLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              parent_ = s;
+              break;
             }
-            supportedLanguageCodes_.add(s);
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            timeZone_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            avatarUri_ = s;
-            break;
-          }
-          case 64: {
-
-            enableLogging_ = input.readBool();
-            break;
-          }
-          case 72: {
-            int rawValue = input.readEnum();
-
-            matchMode_ = rawValue;
-            break;
-          }
-          case 85: {
-
-            classificationThreshold_ = input.readFloat();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              displayName_ = s;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              defaultLanguageCode_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                supportedLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              supportedLanguageCodes_.add(s);
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              timeZone_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              avatarUri_ = s;
+              break;
+            }
+          case 64:
+            {
+              enableLogging_ = input.readBool();
+              break;
+            }
+          case 72:
+            {
+              int rawValue = input.readEnum();
+
+              matchMode_ = rawValue;
+              break;
+            }
+          case 85:
+            {
+              classificationThreshold_ = input.readFloat();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
@@ -139,29 +149,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2.AgentProto.internal_static_google_cloud_dialogflow_v2_Agent_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2.AgentProto
+        .internal_static_google_cloud_dialogflow_v2_Agent_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2.AgentProto.internal_static_google_cloud_dialogflow_v2_Agent_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2.AgentProto
+        .internal_static_google_cloud_dialogflow_v2_Agent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2.Agent.class, com.google.cloud.dialogflow.v2.Agent.Builder.class);
+            com.google.cloud.dialogflow.v2.Agent.class,
+            com.google.cloud.dialogflow.v2.Agent.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Match mode determines how intents are detected from user queries.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dialogflow.v2.Agent.MatchMode}
    */
-  public enum MatchMode
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum MatchMode implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -170,6 +186,8 @@ private static final long serialVersionUID = 0L;
      */
     MATCH_MODE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Best for agents with a small number of examples in intents and/or wide
      * use of templates syntax and composite entities.
@@ -179,6 +197,8 @@ private static final long serialVersionUID = 0L;
      */
     MATCH_MODE_HYBRID(1),
     /**
+     *
+     *
      * <pre>
      * Can be used for agents with a large number of examples in intents,
      * especially the ones using &#64;sys.any or very large developer entities.
@@ -191,6 +211,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -199,6 +221,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MATCH_MODE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Best for agents with a small number of examples in intents and/or wide
      * use of templates syntax and composite entities.
@@ -208,6 +232,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MATCH_MODE_HYBRID_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Can be used for agents with a large number of examples in intents,
      * especially the ones using &#64;sys.any or very large developer entities.
@@ -217,7 +243,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MATCH_MODE_ML_ONLY_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -226,9 +251,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static MatchMode valueOf(int value) {
       return forNumber(value);
@@ -236,45 +259,45 @@ private static final long serialVersionUID = 0L;
 
     public static MatchMode forNumber(int value) {
       switch (value) {
-        case 0: return MATCH_MODE_UNSPECIFIED;
-        case 1: return MATCH_MODE_HYBRID;
-        case 2: return MATCH_MODE_ML_ONLY;
-        default: return null;
+        case 0:
+          return MATCH_MODE_UNSPECIFIED;
+        case 1:
+          return MATCH_MODE_HYBRID;
+        case 2:
+          return MATCH_MODE_ML_ONLY;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<MatchMode>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<MatchMode> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        MatchMode> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<MatchMode>() {
-            public MatchMode findValueByNumber(int number) {
-              return MatchMode.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<MatchMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MatchMode>() {
+          public MatchMode findValueByNumber(int number) {
+            return MatchMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2.Agent.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final MatchMode[] VALUES = values();
 
-    public static MatchMode valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static MatchMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -295,6 +318,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The project of this agent.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -307,14 +332,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The project of this agent.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -322,13 +348,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -339,6 +363,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * Required. The name of this agent.
    * </pre>
@@ -350,27 +376,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The name of this agent.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -381,6 +406,8 @@ private static final long serialVersionUID = 0L;
   public static final int DEFAULT_LANGUAGE_CODE_FIELD_NUMBER = 3;
   private volatile java.lang.Object defaultLanguageCode_;
   /**
+   *
+   *
    * <pre>
    * Required. The default language of the agent as a language tag. See
    * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -395,14 +422,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       defaultLanguageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The default language of the agent as a language tag. See
    * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -412,13 +440,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string default_language_code = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDefaultLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getDefaultLanguageCodeBytes() {
     java.lang.Object ref = defaultLanguageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       defaultLanguageCode_ = b;
       return b;
     } else {
@@ -429,6 +455,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUPPORTED_LANGUAGE_CODES_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList supportedLanguageCodes_;
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -436,11 +464,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string supported_language_codes = 4;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getSupportedLanguageCodesList() {
+  public com.google.protobuf.ProtocolStringList getSupportedLanguageCodesList() {
     return supportedLanguageCodes_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -452,6 +481,8 @@ private static final long serialVersionUID = 0L;
     return supportedLanguageCodes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -463,6 +494,8 @@ private static final long serialVersionUID = 0L;
     return supportedLanguageCodes_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The list of all languages supported by this agent (except for the
    * `default_language_code`).
@@ -470,14 +503,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string supported_language_codes = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getSupportedLanguageCodesBytes(int index) {
+  public com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index) {
     return supportedLanguageCodes_.getByteString(index);
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 5;
   private volatile java.lang.Object timeZone_;
   /**
+   *
+   *
    * <pre>
    * Required. The time zone of this agent from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -491,14 +525,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       timeZone_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The time zone of this agent from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -507,13 +542,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string time_zone = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getTimeZoneBytes() {
+  public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       timeZone_ = b;
       return b;
     } else {
@@ -524,6 +557,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * Optional. The description of this agent.
    * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -536,14 +571,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The description of this agent.
    * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -551,13 +587,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -568,6 +602,8 @@ private static final long serialVersionUID = 0L;
   public static final int AVATAR_URI_FIELD_NUMBER = 7;
   private volatile java.lang.Object avatarUri_;
   /**
+   *
+   *
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -581,14 +617,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       avatarUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The URI of the agent's avatar.
    * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -597,13 +634,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string avatar_uri = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getAvatarUriBytes() {
+  public com.google.protobuf.ByteString getAvatarUriBytes() {
     java.lang.Object ref = avatarUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       avatarUri_ = b;
       return b;
     } else {
@@ -614,6 +649,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENABLE_LOGGING_FIELD_NUMBER = 8;
   private boolean enableLogging_;
   /**
+   *
+   *
    * <pre>
    * Optional. Determines whether this agent should log conversation queries.
    * </pre>
@@ -627,6 +664,8 @@ private static final long serialVersionUID = 0L;
   public static final int MATCH_MODE_FIELD_NUMBER = 9;
   private int matchMode_;
   /**
+   *
+   *
    * <pre>
    * Optional. Determines how intents are detected from user queries.
    * </pre>
@@ -637,6 +676,8 @@ private static final long serialVersionUID = 0L;
     return matchMode_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Determines how intents are detected from user queries.
    * </pre>
@@ -645,13 +686,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.dialogflow.v2.Agent.MatchMode result = com.google.cloud.dialogflow.v2.Agent.MatchMode.valueOf(matchMode_);
+    com.google.cloud.dialogflow.v2.Agent.MatchMode result =
+        com.google.cloud.dialogflow.v2.Agent.MatchMode.valueOf(matchMode_);
     return result == null ? com.google.cloud.dialogflow.v2.Agent.MatchMode.UNRECOGNIZED : result;
   }
 
   public static final int CLASSIFICATION_THRESHOLD_FIELD_NUMBER = 10;
   private float classificationThreshold_;
   /**
+   *
+   *
    * <pre>
    * Optional. To filter out false positive results and still get variety in
    * matched natural language inputs for your agent, you can tune the machine
@@ -669,6 +713,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -680,8 +725,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -692,7 +736,8 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultLanguageCode_);
     }
     for (int i = 0; i < supportedLanguageCodes_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, supportedLanguageCodes_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 4, supportedLanguageCodes_.getRaw(i));
     }
     if (!getTimeZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, timeZone_);
@@ -706,7 +751,8 @@ private static final long serialVersionUID = 0L;
     if (enableLogging_ != false) {
       output.writeBool(8, enableLogging_);
     }
-    if (matchMode_ != com.google.cloud.dialogflow.v2.Agent.MatchMode.MATCH_MODE_UNSPECIFIED.getNumber()) {
+    if (matchMode_
+        != com.google.cloud.dialogflow.v2.Agent.MatchMode.MATCH_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(9, matchMode_);
     }
     if (classificationThreshold_ != 0F) {
@@ -748,16 +794,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, avatarUri_);
     }
     if (enableLogging_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, enableLogging_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableLogging_);
     }
-    if (matchMode_ != com.google.cloud.dialogflow.v2.Agent.MatchMode.MATCH_MODE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, matchMode_);
+    if (matchMode_
+        != com.google.cloud.dialogflow.v2.Agent.MatchMode.MATCH_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, matchMode_);
     }
     if (classificationThreshold_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(10, classificationThreshold_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(10, classificationThreshold_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -767,7 +811,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2.Agent)) {
       return super.equals(obj);
@@ -775,27 +819,20 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dialogflow.v2.Agent other = (com.google.cloud.dialogflow.v2.Agent) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDefaultLanguageCode()
-        .equals(other.getDefaultLanguageCode());
-    result = result && getSupportedLanguageCodesList()
-        .equals(other.getSupportedLanguageCodesList());
-    result = result && getTimeZone()
-        .equals(other.getTimeZone());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getAvatarUri()
-        .equals(other.getAvatarUri());
-    result = result && (getEnableLogging()
-        == other.getEnableLogging());
+    result = result && getParent().equals(other.getParent());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDefaultLanguageCode().equals(other.getDefaultLanguageCode());
+    result =
+        result && getSupportedLanguageCodesList().equals(other.getSupportedLanguageCodesList());
+    result = result && getTimeZone().equals(other.getTimeZone());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getAvatarUri().equals(other.getAvatarUri());
+    result = result && (getEnableLogging() == other.getEnableLogging());
     result = result && matchMode_ == other.matchMode_;
-    result = result && (
-        java.lang.Float.floatToIntBits(getClassificationThreshold())
-        == java.lang.Float.floatToIntBits(
-            other.getClassificationThreshold()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getClassificationThreshold())
+                == java.lang.Float.floatToIntBits(other.getClassificationThreshold()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -824,130 +861,136 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + AVATAR_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAvatarUri().hashCode();
     hash = (37 * hash) + ENABLE_LOGGING_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnableLogging());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLogging());
     hash = (37 * hash) + MATCH_MODE_FIELD_NUMBER;
     hash = (53 * hash) + matchMode_;
     hash = (37 * hash) + CLASSIFICATION_THRESHOLD_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getClassificationThreshold());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getClassificationThreshold());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.v2.Agent parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dialogflow.v2.Agent parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2.Agent parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.dialogflow.v2.Agent parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2.Agent parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dialogflow.v2.Agent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents a conversational agent.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.Agent}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.Agent)
       com.google.cloud.dialogflow.v2.AgentOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2.AgentProto.internal_static_google_cloud_dialogflow_v2_Agent_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.AgentProto
+          .internal_static_google_cloud_dialogflow_v2_Agent_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2.AgentProto.internal_static_google_cloud_dialogflow_v2_Agent_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2.AgentProto
+          .internal_static_google_cloud_dialogflow_v2_Agent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2.Agent.class, com.google.cloud.dialogflow.v2.Agent.Builder.class);
+              com.google.cloud.dialogflow.v2.Agent.class,
+              com.google.cloud.dialogflow.v2.Agent.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2.Agent.newBuilder()
@@ -955,16 +998,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -992,9 +1034,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2.AgentProto.internal_static_google_cloud_dialogflow_v2_Agent_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2.AgentProto
+          .internal_static_google_cloud_dialogflow_v2_Agent_descriptor;
     }
 
     @java.lang.Override
@@ -1039,38 +1081,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2.Agent) {
-        return mergeFrom((com.google.cloud.dialogflow.v2.Agent)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2.Agent) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1150,10 +1193,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
@@ -1164,8 +1210,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -1174,6 +1219,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
@@ -1181,13 +1228,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -1195,6 +1240,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
@@ -1202,17 +1249,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
@@ -1221,12 +1269,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The project of this agent.
      * Format: `projects/&lt;Project ID&gt;`.
@@ -1234,13 +1284,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -1248,6 +1297,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The name of this agent.
      * </pre>
@@ -1257,8 +1308,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1267,19 +1317,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of this agent.
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1287,23 +1337,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of this agent.
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of this agent.
      * </pre>
@@ -1311,25 +1364,26 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of this agent.
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -1337,6 +1391,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object defaultLanguageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The default language of the agent as a language tag. See
      * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -1349,8 +1405,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDefaultLanguageCode() {
       java.lang.Object ref = defaultLanguageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         defaultLanguageCode_ = s;
         return s;
@@ -1359,6 +1414,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The default language of the agent as a language tag. See
      * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -1368,13 +1425,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_language_code = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDefaultLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getDefaultLanguageCodeBytes() {
       java.lang.Object ref = defaultLanguageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         defaultLanguageCode_ = b;
         return b;
       } else {
@@ -1382,6 +1437,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The default language of the agent as a language tag. See
      * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -1391,17 +1448,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_language_code = 3;</code>
      */
-    public Builder setDefaultLanguageCode(
-        java.lang.String value) {
+    public Builder setDefaultLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       defaultLanguageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The default language of the agent as a language tag. See
      * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -1412,12 +1470,14 @@ private static final long serialVersionUID = 0L;
      * <code>string default_language_code = 3;</code>
      */
     public Builder clearDefaultLanguageCode() {
-      
+
       defaultLanguageCode_ = getDefaultInstance().getDefaultLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The default language of the agent as a language tag. See
      * [Language Support](https://dialogflow.com/docs/reference/language) for a
@@ -1427,26 +1487,30 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_language_code = 3;</code>
      */
-    public Builder setDefaultLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDefaultLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       defaultLanguageCode_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList supportedLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureSupportedLanguageCodesIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        supportedLanguageCodes_ = new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
+        supportedLanguageCodes_ =
+            new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1454,11 +1518,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string supported_language_codes = 4;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getSupportedLanguageCodesList() {
+    public com.google.protobuf.ProtocolStringList getSupportedLanguageCodesList() {
       return supportedLanguageCodes_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1470,6 +1535,8 @@ private static final long serialVersionUID = 0L;
       return supportedLanguageCodes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1481,6 +1548,8 @@ private static final long serialVersionUID = 0L;
       return supportedLanguageCodes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1488,11 +1557,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string supported_language_codes = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getSupportedLanguageCodesBytes(int index) {
+    public com.google.protobuf.ByteString getSupportedLanguageCodesBytes(int index) {
       return supportedLanguageCodes_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1500,17 +1570,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string supported_language_codes = 4;</code>
      */
-    public Builder setSupportedLanguageCodes(
-        int index, java.lang.String value) {
+    public Builder setSupportedLanguageCodes(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSupportedLanguageCodesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureSupportedLanguageCodesIsMutable();
       supportedLanguageCodes_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1518,17 +1589,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string supported_language_codes = 4;</code>
      */
-    public Builder addSupportedLanguageCodes(
-        java.lang.String value) {
+    public Builder addSupportedLanguageCodes(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSupportedLanguageCodesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureSupportedLanguageCodesIsMutable();
       supportedLanguageCodes_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1536,15 +1608,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string supported_language_codes = 4;</code>
      */
-    public Builder addAllSupportedLanguageCodes(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllSupportedLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedLanguageCodesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, supportedLanguageCodes_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedLanguageCodes_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1559,6 +1631,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The list of all languages supported by this agent (except for the
      * `default_language_code`).
@@ -1566,12 +1640,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string supported_language_codes = 4;</code>
      */
-    public Builder addSupportedLanguageCodesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addSupportedLanguageCodesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureSupportedLanguageCodesIsMutable();
       supportedLanguageCodes_.add(value);
       onChanged();
@@ -1580,6 +1653,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object timeZone_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The time zone of this agent from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -1591,8 +1666,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         timeZone_ = s;
         return s;
@@ -1601,6 +1675,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time zone of this agent from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -1609,13 +1685,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string time_zone = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getTimeZoneBytes() {
+    public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         timeZone_ = b;
         return b;
       } else {
@@ -1623,6 +1697,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time zone of this agent from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -1631,17 +1707,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string time_zone = 5;</code>
      */
-    public Builder setTimeZone(
-        java.lang.String value) {
+    public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       timeZone_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time zone of this agent from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -1651,12 +1728,14 @@ private static final long serialVersionUID = 0L;
      * <code>string time_zone = 5;</code>
      */
     public Builder clearTimeZone() {
-      
+
       timeZone_ = getDefaultInstance().getTimeZone();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time zone of this agent from the
      * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -1665,13 +1744,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string time_zone = 5;</code>
      */
-    public Builder setTimeZoneBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       timeZone_ = value;
       onChanged();
       return this;
@@ -1679,6 +1757,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The description of this agent.
      * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -1689,8 +1769,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1699,6 +1778,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The description of this agent.
      * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -1706,13 +1787,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1720,6 +1799,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The description of this agent.
      * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -1727,17 +1808,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 6;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The description of this agent.
      * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -1746,12 +1828,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 6;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The description of this agent.
      * The maximum length is 500 characters. If exceeded, the request is rejected.
@@ -1759,13 +1843,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 6;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
@@ -1773,6 +1856,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object avatarUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -1784,8 +1869,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAvatarUri() {
       java.lang.Object ref = avatarUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         avatarUri_ = s;
         return s;
@@ -1794,6 +1878,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -1802,13 +1888,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string avatar_uri = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getAvatarUriBytes() {
+    public com.google.protobuf.ByteString getAvatarUriBytes() {
       java.lang.Object ref = avatarUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         avatarUri_ = b;
         return b;
       } else {
@@ -1816,6 +1900,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -1824,17 +1910,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string avatar_uri = 7;</code>
      */
-    public Builder setAvatarUri(
-        java.lang.String value) {
+    public Builder setAvatarUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       avatarUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -1844,12 +1931,14 @@ private static final long serialVersionUID = 0L;
      * <code>string avatar_uri = 7;</code>
      */
     public Builder clearAvatarUri() {
-      
+
       avatarUri_ = getDefaultInstance().getAvatarUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URI of the agent's avatar.
      * Avatars are used throughout the Dialogflow console and in the self-hosted
@@ -1858,20 +1947,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string avatar_uri = 7;</code>
      */
-    public Builder setAvatarUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAvatarUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       avatarUri_ = value;
       onChanged();
       return this;
     }
 
-    private boolean enableLogging_ ;
+    private boolean enableLogging_;
     /**
+     *
+     *
      * <pre>
      * Optional. Determines whether this agent should log conversation queries.
      * </pre>
@@ -1882,6 +1972,8 @@ private static final long serialVersionUID = 0L;
       return enableLogging_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Determines whether this agent should log conversation queries.
      * </pre>
@@ -1889,12 +1981,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_logging = 8;</code>
      */
     public Builder setEnableLogging(boolean value) {
-      
+
       enableLogging_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Determines whether this agent should log conversation queries.
      * </pre>
@@ -1902,7 +1996,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_logging = 8;</code>
      */
     public Builder clearEnableLogging() {
-      
+
       enableLogging_ = false;
       onChanged();
       return this;
@@ -1910,6 +2004,8 @@ private static final long serialVersionUID = 0L;
 
     private int matchMode_ = 0;
     /**
+     *
+     *
      * <pre>
      * Optional. Determines how intents are detected from user queries.
      * </pre>
@@ -1920,6 +2016,8 @@ private static final long serialVersionUID = 0L;
       return matchMode_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Determines how intents are detected from user queries.
      * </pre>
@@ -1932,6 +2030,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Determines how intents are detected from user queries.
      * </pre>
@@ -1940,10 +2040,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.dialogflow.v2.Agent.MatchMode result = com.google.cloud.dialogflow.v2.Agent.MatchMode.valueOf(matchMode_);
+      com.google.cloud.dialogflow.v2.Agent.MatchMode result =
+          com.google.cloud.dialogflow.v2.Agent.MatchMode.valueOf(matchMode_);
       return result == null ? com.google.cloud.dialogflow.v2.Agent.MatchMode.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Determines how intents are detected from user queries.
      * </pre>
@@ -1954,12 +2057,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       matchMode_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Determines how intents are detected from user queries.
      * </pre>
@@ -1967,14 +2072,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9;</code>
      */
     public Builder clearMatchMode() {
-      
+
       matchMode_ = 0;
       onChanged();
       return this;
     }
 
-    private float classificationThreshold_ ;
+    private float classificationThreshold_;
     /**
+     *
+     *
      * <pre>
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
@@ -1991,6 +2098,8 @@ private static final long serialVersionUID = 0L;
       return classificationThreshold_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
@@ -2004,12 +2113,14 @@ private static final long serialVersionUID = 0L;
      * <code>float classification_threshold = 10;</code>
      */
     public Builder setClassificationThreshold(float value) {
-      
+
       classificationThreshold_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. To filter out false positive results and still get variety in
      * matched natural language inputs for your agent, you can tune the machine
@@ -2023,14 +2134,14 @@ private static final long serialVersionUID = 0L;
      * <code>float classification_threshold = 10;</code>
      */
     public Builder clearClassificationThreshold() {
-      
+
       classificationThreshold_ = 0F;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2040,12 +2151,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.Agent)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.Agent)
   private static final com.google.cloud.dialogflow.v2.Agent DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.Agent();
   }
@@ -2054,16 +2165,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Agent>
-      PARSER = new com.google.protobuf.AbstractParser<Agent>() {
-    @java.lang.Override
-    public Agent parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Agent(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Agent> PARSER =
+      new com.google.protobuf.AbstractParser<Agent>() {
+        @java.lang.Override
+        public Agent parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Agent(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Agent> parser() {
     return PARSER;
@@ -2078,6 +2189,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dialogflow.v2.Agent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

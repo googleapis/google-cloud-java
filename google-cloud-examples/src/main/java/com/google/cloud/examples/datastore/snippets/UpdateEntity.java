@@ -29,9 +29,7 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 
-/**
- * A snippet for Google Cloud Datastore showing how to get an entity and update it if it exists.
- */
+/** A snippet for Google Cloud Datastore showing how to get an entity and update it if it exists. */
 public class UpdateEntity {
 
   public static void main(String... args) {
@@ -41,9 +39,7 @@ public class UpdateEntity {
     Entity entity = datastore.get(key);
     if (entity != null) {
       System.out.println("Updating access_time for " + entity.getString("name"));
-      entity = Entity.newBuilder(entity)
-          .set("access_time", Timestamp.now())
-          .build();
+      entity = Entity.newBuilder(entity).set("access_time", Timestamp.now()).build();
       datastore.update(entity);
     }
   }

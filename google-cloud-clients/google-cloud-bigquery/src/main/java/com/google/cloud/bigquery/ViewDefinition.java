@@ -50,8 +50,6 @@ public abstract class ViewDefinition extends TableDefinition {
       return setUserDefinedFunctionsImmut(ImmutableList.copyOf(userDefinedFunctions));
     }
 
-
-
     /**
      * Sets user defined functions that can be used by {@link #getQuery()}.
      *
@@ -148,7 +146,6 @@ public abstract class ViewDefinition extends TableDefinition {
     return newBuilder().setQuery(query);
   }
 
-
   /**
    * Returns a builder for a BigQuery view definition.
    *
@@ -158,7 +155,6 @@ public abstract class ViewDefinition extends TableDefinition {
   public static Builder newBuilder(String query, List<UserDefinedFunction> functions) {
     return newBuilder(query).setUserDefinedFunctions(functions);
   }
-
 
   /**
    * Returns a builder for a BigQuery view definition.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,22 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
   @Override
   public void instantiateWorkflowTemplate(
       InstantiateWorkflowTemplateRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void instantiateInlineWorkflowTemplate(
+      InstantiateInlineWorkflowTemplateRequest request,
+      StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);

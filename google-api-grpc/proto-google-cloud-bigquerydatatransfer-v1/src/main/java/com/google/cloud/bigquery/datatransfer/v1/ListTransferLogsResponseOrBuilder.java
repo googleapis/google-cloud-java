@@ -3,55 +3,73 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ListTransferLogsResponseOrBuilder extends
+public interface ListTransferLogsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * </code>
    */
-  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage> 
+  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage>
       getTransferMessagesList();
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferMessage getTransferMessages(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * </code>
    */
   int getTransferMessagesCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferMessageOrBuilder> 
+  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferMessageOrBuilder>
       getTransferMessagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage transfer_messages = 1;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferMessageOrBuilder getTransferMessagesOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -63,6 +81,8 @@ public interface ListTransferLogsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -72,6 +92,5 @@ public interface ListTransferLogsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

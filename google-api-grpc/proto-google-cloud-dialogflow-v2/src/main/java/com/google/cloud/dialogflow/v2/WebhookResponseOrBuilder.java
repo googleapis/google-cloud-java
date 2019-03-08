@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface WebhookResponseOrBuilder extends
+public interface WebhookResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.WebhookResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The text to be shown on the screen. This value is passed directly
    * to `QueryResult.fulfillment_text`.
@@ -17,6 +20,8 @@ public interface WebhookResponseOrBuilder extends
    */
   java.lang.String getFulfillmentText();
   /**
+   *
+   *
    * <pre>
    * Optional. The text to be shown on the screen. This value is passed directly
    * to `QueryResult.fulfillment_text`.
@@ -24,10 +29,11 @@ public interface WebhookResponseOrBuilder extends
    *
    * <code>string fulfillment_text = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getFulfillmentTextBytes();
+  com.google.protobuf.ByteString getFulfillmentTextBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -35,9 +41,10 @@ public interface WebhookResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> 
-      getFulfillmentMessagesList();
+  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getFulfillmentMessagesList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -47,6 +54,8 @@ public interface WebhookResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent.Message getFulfillmentMessages(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -56,6 +65,8 @@ public interface WebhookResponseOrBuilder extends
    */
   int getFulfillmentMessagesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -63,9 +74,11 @@ public interface WebhookResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getFulfillmentMessagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -73,10 +86,11 @@ public interface WebhookResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message fulfillment_messages = 2;</code>
    */
-  com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getFulfillmentMessagesOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getFulfillmentMessagesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_source`.
    * </pre>
@@ -85,16 +99,19 @@ public interface WebhookResponseOrBuilder extends
    */
   java.lang.String getSource();
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_source`.
    * </pre>
    *
    * <code>string source = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSourceBytes();
+  com.google.protobuf.ByteString getSourceBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_payload`.
    * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -124,6 +141,8 @@ public interface WebhookResponseOrBuilder extends
    */
   boolean hasPayload();
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_payload`.
    * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -153,6 +172,8 @@ public interface WebhookResponseOrBuilder extends
    */
   com.google.protobuf.Struct getPayload();
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_payload`.
    * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -183,6 +204,8 @@ public interface WebhookResponseOrBuilder extends
   com.google.protobuf.StructOrBuilder getPayloadOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -190,9 +213,10 @@ public interface WebhookResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Context> 
-      getOutputContextsList();
+  java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -202,6 +226,8 @@ public interface WebhookResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Context getOutputContexts(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -211,6 +237,8 @@ public interface WebhookResponseOrBuilder extends
    */
   int getOutputContextsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -218,9 +246,11 @@ public interface WebhookResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -228,10 +258,11 @@ public interface WebhookResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 5;</code>
    */
-  com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
@@ -241,6 +272,8 @@ public interface WebhookResponseOrBuilder extends
    */
   boolean hasFollowupEventInput();
   /**
+   *
+   *
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
@@ -250,6 +283,8 @@ public interface WebhookResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.EventInput getFollowupEventInput();
   /**
+   *
+   *
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.

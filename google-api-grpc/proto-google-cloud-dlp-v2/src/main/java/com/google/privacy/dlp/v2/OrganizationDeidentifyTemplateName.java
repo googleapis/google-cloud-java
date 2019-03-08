@@ -14,20 +14,20 @@
 
 package com.google.privacy.dlp.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class OrganizationDeidentifyTemplateName extends DeidentifyTemplateName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/deidentifyTemplates/{deidentify_template}");
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/deidentifyTemplates/{deidentify_template}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -55,19 +55,20 @@ public class OrganizationDeidentifyTemplateName extends DeidentifyTemplateName {
     deidentifyTemplate = Preconditions.checkNotNull(builder.getDeidentifyTemplate());
   }
 
-  public static OrganizationDeidentifyTemplateName of(String organization, String deidentifyTemplate) {
+  public static OrganizationDeidentifyTemplateName of(
+      String organization, String deidentifyTemplate) {
     return newBuilder()
-      .setOrganization(organization)
-      .setDeidentifyTemplate(deidentifyTemplate)
-      .build();
+        .setOrganization(organization)
+        .setDeidentifyTemplate(deidentifyTemplate)
+        .build();
   }
 
   public static String format(String organization, String deidentifyTemplate) {
     return newBuilder()
-      .setOrganization(organization)
-      .setDeidentifyTemplate(deidentifyTemplate)
-      .build()
-      .toString();
+        .setOrganization(organization)
+        .setDeidentifyTemplate(deidentifyTemplate)
+        .build()
+        .toString();
   }
 
   public static OrganizationDeidentifyTemplateName parse(String formattedString) {
@@ -75,7 +76,9 @@ public class OrganizationDeidentifyTemplateName extends DeidentifyTemplateName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "OrganizationDeidentifyTemplateName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "OrganizationDeidentifyTemplateName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("deidentify_template"));
   }
 
@@ -123,7 +126,8 @@ public class OrganizationDeidentifyTemplateName extends DeidentifyTemplateName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("organization", organization, "deidentify_template", deidentifyTemplate);
+    return PATH_TEMPLATE.instantiate(
+        "organization", organization, "deidentify_template", deidentifyTemplate);
   }
 
   /** Builder for OrganizationDeidentifyTemplateName. */
@@ -150,8 +154,7 @@ public class OrganizationDeidentifyTemplateName extends DeidentifyTemplateName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(OrganizationDeidentifyTemplateName organizationDeidentifyTemplateName) {
       organization = organizationDeidentifyTemplateName.organization;
@@ -186,4 +189,3 @@ public class OrganizationDeidentifyTemplateName extends DeidentifyTemplateName {
     return h;
   }
 }
-

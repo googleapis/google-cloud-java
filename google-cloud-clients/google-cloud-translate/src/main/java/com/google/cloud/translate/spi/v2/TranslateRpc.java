@@ -19,7 +19,6 @@ package com.google.cloud.translate.spi.v2;
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.api.services.translate.model.TranslationsResource;
-
 import com.google.cloud.ServiceRpc;
 import java.util.List;
 import java.util.Map;

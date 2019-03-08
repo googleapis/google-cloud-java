@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface CreateLogMetricRequestOrBuilder extends
+public interface CreateLogMetricRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.CreateLogMetricRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the project in which to create the metric:
    *     "projects/[PROJECT_ID]"
@@ -18,6 +21,8 @@ public interface CreateLogMetricRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The resource name of the project in which to create the metric:
    *     "projects/[PROJECT_ID]"
@@ -26,10 +31,11 @@ public interface CreateLogMetricRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The new logs-based metric, which must not have an identifier that
    * already exists.
@@ -39,6 +45,8 @@ public interface CreateLogMetricRequestOrBuilder extends
    */
   boolean hasMetric();
   /**
+   *
+   *
    * <pre>
    * The new logs-based metric, which must not have an identifier that
    * already exists.
@@ -48,6 +56,8 @@ public interface CreateLogMetricRequestOrBuilder extends
    */
   com.google.logging.v2.LogMetric getMetric();
   /**
+   *
+   *
    * <pre>
    * The new logs-based metric, which must not have an identifier that
    * already exists.

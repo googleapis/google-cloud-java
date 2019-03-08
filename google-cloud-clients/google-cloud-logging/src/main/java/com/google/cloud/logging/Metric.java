@@ -21,7 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.core.ApiFuture;
 import com.google.common.base.Function;
 import com.google.logging.v2.LogMetric;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
@@ -44,9 +43,7 @@ public class Metric extends MetricInfo {
   private final LoggingOptions options;
   private transient Logging logging;
 
-  /**
-   * A builder for {@code Metric} objects.
-   */
+  /** A builder for {@code Metric} objects. */
   public static final class Builder extends MetricInfo.Builder {
 
     private final Logging logging;
@@ -57,20 +54,17 @@ public class Metric extends MetricInfo {
       delegate = new BuilderImpl(metric);
     }
 
-
     @Override
     public Builder setName(String name) {
       delegate.setName(name);
       return this;
     }
 
-
     @Override
     public Builder setDescription(String description) {
       delegate.setDescription(description);
       return this;
     }
-
 
     @Override
     public Builder setFilter(String filter) {
@@ -112,10 +106,7 @@ public class Metric extends MetricInfo {
     return baseEquals(other) && Objects.equals(options, other.options);
   }
 
-
-  /**
-   * Returns the metrics's {@code Logging} object used to issue requests.
-   */
+  /** Returns the metrics's {@code Logging} object used to issue requests. */
   public Logging getLogging() {
     return logging;
   }
@@ -124,7 +115,8 @@ public class Metric extends MetricInfo {
    * Deletes this metric.
    *
    * <p>Example of deleting the metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * boolean deleted = metric.delete();
    * if (deleted) {
    *   // the metric was deleted
@@ -146,7 +138,8 @@ public class Metric extends MetricInfo {
    * {@code false} if it was not found.
    *
    * <p>Example of asynchronously deleting the metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * ApiFuture<Boolean> future = metric.deleteAsync();
    * // ...
    * boolean deleted = future.get();
@@ -167,7 +160,8 @@ public class Metric extends MetricInfo {
    * Fetches current metric's latest information. Returns {@code null} if the metric does not exist.
    *
    * <p>Example of getting the metric's latest information.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Metric latestMetric = metric.reload();
    * if (latestMetric == null) {
    *   // the metric was not found
@@ -182,12 +176,13 @@ public class Metric extends MetricInfo {
   }
 
   /**
-   * Sends a request to fetch current metric's latest information. This method returns a
-   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a {@code Metric}
+   * Sends a request to fetch current metric's latest information. This method returns a {@code
+   * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a {@code Metric}
    * object with latest information or {@code null} if not found.
    *
    * <p>Example of asynchronously getting the metric's latest information.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * ApiFuture<Metric> future = metric.reloadAsync();
    * // ...
    * Metric latestMetric = future.get();
@@ -206,7 +201,8 @@ public class Metric extends MetricInfo {
    * Updates current metric. If the metric does not exist, it is created.
    *
    * <p>Example of updating the metric's information.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Metric updatedMetric = metric.toBuilder()
    *     .setDescription("A more detailed description")
    *     .build()
@@ -222,11 +218,12 @@ public class Metric extends MetricInfo {
 
   /**
    * Sends a request to update current metric. If the metric does not exist, it is created. This
-   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a
-   * {@code Metric} object with updated information.
+   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
+   * returns a {@code Metric} object with updated information.
    *
    * <p>Example of asynchronously updating the metric's information.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * ApiFuture<Metric> future = metric.toBuilder()
    *     .setDescription("A more detailed description")
    *     .build()

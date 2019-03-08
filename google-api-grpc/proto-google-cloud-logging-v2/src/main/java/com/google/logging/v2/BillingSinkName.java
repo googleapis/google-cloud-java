@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class BillingSinkName extends SinkName {
   }
 
   public static BillingSinkName of(String billingAccount, String sink) {
-    return newBuilder()
-      .setBillingAccount(billingAccount)
-      .setSink(sink)
-      .build();
+    return newBuilder().setBillingAccount(billingAccount).setSink(sink).build();
   }
 
   public static String format(String billingAccount, String sink) {
-    return newBuilder()
-      .setBillingAccount(billingAccount)
-      .setSink(sink)
-      .build()
-      .toString();
+    return newBuilder().setBillingAccount(billingAccount).setSink(sink).build().toString();
   }
 
   public static BillingSinkName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class BillingSinkName extends SinkName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "BillingSinkName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "BillingSinkName.parse: formattedString not in valid format");
     return of(matchMap.get("billing_account"), matchMap.get("sink"));
   }
 
@@ -150,8 +143,7 @@ public class BillingSinkName extends SinkName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(BillingSinkName billingSinkName) {
       billingAccount = billingSinkName.billingAccount;
@@ -170,8 +162,7 @@ public class BillingSinkName extends SinkName {
     }
     if (o instanceof BillingSinkName) {
       BillingSinkName that = (BillingSinkName) o;
-      return (this.billingAccount.equals(that.billingAccount))
-          && (this.sink.equals(that.sink));
+      return (this.billingAccount.equals(that.billingAccount)) && (this.sink.equals(that.sink));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class BillingSinkName extends SinkName {
     return h;
   }
 }
-

@@ -20,28 +20,27 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * A Google Compute Engine region identity.
- */
+/** A Google Compute Engine region identity. */
 public final class RegionId extends ResourceId {
 
-  static final Function<String, RegionId> FROM_URL_FUNCTION = new Function<String, RegionId>() {
-    @Override
-    public RegionId apply(String pb) {
-      return RegionId.fromUrl(pb);
-    }
-  };
-  static final Function<RegionId, String> TO_URL_FUNCTION = new Function<RegionId, String>() {
-    @Override
-    public String apply(RegionId regionId) {
-      return regionId.getSelfLink();
-    }
-  };
+  static final Function<String, RegionId> FROM_URL_FUNCTION =
+      new Function<String, RegionId>() {
+        @Override
+        public RegionId apply(String pb) {
+          return RegionId.fromUrl(pb);
+        }
+      };
+  static final Function<RegionId, String> TO_URL_FUNCTION =
+      new Function<RegionId, String>() {
+        @Override
+        public String apply(RegionId regionId) {
+          return regionId.getSelfLink();
+        }
+      };
 
   private static final String REGEX = ResourceId.REGEX + "regions/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
@@ -59,9 +58,7 @@ public final class RegionId extends ResourceId {
     this.region = checkNotNull(regionId.getRegion());
   }
 
-  /**
-   * Returns the name of the region.
-   */
+  /** Returns the name of the region. */
   public String getRegion() {
     return region;
   }
@@ -101,16 +98,12 @@ public final class RegionId extends ResourceId {
     return RegionId.of(projectId, region);
   }
 
-  /**
-   * Returns a new region identity given project and region names.
-   */
+  /** Returns a new region identity given project and region names. */
   public static RegionId of(String project, String region) {
     return new RegionId(project, region);
   }
 
-  /**
-   * Returns a new region identity given region name.
-   */
+  /** Returns a new region identity given region name. */
   public static RegionId of(String region) {
     return RegionId.of(null, region);
   }

@@ -4,6 +4,8 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Data extracted for a specific group based on certain filter criteria,
  * such as a given time period and/or service filter.
@@ -11,15 +13,16 @@ package com.google.devtools.clouderrorreporting.v1beta1;
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats}
  */
-public  final class ErrorGroupStats extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)
     ErrorGroupStatsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ErrorGroupStats.newBuilder() to construct.
   private ErrorGroupStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ErrorGroupStats() {
     count_ = 0L;
     affectedUsersCount_ = 0L;
@@ -29,10 +32,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ErrorGroupStats(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,105 +55,126 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder subBuilder = null;
-            if (group_ != null) {
-              subBuilder = group_.toBuilder();
-            }
-            group_ = input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(group_);
-              group_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder subBuilder = null;
+              if (group_ != null) {
+                subBuilder = group_.toBuilder();
+              }
+              group_ =
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(group_);
+                group_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 16: {
+              break;
+            }
+          case 16:
+            {
+              count_ = input.readInt64();
+              break;
+            }
+          case 24:
+            {
+              affectedUsersCount_ = input.readInt64();
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                timedCounts_ =
+                    new java.util.ArrayList<
+                        com.google.devtools.clouderrorreporting.v1beta1.TimedCount>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              timedCounts_.add(
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.TimedCount.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (firstSeenTime_ != null) {
+                subBuilder = firstSeenTime_.toBuilder();
+              }
+              firstSeenTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(firstSeenTime_);
+                firstSeenTime_ = subBuilder.buildPartial();
+              }
 
-            count_ = input.readInt64();
-            break;
-          }
-          case 24: {
+              break;
+            }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastSeenTime_ != null) {
+                subBuilder = lastSeenTime_.toBuilder();
+              }
+              lastSeenTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastSeenTime_);
+                lastSeenTime_ = subBuilder.buildPartial();
+              }
 
-            affectedUsersCount_ = input.readInt64();
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              timedCounts_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            timedCounts_.add(
-                input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.TimedCount.parser(), extensionRegistry));
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (firstSeenTime_ != null) {
-              subBuilder = firstSeenTime_.toBuilder();
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                affectedServices_ =
+                    new java.util.ArrayList<
+                        com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              affectedServices_.add(
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.parser(),
+                      extensionRegistry));
+              break;
             }
-            firstSeenTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(firstSeenTime_);
-              firstSeenTime_ = subBuilder.buildPartial();
+          case 64:
+            {
+              numAffectedServices_ = input.readInt32();
+              break;
             }
+          case 74:
+            {
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder subBuilder = null;
+              if (representative_ != null) {
+                subBuilder = representative_.toBuilder();
+              }
+              representative_ =
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(representative_);
+                representative_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastSeenTime_ != null) {
-              subBuilder = lastSeenTime_.toBuilder();
+              break;
             }
-            lastSeenTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastSeenTime_);
-              lastSeenTime_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              affectedServices_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>();
-              mutable_bitField0_ |= 0x00000040;
-            }
-            affectedServices_.add(
-                input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.parser(), extensionRegistry));
-            break;
-          }
-          case 64: {
-
-            numAffectedServices_ = input.readInt32();
-            break;
-          }
-          case 74: {
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder subBuilder = null;
-            if (representative_ != null) {
-              subBuilder = representative_.toBuilder();
-            }
-            representative_ = input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(representative_);
-              representative_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         timedCounts_ = java.util.Collections.unmodifiableList(timedCounts_);
@@ -162,23 +186,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.class, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.class,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder.class);
   }
 
   private int bitField0_;
   public static final int GROUP_FIELD_NUMBER = 1;
   private com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group_;
   /**
+   *
+   *
    * <pre>
    * Group data that is independent of the filter criteria.
    * </pre>
@@ -189,6 +218,8 @@ private static final long serialVersionUID = 0L;
     return group_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Group data that is independent of the filter criteria.
    * </pre>
@@ -196,9 +227,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup() {
-    return group_ == null ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance() : group_;
+    return group_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
+        : group_;
   }
   /**
+   *
+   *
    * <pre>
    * Group data that is independent of the filter criteria.
    * </pre>
@@ -212,6 +247,8 @@ private static final long serialVersionUID = 0L;
   public static final int COUNT_FIELD_NUMBER = 2;
   private long count_;
   /**
+   *
+   *
    * <pre>
    * Approximate total number of events in the given group that match
    * the filter criteria.
@@ -226,6 +263,8 @@ private static final long serialVersionUID = 0L;
   public static final int AFFECTED_USERS_COUNT_FIELD_NUMBER = 3;
   private long affectedUsersCount_;
   /**
+   *
+   *
    * <pre>
    * Approximate number of affected users in the given group that
    * match the filter criteria.
@@ -250,6 +289,8 @@ private static final long serialVersionUID = 0L;
   public static final int TIMED_COUNTS_FIELD_NUMBER = 4;
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> timedCounts_;
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -260,10 +301,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
-  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> getTimedCountsList() {
+  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>
+      getTimedCountsList() {
     return timedCounts_;
   }
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -274,11 +318,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
-  public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder> 
+  public java.util.List<
+          ? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>
       getTimedCountsOrBuilderList() {
     return timedCounts_;
   }
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -293,6 +340,8 @@ private static final long serialVersionUID = 0L;
     return timedCounts_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -307,6 +356,8 @@ private static final long serialVersionUID = 0L;
     return timedCounts_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences over time.
    * Timed counts returned by ListGroups are guaranteed to be:
@@ -317,14 +368,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder getTimedCountsOrBuilder(
-      int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder
+      getTimedCountsOrBuilder(int index) {
     return timedCounts_.get(index);
   }
 
   public static final int FIRST_SEEN_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp firstSeenTime_;
   /**
+   *
+   *
    * <pre>
    * Approximate first occurrence that was ever seen for this group
    * and which matches the given filter criteria, ignoring the
@@ -337,6 +390,8 @@ private static final long serialVersionUID = 0L;
     return firstSeenTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Approximate first occurrence that was ever seen for this group
    * and which matches the given filter criteria, ignoring the
@@ -346,9 +401,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp first_seen_time = 5;</code>
    */
   public com.google.protobuf.Timestamp getFirstSeenTime() {
-    return firstSeenTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : firstSeenTime_;
+    return firstSeenTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : firstSeenTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Approximate first occurrence that was ever seen for this group
    * and which matches the given filter criteria, ignoring the
@@ -364,6 +423,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_SEEN_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp lastSeenTime_;
   /**
+   *
+   *
    * <pre>
    * Approximate last occurrence that was ever seen for this group and
    * which matches the given filter criteria, ignoring the time_range
@@ -376,6 +437,8 @@ private static final long serialVersionUID = 0L;
     return lastSeenTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Approximate last occurrence that was ever seen for this group and
    * which matches the given filter criteria, ignoring the time_range
@@ -385,9 +448,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_seen_time = 6;</code>
    */
   public com.google.protobuf.Timestamp getLastSeenTime() {
-    return lastSeenTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastSeenTime_;
+    return lastSeenTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastSeenTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Approximate last occurrence that was ever seen for this group and
    * which matches the given filter criteria, ignoring the time_range
@@ -401,73 +468,99 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AFFECTED_SERVICES_FIELD_NUMBER = 7;
-  private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext> affectedServices_;
+  private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
+      affectedServices_;
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
-  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext> getAffectedServicesList() {
+  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
+      getAffectedServicesList() {
     return affectedServices_;
   }
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
-  public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder> 
+  public java.util.List<
+          ? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
       getAffectedServicesOrBuilderList() {
     return affectedServices_;
   }
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
   public int getAffectedServicesCount() {
     return affectedServices_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getAffectedServices(int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getAffectedServices(
+      int index) {
     return affectedServices_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Service contexts with a non-zero error count for the given filter
    * criteria. This list can be truncated if multiple services are affected.
    * Refer to `num_affected_services` for the total count.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+   * </code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder getAffectedServicesOrBuilder(
-      int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder
+      getAffectedServicesOrBuilder(int index) {
     return affectedServices_.get(index);
   }
 
   public static final int NUM_AFFECTED_SERVICES_FIELD_NUMBER = 8;
   private int numAffectedServices_;
   /**
+   *
+   *
    * <pre>
    * The total number of services with a non-zero error count for the given
    * filter criteria.
@@ -482,6 +575,8 @@ private static final long serialVersionUID = 0L;
   public static final int REPRESENTATIVE_FIELD_NUMBER = 9;
   private com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative_;
   /**
+   *
+   *
    * <pre>
    * An arbitrary event that is chosen as representative for the whole group.
    * The representative event is intended to be used as a quick preview for
@@ -496,6 +591,8 @@ private static final long serialVersionUID = 0L;
     return representative_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * An arbitrary event that is chosen as representative for the whole group.
    * The representative event is intended to be used as a quick preview for
@@ -507,9 +604,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getRepresentative() {
-    return representative_ == null ? com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance() : representative_;
+    return representative_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance()
+        : representative_;
   }
   /**
+   *
+   *
    * <pre>
    * An arbitrary event that is chosen as representative for the whole group.
    * The representative event is intended to be used as a quick preview for
@@ -520,11 +621,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder getRepresentativeOrBuilder() {
+  public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder
+      getRepresentativeOrBuilder() {
     return getRepresentative();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -536,8 +639,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (group_ != null) {
       output.writeMessage(1, getGroup());
     }
@@ -575,40 +677,31 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (group_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getGroup());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGroup());
     }
     if (count_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, count_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, count_);
     }
     if (affectedUsersCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, affectedUsersCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, affectedUsersCount_);
     }
     for (int i = 0; i < timedCounts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, timedCounts_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, timedCounts_.get(i));
     }
     if (firstSeenTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getFirstSeenTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFirstSeenTime());
     }
     if (lastSeenTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getLastSeenTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLastSeenTime());
     }
     for (int i = 0; i < affectedServices_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, affectedServices_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, affectedServices_.get(i));
     }
     if (numAffectedServices_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, numAffectedServices_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, numAffectedServices_);
     }
     if (representative_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getRepresentative());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getRepresentative());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -618,43 +711,35 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats other = (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats other =
+        (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats) obj;
 
     boolean result = true;
     result = result && (hasGroup() == other.hasGroup());
     if (hasGroup()) {
-      result = result && getGroup()
-          .equals(other.getGroup());
+      result = result && getGroup().equals(other.getGroup());
     }
-    result = result && (getCount()
-        == other.getCount());
-    result = result && (getAffectedUsersCount()
-        == other.getAffectedUsersCount());
-    result = result && getTimedCountsList()
-        .equals(other.getTimedCountsList());
+    result = result && (getCount() == other.getCount());
+    result = result && (getAffectedUsersCount() == other.getAffectedUsersCount());
+    result = result && getTimedCountsList().equals(other.getTimedCountsList());
     result = result && (hasFirstSeenTime() == other.hasFirstSeenTime());
     if (hasFirstSeenTime()) {
-      result = result && getFirstSeenTime()
-          .equals(other.getFirstSeenTime());
+      result = result && getFirstSeenTime().equals(other.getFirstSeenTime());
     }
     result = result && (hasLastSeenTime() == other.hasLastSeenTime());
     if (hasLastSeenTime()) {
-      result = result && getLastSeenTime()
-          .equals(other.getLastSeenTime());
+      result = result && getLastSeenTime().equals(other.getLastSeenTime());
     }
-    result = result && getAffectedServicesList()
-        .equals(other.getAffectedServicesList());
-    result = result && (getNumAffectedServices()
-        == other.getNumAffectedServices());
+    result = result && getAffectedServicesList().equals(other.getAffectedServicesList());
+    result = result && (getNumAffectedServices() == other.getNumAffectedServices());
     result = result && (hasRepresentative() == other.hasRepresentative());
     if (hasRepresentative()) {
-      result = result && getRepresentative()
-          .equals(other.getRepresentative());
+      result = result && getRepresentative().equals(other.getRepresentative());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -672,11 +757,9 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getGroup().hashCode();
     }
     hash = (37 * hash) + COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCount());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
     hash = (37 * hash) + AFFECTED_USERS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getAffectedUsersCount());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAffectedUsersCount());
     if (getTimedCountsCount() > 0) {
       hash = (37 * hash) + TIMED_COUNTS_FIELD_NUMBER;
       hash = (53 * hash) + getTimedCountsList().hashCode();
@@ -705,96 +788,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats prototype) {
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Data extracted for a specific group based on certain filter criteria,
    * such as a given time period and/or service filter.
@@ -802,21 +893,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)
       com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.class, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.class,
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder.class);
     }
 
     // Construct using com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.newBuilder()
@@ -824,18 +917,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTimedCountsFieldBuilder();
         getAffectedServicesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -885,13 +978,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroupStats_descriptor;
     }
 
     @java.lang.Override
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getDefaultInstanceForType() {
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats
+        getDefaultInstanceForType() {
       return com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance();
     }
 
@@ -906,7 +1000,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats result = new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats(this);
+      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats result =
+          new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (groupBuilder_ == null) {
@@ -959,46 +1054,50 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)other);
+        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats other) {
+      if (other
+          == com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance())
+        return this;
       if (other.hasGroup()) {
         mergeGroup(other.getGroup());
       }
@@ -1026,9 +1125,10 @@ private static final long serialVersionUID = 0L;
             timedCountsBuilder_ = null;
             timedCounts_ = other.timedCounts_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            timedCountsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTimedCountsFieldBuilder() : null;
+            timedCountsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTimedCountsFieldBuilder()
+                    : null;
           } else {
             timedCountsBuilder_.addAllMessages(other.timedCounts_);
           }
@@ -1058,9 +1158,10 @@ private static final long serialVersionUID = 0L;
             affectedServicesBuilder_ = null;
             affectedServices_ = other.affectedServices_;
             bitField0_ = (bitField0_ & ~0x00000040);
-            affectedServicesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getAffectedServicesFieldBuilder() : null;
+            affectedServicesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAffectedServicesFieldBuilder()
+                    : null;
           } else {
             affectedServicesBuilder_.addAllMessages(other.affectedServices_);
           }
@@ -1091,7 +1192,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1100,12 +1203,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder> groupBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder>
+        groupBuilder_;
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1116,6 +1225,8 @@ private static final long serialVersionUID = 0L;
       return groupBuilder_ != null || group_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1124,12 +1235,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup() {
       if (groupBuilder_ == null) {
-        return group_ == null ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance() : group_;
+        return group_ == null
+            ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
+            : group_;
       } else {
         return groupBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1150,6 +1265,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1168,6 +1285,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1178,7 +1297,9 @@ private static final long serialVersionUID = 0L;
       if (groupBuilder_ == null) {
         if (group_ != null) {
           group_ =
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.newBuilder(group_).mergeFrom(value).buildPartial();
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.newBuilder(group_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           group_ = value;
         }
@@ -1190,6 +1311,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1208,6 +1331,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1215,11 +1340,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder getGroupBuilder() {
-      
+
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1230,11 +1357,14 @@ private static final long serialVersionUID = 0L;
       if (groupBuilder_ != null) {
         return groupBuilder_.getMessageOrBuilder();
       } else {
-        return group_ == null ?
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance() : group_;
+        return group_ == null
+            ? com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()
+            : group_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Group data that is independent of the filter criteria.
      * </pre>
@@ -1242,21 +1372,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder>
         getGroupFieldBuilder() {
       if (groupBuilder_ == null) {
-        groupBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder>(
-                getGroup(),
-                getParentForChildren(),
-                isClean());
+        groupBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder>(
+                getGroup(), getParentForChildren(), isClean());
         group_ = null;
       }
       return groupBuilder_;
     }
 
-    private long count_ ;
+    private long count_;
     /**
+     *
+     *
      * <pre>
      * Approximate total number of events in the given group that match
      * the filter criteria.
@@ -1268,6 +1403,8 @@ private static final long serialVersionUID = 0L;
       return count_;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate total number of events in the given group that match
      * the filter criteria.
@@ -1276,12 +1413,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 count = 2;</code>
      */
     public Builder setCount(long value) {
-      
+
       count_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate total number of events in the given group that match
      * the filter criteria.
@@ -1290,14 +1429,16 @@ private static final long serialVersionUID = 0L;
      * <code>int64 count = 2;</code>
      */
     public Builder clearCount() {
-      
+
       count_ = 0L;
       onChanged();
       return this;
     }
 
-    private long affectedUsersCount_ ;
+    private long affectedUsersCount_;
     /**
+     *
+     *
      * <pre>
      * Approximate number of affected users in the given group that
      * match the filter criteria.
@@ -1319,6 +1460,8 @@ private static final long serialVersionUID = 0L;
       return affectedUsersCount_;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of affected users in the given group that
      * match the filter criteria.
@@ -1337,12 +1480,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 affected_users_count = 3;</code>
      */
     public Builder setAffectedUsersCount(long value) {
-      
+
       affectedUsersCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of affected users in the given group that
      * match the filter criteria.
@@ -1361,25 +1506,33 @@ private static final long serialVersionUID = 0L;
      * <code>int64 affected_users_count = 3;</code>
      */
     public Builder clearAffectedUsersCount() {
-      
+
       affectedUsersCount_ = 0L;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> timedCounts_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>
+        timedCounts_ = java.util.Collections.emptyList();
+
     private void ensureTimedCountsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        timedCounts_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>(timedCounts_);
+        timedCounts_ =
+            new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>(
+                timedCounts_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.TimedCount, com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder, com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder> timedCountsBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.TimedCount,
+            com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>
+        timedCountsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1388,9 +1541,11 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> getTimedCountsList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>
+        getTimedCountsList() {
       if (timedCountsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(timedCounts_);
       } else {
@@ -1398,6 +1553,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1406,7 +1563,8 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public int getTimedCountsCount() {
       if (timedCountsBuilder_ == null) {
@@ -1416,6 +1574,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1424,7 +1584,8 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.TimedCount getTimedCounts(int index) {
       if (timedCountsBuilder_ == null) {
@@ -1434,6 +1595,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1442,7 +1605,8 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder setTimedCounts(
         int index, com.google.devtools.clouderrorreporting.v1beta1.TimedCount value) {
@@ -1459,6 +1623,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1467,10 +1633,12 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder setTimedCounts(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder builderForValue) {
       if (timedCountsBuilder_ == null) {
         ensureTimedCountsIsMutable();
         timedCounts_.set(index, builderForValue.build());
@@ -1481,6 +1649,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1489,9 +1659,11 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
-    public Builder addTimedCounts(com.google.devtools.clouderrorreporting.v1beta1.TimedCount value) {
+    public Builder addTimedCounts(
+        com.google.devtools.clouderrorreporting.v1beta1.TimedCount value) {
       if (timedCountsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1505,6 +1677,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1513,7 +1687,8 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder addTimedCounts(
         int index, com.google.devtools.clouderrorreporting.v1beta1.TimedCount value) {
@@ -1530,6 +1705,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1538,7 +1715,8 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder addTimedCounts(
         com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder builderForValue) {
@@ -1552,6 +1730,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1560,10 +1740,12 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder addTimedCounts(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder builderForValue) {
       if (timedCountsBuilder_ == null) {
         ensureTimedCountsIsMutable();
         timedCounts_.add(index, builderForValue.build());
@@ -1574,6 +1756,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1582,14 +1766,15 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder addAllTimedCounts(
-        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCount> values) {
+        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCount>
+            values) {
       if (timedCountsBuilder_ == null) {
         ensureTimedCountsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, timedCounts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, timedCounts_);
         onChanged();
       } else {
         timedCountsBuilder_.addAllMessages(values);
@@ -1597,6 +1782,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1605,7 +1792,8 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder clearTimedCounts() {
       if (timedCountsBuilder_ == null) {
@@ -1618,6 +1806,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1626,7 +1816,8 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public Builder removeTimedCounts(int index) {
       if (timedCountsBuilder_ == null) {
@@ -1639,6 +1830,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1647,13 +1840,16 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder getTimedCountsBuilder(
         int index) {
       return getTimedCountsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1662,16 +1858,20 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder getTimedCountsOrBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder
+        getTimedCountsOrBuilder(int index) {
       if (timedCountsBuilder_ == null) {
-        return timedCounts_.get(index);  } else {
+        return timedCounts_.get(index);
+      } else {
         return timedCountsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1680,10 +1880,12 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
-    public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder> 
-         getTimedCountsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>
+        getTimedCountsOrBuilderList() {
       if (timedCountsBuilder_ != null) {
         return timedCountsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1691,6 +1893,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1699,13 +1903,18 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder addTimedCountsBuilder() {
-      return getTimedCountsFieldBuilder().addBuilder(
-          com.google.devtools.clouderrorreporting.v1beta1.TimedCount.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder
+        addTimedCountsBuilder() {
+      return getTimedCountsFieldBuilder()
+          .addBuilder(
+              com.google.devtools.clouderrorreporting.v1beta1.TimedCount.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1714,14 +1923,19 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder addTimedCountsBuilder(
         int index) {
-      return getTimedCountsFieldBuilder().addBuilder(
-          index, com.google.devtools.clouderrorreporting.v1beta1.TimedCount.getDefaultInstance());
+      return getTimedCountsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.devtools.clouderrorreporting.v1beta1.TimedCount.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Approximate number of occurrences over time.
      * Timed counts returned by ListGroups are guaranteed to be:
@@ -1730,18 +1944,25 @@ private static final long serialVersionUID = 0L;
      * - Ordered by ascending time.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder> 
-         getTimedCountsBuilderList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder>
+        getTimedCountsBuilderList() {
       return getTimedCountsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.TimedCount, com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder, com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.TimedCount,
+            com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>
         getTimedCountsFieldBuilder() {
       if (timedCountsBuilder_ == null) {
-        timedCountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.TimedCount, com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder, com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>(
+        timedCountsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.TimedCount,
+                com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>(
                 timedCounts_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -1753,8 +1974,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp firstSeenTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> firstSeenTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        firstSeenTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1767,6 +1993,8 @@ private static final long serialVersionUID = 0L;
       return firstSeenTimeBuilder_ != null || firstSeenTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1777,12 +2005,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getFirstSeenTime() {
       if (firstSeenTimeBuilder_ == null) {
-        return firstSeenTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : firstSeenTime_;
+        return firstSeenTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : firstSeenTime_;
       } else {
         return firstSeenTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1805,6 +2037,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1813,8 +2047,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp first_seen_time = 5;</code>
      */
-    public Builder setFirstSeenTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setFirstSeenTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (firstSeenTimeBuilder_ == null) {
         firstSeenTime_ = builderForValue.build();
         onChanged();
@@ -1825,6 +2058,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1837,7 +2072,9 @@ private static final long serialVersionUID = 0L;
       if (firstSeenTimeBuilder_ == null) {
         if (firstSeenTime_ != null) {
           firstSeenTime_ =
-            com.google.protobuf.Timestamp.newBuilder(firstSeenTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(firstSeenTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           firstSeenTime_ = value;
         }
@@ -1849,6 +2086,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1869,6 +2108,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1878,11 +2119,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp first_seen_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getFirstSeenTimeBuilder() {
-      
+
       onChanged();
       return getFirstSeenTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1895,11 +2138,14 @@ private static final long serialVersionUID = 0L;
       if (firstSeenTimeBuilder_ != null) {
         return firstSeenTimeBuilder_.getMessageOrBuilder();
       } else {
-        return firstSeenTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : firstSeenTime_;
+        return firstSeenTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : firstSeenTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate first occurrence that was ever seen for this group
      * and which matches the given filter criteria, ignoring the
@@ -1909,14 +2155,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp first_seen_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getFirstSeenTimeFieldBuilder() {
       if (firstSeenTimeBuilder_ == null) {
-        firstSeenTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getFirstSeenTime(),
-                getParentForChildren(),
-                isClean());
+        firstSeenTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getFirstSeenTime(), getParentForChildren(), isClean());
         firstSeenTime_ = null;
       }
       return firstSeenTimeBuilder_;
@@ -1924,8 +2173,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastSeenTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastSeenTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastSeenTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -1938,6 +2192,8 @@ private static final long serialVersionUID = 0L;
       return lastSeenTimeBuilder_ != null || lastSeenTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -1948,12 +2204,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastSeenTime() {
       if (lastSeenTimeBuilder_ == null) {
-        return lastSeenTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastSeenTime_;
+        return lastSeenTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastSeenTime_;
       } else {
         return lastSeenTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -1976,6 +2236,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -1984,8 +2246,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp last_seen_time = 6;</code>
      */
-    public Builder setLastSeenTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastSeenTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastSeenTimeBuilder_ == null) {
         lastSeenTime_ = builderForValue.build();
         onChanged();
@@ -1996,6 +2257,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -2008,7 +2271,9 @@ private static final long serialVersionUID = 0L;
       if (lastSeenTimeBuilder_ == null) {
         if (lastSeenTime_ != null) {
           lastSeenTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastSeenTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastSeenTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastSeenTime_ = value;
         }
@@ -2020,6 +2285,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -2040,6 +2307,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -2049,11 +2318,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_seen_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastSeenTimeBuilder() {
-      
+
       onChanged();
       return getLastSeenTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -2066,11 +2337,14 @@ private static final long serialVersionUID = 0L;
       if (lastSeenTimeBuilder_ != null) {
         return lastSeenTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastSeenTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastSeenTime_;
+        return lastSeenTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastSeenTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Approximate last occurrence that was ever seen for this group and
      * which matches the given filter criteria, ignoring the time_range
@@ -2080,41 +2354,55 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_seen_time = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastSeenTimeFieldBuilder() {
       if (lastSeenTimeBuilder_ == null) {
-        lastSeenTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastSeenTime(),
-                getParentForChildren(),
-                isClean());
+        lastSeenTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastSeenTime(), getParentForChildren(), isClean());
         lastSeenTime_ = null;
       }
       return lastSeenTimeBuilder_;
     }
 
-    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext> affectedServices_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
+        affectedServices_ = java.util.Collections.emptyList();
+
     private void ensureAffectedServicesIsMutable() {
       if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-        affectedServices_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>(affectedServices_);
+        affectedServices_ =
+            new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>(
+                affectedServices_);
         bitField0_ |= 0x00000040;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ServiceContext, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder, com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder> affectedServicesBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext,
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
+        affectedServicesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext> getAffectedServicesList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
+        getAffectedServicesList() {
       if (affectedServicesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(affectedServices_);
       } else {
@@ -2122,13 +2410,17 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public int getAffectedServicesCount() {
       if (affectedServicesBuilder_ == null) {
@@ -2138,15 +2430,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getAffectedServices(int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getAffectedServices(
+        int index) {
       if (affectedServicesBuilder_ == null) {
         return affectedServices_.get(index);
       } else {
@@ -2154,13 +2451,17 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder setAffectedServices(
         int index, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext value) {
@@ -2177,16 +2478,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder setAffectedServices(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder builderForValue) {
       if (affectedServicesBuilder_ == null) {
         ensureAffectedServicesIsMutable();
         affectedServices_.set(index, builderForValue.build());
@@ -2197,15 +2503,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public Builder addAffectedServices(com.google.devtools.clouderrorreporting.v1beta1.ServiceContext value) {
+    public Builder addAffectedServices(
+        com.google.devtools.clouderrorreporting.v1beta1.ServiceContext value) {
       if (affectedServicesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2219,13 +2530,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder addAffectedServices(
         int index, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext value) {
@@ -2242,13 +2557,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder addAffectedServices(
         com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder builderForValue) {
@@ -2262,16 +2581,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder addAffectedServices(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder builderForValue) {
       if (affectedServicesBuilder_ == null) {
         ensureAffectedServicesIsMutable();
         affectedServices_.add(index, builderForValue.build());
@@ -2282,20 +2606,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder addAllAffectedServices(
-        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContext> values) {
+        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
+            values) {
       if (affectedServicesBuilder_ == null) {
         ensureAffectedServicesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, affectedServices_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, affectedServices_);
         onChanged();
       } else {
         affectedServicesBuilder_.addAllMessages(values);
@@ -2303,13 +2631,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder clearAffectedServices() {
       if (affectedServicesBuilder_ == null) {
@@ -2322,13 +2654,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
     public Builder removeAffectedServices(int index) {
       if (affectedServicesBuilder_ == null) {
@@ -2341,45 +2677,59 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder getAffectedServicesBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder
+        getAffectedServicesBuilder(int index) {
       return getAffectedServicesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder getAffectedServicesOrBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder
+        getAffectedServicesOrBuilder(int index) {
       if (affectedServicesBuilder_ == null) {
-        return affectedServices_.get(index);  } else {
+        return affectedServices_.get(index);
+      } else {
         return affectedServicesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder> 
-         getAffectedServicesOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
+        getAffectedServicesOrBuilderList() {
       if (affectedServicesBuilder_ != null) {
         return affectedServicesBuilder_.getMessageOrBuilderList();
       } else {
@@ -2387,51 +2737,73 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder addAffectedServicesBuilder() {
-      return getAffectedServicesFieldBuilder().addBuilder(
-          com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder
+        addAffectedServicesBuilder() {
+      return getAffectedServicesFieldBuilder()
+          .addBuilder(
+              com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder addAffectedServicesBuilder(
-        int index) {
-      return getAffectedServicesFieldBuilder().addBuilder(
-          index, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder
+        addAffectedServicesBuilder(int index) {
+      return getAffectedServicesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Service contexts with a non-zero error count for the given filter
      * criteria. This list can be truncated if multiple services are affected.
      * Refer to `num_affected_services` for the total count.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ServiceContext affected_services = 7;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder> 
-         getAffectedServicesBuilderList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder>
+        getAffectedServicesBuilderList() {
       return getAffectedServicesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ServiceContext, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder, com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext,
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
         getAffectedServicesFieldBuilder() {
       if (affectedServicesBuilder_ == null) {
-        affectedServicesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder, com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>(
+        affectedServicesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.ServiceContext,
+                com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>(
                 affectedServices_,
                 ((bitField0_ & 0x00000040) == 0x00000040),
                 getParentForChildren(),
@@ -2441,8 +2813,10 @@ private static final long serialVersionUID = 0L;
       return affectedServicesBuilder_;
     }
 
-    private int numAffectedServices_ ;
+    private int numAffectedServices_;
     /**
+     *
+     *
      * <pre>
      * The total number of services with a non-zero error count for the given
      * filter criteria.
@@ -2454,6 +2828,8 @@ private static final long serialVersionUID = 0L;
       return numAffectedServices_;
     }
     /**
+     *
+     *
      * <pre>
      * The total number of services with a non-zero error count for the given
      * filter criteria.
@@ -2462,12 +2838,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 num_affected_services = 8;</code>
      */
     public Builder setNumAffectedServices(int value) {
-      
+
       numAffectedServices_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The total number of services with a non-zero error count for the given
      * filter criteria.
@@ -2476,7 +2854,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 num_affected_services = 8;</code>
      */
     public Builder clearNumAffectedServices() {
-      
+
       numAffectedServices_ = 0;
       onChanged();
       return this;
@@ -2484,8 +2862,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder> representativeBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
+        representativeBuilder_;
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2500,6 +2883,8 @@ private static final long serialVersionUID = 0L;
       return representativeBuilder_ != null || representative_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2512,12 +2897,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getRepresentative() {
       if (representativeBuilder_ == null) {
-        return representative_ == null ? com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance() : representative_;
+        return representative_ == null
+            ? com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance()
+            : representative_;
       } else {
         return representativeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2528,7 +2917,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
      */
-    public Builder setRepresentative(com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
+    public Builder setRepresentative(
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
       if (representativeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2542,6 +2932,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2564,6 +2956,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2574,11 +2968,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
      */
-    public Builder mergeRepresentative(com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
+    public Builder mergeRepresentative(
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
       if (representativeBuilder_ == null) {
         if (representative_ != null) {
           representative_ =
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.newBuilder(representative_).mergeFrom(value).buildPartial();
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.newBuilder(representative_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           representative_ = value;
         }
@@ -2590,6 +2987,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2612,6 +3011,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2622,12 +3023,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder getRepresentativeBuilder() {
-      
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder
+        getRepresentativeBuilder() {
+
       onChanged();
       return getRepresentativeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2638,15 +3042,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder getRepresentativeOrBuilder() {
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder
+        getRepresentativeOrBuilder() {
       if (representativeBuilder_ != null) {
         return representativeBuilder_.getMessageOrBuilder();
       } else {
-        return representative_ == null ?
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance() : representative_;
+        return representative_ == null
+            ? com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance()
+            : representative_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary event that is chosen as representative for the whole group.
      * The representative event is intended to be used as a quick preview for
@@ -2658,21 +3066,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
         getRepresentativeFieldBuilder() {
       if (representativeBuilder_ == null) {
-        representativeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>(
-                getRepresentative(),
-                getParentForChildren(),
-                isClean());
+        representativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>(
+                getRepresentative(), getParentForChildren(), isClean());
         representative_ = null;
       }
       return representativeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2682,30 +3093,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats)
-  private static final com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats DEFAULT_INSTANCE;
+  private static final com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats();
   }
 
-  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getDefaultInstance() {
+  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ErrorGroupStats>
-      PARSER = new com.google.protobuf.AbstractParser<ErrorGroupStats>() {
-    @java.lang.Override
-    public ErrorGroupStats parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ErrorGroupStats(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ErrorGroupStats> PARSER =
+      new com.google.protobuf.AbstractParser<ErrorGroupStats>() {
+        @java.lang.Override
+        public ErrorGroupStats parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ErrorGroupStats(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ErrorGroupStats> parser() {
     return PARSER;
@@ -2717,9 +3130,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getDefaultInstanceForType() {
+  public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

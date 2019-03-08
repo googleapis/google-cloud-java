@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CreateTableFromSnapshotRequestOrBuilder extends
+public interface CreateTableFromSnapshotRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateTableFromSnapshotRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the table.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -17,6 +20,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the table.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -24,10 +29,11 @@ public interface CreateTableFromSnapshotRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name by which the new table should be referred to within the parent
    * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
@@ -37,6 +43,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder extends
    */
   java.lang.String getTableId();
   /**
+   *
+   *
    * <pre>
    * The name by which the new table should be referred to within the parent
    * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
@@ -44,10 +52,11 @@ public interface CreateTableFromSnapshotRequestOrBuilder extends
    *
    * <code>string table_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTableIdBytes();
+  com.google.protobuf.ByteString getTableIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the snapshot from which to restore the table. The
    * snapshot and the table must be in the same instance.
@@ -59,6 +68,8 @@ public interface CreateTableFromSnapshotRequestOrBuilder extends
    */
   java.lang.String getSourceSnapshot();
   /**
+   *
+   *
    * <pre>
    * The unique name of the snapshot from which to restore the table. The
    * snapshot and the table must be in the same instance.
@@ -68,6 +79,5 @@ public interface CreateTableFromSnapshotRequestOrBuilder extends
    *
    * <code>string source_snapshot = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSourceSnapshotBytes();
+  com.google.protobuf.ByteString getSourceSnapshotBytes();
 }

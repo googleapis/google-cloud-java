@@ -18,14 +18,11 @@ package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.storage.Acl;
 import com.google.common.base.Optional;
-
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Interface for attributes on a Cloud Storage file or pseudo-directory.
- */
+/** Interface for attributes on a Cloud Storage file or pseudo-directory. */
 public interface CloudStorageFileAttributes extends BasicFileAttributes {
 
   /**

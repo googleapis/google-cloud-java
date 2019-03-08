@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface SpanContextOrBuilder extends
+public interface SpanContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.SpanContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the span in the following format:
    *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
@@ -21,6 +24,8 @@ public interface SpanContextOrBuilder extends
    */
   java.lang.String getSpanName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the span in the following format:
    *     projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
@@ -32,6 +37,5 @@ public interface SpanContextOrBuilder extends
    *
    * <code>string span_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSpanNameBytes();
+  com.google.protobuf.ByteString getSpanNameBytes();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class InstancesSetLabelsRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("labelFingerprint")) {
+    if ("labelFingerprint".equals(fieldName)) {
       return labelFingerprint;
     }
-    if (fieldName.equals("labels")) {
+    if ("labels".equals(fieldName)) {
       return labels;
     }
     return null;
@@ -58,10 +58,20 @@ public final class InstancesSetLabelsRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide
+   * the latest fingerprint value when making a request to add or change labels.
+   */
   public String getLabelFingerprint() {
     return labelFingerprint;
   }
@@ -114,10 +124,18 @@ public final class InstancesSetLabelsRequest implements ApiMessage {
       this.labels = source.labels;
     }
 
+    /**
+     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts.
+     * Provide the latest fingerprint value when making a request to add or change labels.
+     */
     public String getLabelFingerprint() {
       return labelFingerprint;
     }
 
+    /**
+     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts.
+     * Provide the latest fingerprint value when making a request to add or change labels.
+     */
     public Builder setLabelFingerprint(String labelFingerprint) {
       this.labelFingerprint = labelFingerprint;
       return this;

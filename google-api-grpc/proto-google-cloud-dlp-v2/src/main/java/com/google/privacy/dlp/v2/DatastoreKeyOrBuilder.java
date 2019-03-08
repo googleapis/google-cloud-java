@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DatastoreKeyOrBuilder extends
+public interface DatastoreKeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DatastoreKey)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Datastore entity key.
    * </pre>
@@ -16,6 +19,8 @@ public interface DatastoreKeyOrBuilder extends
    */
   boolean hasEntityKey();
   /**
+   *
+   *
    * <pre>
    * Datastore entity key.
    * </pre>
@@ -24,6 +29,8 @@ public interface DatastoreKeyOrBuilder extends
    */
   com.google.privacy.dlp.v2.Key getEntityKey();
   /**
+   *
+   *
    * <pre>
    * Datastore entity key.
    * </pre>

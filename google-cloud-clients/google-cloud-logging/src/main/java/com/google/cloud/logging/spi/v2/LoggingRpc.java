@@ -53,8 +53,8 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
 
   /**
    * Sends a request to update a sink. If the sink does not exist, it is created. This method
-   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
-   * or created sink.
+   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
+   * updated or created sink.
    *
    * @param request the request object containing all of the parameters for the API call
    */
@@ -69,8 +69,8 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
   ApiFuture<LogSink> get(GetSinkRequest request);
 
   /**
-   * Sends a request to list the sinks in a project. This method returns a {@code ApiFuture} object to
-   * consume the result. {@link ApiFuture#get()} returns a response object containing the listing
+   * Sends a request to list the sinks in a project. This method returns a {@code ApiFuture} object
+   * to consume the result. {@link ApiFuture#get()} returns a response object containing the listing
    * result.
    *
    * @param request the request object containing all of the parameters for the API call
@@ -79,8 +79,8 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
 
   /**
    * Sends a request to delete a sink. This method returns a {@code ApiFuture} object to consume the
-   * result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if the
-   * sink was not found.
+   * result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if
+   * the sink was not found.
    *
    * @param request the request object containing all of the parameters for the API call
    */
@@ -88,16 +88,16 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
 
   /**
    * Sends a request to deletes a log. This method returns a {@code ApiFuture} object to consume the
-   * result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if the
-   * log was not found. The deleted log will reappear if it receives new log entries.
+   * result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if
+   * the log was not found. The deleted log will reappear if it receives new log entries.
    *
    * @param request the request object containing all of the parameters for the API call
    */
   ApiFuture<Empty> delete(DeleteLogRequest request);
 
   /**
-   * Sends a request to write log entries to Stackdriver Logging. This method returns a
-   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a response object for
+   * Sends a request to write log entries to Stackdriver Logging. This method returns a {@code
+   * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a response object for
    * the write operation.
    *
    * @param request the request object containing all of the parameters for the API call
@@ -106,8 +106,8 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
 
   /**
    * Sends a request to list log entries. Use this method to retrieve log entries from Cloud
-   * Logging. This method returns a {@code ApiFuture} object to consume the result.
-   * {@link ApiFuture#get()} returns a response object containing the listing result.
+   * Logging. This method returns a {@code ApiFuture} object to consume the result. {@link
+   * ApiFuture#get()} returns a response object containing the listing result.
    *
    * @param request the request object containing all of the parameters for the API call
    */
@@ -124,8 +124,8 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
       ListMonitoredResourceDescriptorsRequest request);
 
   /**
-   * Sends a request to create a log metric. This method returns a {@code ApiFuture} object to consume
-   * the result. {@link ApiFuture#get()} returns the created metric.
+   * Sends a request to create a log metric. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the created metric.
    *
    * @param request the request object containing all of the parameters for the API call
    */
@@ -133,16 +133,17 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
 
   /**
    * Sends a request to update a log metric. If the log metric does not exist, it is created. This
-   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
-   * updated or created log metric.
+   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
+   * returns the updated or created log metric.
    *
    * @param request the request object containing all of the parameters for the API call
    */
   ApiFuture<LogMetric> update(UpdateLogMetricRequest request);
 
   /**
-   * Sends a request to get a log metric. This method returns a {@code ApiFuture} object to consume the
-   * result. {@link ApiFuture#get()} returns the requested log metric or {@code null} if not found.
+   * Sends a request to get a log metric. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns the requested log metric or {@code null} if not
+   * found.
    *
    * @param request the request object containing all of the parameters for the API call
    */
@@ -158,9 +159,9 @@ public interface LoggingRpc extends AutoCloseable, ServiceRpc {
   ApiFuture<ListLogMetricsResponse> list(ListLogMetricsRequest request);
 
   /**
-   * Sends a request to delete a log metric. This method returns a {@code ApiFuture} object to consume
-   * the result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if
-   * the log was not found.
+   * Sends a request to delete a log metric. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns {@link Empty#getDefaultInstance()} or
+   * {@code null} if the log was not found.
    *
    * @param request the request object containing all of the parameters for the API call
    */

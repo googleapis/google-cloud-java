@@ -4,31 +4,34 @@
 package com.google.cloud.language.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Represents dependency parse tree information for a token.
  * </pre>
  *
  * Protobuf type {@code google.cloud.language.v1beta2.DependencyEdge}
  */
-public  final class DependencyEdge extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DependencyEdge extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.DependencyEdge)
     DependencyEdgeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DependencyEdge.newBuilder() to construct.
   private DependencyEdge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DependencyEdge() {
     headTokenIndex_ = 0;
     label_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DependencyEdge(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,59 +51,65 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            headTokenIndex_ = input.readInt32();
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            label_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              headTokenIndex_ = input.readInt32();
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              int rawValue = input.readEnum();
+
+              label_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_DependencyEdge_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_DependencyEdge_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_DependencyEdge_fieldAccessorTable
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_DependencyEdge_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.language.v1beta2.DependencyEdge.class, com.google.cloud.language.v1beta2.DependencyEdge.Builder.class);
+            com.google.cloud.language.v1beta2.DependencyEdge.class,
+            com.google.cloud.language.v1beta2.DependencyEdge.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The parse label enum for the token.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1beta2.DependencyEdge.Label}
    */
-  public enum Label
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Label implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unknown
      * </pre>
@@ -109,6 +118,8 @@ private static final long serialVersionUID = 0L;
      */
     UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Abbreviation modifier
      * </pre>
@@ -117,6 +128,8 @@ private static final long serialVersionUID = 0L;
      */
     ABBREV(1),
     /**
+     *
+     *
      * <pre>
      * Adjectival complement
      * </pre>
@@ -125,6 +138,8 @@ private static final long serialVersionUID = 0L;
      */
     ACOMP(2),
     /**
+     *
+     *
      * <pre>
      * Adverbial clause modifier
      * </pre>
@@ -133,6 +148,8 @@ private static final long serialVersionUID = 0L;
      */
     ADVCL(3),
     /**
+     *
+     *
      * <pre>
      * Adverbial modifier
      * </pre>
@@ -141,6 +158,8 @@ private static final long serialVersionUID = 0L;
      */
     ADVMOD(4),
     /**
+     *
+     *
      * <pre>
      * Adjectival modifier of an NP
      * </pre>
@@ -149,6 +168,8 @@ private static final long serialVersionUID = 0L;
      */
     AMOD(5),
     /**
+     *
+     *
      * <pre>
      * Appositional modifier of an NP
      * </pre>
@@ -157,6 +178,8 @@ private static final long serialVersionUID = 0L;
      */
     APPOS(6),
     /**
+     *
+     *
      * <pre>
      * Attribute dependent of a copular verb
      * </pre>
@@ -165,6 +188,8 @@ private static final long serialVersionUID = 0L;
      */
     ATTR(7),
     /**
+     *
+     *
      * <pre>
      * Auxiliary (non-main) verb
      * </pre>
@@ -173,6 +198,8 @@ private static final long serialVersionUID = 0L;
      */
     AUX(8),
     /**
+     *
+     *
      * <pre>
      * Passive auxiliary
      * </pre>
@@ -181,6 +208,8 @@ private static final long serialVersionUID = 0L;
      */
     AUXPASS(9),
     /**
+     *
+     *
      * <pre>
      * Coordinating conjunction
      * </pre>
@@ -189,6 +218,8 @@ private static final long serialVersionUID = 0L;
      */
     CC(10),
     /**
+     *
+     *
      * <pre>
      * Clausal complement of a verb or adjective
      * </pre>
@@ -197,6 +228,8 @@ private static final long serialVersionUID = 0L;
      */
     CCOMP(11),
     /**
+     *
+     *
      * <pre>
      * Conjunct
      * </pre>
@@ -205,6 +238,8 @@ private static final long serialVersionUID = 0L;
      */
     CONJ(12),
     /**
+     *
+     *
      * <pre>
      * Clausal subject
      * </pre>
@@ -213,6 +248,8 @@ private static final long serialVersionUID = 0L;
      */
     CSUBJ(13),
     /**
+     *
+     *
      * <pre>
      * Clausal passive subject
      * </pre>
@@ -221,6 +258,8 @@ private static final long serialVersionUID = 0L;
      */
     CSUBJPASS(14),
     /**
+     *
+     *
      * <pre>
      * Dependency (unable to determine)
      * </pre>
@@ -229,6 +268,8 @@ private static final long serialVersionUID = 0L;
      */
     DEP(15),
     /**
+     *
+     *
      * <pre>
      * Determiner
      * </pre>
@@ -237,6 +278,8 @@ private static final long serialVersionUID = 0L;
      */
     DET(16),
     /**
+     *
+     *
      * <pre>
      * Discourse
      * </pre>
@@ -245,6 +288,8 @@ private static final long serialVersionUID = 0L;
      */
     DISCOURSE(17),
     /**
+     *
+     *
      * <pre>
      * Direct object
      * </pre>
@@ -253,6 +298,8 @@ private static final long serialVersionUID = 0L;
      */
     DOBJ(18),
     /**
+     *
+     *
      * <pre>
      * Expletive
      * </pre>
@@ -261,6 +308,8 @@ private static final long serialVersionUID = 0L;
      */
     EXPL(19),
     /**
+     *
+     *
      * <pre>
      * Goes with (part of a word in a text not well edited)
      * </pre>
@@ -269,6 +318,8 @@ private static final long serialVersionUID = 0L;
      */
     GOESWITH(20),
     /**
+     *
+     *
      * <pre>
      * Indirect object
      * </pre>
@@ -277,6 +328,8 @@ private static final long serialVersionUID = 0L;
      */
     IOBJ(21),
     /**
+     *
+     *
      * <pre>
      * Marker (word introducing a subordinate clause)
      * </pre>
@@ -285,6 +338,8 @@ private static final long serialVersionUID = 0L;
      */
     MARK(22),
     /**
+     *
+     *
      * <pre>
      * Multi-word expression
      * </pre>
@@ -293,6 +348,8 @@ private static final long serialVersionUID = 0L;
      */
     MWE(23),
     /**
+     *
+     *
      * <pre>
      * Multi-word verbal expression
      * </pre>
@@ -301,6 +358,8 @@ private static final long serialVersionUID = 0L;
      */
     MWV(24),
     /**
+     *
+     *
      * <pre>
      * Negation modifier
      * </pre>
@@ -309,6 +368,8 @@ private static final long serialVersionUID = 0L;
      */
     NEG(25),
     /**
+     *
+     *
      * <pre>
      * Noun compound modifier
      * </pre>
@@ -317,6 +378,8 @@ private static final long serialVersionUID = 0L;
      */
     NN(26),
     /**
+     *
+     *
      * <pre>
      * Noun phrase used as an adverbial modifier
      * </pre>
@@ -325,6 +388,8 @@ private static final long serialVersionUID = 0L;
      */
     NPADVMOD(27),
     /**
+     *
+     *
      * <pre>
      * Nominal subject
      * </pre>
@@ -333,6 +398,8 @@ private static final long serialVersionUID = 0L;
      */
     NSUBJ(28),
     /**
+     *
+     *
      * <pre>
      * Passive nominal subject
      * </pre>
@@ -341,6 +408,8 @@ private static final long serialVersionUID = 0L;
      */
     NSUBJPASS(29),
     /**
+     *
+     *
      * <pre>
      * Numeric modifier of a noun
      * </pre>
@@ -349,6 +418,8 @@ private static final long serialVersionUID = 0L;
      */
     NUM(30),
     /**
+     *
+     *
      * <pre>
      * Element of compound number
      * </pre>
@@ -357,6 +428,8 @@ private static final long serialVersionUID = 0L;
      */
     NUMBER(31),
     /**
+     *
+     *
      * <pre>
      * Punctuation mark
      * </pre>
@@ -365,6 +438,8 @@ private static final long serialVersionUID = 0L;
      */
     P(32),
     /**
+     *
+     *
      * <pre>
      * Parataxis relation
      * </pre>
@@ -373,6 +448,8 @@ private static final long serialVersionUID = 0L;
      */
     PARATAXIS(33),
     /**
+     *
+     *
      * <pre>
      * Participial modifier
      * </pre>
@@ -381,6 +458,8 @@ private static final long serialVersionUID = 0L;
      */
     PARTMOD(34),
     /**
+     *
+     *
      * <pre>
      * The complement of a preposition is a clause
      * </pre>
@@ -389,6 +468,8 @@ private static final long serialVersionUID = 0L;
      */
     PCOMP(35),
     /**
+     *
+     *
      * <pre>
      * Object of a preposition
      * </pre>
@@ -397,6 +478,8 @@ private static final long serialVersionUID = 0L;
      */
     POBJ(36),
     /**
+     *
+     *
      * <pre>
      * Possession modifier
      * </pre>
@@ -405,6 +488,8 @@ private static final long serialVersionUID = 0L;
      */
     POSS(37),
     /**
+     *
+     *
      * <pre>
      * Postverbal negative particle
      * </pre>
@@ -413,6 +498,8 @@ private static final long serialVersionUID = 0L;
      */
     POSTNEG(38),
     /**
+     *
+     *
      * <pre>
      * Predicate complement
      * </pre>
@@ -421,6 +508,8 @@ private static final long serialVersionUID = 0L;
      */
     PRECOMP(39),
     /**
+     *
+     *
      * <pre>
      * Preconjunt
      * </pre>
@@ -429,6 +518,8 @@ private static final long serialVersionUID = 0L;
      */
     PRECONJ(40),
     /**
+     *
+     *
      * <pre>
      * Predeterminer
      * </pre>
@@ -437,6 +528,8 @@ private static final long serialVersionUID = 0L;
      */
     PREDET(41),
     /**
+     *
+     *
      * <pre>
      * Prefix
      * </pre>
@@ -445,6 +538,8 @@ private static final long serialVersionUID = 0L;
      */
     PREF(42),
     /**
+     *
+     *
      * <pre>
      * Prepositional modifier
      * </pre>
@@ -453,6 +548,8 @@ private static final long serialVersionUID = 0L;
      */
     PREP(43),
     /**
+     *
+     *
      * <pre>
      * The relationship between a verb and verbal morpheme
      * </pre>
@@ -461,6 +558,8 @@ private static final long serialVersionUID = 0L;
      */
     PRONL(44),
     /**
+     *
+     *
      * <pre>
      * Particle
      * </pre>
@@ -469,6 +568,8 @@ private static final long serialVersionUID = 0L;
      */
     PRT(45),
     /**
+     *
+     *
      * <pre>
      * Associative or possessive marker
      * </pre>
@@ -477,6 +578,8 @@ private static final long serialVersionUID = 0L;
      */
     PS(46),
     /**
+     *
+     *
      * <pre>
      * Quantifier phrase modifier
      * </pre>
@@ -485,6 +588,8 @@ private static final long serialVersionUID = 0L;
      */
     QUANTMOD(47),
     /**
+     *
+     *
      * <pre>
      * Relative clause modifier
      * </pre>
@@ -493,6 +598,8 @@ private static final long serialVersionUID = 0L;
      */
     RCMOD(48),
     /**
+     *
+     *
      * <pre>
      * Complementizer in relative clause
      * </pre>
@@ -501,6 +608,8 @@ private static final long serialVersionUID = 0L;
      */
     RCMODREL(49),
     /**
+     *
+     *
      * <pre>
      * Ellipsis without a preceding predicate
      * </pre>
@@ -509,6 +618,8 @@ private static final long serialVersionUID = 0L;
      */
     RDROP(50),
     /**
+     *
+     *
      * <pre>
      * Referent
      * </pre>
@@ -517,6 +628,8 @@ private static final long serialVersionUID = 0L;
      */
     REF(51),
     /**
+     *
+     *
      * <pre>
      * Remnant
      * </pre>
@@ -525,6 +638,8 @@ private static final long serialVersionUID = 0L;
      */
     REMNANT(52),
     /**
+     *
+     *
      * <pre>
      * Reparandum
      * </pre>
@@ -533,6 +648,8 @@ private static final long serialVersionUID = 0L;
      */
     REPARANDUM(53),
     /**
+     *
+     *
      * <pre>
      * Root
      * </pre>
@@ -541,6 +658,8 @@ private static final long serialVersionUID = 0L;
      */
     ROOT(54),
     /**
+     *
+     *
      * <pre>
      * Suffix specifying a unit of number
      * </pre>
@@ -549,6 +668,8 @@ private static final long serialVersionUID = 0L;
      */
     SNUM(55),
     /**
+     *
+     *
      * <pre>
      * Suffix
      * </pre>
@@ -557,6 +678,8 @@ private static final long serialVersionUID = 0L;
      */
     SUFF(56),
     /**
+     *
+     *
      * <pre>
      * Temporal modifier
      * </pre>
@@ -565,6 +688,8 @@ private static final long serialVersionUID = 0L;
      */
     TMOD(57),
     /**
+     *
+     *
      * <pre>
      * Topic marker
      * </pre>
@@ -573,6 +698,8 @@ private static final long serialVersionUID = 0L;
      */
     TOPIC(58),
     /**
+     *
+     *
      * <pre>
      * Clause headed by an infinite form of the verb that modifies a noun
      * </pre>
@@ -581,6 +708,8 @@ private static final long serialVersionUID = 0L;
      */
     VMOD(59),
     /**
+     *
+     *
      * <pre>
      * Vocative
      * </pre>
@@ -589,6 +718,8 @@ private static final long serialVersionUID = 0L;
      */
     VOCATIVE(60),
     /**
+     *
+     *
      * <pre>
      * Open clausal complement
      * </pre>
@@ -597,6 +728,8 @@ private static final long serialVersionUID = 0L;
      */
     XCOMP(61),
     /**
+     *
+     *
      * <pre>
      * Name suffix
      * </pre>
@@ -605,6 +738,8 @@ private static final long serialVersionUID = 0L;
      */
     SUFFIX(62),
     /**
+     *
+     *
      * <pre>
      * Name title
      * </pre>
@@ -613,6 +748,8 @@ private static final long serialVersionUID = 0L;
      */
     TITLE(63),
     /**
+     *
+     *
      * <pre>
      * Adverbial phrase modifier
      * </pre>
@@ -621,6 +758,8 @@ private static final long serialVersionUID = 0L;
      */
     ADVPHMOD(64),
     /**
+     *
+     *
      * <pre>
      * Causative auxiliary
      * </pre>
@@ -629,6 +768,8 @@ private static final long serialVersionUID = 0L;
      */
     AUXCAUS(65),
     /**
+     *
+     *
      * <pre>
      * Helper auxiliary
      * </pre>
@@ -637,6 +778,8 @@ private static final long serialVersionUID = 0L;
      */
     AUXVV(66),
     /**
+     *
+     *
      * <pre>
      * Rentaishi (Prenominal modifier)
      * </pre>
@@ -645,6 +788,8 @@ private static final long serialVersionUID = 0L;
      */
     DTMOD(67),
     /**
+     *
+     *
      * <pre>
      * Foreign words
      * </pre>
@@ -653,6 +798,8 @@ private static final long serialVersionUID = 0L;
      */
     FOREIGN(68),
     /**
+     *
+     *
      * <pre>
      * Keyword
      * </pre>
@@ -661,6 +808,8 @@ private static final long serialVersionUID = 0L;
      */
     KW(69),
     /**
+     *
+     *
      * <pre>
      * List for chains of comparable items
      * </pre>
@@ -669,6 +818,8 @@ private static final long serialVersionUID = 0L;
      */
     LIST(70),
     /**
+     *
+     *
      * <pre>
      * Nominalized clause
      * </pre>
@@ -677,6 +828,8 @@ private static final long serialVersionUID = 0L;
      */
     NOMC(71),
     /**
+     *
+     *
      * <pre>
      * Nominalized clausal subject
      * </pre>
@@ -685,6 +838,8 @@ private static final long serialVersionUID = 0L;
      */
     NOMCSUBJ(72),
     /**
+     *
+     *
      * <pre>
      * Nominalized clausal passive
      * </pre>
@@ -693,6 +848,8 @@ private static final long serialVersionUID = 0L;
      */
     NOMCSUBJPASS(73),
     /**
+     *
+     *
      * <pre>
      * Compound of numeric modifier
      * </pre>
@@ -701,6 +858,8 @@ private static final long serialVersionUID = 0L;
      */
     NUMC(74),
     /**
+     *
+     *
      * <pre>
      * Copula
      * </pre>
@@ -709,6 +868,8 @@ private static final long serialVersionUID = 0L;
      */
     COP(75),
     /**
+     *
+     *
      * <pre>
      * Dislocated relation (for fronted/topicalized elements)
      * </pre>
@@ -717,6 +878,8 @@ private static final long serialVersionUID = 0L;
      */
     DISLOCATED(76),
     /**
+     *
+     *
      * <pre>
      * Aspect marker
      * </pre>
@@ -725,6 +888,8 @@ private static final long serialVersionUID = 0L;
      */
     ASP(77),
     /**
+     *
+     *
      * <pre>
      * Genitive modifier
      * </pre>
@@ -733,6 +898,8 @@ private static final long serialVersionUID = 0L;
      */
     GMOD(78),
     /**
+     *
+     *
      * <pre>
      * Genitive object
      * </pre>
@@ -741,6 +908,8 @@ private static final long serialVersionUID = 0L;
      */
     GOBJ(79),
     /**
+     *
+     *
      * <pre>
      * Infinitival modifier
      * </pre>
@@ -749,6 +918,8 @@ private static final long serialVersionUID = 0L;
      */
     INFMOD(80),
     /**
+     *
+     *
      * <pre>
      * Measure
      * </pre>
@@ -757,6 +928,8 @@ private static final long serialVersionUID = 0L;
      */
     MES(81),
     /**
+     *
+     *
      * <pre>
      * Nominal complement of a noun
      * </pre>
@@ -768,6 +941,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unknown
      * </pre>
@@ -776,6 +951,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Abbreviation modifier
      * </pre>
@@ -784,6 +961,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ABBREV_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Adjectival complement
      * </pre>
@@ -792,6 +971,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ACOMP_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Adverbial clause modifier
      * </pre>
@@ -800,6 +981,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADVCL_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Adverbial modifier
      * </pre>
@@ -808,6 +991,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADVMOD_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Adjectival modifier of an NP
      * </pre>
@@ -816,6 +1001,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AMOD_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Appositional modifier of an NP
      * </pre>
@@ -824,6 +1011,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int APPOS_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Attribute dependent of a copular verb
      * </pre>
@@ -832,6 +1021,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ATTR_VALUE = 7;
     /**
+     *
+     *
      * <pre>
      * Auxiliary (non-main) verb
      * </pre>
@@ -840,6 +1031,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUX_VALUE = 8;
     /**
+     *
+     *
      * <pre>
      * Passive auxiliary
      * </pre>
@@ -848,6 +1041,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUXPASS_VALUE = 9;
     /**
+     *
+     *
      * <pre>
      * Coordinating conjunction
      * </pre>
@@ -856,6 +1051,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CC_VALUE = 10;
     /**
+     *
+     *
      * <pre>
      * Clausal complement of a verb or adjective
      * </pre>
@@ -864,6 +1061,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CCOMP_VALUE = 11;
     /**
+     *
+     *
      * <pre>
      * Conjunct
      * </pre>
@@ -872,6 +1071,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CONJ_VALUE = 12;
     /**
+     *
+     *
      * <pre>
      * Clausal subject
      * </pre>
@@ -880,6 +1081,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CSUBJ_VALUE = 13;
     /**
+     *
+     *
      * <pre>
      * Clausal passive subject
      * </pre>
@@ -888,6 +1091,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CSUBJPASS_VALUE = 14;
     /**
+     *
+     *
      * <pre>
      * Dependency (unable to determine)
      * </pre>
@@ -896,6 +1101,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DEP_VALUE = 15;
     /**
+     *
+     *
      * <pre>
      * Determiner
      * </pre>
@@ -904,6 +1111,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DET_VALUE = 16;
     /**
+     *
+     *
      * <pre>
      * Discourse
      * </pre>
@@ -912,6 +1121,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DISCOURSE_VALUE = 17;
     /**
+     *
+     *
      * <pre>
      * Direct object
      * </pre>
@@ -920,6 +1131,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DOBJ_VALUE = 18;
     /**
+     *
+     *
      * <pre>
      * Expletive
      * </pre>
@@ -928,6 +1141,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int EXPL_VALUE = 19;
     /**
+     *
+     *
      * <pre>
      * Goes with (part of a word in a text not well edited)
      * </pre>
@@ -936,6 +1151,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GOESWITH_VALUE = 20;
     /**
+     *
+     *
      * <pre>
      * Indirect object
      * </pre>
@@ -944,6 +1161,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int IOBJ_VALUE = 21;
     /**
+     *
+     *
      * <pre>
      * Marker (word introducing a subordinate clause)
      * </pre>
@@ -952,6 +1171,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MARK_VALUE = 22;
     /**
+     *
+     *
      * <pre>
      * Multi-word expression
      * </pre>
@@ -960,6 +1181,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MWE_VALUE = 23;
     /**
+     *
+     *
      * <pre>
      * Multi-word verbal expression
      * </pre>
@@ -968,6 +1191,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MWV_VALUE = 24;
     /**
+     *
+     *
      * <pre>
      * Negation modifier
      * </pre>
@@ -976,6 +1201,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NEG_VALUE = 25;
     /**
+     *
+     *
      * <pre>
      * Noun compound modifier
      * </pre>
@@ -984,6 +1211,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NN_VALUE = 26;
     /**
+     *
+     *
      * <pre>
      * Noun phrase used as an adverbial modifier
      * </pre>
@@ -992,6 +1221,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NPADVMOD_VALUE = 27;
     /**
+     *
+     *
      * <pre>
      * Nominal subject
      * </pre>
@@ -1000,6 +1231,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NSUBJ_VALUE = 28;
     /**
+     *
+     *
      * <pre>
      * Passive nominal subject
      * </pre>
@@ -1008,6 +1241,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NSUBJPASS_VALUE = 29;
     /**
+     *
+     *
      * <pre>
      * Numeric modifier of a noun
      * </pre>
@@ -1016,6 +1251,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NUM_VALUE = 30;
     /**
+     *
+     *
      * <pre>
      * Element of compound number
      * </pre>
@@ -1024,6 +1261,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NUMBER_VALUE = 31;
     /**
+     *
+     *
      * <pre>
      * Punctuation mark
      * </pre>
@@ -1032,6 +1271,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int P_VALUE = 32;
     /**
+     *
+     *
      * <pre>
      * Parataxis relation
      * </pre>
@@ -1040,6 +1281,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PARATAXIS_VALUE = 33;
     /**
+     *
+     *
      * <pre>
      * Participial modifier
      * </pre>
@@ -1048,6 +1291,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PARTMOD_VALUE = 34;
     /**
+     *
+     *
      * <pre>
      * The complement of a preposition is a clause
      * </pre>
@@ -1056,6 +1301,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PCOMP_VALUE = 35;
     /**
+     *
+     *
      * <pre>
      * Object of a preposition
      * </pre>
@@ -1064,6 +1311,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int POBJ_VALUE = 36;
     /**
+     *
+     *
      * <pre>
      * Possession modifier
      * </pre>
@@ -1072,6 +1321,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int POSS_VALUE = 37;
     /**
+     *
+     *
      * <pre>
      * Postverbal negative particle
      * </pre>
@@ -1080,6 +1331,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int POSTNEG_VALUE = 38;
     /**
+     *
+     *
      * <pre>
      * Predicate complement
      * </pre>
@@ -1088,6 +1341,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PRECOMP_VALUE = 39;
     /**
+     *
+     *
      * <pre>
      * Preconjunt
      * </pre>
@@ -1096,6 +1351,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PRECONJ_VALUE = 40;
     /**
+     *
+     *
      * <pre>
      * Predeterminer
      * </pre>
@@ -1104,6 +1361,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PREDET_VALUE = 41;
     /**
+     *
+     *
      * <pre>
      * Prefix
      * </pre>
@@ -1112,6 +1371,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PREF_VALUE = 42;
     /**
+     *
+     *
      * <pre>
      * Prepositional modifier
      * </pre>
@@ -1120,6 +1381,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PREP_VALUE = 43;
     /**
+     *
+     *
      * <pre>
      * The relationship between a verb and verbal morpheme
      * </pre>
@@ -1128,6 +1391,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PRONL_VALUE = 44;
     /**
+     *
+     *
      * <pre>
      * Particle
      * </pre>
@@ -1136,6 +1401,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PRT_VALUE = 45;
     /**
+     *
+     *
      * <pre>
      * Associative or possessive marker
      * </pre>
@@ -1144,6 +1411,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PS_VALUE = 46;
     /**
+     *
+     *
      * <pre>
      * Quantifier phrase modifier
      * </pre>
@@ -1152,6 +1421,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int QUANTMOD_VALUE = 47;
     /**
+     *
+     *
      * <pre>
      * Relative clause modifier
      * </pre>
@@ -1160,6 +1431,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RCMOD_VALUE = 48;
     /**
+     *
+     *
      * <pre>
      * Complementizer in relative clause
      * </pre>
@@ -1168,6 +1441,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RCMODREL_VALUE = 49;
     /**
+     *
+     *
      * <pre>
      * Ellipsis without a preceding predicate
      * </pre>
@@ -1176,6 +1451,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RDROP_VALUE = 50;
     /**
+     *
+     *
      * <pre>
      * Referent
      * </pre>
@@ -1184,6 +1461,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REF_VALUE = 51;
     /**
+     *
+     *
      * <pre>
      * Remnant
      * </pre>
@@ -1192,6 +1471,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REMNANT_VALUE = 52;
     /**
+     *
+     *
      * <pre>
      * Reparandum
      * </pre>
@@ -1200,6 +1481,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REPARANDUM_VALUE = 53;
     /**
+     *
+     *
      * <pre>
      * Root
      * </pre>
@@ -1208,6 +1491,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ROOT_VALUE = 54;
     /**
+     *
+     *
      * <pre>
      * Suffix specifying a unit of number
      * </pre>
@@ -1216,6 +1501,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SNUM_VALUE = 55;
     /**
+     *
+     *
      * <pre>
      * Suffix
      * </pre>
@@ -1224,6 +1511,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SUFF_VALUE = 56;
     /**
+     *
+     *
      * <pre>
      * Temporal modifier
      * </pre>
@@ -1232,6 +1521,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TMOD_VALUE = 57;
     /**
+     *
+     *
      * <pre>
      * Topic marker
      * </pre>
@@ -1240,6 +1531,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TOPIC_VALUE = 58;
     /**
+     *
+     *
      * <pre>
      * Clause headed by an infinite form of the verb that modifies a noun
      * </pre>
@@ -1248,6 +1541,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VMOD_VALUE = 59;
     /**
+     *
+     *
      * <pre>
      * Vocative
      * </pre>
@@ -1256,6 +1551,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VOCATIVE_VALUE = 60;
     /**
+     *
+     *
      * <pre>
      * Open clausal complement
      * </pre>
@@ -1264,6 +1561,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int XCOMP_VALUE = 61;
     /**
+     *
+     *
      * <pre>
      * Name suffix
      * </pre>
@@ -1272,6 +1571,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SUFFIX_VALUE = 62;
     /**
+     *
+     *
      * <pre>
      * Name title
      * </pre>
@@ -1280,6 +1581,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TITLE_VALUE = 63;
     /**
+     *
+     *
      * <pre>
      * Adverbial phrase modifier
      * </pre>
@@ -1288,6 +1591,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ADVPHMOD_VALUE = 64;
     /**
+     *
+     *
      * <pre>
      * Causative auxiliary
      * </pre>
@@ -1296,6 +1601,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUXCAUS_VALUE = 65;
     /**
+     *
+     *
      * <pre>
      * Helper auxiliary
      * </pre>
@@ -1304,6 +1611,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUXVV_VALUE = 66;
     /**
+     *
+     *
      * <pre>
      * Rentaishi (Prenominal modifier)
      * </pre>
@@ -1312,6 +1621,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DTMOD_VALUE = 67;
     /**
+     *
+     *
      * <pre>
      * Foreign words
      * </pre>
@@ -1320,6 +1631,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FOREIGN_VALUE = 68;
     /**
+     *
+     *
      * <pre>
      * Keyword
      * </pre>
@@ -1328,6 +1641,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int KW_VALUE = 69;
     /**
+     *
+     *
      * <pre>
      * List for chains of comparable items
      * </pre>
@@ -1336,6 +1651,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int LIST_VALUE = 70;
     /**
+     *
+     *
      * <pre>
      * Nominalized clause
      * </pre>
@@ -1344,6 +1661,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NOMC_VALUE = 71;
     /**
+     *
+     *
      * <pre>
      * Nominalized clausal subject
      * </pre>
@@ -1352,6 +1671,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NOMCSUBJ_VALUE = 72;
     /**
+     *
+     *
      * <pre>
      * Nominalized clausal passive
      * </pre>
@@ -1360,6 +1681,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NOMCSUBJPASS_VALUE = 73;
     /**
+     *
+     *
      * <pre>
      * Compound of numeric modifier
      * </pre>
@@ -1368,6 +1691,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NUMC_VALUE = 74;
     /**
+     *
+     *
      * <pre>
      * Copula
      * </pre>
@@ -1376,6 +1701,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int COP_VALUE = 75;
     /**
+     *
+     *
      * <pre>
      * Dislocated relation (for fronted/topicalized elements)
      * </pre>
@@ -1384,6 +1711,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DISLOCATED_VALUE = 76;
     /**
+     *
+     *
      * <pre>
      * Aspect marker
      * </pre>
@@ -1392,6 +1721,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ASP_VALUE = 77;
     /**
+     *
+     *
      * <pre>
      * Genitive modifier
      * </pre>
@@ -1400,6 +1731,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GMOD_VALUE = 78;
     /**
+     *
+     *
      * <pre>
      * Genitive object
      * </pre>
@@ -1408,6 +1741,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GOBJ_VALUE = 79;
     /**
+     *
+     *
      * <pre>
      * Infinitival modifier
      * </pre>
@@ -1416,6 +1751,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int INFMOD_VALUE = 80;
     /**
+     *
+     *
      * <pre>
      * Measure
      * </pre>
@@ -1424,6 +1761,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MES_VALUE = 81;
     /**
+     *
+     *
      * <pre>
      * Nominal complement of a noun
      * </pre>
@@ -1431,7 +1770,6 @@ private static final long serialVersionUID = 0L;
      * <code>NCOMP = 82;</code>
      */
     public static final int NCOMP_VALUE = 82;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1441,9 +1779,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Label valueOf(int value) {
       return forNumber(value);
@@ -1451,125 +1787,205 @@ private static final long serialVersionUID = 0L;
 
     public static Label forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return ABBREV;
-        case 2: return ACOMP;
-        case 3: return ADVCL;
-        case 4: return ADVMOD;
-        case 5: return AMOD;
-        case 6: return APPOS;
-        case 7: return ATTR;
-        case 8: return AUX;
-        case 9: return AUXPASS;
-        case 10: return CC;
-        case 11: return CCOMP;
-        case 12: return CONJ;
-        case 13: return CSUBJ;
-        case 14: return CSUBJPASS;
-        case 15: return DEP;
-        case 16: return DET;
-        case 17: return DISCOURSE;
-        case 18: return DOBJ;
-        case 19: return EXPL;
-        case 20: return GOESWITH;
-        case 21: return IOBJ;
-        case 22: return MARK;
-        case 23: return MWE;
-        case 24: return MWV;
-        case 25: return NEG;
-        case 26: return NN;
-        case 27: return NPADVMOD;
-        case 28: return NSUBJ;
-        case 29: return NSUBJPASS;
-        case 30: return NUM;
-        case 31: return NUMBER;
-        case 32: return P;
-        case 33: return PARATAXIS;
-        case 34: return PARTMOD;
-        case 35: return PCOMP;
-        case 36: return POBJ;
-        case 37: return POSS;
-        case 38: return POSTNEG;
-        case 39: return PRECOMP;
-        case 40: return PRECONJ;
-        case 41: return PREDET;
-        case 42: return PREF;
-        case 43: return PREP;
-        case 44: return PRONL;
-        case 45: return PRT;
-        case 46: return PS;
-        case 47: return QUANTMOD;
-        case 48: return RCMOD;
-        case 49: return RCMODREL;
-        case 50: return RDROP;
-        case 51: return REF;
-        case 52: return REMNANT;
-        case 53: return REPARANDUM;
-        case 54: return ROOT;
-        case 55: return SNUM;
-        case 56: return SUFF;
-        case 57: return TMOD;
-        case 58: return TOPIC;
-        case 59: return VMOD;
-        case 60: return VOCATIVE;
-        case 61: return XCOMP;
-        case 62: return SUFFIX;
-        case 63: return TITLE;
-        case 64: return ADVPHMOD;
-        case 65: return AUXCAUS;
-        case 66: return AUXVV;
-        case 67: return DTMOD;
-        case 68: return FOREIGN;
-        case 69: return KW;
-        case 70: return LIST;
-        case 71: return NOMC;
-        case 72: return NOMCSUBJ;
-        case 73: return NOMCSUBJPASS;
-        case 74: return NUMC;
-        case 75: return COP;
-        case 76: return DISLOCATED;
-        case 77: return ASP;
-        case 78: return GMOD;
-        case 79: return GOBJ;
-        case 80: return INFMOD;
-        case 81: return MES;
-        case 82: return NCOMP;
-        default: return null;
+        case 0:
+          return UNKNOWN;
+        case 1:
+          return ABBREV;
+        case 2:
+          return ACOMP;
+        case 3:
+          return ADVCL;
+        case 4:
+          return ADVMOD;
+        case 5:
+          return AMOD;
+        case 6:
+          return APPOS;
+        case 7:
+          return ATTR;
+        case 8:
+          return AUX;
+        case 9:
+          return AUXPASS;
+        case 10:
+          return CC;
+        case 11:
+          return CCOMP;
+        case 12:
+          return CONJ;
+        case 13:
+          return CSUBJ;
+        case 14:
+          return CSUBJPASS;
+        case 15:
+          return DEP;
+        case 16:
+          return DET;
+        case 17:
+          return DISCOURSE;
+        case 18:
+          return DOBJ;
+        case 19:
+          return EXPL;
+        case 20:
+          return GOESWITH;
+        case 21:
+          return IOBJ;
+        case 22:
+          return MARK;
+        case 23:
+          return MWE;
+        case 24:
+          return MWV;
+        case 25:
+          return NEG;
+        case 26:
+          return NN;
+        case 27:
+          return NPADVMOD;
+        case 28:
+          return NSUBJ;
+        case 29:
+          return NSUBJPASS;
+        case 30:
+          return NUM;
+        case 31:
+          return NUMBER;
+        case 32:
+          return P;
+        case 33:
+          return PARATAXIS;
+        case 34:
+          return PARTMOD;
+        case 35:
+          return PCOMP;
+        case 36:
+          return POBJ;
+        case 37:
+          return POSS;
+        case 38:
+          return POSTNEG;
+        case 39:
+          return PRECOMP;
+        case 40:
+          return PRECONJ;
+        case 41:
+          return PREDET;
+        case 42:
+          return PREF;
+        case 43:
+          return PREP;
+        case 44:
+          return PRONL;
+        case 45:
+          return PRT;
+        case 46:
+          return PS;
+        case 47:
+          return QUANTMOD;
+        case 48:
+          return RCMOD;
+        case 49:
+          return RCMODREL;
+        case 50:
+          return RDROP;
+        case 51:
+          return REF;
+        case 52:
+          return REMNANT;
+        case 53:
+          return REPARANDUM;
+        case 54:
+          return ROOT;
+        case 55:
+          return SNUM;
+        case 56:
+          return SUFF;
+        case 57:
+          return TMOD;
+        case 58:
+          return TOPIC;
+        case 59:
+          return VMOD;
+        case 60:
+          return VOCATIVE;
+        case 61:
+          return XCOMP;
+        case 62:
+          return SUFFIX;
+        case 63:
+          return TITLE;
+        case 64:
+          return ADVPHMOD;
+        case 65:
+          return AUXCAUS;
+        case 66:
+          return AUXVV;
+        case 67:
+          return DTMOD;
+        case 68:
+          return FOREIGN;
+        case 69:
+          return KW;
+        case 70:
+          return LIST;
+        case 71:
+          return NOMC;
+        case 72:
+          return NOMCSUBJ;
+        case 73:
+          return NOMCSUBJPASS;
+        case 74:
+          return NUMC;
+        case 75:
+          return COP;
+        case 76:
+          return DISLOCATED;
+        case 77:
+          return ASP;
+        case 78:
+          return GMOD;
+        case 79:
+          return GOBJ;
+        case 80:
+          return INFMOD;
+        case 81:
+          return MES;
+        case 82:
+          return NCOMP;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Label>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Label> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Label> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Label>() {
-            public Label findValueByNumber(int number) {
-              return Label.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Label> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Label>() {
+          public Label findValueByNumber(int number) {
+            return Label.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1beta2.DependencyEdge.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Label[] VALUES = values();
 
-    public static Label valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Label valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -1589,6 +2005,8 @@ private static final long serialVersionUID = 0L;
   public static final int HEAD_TOKEN_INDEX_FIELD_NUMBER = 1;
   private int headTokenIndex_;
   /**
+   *
+   *
    * <pre>
    * Represents the head of this token in the dependency tree.
    * This is the index of the token which has an arc going to this token.
@@ -1606,6 +2024,8 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_FIELD_NUMBER = 2;
   private int label_;
   /**
+   *
+   *
    * <pre>
    * The parse label for the token.
    * </pre>
@@ -1616,6 +2036,8 @@ private static final long serialVersionUID = 0L;
     return label_;
   }
   /**
+   *
+   *
    * <pre>
    * The parse label for the token.
    * </pre>
@@ -1624,11 +2046,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.language.v1beta2.DependencyEdge.Label getLabel() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.language.v1beta2.DependencyEdge.Label result = com.google.cloud.language.v1beta2.DependencyEdge.Label.valueOf(label_);
-    return result == null ? com.google.cloud.language.v1beta2.DependencyEdge.Label.UNRECOGNIZED : result;
+    com.google.cloud.language.v1beta2.DependencyEdge.Label result =
+        com.google.cloud.language.v1beta2.DependencyEdge.Label.valueOf(label_);
+    return result == null
+        ? com.google.cloud.language.v1beta2.DependencyEdge.Label.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1640,8 +2066,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (headTokenIndex_ != 0) {
       output.writeInt32(1, headTokenIndex_);
     }
@@ -1658,12 +2083,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (headTokenIndex_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, headTokenIndex_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, headTokenIndex_);
     }
     if (label_ != com.google.cloud.language.v1beta2.DependencyEdge.Label.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, label_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, label_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1673,16 +2096,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.language.v1beta2.DependencyEdge)) {
       return super.equals(obj);
     }
-    com.google.cloud.language.v1beta2.DependencyEdge other = (com.google.cloud.language.v1beta2.DependencyEdge) obj;
+    com.google.cloud.language.v1beta2.DependencyEdge other =
+        (com.google.cloud.language.v1beta2.DependencyEdge) obj;
 
     boolean result = true;
-    result = result && (getHeadTokenIndex()
-        == other.getHeadTokenIndex());
+    result = result && (getHeadTokenIndex() == other.getHeadTokenIndex());
     result = result && label_ == other.label_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1704,118 +2127,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.language.v1beta2.DependencyEdge parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.language.v1beta2.DependencyEdge parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1beta2.DependencyEdge parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.language.v1beta2.DependencyEdge prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents dependency parse tree information for a token.
    * </pre>
    *
    * Protobuf type {@code google.cloud.language.v1beta2.DependencyEdge}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.language.v1beta2.DependencyEdge)
       com.google.cloud.language.v1beta2.DependencyEdgeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_DependencyEdge_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_DependencyEdge_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_DependencyEdge_fieldAccessorTable
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_DependencyEdge_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.language.v1beta2.DependencyEdge.class, com.google.cloud.language.v1beta2.DependencyEdge.Builder.class);
+              com.google.cloud.language.v1beta2.DependencyEdge.class,
+              com.google.cloud.language.v1beta2.DependencyEdge.Builder.class);
     }
 
     // Construct using com.google.cloud.language.v1beta2.DependencyEdge.newBuilder()
@@ -1823,16 +2255,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1844,9 +2275,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_DependencyEdge_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_DependencyEdge_descriptor;
     }
 
     @java.lang.Override
@@ -1865,7 +2296,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.language.v1beta2.DependencyEdge buildPartial() {
-      com.google.cloud.language.v1beta2.DependencyEdge result = new com.google.cloud.language.v1beta2.DependencyEdge(this);
+      com.google.cloud.language.v1beta2.DependencyEdge result =
+          new com.google.cloud.language.v1beta2.DependencyEdge(this);
       result.headTokenIndex_ = headTokenIndex_;
       result.label_ = label_;
       onBuilt();
@@ -1876,38 +2308,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1beta2.DependencyEdge) {
-        return mergeFrom((com.google.cloud.language.v1beta2.DependencyEdge)other);
+        return mergeFrom((com.google.cloud.language.v1beta2.DependencyEdge) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1915,7 +2348,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.language.v1beta2.DependencyEdge other) {
-      if (other == com.google.cloud.language.v1beta2.DependencyEdge.getDefaultInstance()) return this;
+      if (other == com.google.cloud.language.v1beta2.DependencyEdge.getDefaultInstance())
+        return this;
       if (other.getHeadTokenIndex() != 0) {
         setHeadTokenIndex(other.getHeadTokenIndex());
       }
@@ -1951,8 +2385,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int headTokenIndex_ ;
+    private int headTokenIndex_;
     /**
+     *
+     *
      * <pre>
      * Represents the head of this token in the dependency tree.
      * This is the index of the token which has an arc going to this token.
@@ -1967,6 +2403,8 @@ private static final long serialVersionUID = 0L;
       return headTokenIndex_;
     }
     /**
+     *
+     *
      * <pre>
      * Represents the head of this token in the dependency tree.
      * This is the index of the token which has an arc going to this token.
@@ -1978,12 +2416,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 head_token_index = 1;</code>
      */
     public Builder setHeadTokenIndex(int value) {
-      
+
       headTokenIndex_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Represents the head of this token in the dependency tree.
      * This is the index of the token which has an arc going to this token.
@@ -1995,7 +2435,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 head_token_index = 1;</code>
      */
     public Builder clearHeadTokenIndex() {
-      
+
       headTokenIndex_ = 0;
       onChanged();
       return this;
@@ -2003,6 +2443,8 @@ private static final long serialVersionUID = 0L;
 
     private int label_ = 0;
     /**
+     *
+     *
      * <pre>
      * The parse label for the token.
      * </pre>
@@ -2013,6 +2455,8 @@ private static final long serialVersionUID = 0L;
       return label_;
     }
     /**
+     *
+     *
      * <pre>
      * The parse label for the token.
      * </pre>
@@ -2025,6 +2469,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The parse label for the token.
      * </pre>
@@ -2033,10 +2479,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1beta2.DependencyEdge.Label getLabel() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.language.v1beta2.DependencyEdge.Label result = com.google.cloud.language.v1beta2.DependencyEdge.Label.valueOf(label_);
-      return result == null ? com.google.cloud.language.v1beta2.DependencyEdge.Label.UNRECOGNIZED : result;
+      com.google.cloud.language.v1beta2.DependencyEdge.Label result =
+          com.google.cloud.language.v1beta2.DependencyEdge.Label.valueOf(label_);
+      return result == null
+          ? com.google.cloud.language.v1beta2.DependencyEdge.Label.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The parse label for the token.
      * </pre>
@@ -2047,12 +2498,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       label_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The parse label for the token.
      * </pre>
@@ -2060,14 +2513,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.DependencyEdge.Label label = 2;</code>
      */
     public Builder clearLabel() {
-      
+
       label_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2077,12 +2530,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.language.v1beta2.DependencyEdge)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.language.v1beta2.DependencyEdge)
   private static final com.google.cloud.language.v1beta2.DependencyEdge DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.language.v1beta2.DependencyEdge();
   }
@@ -2091,16 +2544,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DependencyEdge>
-      PARSER = new com.google.protobuf.AbstractParser<DependencyEdge>() {
-    @java.lang.Override
-    public DependencyEdge parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DependencyEdge(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DependencyEdge> PARSER =
+      new com.google.protobuf.AbstractParser<DependencyEdge>() {
+        @java.lang.Override
+        public DependencyEdge parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DependencyEdge(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DependencyEdge> parser() {
     return PARSER;
@@ -2115,6 +2568,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.language.v1beta2.DependencyEdge getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

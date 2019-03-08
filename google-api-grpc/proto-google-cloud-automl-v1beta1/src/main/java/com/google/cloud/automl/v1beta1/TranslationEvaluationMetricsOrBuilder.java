@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface TranslationEvaluationMetricsOrBuilder extends
+public interface TranslationEvaluationMetricsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.TranslationEvaluationMetrics)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. BLEU score.
    * </pre>
@@ -17,6 +20,8 @@ public interface TranslationEvaluationMetricsOrBuilder extends
   double getBleuScore();
 
   /**
+   *
+   *
    * <pre>
    * Output only. BLEU score for base model.
    * </pre>

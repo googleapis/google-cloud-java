@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -95,7 +97,6 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -113,6 +114,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   private final UnaryCallSettings<ExecuteSqlRequest, ResultSet> executeSqlSettings;
   private final ServerStreamingCallSettings<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlSettings;
+  private final UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings;
   private final UnaryCallSettings<ReadRequest, ResultSet> readSettings;
   private final ServerStreamingCallSettings<ReadRequest, PartialResultSet> streamingReadSettings;
   private final UnaryCallSettings<BeginTransactionRequest, Transaction> beginTransactionSettings;
@@ -151,6 +154,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   public ServerStreamingCallSettings<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlSettings() {
     return executeStreamingSqlSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeBatchDml. */
+  public UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings() {
+    return executeBatchDmlSettings;
   }
 
   /** Returns the object with the settings used for calls to read. */
@@ -261,6 +270,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     deleteSessionSettings = settingsBuilder.deleteSessionSettings().build();
     executeSqlSettings = settingsBuilder.executeSqlSettings().build();
     executeStreamingSqlSettings = settingsBuilder.executeStreamingSqlSettings().build();
+    executeBatchDmlSettings = settingsBuilder.executeBatchDmlSettings().build();
     readSettings = settingsBuilder.readSettings().build();
     streamingReadSettings = settingsBuilder.streamingReadSettings().build();
     beginTransactionSettings = settingsBuilder.beginTransactionSettings().build();
@@ -300,7 +310,9 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
             @Override
             public Iterable<Session> extractResources(ListSessionsResponse payload) {
-              return payload.getSessionsList();
+              return payload.getSessionsList() != null
+                  ? payload.getSessionsList()
+                  : ImmutableList.<Session>of();
             }
           };
 
@@ -334,6 +346,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     private final UnaryCallSettings.Builder<ExecuteSqlRequest, ResultSet> executeSqlSettings;
     private final ServerStreamingCallSettings.Builder<ExecuteSqlRequest, PartialResultSet>
         executeStreamingSqlSettings;
+    private final UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings;
     private final UnaryCallSettings.Builder<ReadRequest, ResultSet> readSettings;
     private final ServerStreamingCallSettings.Builder<ReadRequest, PartialResultSet>
         streamingReadSettings;
@@ -385,6 +399,17 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               .setInitialRetryDelay(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(32000L))
+              .setInitialRpcTimeout(Duration.ofMillis(120000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(120000L))
+              .setTotalTimeout(Duration.ofMillis(1200000L))
+              .build();
+      definitions.put("streaming", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(32000L))
               .setInitialRpcTimeout(Duration.ofMillis(3600000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(3600000L))
@@ -413,6 +438,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
       executeStreamingSqlSettings = ServerStreamingCallSettings.newBuilder();
 
+      executeBatchDmlSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       readSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       streamingReadSettings = ServerStreamingCallSettings.newBuilder();
@@ -434,6 +461,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               listSessionsSettings,
               deleteSessionSettings,
               executeSqlSettings,
+              executeBatchDmlSettings,
               readSettings,
               beginTransactionSettings,
               commitSettings,
@@ -483,6 +511,11 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       builder
           .executeStreamingSqlSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("streaming"));
+
+      builder
+          .executeBatchDmlSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -493,7 +526,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       builder
           .streamingReadSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("streaming"));
 
       builder
           .beginTransactionSettings()
@@ -532,6 +565,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       deleteSessionSettings = settings.deleteSessionSettings.toBuilder();
       executeSqlSettings = settings.executeSqlSettings.toBuilder();
       executeStreamingSqlSettings = settings.executeStreamingSqlSettings.toBuilder();
+      executeBatchDmlSettings = settings.executeBatchDmlSettings.toBuilder();
       readSettings = settings.readSettings.toBuilder();
       streamingReadSettings = settings.streamingReadSettings.toBuilder();
       beginTransactionSettings = settings.beginTransactionSettings.toBuilder();
@@ -547,6 +581,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               listSessionsSettings,
               deleteSessionSettings,
               executeSqlSettings,
+              executeBatchDmlSettings,
               readSettings,
               beginTransactionSettings,
               commitSettings,
@@ -602,6 +637,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     public ServerStreamingCallSettings.Builder<ExecuteSqlRequest, PartialResultSet>
         executeStreamingSqlSettings() {
       return executeStreamingSqlSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeBatchDml. */
+    public UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings() {
+      return executeBatchDmlSettings;
     }
 
     /** Returns the builder for the settings used for calls to read. */

@@ -4,21 +4,25 @@
 package com.google.cloud.automl.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Model metadata for image classification.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ImageClassificationModelMetadata}
  */
-public  final class ImageClassificationModelMetadata extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ImageClassificationModelMetadata extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
     ImageClassificationModelMetadataOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ImageClassificationModelMetadata.newBuilder() to construct.
-  private ImageClassificationModelMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private ImageClassificationModelMetadata(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ImageClassificationModelMetadata() {
     baseModelId_ = "";
     trainBudget_ = 0L;
@@ -27,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ImageClassificationModelMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,63 +54,69 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            baseModelId_ = s;
-            break;
-          }
-          case 16: {
-
-            trainBudget_ = input.readInt64();
-            break;
-          }
-          case 24: {
-
-            trainCost_ = input.readInt64();
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            stopReason_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              baseModelId_ = s;
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              trainBudget_ = input.readInt64();
+              break;
+            }
+          case 24:
+            {
+              trainCost_ = input.readInt64();
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stopReason_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.automl.v1beta1.ImageProto.internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.automl.v1beta1.ImageProto
+        .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.automl.v1beta1.ImageProto.internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_fieldAccessorTable
+    return com.google.cloud.automl.v1beta1.ImageProto
+        .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.class, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder.class);
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.class,
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder.class);
   }
 
   public static final int BASE_MODEL_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object baseModelId_;
   /**
+   *
+   *
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
@@ -121,14 +131,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       baseModelId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
@@ -138,13 +149,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string base_model_id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getBaseModelIdBytes() {
+  public com.google.protobuf.ByteString getBaseModelIdBytes() {
     java.lang.Object ref = baseModelId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       baseModelId_ = b;
       return b;
     } else {
@@ -155,6 +164,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRAIN_BUDGET_FIELD_NUMBER = 2;
   private long trainBudget_;
   /**
+   *
+   *
    * <pre>
    * Required. The train budget of creating this model. The actual
    * `train_cost` will be equal or less than this value.
@@ -169,6 +180,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRAIN_COST_FIELD_NUMBER = 3;
   private long trainCost_;
   /**
+   *
+   *
    * <pre>
    * Output only. The actual train cost of creating this model. If this
    * model is created from a `base` model, the train cost used to create the
@@ -184,6 +197,8 @@ private static final long serialVersionUID = 0L;
   public static final int STOP_REASON_FIELD_NUMBER = 5;
   private volatile java.lang.Object stopReason_;
   /**
+   *
+   *
    * <pre>
    * Output only. The reason that this create model operation stopped,
    * e.g. BUDGET_REACHED, CONVERGED.
@@ -196,14 +211,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       stopReason_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The reason that this create model operation stopped,
    * e.g. BUDGET_REACHED, CONVERGED.
@@ -211,13 +227,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string stop_reason = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getStopReasonBytes() {
+  public com.google.protobuf.ByteString getStopReasonBytes() {
     java.lang.Object ref = stopReason_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       stopReason_ = b;
       return b;
     } else {
@@ -226,6 +240,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -237,8 +252,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getBaseModelIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, baseModelId_);
     }
@@ -264,12 +278,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, baseModelId_);
     }
     if (trainBudget_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, trainBudget_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, trainBudget_);
     }
     if (trainCost_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, trainCost_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, trainCost_);
     }
     if (!getStopReasonBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stopReason_);
@@ -282,22 +294,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata other = (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) obj;
+    com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata other =
+        (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) obj;
 
     boolean result = true;
-    result = result && getBaseModelId()
-        .equals(other.getBaseModelId());
-    result = result && (getTrainBudget()
-        == other.getTrainBudget());
-    result = result && (getTrainCost()
-        == other.getTrainCost());
-    result = result && getStopReason()
-        .equals(other.getStopReason());
+    result = result && getBaseModelId().equals(other.getBaseModelId());
+    result = result && (getTrainBudget() == other.getTrainBudget());
+    result = result && (getTrainCost() == other.getTrainCost());
+    result = result && getStopReason().equals(other.getStopReason());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -312,11 +321,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BASE_MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getBaseModelId().hashCode();
     hash = (37 * hash) + TRAIN_BUDGET_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTrainBudget());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainBudget());
     hash = (37 * hash) + TRAIN_COST_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTrainCost());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrainCost());
     hash = (37 * hash) + STOP_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getStopReason().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -325,117 +332,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Model metadata for image classification.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ImageClassificationModelMetadata}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
       com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.ImageProto.internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.ImageProto
+          .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.ImageProto.internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.ImageProto
+          .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.class, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder.class);
+              com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.class,
+              com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder.class);
     }
 
     // Construct using com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.newBuilder()
@@ -443,16 +460,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -468,13 +484,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.automl.v1beta1.ImageProto.internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.automl.v1beta1.ImageProto
+          .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata getDefaultInstanceForType() {
+    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+        getDefaultInstanceForType() {
       return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
     }
 
@@ -489,7 +506,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata buildPartial() {
-      com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata result = new com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata(this);
+      com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata result =
+          new com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata(this);
       result.baseModelId_ = baseModelId_;
       result.trainBudget_ = trainBudget_;
       result.trainCost_ = trainCost_;
@@ -502,46 +520,50 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) {
-        return mergeFrom((com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata)other);
+        return mergeFrom((com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata other) {
-      if (other == com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata other) {
+      if (other
+          == com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance())
+        return this;
       if (!other.getBaseModelId().isEmpty()) {
         baseModelId_ = other.baseModelId_;
         onChanged();
@@ -575,7 +597,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -587,6 +611,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object baseModelId_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
@@ -599,8 +625,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getBaseModelId() {
       java.lang.Object ref = baseModelId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         baseModelId_ = s;
         return s;
@@ -609,6 +634,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
@@ -618,13 +645,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string base_model_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getBaseModelIdBytes() {
+    public com.google.protobuf.ByteString getBaseModelIdBytes() {
       java.lang.Object ref = baseModelId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         baseModelId_ = b;
         return b;
       } else {
@@ -632,6 +657,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
@@ -641,17 +668,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string base_model_id = 1;</code>
      */
-    public Builder setBaseModelId(
-        java.lang.String value) {
+    public Builder setBaseModelId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       baseModelId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
@@ -662,12 +690,14 @@ private static final long serialVersionUID = 0L;
      * <code>string base_model_id = 1;</code>
      */
     public Builder clearBaseModelId() {
-      
+
       baseModelId_ = getDefaultInstance().getBaseModelId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The ID of the `base` model. If it is specified, the new model
      * will be created based on the `base` model. Otherwise, the new model will be
@@ -677,20 +707,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string base_model_id = 1;</code>
      */
-    public Builder setBaseModelIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setBaseModelIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       baseModelId_ = value;
       onChanged();
       return this;
     }
 
-    private long trainBudget_ ;
+    private long trainBudget_;
     /**
+     *
+     *
      * <pre>
      * Required. The train budget of creating this model. The actual
      * `train_cost` will be equal or less than this value.
@@ -702,6 +733,8 @@ private static final long serialVersionUID = 0L;
       return trainBudget_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The train budget of creating this model. The actual
      * `train_cost` will be equal or less than this value.
@@ -710,12 +743,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 train_budget = 2;</code>
      */
     public Builder setTrainBudget(long value) {
-      
+
       trainBudget_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The train budget of creating this model. The actual
      * `train_cost` will be equal or less than this value.
@@ -724,14 +759,16 @@ private static final long serialVersionUID = 0L;
      * <code>int64 train_budget = 2;</code>
      */
     public Builder clearTrainBudget() {
-      
+
       trainBudget_ = 0L;
       onChanged();
       return this;
     }
 
-    private long trainCost_ ;
+    private long trainCost_;
     /**
+     *
+     *
      * <pre>
      * Output only. The actual train cost of creating this model. If this
      * model is created from a `base` model, the train cost used to create the
@@ -744,6 +781,8 @@ private static final long serialVersionUID = 0L;
       return trainCost_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The actual train cost of creating this model. If this
      * model is created from a `base` model, the train cost used to create the
@@ -753,12 +792,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 train_cost = 3;</code>
      */
     public Builder setTrainCost(long value) {
-      
+
       trainCost_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The actual train cost of creating this model. If this
      * model is created from a `base` model, the train cost used to create the
@@ -768,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 train_cost = 3;</code>
      */
     public Builder clearTrainCost() {
-      
+
       trainCost_ = 0L;
       onChanged();
       return this;
@@ -776,6 +817,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object stopReason_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The reason that this create model operation stopped,
      * e.g. BUDGET_REACHED, CONVERGED.
@@ -786,8 +829,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getStopReason() {
       java.lang.Object ref = stopReason_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         stopReason_ = s;
         return s;
@@ -796,6 +838,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The reason that this create model operation stopped,
      * e.g. BUDGET_REACHED, CONVERGED.
@@ -803,13 +847,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string stop_reason = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getStopReasonBytes() {
+    public com.google.protobuf.ByteString getStopReasonBytes() {
       java.lang.Object ref = stopReason_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         stopReason_ = b;
         return b;
       } else {
@@ -817,6 +859,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The reason that this create model operation stopped,
      * e.g. BUDGET_REACHED, CONVERGED.
@@ -824,17 +868,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string stop_reason = 5;</code>
      */
-    public Builder setStopReason(
-        java.lang.String value) {
+    public Builder setStopReason(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       stopReason_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The reason that this create model operation stopped,
      * e.g. BUDGET_REACHED, CONVERGED.
@@ -843,12 +888,14 @@ private static final long serialVersionUID = 0L;
      * <code>string stop_reason = 5;</code>
      */
     public Builder clearStopReason() {
-      
+
       stopReason_ = getDefaultInstance().getStopReason();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The reason that this create model operation stopped,
      * e.g. BUDGET_REACHED, CONVERGED.
@@ -856,20 +903,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string stop_reason = 5;</code>
      */
-    public Builder setStopReasonBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setStopReasonBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       stopReason_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -879,30 +925,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
-  private static final com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata DEFAULT_INSTANCE;
+  private static final com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata();
   }
 
-  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata getDefaultInstance() {
+  public static com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImageClassificationModelMetadata>
-      PARSER = new com.google.protobuf.AbstractParser<ImageClassificationModelMetadata>() {
-    @java.lang.Override
-    public ImageClassificationModelMetadata parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImageClassificationModelMetadata(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ImageClassificationModelMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<ImageClassificationModelMetadata>() {
+        @java.lang.Override
+        public ImageClassificationModelMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ImageClassificationModelMetadata(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ImageClassificationModelMetadata> parser() {
     return PARSER;
@@ -914,9 +962,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata getDefaultInstanceForType() {
+  public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

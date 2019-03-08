@@ -3,20 +3,24 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface ListJobsResponseOrBuilder extends
+public interface ListJobsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.ListJobsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of jobs.
    * </pre>
    *
    * <code>repeated .google.cloud.scheduler.v1beta1.Job jobs = 1;</code>
    */
-  java.util.List<com.google.cloud.scheduler.v1beta1.Job> 
-      getJobsList();
+  java.util.List<com.google.cloud.scheduler.v1beta1.Job> getJobsList();
   /**
+   *
+   *
    * <pre>
    * The list of jobs.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListJobsResponseOrBuilder extends
    */
   com.google.cloud.scheduler.v1beta1.Job getJobs(int index);
   /**
+   *
+   *
    * <pre>
    * The list of jobs.
    * </pre>
@@ -33,31 +39,36 @@ public interface ListJobsResponseOrBuilder extends
    */
   int getJobsCount();
   /**
+   *
+   *
    * <pre>
    * The list of jobs.
    * </pre>
    *
    * <code>repeated .google.cloud.scheduler.v1beta1.Job jobs = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.scheduler.v1beta1.JobOrBuilder> 
-      getJobsOrBuilderList();
+  java.util.List<? extends com.google.cloud.scheduler.v1beta1.JobOrBuilder> getJobsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of jobs.
    * </pre>
    *
    * <code>repeated .google.cloud.scheduler.v1beta1.Job jobs = 1;</code>
    */
-  com.google.cloud.scheduler.v1beta1.JobOrBuilder getJobsOrBuilder(
-      int index);
+  com.google.cloud.scheduler.v1beta1.JobOrBuilder getJobsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results. Pass this value in the
-   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
-   * If this is empty it indicates that there are no more results
-   * through which to paginate.
+   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
+   * field in the subsequent call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
+   * retrieve the next page of results. If this is empty it indicates that there
+   * are no more results through which to paginate.
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -65,17 +76,19 @@ public interface ListJobsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results. Pass this value in the
-   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
-   * If this is empty it indicates that there are no more results
-   * through which to paginate.
+   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
+   * field in the subsequent call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
+   * retrieve the next page of results. If this is empty it indicates that there
+   * are no more results through which to paginate.
    * The page token is valid for only 2 hours.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

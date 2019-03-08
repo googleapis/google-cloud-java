@@ -23,9 +23,7 @@ import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
 
-/**
- * Google Translation service exception.
- */
+/** Google Translation service exception. */
 public class TranslateException extends BaseHttpServiceException {
 
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(new Error(500, null));

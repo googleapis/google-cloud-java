@@ -18,16 +18,15 @@ package com.google.cloud.compute.deprecated;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.Service;
 import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
 import com.google.cloud.compute.deprecated.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.deprecated.spi.v1.ComputeRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -108,8 +107,8 @@ public interface Compute extends Service<ComputeOptions> {
   /**
    * Fields of a Compute Engine Region resource.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/regions#resource">
-   *     Region Resource</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/regions#resource">Region
+   *     Resource</a>
    */
   enum RegionField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
@@ -418,8 +417,8 @@ public interface Compute extends Service<ComputeOptions> {
   /**
    * Fields of a Compute Engine Network resource.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/networks#resource">
-   *     Network Resource</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/networks#resource">Network
+   *     Resource</a>
    */
   enum NetworkField implements FieldSelector {
     IPV4_RANGE("IPv4Range"),
@@ -486,9 +485,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
   }
 
-  /**
-   * Base class for list filters.
-   */
+  /** Base class for list filters. */
   abstract class ListFilter implements Serializable {
 
     private static final long serialVersionUID = -238638392811165127L;
@@ -498,14 +495,10 @@ public interface Compute extends Service<ComputeOptions> {
     private final Object value;
 
     enum ComparisonOperator {
-      /**
-       * Defines an equals filter.
-       */
+      /** Defines an equals filter. */
       EQ,
 
-      /**
-       * Defines a not-equals filter.
-       */
+      /** Defines a not-equals filter. */
       NE
     }
 
@@ -539,9 +532,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
   }
 
-  /**
-   * Class for filtering disk type lists.
-   */
+  /** Class for filtering disk type lists. */
   class DiskTypeFilter extends ListFilter {
 
     private static final long serialVersionUID = 4847837203592234453L;
@@ -551,9 +542,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -562,9 +553,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -572,24 +563,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns an equals filter for the given field and long value.
-     */
+    /** Returns an equals filter for the given field and long value. */
     public static DiskTypeFilter equals(DiskTypeField field, long value) {
       return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and long value.
-     */
+    /** Returns a not-equals filter for the given field and long value. */
     public static DiskTypeFilter notEquals(DiskTypeField field, long value) {
       return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
-  /**
-   * Class for filtering machine type lists.
-   */
+  /** Class for filtering machine type lists. */
   class MachineTypeFilter extends ListFilter {
 
     private static final long serialVersionUID = 7346062041571853235L;
@@ -599,9 +584,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -610,9 +595,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -620,24 +605,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns an equals filter for the given field and long value.
-     */
+    /** Returns an equals filter for the given field and long value. */
     public static MachineTypeFilter equals(MachineTypeField field, long value) {
       return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and long value.
-     */
+    /** Returns a not-equals filter for the given field and long value. */
     public static MachineTypeFilter notEquals(MachineTypeField field, long value) {
       return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
-  /**
-   * Class for filtering region lists.
-   */
+  /** Class for filtering region lists. */
   class RegionFilter extends ListFilter {
 
     private static final long serialVersionUID = 4464892812442567172L;
@@ -647,9 +626,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -658,9 +637,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -669,9 +648,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
   }
 
-  /**
-   * Class for filtering zone lists.
-   */
+  /** Class for filtering zone lists. */
   class ZoneFilter extends ListFilter {
 
     private static final long serialVersionUID = -3927428278548808737L;
@@ -681,9 +658,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -692,9 +669,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -703,9 +680,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
   }
 
-  /**
-   * Class for filtering operation lists.
-   */
+  /** Class for filtering operation lists. */
   class OperationFilter extends ListFilter {
 
     private static final long serialVersionUID = -3202249202748346427L;
@@ -715,9 +690,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -726,9 +701,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -736,24 +711,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns an equals filter for the given field and long value.
-     */
+    /** Returns an equals filter for the given field and long value. */
     public static OperationFilter equals(OperationField field, long value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and long value.
-     */
+    /** Returns a not-equals filter for the given field and long value. */
     public static OperationFilter notEquals(OperationField field, long value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
-  /**
-   * Class for filtering address lists.
-   */
+  /** Class for filtering address lists. */
   class AddressFilter extends ListFilter {
 
     private static final long serialVersionUID = -227481644259653765L;
@@ -763,9 +732,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -774,9 +743,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -785,9 +754,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
   }
 
-  /**
-   * Class for filtering snapshot lists.
-   */
+  /** Class for filtering snapshot lists. */
   class SnapshotFilter extends ListFilter {
 
     private static final long serialVersionUID = 8757711630092406747L;
@@ -797,9 +764,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -808,9 +775,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -818,24 +785,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new SnapshotFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns an equals filter for the given field and long value.
-     */
+    /** Returns an equals filter for the given field and long value. */
     public static SnapshotFilter equals(SnapshotField field, long value) {
       return new SnapshotFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and long value.
-     */
+    /** Returns a not-equals filter for the given field and long value. */
     public static SnapshotFilter notEquals(SnapshotField field, long value) {
       return new SnapshotFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
-  /**
-   * Class for filtering image lists.
-   */
+  /** Class for filtering image lists. */
   class ImageFilter extends ListFilter {
 
     private static final long serialVersionUID = -3601427417234098397L;
@@ -845,9 +806,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -856,9 +817,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -866,24 +827,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new ImageFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns an equals filter for the given field and long value.
-     */
+    /** Returns an equals filter for the given field and long value. */
     public static ImageFilter equals(ImageField field, long value) {
       return new ImageFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and long value.
-     */
+    /** Returns a not-equals filter for the given field and long value. */
     public static ImageFilter notEquals(ImageField field, long value) {
       return new ImageFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
-  /**
-   * Class for filtering disk lists.
-   */
+  /** Class for filtering disk lists. */
   class DiskFilter extends ListFilter {
 
     private static final long serialVersionUID = 5856790665396877913L;
@@ -893,9 +848,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -904,9 +859,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -914,24 +869,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new DiskFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns an equals filter for the given field and long value.
-     */
+    /** Returns an equals filter for the given field and long value. */
     public static DiskFilter equals(DiskField field, long value) {
       return new DiskFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and long value.
-     */
+    /** Returns a not-equals filter for the given field and long value. */
     public static DiskFilter notEquals(DiskField field, long value) {
       return new DiskFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
-  /**
-   * Class for filtering subnetwork lists.
-   */
+  /** Class for filtering subnetwork lists. */
   class SubnetworkFilter extends ListFilter {
 
     private static final long serialVersionUID = 979448583739105481L;
@@ -941,9 +890,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -952,9 +901,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -963,9 +912,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
   }
 
-  /**
-   * Class for filtering network lists.
-   */
+  /** Class for filtering network lists. */
   class NetworkFilter extends ListFilter {
 
     private static final long serialVersionUID = 7921406498804130930L;
@@ -975,9 +922,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -986,9 +933,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -996,24 +943,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new NetworkFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns a equals filter for the given field and boolean value.
-     */
+    /** Returns a equals filter for the given field and boolean value. */
     public static NetworkFilter equals(NetworkField field, boolean value) {
       return new NetworkFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and boolean value.
-     */
+    /** Returns a not-equals filter for the given field and boolean value. */
     public static NetworkFilter notEquals(NetworkField field, boolean value) {
       return new NetworkFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
-  /**
-   * Class for filtering instance lists.
-   */
+  /** Class for filtering instance lists. */
   class InstanceFilter extends ListFilter {
 
     private static final long serialVersionUID = 679008888882025686L;
@@ -1023,9 +964,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns an equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -1034,9 +975,9 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns a not-equals filter for the given field and string value. For string fields,
-     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
-     * match the entire field.
+     * Returns a not-equals filter for the given field and string value. For string fields, {@code
+     * value} is interpreted as a regular expression using RE2 syntax. {@code value} must match the
+     * entire field.
      *
      * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
@@ -1044,24 +985,18 @@ public interface Compute extends Service<ComputeOptions> {
       return new InstanceFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
-    /**
-     * Returns a equals filter for the given field and boolean value.
-     */
+    /** Returns a equals filter for the given field and boolean value. */
     public static InstanceFilter equals(InstanceField field, boolean value) {
       return new InstanceFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
 
-    /**
-     * Returns a not-equals filter for the given field and boolean value.
-     */
+    /** Returns a not-equals filter for the given field and boolean value. */
     public static InstanceFilter notEquals(InstanceField field, boolean value) {
       return new InstanceFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
   }
 
-  /**
-   * Class for specifying disk type get options.
-   */
+  /** Class for specifying disk type get options. */
   class DiskTypeOption extends Option {
 
     private static final long serialVersionUID = 7349162455602991554L;
@@ -1073,18 +1008,16 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the disk type's fields to be returned by the RPC call. If this
      * option is not provided, all disk type's fields are returned. {@code DiskTypeOption.fields}
-     * can be used to specify only the fields of interest. {@link DiskType#getDiskTypeId()} is always
-     * returned, even if not specified.
+     * can be used to specify only the fields of interest. {@link DiskType#getDiskTypeId()} is
+     * always returned, even if not specified.
      */
     public static DiskTypeOption fields(DiskTypeField... fields) {
-      return new DiskTypeOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(DiskTypeField.REQUIRED_FIELDS, fields));
+      return new DiskTypeOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(DiskTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying disk type list options.
-   */
+  /** Class for specifying disk type list options. */
   class DiskTypeListOption extends Option {
 
     private static final long serialVersionUID = 9051194230847610951L;
@@ -1093,43 +1026,38 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the disk types being listed.
-     */
+    /** Returns an option to specify a filter on the disk types being listed. */
     public static DiskTypeListOption filter(DiskTypeFilter filter) {
       return new DiskTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of disk types returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of disk types returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static DiskTypeListOption pageSize(long pageSize) {
       return new DiskTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing disk types.
-     */
+    /** Returns an option to specify the page token from which to start listing disk types. */
     public static DiskTypeListOption pageToken(String pageToken) {
       return new DiskTypeListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
     /**
      * Returns an option to specify the disk type's fields to be returned by the RPC call. If this
-     * option is not provided, all disk type's fields are returned.
-     * {@code DiskTypeListOption.fields} can be used to specify only the fields of interest.
-     * {@link DiskType#getDiskTypeId()} is always returned, even if not specified.
+     * option is not provided, all disk type's fields are returned. {@code
+     * DiskTypeListOption.fields} can be used to specify only the fields of interest. {@link
+     * DiskType#getDiskTypeId()} is always returned, even if not specified.
      */
     public static DiskTypeListOption fields(DiskTypeField... fields) {
-      return new DiskTypeListOption(ComputeRpc.Option.FIELDS,
+      return new DiskTypeListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", DiskTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying disk type aggregated list options.
-   */
+  /** Class for specifying disk type aggregated list options. */
   class DiskTypeAggregatedListOption extends Option {
 
     private static final long serialVersionUID = 7611137483018305170L;
@@ -1138,32 +1066,26 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the disk types being listed.
-     */
+    /** Returns an option to specify a filter on the disk types being listed. */
     public static DiskTypeAggregatedListOption filter(DiskTypeFilter filter) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of disk types returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of disk types returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static DiskTypeAggregatedListOption pageSize(long pageSize) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing disk types.
-     */
+    /** Returns an option to specify the page token from which to start listing disk types. */
     public static DiskTypeAggregatedListOption pageToken(String pageToken) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
-  /**
-   * Class for specifying machine type get options.
-   */
+  /** Class for specifying machine type get options. */
   class MachineTypeOption extends Option {
 
     private static final long serialVersionUID = 7349162455602991554L;
@@ -1174,19 +1096,17 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the machine type's fields to be returned by the RPC call. If
-     * this option is not provided, all machine type's fields are returned.
-     * {@code MachineTypeOption.fields} can be used to specify only the fields of interest.
-     * {@link MachineType#getMachineTypeId()} is always returned, even if not specified.
+     * this option is not provided, all machine type's fields are returned. {@code
+     * MachineTypeOption.fields} can be used to specify only the fields of interest. {@link
+     * MachineType#getMachineTypeId()} is always returned, even if not specified.
      */
     public static MachineTypeOption fields(MachineTypeField... fields) {
-      return new MachineTypeOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(MachineTypeField.REQUIRED_FIELDS, fields));
+      return new MachineTypeOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(MachineTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying machine type list options.
-   */
+  /** Class for specifying machine type list options. */
   class MachineTypeListOption extends Option {
 
     private static final long serialVersionUID = -2974553049419897902L;
@@ -1195,43 +1115,38 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the machine types being listed.
-     */
+    /** Returns an option to specify a filter on the machine types being listed. */
     public static MachineTypeListOption filter(MachineTypeFilter filter) {
       return new MachineTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of machine types returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of machine types returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static MachineTypeListOption pageSize(long pageSize) {
       return new MachineTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing machine types.
-     */
+    /** Returns an option to specify the page token from which to start listing machine types. */
     public static MachineTypeListOption pageToken(String pageToken) {
       return new MachineTypeListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
     /**
      * Returns an option to specify the machine type's fields to be returned by the RPC call. If
-     * this option is not provided, all machine type's fields are returned.
-     * {@code MachineTypeListOption.fields} can be used to specify only the fields of interest.
-     * {@link MachineType#getMachineTypeId()} is always returned, even if not specified.
+     * this option is not provided, all machine type's fields are returned. {@code
+     * MachineTypeListOption.fields} can be used to specify only the fields of interest. {@link
+     * MachineType#getMachineTypeId()} is always returned, even if not specified.
      */
     public static MachineTypeListOption fields(MachineTypeField... fields) {
-      return new MachineTypeListOption(ComputeRpc.Option.FIELDS,
+      return new MachineTypeListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", MachineTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying machine type aggregated list options.
-   */
+  /** Class for specifying machine type aggregated list options. */
   class MachineTypeAggregatedListOption extends Option {
 
     private static final long serialVersionUID = 8492257475500296057L;
@@ -1240,32 +1155,26 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the machine types being listed.
-     */
+    /** Returns an option to specify a filter on the machine types being listed. */
     public static MachineTypeAggregatedListOption filter(MachineTypeFilter filter) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of machine types returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of machine types returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static MachineTypeAggregatedListOption pageSize(long pageSize) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing machine types.
-     */
+    /** Returns an option to specify the page token from which to start listing machine types. */
     public static MachineTypeAggregatedListOption pageToken(String pageToken) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
-  /**
-   * Class for specifying region get options.
-   */
+  /** Class for specifying region get options. */
   class RegionOption extends Option {
 
     private static final long serialVersionUID = 2025084807788610826L;
@@ -1277,18 +1186,16 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the region's fields to be returned by the RPC call. If this
      * option is not provided, all region's fields are returned. {@code RegionOption.fields} can be
-     * used to specify only the fields of interest. {@link Region#getRegionId()} is always
-     * returned, even if not specified.
+     * used to specify only the fields of interest. {@link Region#getRegionId()} is always returned,
+     * even if not specified.
      */
     public static RegionOption fields(RegionField... fields) {
-      return new RegionOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(RegionField.REQUIRED_FIELDS, fields));
+      return new RegionOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(RegionField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying region list options.
-   */
+  /** Class for specifying region list options. */
   class RegionListOption extends Option {
 
     private static final long serialVersionUID = 3348089279267170211L;
@@ -1297,24 +1204,20 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the regions being listed.
-     */
+    /** Returns an option to specify a filter on the regions being listed. */
     public static RegionListOption filter(RegionFilter filter) {
       return new RegionListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of regions returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of regions returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static RegionListOption pageSize(long pageSize) {
       return new RegionListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing regions.
-     */
+    /** Returns an option to specify the page token from which to start listing regions. */
     public static RegionListOption pageToken(String pageToken) {
       return new RegionListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -1326,14 +1229,13 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static RegionListOption fields(RegionField... fields) {
-      return new RegionListOption(ComputeRpc.Option.FIELDS,
+      return new RegionListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", RegionField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying zone get options.
-   */
+  /** Class for specifying zone get options. */
   class ZoneOption extends Option {
 
     private static final long serialVersionUID = -2968652076389846258L;
@@ -1345,18 +1247,16 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the zone's fields to be returned by the RPC call. If this option
      * is not provided, all zone's fields are returned. {@code ZoneOption.fields} can be used to
-     * specify only the fields of interest. {@link Zone#getZoneId()} is always returned, even if
-     * not specified.
+     * specify only the fields of interest. {@link Zone#getZoneId()} is always returned, even if not
+     * specified.
      */
     public static ZoneOption fields(ZoneField... fields) {
-      return new ZoneOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(ZoneField.REQUIRED_FIELDS, fields));
+      return new ZoneOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying zone list options.
-   */
+  /** Class for specifying zone list options. */
   class ZoneListOption extends Option {
 
     private static final long serialVersionUID = -4721971371200905764L;
@@ -1365,24 +1265,20 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the zones being listed.
-     */
+    /** Returns an option to specify a filter on the zones being listed. */
     public static ZoneListOption filter(ZoneFilter filter) {
       return new ZoneListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of zones returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of zones returned per page. {@code pageSize}
+     * must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static ZoneListOption pageSize(long pageSize) {
       return new ZoneListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing zones.
-     */
+    /** Returns an option to specify the page token from which to start listing zones. */
     public static ZoneListOption pageToken(String pageToken) {
       return new ZoneListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -1390,18 +1286,17 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the zone's fields to be returned by the RPC call. If this option
      * is not provided, all zone's fields are returned. {@code ZoneListOption.fields} can be used to
-     * specify only the fields of interest. {@link Zone#getZoneId()} is always returned, even if
-     * not specified.
+     * specify only the fields of interest. {@link Zone#getZoneId()} is always returned, even if not
+     * specified.
      */
     public static ZoneListOption fields(ZoneField... fields) {
-      return new ZoneListOption(ComputeRpc.Option.FIELDS,
+      return new ZoneListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying license get options.
-   */
+  /** Class for specifying license get options. */
   class LicenseOption extends Option {
 
     private static final long serialVersionUID = -2968652076389846258L;
@@ -1417,14 +1312,12 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static LicenseOption fields(LicenseField... fields) {
-      return new LicenseOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(LicenseField.REQUIRED_FIELDS, fields));
+      return new LicenseOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(LicenseField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying operation get options.
-   */
+  /** Class for specifying operation get options. */
   class OperationOption extends Option {
 
     private static final long serialVersionUID = -4572636917684779912L;
@@ -1440,14 +1333,12 @@ public interface Compute extends Service<ComputeOptions> {
      * always returned, even if not specified.
      */
     public static OperationOption fields(OperationField... fields) {
-      return new OperationOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(OperationField.REQUIRED_FIELDS, fields));
+      return new OperationOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(OperationField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying operation list options.
-   */
+  /** Class for specifying operation list options. */
   class OperationListOption extends Option {
 
     private static final long serialVersionUID = -1509532420587265823L;
@@ -1456,43 +1347,38 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the operations being listed.
-     */
+    /** Returns an option to specify a filter on the operations being listed. */
     public static OperationListOption filter(OperationFilter filter) {
       return new OperationListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of operations returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of operations returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static OperationListOption pageSize(long pageSize) {
       return new OperationListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing operations.
-     */
+    /** Returns an option to specify the page token from which to start listing operations. */
     public static OperationListOption pageToken(String pageToken) {
       return new OperationListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
     /**
      * Returns an option to specify the operation's fields to be returned by the RPC call. If this
-     * option is not provided, all operation's fields are returned.
-     * {@code OperationListOption.fields} can be used to specify only the fields of interest.
-     * {@link Operation#getOperationId()} is always returned, even if not specified.
+     * option is not provided, all operation's fields are returned. {@code
+     * OperationListOption.fields} can be used to specify only the fields of interest. {@link
+     * Operation#getOperationId()} is always returned, even if not specified.
      */
     public static OperationListOption fields(OperationField... fields) {
-      return new OperationListOption(ComputeRpc.Option.FIELDS,
+      return new OperationListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", OperationField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying address get options.
-   */
+  /** Class for specifying address get options. */
   class AddressOption extends Option {
 
     private static final long serialVersionUID = -5755491818692494389L;
@@ -1508,14 +1394,12 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static AddressOption fields(AddressField... fields) {
-      return new AddressOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(AddressField.REQUIRED_FIELDS, fields));
+      return new AddressOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(AddressField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying address list options.
-   */
+  /** Class for specifying address list options. */
   class AddressListOption extends Option {
 
     private static final long serialVersionUID = -4281322966374929346L;
@@ -1524,24 +1408,20 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the addresses being listed.
-     */
+    /** Returns an option to specify a filter on the addresses being listed. */
     public static AddressListOption filter(AddressFilter filter) {
       return new AddressListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of addresses returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of addresses returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static AddressListOption pageSize(long pageSize) {
       return new AddressListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing addresses.
-     */
+    /** Returns an option to specify the page token from which to start listing addresses. */
     public static AddressListOption pageToken(String pageToken) {
       return new AddressListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -1553,14 +1433,13 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static AddressListOption fields(AddressField... fields) {
-      return new AddressListOption(ComputeRpc.Option.FIELDS,
+      return new AddressListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", AddressField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying address aggregated list options.
-   */
+  /** Class for specifying address aggregated list options. */
   class AddressAggregatedListOption extends Option {
 
     private static final long serialVersionUID = -95538941541279561L;
@@ -1569,32 +1448,26 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the addresses being listed.
-     */
+    /** Returns an option to specify a filter on the addresses being listed. */
     public static AddressAggregatedListOption filter(AddressFilter filter) {
       return new AddressAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of addresses returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of addresses returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static AddressAggregatedListOption pageSize(long pageSize) {
       return new AddressAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing addresses.
-     */
+    /** Returns an option to specify the page token from which to start listing addresses. */
     public static AddressAggregatedListOption pageToken(String pageToken) {
       return new AddressAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
-  /**
-   * Class for specifying snapshot get options.
-   */
+  /** Class for specifying snapshot get options. */
   class SnapshotOption extends Option {
 
     private static final long serialVersionUID = -3505179459035500945L;
@@ -1606,18 +1479,16 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
      * option is not provided, all the snapshot's fields are returned. {@code SnapshotOption.fields}
-     * can be used to specify only the fields of interest. {@link Snapshot#getSnapshotId()} is always
-     * returned, even if not specified.
+     * can be used to specify only the fields of interest. {@link Snapshot#getSnapshotId()} is
+     * always returned, even if not specified.
      */
     public static SnapshotOption fields(SnapshotField... fields) {
-      return new SnapshotOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(SnapshotField.REQUIRED_FIELDS, fields));
+      return new SnapshotOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(SnapshotField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying snapshot list options.
-   */
+  /** Class for specifying snapshot list options. */
   class SnapshotListOption extends Option {
 
     private static final long serialVersionUID = 8278588147660831257L;
@@ -1626,43 +1497,38 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the snapshots being listed.
-     */
+    /** Returns an option to specify a filter on the snapshots being listed. */
     public static SnapshotListOption filter(SnapshotFilter filter) {
       return new SnapshotListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of snapshots returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of snapshots returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static SnapshotListOption pageSize(long pageSize) {
       return new SnapshotListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing snapshots.
-     */
+    /** Returns an option to specify the page token from which to start listing snapshots. */
     public static SnapshotListOption pageToken(String pageToken) {
       return new SnapshotListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
     /**
      * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
-     * option is not provided, all the snapshot's fields are returned.
-     * {@code SnapshotListOption.fields} can be used to specify only the fields of interest.
-     * {@link Snapshot#getSnapshotId()} is always returned, even if not specified.
+     * option is not provided, all the snapshot's fields are returned. {@code
+     * SnapshotListOption.fields} can be used to specify only the fields of interest. {@link
+     * Snapshot#getSnapshotId()} is always returned, even if not specified.
      */
     public static SnapshotListOption fields(SnapshotField... fields) {
-      return new SnapshotListOption(ComputeRpc.Option.FIELDS,
+      return new SnapshotListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", SnapshotField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying image get options.
-   */
+  /** Class for specifying image get options. */
   class ImageOption extends Option {
 
     private static final long serialVersionUID = -7622190783089299272L;
@@ -1674,18 +1540,16 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the image's fields to be returned by the RPC call. If this
      * option is not provided, all image's fields are returned. {@code ImageOption.fields} can be
-     * used to specify only the fields of interest. {@link Image#getImageId()} and
-     * {@link Image#getConfiguration()} are always returned, even if not specified.
+     * used to specify only the fields of interest. {@link Image#getImageId()} and {@link
+     * Image#getConfiguration()} are always returned, even if not specified.
      */
     public static ImageOption fields(ImageField... fields) {
-      return new ImageOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(ImageField.REQUIRED_FIELDS, fields));
+      return new ImageOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(ImageField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying image list options.
-   */
+  /** Class for specifying image list options. */
   class ImageListOption extends Option {
 
     private static final long serialVersionUID = -4927977224287915654L;
@@ -1694,9 +1558,7 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the images being listed.
-     */
+    /** Returns an option to specify a filter on the images being listed. */
     public static ImageListOption filter(ImageFilter filter) {
       return new ImageListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
@@ -1709,9 +1571,7 @@ public interface Compute extends Service<ComputeOptions> {
       return new ImageListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing images.
-     */
+    /** Returns an option to specify the page token from which to start listing images. */
     public static ImageListOption pageToken(String pageToken) {
       return new ImageListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -1719,18 +1579,17 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the image's fields to be returned by the RPC call. If this
      * option is not provided, all image's fields are returned. {@code ImageListOption.fields} can
-     * be used to specify only the fields of interest. {@link Image#getImageId()} and
-     * {@link Image#getConfiguration()} are always returned, even if not specified.
+     * be used to specify only the fields of interest. {@link Image#getImageId()} and {@link
+     * Image#getConfiguration()} are always returned, even if not specified.
      */
     public static ImageListOption fields(ImageField... fields) {
-      return new ImageListOption(ComputeRpc.Option.FIELDS,
+      return new ImageListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", ImageField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying disk get options.
-   */
+  /** Class for specifying disk get options. */
   class DiskOption extends Option {
 
     private static final long serialVersionUID = -4354796876226661667L;
@@ -1742,20 +1601,18 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the disk's fields to be returned by the RPC call. If this option
      * is not provided, all disk's fields are returned. {@code DiskOption.fields} can be used to
-     * specify only the fields of interest. {@link Disk#getDiskId()},
-     * {@link DiskConfiguration#getDiskType()} and either
-     * {@link SnapshotDiskConfiguration#getSourceSnapshot()} or
-     * {@link ImageDiskConfiguration#getSourceImage()} are always returned, even if not specified.
+     * specify only the fields of interest. {@link Disk#getDiskId()}, {@link
+     * DiskConfiguration#getDiskType()} and either {@link
+     * SnapshotDiskConfiguration#getSourceSnapshot()} or {@link
+     * ImageDiskConfiguration#getSourceImage()} are always returned, even if not specified.
      */
     public static DiskOption fields(DiskField... fields) {
-      return new DiskOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(DiskField.REQUIRED_FIELDS, fields));
+      return new DiskOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(DiskField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying disk list options.
-   */
+  /** Class for specifying disk list options. */
   class DiskListOption extends Option {
 
     private static final long serialVersionUID = -5148497888688645905L;
@@ -1764,9 +1621,7 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the disks being listed.
-     */
+    /** Returns an option to specify a filter on the disks being listed. */
     public static DiskListOption filter(DiskFilter filter) {
       return new DiskListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
@@ -1779,9 +1634,7 @@ public interface Compute extends Service<ComputeOptions> {
       return new DiskListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing disks.
-     */
+    /** Returns an option to specify the page token from which to start listing disks. */
     public static DiskListOption pageToken(String pageToken) {
       return new DiskListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -1789,20 +1642,19 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the disk's fields to be returned by the RPC call. If this option
      * is not provided, all disk's fields are returned. {@code DiskListOption.fields} can be used to
-     * specify only the fields of interest. {@link Disk#getDiskId()},
-     * {@link DiskConfiguration#getDiskType()} and either
-     * {@link SnapshotDiskConfiguration#getSourceSnapshot()} or
-     * {@link ImageDiskConfiguration#getSourceImage()} are always returned, even if not specified.
+     * specify only the fields of interest. {@link Disk#getDiskId()}, {@link
+     * DiskConfiguration#getDiskType()} and either {@link
+     * SnapshotDiskConfiguration#getSourceSnapshot()} or {@link
+     * ImageDiskConfiguration#getSourceImage()} are always returned, even if not specified.
      */
     public static DiskListOption fields(DiskField... fields) {
-      return new DiskListOption(ComputeRpc.Option.FIELDS,
+      return new DiskListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", DiskField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying disk aggregated list options.
-   */
+  /** Class for specifying disk aggregated list options. */
   class DiskAggregatedListOption extends Option {
 
     private static final long serialVersionUID = 1163784797870242766L;
@@ -1811,9 +1663,7 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the disks being listed.
-     */
+    /** Returns an option to specify a filter on the disks being listed. */
     public static DiskAggregatedListOption filter(DiskFilter filter) {
       return new DiskAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
@@ -1826,17 +1676,13 @@ public interface Compute extends Service<ComputeOptions> {
       return new DiskAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing disks.
-     */
+    /** Returns an option to specify the page token from which to start listing disks. */
     public static DiskAggregatedListOption pageToken(String pageToken) {
       return new DiskAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
-  /**
-   * Class for specifying subnetwork get options.
-   */
+  /** Class for specifying subnetwork get options. */
   class SubnetworkOption extends Option {
 
     private static final long serialVersionUID = 1994416967962074717L;
@@ -1852,14 +1698,12 @@ public interface Compute extends Service<ComputeOptions> {
      * always returned, even if not specified.
      */
     public static SubnetworkOption fields(SubnetworkField... fields) {
-      return new SubnetworkOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(SubnetworkField.REQUIRED_FIELDS, fields));
+      return new SubnetworkOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(SubnetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying subnetwork list options.
-   */
+  /** Class for specifying subnetwork list options. */
   class SubnetworkListOption extends Option {
 
     private static final long serialVersionUID = -2978666213373829606L;
@@ -1868,43 +1712,38 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the subnetworks being listed.
-     */
+    /** Returns an option to specify a filter on the subnetworks being listed. */
     public static SubnetworkListOption filter(SubnetworkFilter filter) {
       return new SubnetworkListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of subnetworks returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of subnetworks returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static SubnetworkListOption pageSize(long pageSize) {
       return new SubnetworkListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing subnetworks.
-     */
+    /** Returns an option to specify the page token from which to start listing subnetworks. */
     public static SubnetworkListOption pageToken(String pageToken) {
       return new SubnetworkListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
     /**
      * Returns an option to specify the subnetwork's fields to be returned by the RPC call. If this
-     * option is not provided, all subnetwork's fields are returned.
-     * {@code SubnetworListkOption.fields} can be used to specify only the fields of interest.
-     * {@link Subnetwork#getSubnetworkId()} is always returned, even if not specified.
+     * option is not provided, all subnetwork's fields are returned. {@code
+     * SubnetworListkOption.fields} can be used to specify only the fields of interest. {@link
+     * Subnetwork#getSubnetworkId()} is always returned, even if not specified.
      */
     public static SubnetworkListOption fields(SubnetworkField... fields) {
-      return new SubnetworkListOption(ComputeRpc.Option.FIELDS,
+      return new SubnetworkListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", SubnetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying subnetwork aggregated list options.
-   */
+  /** Class for specifying subnetwork aggregated list options. */
   class SubnetworkAggregatedListOption extends Option {
 
     private static final long serialVersionUID = -4033514850525545027L;
@@ -1913,32 +1752,26 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the subnetworks being listed.
-     */
+    /** Returns an option to specify a filter on the subnetworks being listed. */
     public static SubnetworkAggregatedListOption filter(SubnetworkFilter filter) {
       return new SubnetworkAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of subnetworks returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of subnetworks returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static SubnetworkAggregatedListOption pageSize(long pageSize) {
       return new SubnetworkAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing subnetworks.
-     */
+    /** Returns an option to specify the page token from which to start listing subnetworks. */
     public static SubnetworkAggregatedListOption pageToken(String pageToken) {
       return new SubnetworkAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
-  /**
-   * Class for specifying network get options.
-   */
+  /** Class for specifying network get options. */
   class NetworkOption extends Option {
 
     private static final long serialVersionUID = 5346750551643875754L;
@@ -1949,19 +1782,17 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the network's fields to be returned by the RPC call. If this
-     * option is not provided, all network's fields are returned. {@code NetworkOption.fields}
-     * can be used to specify only the fields of interest. {@link Network#getNetworkId()} and
-     * {@link Network#getConfiguration()} are always returned, even if not specified.
+     * option is not provided, all network's fields are returned. {@code NetworkOption.fields} can
+     * be used to specify only the fields of interest. {@link Network#getNetworkId()} and {@link
+     * Network#getConfiguration()} are always returned, even if not specified.
      */
     public static NetworkOption fields(NetworkField... fields) {
-      return new NetworkOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(NetworkField.REQUIRED_FIELDS, fields));
+      return new NetworkOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(NetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying network list options.
-   */
+  /** Class for specifying network list options. */
   class NetworkListOption extends Option {
 
     private static final long serialVersionUID = -4291731916527773896L;
@@ -1970,24 +1801,20 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the networks being listed.
-     */
+    /** Returns an option to specify a filter on the networks being listed. */
     public static NetworkListOption filter(NetworkFilter filter) {
       return new NetworkListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of networks returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of networks returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static NetworkListOption pageSize(long pageSize) {
       return new NetworkListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing networks.
-     */
+    /** Returns an option to specify the page token from which to start listing networks. */
     public static NetworkListOption pageToken(String pageToken) {
       return new NetworkListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -1995,18 +1822,17 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the network's fields to be returned by the RPC call. If this
      * option is not provided, all network's fields are returned. {@code NetworkListOption.fields}
-     * can be used to specify only the fields of interest. {@link Network#getNetworkId()} and
-     * {@link Network#getConfiguration()} are always returned, even if not specified.
+     * can be used to specify only the fields of interest. {@link Network#getNetworkId()} and {@link
+     * Network#getConfiguration()} are always returned, even if not specified.
      */
     public static NetworkListOption fields(NetworkField... fields) {
-      return new NetworkListOption(ComputeRpc.Option.FIELDS,
+      return new NetworkListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", NetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying instance get options.
-   */
+  /** Class for specifying instance get options. */
   class InstanceOption extends Option {
 
     private static final long serialVersionUID = -5277658025892081493L;
@@ -2017,19 +1843,17 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the instance's fields to be returned by the RPC call. If this
-     * option is not provided, all instance's fields are returned. {@code InstanceOption.fields}
-     * can be used to specify only the fields of interest. {@link Instance#getInstanceId()} is
-     * always returned, even if not specified.
+     * option is not provided, all instance's fields are returned. {@code InstanceOption.fields} can
+     * be used to specify only the fields of interest. {@link Instance#getInstanceId()} is always
+     * returned, even if not specified.
      */
     public static InstanceOption fields(InstanceField... fields) {
-      return new InstanceOption(ComputeRpc.Option.FIELDS,
-          Helper.selector(InstanceField.REQUIRED_FIELDS, fields));
+      return new InstanceOption(
+          ComputeRpc.Option.FIELDS, Helper.selector(InstanceField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying instance list options.
-   */
+  /** Class for specifying instance list options. */
   class InstanceListOption extends Option {
 
     private static final long serialVersionUID = -1096684312959047430L;
@@ -2038,24 +1862,20 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the instances being listed.
-     */
+    /** Returns an option to specify a filter on the instances being listed. */
     public static InstanceListOption filter(InstanceFilter filter) {
       return new InstanceListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of instances returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of instances returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static InstanceListOption pageSize(long pageSize) {
       return new InstanceListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing instances.
-     */
+    /** Returns an option to specify the page token from which to start listing instances. */
     public static InstanceListOption pageToken(String pageToken) {
       return new InstanceListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -2067,14 +1887,13 @@ public interface Compute extends Service<ComputeOptions> {
      * always returned, even if not specified.
      */
     public static InstanceListOption fields(InstanceField... fields) {
-      return new InstanceListOption(ComputeRpc.Option.FIELDS,
+      return new InstanceListOption(
+          ComputeRpc.Option.FIELDS,
           Helper.listSelector("items", InstanceField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying instance aggregated list options.
-   */
+  /** Class for specifying instance aggregated list options. */
   class InstanceAggregatedListOption extends Option {
 
     private static final long serialVersionUID = -2020005298975967713L;
@@ -2083,24 +1902,20 @@ public interface Compute extends Service<ComputeOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify a filter on the instances being listed.
-     */
+    /** Returns an option to specify a filter on the instances being listed. */
     public static InstanceAggregatedListOption filter(InstanceFilter filter) {
       return new InstanceAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
-     * Returns an option to specify the maximum number of instances returned per page.
-     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     * Returns an option to specify the maximum number of instances returned per page. {@code
+     * pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static InstanceAggregatedListOption pageSize(long pageSize) {
       return new InstanceAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing instances.
-     */
+    /** Returns an option to specify the page token from which to start listing instances. */
     public static InstanceAggregatedListOption pageToken(String pageToken) {
       return new InstanceAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -2354,9 +2169,9 @@ public interface Compute extends Service<ComputeOptions> {
   /**
    * Lists images in the provided project that are available to the current user. This method can be
    * used to list publicly-available images by providing the respective image project. Examples of
-   * image projects are: {@code centos-cloud}, {@code coreos-cloud}, {@code debian-cloud},
-   * {@code opensuse-cloud}, {@code rhel-cloud}, {@code suse-cloud}, {@code ubuntu-os-cloud} and
-   * {@code windows-cloud}. Attempting to delete or deprecate a publicly-available image will fail.
+   * image projects are: {@code centos-cloud}, {@code coreos-cloud}, {@code debian-cloud}, {@code
+   * opensuse-cloud}, {@code rhel-cloud}, {@code suse-cloud}, {@code ubuntu-os-cloud} and {@code
+   * windows-cloud}. Attempting to delete or deprecate a publicly-available image will fail.
    *
    * @throws ComputeException upon failure
    * @see <a href="https://cloud.google.com/compute/docs/operating-systems/">Operating Systems</a>
@@ -2386,8 +2201,8 @@ public interface Compute extends Service<ComputeOptions> {
    *     image was not found
    * @throws ComputeException upon failure or if {@code image} is a publicly-available image
    */
-  Operation deprecate(ImageId image, DeprecationStatus<ImageId> deprecationStatus,
-      OperationOption... options);
+  Operation deprecate(
+      ImageId image, DeprecationStatus<ImageId> deprecationStatus, OperationOption... options);
 
   /**
    * Returns the requested disk or {@code null} if not found.
@@ -2560,7 +2375,10 @@ public interface Compute extends Service<ComputeOptions> {
    *     was not found
    * @throws ComputeException upon failure
    */
-  Operation addAccessConfig(InstanceId instance, String networkInterface, AccessConfig accessConfig,
+  Operation addAccessConfig(
+      InstanceId instance,
+      String networkInterface,
+      AccessConfig accessConfig,
       OperationOption... options);
 
   /**
@@ -2570,8 +2388,8 @@ public interface Compute extends Service<ComputeOptions> {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation attachDisk(InstanceId instance, PersistentDiskConfiguration configuration,
-      OperationOption... options);
+  Operation attachDisk(
+      InstanceId instance, PersistentDiskConfiguration configuration, OperationOption... options);
 
   /**
    * Attaches a persistent disk to an instance given the device name and its configuration.
@@ -2580,8 +2398,11 @@ public interface Compute extends Service<ComputeOptions> {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation attachDisk(InstanceId instance, String deviceName,
-      PersistentDiskConfiguration configuration, OperationOption... options);
+  Operation attachDisk(
+      InstanceId instance,
+      String deviceName,
+      PersistentDiskConfiguration configuration,
+      OperationOption... options);
 
   /**
    * Attaches a persistent disk to an instance given the device name, its configuration and the
@@ -2591,8 +2412,12 @@ public interface Compute extends Service<ComputeOptions> {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation attachDisk(InstanceId instance, String deviceName,
-      PersistentDiskConfiguration configuration, int index, OperationOption... options);
+  Operation attachDisk(
+      InstanceId instance,
+      String deviceName,
+      PersistentDiskConfiguration configuration,
+      int index,
+      OperationOption... options);
 
   /**
    * Deletes an access configuration from an instance's network interface.
@@ -2601,7 +2426,10 @@ public interface Compute extends Service<ComputeOptions> {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation deleteAccessConfig(InstanceId instance, String networkInterface, String accessConfig,
+  Operation deleteAccessConfig(
+      InstanceId instance,
+      String networkInterface,
+      String accessConfig,
       OperationOption... options);
 
   /**
@@ -2647,19 +2475,19 @@ public interface Compute extends Service<ComputeOptions> {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation setDiskAutoDelete(InstanceId instance, String deviceName, boolean autoDelete,
-      OperationOption... options);
+  Operation setDiskAutoDelete(
+      InstanceId instance, String deviceName, boolean autoDelete, OperationOption... options);
 
   /**
-   * Sets the machine type for the provided instance. Instance must be in
-   * {@link InstanceInfo.Status#TERMINATED} state to be able to set its machine type.
+   * Sets the machine type for the provided instance. Instance must be in {@link
+   * InstanceInfo.Status#TERMINATED} state to be able to set its machine type.
    *
    * @return a zone operation if the set request was issued correctly, {@code null} if the instance
    *     was not found
    * @throws ComputeException upon failure
    */
-  Operation setMachineType(InstanceId instance, MachineTypeId machineType,
-      OperationOption... options);
+  Operation setMachineType(
+      InstanceId instance, MachineTypeId machineType, OperationOption... options);
 
   /**
    * Sets the metadata for the provided instance.
@@ -2677,8 +2505,8 @@ public interface Compute extends Service<ComputeOptions> {
    *     was not found
    * @throws ComputeException upon failure
    */
-  Operation setSchedulingOptions(InstanceId instance, SchedulingOptions scheduling,
-      OperationOption... options);
+  Operation setSchedulingOptions(
+      InstanceId instance, SchedulingOptions scheduling, OperationOption... options);
 
   /**
    * Sets the tags for the provided instance.

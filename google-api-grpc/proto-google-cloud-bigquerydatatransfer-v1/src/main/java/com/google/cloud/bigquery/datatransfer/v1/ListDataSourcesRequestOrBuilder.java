@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ListDataSourcesRequestOrBuilder extends
+public interface ListDataSourcesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The BigQuery project id for which data sources should be returned.
    * Must be in the form: `projects/{project_id}`
@@ -17,6 +20,8 @@ public interface ListDataSourcesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The BigQuery project id for which data sources should be returned.
    * Must be in the form: `projects/{project_id}`
@@ -24,10 +29,11 @@ public interface ListDataSourcesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListDataSourcesRequest` list results. For multiple-page
@@ -40,6 +46,8 @@ public interface ListDataSourcesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListDataSourcesRequest` list results. For multiple-page
@@ -50,10 +58,11 @@ public interface ListDataSourcesRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Page size. The default page size is the maximum value of 1000 results.
    * </pre>

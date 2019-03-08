@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface UpdateSubscriptionRequestOrBuilder extends
+public interface UpdateSubscriptionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.UpdateSubscriptionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The updated subscription object.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    */
   boolean hasSubscription();
   /**
+   *
+   *
    * <pre>
    * The updated subscription object.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    */
   com.google.pubsub.v1.Subscription getSubscription();
   /**
+   *
+   *
    * <pre>
    * The updated subscription object.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateSubscriptionRequestOrBuilder extends
   com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
@@ -42,6 +51,8 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.
@@ -51,6 +62,8 @@ public interface UpdateSubscriptionRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided subscription to update.
    * Must be specified and non-empty.

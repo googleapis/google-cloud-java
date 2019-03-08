@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class BackendServiceGroupHealth implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("healthStatus")) {
+    if ("healthStatus".equals(fieldName)) {
       return healthStatus;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
     return null;
@@ -58,14 +58,28 @@ public final class BackendServiceGroupHealth implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Health state of the backend instances or endpoints in requested instance or network endpoint
+   * group, determined based on configured health checks.
+   */
   public List<HealthStatus> getHealthStatusList() {
     return healthStatus;
   }
 
+  /**
+   * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of
+   * backend services.
+   */
   public String getKind() {
     return kind;
   }
@@ -114,10 +128,18 @@ public final class BackendServiceGroupHealth implements ApiMessage {
       this.kind = source.kind;
     }
 
+    /**
+     * Health state of the backend instances or endpoints in requested instance or network endpoint
+     * group, determined based on configured health checks.
+     */
     public List<HealthStatus> getHealthStatusList() {
       return healthStatus;
     }
 
+    /**
+     * Health state of the backend instances or endpoints in requested instance or network endpoint
+     * group, determined based on configured health checks.
+     */
     public Builder addAllHealthStatus(List<HealthStatus> healthStatus) {
       if (this.healthStatus == null) {
         this.healthStatus = new LinkedList<>();
@@ -126,6 +148,10 @@ public final class BackendServiceGroupHealth implements ApiMessage {
       return this;
     }
 
+    /**
+     * Health state of the backend instances or endpoints in requested instance or network endpoint
+     * group, determined based on configured health checks.
+     */
     public Builder addHealthStatus(HealthStatus healthStatus) {
       if (this.healthStatus == null) {
         this.healthStatus = new LinkedList<>();
@@ -134,10 +160,18 @@ public final class BackendServiceGroupHealth implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of
+     * backend services.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of
+     * backend services.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;

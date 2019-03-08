@@ -14,13 +14,13 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class SourceName implements ResourceName {
   }
 
   public static SourceName of(String organization, String source) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setSource(source)
-      .build();
+    return newBuilder().setOrganization(organization).setSource(source).build();
   }
 
   public static String format(String organization, String source) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setSource(source)
-      .build()
-      .toString();
+    return newBuilder().setOrganization(organization).setSource(source).build().toString();
   }
 
   public static SourceName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class SourceName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "SourceName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "SourceName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("source"));
   }
 
@@ -150,8 +144,7 @@ public class SourceName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(SourceName sourceName) {
       organization = sourceName.organization;
@@ -170,8 +163,7 @@ public class SourceName implements ResourceName {
     }
     if (o instanceof SourceName) {
       SourceName that = (SourceName) o;
-      return (this.organization.equals(that.organization))
-          && (this.source.equals(that.source));
+      return (this.organization.equals(that.organization)) && (this.source.equals(that.source));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class SourceName implements ResourceName {
     return h;
   }
 }
-

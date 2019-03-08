@@ -4,21 +4,24 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
- * A Google Container Engine cluster.
+ * A Google Kubernetes Engine cluster.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.Cluster}
  */
-public  final class Cluster extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Cluster extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.Cluster)
     ClusterOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Cluster.newBuilder() to construct.
   private Cluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Cluster() {
     name_ = "";
     description_ = "";
@@ -46,13 +49,14 @@ private static final long serialVersionUID = 0L;
     instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     currentNodeCount_ = 0;
     expireTime_ = "";
+    location_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Cluster(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -73,298 +77,384 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 24: {
-
-            initialNodeCount_ = input.readInt32();
-            break;
-          }
-          case 34: {
-            com.google.container.v1.NodeConfig.Builder subBuilder = null;
-            if (nodeConfig_ != null) {
-              subBuilder = nodeConfig_.toBuilder();
+              name_ = s;
+              break;
             }
-            nodeConfig_ = input.readMessage(com.google.container.v1.NodeConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(nodeConfig_);
-              nodeConfig_ = subBuilder.buildPartial();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
             }
-
-            break;
-          }
-          case 42: {
-            com.google.container.v1.MasterAuth.Builder subBuilder = null;
-            if (masterAuth_ != null) {
-              subBuilder = masterAuth_.toBuilder();
+          case 24:
+            {
+              initialNodeCount_ = input.readInt32();
+              break;
             }
-            masterAuth_ = input.readMessage(com.google.container.v1.MasterAuth.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(masterAuth_);
-              masterAuth_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.container.v1.NodeConfig.Builder subBuilder = null;
+              if (nodeConfig_ != null) {
+                subBuilder = nodeConfig_.toBuilder();
+              }
+              nodeConfig_ =
+                  input.readMessage(com.google.container.v1.NodeConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nodeConfig_);
+                nodeConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 42:
+            {
+              com.google.container.v1.MasterAuth.Builder subBuilder = null;
+              if (masterAuth_ != null) {
+                subBuilder = masterAuth_.toBuilder();
+              }
+              masterAuth_ =
+                  input.readMessage(com.google.container.v1.MasterAuth.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(masterAuth_);
+                masterAuth_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            loggingService_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            monitoringService_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            network_ = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clusterIpv4Cidr_ = s;
-            break;
-          }
-          case 82: {
-            com.google.container.v1.AddonsConfig.Builder subBuilder = null;
-            if (addonsConfig_ != null) {
-              subBuilder = addonsConfig_.toBuilder();
+              break;
             }
-            addonsConfig_ = input.readMessage(com.google.container.v1.AddonsConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(addonsConfig_);
-              addonsConfig_ = subBuilder.buildPartial();
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              loggingService_ = s;
+              break;
             }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 90: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            subnetwork_ = s;
-            break;
-          }
-          case 98: {
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-              nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>();
-              mutable_bitField0_ |= 0x00000800;
+              monitoringService_ = s;
+              break;
             }
-            nodePools_.add(
-                input.readMessage(com.google.container.v1.NodePool.parser(), extensionRegistry));
-            break;
-          }
-          case 106: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
-              locations_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00001000;
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              network_ = s;
+              break;
             }
-            locations_.add(s);
-            break;
-          }
-          case 112: {
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            enableKubernetesAlpha_ = input.readBool();
-            break;
-          }
-          case 122: {
-            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
-              resourceLabels_ = com.google.protobuf.MapField.newMapField(
-                  ResourceLabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00004000;
+              clusterIpv4Cidr_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            resourceLabels__ = input.readMessage(
-                ResourceLabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            resourceLabels_.getMutableMap().put(
-                resourceLabels__.getKey(), resourceLabels__.getValue());
-            break;
-          }
-          case 130: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 82:
+            {
+              com.google.container.v1.AddonsConfig.Builder subBuilder = null;
+              if (addonsConfig_ != null) {
+                subBuilder = addonsConfig_.toBuilder();
+              }
+              addonsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.AddonsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(addonsConfig_);
+                addonsConfig_ = subBuilder.buildPartial();
+              }
 
-            labelFingerprint_ = s;
-            break;
-          }
-          case 146: {
-            com.google.container.v1.LegacyAbac.Builder subBuilder = null;
-            if (legacyAbac_ != null) {
-              subBuilder = legacyAbac_.toBuilder();
+              break;
             }
-            legacyAbac_ = input.readMessage(com.google.container.v1.LegacyAbac.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(legacyAbac_);
-              legacyAbac_ = subBuilder.buildPartial();
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
             }
-
-            break;
-          }
-          case 154: {
-            com.google.container.v1.NetworkPolicy.Builder subBuilder = null;
-            if (networkPolicy_ != null) {
-              subBuilder = networkPolicy_.toBuilder();
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              nodePools_.add(
+                  input.readMessage(com.google.container.v1.NodePool.parser(), extensionRegistry));
+              break;
             }
-            networkPolicy_ = input.readMessage(com.google.container.v1.NetworkPolicy.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(networkPolicy_);
-              networkPolicy_ = subBuilder.buildPartial();
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+                locations_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              locations_.add(s);
+              break;
             }
-
-            break;
-          }
-          case 162: {
-            com.google.container.v1.IPAllocationPolicy.Builder subBuilder = null;
-            if (ipAllocationPolicy_ != null) {
-              subBuilder = ipAllocationPolicy_.toBuilder();
+          case 112:
+            {
+              enableKubernetesAlpha_ = input.readBool();
+              break;
             }
-            ipAllocationPolicy_ = input.readMessage(com.google.container.v1.IPAllocationPolicy.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(ipAllocationPolicy_);
-              ipAllocationPolicy_ = subBuilder.buildPartial();
+          case 122:
+            {
+              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+                resourceLabels_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ResourceLabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00004000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
+                  input.readMessage(
+                      ResourceLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              resourceLabels_
+                  .getMutableMap()
+                  .put(resourceLabels__.getKey(), resourceLabels__.getValue());
+              break;
             }
+          case 130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 178: {
-            com.google.container.v1.MasterAuthorizedNetworksConfig.Builder subBuilder = null;
-            if (masterAuthorizedNetworksConfig_ != null) {
-              subBuilder = masterAuthorizedNetworksConfig_.toBuilder();
+              labelFingerprint_ = s;
+              break;
             }
-            masterAuthorizedNetworksConfig_ = input.readMessage(com.google.container.v1.MasterAuthorizedNetworksConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(masterAuthorizedNetworksConfig_);
-              masterAuthorizedNetworksConfig_ = subBuilder.buildPartial();
+          case 146:
+            {
+              com.google.container.v1.LegacyAbac.Builder subBuilder = null;
+              if (legacyAbac_ != null) {
+                subBuilder = legacyAbac_.toBuilder();
+              }
+              legacyAbac_ =
+                  input.readMessage(com.google.container.v1.LegacyAbac.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(legacyAbac_);
+                legacyAbac_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 154:
+            {
+              com.google.container.v1.NetworkPolicy.Builder subBuilder = null;
+              if (networkPolicy_ != null) {
+                subBuilder = networkPolicy_.toBuilder();
+              }
+              networkPolicy_ =
+                  input.readMessage(
+                      com.google.container.v1.NetworkPolicy.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(networkPolicy_);
+                networkPolicy_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 186: {
-            com.google.container.v1.MaintenancePolicy.Builder subBuilder = null;
-            if (maintenancePolicy_ != null) {
-              subBuilder = maintenancePolicy_.toBuilder();
+              break;
             }
-            maintenancePolicy_ = input.readMessage(com.google.container.v1.MaintenancePolicy.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(maintenancePolicy_);
-              maintenancePolicy_ = subBuilder.buildPartial();
+          case 162:
+            {
+              com.google.container.v1.IPAllocationPolicy.Builder subBuilder = null;
+              if (ipAllocationPolicy_ != null) {
+                subBuilder = ipAllocationPolicy_.toBuilder();
+              }
+              ipAllocationPolicy_ =
+                  input.readMessage(
+                      com.google.container.v1.IPAllocationPolicy.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ipAllocationPolicy_);
+                ipAllocationPolicy_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 178:
+            {
+              com.google.container.v1.MasterAuthorizedNetworksConfig.Builder subBuilder = null;
+              if (masterAuthorizedNetworksConfig_ != null) {
+                subBuilder = masterAuthorizedNetworksConfig_.toBuilder();
+              }
+              masterAuthorizedNetworksConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.MasterAuthorizedNetworksConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(masterAuthorizedNetworksConfig_);
+                masterAuthorizedNetworksConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 802: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            selfLink_ = s;
-            break;
-          }
-          case 810: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            zone_ = s;
-            break;
-          }
-          case 818: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            endpoint_ = s;
-            break;
-          }
-          case 826: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            initialClusterVersion_ = s;
-            break;
-          }
-          case 834: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            currentMasterVersion_ = s;
-            break;
-          }
-          case 842: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            currentNodeVersion_ = s;
-            break;
-          }
-          case 850: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            createTime_ = s;
-            break;
-          }
-          case 856: {
-            int rawValue = input.readEnum();
-
-            status_ = rawValue;
-            break;
-          }
-          case 866: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            statusMessage_ = s;
-            break;
-          }
-          case 872: {
-
-            nodeIpv4CidrSize_ = input.readInt32();
-            break;
-          }
-          case 882: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            servicesIpv4Cidr_ = s;
-            break;
-          }
-          case 890: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
-              instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField1_ |= 0x00000001;
+              break;
             }
-            instanceGroupUrls_.add(s);
-            break;
-          }
-          case 896: {
+          case 186:
+            {
+              com.google.container.v1.MaintenancePolicy.Builder subBuilder = null;
+              if (maintenancePolicy_ != null) {
+                subBuilder = maintenancePolicy_.toBuilder();
+              }
+              maintenancePolicy_ =
+                  input.readMessage(
+                      com.google.container.v1.MaintenancePolicy.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maintenancePolicy_);
+                maintenancePolicy_ = subBuilder.buildPartial();
+              }
 
-            currentNodeCount_ = input.readInt32();
-            break;
-          }
-          case 906: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            expireTime_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 218:
+            {
+              com.google.container.v1.NetworkConfig.Builder subBuilder = null;
+              if (networkConfig_ != null) {
+                subBuilder = networkConfig_.toBuilder();
+              }
+              networkConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.NetworkConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(networkConfig_);
+                networkConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 298:
+            {
+              com.google.container.v1.PrivateClusterConfig.Builder subBuilder = null;
+              if (privateClusterConfig_ != null) {
+                subBuilder = privateClusterConfig_.toBuilder();
+              }
+              privateClusterConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.PrivateClusterConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(privateClusterConfig_);
+                privateClusterConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 802:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
+          case 810:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              zone_ = s;
+              break;
+            }
+          case 818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              endpoint_ = s;
+              break;
+            }
+          case 826:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              initialClusterVersion_ = s;
+              break;
+            }
+          case 834:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              currentMasterVersion_ = s;
+              break;
+            }
+          case 842:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              currentNodeVersion_ = s;
+              break;
+            }
+          case 850:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createTime_ = s;
+              break;
+            }
+          case 856:
+            {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+          case 866:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusMessage_ = s;
+              break;
+            }
+          case 872:
+            {
+              nodeIpv4CidrSize_ = input.readInt32();
+              break;
+            }
+          case 882:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              servicesIpv4Cidr_ = s;
+              break;
+            }
+          case 890:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField1_ & 0x00000004) == 0x00000004)) {
+                instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField1_ |= 0x00000004;
+              }
+              instanceGroupUrls_.add(s);
+              break;
+            }
+          case 896:
+            {
+              currentNodeCount_ = input.readInt32();
+              break;
+            }
+          case 906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              expireTime_ = s;
+              break;
+            }
+          case 914:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              location_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
         nodePools_ = java.util.Collections.unmodifiableList(nodePools_);
@@ -372,48 +462,52 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
         locations_ = locations_.getUnmodifiableView();
       }
-      if (((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField1_ & 0x00000004) == 0x00000004)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Cluster_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_Cluster_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 15:
         return internalGetResourceLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Cluster_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_Cluster_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.Cluster.class, com.google.container.v1.Cluster.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The current status of the cluster.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1.Cluster.Status}
    */
-  public enum Status
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Status implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -422,6 +516,8 @@ private static final long serialVersionUID = 0L;
      */
     STATUS_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The PROVISIONING state indicates the cluster is being created.
      * </pre>
@@ -430,6 +526,8 @@ private static final long serialVersionUID = 0L;
      */
     PROVISIONING(1),
     /**
+     *
+     *
      * <pre>
      * The RUNNING state indicates the cluster has been created and is fully
      * usable.
@@ -439,6 +537,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING(2),
     /**
+     *
+     *
      * <pre>
      * The RECONCILING state indicates that some work is actively being done on
      * the cluster, such as upgrading the master or node software. Details can
@@ -449,6 +549,8 @@ private static final long serialVersionUID = 0L;
      */
     RECONCILING(3),
     /**
+     *
+     *
      * <pre>
      * The STOPPING state indicates the cluster is being deleted.
      * </pre>
@@ -457,6 +559,8 @@ private static final long serialVersionUID = 0L;
      */
     STOPPING(4),
     /**
+     *
+     *
      * <pre>
      * The ERROR state indicates the cluster may be unusable. Details
      * can be found in the `statusMessage` field.
@@ -465,10 +569,23 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR = 5;</code>
      */
     ERROR(5),
+    /**
+     *
+     *
+     * <pre>
+     * The DEGRADED state indicates the cluster requires user action to restore
+     * full functionality. Details can be found in the `statusMessage` field.
+     * </pre>
+     *
+     * <code>DEGRADED = 6;</code>
+     */
+    DEGRADED(6),
     UNRECOGNIZED(-1),
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -477,6 +594,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The PROVISIONING state indicates the cluster is being created.
      * </pre>
@@ -485,6 +604,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PROVISIONING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The RUNNING state indicates the cluster has been created and is fully
      * usable.
@@ -494,6 +615,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The RECONCILING state indicates that some work is actively being done on
      * the cluster, such as upgrading the master or node software. Details can
@@ -504,6 +627,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RECONCILING_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * The STOPPING state indicates the cluster is being deleted.
      * </pre>
@@ -512,6 +637,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STOPPING_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * The ERROR state indicates the cluster may be unusable. Details
      * can be found in the `statusMessage` field.
@@ -520,7 +647,17 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR = 5;</code>
      */
     public static final int ERROR_VALUE = 5;
-
+    /**
+     *
+     *
+     * <pre>
+     * The DEGRADED state indicates the cluster requires user action to restore
+     * full functionality. Details can be found in the `statusMessage` field.
+     * </pre>
+     *
+     * <code>DEGRADED = 6;</code>
+     */
+    public static final int DEGRADED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -530,9 +667,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
@@ -540,48 +675,53 @@ private static final long serialVersionUID = 0L;
 
     public static Status forNumber(int value) {
       switch (value) {
-        case 0: return STATUS_UNSPECIFIED;
-        case 1: return PROVISIONING;
-        case 2: return RUNNING;
-        case 3: return RECONCILING;
-        case 4: return STOPPING;
-        case 5: return ERROR;
-        default: return null;
+        case 0:
+          return STATUS_UNSPECIFIED;
+        case 1:
+          return PROVISIONING;
+        case 2:
+          return RUNNING;
+        case 3:
+          return RECONCILING;
+        case 4:
+          return STOPPING;
+        case 5:
+          return ERROR;
+        case 6:
+          return DEGRADED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Status>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Status> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Status> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-            public Status findValueByNumber(int number) {
-              return Status.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Status> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+          public Status findValueByNumber(int number) {
+            return Status.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.container.v1.Cluster.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Status[] VALUES = values();
 
-    public static Status valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Status valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -599,9 +739,12 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
+  private int bitField1_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The name of this cluster. The name must be unique within this project
    * and zone, and can be up to 40 characters with the following restrictions:
@@ -617,14 +760,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of this cluster. The name must be unique within this project
    * and zone, and can be up to 40 characters with the following restrictions:
@@ -635,13 +779,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -652,6 +794,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * An optional description of this cluster.
    * </pre>
@@ -663,27 +807,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * An optional description of this cluster.
    * </pre>
    *
    * <code>string description = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -694,6 +837,8 @@ private static final long serialVersionUID = 0L;
   public static final int INITIAL_NODE_COUNT_FIELD_NUMBER = 3;
   private int initialNodeCount_;
   /**
+   *
+   *
    * <pre>
    * The number of nodes to create in this cluster. You must ensure that your
    * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -714,6 +859,8 @@ private static final long serialVersionUID = 0L;
   public static final int NODE_CONFIG_FIELD_NUMBER = 4;
   private com.google.container.v1.NodeConfig nodeConfig_;
   /**
+   *
+   *
    * <pre>
    * Parameters used in creating the cluster's nodes.
    * See `nodeConfig` for the description of its properties.
@@ -732,6 +879,8 @@ private static final long serialVersionUID = 0L;
     return nodeConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters used in creating the cluster's nodes.
    * See `nodeConfig` for the description of its properties.
@@ -747,9 +896,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.NodeConfig node_config = 4;</code>
    */
   public com.google.container.v1.NodeConfig getNodeConfig() {
-    return nodeConfig_ == null ? com.google.container.v1.NodeConfig.getDefaultInstance() : nodeConfig_;
+    return nodeConfig_ == null
+        ? com.google.container.v1.NodeConfig.getDefaultInstance()
+        : nodeConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters used in creating the cluster's nodes.
    * See `nodeConfig` for the description of its properties.
@@ -771,6 +924,8 @@ private static final long serialVersionUID = 0L;
   public static final int MASTER_AUTH_FIELD_NUMBER = 5;
   private com.google.container.v1.MasterAuth masterAuth_;
   /**
+   *
+   *
    * <pre>
    * The authentication information for accessing the master endpoint.
    * </pre>
@@ -781,6 +936,8 @@ private static final long serialVersionUID = 0L;
     return masterAuth_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The authentication information for accessing the master endpoint.
    * </pre>
@@ -788,9 +945,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.MasterAuth master_auth = 5;</code>
    */
   public com.google.container.v1.MasterAuth getMasterAuth() {
-    return masterAuth_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : masterAuth_;
+    return masterAuth_ == null
+        ? com.google.container.v1.MasterAuth.getDefaultInstance()
+        : masterAuth_;
   }
   /**
+   *
+   *
    * <pre>
    * The authentication information for accessing the master endpoint.
    * </pre>
@@ -804,6 +965,8 @@ private static final long serialVersionUID = 0L;
   public static final int LOGGING_SERVICE_FIELD_NUMBER = 6;
   private volatile java.lang.Object loggingService_;
   /**
+   *
+   *
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
@@ -819,14 +982,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       loggingService_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The logging service the cluster should use to write logs.
    * Currently available options:
@@ -837,13 +1001,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string logging_service = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getLoggingServiceBytes() {
+  public com.google.protobuf.ByteString getLoggingServiceBytes() {
     java.lang.Object ref = loggingService_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       loggingService_ = b;
       return b;
     } else {
@@ -854,6 +1016,8 @@ private static final long serialVersionUID = 0L;
   public static final int MONITORING_SERVICE_FIELD_NUMBER = 7;
   private volatile java.lang.Object monitoringService_;
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -869,14 +1033,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       monitoringService_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -887,13 +1052,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string monitoring_service = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getMonitoringServiceBytes() {
+  public com.google.protobuf.ByteString getMonitoringServiceBytes() {
     java.lang.Object ref = monitoringService_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       monitoringService_ = b;
       return b;
     } else {
@@ -904,6 +1067,8 @@ private static final long serialVersionUID = 0L;
   public static final int NETWORK_FIELD_NUMBER = 8;
   private volatile java.lang.Object network_;
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -918,14 +1083,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       network_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -935,13 +1101,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string network = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getNetworkBytes() {
+  public com.google.protobuf.ByteString getNetworkBytes() {
     java.lang.Object ref = network_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       network_ = b;
       return b;
     } else {
@@ -952,6 +1116,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_IPV4_CIDR_FIELD_NUMBER = 9;
   private volatile java.lang.Object clusterIpv4Cidr_;
   /**
+   *
+   *
    * <pre>
    * The IP address range of the container pods in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -966,14 +1132,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterIpv4Cidr_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The IP address range of the container pods in this cluster, in
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -983,13 +1150,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_ipv4_cidr = 9;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterIpv4CidrBytes() {
+  public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
     java.lang.Object ref = clusterIpv4Cidr_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterIpv4Cidr_ = b;
       return b;
     } else {
@@ -1000,6 +1165,8 @@ private static final long serialVersionUID = 0L;
   public static final int ADDONS_CONFIG_FIELD_NUMBER = 10;
   private com.google.container.v1.AddonsConfig addonsConfig_;
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -1010,6 +1177,8 @@ private static final long serialVersionUID = 0L;
     return addonsConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -1017,9 +1186,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.AddonsConfig addons_config = 10;</code>
    */
   public com.google.container.v1.AddonsConfig getAddonsConfig() {
-    return addonsConfig_ == null ? com.google.container.v1.AddonsConfig.getDefaultInstance() : addonsConfig_;
+    return addonsConfig_ == null
+        ? com.google.container.v1.AddonsConfig.getDefaultInstance()
+        : addonsConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -1033,6 +1206,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUBNETWORK_FIELD_NUMBER = 11;
   private volatile java.lang.Object subnetwork_;
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [subnetwork](/compute/docs/subnetworks) to which the
@@ -1046,14 +1221,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       subnetwork_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [subnetwork](/compute/docs/subnetworks) to which the
@@ -1062,13 +1238,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string subnetwork = 11;</code>
    */
-  public com.google.protobuf.ByteString
-      getSubnetworkBytes() {
+  public com.google.protobuf.ByteString getSubnetworkBytes() {
     java.lang.Object ref = subnetwork_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       subnetwork_ = b;
       return b;
     } else {
@@ -1079,6 +1253,8 @@ private static final long serialVersionUID = 0L;
   public static final int NODE_POOLS_FIELD_NUMBER = 12;
   private java.util.List<com.google.container.v1.NodePool> nodePools_;
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -1091,6 +1267,8 @@ private static final long serialVersionUID = 0L;
     return nodePools_;
   }
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -1099,11 +1277,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
-  public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> 
+  public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder>
       getNodePoolsOrBuilderList() {
     return nodePools_;
   }
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -1116,6 +1296,8 @@ private static final long serialVersionUID = 0L;
     return nodePools_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -1128,6 +1310,8 @@ private static final long serialVersionUID = 0L;
     return nodePools_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The node pools associated with this cluster.
    * This field should not be set if "node_config" or "initial_node_count" are
@@ -1136,14 +1320,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
    */
-  public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(
-      int index) {
+  public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(int index) {
     return nodePools_.get(index);
   }
 
   public static final int LOCATIONS_FIELD_NUMBER = 13;
   private com.google.protobuf.LazyStringList locations_;
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1152,11 +1337,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string locations = 13;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getLocationsList() {
+  public com.google.protobuf.ProtocolStringList getLocationsList() {
     return locations_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1169,6 +1355,8 @@ private static final long serialVersionUID = 0L;
     return locations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1181,6 +1369,8 @@ private static final long serialVersionUID = 0L;
     return locations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1189,14 +1379,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string locations = 13;</code>
    */
-  public com.google.protobuf.ByteString
-      getLocationsBytes(int index) {
+  public com.google.protobuf.ByteString getLocationsBytes(int index) {
     return locations_.getByteString(index);
   }
 
   public static final int ENABLE_KUBERNETES_ALPHA_FIELD_NUMBER = 14;
   private boolean enableKubernetesAlpha_;
   /**
+   *
+   *
    * <pre>
    * Kubernetes alpha features are enabled on this cluster. This includes alpha
    * API groups (e.g. v1alpha1) and features that may not be production ready in
@@ -1213,21 +1404,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESOURCE_LABELS_FIELD_NUMBER = 15;
+
   private static final class ResourceLabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Cluster_ResourceLabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.container.v1.ClusterServiceProto
+                .internal_static_google_container_v1_Cluster_ResourceLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> resourceLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetResourceLabels() {
+      internalGetResourceLabels() {
     if (resourceLabels_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           ResourceLabelsDefaultEntryHolder.defaultEntry);
@@ -1239,6 +1431,8 @@ private static final long serialVersionUID = 0L;
     return internalGetResourceLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -1246,20 +1440,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-
-  public boolean containsResourceLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsResourceLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetResourceLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getResourceLabelsMap()} instead.
-   */
+  /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
     return getResourceLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -1267,11 +1461,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
     return internalGetResourceLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -1279,16 +1474,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-
   public java.lang.String getResourceLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetResourceLabels().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * The resource labels for the cluster to use to annotate any related
    * Google Compute Engine resources.
@@ -1296,12 +1492,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-
-  public java.lang.String getResourceLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetResourceLabels().getMap();
+  public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -1311,6 +1506,8 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_FINGERPRINT_FIELD_NUMBER = 16;
   private volatile java.lang.Object labelFingerprint_;
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the set of labels for this cluster.
    * </pre>
@@ -1322,27 +1519,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       labelFingerprint_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the set of labels for this cluster.
    * </pre>
    *
    * <code>string label_fingerprint = 16;</code>
    */
-  public com.google.protobuf.ByteString
-      getLabelFingerprintBytes() {
+  public com.google.protobuf.ByteString getLabelFingerprintBytes() {
     java.lang.Object ref = labelFingerprint_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       labelFingerprint_ = b;
       return b;
     } else {
@@ -1353,6 +1549,8 @@ private static final long serialVersionUID = 0L;
   public static final int LEGACY_ABAC_FIELD_NUMBER = 18;
   private com.google.container.v1.LegacyAbac legacyAbac_;
   /**
+   *
+   *
    * <pre>
    * Configuration for the legacy ABAC authorization mode.
    * </pre>
@@ -1363,6 +1561,8 @@ private static final long serialVersionUID = 0L;
     return legacyAbac_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the legacy ABAC authorization mode.
    * </pre>
@@ -1370,9 +1570,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.LegacyAbac legacy_abac = 18;</code>
    */
   public com.google.container.v1.LegacyAbac getLegacyAbac() {
-    return legacyAbac_ == null ? com.google.container.v1.LegacyAbac.getDefaultInstance() : legacyAbac_;
+    return legacyAbac_ == null
+        ? com.google.container.v1.LegacyAbac.getDefaultInstance()
+        : legacyAbac_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the legacy ABAC authorization mode.
    * </pre>
@@ -1386,6 +1590,8 @@ private static final long serialVersionUID = 0L;
   public static final int NETWORK_POLICY_FIELD_NUMBER = 19;
   private com.google.container.v1.NetworkPolicy networkPolicy_;
   /**
+   *
+   *
    * <pre>
    * Configuration options for the NetworkPolicy feature.
    * </pre>
@@ -1396,6 +1602,8 @@ private static final long serialVersionUID = 0L;
     return networkPolicy_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration options for the NetworkPolicy feature.
    * </pre>
@@ -1403,9 +1611,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.NetworkPolicy network_policy = 19;</code>
    */
   public com.google.container.v1.NetworkPolicy getNetworkPolicy() {
-    return networkPolicy_ == null ? com.google.container.v1.NetworkPolicy.getDefaultInstance() : networkPolicy_;
+    return networkPolicy_ == null
+        ? com.google.container.v1.NetworkPolicy.getDefaultInstance()
+        : networkPolicy_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration options for the NetworkPolicy feature.
    * </pre>
@@ -1419,6 +1631,8 @@ private static final long serialVersionUID = 0L;
   public static final int IP_ALLOCATION_POLICY_FIELD_NUMBER = 20;
   private com.google.container.v1.IPAllocationPolicy ipAllocationPolicy_;
   /**
+   *
+   *
    * <pre>
    * Configuration for cluster IP allocation.
    * </pre>
@@ -1429,6 +1643,8 @@ private static final long serialVersionUID = 0L;
     return ipAllocationPolicy_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for cluster IP allocation.
    * </pre>
@@ -1436,9 +1652,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.IPAllocationPolicy ip_allocation_policy = 20;</code>
    */
   public com.google.container.v1.IPAllocationPolicy getIpAllocationPolicy() {
-    return ipAllocationPolicy_ == null ? com.google.container.v1.IPAllocationPolicy.getDefaultInstance() : ipAllocationPolicy_;
+    return ipAllocationPolicy_ == null
+        ? com.google.container.v1.IPAllocationPolicy.getDefaultInstance()
+        : ipAllocationPolicy_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for cluster IP allocation.
    * </pre>
@@ -1452,42 +1672,57 @@ private static final long serialVersionUID = 0L;
   public static final int MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER = 22;
   private com.google.container.v1.MasterAuthorizedNetworksConfig masterAuthorizedNetworksConfig_;
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * </code>
    */
   public boolean hasMasterAuthorizedNetworksConfig() {
     return masterAuthorizedNetworksConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * </code>
    */
-  public com.google.container.v1.MasterAuthorizedNetworksConfig getMasterAuthorizedNetworksConfig() {
-    return masterAuthorizedNetworksConfig_ == null ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance() : masterAuthorizedNetworksConfig_;
+  public com.google.container.v1.MasterAuthorizedNetworksConfig
+      getMasterAuthorizedNetworksConfig() {
+    return masterAuthorizedNetworksConfig_ == null
+        ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()
+        : masterAuthorizedNetworksConfig_;
   }
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * </code>
    */
-  public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder getMasterAuthorizedNetworksConfigOrBuilder() {
+  public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
+      getMasterAuthorizedNetworksConfigOrBuilder() {
     return getMasterAuthorizedNetworksConfig();
   }
 
   public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 23;
   private com.google.container.v1.MaintenancePolicy maintenancePolicy_;
   /**
+   *
+   *
    * <pre>
    * Configure the maintenance policy for this cluster.
    * </pre>
@@ -1498,6 +1733,8 @@ private static final long serialVersionUID = 0L;
     return maintenancePolicy_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configure the maintenance policy for this cluster.
    * </pre>
@@ -1505,9 +1742,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 23;</code>
    */
   public com.google.container.v1.MaintenancePolicy getMaintenancePolicy() {
-    return maintenancePolicy_ == null ? com.google.container.v1.MaintenancePolicy.getDefaultInstance() : maintenancePolicy_;
+    return maintenancePolicy_ == null
+        ? com.google.container.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
   }
   /**
+   *
+   *
    * <pre>
    * Configure the maintenance policy for this cluster.
    * </pre>
@@ -1518,9 +1759,93 @@ private static final long serialVersionUID = 0L;
     return getMaintenancePolicy();
   }
 
+  public static final int NETWORK_CONFIG_FIELD_NUMBER = 27;
+  private com.google.container.v1.NetworkConfig networkConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  public boolean hasNetworkConfig() {
+    return networkConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  public com.google.container.v1.NetworkConfig getNetworkConfig() {
+    return networkConfig_ == null
+        ? com.google.container.v1.NetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  public com.google.container.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+    return getNetworkConfig();
+  }
+
+  public static final int PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER = 37;
+  private com.google.container.v1.PrivateClusterConfig privateClusterConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  public boolean hasPrivateClusterConfig() {
+    return privateClusterConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  public com.google.container.v1.PrivateClusterConfig getPrivateClusterConfig() {
+    return privateClusterConfig_ == null
+        ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance()
+        : privateClusterConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  public com.google.container.v1.PrivateClusterConfigOrBuilder getPrivateClusterConfigOrBuilder() {
+    return getPrivateClusterConfig();
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 100;
   private volatile java.lang.Object selfLink_;
   /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
@@ -1532,27 +1857,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       selfLink_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>string self_link = 100;</code>
    */
-  public com.google.protobuf.ByteString
-      getSelfLinkBytes() {
+  public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       selfLink_ = b;
       return b;
     } else {
@@ -1563,42 +1887,47 @@ private static final long serialVersionUID = 0L;
   public static final int ZONE_FIELD_NUMBER = 101;
   private volatile java.lang.Object zone_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       zone_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getZoneBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       zone_ = b;
       return b;
     } else {
@@ -1609,6 +1938,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENDPOINT_FIELD_NUMBER = 102;
   private volatile java.lang.Object endpoint_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
@@ -1624,14 +1955,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       endpoint_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address of this cluster's master endpoint.
    * The endpoint can be accessed from the internet at
@@ -1642,13 +1974,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string endpoint = 102;</code>
    */
-  public com.google.protobuf.ByteString
-      getEndpointBytes() {
+  public com.google.protobuf.ByteString getEndpointBytes() {
     java.lang.Object ref = endpoint_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       endpoint_ = b;
       return b;
     } else {
@@ -1659,11 +1989,20 @@ private static final long serialVersionUID = 0L;
   public static final int INITIAL_CLUSTER_VERSION_FIELD_NUMBER = 103;
   private volatile java.lang.Object initialClusterVersion_;
   /**
+   *
+   *
    * <pre>
    * The initial Kubernetes version for this cluster.  Valid versions are those
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
@@ -1673,30 +2012,36 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       initialClusterVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The initial Kubernetes version for this cluster.  Valid versions are those
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
    */
-  public com.google.protobuf.ByteString
-      getInitialClusterVersionBytes() {
+  public com.google.protobuf.ByteString getInitialClusterVersionBytes() {
     java.lang.Object ref = initialClusterVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       initialClusterVersion_ = b;
       return b;
     } else {
@@ -1707,6 +2052,8 @@ private static final long serialVersionUID = 0L;
   public static final int CURRENT_MASTER_VERSION_FIELD_NUMBER = 104;
   private volatile java.lang.Object currentMasterVersion_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The current software version of the master endpoint.
    * </pre>
@@ -1718,27 +2065,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       currentMasterVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The current software version of the master endpoint.
    * </pre>
    *
    * <code>string current_master_version = 104;</code>
    */
-  public com.google.protobuf.ByteString
-      getCurrentMasterVersionBytes() {
+  public com.google.protobuf.ByteString getCurrentMasterVersionBytes() {
     java.lang.Object ref = currentMasterVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       currentMasterVersion_ = b;
       return b;
     } else {
@@ -1749,42 +2095,49 @@ private static final long serialVersionUID = 0L;
   public static final int CURRENT_NODE_VERSION_FIELD_NUMBER = 105;
   private volatile java.lang.Object currentNodeVersion_;
   /**
+   *
+   *
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getCurrentNodeVersion() {
     java.lang.Object ref = currentNodeVersion_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       currentNodeVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getCurrentNodeVersionBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getCurrentNodeVersionBytes() {
     java.lang.Object ref = currentNodeVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       currentNodeVersion_ = b;
       return b;
     } else {
@@ -1795,6 +2148,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 106;
   private volatile java.lang.Object createTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster was created, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -1807,14 +2162,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       createTime_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster was created, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -1822,13 +2178,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string create_time = 106;</code>
    */
-  public com.google.protobuf.ByteString
-      getCreateTimeBytes() {
+  public com.google.protobuf.ByteString getCreateTimeBytes() {
     java.lang.Object ref = createTime_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       createTime_ = b;
       return b;
     } else {
@@ -1839,6 +2193,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 107;
   private int status_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The current status of this cluster.
    * </pre>
@@ -1849,6 +2205,8 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The current status of this cluster.
    * </pre>
@@ -1857,13 +2215,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.container.v1.Cluster.Status getStatus() {
     @SuppressWarnings("deprecation")
-    com.google.container.v1.Cluster.Status result = com.google.container.v1.Cluster.Status.valueOf(status_);
+    com.google.container.v1.Cluster.Status result =
+        com.google.container.v1.Cluster.Status.valueOf(status_);
     return result == null ? com.google.container.v1.Cluster.Status.UNRECOGNIZED : result;
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 108;
   private volatile java.lang.Object statusMessage_;
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * cluster, if available.
@@ -1876,14 +2237,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       statusMessage_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * cluster, if available.
@@ -1891,13 +2253,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string status_message = 108;</code>
    */
-  public com.google.protobuf.ByteString
-      getStatusMessageBytes() {
+  public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       statusMessage_ = b;
       return b;
     } else {
@@ -1908,6 +2268,8 @@ private static final long serialVersionUID = 0L;
   public static final int NODE_IPV4_CIDR_SIZE_FIELD_NUMBER = 109;
   private int nodeIpv4CidrSize_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The size of the address space on each node for hosting
    * containers. This is provisioned from within the `container_ipv4_cidr`
@@ -1923,6 +2285,8 @@ private static final long serialVersionUID = 0L;
   public static final int SERVICES_IPV4_CIDR_FIELD_NUMBER = 110;
   private volatile java.lang.Object servicesIpv4Cidr_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address range of the Kubernetes services in
    * this cluster, in
@@ -1938,14 +2302,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       servicesIpv4Cidr_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The IP address range of the Kubernetes services in
    * this cluster, in
@@ -1956,13 +2321,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string services_ipv4_cidr = 110;</code>
    */
-  public com.google.protobuf.ByteString
-      getServicesIpv4CidrBytes() {
+  public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
     java.lang.Object ref = servicesIpv4Cidr_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       servicesIpv4Cidr_ = b;
       return b;
     } else {
@@ -1973,51 +2336,63 @@ private static final long serialVersionUID = 0L;
   public static final int INSTANCE_GROUP_URLS_FIELD_NUMBER = 111;
   private com.google.protobuf.LazyStringList instanceGroupUrls_;
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getInstanceGroupUrlsList() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
     return instanceGroupUrls_;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public int getInstanceGroupUrlsCount() {
     return instanceGroupUrls_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getInstanceGroupUrls(int index) {
     return instanceGroupUrls_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getInstanceGroupUrlsBytes(int index) {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index) {
     return instanceGroupUrls_.getByteString(index);
   }
 
   public static final int CURRENT_NODE_COUNT_FIELD_NUMBER = 112;
   private int currentNodeCount_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The number of nodes currently in the cluster.
    * </pre>
@@ -2031,6 +2406,8 @@ private static final long serialVersionUID = 0L;
   public static final int EXPIRE_TIME_FIELD_NUMBER = 113;
   private volatile java.lang.Object expireTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster will be automatically
    * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2043,14 +2420,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       expireTime_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the cluster will be automatically
    * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2058,13 +2436,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string expire_time = 113;</code>
    */
-  public com.google.protobuf.ByteString
-      getExpireTimeBytes() {
+  public com.google.protobuf.ByteString getExpireTimeBytes() {
     java.lang.Object ref = expireTime_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       expireTime_ = b;
       return b;
     } else {
@@ -2072,7 +2448,57 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 114;
+  private volatile java.lang.Object location_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -2084,8 +2510,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -2128,12 +2553,8 @@ private static final long serialVersionUID = 0L;
     if (enableKubernetesAlpha_ != false) {
       output.writeBool(14, enableKubernetesAlpha_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetResourceLabels(),
-        ResourceLabelsDefaultEntryHolder.defaultEntry,
-        15);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 15);
     if (!getLabelFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, labelFingerprint_);
     }
@@ -2151,6 +2572,12 @@ private static final long serialVersionUID = 0L;
     }
     if (maintenancePolicy_ != null) {
       output.writeMessage(23, getMaintenancePolicy());
+    }
+    if (networkConfig_ != null) {
+      output.writeMessage(27, getNetworkConfig());
+    }
+    if (privateClusterConfig_ != null) {
+      output.writeMessage(37, getPrivateClusterConfig());
     }
     if (!getSelfLinkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
@@ -2194,6 +2621,9 @@ private static final long serialVersionUID = 0L;
     if (!getExpireTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 113, expireTime_);
     }
+    if (!getLocationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 114, location_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2210,16 +2640,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (initialNodeCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, initialNodeCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, initialNodeCount_);
     }
     if (nodeConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getNodeConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getNodeConfig());
     }
     if (masterAuth_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getMasterAuth());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMasterAuth());
     }
     if (!getLoggingServiceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, loggingService_);
@@ -2234,15 +2661,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clusterIpv4Cidr_);
     }
     if (addonsConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getAddonsConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getAddonsConfig());
     }
     if (!getSubnetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, subnetwork_);
     }
     for (int i = 0; i < nodePools_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, nodePools_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, nodePools_.get(i));
     }
     {
       int dataSize = 0;
@@ -2253,41 +2678,44 @@ private static final long serialVersionUID = 0L;
       size += 1 * getLocationsList().size();
     }
     if (enableKubernetesAlpha_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(14, enableKubernetesAlpha_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, enableKubernetesAlpha_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetResourceLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      resourceLabels__ = ResourceLabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, resourceLabels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourceLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
+          ResourceLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, resourceLabels__);
     }
     if (!getLabelFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, labelFingerprint_);
     }
     if (legacyAbac_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getLegacyAbac());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getLegacyAbac());
     }
     if (networkPolicy_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(19, getNetworkPolicy());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getNetworkPolicy());
     }
     if (ipAllocationPolicy_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(20, getIpAllocationPolicy());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getIpAllocationPolicy());
     }
     if (masterAuthorizedNetworksConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(22, getMasterAuthorizedNetworksConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, getMasterAuthorizedNetworksConfig());
     }
     if (maintenancePolicy_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(23, getMaintenancePolicy());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getMaintenancePolicy());
+    }
+    if (networkConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getNetworkConfig());
+    }
+    if (privateClusterConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(37, getPrivateClusterConfig());
     }
     if (!getSelfLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
@@ -2311,15 +2739,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(106, createTime_);
     }
     if (status_ != com.google.container.v1.Cluster.Status.STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(107, status_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(107, status_);
     }
     if (!getStatusMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(108, statusMessage_);
     }
     if (nodeIpv4CidrSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(109, nodeIpv4CidrSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(109, nodeIpv4CidrSize_);
     }
     if (!getServicesIpv4CidrBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110, servicesIpv4Cidr_);
@@ -2333,11 +2759,13 @@ private static final long serialVersionUID = 0L;
       size += 2 * getInstanceGroupUrlsList().size();
     }
     if (currentNodeCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(112, currentNodeCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(112, currentNodeCount_);
     }
     if (!getExpireTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(113, expireTime_);
+    }
+    if (!getLocationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114, location_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2347,7 +2775,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.Cluster)) {
       return super.equals(obj);
@@ -2355,99 +2783,79 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.Cluster other = (com.google.container.v1.Cluster) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && (getInitialNodeCount()
-        == other.getInitialNodeCount());
+    result = result && getName().equals(other.getName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && (getInitialNodeCount() == other.getInitialNodeCount());
     result = result && (hasNodeConfig() == other.hasNodeConfig());
     if (hasNodeConfig()) {
-      result = result && getNodeConfig()
-          .equals(other.getNodeConfig());
+      result = result && getNodeConfig().equals(other.getNodeConfig());
     }
     result = result && (hasMasterAuth() == other.hasMasterAuth());
     if (hasMasterAuth()) {
-      result = result && getMasterAuth()
-          .equals(other.getMasterAuth());
+      result = result && getMasterAuth().equals(other.getMasterAuth());
     }
-    result = result && getLoggingService()
-        .equals(other.getLoggingService());
-    result = result && getMonitoringService()
-        .equals(other.getMonitoringService());
-    result = result && getNetwork()
-        .equals(other.getNetwork());
-    result = result && getClusterIpv4Cidr()
-        .equals(other.getClusterIpv4Cidr());
+    result = result && getLoggingService().equals(other.getLoggingService());
+    result = result && getMonitoringService().equals(other.getMonitoringService());
+    result = result && getNetwork().equals(other.getNetwork());
+    result = result && getClusterIpv4Cidr().equals(other.getClusterIpv4Cidr());
     result = result && (hasAddonsConfig() == other.hasAddonsConfig());
     if (hasAddonsConfig()) {
-      result = result && getAddonsConfig()
-          .equals(other.getAddonsConfig());
+      result = result && getAddonsConfig().equals(other.getAddonsConfig());
     }
-    result = result && getSubnetwork()
-        .equals(other.getSubnetwork());
-    result = result && getNodePoolsList()
-        .equals(other.getNodePoolsList());
-    result = result && getLocationsList()
-        .equals(other.getLocationsList());
-    result = result && (getEnableKubernetesAlpha()
-        == other.getEnableKubernetesAlpha());
-    result = result && internalGetResourceLabels().equals(
-        other.internalGetResourceLabels());
-    result = result && getLabelFingerprint()
-        .equals(other.getLabelFingerprint());
+    result = result && getSubnetwork().equals(other.getSubnetwork());
+    result = result && getNodePoolsList().equals(other.getNodePoolsList());
+    result = result && getLocationsList().equals(other.getLocationsList());
+    result = result && (getEnableKubernetesAlpha() == other.getEnableKubernetesAlpha());
+    result = result && internalGetResourceLabels().equals(other.internalGetResourceLabels());
+    result = result && getLabelFingerprint().equals(other.getLabelFingerprint());
     result = result && (hasLegacyAbac() == other.hasLegacyAbac());
     if (hasLegacyAbac()) {
-      result = result && getLegacyAbac()
-          .equals(other.getLegacyAbac());
+      result = result && getLegacyAbac().equals(other.getLegacyAbac());
     }
     result = result && (hasNetworkPolicy() == other.hasNetworkPolicy());
     if (hasNetworkPolicy()) {
-      result = result && getNetworkPolicy()
-          .equals(other.getNetworkPolicy());
+      result = result && getNetworkPolicy().equals(other.getNetworkPolicy());
     }
     result = result && (hasIpAllocationPolicy() == other.hasIpAllocationPolicy());
     if (hasIpAllocationPolicy()) {
-      result = result && getIpAllocationPolicy()
-          .equals(other.getIpAllocationPolicy());
+      result = result && getIpAllocationPolicy().equals(other.getIpAllocationPolicy());
     }
-    result = result && (hasMasterAuthorizedNetworksConfig() == other.hasMasterAuthorizedNetworksConfig());
+    result =
+        result
+            && (hasMasterAuthorizedNetworksConfig() == other.hasMasterAuthorizedNetworksConfig());
     if (hasMasterAuthorizedNetworksConfig()) {
-      result = result && getMasterAuthorizedNetworksConfig()
-          .equals(other.getMasterAuthorizedNetworksConfig());
+      result =
+          result
+              && getMasterAuthorizedNetworksConfig()
+                  .equals(other.getMasterAuthorizedNetworksConfig());
     }
     result = result && (hasMaintenancePolicy() == other.hasMaintenancePolicy());
     if (hasMaintenancePolicy()) {
-      result = result && getMaintenancePolicy()
-          .equals(other.getMaintenancePolicy());
+      result = result && getMaintenancePolicy().equals(other.getMaintenancePolicy());
     }
-    result = result && getSelfLink()
-        .equals(other.getSelfLink());
-    result = result && getZone()
-        .equals(other.getZone());
-    result = result && getEndpoint()
-        .equals(other.getEndpoint());
-    result = result && getInitialClusterVersion()
-        .equals(other.getInitialClusterVersion());
-    result = result && getCurrentMasterVersion()
-        .equals(other.getCurrentMasterVersion());
-    result = result && getCurrentNodeVersion()
-        .equals(other.getCurrentNodeVersion());
-    result = result && getCreateTime()
-        .equals(other.getCreateTime());
+    result = result && (hasNetworkConfig() == other.hasNetworkConfig());
+    if (hasNetworkConfig()) {
+      result = result && getNetworkConfig().equals(other.getNetworkConfig());
+    }
+    result = result && (hasPrivateClusterConfig() == other.hasPrivateClusterConfig());
+    if (hasPrivateClusterConfig()) {
+      result = result && getPrivateClusterConfig().equals(other.getPrivateClusterConfig());
+    }
+    result = result && getSelfLink().equals(other.getSelfLink());
+    result = result && getZone().equals(other.getZone());
+    result = result && getEndpoint().equals(other.getEndpoint());
+    result = result && getInitialClusterVersion().equals(other.getInitialClusterVersion());
+    result = result && getCurrentMasterVersion().equals(other.getCurrentMasterVersion());
+    result = result && getCurrentNodeVersion().equals(other.getCurrentNodeVersion());
+    result = result && getCreateTime().equals(other.getCreateTime());
     result = result && status_ == other.status_;
-    result = result && getStatusMessage()
-        .equals(other.getStatusMessage());
-    result = result && (getNodeIpv4CidrSize()
-        == other.getNodeIpv4CidrSize());
-    result = result && getServicesIpv4Cidr()
-        .equals(other.getServicesIpv4Cidr());
-    result = result && getInstanceGroupUrlsList()
-        .equals(other.getInstanceGroupUrlsList());
-    result = result && (getCurrentNodeCount()
-        == other.getCurrentNodeCount());
-    result = result && getExpireTime()
-        .equals(other.getExpireTime());
+    result = result && getStatusMessage().equals(other.getStatusMessage());
+    result = result && (getNodeIpv4CidrSize() == other.getNodeIpv4CidrSize());
+    result = result && getServicesIpv4Cidr().equals(other.getServicesIpv4Cidr());
+    result = result && getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList());
+    result = result && (getCurrentNodeCount() == other.getCurrentNodeCount());
+    result = result && getExpireTime().equals(other.getExpireTime());
+    result = result && getLocation().equals(other.getLocation());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2496,8 +2904,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getLocationsList().hashCode();
     }
     hash = (37 * hash) + ENABLE_KUBERNETES_ALPHA_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnableKubernetesAlpha());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableKubernetesAlpha());
     if (!internalGetResourceLabels().getMap().isEmpty()) {
       hash = (37 * hash) + RESOURCE_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetResourceLabels().hashCode();
@@ -2523,6 +2930,14 @@ private static final long serialVersionUID = 0L;
     if (hasMaintenancePolicy()) {
       hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasNetworkConfig()) {
+      hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
+    if (hasPrivateClusterConfig()) {
+      hash = (37 * hash) + PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateClusterConfig().hashCode();
     }
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getSelfLink().hashCode();
@@ -2554,143 +2969,150 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCurrentNodeCount();
     hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getExpireTime().hashCode();
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.container.v1.Cluster parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.Cluster parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.Cluster parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.Cluster parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.container.v1.Cluster parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.Cluster parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.Cluster parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.Cluster parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.Cluster parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.Cluster parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.Cluster parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.Cluster parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.Cluster parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.Cluster parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.Cluster prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * A Google Container Engine cluster.
+   * A Google Kubernetes Engine cluster.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.Cluster}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.Cluster)
       com.google.container.v1.ClusterOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Cluster_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_Cluster_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 15:
           return internalGetResourceLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 15:
           return internalGetMutableResourceLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Cluster_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_Cluster_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.container.v1.Cluster.class, com.google.container.v1.Cluster.Builder.class);
     }
@@ -2700,17 +3122,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNodePoolsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -2791,6 +3213,18 @@ private static final long serialVersionUID = 0L;
         maintenancePolicy_ = null;
         maintenancePolicyBuilder_ = null;
       }
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfig_ = null;
+      } else {
+        privateClusterConfig_ = null;
+        privateClusterConfigBuilder_ = null;
+      }
       selfLink_ = "";
 
       zone_ = "";
@@ -2814,18 +3248,20 @@ private static final long serialVersionUID = 0L;
       servicesIpv4Cidr_ = "";
 
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       currentNodeCount_ = 0;
 
       expireTime_ = "";
+
+      location_ = "";
 
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Cluster_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_Cluster_descriptor;
     }
 
     @java.lang.Override
@@ -2848,6 +3284,7 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
+      int to_bitField1_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.initialNodeCount_ = initialNodeCount_;
@@ -2914,6 +3351,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.maintenancePolicy_ = maintenancePolicyBuilder_.build();
       }
+      if (networkConfigBuilder_ == null) {
+        result.networkConfig_ = networkConfig_;
+      } else {
+        result.networkConfig_ = networkConfigBuilder_.build();
+      }
+      if (privateClusterConfigBuilder_ == null) {
+        result.privateClusterConfig_ = privateClusterConfig_;
+      } else {
+        result.privateClusterConfig_ = privateClusterConfigBuilder_.build();
+      }
       result.selfLink_ = selfLink_;
       result.zone_ = zone_;
       result.endpoint_ = endpoint_;
@@ -2925,14 +3372,16 @@ private static final long serialVersionUID = 0L;
       result.statusMessage_ = statusMessage_;
       result.nodeIpv4CidrSize_ = nodeIpv4CidrSize_;
       result.servicesIpv4Cidr_ = servicesIpv4Cidr_;
-      if (((bitField1_ & 0x00000001) == 0x00000001)) {
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField1_ = (bitField1_ & ~0x00000004);
       }
       result.instanceGroupUrls_ = instanceGroupUrls_;
       result.currentNodeCount_ = currentNodeCount_;
       result.expireTime_ = expireTime_;
+      result.location_ = location_;
       result.bitField0_ = to_bitField0_;
+      result.bitField1_ = to_bitField1_;
       onBuilt();
       return result;
     }
@@ -2941,38 +3390,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.Cluster) {
-        return mergeFrom((com.google.container.v1.Cluster)other);
+        return mergeFrom((com.google.container.v1.Cluster) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -3039,9 +3489,10 @@ private static final long serialVersionUID = 0L;
             nodePoolsBuilder_ = null;
             nodePools_ = other.nodePools_;
             bitField0_ = (bitField0_ & ~0x00000800);
-            nodePoolsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getNodePoolsFieldBuilder() : null;
+            nodePoolsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNodePoolsFieldBuilder()
+                    : null;
           } else {
             nodePoolsBuilder_.addAllMessages(other.nodePools_);
           }
@@ -3060,8 +3511,7 @@ private static final long serialVersionUID = 0L;
       if (other.getEnableKubernetesAlpha() != false) {
         setEnableKubernetesAlpha(other.getEnableKubernetesAlpha());
       }
-      internalGetMutableResourceLabels().mergeFrom(
-          other.internalGetResourceLabels());
+      internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
       if (!other.getLabelFingerprint().isEmpty()) {
         labelFingerprint_ = other.labelFingerprint_;
         onChanged();
@@ -3080,6 +3530,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMaintenancePolicy()) {
         mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasNetworkConfig()) {
+        mergeNetworkConfig(other.getNetworkConfig());
+      }
+      if (other.hasPrivateClusterConfig()) {
+        mergePrivateClusterConfig(other.getPrivateClusterConfig());
       }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
@@ -3126,7 +3582,7 @@ private static final long serialVersionUID = 0L;
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField1_ = (bitField1_ & ~0x00000001);
+          bitField1_ = (bitField1_ & ~0x00000004);
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -3138,6 +3594,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getExpireTime().isEmpty()) {
         expireTime_ = other.expireTime_;
+        onChanged();
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3168,11 +3628,14 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
     private int bitField1_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of this cluster. The name must be unique within this project
      * and zone, and can be up to 40 characters with the following restrictions:
@@ -3186,8 +3649,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -3196,6 +3658,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of this cluster. The name must be unique within this project
      * and zone, and can be up to 40 characters with the following restrictions:
@@ -3206,13 +3670,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -3220,6 +3682,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of this cluster. The name must be unique within this project
      * and zone, and can be up to 40 characters with the following restrictions:
@@ -3230,17 +3694,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of this cluster. The name must be unique within this project
      * and zone, and can be up to 40 characters with the following restrictions:
@@ -3252,12 +3717,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of this cluster. The name must be unique within this project
      * and zone, and can be up to 40 characters with the following restrictions:
@@ -3268,13 +3735,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -3282,6 +3748,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * An optional description of this cluster.
      * </pre>
@@ -3291,8 +3759,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -3301,19 +3768,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional description of this cluster.
      * </pre>
      *
      * <code>string description = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -3321,23 +3788,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional description of this cluster.
      * </pre>
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional description of this cluster.
      * </pre>
@@ -3345,32 +3815,35 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 2;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional description of this cluster.
      * </pre>
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
 
-    private int initialNodeCount_ ;
+    private int initialNodeCount_;
     /**
+     *
+     *
      * <pre>
      * The number of nodes to create in this cluster. You must ensure that your
      * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -3388,6 +3861,8 @@ private static final long serialVersionUID = 0L;
       return initialNodeCount_;
     }
     /**
+     *
+     *
      * <pre>
      * The number of nodes to create in this cluster. You must ensure that your
      * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -3402,12 +3877,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 initial_node_count = 3;</code>
      */
     public Builder setInitialNodeCount(int value) {
-      
+
       initialNodeCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The number of nodes to create in this cluster. You must ensure that your
      * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -3422,7 +3899,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 initial_node_count = 3;</code>
      */
     public Builder clearInitialNodeCount() {
-      
+
       initialNodeCount_ = 0;
       onChanged();
       return this;
@@ -3430,8 +3907,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NodeConfig nodeConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodeConfig, com.google.container.v1.NodeConfig.Builder, com.google.container.v1.NodeConfigOrBuilder> nodeConfigBuilder_;
+            com.google.container.v1.NodeConfig,
+            com.google.container.v1.NodeConfig.Builder,
+            com.google.container.v1.NodeConfigOrBuilder>
+        nodeConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3450,6 +3932,8 @@ private static final long serialVersionUID = 0L;
       return nodeConfigBuilder_ != null || nodeConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3466,12 +3950,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NodeConfig getNodeConfig() {
       if (nodeConfigBuilder_ == null) {
-        return nodeConfig_ == null ? com.google.container.v1.NodeConfig.getDefaultInstance() : nodeConfig_;
+        return nodeConfig_ == null
+            ? com.google.container.v1.NodeConfig.getDefaultInstance()
+            : nodeConfig_;
       } else {
         return nodeConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3500,6 +3988,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3514,8 +4004,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.NodeConfig node_config = 4;</code>
      */
-    public Builder setNodeConfig(
-        com.google.container.v1.NodeConfig.Builder builderForValue) {
+    public Builder setNodeConfig(com.google.container.v1.NodeConfig.Builder builderForValue) {
       if (nodeConfigBuilder_ == null) {
         nodeConfig_ = builderForValue.build();
         onChanged();
@@ -3526,6 +4015,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3544,7 +4035,9 @@ private static final long serialVersionUID = 0L;
       if (nodeConfigBuilder_ == null) {
         if (nodeConfig_ != null) {
           nodeConfig_ =
-            com.google.container.v1.NodeConfig.newBuilder(nodeConfig_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NodeConfig.newBuilder(nodeConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           nodeConfig_ = value;
         }
@@ -3556,6 +4049,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3582,6 +4077,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3597,11 +4094,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodeConfig node_config = 4;</code>
      */
     public com.google.container.v1.NodeConfig.Builder getNodeConfigBuilder() {
-      
+
       onChanged();
       return getNodeConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3620,11 +4119,14 @@ private static final long serialVersionUID = 0L;
       if (nodeConfigBuilder_ != null) {
         return nodeConfigBuilder_.getMessageOrBuilder();
       } else {
-        return nodeConfig_ == null ?
-            com.google.container.v1.NodeConfig.getDefaultInstance() : nodeConfig_;
+        return nodeConfig_ == null
+            ? com.google.container.v1.NodeConfig.getDefaultInstance()
+            : nodeConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Parameters used in creating the cluster's nodes.
      * See `nodeConfig` for the description of its properties.
@@ -3640,14 +4142,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodeConfig node_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodeConfig, com.google.container.v1.NodeConfig.Builder, com.google.container.v1.NodeConfigOrBuilder> 
+            com.google.container.v1.NodeConfig,
+            com.google.container.v1.NodeConfig.Builder,
+            com.google.container.v1.NodeConfigOrBuilder>
         getNodeConfigFieldBuilder() {
       if (nodeConfigBuilder_ == null) {
-        nodeConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NodeConfig, com.google.container.v1.NodeConfig.Builder, com.google.container.v1.NodeConfigOrBuilder>(
-                getNodeConfig(),
-                getParentForChildren(),
-                isClean());
+        nodeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeConfig,
+                com.google.container.v1.NodeConfig.Builder,
+                com.google.container.v1.NodeConfigOrBuilder>(
+                getNodeConfig(), getParentForChildren(), isClean());
         nodeConfig_ = null;
       }
       return nodeConfigBuilder_;
@@ -3655,8 +4160,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.MasterAuth masterAuth_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuth, com.google.container.v1.MasterAuth.Builder, com.google.container.v1.MasterAuthOrBuilder> masterAuthBuilder_;
+            com.google.container.v1.MasterAuth,
+            com.google.container.v1.MasterAuth.Builder,
+            com.google.container.v1.MasterAuthOrBuilder>
+        masterAuthBuilder_;
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3667,6 +4177,8 @@ private static final long serialVersionUID = 0L;
       return masterAuthBuilder_ != null || masterAuth_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3675,12 +4187,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.MasterAuth getMasterAuth() {
       if (masterAuthBuilder_ == null) {
-        return masterAuth_ == null ? com.google.container.v1.MasterAuth.getDefaultInstance() : masterAuth_;
+        return masterAuth_ == null
+            ? com.google.container.v1.MasterAuth.getDefaultInstance()
+            : masterAuth_;
       } else {
         return masterAuthBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3701,14 +4217,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
      *
      * <code>.google.container.v1.MasterAuth master_auth = 5;</code>
      */
-    public Builder setMasterAuth(
-        com.google.container.v1.MasterAuth.Builder builderForValue) {
+    public Builder setMasterAuth(com.google.container.v1.MasterAuth.Builder builderForValue) {
       if (masterAuthBuilder_ == null) {
         masterAuth_ = builderForValue.build();
         onChanged();
@@ -3719,6 +4236,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3729,7 +4248,9 @@ private static final long serialVersionUID = 0L;
       if (masterAuthBuilder_ == null) {
         if (masterAuth_ != null) {
           masterAuth_ =
-            com.google.container.v1.MasterAuth.newBuilder(masterAuth_).mergeFrom(value).buildPartial();
+              com.google.container.v1.MasterAuth.newBuilder(masterAuth_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           masterAuth_ = value;
         }
@@ -3741,6 +4262,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3759,6 +4282,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3766,11 +4291,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MasterAuth master_auth = 5;</code>
      */
     public com.google.container.v1.MasterAuth.Builder getMasterAuthBuilder() {
-      
+
       onChanged();
       return getMasterAuthFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3781,11 +4308,14 @@ private static final long serialVersionUID = 0L;
       if (masterAuthBuilder_ != null) {
         return masterAuthBuilder_.getMessageOrBuilder();
       } else {
-        return masterAuth_ == null ?
-            com.google.container.v1.MasterAuth.getDefaultInstance() : masterAuth_;
+        return masterAuth_ == null
+            ? com.google.container.v1.MasterAuth.getDefaultInstance()
+            : masterAuth_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information for accessing the master endpoint.
      * </pre>
@@ -3793,14 +4323,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MasterAuth master_auth = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuth, com.google.container.v1.MasterAuth.Builder, com.google.container.v1.MasterAuthOrBuilder> 
+            com.google.container.v1.MasterAuth,
+            com.google.container.v1.MasterAuth.Builder,
+            com.google.container.v1.MasterAuthOrBuilder>
         getMasterAuthFieldBuilder() {
       if (masterAuthBuilder_ == null) {
-        masterAuthBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.MasterAuth, com.google.container.v1.MasterAuth.Builder, com.google.container.v1.MasterAuthOrBuilder>(
-                getMasterAuth(),
-                getParentForChildren(),
-                isClean());
+        masterAuthBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MasterAuth,
+                com.google.container.v1.MasterAuth.Builder,
+                com.google.container.v1.MasterAuthOrBuilder>(
+                getMasterAuth(), getParentForChildren(), isClean());
         masterAuth_ = null;
       }
       return masterAuthBuilder_;
@@ -3808,6 +4341,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object loggingService_ = "";
     /**
+     *
+     *
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
@@ -3821,8 +4356,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLoggingService() {
       java.lang.Object ref = loggingService_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         loggingService_ = s;
         return s;
@@ -3831,6 +4365,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
@@ -3841,13 +4377,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string logging_service = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getLoggingServiceBytes() {
+    public com.google.protobuf.ByteString getLoggingServiceBytes() {
       java.lang.Object ref = loggingService_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         loggingService_ = b;
         return b;
       } else {
@@ -3855,6 +4389,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
@@ -3865,17 +4401,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string logging_service = 6;</code>
      */
-    public Builder setLoggingService(
-        java.lang.String value) {
+    public Builder setLoggingService(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       loggingService_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
@@ -3887,12 +4424,14 @@ private static final long serialVersionUID = 0L;
      * <code>string logging_service = 6;</code>
      */
     public Builder clearLoggingService() {
-      
+
       loggingService_ = getDefaultInstance().getLoggingService();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The logging service the cluster should use to write logs.
      * Currently available options:
@@ -3903,13 +4442,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string logging_service = 6;</code>
      */
-    public Builder setLoggingServiceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLoggingServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       loggingService_ = value;
       onChanged();
       return this;
@@ -3917,6 +4455,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object monitoringService_ = "";
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -3930,8 +4470,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getMonitoringService() {
       java.lang.Object ref = monitoringService_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         monitoringService_ = s;
         return s;
@@ -3940,6 +4479,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -3950,13 +4491,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string monitoring_service = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getMonitoringServiceBytes() {
+    public com.google.protobuf.ByteString getMonitoringServiceBytes() {
       java.lang.Object ref = monitoringService_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         monitoringService_ = b;
         return b;
       } else {
@@ -3964,6 +4503,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -3974,17 +4515,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string monitoring_service = 7;</code>
      */
-    public Builder setMonitoringService(
-        java.lang.String value) {
+    public Builder setMonitoringService(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       monitoringService_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -3996,12 +4538,14 @@ private static final long serialVersionUID = 0L;
      * <code>string monitoring_service = 7;</code>
      */
     public Builder clearMonitoringService() {
-      
+
       monitoringService_ = getDefaultInstance().getMonitoringService();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -4012,13 +4556,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string monitoring_service = 7;</code>
      */
-    public Builder setMonitoringServiceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMonitoringServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       monitoringService_ = value;
       onChanged();
       return this;
@@ -4026,6 +4569,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object network_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -4038,8 +4583,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         network_ = s;
         return s;
@@ -4048,6 +4592,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -4057,13 +4603,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string network = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getNetworkBytes() {
+    public com.google.protobuf.ByteString getNetworkBytes() {
       java.lang.Object ref = network_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         network_ = b;
         return b;
       } else {
@@ -4071,6 +4615,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -4080,17 +4626,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string network = 8;</code>
      */
-    public Builder setNetwork(
-        java.lang.String value) {
+    public Builder setNetwork(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       network_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -4101,12 +4648,14 @@ private static final long serialVersionUID = 0L;
      * <code>string network = 8;</code>
      */
     public Builder clearNetwork() {
-      
+
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -4116,13 +4665,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string network = 8;</code>
      */
-    public Builder setNetworkBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       network_ = value;
       onChanged();
       return this;
@@ -4130,6 +4678,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterIpv4Cidr_ = "";
     /**
+     *
+     *
      * <pre>
      * The IP address range of the container pods in this cluster, in
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -4142,8 +4692,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterIpv4Cidr() {
       java.lang.Object ref = clusterIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterIpv4Cidr_ = s;
         return s;
@@ -4152,6 +4701,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the container pods in this cluster, in
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -4161,13 +4712,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ipv4_cidr = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterIpv4CidrBytes() {
+    public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
       java.lang.Object ref = clusterIpv4Cidr_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterIpv4Cidr_ = b;
         return b;
       } else {
@@ -4175,6 +4724,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the container pods in this cluster, in
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -4184,17 +4735,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ipv4_cidr = 9;</code>
      */
-    public Builder setClusterIpv4Cidr(
-        java.lang.String value) {
+    public Builder setClusterIpv4Cidr(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterIpv4Cidr_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the container pods in this cluster, in
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -4205,12 +4757,14 @@ private static final long serialVersionUID = 0L;
      * <code>string cluster_ipv4_cidr = 9;</code>
      */
     public Builder clearClusterIpv4Cidr() {
-      
+
       clusterIpv4Cidr_ = getDefaultInstance().getClusterIpv4Cidr();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the container pods in this cluster, in
      * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -4220,13 +4774,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ipv4_cidr = 9;</code>
      */
-    public Builder setClusterIpv4CidrBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterIpv4CidrBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterIpv4Cidr_ = value;
       onChanged();
       return this;
@@ -4234,8 +4787,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.AddonsConfig addonsConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.AddonsConfig, com.google.container.v1.AddonsConfig.Builder, com.google.container.v1.AddonsConfigOrBuilder> addonsConfigBuilder_;
+            com.google.container.v1.AddonsConfig,
+            com.google.container.v1.AddonsConfig.Builder,
+            com.google.container.v1.AddonsConfigOrBuilder>
+        addonsConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4246,6 +4804,8 @@ private static final long serialVersionUID = 0L;
       return addonsConfigBuilder_ != null || addonsConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4254,12 +4814,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.AddonsConfig getAddonsConfig() {
       if (addonsConfigBuilder_ == null) {
-        return addonsConfig_ == null ? com.google.container.v1.AddonsConfig.getDefaultInstance() : addonsConfig_;
+        return addonsConfig_ == null
+            ? com.google.container.v1.AddonsConfig.getDefaultInstance()
+            : addonsConfig_;
       } else {
         return addonsConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4280,14 +4844,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
      *
      * <code>.google.container.v1.AddonsConfig addons_config = 10;</code>
      */
-    public Builder setAddonsConfig(
-        com.google.container.v1.AddonsConfig.Builder builderForValue) {
+    public Builder setAddonsConfig(com.google.container.v1.AddonsConfig.Builder builderForValue) {
       if (addonsConfigBuilder_ == null) {
         addonsConfig_ = builderForValue.build();
         onChanged();
@@ -4298,6 +4863,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4308,7 +4875,9 @@ private static final long serialVersionUID = 0L;
       if (addonsConfigBuilder_ == null) {
         if (addonsConfig_ != null) {
           addonsConfig_ =
-            com.google.container.v1.AddonsConfig.newBuilder(addonsConfig_).mergeFrom(value).buildPartial();
+              com.google.container.v1.AddonsConfig.newBuilder(addonsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           addonsConfig_ = value;
         }
@@ -4320,6 +4889,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4338,6 +4909,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4345,11 +4918,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.AddonsConfig addons_config = 10;</code>
      */
     public com.google.container.v1.AddonsConfig.Builder getAddonsConfigBuilder() {
-      
+
       onChanged();
       return getAddonsConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4360,11 +4935,14 @@ private static final long serialVersionUID = 0L;
       if (addonsConfigBuilder_ != null) {
         return addonsConfigBuilder_.getMessageOrBuilder();
       } else {
-        return addonsConfig_ == null ?
-            com.google.container.v1.AddonsConfig.getDefaultInstance() : addonsConfig_;
+        return addonsConfig_ == null
+            ? com.google.container.v1.AddonsConfig.getDefaultInstance()
+            : addonsConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -4372,14 +4950,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.AddonsConfig addons_config = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.AddonsConfig, com.google.container.v1.AddonsConfig.Builder, com.google.container.v1.AddonsConfigOrBuilder> 
+            com.google.container.v1.AddonsConfig,
+            com.google.container.v1.AddonsConfig.Builder,
+            com.google.container.v1.AddonsConfigOrBuilder>
         getAddonsConfigFieldBuilder() {
       if (addonsConfigBuilder_ == null) {
-        addonsConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.AddonsConfig, com.google.container.v1.AddonsConfig.Builder, com.google.container.v1.AddonsConfigOrBuilder>(
-                getAddonsConfig(),
-                getParentForChildren(),
-                isClean());
+        addonsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.AddonsConfig,
+                com.google.container.v1.AddonsConfig.Builder,
+                com.google.container.v1.AddonsConfigOrBuilder>(
+                getAddonsConfig(), getParentForChildren(), isClean());
         addonsConfig_ = null;
       }
       return addonsConfigBuilder_;
@@ -4387,6 +4968,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object subnetwork_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [subnetwork](/compute/docs/subnetworks) to which the
@@ -4398,8 +4981,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSubnetwork() {
       java.lang.Object ref = subnetwork_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         subnetwork_ = s;
         return s;
@@ -4408,6 +4990,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [subnetwork](/compute/docs/subnetworks) to which the
@@ -4416,13 +5000,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork = 11;</code>
      */
-    public com.google.protobuf.ByteString
-        getSubnetworkBytes() {
+    public com.google.protobuf.ByteString getSubnetworkBytes() {
       java.lang.Object ref = subnetwork_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         subnetwork_ = b;
         return b;
       } else {
@@ -4430,6 +5012,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [subnetwork](/compute/docs/subnetworks) to which the
@@ -4438,17 +5022,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork = 11;</code>
      */
-    public Builder setSubnetwork(
-        java.lang.String value) {
+    public Builder setSubnetwork(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       subnetwork_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [subnetwork](/compute/docs/subnetworks) to which the
@@ -4458,12 +5043,14 @@ private static final long serialVersionUID = 0L;
      * <code>string subnetwork = 11;</code>
      */
     public Builder clearSubnetwork() {
-      
+
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [subnetwork](/compute/docs/subnetworks) to which the
@@ -4472,31 +5059,36 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork = 11;</code>
      */
-    public Builder setSubnetworkBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSubnetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       subnetwork_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.container.v1.NodePool> nodePools_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureNodePoolsIsMutable() {
       if (!((bitField0_ & 0x00000800) == 0x00000800)) {
         nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>(nodePools_);
         bitField0_ |= 0x00000800;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.NodePool, com.google.container.v1.NodePool.Builder, com.google.container.v1.NodePoolOrBuilder> nodePoolsBuilder_;
+            com.google.container.v1.NodePool,
+            com.google.container.v1.NodePool.Builder,
+            com.google.container.v1.NodePoolOrBuilder>
+        nodePoolsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4513,6 +5105,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4529,6 +5123,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4545,6 +5141,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4553,8 +5151,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public Builder setNodePools(
-        int index, com.google.container.v1.NodePool value) {
+    public Builder setNodePools(int index, com.google.container.v1.NodePool value) {
       if (nodePoolsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4568,6 +5165,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4588,6 +5187,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4610,6 +5211,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4618,8 +5221,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public Builder addNodePools(
-        int index, com.google.container.v1.NodePool value) {
+    public Builder addNodePools(int index, com.google.container.v1.NodePool value) {
       if (nodePoolsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4633,6 +5235,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4641,8 +5245,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public Builder addNodePools(
-        com.google.container.v1.NodePool.Builder builderForValue) {
+    public Builder addNodePools(com.google.container.v1.NodePool.Builder builderForValue) {
       if (nodePoolsBuilder_ == null) {
         ensureNodePoolsIsMutable();
         nodePools_.add(builderForValue.build());
@@ -4653,6 +5256,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4673,6 +5278,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4685,8 +5292,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.container.v1.NodePool> values) {
       if (nodePoolsBuilder_ == null) {
         ensureNodePoolsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nodePools_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nodePools_);
         onChanged();
       } else {
         nodePoolsBuilder_.addAllMessages(values);
@@ -4694,6 +5300,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4713,6 +5321,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4732,6 +5342,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4740,11 +5352,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public com.google.container.v1.NodePool.Builder getNodePoolsBuilder(
-        int index) {
+    public com.google.container.v1.NodePool.Builder getNodePoolsBuilder(int index) {
       return getNodePoolsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4753,14 +5366,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(
-        int index) {
+    public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(int index) {
       if (nodePoolsBuilder_ == null) {
-        return nodePools_.get(index);  } else {
+        return nodePools_.get(index);
+      } else {
         return nodePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4769,8 +5384,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> 
-         getNodePoolsOrBuilderList() {
+    public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder>
+        getNodePoolsOrBuilderList() {
       if (nodePoolsBuilder_ != null) {
         return nodePoolsBuilder_.getMessageOrBuilderList();
       } else {
@@ -4778,6 +5393,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4787,10 +5404,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
     public com.google.container.v1.NodePool.Builder addNodePoolsBuilder() {
-      return getNodePoolsFieldBuilder().addBuilder(
-          com.google.container.v1.NodePool.getDefaultInstance());
+      return getNodePoolsFieldBuilder()
+          .addBuilder(com.google.container.v1.NodePool.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4799,12 +5418,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public com.google.container.v1.NodePool.Builder addNodePoolsBuilder(
-        int index) {
-      return getNodePoolsFieldBuilder().addBuilder(
-          index, com.google.container.v1.NodePool.getDefaultInstance());
+    public com.google.container.v1.NodePool.Builder addNodePoolsBuilder(int index) {
+      return getNodePoolsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.NodePool.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The node pools associated with this cluster.
      * This field should not be set if "node_config" or "initial_node_count" are
@@ -4813,16 +5433,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 12;</code>
      */
-    public java.util.List<com.google.container.v1.NodePool.Builder> 
-         getNodePoolsBuilderList() {
+    public java.util.List<com.google.container.v1.NodePool.Builder> getNodePoolsBuilderList() {
       return getNodePoolsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.NodePool, com.google.container.v1.NodePool.Builder, com.google.container.v1.NodePoolOrBuilder> 
+            com.google.container.v1.NodePool,
+            com.google.container.v1.NodePool.Builder,
+            com.google.container.v1.NodePoolOrBuilder>
         getNodePoolsFieldBuilder() {
       if (nodePoolsBuilder_ == null) {
-        nodePoolsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.container.v1.NodePool, com.google.container.v1.NodePool.Builder, com.google.container.v1.NodePoolOrBuilder>(
+        nodePoolsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.NodePool,
+                com.google.container.v1.NodePool.Builder,
+                com.google.container.v1.NodePoolOrBuilder>(
                 nodePools_,
                 ((bitField0_ & 0x00000800) == 0x00000800),
                 getParentForChildren(),
@@ -4832,14 +5457,18 @@ private static final long serialVersionUID = 0L;
       return nodePoolsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList locations_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureLocationsIsMutable() {
       if (!((bitField0_ & 0x00001000) == 0x00001000)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
         bitField0_ |= 0x00001000;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4848,11 +5477,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string locations = 13;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getLocationsList() {
+    public com.google.protobuf.ProtocolStringList getLocationsList() {
       return locations_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4865,6 +5495,8 @@ private static final long serialVersionUID = 0L;
       return locations_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4877,6 +5509,8 @@ private static final long serialVersionUID = 0L;
       return locations_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4885,11 +5519,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string locations = 13;</code>
      */
-    public com.google.protobuf.ByteString
-        getLocationsBytes(int index) {
+    public com.google.protobuf.ByteString getLocationsBytes(int index) {
       return locations_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4898,17 +5533,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string locations = 13;</code>
      */
-    public Builder setLocations(
-        int index, java.lang.String value) {
+    public Builder setLocations(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureLocationsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureLocationsIsMutable();
       locations_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4917,17 +5553,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string locations = 13;</code>
      */
-    public Builder addLocations(
-        java.lang.String value) {
+    public Builder addLocations(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureLocationsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureLocationsIsMutable();
       locations_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4936,15 +5573,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string locations = 13;</code>
      */
-    public Builder addAllLocations(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, locations_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4960,6 +5597,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -4968,20 +5607,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string locations = 13;</code>
      */
-    public Builder addLocationsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addLocationsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
       onChanged();
       return this;
     }
 
-    private boolean enableKubernetesAlpha_ ;
+    private boolean enableKubernetesAlpha_;
     /**
+     *
+     *
      * <pre>
      * Kubernetes alpha features are enabled on this cluster. This includes alpha
      * API groups (e.g. v1alpha1) and features that may not be production ready in
@@ -4997,6 +5637,8 @@ private static final long serialVersionUID = 0L;
       return enableKubernetesAlpha_;
     }
     /**
+     *
+     *
      * <pre>
      * Kubernetes alpha features are enabled on this cluster. This includes alpha
      * API groups (e.g. v1alpha1) and features that may not be production ready in
@@ -5009,12 +5651,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_kubernetes_alpha = 14;</code>
      */
     public Builder setEnableKubernetesAlpha(boolean value) {
-      
+
       enableKubernetesAlpha_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Kubernetes alpha features are enabled on this cluster. This includes alpha
      * API groups (e.g. v1alpha1) and features that may not be production ready in
@@ -5027,28 +5671,30 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_kubernetes_alpha = 14;</code>
      */
     public Builder clearEnableKubernetesAlpha() {
-      
+
       enableKubernetesAlpha_ = false;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> resourceLabels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetResourceLabels() {
+        internalGetResourceLabels() {
       if (resourceLabels_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ResourceLabelsDefaultEntryHolder.defaultEntry);
       }
       return resourceLabels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableResourceLabels() {
-      onChanged();;
+        internalGetMutableResourceLabels() {
+      onChanged();
+      ;
       if (resourceLabels_ == null) {
-        resourceLabels_ = com.google.protobuf.MapField.newMapField(
-            ResourceLabelsDefaultEntryHolder.defaultEntry);
+        resourceLabels_ =
+            com.google.protobuf.MapField.newMapField(ResourceLabelsDefaultEntryHolder.defaultEntry);
       }
       if (!resourceLabels_.isMutable()) {
         resourceLabels_ = resourceLabels_.copy();
@@ -5060,6 +5706,8 @@ private static final long serialVersionUID = 0L;
       return internalGetResourceLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * The resource labels for the cluster to use to annotate any related
      * Google Compute Engine resources.
@@ -5067,20 +5715,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
-
-    public boolean containsResourceLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetResourceLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getResourceLabelsMap()} instead.
-     */
+    /** Use {@link #getResourceLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
       return getResourceLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * The resource labels for the cluster to use to annotate any related
      * Google Compute Engine resources.
@@ -5088,11 +5736,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
       return internalGetResourceLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * The resource labels for the cluster to use to annotate any related
      * Google Compute Engine resources.
@@ -5100,16 +5749,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
-
     public java.lang.String getResourceLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetResourceLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * The resource labels for the cluster to use to annotate any related
      * Google Compute Engine resources.
@@ -5117,12 +5767,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
-
-    public java.lang.String getResourceLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetResourceLabels().getMap();
+    public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -5130,11 +5779,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearResourceLabels() {
-      internalGetMutableResourceLabels().getMutableMap()
-          .clear();
+      internalGetMutableResourceLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource labels for the cluster to use to annotate any related
      * Google Compute Engine resources.
@@ -5142,23 +5792,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
-
-    public Builder removeResourceLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableResourceLabels().getMutableMap()
-          .remove(key);
+    public Builder removeResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableResourceLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabels() {
       return internalGetMutableResourceLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * The resource labels for the cluster to use to annotate any related
      * Google Compute Engine resources.
@@ -5166,16 +5814,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
-    public Builder putResourceLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableResourceLabels().getMutableMap()
-          .put(key, value);
+    public Builder putResourceLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource labels for the cluster to use to annotate any related
      * Google Compute Engine resources.
@@ -5183,16 +5834,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; resource_labels = 15;</code>
      */
-
-    public Builder putAllResourceLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableResourceLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllResourceLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourceLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private java.lang.Object labelFingerprint_ = "";
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the set of labels for this cluster.
      * </pre>
@@ -5202,8 +5852,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLabelFingerprint() {
       java.lang.Object ref = labelFingerprint_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         labelFingerprint_ = s;
         return s;
@@ -5212,19 +5861,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the set of labels for this cluster.
      * </pre>
      *
      * <code>string label_fingerprint = 16;</code>
      */
-    public com.google.protobuf.ByteString
-        getLabelFingerprintBytes() {
+    public com.google.protobuf.ByteString getLabelFingerprintBytes() {
       java.lang.Object ref = labelFingerprint_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         labelFingerprint_ = b;
         return b;
       } else {
@@ -5232,23 +5881,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the set of labels for this cluster.
      * </pre>
      *
      * <code>string label_fingerprint = 16;</code>
      */
-    public Builder setLabelFingerprint(
-        java.lang.String value) {
+    public Builder setLabelFingerprint(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       labelFingerprint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the set of labels for this cluster.
      * </pre>
@@ -5256,25 +5908,26 @@ private static final long serialVersionUID = 0L;
      * <code>string label_fingerprint = 16;</code>
      */
     public Builder clearLabelFingerprint() {
-      
+
       labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fingerprint of the set of labels for this cluster.
      * </pre>
      *
      * <code>string label_fingerprint = 16;</code>
      */
-    public Builder setLabelFingerprintBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLabelFingerprintBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       labelFingerprint_ = value;
       onChanged();
       return this;
@@ -5282,8 +5935,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.LegacyAbac legacyAbac_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.LegacyAbac, com.google.container.v1.LegacyAbac.Builder, com.google.container.v1.LegacyAbacOrBuilder> legacyAbacBuilder_;
+            com.google.container.v1.LegacyAbac,
+            com.google.container.v1.LegacyAbac.Builder,
+            com.google.container.v1.LegacyAbacOrBuilder>
+        legacyAbacBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5294,6 +5952,8 @@ private static final long serialVersionUID = 0L;
       return legacyAbacBuilder_ != null || legacyAbac_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5302,12 +5962,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.LegacyAbac getLegacyAbac() {
       if (legacyAbacBuilder_ == null) {
-        return legacyAbac_ == null ? com.google.container.v1.LegacyAbac.getDefaultInstance() : legacyAbac_;
+        return legacyAbac_ == null
+            ? com.google.container.v1.LegacyAbac.getDefaultInstance()
+            : legacyAbac_;
       } else {
         return legacyAbacBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5328,14 +5992,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
      *
      * <code>.google.container.v1.LegacyAbac legacy_abac = 18;</code>
      */
-    public Builder setLegacyAbac(
-        com.google.container.v1.LegacyAbac.Builder builderForValue) {
+    public Builder setLegacyAbac(com.google.container.v1.LegacyAbac.Builder builderForValue) {
       if (legacyAbacBuilder_ == null) {
         legacyAbac_ = builderForValue.build();
         onChanged();
@@ -5346,6 +6011,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5356,7 +6023,9 @@ private static final long serialVersionUID = 0L;
       if (legacyAbacBuilder_ == null) {
         if (legacyAbac_ != null) {
           legacyAbac_ =
-            com.google.container.v1.LegacyAbac.newBuilder(legacyAbac_).mergeFrom(value).buildPartial();
+              com.google.container.v1.LegacyAbac.newBuilder(legacyAbac_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           legacyAbac_ = value;
         }
@@ -5368,6 +6037,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5386,6 +6057,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5393,11 +6066,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.LegacyAbac legacy_abac = 18;</code>
      */
     public com.google.container.v1.LegacyAbac.Builder getLegacyAbacBuilder() {
-      
+
       onChanged();
       return getLegacyAbacFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5408,11 +6083,14 @@ private static final long serialVersionUID = 0L;
       if (legacyAbacBuilder_ != null) {
         return legacyAbacBuilder_.getMessageOrBuilder();
       } else {
-        return legacyAbac_ == null ?
-            com.google.container.v1.LegacyAbac.getDefaultInstance() : legacyAbac_;
+        return legacyAbac_ == null
+            ? com.google.container.v1.LegacyAbac.getDefaultInstance()
+            : legacyAbac_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the legacy ABAC authorization mode.
      * </pre>
@@ -5420,14 +6098,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.LegacyAbac legacy_abac = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.LegacyAbac, com.google.container.v1.LegacyAbac.Builder, com.google.container.v1.LegacyAbacOrBuilder> 
+            com.google.container.v1.LegacyAbac,
+            com.google.container.v1.LegacyAbac.Builder,
+            com.google.container.v1.LegacyAbacOrBuilder>
         getLegacyAbacFieldBuilder() {
       if (legacyAbacBuilder_ == null) {
-        legacyAbacBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.LegacyAbac, com.google.container.v1.LegacyAbac.Builder, com.google.container.v1.LegacyAbacOrBuilder>(
-                getLegacyAbac(),
-                getParentForChildren(),
-                isClean());
+        legacyAbacBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.LegacyAbac,
+                com.google.container.v1.LegacyAbac.Builder,
+                com.google.container.v1.LegacyAbacOrBuilder>(
+                getLegacyAbac(), getParentForChildren(), isClean());
         legacyAbac_ = null;
       }
       return legacyAbacBuilder_;
@@ -5435,8 +6116,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NetworkPolicy networkPolicy_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NetworkPolicy, com.google.container.v1.NetworkPolicy.Builder, com.google.container.v1.NetworkPolicyOrBuilder> networkPolicyBuilder_;
+            com.google.container.v1.NetworkPolicy,
+            com.google.container.v1.NetworkPolicy.Builder,
+            com.google.container.v1.NetworkPolicyOrBuilder>
+        networkPolicyBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5447,6 +6133,8 @@ private static final long serialVersionUID = 0L;
       return networkPolicyBuilder_ != null || networkPolicy_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5455,12 +6143,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NetworkPolicy getNetworkPolicy() {
       if (networkPolicyBuilder_ == null) {
-        return networkPolicy_ == null ? com.google.container.v1.NetworkPolicy.getDefaultInstance() : networkPolicy_;
+        return networkPolicy_ == null
+            ? com.google.container.v1.NetworkPolicy.getDefaultInstance()
+            : networkPolicy_;
       } else {
         return networkPolicyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5481,14 +6173,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
      *
      * <code>.google.container.v1.NetworkPolicy network_policy = 19;</code>
      */
-    public Builder setNetworkPolicy(
-        com.google.container.v1.NetworkPolicy.Builder builderForValue) {
+    public Builder setNetworkPolicy(com.google.container.v1.NetworkPolicy.Builder builderForValue) {
       if (networkPolicyBuilder_ == null) {
         networkPolicy_ = builderForValue.build();
         onChanged();
@@ -5499,6 +6192,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5509,7 +6204,9 @@ private static final long serialVersionUID = 0L;
       if (networkPolicyBuilder_ == null) {
         if (networkPolicy_ != null) {
           networkPolicy_ =
-            com.google.container.v1.NetworkPolicy.newBuilder(networkPolicy_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NetworkPolicy.newBuilder(networkPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           networkPolicy_ = value;
         }
@@ -5521,6 +6218,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5539,6 +6238,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5546,11 +6247,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NetworkPolicy network_policy = 19;</code>
      */
     public com.google.container.v1.NetworkPolicy.Builder getNetworkPolicyBuilder() {
-      
+
       onChanged();
       return getNetworkPolicyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5561,11 +6264,14 @@ private static final long serialVersionUID = 0L;
       if (networkPolicyBuilder_ != null) {
         return networkPolicyBuilder_.getMessageOrBuilder();
       } else {
-        return networkPolicy_ == null ?
-            com.google.container.v1.NetworkPolicy.getDefaultInstance() : networkPolicy_;
+        return networkPolicy_ == null
+            ? com.google.container.v1.NetworkPolicy.getDefaultInstance()
+            : networkPolicy_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration options for the NetworkPolicy feature.
      * </pre>
@@ -5573,14 +6279,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NetworkPolicy network_policy = 19;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NetworkPolicy, com.google.container.v1.NetworkPolicy.Builder, com.google.container.v1.NetworkPolicyOrBuilder> 
+            com.google.container.v1.NetworkPolicy,
+            com.google.container.v1.NetworkPolicy.Builder,
+            com.google.container.v1.NetworkPolicyOrBuilder>
         getNetworkPolicyFieldBuilder() {
       if (networkPolicyBuilder_ == null) {
-        networkPolicyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NetworkPolicy, com.google.container.v1.NetworkPolicy.Builder, com.google.container.v1.NetworkPolicyOrBuilder>(
-                getNetworkPolicy(),
-                getParentForChildren(),
-                isClean());
+        networkPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NetworkPolicy,
+                com.google.container.v1.NetworkPolicy.Builder,
+                com.google.container.v1.NetworkPolicyOrBuilder>(
+                getNetworkPolicy(), getParentForChildren(), isClean());
         networkPolicy_ = null;
       }
       return networkPolicyBuilder_;
@@ -5588,8 +6297,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.IPAllocationPolicy ipAllocationPolicy_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.IPAllocationPolicy, com.google.container.v1.IPAllocationPolicy.Builder, com.google.container.v1.IPAllocationPolicyOrBuilder> ipAllocationPolicyBuilder_;
+            com.google.container.v1.IPAllocationPolicy,
+            com.google.container.v1.IPAllocationPolicy.Builder,
+            com.google.container.v1.IPAllocationPolicyOrBuilder>
+        ipAllocationPolicyBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5600,6 +6314,8 @@ private static final long serialVersionUID = 0L;
       return ipAllocationPolicyBuilder_ != null || ipAllocationPolicy_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5608,12 +6324,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.IPAllocationPolicy getIpAllocationPolicy() {
       if (ipAllocationPolicyBuilder_ == null) {
-        return ipAllocationPolicy_ == null ? com.google.container.v1.IPAllocationPolicy.getDefaultInstance() : ipAllocationPolicy_;
+        return ipAllocationPolicy_ == null
+            ? com.google.container.v1.IPAllocationPolicy.getDefaultInstance()
+            : ipAllocationPolicy_;
       } else {
         return ipAllocationPolicyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5634,6 +6354,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5652,6 +6374,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5662,7 +6386,9 @@ private static final long serialVersionUID = 0L;
       if (ipAllocationPolicyBuilder_ == null) {
         if (ipAllocationPolicy_ != null) {
           ipAllocationPolicy_ =
-            com.google.container.v1.IPAllocationPolicy.newBuilder(ipAllocationPolicy_).mergeFrom(value).buildPartial();
+              com.google.container.v1.IPAllocationPolicy.newBuilder(ipAllocationPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           ipAllocationPolicy_ = value;
         }
@@ -5674,6 +6400,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5692,6 +6420,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5699,11 +6429,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.IPAllocationPolicy ip_allocation_policy = 20;</code>
      */
     public com.google.container.v1.IPAllocationPolicy.Builder getIpAllocationPolicyBuilder() {
-      
+
       onChanged();
       return getIpAllocationPolicyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5714,11 +6446,14 @@ private static final long serialVersionUID = 0L;
       if (ipAllocationPolicyBuilder_ != null) {
         return ipAllocationPolicyBuilder_.getMessageOrBuilder();
       } else {
-        return ipAllocationPolicy_ == null ?
-            com.google.container.v1.IPAllocationPolicy.getDefaultInstance() : ipAllocationPolicy_;
+        return ipAllocationPolicy_ == null
+            ? com.google.container.v1.IPAllocationPolicy.getDefaultInstance()
+            : ipAllocationPolicy_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for cluster IP allocation.
      * </pre>
@@ -5726,57 +6461,78 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.IPAllocationPolicy ip_allocation_policy = 20;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.IPAllocationPolicy, com.google.container.v1.IPAllocationPolicy.Builder, com.google.container.v1.IPAllocationPolicyOrBuilder> 
+            com.google.container.v1.IPAllocationPolicy,
+            com.google.container.v1.IPAllocationPolicy.Builder,
+            com.google.container.v1.IPAllocationPolicyOrBuilder>
         getIpAllocationPolicyFieldBuilder() {
       if (ipAllocationPolicyBuilder_ == null) {
-        ipAllocationPolicyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.IPAllocationPolicy, com.google.container.v1.IPAllocationPolicy.Builder, com.google.container.v1.IPAllocationPolicyOrBuilder>(
-                getIpAllocationPolicy(),
-                getParentForChildren(),
-                isClean());
+        ipAllocationPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.IPAllocationPolicy,
+                com.google.container.v1.IPAllocationPolicy.Builder,
+                com.google.container.v1.IPAllocationPolicyOrBuilder>(
+                getIpAllocationPolicy(), getParentForChildren(), isClean());
         ipAllocationPolicy_ = null;
       }
       return ipAllocationPolicyBuilder_;
     }
 
-    private com.google.container.v1.MasterAuthorizedNetworksConfig masterAuthorizedNetworksConfig_ = null;
+    private com.google.container.v1.MasterAuthorizedNetworksConfig masterAuthorizedNetworksConfig_ =
+        null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder> masterAuthorizedNetworksConfigBuilder_;
+            com.google.container.v1.MasterAuthorizedNetworksConfig,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
+            com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>
+        masterAuthorizedNetworksConfigBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
     public boolean hasMasterAuthorizedNetworksConfig() {
-      return masterAuthorizedNetworksConfigBuilder_ != null || masterAuthorizedNetworksConfig_ != null;
+      return masterAuthorizedNetworksConfigBuilder_ != null
+          || masterAuthorizedNetworksConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig getMasterAuthorizedNetworksConfig() {
+    public com.google.container.v1.MasterAuthorizedNetworksConfig
+        getMasterAuthorizedNetworksConfig() {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
-        return masterAuthorizedNetworksConfig_ == null ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance() : masterAuthorizedNetworksConfig_;
+        return masterAuthorizedNetworksConfig_ == null
+            ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()
+            : masterAuthorizedNetworksConfig_;
       } else {
         return masterAuthorizedNetworksConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
-    public Builder setMasterAuthorizedNetworksConfig(com.google.container.v1.MasterAuthorizedNetworksConfig value) {
+    public Builder setMasterAuthorizedNetworksConfig(
+        com.google.container.v1.MasterAuthorizedNetworksConfig value) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5790,12 +6546,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
     public Builder setMasterAuthorizedNetworksConfig(
         com.google.container.v1.MasterAuthorizedNetworksConfig.Builder builderForValue) {
@@ -5809,18 +6568,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
-    public Builder mergeMasterAuthorizedNetworksConfig(com.google.container.v1.MasterAuthorizedNetworksConfig value) {
+    public Builder mergeMasterAuthorizedNetworksConfig(
+        com.google.container.v1.MasterAuthorizedNetworksConfig value) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
         if (masterAuthorizedNetworksConfig_ != null) {
           masterAuthorizedNetworksConfig_ =
-            com.google.container.v1.MasterAuthorizedNetworksConfig.newBuilder(masterAuthorizedNetworksConfig_).mergeFrom(value).buildPartial();
+              com.google.container.v1.MasterAuthorizedNetworksConfig.newBuilder(
+                      masterAuthorizedNetworksConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           masterAuthorizedNetworksConfig_ = value;
         }
@@ -5832,12 +6598,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
     public Builder clearMasterAuthorizedNetworksConfig() {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
@@ -5851,51 +6620,66 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.Builder getMasterAuthorizedNetworksConfigBuilder() {
-      
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.Builder
+        getMasterAuthorizedNetworksConfigBuilder() {
+
       onChanged();
       return getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder getMasterAuthorizedNetworksConfigOrBuilder() {
+    public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
+        getMasterAuthorizedNetworksConfigOrBuilder() {
       if (masterAuthorizedNetworksConfigBuilder_ != null) {
         return masterAuthorizedNetworksConfigBuilder_.getMessageOrBuilder();
       } else {
-        return masterAuthorizedNetworksConfig_ == null ?
-            com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance() : masterAuthorizedNetworksConfig_;
+        return masterAuthorizedNetworksConfig_ == null
+            ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()
+            : masterAuthorizedNetworksConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder> 
+            com.google.container.v1.MasterAuthorizedNetworksConfig,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
+            com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>
         getMasterAuthorizedNetworksConfigFieldBuilder() {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
-        masterAuthorizedNetworksConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>(
-                getMasterAuthorizedNetworksConfig(),
-                getParentForChildren(),
-                isClean());
+        masterAuthorizedNetworksConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MasterAuthorizedNetworksConfig,
+                com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
+                com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>(
+                getMasterAuthorizedNetworksConfig(), getParentForChildren(), isClean());
         masterAuthorizedNetworksConfig_ = null;
       }
       return masterAuthorizedNetworksConfigBuilder_;
@@ -5903,8 +6687,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.MaintenancePolicy maintenancePolicy_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MaintenancePolicy, com.google.container.v1.MaintenancePolicy.Builder, com.google.container.v1.MaintenancePolicyOrBuilder> maintenancePolicyBuilder_;
+            com.google.container.v1.MaintenancePolicy,
+            com.google.container.v1.MaintenancePolicy.Builder,
+            com.google.container.v1.MaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -5915,6 +6704,8 @@ private static final long serialVersionUID = 0L;
       return maintenancePolicyBuilder_ != null || maintenancePolicy_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -5923,12 +6714,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.MaintenancePolicy getMaintenancePolicy() {
       if (maintenancePolicyBuilder_ == null) {
-        return maintenancePolicy_ == null ? com.google.container.v1.MaintenancePolicy.getDefaultInstance() : maintenancePolicy_;
+        return maintenancePolicy_ == null
+            ? com.google.container.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
       } else {
         return maintenancePolicyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -5949,6 +6744,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -5967,6 +6764,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -5977,7 +6776,9 @@ private static final long serialVersionUID = 0L;
       if (maintenancePolicyBuilder_ == null) {
         if (maintenancePolicy_ != null) {
           maintenancePolicy_ =
-            com.google.container.v1.MaintenancePolicy.newBuilder(maintenancePolicy_).mergeFrom(value).buildPartial();
+              com.google.container.v1.MaintenancePolicy.newBuilder(maintenancePolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           maintenancePolicy_ = value;
         }
@@ -5989,6 +6790,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -6007,6 +6810,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -6014,11 +6819,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 23;</code>
      */
     public com.google.container.v1.MaintenancePolicy.Builder getMaintenancePolicyBuilder() {
-      
+
       onChanged();
       return getMaintenancePolicyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -6029,11 +6836,14 @@ private static final long serialVersionUID = 0L;
       if (maintenancePolicyBuilder_ != null) {
         return maintenancePolicyBuilder_.getMessageOrBuilder();
       } else {
-        return maintenancePolicy_ == null ?
-            com.google.container.v1.MaintenancePolicy.getDefaultInstance() : maintenancePolicy_;
+        return maintenancePolicy_ == null
+            ? com.google.container.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configure the maintenance policy for this cluster.
      * </pre>
@@ -6041,21 +6851,390 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 23;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MaintenancePolicy, com.google.container.v1.MaintenancePolicy.Builder, com.google.container.v1.MaintenancePolicyOrBuilder> 
+            com.google.container.v1.MaintenancePolicy,
+            com.google.container.v1.MaintenancePolicy.Builder,
+            com.google.container.v1.MaintenancePolicyOrBuilder>
         getMaintenancePolicyFieldBuilder() {
       if (maintenancePolicyBuilder_ == null) {
-        maintenancePolicyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.MaintenancePolicy, com.google.container.v1.MaintenancePolicy.Builder, com.google.container.v1.MaintenancePolicyOrBuilder>(
-                getMaintenancePolicy(),
-                getParentForChildren(),
-                isClean());
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MaintenancePolicy,
+                com.google.container.v1.MaintenancePolicy.Builder,
+                com.google.container.v1.MaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
         maintenancePolicy_ = null;
       }
       return maintenancePolicyBuilder_;
     }
 
+    private com.google.container.v1.NetworkConfig networkConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkConfig,
+            com.google.container.v1.NetworkConfig.Builder,
+            com.google.container.v1.NetworkConfigOrBuilder>
+        networkConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public boolean hasNetworkConfig() {
+      return networkConfigBuilder_ != null || networkConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public com.google.container.v1.NetworkConfig getNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        return networkConfig_ == null
+            ? com.google.container.v1.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      } else {
+        return networkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder setNetworkConfig(com.google.container.v1.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkConfig_ = value;
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder setNetworkConfig(com.google.container.v1.NetworkConfig.Builder builderForValue) {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder mergeNetworkConfig(com.google.container.v1.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (networkConfig_ != null) {
+          networkConfig_ =
+              com.google.container.v1.NetworkConfig.newBuilder(networkConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          networkConfig_ = value;
+        }
+        onChanged();
+      } else {
+        networkConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder clearNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+        onChanged();
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public com.google.container.v1.NetworkConfig.Builder getNetworkConfigBuilder() {
+
+      onChanged();
+      return getNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public com.google.container.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+      if (networkConfigBuilder_ != null) {
+        return networkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkConfig_ == null
+            ? com.google.container.v1.NetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkConfig,
+            com.google.container.v1.NetworkConfig.Builder,
+            com.google.container.v1.NetworkConfigOrBuilder>
+        getNetworkConfigFieldBuilder() {
+      if (networkConfigBuilder_ == null) {
+        networkConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NetworkConfig,
+                com.google.container.v1.NetworkConfig.Builder,
+                com.google.container.v1.NetworkConfigOrBuilder>(
+                getNetworkConfig(), getParentForChildren(), isClean());
+        networkConfig_ = null;
+      }
+      return networkConfigBuilder_;
+    }
+
+    private com.google.container.v1.PrivateClusterConfig privateClusterConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivateClusterConfig,
+            com.google.container.v1.PrivateClusterConfig.Builder,
+            com.google.container.v1.PrivateClusterConfigOrBuilder>
+        privateClusterConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public boolean hasPrivateClusterConfig() {
+      return privateClusterConfigBuilder_ != null || privateClusterConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfig getPrivateClusterConfig() {
+      if (privateClusterConfigBuilder_ == null) {
+        return privateClusterConfig_ == null
+            ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance()
+            : privateClusterConfig_;
+      } else {
+        return privateClusterConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder setPrivateClusterConfig(com.google.container.v1.PrivateClusterConfig value) {
+      if (privateClusterConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateClusterConfig_ = value;
+        onChanged();
+      } else {
+        privateClusterConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder setPrivateClusterConfig(
+        com.google.container.v1.PrivateClusterConfig.Builder builderForValue) {
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        privateClusterConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder mergePrivateClusterConfig(com.google.container.v1.PrivateClusterConfig value) {
+      if (privateClusterConfigBuilder_ == null) {
+        if (privateClusterConfig_ != null) {
+          privateClusterConfig_ =
+              com.google.container.v1.PrivateClusterConfig.newBuilder(privateClusterConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          privateClusterConfig_ = value;
+        }
+        onChanged();
+      } else {
+        privateClusterConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder clearPrivateClusterConfig() {
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfig_ = null;
+        onChanged();
+      } else {
+        privateClusterConfig_ = null;
+        privateClusterConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfig.Builder getPrivateClusterConfigBuilder() {
+
+      onChanged();
+      return getPrivateClusterConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfigOrBuilder
+        getPrivateClusterConfigOrBuilder() {
+      if (privateClusterConfigBuilder_ != null) {
+        return privateClusterConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return privateClusterConfig_ == null
+            ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance()
+            : privateClusterConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivateClusterConfig,
+            com.google.container.v1.PrivateClusterConfig.Builder,
+            com.google.container.v1.PrivateClusterConfigOrBuilder>
+        getPrivateClusterConfigFieldBuilder() {
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.PrivateClusterConfig,
+                com.google.container.v1.PrivateClusterConfig.Builder,
+                com.google.container.v1.PrivateClusterConfigOrBuilder>(
+                getPrivateClusterConfig(), getParentForChildren(), isClean());
+        privateClusterConfig_ = null;
+      }
+      return privateClusterConfigBuilder_;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
@@ -6065,8 +7244,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSelfLink() {
       java.lang.Object ref = selfLink_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         selfLink_ = s;
         return s;
@@ -6075,19 +7253,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 100;</code>
      */
-    public com.google.protobuf.ByteString
-        getSelfLinkBytes() {
+    public com.google.protobuf.ByteString getSelfLinkBytes() {
       java.lang.Object ref = selfLink_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         selfLink_ = b;
         return b;
       } else {
@@ -6095,23 +7273,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 100;</code>
      */
-    public Builder setSelfLink(
-        java.lang.String value) {
+    public Builder setSelfLink(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       selfLink_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
@@ -6119,25 +7300,26 @@ private static final long serialVersionUID = 0L;
      * <code>string self_link = 100;</code>
      */
     public Builder clearSelfLink() {
-      
+
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 100;</code>
      */
-    public Builder setSelfLinkBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSelfLinkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       selfLink_ = value;
       onChanged();
       return this;
@@ -6145,19 +7327,22 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object zone_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         zone_ = s;
         return s;
@@ -6166,21 +7351,23 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getZoneBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         zone_ = b;
         return b;
       } else {
@@ -6188,55 +7375,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public Builder setZone(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setZone(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       zone_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearZone() {
-      
+
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       zone_ = value;
       onChanged();
       return this;
@@ -6244,6 +7441,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object endpoint_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
@@ -6257,8 +7456,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getEndpoint() {
       java.lang.Object ref = endpoint_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         endpoint_ = s;
         return s;
@@ -6267,6 +7465,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
@@ -6277,13 +7477,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string endpoint = 102;</code>
      */
-    public com.google.protobuf.ByteString
-        getEndpointBytes() {
+    public com.google.protobuf.ByteString getEndpointBytes() {
       java.lang.Object ref = endpoint_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         endpoint_ = b;
         return b;
       } else {
@@ -6291,6 +7489,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
@@ -6301,17 +7501,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string endpoint = 102;</code>
      */
-    public Builder setEndpoint(
-        java.lang.String value) {
+    public Builder setEndpoint(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       endpoint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
@@ -6323,12 +7524,14 @@ private static final long serialVersionUID = 0L;
      * <code>string endpoint = 102;</code>
      */
     public Builder clearEndpoint() {
-      
+
       endpoint_ = getDefaultInstance().getEndpoint();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address of this cluster's master endpoint.
      * The endpoint can be accessed from the internet at
@@ -6339,13 +7542,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string endpoint = 102;</code>
      */
-    public Builder setEndpointBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       endpoint_ = value;
       onChanged();
       return this;
@@ -6353,11 +7555,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object initialClusterVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * The initial Kubernetes version for this cluster.  Valid versions are those
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
@@ -6365,8 +7576,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInitialClusterVersion() {
       java.lang.Object ref = initialClusterVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         initialClusterVersion_ = s;
         return s;
@@ -6375,22 +7585,29 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The initial Kubernetes version for this cluster.  Valid versions are those
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
      */
-    public com.google.protobuf.ByteString
-        getInitialClusterVersionBytes() {
+    public com.google.protobuf.ByteString getInitialClusterVersionBytes() {
       java.lang.Object ref = initialClusterVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         initialClusterVersion_ = b;
         return b;
       } else {
@@ -6398,58 +7615,83 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The initial Kubernetes version for this cluster.  Valid versions are those
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
      */
-    public Builder setInitialClusterVersion(
-        java.lang.String value) {
+    public Builder setInitialClusterVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       initialClusterVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The initial Kubernetes version for this cluster.  Valid versions are those
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
      */
     public Builder clearInitialClusterVersion() {
-      
+
       initialClusterVersion_ = getDefaultInstance().getInitialClusterVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The initial Kubernetes version for this cluster.  Valid versions are those
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
      */
-    public Builder setInitialClusterVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setInitialClusterVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       initialClusterVersion_ = value;
       onChanged();
       return this;
@@ -6457,6 +7699,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object currentMasterVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The current software version of the master endpoint.
      * </pre>
@@ -6466,8 +7710,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getCurrentMasterVersion() {
       java.lang.Object ref = currentMasterVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         currentMasterVersion_ = s;
         return s;
@@ -6476,19 +7719,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current software version of the master endpoint.
      * </pre>
      *
      * <code>string current_master_version = 104;</code>
      */
-    public com.google.protobuf.ByteString
-        getCurrentMasterVersionBytes() {
+    public com.google.protobuf.ByteString getCurrentMasterVersionBytes() {
       java.lang.Object ref = currentMasterVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         currentMasterVersion_ = b;
         return b;
       } else {
@@ -6496,23 +7739,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current software version of the master endpoint.
      * </pre>
      *
      * <code>string current_master_version = 104;</code>
      */
-    public Builder setCurrentMasterVersion(
-        java.lang.String value) {
+    public Builder setCurrentMasterVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       currentMasterVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current software version of the master endpoint.
      * </pre>
@@ -6520,25 +7766,26 @@ private static final long serialVersionUID = 0L;
      * <code>string current_master_version = 104;</code>
      */
     public Builder clearCurrentMasterVersion() {
-      
+
       currentMasterVersion_ = getDefaultInstance().getCurrentMasterVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current software version of the master endpoint.
      * </pre>
      *
      * <code>string current_master_version = 104;</code>
      */
-    public Builder setCurrentMasterVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCurrentMasterVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       currentMasterVersion_ = value;
       onChanged();
       return this;
@@ -6546,19 +7793,23 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object currentNodeVersion_ = "";
     /**
+     *
+     *
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getCurrentNodeVersion() {
       java.lang.Object ref = currentNodeVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         currentNodeVersion_ = s;
         return s;
@@ -6567,21 +7818,24 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getCurrentNodeVersionBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getCurrentNodeVersionBytes() {
       java.lang.Object ref = currentNodeVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         currentNodeVersion_ = b;
         return b;
       } else {
@@ -6589,55 +7843,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public Builder setCurrentNodeVersion(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setCurrentNodeVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       currentNodeVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearCurrentNodeVersion() {
-      
+
       currentNodeVersion_ = getDefaultInstance().getCurrentNodeVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public Builder setCurrentNodeVersionBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setCurrentNodeVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       currentNodeVersion_ = value;
       onChanged();
       return this;
@@ -6645,6 +7912,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object createTime_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster was created, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -6655,8 +7924,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getCreateTime() {
       java.lang.Object ref = createTime_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         createTime_ = s;
         return s;
@@ -6665,6 +7933,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster was created, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -6672,13 +7942,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string create_time = 106;</code>
      */
-    public com.google.protobuf.ByteString
-        getCreateTimeBytes() {
+    public com.google.protobuf.ByteString getCreateTimeBytes() {
       java.lang.Object ref = createTime_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         createTime_ = b;
         return b;
       } else {
@@ -6686,6 +7954,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster was created, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -6693,17 +7963,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string create_time = 106;</code>
      */
-    public Builder setCreateTime(
-        java.lang.String value) {
+    public Builder setCreateTime(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       createTime_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster was created, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -6712,12 +7983,14 @@ private static final long serialVersionUID = 0L;
      * <code>string create_time = 106;</code>
      */
     public Builder clearCreateTime() {
-      
+
       createTime_ = getDefaultInstance().getCreateTime();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster was created, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -6725,13 +7998,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string create_time = 106;</code>
      */
-    public Builder setCreateTimeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCreateTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       createTime_ = value;
       onChanged();
       return this;
@@ -6739,6 +8011,8 @@ private static final long serialVersionUID = 0L;
 
     private int status_ = 0;
     /**
+     *
+     *
      * <pre>
      * [Output only] The current status of this cluster.
      * </pre>
@@ -6749,6 +8023,8 @@ private static final long serialVersionUID = 0L;
       return status_;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current status of this cluster.
      * </pre>
@@ -6761,6 +8037,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current status of this cluster.
      * </pre>
@@ -6769,10 +8047,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.Cluster.Status getStatus() {
       @SuppressWarnings("deprecation")
-      com.google.container.v1.Cluster.Status result = com.google.container.v1.Cluster.Status.valueOf(status_);
+      com.google.container.v1.Cluster.Status result =
+          com.google.container.v1.Cluster.Status.valueOf(status_);
       return result == null ? com.google.container.v1.Cluster.Status.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current status of this cluster.
      * </pre>
@@ -6783,12 +8064,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       status_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The current status of this cluster.
      * </pre>
@@ -6796,7 +8079,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.Cluster.Status status = 107;</code>
      */
     public Builder clearStatus() {
-      
+
       status_ = 0;
       onChanged();
       return this;
@@ -6804,6 +8087,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object statusMessage_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * cluster, if available.
@@ -6814,8 +8099,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         statusMessage_ = s;
         return s;
@@ -6824,6 +8108,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * cluster, if available.
@@ -6831,13 +8117,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 108;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatusMessageBytes() {
+    public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         statusMessage_ = b;
         return b;
       } else {
@@ -6845,6 +8129,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * cluster, if available.
@@ -6852,17 +8138,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 108;</code>
      */
-    public Builder setStatusMessage(
-        java.lang.String value) {
+    public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       statusMessage_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * cluster, if available.
@@ -6871,12 +8158,14 @@ private static final long serialVersionUID = 0L;
      * <code>string status_message = 108;</code>
      */
     public Builder clearStatusMessage() {
-      
+
       statusMessage_ = getDefaultInstance().getStatusMessage();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * cluster, if available.
@@ -6884,20 +8173,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 108;</code>
      */
-    public Builder setStatusMessageBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       statusMessage_ = value;
       onChanged();
       return this;
     }
 
-    private int nodeIpv4CidrSize_ ;
+    private int nodeIpv4CidrSize_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The size of the address space on each node for hosting
      * containers. This is provisioned from within the `container_ipv4_cidr`
@@ -6910,6 +8200,8 @@ private static final long serialVersionUID = 0L;
       return nodeIpv4CidrSize_;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The size of the address space on each node for hosting
      * containers. This is provisioned from within the `container_ipv4_cidr`
@@ -6919,12 +8211,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 node_ipv4_cidr_size = 109;</code>
      */
     public Builder setNodeIpv4CidrSize(int value) {
-      
+
       nodeIpv4CidrSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The size of the address space on each node for hosting
      * containers. This is provisioned from within the `container_ipv4_cidr`
@@ -6934,7 +8228,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 node_ipv4_cidr_size = 109;</code>
      */
     public Builder clearNodeIpv4CidrSize() {
-      
+
       nodeIpv4CidrSize_ = 0;
       onChanged();
       return this;
@@ -6942,6 +8236,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object servicesIpv4Cidr_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address range of the Kubernetes services in
      * this cluster, in
@@ -6955,8 +8251,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getServicesIpv4Cidr() {
       java.lang.Object ref = servicesIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         servicesIpv4Cidr_ = s;
         return s;
@@ -6965,6 +8260,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address range of the Kubernetes services in
      * this cluster, in
@@ -6975,13 +8272,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_ipv4_cidr = 110;</code>
      */
-    public com.google.protobuf.ByteString
-        getServicesIpv4CidrBytes() {
+    public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
       java.lang.Object ref = servicesIpv4Cidr_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         servicesIpv4Cidr_ = b;
         return b;
       } else {
@@ -6989,6 +8284,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address range of the Kubernetes services in
      * this cluster, in
@@ -6999,17 +8296,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_ipv4_cidr = 110;</code>
      */
-    public Builder setServicesIpv4Cidr(
-        java.lang.String value) {
+    public Builder setServicesIpv4Cidr(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       servicesIpv4Cidr_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address range of the Kubernetes services in
      * this cluster, in
@@ -7021,12 +8319,14 @@ private static final long serialVersionUID = 0L;
      * <code>string services_ipv4_cidr = 110;</code>
      */
     public Builder clearServicesIpv4Cidr() {
-      
+
       servicesIpv4Cidr_ = getDefaultInstance().getServicesIpv4Cidr();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The IP address range of the Kubernetes services in
      * this cluster, in
@@ -7037,150 +8337,173 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_ipv4_cidr = 110;</code>
      */
-    public Builder setServicesIpv4CidrBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setServicesIpv4CidrBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       servicesIpv4Cidr_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList instanceGroupUrls_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField1_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField1_ & 0x00000004) == 0x00000004)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField1_ |= 0x00000001;
-       }
+        bitField1_ |= 0x00000004;
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getInstanceGroupUrlsList() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
       return instanceGroupUrls_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public int getInstanceGroupUrlsCount() {
       return instanceGroupUrls_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getInstanceGroupUrls(int index) {
       return instanceGroupUrls_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getInstanceGroupUrlsBytes(int index) {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index) {
       return instanceGroupUrls_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder setInstanceGroupUrls(
-        int index, java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setInstanceGroupUrls(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceGroupUrlsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder addInstanceGroupUrls(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder addInstanceGroupUrls(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceGroupUrlsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder addAllInstanceGroupUrls(
-        java.lang.Iterable<java.lang.String> values) {
+    @java.lang.Deprecated
+    public Builder addAllInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceGroupUrlsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, instanceGroupUrls_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceGroupUrls_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearInstanceGroupUrls() {
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder addInstanceGroupUrlsBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder addInstanceGroupUrlsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
       onChanged();
       return this;
     }
 
-    private int currentNodeCount_ ;
+    private int currentNodeCount_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The number of nodes currently in the cluster.
      * </pre>
@@ -7191,6 +8514,8 @@ private static final long serialVersionUID = 0L;
       return currentNodeCount_;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The number of nodes currently in the cluster.
      * </pre>
@@ -7198,12 +8523,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 current_node_count = 112;</code>
      */
     public Builder setCurrentNodeCount(int value) {
-      
+
       currentNodeCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The number of nodes currently in the cluster.
      * </pre>
@@ -7211,7 +8538,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 current_node_count = 112;</code>
      */
     public Builder clearCurrentNodeCount() {
-      
+
       currentNodeCount_ = 0;
       onChanged();
       return this;
@@ -7219,6 +8546,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object expireTime_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster will be automatically
      * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -7229,8 +8558,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getExpireTime() {
       java.lang.Object ref = expireTime_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         expireTime_ = s;
         return s;
@@ -7239,6 +8567,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster will be automatically
      * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -7246,13 +8576,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string expire_time = 113;</code>
      */
-    public com.google.protobuf.ByteString
-        getExpireTimeBytes() {
+    public com.google.protobuf.ByteString getExpireTimeBytes() {
       java.lang.Object ref = expireTime_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         expireTime_ = b;
         return b;
       } else {
@@ -7260,6 +8588,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster will be automatically
      * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -7267,17 +8597,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string expire_time = 113;</code>
      */
-    public Builder setExpireTime(
-        java.lang.String value) {
+    public Builder setExpireTime(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       expireTime_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster will be automatically
      * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -7286,12 +8617,14 @@ private static final long serialVersionUID = 0L;
      * <code>string expire_time = 113;</code>
      */
     public Builder clearExpireTime() {
-      
+
       expireTime_ = getDefaultInstance().getExpireTime();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the cluster will be automatically
      * deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -7299,20 +8632,128 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string expire_time = 113;</code>
      */
-    public Builder setExpireTimeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setExpireTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       expireTime_ = value;
       onChanged();
       return this;
     }
+
+    private java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      location_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public Builder clearLocation() {
+
+      location_ = getDefaultInstance().getLocation();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      location_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -7322,12 +8763,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.Cluster)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.Cluster)
   private static final com.google.container.v1.Cluster DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.Cluster();
   }
@@ -7336,16 +8777,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Cluster>
-      PARSER = new com.google.protobuf.AbstractParser<Cluster>() {
-    @java.lang.Override
-    public Cluster parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Cluster(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Cluster> PARSER =
+      new com.google.protobuf.AbstractParser<Cluster>() {
+        @java.lang.Override
+        public Cluster parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Cluster(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Cluster> parser() {
     return PARSER;
@@ -7360,6 +8801,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.Cluster getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

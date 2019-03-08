@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface BatchCreateOccurrencesRequestOrBuilder extends
+public interface BatchCreateOccurrencesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.BatchCreateOccurrencesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrences are to be created.
@@ -17,6 +20,8 @@ public interface BatchCreateOccurrencesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrences are to be created.
@@ -24,19 +29,21 @@ public interface BatchCreateOccurrencesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The occurrences to create.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 2;</code>
    */
-  java.util.List<io.grafeas.v1beta1.Occurrence> 
-      getOccurrencesList();
+  java.util.List<io.grafeas.v1beta1.Occurrence> getOccurrencesList();
   /**
+   *
+   *
    * <pre>
    * The occurrences to create.
    * </pre>
@@ -45,6 +52,8 @@ public interface BatchCreateOccurrencesRequestOrBuilder extends
    */
   io.grafeas.v1beta1.Occurrence getOccurrences(int index);
   /**
+   *
+   *
    * <pre>
    * The occurrences to create.
    * </pre>
@@ -53,21 +62,23 @@ public interface BatchCreateOccurrencesRequestOrBuilder extends
    */
   int getOccurrencesCount();
   /**
+   *
+   *
    * <pre>
    * The occurrences to create.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 2;</code>
    */
-  java.util.List<? extends io.grafeas.v1beta1.OccurrenceOrBuilder> 
-      getOccurrencesOrBuilderList();
+  java.util.List<? extends io.grafeas.v1beta1.OccurrenceOrBuilder> getOccurrencesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The occurrences to create.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.Occurrence occurrences = 2;</code>
    */
-  io.grafeas.v1beta1.OccurrenceOrBuilder getOccurrencesOrBuilder(
-      int index);
+  io.grafeas.v1beta1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index);
 }

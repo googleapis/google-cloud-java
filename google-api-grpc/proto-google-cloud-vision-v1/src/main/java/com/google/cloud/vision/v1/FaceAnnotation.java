@@ -4,21 +4,24 @@
 package com.google.cloud.vision.v1;
 
 /**
+ *
+ *
  * <pre>
  * A face annotation object contains the results of face detection.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.FaceAnnotation}
  */
-public  final class FaceAnnotation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.FaceAnnotation)
     FaceAnnotationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use FaceAnnotation.newBuilder() to construct.
   private FaceAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private FaceAnnotation() {
     landmarks_ = java.util.Collections.emptyList();
     rollAngle_ = 0F;
@@ -36,10 +39,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private FaceAnnotation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -59,122 +62,138 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.vision.v1.BoundingPoly.Builder subBuilder = null;
-            if (boundingPoly_ != null) {
-              subBuilder = boundingPoly_.toBuilder();
+          case 10:
+            {
+              com.google.cloud.vision.v1.BoundingPoly.Builder subBuilder = null;
+              if (boundingPoly_ != null) {
+                subBuilder = boundingPoly_.toBuilder();
+              }
+              boundingPoly_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(boundingPoly_);
+                boundingPoly_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
-            boundingPoly_ = input.readMessage(com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(boundingPoly_);
-              boundingPoly_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.cloud.vision.v1.BoundingPoly.Builder subBuilder = null;
+              if (fdBoundingPoly_ != null) {
+                subBuilder = fdBoundingPoly_.toBuilder();
+              }
+              fdBoundingPoly_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fdBoundingPoly_);
+                fdBoundingPoly_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
-
-            break;
-          }
-          case 18: {
-            com.google.cloud.vision.v1.BoundingPoly.Builder subBuilder = null;
-            if (fdBoundingPoly_ != null) {
-              subBuilder = fdBoundingPoly_.toBuilder();
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                landmarks_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation.Landmark>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              landmarks_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.FaceAnnotation.Landmark.parser(),
+                      extensionRegistry));
+              break;
             }
-            fdBoundingPoly_ = input.readMessage(com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(fdBoundingPoly_);
-              fdBoundingPoly_ = subBuilder.buildPartial();
+          case 37:
+            {
+              rollAngle_ = input.readFloat();
+              break;
             }
-
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              landmarks_ = new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation.Landmark>();
-              mutable_bitField0_ |= 0x00000004;
+          case 45:
+            {
+              panAngle_ = input.readFloat();
+              break;
             }
-            landmarks_.add(
-                input.readMessage(com.google.cloud.vision.v1.FaceAnnotation.Landmark.parser(), extensionRegistry));
-            break;
-          }
-          case 37: {
-
-            rollAngle_ = input.readFloat();
-            break;
-          }
-          case 45: {
-
-            panAngle_ = input.readFloat();
-            break;
-          }
-          case 53: {
-
-            tiltAngle_ = input.readFloat();
-            break;
-          }
-          case 61: {
-
-            detectionConfidence_ = input.readFloat();
-            break;
-          }
-          case 69: {
-
-            landmarkingConfidence_ = input.readFloat();
-            break;
-          }
-          case 72: {
-            int rawValue = input.readEnum();
-
-            joyLikelihood_ = rawValue;
-            break;
-          }
-          case 80: {
-            int rawValue = input.readEnum();
-
-            sorrowLikelihood_ = rawValue;
-            break;
-          }
-          case 88: {
-            int rawValue = input.readEnum();
-
-            angerLikelihood_ = rawValue;
-            break;
-          }
-          case 96: {
-            int rawValue = input.readEnum();
-
-            surpriseLikelihood_ = rawValue;
-            break;
-          }
-          case 104: {
-            int rawValue = input.readEnum();
-
-            underExposedLikelihood_ = rawValue;
-            break;
-          }
-          case 112: {
-            int rawValue = input.readEnum();
-
-            blurredLikelihood_ = rawValue;
-            break;
-          }
-          case 120: {
-            int rawValue = input.readEnum();
-
-            headwearLikelihood_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 53:
+            {
+              tiltAngle_ = input.readFloat();
+              break;
             }
-            break;
-          }
+          case 61:
+            {
+              detectionConfidence_ = input.readFloat();
+              break;
+            }
+          case 69:
+            {
+              landmarkingConfidence_ = input.readFloat();
+              break;
+            }
+          case 72:
+            {
+              int rawValue = input.readEnum();
+
+              joyLikelihood_ = rawValue;
+              break;
+            }
+          case 80:
+            {
+              int rawValue = input.readEnum();
+
+              sorrowLikelihood_ = rawValue;
+              break;
+            }
+          case 88:
+            {
+              int rawValue = input.readEnum();
+
+              angerLikelihood_ = rawValue;
+              break;
+            }
+          case 96:
+            {
+              int rawValue = input.readEnum();
+
+              surpriseLikelihood_ = rawValue;
+              break;
+            }
+          case 104:
+            {
+              int rawValue = input.readEnum();
+
+              underExposedLikelihood_ = rawValue;
+              break;
+            }
+          case 112:
+            {
+              int rawValue = input.readEnum();
+
+              blurredLikelihood_ = rawValue;
+              break;
+            }
+          case 120:
+            {
+              int rawValue = input.readEnum();
+
+              headwearLikelihood_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
@@ -183,24 +202,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_FaceAnnotation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_fieldAccessorTable
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_FaceAnnotation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.FaceAnnotation.class, com.google.cloud.vision.v1.FaceAnnotation.Builder.class);
+            com.google.cloud.vision.v1.FaceAnnotation.class,
+            com.google.cloud.vision.v1.FaceAnnotation.Builder.class);
   }
 
-  public interface LandmarkOrBuilder extends
+  public interface LandmarkOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.FaceAnnotation.Landmark)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Face landmark type.
      * </pre>
@@ -209,6 +234,8 @@ private static final long serialVersionUID = 0L;
      */
     int getTypeValue();
     /**
+     *
+     *
      * <pre>
      * Face landmark type.
      * </pre>
@@ -218,6 +245,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType();
 
     /**
+     *
+     *
      * <pre>
      * Face landmark position.
      * </pre>
@@ -226,6 +255,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasPosition();
     /**
+     *
+     *
      * <pre>
      * Face landmark position.
      * </pre>
@@ -234,6 +265,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.cloud.vision.v1.Position getPosition();
     /**
+     *
+     *
      * <pre>
      * Face landmark position.
      * </pre>
@@ -243,30 +276,33 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.vision.v1.PositionOrBuilder getPositionOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * A face-specific landmark (for example, a face feature).
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.FaceAnnotation.Landmark}
    */
-  public  static final class Landmark extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Landmark extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.FaceAnnotation.Landmark)
       LandmarkOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Landmark.newBuilder() to construct.
     private Landmark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Landmark() {
       type_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Landmark(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -286,58 +322,66 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 24: {
-              int rawValue = input.readEnum();
+            case 24:
+              {
+                int rawValue = input.readEnum();
 
-              type_ = rawValue;
-              break;
-            }
-            case 34: {
-              com.google.cloud.vision.v1.Position.Builder subBuilder = null;
-              if (position_ != null) {
-                subBuilder = position_.toBuilder();
+                type_ = rawValue;
+                break;
               }
-              position_ = input.readMessage(com.google.cloud.vision.v1.Position.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(position_);
-                position_ = subBuilder.buildPartial();
-              }
+            case 34:
+              {
+                com.google.cloud.vision.v1.Position.Builder subBuilder = null;
+                if (position_ != null) {
+                  subBuilder = position_.toBuilder();
+                }
+                position_ =
+                    input.readMessage(
+                        com.google.cloud.vision.v1.Position.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(position_);
+                  position_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_fieldAccessorTable
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.FaceAnnotation.Landmark.class, com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder.class);
+              com.google.cloud.vision.v1.FaceAnnotation.Landmark.class,
+              com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder.class);
     }
 
     /**
+     *
+     *
      * <pre>
      * Face landmark (feature) type.
      * Left and right are defined from the vantage of the viewer of the image
@@ -347,9 +391,10 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf enum {@code google.cloud.vision.v1.FaceAnnotation.Landmark.Type}
      */
-    public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public enum Type implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       *
+       *
        * <pre>
        * Unknown face landmark detected. Should not be filled.
        * </pre>
@@ -358,6 +403,8 @@ private static final long serialVersionUID = 0L;
        */
       UNKNOWN_LANDMARK(0),
       /**
+       *
+       *
        * <pre>
        * Left eye.
        * </pre>
@@ -366,6 +413,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EYE(1),
       /**
+       *
+       *
        * <pre>
        * Right eye.
        * </pre>
@@ -374,6 +423,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EYE(2),
       /**
+       *
+       *
        * <pre>
        * Left of left eyebrow.
        * </pre>
@@ -382,6 +433,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_OF_LEFT_EYEBROW(3),
       /**
+       *
+       *
        * <pre>
        * Right of left eyebrow.
        * </pre>
@@ -390,6 +443,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_OF_LEFT_EYEBROW(4),
       /**
+       *
+       *
        * <pre>
        * Left of right eyebrow.
        * </pre>
@@ -398,6 +453,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_OF_RIGHT_EYEBROW(5),
       /**
+       *
+       *
        * <pre>
        * Right of right eyebrow.
        * </pre>
@@ -406,6 +463,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_OF_RIGHT_EYEBROW(6),
       /**
+       *
+       *
        * <pre>
        * Midpoint between eyes.
        * </pre>
@@ -414,6 +473,8 @@ private static final long serialVersionUID = 0L;
        */
       MIDPOINT_BETWEEN_EYES(7),
       /**
+       *
+       *
        * <pre>
        * Nose tip.
        * </pre>
@@ -422,6 +483,8 @@ private static final long serialVersionUID = 0L;
        */
       NOSE_TIP(8),
       /**
+       *
+       *
        * <pre>
        * Upper lip.
        * </pre>
@@ -430,6 +493,8 @@ private static final long serialVersionUID = 0L;
        */
       UPPER_LIP(9),
       /**
+       *
+       *
        * <pre>
        * Lower lip.
        * </pre>
@@ -438,6 +503,8 @@ private static final long serialVersionUID = 0L;
        */
       LOWER_LIP(10),
       /**
+       *
+       *
        * <pre>
        * Mouth left.
        * </pre>
@@ -446,6 +513,8 @@ private static final long serialVersionUID = 0L;
        */
       MOUTH_LEFT(11),
       /**
+       *
+       *
        * <pre>
        * Mouth right.
        * </pre>
@@ -454,6 +523,8 @@ private static final long serialVersionUID = 0L;
        */
       MOUTH_RIGHT(12),
       /**
+       *
+       *
        * <pre>
        * Mouth center.
        * </pre>
@@ -462,6 +533,8 @@ private static final long serialVersionUID = 0L;
        */
       MOUTH_CENTER(13),
       /**
+       *
+       *
        * <pre>
        * Nose, bottom right.
        * </pre>
@@ -470,6 +543,8 @@ private static final long serialVersionUID = 0L;
        */
       NOSE_BOTTOM_RIGHT(14),
       /**
+       *
+       *
        * <pre>
        * Nose, bottom left.
        * </pre>
@@ -478,6 +553,8 @@ private static final long serialVersionUID = 0L;
        */
       NOSE_BOTTOM_LEFT(15),
       /**
+       *
+       *
        * <pre>
        * Nose, bottom center.
        * </pre>
@@ -486,6 +563,8 @@ private static final long serialVersionUID = 0L;
        */
       NOSE_BOTTOM_CENTER(16),
       /**
+       *
+       *
        * <pre>
        * Left eye, top boundary.
        * </pre>
@@ -494,6 +573,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EYE_TOP_BOUNDARY(17),
       /**
+       *
+       *
        * <pre>
        * Left eye, right corner.
        * </pre>
@@ -502,6 +583,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EYE_RIGHT_CORNER(18),
       /**
+       *
+       *
        * <pre>
        * Left eye, bottom boundary.
        * </pre>
@@ -510,6 +593,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EYE_BOTTOM_BOUNDARY(19),
       /**
+       *
+       *
        * <pre>
        * Left eye, left corner.
        * </pre>
@@ -518,6 +603,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EYE_LEFT_CORNER(20),
       /**
+       *
+       *
        * <pre>
        * Right eye, top boundary.
        * </pre>
@@ -526,6 +613,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EYE_TOP_BOUNDARY(21),
       /**
+       *
+       *
        * <pre>
        * Right eye, right corner.
        * </pre>
@@ -534,6 +623,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EYE_RIGHT_CORNER(22),
       /**
+       *
+       *
        * <pre>
        * Right eye, bottom boundary.
        * </pre>
@@ -542,6 +633,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EYE_BOTTOM_BOUNDARY(23),
       /**
+       *
+       *
        * <pre>
        * Right eye, left corner.
        * </pre>
@@ -550,6 +643,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EYE_LEFT_CORNER(24),
       /**
+       *
+       *
        * <pre>
        * Left eyebrow, upper midpoint.
        * </pre>
@@ -558,6 +653,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EYEBROW_UPPER_MIDPOINT(25),
       /**
+       *
+       *
        * <pre>
        * Right eyebrow, upper midpoint.
        * </pre>
@@ -566,6 +663,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EYEBROW_UPPER_MIDPOINT(26),
       /**
+       *
+       *
        * <pre>
        * Left ear tragion.
        * </pre>
@@ -574,6 +673,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EAR_TRAGION(27),
       /**
+       *
+       *
        * <pre>
        * Right ear tragion.
        * </pre>
@@ -582,6 +683,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EAR_TRAGION(28),
       /**
+       *
+       *
        * <pre>
        * Left eye pupil.
        * </pre>
@@ -590,6 +693,8 @@ private static final long serialVersionUID = 0L;
        */
       LEFT_EYE_PUPIL(29),
       /**
+       *
+       *
        * <pre>
        * Right eye pupil.
        * </pre>
@@ -598,6 +703,8 @@ private static final long serialVersionUID = 0L;
        */
       RIGHT_EYE_PUPIL(30),
       /**
+       *
+       *
        * <pre>
        * Forehead glabella.
        * </pre>
@@ -606,6 +713,8 @@ private static final long serialVersionUID = 0L;
        */
       FOREHEAD_GLABELLA(31),
       /**
+       *
+       *
        * <pre>
        * Chin gnathion.
        * </pre>
@@ -614,6 +723,8 @@ private static final long serialVersionUID = 0L;
        */
       CHIN_GNATHION(32),
       /**
+       *
+       *
        * <pre>
        * Chin left gonion.
        * </pre>
@@ -622,6 +733,8 @@ private static final long serialVersionUID = 0L;
        */
       CHIN_LEFT_GONION(33),
       /**
+       *
+       *
        * <pre>
        * Chin right gonion.
        * </pre>
@@ -633,6 +746,8 @@ private static final long serialVersionUID = 0L;
       ;
 
       /**
+       *
+       *
        * <pre>
        * Unknown face landmark detected. Should not be filled.
        * </pre>
@@ -641,6 +756,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int UNKNOWN_LANDMARK_VALUE = 0;
       /**
+       *
+       *
        * <pre>
        * Left eye.
        * </pre>
@@ -649,6 +766,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EYE_VALUE = 1;
       /**
+       *
+       *
        * <pre>
        * Right eye.
        * </pre>
@@ -657,6 +776,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EYE_VALUE = 2;
       /**
+       *
+       *
        * <pre>
        * Left of left eyebrow.
        * </pre>
@@ -665,6 +786,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_OF_LEFT_EYEBROW_VALUE = 3;
       /**
+       *
+       *
        * <pre>
        * Right of left eyebrow.
        * </pre>
@@ -673,6 +796,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_OF_LEFT_EYEBROW_VALUE = 4;
       /**
+       *
+       *
        * <pre>
        * Left of right eyebrow.
        * </pre>
@@ -681,6 +806,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_OF_RIGHT_EYEBROW_VALUE = 5;
       /**
+       *
+       *
        * <pre>
        * Right of right eyebrow.
        * </pre>
@@ -689,6 +816,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_OF_RIGHT_EYEBROW_VALUE = 6;
       /**
+       *
+       *
        * <pre>
        * Midpoint between eyes.
        * </pre>
@@ -697,6 +826,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int MIDPOINT_BETWEEN_EYES_VALUE = 7;
       /**
+       *
+       *
        * <pre>
        * Nose tip.
        * </pre>
@@ -705,6 +836,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int NOSE_TIP_VALUE = 8;
       /**
+       *
+       *
        * <pre>
        * Upper lip.
        * </pre>
@@ -713,6 +846,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int UPPER_LIP_VALUE = 9;
       /**
+       *
+       *
        * <pre>
        * Lower lip.
        * </pre>
@@ -721,6 +856,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LOWER_LIP_VALUE = 10;
       /**
+       *
+       *
        * <pre>
        * Mouth left.
        * </pre>
@@ -729,6 +866,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int MOUTH_LEFT_VALUE = 11;
       /**
+       *
+       *
        * <pre>
        * Mouth right.
        * </pre>
@@ -737,6 +876,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int MOUTH_RIGHT_VALUE = 12;
       /**
+       *
+       *
        * <pre>
        * Mouth center.
        * </pre>
@@ -745,6 +886,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int MOUTH_CENTER_VALUE = 13;
       /**
+       *
+       *
        * <pre>
        * Nose, bottom right.
        * </pre>
@@ -753,6 +896,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int NOSE_BOTTOM_RIGHT_VALUE = 14;
       /**
+       *
+       *
        * <pre>
        * Nose, bottom left.
        * </pre>
@@ -761,6 +906,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int NOSE_BOTTOM_LEFT_VALUE = 15;
       /**
+       *
+       *
        * <pre>
        * Nose, bottom center.
        * </pre>
@@ -769,6 +916,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int NOSE_BOTTOM_CENTER_VALUE = 16;
       /**
+       *
+       *
        * <pre>
        * Left eye, top boundary.
        * </pre>
@@ -777,6 +926,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EYE_TOP_BOUNDARY_VALUE = 17;
       /**
+       *
+       *
        * <pre>
        * Left eye, right corner.
        * </pre>
@@ -785,6 +936,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EYE_RIGHT_CORNER_VALUE = 18;
       /**
+       *
+       *
        * <pre>
        * Left eye, bottom boundary.
        * </pre>
@@ -793,6 +946,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EYE_BOTTOM_BOUNDARY_VALUE = 19;
       /**
+       *
+       *
        * <pre>
        * Left eye, left corner.
        * </pre>
@@ -801,6 +956,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EYE_LEFT_CORNER_VALUE = 20;
       /**
+       *
+       *
        * <pre>
        * Right eye, top boundary.
        * </pre>
@@ -809,6 +966,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EYE_TOP_BOUNDARY_VALUE = 21;
       /**
+       *
+       *
        * <pre>
        * Right eye, right corner.
        * </pre>
@@ -817,6 +976,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EYE_RIGHT_CORNER_VALUE = 22;
       /**
+       *
+       *
        * <pre>
        * Right eye, bottom boundary.
        * </pre>
@@ -825,6 +986,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EYE_BOTTOM_BOUNDARY_VALUE = 23;
       /**
+       *
+       *
        * <pre>
        * Right eye, left corner.
        * </pre>
@@ -833,6 +996,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EYE_LEFT_CORNER_VALUE = 24;
       /**
+       *
+       *
        * <pre>
        * Left eyebrow, upper midpoint.
        * </pre>
@@ -841,6 +1006,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EYEBROW_UPPER_MIDPOINT_VALUE = 25;
       /**
+       *
+       *
        * <pre>
        * Right eyebrow, upper midpoint.
        * </pre>
@@ -849,6 +1016,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EYEBROW_UPPER_MIDPOINT_VALUE = 26;
       /**
+       *
+       *
        * <pre>
        * Left ear tragion.
        * </pre>
@@ -857,6 +1026,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EAR_TRAGION_VALUE = 27;
       /**
+       *
+       *
        * <pre>
        * Right ear tragion.
        * </pre>
@@ -865,6 +1036,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EAR_TRAGION_VALUE = 28;
       /**
+       *
+       *
        * <pre>
        * Left eye pupil.
        * </pre>
@@ -873,6 +1046,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LEFT_EYE_PUPIL_VALUE = 29;
       /**
+       *
+       *
        * <pre>
        * Right eye pupil.
        * </pre>
@@ -881,6 +1056,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int RIGHT_EYE_PUPIL_VALUE = 30;
       /**
+       *
+       *
        * <pre>
        * Forehead glabella.
        * </pre>
@@ -889,6 +1066,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int FOREHEAD_GLABELLA_VALUE = 31;
       /**
+       *
+       *
        * <pre>
        * Chin gnathion.
        * </pre>
@@ -897,6 +1076,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int CHIN_GNATHION_VALUE = 32;
       /**
+       *
+       *
        * <pre>
        * Chin left gonion.
        * </pre>
@@ -905,6 +1086,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int CHIN_LEFT_GONION_VALUE = 33;
       /**
+       *
+       *
        * <pre>
        * Chin right gonion.
        * </pre>
@@ -912,7 +1095,6 @@ private static final long serialVersionUID = 0L;
        * <code>CHIN_RIGHT_GONION = 34;</code>
        */
       public static final int CHIN_RIGHT_GONION_VALUE = 34;
-
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -922,9 +1104,7 @@ private static final long serialVersionUID = 0L;
         return value;
       }
 
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static Type valueOf(int value) {
         return forNumber(value);
@@ -932,77 +1112,111 @@ private static final long serialVersionUID = 0L;
 
       public static Type forNumber(int value) {
         switch (value) {
-          case 0: return UNKNOWN_LANDMARK;
-          case 1: return LEFT_EYE;
-          case 2: return RIGHT_EYE;
-          case 3: return LEFT_OF_LEFT_EYEBROW;
-          case 4: return RIGHT_OF_LEFT_EYEBROW;
-          case 5: return LEFT_OF_RIGHT_EYEBROW;
-          case 6: return RIGHT_OF_RIGHT_EYEBROW;
-          case 7: return MIDPOINT_BETWEEN_EYES;
-          case 8: return NOSE_TIP;
-          case 9: return UPPER_LIP;
-          case 10: return LOWER_LIP;
-          case 11: return MOUTH_LEFT;
-          case 12: return MOUTH_RIGHT;
-          case 13: return MOUTH_CENTER;
-          case 14: return NOSE_BOTTOM_RIGHT;
-          case 15: return NOSE_BOTTOM_LEFT;
-          case 16: return NOSE_BOTTOM_CENTER;
-          case 17: return LEFT_EYE_TOP_BOUNDARY;
-          case 18: return LEFT_EYE_RIGHT_CORNER;
-          case 19: return LEFT_EYE_BOTTOM_BOUNDARY;
-          case 20: return LEFT_EYE_LEFT_CORNER;
-          case 21: return RIGHT_EYE_TOP_BOUNDARY;
-          case 22: return RIGHT_EYE_RIGHT_CORNER;
-          case 23: return RIGHT_EYE_BOTTOM_BOUNDARY;
-          case 24: return RIGHT_EYE_LEFT_CORNER;
-          case 25: return LEFT_EYEBROW_UPPER_MIDPOINT;
-          case 26: return RIGHT_EYEBROW_UPPER_MIDPOINT;
-          case 27: return LEFT_EAR_TRAGION;
-          case 28: return RIGHT_EAR_TRAGION;
-          case 29: return LEFT_EYE_PUPIL;
-          case 30: return RIGHT_EYE_PUPIL;
-          case 31: return FOREHEAD_GLABELLA;
-          case 32: return CHIN_GNATHION;
-          case 33: return CHIN_LEFT_GONION;
-          case 34: return CHIN_RIGHT_GONION;
-          default: return null;
+          case 0:
+            return UNKNOWN_LANDMARK;
+          case 1:
+            return LEFT_EYE;
+          case 2:
+            return RIGHT_EYE;
+          case 3:
+            return LEFT_OF_LEFT_EYEBROW;
+          case 4:
+            return RIGHT_OF_LEFT_EYEBROW;
+          case 5:
+            return LEFT_OF_RIGHT_EYEBROW;
+          case 6:
+            return RIGHT_OF_RIGHT_EYEBROW;
+          case 7:
+            return MIDPOINT_BETWEEN_EYES;
+          case 8:
+            return NOSE_TIP;
+          case 9:
+            return UPPER_LIP;
+          case 10:
+            return LOWER_LIP;
+          case 11:
+            return MOUTH_LEFT;
+          case 12:
+            return MOUTH_RIGHT;
+          case 13:
+            return MOUTH_CENTER;
+          case 14:
+            return NOSE_BOTTOM_RIGHT;
+          case 15:
+            return NOSE_BOTTOM_LEFT;
+          case 16:
+            return NOSE_BOTTOM_CENTER;
+          case 17:
+            return LEFT_EYE_TOP_BOUNDARY;
+          case 18:
+            return LEFT_EYE_RIGHT_CORNER;
+          case 19:
+            return LEFT_EYE_BOTTOM_BOUNDARY;
+          case 20:
+            return LEFT_EYE_LEFT_CORNER;
+          case 21:
+            return RIGHT_EYE_TOP_BOUNDARY;
+          case 22:
+            return RIGHT_EYE_RIGHT_CORNER;
+          case 23:
+            return RIGHT_EYE_BOTTOM_BOUNDARY;
+          case 24:
+            return RIGHT_EYE_LEFT_CORNER;
+          case 25:
+            return LEFT_EYEBROW_UPPER_MIDPOINT;
+          case 26:
+            return RIGHT_EYEBROW_UPPER_MIDPOINT;
+          case 27:
+            return LEFT_EAR_TRAGION;
+          case 28:
+            return RIGHT_EAR_TRAGION;
+          case 29:
+            return LEFT_EYE_PUPIL;
+          case 30:
+            return RIGHT_EYE_PUPIL;
+          case 31:
+            return FOREHEAD_GLABELLA;
+          case 32:
+            return CHIN_GNATHION;
+          case 33:
+            return CHIN_LEFT_GONION;
+          case 34:
+            return CHIN_RIGHT_GONION;
+          default:
+            return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
+      public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
         return internalValueMap;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Type> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.forNumber(number);
-              }
-            };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
         return getDescriptor().getValues().get(ordinal());
       }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
         return getDescriptor();
       }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDescriptor().getEnumTypes().get(0);
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDescriptor()
+            .getEnumTypes()
+            .get(0);
       }
 
       private static final Type[] VALUES = values();
 
-      public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {
           return UNRECOGNIZED;
@@ -1022,6 +1236,8 @@ private static final long serialVersionUID = 0L;
     public static final int TYPE_FIELD_NUMBER = 3;
     private int type_;
     /**
+     *
+     *
      * <pre>
      * Face landmark type.
      * </pre>
@@ -1032,6 +1248,8 @@ private static final long serialVersionUID = 0L;
       return type_;
     }
     /**
+     *
+     *
      * <pre>
      * Face landmark type.
      * </pre>
@@ -1040,13 +1258,18 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result = com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.valueOf(type_);
-      return result == null ? com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNRECOGNIZED : result;
+      com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result =
+          com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.valueOf(type_);
+      return result == null
+          ? com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNRECOGNIZED
+          : result;
     }
 
     public static final int POSITION_FIELD_NUMBER = 4;
     private com.google.cloud.vision.v1.Position position_;
     /**
+     *
+     *
      * <pre>
      * Face landmark position.
      * </pre>
@@ -1057,6 +1280,8 @@ private static final long serialVersionUID = 0L;
       return position_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Face landmark position.
      * </pre>
@@ -1064,9 +1289,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Position position = 4;</code>
      */
     public com.google.cloud.vision.v1.Position getPosition() {
-      return position_ == null ? com.google.cloud.vision.v1.Position.getDefaultInstance() : position_;
+      return position_ == null
+          ? com.google.cloud.vision.v1.Position.getDefaultInstance()
+          : position_;
     }
     /**
+     *
+     *
      * <pre>
      * Face landmark position.
      * </pre>
@@ -1078,6 +1307,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1089,9 +1319,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (type_ != com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNKNOWN_LANDMARK.getNumber()) {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (type_
+          != com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNKNOWN_LANDMARK.getNumber()) {
         output.writeEnum(3, type_);
       }
       if (position_ != null) {
@@ -1106,13 +1336,12 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNKNOWN_LANDMARK.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, type_);
+      if (type_
+          != com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNKNOWN_LANDMARK.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, type_);
       }
       if (position_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getPosition());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPosition());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1122,19 +1351,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.vision.v1.FaceAnnotation.Landmark)) {
         return super.equals(obj);
       }
-      com.google.cloud.vision.v1.FaceAnnotation.Landmark other = (com.google.cloud.vision.v1.FaceAnnotation.Landmark) obj;
+      com.google.cloud.vision.v1.FaceAnnotation.Landmark other =
+          (com.google.cloud.vision.v1.FaceAnnotation.Landmark) obj;
 
       boolean result = true;
       result = result && type_ == other.type_;
       result = result && (hasPosition() == other.hasPosition());
       if (hasPosition()) {
-        result = result && getPosition()
-            .equals(other.getPosition());
+        result = result && getPosition().equals(other.getPosition());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -1159,87 +1388,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.vision.v1.FaceAnnotation.Landmark parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.cloud.vision.v1.FaceAnnotation.Landmark prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1249,27 +1484,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * A face-specific landmark (for example, a face feature).
      * </pre>
      *
      * Protobuf type {@code google.cloud.vision.v1.FaceAnnotation.Landmark}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.FaceAnnotation.Landmark)
         com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1.ImageAnnotatorProto
+            .internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_fieldAccessorTable
+        return com.google.cloud.vision.v1.ImageAnnotatorProto
+            .internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.vision.v1.FaceAnnotation.Landmark.class, com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder.class);
+                com.google.cloud.vision.v1.FaceAnnotation.Landmark.class,
+                com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder.class);
       }
 
       // Construct using com.google.cloud.vision.v1.FaceAnnotation.Landmark.newBuilder()
@@ -1277,16 +1517,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1302,9 +1541,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1.ImageAnnotatorProto
+            .internal_static_google_cloud_vision_v1_FaceAnnotation_Landmark_descriptor;
       }
 
       @java.lang.Override
@@ -1323,7 +1562,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.cloud.vision.v1.FaceAnnotation.Landmark buildPartial() {
-        com.google.cloud.vision.v1.FaceAnnotation.Landmark result = new com.google.cloud.vision.v1.FaceAnnotation.Landmark(this);
+        com.google.cloud.vision.v1.FaceAnnotation.Landmark result =
+            new com.google.cloud.vision.v1.FaceAnnotation.Landmark(this);
         result.type_ = type_;
         if (positionBuilder_ == null) {
           result.position_ = position_;
@@ -1338,38 +1578,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1.FaceAnnotation.Landmark) {
-          return mergeFrom((com.google.cloud.vision.v1.FaceAnnotation.Landmark)other);
+          return mergeFrom((com.google.cloud.vision.v1.FaceAnnotation.Landmark) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1377,7 +1620,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.cloud.vision.v1.FaceAnnotation.Landmark other) {
-        if (other == com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDefaultInstance()) return this;
+        if (other == com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDefaultInstance())
+          return this;
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -1403,7 +1647,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.vision.v1.FaceAnnotation.Landmark) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.vision.v1.FaceAnnotation.Landmark) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1415,6 +1660,8 @@ private static final long serialVersionUID = 0L;
 
       private int type_ = 0;
       /**
+       *
+       *
        * <pre>
        * Face landmark type.
        * </pre>
@@ -1425,6 +1672,8 @@ private static final long serialVersionUID = 0L;
         return type_;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark type.
        * </pre>
@@ -1437,6 +1686,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark type.
        * </pre>
@@ -1445,10 +1696,15 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type getType() {
         @SuppressWarnings("deprecation")
-        com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result = com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.valueOf(type_);
-        return result == null ? com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNRECOGNIZED : result;
+        com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type result =
+            com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.valueOf(type_);
+        return result == null
+            ? com.google.cloud.vision.v1.FaceAnnotation.Landmark.Type.UNRECOGNIZED
+            : result;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark type.
        * </pre>
@@ -1459,12 +1715,14 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         type_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark type.
        * </pre>
@@ -1472,7 +1730,7 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.vision.v1.FaceAnnotation.Landmark.Type type = 3;</code>
        */
       public Builder clearType() {
-        
+
         type_ = 0;
         onChanged();
         return this;
@@ -1480,8 +1738,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.cloud.vision.v1.Position position_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.vision.v1.Position, com.google.cloud.vision.v1.Position.Builder, com.google.cloud.vision.v1.PositionOrBuilder> positionBuilder_;
+              com.google.cloud.vision.v1.Position,
+              com.google.cloud.vision.v1.Position.Builder,
+              com.google.cloud.vision.v1.PositionOrBuilder>
+          positionBuilder_;
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1492,6 +1755,8 @@ private static final long serialVersionUID = 0L;
         return positionBuilder_ != null || position_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1500,12 +1765,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.cloud.vision.v1.Position getPosition() {
         if (positionBuilder_ == null) {
-          return position_ == null ? com.google.cloud.vision.v1.Position.getDefaultInstance() : position_;
+          return position_ == null
+              ? com.google.cloud.vision.v1.Position.getDefaultInstance()
+              : position_;
         } else {
           return positionBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1526,14 +1795,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
        *
        * <code>.google.cloud.vision.v1.Position position = 4;</code>
        */
-      public Builder setPosition(
-          com.google.cloud.vision.v1.Position.Builder builderForValue) {
+      public Builder setPosition(com.google.cloud.vision.v1.Position.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
           onChanged();
@@ -1544,6 +1814,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1554,7 +1826,9 @@ private static final long serialVersionUID = 0L;
         if (positionBuilder_ == null) {
           if (position_ != null) {
             position_ =
-              com.google.cloud.vision.v1.Position.newBuilder(position_).mergeFrom(value).buildPartial();
+                com.google.cloud.vision.v1.Position.newBuilder(position_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             position_ = value;
           }
@@ -1566,6 +1840,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1584,6 +1860,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1591,11 +1869,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.vision.v1.Position position = 4;</code>
        */
       public com.google.cloud.vision.v1.Position.Builder getPositionBuilder() {
-        
+
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1606,11 +1886,14 @@ private static final long serialVersionUID = 0L;
         if (positionBuilder_ != null) {
           return positionBuilder_.getMessageOrBuilder();
         } else {
-          return position_ == null ?
-              com.google.cloud.vision.v1.Position.getDefaultInstance() : position_;
+          return position_ == null
+              ? com.google.cloud.vision.v1.Position.getDefaultInstance()
+              : position_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Face landmark position.
        * </pre>
@@ -1618,18 +1901,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.vision.v1.Position position = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.vision.v1.Position, com.google.cloud.vision.v1.Position.Builder, com.google.cloud.vision.v1.PositionOrBuilder> 
+              com.google.cloud.vision.v1.Position,
+              com.google.cloud.vision.v1.Position.Builder,
+              com.google.cloud.vision.v1.PositionOrBuilder>
           getPositionFieldBuilder() {
         if (positionBuilder_ == null) {
-          positionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.vision.v1.Position, com.google.cloud.vision.v1.Position.Builder, com.google.cloud.vision.v1.PositionOrBuilder>(
-                  getPosition(),
-                  getParentForChildren(),
-                  isClean());
+          positionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.vision.v1.Position,
+                  com.google.cloud.vision.v1.Position.Builder,
+                  com.google.cloud.vision.v1.PositionOrBuilder>(
+                  getPosition(), getParentForChildren(), isClean());
           position_ = null;
         }
         return positionBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1642,12 +1929,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.FaceAnnotation.Landmark)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.FaceAnnotation.Landmark)
     private static final com.google.cloud.vision.v1.FaceAnnotation.Landmark DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.vision.v1.FaceAnnotation.Landmark();
     }
@@ -1656,16 +1943,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Landmark>
-        PARSER = new com.google.protobuf.AbstractParser<Landmark>() {
-      @java.lang.Override
-      public Landmark parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Landmark(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Landmark> PARSER =
+        new com.google.protobuf.AbstractParser<Landmark>() {
+          @java.lang.Override
+          public Landmark parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Landmark(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Landmark> parser() {
       return PARSER;
@@ -1680,13 +1967,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1.FaceAnnotation.Landmark getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the face. The coordinates of the bounding box
    * are in the original image's scale, as returned in `ImageParams`.
@@ -1703,6 +1991,8 @@ private static final long serialVersionUID = 0L;
     return boundingPoly_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the face. The coordinates of the bounding box
    * are in the original image's scale, as returned in `ImageParams`.
@@ -1716,9 +2006,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
    */
   public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
-    return boundingPoly_ == null ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : boundingPoly_;
+    return boundingPoly_ == null
+        ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+        : boundingPoly_;
   }
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the face. The coordinates of the bounding box
    * are in the original image's scale, as returned in `ImageParams`.
@@ -1738,6 +2032,8 @@ private static final long serialVersionUID = 0L;
   public static final int FD_BOUNDING_POLY_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1.BoundingPoly fdBoundingPoly_;
   /**
+   *
+   *
    * <pre>
    * The `fd_bounding_poly` bounding polygon is tighter than the
    * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -1753,6 +2049,8 @@ private static final long serialVersionUID = 0L;
     return fdBoundingPoly_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The `fd_bounding_poly` bounding polygon is tighter than the
    * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -1765,9 +2063,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
    */
   public com.google.cloud.vision.v1.BoundingPoly getFdBoundingPoly() {
-    return fdBoundingPoly_ == null ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : fdBoundingPoly_;
+    return fdBoundingPoly_ == null
+        ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+        : fdBoundingPoly_;
   }
   /**
+   *
+   *
    * <pre>
    * The `fd_bounding_poly` bounding polygon is tighter than the
    * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -1786,6 +2088,8 @@ private static final long serialVersionUID = 0L;
   public static final int LANDMARKS_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.vision.v1.FaceAnnotation.Landmark> landmarks_;
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
@@ -1796,17 +2100,21 @@ private static final long serialVersionUID = 0L;
     return landmarks_;
   }
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>
       getLandmarksOrBuilderList() {
     return landmarks_;
   }
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
@@ -1817,6 +2125,8 @@ private static final long serialVersionUID = 0L;
     return landmarks_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
@@ -1827,6 +2137,8 @@ private static final long serialVersionUID = 0L;
     return landmarks_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
@@ -1841,6 +2153,8 @@ private static final long serialVersionUID = 0L;
   public static final int ROLL_ANGLE_FIELD_NUMBER = 4;
   private float rollAngle_;
   /**
+   *
+   *
    * <pre>
    * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
    * of the face relative to the image vertical about the axis perpendicular to
@@ -1856,6 +2170,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAN_ANGLE_FIELD_NUMBER = 5;
   private float panAngle_;
   /**
+   *
+   *
    * <pre>
    * Yaw angle, which indicates the leftward/rightward angle that the face is
    * pointing relative to the vertical plane perpendicular to the image. Range
@@ -1871,6 +2187,8 @@ private static final long serialVersionUID = 0L;
   public static final int TILT_ANGLE_FIELD_NUMBER = 6;
   private float tiltAngle_;
   /**
+   *
+   *
    * <pre>
    * Pitch angle, which indicates the upwards/downwards angle that the face is
    * pointing relative to the image's horizontal plane. Range [-180,180].
@@ -1885,6 +2203,8 @@ private static final long serialVersionUID = 0L;
   public static final int DETECTION_CONFIDENCE_FIELD_NUMBER = 7;
   private float detectionConfidence_;
   /**
+   *
+   *
    * <pre>
    * Detection confidence. Range [0, 1].
    * </pre>
@@ -1898,6 +2218,8 @@ private static final long serialVersionUID = 0L;
   public static final int LANDMARKING_CONFIDENCE_FIELD_NUMBER = 8;
   private float landmarkingConfidence_;
   /**
+   *
+   *
    * <pre>
    * Face landmarking confidence. Range [0, 1].
    * </pre>
@@ -1911,6 +2233,8 @@ private static final long serialVersionUID = 0L;
   public static final int JOY_LIKELIHOOD_FIELD_NUMBER = 9;
   private int joyLikelihood_;
   /**
+   *
+   *
    * <pre>
    * Joy likelihood.
    * </pre>
@@ -1921,6 +2245,8 @@ private static final long serialVersionUID = 0L;
     return joyLikelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Joy likelihood.
    * </pre>
@@ -1929,13 +2255,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(joyLikelihood_);
+    com.google.cloud.vision.v1.Likelihood result =
+        com.google.cloud.vision.v1.Likelihood.valueOf(joyLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int SORROW_LIKELIHOOD_FIELD_NUMBER = 10;
   private int sorrowLikelihood_;
   /**
+   *
+   *
    * <pre>
    * Sorrow likelihood.
    * </pre>
@@ -1946,6 +2275,8 @@ private static final long serialVersionUID = 0L;
     return sorrowLikelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Sorrow likelihood.
    * </pre>
@@ -1954,13 +2285,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(sorrowLikelihood_);
+    com.google.cloud.vision.v1.Likelihood result =
+        com.google.cloud.vision.v1.Likelihood.valueOf(sorrowLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int ANGER_LIKELIHOOD_FIELD_NUMBER = 11;
   private int angerLikelihood_;
   /**
+   *
+   *
    * <pre>
    * Anger likelihood.
    * </pre>
@@ -1971,6 +2305,8 @@ private static final long serialVersionUID = 0L;
     return angerLikelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Anger likelihood.
    * </pre>
@@ -1979,13 +2315,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(angerLikelihood_);
+    com.google.cloud.vision.v1.Likelihood result =
+        com.google.cloud.vision.v1.Likelihood.valueOf(angerLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int SURPRISE_LIKELIHOOD_FIELD_NUMBER = 12;
   private int surpriseLikelihood_;
   /**
+   *
+   *
    * <pre>
    * Surprise likelihood.
    * </pre>
@@ -1996,6 +2335,8 @@ private static final long serialVersionUID = 0L;
     return surpriseLikelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Surprise likelihood.
    * </pre>
@@ -2004,13 +2345,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(surpriseLikelihood_);
+    com.google.cloud.vision.v1.Likelihood result =
+        com.google.cloud.vision.v1.Likelihood.valueOf(surpriseLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int UNDER_EXPOSED_LIKELIHOOD_FIELD_NUMBER = 13;
   private int underExposedLikelihood_;
   /**
+   *
+   *
    * <pre>
    * Under-exposed likelihood.
    * </pre>
@@ -2021,6 +2365,8 @@ private static final long serialVersionUID = 0L;
     return underExposedLikelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Under-exposed likelihood.
    * </pre>
@@ -2029,13 +2375,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(underExposedLikelihood_);
+    com.google.cloud.vision.v1.Likelihood result =
+        com.google.cloud.vision.v1.Likelihood.valueOf(underExposedLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int BLURRED_LIKELIHOOD_FIELD_NUMBER = 14;
   private int blurredLikelihood_;
   /**
+   *
+   *
    * <pre>
    * Blurred likelihood.
    * </pre>
@@ -2046,6 +2395,8 @@ private static final long serialVersionUID = 0L;
     return blurredLikelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Blurred likelihood.
    * </pre>
@@ -2054,13 +2405,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(blurredLikelihood_);
+    com.google.cloud.vision.v1.Likelihood result =
+        com.google.cloud.vision.v1.Likelihood.valueOf(blurredLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int HEADWEAR_LIKELIHOOD_FIELD_NUMBER = 15;
   private int headwearLikelihood_;
   /**
+   *
+   *
    * <pre>
    * Headwear likelihood.
    * </pre>
@@ -2071,6 +2425,8 @@ private static final long serialVersionUID = 0L;
     return headwearLikelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Headwear likelihood.
    * </pre>
@@ -2079,11 +2435,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(headwearLikelihood_);
+    com.google.cloud.vision.v1.Likelihood result =
+        com.google.cloud.vision.v1.Likelihood.valueOf(headwearLikelihood_);
     return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -2095,8 +2453,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (boundingPoly_ != null) {
       output.writeMessage(1, getBoundingPoly());
     }
@@ -2152,64 +2509,49 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (boundingPoly_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBoundingPoly());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBoundingPoly());
     }
     if (fdBoundingPoly_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getFdBoundingPoly());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFdBoundingPoly());
     }
     for (int i = 0; i < landmarks_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, landmarks_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, landmarks_.get(i));
     }
     if (rollAngle_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(4, rollAngle_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, rollAngle_);
     }
     if (panAngle_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(5, panAngle_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, panAngle_);
     }
     if (tiltAngle_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(6, tiltAngle_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, tiltAngle_);
     }
     if (detectionConfidence_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(7, detectionConfidence_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, detectionConfidence_);
     }
     if (landmarkingConfidence_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(8, landmarkingConfidence_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, landmarkingConfidence_);
     }
     if (joyLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, joyLikelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, joyLikelihood_);
     }
     if (sorrowLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(10, sorrowLikelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, sorrowLikelihood_);
     }
     if (angerLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(11, angerLikelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, angerLikelihood_);
     }
     if (surpriseLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(12, surpriseLikelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, surpriseLikelihood_);
     }
     if (underExposedLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(13, underExposedLikelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, underExposedLikelihood_);
     }
     if (blurredLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(14, blurredLikelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, blurredLikelihood_);
     }
     if (headwearLikelihood_ != com.google.cloud.vision.v1.Likelihood.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(15, headwearLikelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, headwearLikelihood_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2219,46 +2561,44 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1.FaceAnnotation)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1.FaceAnnotation other = (com.google.cloud.vision.v1.FaceAnnotation) obj;
+    com.google.cloud.vision.v1.FaceAnnotation other =
+        (com.google.cloud.vision.v1.FaceAnnotation) obj;
 
     boolean result = true;
     result = result && (hasBoundingPoly() == other.hasBoundingPoly());
     if (hasBoundingPoly()) {
-      result = result && getBoundingPoly()
-          .equals(other.getBoundingPoly());
+      result = result && getBoundingPoly().equals(other.getBoundingPoly());
     }
     result = result && (hasFdBoundingPoly() == other.hasFdBoundingPoly());
     if (hasFdBoundingPoly()) {
-      result = result && getFdBoundingPoly()
-          .equals(other.getFdBoundingPoly());
+      result = result && getFdBoundingPoly().equals(other.getFdBoundingPoly());
     }
-    result = result && getLandmarksList()
-        .equals(other.getLandmarksList());
-    result = result && (
-        java.lang.Float.floatToIntBits(getRollAngle())
-        == java.lang.Float.floatToIntBits(
-            other.getRollAngle()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getPanAngle())
-        == java.lang.Float.floatToIntBits(
-            other.getPanAngle()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getTiltAngle())
-        == java.lang.Float.floatToIntBits(
-            other.getTiltAngle()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getDetectionConfidence())
-        == java.lang.Float.floatToIntBits(
-            other.getDetectionConfidence()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getLandmarkingConfidence())
-        == java.lang.Float.floatToIntBits(
-            other.getLandmarkingConfidence()));
+    result = result && getLandmarksList().equals(other.getLandmarksList());
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getRollAngle())
+                == java.lang.Float.floatToIntBits(other.getRollAngle()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getPanAngle())
+                == java.lang.Float.floatToIntBits(other.getPanAngle()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getTiltAngle())
+                == java.lang.Float.floatToIntBits(other.getTiltAngle()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getDetectionConfidence())
+                == java.lang.Float.floatToIntBits(other.getDetectionConfidence()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getLandmarkingConfidence())
+                == java.lang.Float.floatToIntBits(other.getLandmarkingConfidence()));
     result = result && joyLikelihood_ == other.joyLikelihood_;
     result = result && sorrowLikelihood_ == other.sorrowLikelihood_;
     result = result && angerLikelihood_ == other.angerLikelihood_;
@@ -2290,20 +2630,15 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getLandmarksList().hashCode();
     }
     hash = (37 * hash) + ROLL_ANGLE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getRollAngle());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getRollAngle());
     hash = (37 * hash) + PAN_ANGLE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getPanAngle());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getPanAngle());
     hash = (37 * hash) + TILT_ANGLE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getTiltAngle());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getTiltAngle());
     hash = (37 * hash) + DETECTION_CONFIDENCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getDetectionConfidence());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getDetectionConfidence());
     hash = (37 * hash) + LANDMARKING_CONFIDENCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getLandmarkingConfidence());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getLandmarkingConfidence());
     hash = (37 * hash) + JOY_LIKELIHOOD_FIELD_NUMBER;
     hash = (53 * hash) + joyLikelihood_;
     hash = (37 * hash) + SORROW_LIKELIHOOD_FIELD_NUMBER;
@@ -2323,118 +2658,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1.FaceAnnotation parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1.FaceAnnotation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.FaceAnnotation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1.FaceAnnotation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A face annotation object contains the results of face detection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.FaceAnnotation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.FaceAnnotation)
       com.google.cloud.vision.v1.FaceAnnotationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_FaceAnnotation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_fieldAccessorTable
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_FaceAnnotation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.FaceAnnotation.class, com.google.cloud.vision.v1.FaceAnnotation.Builder.class);
+              com.google.cloud.vision.v1.FaceAnnotation.class,
+              com.google.cloud.vision.v1.FaceAnnotation.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1.FaceAnnotation.newBuilder()
@@ -2442,17 +2786,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLandmarksFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -2502,9 +2846,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_FaceAnnotation_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_FaceAnnotation_descriptor;
     }
 
     @java.lang.Override
@@ -2523,7 +2867,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1.FaceAnnotation buildPartial() {
-      com.google.cloud.vision.v1.FaceAnnotation result = new com.google.cloud.vision.v1.FaceAnnotation(this);
+      com.google.cloud.vision.v1.FaceAnnotation result =
+          new com.google.cloud.vision.v1.FaceAnnotation(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (boundingPolyBuilder_ == null) {
@@ -2566,38 +2911,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.FaceAnnotation) {
-        return mergeFrom((com.google.cloud.vision.v1.FaceAnnotation)other);
+        return mergeFrom((com.google.cloud.vision.v1.FaceAnnotation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -2630,9 +2976,10 @@ private static final long serialVersionUID = 0L;
             landmarksBuilder_ = null;
             landmarks_ = other.landmarks_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            landmarksBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLandmarksFieldBuilder() : null;
+            landmarksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLandmarksFieldBuilder()
+                    : null;
           } else {
             landmarksBuilder_.addAllMessages(other.landmarks_);
           }
@@ -2702,12 +3049,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.cloud.vision.v1.BoundingPoly boundingPoly_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> boundingPolyBuilder_;
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
+        boundingPolyBuilder_;
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2724,6 +3077,8 @@ private static final long serialVersionUID = 0L;
       return boundingPolyBuilder_ != null || boundingPoly_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2738,12 +3093,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
-        return boundingPoly_ == null ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : boundingPoly_;
+        return boundingPoly_ == null
+            ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+            : boundingPoly_;
       } else {
         return boundingPolyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2770,6 +3129,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2794,6 +3155,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2810,7 +3173,9 @@ private static final long serialVersionUID = 0L;
       if (boundingPolyBuilder_ == null) {
         if (boundingPoly_ != null) {
           boundingPoly_ =
-            com.google.cloud.vision.v1.BoundingPoly.newBuilder(boundingPoly_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1.BoundingPoly.newBuilder(boundingPoly_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           boundingPoly_ = value;
         }
@@ -2822,6 +3187,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2846,6 +3213,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2859,11 +3228,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder getBoundingPolyBuilder() {
-      
+
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2880,11 +3251,14 @@ private static final long serialVersionUID = 0L;
       if (boundingPolyBuilder_ != null) {
         return boundingPolyBuilder_.getMessageOrBuilder();
       } else {
-        return boundingPoly_ == null ?
-            com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : boundingPoly_;
+        return boundingPoly_ == null
+            ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+            : boundingPoly_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the face. The coordinates of the bounding box
      * are in the original image's scale, as returned in `ImageParams`.
@@ -2898,14 +3272,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> 
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         getBoundingPolyFieldBuilder() {
       if (boundingPolyBuilder_ == null) {
-        boundingPolyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
-                getBoundingPoly(),
-                getParentForChildren(),
-                isClean());
+        boundingPolyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1.BoundingPoly,
+                com.google.cloud.vision.v1.BoundingPoly.Builder,
+                com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
+                getBoundingPoly(), getParentForChildren(), isClean());
         boundingPoly_ = null;
       }
       return boundingPolyBuilder_;
@@ -2913,8 +3290,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1.BoundingPoly fdBoundingPoly_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> fdBoundingPolyBuilder_;
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
+        fdBoundingPolyBuilder_;
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -2930,6 +3312,8 @@ private static final long serialVersionUID = 0L;
       return fdBoundingPolyBuilder_ != null || fdBoundingPoly_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -2943,12 +3327,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.BoundingPoly getFdBoundingPoly() {
       if (fdBoundingPolyBuilder_ == null) {
-        return fdBoundingPoly_ == null ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : fdBoundingPoly_;
+        return fdBoundingPoly_ == null
+            ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+            : fdBoundingPoly_;
       } else {
         return fdBoundingPolyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -2974,6 +3362,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -2997,6 +3387,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -3012,7 +3404,9 @@ private static final long serialVersionUID = 0L;
       if (fdBoundingPolyBuilder_ == null) {
         if (fdBoundingPoly_ != null) {
           fdBoundingPoly_ =
-            com.google.cloud.vision.v1.BoundingPoly.newBuilder(fdBoundingPoly_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1.BoundingPoly.newBuilder(fdBoundingPoly_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           fdBoundingPoly_ = value;
         }
@@ -3024,6 +3418,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -3047,6 +3443,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -3059,11 +3457,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder getFdBoundingPolyBuilder() {
-      
+
       onChanged();
       return getFdBoundingPolyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -3079,11 +3479,14 @@ private static final long serialVersionUID = 0L;
       if (fdBoundingPolyBuilder_ != null) {
         return fdBoundingPolyBuilder_.getMessageOrBuilder();
       } else {
-        return fdBoundingPoly_ == null ?
-            com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : fdBoundingPoly_;
+        return fdBoundingPoly_ == null
+            ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+            : fdBoundingPoly_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The `fd_bounding_poly` bounding polygon is tighter than the
      * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -3096,32 +3499,42 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.BoundingPoly fd_bounding_poly = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> 
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         getFdBoundingPolyFieldBuilder() {
       if (fdBoundingPolyBuilder_ == null) {
-        fdBoundingPolyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
-                getFdBoundingPoly(),
-                getParentForChildren(),
-                isClean());
+        fdBoundingPolyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1.BoundingPoly,
+                com.google.cloud.vision.v1.BoundingPoly.Builder,
+                com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
+                getFdBoundingPoly(), getParentForChildren(), isClean());
         fdBoundingPoly_ = null;
       }
       return fdBoundingPolyBuilder_;
     }
 
     private java.util.List<com.google.cloud.vision.v1.FaceAnnotation.Landmark> landmarks_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureLandmarksIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        landmarks_ = new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation.Landmark>(landmarks_);
+        landmarks_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation.Landmark>(landmarks_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.FaceAnnotation.Landmark, com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder, com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder> landmarksBuilder_;
+            com.google.cloud.vision.v1.FaceAnnotation.Landmark,
+            com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder,
+            com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>
+        landmarksBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3136,6 +3549,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3150,6 +3565,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3164,6 +3581,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3185,6 +3604,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3203,6 +3624,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3223,6 +3646,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3244,6 +3669,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3262,6 +3689,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3280,6 +3709,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3290,8 +3721,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1.FaceAnnotation.Landmark> values) {
       if (landmarksBuilder_ == null) {
         ensureLandmarksIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, landmarks_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, landmarks_);
         onChanged();
       } else {
         landmarksBuilder_.addAllMessages(values);
@@ -3299,6 +3729,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3316,6 +3748,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3333,6 +3767,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3344,6 +3780,8 @@ private static final long serialVersionUID = 0L;
       return getLandmarksFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3353,19 +3791,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder getLandmarksOrBuilder(
         int index) {
       if (landmarksBuilder_ == null) {
-        return landmarks_.get(index);  } else {
+        return landmarks_.get(index);
+      } else {
         return landmarksBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder> 
-         getLandmarksOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>
+        getLandmarksOrBuilderList() {
       if (landmarksBuilder_ != null) {
         return landmarksBuilder_.getMessageOrBuilderList();
       } else {
@@ -3373,6 +3814,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3380,10 +3823,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
      */
     public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder addLandmarksBuilder() {
-      return getLandmarksFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDefaultInstance());
+      return getLandmarksFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
@@ -3392,26 +3837,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder addLandmarksBuilder(
         int index) {
-      return getLandmarksFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDefaultInstance());
+      return getLandmarksFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1.FaceAnnotation.Landmark.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Detected face landmarks.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.FaceAnnotation.Landmark landmarks = 3;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder> 
-         getLandmarksBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder>
+        getLandmarksBuilderList() {
       return getLandmarksFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.FaceAnnotation.Landmark, com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder, com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder> 
+            com.google.cloud.vision.v1.FaceAnnotation.Landmark,
+            com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder,
+            com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>
         getLandmarksFieldBuilder() {
       if (landmarksBuilder_ == null) {
-        landmarksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.FaceAnnotation.Landmark, com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder, com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>(
+        landmarksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.FaceAnnotation.Landmark,
+                com.google.cloud.vision.v1.FaceAnnotation.Landmark.Builder,
+                com.google.cloud.vision.v1.FaceAnnotation.LandmarkOrBuilder>(
                 landmarks_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -3421,8 +3875,10 @@ private static final long serialVersionUID = 0L;
       return landmarksBuilder_;
     }
 
-    private float rollAngle_ ;
+    private float rollAngle_;
     /**
+     *
+     *
      * <pre>
      * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
      * of the face relative to the image vertical about the axis perpendicular to
@@ -3435,6 +3891,8 @@ private static final long serialVersionUID = 0L;
       return rollAngle_;
     }
     /**
+     *
+     *
      * <pre>
      * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
      * of the face relative to the image vertical about the axis perpendicular to
@@ -3444,12 +3902,14 @@ private static final long serialVersionUID = 0L;
      * <code>float roll_angle = 4;</code>
      */
     public Builder setRollAngle(float value) {
-      
+
       rollAngle_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
      * of the face relative to the image vertical about the axis perpendicular to
@@ -3459,14 +3919,16 @@ private static final long serialVersionUID = 0L;
      * <code>float roll_angle = 4;</code>
      */
     public Builder clearRollAngle() {
-      
+
       rollAngle_ = 0F;
       onChanged();
       return this;
     }
 
-    private float panAngle_ ;
+    private float panAngle_;
     /**
+     *
+     *
      * <pre>
      * Yaw angle, which indicates the leftward/rightward angle that the face is
      * pointing relative to the vertical plane perpendicular to the image. Range
@@ -3479,6 +3941,8 @@ private static final long serialVersionUID = 0L;
       return panAngle_;
     }
     /**
+     *
+     *
      * <pre>
      * Yaw angle, which indicates the leftward/rightward angle that the face is
      * pointing relative to the vertical plane perpendicular to the image. Range
@@ -3488,12 +3952,14 @@ private static final long serialVersionUID = 0L;
      * <code>float pan_angle = 5;</code>
      */
     public Builder setPanAngle(float value) {
-      
+
       panAngle_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Yaw angle, which indicates the leftward/rightward angle that the face is
      * pointing relative to the vertical plane perpendicular to the image. Range
@@ -3503,14 +3969,16 @@ private static final long serialVersionUID = 0L;
      * <code>float pan_angle = 5;</code>
      */
     public Builder clearPanAngle() {
-      
+
       panAngle_ = 0F;
       onChanged();
       return this;
     }
 
-    private float tiltAngle_ ;
+    private float tiltAngle_;
     /**
+     *
+     *
      * <pre>
      * Pitch angle, which indicates the upwards/downwards angle that the face is
      * pointing relative to the image's horizontal plane. Range [-180,180].
@@ -3522,6 +3990,8 @@ private static final long serialVersionUID = 0L;
       return tiltAngle_;
     }
     /**
+     *
+     *
      * <pre>
      * Pitch angle, which indicates the upwards/downwards angle that the face is
      * pointing relative to the image's horizontal plane. Range [-180,180].
@@ -3530,12 +4000,14 @@ private static final long serialVersionUID = 0L;
      * <code>float tilt_angle = 6;</code>
      */
     public Builder setTiltAngle(float value) {
-      
+
       tiltAngle_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pitch angle, which indicates the upwards/downwards angle that the face is
      * pointing relative to the image's horizontal plane. Range [-180,180].
@@ -3544,14 +4016,16 @@ private static final long serialVersionUID = 0L;
      * <code>float tilt_angle = 6;</code>
      */
     public Builder clearTiltAngle() {
-      
+
       tiltAngle_ = 0F;
       onChanged();
       return this;
     }
 
-    private float detectionConfidence_ ;
+    private float detectionConfidence_;
     /**
+     *
+     *
      * <pre>
      * Detection confidence. Range [0, 1].
      * </pre>
@@ -3562,6 +4036,8 @@ private static final long serialVersionUID = 0L;
       return detectionConfidence_;
     }
     /**
+     *
+     *
      * <pre>
      * Detection confidence. Range [0, 1].
      * </pre>
@@ -3569,12 +4045,14 @@ private static final long serialVersionUID = 0L;
      * <code>float detection_confidence = 7;</code>
      */
     public Builder setDetectionConfidence(float value) {
-      
+
       detectionConfidence_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detection confidence. Range [0, 1].
      * </pre>
@@ -3582,14 +4060,16 @@ private static final long serialVersionUID = 0L;
      * <code>float detection_confidence = 7;</code>
      */
     public Builder clearDetectionConfidence() {
-      
+
       detectionConfidence_ = 0F;
       onChanged();
       return this;
     }
 
-    private float landmarkingConfidence_ ;
+    private float landmarkingConfidence_;
     /**
+     *
+     *
      * <pre>
      * Face landmarking confidence. Range [0, 1].
      * </pre>
@@ -3600,6 +4080,8 @@ private static final long serialVersionUID = 0L;
       return landmarkingConfidence_;
     }
     /**
+     *
+     *
      * <pre>
      * Face landmarking confidence. Range [0, 1].
      * </pre>
@@ -3607,12 +4089,14 @@ private static final long serialVersionUID = 0L;
      * <code>float landmarking_confidence = 8;</code>
      */
     public Builder setLandmarkingConfidence(float value) {
-      
+
       landmarkingConfidence_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Face landmarking confidence. Range [0, 1].
      * </pre>
@@ -3620,7 +4104,7 @@ private static final long serialVersionUID = 0L;
      * <code>float landmarking_confidence = 8;</code>
      */
     public Builder clearLandmarkingConfidence() {
-      
+
       landmarkingConfidence_ = 0F;
       onChanged();
       return this;
@@ -3628,6 +4112,8 @@ private static final long serialVersionUID = 0L;
 
     private int joyLikelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Joy likelihood.
      * </pre>
@@ -3638,6 +4124,8 @@ private static final long serialVersionUID = 0L;
       return joyLikelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Joy likelihood.
      * </pre>
@@ -3650,6 +4138,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Joy likelihood.
      * </pre>
@@ -3658,10 +4148,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.Likelihood getJoyLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(joyLikelihood_);
+      com.google.cloud.vision.v1.Likelihood result =
+          com.google.cloud.vision.v1.Likelihood.valueOf(joyLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Joy likelihood.
      * </pre>
@@ -3672,12 +4165,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       joyLikelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Joy likelihood.
      * </pre>
@@ -3685,7 +4180,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Likelihood joy_likelihood = 9;</code>
      */
     public Builder clearJoyLikelihood() {
-      
+
       joyLikelihood_ = 0;
       onChanged();
       return this;
@@ -3693,6 +4188,8 @@ private static final long serialVersionUID = 0L;
 
     private int sorrowLikelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Sorrow likelihood.
      * </pre>
@@ -3703,6 +4200,8 @@ private static final long serialVersionUID = 0L;
       return sorrowLikelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Sorrow likelihood.
      * </pre>
@@ -3715,6 +4214,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sorrow likelihood.
      * </pre>
@@ -3723,10 +4224,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.Likelihood getSorrowLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(sorrowLikelihood_);
+      com.google.cloud.vision.v1.Likelihood result =
+          com.google.cloud.vision.v1.Likelihood.valueOf(sorrowLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Sorrow likelihood.
      * </pre>
@@ -3737,12 +4241,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       sorrowLikelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sorrow likelihood.
      * </pre>
@@ -3750,7 +4256,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Likelihood sorrow_likelihood = 10;</code>
      */
     public Builder clearSorrowLikelihood() {
-      
+
       sorrowLikelihood_ = 0;
       onChanged();
       return this;
@@ -3758,6 +4264,8 @@ private static final long serialVersionUID = 0L;
 
     private int angerLikelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Anger likelihood.
      * </pre>
@@ -3768,6 +4276,8 @@ private static final long serialVersionUID = 0L;
       return angerLikelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Anger likelihood.
      * </pre>
@@ -3780,6 +4290,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Anger likelihood.
      * </pre>
@@ -3788,10 +4300,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.Likelihood getAngerLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(angerLikelihood_);
+      com.google.cloud.vision.v1.Likelihood result =
+          com.google.cloud.vision.v1.Likelihood.valueOf(angerLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Anger likelihood.
      * </pre>
@@ -3802,12 +4317,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       angerLikelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Anger likelihood.
      * </pre>
@@ -3815,7 +4332,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Likelihood anger_likelihood = 11;</code>
      */
     public Builder clearAngerLikelihood() {
-      
+
       angerLikelihood_ = 0;
       onChanged();
       return this;
@@ -3823,6 +4340,8 @@ private static final long serialVersionUID = 0L;
 
     private int surpriseLikelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Surprise likelihood.
      * </pre>
@@ -3833,6 +4352,8 @@ private static final long serialVersionUID = 0L;
       return surpriseLikelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Surprise likelihood.
      * </pre>
@@ -3845,6 +4366,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Surprise likelihood.
      * </pre>
@@ -3853,10 +4376,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.Likelihood getSurpriseLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(surpriseLikelihood_);
+      com.google.cloud.vision.v1.Likelihood result =
+          com.google.cloud.vision.v1.Likelihood.valueOf(surpriseLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Surprise likelihood.
      * </pre>
@@ -3867,12 +4393,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       surpriseLikelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Surprise likelihood.
      * </pre>
@@ -3880,7 +4408,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Likelihood surprise_likelihood = 12;</code>
      */
     public Builder clearSurpriseLikelihood() {
-      
+
       surpriseLikelihood_ = 0;
       onChanged();
       return this;
@@ -3888,6 +4416,8 @@ private static final long serialVersionUID = 0L;
 
     private int underExposedLikelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Under-exposed likelihood.
      * </pre>
@@ -3898,6 +4428,8 @@ private static final long serialVersionUID = 0L;
       return underExposedLikelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Under-exposed likelihood.
      * </pre>
@@ -3910,6 +4442,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Under-exposed likelihood.
      * </pre>
@@ -3918,10 +4452,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.Likelihood getUnderExposedLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(underExposedLikelihood_);
+      com.google.cloud.vision.v1.Likelihood result =
+          com.google.cloud.vision.v1.Likelihood.valueOf(underExposedLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Under-exposed likelihood.
      * </pre>
@@ -3932,12 +4469,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       underExposedLikelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Under-exposed likelihood.
      * </pre>
@@ -3945,7 +4484,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Likelihood under_exposed_likelihood = 13;</code>
      */
     public Builder clearUnderExposedLikelihood() {
-      
+
       underExposedLikelihood_ = 0;
       onChanged();
       return this;
@@ -3953,6 +4492,8 @@ private static final long serialVersionUID = 0L;
 
     private int blurredLikelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Blurred likelihood.
      * </pre>
@@ -3963,6 +4504,8 @@ private static final long serialVersionUID = 0L;
       return blurredLikelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Blurred likelihood.
      * </pre>
@@ -3975,6 +4518,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Blurred likelihood.
      * </pre>
@@ -3983,10 +4528,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.Likelihood getBlurredLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(blurredLikelihood_);
+      com.google.cloud.vision.v1.Likelihood result =
+          com.google.cloud.vision.v1.Likelihood.valueOf(blurredLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Blurred likelihood.
      * </pre>
@@ -3997,12 +4545,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       blurredLikelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Blurred likelihood.
      * </pre>
@@ -4010,7 +4560,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Likelihood blurred_likelihood = 14;</code>
      */
     public Builder clearBlurredLikelihood() {
-      
+
       blurredLikelihood_ = 0;
       onChanged();
       return this;
@@ -4018,6 +4568,8 @@ private static final long serialVersionUID = 0L;
 
     private int headwearLikelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Headwear likelihood.
      * </pre>
@@ -4028,6 +4580,8 @@ private static final long serialVersionUID = 0L;
       return headwearLikelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Headwear likelihood.
      * </pre>
@@ -4040,6 +4594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Headwear likelihood.
      * </pre>
@@ -4048,10 +4604,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.Likelihood getHeadwearLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1.Likelihood result = com.google.cloud.vision.v1.Likelihood.valueOf(headwearLikelihood_);
+      com.google.cloud.vision.v1.Likelihood result =
+          com.google.cloud.vision.v1.Likelihood.valueOf(headwearLikelihood_);
       return result == null ? com.google.cloud.vision.v1.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Headwear likelihood.
      * </pre>
@@ -4062,12 +4621,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       headwearLikelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Headwear likelihood.
      * </pre>
@@ -4075,14 +4636,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.Likelihood headwear_likelihood = 15;</code>
      */
     public Builder clearHeadwearLikelihood() {
-      
+
       headwearLikelihood_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -4092,12 +4653,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.FaceAnnotation)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.FaceAnnotation)
   private static final com.google.cloud.vision.v1.FaceAnnotation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1.FaceAnnotation();
   }
@@ -4106,16 +4667,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FaceAnnotation>
-      PARSER = new com.google.protobuf.AbstractParser<FaceAnnotation>() {
-    @java.lang.Override
-    public FaceAnnotation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FaceAnnotation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<FaceAnnotation> PARSER =
+      new com.google.protobuf.AbstractParser<FaceAnnotation>() {
+        @java.lang.Override
+        public FaceAnnotation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new FaceAnnotation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<FaceAnnotation> parser() {
     return PARSER;
@@ -4130,6 +4691,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1.FaceAnnotation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

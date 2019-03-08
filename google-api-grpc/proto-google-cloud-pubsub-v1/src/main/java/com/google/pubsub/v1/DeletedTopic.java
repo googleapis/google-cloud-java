@@ -14,7 +14,6 @@
 
 package com.google.pubsub.v1;
 
-import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
@@ -37,16 +36,12 @@ public class DeletedTopic extends TopicName {
     return FIXED_VALUE.equals(value);
   }
 
-  /**
-   * Return a map with a single value FIXED_VALUE keyed on an empty String "".
-   */
+  /** Return a map with a single value FIXED_VALUE keyed on an empty String "". */
   public Map<String, String> getFieldValuesMap() {
     return valueMap;
   }
 
-  /**
-   * Return the FIXED_VALUE if @param fieldName is an empty String "", else return null.
-   */
+  /** Return the FIXED_VALUE if @param fieldName is an empty String "", else return null. */
   public String getFieldValue(String fieldName) {
     return valueMap.get(fieldName);
   }
@@ -56,4 +51,3 @@ public class DeletedTopic extends TopicName {
     return FIXED_VALUE;
   }
 }
-

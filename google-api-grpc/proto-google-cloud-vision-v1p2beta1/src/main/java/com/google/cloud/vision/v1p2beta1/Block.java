@@ -4,21 +4,24 @@
 package com.google.cloud.vision.v1p2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Logical element on the page.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p2beta1.Block}
  */
-public  final class Block extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Block extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p2beta1.Block)
     BlockOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Block.newBuilder() to construct.
   private Block(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Block() {
     paragraphs_ = java.util.Collections.emptyList();
     blockType_ = 0;
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Block(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,66 +52,77 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder subBuilder = null;
-            if (property_ != null) {
-              subBuilder = property_.toBuilder();
-            }
-            property_ = input.readMessage(com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(property_);
-              property_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder subBuilder =
+                  null;
+              if (property_ != null) {
+                subBuilder = property_.toBuilder();
+              }
+              property_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(property_);
+                property_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder subBuilder = null;
-            if (boundingBox_ != null) {
-              subBuilder = boundingBox_.toBuilder();
+              break;
             }
-            boundingBox_ = input.readMessage(com.google.cloud.vision.v1p2beta1.BoundingPoly.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(boundingBox_);
-              boundingBox_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder subBuilder = null;
+              if (boundingBox_ != null) {
+                subBuilder = boundingBox_.toBuilder();
+              }
+              boundingBox_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p2beta1.BoundingPoly.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(boundingBox_);
+                boundingBox_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              paragraphs_ = new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Paragraph>();
-              mutable_bitField0_ |= 0x00000004;
+              break;
             }
-            paragraphs_.add(
-                input.readMessage(com.google.cloud.vision.v1p2beta1.Paragraph.parser(), extensionRegistry));
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            blockType_ = rawValue;
-            break;
-          }
-          case 45: {
-
-            confidence_ = input.readFloat();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                paragraphs_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Paragraph>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              paragraphs_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p2beta1.Paragraph.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              blockType_ = rawValue;
+              break;
+            }
+          case 45:
+            {
+              confidence_ = input.readFloat();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         paragraphs_ = java.util.Collections.unmodifiableList(paragraphs_);
@@ -117,29 +131,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p2beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p2beta1_Block_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p2beta1.TextAnnotationProto
+        .internal_static_google_cloud_vision_v1p2beta1_Block_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p2beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p2beta1_Block_fieldAccessorTable
+    return com.google.cloud.vision.v1p2beta1.TextAnnotationProto
+        .internal_static_google_cloud_vision_v1p2beta1_Block_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p2beta1.Block.class, com.google.cloud.vision.v1p2beta1.Block.Builder.class);
+            com.google.cloud.vision.v1p2beta1.Block.class,
+            com.google.cloud.vision.v1p2beta1.Block.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Type of a block (text, image etc) as identified by OCR.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.vision.v1p2beta1.Block.BlockType}
    */
-  public enum BlockType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum BlockType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unknown block type.
      * </pre>
@@ -148,6 +168,8 @@ private static final long serialVersionUID = 0L;
      */
     UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Regular text block.
      * </pre>
@@ -156,6 +178,8 @@ private static final long serialVersionUID = 0L;
      */
     TEXT(1),
     /**
+     *
+     *
      * <pre>
      * Table block.
      * </pre>
@@ -164,6 +188,8 @@ private static final long serialVersionUID = 0L;
      */
     TABLE(2),
     /**
+     *
+     *
      * <pre>
      * Image block.
      * </pre>
@@ -172,6 +198,8 @@ private static final long serialVersionUID = 0L;
      */
     PICTURE(3),
     /**
+     *
+     *
      * <pre>
      * Horizontal/vertical line box.
      * </pre>
@@ -180,6 +208,8 @@ private static final long serialVersionUID = 0L;
      */
     RULER(4),
     /**
+     *
+     *
      * <pre>
      * Barcode block.
      * </pre>
@@ -191,6 +221,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unknown block type.
      * </pre>
@@ -199,6 +231,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Regular text block.
      * </pre>
@@ -207,6 +241,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TEXT_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Table block.
      * </pre>
@@ -215,6 +251,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TABLE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Image block.
      * </pre>
@@ -223,6 +261,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PICTURE_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Horizontal/vertical line box.
      * </pre>
@@ -231,6 +271,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RULER_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Barcode block.
      * </pre>
@@ -238,7 +280,6 @@ private static final long serialVersionUID = 0L;
      * <code>BARCODE = 5;</code>
      */
     public static final int BARCODE_VALUE = 5;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -248,9 +289,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static BlockType valueOf(int value) {
       return forNumber(value);
@@ -258,48 +297,51 @@ private static final long serialVersionUID = 0L;
 
     public static BlockType forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return TEXT;
-        case 2: return TABLE;
-        case 3: return PICTURE;
-        case 4: return RULER;
-        case 5: return BARCODE;
-        default: return null;
+        case 0:
+          return UNKNOWN;
+        case 1:
+          return TEXT;
+        case 2:
+          return TABLE;
+        case 3:
+          return PICTURE;
+        case 4:
+          return RULER;
+        case 5:
+          return BARCODE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<BlockType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<BlockType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        BlockType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<BlockType>() {
-            public BlockType findValueByNumber(int number) {
-              return BlockType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<BlockType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<BlockType>() {
+          public BlockType findValueByNumber(int number) {
+            return BlockType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.vision.v1p2beta1.Block.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final BlockType[] VALUES = values();
 
-    public static BlockType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static BlockType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -320,6 +362,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property_;
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the block.
    * </pre>
@@ -330,6 +374,8 @@ private static final long serialVersionUID = 0L;
     return property_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the block.
    * </pre>
@@ -337,22 +383,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property = 1;</code>
    */
   public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty getProperty() {
-    return property_ == null ? com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.getDefaultInstance() : property_;
+    return property_ == null
+        ? com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.getDefaultInstance()
+        : property_;
   }
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the block.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property = 1;</code>
    */
-  public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder() {
+  public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder
+      getPropertyOrBuilder() {
     return getProperty();
   }
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1p2beta1.BoundingPoly boundingBox_;
   /**
+   *
+   *
    * <pre>
    * The bounding box for the block.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -377,6 +430,8 @@ private static final long serialVersionUID = 0L;
     return boundingBox_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The bounding box for the block.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -398,9 +453,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p2beta1.BoundingPoly bounding_box = 2;</code>
    */
   public com.google.cloud.vision.v1p2beta1.BoundingPoly getBoundingBox() {
-    return boundingBox_ == null ? com.google.cloud.vision.v1p2beta1.BoundingPoly.getDefaultInstance() : boundingBox_;
+    return boundingBox_ == null
+        ? com.google.cloud.vision.v1p2beta1.BoundingPoly.getDefaultInstance()
+        : boundingBox_;
   }
   /**
+   *
+   *
    * <pre>
    * The bounding box for the block.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -428,6 +487,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARAGRAPHS_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.vision.v1p2beta1.Paragraph> paragraphs_;
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
@@ -438,17 +499,21 @@ private static final long serialVersionUID = 0L;
     return paragraphs_;
   }
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder>
       getParagraphsOrBuilderList() {
     return paragraphs_;
   }
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
@@ -459,6 +524,8 @@ private static final long serialVersionUID = 0L;
     return paragraphs_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
@@ -469,20 +536,23 @@ private static final long serialVersionUID = 0L;
     return paragraphs_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
    */
-  public com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder getParagraphsOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder getParagraphsOrBuilder(int index) {
     return paragraphs_.get(index);
   }
 
   public static final int BLOCK_TYPE_FIELD_NUMBER = 4;
   private int blockType_;
   /**
+   *
+   *
    * <pre>
    * Detected block type (text, image etc) for this block.
    * </pre>
@@ -493,6 +563,8 @@ private static final long serialVersionUID = 0L;
     return blockType_;
   }
   /**
+   *
+   *
    * <pre>
    * Detected block type (text, image etc) for this block.
    * </pre>
@@ -501,13 +573,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1p2beta1.Block.BlockType getBlockType() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1p2beta1.Block.BlockType result = com.google.cloud.vision.v1p2beta1.Block.BlockType.valueOf(blockType_);
+    com.google.cloud.vision.v1p2beta1.Block.BlockType result =
+        com.google.cloud.vision.v1p2beta1.Block.BlockType.valueOf(blockType_);
     return result == null ? com.google.cloud.vision.v1p2beta1.Block.BlockType.UNRECOGNIZED : result;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 5;
   private float confidence_;
   /**
+   *
+   *
    * <pre>
    * Confidence of the OCR results on the block. Range [0, 1].
    * </pre>
@@ -519,6 +594,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -530,8 +606,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (property_ != null) {
       output.writeMessage(1, getProperty());
     }
@@ -557,24 +632,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (property_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getProperty());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProperty());
     }
     if (boundingBox_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getBoundingBox());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getBoundingBox());
     }
     for (int i = 0; i < paragraphs_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, paragraphs_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, paragraphs_.get(i));
     }
     if (blockType_ != com.google.cloud.vision.v1p2beta1.Block.BlockType.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, blockType_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, blockType_);
     }
     if (confidence_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(5, confidence_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, confidence_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -584,7 +654,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p2beta1.Block)) {
       return super.equals(obj);
@@ -594,21 +664,18 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasProperty() == other.hasProperty());
     if (hasProperty()) {
-      result = result && getProperty()
-          .equals(other.getProperty());
+      result = result && getProperty().equals(other.getProperty());
     }
     result = result && (hasBoundingBox() == other.hasBoundingBox());
     if (hasBoundingBox()) {
-      result = result && getBoundingBox()
-          .equals(other.getBoundingBox());
+      result = result && getBoundingBox().equals(other.getBoundingBox());
     }
-    result = result && getParagraphsList()
-        .equals(other.getParagraphsList());
+    result = result && getParagraphsList().equals(other.getParagraphsList());
     result = result && blockType_ == other.blockType_;
-    result = result && (
-        java.lang.Float.floatToIntBits(getConfidence())
-        == java.lang.Float.floatToIntBits(
-            other.getConfidence()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getConfidence())
+                == java.lang.Float.floatToIntBits(other.getConfidence()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -635,125 +702,133 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BLOCK_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + blockType_;
     hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getConfidence());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1p2beta1.Block parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p2beta1.Block parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p2beta1.Block parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Block parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.Block prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Logical element on the page.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p2beta1.Block}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p2beta1.Block)
       com.google.cloud.vision.v1p2beta1.BlockOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p2beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p2beta1_Block_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p2beta1.TextAnnotationProto
+          .internal_static_google_cloud_vision_v1p2beta1_Block_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p2beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p2beta1_Block_fieldAccessorTable
+      return com.google.cloud.vision.v1p2beta1.TextAnnotationProto
+          .internal_static_google_cloud_vision_v1p2beta1_Block_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p2beta1.Block.class, com.google.cloud.vision.v1p2beta1.Block.Builder.class);
+              com.google.cloud.vision.v1p2beta1.Block.class,
+              com.google.cloud.vision.v1p2beta1.Block.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p2beta1.Block.newBuilder()
@@ -761,17 +836,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getParagraphsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -801,9 +876,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p2beta1.TextAnnotationProto.internal_static_google_cloud_vision_v1p2beta1_Block_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p2beta1.TextAnnotationProto
+          .internal_static_google_cloud_vision_v1p2beta1_Block_descriptor;
     }
 
     @java.lang.Override
@@ -822,7 +897,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.Block buildPartial() {
-      com.google.cloud.vision.v1p2beta1.Block result = new com.google.cloud.vision.v1p2beta1.Block(this);
+      com.google.cloud.vision.v1p2beta1.Block result =
+          new com.google.cloud.vision.v1p2beta1.Block(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (propertyBuilder_ == null) {
@@ -855,38 +931,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p2beta1.Block) {
-        return mergeFrom((com.google.cloud.vision.v1p2beta1.Block)other);
+        return mergeFrom((com.google.cloud.vision.v1p2beta1.Block) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -919,9 +996,10 @@ private static final long serialVersionUID = 0L;
             paragraphsBuilder_ = null;
             paragraphs_ = other.paragraphs_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            paragraphsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getParagraphsFieldBuilder() : null;
+            paragraphsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getParagraphsFieldBuilder()
+                    : null;
           } else {
             paragraphsBuilder_.addAllMessages(other.paragraphs_);
           }
@@ -961,12 +1039,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty, com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder, com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder> propertyBuilder_;
+            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty,
+            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder,
+            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder>
+        propertyBuilder_;
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
@@ -977,6 +1061,8 @@ private static final long serialVersionUID = 0L;
       return propertyBuilder_ != null || property_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
@@ -985,19 +1071,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty getProperty() {
       if (propertyBuilder_ == null) {
-        return property_ == null ? com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.getDefaultInstance() : property_;
+        return property_ == null
+            ? com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.getDefaultInstance()
+            : property_;
       } else {
         return propertyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property = 1;</code>
      */
-    public Builder setProperty(com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty value) {
+    public Builder setProperty(
+        com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty value) {
       if (propertyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1011,6 +1102,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
@@ -1029,17 +1122,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property = 1;</code>
      */
-    public Builder mergeProperty(com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty value) {
+    public Builder mergeProperty(
+        com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty value) {
       if (propertyBuilder_ == null) {
         if (property_ != null) {
           property_ =
-            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.newBuilder(property_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.newBuilder(property_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           property_ = value;
         }
@@ -1051,6 +1149,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
@@ -1069,33 +1169,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property = 1;</code>
      */
-    public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder getPropertyBuilder() {
-      
+    public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder
+        getPropertyBuilder() {
+
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property = 1;</code>
      */
-    public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder() {
+    public com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder
+        getPropertyOrBuilder() {
       if (propertyBuilder_ != null) {
         return propertyBuilder_.getMessageOrBuilder();
       } else {
-        return property_ == null ?
-            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.getDefaultInstance() : property_;
+        return property_ == null
+            ? com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.getDefaultInstance()
+            : property_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Additional information detected for the block.
      * </pre>
@@ -1103,14 +1212,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty property = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty, com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder, com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder> 
+            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty,
+            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder,
+            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder>
         getPropertyFieldBuilder() {
       if (propertyBuilder_ == null) {
-        propertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty, com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder, com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder>(
-                getProperty(),
-                getParentForChildren(),
-                isClean());
+        propertyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty,
+                com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty.Builder,
+                com.google.cloud.vision.v1p2beta1.TextAnnotation.TextPropertyOrBuilder>(
+                getProperty(), getParentForChildren(), isClean());
         property_ = null;
       }
       return propertyBuilder_;
@@ -1118,8 +1230,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p2beta1.BoundingPoly boundingBox_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p2beta1.BoundingPoly, com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder, com.google.cloud.vision.v1p2beta1.BoundingPolyOrBuilder> boundingBoxBuilder_;
+            com.google.cloud.vision.v1p2beta1.BoundingPoly,
+            com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1p2beta1.BoundingPolyOrBuilder>
+        boundingBoxBuilder_;
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1144,6 +1261,8 @@ private static final long serialVersionUID = 0L;
       return boundingBoxBuilder_ != null || boundingBox_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1166,12 +1285,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p2beta1.BoundingPoly getBoundingBox() {
       if (boundingBoxBuilder_ == null) {
-        return boundingBox_ == null ? com.google.cloud.vision.v1p2beta1.BoundingPoly.getDefaultInstance() : boundingBox_;
+        return boundingBox_ == null
+            ? com.google.cloud.vision.v1p2beta1.BoundingPoly.getDefaultInstance()
+            : boundingBox_;
       } else {
         return boundingBoxBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1206,6 +1329,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1238,6 +1363,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1262,7 +1389,9 @@ private static final long serialVersionUID = 0L;
       if (boundingBoxBuilder_ == null) {
         if (boundingBox_ != null) {
           boundingBox_ =
-            com.google.cloud.vision.v1p2beta1.BoundingPoly.newBuilder(boundingBox_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p2beta1.BoundingPoly.newBuilder(boundingBox_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           boundingBox_ = value;
         }
@@ -1274,6 +1403,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1306,6 +1437,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1327,11 +1460,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p2beta1.BoundingPoly bounding_box = 2;</code>
      */
     public com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder getBoundingBoxBuilder() {
-      
+
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1356,11 +1491,14 @@ private static final long serialVersionUID = 0L;
       if (boundingBoxBuilder_ != null) {
         return boundingBoxBuilder_.getMessageOrBuilder();
       } else {
-        return boundingBox_ == null ?
-            com.google.cloud.vision.v1p2beta1.BoundingPoly.getDefaultInstance() : boundingBox_;
+        return boundingBox_ == null
+            ? com.google.cloud.vision.v1p2beta1.BoundingPoly.getDefaultInstance()
+            : boundingBox_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The bounding box for the block.
      * The vertices are in the order of top-left, top-right, bottom-right,
@@ -1382,32 +1520,42 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p2beta1.BoundingPoly bounding_box = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p2beta1.BoundingPoly, com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder, com.google.cloud.vision.v1p2beta1.BoundingPolyOrBuilder> 
+            com.google.cloud.vision.v1p2beta1.BoundingPoly,
+            com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1p2beta1.BoundingPolyOrBuilder>
         getBoundingBoxFieldBuilder() {
       if (boundingBoxBuilder_ == null) {
-        boundingBoxBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p2beta1.BoundingPoly, com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder, com.google.cloud.vision.v1p2beta1.BoundingPolyOrBuilder>(
-                getBoundingBox(),
-                getParentForChildren(),
-                isClean());
+        boundingBoxBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p2beta1.BoundingPoly,
+                com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder,
+                com.google.cloud.vision.v1p2beta1.BoundingPolyOrBuilder>(
+                getBoundingBox(), getParentForChildren(), isClean());
         boundingBox_ = null;
       }
       return boundingBoxBuilder_;
     }
 
     private java.util.List<com.google.cloud.vision.v1p2beta1.Paragraph> paragraphs_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureParagraphsIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        paragraphs_ = new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Paragraph>(paragraphs_);
+        paragraphs_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Paragraph>(paragraphs_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p2beta1.Paragraph, com.google.cloud.vision.v1p2beta1.Paragraph.Builder, com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder> paragraphsBuilder_;
+            com.google.cloud.vision.v1p2beta1.Paragraph,
+            com.google.cloud.vision.v1p2beta1.Paragraph.Builder,
+            com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder>
+        paragraphsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1422,6 +1570,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1436,6 +1586,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1450,14 +1602,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
-    public Builder setParagraphs(
-        int index, com.google.cloud.vision.v1p2beta1.Paragraph value) {
+    public Builder setParagraphs(int index, com.google.cloud.vision.v1p2beta1.Paragraph value) {
       if (paragraphsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1471,6 +1624,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1489,6 +1644,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1509,14 +1666,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
-    public Builder addParagraphs(
-        int index, com.google.cloud.vision.v1p2beta1.Paragraph value) {
+    public Builder addParagraphs(int index, com.google.cloud.vision.v1p2beta1.Paragraph value) {
       if (paragraphsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1530,6 +1688,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1548,6 +1708,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1566,6 +1728,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1576,8 +1740,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1p2beta1.Paragraph> values) {
       if (paragraphsBuilder_ == null) {
         ensureParagraphsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, paragraphs_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, paragraphs_);
         onChanged();
       } else {
         paragraphsBuilder_.addAllMessages(values);
@@ -1585,6 +1748,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1602,6 +1767,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1619,39 +1786,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
-    public com.google.cloud.vision.v1p2beta1.Paragraph.Builder getParagraphsBuilder(
-        int index) {
+    public com.google.cloud.vision.v1p2beta1.Paragraph.Builder getParagraphsBuilder(int index) {
       return getParagraphsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
-    public com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder getParagraphsOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder getParagraphsOrBuilder(int index) {
       if (paragraphsBuilder_ == null) {
-        return paragraphs_.get(index);  } else {
+        return paragraphs_.get(index);
+      } else {
         return paragraphsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder> 
-         getParagraphsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder>
+        getParagraphsOrBuilderList() {
       if (paragraphsBuilder_ != null) {
         return paragraphsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1659,6 +1831,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
@@ -1666,38 +1840,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
     public com.google.cloud.vision.v1p2beta1.Paragraph.Builder addParagraphsBuilder() {
-      return getParagraphsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p2beta1.Paragraph.getDefaultInstance());
+      return getParagraphsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p2beta1.Paragraph.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
-    public com.google.cloud.vision.v1p2beta1.Paragraph.Builder addParagraphsBuilder(
-        int index) {
-      return getParagraphsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p2beta1.Paragraph.getDefaultInstance());
+    public com.google.cloud.vision.v1p2beta1.Paragraph.Builder addParagraphsBuilder(int index) {
+      return getParagraphsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1p2beta1.Paragraph.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of paragraphs in this block (if this blocks is of type text).
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p2beta1.Paragraph.Builder> 
-         getParagraphsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p2beta1.Paragraph.Builder>
+        getParagraphsBuilderList() {
       return getParagraphsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p2beta1.Paragraph, com.google.cloud.vision.v1p2beta1.Paragraph.Builder, com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder> 
+            com.google.cloud.vision.v1p2beta1.Paragraph,
+            com.google.cloud.vision.v1p2beta1.Paragraph.Builder,
+            com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder>
         getParagraphsFieldBuilder() {
       if (paragraphsBuilder_ == null) {
-        paragraphsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p2beta1.Paragraph, com.google.cloud.vision.v1p2beta1.Paragraph.Builder, com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder>(
+        paragraphsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p2beta1.Paragraph,
+                com.google.cloud.vision.v1p2beta1.Paragraph.Builder,
+                com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder>(
                 paragraphs_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1709,6 +1892,8 @@ private static final long serialVersionUID = 0L;
 
     private int blockType_ = 0;
     /**
+     *
+     *
      * <pre>
      * Detected block type (text, image etc) for this block.
      * </pre>
@@ -1719,6 +1904,8 @@ private static final long serialVersionUID = 0L;
       return blockType_;
     }
     /**
+     *
+     *
      * <pre>
      * Detected block type (text, image etc) for this block.
      * </pre>
@@ -1731,6 +1918,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected block type (text, image etc) for this block.
      * </pre>
@@ -1739,10 +1928,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p2beta1.Block.BlockType getBlockType() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1p2beta1.Block.BlockType result = com.google.cloud.vision.v1p2beta1.Block.BlockType.valueOf(blockType_);
-      return result == null ? com.google.cloud.vision.v1p2beta1.Block.BlockType.UNRECOGNIZED : result;
+      com.google.cloud.vision.v1p2beta1.Block.BlockType result =
+          com.google.cloud.vision.v1p2beta1.Block.BlockType.valueOf(blockType_);
+      return result == null
+          ? com.google.cloud.vision.v1p2beta1.Block.BlockType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Detected block type (text, image etc) for this block.
      * </pre>
@@ -1753,12 +1947,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       blockType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detected block type (text, image etc) for this block.
      * </pre>
@@ -1766,14 +1962,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p2beta1.Block.BlockType block_type = 4;</code>
      */
     public Builder clearBlockType() {
-      
+
       blockType_ = 0;
       onChanged();
       return this;
     }
 
-    private float confidence_ ;
+    private float confidence_;
     /**
+     *
+     *
      * <pre>
      * Confidence of the OCR results on the block. Range [0, 1].
      * </pre>
@@ -1784,6 +1982,8 @@ private static final long serialVersionUID = 0L;
       return confidence_;
     }
     /**
+     *
+     *
      * <pre>
      * Confidence of the OCR results on the block. Range [0, 1].
      * </pre>
@@ -1791,12 +1991,14 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 5;</code>
      */
     public Builder setConfidence(float value) {
-      
+
       confidence_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Confidence of the OCR results on the block. Range [0, 1].
      * </pre>
@@ -1804,14 +2006,14 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 5;</code>
      */
     public Builder clearConfidence() {
-      
+
       confidence_ = 0F;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1821,12 +2023,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p2beta1.Block)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p2beta1.Block)
   private static final com.google.cloud.vision.v1p2beta1.Block DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p2beta1.Block();
   }
@@ -1835,16 +2037,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Block>
-      PARSER = new com.google.protobuf.AbstractParser<Block>() {
-    @java.lang.Override
-    public Block parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Block(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Block> PARSER =
+      new com.google.protobuf.AbstractParser<Block>() {
+        @java.lang.Override
+        public Block parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Block(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Block> parser() {
     return PARSER;
@@ -1859,6 +2061,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1p2beta1.Block getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

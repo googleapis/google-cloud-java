@@ -72,7 +72,8 @@ public class SubnetworkTest {
   public void testToBuilder() {
     initializeExpectedSubnetwork(8);
     compareSubnetwork(expectedSubnetwork, expectedSubnetwork.toBuilder().build());
-    Subnetwork newSubnetwork = expectedSubnetwork.toBuilder().setDescription("newDescription").build();
+    Subnetwork newSubnetwork =
+        expectedSubnetwork.toBuilder().setDescription("newDescription").build();
     assertEquals("newDescription", newSubnetwork.getDescription());
     newSubnetwork = newSubnetwork.toBuilder().setDescription("description").build();
     compareSubnetwork(expectedSubnetwork, newSubnetwork);
@@ -103,7 +104,8 @@ public class SubnetworkTest {
   @Test
   public void testToAndFromPb() {
     initializeExpectedSubnetwork(8);
-    compareSubnetwork(expectedSubnetwork,
+    compareSubnetwork(
+        expectedSubnetwork,
         Subnetwork.fromPb(serviceMockReturnsOptions, expectedSubnetwork.toPb()));
     Subnetwork subnetwork =
         new Subnetwork.Builder(serviceMockReturnsOptions, SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
@@ -115,9 +117,10 @@ public class SubnetworkTest {
   public void testDeleteOperation() {
     initializeExpectedSubnetwork(2);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     expect(compute.deleteSubnetwork(SUBNETWORK_ID)).andReturn(operation);
     replay(compute);
     initializeSubnetwork();
@@ -139,8 +142,7 @@ public class SubnetworkTest {
     initializeExpectedSubnetwork(1);
     Compute.SubnetworkOption[] expectedOptions = {Compute.SubnetworkOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(compute.getSubnetwork(SUBNETWORK_ID, expectedOptions))
-        .andReturn(expectedSubnetwork);
+    expect(compute.getSubnetwork(SUBNETWORK_ID, expectedOptions)).andReturn(expectedSubnetwork);
     replay(compute);
     initializeSubnetwork();
     assertTrue(subnetwork.exists());

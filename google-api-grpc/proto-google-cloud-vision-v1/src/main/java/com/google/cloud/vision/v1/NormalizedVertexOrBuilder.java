@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface NormalizedVertexOrBuilder extends
+public interface NormalizedVertexOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.NormalizedVertex)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * X coordinate.
    * </pre>
@@ -17,6 +20,8 @@ public interface NormalizedVertexOrBuilder extends
   float getX();
 
   /**
+   *
+   *
    * <pre>
    * Y coordinate.
    * </pre>

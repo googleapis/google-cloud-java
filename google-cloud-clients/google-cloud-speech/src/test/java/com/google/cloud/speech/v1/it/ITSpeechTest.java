@@ -29,20 +29,18 @@ import com.google.common.io.Resources;
 import com.google.common.truth.Truth;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
+import java.net.URL;
+import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-import java.net.URL;
-import java.util.List;
-
 public class ITSpeechTest {
   private static SpeechClient speechClient;
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void setupClass() throws Exception {
@@ -66,7 +64,8 @@ public class ITSpeechTest {
 
   @Test
   public void longrunningRecognize() throws Exception {
-    LongRunningRecognizeResponse response = speechClient.longRunningRecognizeAsync(config(), audio()).get();
+    LongRunningRecognizeResponse response =
+        speechClient.longRunningRecognizeAsync(config(), audio()).get();
 
     Truth.assertThat(response.getResultsCount()).isGreaterThan(0);
     Truth.assertThat(response.getResults(0).getAlternativesCount()).isGreaterThan(0);
@@ -76,11 +75,11 @@ public class ITSpeechTest {
 
   @Test
   public void streamingRecognize() throws Exception {
-    byte[] audioBytes = Resources.toByteArray(new URL("https://storage.googleapis.com/gapic-toolkit/hello.flac"));
+    byte[] audioBytes =
+        Resources.toByteArray(new URL("https://storage.googleapis.com/gapic-toolkit/hello.flac"));
 
-    StreamingRecognitionConfig streamingConfig = StreamingRecognitionConfig.newBuilder()
-        .setConfig(config())
-        .build();
+    StreamingRecognitionConfig streamingConfig =
+        StreamingRecognitionConfig.newBuilder().setConfig(config()).build();
 
     ResponseApiStreamingObserver<StreamingRecognizeResponse> responseObserver =
         new ResponseApiStreamingObserver<>();
@@ -89,14 +88,14 @@ public class ITSpeechTest {
         speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver);
 
     // The first request must **only** contain the audio configuration:
-    requestObserver.onNext(StreamingRecognizeRequest.newBuilder()
-        .setStreamingConfig(streamingConfig)
-        .build());
+    requestObserver.onNext(
+        StreamingRecognizeRequest.newBuilder().setStreamingConfig(streamingConfig).build());
 
     // Subsequent requests must **only** contain the audio data.
-    requestObserver.onNext(StreamingRecognizeRequest.newBuilder()
-        .setAudioContent(ByteString.copyFrom(audioBytes))
-        .build());
+    requestObserver.onNext(
+        StreamingRecognizeRequest.newBuilder()
+            .setAudioContent(ByteString.copyFrom(audioBytes))
+            .build());
 
     // Mark transmission as completed after sending the data.
     requestObserver.onCompleted();

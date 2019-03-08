@@ -3,20 +3,24 @@
 
 package com.google.firestore.v1beta1;
 
-public interface ListCollectionIdsResponseOrBuilder extends
+public interface ListCollectionIdsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.ListCollectionIdsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The collection ids.
    * </pre>
    *
    * <code>repeated string collection_ids = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getCollectionIdsList();
+  java.util.List<java.lang.String> getCollectionIdsList();
   /**
+   *
+   *
    * <pre>
    * The collection ids.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListCollectionIdsResponseOrBuilder extends
    */
   int getCollectionIdsCount();
   /**
+   *
+   *
    * <pre>
    * The collection ids.
    * </pre>
@@ -33,16 +39,19 @@ public interface ListCollectionIdsResponseOrBuilder extends
    */
   java.lang.String getCollectionIds(int index);
   /**
+   *
+   *
    * <pre>
    * The collection ids.
    * </pre>
    *
    * <code>repeated string collection_ids = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getCollectionIdsBytes(int index);
+  com.google.protobuf.ByteString getCollectionIdsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * A page token that may be used to continue the list.
    * </pre>
@@ -51,12 +60,13 @@ public interface ListCollectionIdsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A page token that may be used to continue the list.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

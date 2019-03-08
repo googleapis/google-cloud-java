@@ -77,7 +77,6 @@ public final class StringValue extends Value<String> {
     return new StringValue(value);
   }
 
-
   public static Builder newBuilder(String value) {
     return new Builder().set(value);
   }

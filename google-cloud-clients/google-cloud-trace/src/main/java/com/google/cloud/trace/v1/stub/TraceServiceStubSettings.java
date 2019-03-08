@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,7 +217,9 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
 
             @Override
             public Iterable<Trace> extractResources(ListTracesResponse payload) {
-              return payload.getTracesList();
+              return payload.getTracesList() != null
+                  ? payload.getTracesList()
+                  : ImmutableList.<Trace>of();
             }
           };
 

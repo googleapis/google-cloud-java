@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface AcceleratorConfigOrBuilder extends
+public interface AcceleratorConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.AcceleratorConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The number of the accelerator cards exposed to an instance.
    * </pre>
@@ -17,6 +20,8 @@ public interface AcceleratorConfigOrBuilder extends
   long getAcceleratorCount();
 
   /**
+   *
+   *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
    * [here](/compute/docs/gpus/#Introduction)
@@ -26,6 +31,8 @@ public interface AcceleratorConfigOrBuilder extends
    */
   java.lang.String getAcceleratorType();
   /**
+   *
+   *
    * <pre>
    * The accelerator type resource name. List of supported accelerators
    * [here](/compute/docs/gpus/#Introduction)
@@ -33,6 +40,5 @@ public interface AcceleratorConfigOrBuilder extends
    *
    * <code>string accelerator_type = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAcceleratorTypeBytes();
+  com.google.protobuf.ByteString getAcceleratorTypeBytes();
 }

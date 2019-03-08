@@ -3,20 +3,24 @@
 
 package com.google.container.v1;
 
-public interface ListOperationsResponseOrBuilder extends
+public interface ListOperationsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.ListOperationsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
-  java.util.List<com.google.container.v1.Operation> 
-      getOperationsList();
+  java.util.List<com.google.container.v1.Operation> getOperationsList();
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListOperationsResponseOrBuilder extends
    */
   com.google.container.v1.Operation getOperations(int index);
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListOperationsResponseOrBuilder extends
    */
   int getOperationsCount();
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
-  java.util.List<? extends com.google.container.v1.OperationOrBuilder> 
-      getOperationsOrBuilderList();
+  java.util.List<? extends com.google.container.v1.OperationOrBuilder> getOperationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of operations in the project in the specified zone.
    * </pre>
    *
    * <code>repeated .google.container.v1.Operation operations = 1;</code>
    */
-  com.google.container.v1.OperationOrBuilder getOperationsOrBuilder(
-      int index);
+  com.google.container.v1.OperationOrBuilder getOperationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -59,9 +69,10 @@ public interface ListOperationsResponseOrBuilder extends
    *
    * <code>repeated string missing_zones = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getMissingZonesList();
+  java.util.List<java.lang.String> getMissingZonesList();
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -71,6 +82,8 @@ public interface ListOperationsResponseOrBuilder extends
    */
   int getMissingZonesCount();
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -80,6 +93,8 @@ public interface ListOperationsResponseOrBuilder extends
    */
   java.lang.String getMissingZones(int index);
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of operations returned
    * may be missing the operations from those zones.
@@ -87,6 +102,5 @@ public interface ListOperationsResponseOrBuilder extends
    *
    * <code>repeated string missing_zones = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getMissingZonesBytes(int index);
+  com.google.protobuf.ByteString getMissingZonesBytes(int index);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,12 +24,14 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A Managed Instance resource. */
 public final class ManagedInstance implements ApiMessage {
   private final String currentAction;
   private final String id;
   private final String instance;
   private final String instanceStatus;
   private final ManagedInstanceLastAttempt lastAttempt;
+  private final ManagedInstanceVersion version;
 
   private ManagedInstance() {
     this.currentAction = null;
@@ -37,6 +39,7 @@ public final class ManagedInstance implements ApiMessage {
     this.instance = null;
     this.instanceStatus = null;
     this.lastAttempt = null;
+    this.version = null;
   }
 
   private ManagedInstance(
@@ -44,30 +47,35 @@ public final class ManagedInstance implements ApiMessage {
       String id,
       String instance,
       String instanceStatus,
-      ManagedInstanceLastAttempt lastAttempt) {
+      ManagedInstanceLastAttempt lastAttempt,
+      ManagedInstanceVersion version) {
     this.currentAction = currentAction;
     this.id = id;
     this.instance = instance;
     this.instanceStatus = instanceStatus;
     this.lastAttempt = lastAttempt;
+    this.version = version;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("currentAction")) {
+    if ("currentAction".equals(fieldName)) {
       return currentAction;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("instance")) {
+    if ("instance".equals(fieldName)) {
       return instance;
     }
-    if (fieldName.equals("instanceStatus")) {
+    if ("instanceStatus".equals(fieldName)) {
       return instanceStatus;
     }
-    if (fieldName.equals("lastAttempt")) {
+    if ("lastAttempt".equals(fieldName)) {
       return lastAttempt;
+    }
+    if ("version".equals(fieldName)) {
+      return version;
     }
     return null;
   }
@@ -80,28 +88,68 @@ public final class ManagedInstance implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * [Output Only] The current action that the managed instance group has scheduled for the
+   * instance. Possible values: - NONE The instance is running, and the managed instance group does
+   * not have any scheduled actions for this instance. - CREATING The managed instance group is
+   * creating this instance. If the group fails to create this instance, it will try again until it
+   * is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create
+   * this instance only once. If the group fails to create this instance, it does not try again and
+   * the group's targetSize value is decreased instead. - RECREATING The managed instance group is
+   * recreating this instance. - DELETING The managed instance group is permanently deleting this
+   * instance. - ABANDONING The managed instance group is abandoning this instance. The instance
+   * will be removed from the instance group and from any target pools that are associated with this
+   * group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The
+   * managed instance group is applying configuration changes to the instance without stopping it.
+   * For example, the group can update the target pool list for an instance without stopping that
+   * instance. - VERIFYING The managed instance group has created the instance and it is in the
+   * process of being verified.
+   */
   public String getCurrentAction() {
     return currentAction;
   }
 
+  /**
+   * [Output only] The unique identifier for this resource. This field is empty when instance does
+   * not exist.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been
+   * created.
+   */
   public String getInstance() {
     return instance;
   }
 
+  /**
+   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   */
   public String getInstanceStatus() {
     return instanceStatus;
   }
 
+  /** [Output Only] Information about the last attempt to create or delete the instance. */
   public ManagedInstanceLastAttempt getLastAttempt() {
     return lastAttempt;
+  }
+
+  /** [Output Only] Intended version of this instance. */
+  public ManagedInstanceVersion getVersion() {
+    return version;
   }
 
   public static Builder newBuilder() {
@@ -132,6 +180,7 @@ public final class ManagedInstance implements ApiMessage {
     private String instance;
     private String instanceStatus;
     private ManagedInstanceLastAttempt lastAttempt;
+    private ManagedInstanceVersion version;
 
     Builder() {}
 
@@ -152,6 +201,9 @@ public final class ManagedInstance implements ApiMessage {
       if (other.getLastAttempt() != null) {
         this.lastAttempt = other.lastAttempt;
       }
+      if (other.getVersion() != null) {
+        this.version = other.version;
+      }
       return this;
     }
 
@@ -161,56 +213,128 @@ public final class ManagedInstance implements ApiMessage {
       this.instance = source.instance;
       this.instanceStatus = source.instanceStatus;
       this.lastAttempt = source.lastAttempt;
+      this.version = source.version;
     }
 
+    /**
+     * [Output Only] The current action that the managed instance group has scheduled for the
+     * instance. Possible values: - NONE The instance is running, and the managed instance group
+     * does not have any scheduled actions for this instance. - CREATING The managed instance group
+     * is creating this instance. If the group fails to create this instance, it will try again
+     * until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting
+     * to create this instance only once. If the group fails to create this instance, it does not
+     * try again and the group's targetSize value is decreased instead. - RECREATING The managed
+     * instance group is recreating this instance. - DELETING The managed instance group is
+     * permanently deleting this instance. - ABANDONING The managed instance group is abandoning
+     * this instance. The instance will be removed from the instance group and from any target pools
+     * that are associated with this group. - RESTARTING The managed instance group is restarting
+     * the instance. - REFRESHING The managed instance group is applying configuration changes to
+     * the instance without stopping it. For example, the group can update the target pool list for
+     * an instance without stopping that instance. - VERIFYING The managed instance group has
+     * created the instance and it is in the process of being verified.
+     */
     public String getCurrentAction() {
       return currentAction;
     }
 
+    /**
+     * [Output Only] The current action that the managed instance group has scheduled for the
+     * instance. Possible values: - NONE The instance is running, and the managed instance group
+     * does not have any scheduled actions for this instance. - CREATING The managed instance group
+     * is creating this instance. If the group fails to create this instance, it will try again
+     * until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting
+     * to create this instance only once. If the group fails to create this instance, it does not
+     * try again and the group's targetSize value is decreased instead. - RECREATING The managed
+     * instance group is recreating this instance. - DELETING The managed instance group is
+     * permanently deleting this instance. - ABANDONING The managed instance group is abandoning
+     * this instance. The instance will be removed from the instance group and from any target pools
+     * that are associated with this group. - RESTARTING The managed instance group is restarting
+     * the instance. - REFRESHING The managed instance group is applying configuration changes to
+     * the instance without stopping it. For example, the group can update the target pool list for
+     * an instance without stopping that instance. - VERIFYING The managed instance group has
+     * created the instance and it is in the process of being verified.
+     */
     public Builder setCurrentAction(String currentAction) {
       this.currentAction = currentAction;
       return this;
     }
 
+    /**
+     * [Output only] The unique identifier for this resource. This field is empty when instance does
+     * not exist.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output only] The unique identifier for this resource. This field is empty when instance does
+     * not exist.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet
+     * been created.
+     */
     public String getInstance() {
       return instance;
     }
 
+    /**
+     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet
+     * been created.
+     */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;
     }
 
+    /**
+     * [Output Only] The status of the instance. This field is empty when the instance does not
+     * exist.
+     */
     public String getInstanceStatus() {
       return instanceStatus;
     }
 
+    /**
+     * [Output Only] The status of the instance. This field is empty when the instance does not
+     * exist.
+     */
     public Builder setInstanceStatus(String instanceStatus) {
       this.instanceStatus = instanceStatus;
       return this;
     }
 
+    /** [Output Only] Information about the last attempt to create or delete the instance. */
     public ManagedInstanceLastAttempt getLastAttempt() {
       return lastAttempt;
     }
 
+    /** [Output Only] Information about the last attempt to create or delete the instance. */
     public Builder setLastAttempt(ManagedInstanceLastAttempt lastAttempt) {
       this.lastAttempt = lastAttempt;
       return this;
     }
 
+    /** [Output Only] Intended version of this instance. */
+    public ManagedInstanceVersion getVersion() {
+      return version;
+    }
+
+    /** [Output Only] Intended version of this instance. */
+    public Builder setVersion(ManagedInstanceVersion version) {
+      this.version = version;
+      return this;
+    }
+
     public ManagedInstance build() {
 
-      return new ManagedInstance(currentAction, id, instance, instanceStatus, lastAttempt);
+      return new ManagedInstance(currentAction, id, instance, instanceStatus, lastAttempt, version);
     }
 
     public Builder clone() {
@@ -220,6 +344,7 @@ public final class ManagedInstance implements ApiMessage {
       newBuilder.setInstance(this.instance);
       newBuilder.setInstanceStatus(this.instanceStatus);
       newBuilder.setLastAttempt(this.lastAttempt);
+      newBuilder.setVersion(this.version);
       return newBuilder;
     }
   }
@@ -241,6 +366,9 @@ public final class ManagedInstance implements ApiMessage {
         + ", "
         + "lastAttempt="
         + lastAttempt
+        + ", "
+        + "version="
+        + version
         + "}";
   }
 
@@ -255,13 +383,14 @@ public final class ManagedInstance implements ApiMessage {
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.instance, that.getInstance())
           && Objects.equals(this.instanceStatus, that.getInstanceStatus())
-          && Objects.equals(this.lastAttempt, that.getLastAttempt());
+          && Objects.equals(this.lastAttempt, that.getLastAttempt())
+          && Objects.equals(this.version, that.getVersion());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currentAction, id, instance, instanceStatus, lastAttempt);
+    return Objects.hash(currentAction, id, instance, instanceStatus, lastAttempt, version);
   }
 }

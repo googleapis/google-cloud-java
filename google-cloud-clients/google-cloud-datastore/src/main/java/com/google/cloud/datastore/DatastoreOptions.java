@@ -18,22 +18,21 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
 
-public class DatastoreOptions
-    extends ServiceOptions<Datastore, DatastoreOptions> {
+public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions> {
 
   private static final long serialVersionUID = -1018382430058137336L;
   private static final String API_SHORT_NAME = "Datastore";
@@ -62,13 +61,11 @@ public class DatastoreOptions
     }
   }
 
-  public static class Builder extends
-      ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
 
     private String namespace;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(DatastoreOptions options) {
       super(options);
@@ -89,9 +86,7 @@ public class DatastoreOptions
       return new DatastoreOptions(this);
     }
 
-    /**
-     * Sets the default namespace to be used by the datastore service.
-     */
+    /** Sets the default namespace to be used by the datastore service. */
     public Builder setNamespace(String namespace) {
       this.namespace = validateNamespace(namespace);
       return this;
@@ -105,22 +100,23 @@ public class DatastoreOptions
 
   @Override
   protected String getDefaultHost() {
-    String host = System.getProperty(
-        com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR,
-        System.getenv(com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
+    String host =
+        System.getProperty(
+            com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR,
+            System.getenv(com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
     return host != null ? host : com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
   }
 
   @Override
   protected String getDefaultProject() {
-    String projectId = System.getProperty(
-        com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
-        System.getenv(com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
+    String projectId =
+        System.getProperty(
+            com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
+            System.getenv(com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
     return projectId != null ? projectId : super.getDefaultProject();
   }
 
-  private static class DatastoreDefaults implements
-      ServiceDefaults<Datastore, DatastoreOptions> {
+  private static class DatastoreDefaults implements ServiceDefaults<Datastore, DatastoreOptions> {
 
     @Override
     public DatastoreFactory getDefaultServiceFactory() {
@@ -142,18 +138,12 @@ public class DatastoreOptions
     return HttpTransportOptions.newBuilder().build();
   }
 
-
-  /**
-   * Returns the default namespace to be used by the datastore service.
-   */
+  /** Returns the default namespace to be used by the datastore service. */
   public String getNamespace() {
     return namespace;
   }
 
-
-  /**
-   * Returns a default {@code DatastoreOptions} instance.
-   */
+  /** Returns a default {@code DatastoreOptions} instance. */
   public static DatastoreOptions getDefaultInstance() {
     return newBuilder().build();
   }
@@ -198,7 +188,6 @@ public class DatastoreOptions
     DatastoreOptions other = (DatastoreOptions) obj;
     return baseEquals(other) && Objects.equals(namespace, other.namespace);
   }
-
 
   public static Builder newBuilder() {
     return new Builder();

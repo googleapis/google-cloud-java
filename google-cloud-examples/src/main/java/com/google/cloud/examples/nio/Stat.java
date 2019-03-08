@@ -26,8 +26,7 @@ import java.nio.file.Paths;
 import java.nio.file.spi.FileSystemProvider;
 
 /**
- * Stat is a super-simple program that just displays the size of the file
- * passed as argument.
+ * Stat is a super-simple program that just displays the size of the file passed as argument.
  *
  * <p>It's meant to be used to test Google Cloud's integration with Java NIO.
  *
@@ -35,9 +34,10 @@ import java.nio.file.spi.FileSystemProvider;
  * you can directly pass in a Google Cloud Storage file name to use. In that case you have to be
  * logged in (using e.g. the gcloud auth command).
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/Stat --help | --check | --list | <file>}</pre>
  *
  * <p>In short, this version (in google-cloud-examples) is in a package that lists google-cloud-nio
@@ -45,9 +45,7 @@ import java.nio.file.spi.FileSystemProvider;
  */
 public class Stat {
 
-  /**
-   * See the class documentation.
-   */
+  /** See the class documentation. */
   public static void main(String[] args) throws IOException {
     if (args.length == 0 || args[0].equals("--help")) {
       help();
@@ -69,8 +67,8 @@ public class Stat {
   /**
    * Print the length of the indicated file.
    *
-   * <p>This uses the normal Java NIO Api, so it can take advantage of any installed
-   * NIO Filesystem provider without any extra effort.
+   * <p>This uses the normal Java NIO Api, so it can take advantage of any installed NIO Filesystem
+   * provider without any extra effort.
    */
   private static void statFile(String fname) {
     try {
@@ -83,28 +81,28 @@ public class Stat {
   }
 
   private static void help() {
-    String[] help =
-        {"The arguments can be one of:",
-         " * <path>",
-         "   to display the length of that file.",
-         "",
-         " * --list",
-         "   to list the filesystem providers.",
-         "",
-         " * --check",
-         "   to double-check the Google Cloud Storage provider is installed.",
-         "",
-         "The purpose of this tool is to demonstrate that the Google Cloud NIO filesystem provider",
-         "can add Google Cloud Storage support to programs not explicitly designed for it.",
-         "",
-         "This tool normally knows nothing of Google Cloud Storage. If you pass it --check",
-         "or a Google Cloud Storage file name (e.g. gs://mybucket/myfile), it will show an error.",
-         "However, by just adding the google-cloud-nio jar as a dependency and recompiling, this",
-         "tool is made aware of gs:// paths and can access files on the cloud.",
-         "",
-         "The Google Cloud NIO filesystem provider can similarly enable existing Java 7 programs",
-         "to read and write cloud files, even if they have no special built-in cloud support."
-        };
+    String[] help = {
+      "The arguments can be one of:",
+      " * <path>",
+      "   to display the length of that file.",
+      "",
+      " * --list",
+      "   to list the filesystem providers.",
+      "",
+      " * --check",
+      "   to double-check the Google Cloud Storage provider is installed.",
+      "",
+      "The purpose of this tool is to demonstrate that the Google Cloud NIO filesystem provider",
+      "can add Google Cloud Storage support to programs not explicitly designed for it.",
+      "",
+      "This tool normally knows nothing of Google Cloud Storage. If you pass it --check",
+      "or a Google Cloud Storage file name (e.g. gs://mybucket/myfile), it will show an error.",
+      "However, by just adding the google-cloud-nio jar as a dependency and recompiling, this",
+      "tool is made aware of gs:// paths and can access files on the cloud.",
+      "",
+      "The Google Cloud NIO filesystem provider can similarly enable existing Java 7 programs",
+      "to read and write cloud files, even if they have no special built-in cloud support."
+    };
     for (String s : help) {
       System.out.println(s);
     }

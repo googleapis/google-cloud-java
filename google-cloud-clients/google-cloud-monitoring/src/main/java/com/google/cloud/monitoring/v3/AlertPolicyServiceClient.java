@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStub;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.AlertPolicy;
 import com.google.monitoring.v3.AlertPolicyName;
 import com.google.monitoring.v3.CreateAlertPolicyRequest;
@@ -72,13 +73,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -740,7 +741,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   public static class ListAlertPoliciesPagedResponse
       extends AbstractPagedListResponse<
-          ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy, ListAlertPoliciesPage,
+          ListAlertPoliciesRequest,
+          ListAlertPoliciesResponse,
+          AlertPolicy,
+          ListAlertPoliciesPage,
           ListAlertPoliciesFixedSizeCollection> {
 
     public static ApiFuture<ListAlertPoliciesPagedResponse> createAsync(
@@ -755,7 +759,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
             public ListAlertPoliciesPagedResponse apply(ListAlertPoliciesPage input) {
               return new ListAlertPoliciesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAlertPoliciesPagedResponse(ListAlertPoliciesPage page) {
@@ -794,7 +799,10 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
   public static class ListAlertPoliciesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy, ListAlertPoliciesPage,
+          ListAlertPoliciesRequest,
+          ListAlertPoliciesResponse,
+          AlertPolicy,
+          ListAlertPoliciesPage,
           ListAlertPoliciesFixedSizeCollection> {
 
     private ListAlertPoliciesFixedSizeCollection(

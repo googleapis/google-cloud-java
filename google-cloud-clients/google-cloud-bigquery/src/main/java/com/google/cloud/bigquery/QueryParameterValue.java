@@ -16,6 +16,10 @@
 
 package com.google.cloud.bigquery;
 
+import static org.threeten.bp.temporal.ChronoField.HOUR_OF_DAY;
+import static org.threeten.bp.temporal.ChronoField.MINUTE_OF_HOUR;
+import static org.threeten.bp.temporal.ChronoField.NANO_OF_SECOND;
+import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.auto.value.AutoValue;
@@ -26,11 +30,14 @@ import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.Nullable;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.format.DateTimeFormatterBuilder;
+import org.threeten.bp.format.DateTimeParseException;
 
 /**
  * A value for a QueryParameter along with its type.
@@ -61,12 +68,37 @@ import org.joda.time.format.DateTimeFormatter;
 public abstract class QueryParameterValue implements Serializable {
 
   private static final DateTimeFormatter timestampFormatter =
-      DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSSSSSZZ").withZone(DateTimeZone.UTC);
-  private static final DateTimeFormatter dateFormatter = DateTimeFormat.forPattern("yyyy-MM-dd");
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .appendLiteral(' ')
+          .appendValue(HOUR_OF_DAY, 2)
+          .appendLiteral(':')
+          .appendValue(MINUTE_OF_HOUR, 2)
+          .optionalStart()
+          .appendLiteral(':')
+          .appendValue(SECOND_OF_MINUTE, 2)
+          .optionalStart()
+          .appendFraction(NANO_OF_SECOND, 6, 9, true)
+          .optionalStart()
+          .appendOffset("+HHMM", "+00:00")
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
+  private static final DateTimeFormatter timestampValidator =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(timestampFormatter)
+          .optionalStart()
+          .appendOffsetId()
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
+  private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
   private static final DateTimeFormatter timeFormatter =
-      DateTimeFormat.forPattern("HH:mm:ss.SSSSSS");
+      DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
   private static final DateTimeFormatter datetimeFormatter =
-      DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
 
   static final Function<
           QueryParameterValue, com.google.api.services.bigquery.model.QueryParameterValue>
@@ -210,8 +242,10 @@ public abstract class QueryParameterValue implements Serializable {
     return of(value, StandardSQLTypeName.TIME);
   }
 
-  /** Creates a {@code QueryParameterValue} object with a type of DATETIME.
-   * Must be in the format "yyyy-MM-dd HH:mm:ss.SSSSSS", e.g. ""2014-08-19 12:41:35.220000". */
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of DATETIME. Must be in the format
+   * "yyyy-MM-dd HH:mm:ss.SSSSSS", e.g. ""2014-08-19 12:41:35.220000".
+   */
   public static QueryParameterValue dateTime(String value) {
     return of(value, StandardSQLTypeName.DATETIME);
   }
@@ -254,6 +288,8 @@ public abstract class QueryParameterValue implements Serializable {
       return StandardSQLTypeName.FLOAT64;
     } else if (BigDecimal.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.NUMERIC;
+    } else if (Date.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.DATE;
     }
     throw new IllegalArgumentException("Unsupported object type for QueryParameter: " + type);
   }
@@ -296,31 +332,34 @@ public abstract class QueryParameterValue implements Serializable {
         throw new IllegalArgumentException("Cannot convert ARRAY to String value");
       case TIMESTAMP:
         if (value instanceof Long) {
-          return timestampFormatter.print(((Long) value) / 1000);
+          return timestampFormatter.format(Instant.ofEpochMilli(((Long) value) / 1000));
         } else if (value instanceof String) {
           // verify that the String is in the right format
-          timestampFormatter.parseMillis((String) value);
+          checkFormat(value, timestampValidator);
           return (String) value;
         }
         break;
       case DATE:
         if (value instanceof String) {
           // verify that the String is in the right format
-          dateFormatter.parseMillis((String) value);
+          checkFormat(value, dateFormatter);
           return (String) value;
+        } else if (value instanceof Date) {
+          com.google.cloud.Date date = com.google.cloud.Date.fromJavaUtilDate((Date) value);
+          return date.toString();
         }
         break;
       case TIME:
         if (value instanceof String) {
           // verify that the String is in the right format
-          timeFormatter.parseMillis((String) value);
+          checkFormat(value, timeFormatter);
           return (String) value;
         }
         break;
       case DATETIME:
         if (value instanceof String) {
           // verify that the String is in the right format
-          datetimeFormatter.parseMillis((String) value);
+          checkFormat(value, datetimeFormatter);
           return (String) value;
         }
         break;
@@ -329,6 +368,15 @@ public abstract class QueryParameterValue implements Serializable {
     }
     throw new IllegalArgumentException(
         "Type " + type + " incompatible with " + value.getClass().getCanonicalName());
+  }
+
+  private static void checkFormat(Object value, DateTimeFormatter formatter) {
+    try {
+
+      formatter.parse((String) value);
+    } catch (DateTimeParseException e) {
+      throw new IllegalArgumentException(e.getMessage(), e);
+    }
   }
 
   /** Returns a builder for a QueryParameterValue object with given value. */

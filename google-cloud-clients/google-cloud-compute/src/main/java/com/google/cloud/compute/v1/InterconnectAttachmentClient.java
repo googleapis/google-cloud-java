@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InterconnectAttachmentStub;
 import com.google.cloud.compute.v1.stub.InterconnectAttachmentStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -56,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -785,7 +786,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
    *     resource. For more information, see Creating VLAN Attachments. (== resource_for
    *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -824,7 +828,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
    * @param interconnectAttachmentResource Represents an InterconnectAttachment (VLAN attachment)
    *     resource. For more information, see Creating VLAN Attachments. (== resource_for
    *     beta.interconnectAttachments ==) (== resource_for v1.interconnectAttachments ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -933,14 +940,17 @@ public class InterconnectAttachmentClient implements BackgroundResource {
 
   public static class AggregatedListInterconnectAttachmentsPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
-          InterconnectAttachmentsScopedList, AggregatedListInterconnectAttachmentsPage,
+          AggregatedListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentAggregatedList,
+          InterconnectAttachmentsScopedList,
+          AggregatedListInterconnectAttachmentsPage,
           AggregatedListInterconnectAttachmentsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInterconnectAttachmentsPagedResponse> createAsync(
         PageContext<
                 AggregatedListInterconnectAttachmentsHttpRequest,
-                InterconnectAttachmentAggregatedList, InterconnectAttachmentsScopedList>
+                InterconnectAttachmentAggregatedList,
+                InterconnectAttachmentsScopedList>
             context,
         ApiFuture<InterconnectAttachmentAggregatedList> futureResponse) {
       ApiFuture<AggregatedListInterconnectAttachmentsPage> futurePage =
@@ -956,7 +966,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
                 AggregatedListInterconnectAttachmentsPage input) {
               return new AggregatedListInterconnectAttachmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInterconnectAttachmentsPagedResponse(
@@ -967,13 +978,16 @@ public class InterconnectAttachmentClient implements BackgroundResource {
 
   public static class AggregatedListInterconnectAttachmentsPage
       extends AbstractPage<
-          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
-          InterconnectAttachmentsScopedList, AggregatedListInterconnectAttachmentsPage> {
+          AggregatedListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentAggregatedList,
+          InterconnectAttachmentsScopedList,
+          AggregatedListInterconnectAttachmentsPage> {
 
     private AggregatedListInterconnectAttachmentsPage(
         PageContext<
                 AggregatedListInterconnectAttachmentsHttpRequest,
-                InterconnectAttachmentAggregatedList, InterconnectAttachmentsScopedList>
+                InterconnectAttachmentAggregatedList,
+                InterconnectAttachmentsScopedList>
             context,
         InterconnectAttachmentAggregatedList response) {
       super(context, response);
@@ -987,7 +1001,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
     protected AggregatedListInterconnectAttachmentsPage createPage(
         PageContext<
                 AggregatedListInterconnectAttachmentsHttpRequest,
-                InterconnectAttachmentAggregatedList, InterconnectAttachmentsScopedList>
+                InterconnectAttachmentAggregatedList,
+                InterconnectAttachmentsScopedList>
             context,
         InterconnectAttachmentAggregatedList response) {
       return new AggregatedListInterconnectAttachmentsPage(context, response);
@@ -997,7 +1012,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
     public ApiFuture<AggregatedListInterconnectAttachmentsPage> createPageAsync(
         PageContext<
                 AggregatedListInterconnectAttachmentsHttpRequest,
-                InterconnectAttachmentAggregatedList, InterconnectAttachmentsScopedList>
+                InterconnectAttachmentAggregatedList,
+                InterconnectAttachmentsScopedList>
             context,
         ApiFuture<InterconnectAttachmentAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1006,8 +1022,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
 
   public static class AggregatedListInterconnectAttachmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
-          InterconnectAttachmentsScopedList, AggregatedListInterconnectAttachmentsPage,
+          AggregatedListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentAggregatedList,
+          InterconnectAttachmentsScopedList,
+          AggregatedListInterconnectAttachmentsPage,
           AggregatedListInterconnectAttachmentsFixedSizeCollection> {
 
     private AggregatedListInterconnectAttachmentsFixedSizeCollection(
@@ -1029,13 +1047,16 @@ public class InterconnectAttachmentClient implements BackgroundResource {
 
   public static class ListInterconnectAttachmentsPagedResponse
       extends AbstractPagedListResponse<
-          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
-          InterconnectAttachment, ListInterconnectAttachmentsPage,
+          ListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentList,
+          InterconnectAttachment,
+          ListInterconnectAttachmentsPage,
           ListInterconnectAttachmentsFixedSizeCollection> {
 
     public static ApiFuture<ListInterconnectAttachmentsPagedResponse> createAsync(
         PageContext<
-                ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+                ListInterconnectAttachmentsHttpRequest,
+                InterconnectAttachmentList,
                 InterconnectAttachment>
             context,
         ApiFuture<InterconnectAttachmentList> futureResponse) {
@@ -1051,7 +1072,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
                 ListInterconnectAttachmentsPage input) {
               return new ListInterconnectAttachmentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInterconnectAttachmentsPagedResponse(ListInterconnectAttachmentsPage page) {
@@ -1061,12 +1083,15 @@ public class InterconnectAttachmentClient implements BackgroundResource {
 
   public static class ListInterconnectAttachmentsPage
       extends AbstractPage<
-          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
-          InterconnectAttachment, ListInterconnectAttachmentsPage> {
+          ListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentList,
+          InterconnectAttachment,
+          ListInterconnectAttachmentsPage> {
 
     private ListInterconnectAttachmentsPage(
         PageContext<
-                ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+                ListInterconnectAttachmentsHttpRequest,
+                InterconnectAttachmentList,
                 InterconnectAttachment>
             context,
         InterconnectAttachmentList response) {
@@ -1080,7 +1105,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
     @Override
     protected ListInterconnectAttachmentsPage createPage(
         PageContext<
-                ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+                ListInterconnectAttachmentsHttpRequest,
+                InterconnectAttachmentList,
                 InterconnectAttachment>
             context,
         InterconnectAttachmentList response) {
@@ -1090,7 +1116,8 @@ public class InterconnectAttachmentClient implements BackgroundResource {
     @Override
     public ApiFuture<ListInterconnectAttachmentsPage> createPageAsync(
         PageContext<
-                ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+                ListInterconnectAttachmentsHttpRequest,
+                InterconnectAttachmentList,
                 InterconnectAttachment>
             context,
         ApiFuture<InterconnectAttachmentList> futureResponse) {
@@ -1100,8 +1127,10 @@ public class InterconnectAttachmentClient implements BackgroundResource {
 
   public static class ListInterconnectAttachmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
-          InterconnectAttachment, ListInterconnectAttachmentsPage,
+          ListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentList,
+          InterconnectAttachment,
+          ListInterconnectAttachmentsPage,
           ListInterconnectAttachmentsFixedSizeCollection> {
 
     private ListInterconnectAttachmentsFixedSizeCollection(

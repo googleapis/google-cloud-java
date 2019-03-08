@@ -1,0 +1,32 @@
+{
+  "updateTime": "2019-03-06T08:48:55.349052Z",
+  "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.16.15",
+        "dockerImage": "googleapis/artman@sha256:9caadfa59d48224cba5f3217eb9d61a155b78ccf31e628abef385bc5b7ed3bd2"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "856117505ff9075b3e9c0b5674113667b6cf9e00",
+        "internalRef": "236931378"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "pubsub",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/pubsub/artman_pubsub.yaml"
+      }
+    }
+  ]
+}

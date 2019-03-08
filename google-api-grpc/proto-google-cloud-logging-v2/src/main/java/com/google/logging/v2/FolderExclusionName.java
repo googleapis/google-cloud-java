@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class FolderExclusionName extends ExclusionName {
   }
 
   public static FolderExclusionName of(String folder, String exclusion) {
-    return newBuilder()
-      .setFolder(folder)
-      .setExclusion(exclusion)
-      .build();
+    return newBuilder().setFolder(folder).setExclusion(exclusion).build();
   }
 
   public static String format(String folder, String exclusion) {
-    return newBuilder()
-      .setFolder(folder)
-      .setExclusion(exclusion)
-      .build()
-      .toString();
+    return newBuilder().setFolder(folder).setExclusion(exclusion).build().toString();
   }
 
   public static FolderExclusionName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class FolderExclusionName extends ExclusionName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "FolderExclusionName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "FolderExclusionName.parse: formattedString not in valid format");
     return of(matchMap.get("folder"), matchMap.get("exclusion"));
   }
 
@@ -150,8 +143,7 @@ public class FolderExclusionName extends ExclusionName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(FolderExclusionName folderExclusionName) {
       folder = folderExclusionName.folder;
@@ -170,8 +162,7 @@ public class FolderExclusionName extends ExclusionName {
     }
     if (o instanceof FolderExclusionName) {
       FolderExclusionName that = (FolderExclusionName) o;
-      return (this.folder.equals(that.folder))
-          && (this.exclusion.equals(that.exclusion));
+      return (this.folder.equals(that.folder)) && (this.exclusion.equals(that.exclusion));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class FolderExclusionName extends ExclusionName {
     return h;
   }
 }
-

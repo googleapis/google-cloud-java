@@ -14,13 +14,12 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class ProjectDataSourceName extends DataSourceName {
   }
 
   public static ProjectDataSourceName of(String project, String dataSource) {
-    return newBuilder()
-      .setProject(project)
-      .setDataSource(dataSource)
-      .build();
+    return newBuilder().setProject(project).setDataSource(dataSource).build();
   }
 
   public static String format(String project, String dataSource) {
-    return newBuilder()
-      .setProject(project)
-      .setDataSource(dataSource)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setDataSource(dataSource).build().toString();
   }
 
   public static ProjectDataSourceName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class ProjectDataSourceName extends DataSourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectDataSourceName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectDataSourceName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("data_source"));
   }
 
@@ -150,8 +143,7 @@ public class ProjectDataSourceName extends DataSourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectDataSourceName projectDataSourceName) {
       project = projectDataSourceName.project;
@@ -170,8 +162,7 @@ public class ProjectDataSourceName extends DataSourceName {
     }
     if (o instanceof ProjectDataSourceName) {
       ProjectDataSourceName that = (ProjectDataSourceName) o;
-      return (this.project.equals(that.project))
-          && (this.dataSource.equals(that.dataSource));
+      return (this.project.equals(that.project)) && (this.dataSource.equals(that.dataSource));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class ProjectDataSourceName extends DataSourceName {
     return h;
   }
 }
-

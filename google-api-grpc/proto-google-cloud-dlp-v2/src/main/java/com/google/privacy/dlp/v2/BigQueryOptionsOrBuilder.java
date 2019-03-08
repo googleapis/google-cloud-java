@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface BigQueryOptionsOrBuilder extends
+public interface BigQueryOptionsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.BigQueryOptions)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Complete BigQuery table reference.
    * </pre>
@@ -16,6 +19,8 @@ public interface BigQueryOptionsOrBuilder extends
    */
   boolean hasTableReference();
   /**
+   *
+   *
    * <pre>
    * Complete BigQuery table reference.
    * </pre>
@@ -24,6 +29,8 @@ public interface BigQueryOptionsOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryTable getTableReference();
   /**
+   *
+   *
    * <pre>
    * Complete BigQuery table reference.
    * </pre>
@@ -33,6 +40,8 @@ public interface BigQueryOptionsOrBuilder extends
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableReferenceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * References to fields uniquely identifying rows within the table.
    * Nested fields in the format, like `person.birthdate.year`, are allowed.
@@ -40,9 +49,10 @@ public interface BigQueryOptionsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.FieldId> 
-      getIdentifyingFieldsList();
+  java.util.List<com.google.privacy.dlp.v2.FieldId> getIdentifyingFieldsList();
   /**
+   *
+   *
    * <pre>
    * References to fields uniquely identifying rows within the table.
    * Nested fields in the format, like `person.birthdate.year`, are allowed.
@@ -52,6 +62,8 @@ public interface BigQueryOptionsOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getIdentifyingFields(int index);
   /**
+   *
+   *
    * <pre>
    * References to fields uniquely identifying rows within the table.
    * Nested fields in the format, like `person.birthdate.year`, are allowed.
@@ -61,6 +73,8 @@ public interface BigQueryOptionsOrBuilder extends
    */
   int getIdentifyingFieldsCount();
   /**
+   *
+   *
    * <pre>
    * References to fields uniquely identifying rows within the table.
    * Nested fields in the format, like `person.birthdate.year`, are allowed.
@@ -68,9 +82,11 @@ public interface BigQueryOptionsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getIdentifyingFieldsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * References to fields uniquely identifying rows within the table.
    * Nested fields in the format, like `person.birthdate.year`, are allowed.
@@ -78,10 +94,11 @@ public interface BigQueryOptionsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
    */
-  com.google.privacy.dlp.v2.FieldIdOrBuilder getIdentifyingFieldsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.FieldIdOrBuilder getIdentifyingFieldsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Max number of rows to scan. If the table has more rows than this value, the
    * rest of the rows are omitted. If not set, or if set to 0, all rows will be
@@ -94,6 +111,8 @@ public interface BigQueryOptionsOrBuilder extends
   long getRowsLimit();
 
   /**
+   *
+   *
    * <pre>
    * Max percentage of rows to scan. The rest are omitted. The number of rows
    * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
@@ -106,16 +125,14 @@ public interface BigQueryOptionsOrBuilder extends
    */
   int getRowsLimitPercent();
 
-  /**
-   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code> */
   int getSampleMethodValue();
-  /**
-   * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code> */
   com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod();
 
   /**
+   *
+   *
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
@@ -123,9 +140,10 @@ public interface BigQueryOptionsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.FieldId> 
-      getExcludedFieldsList();
+  java.util.List<com.google.privacy.dlp.v2.FieldId> getExcludedFieldsList();
   /**
+   *
+   *
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
@@ -135,6 +153,8 @@ public interface BigQueryOptionsOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getExcludedFields(int index);
   /**
+   *
+   *
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
@@ -144,6 +164,8 @@ public interface BigQueryOptionsOrBuilder extends
    */
   int getExcludedFieldsCount();
   /**
+   *
+   *
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
@@ -151,9 +173,11 @@ public interface BigQueryOptionsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getExcludedFieldsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * References to fields excluded from scanning. This allows you to skip
    * inspection of entire columns which you know have no findings.
@@ -161,6 +185,5 @@ public interface BigQueryOptionsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
    */
-  com.google.privacy.dlp.v2.FieldIdOrBuilder getExcludedFieldsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.FieldIdOrBuilder getExcludedFieldsOrBuilder(int index);
 }

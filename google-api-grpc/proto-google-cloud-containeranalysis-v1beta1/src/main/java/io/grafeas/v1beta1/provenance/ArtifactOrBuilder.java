@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.provenance;
 
-public interface ArtifactOrBuilder extends
+public interface ArtifactOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.provenance.Artifact)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Hash or checksum value of a binary, or Docker Registry 2.0 digest of a
    * container.
@@ -17,6 +20,8 @@ public interface ArtifactOrBuilder extends
    */
   java.lang.String getChecksum();
   /**
+   *
+   *
    * <pre>
    * Hash or checksum value of a binary, or Docker Registry 2.0 digest of a
    * container.
@@ -24,10 +29,11 @@ public interface ArtifactOrBuilder extends
    *
    * <code>string checksum = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getChecksumBytes();
+  com.google.protobuf.ByteString getChecksumBytes();
 
   /**
+   *
+   *
    * <pre>
    * Artifact ID, if any; for container images, this will be a URL by digest
    * like `gcr.io/projectID/imagename&#64;sha256:123456`.
@@ -37,6 +43,8 @@ public interface ArtifactOrBuilder extends
    */
   java.lang.String getId();
   /**
+   *
+   *
    * <pre>
    * Artifact ID, if any; for container images, this will be a URL by digest
    * like `gcr.io/projectID/imagename&#64;sha256:123456`.
@@ -44,10 +52,11 @@ public interface ArtifactOrBuilder extends
    *
    * <code>string id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getIdBytes();
+  com.google.protobuf.ByteString getIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Related artifact names. This may be the path to a binary or jar file, or in
    * the case of a container build, the name used to push the container image to
@@ -58,9 +67,10 @@ public interface ArtifactOrBuilder extends
    *
    * <code>repeated string names = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getNamesList();
+  java.util.List<java.lang.String> getNamesList();
   /**
+   *
+   *
    * <pre>
    * Related artifact names. This may be the path to a binary or jar file, or in
    * the case of a container build, the name used to push the container image to
@@ -73,6 +83,8 @@ public interface ArtifactOrBuilder extends
    */
   int getNamesCount();
   /**
+   *
+   *
    * <pre>
    * Related artifact names. This may be the path to a binary or jar file, or in
    * the case of a container build, the name used to push the container image to
@@ -85,6 +97,8 @@ public interface ArtifactOrBuilder extends
    */
   java.lang.String getNames(int index);
   /**
+   *
+   *
    * <pre>
    * Related artifact names. This may be the path to a binary or jar file, or in
    * the case of a container build, the name used to push the container image to
@@ -95,6 +109,5 @@ public interface ArtifactOrBuilder extends
    *
    * <code>repeated string names = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNamesBytes(int index);
+  com.google.protobuf.ByteString getNamesBytes(int index);
 }

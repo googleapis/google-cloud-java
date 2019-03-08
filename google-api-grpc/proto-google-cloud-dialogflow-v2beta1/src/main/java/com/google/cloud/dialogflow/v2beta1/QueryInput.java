@@ -4,6 +4,8 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Represents the query input. It can contain either:
  * 1.  An audio config which
@@ -14,23 +16,23 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.QueryInput}
  */
-public  final class QueryInput extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class QueryInput extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.QueryInput)
     QueryInputOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use QueryInput.newBuilder() to construct.
   private QueryInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private QueryInput() {
-  }
+
+  private QueryInput() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private QueryInput(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,95 +52,104 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder subBuilder = null;
-            if (inputCase_ == 1) {
-              subBuilder = ((com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_).toBuilder();
+          case 10:
+            {
+              com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder subBuilder = null;
+              if (inputCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_).toBuilder();
+              }
+              input_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.InputAudioConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_);
+                input_ = subBuilder.buildPartial();
+              }
+              inputCase_ = 1;
+              break;
             }
-            input_ =
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.InputAudioConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_);
-              input_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.cloud.dialogflow.v2beta1.TextInput.Builder subBuilder = null;
+              if (inputCase_ == 2) {
+                subBuilder = ((com.google.cloud.dialogflow.v2beta1.TextInput) input_).toBuilder();
+              }
+              input_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.TextInput.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.TextInput) input_);
+                input_ = subBuilder.buildPartial();
+              }
+              inputCase_ = 2;
+              break;
             }
-            inputCase_ = 1;
-            break;
-          }
-          case 18: {
-            com.google.cloud.dialogflow.v2beta1.TextInput.Builder subBuilder = null;
-            if (inputCase_ == 2) {
-              subBuilder = ((com.google.cloud.dialogflow.v2beta1.TextInput) input_).toBuilder();
+          case 26:
+            {
+              com.google.cloud.dialogflow.v2beta1.EventInput.Builder subBuilder = null;
+              if (inputCase_ == 3) {
+                subBuilder = ((com.google.cloud.dialogflow.v2beta1.EventInput) input_).toBuilder();
+              }
+              input_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.EventInput.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.EventInput) input_);
+                input_ = subBuilder.buildPartial();
+              }
+              inputCase_ = 3;
+              break;
             }
-            input_ =
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.TextInput.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.TextInput) input_);
-              input_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            inputCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.cloud.dialogflow.v2beta1.EventInput.Builder subBuilder = null;
-            if (inputCase_ == 3) {
-              subBuilder = ((com.google.cloud.dialogflow.v2beta1.EventInput) input_).toBuilder();
-            }
-            input_ =
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.EventInput.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dialogflow.v2beta1.EventInput) input_);
-              input_ = subBuilder.buildPartial();
-            }
-            inputCase_ = 3;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryInput_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_QueryInput_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryInput_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_QueryInput_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.QueryInput.class, com.google.cloud.dialogflow.v2beta1.QueryInput.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.QueryInput.class,
+            com.google.cloud.dialogflow.v2beta1.QueryInput.Builder.class);
   }
 
   private int inputCase_ = 0;
   private java.lang.Object input_;
-  public enum InputCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum InputCase implements com.google.protobuf.Internal.EnumLite {
     AUDIO_CONFIG(1),
     TEXT(2),
     EVENT(3),
     INPUT_NOT_SET(0);
     private final int value;
+
     private InputCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static InputCase valueOf(int value) {
       return forNumber(value);
@@ -146,26 +157,32 @@ private static final long serialVersionUID = 0L;
 
     public static InputCase forNumber(int value) {
       switch (value) {
-        case 1: return AUDIO_CONFIG;
-        case 2: return TEXT;
-        case 3: return EVENT;
-        case 0: return INPUT_NOT_SET;
-        default: return null;
+        case 1:
+          return AUDIO_CONFIG;
+        case 2:
+          return TEXT;
+        case 3:
+          return EVENT;
+        case 0:
+          return INPUT_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public InputCase
-  getInputCase() {
-    return InputCase.forNumber(
-        inputCase_);
+  public InputCase getInputCase() {
+    return InputCase.forNumber(inputCase_);
   }
 
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * Instructs the speech recognizer how to process the speech audio.
    * </pre>
@@ -176,6 +193,8 @@ private static final long serialVersionUID = 0L;
     return inputCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * Instructs the speech recognizer how to process the speech audio.
    * </pre>
@@ -184,11 +203,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2beta1.InputAudioConfig getAudioConfig() {
     if (inputCase_ == 1) {
-       return (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_;
+      return (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Instructs the speech recognizer how to process the speech audio.
    * </pre>
@@ -197,13 +218,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder getAudioConfigOrBuilder() {
     if (inputCase_ == 1) {
-       return (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_;
+      return (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
   }
 
   public static final int TEXT_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * The natural language text to be processed.
    * </pre>
@@ -214,6 +237,8 @@ private static final long serialVersionUID = 0L;
     return inputCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * The natural language text to be processed.
    * </pre>
@@ -222,11 +247,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2beta1.TextInput getText() {
     if (inputCase_ == 2) {
-       return (com.google.cloud.dialogflow.v2beta1.TextInput) input_;
+      return (com.google.cloud.dialogflow.v2beta1.TextInput) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The natural language text to be processed.
    * </pre>
@@ -235,13 +262,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder getTextOrBuilder() {
     if (inputCase_ == 2) {
-       return (com.google.cloud.dialogflow.v2beta1.TextInput) input_;
+      return (com.google.cloud.dialogflow.v2beta1.TextInput) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
   }
 
   public static final int EVENT_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * The event to be processed.
    * </pre>
@@ -252,6 +281,8 @@ private static final long serialVersionUID = 0L;
     return inputCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * The event to be processed.
    * </pre>
@@ -260,11 +291,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2beta1.EventInput getEvent() {
     if (inputCase_ == 3) {
-       return (com.google.cloud.dialogflow.v2beta1.EventInput) input_;
+      return (com.google.cloud.dialogflow.v2beta1.EventInput) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The event to be processed.
    * </pre>
@@ -273,12 +306,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder getEventOrBuilder() {
     if (inputCase_ == 3) {
-       return (com.google.cloud.dialogflow.v2beta1.EventInput) input_;
+      return (com.google.cloud.dialogflow.v2beta1.EventInput) input_;
     }
     return com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -290,8 +324,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (inputCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_);
     }
@@ -311,16 +344,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (inputCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_);
     }
     if (inputCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.cloud.dialogflow.v2beta1.TextInput) input_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.dialogflow.v2beta1.TextInput) input_);
     }
     if (inputCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.dialogflow.v2beta1.EventInput) input_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.dialogflow.v2beta1.EventInput) input_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,29 +366,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.QueryInput)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.QueryInput other = (com.google.cloud.dialogflow.v2beta1.QueryInput) obj;
+    com.google.cloud.dialogflow.v2beta1.QueryInput other =
+        (com.google.cloud.dialogflow.v2beta1.QueryInput) obj;
 
     boolean result = true;
-    result = result && getInputCase().equals(
-        other.getInputCase());
+    result = result && getInputCase().equals(other.getInputCase());
     if (!result) return false;
     switch (inputCase_) {
       case 1:
-        result = result && getAudioConfig()
-            .equals(other.getAudioConfig());
+        result = result && getAudioConfig().equals(other.getAudioConfig());
         break;
       case 2:
-        result = result && getText()
-            .equals(other.getText());
+        result = result && getText().equals(other.getText());
         break;
       case 3:
-        result = result && getEvent()
-            .equals(other.getEvent());
+        result = result && getEvent().equals(other.getEvent());
         break;
       case 0:
       default:
@@ -389,97 +422,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.QueryInput parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.QueryInput parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.QueryInput parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.QueryInput prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents the query input. It can contain either:
    * 1.  An audio config which
@@ -490,21 +530,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.QueryInput}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.QueryInput)
       com.google.cloud.dialogflow.v2beta1.QueryInputOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryInput_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_QueryInput_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryInput_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_QueryInput_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.QueryInput.class, com.google.cloud.dialogflow.v2beta1.QueryInput.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.QueryInput.class,
+              com.google.cloud.dialogflow.v2beta1.QueryInput.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.QueryInput.newBuilder()
@@ -512,16 +554,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -531,9 +572,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_QueryInput_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_QueryInput_descriptor;
     }
 
     @java.lang.Override
@@ -552,7 +593,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.QueryInput buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.QueryInput result = new com.google.cloud.dialogflow.v2beta1.QueryInput(this);
+      com.google.cloud.dialogflow.v2beta1.QueryInput result =
+          new com.google.cloud.dialogflow.v2beta1.QueryInput(this);
       if (inputCase_ == 1) {
         if (audioConfigBuilder_ == null) {
           result.input_ = input_;
@@ -583,38 +625,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.QueryInput) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.QueryInput)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.QueryInput) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -624,21 +667,25 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.QueryInput other) {
       if (other == com.google.cloud.dialogflow.v2beta1.QueryInput.getDefaultInstance()) return this;
       switch (other.getInputCase()) {
-        case AUDIO_CONFIG: {
-          mergeAudioConfig(other.getAudioConfig());
-          break;
-        }
-        case TEXT: {
-          mergeText(other.getText());
-          break;
-        }
-        case EVENT: {
-          mergeEvent(other.getEvent());
-          break;
-        }
-        case INPUT_NOT_SET: {
-          break;
-        }
+        case AUDIO_CONFIG:
+          {
+            mergeAudioConfig(other.getAudioConfig());
+            break;
+          }
+        case TEXT:
+          {
+            mergeText(other.getText());
+            break;
+          }
+        case EVENT:
+          {
+            mergeEvent(other.getEvent());
+            break;
+          }
+        case INPUT_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -668,12 +715,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int inputCase_ = 0;
     private java.lang.Object input_;
-    public InputCase
-        getInputCase() {
-      return InputCase.forNumber(
-          inputCase_);
+
+    public InputCase getInputCase() {
+      return InputCase.forNumber(inputCase_);
     }
 
     public Builder clearInput() {
@@ -683,10 +730,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.InputAudioConfig, com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder> audioConfigBuilder_;
+            com.google.cloud.dialogflow.v2beta1.InputAudioConfig,
+            com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder>
+        audioConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -697,6 +748,8 @@ private static final long serialVersionUID = 0L;
       return inputCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -717,6 +770,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -737,6 +792,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -755,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -763,10 +822,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAudioConfig(com.google.cloud.dialogflow.v2beta1.InputAudioConfig value) {
       if (audioConfigBuilder_ == null) {
-        if (inputCase_ == 1 &&
-            input_ != com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance()) {
-          input_ = com.google.cloud.dialogflow.v2beta1.InputAudioConfig.newBuilder((com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_)
-              .mergeFrom(value).buildPartial();
+        if (inputCase_ == 1
+            && input_
+                != com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2beta1.InputAudioConfig.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           input_ = value;
         }
@@ -781,6 +844,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -804,6 +869,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -814,6 +881,8 @@ private static final long serialVersionUID = 0L;
       return getAudioConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -831,6 +900,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech recognizer how to process the speech audio.
      * </pre>
@@ -838,27 +909,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.InputAudioConfig audio_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.InputAudioConfig, com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.InputAudioConfig,
+            com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder>
         getAudioConfigFieldBuilder() {
       if (audioConfigBuilder_ == null) {
         if (!(inputCase_ == 1)) {
           input_ = com.google.cloud.dialogflow.v2beta1.InputAudioConfig.getDefaultInstance();
         }
-        audioConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.InputAudioConfig, com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder>(
+        audioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.InputAudioConfig,
+                com.google.cloud.dialogflow.v2beta1.InputAudioConfig.Builder,
+                com.google.cloud.dialogflow.v2beta1.InputAudioConfigOrBuilder>(
                 (com.google.cloud.dialogflow.v2beta1.InputAudioConfig) input_,
                 getParentForChildren(),
                 isClean());
         input_ = null;
       }
       inputCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return audioConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.TextInput, com.google.cloud.dialogflow.v2beta1.TextInput.Builder, com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder> textBuilder_;
+            com.google.cloud.dialogflow.v2beta1.TextInput,
+            com.google.cloud.dialogflow.v2beta1.TextInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder>
+        textBuilder_;
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -869,6 +951,8 @@ private static final long serialVersionUID = 0L;
       return inputCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -889,6 +973,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -909,14 +995,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.TextInput text = 2;</code>
      */
-    public Builder setText(
-        com.google.cloud.dialogflow.v2beta1.TextInput.Builder builderForValue) {
+    public Builder setText(com.google.cloud.dialogflow.v2beta1.TextInput.Builder builderForValue) {
       if (textBuilder_ == null) {
         input_ = builderForValue.build();
         onChanged();
@@ -927,6 +1014,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -935,10 +1024,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeText(com.google.cloud.dialogflow.v2beta1.TextInput value) {
       if (textBuilder_ == null) {
-        if (inputCase_ == 2 &&
-            input_ != com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance()) {
-          input_ = com.google.cloud.dialogflow.v2beta1.TextInput.newBuilder((com.google.cloud.dialogflow.v2beta1.TextInput) input_)
-              .mergeFrom(value).buildPartial();
+        if (inputCase_ == 2
+            && input_ != com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2beta1.TextInput.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.TextInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           input_ = value;
         }
@@ -953,6 +1045,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -976,6 +1070,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -986,6 +1082,8 @@ private static final long serialVersionUID = 0L;
       return getTextFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -1003,6 +1101,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The natural language text to be processed.
      * </pre>
@@ -1010,27 +1110,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.TextInput text = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.TextInput, com.google.cloud.dialogflow.v2beta1.TextInput.Builder, com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.TextInput,
+            com.google.cloud.dialogflow.v2beta1.TextInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder>
         getTextFieldBuilder() {
       if (textBuilder_ == null) {
         if (!(inputCase_ == 2)) {
           input_ = com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance();
         }
-        textBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.TextInput, com.google.cloud.dialogflow.v2beta1.TextInput.Builder, com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder>(
+        textBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.TextInput,
+                com.google.cloud.dialogflow.v2beta1.TextInput.Builder,
+                com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder>(
                 (com.google.cloud.dialogflow.v2beta1.TextInput) input_,
                 getParentForChildren(),
                 isClean());
         input_ = null;
       }
       inputCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return textBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.EventInput, com.google.cloud.dialogflow.v2beta1.EventInput.Builder, com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder> eventBuilder_;
+            com.google.cloud.dialogflow.v2beta1.EventInput,
+            com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>
+        eventBuilder_;
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1041,6 +1152,8 @@ private static final long serialVersionUID = 0L;
       return inputCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1061,6 +1174,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1081,6 +1196,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1099,6 +1216,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1107,10 +1226,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEvent(com.google.cloud.dialogflow.v2beta1.EventInput value) {
       if (eventBuilder_ == null) {
-        if (inputCase_ == 3 &&
-            input_ != com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance()) {
-          input_ = com.google.cloud.dialogflow.v2beta1.EventInput.newBuilder((com.google.cloud.dialogflow.v2beta1.EventInput) input_)
-              .mergeFrom(value).buildPartial();
+        if (inputCase_ == 3
+            && input_ != com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2beta1.EventInput.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.EventInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           input_ = value;
         }
@@ -1125,6 +1247,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1148,6 +1272,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1158,6 +1284,8 @@ private static final long serialVersionUID = 0L;
       return getEventFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1175,6 +1303,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The event to be processed.
      * </pre>
@@ -1182,26 +1312,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.EventInput event = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.EventInput, com.google.cloud.dialogflow.v2beta1.EventInput.Builder, com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.EventInput,
+            com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>
         getEventFieldBuilder() {
       if (eventBuilder_ == null) {
         if (!(inputCase_ == 3)) {
           input_ = com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
         }
-        eventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.EventInput, com.google.cloud.dialogflow.v2beta1.EventInput.Builder, com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>(
+        eventBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.EventInput,
+                com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
+                com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>(
                 (com.google.cloud.dialogflow.v2beta1.EventInput) input_,
                 getParentForChildren(),
                 isClean());
         input_ = null;
       }
       inputCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return eventBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1211,12 +1347,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.QueryInput)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.QueryInput)
   private static final com.google.cloud.dialogflow.v2beta1.QueryInput DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.QueryInput();
   }
@@ -1225,16 +1361,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<QueryInput>
-      PARSER = new com.google.protobuf.AbstractParser<QueryInput>() {
-    @java.lang.Override
-    public QueryInput parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new QueryInput(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<QueryInput> PARSER =
+      new com.google.protobuf.AbstractParser<QueryInput>() {
+        @java.lang.Override
+        public QueryInput parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new QueryInput(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<QueryInput> parser() {
     return PARSER;
@@ -1249,6 +1385,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dialogflow.v2beta1.QueryInput getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

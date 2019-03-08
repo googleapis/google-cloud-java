@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface GetDocumentRequestOrBuilder extends
+public interface GetDocumentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.GetDocumentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the Document to get. In the format:
    * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
@@ -17,6 +20,8 @@ public interface GetDocumentRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the Document to get. In the format:
    * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
@@ -24,10 +29,11 @@ public interface GetDocumentRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The fields to return. If not set, returns all fields.
    * If the document has a field that is not present in this mask, that field
@@ -38,6 +44,8 @@ public interface GetDocumentRequestOrBuilder extends
    */
   boolean hasMask();
   /**
+   *
+   *
    * <pre>
    * The fields to return. If not set, returns all fields.
    * If the document has a field that is not present in this mask, that field
@@ -48,6 +56,8 @@ public interface GetDocumentRequestOrBuilder extends
    */
   com.google.firestore.v1beta1.DocumentMask getMask();
   /**
+   *
+   *
    * <pre>
    * The fields to return. If not set, returns all fields.
    * If the document has a field that is not present in this mask, that field
@@ -59,6 +69,8 @@ public interface GetDocumentRequestOrBuilder extends
   com.google.firestore.v1beta1.DocumentMaskOrBuilder getMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Reads the document in a transaction.
    * </pre>
@@ -68,6 +80,8 @@ public interface GetDocumentRequestOrBuilder extends
   com.google.protobuf.ByteString getTransaction();
 
   /**
+   *
+   *
    * <pre>
    * Reads the version of the document at the given time.
    * This may not be older than 60 seconds.
@@ -77,6 +91,8 @@ public interface GetDocumentRequestOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Reads the version of the document at the given time.
    * This may not be older than 60 seconds.
@@ -86,6 +102,8 @@ public interface GetDocumentRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Reads the version of the document at the given time.
    * This may not be older than 60 seconds.
@@ -95,5 +113,6 @@ public interface GetDocumentRequestOrBuilder extends
    */
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
-  public com.google.firestore.v1beta1.GetDocumentRequest.ConsistencySelectorCase getConsistencySelectorCase();
+  public com.google.firestore.v1beta1.GetDocumentRequest.ConsistencySelectorCase
+      getConsistencySelectorCase();
 }

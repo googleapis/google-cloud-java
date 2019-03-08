@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.dns.spi.v1.DnsRpc;
-
 import org.junit.Test;
 
 public class DnsTest {
@@ -50,22 +49,22 @@ public class DnsTest {
     assertEquals(recordType.name(), recordSetListOption.getValue());
     assertEquals(DnsRpc.Option.DNS_TYPE, recordSetListOption.getRpcOption());
     // fields
-    recordSetListOption = Dns.RecordSetListOption.fields(Dns.RecordSetField.NAME,
-        Dns.RecordSetField.TTL);
+    recordSetListOption =
+        Dns.RecordSetListOption.fields(Dns.RecordSetField.NAME, Dns.RecordSetField.TTL);
     assertEquals(DnsRpc.Option.FIELDS, recordSetListOption.getRpcOption());
     assertTrue(recordSetListOption.getValue() instanceof String);
-    assertTrue(((String) recordSetListOption.getValue()).contains(
-        Dns.RecordSetField.NAME.getSelector()));
-    assertTrue(((String) recordSetListOption.getValue()).contains(
-        Dns.RecordSetField.TTL.getSelector()));
-    assertTrue(((String) recordSetListOption.getValue()).contains(
-        Dns.RecordSetField.NAME.getSelector()));
+    assertTrue(
+        ((String) recordSetListOption.getValue()).contains(Dns.RecordSetField.NAME.getSelector()));
+    assertTrue(
+        ((String) recordSetListOption.getValue()).contains(Dns.RecordSetField.TTL.getSelector()));
+    assertTrue(
+        ((String) recordSetListOption.getValue()).contains(Dns.RecordSetField.NAME.getSelector()));
   }
 
   @Test
   public void testZoneOption() {
-    Dns.ZoneOption fields = Dns.ZoneOption.fields(Dns.ZoneField.CREATION_TIME,
-        Dns.ZoneField.DESCRIPTION);
+    Dns.ZoneOption fields =
+        Dns.ZoneOption.fields(Dns.ZoneField.CREATION_TIME, Dns.ZoneField.DESCRIPTION);
     assertEquals(DnsRpc.Option.FIELDS, fields.getRpcOption());
     assertTrue(fields.getValue() instanceof String);
     assertTrue(((String) fields.getValue()).contains(Dns.ZoneField.CREATION_TIME.getSelector()));
@@ -75,8 +74,8 @@ public class DnsTest {
   @Test
   public void testZoneList() {
     // fields
-    Dns.ZoneListOption fields = Dns.ZoneListOption.fields(Dns.ZoneField.CREATION_TIME,
-        Dns.ZoneField.DESCRIPTION);
+    Dns.ZoneListOption fields =
+        Dns.ZoneListOption.fields(Dns.ZoneField.CREATION_TIME, Dns.ZoneField.DESCRIPTION);
     assertEquals(DnsRpc.Option.FIELDS, fields.getRpcOption());
     assertTrue(fields.getValue() instanceof String);
     assertTrue(((String) fields.getValue()).contains(Dns.ZoneField.CREATION_TIME.getSelector()));
@@ -109,12 +108,13 @@ public class DnsTest {
   @Test
   public void testChangeRequestOption() {
     // fields
-    Dns.ChangeRequestOption fields = Dns.ChangeRequestOption.fields(
-        Dns.ChangeRequestField.START_TIME, Dns.ChangeRequestField.STATUS);
+    Dns.ChangeRequestOption fields =
+        Dns.ChangeRequestOption.fields(
+            Dns.ChangeRequestField.START_TIME, Dns.ChangeRequestField.STATUS);
     assertEquals(DnsRpc.Option.FIELDS, fields.getRpcOption());
     assertTrue(fields.getValue() instanceof String);
-    assertTrue(((String) fields.getValue()).contains(
-        Dns.ChangeRequestField.START_TIME.getSelector()));
+    assertTrue(
+        ((String) fields.getValue()).contains(Dns.ChangeRequestField.START_TIME.getSelector()));
     assertTrue(((String) fields.getValue()).contains(Dns.ChangeRequestField.STATUS.getSelector()));
     assertTrue(((String) fields.getValue()).contains(Dns.ChangeRequestField.ID.getSelector()));
   }
@@ -122,12 +122,13 @@ public class DnsTest {
   @Test
   public void testChangeRequestListOption() {
     // fields
-    Dns.ChangeRequestListOption fields = Dns.ChangeRequestListOption.fields(
-        Dns.ChangeRequestField.START_TIME, Dns.ChangeRequestField.STATUS);
+    Dns.ChangeRequestListOption fields =
+        Dns.ChangeRequestListOption.fields(
+            Dns.ChangeRequestField.START_TIME, Dns.ChangeRequestField.STATUS);
     assertEquals(DnsRpc.Option.FIELDS, fields.getRpcOption());
     assertTrue(fields.getValue() instanceof String);
-    assertTrue(((String) fields.getValue()).contains(
-        Dns.ChangeRequestField.START_TIME.getSelector()));
+    assertTrue(
+        ((String) fields.getValue()).contains(Dns.ChangeRequestField.START_TIME.getSelector()));
     assertTrue(((String) fields.getValue()).contains(Dns.ChangeRequestField.STATUS.getSelector()));
     assertTrue(((String) fields.getValue()).contains(Dns.ChangeRequestField.ID.getSelector()));
     // page token

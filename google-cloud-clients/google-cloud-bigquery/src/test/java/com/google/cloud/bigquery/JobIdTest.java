@@ -33,7 +33,6 @@ public class JobIdTest {
     assertEquals("job", JOB_COMPLETE.getJob());
   }
 
-
   @Test
   public void testEquals() {
     compareJobs(JOB, JobId.of("job"));

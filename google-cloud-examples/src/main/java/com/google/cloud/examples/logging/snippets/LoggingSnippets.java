@@ -23,9 +23,9 @@
 package com.google.cloud.examples.logging.snippets;
 
 import com.google.api.gax.paging.AsyncPage;
+import com.google.api.gax.paging.Page;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.EntryListOption;
@@ -39,7 +39,6 @@ import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
-
 import com.google.cloud.logging.Synchronicity;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,8 +56,8 @@ public class LoggingSnippets {
   }
 
   /**
-   * Example of creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#getProjectId()} project).
+   * Example of creating a sink to export logs to a BigQuery dataset (in the {@link
+   * LoggingOptions#getProjectId()} project).
    */
   // [TARGET create(SinkInfo)]
   // [VARIABLE "my_sink_name"]
@@ -72,8 +71,8 @@ public class LoggingSnippets {
   }
 
   /**
-   * Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#getProjectId()} project).
+   * Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the {@link
+   * LoggingOptions#getProjectId()} project).
    */
   // [TARGET createAsync(SinkInfo)]
   // [VARIABLE "my_sink_name"]
@@ -89,36 +88,34 @@ public class LoggingSnippets {
     return sink;
   }
 
-  /**
-   * Example of updating a sink.
-   */
+  /** Example of updating a sink. */
   // [TARGET update(SinkInfo)]
   // [VARIABLE "my_sink_name"]
   // [VARIABLE "my_dataset"]
   public Sink updateSink(String sinkName, String datasetName) {
     // [START logging_update_sink]
-    SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
-        .setVersionFormat(SinkInfo.VersionFormat.V2)
-        .setFilter("severity>=ERROR")
-        .build();
+    SinkInfo sinkInfo =
+        SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+            .setVersionFormat(SinkInfo.VersionFormat.V2)
+            .setFilter("severity>=ERROR")
+            .build();
     Sink sink = logging.update(sinkInfo);
     // [END logging_update_sink]
     return sink;
   }
 
-  /**
-   * Example of asynchronously updating a sink.
-   */
+  /** Example of asynchronously updating a sink. */
   // [TARGET updateAsync(SinkInfo)]
   // [VARIABLE "my_sink_name"]
   // [VARIABLE "my_dataset"]
   public Sink updateSinkAsync(String sinkName, String datasetName)
       throws ExecutionException, InterruptedException {
     // [START updateSinkAsync]
-    SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
-        .setVersionFormat(SinkInfo.VersionFormat.V2)
-        .setFilter("severity>=ERROR")
-        .build();
+    SinkInfo sinkInfo =
+        SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+            .setVersionFormat(SinkInfo.VersionFormat.V2)
+            .setFilter("severity>=ERROR")
+            .build();
     Future<Sink> future = logging.updateAsync(sinkInfo);
     // ...
     Sink sink = future.get();
@@ -126,9 +123,7 @@ public class LoggingSnippets {
     return sink;
   }
 
-  /**
-   * Example of getting a sink.
-   */
+  /** Example of getting a sink. */
   // [TARGET getSink(String)]
   // [VARIABLE "my_sink_name"]
   public Sink getSink(String sinkName) {
@@ -141,9 +136,7 @@ public class LoggingSnippets {
     return sink;
   }
 
-  /**
-   * Example of asynchronously getting a sink.
-   */
+  /** Example of asynchronously getting a sink. */
   // [TARGET getSinkAsync(String)]
   // [VARIABLE "my_sink_name"]
   public Sink getSinkAsync(String sinkName) throws ExecutionException, InterruptedException {
@@ -158,9 +151,7 @@ public class LoggingSnippets {
     return sink;
   }
 
-  /**
-   * Example of listing sinks, specifying the page size.
-   */
+  /** Example of listing sinks, specifying the page size. */
   // [TARGET listSinks(ListOption...)]
   public Page<Sink> listSinks() {
     // [START logging_list_sinks]
@@ -172,9 +163,7 @@ public class LoggingSnippets {
     return sinks;
   }
 
-  /**
-   * Example of asynchronously listing sinks, specifying the page size.
-   */
+  /** Example of asynchronously listing sinks, specifying the page size. */
   // [TARGET listSinksAsync(ListOption...)]
   public Page<Sink> listSinksAsync() throws ExecutionException, InterruptedException {
     // [START listSinksAsync]
@@ -188,9 +177,7 @@ public class LoggingSnippets {
     return sinks;
   }
 
-  /**
-   * Example of deleting a sink.
-   */
+  /** Example of deleting a sink. */
   // [TARGET deleteSink(String)]
   // [VARIABLE "my_sink_name"]
   public boolean deleteSink(String sinkName) {
@@ -205,9 +192,7 @@ public class LoggingSnippets {
     return deleted;
   }
 
-  /**
-   * Example of asynchronously deleting a sink.
-   */
+  /** Example of asynchronously deleting a sink. */
   // [TARGET deleteSinkAsync(String)]
   // [VARIABLE "my_sink_name"]
   public boolean deleteSinkAsync(String sinkName) throws ExecutionException, InterruptedException {
@@ -224,9 +209,7 @@ public class LoggingSnippets {
     return deleted;
   }
 
-  /**
-   * Example of deleting a log.
-   */
+  /** Example of deleting a log. */
   // [TARGET deleteLog(String)]
   // [VARIABLE "my_log_name"]
   public boolean deleteLog(String logName) {
@@ -241,9 +224,7 @@ public class LoggingSnippets {
     return deleted;
   }
 
-  /**
-   * Example of asynchronously deleting a log.
-   */
+  /** Example of asynchronously deleting a log. */
   // [TARGET deleteLogAsync(String)]
   // [VARIABLE "my_log_name"]
   public boolean deleteLogAsync(String logName) throws ExecutionException, InterruptedException {
@@ -260,9 +241,7 @@ public class LoggingSnippets {
     return deleted;
   }
 
-  /**
-   * Example of listing monitored resource descriptors, specifying the page size.
-   */
+  /** Example of listing monitored resource descriptors, specifying the page size. */
   // [TARGET listMonitoredResourceDescriptors(ListOption...)]
   public Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors() {
     // [START listMonitoredResourceDescriptors]
@@ -275,9 +254,7 @@ public class LoggingSnippets {
     return descriptors;
   }
 
-  /**
-   * Example of asynchronously listing monitored resource descriptors, specifying the page size.
-   */
+  /** Example of asynchronously listing monitored resource descriptors, specifying the page size. */
   // [TARGET listMonitoredResourceDescriptorsAsync(ListOption...)]
   public Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptorsAsync()
       throws ExecutionException, InterruptedException {
@@ -293,9 +270,7 @@ public class LoggingSnippets {
     return descriptors;
   }
 
-  /**
-   * Example of creating a metric for logs with severity higher or equal to ERROR.
-   */
+  /** Example of creating a metric for logs with severity higher or equal to ERROR. */
   // [TARGET create(MetricInfo)]
   // [VARIABLE "my_metric_name"]
   public Metric createMetric(String metricName) {
@@ -322,32 +297,30 @@ public class LoggingSnippets {
     return metric;
   }
 
-  /**
-   * Example of updating a metric.
-   */
+  /** Example of updating a metric. */
   // [TARGET update(MetricInfo)]
   // [VARIABLE "my_metric_name"]
   public Metric updateMetric(String metricName) {
     // [START updateMetric]
-    MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
-        .setDescription("new description")
-        .build();
+    MetricInfo metricInfo =
+        MetricInfo.newBuilder(metricName, "severity>=ERROR")
+            .setDescription("new description")
+            .build();
     Metric metric = logging.update(metricInfo);
     // [END updateMetric]
     return metric;
   }
 
-  /**
-   * Example of asynchronously updating a metric.
-   */
+  /** Example of asynchronously updating a metric. */
   // [TARGET updateAsync(MetricInfo)]
   // [VARIABLE "my_metric_name"]
   public Metric updateMetricAsync(String metricName)
       throws ExecutionException, InterruptedException {
     // [START updateMetricAsync]
-    MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
-        .setDescription("new description")
-        .build();
+    MetricInfo metricInfo =
+        MetricInfo.newBuilder(metricName, "severity>=ERROR")
+            .setDescription("new description")
+            .build();
     Future<Metric> future = logging.updateAsync(metricInfo);
     // ...
     Metric metric = future.get();
@@ -355,9 +328,7 @@ public class LoggingSnippets {
     return metric;
   }
 
-  /**
-   * Example of getting a metric.
-   */
+  /** Example of getting a metric. */
   // [TARGET getMetric(String)]
   // [VARIABLE "my_metric_name"]
   public Metric getMetric(String metricName) {
@@ -370,9 +341,7 @@ public class LoggingSnippets {
     return metric;
   }
 
-  /**
-   * Example of asynchronously getting a metric.
-   */
+  /** Example of asynchronously getting a metric. */
   // [TARGET getMetricAsync(String)]
   // [VARIABLE "my_metric_name"]
   public Metric getMetricAsync(String metricName) throws ExecutionException, InterruptedException {
@@ -387,9 +356,7 @@ public class LoggingSnippets {
     return metric;
   }
 
-  /**
-   * Example of listing metrics, specifying the page size.
-   */
+  /** Example of listing metrics, specifying the page size. */
   // [TARGET listMetrics(ListOption...)]
   public Page<Metric> listMetrics() {
     // [START listMetrics]
@@ -401,9 +368,7 @@ public class LoggingSnippets {
     return metrics;
   }
 
-  /**
-   * Example of asynchronously listing metrics, specifying the page size.
-   */
+  /** Example of asynchronously listing metrics, specifying the page size. */
   // [TARGET listMetricsAsync(ListOption...)]
   public Page<Metric> listMetricsAsync() throws ExecutionException, InterruptedException {
     // [START listMetricsAsync]
@@ -417,9 +382,7 @@ public class LoggingSnippets {
     return metrics;
   }
 
-  /**
-   * Example of deleting a metric.
-   */
+  /** Example of deleting a metric. */
   // [TARGET deleteMetric(String)]
   // [VARIABLE "my_metric_name"]
   public boolean deleteMetric(String metricName) {
@@ -434,9 +397,7 @@ public class LoggingSnippets {
     return deleted;
   }
 
-  /**
-   * Example of asynchronously deleting a metric.
-   */
+  /** Example of asynchronously deleting a metric. */
   // [TARGET deleteMetricAsync(String)]
   // [VARIABLE "my_metric_name"]
   public boolean deleteMetricAsync(String metricName)
@@ -455,10 +416,9 @@ public class LoggingSnippets {
   }
 
   /**
-   * Example of writing log entries and providing a default log name and monitored
-   * resource.
-   * Logging writes are asynchronous by default.
-   * {@link Logging#setWriteSynchronicity(Synchronicity)} can be used to update the synchronicity.
+   * Example of writing log entries and providing a default log name and monitored resource. Logging
+   * writes are asynchronous by default. {@link Logging#setWriteSynchronicity(Synchronicity)} can be
+   * used to update the synchronicity.
    */
   // [TARGET write(Iterable, WriteOption...)]
   // [VARIABLE "my_log_name"]
@@ -476,9 +436,7 @@ public class LoggingSnippets {
     // [END logging_write_log_entry]
   }
 
-  /**
-   * Example of listing log entries for a specific log.
-   */
+  /** Example of listing log entries for a specific log. */
   // [TARGET listLogEntries(EntryListOption...)]
   // [VARIABLE "logName=projects/my_project_id/logs/my_log_name"]
   public Page<LogEntry> listLogEntries(String filter) {
@@ -491,9 +449,7 @@ public class LoggingSnippets {
     return entries;
   }
 
-  /**
-   * Example of asynchronously listing log entries for a specific log.
-   */
+  /** Example of asynchronously listing log entries for a specific log. */
   // [TARGET listLogEntriesAsync(EntryListOption...)]
   // [VARIABLE "logName=projects/my_project_id/logs/my_log_name"]
   public Page<LogEntry> listLogEntriesAsync(String filter)

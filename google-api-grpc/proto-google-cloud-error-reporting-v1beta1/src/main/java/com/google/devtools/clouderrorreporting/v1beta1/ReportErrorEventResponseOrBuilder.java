@@ -3,7 +3,7 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ReportErrorEventResponseOrBuilder extends
+public interface ReportErrorEventResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

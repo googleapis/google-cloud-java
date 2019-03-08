@@ -23,27 +23,26 @@ package com.google.cloud.spanner;
  * <p>{@code BatchClient} is useful when one wants to read or query a large amount of data from
  * Cloud Spanner across multiple processes, even across different machines. It allows to create
  * partitions of Cloud Spanner database and then read or query over each partition independently yet
- *  at the same snapshot.
+ * at the same snapshot.
  */
 public interface BatchClient {
 
   /**
    * Returns a {@link BatchReadOnlyTransaction} context in which multiple reads and/or queries can
    * be performed. All reads/queries will use the same timestamp, and the timestamp can be inspected
-   * after this transaction is created successfully. This is a blocking method
-   * since it waits to finish the rpcs.
+   * after this transaction is created successfully. This is a blocking method since it waits to
+   * finish the rpcs.
    *
    * <p>Note that the bounded staleness modes, {@link TimestampBound.Mode#MIN_READ_TIMESTAMP} and
-   * {@link TimestampBound.Mode#MAX_STALENESS}, are not supported for
-   * {@link BatchReadOnlyTransaction}.
+   * {@link TimestampBound.Mode#MAX_STALENESS}, are not supported for {@link
+   * BatchReadOnlyTransaction}.
    *
    * @param bound the timestamp bound at which to perform the read
-   *
-   * <!--SNIPPET batch_client_strong_read-->
-   * <pre>{@code
+   *     <!--SNIPPET batch_client_strong_read-->
+   *     <pre>{@code
    * BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(TimestampBound.strong());
    * }</pre>
-   * <!--SNIPPET batch_client_strong_read-->
+   *     <!--SNIPPET batch_client_strong_read-->
    */
   BatchReadOnlyTransaction batchReadOnlyTransaction(TimestampBound bound);
 
@@ -58,7 +57,6 @@ public interface BatchClient {
    *
    * @param batchTransactionId to re-initialize the transaction, re-using the timestamp for
    *     successive read/query.
-   *
    */
   BatchReadOnlyTransaction batchReadOnlyTransaction(BatchTransactionId batchTransactionId);
 }

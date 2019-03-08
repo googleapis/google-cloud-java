@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface GetOrganizationSettingsRequestOrBuilder extends
+public interface GetOrganizationSettingsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.GetOrganizationSettingsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the organization to get organization settings for. Its format is
    * "organizations/[organization_id]/organizationSettings".
@@ -17,6 +20,8 @@ public interface GetOrganizationSettingsRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Name of the organization to get organization settings for. Its format is
    * "organizations/[organization_id]/organizationSettings".
@@ -24,6 +29,5 @@ public interface GetOrganizationSettingsRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

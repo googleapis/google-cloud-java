@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,7 +98,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           .build();
 
   private final PagedCallSettings<
-          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsRequest,
+          ListUptimeCheckConfigsResponse,
           ListUptimeCheckConfigsPagedResponse>
       listUptimeCheckConfigsSettings;
   private final UnaryCallSettings<GetUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -115,7 +116,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<
-          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsRequest,
+          ListUptimeCheckConfigsResponse,
           ListUptimeCheckConfigsPagedResponse>
       listUptimeCheckConfigsSettings() {
     return listUptimeCheckConfigsSettings;
@@ -265,7 +267,9 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
             @Override
             public Iterable<UptimeCheckConfig> extractResources(
                 ListUptimeCheckConfigsResponse payload) {
-              return payload.getUptimeCheckConfigsList();
+              return payload.getUptimeCheckConfigsList() != null
+                  ? payload.getUptimeCheckConfigsList()
+                  : ImmutableList.<UptimeCheckConfig>of();
             }
           };
 
@@ -303,16 +307,20 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
             @Override
             public Iterable<UptimeCheckIp> extractResources(ListUptimeCheckIpsResponse payload) {
-              return payload.getUptimeCheckIpsList();
+              return payload.getUptimeCheckIpsList() != null
+                  ? payload.getUptimeCheckIpsList()
+                  : ImmutableList.<UptimeCheckIp>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsRequest,
+          ListUptimeCheckConfigsResponse,
           ListUptimeCheckConfigsPagedResponse>
       LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+              ListUptimeCheckConfigsRequest,
+              ListUptimeCheckConfigsResponse,
               ListUptimeCheckConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListUptimeCheckConfigsPagedResponse> getFuturePagedResponse(
@@ -322,7 +330,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
                 ApiCallContext context,
                 ApiFuture<ListUptimeCheckConfigsResponse> futureResponse) {
               PageContext<
-                      ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+                      ListUptimeCheckConfigsRequest,
+                      ListUptimeCheckConfigsResponse,
                       UptimeCheckConfig>
                   pageContext =
                       PageContext.create(
@@ -335,7 +344,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
       LIST_UPTIME_CHECK_IPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse,
+              ListUptimeCheckIpsRequest,
+              ListUptimeCheckIpsResponse,
               ListUptimeCheckIpsPagedResponse>() {
             @Override
             public ApiFuture<ListUptimeCheckIpsPagedResponse> getFuturePagedResponse(
@@ -357,7 +367,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+            ListUptimeCheckConfigsRequest,
+            ListUptimeCheckConfigsResponse,
             ListUptimeCheckConfigsPagedResponse>
         listUptimeCheckConfigsSettings;
     private final UnaryCallSettings.Builder<GetUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -521,7 +532,8 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
     /** Returns the builder for the settings used for calls to listUptimeCheckConfigs. */
     public PagedCallSettings.Builder<
-            ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+            ListUptimeCheckConfigsRequest,
+            ListUptimeCheckConfigsResponse,
             ListUptimeCheckConfigsPagedResponse>
         listUptimeCheckConfigsSettings() {
       return listUptimeCheckConfigsSettings;

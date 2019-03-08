@@ -28,10 +28,8 @@ public class OperationTest {
   private static final String PRODUCER = "producer";
   private static final Boolean FIRST = true;
   private static final Boolean LAST = false;
-  private static final Operation OPERATION = Operation.newBuilder(ID, PRODUCER)
-      .setFirst(FIRST)
-      .setLast(LAST)
-      .build();
+  private static final Operation OPERATION =
+      Operation.newBuilder(ID, PRODUCER).setFirst(FIRST).setLast(LAST).build();
 
   @Test
   public void testBuilder() {
@@ -41,26 +39,23 @@ public class OperationTest {
     assertFalse(OPERATION.last());
   }
 
-
   @Test
   public void testToBuilder() {
     compareLogOperation(OPERATION, OPERATION.toBuilder().build());
-    Operation operation = OPERATION.toBuilder()
-        .setId("newId")
-        .setProducer("newProducer")
-        .setFirst(false)
-        .setLast(true)
-        .build();
+    Operation operation =
+        OPERATION
+            .toBuilder()
+            .setId("newId")
+            .setProducer("newProducer")
+            .setFirst(false)
+            .setLast(true)
+            .build();
     assertEquals("newId", operation.getId());
     assertEquals("newProducer", operation.getProducer());
     assertFalse(operation.first());
     assertTrue(operation.last());
-    operation = operation.toBuilder()
-        .setId(ID)
-        .setProducer(PRODUCER)
-        .setFirst(FIRST)
-        .setLast(LAST)
-        .build();
+    operation =
+        operation.toBuilder().setId(ID).setProducer(PRODUCER).setFirst(FIRST).setLast(LAST).build();
     compareLogOperation(OPERATION, operation);
   }
 

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CloudStorageOptionsOrBuilder extends
+public interface CloudStorageOptionsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CloudStorageOptions)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The set of one or more files to scan.
    * </pre>
@@ -16,6 +19,8 @@ public interface CloudStorageOptionsOrBuilder extends
    */
   boolean hasFileSet();
   /**
+   *
+   *
    * <pre>
    * The set of one or more files to scan.
    * </pre>
@@ -24,6 +29,8 @@ public interface CloudStorageOptionsOrBuilder extends
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet();
   /**
+   *
+   *
    * <pre>
    * The set of one or more files to scan.
    * </pre>
@@ -33,6 +40,8 @@ public interface CloudStorageOptionsOrBuilder extends
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Max number of bytes to scan from a file. If a scanned file's size is bigger
    * than this value then the rest of the bytes are omitted. Only one
@@ -44,6 +53,8 @@ public interface CloudStorageOptionsOrBuilder extends
   long getBytesLimitPerFile();
 
   /**
+   *
+   *
    * <pre>
    * Max percentage of bytes to scan from a file. The rest are omitted. The
    * number of bytes scanned is rounded down. Must be between 0 and 100,
@@ -56,6 +67,8 @@ public interface CloudStorageOptionsOrBuilder extends
   int getBytesLimitPerFilePercent();
 
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -67,6 +80,8 @@ public interface CloudStorageOptionsOrBuilder extends
    */
   java.util.List<com.google.privacy.dlp.v2.FileType> getFileTypesList();
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -78,6 +93,8 @@ public interface CloudStorageOptionsOrBuilder extends
    */
   int getFileTypesCount();
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -89,6 +106,8 @@ public interface CloudStorageOptionsOrBuilder extends
    */
   com.google.privacy.dlp.v2.FileType getFileTypes(int index);
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -98,9 +117,10 @@ public interface CloudStorageOptionsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
    */
-  java.util.List<java.lang.Integer>
-  getFileTypesValueList();
+  java.util.List<java.lang.Integer> getFileTypesValueList();
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -112,16 +132,14 @@ public interface CloudStorageOptionsOrBuilder extends
    */
   int getFileTypesValue(int index);
 
-  /**
-   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
   int getSampleMethodValue();
-  /**
-   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
   com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod();
 
   /**
+   *
+   *
    * <pre>
    * Limits the number of files to scan to this percentage of the input FileSet.
    * Number of files scanned is rounded down. Must be between 0 and 100,

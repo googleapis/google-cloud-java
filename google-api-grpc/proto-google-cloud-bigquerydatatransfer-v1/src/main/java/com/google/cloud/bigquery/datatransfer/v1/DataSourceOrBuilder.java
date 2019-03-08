@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface DataSourceOrBuilder extends
+public interface DataSourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.DataSource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. Data source resource name.
    * </pre>
@@ -16,16 +19,19 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. Data source resource name.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Data source id.
    * </pre>
@@ -34,16 +40,19 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getDataSourceId();
   /**
+   *
+   *
    * <pre>
    * Data source id.
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDataSourceIdBytes();
+  com.google.protobuf.ByteString getDataSourceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * User friendly data source name.
    * </pre>
@@ -52,16 +61,19 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * User friendly data source name.
    * </pre>
    *
    * <code>string display_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * User friendly data source description string.
    * </pre>
@@ -70,16 +82,19 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * User friendly data source description string.
    * </pre>
    *
    * <code>string description = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Data source client id which should be used to receive refresh token.
    * When not supplied, no offline credentials are populated for data transfer.
@@ -89,6 +104,8 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getClientId();
   /**
+   *
+   *
    * <pre>
    * Data source client id which should be used to receive refresh token.
    * When not supplied, no offline credentials are populated for data transfer.
@@ -96,10 +113,11 @@ public interface DataSourceOrBuilder extends
    *
    * <code>string client_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getClientIdBytes();
+  com.google.protobuf.ByteString getClientIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -109,9 +127,10 @@ public interface DataSourceOrBuilder extends
    *
    * <code>repeated string scopes = 6;</code>
    */
-  java.util.List<java.lang.String>
-      getScopesList();
+  java.util.List<java.lang.String> getScopesList();
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -123,6 +142,8 @@ public interface DataSourceOrBuilder extends
    */
   int getScopesCount();
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -134,6 +155,8 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getScopes(int index);
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -143,10 +166,11 @@ public interface DataSourceOrBuilder extends
    *
    * <code>repeated string scopes = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getScopesBytes(int index);
+  com.google.protobuf.ByteString getScopesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field has no effect.
    * </pre>
@@ -155,6 +179,8 @@ public interface DataSourceOrBuilder extends
    */
   int getTransferTypeValue();
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field has no effect.
    * </pre>
@@ -164,6 +190,8 @@ public interface DataSourceOrBuilder extends
   com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType();
 
   /**
+   *
+   *
    * <pre>
    * Indicates whether the data source supports multiple transfers
    * to different BigQuery targets.
@@ -174,6 +202,8 @@ public interface DataSourceOrBuilder extends
   boolean getSupportsMultipleTransfers();
 
   /**
+   *
+   *
    * <pre>
    * The number of seconds to wait for an update from the data source
    * before BigQuery marks the transfer as failed.
@@ -184,6 +214,8 @@ public interface DataSourceOrBuilder extends
   int getUpdateDeadlineSeconds();
 
   /**
+   *
+   *
    * <pre>
    * Default data transfer schedule.
    * Examples of valid schedules include:
@@ -196,6 +228,8 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getDefaultSchedule();
   /**
+   *
+   *
    * <pre>
    * Default data transfer schedule.
    * Examples of valid schedules include:
@@ -206,10 +240,11 @@ public interface DataSourceOrBuilder extends
    *
    * <code>string default_schedule = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getDefaultScheduleBytes();
+  com.google.protobuf.ByteString getDefaultScheduleBytes();
 
   /**
+   *
+   *
    * <pre>
    * Specifies whether the data source supports a user defined schedule, or
    * operates on the default schedule.
@@ -221,50 +256,66 @@ public interface DataSourceOrBuilder extends
   boolean getSupportsCustomSchedule();
 
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
-  java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> 
-      getParametersList();
+  java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> getParametersList();
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getParameters(int index);
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
   int getParametersCount();
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder> 
+  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
       getParametersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder getParametersOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Url for the help document for this data source.
    * </pre>
@@ -273,33 +324,44 @@ public interface DataSourceOrBuilder extends
    */
   java.lang.String getHelpUrl();
   /**
+   *
+   *
    * <pre>
    * Url for the help document for this data source.
    * </pre>
    *
    * <code>string help_url = 13;</code>
    */
-  com.google.protobuf.ByteString
-      getHelpUrlBytes();
+  com.google.protobuf.ByteString getHelpUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * Indicates the type of authorization.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+   * </code>
    */
   int getAuthorizationTypeValue();
   /**
+   *
+   *
    * <pre>
    * Indicates the type of authorization.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType getAuthorizationType();
 
   /**
+   *
+   *
    * <pre>
    * Specifies whether the data source supports automatic data refresh for the
    * past few days, and how it's supported.
@@ -307,10 +369,13 @@ public interface DataSourceOrBuilder extends
    * so it's useful to refresh data automatically.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+   * </code>
    */
   int getDataRefreshTypeValue();
   /**
+   *
+   *
    * <pre>
    * Specifies whether the data source supports automatic data refresh for the
    * past few days, and how it's supported.
@@ -318,11 +383,14 @@ public interface DataSourceOrBuilder extends
    * so it's useful to refresh data automatically.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType();
 
   /**
+   *
+   *
    * <pre>
    * Default data refresh window on days.
    * Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
@@ -333,6 +401,8 @@ public interface DataSourceOrBuilder extends
   int getDefaultDataRefreshWindowDays();
 
   /**
+   *
+   *
    * <pre>
    * Disables backfilling and manual run scheduling
    * for the data source.
@@ -343,6 +413,8 @@ public interface DataSourceOrBuilder extends
   boolean getManualRunsDisabled();
 
   /**
+   *
+   *
    * <pre>
    * The minimum interval for scheduler to schedule runs.
    * </pre>
@@ -351,6 +423,8 @@ public interface DataSourceOrBuilder extends
    */
   boolean hasMinimumScheduleInterval();
   /**
+   *
+   *
    * <pre>
    * The minimum interval for scheduler to schedule runs.
    * </pre>
@@ -359,6 +433,8 @@ public interface DataSourceOrBuilder extends
    */
   com.google.protobuf.Duration getMinimumScheduleInterval();
   /**
+   *
+   *
    * <pre>
    * The minimum interval for scheduler to schedule runs.
    * </pre>

@@ -4,31 +4,34 @@
 package com.google.logging.v2;
 
 /**
+ *
+ *
  * <pre>
  * Result returned from ListLogMetrics.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.ListLogMetricsResponse}
  */
-public  final class ListLogMetricsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListLogMetricsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListLogMetricsResponse)
     ListLogMetricsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListLogMetricsResponse.newBuilder() to construct.
   private ListLogMetricsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListLogMetricsResponse() {
     metrics_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListLogMetricsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,35 +51,36 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              metrics_ = new java.util.ArrayList<com.google.logging.v2.LogMetric>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                metrics_ = new java.util.ArrayList<com.google.logging.v2.LogMetric>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              metrics_.add(
+                  input.readMessage(com.google.logging.v2.LogMetric.parser(), extensionRegistry));
+              break;
             }
-            metrics_.add(
-                input.readMessage(com.google.logging.v2.LogMetric.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              nextPageToken_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         metrics_ = java.util.Collections.unmodifiableList(metrics_);
@@ -85,23 +89,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_ListLogMetricsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.logging.v2.LoggingMetricsProto
+        .internal_static_google_logging_v2_ListLogMetricsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_ListLogMetricsResponse_fieldAccessorTable
+    return com.google.logging.v2.LoggingMetricsProto
+        .internal_static_google_logging_v2_ListLogMetricsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.ListLogMetricsResponse.class, com.google.logging.v2.ListLogMetricsResponse.Builder.class);
+            com.google.logging.v2.ListLogMetricsResponse.class,
+            com.google.logging.v2.ListLogMetricsResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int METRICS_FIELD_NUMBER = 1;
   private java.util.List<com.google.logging.v2.LogMetric> metrics_;
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
@@ -112,17 +121,21 @@ private static final long serialVersionUID = 0L;
     return metrics_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
-  public java.util.List<? extends com.google.logging.v2.LogMetricOrBuilder> 
+  public java.util.List<? extends com.google.logging.v2.LogMetricOrBuilder>
       getMetricsOrBuilderList() {
     return metrics_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
@@ -133,6 +146,8 @@ private static final long serialVersionUID = 0L;
     return metrics_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
@@ -143,20 +158,23 @@ private static final long serialVersionUID = 0L;
     return metrics_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
-  public com.google.logging.v2.LogMetricOrBuilder getMetricsOrBuilder(
-      int index) {
+  public com.google.logging.v2.LogMetricOrBuilder getMetricsOrBuilder(int index) {
     return metrics_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -170,14 +188,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -186,13 +205,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -201,6 +218,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -212,8 +230,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < metrics_.size(); i++) {
       output.writeMessage(1, metrics_.get(i));
     }
@@ -230,8 +247,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < metrics_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, metrics_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, metrics_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -244,18 +260,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.logging.v2.ListLogMetricsResponse)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.ListLogMetricsResponse other = (com.google.logging.v2.ListLogMetricsResponse) obj;
+    com.google.logging.v2.ListLogMetricsResponse other =
+        (com.google.logging.v2.ListLogMetricsResponse) obj;
 
     boolean result = true;
-    result = result && getMetricsList()
-        .equals(other.getMetricsList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getMetricsList().equals(other.getMetricsList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -278,118 +293,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.logging.v2.ListLogMetricsResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.logging.v2.ListLogMetricsResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.logging.v2.ListLogMetricsResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.ListLogMetricsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.logging.v2.ListLogMetricsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Result returned from ListLogMetrics.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.ListLogMetricsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.logging.v2.ListLogMetricsResponse)
       com.google.logging.v2.ListLogMetricsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_ListLogMetricsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.logging.v2.LoggingMetricsProto
+          .internal_static_google_logging_v2_ListLogMetricsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_ListLogMetricsResponse_fieldAccessorTable
+      return com.google.logging.v2.LoggingMetricsProto
+          .internal_static_google_logging_v2_ListLogMetricsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.ListLogMetricsResponse.class, com.google.logging.v2.ListLogMetricsResponse.Builder.class);
+              com.google.logging.v2.ListLogMetricsResponse.class,
+              com.google.logging.v2.ListLogMetricsResponse.Builder.class);
     }
 
     // Construct using com.google.logging.v2.ListLogMetricsResponse.newBuilder()
@@ -397,17 +421,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMetricsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -423,9 +447,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_ListLogMetricsResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.logging.v2.LoggingMetricsProto
+          .internal_static_google_logging_v2_ListLogMetricsResponse_descriptor;
     }
 
     @java.lang.Override
@@ -444,7 +468,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.logging.v2.ListLogMetricsResponse buildPartial() {
-      com.google.logging.v2.ListLogMetricsResponse result = new com.google.logging.v2.ListLogMetricsResponse(this);
+      com.google.logging.v2.ListLogMetricsResponse result =
+          new com.google.logging.v2.ListLogMetricsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (metricsBuilder_ == null) {
@@ -466,38 +491,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.ListLogMetricsResponse) {
-        return mergeFrom((com.google.logging.v2.ListLogMetricsResponse)other);
+        return mergeFrom((com.google.logging.v2.ListLogMetricsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -524,9 +550,10 @@ private static final long serialVersionUID = 0L;
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            metricsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getMetricsFieldBuilder() : null;
+            metricsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMetricsFieldBuilder()
+                    : null;
           } else {
             metricsBuilder_.addAllMessages(other.metrics_);
           }
@@ -564,21 +591,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.logging.v2.LogMetric> metrics_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureMetricsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         metrics_ = new java.util.ArrayList<com.google.logging.v2.LogMetric>(metrics_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.logging.v2.LogMetric, com.google.logging.v2.LogMetric.Builder, com.google.logging.v2.LogMetricOrBuilder> metricsBuilder_;
+            com.google.logging.v2.LogMetric,
+            com.google.logging.v2.LogMetric.Builder,
+            com.google.logging.v2.LogMetricOrBuilder>
+        metricsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -593,6 +627,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -607,6 +643,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -621,14 +659,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public Builder setMetrics(
-        int index, com.google.logging.v2.LogMetric value) {
+    public Builder setMetrics(int index, com.google.logging.v2.LogMetric value) {
       if (metricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -642,14 +681,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public Builder setMetrics(
-        int index, com.google.logging.v2.LogMetric.Builder builderForValue) {
+    public Builder setMetrics(int index, com.google.logging.v2.LogMetric.Builder builderForValue) {
       if (metricsBuilder_ == null) {
         ensureMetricsIsMutable();
         metrics_.set(index, builderForValue.build());
@@ -660,6 +700,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -680,14 +722,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public Builder addMetrics(
-        int index, com.google.logging.v2.LogMetric value) {
+    public Builder addMetrics(int index, com.google.logging.v2.LogMetric value) {
       if (metricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -701,14 +744,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public Builder addMetrics(
-        com.google.logging.v2.LogMetric.Builder builderForValue) {
+    public Builder addMetrics(com.google.logging.v2.LogMetric.Builder builderForValue) {
       if (metricsBuilder_ == null) {
         ensureMetricsIsMutable();
         metrics_.add(builderForValue.build());
@@ -719,14 +763,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public Builder addMetrics(
-        int index, com.google.logging.v2.LogMetric.Builder builderForValue) {
+    public Builder addMetrics(int index, com.google.logging.v2.LogMetric.Builder builderForValue) {
       if (metricsBuilder_ == null) {
         ensureMetricsIsMutable();
         metrics_.add(index, builderForValue.build());
@@ -737,6 +782,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -747,8 +794,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.logging.v2.LogMetric> values) {
       if (metricsBuilder_ == null) {
         ensureMetricsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, metrics_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metrics_);
         onChanged();
       } else {
         metricsBuilder_.addAllMessages(values);
@@ -756,6 +802,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -773,6 +821,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -790,39 +840,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public com.google.logging.v2.LogMetric.Builder getMetricsBuilder(
-        int index) {
+    public com.google.logging.v2.LogMetric.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public com.google.logging.v2.LogMetricOrBuilder getMetricsOrBuilder(
-        int index) {
+    public com.google.logging.v2.LogMetricOrBuilder getMetricsOrBuilder(int index) {
       if (metricsBuilder_ == null) {
-        return metrics_.get(index);  } else {
+        return metrics_.get(index);
+      } else {
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public java.util.List<? extends com.google.logging.v2.LogMetricOrBuilder> 
-         getMetricsOrBuilderList() {
+    public java.util.List<? extends com.google.logging.v2.LogMetricOrBuilder>
+        getMetricsOrBuilderList() {
       if (metricsBuilder_ != null) {
         return metricsBuilder_.getMessageOrBuilderList();
       } else {
@@ -830,6 +885,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
@@ -837,38 +894,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
     public com.google.logging.v2.LogMetric.Builder addMetricsBuilder() {
-      return getMetricsFieldBuilder().addBuilder(
-          com.google.logging.v2.LogMetric.getDefaultInstance());
+      return getMetricsFieldBuilder()
+          .addBuilder(com.google.logging.v2.LogMetric.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public com.google.logging.v2.LogMetric.Builder addMetricsBuilder(
-        int index) {
-      return getMetricsFieldBuilder().addBuilder(
-          index, com.google.logging.v2.LogMetric.getDefaultInstance());
+    public com.google.logging.v2.LogMetric.Builder addMetricsBuilder(int index) {
+      return getMetricsFieldBuilder()
+          .addBuilder(index, com.google.logging.v2.LogMetric.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of logs-based metrics.
      * </pre>
      *
      * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
      */
-    public java.util.List<com.google.logging.v2.LogMetric.Builder> 
-         getMetricsBuilderList() {
+    public java.util.List<com.google.logging.v2.LogMetric.Builder> getMetricsBuilderList() {
       return getMetricsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.logging.v2.LogMetric, com.google.logging.v2.LogMetric.Builder, com.google.logging.v2.LogMetricOrBuilder> 
+            com.google.logging.v2.LogMetric,
+            com.google.logging.v2.LogMetric.Builder,
+            com.google.logging.v2.LogMetricOrBuilder>
         getMetricsFieldBuilder() {
       if (metricsBuilder_ == null) {
-        metricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.logging.v2.LogMetric, com.google.logging.v2.LogMetric.Builder, com.google.logging.v2.LogMetricOrBuilder>(
+        metricsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.logging.v2.LogMetric,
+                com.google.logging.v2.LogMetric.Builder,
+                com.google.logging.v2.LogMetricOrBuilder>(
                 metrics_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -880,6 +945,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * If there might be more results than appear in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
@@ -891,8 +958,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -901,6 +967,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than appear in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
@@ -909,13 +977,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -923,6 +989,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than appear in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
@@ -931,17 +999,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than appear in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
@@ -951,12 +1020,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than appear in this response, then
      * `nextPageToken` is included.  To get the next set of results, call this
@@ -965,20 +1036,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -988,12 +1058,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.logging.v2.ListLogMetricsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.logging.v2.ListLogMetricsResponse)
   private static final com.google.logging.v2.ListLogMetricsResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.logging.v2.ListLogMetricsResponse();
   }
@@ -1002,16 +1072,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListLogMetricsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListLogMetricsResponse>() {
-    @java.lang.Override
-    public ListLogMetricsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListLogMetricsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListLogMetricsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListLogMetricsResponse>() {
+        @java.lang.Override
+        public ListLogMetricsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListLogMetricsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListLogMetricsResponse> parser() {
     return PARSER;
@@ -1026,6 +1096,4 @@ private static final long serialVersionUID = 0L;
   public com.google.logging.v2.ListLogMetricsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

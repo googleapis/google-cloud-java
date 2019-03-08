@@ -4,6 +4,8 @@
 package io.grafeas.v1beta1.source;
 
 /**
+ *
+ *
  * <pre>
  * A SourceContext is a reference to a tree of files. A SourceContext together
  * with a path point to a unique revision of a single file or directory.
@@ -11,23 +13,23 @@ package io.grafeas.v1beta1.source;
  *
  * Protobuf type {@code grafeas.v1beta1.source.SourceContext}
  */
-public  final class SourceContext extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.source.SourceContext)
     SourceContextOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SourceContext.newBuilder() to construct.
   private SourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SourceContext() {
-  }
+
+  private SourceContext() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SourceContext(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,121 +49,128 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder subBuilder = null;
-            if (contextCase_ == 1) {
-              subBuilder = ((io.grafeas.v1beta1.source.CloudRepoSourceContext) context_).toBuilder();
+          case 10:
+            {
+              io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder subBuilder = null;
+              if (contextCase_ == 1) {
+                subBuilder =
+                    ((io.grafeas.v1beta1.source.CloudRepoSourceContext) context_).toBuilder();
+              }
+              context_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.source.CloudRepoSourceContext.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.source.CloudRepoSourceContext) context_);
+                context_ = subBuilder.buildPartial();
+              }
+              contextCase_ = 1;
+              break;
             }
-            context_ =
-                input.readMessage(io.grafeas.v1beta1.source.CloudRepoSourceContext.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.source.CloudRepoSourceContext) context_);
-              context_ = subBuilder.buildPartial();
+          case 18:
+            {
+              io.grafeas.v1beta1.source.GerritSourceContext.Builder subBuilder = null;
+              if (contextCase_ == 2) {
+                subBuilder = ((io.grafeas.v1beta1.source.GerritSourceContext) context_).toBuilder();
+              }
+              context_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.source.GerritSourceContext.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.source.GerritSourceContext) context_);
+                context_ = subBuilder.buildPartial();
+              }
+              contextCase_ = 2;
+              break;
             }
-            contextCase_ = 1;
-            break;
-          }
-          case 18: {
-            io.grafeas.v1beta1.source.GerritSourceContext.Builder subBuilder = null;
-            if (contextCase_ == 2) {
-              subBuilder = ((io.grafeas.v1beta1.source.GerritSourceContext) context_).toBuilder();
+          case 26:
+            {
+              io.grafeas.v1beta1.source.GitSourceContext.Builder subBuilder = null;
+              if (contextCase_ == 3) {
+                subBuilder = ((io.grafeas.v1beta1.source.GitSourceContext) context_).toBuilder();
+              }
+              context_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.source.GitSourceContext.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.source.GitSourceContext) context_);
+                context_ = subBuilder.buildPartial();
+              }
+              contextCase_ = 3;
+              break;
             }
-            context_ =
-                input.readMessage(io.grafeas.v1beta1.source.GerritSourceContext.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.source.GerritSourceContext) context_);
-              context_ = subBuilder.buildPartial();
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
             }
-            contextCase_ = 2;
-            break;
-          }
-          case 26: {
-            io.grafeas.v1beta1.source.GitSourceContext.Builder subBuilder = null;
-            if (contextCase_ == 3) {
-              subBuilder = ((io.grafeas.v1beta1.source.GitSourceContext) context_).toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            context_ =
-                input.readMessage(io.grafeas.v1beta1.source.GitSourceContext.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.source.GitSourceContext) context_);
-              context_ = subBuilder.buildPartial();
-            }
-            contextCase_ = 3;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_SourceContext_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.source.Source
+        .internal_static_grafeas_v1beta1_source_SourceContext_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 4:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_SourceContext_fieldAccessorTable
+    return io.grafeas.v1beta1.source.Source
+        .internal_static_grafeas_v1beta1_source_SourceContext_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.source.SourceContext.class, io.grafeas.v1beta1.source.SourceContext.Builder.class);
+            io.grafeas.v1beta1.source.SourceContext.class,
+            io.grafeas.v1beta1.source.SourceContext.Builder.class);
   }
 
   private int bitField0_;
   private int contextCase_ = 0;
   private java.lang.Object context_;
-  public enum ContextCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum ContextCase implements com.google.protobuf.Internal.EnumLite {
     CLOUD_REPO(1),
     GERRIT(2),
     GIT(3),
     CONTEXT_NOT_SET(0);
     private final int value;
+
     private ContextCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ContextCase valueOf(int value) {
       return forNumber(value);
@@ -169,26 +178,32 @@ private static final long serialVersionUID = 0L;
 
     public static ContextCase forNumber(int value) {
       switch (value) {
-        case 1: return CLOUD_REPO;
-        case 2: return GERRIT;
-        case 3: return GIT;
-        case 0: return CONTEXT_NOT_SET;
-        default: return null;
+        case 1:
+          return CLOUD_REPO;
+        case 2:
+          return GERRIT;
+        case 3:
+          return GIT;
+        case 0:
+          return CONTEXT_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ContextCase
-  getContextCase() {
-    return ContextCase.forNumber(
-        contextCase_);
+  public ContextCase getContextCase() {
+    return ContextCase.forNumber(contextCase_);
   }
 
   public static final int CLOUD_REPO_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to a revision in a Google Cloud Source Repo.
    * </pre>
@@ -199,6 +214,8 @@ private static final long serialVersionUID = 0L;
     return contextCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to a revision in a Google Cloud Source Repo.
    * </pre>
@@ -207,11 +224,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.CloudRepoSourceContext getCloudRepo() {
     if (contextCase_ == 1) {
-       return (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_;
+      return (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_;
     }
     return io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to a revision in a Google Cloud Source Repo.
    * </pre>
@@ -220,13 +239,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder getCloudRepoOrBuilder() {
     if (contextCase_ == 1) {
-       return (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_;
+      return (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_;
     }
     return io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance();
   }
 
   public static final int GERRIT_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to a Gerrit project.
    * </pre>
@@ -237,6 +258,8 @@ private static final long serialVersionUID = 0L;
     return contextCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to a Gerrit project.
    * </pre>
@@ -245,11 +268,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.GerritSourceContext getGerrit() {
     if (contextCase_ == 2) {
-       return (io.grafeas.v1beta1.source.GerritSourceContext) context_;
+      return (io.grafeas.v1beta1.source.GerritSourceContext) context_;
     }
     return io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to a Gerrit project.
    * </pre>
@@ -258,13 +283,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.GerritSourceContextOrBuilder getGerritOrBuilder() {
     if (contextCase_ == 2) {
-       return (io.grafeas.v1beta1.source.GerritSourceContext) context_;
+      return (io.grafeas.v1beta1.source.GerritSourceContext) context_;
     }
     return io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance();
   }
 
   public static final int GIT_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to any third party Git repo (e.g., GitHub).
    * </pre>
@@ -275,6 +302,8 @@ private static final long serialVersionUID = 0L;
     return contextCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to any third party Git repo (e.g., GitHub).
    * </pre>
@@ -283,11 +312,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.GitSourceContext getGit() {
     if (contextCase_ == 3) {
-       return (io.grafeas.v1beta1.source.GitSourceContext) context_;
+      return (io.grafeas.v1beta1.source.GitSourceContext) context_;
     }
     return io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to any third party Git repo (e.g., GitHub).
    * </pre>
@@ -296,30 +327,29 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.GitSourceContextOrBuilder getGitOrBuilder() {
     if (contextCase_ == 3) {
-       return (io.grafeas.v1beta1.source.GitSourceContext) context_;
+      return (io.grafeas.v1beta1.source.GitSourceContext) context_;
     }
     return io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance();
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_SourceContext_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            io.grafeas.v1beta1.source.Source
+                .internal_static_grafeas_v1beta1_source_SourceContext_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -328,65 +358,67 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Labels with user defined metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Labels with user defined metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Labels with user defined metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Labels with user defined metadata.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -394,6 +426,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -405,8 +438,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (contextCase_ == 1) {
       output.writeMessage(1, (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_);
     }
@@ -416,12 +448,8 @@ private static final long serialVersionUID = 0L;
     if (contextCase_ == 3) {
       output.writeMessage(3, (io.grafeas.v1beta1.source.GitSourceContext) context_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        4);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
     unknownFields.writeTo(output);
   }
 
@@ -432,26 +460,29 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (contextCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_);
     }
     if (contextCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (io.grafeas.v1beta1.source.GerritSourceContext) context_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (io.grafeas.v1beta1.source.GerritSourceContext) context_);
     }
     if (contextCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (io.grafeas.v1beta1.source.GitSourceContext) context_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (io.grafeas.v1beta1.source.GitSourceContext) context_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -461,7 +492,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.source.SourceContext)) {
       return super.equals(obj);
@@ -469,23 +500,18 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1beta1.source.SourceContext other = (io.grafeas.v1beta1.source.SourceContext) obj;
 
     boolean result = true;
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
-    result = result && getContextCase().equals(
-        other.getContextCase());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
+    result = result && getContextCase().equals(other.getContextCase());
     if (!result) return false;
     switch (contextCase_) {
       case 1:
-        result = result && getCloudRepo()
-            .equals(other.getCloudRepo());
+        result = result && getCloudRepo().equals(other.getCloudRepo());
         break;
       case 2:
-        result = result && getGerrit()
-            .equals(other.getGerrit());
+        result = result && getGerrit().equals(other.getGerrit());
         break;
       case 3:
-        result = result && getGit()
-            .equals(other.getGit());
+        result = result && getGit().equals(other.getGit());
         break;
       case 0:
       default:
@@ -526,97 +552,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.source.SourceContext parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.source.SourceContext parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.source.SourceContext parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.source.SourceContext parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.source.SourceContext parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.source.SourceContext parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1beta1.source.SourceContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext is a reference to a tree of files. A SourceContext together
    * with a path point to a unique revision of a single file or directory.
@@ -624,43 +657,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1beta1.source.SourceContext}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.source.SourceContext)
       io.grafeas.v1beta1.source.SourceContextOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_SourceContext_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.source.Source
+          .internal_static_grafeas_v1beta1_source_SourceContext_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 4:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 4:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_SourceContext_fieldAccessorTable
+      return io.grafeas.v1beta1.source.Source
+          .internal_static_grafeas_v1beta1_source_SourceContext_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.source.SourceContext.class, io.grafeas.v1beta1.source.SourceContext.Builder.class);
+              io.grafeas.v1beta1.source.SourceContext.class,
+              io.grafeas.v1beta1.source.SourceContext.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.source.SourceContext.newBuilder()
@@ -668,16 +701,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -688,9 +720,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_SourceContext_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.source.Source
+          .internal_static_grafeas_v1beta1_source_SourceContext_descriptor;
     }
 
     @java.lang.Override
@@ -709,7 +741,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public io.grafeas.v1beta1.source.SourceContext buildPartial() {
-      io.grafeas.v1beta1.source.SourceContext result = new io.grafeas.v1beta1.source.SourceContext(this);
+      io.grafeas.v1beta1.source.SourceContext result =
+          new io.grafeas.v1beta1.source.SourceContext(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (contextCase_ == 1) {
@@ -745,38 +778,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.source.SourceContext) {
-        return mergeFrom((io.grafeas.v1beta1.source.SourceContext)other);
+        return mergeFrom((io.grafeas.v1beta1.source.SourceContext) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -785,24 +819,27 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.grafeas.v1beta1.source.SourceContext other) {
       if (other == io.grafeas.v1beta1.source.SourceContext.getDefaultInstance()) return this;
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       switch (other.getContextCase()) {
-        case CLOUD_REPO: {
-          mergeCloudRepo(other.getCloudRepo());
-          break;
-        }
-        case GERRIT: {
-          mergeGerrit(other.getGerrit());
-          break;
-        }
-        case GIT: {
-          mergeGit(other.getGit());
-          break;
-        }
-        case CONTEXT_NOT_SET: {
-          break;
-        }
+        case CLOUD_REPO:
+          {
+            mergeCloudRepo(other.getCloudRepo());
+            break;
+          }
+        case GERRIT:
+          {
+            mergeGerrit(other.getGerrit());
+            break;
+          }
+        case GIT:
+          {
+            mergeGit(other.getGit());
+            break;
+          }
+        case CONTEXT_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -832,12 +869,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int contextCase_ = 0;
     private java.lang.Object context_;
-    public ContextCase
-        getContextCase() {
-      return ContextCase.forNumber(
-          contextCase_);
+
+    public ContextCase getContextCase() {
+      return ContextCase.forNumber(contextCase_);
     }
 
     public Builder clearContext() {
@@ -850,8 +887,13 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.CloudRepoSourceContext, io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder, io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder> cloudRepoBuilder_;
+            io.grafeas.v1beta1.source.CloudRepoSourceContext,
+            io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder,
+            io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder>
+        cloudRepoBuilder_;
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -862,6 +904,8 @@ private static final long serialVersionUID = 0L;
       return contextCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -882,6 +926,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -902,6 +948,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -920,6 +968,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -928,10 +978,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCloudRepo(io.grafeas.v1beta1.source.CloudRepoSourceContext value) {
       if (cloudRepoBuilder_ == null) {
-        if (contextCase_ == 1 &&
-            context_ != io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance()) {
-          context_ = io.grafeas.v1beta1.source.CloudRepoSourceContext.newBuilder((io.grafeas.v1beta1.source.CloudRepoSourceContext) context_)
-              .mergeFrom(value).buildPartial();
+        if (contextCase_ == 1
+            && context_ != io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance()) {
+          context_ =
+              io.grafeas.v1beta1.source.CloudRepoSourceContext.newBuilder(
+                      (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           context_ = value;
         }
@@ -946,6 +999,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -969,6 +1024,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -979,6 +1036,8 @@ private static final long serialVersionUID = 0L;
       return getCloudRepoFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -996,6 +1055,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a revision in a Google Cloud Source Repo.
      * </pre>
@@ -1003,27 +1064,38 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.source.CloudRepoSourceContext cloud_repo = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.CloudRepoSourceContext, io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder, io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder> 
+            io.grafeas.v1beta1.source.CloudRepoSourceContext,
+            io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder,
+            io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder>
         getCloudRepoFieldBuilder() {
       if (cloudRepoBuilder_ == null) {
         if (!(contextCase_ == 1)) {
           context_ = io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance();
         }
-        cloudRepoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.source.CloudRepoSourceContext, io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder, io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder>(
+        cloudRepoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.source.CloudRepoSourceContext,
+                io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder,
+                io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder>(
                 (io.grafeas.v1beta1.source.CloudRepoSourceContext) context_,
                 getParentForChildren(),
                 isClean());
         context_ = null;
       }
       contextCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return cloudRepoBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.GerritSourceContext, io.grafeas.v1beta1.source.GerritSourceContext.Builder, io.grafeas.v1beta1.source.GerritSourceContextOrBuilder> gerritBuilder_;
+            io.grafeas.v1beta1.source.GerritSourceContext,
+            io.grafeas.v1beta1.source.GerritSourceContext.Builder,
+            io.grafeas.v1beta1.source.GerritSourceContextOrBuilder>
+        gerritBuilder_;
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1034,6 +1106,8 @@ private static final long serialVersionUID = 0L;
       return contextCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1054,6 +1128,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1074,6 +1150,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1092,6 +1170,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1100,10 +1180,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeGerrit(io.grafeas.v1beta1.source.GerritSourceContext value) {
       if (gerritBuilder_ == null) {
-        if (contextCase_ == 2 &&
-            context_ != io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance()) {
-          context_ = io.grafeas.v1beta1.source.GerritSourceContext.newBuilder((io.grafeas.v1beta1.source.GerritSourceContext) context_)
-              .mergeFrom(value).buildPartial();
+        if (contextCase_ == 2
+            && context_ != io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance()) {
+          context_ =
+              io.grafeas.v1beta1.source.GerritSourceContext.newBuilder(
+                      (io.grafeas.v1beta1.source.GerritSourceContext) context_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           context_ = value;
         }
@@ -1118,6 +1201,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1141,6 +1226,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1151,6 +1238,8 @@ private static final long serialVersionUID = 0L;
       return getGerritFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1168,6 +1257,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to a Gerrit project.
      * </pre>
@@ -1175,27 +1266,38 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.source.GerritSourceContext gerrit = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.GerritSourceContext, io.grafeas.v1beta1.source.GerritSourceContext.Builder, io.grafeas.v1beta1.source.GerritSourceContextOrBuilder> 
+            io.grafeas.v1beta1.source.GerritSourceContext,
+            io.grafeas.v1beta1.source.GerritSourceContext.Builder,
+            io.grafeas.v1beta1.source.GerritSourceContextOrBuilder>
         getGerritFieldBuilder() {
       if (gerritBuilder_ == null) {
         if (!(contextCase_ == 2)) {
           context_ = io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance();
         }
-        gerritBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.source.GerritSourceContext, io.grafeas.v1beta1.source.GerritSourceContext.Builder, io.grafeas.v1beta1.source.GerritSourceContextOrBuilder>(
+        gerritBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.source.GerritSourceContext,
+                io.grafeas.v1beta1.source.GerritSourceContext.Builder,
+                io.grafeas.v1beta1.source.GerritSourceContextOrBuilder>(
                 (io.grafeas.v1beta1.source.GerritSourceContext) context_,
                 getParentForChildren(),
                 isClean());
         context_ = null;
       }
       contextCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return gerritBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.GitSourceContext, io.grafeas.v1beta1.source.GitSourceContext.Builder, io.grafeas.v1beta1.source.GitSourceContextOrBuilder> gitBuilder_;
+            io.grafeas.v1beta1.source.GitSourceContext,
+            io.grafeas.v1beta1.source.GitSourceContext.Builder,
+            io.grafeas.v1beta1.source.GitSourceContextOrBuilder>
+        gitBuilder_;
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1206,6 +1308,8 @@ private static final long serialVersionUID = 0L;
       return contextCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1226,6 +1330,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1246,14 +1352,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
      */
-    public Builder setGit(
-        io.grafeas.v1beta1.source.GitSourceContext.Builder builderForValue) {
+    public Builder setGit(io.grafeas.v1beta1.source.GitSourceContext.Builder builderForValue) {
       if (gitBuilder_ == null) {
         context_ = builderForValue.build();
         onChanged();
@@ -1264,6 +1371,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1272,10 +1381,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeGit(io.grafeas.v1beta1.source.GitSourceContext value) {
       if (gitBuilder_ == null) {
-        if (contextCase_ == 3 &&
-            context_ != io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance()) {
-          context_ = io.grafeas.v1beta1.source.GitSourceContext.newBuilder((io.grafeas.v1beta1.source.GitSourceContext) context_)
-              .mergeFrom(value).buildPartial();
+        if (contextCase_ == 3
+            && context_ != io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance()) {
+          context_ =
+              io.grafeas.v1beta1.source.GitSourceContext.newBuilder(
+                      (io.grafeas.v1beta1.source.GitSourceContext) context_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           context_ = value;
         }
@@ -1290,6 +1402,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1313,6 +1427,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1323,6 +1439,8 @@ private static final long serialVersionUID = 0L;
       return getGitFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1340,6 +1458,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A SourceContext referring to any third party Git repo (e.g., GitHub).
      * </pre>
@@ -1347,40 +1467,45 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.source.GitSourceContext git = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.GitSourceContext, io.grafeas.v1beta1.source.GitSourceContext.Builder, io.grafeas.v1beta1.source.GitSourceContextOrBuilder> 
+            io.grafeas.v1beta1.source.GitSourceContext,
+            io.grafeas.v1beta1.source.GitSourceContext.Builder,
+            io.grafeas.v1beta1.source.GitSourceContextOrBuilder>
         getGitFieldBuilder() {
       if (gitBuilder_ == null) {
         if (!(contextCase_ == 3)) {
           context_ = io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance();
         }
-        gitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.source.GitSourceContext, io.grafeas.v1beta1.source.GitSourceContext.Builder, io.grafeas.v1beta1.source.GitSourceContextOrBuilder>(
+        gitBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.source.GitSourceContext,
+                io.grafeas.v1beta1.source.GitSourceContext.Builder,
+                io.grafeas.v1beta1.source.GitSourceContextOrBuilder>(
                 (io.grafeas.v1beta1.source.GitSourceContext) context_,
                 getParentForChildren(),
                 isClean());
         context_ = null;
       }
       contextCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return gitBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -1392,65 +1517,68 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Labels with user defined metadata.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Labels with user defined metadata.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Labels with user defined metadata.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Labels with user defined metadata.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1458,66 +1586,65 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Labels with user defined metadata.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Labels with user defined metadata.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Labels with user defined metadata.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1527,12 +1654,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.source.SourceContext)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.source.SourceContext)
   private static final io.grafeas.v1beta1.source.SourceContext DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.source.SourceContext();
   }
@@ -1541,16 +1668,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SourceContext>
-      PARSER = new com.google.protobuf.AbstractParser<SourceContext>() {
-    @java.lang.Override
-    public SourceContext parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SourceContext(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SourceContext> PARSER =
+      new com.google.protobuf.AbstractParser<SourceContext>() {
+        @java.lang.Override
+        public SourceContext parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SourceContext(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SourceContext> parser() {
     return PARSER;
@@ -1565,6 +1692,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1beta1.source.SourceContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

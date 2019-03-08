@@ -18,8 +18,5 @@ package com.google.cloud.logging;
 
 import com.google.cloud.ServiceFactory;
 
-/**
- * An interface for Logging factories.
- */
-public interface LoggingFactory extends ServiceFactory<Logging, LoggingOptions> {
-}
+/** An interface for Logging factories. */
+public interface LoggingFactory extends ServiceFactory<Logging, LoggingOptions> {}

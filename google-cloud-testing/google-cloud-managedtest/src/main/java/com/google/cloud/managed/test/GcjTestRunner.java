@@ -53,7 +53,7 @@ public class GcjTestRunner implements Runnable {
   }
 
   public String getOutput() {
-    //works because PrintStream is thread safe synchronizing on "this".
+    // works because PrintStream is thread safe synchronizing on "this".
     synchronized (resultStream) {
       try {
         return resultBytes.toString("UTF-8");

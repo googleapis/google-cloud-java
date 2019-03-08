@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.attestation;
 
-public interface DetailsOrBuilder extends
+public interface DetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.attestation.Details)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Attestation for the resource.
    * </pre>
@@ -16,6 +19,8 @@ public interface DetailsOrBuilder extends
    */
   boolean hasAttestation();
   /**
+   *
+   *
    * <pre>
    * Attestation for the resource.
    * </pre>
@@ -24,6 +29,8 @@ public interface DetailsOrBuilder extends
    */
   io.grafeas.v1beta1.attestation.Attestation getAttestation();
   /**
+   *
+   *
    * <pre>
    * Attestation for the resource.
    * </pre>

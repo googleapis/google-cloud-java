@@ -16,16 +16,25 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
 
-library = gapic.java_library(
-    service='automl',
-    version='v1beta1',
-    config_path='artman_automl_v1beta1.yaml',
-    artman_output_name='')
+service = 'automl'
+versions = ['v1beta1']
+config_pattern = '/google/cloud/automl/artman_automl_{version}.yaml'
 
-s.copy(library / 'gapic-google-cloud-automl-v1beta1/src', 'src')
-s.copy(library / 'grpc-google-cloud-automl-v1beta1/src', '../../google-api-grpc/grpc-google-cloud-automl-v1beta1/src')
-s.copy(library / 'proto-google-cloud-automl-v1beta1/src', '../../google-api-grpc/proto-google-cloud-automl-v1beta1/src')
+for version in versions:
+  library = gapic.java_library(
+      service=service,
+      version=version,
+      config_path=config_pattern.format(version=version),
+      artman_output_name='')
+
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
+  java.format_code('./src')
+  java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')

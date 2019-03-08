@@ -43,16 +43,15 @@ public class PolicyHelperTest {
             .build();
     com.google.api.services.storage.model.Policy apiPolicy =
         new com.google.api.services.storage.model.Policy()
-            .setBindings(ImmutableList.of(
-                new Bindings()
-                    .setMembers(ImmutableList.of("allUsers"))
-                    .setRole("roles/storage.objectViewer"),
-                new Bindings()
-                    .setMembers(
-                        ImmutableList.of(
-                            "user:test1@gmail.com",
-                            "user:test2@gmail.com"))
-                    .setRole("roles/storage.objectAdmin")))
+            .setBindings(
+                ImmutableList.of(
+                    new Bindings()
+                        .setMembers(ImmutableList.of("allUsers"))
+                        .setRole("roles/storage.objectViewer"),
+                    new Bindings()
+                        .setMembers(
+                            ImmutableList.of("user:test1@gmail.com", "user:test2@gmail.com"))
+                        .setRole("roles/storage.objectAdmin")))
             .setEtag(ETAG);
 
     Policy actualLibPolicy = PolicyHelper.convertFromApiPolicy(apiPolicy);

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListMetricDescriptorsResponseOrBuilder extends
+public interface ListMetricDescriptorsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListMetricDescriptorsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The metric descriptors that are available to the project
    * and that match the value of `filter`, if present.
@@ -15,9 +18,10 @@ public interface ListMetricDescriptorsResponseOrBuilder extends
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
-  java.util.List<com.google.api.MetricDescriptor> 
-      getMetricDescriptorsList();
+  java.util.List<com.google.api.MetricDescriptor> getMetricDescriptorsList();
   /**
+   *
+   *
    * <pre>
    * The metric descriptors that are available to the project
    * and that match the value of `filter`, if present.
@@ -27,6 +31,8 @@ public interface ListMetricDescriptorsResponseOrBuilder extends
    */
   com.google.api.MetricDescriptor getMetricDescriptors(int index);
   /**
+   *
+   *
    * <pre>
    * The metric descriptors that are available to the project
    * and that match the value of `filter`, if present.
@@ -36,6 +42,8 @@ public interface ListMetricDescriptorsResponseOrBuilder extends
    */
   int getMetricDescriptorsCount();
   /**
+   *
+   *
    * <pre>
    * The metric descriptors that are available to the project
    * and that match the value of `filter`, if present.
@@ -43,9 +51,11 @@ public interface ListMetricDescriptorsResponseOrBuilder extends
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
-  java.util.List<? extends com.google.api.MetricDescriptorOrBuilder> 
+  java.util.List<? extends com.google.api.MetricDescriptorOrBuilder>
       getMetricDescriptorsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The metric descriptors that are available to the project
    * and that match the value of `filter`, if present.
@@ -53,10 +63,11 @@ public interface ListMetricDescriptorsResponseOrBuilder extends
    *
    * <code>repeated .google.api.MetricDescriptor metric_descriptors = 1;</code>
    */
-  com.google.api.MetricDescriptorOrBuilder getMetricDescriptorsOrBuilder(
-      int index);
+  com.google.api.MetricDescriptorOrBuilder getMetricDescriptorsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -67,6 +78,8 @@ public interface ListMetricDescriptorsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -75,6 +88,5 @@ public interface ListMetricDescriptorsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

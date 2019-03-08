@@ -51,11 +51,12 @@ public final class InsertAllRequest implements Serializable {
   /**
    * A Google Big Query row to be inserted into a table. Each {@code RowToInsert} has an associated
    * id used by BigQuery to detect duplicate insertion requests on a best-effort basis. Please
-   * notice that data for fields of type {@link LegacySQLTypeName#BYTES} must be provided as a base64
-   * encoded string.
+   * notice that data for fields of type {@link LegacySQLTypeName#BYTES} must be provided as a
+   * base64 encoded string.
    *
    * <p>Example usage of creating a row to insert:
-   * <pre> {@code
+   *
+   * <pre>{@code
    * List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
    * Map<String, Object> recordContent = new HashMap<String, Object>();
    * recordContent.put("subfieldName1", "value");
@@ -89,10 +90,7 @@ public final class InsertAllRequest implements Serializable {
       }
     }
 
-
-    /**
-     * Returns the id associated with the row. Returns {@code null} if not set.
-     */
+    /** Returns the id associated with the row. Returns {@code null} if not set. */
     public String getId() {
       return id;
     }
@@ -108,10 +106,7 @@ public final class InsertAllRequest implements Serializable {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("id", id)
-          .add("content", content)
-          .toString();
+      return MoreObjects.toStringHelper(this).add("id", id).add("content", content).toString();
     }
 
     @Override
@@ -125,8 +120,7 @@ public final class InsertAllRequest implements Serializable {
         return false;
       }
       RowToInsert other = (RowToInsert) obj;
-      return Objects.equals(id, other.id)
-          && Objects.equals(content, other.content);
+      return Objects.equals(id, other.id) && Objects.equals(content, other.content);
     }
 
     /**
@@ -161,27 +155,19 @@ public final class InsertAllRequest implements Serializable {
 
     private Builder() {}
 
-
-    /**
-     * Sets the destination table for rows insert request.
-     */
+    /** Sets the destination table for rows insert request. */
     public Builder setTable(TableId table) {
       this.table = checkNotNull(table);
       return this;
     }
 
-
-    /**
-     * Sets the rows to insert as a list of {@link RowToInsert} objects.
-     */
+    /** Sets the rows to insert as a list of {@link RowToInsert} objects. */
     public Builder setRows(Iterable<RowToInsert> rows) {
       this.rows = Lists.newLinkedList(checkNotNull(rows));
       return this;
     }
 
-    /**
-     * Adds a row to be inserted.
-     */
+    /** Adds a row to be inserted. */
     public Builder addRow(RowToInsert rowToInsert) {
       checkNotNull(rowToInsert);
       if (rows == null) {
@@ -196,7 +182,8 @@ public final class InsertAllRequest implements Serializable {
      * {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row with associated id:
-     * <pre> {@code
+     *
+     * <pre>{@code
      * InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      * List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
      * Map<String, Object> recordContent = new HashMap<String, Object>();
@@ -219,7 +206,8 @@ public final class InsertAllRequest implements Serializable {
      * type {@link LegacySQLTypeName#BYTES} must be provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row without an associated id:
-     * <pre> {@code
+     *
+     * <pre>{@code
      * InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      * List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
      * Map<String, Object> recordContent = new HashMap<String, Object>();
@@ -237,7 +225,6 @@ public final class InsertAllRequest implements Serializable {
       return this;
     }
 
-
     /**
      * Sets whether to insert all valid rows of a request, even if invalid rows exist. If not set
      * the entire insert request will fail if it contains an invalid row.
@@ -246,7 +233,6 @@ public final class InsertAllRequest implements Serializable {
       this.skipInvalidRows = skipInvalidRows;
       return this;
     }
-
 
     /**
      * Sets whether to accept rows that contain values that do not match the schema. The unknown
@@ -257,20 +243,21 @@ public final class InsertAllRequest implements Serializable {
       return this;
     }
 
-
     /**
      * If specified, the destination table is treated as a base template. Rows are inserted into an
      * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of
      * the instance table, using the schema of the base template table. Table creation might take
      * some time. To obtain table's information after {@link BigQuery#insertAll(InsertAllRequest)}
      * is called use:
-     * <pre> {@code
+     *
+     * <pre>{@code
      * String suffixTableId = ...;
      * TableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
      * while (suffixTable == null) {
      *   Thread.sleep(1000L);
      *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
-     * }}</pre>
+     * }
+     * }</pre>
      *
      * @see <a
      *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
@@ -281,9 +268,7 @@ public final class InsertAllRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Creates an {@code InsertAllRequest} object.
-     */
+    /** Creates an {@code InsertAllRequest} object. */
     public InsertAllRequest build() {
       return new InsertAllRequest(this);
     }
@@ -297,18 +282,12 @@ public final class InsertAllRequest implements Serializable {
     this.templateSuffix = builder.templateSuffix;
   }
 
-
-  /**
-   * Returns the destination table for rows insert request.
-   */
+  /** Returns the destination table for rows insert request. */
   public TableId getTable() {
     return table;
   }
 
-
-  /**
-   * Returns the rows to be inserted.
-   */
+  /** Returns the rows to be inserted. */
   public List<RowToInsert> getRows() {
     return rows;
   }
@@ -329,37 +308,33 @@ public final class InsertAllRequest implements Serializable {
     return skipInvalidRows;
   }
 
-
   /**
    * If specified, the destination table is treated as a base template. Rows are inserted into an
    * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of the
    * instance table, using the schema of the base template table. Table creation might take some
    * time. To obtain table's information after {@link BigQuery#insertAll(InsertAllRequest)} is
    * called use:
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String suffixTableId = ...;
    * TableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
    * while (suffixTable == null) {
    *   Thread.sleep(1000L);
    *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
-   * }}</pre>
+   * }
+   * }</pre>
    *
-   * @see <a
-   *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
+   * @see <a href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
    *     Template Tables</a>
    */
   public String getTemplateSuffix() {
     return templateSuffix;
   }
 
-
-  /**
-   * Returns a builder for an {@code InsertAllRequest} object given the destination table.
-   */
+  /** Returns a builder for an {@code InsertAllRequest} object given the destination table. */
   public static Builder newBuilder(TableId table) {
     return new Builder().setTable(table);
   }
-
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
@@ -369,7 +344,6 @@ public final class InsertAllRequest implements Serializable {
     return newBuilder(table).setRows(rows);
   }
 
-
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
@@ -378,14 +352,10 @@ public final class InsertAllRequest implements Serializable {
     return newBuilder(table, ImmutableList.copyOf(rows));
   }
 
-
-  /**
-   * Returns a builder for an {@code InsertAllRequest} object given the destination table.
-   */
+  /** Returns a builder for an {@code InsertAllRequest} object given the destination table. */
   public static Builder newBuilder(String datasetId, String tableId) {
     return new Builder().setTable(TableId.of(datasetId, tableId));
   }
-
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
@@ -395,7 +365,6 @@ public final class InsertAllRequest implements Serializable {
     return newBuilder(TableId.of(datasetId, tableId), rows);
   }
 
-
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
@@ -404,7 +373,6 @@ public final class InsertAllRequest implements Serializable {
     return newBuilder(TableId.of(datasetId, tableId), rows);
   }
 
-
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
@@ -412,7 +380,6 @@ public final class InsertAllRequest implements Serializable {
   public static Builder newBuilder(TableInfo tableInfo, Iterable<RowToInsert> rows) {
     return newBuilder(tableInfo.getTableId(), rows);
   }
-
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the

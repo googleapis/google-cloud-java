@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface CreateQueueRequestOrBuilder extends
+public interface CreateQueueRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.CreateQueueRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name in which the queue will be created.
@@ -21,6 +24,8 @@ public interface CreateQueueRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name in which the queue will be created.
@@ -32,34 +37,42 @@ public interface CreateQueueRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta2.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta2.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 2;</code>
    */
   boolean hasQueue();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta2.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta2.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 2;</code>
    */
   com.google.cloud.tasks.v2beta2.Queue getQueue();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta2.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta2.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 2;</code>

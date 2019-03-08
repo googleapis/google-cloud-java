@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceGroupManagerStub;
 import com.google.cloud.compute.v1.stub.InstanceGroupManagerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -57,13 +58,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1259,6 +1260,161 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceGroupManagerClient.patchInstanceGroupManager(instanceGroupManager, instanceGroupManagerResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the instance group manager.
+   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
+   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   *     v1.regionInstanceGroupManagers ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInstanceGroupManager(
+      ProjectZoneInstanceGroupManagerName instanceGroupManager,
+      InstanceGroupManager instanceGroupManagerResource,
+      List<String> fieldMask) {
+
+    PatchInstanceGroupManagerHttpRequest request =
+        PatchInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceGroupManagerClient.patchInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagerResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the instance group manager.
+   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
+   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   *     v1.regionInstanceGroupManagers ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInstanceGroupManager(
+      String instanceGroupManager,
+      InstanceGroupManager instanceGroupManagerResource,
+      List<String> fieldMask) {
+
+    PatchInstanceGroupManagerHttpRequest request =
+        PatchInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchInstanceGroupManagerHttpRequest request = PatchInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = instanceGroupManagerClient.patchInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInstanceGroupManager(PatchInstanceGroupManagerHttpRequest request) {
+    return patchInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchInstanceGroupManagerHttpRequest request = PatchInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.patchInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerCallable() {
+    return stub.patchInstanceGroupManagerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
    * instance group. This operation is marked as DONE when the flag is set even if the instances
@@ -1893,13 +2049,16 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage,
+          AggregatedListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList,
+          AggregatedListInstanceGroupManagersPage,
           AggregatedListInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInstanceGroupManagersPagedResponse> createAsync(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
@@ -1916,7 +2075,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 AggregatedListInstanceGroupManagersPage input) {
               return new AggregatedListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInstanceGroupManagersPagedResponse(
@@ -1927,12 +2087,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersPage
       extends AbstractPage<
-          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage> {
+          AggregatedListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList,
+          AggregatedListInstanceGroupManagersPage> {
 
     private AggregatedListInstanceGroupManagersPage(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         InstanceGroupManagerAggregatedList response) {
@@ -1946,7 +2109,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     protected AggregatedListInstanceGroupManagersPage createPage(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         InstanceGroupManagerAggregatedList response) {
@@ -1956,7 +2120,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListInstanceGroupManagersPage> createPageAsync(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
@@ -1966,8 +2131,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage,
+          AggregatedListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList,
+          AggregatedListInstanceGroupManagersPage,
           AggregatedListInstanceGroupManagersFixedSizeCollection> {
 
     private AggregatedListInstanceGroupManagersFixedSizeCollection(
@@ -1988,12 +2155,16 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersPagedResponse
       extends AbstractPagedListResponse<
-          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
-          ListInstanceGroupManagersPage, ListInstanceGroupManagersFixedSizeCollection> {
+          ListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerList,
+          InstanceGroupManager,
+          ListInstanceGroupManagersPage,
+          ListInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<ListInstanceGroupManagersPagedResponse> createAsync(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<InstanceGroupManagerList> futureResponse) {
@@ -2007,7 +2178,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 ListInstanceGroupManagersPage input) {
               return new ListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstanceGroupManagersPagedResponse(ListInstanceGroupManagersPage page) {
@@ -2017,12 +2189,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersPage
       extends AbstractPage<
-          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
+          ListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerList,
+          InstanceGroupManager,
           ListInstanceGroupManagersPage> {
 
     private ListInstanceGroupManagersPage(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         InstanceGroupManagerList response) {
@@ -2036,7 +2211,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     protected ListInstanceGroupManagersPage createPage(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         InstanceGroupManagerList response) {
@@ -2046,7 +2222,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     public ApiFuture<ListInstanceGroupManagersPage> createPageAsync(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<InstanceGroupManagerList> futureResponse) {
@@ -2056,8 +2233,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
-          ListInstanceGroupManagersPage, ListInstanceGroupManagersFixedSizeCollection> {
+          ListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerList,
+          InstanceGroupManager,
+          ListInstanceGroupManagersPage,
+          ListInstanceGroupManagersFixedSizeCollection> {
 
     private ListInstanceGroupManagersFixedSizeCollection(
         List<ListInstanceGroupManagersPage> pages, int collectionSize) {

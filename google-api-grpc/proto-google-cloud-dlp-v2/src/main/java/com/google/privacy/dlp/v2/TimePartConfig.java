@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * For use with `Date`, `Timestamp`, and `TimeOfDay`, extract or preserve a
  * portion of the value.
@@ -11,24 +13,25 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.TimePartConfig}
  */
-public  final class TimePartConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class TimePartConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TimePartConfig)
     TimePartConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use TimePartConfig.newBuilder() to construct.
   private TimePartConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private TimePartConfig() {
     partToExtract_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private TimePartConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,54 +51,54 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            partToExtract_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              partToExtract_ = rawValue;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_TimePartConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_TimePartConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_TimePartConfig_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_TimePartConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.TimePartConfig.class, com.google.privacy.dlp.v2.TimePartConfig.Builder.class);
+            com.google.privacy.dlp.v2.TimePartConfig.class,
+            com.google.privacy.dlp.v2.TimePartConfig.Builder.class);
   }
 
-  /**
-   * Protobuf enum {@code google.privacy.dlp.v2.TimePartConfig.TimePart}
-   */
-  public enum TimePart
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>TIME_PART_UNSPECIFIED = 0;</code>
-     */
+  /** Protobuf enum {@code google.privacy.dlp.v2.TimePartConfig.TimePart} */
+  public enum TimePart implements com.google.protobuf.ProtocolMessageEnum {
+    /** <code>TIME_PART_UNSPECIFIED = 0;</code> */
     TIME_PART_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * [0-9999]
      * </pre>
@@ -104,6 +107,8 @@ private static final long serialVersionUID = 0L;
      */
     YEAR(1),
     /**
+     *
+     *
      * <pre>
      * [1-12]
      * </pre>
@@ -112,6 +117,8 @@ private static final long serialVersionUID = 0L;
      */
     MONTH(2),
     /**
+     *
+     *
      * <pre>
      * [1-31]
      * </pre>
@@ -120,6 +127,8 @@ private static final long serialVersionUID = 0L;
      */
     DAY_OF_MONTH(3),
     /**
+     *
+     *
      * <pre>
      * [1-7]
      * </pre>
@@ -128,6 +137,8 @@ private static final long serialVersionUID = 0L;
      */
     DAY_OF_WEEK(4),
     /**
+     *
+     *
      * <pre>
      * [1-52]
      * </pre>
@@ -136,6 +147,8 @@ private static final long serialVersionUID = 0L;
      */
     WEEK_OF_YEAR(5),
     /**
+     *
+     *
      * <pre>
      * [0-23]
      * </pre>
@@ -146,11 +159,11 @@ private static final long serialVersionUID = 0L;
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>TIME_PART_UNSPECIFIED = 0;</code>
-     */
+    /** <code>TIME_PART_UNSPECIFIED = 0;</code> */
     public static final int TIME_PART_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * [0-9999]
      * </pre>
@@ -159,6 +172,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int YEAR_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * [1-12]
      * </pre>
@@ -167,6 +182,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MONTH_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * [1-31]
      * </pre>
@@ -175,6 +192,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DAY_OF_MONTH_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * [1-7]
      * </pre>
@@ -183,6 +202,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DAY_OF_WEEK_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * [1-52]
      * </pre>
@@ -191,6 +212,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int WEEK_OF_YEAR_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * [0-23]
      * </pre>
@@ -198,7 +221,6 @@ private static final long serialVersionUID = 0L;
      * <code>HOUR_OF_DAY = 6;</code>
      */
     public static final int HOUR_OF_DAY_VALUE = 6;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -208,9 +230,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TimePart valueOf(int value) {
       return forNumber(value);
@@ -218,49 +238,53 @@ private static final long serialVersionUID = 0L;
 
     public static TimePart forNumber(int value) {
       switch (value) {
-        case 0: return TIME_PART_UNSPECIFIED;
-        case 1: return YEAR;
-        case 2: return MONTH;
-        case 3: return DAY_OF_MONTH;
-        case 4: return DAY_OF_WEEK;
-        case 5: return WEEK_OF_YEAR;
-        case 6: return HOUR_OF_DAY;
-        default: return null;
+        case 0:
+          return TIME_PART_UNSPECIFIED;
+        case 1:
+          return YEAR;
+        case 2:
+          return MONTH;
+        case 3:
+          return DAY_OF_MONTH;
+        case 4:
+          return DAY_OF_WEEK;
+        case 5:
+          return WEEK_OF_YEAR;
+        case 6:
+          return HOUR_OF_DAY;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<TimePart>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<TimePart> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        TimePart> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<TimePart>() {
-            public TimePart findValueByNumber(int number) {
-              return TimePart.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<TimePart> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TimePart>() {
+          public TimePart findValueByNumber(int number) {
+            return TimePart.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.privacy.dlp.v2.TimePartConfig.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final TimePart[] VALUES = values();
 
-    public static TimePart valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static TimePart valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -279,22 +303,20 @@ private static final long serialVersionUID = 0L;
 
   public static final int PART_TO_EXTRACT_FIELD_NUMBER = 1;
   private int partToExtract_;
-  /**
-   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
   public int getPartToExtractValue() {
     return partToExtract_;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
   public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
     @SuppressWarnings("deprecation")
-    com.google.privacy.dlp.v2.TimePartConfig.TimePart result = com.google.privacy.dlp.v2.TimePartConfig.TimePart.valueOf(partToExtract_);
+    com.google.privacy.dlp.v2.TimePartConfig.TimePart result =
+        com.google.privacy.dlp.v2.TimePartConfig.TimePart.valueOf(partToExtract_);
     return result == null ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -306,9 +328,9 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (partToExtract_ != com.google.privacy.dlp.v2.TimePartConfig.TimePart.TIME_PART_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (partToExtract_
+        != com.google.privacy.dlp.v2.TimePartConfig.TimePart.TIME_PART_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, partToExtract_);
     }
     unknownFields.writeTo(output);
@@ -320,9 +342,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (partToExtract_ != com.google.privacy.dlp.v2.TimePartConfig.TimePart.TIME_PART_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, partToExtract_);
+    if (partToExtract_
+        != com.google.privacy.dlp.v2.TimePartConfig.TimePart.TIME_PART_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, partToExtract_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -332,7 +354,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.TimePartConfig)) {
       return super.equals(obj);
@@ -359,97 +381,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.TimePartConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.TimePartConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.TimePartConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.TimePartConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * For use with `Date`, `Timestamp`, and `TimeOfDay`, extract or preserve a
    * portion of the value.
@@ -457,21 +486,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.TimePartConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.TimePartConfig)
       com.google.privacy.dlp.v2.TimePartConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_TimePartConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_TimePartConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_TimePartConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_TimePartConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.TimePartConfig.class, com.google.privacy.dlp.v2.TimePartConfig.Builder.class);
+              com.google.privacy.dlp.v2.TimePartConfig.class,
+              com.google.privacy.dlp.v2.TimePartConfig.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.TimePartConfig.newBuilder()
@@ -479,16 +510,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -498,9 +528,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_TimePartConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_TimePartConfig_descriptor;
     }
 
     @java.lang.Override
@@ -519,7 +549,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.TimePartConfig buildPartial() {
-      com.google.privacy.dlp.v2.TimePartConfig result = new com.google.privacy.dlp.v2.TimePartConfig(this);
+      com.google.privacy.dlp.v2.TimePartConfig result =
+          new com.google.privacy.dlp.v2.TimePartConfig(this);
       result.partToExtract_ = partToExtract_;
       onBuilt();
       return result;
@@ -529,38 +560,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.TimePartConfig) {
-        return mergeFrom((com.google.privacy.dlp.v2.TimePartConfig)other);
+        return mergeFrom((com.google.privacy.dlp.v2.TimePartConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -602,52 +634,45 @@ private static final long serialVersionUID = 0L;
     }
 
     private int partToExtract_ = 0;
-    /**
-     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
     public int getPartToExtractValue() {
       return partToExtract_;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
     public Builder setPartToExtractValue(int value) {
       partToExtract_ = value;
       onChanged();
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
     public com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract() {
       @SuppressWarnings("deprecation")
-      com.google.privacy.dlp.v2.TimePartConfig.TimePart result = com.google.privacy.dlp.v2.TimePartConfig.TimePart.valueOf(partToExtract_);
-      return result == null ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED : result;
+      com.google.privacy.dlp.v2.TimePartConfig.TimePart result =
+          com.google.privacy.dlp.v2.TimePartConfig.TimePart.valueOf(partToExtract_);
+      return result == null
+          ? com.google.privacy.dlp.v2.TimePartConfig.TimePart.UNRECOGNIZED
+          : result;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
     public Builder setPartToExtract(com.google.privacy.dlp.v2.TimePartConfig.TimePart value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       partToExtract_ = value.getNumber();
       onChanged();
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
     public Builder clearPartToExtract() {
-      
+
       partToExtract_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -657,12 +682,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.TimePartConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.TimePartConfig)
   private static final com.google.privacy.dlp.v2.TimePartConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.TimePartConfig();
   }
@@ -671,16 +696,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TimePartConfig>
-      PARSER = new com.google.protobuf.AbstractParser<TimePartConfig>() {
-    @java.lang.Override
-    public TimePartConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TimePartConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<TimePartConfig> PARSER =
+      new com.google.protobuf.AbstractParser<TimePartConfig>() {
+        @java.lang.Override
+        public TimePartConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TimePartConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<TimePartConfig> parser() {
     return PARSER;
@@ -695,6 +720,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.TimePartConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

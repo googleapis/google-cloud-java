@@ -85,7 +85,8 @@ public class ITDatabaseAdminTest {
 
     boolean foundDb = false;
     for (Database dbInList :
-        Iterators.toArray(dbAdminClient.listDatabases(instanceId).iterateAll().iterator(), Database.class)) {
+        Iterators.toArray(
+            dbAdminClient.listDatabases(instanceId).iterateAll().iterator(), Database.class)) {
       if (dbInList.getId().getDatabase().equals(dbId)) {
         foundDb = true;
         break;

@@ -4,31 +4,34 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The protocol for the `ListAlertPolicies` response.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.ListAlertPoliciesResponse}
  */
-public  final class ListAlertPoliciesResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListAlertPoliciesResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListAlertPoliciesResponse)
     ListAlertPoliciesResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListAlertPoliciesResponse.newBuilder() to construct.
   private ListAlertPoliciesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListAlertPoliciesResponse() {
     alertPolicies_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListAlertPoliciesResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,35 +51,37 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              alertPolicies_ = new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy>();
-              mutable_bitField0_ |= 0x00000001;
+              nextPageToken_ = s;
+              break;
             }
-            alertPolicies_.add(
-                input.readMessage(com.google.monitoring.v3.AlertPolicy.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                alertPolicies_ = new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              alertPolicies_.add(
+                  input.readMessage(
+                      com.google.monitoring.v3.AlertPolicy.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         alertPolicies_ = java.util.Collections.unmodifiableList(alertPolicies_);
@@ -85,23 +90,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.AlertServiceProto.internal_static_google_monitoring_v3_ListAlertPoliciesResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.AlertServiceProto
+        .internal_static_google_monitoring_v3_ListAlertPoliciesResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.AlertServiceProto.internal_static_google_monitoring_v3_ListAlertPoliciesResponse_fieldAccessorTable
+    return com.google.monitoring.v3.AlertServiceProto
+        .internal_static_google_monitoring_v3_ListAlertPoliciesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.ListAlertPoliciesResponse.class, com.google.monitoring.v3.ListAlertPoliciesResponse.Builder.class);
+            com.google.monitoring.v3.ListAlertPoliciesResponse.class,
+            com.google.monitoring.v3.ListAlertPoliciesResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int ALERT_POLICIES_FIELD_NUMBER = 3;
   private java.util.List<com.google.monitoring.v3.AlertPolicy> alertPolicies_;
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
@@ -112,17 +122,21 @@ private static final long serialVersionUID = 0L;
     return alertPolicies_;
   }
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
-  public java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder> 
+  public java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder>
       getAlertPoliciesOrBuilderList() {
     return alertPolicies_;
   }
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
@@ -133,6 +147,8 @@ private static final long serialVersionUID = 0L;
     return alertPolicies_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
@@ -143,20 +159,23 @@ private static final long serialVersionUID = 0L;
     return alertPolicies_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
-  public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPoliciesOrBuilder(
-      int index) {
+  public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPoliciesOrBuilder(int index) {
     return alertPolicies_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * If there might be more results than were returned, then this field is set
    * to a non-empty value. To see the additional results,
@@ -170,14 +189,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If there might be more results than were returned, then this field is set
    * to a non-empty value. To see the additional results,
@@ -186,13 +206,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -201,6 +219,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -212,8 +231,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNextPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
@@ -233,8 +251,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     for (int i = 0; i < alertPolicies_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, alertPolicies_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, alertPolicies_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -244,18 +261,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.ListAlertPoliciesResponse)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.ListAlertPoliciesResponse other = (com.google.monitoring.v3.ListAlertPoliciesResponse) obj;
+    com.google.monitoring.v3.ListAlertPoliciesResponse other =
+        (com.google.monitoring.v3.ListAlertPoliciesResponse) obj;
 
     boolean result = true;
-    result = result && getAlertPoliciesList()
-        .equals(other.getAlertPoliciesList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getAlertPoliciesList().equals(other.getAlertPoliciesList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -279,117 +295,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.monitoring.v3.ListAlertPoliciesResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.ListAlertPoliciesResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.ListAlertPoliciesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.monitoring.v3.ListAlertPoliciesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The protocol for the `ListAlertPolicies` response.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.ListAlertPoliciesResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.ListAlertPoliciesResponse)
       com.google.monitoring.v3.ListAlertPoliciesResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.AlertServiceProto.internal_static_google_monitoring_v3_ListAlertPoliciesResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.AlertServiceProto
+          .internal_static_google_monitoring_v3_ListAlertPoliciesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.AlertServiceProto.internal_static_google_monitoring_v3_ListAlertPoliciesResponse_fieldAccessorTable
+      return com.google.monitoring.v3.AlertServiceProto
+          .internal_static_google_monitoring_v3_ListAlertPoliciesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.ListAlertPoliciesResponse.class, com.google.monitoring.v3.ListAlertPoliciesResponse.Builder.class);
+              com.google.monitoring.v3.ListAlertPoliciesResponse.class,
+              com.google.monitoring.v3.ListAlertPoliciesResponse.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.ListAlertPoliciesResponse.newBuilder()
@@ -397,17 +422,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAlertPoliciesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -423,9 +448,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.AlertServiceProto.internal_static_google_monitoring_v3_ListAlertPoliciesResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.AlertServiceProto
+          .internal_static_google_monitoring_v3_ListAlertPoliciesResponse_descriptor;
     }
 
     @java.lang.Override
@@ -444,7 +469,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.monitoring.v3.ListAlertPoliciesResponse buildPartial() {
-      com.google.monitoring.v3.ListAlertPoliciesResponse result = new com.google.monitoring.v3.ListAlertPoliciesResponse(this);
+      com.google.monitoring.v3.ListAlertPoliciesResponse result =
+          new com.google.monitoring.v3.ListAlertPoliciesResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (alertPoliciesBuilder_ == null) {
@@ -466,38 +492,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.ListAlertPoliciesResponse) {
-        return mergeFrom((com.google.monitoring.v3.ListAlertPoliciesResponse)other);
+        return mergeFrom((com.google.monitoring.v3.ListAlertPoliciesResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -505,7 +532,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.monitoring.v3.ListAlertPoliciesResponse other) {
-      if (other == com.google.monitoring.v3.ListAlertPoliciesResponse.getDefaultInstance()) return this;
+      if (other == com.google.monitoring.v3.ListAlertPoliciesResponse.getDefaultInstance())
+        return this;
       if (alertPoliciesBuilder_ == null) {
         if (!other.alertPolicies_.isEmpty()) {
           if (alertPolicies_.isEmpty()) {
@@ -524,9 +552,10 @@ private static final long serialVersionUID = 0L;
             alertPoliciesBuilder_ = null;
             alertPolicies_ = other.alertPolicies_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            alertPoliciesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getAlertPoliciesFieldBuilder() : null;
+            alertPoliciesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAlertPoliciesFieldBuilder()
+                    : null;
           } else {
             alertPoliciesBuilder_.addAllMessages(other.alertPolicies_);
           }
@@ -555,7 +584,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.v3.ListAlertPoliciesResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.monitoring.v3.ListAlertPoliciesResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -564,21 +594,29 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.monitoring.v3.AlertPolicy> alertPolicies_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureAlertPoliciesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        alertPolicies_ = new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy>(alertPolicies_);
+        alertPolicies_ =
+            new java.util.ArrayList<com.google.monitoring.v3.AlertPolicy>(alertPolicies_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.AlertPolicy, com.google.monitoring.v3.AlertPolicy.Builder, com.google.monitoring.v3.AlertPolicyOrBuilder> alertPoliciesBuilder_;
+            com.google.monitoring.v3.AlertPolicy,
+            com.google.monitoring.v3.AlertPolicy.Builder,
+            com.google.monitoring.v3.AlertPolicyOrBuilder>
+        alertPoliciesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -593,6 +631,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -607,6 +647,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -621,14 +663,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public Builder setAlertPolicies(
-        int index, com.google.monitoring.v3.AlertPolicy value) {
+    public Builder setAlertPolicies(int index, com.google.monitoring.v3.AlertPolicy value) {
       if (alertPoliciesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -642,6 +685,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -660,6 +705,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -680,14 +727,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public Builder addAlertPolicies(
-        int index, com.google.monitoring.v3.AlertPolicy value) {
+    public Builder addAlertPolicies(int index, com.google.monitoring.v3.AlertPolicy value) {
       if (alertPoliciesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -701,14 +749,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public Builder addAlertPolicies(
-        com.google.monitoring.v3.AlertPolicy.Builder builderForValue) {
+    public Builder addAlertPolicies(com.google.monitoring.v3.AlertPolicy.Builder builderForValue) {
       if (alertPoliciesBuilder_ == null) {
         ensureAlertPoliciesIsMutable();
         alertPolicies_.add(builderForValue.build());
@@ -719,6 +768,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -737,6 +788,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -747,8 +800,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.monitoring.v3.AlertPolicy> values) {
       if (alertPoliciesBuilder_ == null) {
         ensureAlertPoliciesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, alertPolicies_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, alertPolicies_);
         onChanged();
       } else {
         alertPoliciesBuilder_.addAllMessages(values);
@@ -756,6 +808,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -773,6 +827,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -790,39 +846,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public com.google.monitoring.v3.AlertPolicy.Builder getAlertPoliciesBuilder(
-        int index) {
+    public com.google.monitoring.v3.AlertPolicy.Builder getAlertPoliciesBuilder(int index) {
       return getAlertPoliciesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPoliciesOrBuilder(
-        int index) {
+    public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPoliciesOrBuilder(int index) {
       if (alertPoliciesBuilder_ == null) {
-        return alertPolicies_.get(index);  } else {
+        return alertPolicies_.get(index);
+      } else {
         return alertPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder> 
-         getAlertPoliciesOrBuilderList() {
+    public java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder>
+        getAlertPoliciesOrBuilderList() {
       if (alertPoliciesBuilder_ != null) {
         return alertPoliciesBuilder_.getMessageOrBuilderList();
       } else {
@@ -830,6 +891,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
@@ -837,38 +900,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
     public com.google.monitoring.v3.AlertPolicy.Builder addAlertPoliciesBuilder() {
-      return getAlertPoliciesFieldBuilder().addBuilder(
-          com.google.monitoring.v3.AlertPolicy.getDefaultInstance());
+      return getAlertPoliciesFieldBuilder()
+          .addBuilder(com.google.monitoring.v3.AlertPolicy.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public com.google.monitoring.v3.AlertPolicy.Builder addAlertPoliciesBuilder(
-        int index) {
-      return getAlertPoliciesFieldBuilder().addBuilder(
-          index, com.google.monitoring.v3.AlertPolicy.getDefaultInstance());
+    public com.google.monitoring.v3.AlertPolicy.Builder addAlertPoliciesBuilder(int index) {
+      return getAlertPoliciesFieldBuilder()
+          .addBuilder(index, com.google.monitoring.v3.AlertPolicy.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The returned alert policies.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
      */
-    public java.util.List<com.google.monitoring.v3.AlertPolicy.Builder> 
-         getAlertPoliciesBuilderList() {
+    public java.util.List<com.google.monitoring.v3.AlertPolicy.Builder>
+        getAlertPoliciesBuilderList() {
       return getAlertPoliciesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.AlertPolicy, com.google.monitoring.v3.AlertPolicy.Builder, com.google.monitoring.v3.AlertPolicyOrBuilder> 
+            com.google.monitoring.v3.AlertPolicy,
+            com.google.monitoring.v3.AlertPolicy.Builder,
+            com.google.monitoring.v3.AlertPolicyOrBuilder>
         getAlertPoliciesFieldBuilder() {
       if (alertPoliciesBuilder_ == null) {
-        alertPoliciesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.monitoring.v3.AlertPolicy, com.google.monitoring.v3.AlertPolicy.Builder, com.google.monitoring.v3.AlertPolicyOrBuilder>(
+        alertPoliciesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy,
+                com.google.monitoring.v3.AlertPolicy.Builder,
+                com.google.monitoring.v3.AlertPolicyOrBuilder>(
                 alertPolicies_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -880,6 +952,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * If there might be more results than were returned, then this field is set
      * to a non-empty value. To see the additional results,
@@ -891,8 +965,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -901,6 +974,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than were returned, then this field is set
      * to a non-empty value. To see the additional results,
@@ -909,13 +984,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -923,6 +996,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than were returned, then this field is set
      * to a non-empty value. To see the additional results,
@@ -931,17 +1006,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than were returned, then this field is set
      * to a non-empty value. To see the additional results,
@@ -951,12 +1027,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If there might be more results than were returned, then this field is set
      * to a non-empty value. To see the additional results,
@@ -965,20 +1043,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -988,12 +1065,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.ListAlertPoliciesResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.ListAlertPoliciesResponse)
   private static final com.google.monitoring.v3.ListAlertPoliciesResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.ListAlertPoliciesResponse();
   }
@@ -1002,16 +1079,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListAlertPoliciesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListAlertPoliciesResponse>() {
-    @java.lang.Override
-    public ListAlertPoliciesResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListAlertPoliciesResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListAlertPoliciesResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListAlertPoliciesResponse>() {
+        @java.lang.Override
+        public ListAlertPoliciesResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListAlertPoliciesResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListAlertPoliciesResponse> parser() {
     return PARSER;
@@ -1026,6 +1103,4 @@ private static final long serialVersionUID = 0L;
   public com.google.monitoring.v3.ListAlertPoliciesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

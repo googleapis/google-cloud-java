@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p2beta1;
 
-public interface ImageAnnotationContextOrBuilder extends
+public interface ImageAnnotationContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p2beta1.ImageAnnotationContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The URI of the file used to produce the image.
    * </pre>
@@ -16,16 +19,19 @@ public interface ImageAnnotationContextOrBuilder extends
    */
   java.lang.String getUri();
   /**
+   *
+   *
    * <pre>
    * The URI of the file used to produce the image.
    * </pre>
    *
    * <code>string uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUriBytes();
+  com.google.protobuf.ByteString getUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * If the file was a PDF or TIFF, this field gives the page number within
    * the file used to produce the image.

@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface LogSinkOrBuilder extends
+public interface LogSinkOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.LogSink)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
    * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -20,6 +23,8 @@ public interface LogSinkOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
    * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -30,10 +35,11 @@ public interface LogSinkOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The export destination:
    *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -49,6 +55,8 @@ public interface LogSinkOrBuilder extends
    */
   java.lang.String getDestination();
   /**
+   *
+   *
    * <pre>
    * Required. The export destination:
    *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -62,10 +70,11 @@ public interface LogSinkOrBuilder extends
    *
    * <code>string destination = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDestinationBytes();
+  com.google.protobuf.ByteString getDestinationBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional.
    * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -78,6 +87,8 @@ public interface LogSinkOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Optional.
    * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -88,29 +99,38 @@ public interface LogSinkOrBuilder extends
    *
    * <code>string filter = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated int getOutputVersionFormatValue();
+  @java.lang.Deprecated
+  int getOutputVersionFormatValue();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat();
+  @java.lang.Deprecated
+  com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat();
 
   /**
+   *
+   *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
    * which Logging writes the exported log entries to the sink's
@@ -131,6 +151,8 @@ public interface LogSinkOrBuilder extends
    */
   java.lang.String getWriterIdentity();
   /**
+   *
+   *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
    * which Logging writes the exported log entries to the sink's
@@ -149,10 +171,11 @@ public interface LogSinkOrBuilder extends
    *
    * <code>string writer_identity = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getWriterIdentityBytes();
+  com.google.protobuf.ByteString getWriterIdentityBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. This field applies only to sinks owned by organizations and
    * folders. If the field is false, the default, only the logs owned by the
@@ -173,52 +196,70 @@ public interface LogSinkOrBuilder extends
   boolean getIncludeChildren();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  @java.lang.Deprecated boolean hasStartTime();
+  @java.lang.Deprecated
+  boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.Timestamp getStartTime();
+  @java.lang.Deprecated
+  com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+  @java.lang.Deprecated
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  @java.lang.Deprecated boolean hasEndTime();
+  @java.lang.Deprecated
+  boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.Timestamp getEndTime();
+  @java.lang.Deprecated
+  com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+  @java.lang.Deprecated
+  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 }

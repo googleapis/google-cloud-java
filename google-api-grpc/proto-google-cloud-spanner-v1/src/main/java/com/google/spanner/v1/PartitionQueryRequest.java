@@ -4,31 +4,34 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * The request for [PartitionQuery][google.spanner.v1.Spanner.PartitionQuery]
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.PartitionQueryRequest}
  */
-public  final class PartitionQueryRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.PartitionQueryRequest)
     PartitionQueryRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PartitionQueryRequest.newBuilder() to construct.
   private PartitionQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PartitionQueryRequest() {
     session_ = "";
     sql_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PartitionQueryRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,118 +51,133 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            session_ = s;
-            break;
-          }
-          case 18: {
-            com.google.spanner.v1.TransactionSelector.Builder subBuilder = null;
-            if (transaction_ != null) {
-              subBuilder = transaction_.toBuilder();
+              session_ = s;
+              break;
             }
-            transaction_ = input.readMessage(com.google.spanner.v1.TransactionSelector.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(transaction_);
-              transaction_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.spanner.v1.TransactionSelector.Builder subBuilder = null;
+              if (transaction_ != null) {
+                subBuilder = transaction_.toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(
+                      com.google.spanner.v1.TransactionSelector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            sql_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (params_ != null) {
-              subBuilder = params_.toBuilder();
+              sql_ = s;
+              break;
             }
-            params_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(params_);
-              params_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (params_ != null) {
+                subBuilder = params_.toBuilder();
+              }
+              params_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(params_);
+                params_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              paramTypes_ = com.google.protobuf.MapField.newMapField(
-                  ParamTypesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000010;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
-            paramTypes__ = input.readMessage(
-                ParamTypesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            paramTypes_.getMutableMap().put(
-                paramTypes__.getKey(), paramTypes__.getValue());
-            break;
-          }
-          case 50: {
-            com.google.spanner.v1.PartitionOptions.Builder subBuilder = null;
-            if (partitionOptions_ != null) {
-              subBuilder = partitionOptions_.toBuilder();
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                paramTypes_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ParamTypesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
+                  paramTypes__ =
+                      input.readMessage(
+                          ParamTypesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              paramTypes_.getMutableMap().put(paramTypes__.getKey(), paramTypes__.getValue());
+              break;
             }
-            partitionOptions_ = input.readMessage(com.google.spanner.v1.PartitionOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(partitionOptions_);
-              partitionOptions_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.spanner.v1.PartitionOptions.Builder subBuilder = null;
+              if (partitionOptions_ != null) {
+                subBuilder = partitionOptions_.toBuilder();
+              }
+              partitionOptions_ =
+                  input.readMessage(
+                      com.google.spanner.v1.PartitionOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(partitionOptions_);
+                partitionOptions_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionQueryRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.v1.SpannerProto
+        .internal_static_google_spanner_v1_PartitionQueryRequest_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 5:
         return internalGetParamTypes();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionQueryRequest_fieldAccessorTable
+    return com.google.spanner.v1.SpannerProto
+        .internal_static_google_spanner_v1_PartitionQueryRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.v1.PartitionQueryRequest.class, com.google.spanner.v1.PartitionQueryRequest.Builder.class);
+            com.google.spanner.v1.PartitionQueryRequest.class,
+            com.google.spanner.v1.PartitionQueryRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
+   *
+   *
    * <pre>
    * Required. The session used to create the partitions.
    * </pre>
@@ -171,27 +189,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       session_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The session used to create the partitions.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getSessionBytes() {
+  public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       session_ = b;
       return b;
     } else {
@@ -202,6 +219,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRANSACTION_FIELD_NUMBER = 2;
   private com.google.spanner.v1.TransactionSelector transaction_;
   /**
+   *
+   *
    * <pre>
    * Read only snapshot transactions are supported, read/write and single use
    * transactions are not.
@@ -213,6 +232,8 @@ private static final long serialVersionUID = 0L;
     return transaction_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Read only snapshot transactions are supported, read/write and single use
    * transactions are not.
@@ -221,9 +242,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
    */
   public com.google.spanner.v1.TransactionSelector getTransaction() {
-    return transaction_ == null ? com.google.spanner.v1.TransactionSelector.getDefaultInstance() : transaction_;
+    return transaction_ == null
+        ? com.google.spanner.v1.TransactionSelector.getDefaultInstance()
+        : transaction_;
   }
   /**
+   *
+   *
    * <pre>
    * Read only snapshot transactions are supported, read/write and single use
    * transactions are not.
@@ -238,6 +263,8 @@ private static final long serialVersionUID = 0L;
   public static final int SQL_FIELD_NUMBER = 3;
   private volatile java.lang.Object sql_;
   /**
+   *
+   *
    * <pre>
    * The query request to generate partitions for. The request will fail if
    * the query is not root partitionable. The query plan of a root
@@ -246,7 +273,8 @@ private static final long serialVersionUID = 0L;
    * splits, remotely evaluates a subquery independently on each split, and
    * then unions all results.
    * This must not contain DML commands, such as INSERT, UPDATE, or
-   * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+   * DELETE. Use
+   * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
    * PartitionedDml transaction for large, partition-friendly DML operations.
    * </pre>
    *
@@ -257,14 +285,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       sql_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The query request to generate partitions for. The request will fail if
    * the query is not root partitionable. The query plan of a root
@@ -273,19 +302,18 @@ private static final long serialVersionUID = 0L;
    * splits, remotely evaluates a subquery independently on each split, and
    * then unions all results.
    * This must not contain DML commands, such as INSERT, UPDATE, or
-   * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+   * DELETE. Use
+   * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
    * PartitionedDml transaction for large, partition-friendly DML operations.
    * </pre>
    *
    * <code>string sql = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getSqlBytes() {
+  public com.google.protobuf.ByteString getSqlBytes() {
     java.lang.Object ref = sql_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       sql_ = b;
       return b;
     } else {
@@ -296,6 +324,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARAMS_FIELD_NUMBER = 4;
   private com.google.protobuf.Struct params_;
   /**
+   *
+   *
    * <pre>
    * The SQL query string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -316,6 +346,8 @@ private static final long serialVersionUID = 0L;
     return params_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The SQL query string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -336,6 +368,8 @@ private static final long serialVersionUID = 0L;
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
   /**
+   *
+   *
    * <pre>
    * The SQL query string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -357,24 +391,26 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PARAM_TYPES_FIELD_NUMBER = 5;
+
   private static final class ParamTypesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, com.google.spanner.v1.Type> defaultEntry =
+    static final com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
+        defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.google.spanner.v1.Type>newDefaultInstance(
-                com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionQueryRequest_ParamTypesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.google.spanner.v1.Type.getDefaultInstance());
+                .<java.lang.String, com.google.spanner.v1.Type>newDefaultInstance(
+                    com.google.spanner.v1.SpannerProto
+                        .internal_static_google_spanner_v1_PartitionQueryRequest_ParamTypesEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.spanner.v1.Type.getDefaultInstance());
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, com.google.spanner.v1.Type> paramTypes_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.spanner.v1.Type> paramTypes_;
+
   private com.google.protobuf.MapField<java.lang.String, com.google.spanner.v1.Type>
-  internalGetParamTypes() {
+      internalGetParamTypes() {
     if (paramTypes_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          ParamTypesDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(ParamTypesDefaultEntryHolder.defaultEntry);
     }
     return paramTypes_;
   }
@@ -383,10 +419,13 @@ private static final long serialVersionUID = 0L;
     return internalGetParamTypes().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL query parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -395,24 +434,25 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
-  public boolean containsParamTypes(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsParamTypes(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetParamTypes().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getParamTypesMap()} instead.
-   */
+  /** Use {@link #getParamTypesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypes() {
     return getParamTypesMap();
   }
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL query parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -421,15 +461,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
   public java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypesMap() {
     return internalGetParamTypes().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL query parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -438,20 +480,23 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
   public com.google.spanner.v1.Type getParamTypesOrDefault(
-      java.lang.String key,
-      com.google.spanner.v1.Type defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      java.lang.String key, com.google.spanner.v1.Type defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.spanner.v1.Type> map =
         internalGetParamTypes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL query parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -460,10 +505,10 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
-  public com.google.spanner.v1.Type getParamTypesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public com.google.spanner.v1.Type getParamTypesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.spanner.v1.Type> map =
         internalGetParamTypes().getMap();
     if (!map.containsKey(key)) {
@@ -475,6 +520,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARTITION_OPTIONS_FIELD_NUMBER = 6;
   private com.google.spanner.v1.PartitionOptions partitionOptions_;
   /**
+   *
+   *
    * <pre>
    * Additional options that affect how many partitions are created.
    * </pre>
@@ -485,6 +532,8 @@ private static final long serialVersionUID = 0L;
     return partitionOptions_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Additional options that affect how many partitions are created.
    * </pre>
@@ -492,9 +541,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.v1.PartitionOptions partition_options = 6;</code>
    */
   public com.google.spanner.v1.PartitionOptions getPartitionOptions() {
-    return partitionOptions_ == null ? com.google.spanner.v1.PartitionOptions.getDefaultInstance() : partitionOptions_;
+    return partitionOptions_ == null
+        ? com.google.spanner.v1.PartitionOptions.getDefaultInstance()
+        : partitionOptions_;
   }
   /**
+   *
+   *
    * <pre>
    * Additional options that affect how many partitions are created.
    * </pre>
@@ -506,6 +559,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -517,8 +571,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getSessionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, session_);
     }
@@ -531,12 +584,8 @@ private static final long serialVersionUID = 0L;
     if (params_ != null) {
       output.writeMessage(4, getParams());
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetParamTypes(),
-        ParamTypesDefaultEntryHolder.defaultEntry,
-        5);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetParamTypes(), ParamTypesDefaultEntryHolder.defaultEntry, 5);
     if (partitionOptions_ != null) {
       output.writeMessage(6, getPartitionOptions());
     }
@@ -553,29 +602,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, session_);
     }
     if (transaction_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getTransaction());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTransaction());
     }
     if (!getSqlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sql_);
     }
     if (params_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getParams());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getParams());
     }
-    for (java.util.Map.Entry<java.lang.String, com.google.spanner.v1.Type> entry
-         : internalGetParamTypes().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type>
-      paramTypes__ = ParamTypesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, paramTypes__);
+    for (java.util.Map.Entry<java.lang.String, com.google.spanner.v1.Type> entry :
+        internalGetParamTypes().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.v1.Type> paramTypes__ =
+          ParamTypesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, paramTypes__);
     }
     if (partitionOptions_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getPartitionOptions());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPartitionOptions());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -585,34 +631,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.PartitionQueryRequest)) {
       return super.equals(obj);
     }
-    com.google.spanner.v1.PartitionQueryRequest other = (com.google.spanner.v1.PartitionQueryRequest) obj;
+    com.google.spanner.v1.PartitionQueryRequest other =
+        (com.google.spanner.v1.PartitionQueryRequest) obj;
 
     boolean result = true;
-    result = result && getSession()
-        .equals(other.getSession());
+    result = result && getSession().equals(other.getSession());
     result = result && (hasTransaction() == other.hasTransaction());
     if (hasTransaction()) {
-      result = result && getTransaction()
-          .equals(other.getTransaction());
+      result = result && getTransaction().equals(other.getTransaction());
     }
-    result = result && getSql()
-        .equals(other.getSql());
+    result = result && getSql().equals(other.getSql());
     result = result && (hasParams() == other.hasParams());
     if (hasParams()) {
-      result = result && getParams()
-          .equals(other.getParams());
+      result = result && getParams().equals(other.getParams());
     }
-    result = result && internalGetParamTypes().equals(
-        other.internalGetParamTypes());
+    result = result && internalGetParamTypes().equals(other.internalGetParamTypes());
     result = result && (hasPartitionOptions() == other.hasPartitionOptions());
     if (hasPartitionOptions()) {
-      result = result && getPartitionOptions()
-          .equals(other.getPartitionOptions());
+      result = result && getPartitionOptions().equals(other.getPartitionOptions());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -650,140 +691,147 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.PartitionQueryRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.spanner.v1.PartitionQueryRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.spanner.v1.PartitionQueryRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartitionQueryRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.spanner.v1.PartitionQueryRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request for [PartitionQuery][google.spanner.v1.Spanner.PartitionQuery]
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.PartitionQueryRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.PartitionQueryRequest)
       com.google.spanner.v1.PartitionQueryRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionQueryRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_PartitionQueryRequest_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 5:
           return internalGetParamTypes();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 5:
           return internalGetMutableParamTypes();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionQueryRequest_fieldAccessorTable
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_PartitionQueryRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.PartitionQueryRequest.class, com.google.spanner.v1.PartitionQueryRequest.Builder.class);
+              com.google.spanner.v1.PartitionQueryRequest.class,
+              com.google.spanner.v1.PartitionQueryRequest.Builder.class);
     }
 
     // Construct using com.google.spanner.v1.PartitionQueryRequest.newBuilder()
@@ -791,16 +839,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -831,9 +878,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionQueryRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_PartitionQueryRequest_descriptor;
     }
 
     @java.lang.Override
@@ -852,7 +899,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.spanner.v1.PartitionQueryRequest buildPartial() {
-      com.google.spanner.v1.PartitionQueryRequest result = new com.google.spanner.v1.PartitionQueryRequest(this);
+      com.google.spanner.v1.PartitionQueryRequest result =
+          new com.google.spanner.v1.PartitionQueryRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.session_ = session_;
@@ -883,38 +931,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.PartitionQueryRequest) {
-        return mergeFrom((com.google.spanner.v1.PartitionQueryRequest)other);
+        return mergeFrom((com.google.spanner.v1.PartitionQueryRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -937,8 +986,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasParams()) {
         mergeParams(other.getParams());
       }
-      internalGetMutableParamTypes().mergeFrom(
-          other.internalGetParamTypes());
+      internalGetMutableParamTypes().mergeFrom(other.internalGetParamTypes());
       if (other.hasPartitionOptions()) {
         mergePartitionOptions(other.getPartitionOptions());
       }
@@ -970,10 +1018,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object session_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The session used to create the partitions.
      * </pre>
@@ -983,8 +1034,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         session_ = s;
         return s;
@@ -993,19 +1043,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session used to create the partitions.
      * </pre>
      *
      * <code>string session = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSessionBytes() {
+    public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         session_ = b;
         return b;
       } else {
@@ -1013,23 +1063,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session used to create the partitions.
      * </pre>
      *
      * <code>string session = 1;</code>
      */
-    public Builder setSession(
-        java.lang.String value) {
+    public Builder setSession(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       session_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session used to create the partitions.
      * </pre>
@@ -1037,25 +1090,26 @@ private static final long serialVersionUID = 0L;
      * <code>string session = 1;</code>
      */
     public Builder clearSession() {
-      
+
       session_ = getDefaultInstance().getSession();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session used to create the partitions.
      * </pre>
      *
      * <code>string session = 1;</code>
      */
-    public Builder setSessionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       session_ = value;
       onChanged();
       return this;
@@ -1063,8 +1117,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.v1.TransactionSelector transaction_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.TransactionSelector, com.google.spanner.v1.TransactionSelector.Builder, com.google.spanner.v1.TransactionSelectorOrBuilder> transactionBuilder_;
+            com.google.spanner.v1.TransactionSelector,
+            com.google.spanner.v1.TransactionSelector.Builder,
+            com.google.spanner.v1.TransactionSelectorOrBuilder>
+        transactionBuilder_;
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1076,6 +1135,8 @@ private static final long serialVersionUID = 0L;
       return transactionBuilder_ != null || transaction_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1085,12 +1146,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.spanner.v1.TransactionSelector getTransaction() {
       if (transactionBuilder_ == null) {
-        return transaction_ == null ? com.google.spanner.v1.TransactionSelector.getDefaultInstance() : transaction_;
+        return transaction_ == null
+            ? com.google.spanner.v1.TransactionSelector.getDefaultInstance()
+            : transaction_;
       } else {
         return transactionBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1112,6 +1177,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1131,6 +1198,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1142,7 +1211,9 @@ private static final long serialVersionUID = 0L;
       if (transactionBuilder_ == null) {
         if (transaction_ != null) {
           transaction_ =
-            com.google.spanner.v1.TransactionSelector.newBuilder(transaction_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.TransactionSelector.newBuilder(transaction_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           transaction_ = value;
         }
@@ -1154,6 +1225,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1173,6 +1246,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1181,11 +1256,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
      */
     public com.google.spanner.v1.TransactionSelector.Builder getTransactionBuilder() {
-      
+
       onChanged();
       return getTransactionFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1197,11 +1274,14 @@ private static final long serialVersionUID = 0L;
       if (transactionBuilder_ != null) {
         return transactionBuilder_.getMessageOrBuilder();
       } else {
-        return transaction_ == null ?
-            com.google.spanner.v1.TransactionSelector.getDefaultInstance() : transaction_;
+        return transaction_ == null
+            ? com.google.spanner.v1.TransactionSelector.getDefaultInstance()
+            : transaction_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Read only snapshot transactions are supported, read/write and single use
      * transactions are not.
@@ -1210,14 +1290,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.TransactionSelector, com.google.spanner.v1.TransactionSelector.Builder, com.google.spanner.v1.TransactionSelectorOrBuilder> 
+            com.google.spanner.v1.TransactionSelector,
+            com.google.spanner.v1.TransactionSelector.Builder,
+            com.google.spanner.v1.TransactionSelectorOrBuilder>
         getTransactionFieldBuilder() {
       if (transactionBuilder_ == null) {
-        transactionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.TransactionSelector, com.google.spanner.v1.TransactionSelector.Builder, com.google.spanner.v1.TransactionSelectorOrBuilder>(
-                getTransaction(),
-                getParentForChildren(),
-                isClean());
+        transactionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.TransactionSelector,
+                com.google.spanner.v1.TransactionSelector.Builder,
+                com.google.spanner.v1.TransactionSelectorOrBuilder>(
+                getTransaction(), getParentForChildren(), isClean());
         transaction_ = null;
       }
       return transactionBuilder_;
@@ -1225,6 +1308,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sql_ = "";
     /**
+     *
+     *
      * <pre>
      * The query request to generate partitions for. The request will fail if
      * the query is not root partitionable. The query plan of a root
@@ -1233,7 +1318,8 @@ private static final long serialVersionUID = 0L;
      * splits, remotely evaluates a subquery independently on each split, and
      * then unions all results.
      * This must not contain DML commands, such as INSERT, UPDATE, or
-     * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+     * DELETE. Use
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
      * PartitionedDml transaction for large, partition-friendly DML operations.
      * </pre>
      *
@@ -1242,8 +1328,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSql() {
       java.lang.Object ref = sql_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         sql_ = s;
         return s;
@@ -1252,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The query request to generate partitions for. The request will fail if
      * the query is not root partitionable. The query plan of a root
@@ -1260,19 +1347,18 @@ private static final long serialVersionUID = 0L;
      * splits, remotely evaluates a subquery independently on each split, and
      * then unions all results.
      * This must not contain DML commands, such as INSERT, UPDATE, or
-     * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+     * DELETE. Use
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
      * PartitionedDml transaction for large, partition-friendly DML operations.
      * </pre>
      *
      * <code>string sql = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getSqlBytes() {
+    public com.google.protobuf.ByteString getSqlBytes() {
       java.lang.Object ref = sql_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         sql_ = b;
         return b;
       } else {
@@ -1280,6 +1366,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The query request to generate partitions for. The request will fail if
      * the query is not root partitionable. The query plan of a root
@@ -1288,23 +1376,25 @@ private static final long serialVersionUID = 0L;
      * splits, remotely evaluates a subquery independently on each split, and
      * then unions all results.
      * This must not contain DML commands, such as INSERT, UPDATE, or
-     * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+     * DELETE. Use
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
      * PartitionedDml transaction for large, partition-friendly DML operations.
      * </pre>
      *
      * <code>string sql = 3;</code>
      */
-    public Builder setSql(
-        java.lang.String value) {
+    public Builder setSql(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       sql_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The query request to generate partitions for. The request will fail if
      * the query is not root partitionable. The query plan of a root
@@ -1313,19 +1403,22 @@ private static final long serialVersionUID = 0L;
      * splits, remotely evaluates a subquery independently on each split, and
      * then unions all results.
      * This must not contain DML commands, such as INSERT, UPDATE, or
-     * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+     * DELETE. Use
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
      * PartitionedDml transaction for large, partition-friendly DML operations.
      * </pre>
      *
      * <code>string sql = 3;</code>
      */
     public Builder clearSql() {
-      
+
       sql_ = getDefaultInstance().getSql();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The query request to generate partitions for. The request will fail if
      * the query is not root partitionable. The query plan of a root
@@ -1334,19 +1427,19 @@ private static final long serialVersionUID = 0L;
      * splits, remotely evaluates a subquery independently on each split, and
      * then unions all results.
      * This must not contain DML commands, such as INSERT, UPDATE, or
-     * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+     * DELETE. Use
+     * [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
      * PartitionedDml transaction for large, partition-friendly DML operations.
      * </pre>
      *
      * <code>string sql = 3;</code>
      */
-    public Builder setSqlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSqlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       sql_ = value;
       onChanged();
       return this;
@@ -1354,8 +1447,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Struct params_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> paramsBuilder_;
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        paramsBuilder_;
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1376,6 +1474,8 @@ private static final long serialVersionUID = 0L;
       return paramsBuilder_ != null || params_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1400,6 +1500,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1430,6 +1532,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1446,8 +1550,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct params = 4;</code>
      */
-    public Builder setParams(
-        com.google.protobuf.Struct.Builder builderForValue) {
+    public Builder setParams(com.google.protobuf.Struct.Builder builderForValue) {
       if (paramsBuilder_ == null) {
         params_ = builderForValue.build();
         onChanged();
@@ -1458,6 +1561,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1477,8 +1582,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeParams(com.google.protobuf.Struct value) {
       if (paramsBuilder_ == null) {
         if (params_ != null) {
-          params_ =
-            com.google.protobuf.Struct.newBuilder(params_).mergeFrom(value).buildPartial();
+          params_ = com.google.protobuf.Struct.newBuilder(params_).mergeFrom(value).buildPartial();
         } else {
           params_ = value;
         }
@@ -1490,6 +1594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1518,6 +1624,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1535,11 +1643,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct params = 4;</code>
      */
     public com.google.protobuf.Struct.Builder getParamsBuilder() {
-      
+
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1560,11 +1670,12 @@ private static final long serialVersionUID = 0L;
       if (paramsBuilder_ != null) {
         return paramsBuilder_.getMessageOrBuilder();
       } else {
-        return params_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : params_;
+        return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The SQL query string can contain parameter placeholders. A parameter
      * placeholder consists of `'&#64;'` followed by the parameter
@@ -1582,35 +1693,40 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct params = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
         getParamsFieldBuilder() {
       if (paramsBuilder_ == null) {
-        paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getParams(),
-                getParentForChildren(),
-                isClean());
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
         params_ = null;
       }
       return paramsBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, com.google.spanner.v1.Type> paramTypes_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.spanner.v1.Type> paramTypes_;
+
     private com.google.protobuf.MapField<java.lang.String, com.google.spanner.v1.Type>
-    internalGetParamTypes() {
+        internalGetParamTypes() {
       if (paramTypes_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ParamTypesDefaultEntryHolder.defaultEntry);
       }
       return paramTypes_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, com.google.spanner.v1.Type>
-    internalGetMutableParamTypes() {
-      onChanged();;
+        internalGetMutableParamTypes() {
+      onChanged();
+      ;
       if (paramTypes_ == null) {
-        paramTypes_ = com.google.protobuf.MapField.newMapField(
-            ParamTypesDefaultEntryHolder.defaultEntry);
+        paramTypes_ =
+            com.google.protobuf.MapField.newMapField(ParamTypesDefaultEntryHolder.defaultEntry);
       }
       if (!paramTypes_.isMutable()) {
         paramTypes_ = paramTypes_.copy();
@@ -1622,10 +1738,13 @@ private static final long serialVersionUID = 0L;
       return internalGetParamTypes().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL query parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1634,24 +1753,25 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
      */
-
-    public boolean containsParamTypes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsParamTypes(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetParamTypes().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getParamTypesMap()} instead.
-     */
+    /** Use {@link #getParamTypesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypes() {
       return getParamTypesMap();
     }
     /**
+     *
+     *
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL query parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1660,15 +1780,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
      */
-
     public java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypesMap() {
       return internalGetParamTypes().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL query parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1677,20 +1799,23 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
      */
-
     public com.google.spanner.v1.Type getParamTypesOrDefault(
-        java.lang.String key,
-        com.google.spanner.v1.Type defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        java.lang.String key, com.google.spanner.v1.Type defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.spanner.v1.Type> map =
           internalGetParamTypes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL query parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1699,10 +1824,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
      */
-
-    public com.google.spanner.v1.Type getParamTypesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public com.google.spanner.v1.Type getParamTypesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.spanner.v1.Type> map =
           internalGetParamTypes().getMap();
       if (!map.containsKey(key)) {
@@ -1712,15 +1837,17 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearParamTypes() {
-      internalGetMutableParamTypes().getMutableMap()
-          .clear();
+      internalGetMutableParamTypes().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL query parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1729,27 +1856,26 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
      */
-
-    public Builder removeParamTypes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableParamTypes().getMutableMap()
-          .remove(key);
+    public Builder removeParamTypes(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableParamTypes().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.spanner.v1.Type>
-    getMutableParamTypes() {
+    public java.util.Map<java.lang.String, com.google.spanner.v1.Type> getMutableParamTypes() {
       return internalGetMutableParamTypes().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL query parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1758,20 +1884,24 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
      */
-    public Builder putParamTypes(
-        java.lang.String key,
-        com.google.spanner.v1.Type value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableParamTypes().getMutableMap()
-          .put(key, value);
+    public Builder putParamTypes(java.lang.String key, com.google.spanner.v1.Type value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableParamTypes().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * It is not always possible for Cloud Spanner to infer the right SQL type
      * from a JSON value.  For example, values of type `BYTES` and values
-     * of type `STRING` both appear in [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
+     * of type `STRING` both appear in
+     * [params][google.spanner.v1.PartitionQueryRequest.params] as JSON strings.
      * In these cases, `param_types` can be used to specify the exact
      * SQL type for some or all of the SQL query parameters. See the
      * definition of [Type][google.spanner.v1.Type] for more information
@@ -1780,18 +1910,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
      */
-
     public Builder putAllParamTypes(
         java.util.Map<java.lang.String, com.google.spanner.v1.Type> values) {
-      internalGetMutableParamTypes().getMutableMap()
-          .putAll(values);
+      internalGetMutableParamTypes().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.spanner.v1.PartitionOptions partitionOptions_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.PartitionOptions, com.google.spanner.v1.PartitionOptions.Builder, com.google.spanner.v1.PartitionOptionsOrBuilder> partitionOptionsBuilder_;
+            com.google.spanner.v1.PartitionOptions,
+            com.google.spanner.v1.PartitionOptions.Builder,
+            com.google.spanner.v1.PartitionOptionsOrBuilder>
+        partitionOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1802,6 +1935,8 @@ private static final long serialVersionUID = 0L;
       return partitionOptionsBuilder_ != null || partitionOptions_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1810,12 +1945,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.spanner.v1.PartitionOptions getPartitionOptions() {
       if (partitionOptionsBuilder_ == null) {
-        return partitionOptions_ == null ? com.google.spanner.v1.PartitionOptions.getDefaultInstance() : partitionOptions_;
+        return partitionOptions_ == null
+            ? com.google.spanner.v1.PartitionOptions.getDefaultInstance()
+            : partitionOptions_;
       } else {
         return partitionOptionsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1836,6 +1975,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1854,6 +1995,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1864,7 +2007,9 @@ private static final long serialVersionUID = 0L;
       if (partitionOptionsBuilder_ == null) {
         if (partitionOptions_ != null) {
           partitionOptions_ =
-            com.google.spanner.v1.PartitionOptions.newBuilder(partitionOptions_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.PartitionOptions.newBuilder(partitionOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           partitionOptions_ = value;
         }
@@ -1876,6 +2021,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1894,6 +2041,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1901,11 +2050,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.PartitionOptions partition_options = 6;</code>
      */
     public com.google.spanner.v1.PartitionOptions.Builder getPartitionOptionsBuilder() {
-      
+
       onChanged();
       return getPartitionOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1916,11 +2067,14 @@ private static final long serialVersionUID = 0L;
       if (partitionOptionsBuilder_ != null) {
         return partitionOptionsBuilder_.getMessageOrBuilder();
       } else {
-        return partitionOptions_ == null ?
-            com.google.spanner.v1.PartitionOptions.getDefaultInstance() : partitionOptions_;
+        return partitionOptions_ == null
+            ? com.google.spanner.v1.PartitionOptions.getDefaultInstance()
+            : partitionOptions_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Additional options that affect how many partitions are created.
      * </pre>
@@ -1928,21 +2082,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.PartitionOptions partition_options = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.PartitionOptions, com.google.spanner.v1.PartitionOptions.Builder, com.google.spanner.v1.PartitionOptionsOrBuilder> 
+            com.google.spanner.v1.PartitionOptions,
+            com.google.spanner.v1.PartitionOptions.Builder,
+            com.google.spanner.v1.PartitionOptionsOrBuilder>
         getPartitionOptionsFieldBuilder() {
       if (partitionOptionsBuilder_ == null) {
-        partitionOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.PartitionOptions, com.google.spanner.v1.PartitionOptions.Builder, com.google.spanner.v1.PartitionOptionsOrBuilder>(
-                getPartitionOptions(),
-                getParentForChildren(),
-                isClean());
+        partitionOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.PartitionOptions,
+                com.google.spanner.v1.PartitionOptions.Builder,
+                com.google.spanner.v1.PartitionOptionsOrBuilder>(
+                getPartitionOptions(), getParentForChildren(), isClean());
         partitionOptions_ = null;
       }
       return partitionOptionsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1952,12 +2109,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.PartitionQueryRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.PartitionQueryRequest)
   private static final com.google.spanner.v1.PartitionQueryRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.PartitionQueryRequest();
   }
@@ -1966,16 +2123,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PartitionQueryRequest>
-      PARSER = new com.google.protobuf.AbstractParser<PartitionQueryRequest>() {
-    @java.lang.Override
-    public PartitionQueryRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PartitionQueryRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PartitionQueryRequest> PARSER =
+      new com.google.protobuf.AbstractParser<PartitionQueryRequest>() {
+        @java.lang.Override
+        public PartitionQueryRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PartitionQueryRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PartitionQueryRequest> parser() {
     return PARSER;
@@ -1990,6 +2147,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.v1.PartitionQueryRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

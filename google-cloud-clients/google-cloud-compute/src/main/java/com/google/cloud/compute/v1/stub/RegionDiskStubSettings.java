@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,7 +277,9 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
             @Override
             public Iterable<Disk> extractResources(DiskList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Disk>of();
             }
           };
 

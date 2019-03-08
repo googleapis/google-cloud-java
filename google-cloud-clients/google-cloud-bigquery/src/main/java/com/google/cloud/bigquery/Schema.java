@@ -18,34 +18,33 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.api.services.bigquery.model.TableSchema;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
-/**
- * This class represents the schema for a Google BigQuery Table or data source.
- */
+/** This class represents the schema for a Google BigQuery Table or data source. */
 public final class Schema implements Serializable {
 
   static final Function<com.google.api.services.bigquery.model.TableSchema, Schema>
-      FROM_PB_FUNCTION = new Function<com.google.api.services.bigquery.model.TableSchema,
-          Schema>() {
+      FROM_PB_FUNCTION =
+          new Function<com.google.api.services.bigquery.model.TableSchema, Schema>() {
             @Override
             public Schema apply(com.google.api.services.bigquery.model.TableSchema pb) {
               return Schema.fromPb(pb);
             }
           };
-  static final Function<Schema, com.google.api.services.bigquery.model.TableSchema>
-      TO_PB_FUNCTION = new Function<Schema,
-          com.google.api.services.bigquery.model.TableSchema>() {
-            @Override
-            public com.google.api.services.bigquery.model.TableSchema apply(Schema schema) {
-              return schema.toPb();
-            }
-          };
+  static final Function<Schema, com.google.api.services.bigquery.model.TableSchema> TO_PB_FUNCTION =
+      new Function<Schema, com.google.api.services.bigquery.model.TableSchema>() {
+        @Override
+        public com.google.api.services.bigquery.model.TableSchema apply(Schema schema) {
+          return schema.toPb();
+        }
+      };
 
   private static final long serialVersionUID = 5522743613515073017L;
 
@@ -55,18 +54,14 @@ public final class Schema implements Serializable {
     this.fields = checkNotNull(fields);
   }
 
-  /**
-   * Returns the fields in the current table schema.
-   */
+  /** Returns the fields in the current table schema. */
   public FieldList getFields() {
     return fields;
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("fields", fields)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("fields", fields).toString();
   }
 
   @Override
@@ -76,27 +71,21 @@ public final class Schema implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this
-        || obj instanceof Schema
-        && Objects.equals(toPb(), ((Schema) obj).toPb());
+    return obj == this || obj instanceof Schema && Objects.equals(toPb(), ((Schema) obj).toPb());
   }
 
-  /**
-   * Creates a {@code Schema} object given a list of fields.
-   */
+  /** Creates a {@code Schema} object given a list of fields. */
   public static Schema of(Iterable<Field> fields) {
     return new Schema(FieldList.of(fields));
   }
 
-  /**
-   * Creates a {@code Schema} object given some fields.
-   */
+  /** Creates a {@code Schema} object given some fields. */
   public static Schema of(Field... fields) {
     return new Schema(FieldList.of(fields));
   }
 
   TableSchema toPb() {
-      TableSchema tableSchemaPb = new TableSchema();
+    TableSchema tableSchemaPb = new TableSchema();
     if (fields != null) {
       tableSchemaPb.setFields(fields.toPb());
     }
@@ -104,6 +93,10 @@ public final class Schema implements Serializable {
   }
 
   static Schema fromPb(com.google.api.services.bigquery.model.TableSchema tableSchemaPb) {
-    return Schema.of(FieldList.fromPb(tableSchemaPb.getFields()));
+    List<TableFieldSchema> fields = tableSchemaPb.getFields();
+    if (fields == null) {
+      fields = Collections.emptyList();
+    }
+    return Schema.of(FieldList.fromPb(fields));
   }
 }

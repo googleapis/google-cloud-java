@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListUptimeCheckIpsRequestOrBuilder extends
+public interface ListUptimeCheckIpsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListUptimeCheckIpsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. The server
    * may further constrain the maximum number of results returned in a single
@@ -21,6 +24,8 @@ public interface ListUptimeCheckIpsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -32,6 +37,8 @@ public interface ListUptimeCheckIpsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -41,6 +48,5 @@ public interface ListUptimeCheckIpsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

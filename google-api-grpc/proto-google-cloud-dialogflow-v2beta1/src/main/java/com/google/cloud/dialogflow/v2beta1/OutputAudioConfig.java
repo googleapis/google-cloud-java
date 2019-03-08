@@ -4,31 +4,34 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Instructs the speech synthesizer how to generate the output audio content.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.OutputAudioConfig}
  */
-public  final class OutputAudioConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.OutputAudioConfig)
     OutputAudioConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use OutputAudioConfig.newBuilder() to construct.
   private OutputAudioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private OutputAudioConfig() {
     audioEncoding_ = 0;
     sampleRateHertz_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private OutputAudioConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,65 +51,74 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            audioEncoding_ = rawValue;
-            break;
-          }
-          case 16: {
+              audioEncoding_ = rawValue;
+              break;
+            }
+          case 16:
+            {
+              sampleRateHertz_ = input.readInt32();
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder subBuilder = null;
+              if (synthesizeSpeechConfig_ != null) {
+                subBuilder = synthesizeSpeechConfig_.toBuilder();
+              }
+              synthesizeSpeechConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(synthesizeSpeechConfig_);
+                synthesizeSpeechConfig_ = subBuilder.buildPartial();
+              }
 
-            sampleRateHertz_ = input.readInt32();
-            break;
-          }
-          case 26: {
-            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder subBuilder = null;
-            if (synthesizeSpeechConfig_ != null) {
-              subBuilder = synthesizeSpeechConfig_.toBuilder();
+              break;
             }
-            synthesizeSpeechConfig_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(synthesizeSpeechConfig_);
-              synthesizeSpeechConfig_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+        .internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+        .internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.class, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.class,
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder.class);
   }
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_;
   /**
+   *
+   *
    * <pre>
    * Required. Audio encoding of the synthesized audio content.
    * </pre>
@@ -117,6 +129,8 @@ private static final long serialVersionUID = 0L;
     return audioEncoding_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Audio encoding of the synthesized audio content.
    * </pre>
@@ -125,13 +139,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding result = com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.valueOf(audioEncoding_);
-    return result == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.UNRECOGNIZED : result;
+    com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding result =
+        com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.valueOf(audioEncoding_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.UNRECOGNIZED
+        : result;
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
   private int sampleRateHertz_;
   /**
+   *
+   *
    * <pre>
    * Optional. The synthesis sample rate (in hertz) for this audio. If not
    * provided, then the synthesizer will use the default sample rate based on
@@ -149,37 +168,50 @@ private static final long serialVersionUID = 0L;
   public static final int SYNTHESIZE_SPEECH_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesizeSpeechConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+   * </code>
    */
   public boolean hasSynthesizeSpeechConfig() {
     return synthesizeSpeechConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getSynthesizeSpeechConfig() {
-    return synthesizeSpeechConfig_ == null ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance() : synthesizeSpeechConfig_;
+    return synthesizeSpeechConfig_ == null
+        ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
+        : synthesizeSpeechConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+   * </code>
    */
-  public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder getSynthesizeSpeechConfigOrBuilder() {
+  public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder
+      getSynthesizeSpeechConfigOrBuilder() {
     return getSynthesizeSpeechConfig();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -191,9 +223,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (audioEncoding_ != com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (audioEncoding_
+        != com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, audioEncoding_);
     }
     if (sampleRateHertz_ != 0) {
@@ -211,17 +244,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (audioEncoding_ != com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, audioEncoding_);
+    if (audioEncoding_
+        != com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, audioEncoding_);
     }
     if (sampleRateHertz_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, sampleRateHertz_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, sampleRateHertz_);
     }
     if (synthesizeSpeechConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getSynthesizeSpeechConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSynthesizeSpeechConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,21 +264,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.OutputAudioConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.OutputAudioConfig other = (com.google.cloud.dialogflow.v2beta1.OutputAudioConfig) obj;
+    com.google.cloud.dialogflow.v2beta1.OutputAudioConfig other =
+        (com.google.cloud.dialogflow.v2beta1.OutputAudioConfig) obj;
 
     boolean result = true;
     result = result && audioEncoding_ == other.audioEncoding_;
-    result = result && (getSampleRateHertz()
-        == other.getSampleRateHertz());
+    result = result && (getSampleRateHertz() == other.getSampleRateHertz());
     result = result && (hasSynthesizeSpeechConfig() == other.hasSynthesizeSpeechConfig());
     if (hasSynthesizeSpeechConfig()) {
-      result = result && getSynthesizeSpeechConfig()
-          .equals(other.getSynthesizeSpeechConfig());
+      result = result && getSynthesizeSpeechConfig().equals(other.getSynthesizeSpeechConfig());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -272,117 +304,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.OutputAudioConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.OutputAudioConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio content.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.OutputAudioConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.OutputAudioConfig)
       com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.class, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.class,
+              com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.newBuilder()
@@ -390,16 +432,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -417,9 +458,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2beta1_OutputAudioConfig_descriptor;
     }
 
     @java.lang.Override
@@ -438,7 +479,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.OutputAudioConfig result = new com.google.cloud.dialogflow.v2beta1.OutputAudioConfig(this);
+      com.google.cloud.dialogflow.v2beta1.OutputAudioConfig result =
+          new com.google.cloud.dialogflow.v2beta1.OutputAudioConfig(this);
       result.audioEncoding_ = audioEncoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
       if (synthesizeSpeechConfigBuilder_ == null) {
@@ -454,38 +496,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.OutputAudioConfig) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.OutputAudioConfig)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.OutputAudioConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -493,7 +536,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance())
+        return this;
       if (other.audioEncoding_ != 0) {
         setAudioEncodingValue(other.getAudioEncodingValue());
       }
@@ -522,7 +566,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.OutputAudioConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.OutputAudioConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -534,6 +579,8 @@ private static final long serialVersionUID = 0L;
 
     private int audioEncoding_ = 0;
     /**
+     *
+     *
      * <pre>
      * Required. Audio encoding of the synthesized audio content.
      * </pre>
@@ -544,6 +591,8 @@ private static final long serialVersionUID = 0L;
       return audioEncoding_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Audio encoding of the synthesized audio content.
      * </pre>
@@ -556,6 +605,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Audio encoding of the synthesized audio content.
      * </pre>
@@ -564,10 +615,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding result = com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.valueOf(audioEncoding_);
-      return result == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.UNRECOGNIZED : result;
+      com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding result =
+          com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.valueOf(audioEncoding_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Audio encoding of the synthesized audio content.
      * </pre>
@@ -578,12 +634,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       audioEncoding_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Audio encoding of the synthesized audio content.
      * </pre>
@@ -591,14 +649,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioEncoding audio_encoding = 1;</code>
      */
     public Builder clearAudioEncoding() {
-      
+
       audioEncoding_ = 0;
       onChanged();
       return this;
     }
 
-    private int sampleRateHertz_ ;
+    private int sampleRateHertz_;
     /**
+     *
+     *
      * <pre>
      * Optional. The synthesis sample rate (in hertz) for this audio. If not
      * provided, then the synthesizer will use the default sample rate based on
@@ -613,6 +673,8 @@ private static final long serialVersionUID = 0L;
       return sampleRateHertz_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The synthesis sample rate (in hertz) for this audio. If not
      * provided, then the synthesizer will use the default sample rate based on
@@ -624,12 +686,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 sample_rate_hertz = 2;</code>
      */
     public Builder setSampleRateHertz(int value) {
-      
+
       sampleRateHertz_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The synthesis sample rate (in hertz) for this audio. If not
      * provided, then the synthesizer will use the default sample rate based on
@@ -641,47 +705,63 @@ private static final long serialVersionUID = 0L;
      * <code>int32 sample_rate_hertz = 2;</code>
      */
     public Builder clearSampleRateHertz() {
-      
+
       sampleRateHertz_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesizeSpeechConfig_ = null;
+    private com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesizeSpeechConfig_ =
+        null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder> synthesizeSpeechConfigBuilder_;
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder>
+        synthesizeSpeechConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
     public boolean hasSynthesizeSpeechConfig() {
       return synthesizeSpeechConfigBuilder_ != null || synthesizeSpeechConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getSynthesizeSpeechConfig() {
       if (synthesizeSpeechConfigBuilder_ == null) {
-        return synthesizeSpeechConfig_ == null ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance() : synthesizeSpeechConfig_;
+        return synthesizeSpeechConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
+            : synthesizeSpeechConfig_;
       } else {
         return synthesizeSpeechConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
-    public Builder setSynthesizeSpeechConfig(com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig value) {
+    public Builder setSynthesizeSpeechConfig(
+        com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig value) {
       if (synthesizeSpeechConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -695,11 +775,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
     public Builder setSynthesizeSpeechConfig(
         com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder builderForValue) {
@@ -713,17 +796,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
-    public Builder mergeSynthesizeSpeechConfig(com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig value) {
+    public Builder mergeSynthesizeSpeechConfig(
+        com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig value) {
       if (synthesizeSpeechConfigBuilder_ == null) {
         if (synthesizeSpeechConfig_ != null) {
           synthesizeSpeechConfig_ =
-            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.newBuilder(synthesizeSpeechConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.newBuilder(
+                      synthesizeSpeechConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           synthesizeSpeechConfig_ = value;
         }
@@ -735,11 +825,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
     public Builder clearSynthesizeSpeechConfig() {
       if (synthesizeSpeechConfigBuilder_ == null) {
@@ -753,55 +846,70 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder getSynthesizeSpeechConfigBuilder() {
-      
+    public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder
+        getSynthesizeSpeechConfigBuilder() {
+
       onChanged();
       return getSynthesizeSpeechConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder getSynthesizeSpeechConfigOrBuilder() {
+    public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder
+        getSynthesizeSpeechConfigOrBuilder() {
       if (synthesizeSpeechConfigBuilder_ != null) {
         return synthesizeSpeechConfigBuilder_.getMessageOrBuilder();
       } else {
-        return synthesizeSpeechConfig_ == null ?
-            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance() : synthesizeSpeechConfig_;
+        return synthesizeSpeechConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()
+            : synthesizeSpeechConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+     * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder>
         getSynthesizeSpeechConfigFieldBuilder() {
       if (synthesizeSpeechConfigBuilder_ == null) {
-        synthesizeSpeechConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder>(
-                getSynthesizeSpeechConfig(),
-                getParentForChildren(),
-                isClean());
+        synthesizeSpeechConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig,
+                com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder,
+                com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder>(
+                getSynthesizeSpeechConfig(), getParentForChildren(), isClean());
         synthesizeSpeechConfig_ = null;
       }
       return synthesizeSpeechConfigBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -811,12 +919,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.OutputAudioConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.OutputAudioConfig)
   private static final com.google.cloud.dialogflow.v2beta1.OutputAudioConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.OutputAudioConfig();
   }
@@ -825,16 +933,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OutputAudioConfig>
-      PARSER = new com.google.protobuf.AbstractParser<OutputAudioConfig>() {
-    @java.lang.Override
-    public OutputAudioConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new OutputAudioConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<OutputAudioConfig> PARSER =
+      new com.google.protobuf.AbstractParser<OutputAudioConfig>() {
+        @java.lang.Override
+        public OutputAudioConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OutputAudioConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<OutputAudioConfig> parser() {
     return PARSER;
@@ -849,6 +957,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

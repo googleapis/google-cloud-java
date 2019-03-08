@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,7 +78,8 @@ public class TargetPoolSettings extends ClientSettings<TargetPoolSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListTargetPools. */
   public PagedCallSettings<
-          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+          AggregatedListTargetPoolsHttpRequest,
+          TargetPoolAggregatedList,
           AggregatedListTargetPoolsPagedResponse>
       aggregatedListTargetPoolsSettings() {
     return ((TargetPoolStubSettings) getStubSettings()).aggregatedListTargetPoolsSettings();
@@ -244,7 +245,8 @@ public class TargetPoolSettings extends ClientSettings<TargetPoolSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListTargetPools. */
     public PagedCallSettings.Builder<
-            AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+            AggregatedListTargetPoolsHttpRequest,
+            TargetPoolAggregatedList,
             AggregatedListTargetPoolsPagedResponse>
         aggregatedListTargetPoolsSettings() {
       return getStubSettingsBuilder().aggregatedListTargetPoolsSettings();

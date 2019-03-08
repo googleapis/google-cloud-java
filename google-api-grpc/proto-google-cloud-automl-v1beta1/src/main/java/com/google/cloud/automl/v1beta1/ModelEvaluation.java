@@ -4,21 +4,24 @@
 package com.google.cloud.automl.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Evaluation results of a model.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ModelEvaluation}
  */
-public  final class ModelEvaluation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ModelEvaluation)
     ModelEvaluationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ModelEvaluation.newBuilder() to construct.
   private ModelEvaluation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ModelEvaluation() {
     name_ = "";
     annotationSpecId_ = "";
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ModelEvaluation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,110 +52,135 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            annotationSpecId_ = s;
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              annotationSpecId_ = s;
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 48: {
-
-            evaluatedExampleCount_ = input.readInt32();
-            break;
-          }
-          case 66: {
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder subBuilder = null;
-            if (metricsCase_ == 8) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_).toBuilder();
+              break;
             }
-            metrics_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_);
-              metrics_ = subBuilder.buildPartial();
+          case 48:
+            {
+              evaluatedExampleCount_ = input.readInt32();
+              break;
             }
-            metricsCase_ = 8;
-            break;
-          }
-          case 74: {
-            com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder subBuilder = null;
-            if (metricsCase_ == 9) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_).toBuilder();
+          case 66:
+            {
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                      .Builder
+                  subBuilder = null;
+              if (metricsCase_ == 8) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ClassificationProto
+                                .ClassificationEvaluationMetrics)
+                            metrics_)
+                        .toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ClassificationProto
+                          .ClassificationEvaluationMetrics.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ClassificationProto
+                            .ClassificationEvaluationMetrics)
+                        metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
+              metricsCase_ = 8;
+              break;
             }
-            metrics_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_);
-              metrics_ = subBuilder.buildPartial();
+          case 74:
+            {
+              com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder subBuilder =
+                  null;
+              if (metricsCase_ == 9) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_)
+                        .toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
+              metricsCase_ = 9;
+              break;
             }
-            metricsCase_ = 9;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.internal_static_google_cloud_automl_v1beta1_ModelEvaluation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass
+        .internal_static_google_cloud_automl_v1beta1_ModelEvaluation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.internal_static_google_cloud_automl_v1beta1_ModelEvaluation_fieldAccessorTable
+    return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass
+        .internal_static_google_cloud_automl_v1beta1_ModelEvaluation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.ModelEvaluation.class, com.google.cloud.automl.v1beta1.ModelEvaluation.Builder.class);
+            com.google.cloud.automl.v1beta1.ModelEvaluation.class,
+            com.google.cloud.automl.v1beta1.ModelEvaluation.Builder.class);
   }
 
   private int metricsCase_ = 0;
   private java.lang.Object metrics_;
-  public enum MetricsCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum MetricsCase implements com.google.protobuf.Internal.EnumLite {
     CLASSIFICATION_EVALUATION_METRICS(8),
     TRANSLATION_EVALUATION_METRICS(9),
     METRICS_NOT_SET(0);
     private final int value;
+
     private MetricsCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static MetricsCase valueOf(int value) {
       return forNumber(value);
@@ -160,95 +188,131 @@ private static final long serialVersionUID = 0L;
 
     public static MetricsCase forNumber(int value) {
       switch (value) {
-        case 8: return CLASSIFICATION_EVALUATION_METRICS;
-        case 9: return TRANSLATION_EVALUATION_METRICS;
-        case 0: return METRICS_NOT_SET;
-        default: return null;
+        case 8:
+          return CLASSIFICATION_EVALUATION_METRICS;
+        case 9:
+          return TRANSLATION_EVALUATION_METRICS;
+        case 0:
+          return METRICS_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public MetricsCase
-  getMetricsCase() {
-    return MetricsCase.forNumber(
-        metricsCase_);
+  public MetricsCase getMetricsCase() {
+    return MetricsCase.forNumber(metricsCase_);
   }
 
   public static final int CLASSIFICATION_EVALUATION_METRICS_FIELD_NUMBER = 8;
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on classification problems models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
    */
   public boolean hasClassificationEvaluationMetrics() {
     return metricsCase_ == 8;
   }
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on classification problems models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getClassificationEvaluationMetrics() {
+  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+      getClassificationEvaluationMetrics() {
     if (metricsCase_ == 8) {
-       return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)
+          metrics_;
     }
-    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
+    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+        .getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on classification problems models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder getClassificationEvaluationMetricsOrBuilder() {
+  public com.google.cloud.automl.v1beta1.ClassificationProto
+          .ClassificationEvaluationMetricsOrBuilder
+      getClassificationEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 8) {
-       return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)
+          metrics_;
     }
-    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
+    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+        .getDefaultInstance();
   }
 
   public static final int TRANSLATION_EVALUATION_METRICS_FIELD_NUMBER = 9;
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+   * </code>
    */
   public boolean hasTranslationEvaluationMetrics() {
     return metricsCase_ == 9;
   }
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics getTranslationEvaluationMetrics() {
+  public com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics
+      getTranslationEvaluationMetrics() {
     if (metricsCase_ == 9) {
-       return (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_;
     }
     return com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder getTranslationEvaluationMetricsOrBuilder() {
+  public com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder
+      getTranslationEvaluationMetricsOrBuilder() {
     if (metricsCase_ == 9) {
-       return (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_;
+      return (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_;
     }
     return com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.getDefaultInstance();
   }
@@ -256,6 +320,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model evaluation.
@@ -270,14 +336,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model evaluation.
@@ -287,13 +354,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -304,6 +369,8 @@ private static final long serialVersionUID = 0L;
   public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object annotationSpecId_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
@@ -320,14 +387,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       annotationSpecId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
@@ -339,13 +407,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string annotation_spec_id = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getAnnotationSpecIdBytes() {
+  public com.google.protobuf.ByteString getAnnotationSpecIdBytes() {
     java.lang.Object ref = annotationSpecId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       annotationSpecId_ = b;
       return b;
     } else {
@@ -356,6 +422,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model evaluation was created.
@@ -367,6 +435,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model evaluation was created.
@@ -378,6 +448,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model evaluation was created.
@@ -392,6 +464,8 @@ private static final long serialVersionUID = 0L;
   public static final int EVALUATED_EXAMPLE_COUNT_FIELD_NUMBER = 6;
   private int evaluatedExampleCount_;
   /**
+   *
+   *
    * <pre>
    * Output only. The number of examples used for model evaluation.
    * </pre>
@@ -403,6 +477,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -414,8 +489,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -429,10 +503,14 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(6, evaluatedExampleCount_);
     }
     if (metricsCase_ == 8) {
-      output.writeMessage(8, (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_);
+      output.writeMessage(
+          8,
+          (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)
+              metrics_);
     }
     if (metricsCase_ == 9) {
-      output.writeMessage(9, (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_);
+      output.writeMessage(
+          9, (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_);
     }
     unknownFields.writeTo(output);
   }
@@ -450,20 +528,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, annotationSpecId_);
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCreateTime());
     }
     if (evaluatedExampleCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, evaluatedExampleCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, evaluatedExampleCount_);
     }
     if (metricsCase_ == 8) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8,
+              (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)
+                  metrics_);
     }
     if (metricsCase_ == 9) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -473,36 +553,36 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.automl.v1beta1.ModelEvaluation)) {
       return super.equals(obj);
     }
-    com.google.cloud.automl.v1beta1.ModelEvaluation other = (com.google.cloud.automl.v1beta1.ModelEvaluation) obj;
+    com.google.cloud.automl.v1beta1.ModelEvaluation other =
+        (com.google.cloud.automl.v1beta1.ModelEvaluation) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getAnnotationSpecId()
-        .equals(other.getAnnotationSpecId());
+    result = result && getName().equals(other.getName());
+    result = result && getAnnotationSpecId().equals(other.getAnnotationSpecId());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
-    result = result && (getEvaluatedExampleCount()
-        == other.getEvaluatedExampleCount());
-    result = result && getMetricsCase().equals(
-        other.getMetricsCase());
+    result = result && (getEvaluatedExampleCount() == other.getEvaluatedExampleCount());
+    result = result && getMetricsCase().equals(other.getMetricsCase());
     if (!result) return false;
     switch (metricsCase_) {
       case 8:
-        result = result && getClassificationEvaluationMetrics()
-            .equals(other.getClassificationEvaluationMetrics());
+        result =
+            result
+                && getClassificationEvaluationMetrics()
+                    .equals(other.getClassificationEvaluationMetrics());
         break;
       case 9:
-        result = result && getTranslationEvaluationMetrics()
-            .equals(other.getTranslationEvaluationMetrics());
+        result =
+            result
+                && getTranslationEvaluationMetrics()
+                    .equals(other.getTranslationEvaluationMetrics());
         break;
       case 0:
       default:
@@ -545,118 +625,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.ModelEvaluation parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.automl.v1beta1.ModelEvaluation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.ModelEvaluation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.automl.v1beta1.ModelEvaluation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Evaluation results of a model.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ModelEvaluation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ModelEvaluation)
       com.google.cloud.automl.v1beta1.ModelEvaluationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.internal_static_google_cloud_automl_v1beta1_ModelEvaluation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass
+          .internal_static_google_cloud_automl_v1beta1_ModelEvaluation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.internal_static_google_cloud_automl_v1beta1_ModelEvaluation_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass
+          .internal_static_google_cloud_automl_v1beta1_ModelEvaluation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.ModelEvaluation.class, com.google.cloud.automl.v1beta1.ModelEvaluation.Builder.class);
+              com.google.cloud.automl.v1beta1.ModelEvaluation.class,
+              com.google.cloud.automl.v1beta1.ModelEvaluation.Builder.class);
     }
 
     // Construct using com.google.cloud.automl.v1beta1.ModelEvaluation.newBuilder()
@@ -664,16 +753,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -695,9 +783,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass.internal_static_google_cloud_automl_v1beta1_ModelEvaluation_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.automl.v1beta1.ModelEvaluationOuterClass
+          .internal_static_google_cloud_automl_v1beta1_ModelEvaluation_descriptor;
     }
 
     @java.lang.Override
@@ -716,7 +804,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.ModelEvaluation buildPartial() {
-      com.google.cloud.automl.v1beta1.ModelEvaluation result = new com.google.cloud.automl.v1beta1.ModelEvaluation(this);
+      com.google.cloud.automl.v1beta1.ModelEvaluation result =
+          new com.google.cloud.automl.v1beta1.ModelEvaluation(this);
       if (metricsCase_ == 8) {
         if (classificationEvaluationMetricsBuilder_ == null) {
           result.metrics_ = metrics_;
@@ -748,38 +837,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.automl.v1beta1.ModelEvaluation) {
-        return mergeFrom((com.google.cloud.automl.v1beta1.ModelEvaluation)other);
+        return mergeFrom((com.google.cloud.automl.v1beta1.ModelEvaluation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -787,7 +877,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.ModelEvaluation other) {
-      if (other == com.google.cloud.automl.v1beta1.ModelEvaluation.getDefaultInstance()) return this;
+      if (other == com.google.cloud.automl.v1beta1.ModelEvaluation.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -803,17 +894,20 @@ private static final long serialVersionUID = 0L;
         setEvaluatedExampleCount(other.getEvaluatedExampleCount());
       }
       switch (other.getMetricsCase()) {
-        case CLASSIFICATION_EVALUATION_METRICS: {
-          mergeClassificationEvaluationMetrics(other.getClassificationEvaluationMetrics());
-          break;
-        }
-        case TRANSLATION_EVALUATION_METRICS: {
-          mergeTranslationEvaluationMetrics(other.getTranslationEvaluationMetrics());
-          break;
-        }
-        case METRICS_NOT_SET: {
-          break;
-        }
+        case CLASSIFICATION_EVALUATION_METRICS:
+          {
+            mergeClassificationEvaluationMetrics(other.getClassificationEvaluationMetrics());
+            break;
+          }
+        case TRANSLATION_EVALUATION_METRICS:
+          {
+            mergeTranslationEvaluationMetrics(other.getTranslationEvaluationMetrics());
+            break;
+          }
+        case METRICS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -843,12 +937,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int metricsCase_ = 0;
     private java.lang.Object metrics_;
-    public MetricsCase
-        getMetricsCase() {
-      return MetricsCase.forNumber(
-          metricsCase_);
+
+    public MetricsCase getMetricsCase() {
+      return MetricsCase.forNumber(metricsCase_);
     }
 
     public Builder clearMetrics() {
@@ -858,47 +952,69 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder> classificationEvaluationMetricsBuilder_;
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .Builder,
+            com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetricsOrBuilder>
+        classificationEvaluationMetricsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
     public boolean hasClassificationEvaluationMetrics() {
       return metricsCase_ == 8;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getClassificationEvaluationMetrics() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+        getClassificationEvaluationMetrics() {
       if (classificationEvaluationMetricsBuilder_ == null) {
         if (metricsCase_ == 8) {
-          return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_;
+          return (com.google.cloud.automl.v1beta1.ClassificationProto
+                  .ClassificationEvaluationMetrics)
+              metrics_;
         }
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .getDefaultInstance();
       } else {
         if (metricsCase_ == 8) {
           return classificationEvaluationMetricsBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .getDefaultInstance();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
-    public Builder setClassificationEvaluationMetrics(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics value) {
+    public Builder setClassificationEvaluationMetrics(
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics value) {
       if (classificationEvaluationMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -912,14 +1028,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
     public Builder setClassificationEvaluationMetrics(
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder builderForValue) {
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder
+            builderForValue) {
       if (classificationEvaluationMetricsBuilder_ == null) {
         metrics_ = builderForValue.build();
         onChanged();
@@ -930,18 +1051,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
-    public Builder mergeClassificationEvaluationMetrics(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics value) {
+    public Builder mergeClassificationEvaluationMetrics(
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics value) {
       if (classificationEvaluationMetricsBuilder_ == null) {
-        if (metricsCase_ == 8 &&
-            metrics_ != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance()) {
-          metrics_ = com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.newBuilder((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_)
-              .mergeFrom(value).buildPartial();
+        if (metricsCase_ == 8
+            && metrics_
+                != com.google.cloud.automl.v1beta1.ClassificationProto
+                    .ClassificationEvaluationMetrics.getDefaultInstance()) {
+          metrics_ =
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .newBuilder(
+                      (com.google.cloud.automl.v1beta1.ClassificationProto
+                              .ClassificationEvaluationMetrics)
+                          metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           metrics_ = value;
         }
@@ -956,11 +1090,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
     public Builder clearClassificationEvaluationMetrics() {
       if (classificationEvaluationMetricsBuilder_ == null) {
@@ -979,78 +1117,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder getClassificationEvaluationMetricsBuilder() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .Builder
+        getClassificationEvaluationMetricsBuilder() {
       return getClassificationEvaluationMetricsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder getClassificationEvaluationMetricsOrBuilder() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetricsOrBuilder
+        getClassificationEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 8) && (classificationEvaluationMetricsBuilder_ != null)) {
         return classificationEvaluationMetricsBuilder_.getMessageOrBuilder();
       } else {
         if (metricsCase_ == 8) {
-          return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_;
+          return (com.google.cloud.automl.v1beta1.ClassificationProto
+                  .ClassificationEvaluationMetrics)
+              metrics_;
         }
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .getDefaultInstance();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on classification problems models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder> 
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .Builder,
+            com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetricsOrBuilder>
         getClassificationEvaluationMetricsFieldBuilder() {
       if (classificationEvaluationMetricsBuilder_ == null) {
         if (!(metricsCase_ == 8)) {
-          metrics_ = com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
+          metrics_ =
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .getDefaultInstance();
         }
-        classificationEvaluationMetricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder>(
-                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) metrics_,
+        classificationEvaluationMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .Builder,
+                com.google.cloud.automl.v1beta1.ClassificationProto
+                    .ClassificationEvaluationMetricsOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics)
+                    metrics_,
                 getParentForChildren(),
                 isClean());
         metrics_ = null;
       }
       metricsCase_ = 8;
-      onChanged();;
+      onChanged();
+      ;
       return classificationEvaluationMetricsBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics, com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder, com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder> translationEvaluationMetricsBuilder_;
+            com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics,
+            com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder>
+        translationEvaluationMetricsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
     public boolean hasTranslationEvaluationMetrics() {
       return metricsCase_ == 9;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics getTranslationEvaluationMetrics() {
+    public com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics
+        getTranslationEvaluationMetrics() {
       if (translationEvaluationMetricsBuilder_ == null) {
         if (metricsCase_ == 9) {
           return (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_;
@@ -1064,13 +1247,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
-    public Builder setTranslationEvaluationMetrics(com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics value) {
+    public Builder setTranslationEvaluationMetrics(
+        com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics value) {
       if (translationEvaluationMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1084,11 +1272,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
     public Builder setTranslationEvaluationMetrics(
         com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder builderForValue) {
@@ -1102,18 +1294,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
-    public Builder mergeTranslationEvaluationMetrics(com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics value) {
+    public Builder mergeTranslationEvaluationMetrics(
+        com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics value) {
       if (translationEvaluationMetricsBuilder_ == null) {
-        if (metricsCase_ == 9 &&
-            metrics_ != com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.getDefaultInstance()) {
-          metrics_ = com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.newBuilder((com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_)
-              .mergeFrom(value).buildPartial();
+        if (metricsCase_ == 9
+            && metrics_
+                != com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics
+                    .getDefaultInstance()) {
+          metrics_ =
+              com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           metrics_ = value;
         }
@@ -1128,11 +1330,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
     public Builder clearTranslationEvaluationMetrics() {
       if (translationEvaluationMetricsBuilder_ == null) {
@@ -1151,23 +1357,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder getTranslationEvaluationMetricsBuilder() {
+    public com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder
+        getTranslationEvaluationMetricsBuilder() {
       return getTranslationEvaluationMetricsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder getTranslationEvaluationMetricsOrBuilder() {
+    public com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder
+        getTranslationEvaluationMetricsOrBuilder() {
       if ((metricsCase_ == 9) && (translationEvaluationMetricsBuilder_ != null)) {
         return translationEvaluationMetricsBuilder_.getMessageOrBuilder();
       } else {
@@ -1178,33 +1394,46 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Evaluation metrics for models on translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics, com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder, com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder> 
+            com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics,
+            com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder,
+            com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder>
         getTranslationEvaluationMetricsFieldBuilder() {
       if (translationEvaluationMetricsBuilder_ == null) {
         if (!(metricsCase_ == 9)) {
-          metrics_ = com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.getDefaultInstance();
+          metrics_ =
+              com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.getDefaultInstance();
         }
-        translationEvaluationMetricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics, com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder, com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder>(
+        translationEvaluationMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics,
+                com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics.Builder,
+                com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder>(
                 (com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics) metrics_,
                 getParentForChildren(),
                 isClean());
         metrics_ = null;
       }
       metricsCase_ = 9;
-      onChanged();;
+      onChanged();
+      ;
       return translationEvaluationMetricsBuilder_;
     }
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model evaluation.
@@ -1217,8 +1446,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1227,6 +1455,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model evaluation.
@@ -1236,13 +1466,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1250,6 +1478,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model evaluation.
@@ -1259,17 +1489,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model evaluation.
@@ -1280,12 +1511,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model evaluation.
@@ -1295,13 +1528,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1309,6 +1541,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object annotationSpecId_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
@@ -1323,8 +1557,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAnnotationSpecId() {
       java.lang.Object ref = annotationSpecId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         annotationSpecId_ = s;
         return s;
@@ -1333,6 +1566,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
@@ -1344,13 +1579,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotation_spec_id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getAnnotationSpecIdBytes() {
+    public com.google.protobuf.ByteString getAnnotationSpecIdBytes() {
       java.lang.Object ref = annotationSpecId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         annotationSpecId_ = b;
         return b;
       } else {
@@ -1358,6 +1591,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
@@ -1369,17 +1604,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotation_spec_id = 2;</code>
      */
-    public Builder setAnnotationSpecId(
-        java.lang.String value) {
+    public Builder setAnnotationSpecId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       annotationSpecId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
@@ -1392,12 +1628,14 @@ private static final long serialVersionUID = 0L;
      * <code>string annotation_spec_id = 2;</code>
      */
     public Builder clearAnnotationSpecId() {
-      
+
       annotationSpecId_ = getDefaultInstance().getAnnotationSpecId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The ID of the annotation spec that the model evaluation applies to. The
@@ -1409,13 +1647,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotation_spec_id = 2;</code>
      */
-    public Builder setAnnotationSpecIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       annotationSpecId_ = value;
       onChanged();
       return this;
@@ -1423,8 +1660,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1436,6 +1678,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1445,12 +1689,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1472,6 +1720,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1479,8 +1729,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -1491,6 +1740,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1502,7 +1753,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -1514,6 +1765,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1533,6 +1786,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1541,11 +1796,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1557,11 +1814,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model evaluation was created.
@@ -1570,21 +1830,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
     }
 
-    private int evaluatedExampleCount_ ;
+    private int evaluatedExampleCount_;
     /**
+     *
+     *
      * <pre>
      * Output only. The number of examples used for model evaluation.
      * </pre>
@@ -1595,6 +1860,8 @@ private static final long serialVersionUID = 0L;
       return evaluatedExampleCount_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The number of examples used for model evaluation.
      * </pre>
@@ -1602,12 +1869,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 evaluated_example_count = 6;</code>
      */
     public Builder setEvaluatedExampleCount(int value) {
-      
+
       evaluatedExampleCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The number of examples used for model evaluation.
      * </pre>
@@ -1615,14 +1884,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 evaluated_example_count = 6;</code>
      */
     public Builder clearEvaluatedExampleCount() {
-      
+
       evaluatedExampleCount_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1632,12 +1901,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ModelEvaluation)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ModelEvaluation)
   private static final com.google.cloud.automl.v1beta1.ModelEvaluation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ModelEvaluation();
   }
@@ -1646,16 +1915,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ModelEvaluation>
-      PARSER = new com.google.protobuf.AbstractParser<ModelEvaluation>() {
-    @java.lang.Override
-    public ModelEvaluation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ModelEvaluation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ModelEvaluation> PARSER =
+      new com.google.protobuf.AbstractParser<ModelEvaluation>() {
+        @java.lang.Override
+        public ModelEvaluation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ModelEvaluation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ModelEvaluation> parser() {
     return PARSER;
@@ -1670,6 +1939,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.automl.v1beta1.ModelEvaluation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.AddressStub;
 import com.google.cloud.compute.v1.stub.AddressStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -55,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -763,8 +764,11 @@ public class AddressClient implements BackgroundResource {
 
   public static class AggregatedListAddressesPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList,
-          AggregatedListAddressesPage, AggregatedListAddressesFixedSizeCollection> {
+          AggregatedListAddressesHttpRequest,
+          AddressAggregatedList,
+          AddressesScopedList,
+          AggregatedListAddressesPage,
+          AggregatedListAddressesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListAddressesPagedResponse> createAsync(
         PageContext<AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList>
@@ -779,7 +783,8 @@ public class AddressClient implements BackgroundResource {
             public AggregatedListAddressesPagedResponse apply(AggregatedListAddressesPage input) {
               return new AggregatedListAddressesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListAddressesPagedResponse(AggregatedListAddressesPage page) {
@@ -789,7 +794,9 @@ public class AddressClient implements BackgroundResource {
 
   public static class AggregatedListAddressesPage
       extends AbstractPage<
-          AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList,
+          AggregatedListAddressesHttpRequest,
+          AddressAggregatedList,
+          AddressesScopedList,
           AggregatedListAddressesPage> {
 
     private AggregatedListAddressesPage(
@@ -822,8 +829,11 @@ public class AddressClient implements BackgroundResource {
 
   public static class AggregatedListAddressesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListAddressesHttpRequest, AddressAggregatedList, AddressesScopedList,
-          AggregatedListAddressesPage, AggregatedListAddressesFixedSizeCollection> {
+          AggregatedListAddressesHttpRequest,
+          AddressAggregatedList,
+          AddressesScopedList,
+          AggregatedListAddressesPage,
+          AggregatedListAddressesFixedSizeCollection> {
 
     private AggregatedListAddressesFixedSizeCollection(
         List<AggregatedListAddressesPage> pages, int collectionSize) {
@@ -843,7 +853,10 @@ public class AddressClient implements BackgroundResource {
 
   public static class ListAddressesPagedResponse
       extends AbstractPagedListResponse<
-          ListAddressesHttpRequest, AddressList, Address, ListAddressesPage,
+          ListAddressesHttpRequest,
+          AddressList,
+          Address,
+          ListAddressesPage,
           ListAddressesFixedSizeCollection> {
 
     public static ApiFuture<ListAddressesPagedResponse> createAsync(
@@ -858,7 +871,8 @@ public class AddressClient implements BackgroundResource {
             public ListAddressesPagedResponse apply(ListAddressesPage input) {
               return new ListAddressesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAddressesPagedResponse(ListAddressesPage page) {
@@ -894,7 +908,10 @@ public class AddressClient implements BackgroundResource {
 
   public static class ListAddressesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAddressesHttpRequest, AddressList, Address, ListAddressesPage,
+          ListAddressesHttpRequest,
+          AddressList,
+          Address,
+          ListAddressesPage,
           ListAddressesFixedSizeCollection> {
 
     private ListAddressesFixedSizeCollection(List<ListAddressesPage> pages, int collectionSize) {

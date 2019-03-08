@@ -16,16 +16,37 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
 
-library = gapic.java_library(
+data_library = gapic.java_library(
     service='bigtable',
     version='v2',
     config_path='/google/bigtable/artman_bigtable.yaml',
     artman_output_name='')
 
-s.copy(library / 'gapic-google-cloud-bigtable-v2/src', 'src')
-s.copy(library / 'grpc-google-cloud-bigtable-v2/src', '../../google-api-grpc/grpc-google-cloud-bigtable-v2/src')
-s.copy(library / 'proto-google-cloud-bigtable-v2/src', '../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
+
+s.copy(data_library / 'gapic-google-cloud-bigtable-v2/src', 'src')
+s.copy(data_library / 'grpc-google-cloud-bigtable-v2/src', '../../google-api-grpc/grpc-google-cloud-bigtable-v2/src')
+s.copy(data_library / 'proto-google-cloud-bigtable-v2/src', '../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
+
+java.format_code('../../google-api-grpc/grpc-google-cloud-bigtable-v2/src')
+java.format_code('../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
+
+
+admin_library = gapic.java_library(
+    service='bigtable-admin',
+    version='v2',
+    config_path='/google/bigtable/admin/artman_bigtableadmin.yaml',
+    artman_output_name='')
+
+
+s.copy(admin_library / 'gapic-google-cloud-bigtable-admin-v2/src', 'src')
+s.copy(admin_library / 'grpc-google-cloud-bigtable-admin-v2/src', '../../google-api-grpc/grpc-google-cloud-bigtable-admin-v2/src')
+s.copy(admin_library / 'proto-google-cloud-bigtable-admin-v2/src', '../../google-api-grpc/proto-google-cloud-bigtable-admin-v2/src')
+
+java.format_code('../../google-api-grpc/grpc-google-cloud-bigtable-admin-v2/src')
+java.format_code('../../google-api-grpc/proto-google-cloud-bigtable-admin-v2/src')
+
+java.format_code('./src')

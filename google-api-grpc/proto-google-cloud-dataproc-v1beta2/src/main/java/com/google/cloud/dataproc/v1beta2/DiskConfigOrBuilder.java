@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface DiskConfigOrBuilder extends
+public interface DiskConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.DiskConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. Type of the boot disk (default is "pd-standard").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
@@ -18,6 +21,8 @@ public interface DiskConfigOrBuilder extends
    */
   java.lang.String getBootDiskType();
   /**
+   *
+   *
    * <pre>
    * Optional. Type of the boot disk (default is "pd-standard").
    * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
@@ -26,10 +31,11 @@ public interface DiskConfigOrBuilder extends
    *
    * <code>string boot_disk_type = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getBootDiskTypeBytes();
+  com.google.protobuf.ByteString getBootDiskTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Size in GB of the boot disk (default is 500GB).
    * </pre>
@@ -39,6 +45,8 @@ public interface DiskConfigOrBuilder extends
   int getBootDiskSizeGb();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
    * If SSDs are not attached, the boot disk is used to store runtime logs and

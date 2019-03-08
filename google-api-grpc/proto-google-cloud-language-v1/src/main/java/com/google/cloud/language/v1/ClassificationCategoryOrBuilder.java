@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1;
 
-public interface ClassificationCategoryOrBuilder extends
+public interface ClassificationCategoryOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.ClassificationCategory)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the category representing the document.
    * </pre>
@@ -16,16 +19,19 @@ public interface ClassificationCategoryOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the category representing the document.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The classifier's confidence of the category. Number represents how certain
    * the classifier is that this category represents the given text.

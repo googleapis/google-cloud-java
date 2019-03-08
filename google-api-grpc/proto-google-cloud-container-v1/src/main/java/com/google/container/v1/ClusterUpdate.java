@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * ClusterUpdate describes an update to the cluster. Exactly one update can
  * be applied to a cluster with each request, so at most one field can be
@@ -12,15 +14,16 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.ClusterUpdate}
  */
-public  final class ClusterUpdate extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.ClusterUpdate)
     ClusterUpdateOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ClusterUpdate.newBuilder() to construct.
   private ClusterUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ClusterUpdate() {
     desiredNodeVersion_ = "";
     desiredMonitoringService_ = "";
@@ -31,10 +34,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ClusterUpdate(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54,98 +57,113 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            desiredNodeVersion_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+              desiredNodeVersion_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            desiredMonitoringService_ = s;
-            break;
-          }
-          case 50: {
-            com.google.container.v1.AddonsConfig.Builder subBuilder = null;
-            if (desiredAddonsConfig_ != null) {
-              subBuilder = desiredAddonsConfig_.toBuilder();
+              desiredMonitoringService_ = s;
+              break;
             }
-            desiredAddonsConfig_ = input.readMessage(com.google.container.v1.AddonsConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(desiredAddonsConfig_);
-              desiredAddonsConfig_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.container.v1.AddonsConfig.Builder subBuilder = null;
+              if (desiredAddonsConfig_ != null) {
+                subBuilder = desiredAddonsConfig_.toBuilder();
+              }
+              desiredAddonsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.AddonsConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredAddonsConfig_);
+                desiredAddonsConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            desiredNodePoolId_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+              desiredNodePoolId_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            desiredImageType_ = s;
-            break;
-          }
-          case 74: {
-            com.google.container.v1.NodePoolAutoscaling.Builder subBuilder = null;
-            if (desiredNodePoolAutoscaling_ != null) {
-              subBuilder = desiredNodePoolAutoscaling_.toBuilder();
+              desiredImageType_ = s;
+              break;
             }
-            desiredNodePoolAutoscaling_ = input.readMessage(com.google.container.v1.NodePoolAutoscaling.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(desiredNodePoolAutoscaling_);
-              desiredNodePoolAutoscaling_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.container.v1.NodePoolAutoscaling.Builder subBuilder = null;
+              if (desiredNodePoolAutoscaling_ != null) {
+                subBuilder = desiredNodePoolAutoscaling_.toBuilder();
+              }
+              desiredNodePoolAutoscaling_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePoolAutoscaling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredNodePoolAutoscaling_);
+                desiredNodePoolAutoscaling_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              desiredLocations_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000040;
+              break;
             }
-            desiredLocations_.add(s);
-            break;
-          }
-          case 98: {
-            com.google.container.v1.MasterAuthorizedNetworksConfig.Builder subBuilder = null;
-            if (desiredMasterAuthorizedNetworksConfig_ != null) {
-              subBuilder = desiredMasterAuthorizedNetworksConfig_.toBuilder();
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                desiredLocations_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              desiredLocations_.add(s);
+              break;
             }
-            desiredMasterAuthorizedNetworksConfig_ = input.readMessage(com.google.container.v1.MasterAuthorizedNetworksConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(desiredMasterAuthorizedNetworksConfig_);
-              desiredMasterAuthorizedNetworksConfig_ = subBuilder.buildPartial();
-            }
+          case 98:
+            {
+              com.google.container.v1.MasterAuthorizedNetworksConfig.Builder subBuilder = null;
+              if (desiredMasterAuthorizedNetworksConfig_ != null) {
+                subBuilder = desiredMasterAuthorizedNetworksConfig_.toBuilder();
+              }
+              desiredMasterAuthorizedNetworksConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.MasterAuthorizedNetworksConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredMasterAuthorizedNetworksConfig_);
+                desiredMasterAuthorizedNetworksConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 802: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            desiredMasterVersion_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 802:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              desiredMasterVersion_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         desiredLocations_ = desiredLocations_.getUnmodifiableView();
@@ -154,27 +172,38 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ClusterUpdate_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ClusterUpdate_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ClusterUpdate_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ClusterUpdate_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.ClusterUpdate.class, com.google.container.v1.ClusterUpdate.Builder.class);
+            com.google.container.v1.ClusterUpdate.class,
+            com.google.container.v1.ClusterUpdate.Builder.class);
   }
 
   private int bitField0_;
   public static final int DESIRED_NODE_VERSION_FIELD_NUMBER = 4;
   private volatile java.lang.Object desiredNodeVersion_;
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
@@ -184,29 +213,34 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       desiredNodeVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getDesiredNodeVersionBytes() {
+  public com.google.protobuf.ByteString getDesiredNodeVersionBytes() {
     java.lang.Object ref = desiredNodeVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       desiredNodeVersion_ = b;
       return b;
     } else {
@@ -217,6 +251,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESIRED_MONITORING_SERVICE_FIELD_NUMBER = 5;
   private volatile java.lang.Object desiredMonitoringService_;
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -231,14 +267,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       desiredMonitoringService_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -248,13 +285,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string desired_monitoring_service = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getDesiredMonitoringServiceBytes() {
+  public com.google.protobuf.ByteString getDesiredMonitoringServiceBytes() {
     java.lang.Object ref = desiredMonitoringService_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       desiredMonitoringService_ = b;
       return b;
     } else {
@@ -265,6 +300,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESIRED_ADDONS_CONFIG_FIELD_NUMBER = 6;
   private com.google.container.v1.AddonsConfig desiredAddonsConfig_;
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -275,6 +312,8 @@ private static final long serialVersionUID = 0L;
     return desiredAddonsConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -282,9 +321,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.AddonsConfig desired_addons_config = 6;</code>
    */
   public com.google.container.v1.AddonsConfig getDesiredAddonsConfig() {
-    return desiredAddonsConfig_ == null ? com.google.container.v1.AddonsConfig.getDefaultInstance() : desiredAddonsConfig_;
+    return desiredAddonsConfig_ == null
+        ? com.google.container.v1.AddonsConfig.getDefaultInstance()
+        : desiredAddonsConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -298,6 +341,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESIRED_NODE_POOL_ID_FIELD_NUMBER = 7;
   private volatile java.lang.Object desiredNodePoolId_;
   /**
+   *
+   *
    * <pre>
    * The node pool to be upgraded. This field is mandatory if
    * "desired_node_version", "desired_image_family" or
@@ -312,14 +357,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       desiredNodePoolId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The node pool to be upgraded. This field is mandatory if
    * "desired_node_version", "desired_image_family" or
@@ -329,13 +375,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string desired_node_pool_id = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getDesiredNodePoolIdBytes() {
+  public com.google.protobuf.ByteString getDesiredNodePoolIdBytes() {
     java.lang.Object ref = desiredNodePoolId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       desiredNodePoolId_ = b;
       return b;
     } else {
@@ -346,6 +390,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESIRED_IMAGE_TYPE_FIELD_NUMBER = 8;
   private volatile java.lang.Object desiredImageType_;
   /**
+   *
+   *
    * <pre>
    * The desired image type for the node pool.
    * NOTE: Set the "desired_node_pool" field as well.
@@ -358,14 +404,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       desiredImageType_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The desired image type for the node pool.
    * NOTE: Set the "desired_node_pool" field as well.
@@ -373,13 +420,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string desired_image_type = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getDesiredImageTypeBytes() {
+  public com.google.protobuf.ByteString getDesiredImageTypeBytes() {
     java.lang.Object ref = desiredImageType_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       desiredImageType_ = b;
       return b;
     } else {
@@ -390,6 +435,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESIRED_NODE_POOL_AUTOSCALING_FIELD_NUMBER = 9;
   private com.google.container.v1.NodePoolAutoscaling desiredNodePoolAutoscaling_;
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for the node pool specified in
    * desired_node_pool_id. If there is only one pool in the
@@ -403,6 +450,8 @@ private static final long serialVersionUID = 0L;
     return desiredNodePoolAutoscaling_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for the node pool specified in
    * desired_node_pool_id. If there is only one pool in the
@@ -413,9 +462,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
    */
   public com.google.container.v1.NodePoolAutoscaling getDesiredNodePoolAutoscaling() {
-    return desiredNodePoolAutoscaling_ == null ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : desiredNodePoolAutoscaling_;
+    return desiredNodePoolAutoscaling_ == null
+        ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+        : desiredNodePoolAutoscaling_;
   }
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for the node pool specified in
    * desired_node_pool_id. If there is only one pool in the
@@ -425,13 +478,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
    */
-  public com.google.container.v1.NodePoolAutoscalingOrBuilder getDesiredNodePoolAutoscalingOrBuilder() {
+  public com.google.container.v1.NodePoolAutoscalingOrBuilder
+      getDesiredNodePoolAutoscalingOrBuilder() {
     return getDesiredNodePoolAutoscaling();
   }
 
   public static final int DESIRED_LOCATIONS_FIELD_NUMBER = 10;
   private com.google.protobuf.LazyStringList desiredLocations_;
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -443,11 +499,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string desired_locations = 10;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getDesiredLocationsList() {
+  public com.google.protobuf.ProtocolStringList getDesiredLocationsList() {
     return desiredLocations_;
   }
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -463,6 +520,8 @@ private static final long serialVersionUID = 0L;
     return desiredLocations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -478,6 +537,8 @@ private static final long serialVersionUID = 0L;
     return desiredLocations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -489,54 +550,74 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string desired_locations = 10;</code>
    */
-  public com.google.protobuf.ByteString
-      getDesiredLocationsBytes(int index) {
+  public com.google.protobuf.ByteString getDesiredLocationsBytes(int index) {
     return desiredLocations_.getByteString(index);
   }
 
   public static final int DESIRED_MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER = 12;
-  private com.google.container.v1.MasterAuthorizedNetworksConfig desiredMasterAuthorizedNetworksConfig_;
+  private com.google.container.v1.MasterAuthorizedNetworksConfig
+      desiredMasterAuthorizedNetworksConfig_;
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * </code>
    */
   public boolean hasDesiredMasterAuthorizedNetworksConfig() {
     return desiredMasterAuthorizedNetworksConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * </code>
    */
-  public com.google.container.v1.MasterAuthorizedNetworksConfig getDesiredMasterAuthorizedNetworksConfig() {
-    return desiredMasterAuthorizedNetworksConfig_ == null ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance() : desiredMasterAuthorizedNetworksConfig_;
+  public com.google.container.v1.MasterAuthorizedNetworksConfig
+      getDesiredMasterAuthorizedNetworksConfig() {
+    return desiredMasterAuthorizedNetworksConfig_ == null
+        ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()
+        : desiredMasterAuthorizedNetworksConfig_;
   }
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * </code>
    */
-  public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder getDesiredMasterAuthorizedNetworksConfigOrBuilder() {
+  public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
+      getDesiredMasterAuthorizedNetworksConfigOrBuilder() {
     return getDesiredMasterAuthorizedNetworksConfig();
   }
 
   public static final int DESIRED_MASTER_VERSION_FIELD_NUMBER = 100;
   private volatile java.lang.Object desiredMasterVersion_;
   /**
+   *
+   *
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>
@@ -546,29 +627,33 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       desiredMasterVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>
    */
-  public com.google.protobuf.ByteString
-      getDesiredMasterVersionBytes() {
+  public com.google.protobuf.ByteString getDesiredMasterVersionBytes() {
     java.lang.Object ref = desiredMasterVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       desiredMasterVersion_ = b;
       return b;
     } else {
@@ -577,6 +662,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -588,8 +674,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getDesiredNodeVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, desiredNodeVersion_);
     }
@@ -630,11 +715,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, desiredNodeVersion_);
     }
     if (!getDesiredMonitoringServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desiredMonitoringService_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desiredMonitoringService_);
     }
     if (desiredAddonsConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getDesiredAddonsConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDesiredAddonsConfig());
     }
     if (!getDesiredNodePoolIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, desiredNodePoolId_);
@@ -643,8 +728,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, desiredImageType_);
     }
     if (desiredNodePoolAutoscaling_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getDesiredNodePoolAutoscaling());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getDesiredNodePoolAutoscaling());
     }
     {
       int dataSize = 0;
@@ -655,8 +741,9 @@ private static final long serialVersionUID = 0L;
       size += 1 * getDesiredLocationsList().size();
     }
     if (desiredMasterAuthorizedNetworksConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getDesiredMasterAuthorizedNetworksConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, getDesiredMasterAuthorizedNetworksConfig());
     }
     if (!getDesiredMasterVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, desiredMasterVersion_);
@@ -669,7 +756,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.ClusterUpdate)) {
       return super.equals(obj);
@@ -677,33 +764,31 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.ClusterUpdate other = (com.google.container.v1.ClusterUpdate) obj;
 
     boolean result = true;
-    result = result && getDesiredNodeVersion()
-        .equals(other.getDesiredNodeVersion());
-    result = result && getDesiredMonitoringService()
-        .equals(other.getDesiredMonitoringService());
+    result = result && getDesiredNodeVersion().equals(other.getDesiredNodeVersion());
+    result = result && getDesiredMonitoringService().equals(other.getDesiredMonitoringService());
     result = result && (hasDesiredAddonsConfig() == other.hasDesiredAddonsConfig());
     if (hasDesiredAddonsConfig()) {
-      result = result && getDesiredAddonsConfig()
-          .equals(other.getDesiredAddonsConfig());
+      result = result && getDesiredAddonsConfig().equals(other.getDesiredAddonsConfig());
     }
-    result = result && getDesiredNodePoolId()
-        .equals(other.getDesiredNodePoolId());
-    result = result && getDesiredImageType()
-        .equals(other.getDesiredImageType());
+    result = result && getDesiredNodePoolId().equals(other.getDesiredNodePoolId());
+    result = result && getDesiredImageType().equals(other.getDesiredImageType());
     result = result && (hasDesiredNodePoolAutoscaling() == other.hasDesiredNodePoolAutoscaling());
     if (hasDesiredNodePoolAutoscaling()) {
-      result = result && getDesiredNodePoolAutoscaling()
-          .equals(other.getDesiredNodePoolAutoscaling());
+      result =
+          result && getDesiredNodePoolAutoscaling().equals(other.getDesiredNodePoolAutoscaling());
     }
-    result = result && getDesiredLocationsList()
-        .equals(other.getDesiredLocationsList());
-    result = result && (hasDesiredMasterAuthorizedNetworksConfig() == other.hasDesiredMasterAuthorizedNetworksConfig());
+    result = result && getDesiredLocationsList().equals(other.getDesiredLocationsList());
+    result =
+        result
+            && (hasDesiredMasterAuthorizedNetworksConfig()
+                == other.hasDesiredMasterAuthorizedNetworksConfig());
     if (hasDesiredMasterAuthorizedNetworksConfig()) {
-      result = result && getDesiredMasterAuthorizedNetworksConfig()
-          .equals(other.getDesiredMasterAuthorizedNetworksConfig());
+      result =
+          result
+              && getDesiredMasterAuthorizedNetworksConfig()
+                  .equals(other.getDesiredMasterAuthorizedNetworksConfig());
     }
-    result = result && getDesiredMasterVersion()
-        .equals(other.getDesiredMasterVersion());
+    result = result && getDesiredMasterVersion().equals(other.getDesiredMasterVersion());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -746,97 +831,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.ClusterUpdate parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.ClusterUpdate parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.ClusterUpdate parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.container.v1.ClusterUpdate parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.ClusterUpdate parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ClusterUpdate parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ClusterUpdate parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.ClusterUpdate prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * ClusterUpdate describes an update to the cluster. Exactly one update can
    * be applied to a cluster with each request, so at most one field can be
@@ -845,21 +936,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.ClusterUpdate}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.ClusterUpdate)
       com.google.container.v1.ClusterUpdateOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ClusterUpdate_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ClusterUpdate_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ClusterUpdate_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ClusterUpdate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.ClusterUpdate.class, com.google.container.v1.ClusterUpdate.Builder.class);
+              com.google.container.v1.ClusterUpdate.class,
+              com.google.container.v1.ClusterUpdate.Builder.class);
     }
 
     // Construct using com.google.container.v1.ClusterUpdate.newBuilder()
@@ -867,16 +960,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -914,9 +1006,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ClusterUpdate_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ClusterUpdate_descriptor;
     }
 
     @java.lang.Override
@@ -935,7 +1027,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.ClusterUpdate buildPartial() {
-      com.google.container.v1.ClusterUpdate result = new com.google.container.v1.ClusterUpdate(this);
+      com.google.container.v1.ClusterUpdate result =
+          new com.google.container.v1.ClusterUpdate(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.desiredNodeVersion_ = desiredNodeVersion_;
@@ -960,7 +1053,8 @@ private static final long serialVersionUID = 0L;
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
         result.desiredMasterAuthorizedNetworksConfig_ = desiredMasterAuthorizedNetworksConfig_;
       } else {
-        result.desiredMasterAuthorizedNetworksConfig_ = desiredMasterAuthorizedNetworksConfigBuilder_.build();
+        result.desiredMasterAuthorizedNetworksConfig_ =
+            desiredMasterAuthorizedNetworksConfigBuilder_.build();
       }
       result.desiredMasterVersion_ = desiredMasterVersion_;
       result.bitField0_ = to_bitField0_;
@@ -972,38 +1066,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.ClusterUpdate) {
-        return mergeFrom((com.google.container.v1.ClusterUpdate)other);
+        return mergeFrom((com.google.container.v1.ClusterUpdate) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1045,7 +1140,8 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasDesiredMasterAuthorizedNetworksConfig()) {
-        mergeDesiredMasterAuthorizedNetworksConfig(other.getDesiredMasterAuthorizedNetworksConfig());
+        mergeDesiredMasterAuthorizedNetworksConfig(
+            other.getDesiredMasterAuthorizedNetworksConfig());
       }
       if (!other.getDesiredMasterVersion().isEmpty()) {
         desiredMasterVersion_ = other.desiredMasterVersion_;
@@ -1079,14 +1175,23 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object desiredNodeVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
@@ -1094,8 +1199,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDesiredNodeVersion() {
       java.lang.Object ref = desiredNodeVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         desiredNodeVersion_ = s;
         return s;
@@ -1104,21 +1208,27 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getDesiredNodeVersionBytes() {
+    public com.google.protobuf.ByteString getDesiredNodeVersionBytes() {
       java.lang.Object ref = desiredNodeVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         desiredNodeVersion_ = b;
         return b;
       } else {
@@ -1126,55 +1236,77 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
      */
-    public Builder setDesiredNodeVersion(
-        java.lang.String value) {
+    public Builder setDesiredNodeVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       desiredNodeVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
      */
     public Builder clearDesiredNodeVersion() {
-      
+
       desiredNodeVersion_ = getDefaultInstance().getDesiredNodeVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
      */
-    public Builder setDesiredNodeVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDesiredNodeVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       desiredNodeVersion_ = value;
       onChanged();
       return this;
@@ -1182,6 +1314,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object desiredMonitoringService_ = "";
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -1194,8 +1328,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDesiredMonitoringService() {
       java.lang.Object ref = desiredMonitoringService_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         desiredMonitoringService_ = s;
         return s;
@@ -1204,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -1213,13 +1348,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_monitoring_service = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getDesiredMonitoringServiceBytes() {
+    public com.google.protobuf.ByteString getDesiredMonitoringServiceBytes() {
       java.lang.Object ref = desiredMonitoringService_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         desiredMonitoringService_ = b;
         return b;
       } else {
@@ -1227,6 +1360,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -1236,17 +1371,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_monitoring_service = 5;</code>
      */
-    public Builder setDesiredMonitoringService(
-        java.lang.String value) {
+    public Builder setDesiredMonitoringService(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       desiredMonitoringService_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -1257,12 +1393,14 @@ private static final long serialVersionUID = 0L;
      * <code>string desired_monitoring_service = 5;</code>
      */
     public Builder clearDesiredMonitoringService() {
-      
+
       desiredMonitoringService_ = getDefaultInstance().getDesiredMonitoringService();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The monitoring service the cluster should use to write metrics.
      * Currently available options:
@@ -1272,13 +1410,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_monitoring_service = 5;</code>
      */
-    public Builder setDesiredMonitoringServiceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDesiredMonitoringServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       desiredMonitoringService_ = value;
       onChanged();
       return this;
@@ -1286,8 +1423,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.AddonsConfig desiredAddonsConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.AddonsConfig, com.google.container.v1.AddonsConfig.Builder, com.google.container.v1.AddonsConfigOrBuilder> desiredAddonsConfigBuilder_;
+            com.google.container.v1.AddonsConfig,
+            com.google.container.v1.AddonsConfig.Builder,
+            com.google.container.v1.AddonsConfigOrBuilder>
+        desiredAddonsConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1298,6 +1440,8 @@ private static final long serialVersionUID = 0L;
       return desiredAddonsConfigBuilder_ != null || desiredAddonsConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1306,12 +1450,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.AddonsConfig getDesiredAddonsConfig() {
       if (desiredAddonsConfigBuilder_ == null) {
-        return desiredAddonsConfig_ == null ? com.google.container.v1.AddonsConfig.getDefaultInstance() : desiredAddonsConfig_;
+        return desiredAddonsConfig_ == null
+            ? com.google.container.v1.AddonsConfig.getDefaultInstance()
+            : desiredAddonsConfig_;
       } else {
         return desiredAddonsConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1332,6 +1480,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1350,6 +1500,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1360,7 +1512,9 @@ private static final long serialVersionUID = 0L;
       if (desiredAddonsConfigBuilder_ == null) {
         if (desiredAddonsConfig_ != null) {
           desiredAddonsConfig_ =
-            com.google.container.v1.AddonsConfig.newBuilder(desiredAddonsConfig_).mergeFrom(value).buildPartial();
+              com.google.container.v1.AddonsConfig.newBuilder(desiredAddonsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           desiredAddonsConfig_ = value;
         }
@@ -1372,6 +1526,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1390,6 +1546,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1397,11 +1555,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.AddonsConfig desired_addons_config = 6;</code>
      */
     public com.google.container.v1.AddonsConfig.Builder getDesiredAddonsConfigBuilder() {
-      
+
       onChanged();
       return getDesiredAddonsConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1412,11 +1572,14 @@ private static final long serialVersionUID = 0L;
       if (desiredAddonsConfigBuilder_ != null) {
         return desiredAddonsConfigBuilder_.getMessageOrBuilder();
       } else {
-        return desiredAddonsConfig_ == null ?
-            com.google.container.v1.AddonsConfig.getDefaultInstance() : desiredAddonsConfig_;
+        return desiredAddonsConfig_ == null
+            ? com.google.container.v1.AddonsConfig.getDefaultInstance()
+            : desiredAddonsConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configurations for the various addons available to run in the cluster.
      * </pre>
@@ -1424,14 +1587,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.AddonsConfig desired_addons_config = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.AddonsConfig, com.google.container.v1.AddonsConfig.Builder, com.google.container.v1.AddonsConfigOrBuilder> 
+            com.google.container.v1.AddonsConfig,
+            com.google.container.v1.AddonsConfig.Builder,
+            com.google.container.v1.AddonsConfigOrBuilder>
         getDesiredAddonsConfigFieldBuilder() {
       if (desiredAddonsConfigBuilder_ == null) {
-        desiredAddonsConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.AddonsConfig, com.google.container.v1.AddonsConfig.Builder, com.google.container.v1.AddonsConfigOrBuilder>(
-                getDesiredAddonsConfig(),
-                getParentForChildren(),
-                isClean());
+        desiredAddonsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.AddonsConfig,
+                com.google.container.v1.AddonsConfig.Builder,
+                com.google.container.v1.AddonsConfigOrBuilder>(
+                getDesiredAddonsConfig(), getParentForChildren(), isClean());
         desiredAddonsConfig_ = null;
       }
       return desiredAddonsConfigBuilder_;
@@ -1439,6 +1605,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object desiredNodePoolId_ = "";
     /**
+     *
+     *
      * <pre>
      * The node pool to be upgraded. This field is mandatory if
      * "desired_node_version", "desired_image_family" or
@@ -1451,8 +1619,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDesiredNodePoolId() {
       java.lang.Object ref = desiredNodePoolId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         desiredNodePoolId_ = s;
         return s;
@@ -1461,6 +1628,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node pool to be upgraded. This field is mandatory if
      * "desired_node_version", "desired_image_family" or
@@ -1470,13 +1639,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_node_pool_id = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getDesiredNodePoolIdBytes() {
+    public com.google.protobuf.ByteString getDesiredNodePoolIdBytes() {
       java.lang.Object ref = desiredNodePoolId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         desiredNodePoolId_ = b;
         return b;
       } else {
@@ -1484,6 +1651,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node pool to be upgraded. This field is mandatory if
      * "desired_node_version", "desired_image_family" or
@@ -1493,17 +1662,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_node_pool_id = 7;</code>
      */
-    public Builder setDesiredNodePoolId(
-        java.lang.String value) {
+    public Builder setDesiredNodePoolId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       desiredNodePoolId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pool to be upgraded. This field is mandatory if
      * "desired_node_version", "desired_image_family" or
@@ -1514,12 +1684,14 @@ private static final long serialVersionUID = 0L;
      * <code>string desired_node_pool_id = 7;</code>
      */
     public Builder clearDesiredNodePoolId() {
-      
+
       desiredNodePoolId_ = getDefaultInstance().getDesiredNodePoolId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node pool to be upgraded. This field is mandatory if
      * "desired_node_version", "desired_image_family" or
@@ -1529,13 +1701,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_node_pool_id = 7;</code>
      */
-    public Builder setDesiredNodePoolIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDesiredNodePoolIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       desiredNodePoolId_ = value;
       onChanged();
       return this;
@@ -1543,6 +1714,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object desiredImageType_ = "";
     /**
+     *
+     *
      * <pre>
      * The desired image type for the node pool.
      * NOTE: Set the "desired_node_pool" field as well.
@@ -1553,8 +1726,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDesiredImageType() {
       java.lang.Object ref = desiredImageType_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         desiredImageType_ = s;
         return s;
@@ -1563,6 +1735,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The desired image type for the node pool.
      * NOTE: Set the "desired_node_pool" field as well.
@@ -1570,13 +1744,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_image_type = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getDesiredImageTypeBytes() {
+    public com.google.protobuf.ByteString getDesiredImageTypeBytes() {
       java.lang.Object ref = desiredImageType_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         desiredImageType_ = b;
         return b;
       } else {
@@ -1584,6 +1756,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The desired image type for the node pool.
      * NOTE: Set the "desired_node_pool" field as well.
@@ -1591,17 +1765,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_image_type = 8;</code>
      */
-    public Builder setDesiredImageType(
-        java.lang.String value) {
+    public Builder setDesiredImageType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       desiredImageType_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The desired image type for the node pool.
      * NOTE: Set the "desired_node_pool" field as well.
@@ -1610,12 +1785,14 @@ private static final long serialVersionUID = 0L;
      * <code>string desired_image_type = 8;</code>
      */
     public Builder clearDesiredImageType() {
-      
+
       desiredImageType_ = getDefaultInstance().getDesiredImageType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The desired image type for the node pool.
      * NOTE: Set the "desired_node_pool" field as well.
@@ -1623,13 +1800,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string desired_image_type = 8;</code>
      */
-    public Builder setDesiredImageTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDesiredImageTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       desiredImageType_ = value;
       onChanged();
       return this;
@@ -1637,8 +1813,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NodePoolAutoscaling desiredNodePoolAutoscaling_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder> desiredNodePoolAutoscalingBuilder_;
+            com.google.container.v1.NodePoolAutoscaling,
+            com.google.container.v1.NodePoolAutoscaling.Builder,
+            com.google.container.v1.NodePoolAutoscalingOrBuilder>
+        desiredNodePoolAutoscalingBuilder_;
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1652,6 +1833,8 @@ private static final long serialVersionUID = 0L;
       return desiredNodePoolAutoscalingBuilder_ != null || desiredNodePoolAutoscaling_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1663,12 +1846,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NodePoolAutoscaling getDesiredNodePoolAutoscaling() {
       if (desiredNodePoolAutoscalingBuilder_ == null) {
-        return desiredNodePoolAutoscaling_ == null ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : desiredNodePoolAutoscaling_;
+        return desiredNodePoolAutoscaling_ == null
+            ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+            : desiredNodePoolAutoscaling_;
       } else {
         return desiredNodePoolAutoscalingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1678,7 +1865,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
      */
-    public Builder setDesiredNodePoolAutoscaling(com.google.container.v1.NodePoolAutoscaling value) {
+    public Builder setDesiredNodePoolAutoscaling(
+        com.google.container.v1.NodePoolAutoscaling value) {
       if (desiredNodePoolAutoscalingBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1692,6 +1880,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1713,6 +1903,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1722,11 +1914,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
      */
-    public Builder mergeDesiredNodePoolAutoscaling(com.google.container.v1.NodePoolAutoscaling value) {
+    public Builder mergeDesiredNodePoolAutoscaling(
+        com.google.container.v1.NodePoolAutoscaling value) {
       if (desiredNodePoolAutoscalingBuilder_ == null) {
         if (desiredNodePoolAutoscaling_ != null) {
           desiredNodePoolAutoscaling_ =
-            com.google.container.v1.NodePoolAutoscaling.newBuilder(desiredNodePoolAutoscaling_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NodePoolAutoscaling.newBuilder(desiredNodePoolAutoscaling_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           desiredNodePoolAutoscaling_ = value;
         }
@@ -1738,6 +1933,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1759,6 +1956,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1768,12 +1967,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
      */
-    public com.google.container.v1.NodePoolAutoscaling.Builder getDesiredNodePoolAutoscalingBuilder() {
-      
+    public com.google.container.v1.NodePoolAutoscaling.Builder
+        getDesiredNodePoolAutoscalingBuilder() {
+
       onChanged();
       return getDesiredNodePoolAutoscalingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1783,15 +1985,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
      */
-    public com.google.container.v1.NodePoolAutoscalingOrBuilder getDesiredNodePoolAutoscalingOrBuilder() {
+    public com.google.container.v1.NodePoolAutoscalingOrBuilder
+        getDesiredNodePoolAutoscalingOrBuilder() {
       if (desiredNodePoolAutoscalingBuilder_ != null) {
         return desiredNodePoolAutoscalingBuilder_.getMessageOrBuilder();
       } else {
-        return desiredNodePoolAutoscaling_ == null ?
-            com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : desiredNodePoolAutoscaling_;
+        return desiredNodePoolAutoscaling_ == null
+            ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+            : desiredNodePoolAutoscaling_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for the node pool specified in
      * desired_node_pool_id. If there is only one pool in the
@@ -1802,27 +2008,34 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodePoolAutoscaling desired_node_pool_autoscaling = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder> 
+            com.google.container.v1.NodePoolAutoscaling,
+            com.google.container.v1.NodePoolAutoscaling.Builder,
+            com.google.container.v1.NodePoolAutoscalingOrBuilder>
         getDesiredNodePoolAutoscalingFieldBuilder() {
       if (desiredNodePoolAutoscalingBuilder_ == null) {
-        desiredNodePoolAutoscalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder>(
-                getDesiredNodePoolAutoscaling(),
-                getParentForChildren(),
-                isClean());
+        desiredNodePoolAutoscalingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePoolAutoscaling,
+                com.google.container.v1.NodePoolAutoscaling.Builder,
+                com.google.container.v1.NodePoolAutoscalingOrBuilder>(
+                getDesiredNodePoolAutoscaling(), getParentForChildren(), isClean());
         desiredNodePoolAutoscaling_ = null;
       }
       return desiredNodePoolAutoscalingBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList desiredLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList desiredLocations_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureDesiredLocationsIsMutable() {
       if (!((bitField0_ & 0x00000040) == 0x00000040)) {
         desiredLocations_ = new com.google.protobuf.LazyStringArrayList(desiredLocations_);
         bitField0_ |= 0x00000040;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1834,11 +2047,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string desired_locations = 10;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getDesiredLocationsList() {
+    public com.google.protobuf.ProtocolStringList getDesiredLocationsList() {
       return desiredLocations_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1854,6 +2068,8 @@ private static final long serialVersionUID = 0L;
       return desiredLocations_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1869,6 +2085,8 @@ private static final long serialVersionUID = 0L;
       return desiredLocations_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1880,11 +2098,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string desired_locations = 10;</code>
      */
-    public com.google.protobuf.ByteString
-        getDesiredLocationsBytes(int index) {
+    public com.google.protobuf.ByteString getDesiredLocationsBytes(int index) {
       return desiredLocations_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1896,17 +2115,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string desired_locations = 10;</code>
      */
-    public Builder setDesiredLocations(
-        int index, java.lang.String value) {
+    public Builder setDesiredLocations(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDesiredLocationsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureDesiredLocationsIsMutable();
       desiredLocations_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1918,17 +2138,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string desired_locations = 10;</code>
      */
-    public Builder addDesiredLocations(
-        java.lang.String value) {
+    public Builder addDesiredLocations(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDesiredLocationsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureDesiredLocationsIsMutable();
       desiredLocations_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1940,15 +2161,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string desired_locations = 10;</code>
      */
-    public Builder addAllDesiredLocations(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllDesiredLocations(java.lang.Iterable<java.lang.String> values) {
       ensureDesiredLocationsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, desiredLocations_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, desiredLocations_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1967,6 +2188,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The desired list of Google Compute Engine
      * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -1978,56 +2201,73 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string desired_locations = 10;</code>
      */
-    public Builder addDesiredLocationsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addDesiredLocationsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureDesiredLocationsIsMutable();
       desiredLocations_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.container.v1.MasterAuthorizedNetworksConfig desiredMasterAuthorizedNetworksConfig_ = null;
+    private com.google.container.v1.MasterAuthorizedNetworksConfig
+        desiredMasterAuthorizedNetworksConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder> desiredMasterAuthorizedNetworksConfigBuilder_;
+            com.google.container.v1.MasterAuthorizedNetworksConfig,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
+            com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>
+        desiredMasterAuthorizedNetworksConfigBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
     public boolean hasDesiredMasterAuthorizedNetworksConfig() {
-      return desiredMasterAuthorizedNetworksConfigBuilder_ != null || desiredMasterAuthorizedNetworksConfig_ != null;
+      return desiredMasterAuthorizedNetworksConfigBuilder_ != null
+          || desiredMasterAuthorizedNetworksConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig getDesiredMasterAuthorizedNetworksConfig() {
+    public com.google.container.v1.MasterAuthorizedNetworksConfig
+        getDesiredMasterAuthorizedNetworksConfig() {
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
-        return desiredMasterAuthorizedNetworksConfig_ == null ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance() : desiredMasterAuthorizedNetworksConfig_;
+        return desiredMasterAuthorizedNetworksConfig_ == null
+            ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()
+            : desiredMasterAuthorizedNetworksConfig_;
       } else {
         return desiredMasterAuthorizedNetworksConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
-    public Builder setDesiredMasterAuthorizedNetworksConfig(com.google.container.v1.MasterAuthorizedNetworksConfig value) {
+    public Builder setDesiredMasterAuthorizedNetworksConfig(
+        com.google.container.v1.MasterAuthorizedNetworksConfig value) {
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2041,12 +2281,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
     public Builder setDesiredMasterAuthorizedNetworksConfig(
         com.google.container.v1.MasterAuthorizedNetworksConfig.Builder builderForValue) {
@@ -2060,18 +2303,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
-    public Builder mergeDesiredMasterAuthorizedNetworksConfig(com.google.container.v1.MasterAuthorizedNetworksConfig value) {
+    public Builder mergeDesiredMasterAuthorizedNetworksConfig(
+        com.google.container.v1.MasterAuthorizedNetworksConfig value) {
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
         if (desiredMasterAuthorizedNetworksConfig_ != null) {
           desiredMasterAuthorizedNetworksConfig_ =
-            com.google.container.v1.MasterAuthorizedNetworksConfig.newBuilder(desiredMasterAuthorizedNetworksConfig_).mergeFrom(value).buildPartial();
+              com.google.container.v1.MasterAuthorizedNetworksConfig.newBuilder(
+                      desiredMasterAuthorizedNetworksConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           desiredMasterAuthorizedNetworksConfig_ = value;
         }
@@ -2083,12 +2333,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
     public Builder clearDesiredMasterAuthorizedNetworksConfig() {
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
@@ -2102,51 +2355,66 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfig.Builder getDesiredMasterAuthorizedNetworksConfigBuilder() {
-      
+    public com.google.container.v1.MasterAuthorizedNetworksConfig.Builder
+        getDesiredMasterAuthorizedNetworksConfigBuilder() {
+
       onChanged();
       return getDesiredMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
-    public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder getDesiredMasterAuthorizedNetworksConfigOrBuilder() {
+    public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
+        getDesiredMasterAuthorizedNetworksConfigOrBuilder() {
       if (desiredMasterAuthorizedNetworksConfigBuilder_ != null) {
         return desiredMasterAuthorizedNetworksConfigBuilder_.getMessageOrBuilder();
       } else {
-        return desiredMasterAuthorizedNetworksConfig_ == null ?
-            com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance() : desiredMasterAuthorizedNetworksConfig_;
+        return desiredMasterAuthorizedNetworksConfig_ == null
+            ? com.google.container.v1.MasterAuthorizedNetworksConfig.getDefaultInstance()
+            : desiredMasterAuthorizedNetworksConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
-     * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+     * <code>
+     * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder> 
+            com.google.container.v1.MasterAuthorizedNetworksConfig,
+            com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
+            com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>
         getDesiredMasterAuthorizedNetworksConfigFieldBuilder() {
       if (desiredMasterAuthorizedNetworksConfigBuilder_ == null) {
-        desiredMasterAuthorizedNetworksConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>(
-                getDesiredMasterAuthorizedNetworksConfig(),
-                getParentForChildren(),
-                isClean());
+        desiredMasterAuthorizedNetworksConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.MasterAuthorizedNetworksConfig,
+                com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
+                com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder>(
+                getDesiredMasterAuthorizedNetworksConfig(), getParentForChildren(), isClean());
         desiredMasterAuthorizedNetworksConfig_ = null;
       }
       return desiredMasterAuthorizedNetworksConfigBuilder_;
@@ -2154,10 +2422,17 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object desiredMasterVersion_ = "";
     /**
+     *
+     *
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
@@ -2165,8 +2440,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDesiredMasterVersion() {
       java.lang.Object ref = desiredMasterVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         desiredMasterVersion_ = s;
         return s;
@@ -2175,21 +2449,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
      */
-    public com.google.protobuf.ByteString
-        getDesiredMasterVersionBytes() {
+    public com.google.protobuf.ByteString getDesiredMasterVersionBytes() {
       java.lang.Object ref = desiredMasterVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         desiredMasterVersion_ = b;
         return b;
       } else {
@@ -2197,62 +2476,81 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
      */
-    public Builder setDesiredMasterVersion(
-        java.lang.String value) {
+    public Builder setDesiredMasterVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       desiredMasterVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
      */
     public Builder clearDesiredMasterVersion() {
-      
+
       desiredMasterVersion_ = getDefaultInstance().getDesiredMasterVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
      */
-    public Builder setDesiredMasterVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDesiredMasterVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       desiredMasterVersion_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2262,12 +2560,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.ClusterUpdate)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.ClusterUpdate)
   private static final com.google.container.v1.ClusterUpdate DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.ClusterUpdate();
   }
@@ -2276,16 +2574,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ClusterUpdate>
-      PARSER = new com.google.protobuf.AbstractParser<ClusterUpdate>() {
-    @java.lang.Override
-    public ClusterUpdate parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ClusterUpdate(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ClusterUpdate> PARSER =
+      new com.google.protobuf.AbstractParser<ClusterUpdate>() {
+        @java.lang.Override
+        public ClusterUpdate parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClusterUpdate(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ClusterUpdate> parser() {
     return PARSER;
@@ -2300,6 +2598,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.ClusterUpdate getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

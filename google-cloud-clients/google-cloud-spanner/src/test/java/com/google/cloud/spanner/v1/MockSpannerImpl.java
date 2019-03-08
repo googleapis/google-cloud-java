@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -154,6 +156,21 @@ public class MockSpannerImpl extends SpannerImplBase {
     if (response instanceof PartialResultSet) {
       requests.add(request);
       responseObserver.onNext((PartialResultSet) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void executeBatchDml(
+      ExecuteBatchDmlRequest request, StreamObserver<ExecuteBatchDmlResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ExecuteBatchDmlResponse) {
+      requests.add(request);
+      responseObserver.onNext((ExecuteBatchDmlResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

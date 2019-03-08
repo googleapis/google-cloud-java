@@ -3,7 +3,7 @@
 
 package com.google.datastore.v1;
 
-public interface RollbackResponseOrBuilder extends
+public interface RollbackResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.RollbackResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

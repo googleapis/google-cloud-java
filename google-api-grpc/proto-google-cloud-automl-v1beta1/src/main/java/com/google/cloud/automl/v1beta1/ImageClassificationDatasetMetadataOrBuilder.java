@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ImageClassificationDatasetMetadataOrBuilder extends
+public interface ImageClassificationDatasetMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ImageClassificationDatasetMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * Type of the classification problem.
@@ -17,6 +20,8 @@ public interface ImageClassificationDatasetMetadataOrBuilder extends
    */
   int getClassificationTypeValue();
   /**
+   *
+   *
    * <pre>
    * Required.
    * Type of the classification problem.

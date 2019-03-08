@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.stub.IntentsStub;
 import com.google.cloud.dialogflow.v2.stub.IntentsStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -88,13 +89,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -971,7 +972,7 @@ public class IntentsClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setLanguageCode(languageCode)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = intentsClient.batchUpdateIntentsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;BatchUpdateIntentsResponse, Struct&gt; future = intentsClient.batchUpdateIntentsOperationCallable().futureCall(request);
    *   // Do something
    *   BatchUpdateIntentsResponse response = future.get();
    * }
@@ -1022,7 +1023,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   Empty response = intentsClient.batchDeleteIntentsAsync(parent, intents).get();
+   *   intentsClient.batchDeleteIntentsAsync(parent, intents).get();
    * }
    * </code></pre>
    *
@@ -1057,7 +1058,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   Empty response = intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
+   *   intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
    * }
    * </code></pre>
    *
@@ -1093,7 +1094,7 @@ public class IntentsClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllIntents(intents)
    *     .build();
-   *   Empty response = intentsClient.batchDeleteIntentsAsync(request).get();
+   *   intentsClient.batchDeleteIntentsAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1123,9 +1124,9 @@ public class IntentsClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllIntents(intents)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = intentsClient.batchDeleteIntentsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = intentsClient.batchDeleteIntentsOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1193,7 +1194,10 @@ public class IntentsClient implements BackgroundResource {
 
   public static class ListIntentsPagedResponse
       extends AbstractPagedListResponse<
-          ListIntentsRequest, ListIntentsResponse, Intent, ListIntentsPage,
+          ListIntentsRequest,
+          ListIntentsResponse,
+          Intent,
+          ListIntentsPage,
           ListIntentsFixedSizeCollection> {
 
     public static ApiFuture<ListIntentsPagedResponse> createAsync(
@@ -1208,7 +1212,8 @@ public class IntentsClient implements BackgroundResource {
             public ListIntentsPagedResponse apply(ListIntentsPage input) {
               return new ListIntentsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListIntentsPagedResponse(ListIntentsPage page) {
@@ -1246,7 +1251,10 @@ public class IntentsClient implements BackgroundResource {
 
   public static class ListIntentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListIntentsRequest, ListIntentsResponse, Intent, ListIntentsPage,
+          ListIntentsRequest,
+          ListIntentsResponse,
+          Intent,
+          ListIntentsPage,
           ListIntentsFixedSizeCollection> {
 
     private ListIntentsFixedSizeCollection(List<ListIntentsPage> pages, int collectionSize) {

@@ -3,7 +3,7 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ReplaceWithInfoTypeConfigOrBuilder extends
+public interface ReplaceWithInfoTypeConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ReplaceWithInfoTypeConfig)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

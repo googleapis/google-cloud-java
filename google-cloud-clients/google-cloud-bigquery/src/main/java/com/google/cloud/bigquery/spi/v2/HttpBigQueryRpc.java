@@ -89,10 +89,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
-    bigquery = new Bigquery.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.getHost())
-        .setApplicationName(options.getApplicationName())
-        .build();
+    bigquery =
+        new Bigquery.Builder(transport, new JacksonFactory(), initializer)
+            .setRootUrl(options.getHost())
+            .setApplicationName(options.getApplicationName())
+            .build();
   }
 
   private static BigQueryException translate(IOException exception) {
@@ -102,7 +103,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Dataset getDataset(String projectId, String datasetId, Map<Option, ?> options) {
     try {
-      return bigquery.datasets()
+      return bigquery
+          .datasets()
           .get(projectId, datasetId)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -118,13 +120,15 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Tuple<String, Iterable<Dataset>> listDatasets(String projectId, Map<Option, ?> options) {
     try {
-      DatasetList datasetsList = bigquery.datasets()
-          .list(projectId)
-          .setAll(Option.ALL_DATASETS.getBoolean(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .execute();
+      DatasetList datasetsList =
+          bigquery
+              .datasets()
+              .list(projectId)
+              .setAll(Option.ALL_DATASETS.getBoolean(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
       return Tuple.of(
           datasetsList.getNextPageToken(),
@@ -139,7 +143,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Dataset create(Dataset dataset, Map<Option, ?> options) {
     try {
-      return bigquery.datasets().insert(dataset.getDatasetReference().getProjectId(), dataset)
+      return bigquery
+          .datasets()
+          .insert(dataset.getDatasetReference().getProjectId(), dataset)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -153,7 +159,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       // unset the type, as it is output only
       table.setType(null);
       TableReference reference = table.getTableReference();
-      return bigquery.tables()
+      return bigquery
+          .tables()
           .insert(reference.getProjectId(), reference.getDatasetId(), table)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -165,9 +172,12 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Job create(Job job, Map<Option, ?> options) {
     try {
-      String projectId = job.getJobReference() != null
-          ? job.getJobReference().getProjectId() : this.options.getProjectId();
-      return bigquery.jobs()
+      String projectId =
+          job.getJobReference() != null
+              ? job.getJobReference().getProjectId()
+              : this.options.getProjectId();
+      return bigquery
+          .jobs()
           .insert(projectId, job)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -179,7 +189,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean deleteDataset(String projectId, String datasetId, Map<Option, ?> options) {
     try {
-      bigquery.datasets().delete(projectId, datasetId)
+      bigquery
+          .datasets()
+          .delete(projectId, datasetId)
           .setDeleteContents(Option.DELETE_CONTENTS.getBoolean(options))
           .execute();
       return true;
@@ -196,7 +208,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Dataset patch(Dataset dataset, Map<Option, ?> options) {
     try {
       DatasetReference reference = dataset.getDatasetReference();
-      return bigquery.datasets()
+      return bigquery
+          .datasets()
           .patch(reference.getProjectId(), reference.getDatasetId(), dataset)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -211,7 +224,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       // unset the type, as it is output only
       table.setType(null);
       TableReference reference = table.getTableReference();
-      return bigquery.tables()
+      return bigquery
+          .tables()
           .patch(reference.getProjectId(), reference.getDatasetId(), reference.getTableId(), table)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -221,10 +235,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Table getTable(String projectId, String datasetId, String tableId,
-      Map<Option, ?> options) {
+  public Table getTable(
+      String projectId, String datasetId, String tableId, Map<Option, ?> options) {
     try {
-      return bigquery.tables()
+      return bigquery
+          .tables()
           .get(projectId, datasetId, tableId)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -238,17 +253,21 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Table>> listTables(String projectId, String datasetId,
-      Map<Option, ?> options) {
+  public Tuple<String, Iterable<Table>> listTables(
+      String projectId, String datasetId, Map<Option, ?> options) {
     try {
-      TableList tableList = bigquery.tables()
-          .list(projectId, datasetId)
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .execute();
+      TableList tableList =
+          bigquery
+              .tables()
+              .list(projectId, datasetId)
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .execute();
       Iterable<TableList.Tables> tables = tableList.getTables();
-      return Tuple.of(tableList.getNextPageToken(),
-          Iterables.transform(tables != null ? tables : ImmutableList.<TableList.Tables>of(),
+      return Tuple.of(
+          tableList.getNextPageToken(),
+          Iterables.transform(
+              tables != null ? tables : ImmutableList.<TableList.Tables>of(),
               new Function<TableList.Tables, Table>() {
                 @Override
                 public Table apply(TableList.Tables tablePb) {
@@ -280,8 +299,8 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public TableDataInsertAllResponse insertAll(String projectId, String datasetId, String tableId,
-      TableDataInsertAllRequest request) {
+  public TableDataInsertAllResponse insertAll(
+      String projectId, String datasetId, String tableId, TableDataInsertAllRequest request) {
     try {
       return bigquery.tabledata().insertAll(projectId, datasetId, tableId, request).execute();
     } catch (IOException ex) {
@@ -329,23 +348,27 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   @Override
   public Tuple<String, Iterable<Job>> listJobs(String projectId, Map<Option, ?> options) {
     try {
-      JobList jobsList = bigquery.jobs()
-          .list(projectId)
-          .setAllUsers(Option.ALL_USERS.getBoolean(options))
-          .setFields(Option.FIELDS.getString(options))
-          .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setProjection(DEFAULT_PROJECTION)
-          .execute();
+      JobList jobsList =
+          bigquery
+              .jobs()
+              .list(projectId)
+              .setAllUsers(Option.ALL_USERS.getBoolean(options))
+              .setFields(Option.FIELDS.getString(options))
+              .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setProjection(DEFAULT_PROJECTION)
+              .execute();
       Iterable<JobList.Jobs> jobs = jobsList.getJobs();
-      return Tuple.of(jobsList.getNextPageToken(),
-          Iterables.transform(jobs != null ? jobs : ImmutableList.<JobList.Jobs>of(),
+      return Tuple.of(
+          jobsList.getNextPageToken(),
+          Iterables.transform(
+              jobs != null ? jobs : ImmutableList.<JobList.Jobs>of(),
               new Function<JobList.Jobs, Job>() {
                 @Override
                 public Job apply(JobList.Jobs jobPb) {
-                  JobStatus statusPb = jobPb.getStatus() != null
-                      ? jobPb.getStatus() : new JobStatus();
+                  JobStatus statusPb =
+                      jobPb.getStatus() != null ? jobPb.getStatus() : new JobStatus();
                   if (statusPb.getState() == null) {
                     statusPb.setState(jobPb.getState());
                   }
@@ -421,15 +444,22 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Job write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+  public Job write(
+      String uploadId,
+      byte[] toWrite,
+      int toWriteOffset,
+      long destOffset,
+      int length,
       boolean last) {
     try {
       if (length == 0) {
         return null;
       }
       GenericUrl url = new GenericUrl(uploadId);
-      HttpRequest httpRequest = bigquery.getRequestFactory()
-          .buildPutRequest(url, new ByteArrayContent(null, toWrite, toWriteOffset, length));
+      HttpRequest httpRequest =
+          bigquery
+              .getRequestFactory()
+              .buildPutRequest(url, new ByteArrayContent(null, toWrite, toWriteOffset, length));
       httpRequest.setParser(bigquery.getObjectParser());
       long limit = destOffset + length;
       StringBuilder range = new StringBuilder("bytes ");

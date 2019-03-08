@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface OrganizationSettingsOrBuilder extends
+public interface OrganizationSettingsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.OrganizationSettings)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -19,6 +22,8 @@ public interface OrganizationSettingsOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -28,10 +33,11 @@ public interface OrganizationSettingsOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A flag that indicates if Asset Discovery should be enabled. If the flag is
    * set to `true`, then discovery of assets will occur. If it is set to `false,
@@ -44,27 +50,41 @@ public interface OrganizationSettingsOrBuilder extends
   boolean getEnableAssetDiscovery();
 
   /**
+   *
+   *
    * <pre>
    * The configuration used for Asset Discovery runs.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+   * </code>
    */
   boolean hasAssetDiscoveryConfig();
   /**
+   *
+   *
    * <pre>
    * The configuration used for Asset Discovery runs.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+   * </code>
    */
-  com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig getAssetDiscoveryConfig();
+  com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+      getAssetDiscoveryConfig();
   /**
+   *
+   *
    * <pre>
    * The configuration used for Asset Discovery runs.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+   * </code>
    */
-  com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder getAssetDiscoveryConfigOrBuilder();
+  com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder
+      getAssetDiscoveryConfigOrBuilder();
 }

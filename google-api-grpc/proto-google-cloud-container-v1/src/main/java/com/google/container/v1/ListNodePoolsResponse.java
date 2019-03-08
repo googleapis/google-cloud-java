@@ -4,30 +4,33 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * ListNodePoolsResponse is the result of ListNodePoolsRequest.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.ListNodePoolsResponse}
  */
-public  final class ListNodePoolsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.ListNodePoolsResponse)
     ListNodePoolsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListNodePoolsResponse.newBuilder() to construct.
   private ListNodePoolsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListNodePoolsResponse() {
     nodePools_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListNodePoolsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,29 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              nodePools_.add(
+                  input.readMessage(com.google.container.v1.NodePool.parser(), extensionRegistry));
+              break;
             }
-            nodePools_.add(
-                input.readMessage(com.google.container.v1.NodePool.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         nodePools_ = java.util.Collections.unmodifiableList(nodePools_);
@@ -78,22 +81,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListNodePoolsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ListNodePoolsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListNodePoolsResponse_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ListNodePoolsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.ListNodePoolsResponse.class, com.google.container.v1.ListNodePoolsResponse.Builder.class);
+            com.google.container.v1.ListNodePoolsResponse.class,
+            com.google.container.v1.ListNodePoolsResponse.Builder.class);
   }
 
   public static final int NODE_POOLS_FIELD_NUMBER = 1;
   private java.util.List<com.google.container.v1.NodePool> nodePools_;
   /**
+   *
+   *
    * <pre>
    * A list of node pools for a cluster.
    * </pre>
@@ -104,17 +112,21 @@ private static final long serialVersionUID = 0L;
     return nodePools_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of node pools for a cluster.
    * </pre>
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
-  public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> 
+  public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder>
       getNodePoolsOrBuilderList() {
     return nodePools_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of node pools for a cluster.
    * </pre>
@@ -125,6 +137,8 @@ private static final long serialVersionUID = 0L;
     return nodePools_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of node pools for a cluster.
    * </pre>
@@ -135,18 +149,20 @@ private static final long serialVersionUID = 0L;
     return nodePools_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of node pools for a cluster.
    * </pre>
    *
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
-  public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(
-      int index) {
+  public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(int index) {
     return nodePools_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -158,8 +174,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < nodePools_.size(); i++) {
       output.writeMessage(1, nodePools_.get(i));
     }
@@ -173,8 +188,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < nodePools_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, nodePools_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, nodePools_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,16 +198,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.ListNodePoolsResponse)) {
       return super.equals(obj);
     }
-    com.google.container.v1.ListNodePoolsResponse other = (com.google.container.v1.ListNodePoolsResponse) obj;
+    com.google.container.v1.ListNodePoolsResponse other =
+        (com.google.container.v1.ListNodePoolsResponse) obj;
 
     boolean result = true;
-    result = result && getNodePoolsList()
-        .equals(other.getNodePoolsList());
+    result = result && getNodePoolsList().equals(other.getNodePoolsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -214,118 +228,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.ListNodePoolsResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.ListNodePoolsResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.ListNodePoolsResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.ListNodePoolsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.ListNodePoolsResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ListNodePoolsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.ListNodePoolsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * ListNodePoolsResponse is the result of ListNodePoolsRequest.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.ListNodePoolsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.ListNodePoolsResponse)
       com.google.container.v1.ListNodePoolsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListNodePoolsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ListNodePoolsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListNodePoolsResponse_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ListNodePoolsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.ListNodePoolsResponse.class, com.google.container.v1.ListNodePoolsResponse.Builder.class);
+              com.google.container.v1.ListNodePoolsResponse.class,
+              com.google.container.v1.ListNodePoolsResponse.Builder.class);
     }
 
     // Construct using com.google.container.v1.ListNodePoolsResponse.newBuilder()
@@ -333,17 +356,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getNodePoolsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -357,9 +380,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ListNodePoolsResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ListNodePoolsResponse_descriptor;
     }
 
     @java.lang.Override
@@ -378,7 +401,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.ListNodePoolsResponse buildPartial() {
-      com.google.container.v1.ListNodePoolsResponse result = new com.google.container.v1.ListNodePoolsResponse(this);
+      com.google.container.v1.ListNodePoolsResponse result =
+          new com.google.container.v1.ListNodePoolsResponse(this);
       int from_bitField0_ = bitField0_;
       if (nodePoolsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -397,38 +421,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.ListNodePoolsResponse) {
-        return mergeFrom((com.google.container.v1.ListNodePoolsResponse)other);
+        return mergeFrom((com.google.container.v1.ListNodePoolsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -455,9 +480,10 @@ private static final long serialVersionUID = 0L;
             nodePoolsBuilder_ = null;
             nodePools_ = other.nodePools_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            nodePoolsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getNodePoolsFieldBuilder() : null;
+            nodePoolsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNodePoolsFieldBuilder()
+                    : null;
           } else {
             nodePoolsBuilder_.addAllMessages(other.nodePools_);
           }
@@ -491,21 +517,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.container.v1.NodePool> nodePools_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureNodePoolsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>(nodePools_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.NodePool, com.google.container.v1.NodePool.Builder, com.google.container.v1.NodePoolOrBuilder> nodePoolsBuilder_;
+            com.google.container.v1.NodePool,
+            com.google.container.v1.NodePool.Builder,
+            com.google.container.v1.NodePoolOrBuilder>
+        nodePoolsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -520,6 +553,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -534,6 +569,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -548,14 +585,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public Builder setNodePools(
-        int index, com.google.container.v1.NodePool value) {
+    public Builder setNodePools(int index, com.google.container.v1.NodePool value) {
       if (nodePoolsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -569,6 +607,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -587,6 +627,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -607,14 +649,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public Builder addNodePools(
-        int index, com.google.container.v1.NodePool value) {
+    public Builder addNodePools(int index, com.google.container.v1.NodePool value) {
       if (nodePoolsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -628,14 +671,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public Builder addNodePools(
-        com.google.container.v1.NodePool.Builder builderForValue) {
+    public Builder addNodePools(com.google.container.v1.NodePool.Builder builderForValue) {
       if (nodePoolsBuilder_ == null) {
         ensureNodePoolsIsMutable();
         nodePools_.add(builderForValue.build());
@@ -646,6 +690,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -664,6 +710,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -674,8 +722,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.container.v1.NodePool> values) {
       if (nodePoolsBuilder_ == null) {
         ensureNodePoolsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nodePools_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nodePools_);
         onChanged();
       } else {
         nodePoolsBuilder_.addAllMessages(values);
@@ -683,6 +730,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -700,6 +749,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -717,39 +768,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public com.google.container.v1.NodePool.Builder getNodePoolsBuilder(
-        int index) {
+    public com.google.container.v1.NodePool.Builder getNodePoolsBuilder(int index) {
       return getNodePoolsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(
-        int index) {
+    public com.google.container.v1.NodePoolOrBuilder getNodePoolsOrBuilder(int index) {
       if (nodePoolsBuilder_ == null) {
-        return nodePools_.get(index);  } else {
+        return nodePools_.get(index);
+      } else {
         return nodePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> 
-         getNodePoolsOrBuilderList() {
+    public java.util.List<? extends com.google.container.v1.NodePoolOrBuilder>
+        getNodePoolsOrBuilderList() {
       if (nodePoolsBuilder_ != null) {
         return nodePoolsBuilder_.getMessageOrBuilderList();
       } else {
@@ -757,6 +813,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
@@ -764,38 +822,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
     public com.google.container.v1.NodePool.Builder addNodePoolsBuilder() {
-      return getNodePoolsFieldBuilder().addBuilder(
-          com.google.container.v1.NodePool.getDefaultInstance());
+      return getNodePoolsFieldBuilder()
+          .addBuilder(com.google.container.v1.NodePool.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public com.google.container.v1.NodePool.Builder addNodePoolsBuilder(
-        int index) {
-      return getNodePoolsFieldBuilder().addBuilder(
-          index, com.google.container.v1.NodePool.getDefaultInstance());
+    public com.google.container.v1.NodePool.Builder addNodePoolsBuilder(int index) {
+      return getNodePoolsFieldBuilder()
+          .addBuilder(index, com.google.container.v1.NodePool.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of node pools for a cluster.
      * </pre>
      *
      * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
      */
-    public java.util.List<com.google.container.v1.NodePool.Builder> 
-         getNodePoolsBuilderList() {
+    public java.util.List<com.google.container.v1.NodePool.Builder> getNodePoolsBuilderList() {
       return getNodePoolsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.container.v1.NodePool, com.google.container.v1.NodePool.Builder, com.google.container.v1.NodePoolOrBuilder> 
+            com.google.container.v1.NodePool,
+            com.google.container.v1.NodePool.Builder,
+            com.google.container.v1.NodePoolOrBuilder>
         getNodePoolsFieldBuilder() {
       if (nodePoolsBuilder_ == null) {
-        nodePoolsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.container.v1.NodePool, com.google.container.v1.NodePool.Builder, com.google.container.v1.NodePoolOrBuilder>(
+        nodePoolsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1.NodePool,
+                com.google.container.v1.NodePool.Builder,
+                com.google.container.v1.NodePoolOrBuilder>(
                 nodePools_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -804,9 +870,9 @@ private static final long serialVersionUID = 0L;
       }
       return nodePoolsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -816,12 +882,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.ListNodePoolsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.ListNodePoolsResponse)
   private static final com.google.container.v1.ListNodePoolsResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.ListNodePoolsResponse();
   }
@@ -830,16 +896,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListNodePoolsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListNodePoolsResponse>() {
-    @java.lang.Override
-    public ListNodePoolsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListNodePoolsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListNodePoolsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListNodePoolsResponse>() {
+        @java.lang.Override
+        public ListNodePoolsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListNodePoolsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListNodePoolsResponse> parser() {
     return PARSER;
@@ -854,6 +920,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.ListNodePoolsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

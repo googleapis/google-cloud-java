@@ -4,6 +4,8 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * Indicates whether DeviceService (HTTP) is enabled or disabled for the
  * registry. See the field description for details.
@@ -11,9 +13,10 @@ package com.google.cloud.iot.v1;
  *
  * Protobuf enum {@code google.cloud.iot.v1.HttpState}
  */
-public enum HttpState
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum HttpState implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * No HTTP state specified. If not specified, DeviceService will be
    * enabled by default.
@@ -23,6 +26,8 @@ public enum HttpState
    */
   HTTP_STATE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Enables DeviceService (HTTP) service for the registry.
    * </pre>
@@ -31,6 +36,8 @@ public enum HttpState
    */
   HTTP_ENABLED(1),
   /**
+   *
+   *
    * <pre>
    * Disables DeviceService (HTTP) service for the registry.
    * </pre>
@@ -42,6 +49,8 @@ public enum HttpState
   ;
 
   /**
+   *
+   *
    * <pre>
    * No HTTP state specified. If not specified, DeviceService will be
    * enabled by default.
@@ -51,6 +60,8 @@ public enum HttpState
    */
   public static final int HTTP_STATE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Enables DeviceService (HTTP) service for the registry.
    * </pre>
@@ -59,6 +70,8 @@ public enum HttpState
    */
   public static final int HTTP_ENABLED_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Disables DeviceService (HTTP) service for the registry.
    * </pre>
@@ -66,7 +79,6 @@ public enum HttpState
    * <code>HTTP_DISABLED = 2;</code>
    */
   public static final int HTTP_DISABLED_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -76,9 +88,7 @@ public enum HttpState
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static HttpState valueOf(int value) {
     return forNumber(value);
@@ -86,45 +96,45 @@ public enum HttpState
 
   public static HttpState forNumber(int value) {
     switch (value) {
-      case 0: return HTTP_STATE_UNSPECIFIED;
-      case 1: return HTTP_ENABLED;
-      case 2: return HTTP_DISABLED;
-      default: return null;
+      case 0:
+        return HTTP_STATE_UNSPECIFIED;
+      case 1:
+        return HTTP_ENABLED;
+      case 2:
+        return HTTP_DISABLED;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<HttpState>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<HttpState> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      HttpState> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<HttpState>() {
-          public HttpState findValueByNumber(int number) {
-            return HttpState.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<HttpState> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<HttpState>() {
+        public HttpState findValueByNumber(int number) {
+          return HttpState.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final HttpState[] VALUES = values();
 
-  public static HttpState valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static HttpState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -140,4 +150,3 @@ public enum HttpState
 
   // @@protoc_insertion_point(enum_scope:google.cloud.iot.v1.HttpState)
 }
-

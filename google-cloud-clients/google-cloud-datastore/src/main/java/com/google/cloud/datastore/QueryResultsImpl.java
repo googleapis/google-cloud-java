@@ -21,7 +21,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
 import com.google.protobuf.ByteString;
-
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -38,15 +37,16 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private boolean lastBatch;
   private Iterator<com.google.datastore.v1.EntityResult> entityResultPbIter;
   private ByteString cursor;
+  private MoreResultsType moreResults;
 
-  QueryResultsImpl(DatastoreImpl datastore, com.google.datastore.v1.ReadOptions readOptionsPb,
-                   Query<T> query) {
+  QueryResultsImpl(
+      DatastoreImpl datastore, com.google.datastore.v1.ReadOptions readOptionsPb, Query<T> query) {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
     queryResultType = query.getType();
     com.google.datastore.v1.PartitionId.Builder pbBuilder =
-         com.google.datastore.v1.PartitionId.newBuilder();
+        com.google.datastore.v1.PartitionId.newBuilder();
     pbBuilder.setProjectId(datastore.getOptions().getProjectId());
     if (query.getNamespace() != null) {
       pbBuilder.setNamespaceId(query.getNamespace());
@@ -75,14 +75,16 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     if (mostRecentQueryPb == null) {
       mostRecentQueryPb = requestPb.getQuery();
     }
-    lastBatch = runQueryResponsePb.getBatch().getMoreResults() != MoreResultsType.NOT_FINISHED;
+    moreResults = runQueryResponsePb.getBatch().getMoreResults();
+    lastBatch = moreResults != MoreResultsType.NOT_FINISHED;
     entityResultPbIter = runQueryResponsePb.getBatch().getEntityResultsList().iterator();
     actualResultType = ResultType.fromPb(runQueryResponsePb.getBatch().getEntityResultType());
     if (Objects.equals(queryResultType, ResultType.PROJECTION_ENTITY)) {
       // projection entity can represent all type of results
       actualResultType = ResultType.PROJECTION_ENTITY;
     }
-    Preconditions.checkState(queryResultType.isAssignableFrom(actualResultType),
+    Preconditions.checkState(
+        queryResultType.isAssignableFrom(actualResultType),
         "Unexpected result type " + actualResultType + " vs " + queryResultType);
   }
 
@@ -103,15 +105,23 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     return result;
   }
 
-
   @Override
   public Class<?> getResultClass() {
     return actualResultType.resultClass();
   }
 
-
   @Override
   public Cursor getCursorAfter() {
     return new Cursor(cursor);
+  }
+
+  @Override
+  public int getSkippedResults() {
+    return runQueryResponsePb.getBatch().getSkippedResults();
+  }
+
+  @Override
+  public MoreResultsType getMoreResults() {
+    return moreResults;
   }
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface CreateWorkflowTemplateRequestOrBuilder extends
+public interface CreateWorkflowTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.CreateWorkflowTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -18,6 +21,8 @@ public interface CreateWorkflowTemplateRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -26,10 +31,11 @@ public interface CreateWorkflowTemplateRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Dataproc workflow template to create.
    * </pre>
@@ -38,6 +44,8 @@ public interface CreateWorkflowTemplateRequestOrBuilder extends
    */
   boolean hasTemplate();
   /**
+   *
+   *
    * <pre>
    * Required. The Dataproc workflow template to create.
    * </pre>
@@ -46,6 +54,8 @@ public interface CreateWorkflowTemplateRequestOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate();
   /**
+   *
+   *
    * <pre>
    * Required. The Dataproc workflow template to create.
    * </pre>

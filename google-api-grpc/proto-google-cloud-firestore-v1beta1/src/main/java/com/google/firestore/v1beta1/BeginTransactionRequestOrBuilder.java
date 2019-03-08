@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface BeginTransactionRequestOrBuilder extends
+public interface BeginTransactionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.BeginTransactionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
@@ -17,6 +20,8 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
@@ -24,10 +29,11 @@ public interface BeginTransactionRequestOrBuilder extends
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 
   /**
+   *
+   *
    * <pre>
    * The options for the transaction.
    * Defaults to a read-write transaction.
@@ -37,6 +43,8 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   boolean hasOptions();
   /**
+   *
+   *
    * <pre>
    * The options for the transaction.
    * Defaults to a read-write transaction.
@@ -46,6 +54,8 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   com.google.firestore.v1beta1.TransactionOptions getOptions();
   /**
+   *
+   *
    * <pre>
    * The options for the transaction.
    * Defaults to a read-write transaction.

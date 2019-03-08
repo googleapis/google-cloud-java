@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InspectionRuleSetOrBuilder extends
+public interface InspectionRuleSetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectionRuleSet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of infoTypes this rule set is applied to.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.InfoType> 
-      getInfoTypesList();
+  java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
   /**
+   *
+   *
    * <pre>
    * List of infoTypes this rule set is applied to.
    * </pre>
@@ -25,6 +29,8 @@ public interface InspectionRuleSetOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
   /**
+   *
+   *
    * <pre>
    * List of infoTypes this rule set is applied to.
    * </pre>
@@ -33,34 +39,39 @@ public interface InspectionRuleSetOrBuilder extends
    */
   int getInfoTypesCount();
   /**
+   *
+   *
    * <pre>
    * List of infoTypes this rule set is applied to.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
-      getInfoTypesOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> getInfoTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of infoTypes this rule set is applied to.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Set of rules to be applied to infoTypes. The rules are applied in order.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.InspectionRule> 
-      getRulesList();
+  java.util.List<com.google.privacy.dlp.v2.InspectionRule> getRulesList();
   /**
+   *
+   *
    * <pre>
    * Set of rules to be applied to infoTypes. The rules are applied in order.
    * </pre>
@@ -69,6 +80,8 @@ public interface InspectionRuleSetOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectionRule getRules(int index);
   /**
+   *
+   *
    * <pre>
    * Set of rules to be applied to infoTypes. The rules are applied in order.
    * </pre>
@@ -77,21 +90,24 @@ public interface InspectionRuleSetOrBuilder extends
    */
   int getRulesCount();
   /**
+   *
+   *
    * <pre>
    * Set of rules to be applied to infoTypes. The rules are applied in order.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.InspectionRuleOrBuilder>
       getRulesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Set of rules to be applied to infoTypes. The rules are applied in order.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectionRule rules = 2;</code>
    */
-  com.google.privacy.dlp.v2.InspectionRuleOrBuilder getRulesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.InspectionRuleOrBuilder getRulesOrBuilder(int index);
 }

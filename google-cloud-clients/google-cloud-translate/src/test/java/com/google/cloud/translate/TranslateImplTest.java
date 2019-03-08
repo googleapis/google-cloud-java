@@ -33,12 +33,9 @@ import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
 import java.util.List;
 import java.util.Map;
-
 import org.easymock.EasyMock;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -94,10 +91,14 @@ public class TranslateImplTest {
   private static final TranslateOption FORMAT_OPTION = TranslateOption.format("text");
   private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS =
       ImmutableMap.of(
-          TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.getValue(),
-          TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue(),
-          TranslateRpc.Option.MODEL, "nmt",
-          TranslateRpc.Option.FORMAT, "text");
+          TranslateRpc.Option.TARGET_LANGUAGE,
+          TARGET_LANGUAGE_OPTION.getValue(),
+          TranslateRpc.Option.SOURCE_LANGUAGE,
+          SOURCE_LANGUAGE_OPTION.getValue(),
+          TranslateRpc.Option.MODEL,
+          "nmt",
+          TranslateRpc.Option.FORMAT,
+          "text");
   private static final RetrySettings NO_RETRY_SETTINGS = ServiceOptions.getNoRetrySettings();
 
   private TranslateOptions options;
@@ -105,8 +106,7 @@ public class TranslateImplTest {
   private TranslateRpc translateRpcMock;
   private Translate translate;
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -318,7 +318,8 @@ public class TranslateImplTest {
     initializeService();
     assertEquals(
         TRANSLATION2,
-        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION, FORMAT_OPTION));
+        translate.translate(
+            text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION, FORMAT_OPTION));
     verify();
   }
 
@@ -345,7 +346,8 @@ public class TranslateImplTest {
     initializeService();
     assertEquals(
         ImmutableList.of(TRANSLATION2),
-        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION, FORMAT_OPTION));
+        translate.translate(
+            texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION, FORMAT_OPTION));
     verify();
   }
 

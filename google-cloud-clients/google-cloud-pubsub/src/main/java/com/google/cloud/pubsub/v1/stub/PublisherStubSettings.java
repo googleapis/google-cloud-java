@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,7 +117,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   private final PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings;
   private final PagedCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings;
   private final UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
@@ -154,7 +155,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
   /** Returns the object with the settings used for calls to listTopicSubscriptions. */
   public PagedCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings() {
     return listTopicSubscriptionsSettings;
@@ -290,7 +292,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<Topic> extractResources(ListTopicsResponse payload) {
-              return payload.getTopicsList();
+              return payload.getTopicsList() != null
+                  ? payload.getTopicsList()
+                  : ImmutableList.<Topic>of();
             }
           };
 
@@ -330,7 +334,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<String> extractResources(ListTopicSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList();
+              return payload.getSubscriptionsList() != null
+                  ? payload.getSubscriptionsList()
+                  : ImmutableList.<String>of();
             }
           };
 
@@ -352,11 +358,13 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+              ListTopicSubscriptionsRequest,
+              ListTopicSubscriptionsResponse,
               ListTopicSubscriptionsPagedResponse>() {
             @Override
             public ApiFuture<ListTopicSubscriptionsPagedResponse> getFuturePagedResponse(
@@ -451,7 +459,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
             ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
         listTopicsSettings;
     private final PagedCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsRequest,
+            ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings;
     private final UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
@@ -470,15 +479,13 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+                  StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
       definitions.put(
-          "http_get",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "non_idempotent",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("none", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "one_plus_delivery",
+          "publish",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.ABORTED,
@@ -580,12 +587,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       builder
           .createTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .updateTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -602,7 +609,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
                   .build());
       builder
           .publishSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("publish"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("messaging"));
 
       builder
@@ -622,7 +629,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       builder
           .deleteTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -715,7 +722,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
     /** Returns the builder for the settings used for calls to listTopicSubscriptions. */
     public PagedCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsRequest,
+            ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
       return listTopicSubscriptionsSettings;

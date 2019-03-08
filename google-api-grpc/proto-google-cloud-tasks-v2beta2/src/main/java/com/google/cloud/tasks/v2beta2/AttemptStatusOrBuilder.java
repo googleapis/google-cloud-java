@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface AttemptStatusOrBuilder extends
+public interface AttemptStatusOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.AttemptStatus)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was scheduled.
    * `schedule_time` will be truncated to the nearest microsecond.
@@ -17,6 +20,8 @@ public interface AttemptStatusOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was scheduled.
    * `schedule_time` will be truncated to the nearest microsecond.
@@ -26,6 +31,8 @@ public interface AttemptStatusOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was scheduled.
    * `schedule_time` will be truncated to the nearest microsecond.
@@ -36,6 +43,8 @@ public interface AttemptStatusOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was dispatched.
    * `dispatch_time` will be truncated to the nearest microsecond.
@@ -45,6 +54,8 @@ public interface AttemptStatusOrBuilder extends
    */
   boolean hasDispatchTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was dispatched.
    * `dispatch_time` will be truncated to the nearest microsecond.
@@ -54,6 +65,8 @@ public interface AttemptStatusOrBuilder extends
    */
   com.google.protobuf.Timestamp getDispatchTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was dispatched.
    * `dispatch_time` will be truncated to the nearest microsecond.
@@ -64,6 +77,8 @@ public interface AttemptStatusOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getDispatchTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt response was received.
    * `response_time` will be truncated to the nearest microsecond.
@@ -73,6 +88,8 @@ public interface AttemptStatusOrBuilder extends
    */
   boolean hasResponseTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt response was received.
    * `response_time` will be truncated to the nearest microsecond.
@@ -82,6 +99,8 @@ public interface AttemptStatusOrBuilder extends
    */
   com.google.protobuf.Timestamp getResponseTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt response was received.
    * `response_time` will be truncated to the nearest microsecond.
@@ -92,6 +111,8 @@ public interface AttemptStatusOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getResponseTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for this attempt.
    * If the task has not been attempted or the task is currently running
@@ -102,6 +123,8 @@ public interface AttemptStatusOrBuilder extends
    */
   boolean hasResponseStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for this attempt.
    * If the task has not been attempted or the task is currently running
@@ -112,6 +135,8 @@ public interface AttemptStatusOrBuilder extends
    */
   com.google.rpc.Status getResponseStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for this attempt.
    * If the task has not been attempted or the task is currently running

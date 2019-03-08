@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -177,7 +177,8 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
 
   /** Returns the object with the settings used for calls to listModelEvaluations. */
   public PagedCallSettings<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings() {
     return ((AutoMlStubSettings) getStubSettings()).listModelEvaluationsSettings();
@@ -390,7 +391,8 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
 
     /** Returns the builder for the settings used for calls to listModelEvaluations. */
     public PagedCallSettings.Builder<
-            ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+            ListModelEvaluationsRequest,
+            ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings() {
       return getStubSettingsBuilder().listModelEvaluationsSettings();

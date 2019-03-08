@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface UpdateOccurrenceRequestOrBuilder extends
+public interface UpdateOccurrenceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.UpdateOccurrenceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -17,6 +20,8 @@ public interface UpdateOccurrenceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -24,10 +29,11 @@ public interface UpdateOccurrenceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The updated occurrence.
    * </pre>
@@ -36,6 +42,8 @@ public interface UpdateOccurrenceRequestOrBuilder extends
    */
   boolean hasOccurrence();
   /**
+   *
+   *
    * <pre>
    * The updated occurrence.
    * </pre>
@@ -44,6 +52,8 @@ public interface UpdateOccurrenceRequestOrBuilder extends
    */
   io.grafeas.v1beta1.Occurrence getOccurrence();
   /**
+   *
+   *
    * <pre>
    * The updated occurrence.
    * </pre>
@@ -53,6 +63,8 @@ public interface UpdateOccurrenceRequestOrBuilder extends
   io.grafeas.v1beta1.OccurrenceOrBuilder getOccurrenceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>
@@ -61,6 +73,8 @@ public interface UpdateOccurrenceRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>
@@ -69,6 +83,8 @@ public interface UpdateOccurrenceRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>

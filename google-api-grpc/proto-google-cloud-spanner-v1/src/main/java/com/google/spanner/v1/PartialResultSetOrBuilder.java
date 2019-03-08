@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface PartialResultSetOrBuilder extends
+public interface PartialResultSetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.PartialResultSet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -17,6 +20,8 @@ public interface PartialResultSetOrBuilder extends
    */
   boolean hasMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -26,6 +31,8 @@ public interface PartialResultSetOrBuilder extends
    */
   com.google.spanner.v1.ResultSetMetadata getMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -36,6 +43,8 @@ public interface PartialResultSetOrBuilder extends
   com.google.spanner.v1.ResultSetMetadataOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -46,9 +55,10 @@ public interface PartialResultSetOrBuilder extends
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -100,9 +110,10 @@ public interface PartialResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  java.util.List<com.google.protobuf.Value> 
-      getValuesList();
+  java.util.List<com.google.protobuf.Value> getValuesList();
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -113,9 +124,10 @@ public interface PartialResultSetOrBuilder extends
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -169,6 +181,8 @@ public interface PartialResultSetOrBuilder extends
    */
   com.google.protobuf.Value getValues(int index);
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -179,9 +193,10 @@ public interface PartialResultSetOrBuilder extends
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -235,6 +250,8 @@ public interface PartialResultSetOrBuilder extends
    */
   int getValuesCount();
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -245,9 +262,10 @@ public interface PartialResultSetOrBuilder extends
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -299,9 +317,10 @@ public interface PartialResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  java.util.List<? extends com.google.protobuf.ValueOrBuilder> 
-      getValuesOrBuilderList();
+  java.util.List<? extends com.google.protobuf.ValueOrBuilder> getValuesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -312,9 +331,10 @@ public interface PartialResultSetOrBuilder extends
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -366,14 +386,16 @@ public interface PartialResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  com.google.protobuf.ValueOrBuilder getValuesOrBuilder(
-      int index);
+  com.google.protobuf.ValueOrBuilder getValuesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
-   * If true, then the final value in [values][google.spanner.v1.PartialResultSet.values] is chunked, and must
-   * be combined with more values from subsequent `PartialResultSet`s
-   * to obtain a complete field value.
+   * If true, then the final value in
+   * [values][google.spanner.v1.PartialResultSet.values] is chunked, and must be
+   * combined with more values from subsequent `PartialResultSet`s to obtain a
+   * complete field value.
    * </pre>
    *
    * <code>bool chunked_value = 3;</code>
@@ -381,6 +403,8 @@ public interface PartialResultSetOrBuilder extends
   boolean getChunkedValue();
 
   /**
+   *
+   *
    * <pre>
    * Streaming calls might be interrupted for a variety of reasons, such
    * as TCP connection loss. If this occurs, the stream of results can
@@ -394,39 +418,42 @@ public interface PartialResultSetOrBuilder extends
   com.google.protobuf.ByteString getResumeToken();
 
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
    */
   boolean hasStats();
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
    */
   com.google.spanner.v1.ResultSetStats getStats();
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>

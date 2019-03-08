@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p2beta1;
 
-public interface ImagePropertiesOrBuilder extends
+public interface ImagePropertiesOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p2beta1.ImageProperties)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * If present, dominant colors completed successfully.
    * </pre>
@@ -16,6 +19,8 @@ public interface ImagePropertiesOrBuilder extends
    */
   boolean hasDominantColors();
   /**
+   *
+   *
    * <pre>
    * If present, dominant colors completed successfully.
    * </pre>
@@ -24,6 +29,8 @@ public interface ImagePropertiesOrBuilder extends
    */
   com.google.cloud.vision.v1p2beta1.DominantColorsAnnotation getDominantColors();
   /**
+   *
+   *
    * <pre>
    * If present, dominant colors completed successfully.
    * </pre>

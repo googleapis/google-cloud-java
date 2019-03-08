@@ -18,9 +18,9 @@ package com.google.cloud.firestore;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.firestore.v1beta1.ArrayValue;
-import com.google.firestore.v1beta1.MapValue;
-import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1.ArrayValue;
+import com.google.firestore.v1.MapValue;
+import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Timestamp;

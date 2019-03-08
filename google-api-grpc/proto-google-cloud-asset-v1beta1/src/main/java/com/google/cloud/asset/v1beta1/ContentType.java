@@ -4,15 +4,18 @@
 package com.google.cloud.asset.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Asset content type.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.asset.v1beta1.ContentType}
  */
-public enum ContentType
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Unspecified content type.
    * </pre>
@@ -21,6 +24,8 @@ public enum ContentType
    */
   CONTENT_TYPE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Resource metadata.
    * </pre>
@@ -29,6 +34,8 @@ public enum ContentType
    */
   RESOURCE(1),
   /**
+   *
+   *
    * <pre>
    * The actual IAM policy set on a resource.
    * </pre>
@@ -40,6 +47,8 @@ public enum ContentType
   ;
 
   /**
+   *
+   *
    * <pre>
    * Unspecified content type.
    * </pre>
@@ -48,6 +57,8 @@ public enum ContentType
    */
   public static final int CONTENT_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Resource metadata.
    * </pre>
@@ -56,6 +67,8 @@ public enum ContentType
    */
   public static final int RESOURCE_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * The actual IAM policy set on a resource.
    * </pre>
@@ -63,7 +76,6 @@ public enum ContentType
    * <code>IAM_POLICY = 2;</code>
    */
   public static final int IAM_POLICY_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -73,9 +85,7 @@ public enum ContentType
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static ContentType valueOf(int value) {
     return forNumber(value);
@@ -83,45 +93,45 @@ public enum ContentType
 
   public static ContentType forNumber(int value) {
     switch (value) {
-      case 0: return CONTENT_TYPE_UNSPECIFIED;
-      case 1: return RESOURCE;
-      case 2: return IAM_POLICY;
-      default: return null;
+      case 0:
+        return CONTENT_TYPE_UNSPECIFIED;
+      case 1:
+        return RESOURCE;
+      case 2:
+        return IAM_POLICY;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ContentType>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<ContentType> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      ContentType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ContentType>() {
-          public ContentType findValueByNumber(int number) {
-            return ContentType.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<ContentType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<ContentType>() {
+        public ContentType findValueByNumber(int number) {
+          return ContentType.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.asset.v1beta1.AssetServiceProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final ContentType[] VALUES = values();
 
-  public static ContentType valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static ContentType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -137,4 +147,3 @@ public enum ContentType
 
   // @@protoc_insertion_point(enum_scope:google.cloud.asset.v1beta1.ContentType)
 }
-

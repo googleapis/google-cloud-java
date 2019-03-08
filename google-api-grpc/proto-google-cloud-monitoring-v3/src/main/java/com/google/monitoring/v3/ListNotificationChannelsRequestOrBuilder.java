@@ -3,39 +3,47 @@
 
 package com.google.monitoring.v3;
 
-public interface ListNotificationChannelsRequestOrBuilder extends
+public interface ListNotificationChannelsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListNotificationChannelsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project on which to execute the request. The format is
    * `projects/[PROJECT_ID]`. That is, this names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
    * the
-   * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel] operation.
+   * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
+   * operation.
    * </pre>
    *
    * <code>string name = 5;</code>
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The project on which to execute the request. The format is
    * `projects/[PROJECT_ID]`. That is, this names the container
    * in which to look for the notification channels; it does not name a
    * specific channel. To query a specific channel by REST resource name, use
    * the
-   * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel] operation.
+   * [`GetNotificationChannel`][google.monitoring.v3.NotificationChannelService.GetNotificationChannel]
+   * operation.
    * </pre>
    *
    * <code>string name = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * notification channels to be included in the response.
@@ -47,6 +55,8 @@ public interface ListNotificationChannelsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * notification channels to be included in the response.
@@ -56,10 +66,11 @@ public interface ListNotificationChannelsRequestOrBuilder extends
    *
    * <code>string filter = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of fields as in `filter`. Entries can be prefixed with
@@ -72,6 +83,8 @@ public interface ListNotificationChannelsRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of fields as in `filter`. Entries can be prefixed with
@@ -82,10 +95,11 @@ public interface ListNotificationChannelsRequestOrBuilder extends
    *
    * <code>string order_by = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. If
    * not set to a positive number, a reasonable value will be chosen by the
@@ -97,6 +111,8 @@ public interface ListNotificationChannelsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` must contain a value returned as the
    * `next_page_token` in a previous response to request the next set
@@ -107,6 +123,8 @@ public interface ListNotificationChannelsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` must contain a value returned as the
    * `next_page_token` in a previous response to request the next set
@@ -115,6 +133,5 @@ public interface ListNotificationChannelsRequestOrBuilder extends
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

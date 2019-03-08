@@ -4,30 +4,33 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * A transaction.
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.Transaction}
  */
-public  final class Transaction extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Transaction extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.Transaction)
     TransactionOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Transaction.newBuilder() to construct.
   private Transaction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Transaction() {
     id_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Transaction(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,59 +50,65 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
+          case 10:
+            {
+              id_ = input.readBytes();
+              break;
+            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (readTimestamp_ != null) {
+                subBuilder = readTimestamp_.toBuilder();
+              }
+              readTimestamp_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTimestamp_);
+                readTimestamp_ = subBuilder.buildPartial();
+              }
 
-            id_ = input.readBytes();
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (readTimestamp_ != null) {
-              subBuilder = readTimestamp_.toBuilder();
+              break;
             }
-            readTimestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(readTimestamp_);
-              readTimestamp_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_Transaction_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.v1.TransactionProto
+        .internal_static_google_spanner_v1_Transaction_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_Transaction_fieldAccessorTable
+    return com.google.spanner.v1.TransactionProto
+        .internal_static_google_spanner_v1_Transaction_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.v1.Transaction.class, com.google.spanner.v1.Transaction.Builder.class);
+            com.google.spanner.v1.Transaction.class,
+            com.google.spanner.v1.Transaction.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString id_;
   /**
+   *
+   *
    * <pre>
    * `id` may be used to identify the transaction in subsequent
    * [Read][google.spanner.v1.Spanner.Read],
@@ -119,6 +128,8 @@ private static final long serialVersionUID = 0L;
   public static final int READ_TIMESTAMP_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp readTimestamp_;
   /**
+   *
+   *
    * <pre>
    * For snapshot read-only transactions, the read timestamp chosen
    * for the transaction. Not returned by default: see
@@ -133,6 +144,8 @@ private static final long serialVersionUID = 0L;
     return readTimestamp_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * For snapshot read-only transactions, the read timestamp chosen
    * for the transaction. Not returned by default: see
@@ -144,9 +157,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
    */
   public com.google.protobuf.Timestamp getReadTimestamp() {
-    return readTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTimestamp_;
+    return readTimestamp_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : readTimestamp_;
   }
   /**
+   *
+   *
    * <pre>
    * For snapshot read-only transactions, the read timestamp chosen
    * for the transaction. Not returned by default: see
@@ -162,6 +179,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -173,8 +191,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!id_.isEmpty()) {
       output.writeBytes(1, id_);
     }
@@ -191,12 +208,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!id_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(1, id_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, id_);
     }
     if (readTimestamp_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getReadTimestamp());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getReadTimestamp());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -206,7 +221,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.Transaction)) {
       return super.equals(obj);
@@ -214,12 +229,10 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.Transaction other = (com.google.spanner.v1.Transaction) obj;
 
     boolean result = true;
-    result = result && getId()
-        .equals(other.getId());
+    result = result && getId().equals(other.getId());
     result = result && (hasReadTimestamp() == other.hasReadTimestamp());
     if (hasReadTimestamp()) {
-      result = result && getReadTimestamp()
-          .equals(other.getReadTimestamp());
+      result = result && getReadTimestamp().equals(other.getReadTimestamp());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -243,118 +256,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.Transaction parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.Transaction parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.Transaction parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.Transaction parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.Transaction parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.Transaction parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.Transaction parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.spanner.v1.Transaction prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A transaction.
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.Transaction}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.Transaction)
       com.google.spanner.v1.TransactionOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_Transaction_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.TransactionProto
+          .internal_static_google_spanner_v1_Transaction_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_Transaction_fieldAccessorTable
+      return com.google.spanner.v1.TransactionProto
+          .internal_static_google_spanner_v1_Transaction_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.Transaction.class, com.google.spanner.v1.Transaction.Builder.class);
+              com.google.spanner.v1.Transaction.class,
+              com.google.spanner.v1.Transaction.Builder.class);
     }
 
     // Construct using com.google.spanner.v1.Transaction.newBuilder()
@@ -362,16 +383,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -387,9 +407,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.TransactionProto.internal_static_google_spanner_v1_Transaction_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.TransactionProto
+          .internal_static_google_spanner_v1_Transaction_descriptor;
     }
 
     @java.lang.Override
@@ -423,38 +443,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.Transaction) {
-        return mergeFrom((com.google.spanner.v1.Transaction)other);
+        return mergeFrom((com.google.spanner.v1.Transaction) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -500,6 +521,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString id_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * `id` may be used to identify the transaction in subsequent
      * [Read][google.spanner.v1.Spanner.Read],
@@ -516,6 +539,8 @@ private static final long serialVersionUID = 0L;
       return id_;
     }
     /**
+     *
+     *
      * <pre>
      * `id` may be used to identify the transaction in subsequent
      * [Read][google.spanner.v1.Spanner.Read],
@@ -530,14 +555,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setId(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       id_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * `id` may be used to identify the transaction in subsequent
      * [Read][google.spanner.v1.Spanner.Read],
@@ -551,7 +578,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes id = 1;</code>
      */
     public Builder clearId() {
-      
+
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -559,8 +586,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp readTimestamp_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimestampBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        readTimestampBuilder_;
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -575,6 +607,8 @@ private static final long serialVersionUID = 0L;
       return readTimestampBuilder_ != null || readTimestamp_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -587,12 +621,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getReadTimestamp() {
       if (readTimestampBuilder_ == null) {
-        return readTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTimestamp_;
+        return readTimestamp_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : readTimestamp_;
       } else {
         return readTimestampBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -617,6 +655,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -627,8 +667,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
      */
-    public Builder setReadTimestamp(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setReadTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimestampBuilder_ == null) {
         readTimestamp_ = builderForValue.build();
         onChanged();
@@ -639,6 +678,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -653,7 +694,9 @@ private static final long serialVersionUID = 0L;
       if (readTimestampBuilder_ == null) {
         if (readTimestamp_ != null) {
           readTimestamp_ =
-            com.google.protobuf.Timestamp.newBuilder(readTimestamp_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(readTimestamp_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           readTimestamp_ = value;
         }
@@ -665,6 +708,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -687,6 +732,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -698,11 +745,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimestampBuilder() {
-      
+
       onChanged();
       return getReadTimestampFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -717,11 +766,14 @@ private static final long serialVersionUID = 0L;
       if (readTimestampBuilder_ != null) {
         return readTimestampBuilder_.getMessageOrBuilder();
       } else {
-        return readTimestamp_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : readTimestamp_;
+        return readTimestamp_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : readTimestamp_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * For snapshot read-only transactions, the read timestamp chosen
      * for the transaction. Not returned by default: see
@@ -733,21 +785,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_timestamp = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getReadTimestampFieldBuilder() {
       if (readTimestampBuilder_ == null) {
-        readTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getReadTimestamp(),
-                getParentForChildren(),
-                isClean());
+        readTimestampBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getReadTimestamp(), getParentForChildren(), isClean());
         readTimestamp_ = null;
       }
       return readTimestampBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -757,12 +812,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.Transaction)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.Transaction)
   private static final com.google.spanner.v1.Transaction DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.Transaction();
   }
@@ -771,16 +826,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Transaction>
-      PARSER = new com.google.protobuf.AbstractParser<Transaction>() {
-    @java.lang.Override
-    public Transaction parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Transaction(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Transaction> PARSER =
+      new com.google.protobuf.AbstractParser<Transaction>() {
+        @java.lang.Override
+        public Transaction parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Transaction(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Transaction> parser() {
     return PARSER;
@@ -795,6 +850,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.v1.Transaction getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

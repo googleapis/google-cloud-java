@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -80,13 +81,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -177,7 +178,8 @@ public class TopicAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates the given topic with the given name. See the &lt;a
-   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+   * rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -204,7 +206,8 @@ public class TopicAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates the given topic with the given name. See the &lt;a
-   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+   * rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -231,7 +234,8 @@ public class TopicAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates the given topic with the given name. See the &lt;a
-   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+   * rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -255,7 +259,8 @@ public class TopicAdminClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates the given topic with the given name. See the &lt;a
-   * href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+   * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+   * rules&lt;/a&gt;.
    *
    * <p>Sample code:
    *
@@ -1171,7 +1176,10 @@ public class TopicAdminClient implements BackgroundResource {
 
   public static class ListTopicsPagedResponse
       extends AbstractPagedListResponse<
-          ListTopicsRequest, ListTopicsResponse, Topic, ListTopicsPage,
+          ListTopicsRequest,
+          ListTopicsResponse,
+          Topic,
+          ListTopicsPage,
           ListTopicsFixedSizeCollection> {
 
     public static ApiFuture<ListTopicsPagedResponse> createAsync(
@@ -1186,7 +1194,8 @@ public class TopicAdminClient implements BackgroundResource {
             public ListTopicsPagedResponse apply(ListTopicsPage input) {
               return new ListTopicsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTopicsPagedResponse(ListTopicsPage page) {
@@ -1224,7 +1233,10 @@ public class TopicAdminClient implements BackgroundResource {
 
   public static class ListTopicsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTopicsRequest, ListTopicsResponse, Topic, ListTopicsPage,
+          ListTopicsRequest,
+          ListTopicsResponse,
+          Topic,
+          ListTopicsPage,
           ListTopicsFixedSizeCollection> {
 
     private ListTopicsFixedSizeCollection(List<ListTopicsPage> pages, int collectionSize) {
@@ -1244,8 +1256,11 @@ public class TopicAdminClient implements BackgroundResource {
 
   public static class ListTopicSubscriptionsPagedResponse
       extends AbstractPagedListResponse<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String,
-          ListTopicSubscriptionsPage, ListTopicSubscriptionsFixedSizeCollection> {
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
+          String,
+          ListTopicSubscriptionsPage,
+          ListTopicSubscriptionsFixedSizeCollection> {
 
     public static ApiFuture<ListTopicSubscriptionsPagedResponse> createAsync(
         PageContext<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> context,
@@ -1259,7 +1274,8 @@ public class TopicAdminClient implements BackgroundResource {
             public ListTopicSubscriptionsPagedResponse apply(ListTopicSubscriptionsPage input) {
               return new ListTopicSubscriptionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTopicSubscriptionsPagedResponse(ListTopicSubscriptionsPage page) {
@@ -1280,7 +1296,9 @@ public class TopicAdminClient implements BackgroundResource {
 
   public static class ListTopicSubscriptionsPage
       extends AbstractPage<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
+          String,
           ListTopicSubscriptionsPage> {
 
     private ListTopicSubscriptionsPage(
@@ -1332,8 +1350,11 @@ public class TopicAdminClient implements BackgroundResource {
 
   public static class ListTopicSubscriptionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String,
-          ListTopicSubscriptionsPage, ListTopicSubscriptionsFixedSizeCollection> {
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
+          String,
+          ListTopicSubscriptionsPage,
+          ListTopicSubscriptionsFixedSizeCollection> {
 
     private ListTopicSubscriptionsFixedSizeCollection(
         List<ListTopicSubscriptionsPage> pages, int collectionSize) {

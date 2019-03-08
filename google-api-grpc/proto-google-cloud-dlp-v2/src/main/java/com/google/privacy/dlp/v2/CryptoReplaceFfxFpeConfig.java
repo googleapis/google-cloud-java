@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Replaces an identifier with a surrogate using FPE with the FFX
  * mode of operation; however when used in the `ReidentifyContent` API method,
@@ -19,23 +21,23 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
  */
-public  final class CryptoReplaceFfxFpeConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CryptoReplaceFfxFpeConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)
     CryptoReplaceFfxFpeConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CryptoReplaceFfxFpeConfig.newBuilder() to construct.
   private CryptoReplaceFfxFpeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CryptoReplaceFfxFpeConfig() {
-  }
+
+  private CryptoReplaceFfxFpeConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CryptoReplaceFfxFpeConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -55,95 +57,109 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.privacy.dlp.v2.CryptoKey.Builder subBuilder = null;
-            if (cryptoKey_ != null) {
-              subBuilder = cryptoKey_.toBuilder();
-            }
-            cryptoKey_ = input.readMessage(com.google.privacy.dlp.v2.CryptoKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(cryptoKey_);
-              cryptoKey_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.privacy.dlp.v2.CryptoKey.Builder subBuilder = null;
+              if (cryptoKey_ != null) {
+                subBuilder = cryptoKey_.toBuilder();
+              }
+              cryptoKey_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CryptoKey.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cryptoKey_);
+                cryptoKey_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-            if (context_ != null) {
-              subBuilder = context_.toBuilder();
+              break;
             }
-            context_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(context_);
-              context_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+              if (context_ != null) {
+                subBuilder = context_.toBuilder();
+              }
+              context_ =
+                  input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(context_);
+                context_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-            alphabetCase_ = 4;
-            alphabet_ = rawValue;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            alphabetCase_ = 5;
-            alphabet_ = s;
-            break;
-          }
-          case 48: {
-            alphabetCase_ = 6;
-            alphabet_ = input.readInt32();
-            break;
-          }
-          case 66: {
-            com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
-            if (surrogateInfoType_ != null) {
-              subBuilder = surrogateInfoType_.toBuilder();
+              break;
             }
-            surrogateInfoType_ = input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(surrogateInfoType_);
-              surrogateInfoType_ = subBuilder.buildPartial();
+          case 32:
+            {
+              int rawValue = input.readEnum();
+              alphabetCase_ = 4;
+              alphabet_ = rawValue;
+              break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              alphabetCase_ = 5;
+              alphabet_ = s;
+              break;
+            }
+          case 48:
+            {
+              alphabetCase_ = 6;
+              alphabet_ = input.readInt32();
+              break;
+            }
+          case 66:
+            {
+              com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
+              if (surrogateInfoType_ != null) {
+                subBuilder = surrogateInfoType_.toBuilder();
+              }
+              surrogateInfoType_ =
+                  input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(surrogateInfoType_);
+                surrogateInfoType_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.class, com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder.class);
+            com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.class,
+            com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * These are commonly used subsets of the alphabet that the FFX mode
    * natively supports. In the algorithm, the alphabet is selected using
@@ -152,13 +168,12 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet}
    */
-  public enum FfxCommonNativeAlphabet
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code>
-     */
+  public enum FfxCommonNativeAlphabet implements com.google.protobuf.ProtocolMessageEnum {
+    /** <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code> */
     FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * [0-9] (radix of 10)
      * </pre>
@@ -167,6 +182,8 @@ private static final long serialVersionUID = 0L;
      */
     NUMERIC(1),
     /**
+     *
+     *
      * <pre>
      * [0-9A-F] (radix of 16)
      * </pre>
@@ -175,6 +192,8 @@ private static final long serialVersionUID = 0L;
      */
     HEXADECIMAL(2),
     /**
+     *
+     *
      * <pre>
      * [0-9A-Z] (radix of 36)
      * </pre>
@@ -183,6 +202,8 @@ private static final long serialVersionUID = 0L;
      */
     UPPER_CASE_ALPHA_NUMERIC(3),
     /**
+     *
+     *
      * <pre>
      * [0-9A-Za-z] (radix of 62)
      * </pre>
@@ -193,11 +214,11 @@ private static final long serialVersionUID = 0L;
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code>
-     */
+    /** <code>FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED = 0;</code> */
     public static final int FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * [0-9] (radix of 10)
      * </pre>
@@ -206,6 +227,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NUMERIC_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * [0-9A-F] (radix of 16)
      * </pre>
@@ -214,6 +237,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int HEXADECIMAL_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * [0-9A-Z] (radix of 36)
      * </pre>
@@ -222,6 +247,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UPPER_CASE_ALPHA_NUMERIC_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * [0-9A-Za-z] (radix of 62)
      * </pre>
@@ -229,7 +256,6 @@ private static final long serialVersionUID = 0L;
      * <code>ALPHA_NUMERIC = 4;</code>
      */
     public static final int ALPHA_NUMERIC_VALUE = 4;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -239,9 +265,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static FfxCommonNativeAlphabet valueOf(int value) {
       return forNumber(value);
@@ -249,12 +273,18 @@ private static final long serialVersionUID = 0L;
 
     public static FfxCommonNativeAlphabet forNumber(int value) {
       switch (value) {
-        case 0: return FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
-        case 1: return NUMERIC;
-        case 2: return HEXADECIMAL;
-        case 3: return UPPER_CASE_ALPHA_NUMERIC;
-        case 4: return ALPHA_NUMERIC;
-        default: return null;
+        case 0:
+          return FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
+        case 1:
+          return NUMERIC;
+        case 2:
+          return HEXADECIMAL;
+        case 3:
+          return UPPER_CASE_ALPHA_NUMERIC;
+        case 4:
+          return ALPHA_NUMERIC;
+        default:
+          return null;
       }
     }
 
@@ -262,25 +292,27 @@ private static final long serialVersionUID = 0L;
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        FfxCommonNativeAlphabet> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<FfxCommonNativeAlphabet>() {
-            public FfxCommonNativeAlphabet findValueByNumber(int number) {
-              return FfxCommonNativeAlphabet.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<FfxCommonNativeAlphabet>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<FfxCommonNativeAlphabet>() {
+              public FfxCommonNativeAlphabet findValueByNumber(int number) {
+                return FfxCommonNativeAlphabet.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final FfxCommonNativeAlphabet[] VALUES = values();
@@ -288,8 +320,7 @@ private static final long serialVersionUID = 0L;
     public static FfxCommonNativeAlphabet valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -308,19 +339,18 @@ private static final long serialVersionUID = 0L;
 
   private int alphabetCase_ = 0;
   private java.lang.Object alphabet_;
-  public enum AlphabetCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum AlphabetCase implements com.google.protobuf.Internal.EnumLite {
     COMMON_ALPHABET(4),
     CUSTOM_ALPHABET(5),
     RADIX(6),
     ALPHABET_NOT_SET(0);
     private final int value;
+
     private AlphabetCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static AlphabetCase valueOf(int value) {
       return forNumber(value);
@@ -328,27 +358,33 @@ private static final long serialVersionUID = 0L;
 
     public static AlphabetCase forNumber(int value) {
       switch (value) {
-        case 4: return COMMON_ALPHABET;
-        case 5: return CUSTOM_ALPHABET;
-        case 6: return RADIX;
-        case 0: return ALPHABET_NOT_SET;
-        default: return null;
+        case 4:
+          return COMMON_ALPHABET;
+        case 5:
+          return CUSTOM_ALPHABET;
+        case 6:
+          return RADIX;
+        case 0:
+          return ALPHABET_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public AlphabetCase
-  getAlphabetCase() {
-    return AlphabetCase.forNumber(
-        alphabetCase_);
+  public AlphabetCase getAlphabetCase() {
+    return AlphabetCase.forNumber(alphabetCase_);
   }
 
   public static final int CRYPTO_KEY_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
   /**
+   *
+   *
    * <pre>
    * The key used by the encryption algorithm. [required]
    * </pre>
@@ -359,6 +395,8 @@ private static final long serialVersionUID = 0L;
     return cryptoKey_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The key used by the encryption algorithm. [required]
    * </pre>
@@ -366,9 +404,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
    */
   public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
-    return cryptoKey_ == null ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance() : cryptoKey_;
+    return cryptoKey_ == null
+        ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
+        : cryptoKey_;
   }
   /**
+   *
+   *
    * <pre>
    * The key used by the encryption algorithm. [required]
    * </pre>
@@ -382,6 +424,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTEXT_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.FieldId context_;
   /**
+   *
+   *
    * <pre>
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
@@ -405,6 +449,8 @@ private static final long serialVersionUID = 0L;
     return context_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
@@ -428,6 +474,8 @@ private static final long serialVersionUID = 0L;
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
   /**
+   *
+   *
    * <pre>
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
@@ -453,7 +501,9 @@ private static final long serialVersionUID = 0L;
 
   public static final int COMMON_ALPHABET_FIELD_NUMBER = 4;
   /**
-   * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+   * </code>
    */
   public int getCommonAlphabetValue() {
     if (alphabetCase_ == 4) {
@@ -462,20 +512,29 @@ private static final long serialVersionUID = 0L;
     return 0;
   }
   /**
-   * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+   * </code>
    */
-  public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet() {
+  public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
+      getCommonAlphabet() {
     if (alphabetCase_ == 4) {
       @SuppressWarnings("deprecation")
-      com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result = com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
-          (java.lang.Integer) alphabet_);
-      return result == null ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.UNRECOGNIZED : result;
+      com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result =
+          com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
+              (java.lang.Integer) alphabet_);
+      return result == null
+          ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.UNRECOGNIZED
+          : result;
     }
-    return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
+    return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
+        .FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
   }
 
   public static final int CUSTOM_ALPHABET_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * This is supported by mapping these to the alphanumeric characters
    * that the FFX mode natively supports. This happens before/after
@@ -496,8 +555,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (alphabetCase_ == 5) {
         alphabet_ = s;
@@ -506,6 +564,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * This is supported by mapping these to the alphanumeric characters
    * that the FFX mode natively supports. This happens before/after
@@ -518,16 +578,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string custom_alphabet = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getCustomAlphabetBytes() {
+  public com.google.protobuf.ByteString getCustomAlphabetBytes() {
     java.lang.Object ref = "";
     if (alphabetCase_ == 5) {
       ref = alphabet_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (alphabetCase_ == 5) {
         alphabet_ = b;
       }
@@ -539,6 +597,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int RADIX_FIELD_NUMBER = 6;
   /**
+   *
+   *
    * <pre>
    * The native way to select the alphabet. Must be in the range [2, 62].
    * </pre>
@@ -555,6 +615,8 @@ private static final long serialVersionUID = 0L;
   public static final int SURROGATE_INFO_TYPE_FIELD_NUMBER = 8;
   private com.google.privacy.dlp.v2.InfoType surrogateInfoType_;
   /**
+   *
+   *
    * <pre>
    * The custom infoType to annotate the surrogate with.
    * This annotation will be applied to the surrogate by prefixing it with
@@ -586,6 +648,8 @@ private static final long serialVersionUID = 0L;
     return surrogateInfoType_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The custom infoType to annotate the surrogate with.
    * This annotation will be applied to the surrogate by prefixing it with
@@ -614,9 +678,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
    */
   public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
-    return surrogateInfoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : surrogateInfoType_;
+    return surrogateInfoType_ == null
+        ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+        : surrogateInfoType_;
   }
   /**
+   *
+   *
    * <pre>
    * The custom infoType to annotate the surrogate with.
    * This annotation will be applied to the surrogate by prefixing it with
@@ -649,6 +717,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -660,8 +729,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (cryptoKey_ != null) {
       output.writeMessage(1, getCryptoKey());
     }
@@ -675,8 +743,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, alphabet_);
     }
     if (alphabetCase_ == 6) {
-      output.writeInt32(
-          6, (int)((java.lang.Integer) alphabet_));
+      output.writeInt32(6, (int) ((java.lang.Integer) alphabet_));
     }
     if (surrogateInfoType_ != null) {
       output.writeMessage(8, getSurrogateInfoType());
@@ -691,28 +758,25 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (cryptoKey_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getCryptoKey());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCryptoKey());
     }
     if (context_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getContext());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getContext());
     }
     if (alphabetCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, ((java.lang.Integer) alphabet_));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(4, ((java.lang.Integer) alphabet_));
     }
     if (alphabetCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, alphabet_);
     }
     if (alphabetCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(
-            6, (int)((java.lang.Integer) alphabet_));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              6, (int) ((java.lang.Integer) alphabet_));
     }
     if (surrogateInfoType_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getSurrogateInfoType());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSurrogateInfoType());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -722,44 +786,38 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig other = (com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) obj;
+    com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig other =
+        (com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) obj;
 
     boolean result = true;
     result = result && (hasCryptoKey() == other.hasCryptoKey());
     if (hasCryptoKey()) {
-      result = result && getCryptoKey()
-          .equals(other.getCryptoKey());
+      result = result && getCryptoKey().equals(other.getCryptoKey());
     }
     result = result && (hasContext() == other.hasContext());
     if (hasContext()) {
-      result = result && getContext()
-          .equals(other.getContext());
+      result = result && getContext().equals(other.getContext());
     }
     result = result && (hasSurrogateInfoType() == other.hasSurrogateInfoType());
     if (hasSurrogateInfoType()) {
-      result = result && getSurrogateInfoType()
-          .equals(other.getSurrogateInfoType());
+      result = result && getSurrogateInfoType().equals(other.getSurrogateInfoType());
     }
-    result = result && getAlphabetCase().equals(
-        other.getAlphabetCase());
+    result = result && getAlphabetCase().equals(other.getAlphabetCase());
     if (!result) return false;
     switch (alphabetCase_) {
       case 4:
-        result = result && getCommonAlphabetValue()
-            == other.getCommonAlphabetValue();
+        result = result && getCommonAlphabetValue() == other.getCommonAlphabetValue();
         break;
       case 5:
-        result = result && getCustomAlphabet()
-            .equals(other.getCustomAlphabet());
+        result = result && getCustomAlphabet().equals(other.getCustomAlphabet());
         break;
       case 6:
-        result = result && (getRadix()
-            == other.getRadix());
+        result = result && (getRadix() == other.getRadix());
         break;
       case 0:
       default:
@@ -809,96 +867,103 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Replaces an identifier with a surrogate using FPE with the FFX
    * mode of operation; however when used in the `ReidentifyContent` API method,
@@ -914,21 +979,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)
       com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.class, com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder.class);
+              com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.class,
+              com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.newBuilder()
@@ -936,16 +1003,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -973,9 +1039,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CryptoReplaceFfxFpeConfig_descriptor;
     }
 
     @java.lang.Override
@@ -994,7 +1060,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig buildPartial() {
-      com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig result = new com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig(this);
+      com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig result =
+          new com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig(this);
       if (cryptoKeyBuilder_ == null) {
         result.cryptoKey_ = cryptoKey_;
       } else {
@@ -1028,38 +1095,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) {
-        return mergeFrom((com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)other);
+        return mergeFrom((com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1067,7 +1135,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig other) {
-      if (other == com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.getDefaultInstance())
+        return this;
       if (other.hasCryptoKey()) {
         mergeCryptoKey(other.getCryptoKey());
       }
@@ -1078,23 +1147,27 @@ private static final long serialVersionUID = 0L;
         mergeSurrogateInfoType(other.getSurrogateInfoType());
       }
       switch (other.getAlphabetCase()) {
-        case COMMON_ALPHABET: {
-          setCommonAlphabetValue(other.getCommonAlphabetValue());
-          break;
-        }
-        case CUSTOM_ALPHABET: {
-          alphabetCase_ = 5;
-          alphabet_ = other.alphabet_;
-          onChanged();
-          break;
-        }
-        case RADIX: {
-          setRadix(other.getRadix());
-          break;
-        }
-        case ALPHABET_NOT_SET: {
-          break;
-        }
+        case COMMON_ALPHABET:
+          {
+            setCommonAlphabetValue(other.getCommonAlphabetValue());
+            break;
+          }
+        case CUSTOM_ALPHABET:
+          {
+            alphabetCase_ = 5;
+            alphabet_ = other.alphabet_;
+            onChanged();
+            break;
+          }
+        case RADIX:
+          {
+            setRadix(other.getRadix());
+            break;
+          }
+        case ALPHABET_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1115,7 +1188,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1124,12 +1198,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int alphabetCase_ = 0;
     private java.lang.Object alphabet_;
-    public AlphabetCase
-        getAlphabetCase() {
-      return AlphabetCase.forNumber(
-          alphabetCase_);
+
+    public AlphabetCase getAlphabetCase() {
+      return AlphabetCase.forNumber(alphabetCase_);
     }
 
     public Builder clearAlphabet() {
@@ -1139,11 +1213,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.privacy.dlp.v2.CryptoKey cryptoKey_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CryptoKey, com.google.privacy.dlp.v2.CryptoKey.Builder, com.google.privacy.dlp.v2.CryptoKeyOrBuilder> cryptoKeyBuilder_;
+            com.google.privacy.dlp.v2.CryptoKey,
+            com.google.privacy.dlp.v2.CryptoKey.Builder,
+            com.google.privacy.dlp.v2.CryptoKeyOrBuilder>
+        cryptoKeyBuilder_;
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1154,6 +1232,8 @@ private static final long serialVersionUID = 0L;
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1162,12 +1242,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
-        return cryptoKey_ == null ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance() : cryptoKey_;
+        return cryptoKey_ == null
+            ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
+            : cryptoKey_;
       } else {
         return cryptoKeyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1188,14 +1272,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
-    public Builder setCryptoKey(
-        com.google.privacy.dlp.v2.CryptoKey.Builder builderForValue) {
+    public Builder setCryptoKey(com.google.privacy.dlp.v2.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
         cryptoKey_ = builderForValue.build();
         onChanged();
@@ -1206,6 +1291,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1216,7 +1303,9 @@ private static final long serialVersionUID = 0L;
       if (cryptoKeyBuilder_ == null) {
         if (cryptoKey_ != null) {
           cryptoKey_ =
-            com.google.privacy.dlp.v2.CryptoKey.newBuilder(cryptoKey_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.CryptoKey.newBuilder(cryptoKey_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           cryptoKey_ = value;
         }
@@ -1228,6 +1317,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1246,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1253,11 +1346,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
     public com.google.privacy.dlp.v2.CryptoKey.Builder getCryptoKeyBuilder() {
-      
+
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1268,11 +1363,14 @@ private static final long serialVersionUID = 0L;
       if (cryptoKeyBuilder_ != null) {
         return cryptoKeyBuilder_.getMessageOrBuilder();
       } else {
-        return cryptoKey_ == null ?
-            com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance() : cryptoKey_;
+        return cryptoKey_ == null
+            ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
+            : cryptoKey_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The key used by the encryption algorithm. [required]
      * </pre>
@@ -1280,14 +1378,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CryptoKey, com.google.privacy.dlp.v2.CryptoKey.Builder, com.google.privacy.dlp.v2.CryptoKeyOrBuilder> 
+            com.google.privacy.dlp.v2.CryptoKey,
+            com.google.privacy.dlp.v2.CryptoKey.Builder,
+            com.google.privacy.dlp.v2.CryptoKeyOrBuilder>
         getCryptoKeyFieldBuilder() {
       if (cryptoKeyBuilder_ == null) {
-        cryptoKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CryptoKey, com.google.privacy.dlp.v2.CryptoKey.Builder, com.google.privacy.dlp.v2.CryptoKeyOrBuilder>(
-                getCryptoKey(),
-                getParentForChildren(),
-                isClean());
+        cryptoKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CryptoKey,
+                com.google.privacy.dlp.v2.CryptoKey.Builder,
+                com.google.privacy.dlp.v2.CryptoKeyOrBuilder>(
+                getCryptoKey(), getParentForChildren(), isClean());
         cryptoKey_ = null;
       }
       return cryptoKeyBuilder_;
@@ -1295,8 +1396,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.FieldId context_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> contextBuilder_;
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
+        contextBuilder_;
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1320,6 +1426,8 @@ private static final long serialVersionUID = 0L;
       return contextBuilder_ != null || context_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1347,6 +1455,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1380,6 +1490,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1399,8 +1511,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
      */
-    public Builder setContext(
-        com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+    public Builder setContext(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
         onChanged();
@@ -1411,6 +1522,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1434,7 +1547,9 @@ private static final long serialVersionUID = 0L;
       if (contextBuilder_ == null) {
         if (context_ != null) {
           context_ =
-            com.google.privacy.dlp.v2.FieldId.newBuilder(context_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.FieldId.newBuilder(context_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           context_ = value;
         }
@@ -1446,6 +1561,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1477,6 +1594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1497,11 +1616,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getContextBuilder() {
-      
+
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1525,11 +1646,12 @@ private static final long serialVersionUID = 0L;
       if (contextBuilder_ != null) {
         return contextBuilder_.getMessageOrBuilder();
       } else {
-        return context_ == null ?
-            com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
+        return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The 'tweak', a context may be used for higher security since the same
      * identifier in two different contexts won't be given the same surrogate. If
@@ -1550,21 +1672,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.FieldId context = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getContextFieldBuilder() {
       if (contextBuilder_ == null) {
-        contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                getContext(),
-                getParentForChildren(),
-                isClean());
+        contextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                getContext(), getParentForChildren(), isClean());
         context_ = null;
       }
       return contextBuilder_;
     }
 
     /**
-     * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+     * </code>
      */
     public int getCommonAlphabetValue() {
       if (alphabetCase_ == 4) {
@@ -1573,7 +1700,9 @@ private static final long serialVersionUID = 0L;
       return 0;
     }
     /**
-     * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+     * </code>
      */
     public Builder setCommonAlphabetValue(int value) {
       alphabetCase_ = 4;
@@ -1582,21 +1711,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet() {
+    public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
+        getCommonAlphabet() {
       if (alphabetCase_ == 4) {
         @SuppressWarnings("deprecation")
-        com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result = com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
-            (java.lang.Integer) alphabet_);
-        return result == null ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.UNRECOGNIZED : result;
+        com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet result =
+            com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.valueOf(
+                (java.lang.Integer) alphabet_);
+        return result == null
+            ? com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
+                .UNRECOGNIZED
+            : result;
       }
-      return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet.FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
+      return com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet
+          .FFX_COMMON_NATIVE_ALPHABET_UNSPECIFIED;
     }
     /**
-     * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+     * </code>
      */
-    public Builder setCommonAlphabet(com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet value) {
+    public Builder setCommonAlphabet(
+        com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1606,7 +1746,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+     * <code>
+     * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+     * </code>
      */
     public Builder clearCommonAlphabet() {
       if (alphabetCase_ == 4) {
@@ -1618,6 +1760,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * This is supported by mapping these to the alphanumeric characters
      * that the FFX mode natively supports. This happens before/after
@@ -1636,8 +1780,7 @@ private static final long serialVersionUID = 0L;
         ref = alphabet_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (alphabetCase_ == 5) {
           alphabet_ = s;
@@ -1648,6 +1791,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This is supported by mapping these to the alphanumeric characters
      * that the FFX mode natively supports. This happens before/after
@@ -1660,16 +1805,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string custom_alphabet = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getCustomAlphabetBytes() {
+    public com.google.protobuf.ByteString getCustomAlphabetBytes() {
       java.lang.Object ref = "";
       if (alphabetCase_ == 5) {
         ref = alphabet_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (alphabetCase_ == 5) {
           alphabet_ = b;
         }
@@ -1679,6 +1822,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This is supported by mapping these to the alphanumeric characters
      * that the FFX mode natively supports. This happens before/after
@@ -1691,17 +1836,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string custom_alphabet = 5;</code>
      */
-    public Builder setCustomAlphabet(
-        java.lang.String value) {
+    public Builder setCustomAlphabet(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  alphabetCase_ = 5;
+        throw new NullPointerException();
+      }
+      alphabetCase_ = 5;
       alphabet_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This is supported by mapping these to the alphanumeric characters
      * that the FFX mode natively supports. This happens before/after
@@ -1723,6 +1869,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This is supported by mapping these to the alphanumeric characters
      * that the FFX mode natively supports. This happens before/after
@@ -1735,12 +1883,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string custom_alphabet = 5;</code>
      */
-    public Builder setCustomAlphabetBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCustomAlphabetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       alphabetCase_ = 5;
       alphabet_ = value;
       onChanged();
@@ -1748,6 +1895,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * The native way to select the alphabet. Must be in the range [2, 62].
      * </pre>
@@ -1761,6 +1910,8 @@ private static final long serialVersionUID = 0L;
       return 0;
     }
     /**
+     *
+     *
      * <pre>
      * The native way to select the alphabet. Must be in the range [2, 62].
      * </pre>
@@ -1774,6 +1925,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The native way to select the alphabet. Must be in the range [2, 62].
      * </pre>
@@ -1791,8 +1944,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.InfoType surrogateInfoType_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> surrogateInfoTypeBuilder_;
+            com.google.privacy.dlp.v2.InfoType,
+            com.google.privacy.dlp.v2.InfoType.Builder,
+            com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+        surrogateInfoTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -1824,6 +1982,8 @@ private static final long serialVersionUID = 0L;
       return surrogateInfoTypeBuilder_ != null || surrogateInfoType_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -1853,12 +2013,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.InfoType getSurrogateInfoType() {
       if (surrogateInfoTypeBuilder_ == null) {
-        return surrogateInfoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : surrogateInfoType_;
+        return surrogateInfoType_ == null
+            ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+            : surrogateInfoType_;
       } else {
         return surrogateInfoTypeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -1900,6 +2064,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -1939,6 +2105,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -1970,7 +2138,9 @@ private static final long serialVersionUID = 0L;
       if (surrogateInfoTypeBuilder_ == null) {
         if (surrogateInfoType_ != null) {
           surrogateInfoType_ =
-            com.google.privacy.dlp.v2.InfoType.newBuilder(surrogateInfoType_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.InfoType.newBuilder(surrogateInfoType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           surrogateInfoType_ = value;
         }
@@ -1982,6 +2152,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -2021,6 +2193,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -2049,11 +2223,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getSurrogateInfoTypeBuilder() {
-      
+
       onChanged();
       return getSurrogateInfoTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -2085,11 +2261,14 @@ private static final long serialVersionUID = 0L;
       if (surrogateInfoTypeBuilder_ != null) {
         return surrogateInfoTypeBuilder_.getMessageOrBuilder();
       } else {
-        return surrogateInfoType_ == null ?
-            com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : surrogateInfoType_;
+        return surrogateInfoType_ == null
+            ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+            : surrogateInfoType_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The custom infoType to annotate the surrogate with.
      * This annotation will be applied to the surrogate by prefixing it with
@@ -2118,21 +2297,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InfoType surrogate_info_type = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
+            com.google.privacy.dlp.v2.InfoType,
+            com.google.privacy.dlp.v2.InfoType.Builder,
+            com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         getSurrogateInfoTypeFieldBuilder() {
       if (surrogateInfoTypeBuilder_ == null) {
-        surrogateInfoTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
-                getSurrogateInfoType(),
-                getParentForChildren(),
-                isClean());
+        surrogateInfoTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InfoType,
+                com.google.privacy.dlp.v2.InfoType.Builder,
+                com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
+                getSurrogateInfoType(), getParentForChildren(), isClean());
         surrogateInfoType_ = null;
       }
       return surrogateInfoTypeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2142,12 +2324,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)
   private static final com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig();
   }
@@ -2156,16 +2338,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CryptoReplaceFfxFpeConfig>
-      PARSER = new com.google.protobuf.AbstractParser<CryptoReplaceFfxFpeConfig>() {
-    @java.lang.Override
-    public CryptoReplaceFfxFpeConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CryptoReplaceFfxFpeConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CryptoReplaceFfxFpeConfig> PARSER =
+      new com.google.protobuf.AbstractParser<CryptoReplaceFfxFpeConfig>() {
+        @java.lang.Override
+        public CryptoReplaceFfxFpeConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CryptoReplaceFfxFpeConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CryptoReplaceFfxFpeConfig> parser() {
     return PARSER;
@@ -2180,6 +2362,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface VerifyNotificationChannelRequestOrBuilder extends
+public interface VerifyNotificationChannelRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.VerifyNotificationChannelRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The notification channel to verify.
    * </pre>
@@ -16,16 +19,19 @@ public interface VerifyNotificationChannelRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The notification channel to verify.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The verification code that was delivered to the channel as
    * a result of invoking the `SendNotificationChannelVerificationCode` API
@@ -40,6 +46,8 @@ public interface VerifyNotificationChannelRequestOrBuilder extends
    */
   java.lang.String getCode();
   /**
+   *
+   *
    * <pre>
    * The verification code that was delivered to the channel as
    * a result of invoking the `SendNotificationChannelVerificationCode` API
@@ -52,6 +60,5 @@ public interface VerifyNotificationChannelRequestOrBuilder extends
    *
    * <code>string code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getCodeBytes();
+  com.google.protobuf.ByteString getCodeBytes();
 }

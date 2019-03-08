@@ -20,29 +20,26 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.SpannerImpl.SessionTransaction;
 import com.google.common.base.Preconditions;
-
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 
-/**
- * Implementation of {@link TransactionManager}.
- */
+/** Implementation of {@link TransactionManager}. */
 final class TransactionManagerImpl implements TransactionManager, SessionTransaction {
   private static final Tracer tracer = Tracing.getTracer();
-  
+
   private final SessionImpl session;
   private final Span span;
-  
+
   private SpannerImpl.TransactionContextImpl txn;
   private TransactionState txnState;
-  
+
   TransactionManagerImpl(SessionImpl session) {
     this.session = session;
     this.span = Tracing.getTracer().getCurrentSpan();
   }
-  
+
   @Override
   public TransactionContext begin() {
     Preconditions.checkState(txn == null, "begin can only be called once");
@@ -57,12 +54,13 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
 
   @Override
   public void commit() {
-    Preconditions.checkState(txnState == TransactionState.STARTED, "commit can only be invoked if"
-        + " the transaction is in progress");
+    Preconditions.checkState(
+        txnState == TransactionState.STARTED,
+        "commit can only be invoked if" + " the transaction is in progress");
     if (txn.isAborted()) {
       txnState = TransactionState.ABORTED;
-      throw SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED,
-          "Transaction already aborted");
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.ABORTED, "Transaction already aborted");
     }
     try {
       txn.commit();
@@ -78,7 +76,8 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
 
   @Override
   public void rollback() {
-    Preconditions.checkState(txnState == TransactionState.STARTED,
+    Preconditions.checkState(
+        txnState == TransactionState.STARTED,
         "rollback can only be called if the transaction is in progress");
     try {
       txn.rollback();
@@ -89,10 +88,9 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
 
   @Override
   public TransactionContext resetForRetry() {
-    if (txn == null
-        || !txn.isAborted() && txnState != TransactionState.ABORTED) {
-      throw new IllegalStateException("resetForRetry can only be called if the previous attempt"
-          + " aborted");
+    if (txn == null || !txn.isAborted() && txnState != TransactionState.ABORTED) {
+      throw new IllegalStateException(
+          "resetForRetry can only be called if the previous attempt" + " aborted");
     }
     try (Scope s = tracer.withSpan(span)) {
       txn = session.newTransaction();
@@ -104,7 +102,8 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
 
   @Override
   public Timestamp getCommitTimestamp() {
-    Preconditions.checkState(txnState == TransactionState.COMMITTED,
+    Preconditions.checkState(
+        txnState == TransactionState.COMMITTED,
         "getCommitTimestamp can only be invoked if the transaction committed successfully");
     return txn.commitTimestamp();
   }
@@ -120,7 +119,7 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
       span.end();
     }
   }
-  
+
   @Override
   public TransactionState getState() {
     return txnState;

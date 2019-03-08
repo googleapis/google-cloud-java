@@ -14,13 +14,13 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class KnowledgeBaseName implements ResourceName {
   }
 
   public static KnowledgeBaseName of(String project, String knowledgeBase) {
-    return newBuilder()
-      .setProject(project)
-      .setKnowledgeBase(knowledgeBase)
-      .build();
+    return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build();
   }
 
   public static String format(String project, String knowledgeBase) {
-    return newBuilder()
-      .setProject(project)
-      .setKnowledgeBase(knowledgeBase)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build().toString();
   }
 
   public static KnowledgeBaseName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class KnowledgeBaseName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "KnowledgeBaseName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "KnowledgeBaseName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("knowledge_base"));
   }
 
@@ -150,8 +144,7 @@ public class KnowledgeBaseName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(KnowledgeBaseName knowledgeBaseName) {
       project = knowledgeBaseName.project;
@@ -170,8 +163,7 @@ public class KnowledgeBaseName implements ResourceName {
     }
     if (o instanceof KnowledgeBaseName) {
       KnowledgeBaseName that = (KnowledgeBaseName) o;
-      return (this.project.equals(that.project))
-          && (this.knowledgeBase.equals(that.knowledgeBase));
+      return (this.project.equals(that.project)) && (this.knowledgeBase.equals(that.knowledgeBase));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class KnowledgeBaseName implements ResourceName {
     return h;
   }
 }
-

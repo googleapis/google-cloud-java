@@ -4,30 +4,33 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A list of queries to run on a cluster.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.QueryList}
  */
-public  final class QueryList extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class QueryList extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.QueryList)
     QueryListOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use QueryList.newBuilder() to construct.
   private QueryList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private QueryList() {
     queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private QueryList(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,29 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              queries_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                queries_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              queries_.add(s);
+              break;
             }
-            queries_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         queries_ = queries_.getUnmodifiableView();
@@ -78,22 +81,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_QueryList_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_QueryList_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_QueryList_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_QueryList_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.QueryList.class, com.google.cloud.dataproc.v1beta2.QueryList.Builder.class);
+            com.google.cloud.dataproc.v1beta2.QueryList.class,
+            com.google.cloud.dataproc.v1beta2.QueryList.Builder.class);
   }
 
   public static final int QUERIES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList queries_;
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -112,11 +120,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string queries = 1;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getQueriesList() {
+  public com.google.protobuf.ProtocolStringList getQueriesList() {
     return queries_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -139,6 +148,8 @@ private static final long serialVersionUID = 0L;
     return queries_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -161,6 +172,8 @@ private static final long serialVersionUID = 0L;
     return queries_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -179,12 +192,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string queries = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getQueriesBytes(int index) {
+  public com.google.protobuf.ByteString getQueriesBytes(int index) {
     return queries_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -196,8 +209,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < queries_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queries_.getRaw(i));
     }
@@ -226,16 +238,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.QueryList)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.QueryList other = (com.google.cloud.dataproc.v1beta2.QueryList) obj;
+    com.google.cloud.dataproc.v1beta2.QueryList other =
+        (com.google.cloud.dataproc.v1beta2.QueryList) obj;
 
     boolean result = true;
-    result = result && getQueriesList()
-        .equals(other.getQueriesList());
+    result = result && getQueriesList().equals(other.getQueriesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -256,118 +268,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.QueryList parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.QueryList parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.QueryList parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.QueryList prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A list of queries to run on a cluster.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.QueryList}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.QueryList)
       com.google.cloud.dataproc.v1beta2.QueryListOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_QueryList_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_QueryList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_QueryList_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_QueryList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.QueryList.class, com.google.cloud.dataproc.v1beta2.QueryList.Builder.class);
+              com.google.cloud.dataproc.v1beta2.QueryList.class,
+              com.google.cloud.dataproc.v1beta2.QueryList.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.QueryList.newBuilder()
@@ -375,16 +396,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -394,9 +414,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_QueryList_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_QueryList_descriptor;
     }
 
     @java.lang.Override
@@ -415,7 +435,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.QueryList buildPartial() {
-      com.google.cloud.dataproc.v1beta2.QueryList result = new com.google.cloud.dataproc.v1beta2.QueryList(this);
+      com.google.cloud.dataproc.v1beta2.QueryList result =
+          new com.google.cloud.dataproc.v1beta2.QueryList(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         queries_ = queries_.getUnmodifiableView();
@@ -430,38 +451,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.QueryList) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.QueryList)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.QueryList) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -508,16 +530,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList queries_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureQueriesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         queries_ = new com.google.protobuf.LazyStringArrayList(queries_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -536,11 +563,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string queries = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getQueriesList() {
+    public com.google.protobuf.ProtocolStringList getQueriesList() {
       return queries_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -563,6 +591,8 @@ private static final long serialVersionUID = 0L;
       return queries_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -585,6 +615,8 @@ private static final long serialVersionUID = 0L;
       return queries_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -603,11 +635,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string queries = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getQueriesBytes(int index) {
+    public com.google.protobuf.ByteString getQueriesBytes(int index) {
       return queries_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -626,17 +659,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string queries = 1;</code>
      */
-    public Builder setQueries(
-        int index, java.lang.String value) {
+    public Builder setQueries(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureQueriesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureQueriesIsMutable();
       queries_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -655,17 +689,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string queries = 1;</code>
      */
-    public Builder addQueries(
-        java.lang.String value) {
+    public Builder addQueries(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureQueriesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureQueriesIsMutable();
       queries_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -684,15 +719,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string queries = 1;</code>
      */
-    public Builder addAllQueries(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllQueries(java.lang.Iterable<java.lang.String> values) {
       ensureQueriesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, queries_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queries_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -718,6 +753,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The queries to execute. You do not need to terminate a query
      * with a semicolon. Multiple queries can be specified in one string
@@ -736,20 +773,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string queries = 1;</code>
      */
-    public Builder addQueriesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addQueriesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureQueriesIsMutable();
       queries_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -759,12 +795,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.QueryList)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.QueryList)
   private static final com.google.cloud.dataproc.v1beta2.QueryList DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.QueryList();
   }
@@ -773,16 +809,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<QueryList>
-      PARSER = new com.google.protobuf.AbstractParser<QueryList>() {
-    @java.lang.Override
-    public QueryList parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new QueryList(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<QueryList> PARSER =
+      new com.google.protobuf.AbstractParser<QueryList>() {
+        @java.lang.Override
+        public QueryList parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new QueryList(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<QueryList> parser() {
     return PARSER;
@@ -797,6 +833,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.QueryList getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

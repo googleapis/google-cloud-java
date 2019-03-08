@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * gRPC stub implementation for Google Container Engine API.
+ * gRPC stub implementation for Kubernetes Engine API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

@@ -4,21 +4,24 @@
 package com.google.cloud.websecurityscanner.v1alpha;
 
 /**
+ *
+ *
  * <pre>
  * Request for the `ListScanConfigs` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest}
  */
-public  final class ListScanConfigsRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListScanConfigsRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest)
     ListScanConfigsRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListScanConfigsRequest.newBuilder() to construct.
   private ListScanConfigsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListScanConfigsRequest() {
     parent_ = "";
     pageToken_ = "";
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListScanConfigsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,58 +52,64 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            pageToken_ = s;
-            break;
-          }
-          case 24: {
-
-            pageSize_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              parent_ = s;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pageToken_ = s;
+              break;
+            }
+          case 24:
+            {
+              pageSize_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_fieldAccessorTable
+    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.class, com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.Builder.class);
+            com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.class,
+            com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a project resource name in the
@@ -114,14 +123,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a project resource name in the
@@ -130,13 +140,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -147,6 +155,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object pageToken_;
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This should be a
    * `next_page_token` value returned from a previous List request.
@@ -160,14 +170,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This should be a
    * `next_page_token` value returned from a previous List request.
@@ -176,13 +187,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
+  public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
       return b;
     } else {
@@ -193,6 +202,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_;
   /**
+   *
+   *
    * <pre>
    * The maximum number of ScanConfigs to return, can be limited by server.
    * If not specified or not positive, the implementation will select a
@@ -206,6 +217,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -217,8 +229,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -244,8 +255,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageToken_);
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -255,20 +265,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest other = (com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest) obj;
+    com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest other =
+        (com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getPageToken()
-        .equals(other.getPageToken());
-    result = result && (getPageSize()
-        == other.getPageSize());
+    result = result && getParent().equals(other.getParent());
+    result = result && getPageToken().equals(other.getPageToken());
+    result = result && (getPageSize() == other.getPageSize());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -292,134 +300,145 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request for the `ListScanConfigs` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest)
       com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.class, com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.class,
+              com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -433,14 +452,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ListScanConfigsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest getDefaultInstanceForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.getDefaultInstance();
+    public com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
@@ -454,7 +475,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest buildPartial() {
-      com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest result = new com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest(this);
+      com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest result =
+          new com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest(this);
       result.parent_ = parent_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
@@ -466,46 +488,51 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest) {
-        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest)other);
+        return mergeFrom(
+            (com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest other) {
-      if (other == com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest other) {
+      if (other
+          == com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+              .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -536,7 +563,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -548,6 +577,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required.
      * The parent resource name, which should be a project resource name in the
@@ -559,8 +590,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -569,6 +599,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The parent resource name, which should be a project resource name in the
@@ -577,13 +609,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -591,6 +621,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The parent resource name, which should be a project resource name in the
@@ -599,17 +631,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The parent resource name, which should be a project resource name in the
@@ -619,12 +652,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The parent resource name, which should be a project resource name in the
@@ -633,13 +668,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -647,6 +681,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * A token identifying a page of results to be returned. This should be a
      * `next_page_token` value returned from a previous List request.
@@ -658,8 +694,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageToken_ = s;
         return s;
@@ -668,6 +703,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A token identifying a page of results to be returned. This should be a
      * `next_page_token` value returned from a previous List request.
@@ -676,13 +713,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
+    public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageToken_ = b;
         return b;
       } else {
@@ -690,6 +725,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A token identifying a page of results to be returned. This should be a
      * `next_page_token` value returned from a previous List request.
@@ -698,17 +735,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 2;</code>
      */
-    public Builder setPageToken(
-        java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A token identifying a page of results to be returned. This should be a
      * `next_page_token` value returned from a previous List request.
@@ -718,12 +756,14 @@ private static final long serialVersionUID = 0L;
      * <code>string page_token = 2;</code>
      */
     public Builder clearPageToken() {
-      
+
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A token identifying a page of results to be returned. This should be a
      * `next_page_token` value returned from a previous List request.
@@ -732,20 +772,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 2;</code>
      */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pageToken_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_ ;
+    private int pageSize_;
     /**
+     *
+     *
      * <pre>
      * The maximum number of ScanConfigs to return, can be limited by server.
      * If not specified or not positive, the implementation will select a
@@ -758,6 +799,8 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of ScanConfigs to return, can be limited by server.
      * If not specified or not positive, the implementation will select a
@@ -767,12 +810,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 3;</code>
      */
     public Builder setPageSize(int value) {
-      
+
       pageSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of ScanConfigs to return, can be limited by server.
      * If not specified or not positive, the implementation will select a
@@ -782,14 +827,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 3;</code>
      */
     public Builder clearPageSize() {
-      
+
       pageSize_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -799,30 +844,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest)
-  private static final com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest();
   }
 
-  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest getDefaultInstance() {
+  public static com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListScanConfigsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListScanConfigsRequest>() {
-    @java.lang.Override
-    public ListScanConfigsRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListScanConfigsRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListScanConfigsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListScanConfigsRequest>() {
+        @java.lang.Override
+        public ListScanConfigsRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListScanConfigsRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListScanConfigsRequest> parser() {
     return PARSER;
@@ -834,9 +881,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest getDefaultInstanceForType() {
+  public com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

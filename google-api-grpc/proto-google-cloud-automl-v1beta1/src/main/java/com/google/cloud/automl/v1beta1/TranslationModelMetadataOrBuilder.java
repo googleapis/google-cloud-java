@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface TranslationModelMetadataOrBuilder extends
+public interface TranslationModelMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.TranslationModelMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the model to use as a baseline to train the custom
    * model. If unset, we use the default base model provided by Google
@@ -19,6 +22,8 @@ public interface TranslationModelMetadataOrBuilder extends
    */
   java.lang.String getBaseModel();
   /**
+   *
+   *
    * <pre>
    * The resource name of the model to use as a baseline to train the custom
    * model. If unset, we use the default base model provided by Google
@@ -28,10 +33,11 @@ public interface TranslationModelMetadataOrBuilder extends
    *
    * <code>string base_model = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getBaseModelBytes();
+  com.google.protobuf.ByteString getBaseModelBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Inferred from the dataset.
    * The source languge (The BCP-47 language code) that is used for training.
@@ -41,6 +47,8 @@ public interface TranslationModelMetadataOrBuilder extends
    */
   java.lang.String getSourceLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Output only. Inferred from the dataset.
    * The source languge (The BCP-47 language code) that is used for training.
@@ -48,10 +56,11 @@ public interface TranslationModelMetadataOrBuilder extends
    *
    * <code>string source_language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getSourceLanguageCodeBytes();
+  com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The target languge (The BCP-47 language code) that is used for
    * training.
@@ -61,6 +70,8 @@ public interface TranslationModelMetadataOrBuilder extends
    */
   java.lang.String getTargetLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Output only. The target languge (The BCP-47 language code) that is used for
    * training.
@@ -68,6 +79,5 @@ public interface TranslationModelMetadataOrBuilder extends
    *
    * <code>string target_language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getTargetLanguageCodeBytes();
+  com.google.protobuf.ByteString getTargetLanguageCodeBytes();
 }

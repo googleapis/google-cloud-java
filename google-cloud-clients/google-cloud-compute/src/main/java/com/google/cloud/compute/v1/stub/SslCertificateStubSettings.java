@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,7 +248,9 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
 
             @Override
             public Iterable<SslCertificate> extractResources(SslCertificateList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<SslCertificate>of();
             }
           };
 
@@ -256,7 +258,8 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
           ListSslCertificatesHttpRequest, SslCertificateList, ListSslCertificatesPagedResponse>
       LIST_SSL_CERTIFICATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSslCertificatesHttpRequest, SslCertificateList,
+              ListSslCertificatesHttpRequest,
+              SslCertificateList,
               ListSslCertificatesPagedResponse>() {
             @Override
             public ApiFuture<ListSslCertificatesPagedResponse> getFuturePagedResponse(

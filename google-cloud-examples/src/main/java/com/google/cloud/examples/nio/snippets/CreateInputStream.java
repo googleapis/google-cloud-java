@@ -23,9 +23,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/**
- * A snippet showing how to create an input stream for a Google Cloud Storage file using NIO.
- */
+/** A snippet showing how to create an input stream for a Google Cloud Storage file using NIO. */
 public class CreateInputStream {
 
   public static void main(String... args) throws IOException {

@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface CreateFindingRequestOrBuilder extends
+public interface CreateFindingRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.CreateFindingRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the new finding's parent. Its format should be
    * "organizations/[organization_id]/sources/[source_id]".
@@ -17,6 +20,8 @@ public interface CreateFindingRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Resource name of the new finding's parent. Its format should be
    * "organizations/[organization_id]/sources/[source_id]".
@@ -24,10 +29,11 @@ public interface CreateFindingRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Unique identifier provided by the client within the parent scope.
    * It must be alphanumeric and less than or equal to 32 characters and
@@ -38,6 +44,8 @@ public interface CreateFindingRequestOrBuilder extends
    */
   java.lang.String getFindingId();
   /**
+   *
+   *
    * <pre>
    * Unique identifier provided by the client within the parent scope.
    * It must be alphanumeric and less than or equal to 32 characters and
@@ -46,10 +54,11 @@ public interface CreateFindingRequestOrBuilder extends
    *
    * <code>string finding_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFindingIdBytes();
+  com.google.protobuf.ByteString getFindingIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
@@ -59,6 +68,8 @@ public interface CreateFindingRequestOrBuilder extends
    */
   boolean hasFinding();
   /**
+   *
+   *
    * <pre>
    * The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.
@@ -68,6 +79,8 @@ public interface CreateFindingRequestOrBuilder extends
    */
   com.google.cloud.securitycenter.v1beta1.Finding getFinding();
   /**
+   *
+   *
    * <pre>
    * The Finding being created. The name and security_marks will be ignored as
    * they are both output only fields on this resource.

@@ -20,8 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
-
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
@@ -44,18 +44,20 @@ public class StandardTableDefinitionTest {
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Long NUM_BYTES = 42L;
+  private static final Long NUM_LONG_TERM_BYTES = 18L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
   private static final TimePartitioning TIME_PARTITIONING =
       TimePartitioning.of(TimePartitioning.Type.DAY, 42);
   private static final Clustering CLUSTERING =
-      Clustering.newBuilder().setFields(ImmutableList.of("Foo","Bar")).build();
+      Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.newBuilder()
           .setLocation(LOCATION)
           .setNumBytes(NUM_BYTES)
           .setNumRows(NUM_ROWS)
+          .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
           .setStreamingBuffer(STREAMING_BUFFER)
           .setSchema(TABLE_SCHEMA)
           .setTimePartitioning(TIME_PARTITIONING)
@@ -68,9 +70,7 @@ public class StandardTableDefinitionTest {
     StandardTableDefinition tableDefinition =
         TABLE_DEFINITION.toBuilder().setLocation("EU").build();
     assertEquals("EU", tableDefinition.getLocation());
-    tableDefinition = tableDefinition.toBuilder()
-        .setLocation(LOCATION)
-        .build();
+    tableDefinition = tableDefinition.toBuilder().setLocation(LOCATION).build();
     compareStandardTableDefinition(TABLE_DEFINITION, tableDefinition);
   }
 
@@ -86,12 +86,12 @@ public class StandardTableDefinitionTest {
     assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.getSchema());
     assertEquals(LOCATION, TABLE_DEFINITION.getLocation());
     assertEquals(NUM_BYTES, TABLE_DEFINITION.getNumBytes());
+    assertEquals(NUM_LONG_TERM_BYTES, TABLE_DEFINITION.getNumLongTermBytes());
     assertEquals(NUM_ROWS, TABLE_DEFINITION.getNumRows());
     assertEquals(STREAMING_BUFFER, TABLE_DEFINITION.getStreamingBuffer());
     assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.getTimePartitioning());
     assertEquals(CLUSTERING, TABLE_DEFINITION.getClustering());
   }
-
 
   @Test
   public void testOf() {
@@ -100,6 +100,7 @@ public class StandardTableDefinitionTest {
     assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.getSchema());
     assertNull(definition.getLocation());
     assertNull(definition.getNumBytes());
+    assertNull(definition.getNumLongTermBytes());
     assertNull(definition.getNumRows());
     assertNull(definition.getStreamingBuffer());
     assertNull(definition.getTimePartitioning());
@@ -109,20 +110,32 @@ public class StandardTableDefinitionTest {
   @Test
   public void testToAndFromPb() {
     assertTrue(TableDefinition.fromPb(TABLE_DEFINITION.toPb()) instanceof StandardTableDefinition);
-    compareStandardTableDefinition(TABLE_DEFINITION,
-        TableDefinition.<StandardTableDefinition>fromPb(TABLE_DEFINITION.toPb()));
+    compareStandardTableDefinition(
+        TABLE_DEFINITION, TableDefinition.<StandardTableDefinition>fromPb(TABLE_DEFINITION.toPb()));
     StandardTableDefinition definition = StandardTableDefinition.of(TABLE_SCHEMA);
     assertTrue(TableDefinition.fromPb(definition.toPb()) instanceof StandardTableDefinition);
-    compareStandardTableDefinition(definition,
-        TableDefinition.<StandardTableDefinition>fromPb(definition.toPb()));
+    compareStandardTableDefinition(
+        definition, TableDefinition.<StandardTableDefinition>fromPb(definition.toPb()));
   }
 
-  private void compareStandardTableDefinition(StandardTableDefinition expected,
-      StandardTableDefinition value) {
+  @Test
+  public void testFromPbWithNullEstimatedRowsAndBytes() {
+    StandardTableDefinition.fromPb(
+        TABLE_DEFINITION.toPb().setStreamingBuffer(new Streamingbuffer()));
+  }
+
+  @Test
+  public void testStreamingBufferWithNullFieldsToPb() {
+    new StreamingBuffer(null, null, null).toPb();
+  }
+
+  private void compareStandardTableDefinition(
+      StandardTableDefinition expected, StandardTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getNumBytes(), value.getNumBytes());
+    assertEquals(expected.getNumLongTermBytes(), value.getNumLongTermBytes());
     assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getLocation(), value.getLocation());
     assertEquals(expected.getStreamingBuffer(), value.getStreamingBuffer());

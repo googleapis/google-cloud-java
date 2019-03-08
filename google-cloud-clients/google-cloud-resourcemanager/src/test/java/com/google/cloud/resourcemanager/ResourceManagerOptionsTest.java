@@ -24,14 +24,12 @@ import org.junit.rules.ExpectedException;
 
 public class ResourceManagerOptionsTest {
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
-    ResourceManagerOptions.newBuilder().setTransportOptions(
-        EasyMock.createMock(TransportOptions.class));
+    ResourceManagerOptions.newBuilder()
+        .setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
-
 }

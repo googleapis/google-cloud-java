@@ -24,7 +24,6 @@ package com.google.cloud.examples.spanner.snippets;
 
 import com.google.cloud.spanner.BatchClient;
 import com.google.cloud.spanner.BatchReadOnlyTransaction;
-import com.google.cloud.spanner.BatchTransactionId;
 import com.google.cloud.spanner.KeySet;
 import com.google.cloud.spanner.Partition;
 import com.google.cloud.spanner.PartitionOptions;
@@ -34,9 +33,7 @@ import com.google.cloud.spanner.TimestampBound;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * This class contains snippets for {@link com.google.cloud.spanner.BatchClient} interface.
- */
+/** This class contains snippets for {@link com.google.cloud.spanner.BatchClient} interface. */
 public class BatchClientSnippets {
 
   private final BatchClient batchClient;
@@ -45,9 +42,7 @@ public class BatchClientSnippets {
     this.batchClient = batchClient;
   }
 
-  /**
-   * Example to do a batch strong read.
-   */
+  /** Example to do a batch strong read. */
   BatchReadOnlyTransaction readStrong() {
     // [START batch_client_strong_read]
     BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(TimestampBound.strong());
@@ -59,8 +54,10 @@ public class BatchClientSnippets {
     // [START partition_query]
     final BatchReadOnlyTransaction txn =
         batchClient.batchReadOnlyTransaction(TimestampBound.strong());
-    List<Partition> partitions = txn.partitionQuery(PartitionOptions.getDefaultInstance(),
-        Statement.of("SELECT SingerId, FirstName, LastName FROM Singers"));
+    List<Partition> partitions =
+        txn.partitionQuery(
+            PartitionOptions.getDefaultInstance(),
+            Statement.of("SELECT SingerId, FirstName, LastName FROM Singers"));
 
     for (final Partition p : partitions) {
       try (ResultSet results = txn.execute(p)) {
@@ -124,4 +121,3 @@ public class BatchClientSnippets {
     // [END partition_read_using_index]
   }
 }
-

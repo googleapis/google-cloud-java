@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface GetGroupRequestOrBuilder extends
+public interface GetGroupRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.GetGroupRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The group to retrieve. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -17,6 +20,8 @@ public interface GetGroupRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The group to retrieve. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -24,6 +29,5 @@ public interface GetGroupRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

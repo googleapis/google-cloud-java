@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -81,13 +82,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -461,7 +462,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setCreateStatement(createStatement)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = databaseAdminClient.createDatabaseOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Database, CreateDatabaseMetadata&gt; future = databaseAdminClient.createDatabaseOperationCallable().futureCall(request);
    *   // Do something
    *   Database response = future.get();
    * }
@@ -611,7 +612,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; statements = new ArrayList&lt;&gt;();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(database, statements).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(database, statements).get();
    * }
    * </code></pre>
    *
@@ -648,7 +649,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; statements = new ArrayList&lt;&gt;();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(database.toString(), statements).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(database.toString(), statements).get();
    * }
    * </code></pre>
    *
@@ -689,7 +690,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setDatabase(database.toString())
    *     .addAllStatements(statements)
    *     .build();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(request).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(request).get();
    * }
    * </code></pre>
    *
@@ -723,9 +724,9 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setDatabase(database.toString())
    *     .addAllStatements(statements)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = databaseAdminClient.updateDatabaseDdlOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, UpdateDatabaseDdlMetadata&gt; future = databaseAdminClient.updateDatabaseDdlOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1254,7 +1255,10 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListDatabasesPagedResponse
       extends AbstractPagedListResponse<
-          ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage,
+          ListDatabasesRequest,
+          ListDatabasesResponse,
+          Database,
+          ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
     public static ApiFuture<ListDatabasesPagedResponse> createAsync(
@@ -1269,7 +1273,8 @@ public class DatabaseAdminClient implements BackgroundResource {
             public ListDatabasesPagedResponse apply(ListDatabasesPage input) {
               return new ListDatabasesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDatabasesPagedResponse(ListDatabasesPage page) {
@@ -1308,7 +1313,10 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListDatabasesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage,
+          ListDatabasesRequest,
+          ListDatabasesResponse,
+          Database,
+          ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
     private ListDatabasesFixedSizeCollection(List<ListDatabasesPage> pages, int collectionSize) {

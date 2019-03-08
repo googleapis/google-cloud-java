@@ -4,33 +4,37 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * SetNodePoolAutoscalingRequest sets the autoscaler settings of a node pool.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.SetNodePoolAutoscalingRequest}
  */
-public  final class SetNodePoolAutoscalingRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.SetNodePoolAutoscalingRequest)
     SetNodePoolAutoscalingRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SetNodePoolAutoscalingRequest.newBuilder() to construct.
   private SetNodePoolAutoscalingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SetNodePoolAutoscalingRequest() {
     projectId_ = "";
     zone_ = "";
     clusterId_ = "";
     nodePoolId_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SetNodePoolAutoscalingRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,112 +54,133 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            zone_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clusterId_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            nodePoolId_ = s;
-            break;
-          }
-          case 42: {
-            com.google.container.v1.NodePoolAutoscaling.Builder subBuilder = null;
-            if (autoscaling_ != null) {
-              subBuilder = autoscaling_.toBuilder();
+              projectId_ = s;
+              break;
             }
-            autoscaling_ = input.readMessage(com.google.container.v1.NodePoolAutoscaling.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(autoscaling_);
-              autoscaling_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              zone_ = s;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterId_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodePoolId_ = s;
+              break;
+            }
+          case 42:
+            {
+              com.google.container.v1.NodePoolAutoscaling.Builder subBuilder = null;
+              if (autoscaling_ != null) {
+                subBuilder = autoscaling_.toBuilder();
+              }
+              autoscaling_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePoolAutoscaling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(autoscaling_);
+                autoscaling_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetNodePoolAutoscalingRequest_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_SetNodePoolAutoscalingRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.SetNodePoolAutoscalingRequest.class, com.google.container.v1.SetNodePoolAutoscalingRequest.Builder.class);
+            com.google.container.v1.SetNodePoolAutoscalingRequest.class,
+            com.google.container.v1.SetNodePoolAutoscalingRequest.Builder.class);
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -166,42 +191,47 @@ private static final long serialVersionUID = 0L;
   public static final int ZONE_FIELD_NUMBER = 2;
   private volatile java.lang.Object zone_;
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       zone_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getZoneBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       zone_ = b;
       return b;
     } else {
@@ -212,38 +242,43 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object clusterId_;
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getClusterId() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to upgrade.
+   * Deprecated. The name of the cluster to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterIdBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getClusterIdBytes() {
     java.lang.Object ref = clusterId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterId_ = b;
       return b;
     } else {
@@ -254,38 +289,43 @@ private static final long serialVersionUID = 0L;
   public static final int NODE_POOL_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object nodePoolId_;
   /**
+   *
+   *
    * <pre>
-   * The name of the node pool to upgrade.
+   * Deprecated. The name of the node pool to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4;</code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getNodePoolId() {
     java.lang.Object ref = nodePoolId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nodePoolId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The name of the node pool to upgrade.
+   * Deprecated. The name of the node pool to upgrade.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string node_pool_id = 4;</code>
+   * <code>string node_pool_id = 4 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getNodePoolIdBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getNodePoolIdBytes() {
     java.lang.Object ref = nodePoolId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nodePoolId_ = b;
       return b;
     } else {
@@ -296,6 +336,8 @@ private static final long serialVersionUID = 0L;
   public static final int AUTOSCALING_FIELD_NUMBER = 5;
   private com.google.container.v1.NodePoolAutoscaling autoscaling_;
   /**
+   *
+   *
    * <pre>
    * Autoscaling configuration for the node pool.
    * </pre>
@@ -306,6 +348,8 @@ private static final long serialVersionUID = 0L;
     return autoscaling_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Autoscaling configuration for the node pool.
    * </pre>
@@ -313,9 +357,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
    */
   public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
-    return autoscaling_ == null ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : autoscaling_;
+    return autoscaling_ == null
+        ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+        : autoscaling_;
   }
   /**
+   *
+   *
    * <pre>
    * Autoscaling configuration for the node pool.
    * </pre>
@@ -326,7 +374,55 @@ private static final long serialVersionUID = 0L;
     return getAutoscaling();
   }
 
+  public static final int NAME_FIELD_NUMBER = 6;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster, node pool) of the node pool to set
+   * autoscaler settings. Specified in the format
+   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster, node pool) of the node pool to set
+   * autoscaler settings. Specified in the format
+   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -338,8 +434,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
@@ -354,6 +449,9 @@ private static final long serialVersionUID = 0L;
     }
     if (autoscaling_ != null) {
       output.writeMessage(5, getAutoscaling());
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -377,8 +475,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nodePoolId_);
     }
     if (autoscaling_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getAutoscaling());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAutoscaling());
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -388,27 +488,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.SetNodePoolAutoscalingRequest)) {
       return super.equals(obj);
     }
-    com.google.container.v1.SetNodePoolAutoscalingRequest other = (com.google.container.v1.SetNodePoolAutoscalingRequest) obj;
+    com.google.container.v1.SetNodePoolAutoscalingRequest other =
+        (com.google.container.v1.SetNodePoolAutoscalingRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
-    result = result && getZone()
-        .equals(other.getZone());
-    result = result && getClusterId()
-        .equals(other.getClusterId());
-    result = result && getNodePoolId()
-        .equals(other.getNodePoolId());
+    result = result && getProjectId().equals(other.getProjectId());
+    result = result && getZone().equals(other.getZone());
+    result = result && getClusterId().equals(other.getClusterId());
+    result = result && getNodePoolId().equals(other.getNodePoolId());
     result = result && (hasAutoscaling() == other.hasAutoscaling());
     if (hasAutoscaling()) {
-      result = result && getAutoscaling()
-          .equals(other.getAutoscaling());
+      result = result && getAutoscaling().equals(other.getAutoscaling());
     }
+    result = result && getName().equals(other.getName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -432,123 +529,135 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + AUTOSCALING_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscaling().hashCode();
     }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.container.v1.SetNodePoolAutoscalingRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.SetNodePoolAutoscalingRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.SetNodePoolAutoscalingRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.container.v1.SetNodePoolAutoscalingRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.container.v1.SetNodePoolAutoscalingRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * SetNodePoolAutoscalingRequest sets the autoscaler settings of a node pool.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.SetNodePoolAutoscalingRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.SetNodePoolAutoscalingRequest)
       com.google.container.v1.SetNodePoolAutoscalingRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetNodePoolAutoscalingRequest_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetNodePoolAutoscalingRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.SetNodePoolAutoscalingRequest.class, com.google.container.v1.SetNodePoolAutoscalingRequest.Builder.class);
+              com.google.container.v1.SetNodePoolAutoscalingRequest.class,
+              com.google.container.v1.SetNodePoolAutoscalingRequest.Builder.class);
     }
 
     // Construct using com.google.container.v1.SetNodePoolAutoscalingRequest.newBuilder()
@@ -556,16 +665,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -583,13 +691,15 @@ private static final long serialVersionUID = 0L;
         autoscaling_ = null;
         autoscalingBuilder_ = null;
       }
+      name_ = "";
+
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_SetNodePoolAutoscalingRequest_descriptor;
     }
 
     @java.lang.Override
@@ -608,7 +718,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.SetNodePoolAutoscalingRequest buildPartial() {
-      com.google.container.v1.SetNodePoolAutoscalingRequest result = new com.google.container.v1.SetNodePoolAutoscalingRequest(this);
+      com.google.container.v1.SetNodePoolAutoscalingRequest result =
+          new com.google.container.v1.SetNodePoolAutoscalingRequest(this);
       result.projectId_ = projectId_;
       result.zone_ = zone_;
       result.clusterId_ = clusterId_;
@@ -618,6 +729,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.autoscaling_ = autoscalingBuilder_.build();
       }
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -626,38 +738,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.SetNodePoolAutoscalingRequest) {
-        return mergeFrom((com.google.container.v1.SetNodePoolAutoscalingRequest)other);
+        return mergeFrom((com.google.container.v1.SetNodePoolAutoscalingRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -665,7 +778,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.container.v1.SetNodePoolAutoscalingRequest other) {
-      if (other == com.google.container.v1.SetNodePoolAutoscalingRequest.getDefaultInstance()) return this;
+      if (other == com.google.container.v1.SetNodePoolAutoscalingRequest.getDefaultInstance())
+        return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -684,6 +798,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAutoscaling()) {
         mergeAutoscaling(other.getAutoscaling());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -704,7 +822,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1.SetNodePoolAutoscalingRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.container.v1.SetNodePoolAutoscalingRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -716,18 +835,21 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -736,20 +858,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -757,52 +881,62 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -810,19 +944,22 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object zone_ = "";
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         zone_ = s;
         return s;
@@ -831,21 +968,23 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getZoneBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         zone_ = b;
         return b;
       } else {
@@ -853,55 +992,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZone(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setZone(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       zone_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearZone() {
-      
+
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       zone_ = value;
       onChanged();
       return this;
@@ -909,17 +1058,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterId_ = "";
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getClusterId() {
       java.lang.Object ref = clusterId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterId_ = s;
         return s;
@@ -928,19 +1080,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterIdBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getClusterIdBytes() {
       java.lang.Object ref = clusterId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterId_ = b;
         return b;
       } else {
@@ -948,49 +1102,59 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public Builder setClusterId(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setClusterId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearClusterId() {
-      
+
       clusterId_ = getDefaultInstance().getClusterId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the cluster to upgrade.
+     * Deprecated. The name of the cluster to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string cluster_id = 3;</code>
+     * <code>string cluster_id = 3 [deprecated = true];</code>
      */
-    public Builder setClusterIdBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setClusterIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterId_ = value;
       onChanged();
       return this;
@@ -998,17 +1162,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nodePoolId_ = "";
     /**
+     *
+     *
      * <pre>
-     * The name of the node pool to upgrade.
+     * Deprecated. The name of the node pool to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4;</code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getNodePoolId() {
       java.lang.Object ref = nodePoolId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nodePoolId_ = s;
         return s;
@@ -1017,19 +1184,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the node pool to upgrade.
+     * Deprecated. The name of the node pool to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4;</code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getNodePoolIdBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getNodePoolIdBytes() {
       java.lang.Object ref = nodePoolId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nodePoolId_ = b;
         return b;
       } else {
@@ -1037,49 +1206,59 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the node pool to upgrade.
+     * Deprecated. The name of the node pool to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4;</code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      */
-    public Builder setNodePoolId(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setNodePoolId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nodePoolId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the node pool to upgrade.
+     * Deprecated. The name of the node pool to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4;</code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearNodePoolId() {
-      
+
       nodePoolId_ = getDefaultInstance().getNodePoolId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The name of the node pool to upgrade.
+     * Deprecated. The name of the node pool to upgrade.
+     * This field has been deprecated and replaced by the name field.
      * </pre>
      *
-     * <code>string node_pool_id = 4;</code>
+     * <code>string node_pool_id = 4 [deprecated = true];</code>
      */
-    public Builder setNodePoolIdBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setNodePoolIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nodePoolId_ = value;
       onChanged();
       return this;
@@ -1087,8 +1266,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NodePoolAutoscaling autoscaling_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder> autoscalingBuilder_;
+            com.google.container.v1.NodePoolAutoscaling,
+            com.google.container.v1.NodePoolAutoscaling.Builder,
+            com.google.container.v1.NodePoolAutoscalingOrBuilder>
+        autoscalingBuilder_;
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1099,6 +1283,8 @@ private static final long serialVersionUID = 0L;
       return autoscalingBuilder_ != null || autoscaling_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1107,12 +1293,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
       if (autoscalingBuilder_ == null) {
-        return autoscaling_ == null ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : autoscaling_;
+        return autoscaling_ == null
+            ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+            : autoscaling_;
       } else {
         return autoscalingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1133,6 +1323,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1151,6 +1343,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1161,7 +1355,9 @@ private static final long serialVersionUID = 0L;
       if (autoscalingBuilder_ == null) {
         if (autoscaling_ != null) {
           autoscaling_ =
-            com.google.container.v1.NodePoolAutoscaling.newBuilder(autoscaling_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NodePoolAutoscaling.newBuilder(autoscaling_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           autoscaling_ = value;
         }
@@ -1173,6 +1369,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1191,6 +1389,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1198,11 +1398,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
      */
     public com.google.container.v1.NodePoolAutoscaling.Builder getAutoscalingBuilder() {
-      
+
       onChanged();
       return getAutoscalingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1213,11 +1415,14 @@ private static final long serialVersionUID = 0L;
       if (autoscalingBuilder_ != null) {
         return autoscalingBuilder_.getMessageOrBuilder();
       } else {
-        return autoscaling_ == null ?
-            com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : autoscaling_;
+        return autoscaling_ == null
+            ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+            : autoscaling_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaling configuration for the node pool.
      * </pre>
@@ -1225,21 +1430,128 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder> 
+            com.google.container.v1.NodePoolAutoscaling,
+            com.google.container.v1.NodePoolAutoscaling.Builder,
+            com.google.container.v1.NodePoolAutoscalingOrBuilder>
         getAutoscalingFieldBuilder() {
       if (autoscalingBuilder_ == null) {
-        autoscalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder>(
-                getAutoscaling(),
-                getParentForChildren(),
-                isClean());
+        autoscalingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePoolAutoscaling,
+                com.google.container.v1.NodePoolAutoscaling.Builder,
+                com.google.container.v1.NodePoolAutoscalingOrBuilder>(
+                getAutoscaling(), getParentForChildren(), isClean());
         autoscaling_ = null;
       }
       return autoscalingBuilder_;
     }
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster, node pool) of the node pool to set
+     * autoscaler settings. Specified in the format
+     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster, node pool) of the node pool to set
+     * autoscaler settings. Specified in the format
+     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster, node pool) of the node pool to set
+     * autoscaler settings. Specified in the format
+     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster, node pool) of the node pool to set
+     * autoscaler settings. Specified in the format
+     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name (project, location, cluster, node pool) of the node pool to set
+     * autoscaler settings. Specified in the format
+     * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+     * </pre>
+     *
+     * <code>string name = 6;</code>
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1249,12 +1561,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.SetNodePoolAutoscalingRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.SetNodePoolAutoscalingRequest)
   private static final com.google.container.v1.SetNodePoolAutoscalingRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.SetNodePoolAutoscalingRequest();
   }
@@ -1263,16 +1575,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SetNodePoolAutoscalingRequest>
-      PARSER = new com.google.protobuf.AbstractParser<SetNodePoolAutoscalingRequest>() {
-    @java.lang.Override
-    public SetNodePoolAutoscalingRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SetNodePoolAutoscalingRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SetNodePoolAutoscalingRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SetNodePoolAutoscalingRequest>() {
+        @java.lang.Override
+        public SetNodePoolAutoscalingRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SetNodePoolAutoscalingRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SetNodePoolAutoscalingRequest> parser() {
     return PARSER;
@@ -1287,6 +1599,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.SetNodePoolAutoscalingRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

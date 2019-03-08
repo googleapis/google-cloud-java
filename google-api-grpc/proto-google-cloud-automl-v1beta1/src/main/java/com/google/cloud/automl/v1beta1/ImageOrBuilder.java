@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ImageOrBuilder extends
+public interface ImageOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.Image)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Image content represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
@@ -19,6 +22,8 @@ public interface ImageOrBuilder extends
   com.google.protobuf.ByteString getImageBytes();
 
   /**
+   *
+   *
    * <pre>
    * An input config specifying the content of the image.
    * </pre>
@@ -27,6 +32,8 @@ public interface ImageOrBuilder extends
    */
   boolean hasInputConfig();
   /**
+   *
+   *
    * <pre>
    * An input config specifying the content of the image.
    * </pre>
@@ -35,6 +42,8 @@ public interface ImageOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.InputConfig getInputConfig();
   /**
+   *
+   *
    * <pre>
    * An input config specifying the content of the image.
    * </pre>
@@ -44,6 +53,8 @@ public interface ImageOrBuilder extends
   com.google.cloud.automl.v1beta1.InputConfigOrBuilder getInputConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. HTTP URI to the thumbnail image.
    * </pre>
@@ -52,14 +63,15 @@ public interface ImageOrBuilder extends
    */
   java.lang.String getThumbnailUri();
   /**
+   *
+   *
    * <pre>
    * Output only. HTTP URI to the thumbnail image.
    * </pre>
    *
    * <code>string thumbnail_uri = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getThumbnailUriBytes();
+  com.google.protobuf.ByteString getThumbnailUriBytes();
 
   public com.google.cloud.automl.v1beta1.Image.DataCase getDataCase();
 }

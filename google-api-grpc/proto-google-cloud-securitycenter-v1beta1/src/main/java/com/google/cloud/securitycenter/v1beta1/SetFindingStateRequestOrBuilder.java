@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface SetFindingStateRequestOrBuilder extends
+public interface SetFindingStateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.SetFindingStateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -19,6 +22,8 @@ public interface SetFindingStateRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the finding. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -28,10 +33,11 @@ public interface SetFindingStateRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The desired State of the finding.
    * </pre>
@@ -40,6 +46,8 @@ public interface SetFindingStateRequestOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * The desired State of the finding.
    * </pre>
@@ -49,6 +57,8 @@ public interface SetFindingStateRequestOrBuilder extends
   com.google.cloud.securitycenter.v1beta1.Finding.State getState();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the updated state takes effect.
    * </pre>
@@ -57,6 +67,8 @@ public interface SetFindingStateRequestOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the updated state takes effect.
    * </pre>
@@ -65,6 +77,8 @@ public interface SetFindingStateRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the updated state takes effect.
    * </pre>

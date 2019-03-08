@@ -36,13 +36,9 @@ public class ViewDefinitionTest {
   @Test
   public void testToBuilder() {
     compareViewDefinition(VIEW_DEFINITION, VIEW_DEFINITION.toBuilder().build());
-    ViewDefinition viewDefinition = VIEW_DEFINITION.toBuilder()
-        .setQuery("NEW QUERY")
-        .build();
+    ViewDefinition viewDefinition = VIEW_DEFINITION.toBuilder().setQuery("NEW QUERY").build();
     assertEquals("NEW QUERY", viewDefinition.getQuery());
-    viewDefinition = viewDefinition.toBuilder()
-        .setQuery(VIEW_QUERY)
-        .build();
+    viewDefinition = viewDefinition.toBuilder().setQuery(VIEW_QUERY).build();
     compareViewDefinition(VIEW_DEFINITION, viewDefinition);
 
     viewDefinition = viewDefinition.toBuilder().setUseLegacySql(true).build();
@@ -61,17 +57,22 @@ public class ViewDefinitionTest {
     assertEquals(TableDefinition.Type.VIEW, VIEW_DEFINITION.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, VIEW_DEFINITION.getUserDefinedFunctions());
 
-    ViewDefinition viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY)
-        .setUserDefinedFunctions(UserDefinedFunction.inline("Function"),
-            UserDefinedFunction.fromUri("URI"))
-        .build();
+    ViewDefinition viewDefinition =
+        ViewDefinition.newBuilder(VIEW_QUERY)
+            .setUserDefinedFunctions(
+                UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"))
+            .build();
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
     assertFalse(viewDefinition.useLegacySql());
 
-    viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY,
-        UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI")).build();
+    viewDefinition =
+        ViewDefinition.newBuilder(
+                VIEW_QUERY,
+                UserDefinedFunction.inline("Function"),
+                UserDefinedFunction.fromUri("URI"))
+            .build();
     assertEquals(VIEW_QUERY, viewDefinition.getQuery());
     assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
     assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
@@ -89,7 +90,6 @@ public class ViewDefinitionTest {
     assertNull(viewDefinition.getUserDefinedFunctions());
     assertTrue(viewDefinition.useLegacySql());
   }
-
 
   @Test
   public void testToAndFromPb() {

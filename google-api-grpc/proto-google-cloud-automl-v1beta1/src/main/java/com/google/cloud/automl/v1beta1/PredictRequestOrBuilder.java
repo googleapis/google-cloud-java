@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface PredictRequestOrBuilder extends
+public interface PredictRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.PredictRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the model requested to serve the prediction.
    * </pre>
@@ -16,16 +19,19 @@ public interface PredictRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Name of the model requested to serve the prediction.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * Payload to perform a prediction on. The payload must match the
@@ -36,6 +42,8 @@ public interface PredictRequestOrBuilder extends
    */
   boolean hasPayload();
   /**
+   *
+   *
    * <pre>
    * Required.
    * Payload to perform a prediction on. The payload must match the
@@ -46,6 +54,8 @@ public interface PredictRequestOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.ExamplePayload getPayload();
   /**
+   *
+   *
    * <pre>
    * Required.
    * Payload to perform a prediction on. The payload must match the
@@ -57,6 +67,8 @@ public interface PredictRequestOrBuilder extends
   com.google.cloud.automl.v1beta1.ExamplePayloadOrBuilder getPayloadOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
@@ -71,6 +83,8 @@ public interface PredictRequestOrBuilder extends
    */
   int getParamsCount();
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
@@ -83,15 +97,13 @@ public interface PredictRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
-  boolean containsParams(
-      java.lang.String key);
-  /**
-   * Use {@link #getParamsMap()} instead.
-   */
+  boolean containsParams(java.lang.String key);
+  /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getParams();
+  java.util.Map<java.lang.String, java.lang.String> getParams();
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
@@ -104,9 +116,10 @@ public interface PredictRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getParamsMap();
+  java.util.Map<java.lang.String, java.lang.String> getParamsMap();
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
@@ -119,11 +132,10 @@ public interface PredictRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
-
-  java.lang.String getParamsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
@@ -136,7 +148,5 @@ public interface PredictRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
-
-  java.lang.String getParamsOrThrow(
-      java.lang.String key);
+  java.lang.String getParamsOrThrow(java.lang.String key);
 }

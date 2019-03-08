@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface FixedSizeBucketingConfigOrBuilder extends
+public interface FixedSizeBucketingConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.FixedSizeBucketingConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
@@ -18,6 +21,8 @@ public interface FixedSizeBucketingConfigOrBuilder extends
    */
   boolean hasLowerBound();
   /**
+   *
+   *
    * <pre>
    * Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
@@ -28,6 +33,8 @@ public interface FixedSizeBucketingConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.Value getLowerBound();
   /**
+   *
+   *
    * <pre>
    * Lower bound value of buckets. All values less than `lower_bound` are
    * grouped together into a single bucket; for example if `lower_bound` = 10,
@@ -39,6 +46,8 @@ public interface FixedSizeBucketingConfigOrBuilder extends
   com.google.privacy.dlp.v2.ValueOrBuilder getLowerBoundOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
@@ -50,6 +59,8 @@ public interface FixedSizeBucketingConfigOrBuilder extends
    */
   boolean hasUpperBound();
   /**
+   *
+   *
    * <pre>
    * Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
@@ -61,6 +72,8 @@ public interface FixedSizeBucketingConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.Value getUpperBound();
   /**
+   *
+   *
    * <pre>
    * Upper bound value of buckets. All values greater than upper_bound are
    * grouped together into a single bucket; for example if `upper_bound` = 89,
@@ -73,6 +86,8 @@ public interface FixedSizeBucketingConfigOrBuilder extends
   com.google.privacy.dlp.v2.ValueOrBuilder getUpperBoundOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Size of each bucket (except for minimum and maximum buckets). So if
    * `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the

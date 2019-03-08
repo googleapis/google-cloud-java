@@ -14,20 +14,21 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class DocumentName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -63,19 +64,19 @@ public class DocumentName implements ResourceName {
 
   public static DocumentName of(String project, String knowledgeBase, String document) {
     return newBuilder()
-      .setProject(project)
-      .setKnowledgeBase(knowledgeBase)
-      .setDocument(document)
-      .build();
+        .setProject(project)
+        .setKnowledgeBase(knowledgeBase)
+        .setDocument(document)
+        .build();
   }
 
   public static String format(String project, String knowledgeBase, String document) {
     return newBuilder()
-      .setProject(project)
-      .setKnowledgeBase(knowledgeBase)
-      .setDocument(document)
-      .build()
-      .toString();
+        .setProject(project)
+        .setKnowledgeBase(knowledgeBase)
+        .setDocument(document)
+        .build()
+        .toString();
   }
 
   public static DocumentName parse(String formattedString) {
@@ -83,7 +84,8 @@ public class DocumentName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "DocumentName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "DocumentName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("knowledge_base"), matchMap.get("document"));
   }
 
@@ -132,7 +134,8 @@ public class DocumentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "knowledge_base", knowledgeBase, "document", document);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "knowledge_base", knowledgeBase, "document", document);
   }
 
   /** Builder for DocumentName. */
@@ -169,8 +172,7 @@ public class DocumentName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(DocumentName documentName) {
       project = documentName.project;
@@ -209,4 +211,3 @@ public class DocumentName implements ResourceName {
     return h;
   }
 }
-

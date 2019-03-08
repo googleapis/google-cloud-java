@@ -42,11 +42,8 @@ public class JobInfoTest {
   private static final String EMAIL = "email";
   private static final JobId JOB_ID = JobId.of("job");
   private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE);
-  private static final CopyStatistics COPY_JOB_STATISTICS = CopyStatistics.newBuilder()
-      .setCreationTimestamp(1L)
-      .setEndTime(3L)
-      .setStartTime(2L)
-      .build();
+  private static final CopyStatistics COPY_JOB_STATISTICS =
+      CopyStatistics.newBuilder().setCreationTimestamp(1L).setEndTime(3L).setStartTime(2L).build();
   private static final ExtractStatistics EXTRACT_JOB_STATISTICS =
       ExtractStatistics.newBuilder()
           .setCreationTimestamp(1L)
@@ -144,8 +141,8 @@ public class JobInfoTest {
   private static final boolean ALLOW_LARGE_RESULTS = true;
   private static final boolean USE_QUERY_CACHE = false;
   private static final boolean FLATTEN_RESULTS = true;
-  private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
-      UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
+  private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
+      ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final QueryJobConfiguration QUERY_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -161,46 +158,50 @@ public class JobInfoTest {
           .setDryRun(true)
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .build();
-  private static final JobInfo COPY_JOB = JobInfo.newBuilder(COPY_CONFIGURATION)
-      .setJobId(JOB_ID)
-      .setStatistics(COPY_JOB_STATISTICS)
-      .setJobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
-  private static final JobInfo EXTRACT_JOB = JobInfo.newBuilder(EXTRACT_CONFIGURATION)
-      .setJobId(JOB_ID)
-      .setStatistics(EXTRACT_JOB_STATISTICS)
-      .setJobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
-  private static final JobInfo LOAD_JOB = JobInfo.newBuilder(LOAD_CONFIGURATION)
-      .setJobId(JOB_ID)
-      .setStatistics(LOAD_JOB_STATISTICS)
-      .setJobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
-  private static final JobInfo QUERY_JOB = JobInfo.newBuilder(QUERY_CONFIGURATION)
-      .setJobId(JOB_ID)
-      .setStatistics(QUERY_JOB_STATISTICS)
-      .setJobId(JOB_ID)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setSelfLink(SELF_LINK)
-      .setUserEmail(EMAIL)
-      .setStatus(JOB_STATUS)
-      .build();
+  private static final JobInfo COPY_JOB =
+      JobInfo.newBuilder(COPY_CONFIGURATION)
+          .setJobId(JOB_ID)
+          .setStatistics(COPY_JOB_STATISTICS)
+          .setJobId(JOB_ID)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setSelfLink(SELF_LINK)
+          .setUserEmail(EMAIL)
+          .setStatus(JOB_STATUS)
+          .build();
+  private static final JobInfo EXTRACT_JOB =
+      JobInfo.newBuilder(EXTRACT_CONFIGURATION)
+          .setJobId(JOB_ID)
+          .setStatistics(EXTRACT_JOB_STATISTICS)
+          .setJobId(JOB_ID)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setSelfLink(SELF_LINK)
+          .setUserEmail(EMAIL)
+          .setStatus(JOB_STATUS)
+          .build();
+  private static final JobInfo LOAD_JOB =
+      JobInfo.newBuilder(LOAD_CONFIGURATION)
+          .setJobId(JOB_ID)
+          .setStatistics(LOAD_JOB_STATISTICS)
+          .setJobId(JOB_ID)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setSelfLink(SELF_LINK)
+          .setUserEmail(EMAIL)
+          .setStatus(JOB_STATUS)
+          .build();
+  private static final JobInfo QUERY_JOB =
+      JobInfo.newBuilder(QUERY_CONFIGURATION)
+          .setJobId(JOB_ID)
+          .setStatistics(QUERY_JOB_STATISTICS)
+          .setJobId(JOB_ID)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setSelfLink(SELF_LINK)
+          .setUserEmail(EMAIL)
+          .setStatus(JOB_STATUS)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -208,27 +209,19 @@ public class JobInfoTest {
     compareJobInfo(EXTRACT_JOB, EXTRACT_JOB.toBuilder().build());
     compareJobInfo(LOAD_JOB, LOAD_JOB.toBuilder().build());
     compareJobInfo(QUERY_JOB, QUERY_JOB.toBuilder().build());
-    JobInfo job = COPY_JOB.toBuilder()
-        .setUserEmail("newEmail")
-        .build();
+    JobInfo job = COPY_JOB.toBuilder().setUserEmail("newEmail").build();
     assertEquals("newEmail", job.getUserEmail());
     job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(COPY_JOB, job);
-    job = EXTRACT_JOB.toBuilder()
-        .setUserEmail("newEmail")
-        .build();
+    job = EXTRACT_JOB.toBuilder().setUserEmail("newEmail").build();
     assertEquals("newEmail", job.getUserEmail());
     job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(EXTRACT_JOB, job);
-    job = LOAD_JOB.toBuilder()
-        .setUserEmail("newEmail")
-        .build();
+    job = LOAD_JOB.toBuilder().setUserEmail("newEmail").build();
     assertEquals("newEmail", job.getUserEmail());
     job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(LOAD_JOB, job);
-    job = QUERY_JOB.toBuilder()
-        .setUserEmail("newEmail")
-        .build();
+    job = QUERY_JOB.toBuilder().setUserEmail("newEmail").build();
     assertEquals("newEmail", job.getUserEmail());
     job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(QUERY_JOB, job);

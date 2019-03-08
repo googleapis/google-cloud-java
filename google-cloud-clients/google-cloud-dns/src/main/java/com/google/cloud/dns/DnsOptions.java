@@ -16,16 +16,15 @@
 
 package com.google.cloud.dns;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.dns.spi.v1.HttpDnsRpc;
-import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
+import com.google.cloud.dns.spi.v1.DnsRpc;
+import com.google.cloud.dns.spi.v1.HttpDnsRpc;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
 public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
@@ -54,11 +53,9 @@ public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
     }
   }
 
-  public static class Builder extends ServiceOptions.Builder<Dns,
-      DnsOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<Dns, DnsOptions, Builder> {
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(DnsOptions options) {
       super(options);
@@ -83,8 +80,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
     super(DnsFactory.class, DnsRpcFactory.class, builder, new DnsDefaults());
   }
 
-  private static class DnsDefaults implements
-      ServiceDefaults<Dns, DnsOptions> {
+  private static class DnsDefaults implements ServiceDefaults<Dns, DnsOptions> {
 
     @Override
     public DnsFactory getDefaultServiceFactory() {
@@ -121,11 +117,9 @@ public class DnsOptions extends ServiceOptions<Dns, DnsOptions> {
     return new Builder(this);
   }
 
-
   public static Builder newBuilder() {
     return new Builder();
   }
-
 
   /**
    * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred

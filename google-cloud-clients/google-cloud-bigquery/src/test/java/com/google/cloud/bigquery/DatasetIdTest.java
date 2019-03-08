@@ -33,7 +33,6 @@ public class DatasetIdTest {
     assertEquals("dataset", DATASET_COMPLETE.getDataset());
   }
 
-
   @Test
   public void testEquals() {
     compareDatasetIds(DATASET, DatasetId.of("dataset"));

@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.deployment;
 
-public interface DeploymentOrBuilder extends
+public interface DeploymentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.deployment.Deployment)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Identity of the user that triggered this deployment.
    * </pre>
@@ -16,16 +19,19 @@ public interface DeploymentOrBuilder extends
    */
   java.lang.String getUserEmail();
   /**
+   *
+   *
    * <pre>
    * Identity of the user that triggered this deployment.
    * </pre>
    *
    * <code>string user_email = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUserEmailBytes();
+  com.google.protobuf.ByteString getUserEmailBytes();
 
   /**
+   *
+   *
    * <pre>
    * Beginning of the lifetime of this deployment.
    * </pre>
@@ -34,6 +40,8 @@ public interface DeploymentOrBuilder extends
    */
   boolean hasDeployTime();
   /**
+   *
+   *
    * <pre>
    * Beginning of the lifetime of this deployment.
    * </pre>
@@ -42,6 +50,8 @@ public interface DeploymentOrBuilder extends
    */
   com.google.protobuf.Timestamp getDeployTime();
   /**
+   *
+   *
    * <pre>
    * Beginning of the lifetime of this deployment.
    * </pre>
@@ -51,6 +61,8 @@ public interface DeploymentOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getDeployTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * End of the lifetime of this deployment.
    * </pre>
@@ -59,6 +71,8 @@ public interface DeploymentOrBuilder extends
    */
   boolean hasUndeployTime();
   /**
+   *
+   *
    * <pre>
    * End of the lifetime of this deployment.
    * </pre>
@@ -67,6 +81,8 @@ public interface DeploymentOrBuilder extends
    */
   com.google.protobuf.Timestamp getUndeployTime();
   /**
+   *
+   *
    * <pre>
    * End of the lifetime of this deployment.
    * </pre>
@@ -76,6 +92,8 @@ public interface DeploymentOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUndeployTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration used to create this deployment.
    * </pre>
@@ -84,16 +102,19 @@ public interface DeploymentOrBuilder extends
    */
   java.lang.String getConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration used to create this deployment.
    * </pre>
    *
    * <code>string config = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getConfigBytes();
+  com.google.protobuf.ByteString getConfigBytes();
 
   /**
+   *
+   *
    * <pre>
    * Address of the runtime element hosting this deployment.
    * </pre>
@@ -102,16 +123,19 @@ public interface DeploymentOrBuilder extends
    */
   java.lang.String getAddress();
   /**
+   *
+   *
    * <pre>
    * Address of the runtime element hosting this deployment.
    * </pre>
    *
    * <code>string address = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getAddressBytes();
+  com.google.protobuf.ByteString getAddressBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
@@ -119,9 +143,10 @@ public interface DeploymentOrBuilder extends
    *
    * <code>repeated string resource_uri = 6;</code>
    */
-  java.util.List<java.lang.String>
-      getResourceUriList();
+  java.util.List<java.lang.String> getResourceUriList();
   /**
+   *
+   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
@@ -131,6 +156,8 @@ public interface DeploymentOrBuilder extends
    */
   int getResourceUriCount();
   /**
+   *
+   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
@@ -140,6 +167,8 @@ public interface DeploymentOrBuilder extends
    */
   java.lang.String getResourceUri(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
@@ -147,10 +176,11 @@ public interface DeploymentOrBuilder extends
    *
    * <code>repeated string resource_uri = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceUriBytes(int index);
+  com.google.protobuf.ByteString getResourceUriBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Platform hosting this deployment.
    * </pre>
@@ -159,6 +189,8 @@ public interface DeploymentOrBuilder extends
    */
   int getPlatformValue();
   /**
+   *
+   *
    * <pre>
    * Platform hosting this deployment.
    * </pre>

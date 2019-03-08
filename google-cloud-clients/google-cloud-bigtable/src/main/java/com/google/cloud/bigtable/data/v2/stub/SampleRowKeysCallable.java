@@ -22,7 +22,7 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.common.collect.ImmutableList;
@@ -44,15 +44,13 @@ class SampleRowKeysCallable extends UnaryCallable<String, List<KeyOffset>> {
 
   @Override
   public ApiFuture<List<KeyOffset>> futureCall(String tableId, ApiCallContext context) {
-    TableName tableName =
-        TableName.of(
-            requestContext.getInstanceName().getProject(),
-            requestContext.getInstanceName().getInstance(),
-            tableId);
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     SampleRowKeysRequest request =
         SampleRowKeysRequest.newBuilder()
-            .setTableName(tableName.toString())
+            .setTableName(tableName)
             .setAppProfileId(requestContext.getAppProfileId())
             .build();
 

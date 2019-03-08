@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
  * BasePath represents a path sequence in the Firestore database. It is composed of an ordered
  * sequence of string segments.
  */
-abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
+public abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
 
   /**
    * Returns the segments that make up this path.

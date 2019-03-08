@@ -108,7 +108,6 @@ public class PageImpl<T> implements Page<T>, Serializable {
     return cursor;
   }
 
-
   @Override
   public Page<T> getNextPage() {
     if (cursor == null || pageFetcher == null) {
@@ -128,15 +127,14 @@ public class PageImpl<T> implements Page<T>, Serializable {
       return false;
     }
     PageImpl<?> other = (PageImpl<?>) obj;
-    return Objects.equals(cursor, other.cursor)
-        && Objects.equals(results, other.results);
+    return Objects.equals(cursor, other.cursor) && Objects.equals(results, other.results);
   }
 
   /**
    * Utility method to construct the options map for the next page request.
    *
-   * @param <T> the value type that the page holds. Instances of {@code T} should be
-   *     {@code Serializable}
+   * @param <T> the value type that the page holds. Instances of {@code T} should be {@code
+   *     Serializable}
    * @param pageTokenOption the key for the next page cursor option in the options map
    * @param cursor the cursor for the next page
    * @param optionMap the previous options map

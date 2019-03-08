@@ -3,20 +3,24 @@
 
 package com.google.spanner.v1;
 
-public interface PartitionResponseOrBuilder extends
+public interface PartitionResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.PartitionResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Partitions created by this request.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.Partition partitions = 1;</code>
    */
-  java.util.List<com.google.spanner.v1.Partition> 
-      getPartitionsList();
+  java.util.List<com.google.spanner.v1.Partition> getPartitionsList();
   /**
+   *
+   *
    * <pre>
    * Partitions created by this request.
    * </pre>
@@ -25,6 +29,8 @@ public interface PartitionResponseOrBuilder extends
    */
   com.google.spanner.v1.Partition getPartitions(int index);
   /**
+   *
+   *
    * <pre>
    * Partitions created by this request.
    * </pre>
@@ -33,25 +39,29 @@ public interface PartitionResponseOrBuilder extends
    */
   int getPartitionsCount();
   /**
+   *
+   *
    * <pre>
    * Partitions created by this request.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.Partition partitions = 1;</code>
    */
-  java.util.List<? extends com.google.spanner.v1.PartitionOrBuilder> 
-      getPartitionsOrBuilderList();
+  java.util.List<? extends com.google.spanner.v1.PartitionOrBuilder> getPartitionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Partitions created by this request.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.Partition partitions = 1;</code>
    */
-  com.google.spanner.v1.PartitionOrBuilder getPartitionsOrBuilder(
-      int index);
+  com.google.spanner.v1.PartitionOrBuilder getPartitionsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Transaction created by this request.
    * </pre>
@@ -60,6 +70,8 @@ public interface PartitionResponseOrBuilder extends
    */
   boolean hasTransaction();
   /**
+   *
+   *
    * <pre>
    * Transaction created by this request.
    * </pre>
@@ -68,6 +80,8 @@ public interface PartitionResponseOrBuilder extends
    */
   com.google.spanner.v1.Transaction getTransaction();
   /**
+   *
+   *
    * <pre>
    * Transaction created by this request.
    * </pre>

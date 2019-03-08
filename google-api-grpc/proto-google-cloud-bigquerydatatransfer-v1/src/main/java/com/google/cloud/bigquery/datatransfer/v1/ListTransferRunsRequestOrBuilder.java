@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ListTransferRunsRequestOrBuilder extends
+public interface ListTransferRunsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of transfer configuration for which transfer runs should be retrieved.
    * Format of transfer configuration resource name is:
@@ -18,6 +21,8 @@ public interface ListTransferRunsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Name of transfer configuration for which transfer runs should be retrieved.
    * Format of transfer configuration resource name is:
@@ -26,10 +31,11 @@ public interface ListTransferRunsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * When specified, only transfer runs with requested states are returned.
    * </pre>
@@ -38,6 +44,8 @@ public interface ListTransferRunsRequestOrBuilder extends
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferState> getStatesList();
   /**
+   *
+   *
    * <pre>
    * When specified, only transfer runs with requested states are returned.
    * </pre>
@@ -46,6 +54,8 @@ public interface ListTransferRunsRequestOrBuilder extends
    */
   int getStatesCount();
   /**
+   *
+   *
    * <pre>
    * When specified, only transfer runs with requested states are returned.
    * </pre>
@@ -54,15 +64,18 @@ public interface ListTransferRunsRequestOrBuilder extends
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferState getStates(int index);
   /**
+   *
+   *
    * <pre>
    * When specified, only transfer runs with requested states are returned.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferState states = 2;</code>
    */
-  java.util.List<java.lang.Integer>
-  getStatesValueList();
+  java.util.List<java.lang.Integer> getStatesValueList();
   /**
+   *
+   *
    * <pre>
    * When specified, only transfer runs with requested states are returned.
    * </pre>
@@ -72,6 +85,8 @@ public interface ListTransferRunsRequestOrBuilder extends
   int getStatesValue(int index);
 
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListTransferRunsRequest` list results. For multiple-page
@@ -84,6 +99,8 @@ public interface ListTransferRunsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListTransferRunsRequest` list results. For multiple-page
@@ -94,10 +111,11 @@ public interface ListTransferRunsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Page size. The default page size is the maximum value of 1000 results.
    * </pre>
@@ -107,19 +125,27 @@ public interface ListTransferRunsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Indicates how run attempts are to be pulled.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
+   * </code>
    */
   int getRunAttemptValue();
   /**
+   *
+   *
    * <pre>
    * Indicates how run attempts are to be pulled.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt run_attempt = 5;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt getRunAttempt();
 }

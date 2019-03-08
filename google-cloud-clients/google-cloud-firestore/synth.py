@@ -16,16 +16,38 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
+
+service = 'firestore'
+version='v1beta1'
 
 library = gapic.java_library(
-    service='firestore',
+    service=service,
     version='v1beta1',
-    config_path='/google/firestore/artman_firestore.yaml',
+    config_path=f'/google/firestore/artman_firestore.yaml',
     artman_output_name='')
 
-s.copy(library / 'gapic-google-cloud-firestore-v1beta1/src', 'src')
-s.copy(library / 'grpc-google-cloud-firestore-v1beta1/src', '../../google-api-grpc/grpc-google-cloud-firestore-v1beta1/src')
-s.copy(library / 'proto-google-cloud-firestore-v1beta1/src', '../../google-api-grpc/proto-google-cloud-firestore-v1beta1/src')
+s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
+java.format_code('./src')
+java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
+version='v1'
+library = gapic.java_library(
+    service=service,
+    version='v1',
+    config_path=f'/google/firestore/artman_firestore_v1.yaml',
+    artman_output_name='')
+
+s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
+java.format_code('./src')
+java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')

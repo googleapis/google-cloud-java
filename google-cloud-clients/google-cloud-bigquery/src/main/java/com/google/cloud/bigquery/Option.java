@@ -20,13 +20,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Base class for BigQuery operation option.
- */
+/** Base class for BigQuery operation option. */
 abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -6647817677804099207L;

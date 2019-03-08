@@ -4,29 +4,31 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
  * The status of a task attempt.
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.AttemptStatus}
  */
-public  final class AttemptStatus extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AttemptStatus extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.AttemptStatus)
     AttemptStatusOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AttemptStatus.newBuilder() to construct.
   private AttemptStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private AttemptStatus() {
-  }
+
+  private AttemptStatus() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AttemptStatus(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,93 +48,105 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (scheduleTime_ != null) {
-              subBuilder = scheduleTime_.toBuilder();
-            }
-            scheduleTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scheduleTime_);
-              scheduleTime_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (scheduleTime_ != null) {
+                subBuilder = scheduleTime_.toBuilder();
+              }
+              scheduleTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduleTime_);
+                scheduleTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (dispatchTime_ != null) {
-              subBuilder = dispatchTime_.toBuilder();
+              break;
             }
-            dispatchTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(dispatchTime_);
-              dispatchTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (dispatchTime_ != null) {
+                subBuilder = dispatchTime_.toBuilder();
+              }
+              dispatchTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dispatchTime_);
+                dispatchTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (responseTime_ != null) {
-              subBuilder = responseTime_.toBuilder();
+              break;
             }
-            responseTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(responseTime_);
-              responseTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (responseTime_ != null) {
+                subBuilder = responseTime_.toBuilder();
+              }
+              responseTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(responseTime_);
+                responseTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (responseStatus_ != null) {
-              subBuilder = responseStatus_.toBuilder();
+              break;
             }
-            responseStatus_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(responseStatus_);
-              responseStatus_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (responseStatus_ != null) {
+                subBuilder = responseStatus_.toBuilder();
+              }
+              responseStatus_ =
+                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(responseStatus_);
+                responseStatus_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.TaskProto.internal_static_google_cloud_tasks_v2beta2_AttemptStatus_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.TaskProto
+        .internal_static_google_cloud_tasks_v2beta2_AttemptStatus_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.TaskProto.internal_static_google_cloud_tasks_v2beta2_AttemptStatus_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.TaskProto
+        .internal_static_google_cloud_tasks_v2beta2_AttemptStatus_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.AttemptStatus.class, com.google.cloud.tasks.v2beta2.AttemptStatus.Builder.class);
+            com.google.cloud.tasks.v2beta2.AttemptStatus.class,
+            com.google.cloud.tasks.v2beta2.AttemptStatus.Builder.class);
   }
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was scheduled.
    * `schedule_time` will be truncated to the nearest microsecond.
@@ -144,6 +158,8 @@ private static final long serialVersionUID = 0L;
     return scheduleTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was scheduled.
    * `schedule_time` will be truncated to the nearest microsecond.
@@ -152,9 +168,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
-    return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was scheduled.
    * `schedule_time` will be truncated to the nearest microsecond.
@@ -169,6 +189,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPATCH_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp dispatchTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was dispatched.
    * `dispatch_time` will be truncated to the nearest microsecond.
@@ -180,6 +202,8 @@ private static final long serialVersionUID = 0L;
     return dispatchTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was dispatched.
    * `dispatch_time` will be truncated to the nearest microsecond.
@@ -188,9 +212,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
    */
   public com.google.protobuf.Timestamp getDispatchTime() {
-    return dispatchTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dispatchTime_;
+    return dispatchTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dispatchTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt was dispatched.
    * `dispatch_time` will be truncated to the nearest microsecond.
@@ -205,6 +233,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp responseTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt response was received.
    * `response_time` will be truncated to the nearest microsecond.
@@ -216,6 +246,8 @@ private static final long serialVersionUID = 0L;
     return responseTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt response was received.
    * `response_time` will be truncated to the nearest microsecond.
@@ -224,9 +256,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp response_time = 3;</code>
    */
   public com.google.protobuf.Timestamp getResponseTime() {
-    return responseTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : responseTime_;
+    return responseTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : responseTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time that this attempt response was received.
    * `response_time` will be truncated to the nearest microsecond.
@@ -241,6 +277,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSE_STATUS_FIELD_NUMBER = 4;
   private com.google.rpc.Status responseStatus_;
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for this attempt.
    * If the task has not been attempted or the task is currently running
@@ -253,6 +291,8 @@ private static final long serialVersionUID = 0L;
     return responseStatus_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for this attempt.
    * If the task has not been attempted or the task is currently running
@@ -265,6 +305,8 @@ private static final long serialVersionUID = 0L;
     return responseStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : responseStatus_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for this attempt.
    * If the task has not been attempted or the task is currently running
@@ -278,6 +320,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -289,8 +332,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (scheduleTime_ != null) {
       output.writeMessage(1, getScheduleTime());
     }
@@ -313,20 +355,16 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (scheduleTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getScheduleTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getScheduleTime());
     }
     if (dispatchTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getDispatchTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDispatchTime());
     }
     if (responseTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getResponseTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getResponseTime());
     }
     if (responseStatus_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getResponseStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getResponseStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -336,33 +374,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.AttemptStatus)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta2.AttemptStatus other = (com.google.cloud.tasks.v2beta2.AttemptStatus) obj;
+    com.google.cloud.tasks.v2beta2.AttemptStatus other =
+        (com.google.cloud.tasks.v2beta2.AttemptStatus) obj;
 
     boolean result = true;
     result = result && (hasScheduleTime() == other.hasScheduleTime());
     if (hasScheduleTime()) {
-      result = result && getScheduleTime()
-          .equals(other.getScheduleTime());
+      result = result && getScheduleTime().equals(other.getScheduleTime());
     }
     result = result && (hasDispatchTime() == other.hasDispatchTime());
     if (hasDispatchTime()) {
-      result = result && getDispatchTime()
-          .equals(other.getDispatchTime());
+      result = result && getDispatchTime().equals(other.getDispatchTime());
     }
     result = result && (hasResponseTime() == other.hasResponseTime());
     if (hasResponseTime()) {
-      result = result && getResponseTime()
-          .equals(other.getResponseTime());
+      result = result && getResponseTime().equals(other.getResponseTime());
     }
     result = result && (hasResponseStatus() == other.hasResponseStatus());
     if (hasResponseStatus()) {
-      result = result && getResponseStatus()
-          .equals(other.getResponseStatus());
+      result = result && getResponseStatus().equals(other.getResponseStatus());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -396,118 +431,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.AttemptStatus parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta2.AttemptStatus parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.AttemptStatus parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta2.AttemptStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The status of a task attempt.
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.AttemptStatus}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.AttemptStatus)
       com.google.cloud.tasks.v2beta2.AttemptStatusOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.TaskProto.internal_static_google_cloud_tasks_v2beta2_AttemptStatus_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.TaskProto
+          .internal_static_google_cloud_tasks_v2beta2_AttemptStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.TaskProto.internal_static_google_cloud_tasks_v2beta2_AttemptStatus_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.TaskProto
+          .internal_static_google_cloud_tasks_v2beta2_AttemptStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.AttemptStatus.class, com.google.cloud.tasks.v2beta2.AttemptStatus.Builder.class);
+              com.google.cloud.tasks.v2beta2.AttemptStatus.class,
+              com.google.cloud.tasks.v2beta2.AttemptStatus.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.AttemptStatus.newBuilder()
@@ -515,16 +559,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -556,9 +599,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.TaskProto.internal_static_google_cloud_tasks_v2beta2_AttemptStatus_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.TaskProto
+          .internal_static_google_cloud_tasks_v2beta2_AttemptStatus_descriptor;
     }
 
     @java.lang.Override
@@ -577,7 +620,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.AttemptStatus buildPartial() {
-      com.google.cloud.tasks.v2beta2.AttemptStatus result = new com.google.cloud.tasks.v2beta2.AttemptStatus(this);
+      com.google.cloud.tasks.v2beta2.AttemptStatus result =
+          new com.google.cloud.tasks.v2beta2.AttemptStatus(this);
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
       } else {
@@ -606,38 +650,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.AttemptStatus) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.AttemptStatus)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.AttemptStatus) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -689,8 +734,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp scheduleTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scheduleTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        scheduleTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -702,6 +752,8 @@ private static final long serialVersionUID = 0L;
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -711,12 +763,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
-        return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       } else {
         return scheduleTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -738,6 +794,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -745,8 +803,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      */
-    public Builder setScheduleTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
         onChanged();
@@ -757,6 +814,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -768,7 +827,9 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ == null) {
         if (scheduleTime_ != null) {
           scheduleTime_ =
-            com.google.protobuf.Timestamp.newBuilder(scheduleTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           scheduleTime_ = value;
         }
@@ -780,6 +841,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -799,6 +862,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -807,11 +872,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      
+
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -823,11 +890,14 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ != null) {
         return scheduleTimeBuilder_.getMessageOrBuilder();
       } else {
-        return scheduleTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was scheduled.
      * `schedule_time` will be truncated to the nearest microsecond.
@@ -836,14 +906,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getScheduleTimeFieldBuilder() {
       if (scheduleTimeBuilder_ == null) {
-        scheduleTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getScheduleTime(),
-                getParentForChildren(),
-                isClean());
+        scheduleTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getScheduleTime(), getParentForChildren(), isClean());
         scheduleTime_ = null;
       }
       return scheduleTimeBuilder_;
@@ -851,8 +924,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp dispatchTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dispatchTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        dispatchTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -864,6 +942,8 @@ private static final long serialVersionUID = 0L;
       return dispatchTimeBuilder_ != null || dispatchTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -873,12 +953,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getDispatchTime() {
       if (dispatchTimeBuilder_ == null) {
-        return dispatchTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dispatchTime_;
+        return dispatchTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dispatchTime_;
       } else {
         return dispatchTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -900,6 +984,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -907,8 +993,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
      */
-    public Builder setDispatchTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setDispatchTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dispatchTimeBuilder_ == null) {
         dispatchTime_ = builderForValue.build();
         onChanged();
@@ -919,6 +1004,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -930,7 +1017,9 @@ private static final long serialVersionUID = 0L;
       if (dispatchTimeBuilder_ == null) {
         if (dispatchTime_ != null) {
           dispatchTime_ =
-            com.google.protobuf.Timestamp.newBuilder(dispatchTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(dispatchTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           dispatchTime_ = value;
         }
@@ -942,6 +1031,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -961,6 +1052,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -969,11 +1062,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDispatchTimeBuilder() {
-      
+
       onChanged();
       return getDispatchTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -985,11 +1080,14 @@ private static final long serialVersionUID = 0L;
       if (dispatchTimeBuilder_ != null) {
         return dispatchTimeBuilder_.getMessageOrBuilder();
       } else {
-        return dispatchTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : dispatchTime_;
+        return dispatchTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dispatchTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt was dispatched.
      * `dispatch_time` will be truncated to the nearest microsecond.
@@ -998,14 +1096,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp dispatch_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getDispatchTimeFieldBuilder() {
       if (dispatchTimeBuilder_ == null) {
-        dispatchTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getDispatchTime(),
-                getParentForChildren(),
-                isClean());
+        dispatchTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDispatchTime(), getParentForChildren(), isClean());
         dispatchTime_ = null;
       }
       return dispatchTimeBuilder_;
@@ -1013,8 +1114,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp responseTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> responseTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        responseTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1026,6 +1132,8 @@ private static final long serialVersionUID = 0L;
       return responseTimeBuilder_ != null || responseTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1035,12 +1143,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getResponseTime() {
       if (responseTimeBuilder_ == null) {
-        return responseTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : responseTime_;
+        return responseTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : responseTime_;
       } else {
         return responseTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1062,6 +1174,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1069,8 +1183,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp response_time = 3;</code>
      */
-    public Builder setResponseTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setResponseTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (responseTimeBuilder_ == null) {
         responseTime_ = builderForValue.build();
         onChanged();
@@ -1081,6 +1194,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1092,7 +1207,9 @@ private static final long serialVersionUID = 0L;
       if (responseTimeBuilder_ == null) {
         if (responseTime_ != null) {
           responseTime_ =
-            com.google.protobuf.Timestamp.newBuilder(responseTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(responseTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           responseTime_ = value;
         }
@@ -1104,6 +1221,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1123,6 +1242,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1131,11 +1252,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp response_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getResponseTimeBuilder() {
-      
+
       onChanged();
       return getResponseTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1147,11 +1270,14 @@ private static final long serialVersionUID = 0L;
       if (responseTimeBuilder_ != null) {
         return responseTimeBuilder_.getMessageOrBuilder();
       } else {
-        return responseTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : responseTime_;
+        return responseTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : responseTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time that this attempt response was received.
      * `response_time` will be truncated to the nearest microsecond.
@@ -1160,14 +1286,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp response_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getResponseTimeFieldBuilder() {
       if (responseTimeBuilder_ == null) {
-        responseTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getResponseTime(),
-                getParentForChildren(),
-                isClean());
+        responseTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getResponseTime(), getParentForChildren(), isClean());
         responseTime_ = null;
       }
       return responseTimeBuilder_;
@@ -1175,8 +1304,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status responseStatus_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> responseStatusBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        responseStatusBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1189,6 +1321,8 @@ private static final long serialVersionUID = 0L;
       return responseStatusBuilder_ != null || responseStatus_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1199,12 +1333,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.rpc.Status getResponseStatus() {
       if (responseStatusBuilder_ == null) {
-        return responseStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : responseStatus_;
+        return responseStatus_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : responseStatus_;
       } else {
         return responseStatusBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1227,6 +1365,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1235,8 +1375,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.rpc.Status response_status = 4;</code>
      */
-    public Builder setResponseStatus(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setResponseStatus(com.google.rpc.Status.Builder builderForValue) {
       if (responseStatusBuilder_ == null) {
         responseStatus_ = builderForValue.build();
         onChanged();
@@ -1247,6 +1386,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1259,7 +1400,7 @@ private static final long serialVersionUID = 0L;
       if (responseStatusBuilder_ == null) {
         if (responseStatus_ != null) {
           responseStatus_ =
-            com.google.rpc.Status.newBuilder(responseStatus_).mergeFrom(value).buildPartial();
+              com.google.rpc.Status.newBuilder(responseStatus_).mergeFrom(value).buildPartial();
         } else {
           responseStatus_ = value;
         }
@@ -1271,6 +1412,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1291,6 +1434,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1300,11 +1445,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status response_status = 4;</code>
      */
     public com.google.rpc.Status.Builder getResponseStatusBuilder() {
-      
+
       onChanged();
       return getResponseStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1317,11 +1464,14 @@ private static final long serialVersionUID = 0L;
       if (responseStatusBuilder_ != null) {
         return responseStatusBuilder_.getMessageOrBuilder();
       } else {
-        return responseStatus_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : responseStatus_;
+        return responseStatus_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : responseStatus_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for this attempt.
      * If the task has not been attempted or the task is currently running
@@ -1331,21 +1481,22 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status response_status = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getResponseStatusFieldBuilder() {
       if (responseStatusBuilder_ == null) {
-        responseStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getResponseStatus(),
-                getParentForChildren(),
-                isClean());
+        responseStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                getResponseStatus(), getParentForChildren(), isClean());
         responseStatus_ = null;
       }
       return responseStatusBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1355,12 +1506,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.AttemptStatus)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.AttemptStatus)
   private static final com.google.cloud.tasks.v2beta2.AttemptStatus DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.AttemptStatus();
   }
@@ -1369,16 +1520,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AttemptStatus>
-      PARSER = new com.google.protobuf.AbstractParser<AttemptStatus>() {
-    @java.lang.Override
-    public AttemptStatus parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AttemptStatus(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AttemptStatus> PARSER =
+      new com.google.protobuf.AbstractParser<AttemptStatus>() {
+        @java.lang.Override
+        public AttemptStatus parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AttemptStatus(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AttemptStatus> parser() {
     return PARSER;
@@ -1393,6 +1544,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta2.AttemptStatus getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

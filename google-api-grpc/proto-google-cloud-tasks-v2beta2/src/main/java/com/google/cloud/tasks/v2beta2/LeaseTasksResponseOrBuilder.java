@@ -3,20 +3,24 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface LeaseTasksResponseOrBuilder extends
+public interface LeaseTasksResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.LeaseTasksResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
-  java.util.List<com.google.cloud.tasks.v2beta2.Task> 
-      getTasksList();
+  java.util.List<com.google.cloud.tasks.v2beta2.Task> getTasksList();
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
@@ -25,6 +29,8 @@ public interface LeaseTasksResponseOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.Task getTasks(int index);
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
@@ -33,21 +39,23 @@ public interface LeaseTasksResponseOrBuilder extends
    */
   int getTasksCount();
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder> 
-      getTasksOrBuilderList();
+  java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder> getTasksOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
-  com.google.cloud.tasks.v2beta2.TaskOrBuilder getTasksOrBuilder(
-      int index);
+  com.google.cloud.tasks.v2beta2.TaskOrBuilder getTasksOrBuilder(int index);
 }

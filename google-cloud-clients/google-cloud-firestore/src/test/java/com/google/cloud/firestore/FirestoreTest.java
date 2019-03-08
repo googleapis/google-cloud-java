@@ -25,9 +25,9 @@ import static org.mockito.Mockito.doAnswer;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.ListCollectionIdsRequest;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,10 +44,7 @@ public class FirestoreTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
@@ -119,6 +116,25 @@ public class FirestoreTest {
   }
 
   @Test
+  public void getAllWithFieldMask() throws Exception {
+    doAnswer(getAllResponse(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            getAllCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    DocumentReference doc1 = firestoreMock.document("coll/doc1");
+    FieldMask fieldMask = FieldMask.of(FieldPath.of("foo", "bar"));
+
+    firestoreMock.getAll(new DocumentReference[] {doc1}, fieldMask).get();
+
+    BatchGetDocumentsRequest request = getAllCapture.getValue();
+    assertEquals(1, request.getMask().getFieldPathsCount());
+    assertEquals("foo.bar", request.getMask().getFieldPaths(0));
+  }
+
+  @Test
   public void arrayUnionEquals() {
     FieldValue arrayUnion1 = FieldValue.arrayUnion("foo", "bar");
     FieldValue arrayUnion2 = FieldValue.arrayUnion("foo", "bar");
@@ -140,5 +156,17 @@ public class FirestoreTest {
     assertEquals(arrayRemove1, arrayRemove2);
     assertNotEquals(arrayRemove1, arrayRemove3);
     assertNotEquals(arrayRemove1, arrayUnion);
+  }
+
+  @Test
+  public void incrementEquals() {
+    FieldValue increment1 = FieldValue.increment(42);
+    FieldValue increment2 = FieldValue.increment(42);
+    FieldValue increment3 = FieldValue.increment(42.0);
+    FieldValue increment4 = FieldValue.increment(42.0);
+    assertEquals(increment1, increment2);
+    assertEquals(increment3, increment4);
+    assertNotEquals(increment1, increment3);
+    assertNotEquals(increment2, increment4);
   }
 }

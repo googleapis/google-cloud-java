@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface OccurrenceOrBuilder extends
+public interface OccurrenceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.Occurrence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -17,6 +20,8 @@ public interface OccurrenceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -24,10 +29,11 @@ public interface OccurrenceOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource for which the occurrence applies.
    * </pre>
@@ -36,6 +42,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasResource();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource for which the occurrence applies.
    * </pre>
@@ -44,6 +52,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.Resource getResource();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource for which the occurrence applies.
    * </pre>
@@ -53,6 +63,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.ResourceOrBuilder getResourceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
    * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -63,6 +75,8 @@ public interface OccurrenceOrBuilder extends
    */
   java.lang.String getNoteName();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
    * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -71,10 +85,11 @@ public interface OccurrenceOrBuilder extends
    *
    * <code>string note_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNoteNameBytes();
+  com.google.protobuf.ByteString getNoteNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. This explicitly denotes which of the occurrence details are
    * specified. This field can be used as a filter in list requests.
@@ -84,6 +99,8 @@ public interface OccurrenceOrBuilder extends
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * Output only. This explicitly denotes which of the occurrence details are
    * specified. This field can be used as a filter in list requests.
@@ -94,6 +111,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.common.NoteKind getKind();
 
   /**
+   *
+   *
    * <pre>
    * A description of actions that can be taken to remedy the note.
    * </pre>
@@ -102,16 +121,19 @@ public interface OccurrenceOrBuilder extends
    */
   java.lang.String getRemediation();
   /**
+   *
+   *
    * <pre>
    * A description of actions that can be taken to remedy the note.
    * </pre>
    *
    * <code>string remediation = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getRemediationBytes();
+  com.google.protobuf.ByteString getRemediationBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
@@ -120,6 +142,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
@@ -128,6 +152,8 @@ public interface OccurrenceOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
@@ -137,6 +163,8 @@ public interface OccurrenceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
@@ -145,6 +173,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
@@ -153,6 +183,8 @@ public interface OccurrenceOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
@@ -162,6 +194,8 @@ public interface OccurrenceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
@@ -170,6 +204,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasVulnerability();
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
@@ -178,6 +214,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.vulnerability.Details getVulnerability();
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
@@ -187,6 +225,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.vulnerability.DetailsOrBuilder getVulnerabilityOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
@@ -195,6 +235,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasBuild();
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
@@ -203,6 +245,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.build.Details getBuild();
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
@@ -212,6 +256,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.build.DetailsOrBuilder getBuildOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
@@ -221,6 +267,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasDerivedImage();
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
@@ -230,6 +278,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.image.Details getDerivedImage();
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
@@ -240,6 +290,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.image.DetailsOrBuilder getDerivedImageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
@@ -248,6 +300,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasInstallation();
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
@@ -256,6 +310,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.pkg.Details getInstallation();
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
@@ -265,6 +321,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.pkg.DetailsOrBuilder getInstallationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
@@ -273,6 +331,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasDeployment();
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
@@ -281,6 +341,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.deployment.Details getDeployment();
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
@@ -290,6 +352,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.deployment.DetailsOrBuilder getDeploymentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
@@ -298,6 +362,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasDiscovered();
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
@@ -306,6 +372,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.discovery.Details getDiscovered();
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
@@ -315,6 +383,8 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1beta1.discovery.DetailsOrBuilder getDiscoveredOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
@@ -323,6 +393,8 @@ public interface OccurrenceOrBuilder extends
    */
   boolean hasAttestation();
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
@@ -331,6 +403,8 @@ public interface OccurrenceOrBuilder extends
    */
   io.grafeas.v1beta1.attestation.Details getAttestation();
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>

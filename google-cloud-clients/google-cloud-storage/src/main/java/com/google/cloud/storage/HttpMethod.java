@@ -20,9 +20,7 @@ import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 
-/**
- * Http method supported by Storage service.
- */
+/** Http method supported by Storage service. */
 public final class HttpMethod extends StringEnumValue {
   private static final long serialVersionUID = -1394461645628254471L;
 
@@ -38,9 +36,8 @@ public final class HttpMethod extends StringEnumValue {
         }
       };
 
-  private static final StringEnumType<HttpMethod> type = new StringEnumType(
-      HttpMethod.class,
-      CONSTRUCTOR);
+  private static final StringEnumType<HttpMethod> type =
+      new StringEnumType(HttpMethod.class, CONSTRUCTOR);
 
   public static final HttpMethod GET = type.createAndRegister("GET");
   public static final HttpMethod HEAD = type.createAndRegister("HEAD");
@@ -50,23 +47,19 @@ public final class HttpMethod extends StringEnumValue {
   public static final HttpMethod OPTIONS = type.createAndRegister("OPTIONS");
 
   /**
-   * Get the HttpMethod for the given String constant, and throw an exception if the constant is
-   * not recognized.
+   * Get the HttpMethod for the given String constant, and throw an exception if the constant is not
+   * recognized.
    */
   public static HttpMethod valueOfStrict(String constant) {
     return type.valueOfStrict(constant);
   }
 
-  /**
-   * Get the HttpMethod for the given String constant, and allow unrecognized values.
-   */
+  /** Get the HttpMethod for the given String constant, and allow unrecognized values. */
   public static HttpMethod valueOf(String constant) {
     return type.valueOf(constant);
   }
 
-  /**
-   * Return the known values for HttpMethod.
-   */
+  /** Return the known values for HttpMethod. */
   public static HttpMethod[] values() {
     return type.values();
   }

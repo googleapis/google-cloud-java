@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,10 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
     return null;
@@ -57,14 +57,22 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] Description of this License Code. */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] URL of license corresponding to this License Code. */
   public String getSelfLink() {
     return selfLink;
   }
@@ -113,19 +121,23 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
       this.selfLink = source.selfLink;
     }
 
+    /** [Output Only] Description of this License Code. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] Description of this License Code. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] URL of license corresponding to this License Code. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] URL of license corresponding to this License Code. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;

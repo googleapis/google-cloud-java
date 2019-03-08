@@ -4,31 +4,34 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
  * A filter that merges multiple other filters using the given operator.
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.CompositeFilter}
  */
-public  final class CompositeFilter extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.CompositeFilter)
     CompositeFilterOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CompositeFilter.newBuilder() to construct.
   private CompositeFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CompositeFilter() {
     op_ = 0;
     filters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CompositeFilter(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,35 +51,36 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            op_ = rawValue;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              filters_ = new java.util.ArrayList<com.google.datastore.v1.Filter>();
-              mutable_bitField0_ |= 0x00000002;
+              op_ = rawValue;
+              break;
             }
-            filters_.add(
-                input.readMessage(com.google.datastore.v1.Filter.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                filters_ = new java.util.ArrayList<com.google.datastore.v1.Filter>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              filters_.add(
+                  input.readMessage(com.google.datastore.v1.Filter.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         filters_ = java.util.Collections.unmodifiableList(filters_);
@@ -85,29 +89,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_CompositeFilter_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.datastore.v1.QueryProto
+        .internal_static_google_datastore_v1_CompositeFilter_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_CompositeFilter_fieldAccessorTable
+    return com.google.datastore.v1.QueryProto
+        .internal_static_google_datastore_v1_CompositeFilter_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.CompositeFilter.class, com.google.datastore.v1.CompositeFilter.Builder.class);
+            com.google.datastore.v1.CompositeFilter.class,
+            com.google.datastore.v1.CompositeFilter.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * A composite filter operator.
    * </pre>
    *
    * Protobuf enum {@code google.datastore.v1.CompositeFilter.Operator}
    */
-  public enum Operator
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Operator implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unspecified. This value must not be used.
      * </pre>
@@ -116,6 +126,8 @@ private static final long serialVersionUID = 0L;
      */
     OPERATOR_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The results are required to satisfy each of the combined filters.
      * </pre>
@@ -127,6 +139,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unspecified. This value must not be used.
      * </pre>
@@ -135,6 +149,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The results are required to satisfy each of the combined filters.
      * </pre>
@@ -142,7 +158,6 @@ private static final long serialVersionUID = 0L;
      * <code>AND = 1;</code>
      */
     public static final int AND_VALUE = 1;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -152,9 +167,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Operator valueOf(int value) {
       return forNumber(value);
@@ -162,44 +175,43 @@ private static final long serialVersionUID = 0L;
 
     public static Operator forNumber(int value) {
       switch (value) {
-        case 0: return OPERATOR_UNSPECIFIED;
-        case 1: return AND;
-        default: return null;
+        case 0:
+          return OPERATOR_UNSPECIFIED;
+        case 1:
+          return AND;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Operator>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Operator> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Operator> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Operator>() {
-            public Operator findValueByNumber(int number) {
-              return Operator.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Operator> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Operator>() {
+          public Operator findValueByNumber(int number) {
+            return Operator.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.datastore.v1.CompositeFilter.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Operator[] VALUES = values();
 
-    public static Operator valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Operator valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -220,6 +232,8 @@ private static final long serialVersionUID = 0L;
   public static final int OP_FIELD_NUMBER = 1;
   private int op_;
   /**
+   *
+   *
    * <pre>
    * The operator for combining multiple filters.
    * </pre>
@@ -230,6 +244,8 @@ private static final long serialVersionUID = 0L;
     return op_;
   }
   /**
+   *
+   *
    * <pre>
    * The operator for combining multiple filters.
    * </pre>
@@ -238,13 +254,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.datastore.v1.CompositeFilter.Operator getOp() {
     @SuppressWarnings("deprecation")
-    com.google.datastore.v1.CompositeFilter.Operator result = com.google.datastore.v1.CompositeFilter.Operator.valueOf(op_);
+    com.google.datastore.v1.CompositeFilter.Operator result =
+        com.google.datastore.v1.CompositeFilter.Operator.valueOf(op_);
     return result == null ? com.google.datastore.v1.CompositeFilter.Operator.UNRECOGNIZED : result;
   }
 
   public static final int FILTERS_FIELD_NUMBER = 2;
   private java.util.List<com.google.datastore.v1.Filter> filters_;
   /**
+   *
+   *
    * <pre>
    * The list of filters to combine.
    * Must contain at least one filter.
@@ -256,6 +275,8 @@ private static final long serialVersionUID = 0L;
     return filters_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of filters to combine.
    * Must contain at least one filter.
@@ -263,11 +284,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.FilterOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.FilterOrBuilder>
       getFiltersOrBuilderList() {
     return filters_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of filters to combine.
    * Must contain at least one filter.
@@ -279,6 +302,8 @@ private static final long serialVersionUID = 0L;
     return filters_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of filters to combine.
    * Must contain at least one filter.
@@ -290,6 +315,8 @@ private static final long serialVersionUID = 0L;
     return filters_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of filters to combine.
    * Must contain at least one filter.
@@ -297,12 +324,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
-  public com.google.datastore.v1.FilterOrBuilder getFiltersOrBuilder(
-      int index) {
+  public com.google.datastore.v1.FilterOrBuilder getFiltersOrBuilder(int index) {
     return filters_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -314,8 +341,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (op_ != com.google.datastore.v1.CompositeFilter.Operator.OPERATOR_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, op_);
     }
@@ -332,12 +358,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (op_ != com.google.datastore.v1.CompositeFilter.Operator.OPERATOR_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, op_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, op_);
     }
     for (int i = 0; i < filters_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, filters_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, filters_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -347,7 +371,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.CompositeFilter)) {
       return super.equals(obj);
@@ -356,8 +380,7 @@ private static final long serialVersionUID = 0L;
 
     boolean result = true;
     result = result && op_ == other.op_;
-    result = result && getFiltersList()
-        .equals(other.getFiltersList());
+    result = result && getFiltersList().equals(other.getFiltersList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -380,118 +403,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.CompositeFilter parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.CompositeFilter parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.datastore.v1.CompositeFilter parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.datastore.v1.CompositeFilter parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.datastore.v1.CompositeFilter parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.CompositeFilter parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.datastore.v1.CompositeFilter prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A filter that merges multiple other filters using the given operator.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.CompositeFilter}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.CompositeFilter)
       com.google.datastore.v1.CompositeFilterOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_CompositeFilter_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_CompositeFilter_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_CompositeFilter_fieldAccessorTable
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_CompositeFilter_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.CompositeFilter.class, com.google.datastore.v1.CompositeFilter.Builder.class);
+              com.google.datastore.v1.CompositeFilter.class,
+              com.google.datastore.v1.CompositeFilter.Builder.class);
     }
 
     // Construct using com.google.datastore.v1.CompositeFilter.newBuilder()
@@ -499,17 +531,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFiltersFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -525,9 +557,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_CompositeFilter_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_CompositeFilter_descriptor;
     }
 
     @java.lang.Override
@@ -546,7 +578,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.datastore.v1.CompositeFilter buildPartial() {
-      com.google.datastore.v1.CompositeFilter result = new com.google.datastore.v1.CompositeFilter(this);
+      com.google.datastore.v1.CompositeFilter result =
+          new com.google.datastore.v1.CompositeFilter(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.op_ = op_;
@@ -568,38 +601,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.CompositeFilter) {
-        return mergeFrom((com.google.datastore.v1.CompositeFilter)other);
+        return mergeFrom((com.google.datastore.v1.CompositeFilter) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -629,9 +663,10 @@ private static final long serialVersionUID = 0L;
             filtersBuilder_ = null;
             filters_ = other.filters_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            filtersBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFiltersFieldBuilder() : null;
+            filtersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFiltersFieldBuilder()
+                    : null;
           } else {
             filtersBuilder_.addAllMessages(other.filters_);
           }
@@ -665,10 +700,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private int op_ = 0;
     /**
+     *
+     *
      * <pre>
      * The operator for combining multiple filters.
      * </pre>
@@ -679,6 +717,8 @@ private static final long serialVersionUID = 0L;
       return op_;
     }
     /**
+     *
+     *
      * <pre>
      * The operator for combining multiple filters.
      * </pre>
@@ -691,6 +731,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The operator for combining multiple filters.
      * </pre>
@@ -699,10 +741,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.datastore.v1.CompositeFilter.Operator getOp() {
       @SuppressWarnings("deprecation")
-      com.google.datastore.v1.CompositeFilter.Operator result = com.google.datastore.v1.CompositeFilter.Operator.valueOf(op_);
-      return result == null ? com.google.datastore.v1.CompositeFilter.Operator.UNRECOGNIZED : result;
+      com.google.datastore.v1.CompositeFilter.Operator result =
+          com.google.datastore.v1.CompositeFilter.Operator.valueOf(op_);
+      return result == null
+          ? com.google.datastore.v1.CompositeFilter.Operator.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The operator for combining multiple filters.
      * </pre>
@@ -713,12 +760,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       op_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The operator for combining multiple filters.
      * </pre>
@@ -726,25 +775,31 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.CompositeFilter.Operator op = 1;</code>
      */
     public Builder clearOp() {
-      
+
       op_ = 0;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.datastore.v1.Filter> filters_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFiltersIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         filters_ = new java.util.ArrayList<com.google.datastore.v1.Filter>(filters_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Filter, com.google.datastore.v1.Filter.Builder, com.google.datastore.v1.FilterOrBuilder> filtersBuilder_;
+            com.google.datastore.v1.Filter,
+            com.google.datastore.v1.Filter.Builder,
+            com.google.datastore.v1.FilterOrBuilder>
+        filtersBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -760,6 +815,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -775,6 +832,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -790,6 +849,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -797,8 +858,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public Builder setFilters(
-        int index, com.google.datastore.v1.Filter value) {
+    public Builder setFilters(int index, com.google.datastore.v1.Filter value) {
       if (filtersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -812,6 +872,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -819,8 +881,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public Builder setFilters(
-        int index, com.google.datastore.v1.Filter.Builder builderForValue) {
+    public Builder setFilters(int index, com.google.datastore.v1.Filter.Builder builderForValue) {
       if (filtersBuilder_ == null) {
         ensureFiltersIsMutable();
         filters_.set(index, builderForValue.build());
@@ -831,6 +892,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -852,6 +915,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -859,8 +924,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public Builder addFilters(
-        int index, com.google.datastore.v1.Filter value) {
+    public Builder addFilters(int index, com.google.datastore.v1.Filter value) {
       if (filtersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -874,6 +938,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -881,8 +947,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public Builder addFilters(
-        com.google.datastore.v1.Filter.Builder builderForValue) {
+    public Builder addFilters(com.google.datastore.v1.Filter.Builder builderForValue) {
       if (filtersBuilder_ == null) {
         ensureFiltersIsMutable();
         filters_.add(builderForValue.build());
@@ -893,6 +958,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -900,8 +967,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public Builder addFilters(
-        int index, com.google.datastore.v1.Filter.Builder builderForValue) {
+    public Builder addFilters(int index, com.google.datastore.v1.Filter.Builder builderForValue) {
       if (filtersBuilder_ == null) {
         ensureFiltersIsMutable();
         filters_.add(index, builderForValue.build());
@@ -912,6 +978,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -923,8 +991,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.Filter> values) {
       if (filtersBuilder_ == null) {
         ensureFiltersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, filters_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filters_);
         onChanged();
       } else {
         filtersBuilder_.addAllMessages(values);
@@ -932,6 +999,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -950,6 +1019,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -968,6 +1039,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -975,11 +1048,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public com.google.datastore.v1.Filter.Builder getFiltersBuilder(
-        int index) {
+    public com.google.datastore.v1.Filter.Builder getFiltersBuilder(int index) {
       return getFiltersFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -987,14 +1061,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public com.google.datastore.v1.FilterOrBuilder getFiltersOrBuilder(
-        int index) {
+    public com.google.datastore.v1.FilterOrBuilder getFiltersOrBuilder(int index) {
       if (filtersBuilder_ == null) {
-        return filters_.get(index);  } else {
+        return filters_.get(index);
+      } else {
         return filtersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -1002,8 +1078,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.FilterOrBuilder> 
-         getFiltersOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.FilterOrBuilder>
+        getFiltersOrBuilderList() {
       if (filtersBuilder_ != null) {
         return filtersBuilder_.getMessageOrBuilderList();
       } else {
@@ -1011,6 +1087,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -1019,10 +1097,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
     public com.google.datastore.v1.Filter.Builder addFiltersBuilder() {
-      return getFiltersFieldBuilder().addBuilder(
-          com.google.datastore.v1.Filter.getDefaultInstance());
+      return getFiltersFieldBuilder()
+          .addBuilder(com.google.datastore.v1.Filter.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -1030,12 +1110,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public com.google.datastore.v1.Filter.Builder addFiltersBuilder(
-        int index) {
-      return getFiltersFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.Filter.getDefaultInstance());
+    public com.google.datastore.v1.Filter.Builder addFiltersBuilder(int index) {
+      return getFiltersFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.Filter.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of filters to combine.
      * Must contain at least one filter.
@@ -1043,16 +1124,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
      */
-    public java.util.List<com.google.datastore.v1.Filter.Builder> 
-         getFiltersBuilderList() {
+    public java.util.List<com.google.datastore.v1.Filter.Builder> getFiltersBuilderList() {
       return getFiltersFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Filter, com.google.datastore.v1.Filter.Builder, com.google.datastore.v1.FilterOrBuilder> 
+            com.google.datastore.v1.Filter,
+            com.google.datastore.v1.Filter.Builder,
+            com.google.datastore.v1.FilterOrBuilder>
         getFiltersFieldBuilder() {
       if (filtersBuilder_ == null) {
-        filtersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.Filter, com.google.datastore.v1.Filter.Builder, com.google.datastore.v1.FilterOrBuilder>(
+        filtersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.Filter,
+                com.google.datastore.v1.Filter.Builder,
+                com.google.datastore.v1.FilterOrBuilder>(
                 filters_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1061,9 +1147,9 @@ private static final long serialVersionUID = 0L;
       }
       return filtersBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1073,12 +1159,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.CompositeFilter)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.CompositeFilter)
   private static final com.google.datastore.v1.CompositeFilter DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.CompositeFilter();
   }
@@ -1087,16 +1173,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CompositeFilter>
-      PARSER = new com.google.protobuf.AbstractParser<CompositeFilter>() {
-    @java.lang.Override
-    public CompositeFilter parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CompositeFilter(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CompositeFilter> PARSER =
+      new com.google.protobuf.AbstractParser<CompositeFilter>() {
+        @java.lang.Override
+        public CompositeFilter parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CompositeFilter(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CompositeFilter> parser() {
     return PARSER;
@@ -1111,6 +1197,4 @@ private static final long serialVersionUID = 0L;
   public com.google.datastore.v1.CompositeFilter getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

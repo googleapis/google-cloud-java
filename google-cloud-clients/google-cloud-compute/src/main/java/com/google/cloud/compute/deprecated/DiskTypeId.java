@@ -20,28 +20,27 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine disk type.
- */
+/** Identity for a Google Compute Engine disk type. */
 public final class DiskTypeId extends ResourceId {
 
-  static final Function<String, DiskTypeId> FROM_URL_FUNCTION = new Function<String, DiskTypeId>() {
-    @Override
-    public DiskTypeId apply(String pb) {
-      return DiskTypeId.fromUrl(pb);
-    }
-  };
-  static final Function<DiskTypeId, String> TO_URL_FUNCTION = new Function<DiskTypeId, String>() {
-    @Override
-    public String apply(DiskTypeId diskTypeId) {
-      return diskTypeId.getSelfLink();
-    }
-  };
+  static final Function<String, DiskTypeId> FROM_URL_FUNCTION =
+      new Function<String, DiskTypeId>() {
+        @Override
+        public DiskTypeId apply(String pb) {
+          return DiskTypeId.fromUrl(pb);
+        }
+      };
+  static final Function<DiskTypeId, String> TO_URL_FUNCTION =
+      new Function<DiskTypeId, String>() {
+        @Override
+        public String apply(DiskTypeId diskTypeId) {
+          return diskTypeId.getSelfLink();
+        }
+      };
 
   private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/diskTypes/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
@@ -56,23 +55,17 @@ public final class DiskTypeId extends ResourceId {
     this.type = checkNotNull(type);
   }
 
-  /**
-   * Returns the name of the disk type.
-   */
+  /** Returns the name of the disk type. */
   public String getType() {
     return type;
   }
 
-  /**
-   * Returns the name of the zone this disk type belongs to.
-   */
+  /** Returns the name of the zone this disk type belongs to. */
   public String getZone() {
     return zone;
   }
 
-  /**
-   * Returns the identity of the zone this disk type belongs to.
-   */
+  /** Returns the identity of the zone this disk type belongs to. */
   public ZoneId getZoneId() {
     return ZoneId.of(getProject(), zone);
   }
@@ -114,23 +107,17 @@ public final class DiskTypeId extends ResourceId {
     return DiskTypeId.of(projectId, zone, type);
   }
 
-  /**
-   * Returns a disk type identity given the zone identity and the disk type name.
-   */
+  /** Returns a disk type identity given the zone identity and the disk type name. */
   public static DiskTypeId of(ZoneId zoneId, String type) {
     return new DiskTypeId(zoneId.getProject(), zoneId.getZone(), type);
   }
 
-  /**
-   * Returns a disk type identity given the zone and disk type names.
-   */
+  /** Returns a disk type identity given the zone and disk type names. */
   public static DiskTypeId of(String zone, String type) {
     return of(ZoneId.of(null, zone), type);
   }
 
-  /**
-   * Returns a disk type identity given project disk, zone and disk type names.
-   */
+  /** Returns a disk type identity given project disk, zone and disk type names. */
   public static DiskTypeId of(String project, String zone, String type) {
     return of(ZoneId.of(project, zone), type);
   }

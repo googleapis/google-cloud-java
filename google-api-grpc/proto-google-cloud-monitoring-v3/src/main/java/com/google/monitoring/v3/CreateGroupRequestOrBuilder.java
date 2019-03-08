@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface CreateGroupRequestOrBuilder extends
+public interface CreateGroupRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.CreateGroupRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
@@ -17,6 +20,8 @@ public interface CreateGroupRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
@@ -24,10 +29,11 @@ public interface CreateGroupRequestOrBuilder extends
    *
    * <code>string name = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A group definition. It is an error to define the `name` field because
    * the system assigns the name.
@@ -37,6 +43,8 @@ public interface CreateGroupRequestOrBuilder extends
    */
   boolean hasGroup();
   /**
+   *
+   *
    * <pre>
    * A group definition. It is an error to define the `name` field because
    * the system assigns the name.
@@ -46,6 +54,8 @@ public interface CreateGroupRequestOrBuilder extends
    */
   com.google.monitoring.v3.Group getGroup();
   /**
+   *
+   *
    * <pre>
    * A group definition. It is an error to define the `name` field because
    * the system assigns the name.
@@ -56,6 +66,8 @@ public interface CreateGroupRequestOrBuilder extends
   com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If true, validate this request but do not create the group.
    * </pre>

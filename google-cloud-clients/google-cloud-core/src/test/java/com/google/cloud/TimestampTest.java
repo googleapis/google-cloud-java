@@ -86,7 +86,7 @@ public class TimestampTest {
   public void ofDatePreEpoch() {
     Timestamp timestamp = Timestamp.of(TEST_DATE_PRE_EPOCH);
     long expectedSeconds = TEST_TIME_MILLISECONDS_NEGATIVE / 1_000;
-    int expectedNanos = (int)(TEST_TIME_MILLISECONDS_NEGATIVE % 1_000 * 1000_000);
+    int expectedNanos = (int) (TEST_TIME_MILLISECONDS_NEGATIVE % 1_000 * 1000_000);
     if (expectedNanos < 0) {
       expectedSeconds--;
       expectedNanos += 1_000_000_000;

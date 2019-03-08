@@ -16,16 +16,15 @@
 
 package com.google.cloud.compute.deprecated;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.compute.deprecated.spi.v1.ComputeRpc;
 import com.google.cloud.compute.deprecated.spi.ComputeRpcFactory;
+import com.google.cloud.compute.deprecated.spi.v1.ComputeRpc;
 import com.google.cloud.compute.deprecated.spi.v1.HttpComputeRpc;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
 public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
@@ -55,11 +54,9 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
     }
   }
 
-  public static class Builder extends
-      ServiceOptions.Builder<Compute, ComputeOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<Compute, ComputeOptions, Builder> {
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ComputeOptions options) {
       super(options);
@@ -84,8 +81,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeOptions> {
     super(ComputeFactory.class, ComputeRpcFactory.class, builder, new ComputeDefaults());
   }
 
-  private static class ComputeDefaults implements
-      ServiceDefaults<Compute, ComputeOptions> {
+  private static class ComputeDefaults implements ServiceDefaults<Compute, ComputeOptions> {
 
     @Override
     public ComputeFactory getDefaultServiceFactory() {

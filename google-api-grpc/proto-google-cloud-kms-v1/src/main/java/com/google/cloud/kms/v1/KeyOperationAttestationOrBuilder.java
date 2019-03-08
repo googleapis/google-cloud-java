@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface KeyOperationAttestationOrBuilder extends
+public interface KeyOperationAttestationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.KeyOperationAttestation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The format of the attestation data.
    * </pre>
@@ -16,6 +19,8 @@ public interface KeyOperationAttestationOrBuilder extends
    */
   int getFormatValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The format of the attestation data.
    * </pre>
@@ -25,6 +30,8 @@ public interface KeyOperationAttestationOrBuilder extends
   com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The attestation data provided by the HSM when the key
    * operation was performed.

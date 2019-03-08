@@ -19,7 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
@@ -33,11 +33,12 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class RowMutationTest {
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String TABLE_ID = "fake-table";
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create(INSTANCE_NAME, APP_PROFILE_ID);
+      RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
 
   @Test
   public void toProtoTest() {
@@ -52,9 +53,7 @@ public class RowMutationTest {
         com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
 
     assertThat(actualRowMutation.getTableName())
-        .isEqualTo(
-            TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table")
-                .toString());
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, "fake-table"));
     assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
     assertThat(actualRowMutation.getMutationsList()).hasSize(1);
     assertThat(actualRowMutation.getMutations(0).getSetCell().getValue())
@@ -77,9 +76,7 @@ public class RowMutationTest {
         com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
 
     assertThat(actualRowMutation.getTableName())
-        .isEqualTo(
-            TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table")
-                .toString());
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
     assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
     assertThat(actualRowMutation.getEntriesList()).hasSize(1);
     assertThat(actualRowMutation.getEntries(0).getMutationsList()).hasSize(1);

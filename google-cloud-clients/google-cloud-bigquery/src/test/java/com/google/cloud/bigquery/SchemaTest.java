@@ -18,11 +18,10 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.services.bigquery.model.TableSchema;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class SchemaTest {
 
@@ -41,8 +40,8 @@ public class SchemaTest {
           .setMode(Field.Mode.REQUIRED)
           .setDescription("FieldDescription3")
           .build();
-  private static final List<Field> FIELDS = ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2,
-      FIELD_SCHEMA3);
+  private static final List<Field> FIELDS =
+      ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELDS);
 
   @Test
@@ -58,5 +57,12 @@ public class SchemaTest {
   private void compareTableSchema(Schema expected, Schema value) {
     assertEquals(expected, value);
     assertEquals(expected.getFields(), value.getFields());
+  }
+
+  @Test
+  public void testEmptySchema() {
+    TableSchema tableSchema = new TableSchema();
+    Schema schema = Schema.fromPb(tableSchema);
+    assertEquals(0, schema.getFields().size());
   }
 }

@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.build;
 
-public interface BuildOrBuilder extends
+public interface BuildOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.build.Build)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Version of the builder which produced this Note.
    * </pre>
@@ -16,16 +19,19 @@ public interface BuildOrBuilder extends
    */
   java.lang.String getBuilderVersion();
   /**
+   *
+   *
    * <pre>
    * Version of the builder which produced this Note.
    * </pre>
    *
    * <code>string builder_version = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getBuilderVersionBytes();
+  com.google.protobuf.ByteString getBuilderVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Signature of the build in Occurrences pointing to the Note containing this
    * `BuilderDetails`.
@@ -35,6 +41,8 @@ public interface BuildOrBuilder extends
    */
   boolean hasSignature();
   /**
+   *
+   *
    * <pre>
    * Signature of the build in Occurrences pointing to the Note containing this
    * `BuilderDetails`.
@@ -44,6 +52,8 @@ public interface BuildOrBuilder extends
    */
   io.grafeas.v1beta1.build.BuildSignature getSignature();
   /**
+   *
+   *
    * <pre>
    * Signature of the build in Occurrences pointing to the Note containing this
    * `BuilderDetails`.

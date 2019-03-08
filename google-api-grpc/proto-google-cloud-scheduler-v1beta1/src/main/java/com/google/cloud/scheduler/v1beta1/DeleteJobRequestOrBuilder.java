@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface DeleteJobRequestOrBuilder extends
+public interface DeleteJobRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.DeleteJobRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The job name. For example:
@@ -18,6 +21,8 @@ public interface DeleteJobRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The job name. For example:
@@ -26,6 +31,5 @@ public interface DeleteJobRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

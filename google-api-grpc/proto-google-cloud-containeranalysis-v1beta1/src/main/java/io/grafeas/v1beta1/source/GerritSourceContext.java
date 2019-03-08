@@ -4,31 +4,34 @@
 package io.grafeas.v1beta1.source;
 
 /**
+ *
+ *
  * <pre>
  * A SourceContext referring to a Gerrit project.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.source.GerritSourceContext}
  */
-public  final class GerritSourceContext extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class GerritSourceContext extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.source.GerritSourceContext)
     GerritSourceContextOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use GerritSourceContext.newBuilder() to construct.
   private GerritSourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private GerritSourceContext() {
     hostUri_ = "";
     gerritProject_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private GerritSourceContext(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,84 +51,90 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            hostUri_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              hostUri_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            gerritProject_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            revisionCase_ = 3;
-            revision_ = s;
-            break;
-          }
-          case 34: {
-            io.grafeas.v1beta1.source.AliasContext.Builder subBuilder = null;
-            if (revisionCase_ == 4) {
-              subBuilder = ((io.grafeas.v1beta1.source.AliasContext) revision_).toBuilder();
+              gerritProject_ = s;
+              break;
             }
-            revision_ =
-                input.readMessage(io.grafeas.v1beta1.source.AliasContext.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.source.AliasContext) revision_);
-              revision_ = subBuilder.buildPartial();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              revisionCase_ = 3;
+              revision_ = s;
+              break;
             }
-            revisionCase_ = 4;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 34:
+            {
+              io.grafeas.v1beta1.source.AliasContext.Builder subBuilder = null;
+              if (revisionCase_ == 4) {
+                subBuilder = ((io.grafeas.v1beta1.source.AliasContext) revision_).toBuilder();
+              }
+              revision_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.source.AliasContext.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.source.AliasContext) revision_);
+                revision_ = subBuilder.buildPartial();
+              }
+              revisionCase_ = 4;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_GerritSourceContext_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.source.Source
+        .internal_static_grafeas_v1beta1_source_GerritSourceContext_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_GerritSourceContext_fieldAccessorTable
+    return io.grafeas.v1beta1.source.Source
+        .internal_static_grafeas_v1beta1_source_GerritSourceContext_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.source.GerritSourceContext.class, io.grafeas.v1beta1.source.GerritSourceContext.Builder.class);
+            io.grafeas.v1beta1.source.GerritSourceContext.class,
+            io.grafeas.v1beta1.source.GerritSourceContext.Builder.class);
   }
 
   private int revisionCase_ = 0;
   private java.lang.Object revision_;
-  public enum RevisionCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum RevisionCase implements com.google.protobuf.Internal.EnumLite {
     REVISION_ID(3),
     ALIAS_CONTEXT(4),
     REVISION_NOT_SET(0);
     private final int value;
+
     private RevisionCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static RevisionCase valueOf(int value) {
       return forNumber(value);
@@ -133,26 +142,31 @@ private static final long serialVersionUID = 0L;
 
     public static RevisionCase forNumber(int value) {
       switch (value) {
-        case 3: return REVISION_ID;
-        case 4: return ALIAS_CONTEXT;
-        case 0: return REVISION_NOT_SET;
-        default: return null;
+        case 3:
+          return REVISION_ID;
+        case 4:
+          return ALIAS_CONTEXT;
+        case 0:
+          return REVISION_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public RevisionCase
-  getRevisionCase() {
-    return RevisionCase.forNumber(
-        revisionCase_);
+  public RevisionCase getRevisionCase() {
+    return RevisionCase.forNumber(revisionCase_);
   }
 
   public static final int HOST_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object hostUri_;
   /**
+   *
+   *
    * <pre>
    * The URI of a running Gerrit instance.
    * </pre>
@@ -164,27 +178,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       hostUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The URI of a running Gerrit instance.
    * </pre>
    *
    * <code>string host_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getHostUriBytes() {
+  public com.google.protobuf.ByteString getHostUriBytes() {
     java.lang.Object ref = hostUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       hostUri_ = b;
       return b;
     } else {
@@ -195,6 +208,8 @@ private static final long serialVersionUID = 0L;
   public static final int GERRIT_PROJECT_FIELD_NUMBER = 2;
   private volatile java.lang.Object gerritProject_;
   /**
+   *
+   *
    * <pre>
    * The full project name within the host. Projects may be nested, so
    * "project/subproject" is a valid project name. The "repo name" is the
@@ -208,14 +223,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       gerritProject_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The full project name within the host. Projects may be nested, so
    * "project/subproject" is a valid project name. The "repo name" is the
@@ -224,13 +240,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string gerrit_project = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getGerritProjectBytes() {
+  public com.google.protobuf.ByteString getGerritProjectBytes() {
     java.lang.Object ref = gerritProject_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       gerritProject_ = b;
       return b;
     } else {
@@ -240,6 +254,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int REVISION_ID_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * A revision (commit) ID.
    * </pre>
@@ -254,8 +270,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (revisionCase_ == 3) {
         revision_ = s;
@@ -264,22 +279,22 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A revision (commit) ID.
    * </pre>
    *
    * <code>string revision_id = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getRevisionIdBytes() {
+  public com.google.protobuf.ByteString getRevisionIdBytes() {
     java.lang.Object ref = "";
     if (revisionCase_ == 3) {
       ref = revision_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (revisionCase_ == 3) {
         revision_ = b;
       }
@@ -291,6 +306,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int ALIAS_CONTEXT_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>
@@ -301,6 +318,8 @@ private static final long serialVersionUID = 0L;
     return revisionCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>
@@ -309,11 +328,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.AliasContext getAliasContext() {
     if (revisionCase_ == 4) {
-       return (io.grafeas.v1beta1.source.AliasContext) revision_;
+      return (io.grafeas.v1beta1.source.AliasContext) revision_;
     }
     return io.grafeas.v1beta1.source.AliasContext.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>
@@ -322,12 +343,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.source.AliasContextOrBuilder getAliasContextOrBuilder() {
     if (revisionCase_ == 4) {
-       return (io.grafeas.v1beta1.source.AliasContext) revision_;
+      return (io.grafeas.v1beta1.source.AliasContext) revision_;
     }
     return io.grafeas.v1beta1.source.AliasContext.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -339,8 +361,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getHostUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, hostUri_);
     }
@@ -372,8 +393,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, revision_);
     }
     if (revisionCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (io.grafeas.v1beta1.source.AliasContext) revision_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (io.grafeas.v1beta1.source.AliasContext) revision_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -383,29 +405,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.source.GerritSourceContext)) {
       return super.equals(obj);
     }
-    io.grafeas.v1beta1.source.GerritSourceContext other = (io.grafeas.v1beta1.source.GerritSourceContext) obj;
+    io.grafeas.v1beta1.source.GerritSourceContext other =
+        (io.grafeas.v1beta1.source.GerritSourceContext) obj;
 
     boolean result = true;
-    result = result && getHostUri()
-        .equals(other.getHostUri());
-    result = result && getGerritProject()
-        .equals(other.getGerritProject());
-    result = result && getRevisionCase().equals(
-        other.getRevisionCase());
+    result = result && getHostUri().equals(other.getHostUri());
+    result = result && getGerritProject().equals(other.getGerritProject());
+    result = result && getRevisionCase().equals(other.getRevisionCase());
     if (!result) return false;
     switch (revisionCase_) {
       case 3:
-        result = result && getRevisionId()
-            .equals(other.getRevisionId());
+        result = result && getRevisionId().equals(other.getRevisionId());
         break;
       case 4:
-        result = result && getAliasContext()
-            .equals(other.getAliasContext());
+        result = result && getAliasContext().equals(other.getAliasContext());
         break;
       case 0:
       default:
@@ -442,118 +460,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.source.GerritSourceContext parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.source.GerritSourceContext parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.source.GerritSourceContext parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1beta1.source.GerritSourceContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A SourceContext referring to a Gerrit project.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.source.GerritSourceContext}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.source.GerritSourceContext)
       io.grafeas.v1beta1.source.GerritSourceContextOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_GerritSourceContext_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.source.Source
+          .internal_static_grafeas_v1beta1_source_GerritSourceContext_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_GerritSourceContext_fieldAccessorTable
+      return io.grafeas.v1beta1.source.Source
+          .internal_static_grafeas_v1beta1_source_GerritSourceContext_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.source.GerritSourceContext.class, io.grafeas.v1beta1.source.GerritSourceContext.Builder.class);
+              io.grafeas.v1beta1.source.GerritSourceContext.class,
+              io.grafeas.v1beta1.source.GerritSourceContext.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.source.GerritSourceContext.newBuilder()
@@ -561,16 +588,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -584,9 +610,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.source.Source.internal_static_grafeas_v1beta1_source_GerritSourceContext_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.source.Source
+          .internal_static_grafeas_v1beta1_source_GerritSourceContext_descriptor;
     }
 
     @java.lang.Override
@@ -605,7 +631,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public io.grafeas.v1beta1.source.GerritSourceContext buildPartial() {
-      io.grafeas.v1beta1.source.GerritSourceContext result = new io.grafeas.v1beta1.source.GerritSourceContext(this);
+      io.grafeas.v1beta1.source.GerritSourceContext result =
+          new io.grafeas.v1beta1.source.GerritSourceContext(this);
       result.hostUri_ = hostUri_;
       result.gerritProject_ = gerritProject_;
       if (revisionCase_ == 3) {
@@ -627,38 +654,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.source.GerritSourceContext) {
-        return mergeFrom((io.grafeas.v1beta1.source.GerritSourceContext)other);
+        return mergeFrom((io.grafeas.v1beta1.source.GerritSourceContext) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -676,19 +704,22 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getRevisionCase()) {
-        case REVISION_ID: {
-          revisionCase_ = 3;
-          revision_ = other.revision_;
-          onChanged();
-          break;
-        }
-        case ALIAS_CONTEXT: {
-          mergeAliasContext(other.getAliasContext());
-          break;
-        }
-        case REVISION_NOT_SET: {
-          break;
-        }
+        case REVISION_ID:
+          {
+            revisionCase_ = 3;
+            revision_ = other.revision_;
+            onChanged();
+            break;
+          }
+        case ALIAS_CONTEXT:
+          {
+            mergeAliasContext(other.getAliasContext());
+            break;
+          }
+        case REVISION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -718,12 +749,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int revisionCase_ = 0;
     private java.lang.Object revision_;
-    public RevisionCase
-        getRevisionCase() {
-      return RevisionCase.forNumber(
-          revisionCase_);
+
+    public RevisionCase getRevisionCase() {
+      return RevisionCase.forNumber(revisionCase_);
     }
 
     public Builder clearRevision() {
@@ -733,9 +764,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object hostUri_ = "";
     /**
+     *
+     *
      * <pre>
      * The URI of a running Gerrit instance.
      * </pre>
@@ -745,8 +777,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getHostUri() {
       java.lang.Object ref = hostUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         hostUri_ = s;
         return s;
@@ -755,19 +786,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URI of a running Gerrit instance.
      * </pre>
      *
      * <code>string host_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getHostUriBytes() {
+    public com.google.protobuf.ByteString getHostUriBytes() {
       java.lang.Object ref = hostUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         hostUri_ = b;
         return b;
       } else {
@@ -775,23 +806,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URI of a running Gerrit instance.
      * </pre>
      *
      * <code>string host_uri = 1;</code>
      */
-    public Builder setHostUri(
-        java.lang.String value) {
+    public Builder setHostUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       hostUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URI of a running Gerrit instance.
      * </pre>
@@ -799,25 +833,26 @@ private static final long serialVersionUID = 0L;
      * <code>string host_uri = 1;</code>
      */
     public Builder clearHostUri() {
-      
+
       hostUri_ = getDefaultInstance().getHostUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URI of a running Gerrit instance.
      * </pre>
      *
      * <code>string host_uri = 1;</code>
      */
-    public Builder setHostUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setHostUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       hostUri_ = value;
       onChanged();
       return this;
@@ -825,6 +860,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object gerritProject_ = "";
     /**
+     *
+     *
      * <pre>
      * The full project name within the host. Projects may be nested, so
      * "project/subproject" is a valid project name. The "repo name" is the
@@ -836,8 +873,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getGerritProject() {
       java.lang.Object ref = gerritProject_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         gerritProject_ = s;
         return s;
@@ -846,6 +882,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full project name within the host. Projects may be nested, so
      * "project/subproject" is a valid project name. The "repo name" is the
@@ -854,13 +892,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string gerrit_project = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getGerritProjectBytes() {
+    public com.google.protobuf.ByteString getGerritProjectBytes() {
       java.lang.Object ref = gerritProject_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         gerritProject_ = b;
         return b;
       } else {
@@ -868,6 +904,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full project name within the host. Projects may be nested, so
      * "project/subproject" is a valid project name. The "repo name" is the
@@ -876,17 +914,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string gerrit_project = 2;</code>
      */
-    public Builder setGerritProject(
-        java.lang.String value) {
+    public Builder setGerritProject(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       gerritProject_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The full project name within the host. Projects may be nested, so
      * "project/subproject" is a valid project name. The "repo name" is the
@@ -896,12 +935,14 @@ private static final long serialVersionUID = 0L;
      * <code>string gerrit_project = 2;</code>
      */
     public Builder clearGerritProject() {
-      
+
       gerritProject_ = getDefaultInstance().getGerritProject();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The full project name within the host. Projects may be nested, so
      * "project/subproject" is a valid project name. The "repo name" is the
@@ -910,19 +951,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string gerrit_project = 2;</code>
      */
-    public Builder setGerritProjectBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setGerritProjectBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       gerritProject_ = value;
       onChanged();
       return this;
     }
 
     /**
+     *
+     *
      * <pre>
      * A revision (commit) ID.
      * </pre>
@@ -935,8 +977,7 @@ private static final long serialVersionUID = 0L;
         ref = revision_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (revisionCase_ == 3) {
           revision_ = s;
@@ -947,22 +988,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A revision (commit) ID.
      * </pre>
      *
      * <code>string revision_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getRevisionIdBytes() {
+    public com.google.protobuf.ByteString getRevisionIdBytes() {
       java.lang.Object ref = "";
       if (revisionCase_ == 3) {
         ref = revision_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (revisionCase_ == 3) {
           revision_ = b;
         }
@@ -972,23 +1013,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A revision (commit) ID.
      * </pre>
      *
      * <code>string revision_id = 3;</code>
      */
-    public Builder setRevisionId(
-        java.lang.String value) {
+    public Builder setRevisionId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  revisionCase_ = 3;
+        throw new NullPointerException();
+      }
+      revisionCase_ = 3;
       revision_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A revision (commit) ID.
      * </pre>
@@ -1004,18 +1048,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A revision (commit) ID.
      * </pre>
      *
      * <code>string revision_id = 3;</code>
      */
-    public Builder setRevisionIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRevisionIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       revisionCase_ = 3;
       revision_ = value;
       onChanged();
@@ -1023,8 +1068,13 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.AliasContext, io.grafeas.v1beta1.source.AliasContext.Builder, io.grafeas.v1beta1.source.AliasContextOrBuilder> aliasContextBuilder_;
+            io.grafeas.v1beta1.source.AliasContext,
+            io.grafeas.v1beta1.source.AliasContext.Builder,
+            io.grafeas.v1beta1.source.AliasContextOrBuilder>
+        aliasContextBuilder_;
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1035,6 +1085,8 @@ private static final long serialVersionUID = 0L;
       return revisionCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1055,6 +1107,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1075,14 +1129,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.AliasContext alias_context = 4;</code>
      */
-    public Builder setAliasContext(
-        io.grafeas.v1beta1.source.AliasContext.Builder builderForValue) {
+    public Builder setAliasContext(io.grafeas.v1beta1.source.AliasContext.Builder builderForValue) {
       if (aliasContextBuilder_ == null) {
         revision_ = builderForValue.build();
         onChanged();
@@ -1093,6 +1148,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1101,10 +1158,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAliasContext(io.grafeas.v1beta1.source.AliasContext value) {
       if (aliasContextBuilder_ == null) {
-        if (revisionCase_ == 4 &&
-            revision_ != io.grafeas.v1beta1.source.AliasContext.getDefaultInstance()) {
-          revision_ = io.grafeas.v1beta1.source.AliasContext.newBuilder((io.grafeas.v1beta1.source.AliasContext) revision_)
-              .mergeFrom(value).buildPartial();
+        if (revisionCase_ == 4
+            && revision_ != io.grafeas.v1beta1.source.AliasContext.getDefaultInstance()) {
+          revision_ =
+              io.grafeas.v1beta1.source.AliasContext.newBuilder(
+                      (io.grafeas.v1beta1.source.AliasContext) revision_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           revision_ = value;
         }
@@ -1119,6 +1179,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1142,6 +1204,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1152,6 +1216,8 @@ private static final long serialVersionUID = 0L;
       return getAliasContextFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1169,6 +1235,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An alias, which may be a branch or tag.
      * </pre>
@@ -1176,26 +1244,32 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.source.AliasContext alias_context = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.AliasContext, io.grafeas.v1beta1.source.AliasContext.Builder, io.grafeas.v1beta1.source.AliasContextOrBuilder> 
+            io.grafeas.v1beta1.source.AliasContext,
+            io.grafeas.v1beta1.source.AliasContext.Builder,
+            io.grafeas.v1beta1.source.AliasContextOrBuilder>
         getAliasContextFieldBuilder() {
       if (aliasContextBuilder_ == null) {
         if (!(revisionCase_ == 4)) {
           revision_ = io.grafeas.v1beta1.source.AliasContext.getDefaultInstance();
         }
-        aliasContextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.source.AliasContext, io.grafeas.v1beta1.source.AliasContext.Builder, io.grafeas.v1beta1.source.AliasContextOrBuilder>(
+        aliasContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.source.AliasContext,
+                io.grafeas.v1beta1.source.AliasContext.Builder,
+                io.grafeas.v1beta1.source.AliasContextOrBuilder>(
                 (io.grafeas.v1beta1.source.AliasContext) revision_,
                 getParentForChildren(),
                 isClean());
         revision_ = null;
       }
       revisionCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return aliasContextBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1205,12 +1279,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.source.GerritSourceContext)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.source.GerritSourceContext)
   private static final io.grafeas.v1beta1.source.GerritSourceContext DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.source.GerritSourceContext();
   }
@@ -1219,16 +1293,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GerritSourceContext>
-      PARSER = new com.google.protobuf.AbstractParser<GerritSourceContext>() {
-    @java.lang.Override
-    public GerritSourceContext parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GerritSourceContext(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<GerritSourceContext> PARSER =
+      new com.google.protobuf.AbstractParser<GerritSourceContext>() {
+        @java.lang.Override
+        public GerritSourceContext parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GerritSourceContext(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<GerritSourceContext> parser() {
     return PARSER;
@@ -1243,6 +1317,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1beta1.source.GerritSourceContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface GroupAssetsRequestOrBuilder extends
+public interface GroupAssetsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.GroupAssetsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the organization to groupBy. Its format is
    * "organizations/[organization_id]".
@@ -17,6 +20,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Name of the organization to groupBy. Its format is
    * "organizations/[organization_id]".
@@ -24,10 +29,11 @@ public interface GroupAssetsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across assets.
    * The expression is a list of zero or more restrictions combined via logical
@@ -55,6 +61,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across assets.
    * The expression is a list of zero or more restrictions combined via logical
@@ -80,10 +88,11 @@ public interface GroupAssetsRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines what assets fields to use for grouping. The string
    * value should follow SQL syntax: comma separated list of fields. For
@@ -101,6 +110,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   java.lang.String getGroupBy();
   /**
+   *
+   *
    * <pre>
    * Expression that defines what assets fields to use for grouping. The string
    * value should follow SQL syntax: comma separated list of fields. For
@@ -116,10 +127,11 @@ public interface GroupAssetsRequestOrBuilder extends
    *
    * <code>string group_by = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getGroupByBytes();
+  com.google.protobuf.ByteString getGroupByBytes();
 
   /**
+   *
+   *
    * <pre>
    * When compare_duration is set, the Asset's "state" property is updated to
    * indicate whether the asset was added, removed, or remained present during
@@ -144,6 +156,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   boolean hasCompareDuration();
   /**
+   *
+   *
    * <pre>
    * When compare_duration is set, the Asset's "state" property is updated to
    * indicate whether the asset was added, removed, or remained present during
@@ -168,6 +182,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   com.google.protobuf.Duration getCompareDuration();
   /**
+   *
+   *
    * <pre>
    * When compare_duration is set, the Asset's "state" property is updated to
    * indicate whether the asset was added, removed, or remained present during
@@ -193,6 +209,8 @@ public interface GroupAssetsRequestOrBuilder extends
   com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering assets. The filter is limited
    * to assets existing at the supplied time and their values are those at that
@@ -204,6 +222,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering assets. The filter is limited
    * to assets existing at the supplied time and their values are those at that
@@ -215,6 +235,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering assets. The filter is limited
    * to assets existing at the supplied time and their values are those at that
@@ -227,6 +249,8 @@ public interface GroupAssetsRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `GroupAssetsResponse`; indicates
    * that this is a continuation of a prior `GroupAssets` call, and that the
@@ -237,6 +261,8 @@ public interface GroupAssetsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `GroupAssetsResponse`; indicates
    * that this is a continuation of a prior `GroupAssets` call, and that the
@@ -245,10 +271,11 @@ public interface GroupAssetsRequestOrBuilder extends
    *
    * <code>string page_token = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. Default is
    * 10, minimum is 1, maximum is 1000.

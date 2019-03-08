@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface UpdateProductRequestOrBuilder extends
+public interface UpdateProductRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.UpdateProductRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Product resource which replaces the one on the server.
    * product.name is immutable.
@@ -17,6 +20,8 @@ public interface UpdateProductRequestOrBuilder extends
    */
   boolean hasProduct();
   /**
+   *
+   *
    * <pre>
    * The Product resource which replaces the one on the server.
    * product.name is immutable.
@@ -26,6 +31,8 @@ public interface UpdateProductRequestOrBuilder extends
    */
   com.google.cloud.vision.v1.Product getProduct();
   /**
+   *
+   *
    * <pre>
    * The Product resource which replaces the one on the server.
    * product.name is immutable.
@@ -36,6 +43,8 @@ public interface UpdateProductRequestOrBuilder extends
   com.google.cloud.vision.v1.ProductOrBuilder getProductOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The [FieldMask][google.protobuf.FieldMask] that specifies which fields
    * to update.
@@ -48,6 +57,8 @@ public interface UpdateProductRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The [FieldMask][google.protobuf.FieldMask] that specifies which fields
    * to update.
@@ -60,6 +71,8 @@ public interface UpdateProductRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The [FieldMask][google.protobuf.FieldMask] that specifies which fields
    * to update.

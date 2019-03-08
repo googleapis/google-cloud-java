@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface UpdateSecurityMarksRequestOrBuilder extends
+public interface UpdateSecurityMarksRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The security marks resource to update.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    */
   boolean hasSecurityMarks();
   /**
+   *
+   *
    * <pre>
    * The security marks resource to update.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    */
   com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks();
   /**
+   *
+   *
    * <pre>
    * The security marks resource to update.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
   com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder getSecurityMarksOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
    * </pre>
@@ -41,6 +50,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
    * </pre>
@@ -49,6 +60,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
    * </pre>
@@ -58,6 +71,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * </pre>
@@ -66,6 +81,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * </pre>
@@ -74,6 +91,8 @@ public interface UpdateSecurityMarksRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface HttpTargetOrBuilder extends
+public interface HttpTargetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.HttpTarget)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The full URI path that the request will be sent to. This string
@@ -22,6 +25,8 @@ public interface HttpTargetOrBuilder extends
    */
   java.lang.String getUri();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The full URI path that the request will be sent to. This string
@@ -34,10 +39,11 @@ public interface HttpTargetOrBuilder extends
    *
    * <code>string uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUriBytes();
+  com.google.protobuf.ByteString getUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Which HTTP method to use for the request.
    * </pre>
@@ -46,6 +52,8 @@ public interface HttpTargetOrBuilder extends
    */
   int getHttpMethodValue();
   /**
+   *
+   *
    * <pre>
    * Which HTTP method to use for the request.
    * </pre>
@@ -55,6 +63,8 @@ public interface HttpTargetOrBuilder extends
   com.google.cloud.scheduler.v1beta1.HttpMethod getHttpMethod();
 
   /**
+   *
+   *
    * <pre>
    * The user can specify HTTP request headers to send with the job's
    * HTTP request. This map contains the header field names and
@@ -76,6 +86,8 @@ public interface HttpTargetOrBuilder extends
    */
   int getHeadersCount();
   /**
+   *
+   *
    * <pre>
    * The user can specify HTTP request headers to send with the job's
    * HTTP request. This map contains the header field names and
@@ -95,15 +107,13 @@ public interface HttpTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
-  boolean containsHeaders(
-      java.lang.String key);
-  /**
-   * Use {@link #getHeadersMap()} instead.
-   */
+  boolean containsHeaders(java.lang.String key);
+  /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getHeaders();
+  java.util.Map<java.lang.String, java.lang.String> getHeaders();
   /**
+   *
+   *
    * <pre>
    * The user can specify HTTP request headers to send with the job's
    * HTTP request. This map contains the header field names and
@@ -123,9 +133,10 @@ public interface HttpTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getHeadersMap();
+  java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
   /**
+   *
+   *
    * <pre>
    * The user can specify HTTP request headers to send with the job's
    * HTTP request. This map contains the header field names and
@@ -145,11 +156,10 @@ public interface HttpTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
-
-  java.lang.String getHeadersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * The user can specify HTTP request headers to send with the job's
    * HTTP request. This map contains the header field names and
@@ -169,11 +179,11 @@ public interface HttpTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
-
-  java.lang.String getHeadersOrThrow(
-      java.lang.String key);
+  java.lang.String getHeadersOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * HTTP request body. A request body is allowed only if the HTTP
    * method is POST, PUT, or PATCH. It is an error to set body on a job with an

@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface InputConfigOrBuilder extends
+public interface InputConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.InputConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location to read the input from.
    * </pre>
@@ -16,6 +19,8 @@ public interface InputConfigOrBuilder extends
    */
   boolean hasGcsSource();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location to read the input from.
    * </pre>
@@ -24,6 +29,8 @@ public interface InputConfigOrBuilder extends
    */
   com.google.cloud.vision.v1.GcsSource getGcsSource();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location to read the input from.
    * </pre>
@@ -33,6 +40,8 @@ public interface InputConfigOrBuilder extends
   com.google.cloud.vision.v1.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The type of the file. Currently only "application/pdf" and "image/tiff"
    * are supported. Wildcards are not supported.
@@ -42,6 +51,8 @@ public interface InputConfigOrBuilder extends
    */
   java.lang.String getMimeType();
   /**
+   *
+   *
    * <pre>
    * The type of the file. Currently only "application/pdf" and "image/tiff"
    * are supported. Wildcards are not supported.
@@ -49,6 +60,5 @@ public interface InputConfigOrBuilder extends
    *
    * <code>string mime_type = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getMimeTypeBytes();
+  com.google.protobuf.ByteString getMimeTypeBytes();
 }

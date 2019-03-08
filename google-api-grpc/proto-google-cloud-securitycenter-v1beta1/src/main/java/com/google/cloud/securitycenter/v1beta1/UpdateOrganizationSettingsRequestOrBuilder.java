@@ -3,36 +3,49 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface UpdateOrganizationSettingsRequestOrBuilder extends
+public interface UpdateOrganizationSettingsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.UpdateOrganizationSettingsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;
+   * </code>
    */
   boolean hasOrganizationSettings();
   /**
+   *
+   *
    * <pre>
    * The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;
+   * </code>
    */
   com.google.cloud.securitycenter.v1beta1.OrganizationSettings getOrganizationSettings();
   /**
+   *
+   *
    * <pre>
    * The organization settings resource to update.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;</code>
+   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings organization_settings = 1;
+   * </code>
    */
-  com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOrBuilder getOrganizationSettingsOrBuilder();
+  com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOrBuilder
+      getOrganizationSettingsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the settings resource.
    * </pre>
@@ -41,6 +54,8 @@ public interface UpdateOrganizationSettingsRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the settings resource.
    * </pre>
@@ -49,6 +64,8 @@ public interface UpdateOrganizationSettingsRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the settings resource.
    * </pre>

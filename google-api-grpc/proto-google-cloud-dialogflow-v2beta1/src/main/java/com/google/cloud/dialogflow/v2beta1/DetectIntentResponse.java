@@ -4,21 +4,24 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * The message returned from the DetectIntent method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.DetectIntentResponse}
  */
-public  final class DetectIntentResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DetectIntentResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.DetectIntentResponse)
     DetectIntentResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DetectIntentResponse.newBuilder() to construct.
   private DetectIntentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DetectIntentResponse() {
     responseId_ = "";
     alternativeQueryResults_ = java.util.Collections.emptyList();
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DetectIntentResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,79 +52,90 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            responseId_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.dialogflow.v2beta1.QueryResult.Builder subBuilder = null;
-            if (queryResult_ != null) {
-              subBuilder = queryResult_.toBuilder();
+              responseId_ = s;
+              break;
             }
-            queryResult_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.QueryResult.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(queryResult_);
-              queryResult_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.dialogflow.v2beta1.QueryResult.Builder subBuilder = null;
+              if (queryResult_ != null) {
+                subBuilder = queryResult_.toBuilder();
+              }
+              queryResult_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.QueryResult.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(queryResult_);
+                queryResult_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (webhookStatus_ != null) {
-              subBuilder = webhookStatus_.toBuilder();
+              break;
             }
-            webhookStatus_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(webhookStatus_);
-              webhookStatus_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (webhookStatus_ != null) {
+                subBuilder = webhookStatus_.toBuilder();
+              }
+              webhookStatus_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(webhookStatus_);
+                webhookStatus_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
+              break;
+            }
+          case 34:
+            {
+              outputAudio_ = input.readBytes();
+              break;
+            }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                alternativeQueryResults_ =
+                    new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              alternativeQueryResults_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.QueryResult.parser(), extensionRegistry));
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder subBuilder = null;
+              if (outputAudioConfig_ != null) {
+                subBuilder = outputAudioConfig_.toBuilder();
+              }
+              outputAudioConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputAudioConfig_);
+                outputAudioConfig_ = subBuilder.buildPartial();
+              }
 
-            outputAudio_ = input.readBytes();
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              alternativeQueryResults_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>();
-              mutable_bitField0_ |= 0x00000004;
+              break;
             }
-            alternativeQueryResults_.add(
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.QueryResult.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder subBuilder = null;
-            if (outputAudioConfig_ != null) {
-              subBuilder = outputAudioConfig_.toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            outputAudioConfig_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(outputAudioConfig_);
-              outputAudioConfig_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
@@ -130,23 +144,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.class, com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.class,
+            com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int RESPONSE_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object responseId_;
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -159,14 +178,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       responseId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -174,13 +194,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string response_id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getResponseIdBytes() {
+  public com.google.protobuf.ByteString getResponseIdBytes() {
     java.lang.Object ref = responseId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       responseId_ = b;
       return b;
     } else {
@@ -191,6 +209,8 @@ private static final long serialVersionUID = 0L;
   public static final int QUERY_RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2beta1.QueryResult queryResult_;
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -202,6 +222,8 @@ private static final long serialVersionUID = 0L;
     return queryResult_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -210,9 +232,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult() {
-    return queryResult_ == null ? com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance() : queryResult_;
+    return queryResult_ == null
+        ? com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance()
+        : queryResult_;
   }
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -227,6 +253,8 @@ private static final long serialVersionUID = 0L;
   public static final int ALTERNATIVE_QUERY_RESULTS_FIELD_NUMBER = 5;
   private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_;
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -238,12 +266,16 @@ private static final long serialVersionUID = 0L;
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
-  public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList() {
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult>
+      getAlternativeQueryResultsList() {
     return alternativeQueryResults_;
   }
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -255,13 +287,16 @@ private static final long serialVersionUID = 0L;
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
       getAlternativeQueryResultsOrBuilderList() {
     return alternativeQueryResults_;
   }
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -273,12 +308,15 @@ private static final long serialVersionUID = 0L;
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
   public int getAlternativeQueryResultsCount() {
     return alternativeQueryResults_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -290,12 +328,15 @@ private static final long serialVersionUID = 0L;
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
     return alternativeQueryResults_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -307,16 +348,19 @@ private static final long serialVersionUID = 0L;
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
-  public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
-      int index) {
+  public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder
+      getAlternativeQueryResultsOrBuilder(int index) {
     return alternativeQueryResults_.get(index);
   }
 
   public static final int WEBHOOK_STATUS_FIELD_NUMBER = 3;
   private com.google.rpc.Status webhookStatus_;
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request. `webhook_status`
    * is never populated in webhook requests.
@@ -328,6 +372,8 @@ private static final long serialVersionUID = 0L;
     return webhookStatus_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request. `webhook_status`
    * is never populated in webhook requests.
@@ -339,6 +385,8 @@ private static final long serialVersionUID = 0L;
     return webhookStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request. `webhook_status`
    * is never populated in webhook requests.
@@ -353,6 +401,8 @@ private static final long serialVersionUID = 0L;
   public static final int OUTPUT_AUDIO_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString outputAudio_;
   /**
+   *
+   *
    * <pre>
    * The audio data bytes encoded as specified in the request.
    * </pre>
@@ -366,6 +416,8 @@ private static final long serialVersionUID = 0L;
   public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig outputAudioConfig_;
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,
@@ -378,6 +430,8 @@ private static final long serialVersionUID = 0L;
     return outputAudioConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,
@@ -387,9 +441,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
-    return outputAudioConfig_ == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+    return outputAudioConfig_ == null
+        ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()
+        : outputAudioConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,
@@ -398,11 +456,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
    */
-  public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+  public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder
+      getOutputAudioConfigOrBuilder() {
     return getOutputAudioConfig();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -414,8 +474,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getResponseIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseId_);
     }
@@ -447,24 +506,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseId_);
     }
     if (queryResult_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getQueryResult());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getQueryResult());
     }
     if (webhookStatus_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getWebhookStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getWebhookStatus());
     }
     if (!outputAudio_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(4, outputAudio_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, outputAudio_);
     }
     for (int i = 0; i < alternativeQueryResults_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, alternativeQueryResults_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, alternativeQueryResults_.get(i));
     }
     if (outputAudioConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getOutputAudioConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getOutputAudioConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -474,34 +530,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.DetectIntentResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.DetectIntentResponse other = (com.google.cloud.dialogflow.v2beta1.DetectIntentResponse) obj;
+    com.google.cloud.dialogflow.v2beta1.DetectIntentResponse other =
+        (com.google.cloud.dialogflow.v2beta1.DetectIntentResponse) obj;
 
     boolean result = true;
-    result = result && getResponseId()
-        .equals(other.getResponseId());
+    result = result && getResponseId().equals(other.getResponseId());
     result = result && (hasQueryResult() == other.hasQueryResult());
     if (hasQueryResult()) {
-      result = result && getQueryResult()
-          .equals(other.getQueryResult());
+      result = result && getQueryResult().equals(other.getQueryResult());
     }
-    result = result && getAlternativeQueryResultsList()
-        .equals(other.getAlternativeQueryResultsList());
+    result =
+        result && getAlternativeQueryResultsList().equals(other.getAlternativeQueryResultsList());
     result = result && (hasWebhookStatus() == other.hasWebhookStatus());
     if (hasWebhookStatus()) {
-      result = result && getWebhookStatus()
-          .equals(other.getWebhookStatus());
+      result = result && getWebhookStatus().equals(other.getWebhookStatus());
     }
-    result = result && getOutputAudio()
-        .equals(other.getOutputAudio());
+    result = result && getOutputAudio().equals(other.getOutputAudio());
     result = result && (hasOutputAudioConfig() == other.hasOutputAudioConfig());
     if (hasOutputAudioConfig()) {
-      result = result && getOutputAudioConfig()
-          .equals(other.getOutputAudioConfig());
+      result = result && getOutputAudioConfig().equals(other.getOutputAudioConfig());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -540,117 +592,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.DetectIntentResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.DetectIntentResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.DetectIntentResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The message returned from the DetectIntent method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.DetectIntentResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.DetectIntentResponse)
       com.google.cloud.dialogflow.v2beta1.DetectIntentResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.class, com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.class,
+              com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.newBuilder()
@@ -658,17 +720,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAlternativeQueryResultsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -704,9 +766,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_DetectIntentResponse_descriptor;
     }
 
     @java.lang.Override
@@ -725,7 +787,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.DetectIntentResponse buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.DetectIntentResponse result = new com.google.cloud.dialogflow.v2beta1.DetectIntentResponse(this);
+      com.google.cloud.dialogflow.v2beta1.DetectIntentResponse result =
+          new com.google.cloud.dialogflow.v2beta1.DetectIntentResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.responseId_ = responseId_;
@@ -736,7 +799,8 @@ private static final long serialVersionUID = 0L;
       }
       if (alternativeQueryResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          alternativeQueryResults_ = java.util.Collections.unmodifiableList(alternativeQueryResults_);
+          alternativeQueryResults_ =
+              java.util.Collections.unmodifiableList(alternativeQueryResults_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.alternativeQueryResults_ = alternativeQueryResults_;
@@ -763,38 +827,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.DetectIntentResponse) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.DetectIntentResponse)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.DetectIntentResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -802,7 +867,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.DetectIntentResponse other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.getDefaultInstance())
+        return this;
       if (!other.getResponseId().isEmpty()) {
         responseId_ = other.responseId_;
         onChanged();
@@ -828,9 +894,10 @@ private static final long serialVersionUID = 0L;
             alternativeQueryResultsBuilder_ = null;
             alternativeQueryResults_ = other.alternativeQueryResults_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            alternativeQueryResultsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getAlternativeQueryResultsFieldBuilder() : null;
+            alternativeQueryResultsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAlternativeQueryResultsFieldBuilder()
+                    : null;
           } else {
             alternativeQueryResultsBuilder_.addAllMessages(other.alternativeQueryResults_);
           }
@@ -864,7 +931,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.DetectIntentResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.DetectIntentResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -873,10 +941,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object responseId_ = "";
     /**
+     *
+     *
      * <pre>
      * The unique identifier of the response. It can be used to
      * locate a response in the training example set or for reporting issues.
@@ -887,8 +958,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getResponseId() {
       java.lang.Object ref = responseId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         responseId_ = s;
         return s;
@@ -897,6 +967,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique identifier of the response. It can be used to
      * locate a response in the training example set or for reporting issues.
@@ -904,13 +976,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string response_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getResponseIdBytes() {
+    public com.google.protobuf.ByteString getResponseIdBytes() {
       java.lang.Object ref = responseId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         responseId_ = b;
         return b;
       } else {
@@ -918,6 +988,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique identifier of the response. It can be used to
      * locate a response in the training example set or for reporting issues.
@@ -925,17 +997,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string response_id = 1;</code>
      */
-    public Builder setResponseId(
-        java.lang.String value) {
+    public Builder setResponseId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       responseId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique identifier of the response. It can be used to
      * locate a response in the training example set or for reporting issues.
@@ -944,12 +1017,14 @@ private static final long serialVersionUID = 0L;
      * <code>string response_id = 1;</code>
      */
     public Builder clearResponseId() {
-      
+
       responseId_ = getDefaultInstance().getResponseId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique identifier of the response. It can be used to
      * locate a response in the training example set or for reporting issues.
@@ -957,13 +1032,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string response_id = 1;</code>
      */
-    public Builder setResponseIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setResponseIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       responseId_ = value;
       onChanged();
       return this;
@@ -971,8 +1045,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dialogflow.v2beta1.QueryResult queryResult_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> queryResultBuilder_;
+            com.google.cloud.dialogflow.v2beta1.QueryResult,
+            com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
+            com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
+        queryResultBuilder_;
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -984,6 +1063,8 @@ private static final long serialVersionUID = 0L;
       return queryResultBuilder_ != null || queryResult_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -993,12 +1074,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult() {
       if (queryResultBuilder_ == null) {
-        return queryResult_ == null ? com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance() : queryResult_;
+        return queryResult_ == null
+            ? com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance()
+            : queryResult_;
       } else {
         return queryResultBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -1020,6 +1105,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -1039,6 +1126,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -1050,7 +1139,9 @@ private static final long serialVersionUID = 0L;
       if (queryResultBuilder_ == null) {
         if (queryResult_ != null) {
           queryResult_ =
-            com.google.cloud.dialogflow.v2beta1.QueryResult.newBuilder(queryResult_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.QueryResult.newBuilder(queryResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           queryResult_ = value;
         }
@@ -1062,6 +1153,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -1081,6 +1174,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -1089,11 +1184,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder getQueryResultBuilder() {
-      
+
       onChanged();
       return getQueryResultFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -1105,11 +1202,14 @@ private static final long serialVersionUID = 0L;
       if (queryResultBuilder_ != null) {
         return queryResultBuilder_.getMessageOrBuilder();
       } else {
-        return queryResult_ == null ?
-            com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance() : queryResult_;
+        return queryResult_ == null
+            ? com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance()
+            : queryResult_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The selected results of the conversational query or event processing.
      * See `alternative_query_results` for additional potential results.
@@ -1118,32 +1218,43 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.QueryResult query_result = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.QueryResult,
+            com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
+            com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
         getQueryResultFieldBuilder() {
       if (queryResultBuilder_ == null) {
-        queryResultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
-                getQueryResult(),
-                getParentForChildren(),
-                isClean());
+        queryResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.QueryResult,
+                com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
+                com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
+                getQueryResult(), getParentForChildren(), isClean());
         queryResult_ = null;
       }
       return queryResultBuilder_;
     }
 
-    private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult>
+        alternativeQueryResults_ = java.util.Collections.emptyList();
+
     private void ensureAlternativeQueryResultsIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        alternativeQueryResults_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(alternativeQueryResults_);
+        alternativeQueryResults_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.QueryResult>(
+                alternativeQueryResults_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> alternativeQueryResultsBuilder_;
+            com.google.cloud.dialogflow.v2beta1.QueryResult,
+            com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
+            com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
+        alternativeQueryResultsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1155,9 +1266,11 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult>
+        getAlternativeQueryResultsList() {
       if (alternativeQueryResultsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(alternativeQueryResults_);
       } else {
@@ -1165,6 +1278,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1176,7 +1291,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public int getAlternativeQueryResultsCount() {
       if (alternativeQueryResultsBuilder_ == null) {
@@ -1186,6 +1302,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1197,7 +1315,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
       if (alternativeQueryResultsBuilder_ == null) {
@@ -1207,6 +1326,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1218,7 +1339,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder setAlternativeQueryResults(
         int index, com.google.cloud.dialogflow.v2beta1.QueryResult value) {
@@ -1235,6 +1357,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1246,7 +1370,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder setAlternativeQueryResults(
         int index, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
@@ -1260,6 +1385,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1271,9 +1398,11 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public Builder addAlternativeQueryResults(com.google.cloud.dialogflow.v2beta1.QueryResult value) {
+    public Builder addAlternativeQueryResults(
+        com.google.cloud.dialogflow.v2beta1.QueryResult value) {
       if (alternativeQueryResultsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1287,6 +1416,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1298,7 +1429,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder addAlternativeQueryResults(
         int index, com.google.cloud.dialogflow.v2beta1.QueryResult value) {
@@ -1315,6 +1447,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1326,7 +1460,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder addAlternativeQueryResults(
         com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
@@ -1340,6 +1475,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1351,7 +1488,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder addAlternativeQueryResults(
         int index, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder builderForValue) {
@@ -1365,6 +1503,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1376,14 +1516,14 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder addAllAlternativeQueryResults(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.QueryResult> values) {
       if (alternativeQueryResultsBuilder_ == null) {
         ensureAlternativeQueryResultsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, alternativeQueryResults_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, alternativeQueryResults_);
         onChanged();
       } else {
         alternativeQueryResultsBuilder_.addAllMessages(values);
@@ -1391,6 +1531,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1402,7 +1544,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder clearAlternativeQueryResults() {
       if (alternativeQueryResultsBuilder_ == null) {
@@ -1415,6 +1558,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1426,7 +1571,8 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
     public Builder removeAlternativeQueryResults(int index) {
       if (alternativeQueryResultsBuilder_ == null) {
@@ -1439,6 +1585,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1450,13 +1598,16 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder getAlternativeQueryResultsBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder
+        getAlternativeQueryResultsBuilder(int index) {
       return getAlternativeQueryResultsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1468,16 +1619,20 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder
+        getAlternativeQueryResultsOrBuilder(int index) {
       if (alternativeQueryResultsBuilder_ == null) {
-        return alternativeQueryResults_.get(index);  } else {
+        return alternativeQueryResults_.get(index);
+      } else {
         return alternativeQueryResultsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1489,10 +1644,11 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
-         getAlternativeQueryResultsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
+        getAlternativeQueryResultsOrBuilderList() {
       if (alternativeQueryResultsBuilder_ != null) {
         return alternativeQueryResultsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1500,6 +1656,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1511,13 +1669,17 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder addAlternativeQueryResultsBuilder() {
-      return getAlternativeQueryResultsFieldBuilder().addBuilder(
-          com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder
+        addAlternativeQueryResultsBuilder() {
+      return getAlternativeQueryResultsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1529,14 +1691,17 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder addAlternativeQueryResultsBuilder(
-        int index) {
-      return getAlternativeQueryResultsFieldBuilder().addBuilder(
-          index, com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
+    public com.google.cloud.dialogflow.v2beta1.QueryResult.Builder
+        addAlternativeQueryResultsBuilder(int index) {
+      return getAlternativeQueryResultsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If Knowledge Connectors are enabled, there could be more than one result
      * returned for a given query or event, and this field will contain all
@@ -1548,18 +1713,25 @@ private static final long serialVersionUID = 0L;
      * surfaced here.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+     * </code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult.Builder> 
-         getAlternativeQueryResultsBuilderList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult.Builder>
+        getAlternativeQueryResultsBuilderList() {
       return getAlternativeQueryResultsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.QueryResult,
+            com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
+            com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
         getAlternativeQueryResultsFieldBuilder() {
       if (alternativeQueryResultsBuilder_ == null) {
-        alternativeQueryResultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.QueryResult, com.google.cloud.dialogflow.v2beta1.QueryResult.Builder, com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
+        alternativeQueryResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.QueryResult,
+                com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
+                com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>(
                 alternativeQueryResults_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1571,8 +1743,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status webhookStatus_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> webhookStatusBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        webhookStatusBuilder_;
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1584,6 +1759,8 @@ private static final long serialVersionUID = 0L;
       return webhookStatusBuilder_ != null || webhookStatus_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1599,6 +1776,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1620,6 +1799,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1627,8 +1808,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.rpc.Status webhook_status = 3;</code>
      */
-    public Builder setWebhookStatus(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setWebhookStatus(com.google.rpc.Status.Builder builderForValue) {
       if (webhookStatusBuilder_ == null) {
         webhookStatus_ = builderForValue.build();
         onChanged();
@@ -1639,6 +1819,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1650,7 +1832,7 @@ private static final long serialVersionUID = 0L;
       if (webhookStatusBuilder_ == null) {
         if (webhookStatus_ != null) {
           webhookStatus_ =
-            com.google.rpc.Status.newBuilder(webhookStatus_).mergeFrom(value).buildPartial();
+              com.google.rpc.Status.newBuilder(webhookStatus_).mergeFrom(value).buildPartial();
         } else {
           webhookStatus_ = value;
         }
@@ -1662,6 +1844,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1681,6 +1865,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1689,11 +1875,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status webhook_status = 3;</code>
      */
     public com.google.rpc.Status.Builder getWebhookStatusBuilder() {
-      
+
       onChanged();
       return getWebhookStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1705,11 +1893,12 @@ private static final long serialVersionUID = 0L;
       if (webhookStatusBuilder_ != null) {
         return webhookStatusBuilder_.getMessageOrBuilder();
       } else {
-        return webhookStatus_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
+        return webhookStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the status of the webhook request. `webhook_status`
      * is never populated in webhook requests.
@@ -1718,14 +1907,15 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status webhook_status = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getWebhookStatusFieldBuilder() {
       if (webhookStatusBuilder_ == null) {
-        webhookStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getWebhookStatus(),
-                getParentForChildren(),
-                isClean());
+        webhookStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                getWebhookStatus(), getParentForChildren(), isClean());
         webhookStatus_ = null;
       }
       return webhookStatusBuilder_;
@@ -1733,6 +1923,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * </pre>
@@ -1743,6 +1935,8 @@ private static final long serialVersionUID = 0L;
       return outputAudio_;
     }
     /**
+     *
+     *
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * </pre>
@@ -1751,14 +1945,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOutputAudio(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       outputAudio_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The audio data bytes encoded as specified in the request.
      * </pre>
@@ -1766,7 +1962,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes output_audio = 4;</code>
      */
     public Builder clearOutputAudio() {
-      
+
       outputAudio_ = getDefaultInstance().getOutputAudio();
       onChanged();
       return this;
@@ -1774,8 +1970,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig outputAudioConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder> outputAudioConfigBuilder_;
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig,
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>
+        outputAudioConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1788,6 +1989,8 @@ private static final long serialVersionUID = 0L;
       return outputAudioConfigBuilder_ != null || outputAudioConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1798,12 +2001,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig() {
       if (outputAudioConfigBuilder_ == null) {
-        return outputAudioConfig_ == null ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+        return outputAudioConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()
+            : outputAudioConfig_;
       } else {
         return outputAudioConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1812,7 +2019,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
      */
-    public Builder setOutputAudioConfig(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
+    public Builder setOutputAudioConfig(
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1826,6 +2034,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1846,6 +2056,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1854,11 +2066,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
      */
-    public Builder mergeOutputAudioConfig(com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
+    public Builder mergeOutputAudioConfig(
+        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
         if (outputAudioConfig_ != null) {
           outputAudioConfig_ =
-            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.newBuilder(outputAudioConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.newBuilder(outputAudioConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           outputAudioConfig_ = value;
         }
@@ -1870,6 +2085,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1890,6 +2107,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1898,12 +2117,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder getOutputAudioConfigBuilder() {
-      
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder
+        getOutputAudioConfigBuilder() {
+
       onChanged();
       return getOutputAudioConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1912,15 +2134,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
+    public com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder
+        getOutputAudioConfigOrBuilder() {
       if (outputAudioConfigBuilder_ != null) {
         return outputAudioConfigBuilder_.getMessageOrBuilder();
       } else {
-        return outputAudioConfig_ == null ?
-            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance() : outputAudioConfig_;
+        return outputAudioConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()
+            : outputAudioConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Instructs the speech synthesizer how to generate the output audio. This
      * field is populated from the agent-level speech synthesizer configuration,
@@ -1930,21 +2156,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig output_audio_config = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig,
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder,
+            com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>
         getOutputAudioConfigFieldBuilder() {
       if (outputAudioConfigBuilder_ == null) {
-        outputAudioConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.OutputAudioConfig, com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder, com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>(
-                getOutputAudioConfig(),
-                getParentForChildren(),
-                isClean());
+        outputAudioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.OutputAudioConfig,
+                com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder,
+                com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>(
+                getOutputAudioConfig(), getParentForChildren(), isClean());
         outputAudioConfig_ = null;
       }
       return outputAudioConfigBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1954,12 +2183,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.DetectIntentResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.DetectIntentResponse)
   private static final com.google.cloud.dialogflow.v2beta1.DetectIntentResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.DetectIntentResponse();
   }
@@ -1968,16 +2197,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DetectIntentResponse>
-      PARSER = new com.google.protobuf.AbstractParser<DetectIntentResponse>() {
-    @java.lang.Override
-    public DetectIntentResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DetectIntentResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DetectIntentResponse> PARSER =
+      new com.google.protobuf.AbstractParser<DetectIntentResponse>() {
+        @java.lang.Override
+        public DetectIntentResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DetectIntentResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DetectIntentResponse> parser() {
     return PARSER;
@@ -1992,6 +2221,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dialogflow.v2beta1.DetectIntentResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

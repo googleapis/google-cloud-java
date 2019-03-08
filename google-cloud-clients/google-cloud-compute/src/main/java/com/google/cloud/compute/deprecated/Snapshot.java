@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.compute.deprecated.Compute.OperationOption;
 import com.google.cloud.compute.deprecated.Compute.SnapshotOption;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -31,8 +30,8 @@ import java.util.Objects;
  * disk and create new persistent disks from that snapshot. This can be useful for backing up data,
  * recreating a persistent disk that might have been lost, or copying a persistent disk. Snapshots
  * can be applied across persistent disk types. {@code Snapshot} adds a layer of service-related
- * functionality over {@link SnapshotInfo}. Objects of this class are immutable; to get a
- * {@code Snapshot} object with the most recent information use {@link #reload}.
+ * functionality over {@link SnapshotInfo}. Objects of this class are immutable; to get a {@code
+ * Snapshot} object with the most recent information use {@link #reload}.
  *
  * @see <a href="https://cloud.google.com/compute/docs/disks/persistent-disks#snapshots">Use
  *     persistent disk snapshots</a>
@@ -44,9 +43,7 @@ public class Snapshot extends SnapshotInfo {
   private final ComputeOptions options;
   private transient Compute compute;
 
-  /**
-   * A builder for {@code Snapshot} objects.
-   */
+  /** A builder for {@code Snapshot} objects. */
   public static class Builder extends SnapshotInfo.Builder {
 
     private final Compute compute;
@@ -175,9 +172,7 @@ public class Snapshot extends SnapshotInfo {
     return compute.deleteSnapshot(getSnapshotId(), options);
   }
 
-  /**
-   * Returns the snapshot's {@code Compute} object used to issue requests.
-   */
+  /** Returns the snapshot's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }
@@ -209,8 +204,8 @@ public class Snapshot extends SnapshotInfo {
     this.compute = options.getService();
   }
 
-  static Snapshot fromPb(Compute compute,
-        com.google.api.services.compute.model.Snapshot snapshotPb) {
+  static Snapshot fromPb(
+      Compute compute, com.google.api.services.compute.model.Snapshot snapshotPb) {
     return new Snapshot(compute, new SnapshotInfo.BuilderImpl(snapshotPb));
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.GlobalOperationStub;
 import com.google.cloud.compute.v1.stub.GlobalOperationStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -56,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -664,12 +665,16 @@ public class GlobalOperationClient implements BackgroundResource {
 
   public static class AggregatedListGlobalOperationsPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList, OperationsScopedList,
-          AggregatedListGlobalOperationsPage, AggregatedListGlobalOperationsFixedSizeCollection> {
+          AggregatedListGlobalOperationsHttpRequest,
+          OperationAggregatedList,
+          OperationsScopedList,
+          AggregatedListGlobalOperationsPage,
+          AggregatedListGlobalOperationsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListGlobalOperationsPagedResponse> createAsync(
         PageContext<
-                AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
+                AggregatedListGlobalOperationsHttpRequest,
+                OperationAggregatedList,
                 OperationsScopedList>
             context,
         ApiFuture<OperationAggregatedList> futureResponse) {
@@ -685,7 +690,8 @@ public class GlobalOperationClient implements BackgroundResource {
                 AggregatedListGlobalOperationsPage input) {
               return new AggregatedListGlobalOperationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListGlobalOperationsPagedResponse(AggregatedListGlobalOperationsPage page) {
@@ -695,12 +701,15 @@ public class GlobalOperationClient implements BackgroundResource {
 
   public static class AggregatedListGlobalOperationsPage
       extends AbstractPage<
-          AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList, OperationsScopedList,
+          AggregatedListGlobalOperationsHttpRequest,
+          OperationAggregatedList,
+          OperationsScopedList,
           AggregatedListGlobalOperationsPage> {
 
     private AggregatedListGlobalOperationsPage(
         PageContext<
-                AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
+                AggregatedListGlobalOperationsHttpRequest,
+                OperationAggregatedList,
                 OperationsScopedList>
             context,
         OperationAggregatedList response) {
@@ -714,7 +723,8 @@ public class GlobalOperationClient implements BackgroundResource {
     @Override
     protected AggregatedListGlobalOperationsPage createPage(
         PageContext<
-                AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
+                AggregatedListGlobalOperationsHttpRequest,
+                OperationAggregatedList,
                 OperationsScopedList>
             context,
         OperationAggregatedList response) {
@@ -724,7 +734,8 @@ public class GlobalOperationClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListGlobalOperationsPage> createPageAsync(
         PageContext<
-                AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
+                AggregatedListGlobalOperationsHttpRequest,
+                OperationAggregatedList,
                 OperationsScopedList>
             context,
         ApiFuture<OperationAggregatedList> futureResponse) {
@@ -734,8 +745,11 @@ public class GlobalOperationClient implements BackgroundResource {
 
   public static class AggregatedListGlobalOperationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList, OperationsScopedList,
-          AggregatedListGlobalOperationsPage, AggregatedListGlobalOperationsFixedSizeCollection> {
+          AggregatedListGlobalOperationsHttpRequest,
+          OperationAggregatedList,
+          OperationsScopedList,
+          AggregatedListGlobalOperationsPage,
+          AggregatedListGlobalOperationsFixedSizeCollection> {
 
     private AggregatedListGlobalOperationsFixedSizeCollection(
         List<AggregatedListGlobalOperationsPage> pages, int collectionSize) {
@@ -755,7 +769,10 @@ public class GlobalOperationClient implements BackgroundResource {
 
   public static class ListGlobalOperationsPagedResponse
       extends AbstractPagedListResponse<
-          ListGlobalOperationsHttpRequest, OperationList, Operation, ListGlobalOperationsPage,
+          ListGlobalOperationsHttpRequest,
+          OperationList,
+          Operation,
+          ListGlobalOperationsPage,
           ListGlobalOperationsFixedSizeCollection> {
 
     public static ApiFuture<ListGlobalOperationsPagedResponse> createAsync(
@@ -770,7 +787,8 @@ public class GlobalOperationClient implements BackgroundResource {
             public ListGlobalOperationsPagedResponse apply(ListGlobalOperationsPage input) {
               return new ListGlobalOperationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListGlobalOperationsPagedResponse(ListGlobalOperationsPage page) {
@@ -809,7 +827,10 @@ public class GlobalOperationClient implements BackgroundResource {
 
   public static class ListGlobalOperationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListGlobalOperationsHttpRequest, OperationList, Operation, ListGlobalOperationsPage,
+          ListGlobalOperationsHttpRequest,
+          OperationList,
+          Operation,
+          ListGlobalOperationsPage,
           ListGlobalOperationsFixedSizeCollection> {
 
     private ListGlobalOperationsFixedSizeCollection(

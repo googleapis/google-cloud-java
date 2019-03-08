@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface DropRowRangeRequestOrBuilder extends
+public interface DropRowRangeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.DropRowRangeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the table on which to drop a range of rows.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface DropRowRangeRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the table on which to drop a range of rows.
    * Values are of the form
@@ -26,10 +31,11 @@ public interface DropRowRangeRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Delete all rows that start with this row key prefix. Prefix cannot be
    * zero length.
@@ -40,6 +46,8 @@ public interface DropRowRangeRequestOrBuilder extends
   com.google.protobuf.ByteString getRowKeyPrefix();
 
   /**
+   *
+   *
    * <pre>
    * Delete all rows in the table. Setting this to false is a no-op.
    * </pre>

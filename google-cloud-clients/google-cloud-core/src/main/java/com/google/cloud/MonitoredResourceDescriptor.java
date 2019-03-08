@@ -23,7 +23,6 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,15 +37,17 @@ import java.util.Objects;
 public class MonitoredResourceDescriptor implements Serializable {
 
   private static final long serialVersionUID = -3702077512777687441L;
-  public static final ApiFunction<com.google.api.MonitoredResourceDescriptor,
-      MonitoredResourceDescriptor> FROM_PB_FUNCTION =
-      new ApiFunction<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
-        @Override
-        public MonitoredResourceDescriptor apply(
-            com.google.api.MonitoredResourceDescriptor pb) {
-          return fromPb(pb);
-        }
-      };
+  public static final ApiFunction<
+          com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>
+      FROM_PB_FUNCTION =
+          new ApiFunction<
+              com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+            @Override
+            public MonitoredResourceDescriptor apply(
+                com.google.api.MonitoredResourceDescriptor pb) {
+              return fromPb(pb);
+            }
+          };
 
   private final String type;
   private final String name;
@@ -62,14 +63,15 @@ public class MonitoredResourceDescriptor implements Serializable {
 
     private static final long serialVersionUID = -2811608103754481777L;
     private static final Function<com.google.api.LabelDescriptor, LabelDescriptor>
-        FROM_PB_FUNCTION = new Function<com.google.api.LabelDescriptor, LabelDescriptor>() {
-          @Override
-          public LabelDescriptor apply(com.google.api.LabelDescriptor descriptorPb) {
-            return fromPb(descriptorPb);
-          }
-        };
-    private static final Function<LabelDescriptor, com.google.api.LabelDescriptor>
-        TO_PB_FUNCTION = new Function<LabelDescriptor, com.google.api.LabelDescriptor>() {
+        FROM_PB_FUNCTION =
+            new Function<com.google.api.LabelDescriptor, LabelDescriptor>() {
+              @Override
+              public LabelDescriptor apply(com.google.api.LabelDescriptor descriptorPb) {
+                return fromPb(descriptorPb);
+              }
+            };
+    private static final Function<LabelDescriptor, com.google.api.LabelDescriptor> TO_PB_FUNCTION =
+        new Function<LabelDescriptor, com.google.api.LabelDescriptor>() {
           @Override
           public com.google.api.LabelDescriptor apply(LabelDescriptor descriptor) {
             return descriptor.toPb();
@@ -80,9 +82,7 @@ public class MonitoredResourceDescriptor implements Serializable {
     private final ValueType valueType;
     private final String description;
 
-    /**
-     * Value types that can be used as label values.
-     */
+    /** Value types that can be used as label values. */
     public enum ValueType {
       STRING(com.google.api.LabelDescriptor.ValueType.STRING),
       BOOL(com.google.api.LabelDescriptor.ValueType.BOOL),
@@ -118,22 +118,15 @@ public class MonitoredResourceDescriptor implements Serializable {
       this.description = description;
     }
 
-
-    /**
-     * Returns the key associated to this label.
-     */
+    /** Returns the key associated to this label. */
     public String getKey() {
       return key;
     }
 
-
-    /**
-     * Returns the type of data that can be assigned to this label.
-     */
+    /** Returns the type of data that can be assigned to this label. */
     public ValueType getValueType() {
       return valueType;
     }
-
 
     /**
      * Returns the optional human-readable description for this label. If not set, this method
@@ -172,9 +165,8 @@ public class MonitoredResourceDescriptor implements Serializable {
     }
 
     com.google.api.LabelDescriptor toPb() {
-      com.google.api.LabelDescriptor.Builder builder = com.google.api.LabelDescriptor.newBuilder()
-          .setKey(key)
-          .setValueType(valueType.toPb());
+      com.google.api.LabelDescriptor.Builder builder =
+          com.google.api.LabelDescriptor.newBuilder().setKey(key).setValueType(valueType.toPb());
       if (description != null) {
         builder.setDescription(description);
       }
@@ -186,8 +178,8 @@ public class MonitoredResourceDescriptor implements Serializable {
       if (descriptorPb.getDescription() != null && !descriptorPb.getDescription().equals("")) {
         description = descriptorPb.getDescription();
       }
-      return new LabelDescriptor(descriptorPb.getKey(),
-          ValueType.fromPb(descriptorPb.getValueType()), description);
+      return new LabelDescriptor(
+          descriptorPb.getKey(), ValueType.fromPb(descriptorPb.getValueType()), description);
     }
   }
 
@@ -236,7 +228,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     this.labels = checkNotNull(builder.labels);
   }
 
-
   /**
    * Returns the monitored resource type. For example, the type {@code cloudsql_database} represents
    * databases in Google Cloud SQL.
@@ -245,7 +236,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     return type;
   }
 
-
   /**
    * Returns an optional name for the monitored resource descriptor. If not set, this method returns
    * {@code null}.
@@ -253,7 +243,6 @@ public class MonitoredResourceDescriptor implements Serializable {
   public String getName() {
     return name;
   }
-
 
   /**
    * Returns an optional concise name for the monitored resource type. This value might be displayed
@@ -264,7 +253,6 @@ public class MonitoredResourceDescriptor implements Serializable {
     return displayName;
   }
 
-
   /**
    * Returns an optional detailed description of the monitored resource type. This value might be
    * used in documentation. If not set, this method returns {@code null}.
@@ -273,11 +261,10 @@ public class MonitoredResourceDescriptor implements Serializable {
     return description;
   }
 
-
   /**
    * Returns a list of labels used to describe instances of this monitored resource type. For
-   * example, an individual Google Cloud SQL database is identified by values for the labels
-   * {@code database_id} and {@code region}.
+   * example, an individual Google Cloud SQL database is identified by values for the labels {@code
+   * database_id} and {@code region}.
    */
   public List<LabelDescriptor> getLabels() {
     return labels;
@@ -348,8 +335,8 @@ public class MonitoredResourceDescriptor implements Serializable {
     if (descriptorPb.getDescription() != null && !descriptorPb.getDescription().equals("")) {
       builder.setDescription(descriptorPb.getDescription());
     }
-    builder.setLabels(Lists.transform(descriptorPb.getLabelsList(),
-        LabelDescriptor.FROM_PB_FUNCTION));
+    builder.setLabels(
+        Lists.transform(descriptorPb.getLabelsList(), LabelDescriptor.FROM_PB_FUNCTION));
     return builder.build();
   }
 }

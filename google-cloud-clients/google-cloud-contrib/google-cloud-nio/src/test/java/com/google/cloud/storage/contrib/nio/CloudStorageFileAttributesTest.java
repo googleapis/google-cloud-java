@@ -23,25 +23,22 @@ import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link CloudStorageFileAttributes}.
- */
+/** Unit tests for {@link CloudStorageFileAttributes}. */
 @RunWith(JUnit4.class)
 public class CloudStorageFileAttributesTest {
 
   private static final byte[] HAPPY = "(✿◕ ‿◕ )ノ".getBytes(UTF_8);
+  private static final byte[] EMPTY = "".getBytes(UTF_8);
 
   private Path path;
   private Path dir;
@@ -103,6 +100,14 @@ public class CloudStorageFileAttributesTest {
   @Test
   public void testIsDirectory() throws IOException {
     Files.write(path, HAPPY);
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isDirectory())
+        .isFalse();
+    assertThat(Files.readAttributes(dir, CloudStorageFileAttributes.class).isDirectory()).isTrue();
+  }
+
+  @Test
+  public void testIsPseudoDirectory() throws IOException {
+    Files.write(path, EMPTY);
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isDirectory())
         .isFalse();
     assertThat(Files.readAttributes(dir, CloudStorageFileAttributes.class).isDirectory()).isTrue();

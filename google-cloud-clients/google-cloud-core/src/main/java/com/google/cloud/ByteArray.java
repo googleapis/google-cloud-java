@@ -21,7 +21,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -29,9 +28,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
-/**
- * An immutable byte array holder.
- */
+/** An immutable byte array holder. */
 @BetaApi
 public class ByteArray implements Iterable<Byte>, Serializable {
 
@@ -73,23 +70,17 @@ public class ByteArray implements Iterable<Byte>, Serializable {
         || obj instanceof ByteArray && byteString.equals(((ByteArray) obj).byteString);
   }
 
-  /**
-   * Returns the number of bytes in this {@code ByteArray}.
-   */
+  /** Returns the number of bytes in this {@code ByteArray}. */
   public final int length() {
     return byteString.size();
   }
 
-  /**
-   * Returns a copy of this {@code ByteArray} as an array of bytes.
-   */
+  /** Returns a copy of this {@code ByteArray} as an array of bytes. */
   public final byte[] toByteArray() {
     return byteString.toByteArray();
   }
 
-  /**
-   * Returns a copy of this {@code ByteArray} as an {@code UTF-8} string.
-   */
+  /** Returns a copy of this {@code ByteArray} as an {@code UTF-8} string. */
   public final String toStringUtf8() {
     return byteString.toStringUtf8();
   }
@@ -99,16 +90,12 @@ public class ByteArray implements Iterable<Byte>, Serializable {
     return encoder.encode(toByteArray());
   }
 
-  /**
-   * Returns the content of this {@code ByteArray} as a read-only {@link ByteBuffer}.
-   */
+  /** Returns the content of this {@code ByteArray} as a read-only {@link ByteBuffer}. */
   public final ByteBuffer asReadOnlyByteBuffer() {
     return byteString.asReadOnlyByteBuffer();
   }
 
-  /**
-   * Returns an {@link InputStream} for this {@code ByteArray} content.
-   */
+  /** Returns an {@link InputStream} for this {@code ByteArray} content. */
   public final InputStream asInputStream() {
     return byteString.newInput();
   }
@@ -133,9 +120,7 @@ public class ByteArray implements Iterable<Byte>, Serializable {
     byteString.copyTo(target, 0, 0, length());
   }
 
-  /**
-   * Creates a {@code ByteArray} object given an array of bytes. The bytes are copied.
-   */
+  /** Creates a {@code ByteArray} object given an array of bytes. The bytes are copied. */
   public static final ByteArray copyFrom(byte[] bytes) {
     return new ByteArray(ByteString.copyFrom(bytes));
   }
@@ -148,9 +133,7 @@ public class ByteArray implements Iterable<Byte>, Serializable {
     return new ByteArray(ByteString.copyFrom(string, StandardCharsets.UTF_8));
   }
 
-  /**
-   * Creates a {@code ByteArray} object given a {@link ByteBuffer}. The bytes are copied.
-   */
+  /** Creates a {@code ByteArray} object given a {@link ByteBuffer}. The bytes are copied. */
   public static final ByteArray copyFrom(ByteBuffer bytes) {
     return new ByteArray(ByteString.copyFrom(bytes));
   }

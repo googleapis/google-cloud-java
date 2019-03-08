@@ -30,8 +30,8 @@ public final class EncryptionConfiguration implements Serializable {
   }
 
   public com.google.api.services.bigquery.model.EncryptionConfiguration toPb() {
-    com.google.api.services.bigquery.model.EncryptionConfiguration encryptionConfigurationPb
-        = new com.google.api.services.bigquery.model.EncryptionConfiguration();
+    com.google.api.services.bigquery.model.EncryptionConfiguration encryptionConfigurationPb =
+        new com.google.api.services.bigquery.model.EncryptionConfiguration();
     encryptionConfigurationPb.setKmsKeyName(kmsKeyName);
     return encryptionConfigurationPb;
   }
@@ -45,7 +45,8 @@ public final class EncryptionConfiguration implements Serializable {
       kmsKeyName = options.kmsKeyName;
     }
 
-    public Builder(com.google.api.services.bigquery.model.EncryptionConfiguration encryptionConfigurationPb) {
+    public Builder(
+        com.google.api.services.bigquery.model.EncryptionConfiguration encryptionConfigurationPb) {
       setKmsKeyName(encryptionConfigurationPb.getKmsKeyName());
     }
 
@@ -54,9 +55,7 @@ public final class EncryptionConfiguration implements Serializable {
       return this;
     }
 
-    /**
-     * Creates a {@code EncryptionConfiguration} object.
-     */
+    /** Creates a {@code EncryptionConfiguration} object. */
     public EncryptionConfiguration build() {
       return new EncryptionConfiguration(this);
     }
@@ -66,25 +65,19 @@ public final class EncryptionConfiguration implements Serializable {
     this.kmsKeyName = builder.kmsKeyName;
   }
 
-  /**
-   * Returns a builder for the {@code EncryptionConfiguration} object.
-   */
+  /** Returns a builder for the {@code EncryptionConfiguration} object. */
   public EncryptionConfiguration.Builder toBuilder() {
     return new EncryptionConfiguration.Builder(this);
   }
 
-  /**
-   * Returns a builder for a {@code EncryptionConfiguration} object.
-   */
+  /** Returns a builder for a {@code EncryptionConfiguration} object. */
   public static EncryptionConfiguration.Builder newBuilder() {
     return new EncryptionConfiguration.Builder();
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("kmsKeyName", kmsKeyName)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("kmsKeyName", kmsKeyName).toString();
   }
 
   @Override
@@ -96,6 +89,6 @@ public final class EncryptionConfiguration implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj instanceof EncryptionConfiguration
-        && Objects.equals(kmsKeyName, ((EncryptionConfiguration) obj).getKmsKeyName());
+            && Objects.equals(kmsKeyName, ((EncryptionConfiguration) obj).getKmsKeyName());
   }
 }

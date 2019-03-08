@@ -16,12 +16,12 @@
 
 package com.google.cloud.firestore;
 
-import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS;
-import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.EQUAL;
-import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.GREATER_THAN;
-import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL;
-import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.LESS_THAN;
-import static com.google.firestore.v1beta1.StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.ARRAY_CONTAINS;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.EQUAL;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.GREATER_THAN;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.GREATER_THAN_OR_EQUAL;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.LESS_THAN;
+import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.LESS_THAN_OR_EQUAL;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
@@ -29,16 +29,16 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.firestore.v1beta1.Cursor;
-import com.google.firestore.v1beta1.Document;
-import com.google.firestore.v1beta1.RunQueryRequest;
-import com.google.firestore.v1beta1.RunQueryResponse;
-import com.google.firestore.v1beta1.StructuredQuery;
-import com.google.firestore.v1beta1.StructuredQuery.CompositeFilter;
-import com.google.firestore.v1beta1.StructuredQuery.FieldReference;
-import com.google.firestore.v1beta1.StructuredQuery.Filter;
-import com.google.firestore.v1beta1.StructuredQuery.Order;
-import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1.Cursor;
+import com.google.firestore.v1.Document;
+import com.google.firestore.v1.RunQueryRequest;
+import com.google.firestore.v1.RunQueryResponse;
+import com.google.firestore.v1.StructuredQuery;
+import com.google.firestore.v1.StructuredQuery.CompositeFilter;
+import com.google.firestore.v1.StructuredQuery.FieldReference;
+import com.google.firestore.v1.StructuredQuery.Filter;
+import com.google.firestore.v1.StructuredQuery.Order;
+import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Int32Value;
 import io.opencensus.trace.AttributeValue;

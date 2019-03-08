@@ -22,10 +22,8 @@ import static org.junit.Assert.assertNull;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class MonitoredResourceDescriptorTest {
 
@@ -67,7 +65,6 @@ public class MonitoredResourceDescriptorTest {
     assertNull(INT_LABEL_NO_DESCRIPTION.getDescription());
   }
 
-
   @Test
   public void testBuilder() {
     assertEquals(TYPE, RESOURCE_DESCRIPTOR.getType());
@@ -84,24 +81,23 @@ public class MonitoredResourceDescriptorTest {
     assertEquals(ImmutableList.of(), resourceDescriptor.getLabels());
   }
 
-
   @Test
   public void testToAndFromPbLabelDescriptor() {
     compareLabelDescriptor(BOOLEAN_LABEL, LabelDescriptor.fromPb(BOOLEAN_LABEL.toPb()));
     compareLabelDescriptor(STRING_LABEL, LabelDescriptor.fromPb(STRING_LABEL.toPb()));
     compareLabelDescriptor(INT_LABEL, LabelDescriptor.fromPb(INT_LABEL.toPb()));
-    compareLabelDescriptor(INT_LABEL_NO_DESCRIPTION,
-        LabelDescriptor.fromPb(INT_LABEL_NO_DESCRIPTION.toPb()));
+    compareLabelDescriptor(
+        INT_LABEL_NO_DESCRIPTION, LabelDescriptor.fromPb(INT_LABEL_NO_DESCRIPTION.toPb()));
   }
 
   @Test
   public void testToAndFromPb() {
-    compareResourceDescriptor(RESOURCE_DESCRIPTOR,
-        MonitoredResourceDescriptor.fromPb(RESOURCE_DESCRIPTOR.toPb()));
+    compareResourceDescriptor(
+        RESOURCE_DESCRIPTOR, MonitoredResourceDescriptor.fromPb(RESOURCE_DESCRIPTOR.toPb()));
     MonitoredResourceDescriptor resourceDescriptor =
         MonitoredResourceDescriptor.newBuilder(TYPE).build();
-    compareResourceDescriptor(resourceDescriptor,
-        MonitoredResourceDescriptor.fromPb(resourceDescriptor.toPb()));
+    compareResourceDescriptor(
+        resourceDescriptor, MonitoredResourceDescriptor.fromPb(resourceDescriptor.toPb()));
   }
 
   private void compareLabelDescriptor(LabelDescriptor expected, LabelDescriptor value) {
@@ -113,8 +109,8 @@ public class MonitoredResourceDescriptorTest {
     assertEquals(expected.toString(), value.toString());
   }
 
-  private void compareResourceDescriptor(MonitoredResourceDescriptor expected,
-      MonitoredResourceDescriptor value) {
+  private void compareResourceDescriptor(
+      MonitoredResourceDescriptor expected, MonitoredResourceDescriptor value) {
     assertEquals(expected, value);
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getName(), value.getName());

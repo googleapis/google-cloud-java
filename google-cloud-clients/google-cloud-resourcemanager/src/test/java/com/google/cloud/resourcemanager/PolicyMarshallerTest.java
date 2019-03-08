@@ -23,7 +23,6 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-
 import org.junit.Test;
 
 public class PolicyMarshallerTest {
@@ -39,21 +38,23 @@ public class PolicyMarshallerTest {
   private static final Role EDITOR = Role.editor();
   private static final Role OWNER = Role.owner();
   private static final Role SOME_ROLE = Role.of("roles/some-role");
-  private static final Policy SIMPLE_POLICY = Policy.newBuilder()
-      .addIdentity(OWNER, USER)
-      .addIdentity(VIEWER, ALL_USERS)
-      .addIdentity(EDITOR, ALL_AUTH_USERS, DOMAIN)
-      .addIdentity(SOME_ROLE, SERVICE_ACCOUNT, GROUP)
-      .build();
-  private static final Policy FULL_POLICY = PolicyMarshaller.INSTANCE.fromPb(
-      PolicyMarshaller.INSTANCE.toPb(SIMPLE_POLICY).setEtag("etag").setVersion(1));
-
+  private static final Policy SIMPLE_POLICY =
+      Policy.newBuilder()
+          .addIdentity(OWNER, USER)
+          .addIdentity(VIEWER, ALL_USERS)
+          .addIdentity(EDITOR, ALL_AUTH_USERS, DOMAIN)
+          .addIdentity(SOME_ROLE, SERVICE_ACCOUNT, GROUP)
+          .build();
+  private static final Policy FULL_POLICY =
+      PolicyMarshaller.INSTANCE.fromPb(
+          PolicyMarshaller.INSTANCE.toPb(SIMPLE_POLICY).setEtag("etag").setVersion(1));
 
   @Test
   public void testToAndFromPb() {
-    assertEquals(FULL_POLICY,
-        PolicyMarshaller.INSTANCE.fromPb(PolicyMarshaller.INSTANCE.toPb(FULL_POLICY)));
-    assertEquals(SIMPLE_POLICY,
+    assertEquals(
+        FULL_POLICY, PolicyMarshaller.INSTANCE.fromPb(PolicyMarshaller.INSTANCE.toPb(FULL_POLICY)));
+    assertEquals(
+        SIMPLE_POLICY,
         PolicyMarshaller.INSTANCE.fromPb(PolicyMarshaller.INSTANCE.toPb(SIMPLE_POLICY)));
     com.google.api.services.cloudresourcemanager.model.Policy policyPb =
         new com.google.api.services.cloudresourcemanager.model.Policy();

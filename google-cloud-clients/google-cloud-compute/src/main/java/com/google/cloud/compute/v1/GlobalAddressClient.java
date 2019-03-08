@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.GlobalAddressStub;
 import com.google.cloud.compute.v1.stub.GlobalAddressStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -55,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -635,7 +636,10 @@ public class GlobalAddressClient implements BackgroundResource {
 
   public static class ListGlobalAddressesPagedResponse
       extends AbstractPagedListResponse<
-          ListGlobalAddressesHttpRequest, AddressList, Address, ListGlobalAddressesPage,
+          ListGlobalAddressesHttpRequest,
+          AddressList,
+          Address,
+          ListGlobalAddressesPage,
           ListGlobalAddressesFixedSizeCollection> {
 
     public static ApiFuture<ListGlobalAddressesPagedResponse> createAsync(
@@ -650,7 +654,8 @@ public class GlobalAddressClient implements BackgroundResource {
             public ListGlobalAddressesPagedResponse apply(ListGlobalAddressesPage input) {
               return new ListGlobalAddressesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListGlobalAddressesPagedResponse(ListGlobalAddressesPage page) {
@@ -689,7 +694,10 @@ public class GlobalAddressClient implements BackgroundResource {
 
   public static class ListGlobalAddressesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListGlobalAddressesHttpRequest, AddressList, Address, ListGlobalAddressesPage,
+          ListGlobalAddressesHttpRequest,
+          AddressList,
+          Address,
+          ListGlobalAddressesPage,
           ListGlobalAddressesFixedSizeCollection> {
 
     private ListGlobalAddressesFixedSizeCollection(

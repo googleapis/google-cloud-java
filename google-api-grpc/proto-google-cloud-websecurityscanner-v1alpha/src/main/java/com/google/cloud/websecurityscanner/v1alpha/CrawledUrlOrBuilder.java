@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface CrawledUrlOrBuilder extends
+public interface CrawledUrlOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.CrawledUrl)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The http method of the request that was used to visit the URL, in
@@ -18,6 +21,8 @@ public interface CrawledUrlOrBuilder extends
    */
   java.lang.String getHttpMethod();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The http method of the request that was used to visit the URL, in
@@ -26,10 +31,11 @@ public interface CrawledUrlOrBuilder extends
    *
    * <code>string http_method = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getHttpMethodBytes();
+  com.google.protobuf.ByteString getHttpMethodBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL that was crawled.
@@ -39,6 +45,8 @@ public interface CrawledUrlOrBuilder extends
    */
   java.lang.String getUrl();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL that was crawled.
@@ -46,10 +54,11 @@ public interface CrawledUrlOrBuilder extends
    *
    * <code>string url = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getUrlBytes();
+  com.google.protobuf.ByteString getUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The body of the request that was used to visit the URL.
@@ -59,6 +68,8 @@ public interface CrawledUrlOrBuilder extends
    */
   java.lang.String getBody();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The body of the request that was used to visit the URL.
@@ -66,6 +77,5 @@ public interface CrawledUrlOrBuilder extends
    *
    * <code>string body = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getBodyBytes();
+  com.google.protobuf.ByteString getBodyBytes();
 }

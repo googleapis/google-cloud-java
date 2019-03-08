@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("srcIpRanges")) {
+    if ("srcIpRanges".equals(fieldName)) {
       return srcIpRanges;
     }
     return null;
@@ -52,10 +52,17 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** CIDR IP address range. */
   public List<String> getSrcIpRangesList() {
     return srcIpRanges;
   }
@@ -99,10 +106,12 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
       this.srcIpRanges = source.srcIpRanges;
     }
 
+    /** CIDR IP address range. */
     public List<String> getSrcIpRangesList() {
       return srcIpRanges;
     }
 
+    /** CIDR IP address range. */
     public Builder addAllSrcIpRanges(List<String> srcIpRanges) {
       if (this.srcIpRanges == null) {
         this.srcIpRanges = new LinkedList<>();
@@ -111,6 +120,7 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
       return this;
     }
 
+    /** CIDR IP address range. */
     public Builder addSrcIpRanges(String srcIpRanges) {
       if (this.srcIpRanges == null) {
         this.srcIpRanges = new LinkedList<>();

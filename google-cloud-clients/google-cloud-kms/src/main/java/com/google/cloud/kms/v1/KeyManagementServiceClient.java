@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.stub.KeyManagementServiceStub;
 import com.google.cloud.kms.v1.stub.KeyManagementServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -72,13 +73,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -2834,7 +2835,10 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListKeyRingsPagedResponse
       extends AbstractPagedListResponse<
-          ListKeyRingsRequest, ListKeyRingsResponse, KeyRing, ListKeyRingsPage,
+          ListKeyRingsRequest,
+          ListKeyRingsResponse,
+          KeyRing,
+          ListKeyRingsPage,
           ListKeyRingsFixedSizeCollection> {
 
     public static ApiFuture<ListKeyRingsPagedResponse> createAsync(
@@ -2849,7 +2853,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListKeyRingsPagedResponse apply(ListKeyRingsPage input) {
               return new ListKeyRingsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListKeyRingsPagedResponse(ListKeyRingsPage page) {
@@ -2887,7 +2892,10 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListKeyRingsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListKeyRingsRequest, ListKeyRingsResponse, KeyRing, ListKeyRingsPage,
+          ListKeyRingsRequest,
+          ListKeyRingsResponse,
+          KeyRing,
+          ListKeyRingsPage,
           ListKeyRingsFixedSizeCollection> {
 
     private ListKeyRingsFixedSizeCollection(List<ListKeyRingsPage> pages, int collectionSize) {
@@ -2907,7 +2915,10 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeysPagedResponse
       extends AbstractPagedListResponse<
-          ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey, ListCryptoKeysPage,
+          ListCryptoKeysRequest,
+          ListCryptoKeysResponse,
+          CryptoKey,
+          ListCryptoKeysPage,
           ListCryptoKeysFixedSizeCollection> {
 
     public static ApiFuture<ListCryptoKeysPagedResponse> createAsync(
@@ -2922,7 +2933,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListCryptoKeysPagedResponse apply(ListCryptoKeysPage input) {
               return new ListCryptoKeysPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListCryptoKeysPagedResponse(ListCryptoKeysPage page) {
@@ -2961,7 +2973,10 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeysFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey, ListCryptoKeysPage,
+          ListCryptoKeysRequest,
+          ListCryptoKeysResponse,
+          CryptoKey,
+          ListCryptoKeysPage,
           ListCryptoKeysFixedSizeCollection> {
 
     private ListCryptoKeysFixedSizeCollection(List<ListCryptoKeysPage> pages, int collectionSize) {
@@ -2981,8 +2996,11 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeyVersionsPagedResponse
       extends AbstractPagedListResponse<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion,
-          ListCryptoKeyVersionsPage, ListCryptoKeyVersionsFixedSizeCollection> {
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
+          CryptoKeyVersion,
+          ListCryptoKeyVersionsPage,
+          ListCryptoKeyVersionsFixedSizeCollection> {
 
     public static ApiFuture<ListCryptoKeyVersionsPagedResponse> createAsync(
         PageContext<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
@@ -2997,7 +3015,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListCryptoKeyVersionsPagedResponse apply(ListCryptoKeyVersionsPage input) {
               return new ListCryptoKeyVersionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListCryptoKeyVersionsPagedResponse(ListCryptoKeyVersionsPage page) {
@@ -3007,7 +3026,9 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeyVersionsPage
       extends AbstractPage<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
+          CryptoKeyVersion,
           ListCryptoKeyVersionsPage> {
 
     private ListCryptoKeyVersionsPage(
@@ -3040,8 +3061,11 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeyVersionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion,
-          ListCryptoKeyVersionsPage, ListCryptoKeyVersionsFixedSizeCollection> {
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
+          CryptoKeyVersion,
+          ListCryptoKeyVersionsPage,
+          ListCryptoKeyVersionsFixedSizeCollection> {
 
     private ListCryptoKeyVersionsFixedSizeCollection(
         List<ListCryptoKeyVersionsPage> pages, int collectionSize) {

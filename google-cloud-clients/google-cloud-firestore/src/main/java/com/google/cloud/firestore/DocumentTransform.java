@@ -16,8 +16,8 @@
 
 package com.google.cloud.firestore;
 
-import com.google.firestore.v1beta1.DocumentTransform.FieldTransform;
-import com.google.firestore.v1beta1.Write;
+import com.google.firestore.v1.DocumentTransform.FieldTransform;
+import com.google.firestore.v1.Write;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -118,7 +118,7 @@ final class DocumentTransform {
 
   Write.Builder toPb() {
     Write.Builder write = Write.newBuilder();
-    com.google.firestore.v1beta1.DocumentTransform.Builder transform = write.getTransformBuilder();
+    com.google.firestore.v1.DocumentTransform.Builder transform = write.getTransformBuilder();
     transform.addAllFieldTransforms(transforms.values());
     transform.setDocument(documentReference.getName());
     return write;

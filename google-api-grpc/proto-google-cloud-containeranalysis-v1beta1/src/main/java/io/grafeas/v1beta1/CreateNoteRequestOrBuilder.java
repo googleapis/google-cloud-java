@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface CreateNoteRequestOrBuilder extends
+public interface CreateNoteRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.CreateNoteRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the note is to be created.
@@ -17,6 +20,8 @@ public interface CreateNoteRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the note is to be created.
@@ -24,10 +29,11 @@ public interface CreateNoteRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The ID to use for this note.
    * </pre>
@@ -36,16 +42,19 @@ public interface CreateNoteRequestOrBuilder extends
    */
   java.lang.String getNoteId();
   /**
+   *
+   *
    * <pre>
    * The ID to use for this note.
    * </pre>
    *
    * <code>string note_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNoteIdBytes();
+  com.google.protobuf.ByteString getNoteIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The note to create.
    * </pre>
@@ -54,6 +63,8 @@ public interface CreateNoteRequestOrBuilder extends
    */
   boolean hasNote();
   /**
+   *
+   *
    * <pre>
    * The note to create.
    * </pre>
@@ -62,6 +73,8 @@ public interface CreateNoteRequestOrBuilder extends
    */
   io.grafeas.v1beta1.Note getNote();
   /**
+   *
+   *
    * <pre>
    * The note to create.
    * </pre>

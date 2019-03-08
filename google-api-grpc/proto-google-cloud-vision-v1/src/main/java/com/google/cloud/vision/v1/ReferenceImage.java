@@ -4,6 +4,8 @@
 package com.google.cloud.vision.v1;
 
 /**
+ *
+ *
  * <pre>
  * A `ReferenceImage` represents a product image and its associated metadata,
  * such as bounding boxes.
@@ -11,15 +13,16 @@ package com.google.cloud.vision.v1;
  *
  * Protobuf type {@code google.cloud.vision.v1.ReferenceImage}
  */
-public  final class ReferenceImage extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ReferenceImage)
     ReferenceImageOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ReferenceImage.newBuilder() to construct.
   private ReferenceImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ReferenceImage() {
     name_ = "";
     uri_ = "";
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ReferenceImage(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,41 +53,44 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            uri_ = s;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              boundingPolys_ = new java.util.ArrayList<com.google.cloud.vision.v1.BoundingPoly>();
-              mutable_bitField0_ |= 0x00000004;
+              uri_ = s;
+              break;
             }
-            boundingPolys_.add(
-                input.readMessage(com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                boundingPolys_ = new java.util.ArrayList<com.google.cloud.vision.v1.BoundingPoly>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              boundingPolys_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         boundingPolys_ = java.util.Collections.unmodifiableList(boundingPolys_);
@@ -93,23 +99,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1_ReferenceImage_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1_ReferenceImage_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1_ReferenceImage_fieldAccessorTable
+    return com.google.cloud.vision.v1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1_ReferenceImage_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.ReferenceImage.class, com.google.cloud.vision.v1.ReferenceImage.Builder.class);
+            com.google.cloud.vision.v1.ReferenceImage.class,
+            com.google.cloud.vision.v1.ReferenceImage.Builder.class);
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The resource name of the reference image.
    * Format is:
@@ -124,14 +135,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource name of the reference image.
    * Format is:
@@ -141,13 +153,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -158,6 +168,8 @@ private static final long serialVersionUID = 0L;
   public static final int URI_FIELD_NUMBER = 2;
   private volatile java.lang.Object uri_;
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
@@ -171,14 +183,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       uri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
@@ -187,13 +200,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string uri = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getUriBytes() {
+  public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       uri_ = b;
       return b;
     } else {
@@ -204,6 +215,8 @@ private static final long serialVersionUID = 0L;
   public static final int BOUNDING_POLYS_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.vision.v1.BoundingPoly> boundingPolys_;
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -220,6 +233,8 @@ private static final long serialVersionUID = 0L;
     return boundingPolys_;
   }
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -232,11 +247,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.BoundingPolyOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.BoundingPolyOrBuilder>
       getBoundingPolysOrBuilderList() {
     return boundingPolys_;
   }
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -253,6 +270,8 @@ private static final long serialVersionUID = 0L;
     return boundingPolys_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -269,6 +288,8 @@ private static final long serialVersionUID = 0L;
     return boundingPolys_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -281,12 +302,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
    */
-  public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(int index) {
     return boundingPolys_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -298,8 +319,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -325,8 +345,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
     for (int i = 0; i < boundingPolys_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, boundingPolys_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, boundingPolys_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -336,20 +355,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1.ReferenceImage)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1.ReferenceImage other = (com.google.cloud.vision.v1.ReferenceImage) obj;
+    com.google.cloud.vision.v1.ReferenceImage other =
+        (com.google.cloud.vision.v1.ReferenceImage) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getUri()
-        .equals(other.getUri());
-    result = result && getBoundingPolysList()
-        .equals(other.getBoundingPolysList());
+    result = result && getName().equals(other.getName());
+    result = result && getUri().equals(other.getUri());
+    result = result && getBoundingPolysList().equals(other.getBoundingPolysList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -374,97 +391,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1.ReferenceImage parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1.ReferenceImage parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1.ReferenceImage parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.ReferenceImage parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1.ReferenceImage prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A `ReferenceImage` represents a product image and its associated metadata,
    * such as bounding boxes.
@@ -472,21 +496,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.vision.v1.ReferenceImage}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.ReferenceImage)
       com.google.cloud.vision.v1.ReferenceImageOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1_ReferenceImage_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1_ReferenceImage_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1_ReferenceImage_fieldAccessorTable
+      return com.google.cloud.vision.v1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1_ReferenceImage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.ReferenceImage.class, com.google.cloud.vision.v1.ReferenceImage.Builder.class);
+              com.google.cloud.vision.v1.ReferenceImage.class,
+              com.google.cloud.vision.v1.ReferenceImage.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1.ReferenceImage.newBuilder()
@@ -494,17 +520,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBoundingPolysFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -522,9 +548,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1_ReferenceImage_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1_ReferenceImage_descriptor;
     }
 
     @java.lang.Override
@@ -543,7 +569,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1.ReferenceImage buildPartial() {
-      com.google.cloud.vision.v1.ReferenceImage result = new com.google.cloud.vision.v1.ReferenceImage(this);
+      com.google.cloud.vision.v1.ReferenceImage result =
+          new com.google.cloud.vision.v1.ReferenceImage(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -566,38 +593,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.ReferenceImage) {
-        return mergeFrom((com.google.cloud.vision.v1.ReferenceImage)other);
+        return mergeFrom((com.google.cloud.vision.v1.ReferenceImage) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -632,9 +660,10 @@ private static final long serialVersionUID = 0L;
             boundingPolysBuilder_ = null;
             boundingPolys_ = other.boundingPolys_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            boundingPolysBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBoundingPolysFieldBuilder() : null;
+            boundingPolysBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getBoundingPolysFieldBuilder()
+                    : null;
           } else {
             boundingPolysBuilder_.addAllMessages(other.boundingPolys_);
           }
@@ -668,10 +697,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource name of the reference image.
      * Format is:
@@ -684,8 +716,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -694,6 +725,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the reference image.
      * Format is:
@@ -703,13 +736,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -717,6 +748,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the reference image.
      * Format is:
@@ -726,17 +759,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the reference image.
      * Format is:
@@ -747,12 +781,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the reference image.
      * Format is:
@@ -762,13 +798,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -776,6 +811,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object uri_ = "";
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
@@ -787,8 +824,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         uri_ = s;
         return s;
@@ -797,6 +833,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
@@ -805,13 +843,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getUriBytes() {
+    public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         uri_ = b;
         return b;
       } else {
@@ -819,6 +855,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
@@ -827,17 +865,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public Builder setUri(
-        java.lang.String value) {
+    public Builder setUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       uri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
@@ -847,12 +886,14 @@ private static final long serialVersionUID = 0L;
      * <code>string uri = 2;</code>
      */
     public Builder clearUri() {
-      
+
       uri_ = getDefaultInstance().getUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Google Cloud Storage URI of the reference image.
      * The URI must start with `gs://`.
@@ -861,31 +902,37 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public Builder setUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       uri_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.vision.v1.BoundingPoly> boundingPolys_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureBoundingPolysIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        boundingPolys_ = new java.util.ArrayList<com.google.cloud.vision.v1.BoundingPoly>(boundingPolys_);
+        boundingPolys_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.BoundingPoly>(boundingPolys_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> boundingPolysBuilder_;
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
+        boundingPolysBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -906,6 +953,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -926,6 +975,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -946,6 +997,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -958,8 +1011,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
-    public Builder setBoundingPolys(
-        int index, com.google.cloud.vision.v1.BoundingPoly value) {
+    public Builder setBoundingPolys(int index, com.google.cloud.vision.v1.BoundingPoly value) {
       if (boundingPolysBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -973,6 +1025,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -997,6 +1051,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1023,6 +1079,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1035,8 +1093,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
-    public Builder addBoundingPolys(
-        int index, com.google.cloud.vision.v1.BoundingPoly value) {
+    public Builder addBoundingPolys(int index, com.google.cloud.vision.v1.BoundingPoly value) {
       if (boundingPolysBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1050,6 +1107,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1074,6 +1133,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1098,6 +1159,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1114,8 +1177,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1.BoundingPoly> values) {
       if (boundingPolysBuilder_ == null) {
         ensureBoundingPolysIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, boundingPolys_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, boundingPolys_);
         onChanged();
       } else {
         boundingPolysBuilder_.addAllMessages(values);
@@ -1123,6 +1185,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1146,6 +1210,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1169,6 +1235,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1181,11 +1249,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
-    public com.google.cloud.vision.v1.BoundingPoly.Builder getBoundingPolysBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.BoundingPoly.Builder getBoundingPolysBuilder(int index) {
       return getBoundingPolysFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1198,14 +1267,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
-    public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(int index) {
       if (boundingPolysBuilder_ == null) {
-        return boundingPolys_.get(index);  } else {
+        return boundingPolys_.get(index);
+      } else {
         return boundingPolysBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1218,8 +1289,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.BoundingPolyOrBuilder> 
-         getBoundingPolysOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.BoundingPolyOrBuilder>
+        getBoundingPolysOrBuilderList() {
       if (boundingPolysBuilder_ != null) {
         return boundingPolysBuilder_.getMessageOrBuilderList();
       } else {
@@ -1227,6 +1298,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1240,10 +1313,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder addBoundingPolysBuilder() {
-      return getBoundingPolysFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance());
+      return getBoundingPolysFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1256,12 +1331,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
-    public com.google.cloud.vision.v1.BoundingPoly.Builder addBoundingPolysBuilder(
-        int index) {
-      return getBoundingPolysFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance());
+    public com.google.cloud.vision.v1.BoundingPoly.Builder addBoundingPolysBuilder(int index) {
+      return getBoundingPolysFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Bounding polygons around the areas of interest in the reference image.
      * Optional. If this field is empty, the system will try to detect regions of
@@ -1274,16 +1350,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.BoundingPoly bounding_polys = 3;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.BoundingPoly.Builder> 
-         getBoundingPolysBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.BoundingPoly.Builder>
+        getBoundingPolysBuilderList() {
       return getBoundingPolysFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> 
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         getBoundingPolysFieldBuilder() {
       if (boundingPolysBuilder_ == null) {
-        boundingPolysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
+        boundingPolysBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.BoundingPoly,
+                com.google.cloud.vision.v1.BoundingPoly.Builder,
+                com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
                 boundingPolys_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1292,9 +1374,9 @@ private static final long serialVersionUID = 0L;
       }
       return boundingPolysBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1304,12 +1386,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.ReferenceImage)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.ReferenceImage)
   private static final com.google.cloud.vision.v1.ReferenceImage DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1.ReferenceImage();
   }
@@ -1318,16 +1400,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReferenceImage>
-      PARSER = new com.google.protobuf.AbstractParser<ReferenceImage>() {
-    @java.lang.Override
-    public ReferenceImage parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReferenceImage(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ReferenceImage> PARSER =
+      new com.google.protobuf.AbstractParser<ReferenceImage>() {
+        @java.lang.Override
+        public ReferenceImage parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReferenceImage(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ReferenceImage> parser() {
     return PARSER;
@@ -1342,6 +1424,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1.ReferenceImage getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

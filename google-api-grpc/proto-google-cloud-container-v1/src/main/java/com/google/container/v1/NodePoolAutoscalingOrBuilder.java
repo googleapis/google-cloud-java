@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface NodePoolAutoscalingOrBuilder extends
+public interface NodePoolAutoscalingOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.NodePoolAutoscaling)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Is autoscaling enabled for this node pool.
    * </pre>
@@ -17,6 +20,8 @@ public interface NodePoolAutoscalingOrBuilder extends
   boolean getEnabled();
 
   /**
+   *
+   *
    * <pre>
    * Minimum number of nodes in the NodePool. Must be &gt;= 1 and &lt;=
    * max_node_count.
@@ -27,6 +32,8 @@ public interface NodePoolAutoscalingOrBuilder extends
   int getMinNodeCount();
 
   /**
+   *
+   *
    * <pre>
    * Maximum number of nodes in the NodePool. Must be &gt;= min_node_count. There
    * has to enough quota to scale up the cluster.

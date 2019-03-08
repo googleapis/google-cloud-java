@@ -37,7 +37,7 @@ import java.util.Objects;
  * table level.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#datasets">
- * Managing Jobs, Datasets, and Projects</a>
+ *     Managing Jobs, Datasets, and Projects</a>
  */
 public class DatasetInfo implements Serializable {
 
@@ -70,17 +70,11 @@ public class DatasetInfo implements Serializable {
   private final String selfLink;
   private final Labels labels;
 
-  /**
-   * A builder for {@code DatasetInfo} objects.
-   */
+  /** A builder for {@code DatasetInfo} objects. */
   public abstract static class Builder {
 
-
-    /**
-     * Sets the dataset identity.
-     */
+    /** Sets the dataset identity. */
     public abstract Builder setDatasetId(DatasetId datasetId);
-
 
     /**
      * Sets the dataset's access control configuration.
@@ -90,7 +84,6 @@ public class DatasetInfo implements Serializable {
     public abstract Builder setAcl(List<Acl> acl);
 
     abstract Builder setCreationTime(Long creationTime);
-
 
     /**
      * Sets the default lifetime of all tables in the dataset, in milliseconds. The minimum value is
@@ -105,24 +98,17 @@ public class DatasetInfo implements Serializable {
      */
     public abstract Builder setDefaultTableLifetime(Long defaultTableLifetime);
 
-
-    /**
-     * Sets a user-friendly description for the dataset.
-     */
+    /** Sets a user-friendly description for the dataset. */
     public abstract Builder setDescription(String description);
 
     abstract Builder setEtag(String etag);
 
-
-    /**
-     * Sets a user-friendly name for the dataset.
-     */
+    /** Sets a user-friendly name for the dataset. */
     public abstract Builder setFriendlyName(String friendlyName);
 
     abstract Builder setGeneratedId(String generatedId);
 
     abstract Builder setLastModified(Long lastModified);
-
 
     /**
      * Sets the geographic location where the dataset should reside. This property is experimental
@@ -137,9 +123,7 @@ public class DatasetInfo implements Serializable {
 
     public abstract Builder setLabels(Map<String, String> labels);
 
-    /**
-     * Creates a {@code DatasetInfo} object.
-     */
+    /** Creates a {@code DatasetInfo} object. */
     public abstract DatasetInfo build();
   }
 
@@ -180,12 +164,15 @@ public class DatasetInfo implements Serializable {
         this.datasetId = DatasetId.fromPb(datasetPb.getDatasetReference());
       }
       if (datasetPb.getAccess() != null) {
-        this.acl = Lists.transform(datasetPb.getAccess(), new Function<Dataset.Access, Acl>() {
-          @Override
-          public Acl apply(Dataset.Access accessPb) {
-            return Acl.fromPb(accessPb);
-          }
-        });
+        this.acl =
+            Lists.transform(
+                datasetPb.getAccess(),
+                new Function<Dataset.Access, Acl>() {
+                  @Override
+                  public Acl apply(Dataset.Access accessPb) {
+                    return Acl.fromPb(accessPb);
+                  }
+                });
       }
       this.creationTime = datasetPb.getCreationTime();
       this.defaultTableLifetime = datasetPb.getDefaultTableExpirationMs();
@@ -199,13 +186,11 @@ public class DatasetInfo implements Serializable {
       this.labels = Labels.fromPb(datasetPb.getLabels());
     }
 
-
     @Override
     public Builder setDatasetId(DatasetId datasetId) {
       this.datasetId = checkNotNull(datasetId);
       return this;
     }
-
 
     @Override
     public Builder setAcl(List<Acl> acl) {
@@ -219,14 +204,11 @@ public class DatasetInfo implements Serializable {
       return this;
     }
 
-
     @Override
     public Builder setDefaultTableLifetime(Long defaultTableLifetime) {
-      this.defaultTableLifetime =
-          firstNonNull(defaultTableLifetime, Data.<Long>nullOf(Long.class));
+      this.defaultTableLifetime = firstNonNull(defaultTableLifetime, Data.<Long>nullOf(Long.class));
       return this;
     }
-
 
     @Override
     public Builder setDescription(String description) {
@@ -239,7 +221,6 @@ public class DatasetInfo implements Serializable {
       this.etag = etag;
       return this;
     }
-
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -258,7 +239,6 @@ public class DatasetInfo implements Serializable {
       this.lastModified = lastModified;
       return this;
     }
-
 
     @Override
     public Builder setLocation(String location) {
@@ -306,29 +286,26 @@ public class DatasetInfo implements Serializable {
     labels = builder.labels;
   }
 
-
-  /**
-   * Returns the dataset identity.
-   */
+  /** Returns the dataset identity. */
   public DatasetId getDatasetId() {
     return datasetId;
   }
-
 
   /**
    * Returns the dataset's access control configuration.
    *
    * <p>Update the ACLs for a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Dataset dataset = bigquery.getDataset(DatasetId.of("my_dataset"));
    * List<Acl> beforeAcls = dataset.getAcl();
-   * 
+   *
    * // Make a copy of the ACLs so that they can be modified.
    * ArrayList<Acl> acls = new ArrayList<>(beforeAcls);
    * acls.add(Acl.of(new Acl.User("sample.bigquery.dev@gmail.com"), Acl.Role.READER));
    * Dataset.Builder builder = dataset.toBuilder();
    * builder.setAcl(acls);
-   * 
+   *
    * bigquery.update(builder.build());  // API request.
    * }</pre>
    *
@@ -338,14 +315,10 @@ public class DatasetInfo implements Serializable {
     return acl;
   }
 
-
-  /**
-   * Returns the time when this dataset was created, in milliseconds since the epoch.
-   */
+  /** Returns the time when this dataset was created, in milliseconds since the epoch. */
   public Long getCreationTime() {
     return creationTime;
   }
-
 
   /**
    * Returns the default lifetime of all tables in the dataset, in milliseconds. Once this property
@@ -357,53 +330,40 @@ public class DatasetInfo implements Serializable {
    * takes precedence over the default expiration time indicated by this property.
    *
    * <p>Update the default table expiration time for a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Dataset dataset = bigquery.getDataset(DatasetId.of("my_dataset"));
    * Long beforeExpiration = dataset.getDefaultTableLifetime();
-   * 
+   *
    * Long oneDayMilliseconds = 24 * 60 * 60 * 1000L;
    * Dataset.Builder builder = dataset.toBuilder();
    * builder.setDefaultTableLifetime(oneDayMilliseconds);
    * bigquery.update(builder.build());  // API request.
    * }</pre>
-   *
    */
   public Long getDefaultTableLifetime() {
     return defaultTableLifetime;
   }
 
-
-  /**
-   * Returns a user-friendly description for the dataset.
-   */
+  /** Returns a user-friendly description for the dataset. */
   public String getDescription() {
     return description;
   }
 
-
-  /**
-   * Returns the hash of the dataset resource.
-   */
+  /** Returns the hash of the dataset resource. */
   public String getEtag() {
     return etag;
   }
 
-
-  /**
-   * Returns a user-friendly name for the dataset.
-   */
+  /** Returns a user-friendly name for the dataset. */
   public String getFriendlyName() {
     return friendlyName;
   }
 
-
-  /**
-   * Returns the service-generated id for the dataset.
-   */
+  /** Returns the service-generated id for the dataset. */
   public String getGeneratedId() {
     return generatedId;
   }
-
 
   /**
    * Returns the time when this dataset or any of its tables was last modified, in milliseconds
@@ -413,17 +373,16 @@ public class DatasetInfo implements Serializable {
     return lastModified;
   }
 
-
   /**
    * Returns the geographic location where the dataset should reside.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
    *     Dataset Location</a>
    */
   public String getLocation() {
     return location;
   }
-
 
   /**
    * Returns an URL that can be used to access the resource again. The returned URL can be used for
@@ -442,9 +401,7 @@ public class DatasetInfo implements Serializable {
     return labels.userMap();
   }
 
-  /**
-   * Returns a builder for the dataset object.
-   */
+  /** Returns a builder for the dataset object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -476,8 +433,8 @@ public class DatasetInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(DatasetInfo.class)
-        && Objects.equals(toPb(), ((DatasetInfo) obj).toPb());
+            && obj.getClass().equals(DatasetInfo.class)
+            && Objects.equals(toPb(), ((DatasetInfo) obj).toPb());
   }
 
   DatasetInfo setProjectId(String projectId) {
@@ -515,33 +472,29 @@ public class DatasetInfo implements Serializable {
     datasetPb.setLocation(location);
     datasetPb.setSelfLink(selfLink);
     if (acl != null) {
-      datasetPb.setAccess(Lists.transform(acl, new Function<Acl, Dataset.Access>() {
-        @Override
-        public Dataset.Access apply(Acl acl) {
-          return acl.toPb();
-        }
-      }));
+      datasetPb.setAccess(
+          Lists.transform(
+              acl,
+              new Function<Acl, Dataset.Access>() {
+                @Override
+                public Dataset.Access apply(Acl acl) {
+                  return acl.toPb();
+                }
+              }));
     }
     datasetPb.setLabels(labels.toPb());
     return datasetPb;
   }
 
-
-  /**
-   * Returns a builder for a {@code DatasetInfo} object given it's identity.
-   */
+  /** Returns a builder for a {@code DatasetInfo} object given it's identity. */
   public static Builder newBuilder(DatasetId datasetId) {
     return new BuilderImpl().setDatasetId(datasetId);
   }
 
-
-  /**
-   * Returns a builder for a {@code DatasetInfo} object given it's user-defined id.
-   */
+  /** Returns a builder for a {@code DatasetInfo} object given it's user-defined id. */
   public static Builder newBuilder(String datasetId) {
     return newBuilder(DatasetId.of(datasetId));
   }
-
 
   /**
    * Returns a builder for the DatasetInfo object given it's user-defined project and dataset ids.
@@ -550,16 +503,12 @@ public class DatasetInfo implements Serializable {
     return newBuilder(DatasetId.of(projectId, datasetId));
   }
 
-  /**
-   * Returns a {@code DatasetInfo} object given it's identity.
-   */
+  /** Returns a {@code DatasetInfo} object given it's identity. */
   public static DatasetInfo of(DatasetId datasetId) {
     return newBuilder(datasetId).build();
   }
 
-  /**
-   * Returns a {@code DatasetInfo} object given it's user-defined id.
-   */
+  /** Returns a {@code DatasetInfo} object given it's user-defined id. */
   public static DatasetInfo of(String datasetId) {
     return newBuilder(datasetId).build();
   }

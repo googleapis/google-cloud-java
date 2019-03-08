@@ -97,8 +97,25 @@ public interface TransactionContext extends ReadContext {
 
   /**
    * Executes the DML statement(s) and returns the number of rows modified. For non-DML statements,
-   * it will result in an {@code IllegalArgumentException}. The effects of the DML statement
-   * will be visible to subsequent operations in the transaction.
+   * it will result in an {@code IllegalArgumentException}. The effects of the DML statement will be
+   * visible to subsequent operations in the transaction.
    */
   long executeUpdate(Statement statement);
+
+  /**
+   * Executes a list of DML statements in a single request. The statements will be executed in order
+   * and the semantics is the same as if each statement is executed by {@code executeUpdate} in a
+   * loop. This method returns an array of long integers, each representing the number of rows
+   * modified by each statement.
+   *
+   * <p>If an individual statement fails, execution stops and a {@code SpannerBatchUpdateException}
+   * is returned, which includes the error and the number of rows affected by the statements that
+   * are run prior to the error.
+   *
+   * <p>For example, if statements contains 3 statements, and the 2nd one is not a valid DML. This
+   * method throws a {@code SpannerBatchUpdateException} that contains the error message from the
+   * 2nd statement, and an array of length 1 that contains the number of rows modified by the 1st
+   * statement. The 3rd statement will not run.
+   */
+  long[] batchUpdate(Iterable<Statement> statements);
 }

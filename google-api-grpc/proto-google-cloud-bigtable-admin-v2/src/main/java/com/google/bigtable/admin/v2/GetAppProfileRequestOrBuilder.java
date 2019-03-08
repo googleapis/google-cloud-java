@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface GetAppProfileRequestOrBuilder extends
+public interface GetAppProfileRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.GetAppProfileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the requested app profile. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
@@ -17,6 +20,8 @@ public interface GetAppProfileRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the requested app profile. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/appProfiles/&lt;app_profile&gt;`.
@@ -24,6 +29,5 @@ public interface GetAppProfileRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

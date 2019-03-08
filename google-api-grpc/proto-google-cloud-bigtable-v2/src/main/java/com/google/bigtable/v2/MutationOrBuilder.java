@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface MutationOrBuilder extends
+public interface MutationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.Mutation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Set a cell's value.
    * </pre>
@@ -16,6 +19,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasSetCell();
   /**
+   *
+   *
    * <pre>
    * Set a cell's value.
    * </pre>
@@ -24,6 +29,8 @@ public interface MutationOrBuilder extends
    */
   com.google.bigtable.v2.Mutation.SetCell getSetCell();
   /**
+   *
+   *
    * <pre>
    * Set a cell's value.
    * </pre>
@@ -33,6 +40,8 @@ public interface MutationOrBuilder extends
   com.google.bigtable.v2.Mutation.SetCellOrBuilder getSetCellOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Deletes cells from a column.
    * </pre>
@@ -41,6 +50,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasDeleteFromColumn();
   /**
+   *
+   *
    * <pre>
    * Deletes cells from a column.
    * </pre>
@@ -49,6 +60,8 @@ public interface MutationOrBuilder extends
    */
   com.google.bigtable.v2.Mutation.DeleteFromColumn getDeleteFromColumn();
   /**
+   *
+   *
    * <pre>
    * Deletes cells from a column.
    * </pre>
@@ -58,6 +71,8 @@ public interface MutationOrBuilder extends
   com.google.bigtable.v2.Mutation.DeleteFromColumnOrBuilder getDeleteFromColumnOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Deletes cells from a column family.
    * </pre>
@@ -66,6 +81,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasDeleteFromFamily();
   /**
+   *
+   *
    * <pre>
    * Deletes cells from a column family.
    * </pre>
@@ -74,6 +91,8 @@ public interface MutationOrBuilder extends
    */
   com.google.bigtable.v2.Mutation.DeleteFromFamily getDeleteFromFamily();
   /**
+   *
+   *
    * <pre>
    * Deletes cells from a column family.
    * </pre>
@@ -83,6 +102,8 @@ public interface MutationOrBuilder extends
   com.google.bigtable.v2.Mutation.DeleteFromFamilyOrBuilder getDeleteFromFamilyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Deletes cells from the entire row.
    * </pre>
@@ -91,6 +112,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasDeleteFromRow();
   /**
+   *
+   *
    * <pre>
    * Deletes cells from the entire row.
    * </pre>
@@ -99,6 +122,8 @@ public interface MutationOrBuilder extends
    */
   com.google.bigtable.v2.Mutation.DeleteFromRow getDeleteFromRow();
   /**
+   *
+   *
    * <pre>
    * Deletes cells from the entire row.
    * </pre>

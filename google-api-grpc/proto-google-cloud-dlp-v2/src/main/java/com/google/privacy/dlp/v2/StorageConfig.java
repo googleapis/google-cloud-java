@@ -4,29 +4,31 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Shared message indicating Cloud storage type.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.StorageConfig}
  */
-public  final class StorageConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StorageConfig)
     StorageConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use StorageConfig.newBuilder() to construct.
   private StorageConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private StorageConfig() {
-  }
+
+  private StorageConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private StorageConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,98 +48,113 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
-            com.google.privacy.dlp.v2.DatastoreOptions.Builder subBuilder = null;
-            if (typeCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.DatastoreOptions) type_).toBuilder();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.DatastoreOptions.Builder subBuilder = null;
+              if (typeCase_ == 2) {
+                subBuilder = ((com.google.privacy.dlp.v2.DatastoreOptions) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.DatastoreOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.DatastoreOptions) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 2;
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.DatastoreOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.DatastoreOptions) type_);
-              type_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.privacy.dlp.v2.CloudStorageOptions.Builder subBuilder = null;
+              if (typeCase_ == 3) {
+                subBuilder = ((com.google.privacy.dlp.v2.CloudStorageOptions) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CloudStorageOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CloudStorageOptions) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 3;
+              break;
             }
-            typeCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.CloudStorageOptions.Builder subBuilder = null;
-            if (typeCase_ == 3) {
-              subBuilder = ((com.google.privacy.dlp.v2.CloudStorageOptions) type_).toBuilder();
+          case 34:
+            {
+              com.google.privacy.dlp.v2.BigQueryOptions.Builder subBuilder = null;
+              if (typeCase_ == 4) {
+                subBuilder = ((com.google.privacy.dlp.v2.BigQueryOptions) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.BigQueryOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.BigQueryOptions) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 4;
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.CloudStorageOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.CloudStorageOptions) type_);
-              type_ = subBuilder.buildPartial();
-            }
-            typeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.privacy.dlp.v2.BigQueryOptions.Builder subBuilder = null;
-            if (typeCase_ == 4) {
-              subBuilder = ((com.google.privacy.dlp.v2.BigQueryOptions) type_).toBuilder();
-            }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.BigQueryOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.BigQueryOptions) type_);
-              type_ = subBuilder.buildPartial();
-            }
-            typeCase_ = 4;
-            break;
-          }
-          case 50: {
-            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder subBuilder = null;
-            if (timespanConfig_ != null) {
-              subBuilder = timespanConfig_.toBuilder();
-            }
-            timespanConfig_ = input.readMessage(com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timespanConfig_);
-              timespanConfig_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder subBuilder = null;
+              if (timespanConfig_ != null) {
+                subBuilder = timespanConfig_.toBuilder();
+              }
+              timespanConfig_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timespanConfig_);
+                timespanConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_StorageConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_StorageConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.StorageConfig.class, com.google.privacy.dlp.v2.StorageConfig.Builder.class);
+            com.google.privacy.dlp.v2.StorageConfig.class,
+            com.google.privacy.dlp.v2.StorageConfig.Builder.class);
   }
 
-  public interface TimespanConfigOrBuilder extends
+  public interface TimespanConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.StorageConfig.TimespanConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows older than this value.
      * </pre>
@@ -146,6 +163,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasStartTime();
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows older than this value.
      * </pre>
@@ -154,6 +173,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.protobuf.Timestamp getStartTime();
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows older than this value.
      * </pre>
@@ -163,6 +184,8 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
@@ -172,6 +195,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasEndTime();
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
@@ -181,6 +206,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.protobuf.Timestamp getEndTime();
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
@@ -191,6 +218,8 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore or BigQuery.
@@ -207,6 +236,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasTimestampField();
     /**
+     *
+     *
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore or BigQuery.
@@ -223,6 +254,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.FieldId getTimestampField();
     /**
+     *
+     *
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore or BigQuery.
@@ -240,6 +273,8 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.FieldIdOrBuilder getTimestampFieldOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * When the job is started by a JobTrigger we will automatically figure out
      * a valid start_time to avoid scanning files that have not been modified
@@ -252,6 +287,8 @@ private static final long serialVersionUID = 0L;
     boolean getEnableAutoPopulationOfTimespanConfig();
   }
   /**
+   *
+   *
    * <pre>
    * Configuration of the timespan of the items to include in scanning.
    * Currently only supported when inspecting Google Cloud Storage and BigQuery.
@@ -259,24 +296,25 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.StorageConfig.TimespanConfig}
    */
-  public  static final class TimespanConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class TimespanConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StorageConfig.TimespanConfig)
       TimespanConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TimespanConfig.newBuilder() to construct.
     private TimespanConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private TimespanConfig() {
       enableAutoPopulationOfTimespanConfig_ = false;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TimespanConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -296,85 +334,96 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (startTime_ != null) {
+                  subBuilder = startTime_.toBuilder();
+                }
+                startTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(startTime_);
+                  startTime_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
+                break;
               }
-              endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (endTime_ != null) {
+                  subBuilder = endTime_.toBuilder();
+                }
+                endTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(endTime_);
+                  endTime_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 26: {
-              com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-              if (timestampField_ != null) {
-                subBuilder = timestampField_.toBuilder();
+                break;
               }
-              timestampField_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timestampField_);
-                timestampField_ = subBuilder.buildPartial();
-              }
+            case 26:
+              {
+                com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+                if (timestampField_ != null) {
+                  subBuilder = timestampField_.toBuilder();
+                }
+                timestampField_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(timestampField_);
+                  timestampField_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 32: {
-
-              enableAutoPopulationOfTimespanConfig_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            case 32:
+              {
+                enableAutoPopulationOfTimespanConfig_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.class, com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder.class);
+              com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.class,
+              com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder.class);
     }
 
     public static final int START_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp startTime_;
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows older than this value.
      * </pre>
@@ -385,6 +434,8 @@ private static final long serialVersionUID = 0L;
       return startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows older than this value.
      * </pre>
@@ -395,6 +446,8 @@ private static final long serialVersionUID = 0L;
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows older than this value.
      * </pre>
@@ -408,6 +461,8 @@ private static final long serialVersionUID = 0L;
     public static final int END_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp endTime_;
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
@@ -419,6 +474,8 @@ private static final long serialVersionUID = 0L;
       return endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
@@ -430,6 +487,8 @@ private static final long serialVersionUID = 0L;
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
     /**
+     *
+     *
      * <pre>
      * Exclude files or rows newer than this value.
      * If set to zero, no upper time limit is applied.
@@ -444,6 +503,8 @@ private static final long serialVersionUID = 0L;
     public static final int TIMESTAMP_FIELD_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.FieldId timestampField_;
     /**
+     *
+     *
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore or BigQuery.
@@ -462,6 +523,8 @@ private static final long serialVersionUID = 0L;
       return timestampField_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore or BigQuery.
@@ -477,9 +540,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
      */
     public com.google.privacy.dlp.v2.FieldId getTimestampField() {
-      return timestampField_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : timestampField_;
+      return timestampField_ == null
+          ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+          : timestampField_;
     }
     /**
+     *
+     *
      * <pre>
      * Specification of the field containing the timestamp of scanned items.
      * Used for data sources like Datastore or BigQuery.
@@ -501,6 +568,8 @@ private static final long serialVersionUID = 0L;
     public static final int ENABLE_AUTO_POPULATION_OF_TIMESPAN_CONFIG_FIELD_NUMBER = 4;
     private boolean enableAutoPopulationOfTimespanConfig_;
     /**
+     *
+     *
      * <pre>
      * When the job is started by a JobTrigger we will automatically figure out
      * a valid start_time to avoid scanning files that have not been modified
@@ -515,6 +584,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -526,8 +596,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (startTime_ != null) {
         output.writeMessage(1, getStartTime());
       }
@@ -550,20 +619,18 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (startTime_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getStartTime());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStartTime());
       }
       if (endTime_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getEndTime());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
       }
       if (timestampField_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getTimestampField());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTimestampField());
       }
       if (enableAutoPopulationOfTimespanConfig_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, enableAutoPopulationOfTimespanConfig_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                4, enableAutoPopulationOfTimespanConfig_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -573,31 +640,31 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.StorageConfig.TimespanConfig)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.StorageConfig.TimespanConfig other = (com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) obj;
+      com.google.privacy.dlp.v2.StorageConfig.TimespanConfig other =
+          (com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) obj;
 
       boolean result = true;
       result = result && (hasStartTime() == other.hasStartTime());
       if (hasStartTime()) {
-        result = result && getStartTime()
-            .equals(other.getStartTime());
+        result = result && getStartTime().equals(other.getStartTime());
       }
       result = result && (hasEndTime() == other.hasEndTime());
       if (hasEndTime()) {
-        result = result && getEndTime()
-            .equals(other.getEndTime());
+        result = result && getEndTime().equals(other.getEndTime());
       }
       result = result && (hasTimestampField() == other.hasTimestampField());
       if (hasTimestampField()) {
-        result = result && getTimestampField()
-            .equals(other.getTimestampField());
+        result = result && getTimestampField().equals(other.getTimestampField());
       }
-      result = result && (getEnableAutoPopulationOfTimespanConfig()
-          == other.getEnableAutoPopulationOfTimespanConfig());
+      result =
+          result
+              && (getEnableAutoPopulationOfTimespanConfig()
+                  == other.getEnableAutoPopulationOfTimespanConfig());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -622,95 +689,103 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getTimestampField().hashCode();
       }
       hash = (37 * hash) + ENABLE_AUTO_POPULATION_OF_TIMESPAN_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEnableAutoPopulationOfTimespanConfig());
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getEnableAutoPopulationOfTimespanConfig());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.StorageConfig.TimespanConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.StorageConfig.TimespanConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.StorageConfig.TimespanConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -720,6 +795,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration of the timespan of the items to include in scanning.
      * Currently only supported when inspecting Google Cloud Storage and BigQuery.
@@ -727,21 +804,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.StorageConfig.TimespanConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.StorageConfig.TimespanConfig)
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.class, com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder.class);
+                com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.class,
+                com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.newBuilder()
@@ -749,16 +829,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -786,9 +865,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_StorageConfig_TimespanConfig_descriptor;
       }
 
       @java.lang.Override
@@ -807,7 +886,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig buildPartial() {
-        com.google.privacy.dlp.v2.StorageConfig.TimespanConfig result = new com.google.privacy.dlp.v2.StorageConfig.TimespanConfig(this);
+        com.google.privacy.dlp.v2.StorageConfig.TimespanConfig result =
+            new com.google.privacy.dlp.v2.StorageConfig.TimespanConfig(this);
         if (startTimeBuilder_ == null) {
           result.startTime_ = startTime_;
         } else {
@@ -832,38 +912,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) {
-          return mergeFrom((com.google.privacy.dlp.v2.StorageConfig.TimespanConfig)other);
+          return mergeFrom((com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -871,7 +954,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.StorageConfig.TimespanConfig other) {
-        if (other == com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance())
+          return this;
         if (other.hasStartTime()) {
           mergeStartTime(other.getStartTime());
         }
@@ -903,7 +987,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -915,8 +1000,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Timestamp startTime_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          startTimeBuilder_;
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -927,6 +1017,8 @@ private static final long serialVersionUID = 0L;
         return startTimeBuilder_ != null || startTime_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -935,12 +1027,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.protobuf.Timestamp getStartTime() {
         if (startTimeBuilder_ == null) {
-          return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
         } else {
           return startTimeBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -961,14 +1057,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
-      public Builder setStartTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+      public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
           onChanged();
@@ -979,6 +1076,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -989,7 +1088,9 @@ private static final long serialVersionUID = 0L;
         if (startTimeBuilder_ == null) {
           if (startTime_ != null) {
             startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Timestamp.newBuilder(startTime_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             startTime_ = value;
           }
@@ -1001,6 +1102,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -1019,6 +1122,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -1026,11 +1131,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-        
+
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -1041,11 +1148,14 @@ private static final long serialVersionUID = 0L;
         if (startTimeBuilder_ != null) {
           return startTimeBuilder_.getMessageOrBuilder();
         } else {
-          return startTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows older than this value.
        * </pre>
@@ -1053,14 +1163,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
           getStartTimeFieldBuilder() {
         if (startTimeBuilder_ == null) {
-          startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getStartTime(),
-                  getParentForChildren(),
-                  isClean());
+          startTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getStartTime(), getParentForChildren(), isClean());
           startTime_ = null;
         }
         return startTimeBuilder_;
@@ -1068,8 +1181,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Timestamp endTime_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          endTimeBuilder_;
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1081,6 +1199,8 @@ private static final long serialVersionUID = 0L;
         return endTimeBuilder_ != null || endTime_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1096,6 +1216,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1117,6 +1239,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1124,8 +1248,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
-      public Builder setEndTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+      public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (endTimeBuilder_ == null) {
           endTime_ = builderForValue.build();
           onChanged();
@@ -1136,6 +1259,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1147,7 +1272,7 @@ private static final long serialVersionUID = 0L;
         if (endTimeBuilder_ == null) {
           if (endTime_ != null) {
             endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
           } else {
             endTime_ = value;
           }
@@ -1159,6 +1284,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1178,6 +1305,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1186,11 +1315,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-        
+
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1202,11 +1333,12 @@ private static final long serialVersionUID = 0L;
         if (endTimeBuilder_ != null) {
           return endTimeBuilder_.getMessageOrBuilder();
         } else {
-          return endTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Exclude files or rows newer than this value.
        * If set to zero, no upper time limit is applied.
@@ -1215,14 +1347,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
           getEndTimeFieldBuilder() {
         if (endTimeBuilder_ == null) {
-          endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getEndTime(),
-                  getParentForChildren(),
-                  isClean());
+          endTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getEndTime(), getParentForChildren(), isClean());
           endTime_ = null;
         }
         return endTimeBuilder_;
@@ -1230,8 +1365,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.FieldId timestampField_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> timestampFieldBuilder_;
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
+          timestampFieldBuilder_;
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1250,6 +1390,8 @@ private static final long serialVersionUID = 0L;
         return timestampFieldBuilder_ != null || timestampField_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1266,12 +1408,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.FieldId getTimestampField() {
         if (timestampFieldBuilder_ == null) {
-          return timestampField_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : timestampField_;
+          return timestampField_ == null
+              ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+              : timestampField_;
         } else {
           return timestampFieldBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1300,6 +1446,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1314,8 +1462,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
        */
-      public Builder setTimestampField(
-          com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      public Builder setTimestampField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
         if (timestampFieldBuilder_ == null) {
           timestampField_ = builderForValue.build();
           onChanged();
@@ -1326,6 +1473,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1344,7 +1493,9 @@ private static final long serialVersionUID = 0L;
         if (timestampFieldBuilder_ == null) {
           if (timestampField_ != null) {
             timestampField_ =
-              com.google.privacy.dlp.v2.FieldId.newBuilder(timestampField_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.FieldId.newBuilder(timestampField_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             timestampField_ = value;
           }
@@ -1356,6 +1507,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1382,6 +1535,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1397,11 +1552,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
        */
       public com.google.privacy.dlp.v2.FieldId.Builder getTimestampFieldBuilder() {
-        
+
         onChanged();
         return getTimestampFieldFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1420,11 +1577,14 @@ private static final long serialVersionUID = 0L;
         if (timestampFieldBuilder_ != null) {
           return timestampFieldBuilder_.getMessageOrBuilder();
         } else {
-          return timestampField_ == null ?
-              com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : timestampField_;
+          return timestampField_ == null
+              ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
+              : timestampField_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Specification of the field containing the timestamp of scanned items.
        * Used for data sources like Datastore or BigQuery.
@@ -1440,21 +1600,26 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.FieldId timestamp_field = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+              com.google.privacy.dlp.v2.FieldId,
+              com.google.privacy.dlp.v2.FieldId.Builder,
+              com.google.privacy.dlp.v2.FieldIdOrBuilder>
           getTimestampFieldFieldBuilder() {
         if (timestampFieldBuilder_ == null) {
-          timestampFieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                  getTimestampField(),
-                  getParentForChildren(),
-                  isClean());
+          timestampFieldBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.FieldId,
+                  com.google.privacy.dlp.v2.FieldId.Builder,
+                  com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                  getTimestampField(), getParentForChildren(), isClean());
           timestampField_ = null;
         }
         return timestampFieldBuilder_;
       }
 
-      private boolean enableAutoPopulationOfTimespanConfig_ ;
+      private boolean enableAutoPopulationOfTimespanConfig_;
       /**
+       *
+       *
        * <pre>
        * When the job is started by a JobTrigger we will automatically figure out
        * a valid start_time to avoid scanning files that have not been modified
@@ -1468,6 +1633,8 @@ private static final long serialVersionUID = 0L;
         return enableAutoPopulationOfTimespanConfig_;
       }
       /**
+       *
+       *
        * <pre>
        * When the job is started by a JobTrigger we will automatically figure out
        * a valid start_time to avoid scanning files that have not been modified
@@ -1478,12 +1645,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
        */
       public Builder setEnableAutoPopulationOfTimespanConfig(boolean value) {
-        
+
         enableAutoPopulationOfTimespanConfig_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * When the job is started by a JobTrigger we will automatically figure out
        * a valid start_time to avoid scanning files that have not been modified
@@ -1494,11 +1663,12 @@ private static final long serialVersionUID = 0L;
        * <code>bool enable_auto_population_of_timespan_config = 4;</code>
        */
       public Builder clearEnableAutoPopulationOfTimespanConfig() {
-        
+
         enableAutoPopulationOfTimespanConfig_ = false;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1511,12 +1681,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.StorageConfig.TimespanConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.StorageConfig.TimespanConfig)
     private static final com.google.privacy.dlp.v2.StorageConfig.TimespanConfig DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.StorageConfig.TimespanConfig();
     }
@@ -1525,16 +1695,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TimespanConfig>
-        PARSER = new com.google.protobuf.AbstractParser<TimespanConfig>() {
-      @java.lang.Override
-      public TimespanConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TimespanConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TimespanConfig> PARSER =
+        new com.google.protobuf.AbstractParser<TimespanConfig>() {
+          @java.lang.Override
+          public TimespanConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TimespanConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TimespanConfig> parser() {
       return PARSER;
@@ -1549,24 +1719,22 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int typeCase_ = 0;
   private java.lang.Object type_;
-  public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
     DATASTORE_OPTIONS(2),
     CLOUD_STORAGE_OPTIONS(3),
     BIG_QUERY_OPTIONS(4),
     TYPE_NOT_SET(0);
     private final int value;
+
     private TypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -1574,26 +1742,32 @@ private static final long serialVersionUID = 0L;
 
     public static TypeCase forNumber(int value) {
       switch (value) {
-        case 2: return DATASTORE_OPTIONS;
-        case 3: return CLOUD_STORAGE_OPTIONS;
-        case 4: return BIG_QUERY_OPTIONS;
-        case 0: return TYPE_NOT_SET;
-        default: return null;
+        case 2:
+          return DATASTORE_OPTIONS;
+        case 3:
+          return CLOUD_STORAGE_OPTIONS;
+        case 4:
+          return BIG_QUERY_OPTIONS;
+        case 0:
+          return TYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TypeCase
-  getTypeCase() {
-    return TypeCase.forNumber(
-        typeCase_);
+  public TypeCase getTypeCase() {
+    return TypeCase.forNumber(typeCase_);
   }
 
   public static final int DATASTORE_OPTIONS_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Google Cloud Datastore options specification.
    * </pre>
@@ -1604,6 +1778,8 @@ private static final long serialVersionUID = 0L;
     return typeCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * Google Cloud Datastore options specification.
    * </pre>
@@ -1612,11 +1788,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions() {
     if (typeCase_ == 2) {
-       return (com.google.privacy.dlp.v2.DatastoreOptions) type_;
+      return (com.google.privacy.dlp.v2.DatastoreOptions) type_;
     }
     return com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Google Cloud Datastore options specification.
    * </pre>
@@ -1625,13 +1803,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder getDatastoreOptionsOrBuilder() {
     if (typeCase_ == 2) {
-       return (com.google.privacy.dlp.v2.DatastoreOptions) type_;
+      return (com.google.privacy.dlp.v2.DatastoreOptions) type_;
     }
     return com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance();
   }
 
   public static final int CLOUD_STORAGE_OPTIONS_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage options specification.
    * </pre>
@@ -1642,6 +1822,8 @@ private static final long serialVersionUID = 0L;
     return typeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage options specification.
    * </pre>
@@ -1650,11 +1832,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions() {
     if (typeCase_ == 3) {
-       return (com.google.privacy.dlp.v2.CloudStorageOptions) type_;
+      return (com.google.privacy.dlp.v2.CloudStorageOptions) type_;
     }
     return com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage options specification.
    * </pre>
@@ -1663,13 +1847,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder getCloudStorageOptionsOrBuilder() {
     if (typeCase_ == 3) {
-       return (com.google.privacy.dlp.v2.CloudStorageOptions) type_;
+      return (com.google.privacy.dlp.v2.CloudStorageOptions) type_;
     }
     return com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance();
   }
 
   public static final int BIG_QUERY_OPTIONS_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * BigQuery options specification.
    * </pre>
@@ -1680,6 +1866,8 @@ private static final long serialVersionUID = 0L;
     return typeCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * BigQuery options specification.
    * </pre>
@@ -1688,11 +1876,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions() {
     if (typeCase_ == 4) {
-       return (com.google.privacy.dlp.v2.BigQueryOptions) type_;
+      return (com.google.privacy.dlp.v2.BigQueryOptions) type_;
     }
     return com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * BigQuery options specification.
    * </pre>
@@ -1701,33 +1891,31 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder getBigQueryOptionsOrBuilder() {
     if (typeCase_ == 4) {
-       return (com.google.privacy.dlp.v2.BigQueryOptions) type_;
+      return (com.google.privacy.dlp.v2.BigQueryOptions) type_;
     }
     return com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
   }
 
   public static final int TIMESPAN_CONFIG_FIELD_NUMBER = 6;
   private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_;
-  /**
-   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
   public boolean hasTimespanConfig() {
     return timespanConfig_ != null;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
   public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig() {
-    return timespanConfig_ == null ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance() : timespanConfig_;
+    return timespanConfig_ == null
+        ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
+        : timespanConfig_;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-   */
-  public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder getTimespanConfigOrBuilder() {
+  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+  public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder
+      getTimespanConfigOrBuilder() {
     return getTimespanConfig();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1739,8 +1927,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (typeCase_ == 2) {
       output.writeMessage(2, (com.google.privacy.dlp.v2.DatastoreOptions) type_);
     }
@@ -1763,20 +1950,22 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (typeCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.DatastoreOptions) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.DatastoreOptions) type_);
     }
     if (typeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.privacy.dlp.v2.CloudStorageOptions) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.CloudStorageOptions) type_);
     }
     if (typeCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.privacy.dlp.v2.BigQueryOptions) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.BigQueryOptions) type_);
     }
     if (timespanConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getTimespanConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getTimespanConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1786,7 +1975,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.StorageConfig)) {
       return super.equals(obj);
@@ -1796,24 +1985,19 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasTimespanConfig() == other.hasTimespanConfig());
     if (hasTimespanConfig()) {
-      result = result && getTimespanConfig()
-          .equals(other.getTimespanConfig());
+      result = result && getTimespanConfig().equals(other.getTimespanConfig());
     }
-    result = result && getTypeCase().equals(
-        other.getTypeCase());
+    result = result && getTypeCase().equals(other.getTypeCase());
     if (!result) return false;
     switch (typeCase_) {
       case 2:
-        result = result && getDatastoreOptions()
-            .equals(other.getDatastoreOptions());
+        result = result && getDatastoreOptions().equals(other.getDatastoreOptions());
         break;
       case 3:
-        result = result && getCloudStorageOptions()
-            .equals(other.getCloudStorageOptions());
+        result = result && getCloudStorageOptions().equals(other.getCloudStorageOptions());
         break;
       case 4:
-        result = result && getBigQueryOptions()
-            .equals(other.getBigQueryOptions());
+        result = result && getBigQueryOptions().equals(other.getBigQueryOptions());
         break;
       case 0:
       default:
@@ -1854,118 +2038,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.StorageConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.StorageConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.StorageConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.StorageConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.StorageConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Shared message indicating Cloud storage type.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.StorageConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.StorageConfig)
       com.google.privacy.dlp.v2.StorageConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_StorageConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_StorageConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.StorageConfig.class, com.google.privacy.dlp.v2.StorageConfig.Builder.class);
+              com.google.privacy.dlp.v2.StorageConfig.class,
+              com.google.privacy.dlp.v2.StorageConfig.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.StorageConfig.newBuilder()
@@ -1973,16 +2166,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1998,9 +2190,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_StorageConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_StorageConfig_descriptor;
     }
 
     @java.lang.Override
@@ -2019,7 +2211,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.StorageConfig buildPartial() {
-      com.google.privacy.dlp.v2.StorageConfig result = new com.google.privacy.dlp.v2.StorageConfig(this);
+      com.google.privacy.dlp.v2.StorageConfig result =
+          new com.google.privacy.dlp.v2.StorageConfig(this);
       if (typeCase_ == 2) {
         if (datastoreOptionsBuilder_ == null) {
           result.type_ = type_;
@@ -2055,38 +2248,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.StorageConfig) {
-        return mergeFrom((com.google.privacy.dlp.v2.StorageConfig)other);
+        return mergeFrom((com.google.privacy.dlp.v2.StorageConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -2099,21 +2293,25 @@ private static final long serialVersionUID = 0L;
         mergeTimespanConfig(other.getTimespanConfig());
       }
       switch (other.getTypeCase()) {
-        case DATASTORE_OPTIONS: {
-          mergeDatastoreOptions(other.getDatastoreOptions());
-          break;
-        }
-        case CLOUD_STORAGE_OPTIONS: {
-          mergeCloudStorageOptions(other.getCloudStorageOptions());
-          break;
-        }
-        case BIG_QUERY_OPTIONS: {
-          mergeBigQueryOptions(other.getBigQueryOptions());
-          break;
-        }
-        case TYPE_NOT_SET: {
-          break;
-        }
+        case DATASTORE_OPTIONS:
+          {
+            mergeDatastoreOptions(other.getDatastoreOptions());
+            break;
+          }
+        case CLOUD_STORAGE_OPTIONS:
+          {
+            mergeCloudStorageOptions(other.getCloudStorageOptions());
+            break;
+          }
+        case BIG_QUERY_OPTIONS:
+          {
+            mergeBigQueryOptions(other.getBigQueryOptions());
+            break;
+          }
+        case TYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2143,12 +2341,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int typeCase_ = 0;
     private java.lang.Object type_;
-    public TypeCase
-        getTypeCase() {
-      return TypeCase.forNumber(
-          typeCase_);
+
+    public TypeCase getTypeCase() {
+      return TypeCase.forNumber(typeCase_);
     }
 
     public Builder clearType() {
@@ -2158,10 +2356,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DatastoreOptions, com.google.privacy.dlp.v2.DatastoreOptions.Builder, com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder> datastoreOptionsBuilder_;
+            com.google.privacy.dlp.v2.DatastoreOptions,
+            com.google.privacy.dlp.v2.DatastoreOptions.Builder,
+            com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder>
+        datastoreOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2172,6 +2374,8 @@ private static final long serialVersionUID = 0L;
       return typeCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2192,6 +2396,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2212,6 +2418,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2230,6 +2438,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2238,10 +2448,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDatastoreOptions(com.google.privacy.dlp.v2.DatastoreOptions value) {
       if (datastoreOptionsBuilder_ == null) {
-        if (typeCase_ == 2 &&
-            type_ != com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.DatastoreOptions.newBuilder((com.google.privacy.dlp.v2.DatastoreOptions) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 2
+            && type_ != com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.DatastoreOptions.newBuilder(
+                      (com.google.privacy.dlp.v2.DatastoreOptions) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -2256,6 +2469,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2279,6 +2494,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2289,6 +2506,8 @@ private static final long serialVersionUID = 0L;
       return getDatastoreOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2306,6 +2525,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Datastore options specification.
      * </pre>
@@ -2313,27 +2534,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.DatastoreOptions datastore_options = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DatastoreOptions, com.google.privacy.dlp.v2.DatastoreOptions.Builder, com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder> 
+            com.google.privacy.dlp.v2.DatastoreOptions,
+            com.google.privacy.dlp.v2.DatastoreOptions.Builder,
+            com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder>
         getDatastoreOptionsFieldBuilder() {
       if (datastoreOptionsBuilder_ == null) {
         if (!(typeCase_ == 2)) {
           type_ = com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance();
         }
-        datastoreOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.DatastoreOptions, com.google.privacy.dlp.v2.DatastoreOptions.Builder, com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder>(
+        datastoreOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DatastoreOptions,
+                com.google.privacy.dlp.v2.DatastoreOptions.Builder,
+                com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder>(
                 (com.google.privacy.dlp.v2.DatastoreOptions) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return datastoreOptionsBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStorageOptions, com.google.privacy.dlp.v2.CloudStorageOptions.Builder, com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder> cloudStorageOptionsBuilder_;
+            com.google.privacy.dlp.v2.CloudStorageOptions,
+            com.google.privacy.dlp.v2.CloudStorageOptions.Builder,
+            com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder>
+        cloudStorageOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2344,6 +2576,8 @@ private static final long serialVersionUID = 0L;
       return typeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2364,6 +2598,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2384,6 +2620,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2402,6 +2640,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2410,10 +2650,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCloudStorageOptions(com.google.privacy.dlp.v2.CloudStorageOptions value) {
       if (cloudStorageOptionsBuilder_ == null) {
-        if (typeCase_ == 3 &&
-            type_ != com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.CloudStorageOptions.newBuilder((com.google.privacy.dlp.v2.CloudStorageOptions) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 3
+            && type_ != com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.CloudStorageOptions.newBuilder(
+                      (com.google.privacy.dlp.v2.CloudStorageOptions) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -2428,6 +2671,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2451,6 +2696,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2461,13 +2708,16 @@ private static final long serialVersionUID = 0L;
       return getCloudStorageOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
      */
-    public com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder getCloudStorageOptionsOrBuilder() {
+    public com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder
+        getCloudStorageOptionsOrBuilder() {
       if ((typeCase_ == 3) && (cloudStorageOptionsBuilder_ != null)) {
         return cloudStorageOptionsBuilder_.getMessageOrBuilder();
       } else {
@@ -2478,6 +2728,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Google Cloud Storage options specification.
      * </pre>
@@ -2485,27 +2737,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CloudStorageOptions cloud_storage_options = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStorageOptions, com.google.privacy.dlp.v2.CloudStorageOptions.Builder, com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder> 
+            com.google.privacy.dlp.v2.CloudStorageOptions,
+            com.google.privacy.dlp.v2.CloudStorageOptions.Builder,
+            com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder>
         getCloudStorageOptionsFieldBuilder() {
       if (cloudStorageOptionsBuilder_ == null) {
         if (!(typeCase_ == 3)) {
           type_ = com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance();
         }
-        cloudStorageOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CloudStorageOptions, com.google.privacy.dlp.v2.CloudStorageOptions.Builder, com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder>(
+        cloudStorageOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CloudStorageOptions,
+                com.google.privacy.dlp.v2.CloudStorageOptions.Builder,
+                com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder>(
                 (com.google.privacy.dlp.v2.CloudStorageOptions) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return cloudStorageOptionsBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.BigQueryOptions, com.google.privacy.dlp.v2.BigQueryOptions.Builder, com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder> bigQueryOptionsBuilder_;
+            com.google.privacy.dlp.v2.BigQueryOptions,
+            com.google.privacy.dlp.v2.BigQueryOptions.Builder,
+            com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder>
+        bigQueryOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2516,6 +2779,8 @@ private static final long serialVersionUID = 0L;
       return typeCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2536,6 +2801,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2556,6 +2823,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2574,6 +2843,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2582,10 +2853,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBigQueryOptions(com.google.privacy.dlp.v2.BigQueryOptions value) {
       if (bigQueryOptionsBuilder_ == null) {
-        if (typeCase_ == 4 &&
-            type_ != com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.BigQueryOptions.newBuilder((com.google.privacy.dlp.v2.BigQueryOptions) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 4
+            && type_ != com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.BigQueryOptions.newBuilder(
+                      (com.google.privacy.dlp.v2.BigQueryOptions) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -2600,6 +2874,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2623,6 +2899,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2633,6 +2911,8 @@ private static final long serialVersionUID = 0L;
       return getBigQueryOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2650,6 +2930,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * BigQuery options specification.
      * </pre>
@@ -2657,46 +2939,51 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.BigQueryOptions big_query_options = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.BigQueryOptions, com.google.privacy.dlp.v2.BigQueryOptions.Builder, com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder> 
+            com.google.privacy.dlp.v2.BigQueryOptions,
+            com.google.privacy.dlp.v2.BigQueryOptions.Builder,
+            com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder>
         getBigQueryOptionsFieldBuilder() {
       if (bigQueryOptionsBuilder_ == null) {
         if (!(typeCase_ == 4)) {
           type_ = com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
         }
-        bigQueryOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.BigQueryOptions, com.google.privacy.dlp.v2.BigQueryOptions.Builder, com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder>(
+        bigQueryOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.BigQueryOptions,
+                com.google.privacy.dlp.v2.BigQueryOptions.Builder,
+                com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder>(
                 (com.google.privacy.dlp.v2.BigQueryOptions) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return bigQueryOptionsBuilder_;
     }
 
     private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StorageConfig.TimespanConfig, com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder, com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder> timespanConfigBuilder_;
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
+            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig,
+            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder,
+            com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder>
+        timespanConfigBuilder_;
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public boolean hasTimespanConfig() {
       return timespanConfigBuilder_ != null || timespanConfig_ != null;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig() {
       if (timespanConfigBuilder_ == null) {
-        return timespanConfig_ == null ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance() : timespanConfig_;
+        return timespanConfig_ == null
+            ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
+            : timespanConfig_;
       } else {
         return timespanConfigBuilder_.getMessage();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public Builder setTimespanConfig(com.google.privacy.dlp.v2.StorageConfig.TimespanConfig value) {
       if (timespanConfigBuilder_ == null) {
         if (value == null) {
@@ -2710,9 +2997,7 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public Builder setTimespanConfig(
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder builderForValue) {
       if (timespanConfigBuilder_ == null) {
@@ -2724,14 +3009,15 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
-    public Builder mergeTimespanConfig(com.google.privacy.dlp.v2.StorageConfig.TimespanConfig value) {
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    public Builder mergeTimespanConfig(
+        com.google.privacy.dlp.v2.StorageConfig.TimespanConfig value) {
       if (timespanConfigBuilder_ == null) {
         if (timespanConfig_ != null) {
           timespanConfig_ =
-            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.newBuilder(timespanConfig_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.newBuilder(timespanConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           timespanConfig_ = value;
         }
@@ -2742,9 +3028,7 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     public Builder clearTimespanConfig() {
       if (timespanConfigBuilder_ == null) {
         timespanConfig_ = null;
@@ -2756,44 +3040,44 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
-    public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder getTimespanConfigBuilder() {
-      
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder
+        getTimespanConfigBuilder() {
+
       onChanged();
       return getTimespanConfigFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
-    public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder getTimespanConfigOrBuilder() {
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder
+        getTimespanConfigOrBuilder() {
       if (timespanConfigBuilder_ != null) {
         return timespanConfigBuilder_.getMessageOrBuilder();
       } else {
-        return timespanConfig_ == null ?
-            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance() : timespanConfig_;
+        return timespanConfig_ == null
+            ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
+            : timespanConfig_;
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StorageConfig.TimespanConfig, com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder, com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder> 
+            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig,
+            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder,
+            com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder>
         getTimespanConfigFieldBuilder() {
       if (timespanConfigBuilder_ == null) {
-        timespanConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.StorageConfig.TimespanConfig, com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder, com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder>(
-                getTimespanConfig(),
-                getParentForChildren(),
-                isClean());
+        timespanConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.StorageConfig.TimespanConfig,
+                com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder,
+                com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder>(
+                getTimespanConfig(), getParentForChildren(), isClean());
         timespanConfig_ = null;
       }
       return timespanConfigBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2803,12 +3087,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.StorageConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.StorageConfig)
   private static final com.google.privacy.dlp.v2.StorageConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.StorageConfig();
   }
@@ -2817,16 +3101,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StorageConfig>
-      PARSER = new com.google.protobuf.AbstractParser<StorageConfig>() {
-    @java.lang.Override
-    public StorageConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StorageConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<StorageConfig> PARSER =
+      new com.google.protobuf.AbstractParser<StorageConfig>() {
+        @java.lang.Override
+        public StorageConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new StorageConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<StorageConfig> parser() {
     return PARSER;
@@ -2841,6 +3125,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.StorageConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

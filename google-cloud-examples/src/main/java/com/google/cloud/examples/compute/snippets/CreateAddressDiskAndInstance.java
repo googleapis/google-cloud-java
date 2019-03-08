@@ -34,7 +34,6 @@ import com.google.cloud.compute.deprecated.NetworkInterface;
 import com.google.cloud.compute.deprecated.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.deprecated.Operation;
 import com.google.cloud.compute.deprecated.RegionAddressId;
-
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -82,9 +81,10 @@ public class CreateAddressDiskAndInstance {
     PersistentDiskConfiguration attachConfiguration =
         PersistentDiskConfiguration.newBuilder(diskId).setBoot(true).build();
     AttachedDisk attachedDisk = AttachedDisk.of("dev0", attachConfiguration);
-    NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId)
-        .setAccessConfigurations(AccessConfig.of(externalIp.getAddress()))
-        .build();
+    NetworkInterface networkInterface =
+        NetworkInterface.newBuilder(networkId)
+            .setAccessConfigurations(AccessConfig.of(externalIp.getAddress()))
+            .build();
     MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
     InstanceInfo instance =
         InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface);

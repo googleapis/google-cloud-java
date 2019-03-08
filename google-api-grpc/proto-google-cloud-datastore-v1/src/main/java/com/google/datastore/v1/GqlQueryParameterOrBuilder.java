@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface GqlQueryParameterOrBuilder extends
+public interface GqlQueryParameterOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.GqlQueryParameter)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A value parameter.
    * </pre>
@@ -16,6 +19,8 @@ public interface GqlQueryParameterOrBuilder extends
    */
   boolean hasValue();
   /**
+   *
+   *
    * <pre>
    * A value parameter.
    * </pre>
@@ -24,6 +29,8 @@ public interface GqlQueryParameterOrBuilder extends
    */
   com.google.datastore.v1.Value getValue();
   /**
+   *
+   *
    * <pre>
    * A value parameter.
    * </pre>
@@ -33,6 +40,8 @@ public interface GqlQueryParameterOrBuilder extends
   com.google.datastore.v1.ValueOrBuilder getValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A query cursor. Query cursors are returned in query
    * result batches.

@@ -18,21 +18,23 @@
  * A client for Cloud Storage - Unified object storage.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
- * shows how to create a Storage blob. For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/GetOrCreateBlob.java">
+ * shows how to create a Storage blob. For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/GetOrCreateBlob.java">
  * CreateBlob.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * Storage storage = StorageOptions.getDefaultInstance().getService();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
  * Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
  * }</pre>
- * <p>
- * This second example shows how to update the blob's content if the blob exists. For the complete
- * source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java">
+ *
+ * <p>This second example shows how to update the blob's content if the blob exists. For the
+ * complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java">
  * UpdateBlob.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * Storage storage = StorageOptions.getDefaultInstance().getService();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * Blob blob = storage.get(blobId);
@@ -42,13 +44,15 @@
  *   WritableByteChannel channel = blob.writer();
  *   channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
  *   channel.close();
- * }}</pre>
+ * }
+ * }</pre>
+ *
  * <p>When using google-cloud from outside of App/Compute Engine, you have to <a
- * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a
- * project ID</a> and
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java#authentication">provide
+ * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a project
+ * ID</a> and <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java#authentication">provide
  * credentials</a>.
+ *
  * @see <a href="https://cloud.google.com/storage/">Google Cloud Storage</a>
  */
 package com.google.cloud.storage;
-

@@ -50,10 +50,11 @@ public class DetectLanguageAndTranslate {
     String detectedLanguage = detection.getLanguage();
 
     // Translate the mysterious text to English
-    Translation translation = translate.translate(
-        mysteriousText,
-        TranslateOption.sourceLanguage(detectedLanguage),
-        TranslateOption.targetLanguage("en"));
+    Translation translation =
+        translate.translate(
+            mysteriousText,
+            TranslateOption.sourceLanguage(detectedLanguage),
+            TranslateOption.targetLanguage("en"));
 
     System.out.println(translation.getTranslatedText());
   }

@@ -33,7 +33,6 @@ public class KeyTest {
     assertFalse(key.hasId());
   }
 
-
   @Test
   public void testId() throws Exception {
     Key.Builder builder = Key.newBuilder("d", "k", 10);
@@ -42,7 +41,6 @@ public class KeyTest {
     key = builder.setId(100).build();
     assertEquals(Long.valueOf(100), key.getId());
   }
-
 
   @Test
   public void testHasName() throws Exception {
@@ -53,7 +51,6 @@ public class KeyTest {
     assertFalse(key.hasName());
   }
 
-
   @Test
   public void testName() throws Exception {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
@@ -63,7 +60,6 @@ public class KeyTest {
     assertEquals("o", key.getName());
   }
 
-
   @Test
   public void testNameOrId() throws Exception {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
@@ -72,7 +68,6 @@ public class KeyTest {
     key = builder.setId(1).build();
     assertEquals(Long.valueOf(1), key.getNameOrId());
   }
-
 
   @Test
   public void testToAndFromUrlSafe() throws Exception {

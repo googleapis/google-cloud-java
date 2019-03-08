@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.database.v1;
 
-public interface CreateDatabaseRequestOrBuilder extends
+public interface CreateDatabaseRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.database.v1.CreateDatabaseRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the instance that will serve the new database.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -17,6 +20,8 @@ public interface CreateDatabaseRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the instance that will serve the new database.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -24,10 +29,11 @@ public interface CreateDatabaseRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. A `CREATE DATABASE` statement, which specifies the ID of the
    * new database.  The database ID must conform to the regular expression
@@ -40,6 +46,8 @@ public interface CreateDatabaseRequestOrBuilder extends
    */
   java.lang.String getCreateStatement();
   /**
+   *
+   *
    * <pre>
    * Required. A `CREATE DATABASE` statement, which specifies the ID of the
    * new database.  The database ID must conform to the regular expression
@@ -50,10 +58,11 @@ public interface CreateDatabaseRequestOrBuilder extends
    *
    * <code>string create_statement = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getCreateStatementBytes();
+  com.google.protobuf.ByteString getCreateStatementBytes();
 
   /**
+   *
+   *
    * <pre>
    * An optional list of DDL statements to run inside the newly created
    * database. Statements can create tables, indexes, etc. These
@@ -63,9 +72,10 @@ public interface CreateDatabaseRequestOrBuilder extends
    *
    * <code>repeated string extra_statements = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getExtraStatementsList();
+  java.util.List<java.lang.String> getExtraStatementsList();
   /**
+   *
+   *
    * <pre>
    * An optional list of DDL statements to run inside the newly created
    * database. Statements can create tables, indexes, etc. These
@@ -77,6 +87,8 @@ public interface CreateDatabaseRequestOrBuilder extends
    */
   int getExtraStatementsCount();
   /**
+   *
+   *
    * <pre>
    * An optional list of DDL statements to run inside the newly created
    * database. Statements can create tables, indexes, etc. These
@@ -88,6 +100,8 @@ public interface CreateDatabaseRequestOrBuilder extends
    */
   java.lang.String getExtraStatements(int index);
   /**
+   *
+   *
    * <pre>
    * An optional list of DDL statements to run inside the newly created
    * database. Statements can create tables, indexes, etc. These
@@ -97,6 +111,5 @@ public interface CreateDatabaseRequestOrBuilder extends
    *
    * <code>repeated string extra_statements = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getExtraStatementsBytes(int index);
+  com.google.protobuf.ByteString getExtraStatementsBytes(int index);
 }

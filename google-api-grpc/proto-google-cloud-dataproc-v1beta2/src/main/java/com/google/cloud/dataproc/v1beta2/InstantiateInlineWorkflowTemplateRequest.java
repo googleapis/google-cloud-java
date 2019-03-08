@@ -4,31 +4,37 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A request to instantiate an inline workflow template.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest}
  */
-public  final class InstantiateInlineWorkflowTemplateRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class InstantiateInlineWorkflowTemplateRequest
+    extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)
     InstantiateInlineWorkflowTemplateRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use InstantiateInlineWorkflowTemplateRequest.newBuilder() to construct.
-  private InstantiateInlineWorkflowTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private InstantiateInlineWorkflowTemplateRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private InstantiateInlineWorkflowTemplateRequest() {
     parent_ = "";
     instanceId_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private InstantiateInlineWorkflowTemplateRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,66 +54,84 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder subBuilder = null;
-            if (template_ != null) {
-              subBuilder = template_.toBuilder();
+              parent_ = s;
+              break;
             }
-            template_ = input.readMessage(com.google.cloud.dataproc.v1beta2.WorkflowTemplate.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(template_);
-              template_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder subBuilder = null;
+              if (template_ != null) {
+                subBuilder = template_.toBuilder();
+              }
+              template_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.WorkflowTemplate.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(template_);
+                template_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            instanceId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceId_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.class, com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.Builder.class);
+            com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.class,
+            com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.Builder
+                .class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -121,14 +145,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -137,13 +162,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -154,6 +177,8 @@ private static final long serialVersionUID = 0L;
   public static final int TEMPLATE_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1beta2.WorkflowTemplate template_;
   /**
+   *
+   *
    * <pre>
    * Required. The workflow template to instantiate.
    * </pre>
@@ -164,6 +189,8 @@ private static final long serialVersionUID = 0L;
     return template_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The workflow template to instantiate.
    * </pre>
@@ -171,9 +198,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2;</code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
-    return template_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance() : template_;
+    return template_ == null
+        ? com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance()
+        : template_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The workflow template to instantiate.
    * </pre>
@@ -187,14 +218,10 @@ private static final long serialVersionUID = 0L;
   public static final int INSTANCE_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object instanceId_;
   /**
+   *
+   *
    * <pre>
-   * Optional. A tag that prevents multiple concurrent workflow
-   * instances with the same tag from running. This mitigates risk of
-   * concurrent instances started due to retries.
-   * It is recommended to always set this value to a
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * Deprecated. Please use `request_id` field instead.
    * </pre>
    *
    * <code>string instance_id = 3;</code>
@@ -204,14 +231,38 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       instanceId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
+   * <pre>
+   * Deprecated. Please use `request_id` field instead.
+   * </pre>
+   *
+   * <code>string instance_id = 3;</code>
+   */
+  public com.google.protobuf.ByteString getInstanceIdBytes() {
+    java.lang.Object ref = instanceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      instanceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
    * <pre>
    * Optional. A tag that prevents multiple concurrent workflow
    * instances with the same tag from running. This mitigates risk of
@@ -222,16 +273,40 @@ private static final long serialVersionUID = 0L;
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string instance_id = 3;</code>
+   * <code>string request_id = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getInstanceIdBytes() {
-    java.lang.Object ref = instanceId_;
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      instanceId_ = b;
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A tag that prevents multiple concurrent workflow
+   * instances with the same tag from running. This mitigates risk of
+   * concurrent instances started due to retries.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   */
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -239,6 +314,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -250,8 +326,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -260,6 +335,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getInstanceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
     }
     unknownFields.writeTo(output);
   }
@@ -274,11 +352,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (template_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getTemplate());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTemplate());
     }
     if (!getInstanceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -288,23 +368,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
-    if (!(obj instanceof com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)) {
+    if (!(obj
+        instanceof com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest other = (com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest) obj;
+    com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest other =
+        (com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
+    result = result && getParent().equals(other.getParent());
     result = result && (hasTemplate() == other.hasTemplate());
     if (hasTemplate()) {
-      result = result && getTemplate()
-          .equals(other.getTemplate());
+      result = result && getTemplate().equals(other.getTemplate());
     }
-    result = result && getInstanceId()
-        .equals(other.getInstanceId());
+    result = result && getInstanceId().equals(other.getInstanceId());
+    result = result && getRequestId().equals(other.getRequestId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -324,140 +404,159 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceId().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A request to instantiate an inline workflow template.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)
       com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.class, com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.Builder.class);
+              com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.class,
+              com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.Builder
+                  .class);
     }
 
-    // Construct using com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -471,23 +570,28 @@ private static final long serialVersionUID = 0L;
       }
       instanceId_ = "";
 
+      requestId_ = "";
+
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_InstantiateInlineWorkflowTemplateRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest getDefaultInstanceForType() {
-      return com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.getDefaultInstance();
+    public com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest build() {
-      com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest result = buildPartial();
+      com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -495,8 +599,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest buildPartial() {
-      com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest result = new com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest(this);
+    public com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+        buildPartial() {
+      com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest result =
+          new com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest(this);
       result.parent_ = parent_;
       if (templateBuilder_ == null) {
         result.template_ = template_;
@@ -504,6 +610,7 @@ private static final long serialVersionUID = 0L;
         result.template_ = templateBuilder_.build();
       }
       result.instanceId_ = instanceId_;
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -512,46 +619,52 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)other);
+      if (other
+          instanceof com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest) {
+        return mergeFrom(
+            (com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest other) {
-      if (other == com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest other) {
+      if (other
+          == com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+              .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -561,6 +674,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        onChanged();
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -578,11 +695,14 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parsedMessage = null;
+      com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest parsedMessage =
+          null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -594,6 +714,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The "resource name" of the workflow template region, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -605,8 +727,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -615,6 +736,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The "resource name" of the workflow template region, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -623,13 +746,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -637,6 +758,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The "resource name" of the workflow template region, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -645,17 +768,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The "resource name" of the workflow template region, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -665,12 +789,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The "resource name" of the workflow template region, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -679,13 +805,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -693,8 +818,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.WorkflowTemplate template_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.WorkflowTemplate, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder, com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder> templateBuilder_;
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplate,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>
+        templateBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -705,6 +835,8 @@ private static final long serialVersionUID = 0L;
       return templateBuilder_ != null || template_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -713,12 +845,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate() {
       if (templateBuilder_ == null) {
-        return template_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance() : template_;
+        return template_ == null
+            ? com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance()
+            : template_;
       } else {
         return templateBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -739,6 +875,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -757,6 +895,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -767,7 +907,9 @@ private static final long serialVersionUID = 0L;
       if (templateBuilder_ == null) {
         if (template_ != null) {
           template_ =
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.newBuilder(template_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.WorkflowTemplate.newBuilder(template_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           template_ = value;
         }
@@ -779,6 +921,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -797,6 +941,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -804,11 +950,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2;</code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder getTemplateBuilder() {
-      
+
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -819,11 +967,14 @@ private static final long serialVersionUID = 0L;
       if (templateBuilder_ != null) {
         return templateBuilder_.getMessageOrBuilder();
       } else {
-        return template_ == null ?
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance() : template_;
+        return template_ == null
+            ? com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance()
+            : template_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The workflow template to instantiate.
      * </pre>
@@ -831,14 +982,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplate template = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.WorkflowTemplate, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder, com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplate,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>
         getTemplateFieldBuilder() {
       if (templateBuilder_ == null) {
-        templateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplate, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder, com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>(
-                getTemplate(),
-                getParentForChildren(),
-                isClean());
+        templateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.WorkflowTemplate,
+                com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder,
+                com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>(
+                getTemplate(), getParentForChildren(), isClean());
         template_ = null;
       }
       return templateBuilder_;
@@ -846,14 +1000,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object instanceId_ = "";
     /**
+     *
+     *
      * <pre>
-     * Optional. A tag that prevents multiple concurrent workflow
-     * instances with the same tag from running. This mitigates risk of
-     * concurrent instances started due to retries.
-     * It is recommended to always set this value to a
-     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * Deprecated. Please use `request_id` field instead.
      * </pre>
      *
      * <code>string instance_id = 3;</code>
@@ -861,8 +1011,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInstanceId() {
       java.lang.Object ref = instanceId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         instanceId_ = s;
         return s;
@@ -871,25 +1020,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. A tag that prevents multiple concurrent workflow
-     * instances with the same tag from running. This mitigates risk of
-     * concurrent instances started due to retries.
-     * It is recommended to always set this value to a
-     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * Deprecated. Please use `request_id` field instead.
      * </pre>
      *
      * <code>string instance_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getInstanceIdBytes() {
+    public com.google.protobuf.ByteString getInstanceIdBytes() {
       java.lang.Object ref = instanceId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         instanceId_ = b;
         return b;
       } else {
@@ -897,48 +1040,62 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. A tag that prevents multiple concurrent workflow
-     * instances with the same tag from running. This mitigates risk of
-     * concurrent instances started due to retries.
-     * It is recommended to always set this value to a
-     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * Deprecated. Please use `request_id` field instead.
      * </pre>
      *
      * <code>string instance_id = 3;</code>
      */
-    public Builder setInstanceId(
-        java.lang.String value) {
+    public Builder setInstanceId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       instanceId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. A tag that prevents multiple concurrent workflow
-     * instances with the same tag from running. This mitigates risk of
-     * concurrent instances started due to retries.
-     * It is recommended to always set this value to a
-     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * Deprecated. Please use `request_id` field instead.
      * </pre>
      *
      * <code>string instance_id = 3;</code>
      */
     public Builder clearInstanceId() {
-      
+
       instanceId_ = getDefaultInstance().getInstanceId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3;</code>
+     */
+    public Builder setInstanceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      instanceId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
      * <pre>
      * Optional. A tag that prevents multiple concurrent workflow
      * instances with the same tag from running. This mitigates risk of
@@ -949,22 +1106,118 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 4;</code>
      */
-    public Builder setInstanceIdBytes(
-        com.google.protobuf.ByteString value) {
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A tag that prevents multiple concurrent workflow
+     * instances with the same tag from running. This mitigates risk of
+     * concurrent instances started due to retries.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A tag that prevents multiple concurrent workflow
+     * instances with the same tag from running. This mitigates risk of
+     * concurrent instances started due to retries.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     */
+    public Builder setRequestId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      instanceId_ = value;
+        throw new NullPointerException();
+      }
+
+      requestId_ = value;
       onChanged();
       return this;
     }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A tag that prevents multiple concurrent workflow
+     * instances with the same tag from running. This mitigates risk of
+     * concurrent instances started due to retries.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     */
+    public Builder clearRequestId() {
+
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A tag that prevents multiple concurrent workflow
+     * instances with the same tag from running. This mitigates risk of
+     * concurrent instances started due to retries.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -974,30 +1227,33 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)
-  private static final com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      DEFAULT_INSTANCE;
+
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest();
+    DEFAULT_INSTANCE =
+        new com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest();
   }
 
-  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest getDefaultInstance() {
+  public static com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InstantiateInlineWorkflowTemplateRequest>
-      PARSER = new com.google.protobuf.AbstractParser<InstantiateInlineWorkflowTemplateRequest>() {
-    @java.lang.Override
-    public InstantiateInlineWorkflowTemplateRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new InstantiateInlineWorkflowTemplateRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<InstantiateInlineWorkflowTemplateRequest> PARSER =
+      new com.google.protobuf.AbstractParser<InstantiateInlineWorkflowTemplateRequest>() {
+        @java.lang.Override
+        public InstantiateInlineWorkflowTemplateRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new InstantiateInlineWorkflowTemplateRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<InstantiateInlineWorkflowTemplateRequest> parser() {
     return PARSER;
@@ -1009,9 +1265,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest getDefaultInstanceForType() {
+  public com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

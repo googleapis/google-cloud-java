@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ManagedClusterOrBuilder extends
+public interface ManagedClusterOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ManagedCluster)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name prefix. A unique cluster name will be formed by
    * appending a random suffix.
@@ -20,6 +23,8 @@ public interface ManagedClusterOrBuilder extends
    */
   java.lang.String getClusterName();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name prefix. A unique cluster name will be formed by
    * appending a random suffix.
@@ -30,10 +35,11 @@ public interface ManagedClusterOrBuilder extends
    *
    * <code>string cluster_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterNameBytes();
+  com.google.protobuf.ByteString getClusterNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The cluster configuration.
    * </pre>
@@ -42,6 +48,8 @@ public interface ManagedClusterOrBuilder extends
    */
   boolean hasConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster configuration.
    * </pre>
@@ -50,6 +58,8 @@ public interface ManagedClusterOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.ClusterConfig getConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster configuration.
    * </pre>
@@ -59,6 +69,8 @@ public interface ManagedClusterOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterConfigOrBuilder getConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -73,6 +85,8 @@ public interface ManagedClusterOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -85,15 +99,13 @@ public interface ManagedClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -106,9 +118,10 @@ public interface ManagedClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -121,11 +134,10 @@ public interface ManagedClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -138,7 +150,5 @@ public interface ManagedClusterOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

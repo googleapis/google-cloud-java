@@ -23,14 +23,13 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine persistent disk. A disk can be used as primary storage for your virtual
@@ -56,7 +55,8 @@ public class DiskInfo implements Serializable {
       };
 
   private static final long serialVersionUID = -7173418340679279619L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final DiskId diskId;
@@ -69,55 +69,37 @@ public class DiskInfo implements Serializable {
   private final Long lastAttachTimestamp;
   private final Long lastDetachTimestamp;
 
-  /**
-   * The status of disk creation.
-   */
+  /** The status of disk creation. */
   public enum CreationStatus {
-    /**
-     * The disk is being created.
-     */
+    /** The disk is being created. */
     CREATING,
 
-    /**
-     * Disk creation failed.
-     */
+    /** Disk creation failed. */
     FAILED,
 
-    /**
-     * The disk has been created and is ready to use.
-     */
+    /** The disk has been created and is ready to use. */
     READY,
 
-    /**
-     * The disk is being restored.
-     */
+    /** The disk is being restored. */
     RESTORING
   }
 
-  /**
-   * Builder for {@code DiskInfo} objects.
-   */
+  /** Builder for {@code DiskInfo} objects. */
   public abstract static class Builder {
 
     abstract Builder setGeneratedId(String generatedId);
 
-    /**
-     * Sets the disk configuration.
-     */
+    /** Sets the disk configuration. */
     public abstract Builder setConfiguration(DiskConfiguration configuration);
 
-    /**
-     * Sets the disk identity.
-     */
+    /** Sets the disk identity. */
     public abstract Builder setDiskId(DiskId diskId);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
 
     abstract Builder setCreationStatus(CreationStatus creationStatus);
 
-    /**
-     * Sets an optional textual description of the resource.
-     */
+    /** Sets an optional textual description of the resource. */
     public abstract Builder setDescription(String description);
 
     abstract Builder setLicenses(List<LicenseId> licenses);
@@ -128,9 +110,7 @@ public class DiskInfo implements Serializable {
 
     abstract Builder setLastDetachTimestamp(Long lastDetachTimestamp);
 
-    /**
-     * Creates a {@code DiskInfo} object.
-     */
+    /** Creates a {@code DiskInfo} object. */
     public abstract DiskInfo build();
   }
 
@@ -171,7 +151,8 @@ public class DiskInfo implements Serializable {
       }
       this.configuration = DiskConfiguration.fromPb(diskPb);
       if (diskPb.getCreationTimestamp() != null) {
-        this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(diskPb.getCreationTimestamp());
+        this.creationTimestamp =
+            TIMESTAMP_FORMATTER.parse(diskPb.getCreationTimestamp(), Instant.FROM).toEpochMilli();
       }
       if (diskPb.getStatus() != null) {
         this.creationStatus = CreationStatus.valueOf(diskPb.getStatus());
@@ -185,10 +166,12 @@ public class DiskInfo implements Serializable {
         this.attachedInstances = Lists.transform(diskPb.getUsers(), InstanceId.FROM_URL_FUNCTION);
       }
       if (diskPb.getLastAttachTimestamp() != null) {
-        this.lastAttachTimestamp = TIMESTAMP_FORMATTER.parseMillis(diskPb.getLastAttachTimestamp());
+        this.lastAttachTimestamp =
+            TIMESTAMP_FORMATTER.parse(diskPb.getLastAttachTimestamp(), Instant.FROM).toEpochMilli();
       }
       if (diskPb.getLastDetachTimestamp() != null) {
-        this.lastDetachTimestamp = TIMESTAMP_FORMATTER.parseMillis(diskPb.getLastDetachTimestamp());
+        this.lastDetachTimestamp =
+            TIMESTAMP_FORMATTER.parse(diskPb.getLastDetachTimestamp(), Instant.FROM).toEpochMilli();
       }
     }
 
@@ -272,80 +255,58 @@ public class DiskInfo implements Serializable {
     this.lastDetachTimestamp = builder.lastDetachTimestamp;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the disk.
-   */
+  /** Returns the service-generated unique identifier for the disk. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the disk configuration.
-   */
+  /** Returns the disk configuration. */
   @SuppressWarnings("unchecked")
   public <T extends DiskConfiguration> T getConfiguration() {
     return (T) configuration;
   }
 
-  /**
-   * Returns the disk identity.
-   */
+  /** Returns the disk identity. */
   public DiskId getDiskId() {
     return diskId;
   }
 
-  /**
-   * Returns the creation status of the disk.
-   */
+  /** Returns the creation status of the disk. */
   public CreationStatus getCreationStatus() {
     return creationStatus;
   }
 
-  /**
-   * Returns a textual description of the disk.
-   */
+  /** Returns a textual description of the disk. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns all applicable publicly visible licenses for the disk.
-   */
+  /** Returns all applicable publicly visible licenses for the disk. */
   public List<LicenseId> getLicenses() {
     return licenses;
   }
 
-  /**
-   * Returns all the identities of the instances this disk is attached to.
-   */
+  /** Returns all the identities of the instances this disk is attached to. */
   public List<InstanceId> getAttachedInstances() {
     return attachedInstances;
   }
 
-  /**
-   * Returns the last attach timestamp in milliseconds since epoch.
-   */
+  /** Returns the last attach timestamp in milliseconds since epoch. */
   public Long getLastAttachTimestamp() {
     return lastAttachTimestamp;
   }
 
-  /**
-   * Returns the last detach timestamp in milliseconds since epoch.
-   */
+  /** Returns the last detach timestamp in milliseconds since epoch. */
   public Long getLastDetachTimestamp() {
     return lastDetachTimestamp;
   }
 
-  /**
-   * Returns a builder for the object.
-   */
+  /** Returns a builder for the object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -368,33 +329,41 @@ public class DiskInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(diskId, configuration, creationTimestamp, creationStatus, description,
-        licenses, attachedInstances, lastAttachTimestamp, lastDetachTimestamp);
+    return Objects.hash(
+        diskId,
+        configuration,
+        creationTimestamp,
+        creationStatus,
+        description,
+        licenses,
+        attachedInstances,
+        lastAttachTimestamp,
+        lastDetachTimestamp);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(DiskInfo.class)
-        && Objects.equals(toPb(), ((DiskInfo) obj).toPb());
+            && obj.getClass().equals(DiskInfo.class)
+            && Objects.equals(toPb(), ((DiskInfo) obj).toPb());
   }
 
   /**
    * Returns a builder for a {@code DiskInfo} object given its identity and configuration. Use
-   * {@link StandardDiskConfiguration} to create a simple disk given its type and size. Use
-   * {@link SnapshotDiskConfiguration} to create a disk from a snapshot. Use
-   * {@link ImageDiskConfiguration} to create a disk from a disk image.
+   * {@link StandardDiskConfiguration} to create a simple disk given its type and size. Use {@link
+   * SnapshotDiskConfiguration} to create a disk from a snapshot. Use {@link ImageDiskConfiguration}
+   * to create a disk from a disk image.
    */
   public static Builder newBuilder(DiskId diskId, DiskConfiguration configuration) {
     return new BuilderImpl(diskId, configuration);
   }
 
   /**
-   * Returns a {@code DiskInfo} object given its identity and configuration. Use
-   * {@link StandardDiskConfiguration} to create a simple disk given its type and size. Use
-   * {@link SnapshotDiskConfiguration} to create a disk from a snapshot. Use
-   * {@link ImageDiskConfiguration} to create a disk from a disk image.
+   * Returns a {@code DiskInfo} object given its identity and configuration. Use {@link
+   * StandardDiskConfiguration} to create a simple disk given its type and size. Use {@link
+   * SnapshotDiskConfiguration} to create a disk from a snapshot. Use {@link ImageDiskConfiguration}
+   * to create a disk from a disk image.
    */
   public static DiskInfo of(DiskId diskId, DiskConfiguration configuration) {
     return newBuilder(diskId, configuration).build();
@@ -413,7 +382,8 @@ public class DiskInfo implements Serializable {
       diskPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      diskPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      diskPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     diskPb.setZone(diskId.getZoneId().getSelfLink());
     if (creationStatus != null) {
@@ -429,10 +399,12 @@ public class DiskInfo implements Serializable {
       diskPb.setUsers(Lists.transform(attachedInstances, InstanceId.TO_URL_FUNCTION));
     }
     if (lastAttachTimestamp != null) {
-      diskPb.setLastAttachTimestamp(TIMESTAMP_FORMATTER.print(lastAttachTimestamp));
+      diskPb.setLastAttachTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(lastAttachTimestamp)));
     }
     if (lastDetachTimestamp != null) {
-      diskPb.setLastDetachTimestamp(TIMESTAMP_FORMATTER.print(lastDetachTimestamp));
+      diskPb.setLastDetachTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(lastDetachTimestamp)));
     }
     return diskPb;
   }

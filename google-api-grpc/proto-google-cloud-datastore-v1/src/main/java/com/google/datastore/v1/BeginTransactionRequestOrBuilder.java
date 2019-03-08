@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface BeginTransactionRequestOrBuilder extends
+public interface BeginTransactionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.BeginTransactionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -16,16 +19,19 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Options for a new transaction.
    * </pre>
@@ -34,6 +40,8 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   boolean hasTransactionOptions();
   /**
+   *
+   *
    * <pre>
    * Options for a new transaction.
    * </pre>
@@ -42,6 +50,8 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   com.google.datastore.v1.TransactionOptions getTransactionOptions();
   /**
+   *
+   *
    * <pre>
    * Options for a new transaction.
    * </pre>

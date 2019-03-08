@@ -51,10 +51,11 @@ public class HttpTranslateRpc implements TranslateRpc {
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
-    translate = new Translate.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.getHost())
-        .setApplicationName(options.getApplicationName())
-        .build();
+    translate =
+        new Translate.Builder(transport, new JacksonFactory(), initializer)
+            .setRootUrl(options.getHost())
+            .setApplicationName(options.getApplicationName())
+            .build();
   }
 
   private static TranslateException translate(IOException exception) {
@@ -73,15 +74,19 @@ public class HttpTranslateRpc implements TranslateRpc {
   public List<List<DetectionsResourceItems>> detect(List<String> texts) {
     try {
       Map<String, ?> content = ImmutableMap.of("q", texts);
-      HttpRequest httpRequest = translate.getRequestFactory()
-          .buildPostRequest(buildTargetUrl("detect"),
-              new JsonHttpContent(translate.getJsonFactory(), content))
-          .setParser(translate.getObjectParser());
+      HttpRequest httpRequest =
+          translate
+              .getRequestFactory()
+              .buildPostRequest(
+                  buildTargetUrl("detect"),
+                  new JsonHttpContent(translate.getJsonFactory(), content))
+              .setParser(translate.getObjectParser());
       List<List<DetectionsResourceItems>> detections =
           httpRequest.execute().parseAs(DetectionsListResponse.class).getDetections();
       // TODO use REST apiary as soon as it supports POST
       // List<List<DetectionsResourceItems>> detections =
-      //    translate.detections().list(texts).setKey(options.getApiKey()).execute().getDetections();
+      //
+      // translate.detections().list(texts).setKey(options.getApiKey()).execute().getDetections();
       return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();
     } catch (IOException ex) {
       throw translate(ex);
@@ -91,12 +96,18 @@ public class HttpTranslateRpc implements TranslateRpc {
   @Override
   public List<LanguagesResource> listSupportedLanguages(Map<Option, ?> optionMap) {
     try {
-      Map<String, ?> content = ImmutableMap.of("target",
-          firstNonNull(Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()));
-      HttpRequest httpRequest = translate.getRequestFactory()
-          .buildPostRequest(buildTargetUrl("languages"),
-              new JsonHttpContent(translate.getJsonFactory(), content))
-          .setParser(translate.getObjectParser());
+      Map<String, ?> content =
+          ImmutableMap.of(
+              "target",
+              firstNonNull(
+                  Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()));
+      HttpRequest httpRequest =
+          translate
+              .getRequestFactory()
+              .buildPostRequest(
+                  buildTargetUrl("languages"),
+                  new JsonHttpContent(translate.getJsonFactory(), content))
+              .setParser(translate.getObjectParser());
       List<LanguagesResource> languages =
           httpRequest.execute().parseAs(LanguagesListResponse.class).getLanguages();
       // TODO use REST apiary as soon as it supports POST
@@ -121,7 +132,8 @@ public class HttpTranslateRpc implements TranslateRpc {
           firstNonNull(Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
       final String sourceLanguage = Option.SOURCE_LANGUAGE.getString(optionMap);
       List<TranslationsResource> translations =
-          translate.translations()
+          translate
+              .translations()
               .list(texts, targetLanguage)
               .setSource(sourceLanguage)
               .setKey(options.getApiKey())

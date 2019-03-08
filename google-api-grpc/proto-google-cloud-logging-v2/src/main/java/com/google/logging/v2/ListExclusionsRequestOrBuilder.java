@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface ListExclusionsRequestOrBuilder extends
+public interface ListExclusionsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListExclusionsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The parent resource whose exclusions are to be listed.
    *     "projects/[PROJECT_ID]"
@@ -20,6 +23,8 @@ public interface ListExclusionsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The parent resource whose exclusions are to be listed.
    *     "projects/[PROJECT_ID]"
@@ -30,10 +35,11 @@ public interface ListExclusionsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `pageToken` must be the value of
@@ -45,6 +51,8 @@ public interface ListExclusionsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `pageToken` must be the value of
@@ -54,10 +62,11 @@ public interface ListExclusionsRequestOrBuilder extends
    *
    * <code>string page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The maximum number of results to return from this request.
    * Non-positive values are ignored.  The presence of `nextPageToken` in the

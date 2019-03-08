@@ -14,20 +14,21 @@
 
 package com.google.monitoring.v3;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class UptimeCheckConfigName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/uptimeCheckConfigs/{uptime_check_config}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/uptimeCheckConfigs/{uptime_check_config}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +57,15 @@ public class UptimeCheckConfigName implements ResourceName {
   }
 
   public static UptimeCheckConfigName of(String project, String uptimeCheckConfig) {
-    return newBuilder()
-      .setProject(project)
-      .setUptimeCheckConfig(uptimeCheckConfig)
-      .build();
+    return newBuilder().setProject(project).setUptimeCheckConfig(uptimeCheckConfig).build();
   }
 
   public static String format(String project, String uptimeCheckConfig) {
     return newBuilder()
-      .setProject(project)
-      .setUptimeCheckConfig(uptimeCheckConfig)
-      .build()
-      .toString();
+        .setProject(project)
+        .setUptimeCheckConfig(uptimeCheckConfig)
+        .build()
+        .toString();
   }
 
   public static UptimeCheckConfigName parse(String formattedString) {
@@ -75,7 +73,8 @@ public class UptimeCheckConfigName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "UptimeCheckConfigName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "UptimeCheckConfigName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("uptime_check_config"));
   }
 
@@ -150,8 +149,7 @@ public class UptimeCheckConfigName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(UptimeCheckConfigName uptimeCheckConfigName) {
       project = uptimeCheckConfigName.project;
@@ -186,4 +184,3 @@ public class UptimeCheckConfigName implements ResourceName {
     return h;
   }
 }
-

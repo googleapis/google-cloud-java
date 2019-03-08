@@ -25,7 +25,6 @@ import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -73,40 +72,32 @@ public final class Acl implements Serializable {
           }
         };
 
-    private static final StringEnumType<Role> type = new StringEnumType(
-        Role.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Role> type = new StringEnumType(Role.class, CONSTRUCTOR);
 
     public static final Role OWNER = type.createAndRegister("OWNER");
     public static final Role READER = type.createAndRegister("READER");
     public static final Role WRITER = type.createAndRegister("WRITER");
 
     /**
-     * Get the Role for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Role for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Role valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Role for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Role for the given String constant, and allow unrecognized values. */
     public static Role valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Role.
-     */
+    /** Return the known values for Role. */
     public static Role[] values() {
       return type.values();
     }
   }
 
-  /**
-   * Builder for {@code Acl} objects.
-   */
+  /** Builder for {@code Acl} objects. */
   public static class Builder {
 
     private Entity entity;
@@ -126,17 +117,13 @@ public final class Acl implements Serializable {
       this.etag = acl.etag;
     }
 
-    /**
-     * Sets the entity for the ACL object.
-     */
+    /** Sets the entity for the ACL object. */
     public Builder setEntity(Entity entity) {
       this.entity = entity;
       return this;
     }
 
-    /**
-     * Sets the role to associate to the {@code entity} object.
-     */
+    /** Sets the role to associate to the {@code entity} object. */
     public Builder setRole(Role role) {
       this.role = role;
       return this;
@@ -152,17 +139,13 @@ public final class Acl implements Serializable {
       return this;
     }
 
-    /**
-     * Creates an {@code Acl} object from this builder.
-     */
+    /** Creates an {@code Acl} object from this builder. */
     public Acl build() {
       return new Acl(this);
     }
   }
 
-  /**
-   * Base class for Access Control List entities.
-   */
+  /** Base class for Access Control List entities. */
   public abstract static class Entity implements Serializable {
 
     private static final long serialVersionUID = -2707407252771255840L;
@@ -171,7 +154,11 @@ public final class Acl implements Serializable {
     private final String value;
 
     public enum Type {
-      DOMAIN, GROUP, USER, PROJECT, UNKNOWN
+      DOMAIN,
+      GROUP,
+      USER,
+      PROJECT,
+      UNKNOWN
     }
 
     Entity(Type type, String value) {
@@ -179,16 +166,12 @@ public final class Acl implements Serializable {
       this.value = value;
     }
 
-    /**
-     * Returns the type of entity.
-     */
+    /** Returns the type of entity. */
     public Type getType() {
       return type;
     }
 
-    /**
-     * Returns the entity's value.
-     */
+    /** Returns the entity's value. */
     protected String getValue() {
       return value;
     }
@@ -245,9 +228,7 @@ public final class Acl implements Serializable {
     }
   }
 
-  /**
-   * Class for ACL Domain entities.
-   */
+  /** Class for ACL Domain entities. */
   public static final class Domain extends Entity {
 
     private static final long serialVersionUID = -3033025857280447253L;
@@ -261,17 +242,13 @@ public final class Acl implements Serializable {
       super(Type.DOMAIN, domain);
     }
 
-    /**
-     * Returns the domain associated to this entity.
-     */
+    /** Returns the domain associated to this entity. */
     public String getDomain() {
       return getValue();
     }
   }
 
-  /**
-   * Class for ACL Group entities.
-   */
+  /** Class for ACL Group entities. */
   public static final class Group extends Entity {
 
     private static final long serialVersionUID = -1660987136294408826L;
@@ -285,17 +262,13 @@ public final class Acl implements Serializable {
       super(Type.GROUP, email);
     }
 
-    /**
-     * Returns the group email.
-     */
+    /** Returns the group email. */
     public String getEmail() {
       return getValue();
     }
   }
 
-  /**
-   * Class for ACL User entities.
-   */
+  /** Class for ACL User entities. */
   public static final class User extends Entity {
 
     private static final long serialVersionUID = 3076518036392737008L;
@@ -311,9 +284,7 @@ public final class Acl implements Serializable {
       super(Type.USER, email);
     }
 
-    /**
-     * Returns the user email.
-     */
+    /** Returns the user email. */
     public String getEmail() {
       return getValue();
     }
@@ -340,9 +311,7 @@ public final class Acl implements Serializable {
     }
   }
 
-  /**
-   * Class for ACL Project entities.
-   */
+  /** Class for ACL Project entities. */
   public static final class Project extends Entity {
 
     private static final long serialVersionUID = 7933776866530023027L;
@@ -365,32 +334,27 @@ public final class Acl implements Serializable {
             }
           };
 
-      private static final StringEnumType<ProjectRole> type = new StringEnumType(
-          ProjectRole.class,
-          CONSTRUCTOR);
+      private static final StringEnumType<ProjectRole> type =
+          new StringEnumType(ProjectRole.class, CONSTRUCTOR);
 
       public static final ProjectRole OWNERS = type.createAndRegister("OWNERS");
       public static final ProjectRole EDITORS = type.createAndRegister("EDITORS");
       public static final ProjectRole VIEWERS = type.createAndRegister("VIEWERS");
 
       /**
-       * Get the ProjectRole for the given String constant, and throw an exception if the constant is
-       * not recognized.
+       * Get the ProjectRole for the given String constant, and throw an exception if the constant
+       * is not recognized.
        */
       public static ProjectRole valueOfStrict(String constant) {
         return type.valueOfStrict(constant);
       }
 
-      /**
-       * Get the ProjectRole for the given String constant, and allow unrecognized values.
-       */
+      /** Get the ProjectRole for the given String constant, and allow unrecognized values. */
       public static ProjectRole valueOf(String constant) {
         return type.valueOf(constant);
       }
 
-      /**
-       * Return the known values for ProjectRole.
-       */
+      /** Return the known values for ProjectRole. */
       public static ProjectRole[] values() {
         return type.values();
       }
@@ -408,16 +372,12 @@ public final class Acl implements Serializable {
       this.projectId = projectId;
     }
 
-    /**
-     * Returns the role in the project for this entity.
-     */
+    /** Returns the role in the project for this entity. */
     public ProjectRole getProjectRole() {
       return projectRole;
     }
 
-    /**
-     * Returns the project id for this entity.
-     */
+    /** Returns the project id for this entity. */
     public String getProjectId() {
       return projectId;
     }
@@ -444,23 +404,17 @@ public final class Acl implements Serializable {
     this.etag = builder.etag;
   }
 
-  /**
-   * Returns the entity for this ACL object.
-   */
+  /** Returns the entity for this ACL object. */
   public Entity getEntity() {
     return entity;
   }
 
-  /**
-   * Returns the role associated to the entity in this ACL object.
-   */
+  /** Returns the role associated to the entity in this ACL object. */
   public Role getRole() {
     return role;
   }
 
-  /**
-   * Returns the ID of the ACL entry.
-   */
+  /** Returns the ID of the ACL entry. */
   public String getId() {
     return id;
   }
@@ -474,9 +428,7 @@ public final class Acl implements Serializable {
     return etag;
   }
 
-  /**
-   * Returns a builder for this {@code Acl} object.
-   */
+  /** Returns a builder for this {@code Acl} object. */
   public Builder toBuilder() {
     return new Builder(this);
   }

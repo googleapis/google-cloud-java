@@ -5,20 +5,21 @@ package com.google.cloud.bigquery.storage.v1beta1;
 
 public final class AvroProto {
   private AvroProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface AvroSchemaOrBuilder extends
+  public interface AvroSchemaOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta1.AvroSchema)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Json serialized schema, as described at
      * https://avro.apache.org/docs/1.8.1/spec.html
@@ -28,6 +29,8 @@ public final class AvroProto {
      */
     java.lang.String getSchema();
     /**
+     *
+     *
      * <pre>
      * Json serialized schema, as described at
      * https://avro.apache.org/docs/1.8.1/spec.html
@@ -35,34 +38,36 @@ public final class AvroProto {
      *
      * <code>string schema = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getSchemaBytes();
+    com.google.protobuf.ByteString getSchemaBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Avro schema.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.AvroSchema}
    */
-  public  static final class AvroSchema extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.AvroSchema)
       AvroSchemaOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use AvroSchema.newBuilder() to construct.
     private AvroSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private AvroSchema() {
       schema_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private AvroSchema(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -82,47 +87,52 @@ public final class AvroProto {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              schema_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                schema_ = s;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable
+      return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.class, com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder.class);
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.class,
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder.class);
     }
 
     public static final int SCHEMA_FIELD_NUMBER = 1;
     private volatile java.lang.Object schema_;
     /**
+     *
+     *
      * <pre>
      * Json serialized schema, as described at
      * https://avro.apache.org/docs/1.8.1/spec.html
@@ -135,14 +145,15 @@ public final class AvroProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         schema_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Json serialized schema, as described at
      * https://avro.apache.org/docs/1.8.1/spec.html
@@ -150,13 +161,11 @@ public final class AvroProto {
      *
      * <code>string schema = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSchemaBytes() {
+    public com.google.protobuf.ByteString getSchemaBytes() {
       java.lang.Object ref = schema_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         schema_ = b;
         return b;
       } else {
@@ -165,6 +174,7 @@ public final class AvroProto {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -176,8 +186,7 @@ public final class AvroProto {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getSchemaBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schema_);
       }
@@ -201,16 +210,16 @@ public final class AvroProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema)) {
         return super.equals(obj);
       }
-      com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema other = (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) obj;
+      com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema other =
+          (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) obj;
 
       boolean result = true;
-      result = result && getSchema()
-          .equals(other.getSchema());
+      result = result && getSchema().equals(other.getSchema());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -230,87 +239,94 @@ public final class AvroProto {
     }
 
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -320,27 +336,32 @@ public final class AvroProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Avro schema.
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.AvroSchema}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta1.AvroSchema)
         com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchemaOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable
+        return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.class, com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder.class);
+                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.class,
+                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.Builder.class);
       }
 
       // Construct using com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.newBuilder()
@@ -348,16 +369,15 @@ public final class AvroProto {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -367,13 +387,14 @@ public final class AvroProto {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getDefaultInstanceForType() {
+      public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+          getDefaultInstanceForType() {
         return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.getDefaultInstance();
       }
 
@@ -388,7 +409,8 @@ public final class AvroProto {
 
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema buildPartial() {
-        com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema result = new com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema(this);
+        com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema result =
+            new com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema(this);
         result.schema_ = schema_;
         onBuilt();
         return result;
@@ -398,46 +420,52 @@ public final class AvroProto {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) {
-          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema)other);
+          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema other) {
-        if (other == com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema.getDefaultInstance())
+          return this;
         if (!other.getSchema().isEmpty()) {
           schema_ = other.schema_;
           onChanged();
@@ -461,7 +489,9 @@ public final class AvroProto {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -473,6 +503,8 @@ public final class AvroProto {
 
       private java.lang.Object schema_ = "";
       /**
+       *
+       *
        * <pre>
        * Json serialized schema, as described at
        * https://avro.apache.org/docs/1.8.1/spec.html
@@ -483,8 +515,7 @@ public final class AvroProto {
       public java.lang.String getSchema() {
         java.lang.Object ref = schema_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           schema_ = s;
           return s;
@@ -493,6 +524,8 @@ public final class AvroProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Json serialized schema, as described at
        * https://avro.apache.org/docs/1.8.1/spec.html
@@ -500,13 +533,11 @@ public final class AvroProto {
        *
        * <code>string schema = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getSchemaBytes() {
+      public com.google.protobuf.ByteString getSchemaBytes() {
         java.lang.Object ref = schema_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           schema_ = b;
           return b;
         } else {
@@ -514,6 +545,8 @@ public final class AvroProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Json serialized schema, as described at
        * https://avro.apache.org/docs/1.8.1/spec.html
@@ -521,17 +554,18 @@ public final class AvroProto {
        *
        * <code>string schema = 1;</code>
        */
-      public Builder setSchema(
-          java.lang.String value) {
+      public Builder setSchema(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         schema_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Json serialized schema, as described at
        * https://avro.apache.org/docs/1.8.1/spec.html
@@ -540,12 +574,14 @@ public final class AvroProto {
        * <code>string schema = 1;</code>
        */
       public Builder clearSchema() {
-        
+
         schema_ = getDefaultInstance().getSchema();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Json serialized schema, as described at
        * https://avro.apache.org/docs/1.8.1/spec.html
@@ -553,17 +589,17 @@ public final class AvroProto {
        *
        * <code>string schema = 1;</code>
        */
-      public Builder setSchemaBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setSchemaBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         schema_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -576,30 +612,32 @@ public final class AvroProto {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1beta1.AvroSchema)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1beta1.AvroSchema)
-    private static final com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema DEFAULT_INSTANCE;
+    private static final com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema();
     }
 
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getDefaultInstance() {
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AvroSchema>
-        PARSER = new com.google.protobuf.AbstractParser<AvroSchema>() {
-      @java.lang.Override
-      public AvroSchema parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvroSchema(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<AvroSchema> PARSER =
+        new com.google.protobuf.AbstractParser<AvroSchema>() {
+          @java.lang.Override
+          public AvroSchema parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AvroSchema(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<AvroSchema> parser() {
       return PARSER;
@@ -611,17 +649,20 @@ public final class AvroProto {
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema getDefaultInstanceForType() {
+    public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroSchema
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface AvroRowsOrBuilder extends
+  public interface AvroRowsOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta1.AvroRows)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Binary serialized rows in a block.
      * </pre>
@@ -631,6 +672,8 @@ public final class AvroProto {
     com.google.protobuf.ByteString getSerializedBinaryRows();
 
     /**
+     *
+     *
      * <pre>
      * The count of rows in the returning block.
      * </pre>
@@ -640,31 +683,34 @@ public final class AvroProto {
     long getRowCount();
   }
   /**
+   *
+   *
    * <pre>
    * Avro rows.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.AvroRows}
    */
-  public  static final class AvroRows extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class AvroRows extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.AvroRows)
       AvroRowsOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use AvroRows.newBuilder() to construct.
     private AvroRows(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private AvroRows() {
       serializedBinaryRows_ = com.google.protobuf.ByteString.EMPTY;
       rowCount_ = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private AvroRows(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -684,51 +730,55 @@ public final class AvroProto {
             case 0:
               done = true;
               break;
-            case 10: {
-
-              serializedBinaryRows_ = input.readBytes();
-              break;
-            }
-            case 16: {
-
-              rowCount_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 10:
+              {
+                serializedBinaryRows_ = input.readBytes();
+                break;
               }
-              break;
-            }
+            case 16:
+              {
+                rowCount_ = input.readInt64();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_fieldAccessorTable
+      return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.class, com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.Builder.class);
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.class,
+              com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.Builder.class);
     }
 
     public static final int SERIALIZED_BINARY_ROWS_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString serializedBinaryRows_;
     /**
+     *
+     *
      * <pre>
      * Binary serialized rows in a block.
      * </pre>
@@ -742,6 +792,8 @@ public final class AvroProto {
     public static final int ROW_COUNT_FIELD_NUMBER = 2;
     private long rowCount_;
     /**
+     *
+     *
      * <pre>
      * The count of rows in the returning block.
      * </pre>
@@ -753,6 +805,7 @@ public final class AvroProto {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -764,8 +817,7 @@ public final class AvroProto {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!serializedBinaryRows_.isEmpty()) {
         output.writeBytes(1, serializedBinaryRows_);
       }
@@ -782,12 +834,10 @@ public final class AvroProto {
 
       size = 0;
       if (!serializedBinaryRows_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, serializedBinaryRows_);
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, serializedBinaryRows_);
       }
       if (rowCount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, rowCount_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, rowCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -797,18 +847,17 @@ public final class AvroProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows)) {
         return super.equals(obj);
       }
-      com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows other = (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) obj;
+      com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows other =
+          (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) obj;
 
       boolean result = true;
-      result = result && getSerializedBinaryRows()
-          .equals(other.getSerializedBinaryRows());
-      result = result && (getRowCount()
-          == other.getRowCount());
+      result = result && getSerializedBinaryRows().equals(other.getSerializedBinaryRows());
+      result = result && (getRowCount() == other.getRowCount());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -823,95 +872,101 @@ public final class AvroProto {
       hash = (37 * hash) + SERIALIZED_BINARY_ROWS_FIELD_NUMBER;
       hash = (53 * hash) + getSerializedBinaryRows().hashCode();
       hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getRowCount());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowCount());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -921,27 +976,32 @@ public final class AvroProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Avro rows.
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.AvroRows}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta1.AvroRows)
         com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRowsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_fieldAccessorTable
+        return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.class, com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.Builder.class);
+                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.class,
+                com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.Builder.class);
       }
 
       // Construct using com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.newBuilder()
@@ -949,16 +1009,15 @@ public final class AvroProto {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -970,13 +1029,14 @@ public final class AvroProto {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.AvroProto.internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.AvroProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getDefaultInstanceForType() {
+      public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows
+          getDefaultInstanceForType() {
         return com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.getDefaultInstance();
       }
 
@@ -991,7 +1051,8 @@ public final class AvroProto {
 
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows buildPartial() {
-        com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows result = new com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows(this);
+        com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows result =
+            new com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows(this);
         result.serializedBinaryRows_ = serializedBinaryRows_;
         result.rowCount_ = rowCount_;
         onBuilt();
@@ -1002,38 +1063,41 @@ public final class AvroProto {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) {
-          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows)other);
+          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1041,7 +1105,9 @@ public final class AvroProto {
       }
 
       public Builder mergeFrom(com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows other) {
-        if (other == com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.getDefaultInstance()) return this;
+        if (other
+            == com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows.getDefaultInstance())
+          return this;
         if (other.getSerializedBinaryRows() != com.google.protobuf.ByteString.EMPTY) {
           setSerializedBinaryRows(other.getSerializedBinaryRows());
         }
@@ -1067,7 +1133,9 @@ public final class AvroProto {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1077,8 +1145,11 @@ public final class AvroProto {
         return this;
       }
 
-      private com.google.protobuf.ByteString serializedBinaryRows_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString serializedBinaryRows_ =
+          com.google.protobuf.ByteString.EMPTY;
       /**
+       *
+       *
        * <pre>
        * Binary serialized rows in a block.
        * </pre>
@@ -1089,6 +1160,8 @@ public final class AvroProto {
         return serializedBinaryRows_;
       }
       /**
+       *
+       *
        * <pre>
        * Binary serialized rows in a block.
        * </pre>
@@ -1097,14 +1170,16 @@ public final class AvroProto {
        */
       public Builder setSerializedBinaryRows(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         serializedBinaryRows_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Binary serialized rows in a block.
        * </pre>
@@ -1112,14 +1187,16 @@ public final class AvroProto {
        * <code>bytes serialized_binary_rows = 1;</code>
        */
       public Builder clearSerializedBinaryRows() {
-        
+
         serializedBinaryRows_ = getDefaultInstance().getSerializedBinaryRows();
         onChanged();
         return this;
       }
 
-      private long rowCount_ ;
+      private long rowCount_;
       /**
+       *
+       *
        * <pre>
        * The count of rows in the returning block.
        * </pre>
@@ -1130,6 +1207,8 @@ public final class AvroProto {
         return rowCount_;
       }
       /**
+       *
+       *
        * <pre>
        * The count of rows in the returning block.
        * </pre>
@@ -1137,12 +1216,14 @@ public final class AvroProto {
        * <code>int64 row_count = 2;</code>
        */
       public Builder setRowCount(long value) {
-        
+
         rowCount_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The count of rows in the returning block.
        * </pre>
@@ -1150,11 +1231,12 @@ public final class AvroProto {
        * <code>int64 row_count = 2;</code>
        */
       public Builder clearRowCount() {
-        
+
         rowCount_ = 0L;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1167,30 +1249,32 @@ public final class AvroProto {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1beta1.AvroRows)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1beta1.AvroRows)
-    private static final com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows DEFAULT_INSTANCE;
+    private static final com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows();
     }
 
-    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getDefaultInstance() {
+    public static com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AvroRows>
-        PARSER = new com.google.protobuf.AbstractParser<AvroRows>() {
-      @java.lang.Override
-      public AvroRows parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvroRows(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<AvroRows> PARSER =
+        new com.google.protobuf.AbstractParser<AvroRows>() {
+          @java.lang.Override
+          public AvroRows parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AvroRows(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<AvroRows> parser() {
       return PARSER;
@@ -1202,65 +1286,65 @@ public final class AvroProto {
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows getDefaultInstanceForType() {
+    public com.google.cloud.bigquery.storage.v1beta1.AvroProto.AvroRows
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/cloud/bigquery/storage/v1beta1/" +
-      "avro.proto\022%google.cloud.bigquery.storag" +
-      "e.v1beta1\"\034\n\nAvroSchema\022\016\n\006schema\030\001 \001(\t\"" +
-      "=\n\010AvroRows\022\036\n\026serialized_binary_rows\030\001 " +
-      "\001(\014\022\021\n\trow_count\030\002 \001(\003B\204\001\n)com.google.cl" +
-      "oud.bigquery.storage.v1beta1B\tAvroProtoZ" +
-      "Lgoogle.golang.org/genproto/googleapis/c" +
-      "loud/bigquery/storage/v1beta1;storageb\006p" +
-      "roto3"
+      "\n0google/cloud/bigquery/storage/v1beta1/"
+          + "avro.proto\022%google.cloud.bigquery.storag"
+          + "e.v1beta1\"\034\n\nAvroSchema\022\016\n\006schema\030\001 \001(\t\""
+          + "=\n\010AvroRows\022\036\n\026serialized_binary_rows\030\001 "
+          + "\001(\014\022\021\n\trow_count\030\002 \001(\003B\204\001\n)com.google.cl"
+          + "oud.bigquery.storage.v1beta1B\tAvroProtoZ"
+          + "Lgoogle.golang.org/genproto/googleapis/c"
+          + "loud/bigquery/storage/v1beta1;storageb\006p"
+          + "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
           public com.google.protobuf.ExtensionRegistry assignDescriptors(
               com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor,
-        new java.lang.String[] { "Schema", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta1_AvroSchema_descriptor,
+            new java.lang.String[] {
+              "Schema",
+            });
     internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor,
-        new java.lang.String[] { "SerializedBinaryRows", "RowCount", });
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta1_AvroRows_descriptor,
+            new java.lang.String[] {
+              "SerializedBinaryRows", "RowCount",
+            });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

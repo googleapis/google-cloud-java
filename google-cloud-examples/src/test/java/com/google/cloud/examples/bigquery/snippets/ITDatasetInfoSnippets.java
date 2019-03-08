@@ -16,24 +16,23 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import static org.junit.Assert.*;
+
 import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-
-import static org.junit.Assert.*;
 
 public class ITDatasetInfoSnippets {
 

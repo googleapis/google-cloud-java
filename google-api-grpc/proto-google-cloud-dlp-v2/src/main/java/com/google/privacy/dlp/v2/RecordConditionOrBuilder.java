@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface RecordConditionOrBuilder extends
+public interface RecordConditionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.RecordCondition)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * An expression.
    * </pre>
@@ -16,6 +19,8 @@ public interface RecordConditionOrBuilder extends
    */
   boolean hasExpressions();
   /**
+   *
+   *
    * <pre>
    * An expression.
    * </pre>
@@ -24,6 +29,8 @@ public interface RecordConditionOrBuilder extends
    */
   com.google.privacy.dlp.v2.RecordCondition.Expressions getExpressions();
   /**
+   *
+   *
    * <pre>
    * An expression.
    * </pre>

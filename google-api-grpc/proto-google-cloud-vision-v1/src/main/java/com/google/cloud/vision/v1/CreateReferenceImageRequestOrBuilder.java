@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface CreateReferenceImageRequestOrBuilder extends
+public interface CreateReferenceImageRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.CreateReferenceImageRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the product in which to create the reference image.
    * Format is
@@ -18,6 +21,8 @@ public interface CreateReferenceImageRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Resource name of the product in which to create the reference image.
    * Format is
@@ -26,10 +31,11 @@ public interface CreateReferenceImageRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The reference image to create.
    * If an image ID is specified, it is ignored.
@@ -39,6 +45,8 @@ public interface CreateReferenceImageRequestOrBuilder extends
    */
   boolean hasReferenceImage();
   /**
+   *
+   *
    * <pre>
    * The reference image to create.
    * If an image ID is specified, it is ignored.
@@ -48,6 +56,8 @@ public interface CreateReferenceImageRequestOrBuilder extends
    */
   com.google.cloud.vision.v1.ReferenceImage getReferenceImage();
   /**
+   *
+   *
    * <pre>
    * The reference image to create.
    * If an image ID is specified, it is ignored.
@@ -58,6 +68,8 @@ public interface CreateReferenceImageRequestOrBuilder extends
   com.google.cloud.vision.v1.ReferenceImageOrBuilder getReferenceImageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A user-supplied resource id for the ReferenceImage to be added. If set,
    * the server will attempt to use this value as the resource id. If it is
@@ -69,6 +81,8 @@ public interface CreateReferenceImageRequestOrBuilder extends
    */
   java.lang.String getReferenceImageId();
   /**
+   *
+   *
    * <pre>
    * A user-supplied resource id for the ReferenceImage to be added. If set,
    * the server will attempt to use this value as the resource id. If it is
@@ -78,6 +92,5 @@ public interface CreateReferenceImageRequestOrBuilder extends
    *
    * <code>string reference_image_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getReferenceImageIdBytes();
+  com.google.protobuf.ByteString getReferenceImageIdBytes();
 }

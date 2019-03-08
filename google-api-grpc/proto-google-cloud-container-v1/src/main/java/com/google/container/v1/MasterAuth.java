@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * The authentication information for accessing the master endpoint.
  * Authentication can be done using HTTP basic auth or using client
@@ -12,15 +14,16 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.MasterAuth}
  */
-public  final class MasterAuth extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.MasterAuth)
     MasterAuthOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use MasterAuth.newBuilder() to construct.
   private MasterAuth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private MasterAuth() {
     username_ = "";
     password_ = "";
@@ -30,10 +33,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private MasterAuth(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,84 +56,96 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            username_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            password_ = s;
-            break;
-          }
-          case 26: {
-            com.google.container.v1.ClientCertificateConfig.Builder subBuilder = null;
-            if (clientCertificateConfig_ != null) {
-              subBuilder = clientCertificateConfig_.toBuilder();
+              username_ = s;
+              break;
             }
-            clientCertificateConfig_ = input.readMessage(com.google.container.v1.ClientCertificateConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(clientCertificateConfig_);
-              clientCertificateConfig_ = subBuilder.buildPartial();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
             }
+          case 26:
+            {
+              com.google.container.v1.ClientCertificateConfig.Builder subBuilder = null;
+              if (clientCertificateConfig_ != null) {
+                subBuilder = clientCertificateConfig_.toBuilder();
+              }
+              clientCertificateConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.ClientCertificateConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientCertificateConfig_);
+                clientCertificateConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 802: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clusterCaCertificate_ = s;
-            break;
-          }
-          case 810: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clientCertificate_ = s;
-            break;
-          }
-          case 818: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clientKey_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 802:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterCaCertificate_ = s;
+              break;
+            }
+          case 810:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientCertificate_ = s;
+              break;
+            }
+          case 818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientKey_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuth_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_MasterAuth_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuth_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_MasterAuth_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.MasterAuth.class, com.google.container.v1.MasterAuth.Builder.class);
+            com.google.container.v1.MasterAuth.class,
+            com.google.container.v1.MasterAuth.Builder.class);
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object username_;
   /**
+   *
+   *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -144,14 +159,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       username_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -160,13 +176,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string username = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getUsernameBytes() {
+  public com.google.protobuf.ByteString getUsernameBytes() {
     java.lang.Object ref = username_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       username_ = b;
       return b;
     } else {
@@ -177,6 +191,8 @@ private static final long serialVersionUID = 0L;
   public static final int PASSWORD_FIELD_NUMBER = 2;
   private volatile java.lang.Object password_;
   /**
+   *
+   *
    * <pre>
    * The password to use for HTTP basic authentication to the master endpoint.
    * Because the master endpoint is open to the Internet, you should create a
@@ -191,14 +207,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       password_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The password to use for HTTP basic authentication to the master endpoint.
    * Because the master endpoint is open to the Internet, you should create a
@@ -208,13 +225,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string password = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getPasswordBytes() {
+  public com.google.protobuf.ByteString getPasswordBytes() {
     java.lang.Object ref = password_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       password_ = b;
       return b;
     } else {
@@ -225,9 +240,12 @@ private static final long serialVersionUID = 0L;
   public static final int CLIENT_CERTIFICATE_CONFIG_FIELD_NUMBER = 3;
   private com.google.container.v1.ClientCertificateConfig clientCertificateConfig_;
   /**
+   *
+   *
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -236,31 +254,42 @@ private static final long serialVersionUID = 0L;
     return clientCertificateConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
    */
   public com.google.container.v1.ClientCertificateConfig getClientCertificateConfig() {
-    return clientCertificateConfig_ == null ? com.google.container.v1.ClientCertificateConfig.getDefaultInstance() : clientCertificateConfig_;
+    return clientCertificateConfig_ == null
+        ? com.google.container.v1.ClientCertificateConfig.getDefaultInstance()
+        : clientCertificateConfig_;
   }
   /**
+   *
+   *
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
    */
-  public com.google.container.v1.ClientCertificateConfigOrBuilder getClientCertificateConfigOrBuilder() {
+  public com.google.container.v1.ClientCertificateConfigOrBuilder
+      getClientCertificateConfigOrBuilder() {
     return getClientCertificateConfig();
   }
 
   public static final int CLUSTER_CA_CERTIFICATE_FIELD_NUMBER = 100;
   private volatile java.lang.Object clusterCaCertificate_;
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate that is the root of
    * trust for the cluster.
@@ -273,14 +302,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterCaCertificate_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate that is the root of
    * trust for the cluster.
@@ -288,13 +318,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_ca_certificate = 100;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterCaCertificateBytes() {
+  public com.google.protobuf.ByteString getClusterCaCertificateBytes() {
     java.lang.Object ref = clusterCaCertificate_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterCaCertificate_ = b;
       return b;
     } else {
@@ -305,6 +333,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLIENT_CERTIFICATE_FIELD_NUMBER = 101;
   private volatile java.lang.Object clientCertificate_;
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
@@ -317,14 +347,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clientCertificate_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
@@ -332,13 +363,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string client_certificate = 101;</code>
    */
-  public com.google.protobuf.ByteString
-      getClientCertificateBytes() {
+  public com.google.protobuf.ByteString getClientCertificateBytes() {
     java.lang.Object ref = clientCertificate_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clientCertificate_ = b;
       return b;
     } else {
@@ -349,6 +378,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLIENT_KEY_FIELD_NUMBER = 102;
   private volatile java.lang.Object clientKey_;
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
@@ -361,14 +392,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clientKey_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
@@ -376,13 +408,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string client_key = 102;</code>
    */
-  public com.google.protobuf.ByteString
-      getClientKeyBytes() {
+  public com.google.protobuf.ByteString getClientKeyBytes() {
     java.lang.Object ref = clientKey_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clientKey_ = b;
       return b;
     } else {
@@ -391,6 +421,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -402,8 +433,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getUsernameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
     }
@@ -438,8 +468,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
     }
     if (clientCertificateConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getClientCertificateConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getClientCertificateConfig());
     }
     if (!getClusterCaCertificateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, clusterCaCertificate_);
@@ -458,7 +488,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.MasterAuth)) {
       return super.equals(obj);
@@ -466,21 +496,15 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.MasterAuth other = (com.google.container.v1.MasterAuth) obj;
 
     boolean result = true;
-    result = result && getUsername()
-        .equals(other.getUsername());
-    result = result && getPassword()
-        .equals(other.getPassword());
+    result = result && getUsername().equals(other.getUsername());
+    result = result && getPassword().equals(other.getPassword());
     result = result && (hasClientCertificateConfig() == other.hasClientCertificateConfig());
     if (hasClientCertificateConfig()) {
-      result = result && getClientCertificateConfig()
-          .equals(other.getClientCertificateConfig());
+      result = result && getClientCertificateConfig().equals(other.getClientCertificateConfig());
     }
-    result = result && getClusterCaCertificate()
-        .equals(other.getClusterCaCertificate());
-    result = result && getClientCertificate()
-        .equals(other.getClientCertificate());
-    result = result && getClientKey()
-        .equals(other.getClientKey());
+    result = result && getClusterCaCertificate().equals(other.getClusterCaCertificate());
+    result = result && getClientCertificate().equals(other.getClientCertificate());
+    result = result && getClientKey().equals(other.getClientKey());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -511,97 +535,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.MasterAuth parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.MasterAuth parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.MasterAuth parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.container.v1.MasterAuth parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.MasterAuth parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.MasterAuth parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.MasterAuth parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.MasterAuth prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The authentication information for accessing the master endpoint.
    * Authentication can be done using HTTP basic auth or using client
@@ -610,21 +640,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.MasterAuth}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.MasterAuth)
       com.google.container.v1.MasterAuthOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuth_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuth_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuth_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuth_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.MasterAuth.class, com.google.container.v1.MasterAuth.Builder.class);
+              com.google.container.v1.MasterAuth.class,
+              com.google.container.v1.MasterAuth.Builder.class);
     }
 
     // Construct using com.google.container.v1.MasterAuth.newBuilder()
@@ -632,16 +664,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -665,9 +696,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_MasterAuth_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_MasterAuth_descriptor;
     }
 
     @java.lang.Override
@@ -705,38 +736,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.MasterAuth) {
-        return mergeFrom((com.google.container.v1.MasterAuth)other);
+        return mergeFrom((com.google.container.v1.MasterAuth) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -799,6 +831,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object username_ = "";
     /**
+     *
+     *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
      * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -810,8 +844,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         username_ = s;
         return s;
@@ -820,6 +853,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
      * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -828,13 +863,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
+    public com.google.protobuf.ByteString getUsernameBytes() {
       java.lang.Object ref = username_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         username_ = b;
         return b;
       } else {
@@ -842,6 +875,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
      * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -850,17 +885,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1;</code>
      */
-    public Builder setUsername(
-        java.lang.String value) {
+    public Builder setUsername(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       username_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
      * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -870,12 +906,14 @@ private static final long serialVersionUID = 0L;
      * <code>string username = 1;</code>
      */
     public Builder clearUsername() {
-      
+
       username_ = getDefaultInstance().getUsername();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The username to use for HTTP basic authentication to the master endpoint.
      * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -884,13 +922,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1;</code>
      */
-    public Builder setUsernameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       username_ = value;
       onChanged();
       return this;
@@ -898,6 +935,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object password_ = "";
     /**
+     *
+     *
      * <pre>
      * The password to use for HTTP basic authentication to the master endpoint.
      * Because the master endpoint is open to the Internet, you should create a
@@ -910,8 +949,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPassword() {
       java.lang.Object ref = password_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         password_ = s;
         return s;
@@ -920,6 +958,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The password to use for HTTP basic authentication to the master endpoint.
      * Because the master endpoint is open to the Internet, you should create a
@@ -929,13 +969,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
+    public com.google.protobuf.ByteString getPasswordBytes() {
       java.lang.Object ref = password_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         password_ = b;
         return b;
       } else {
@@ -943,6 +981,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The password to use for HTTP basic authentication to the master endpoint.
      * Because the master endpoint is open to the Internet, you should create a
@@ -952,17 +992,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2;</code>
      */
-    public Builder setPassword(
-        java.lang.String value) {
+    public Builder setPassword(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       password_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The password to use for HTTP basic authentication to the master endpoint.
      * Because the master endpoint is open to the Internet, you should create a
@@ -973,12 +1014,14 @@ private static final long serialVersionUID = 0L;
      * <code>string password = 2;</code>
      */
     public Builder clearPassword() {
-      
+
       password_ = getDefaultInstance().getPassword();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The password to use for HTTP basic authentication to the master endpoint.
      * Because the master endpoint is open to the Internet, you should create a
@@ -988,13 +1031,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2;</code>
      */
-    public Builder setPasswordBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       password_ = value;
       onChanged();
       return this;
@@ -1002,11 +1044,17 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.ClientCertificateConfig clientCertificateConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.ClientCertificateConfig, com.google.container.v1.ClientCertificateConfig.Builder, com.google.container.v1.ClientCertificateConfigOrBuilder> clientCertificateConfigBuilder_;
+            com.google.container.v1.ClientCertificateConfig,
+            com.google.container.v1.ClientCertificateConfig.Builder,
+            com.google.container.v1.ClientCertificateConfigOrBuilder>
+        clientCertificateConfigBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1015,29 +1063,38 @@ private static final long serialVersionUID = 0L;
       return clientCertificateConfigBuilder_ != null || clientCertificateConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
      */
     public com.google.container.v1.ClientCertificateConfig getClientCertificateConfig() {
       if (clientCertificateConfigBuilder_ == null) {
-        return clientCertificateConfig_ == null ? com.google.container.v1.ClientCertificateConfig.getDefaultInstance() : clientCertificateConfig_;
+        return clientCertificateConfig_ == null
+            ? com.google.container.v1.ClientCertificateConfig.getDefaultInstance()
+            : clientCertificateConfig_;
       } else {
         return clientCertificateConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
      */
-    public Builder setClientCertificateConfig(com.google.container.v1.ClientCertificateConfig value) {
+    public Builder setClientCertificateConfig(
+        com.google.container.v1.ClientCertificateConfig value) {
       if (clientCertificateConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1051,9 +1108,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1070,18 +1130,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
      */
-    public Builder mergeClientCertificateConfig(com.google.container.v1.ClientCertificateConfig value) {
+    public Builder mergeClientCertificateConfig(
+        com.google.container.v1.ClientCertificateConfig value) {
       if (clientCertificateConfigBuilder_ == null) {
         if (clientCertificateConfig_ != null) {
           clientCertificateConfig_ =
-            com.google.container.v1.ClientCertificateConfig.newBuilder(clientCertificateConfig_).mergeFrom(value).buildPartial();
+              com.google.container.v1.ClientCertificateConfig.newBuilder(clientCertificateConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           clientCertificateConfig_ = value;
         }
@@ -1093,9 +1159,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1112,51 +1181,66 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
      */
-    public com.google.container.v1.ClientCertificateConfig.Builder getClientCertificateConfigBuilder() {
-      
+    public com.google.container.v1.ClientCertificateConfig.Builder
+        getClientCertificateConfigBuilder() {
+
       onChanged();
       return getClientCertificateConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
      */
-    public com.google.container.v1.ClientCertificateConfigOrBuilder getClientCertificateConfigOrBuilder() {
+    public com.google.container.v1.ClientCertificateConfigOrBuilder
+        getClientCertificateConfigOrBuilder() {
       if (clientCertificateConfigBuilder_ != null) {
         return clientCertificateConfigBuilder_.getMessageOrBuilder();
       } else {
-        return clientCertificateConfig_ == null ?
-            com.google.container.v1.ClientCertificateConfig.getDefaultInstance() : clientCertificateConfig_;
+        return clientCertificateConfig_ == null
+            ? com.google.container.v1.ClientCertificateConfig.getDefaultInstance()
+            : clientCertificateConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.ClientCertificateConfig, com.google.container.v1.ClientCertificateConfig.Builder, com.google.container.v1.ClientCertificateConfigOrBuilder> 
+            com.google.container.v1.ClientCertificateConfig,
+            com.google.container.v1.ClientCertificateConfig.Builder,
+            com.google.container.v1.ClientCertificateConfigOrBuilder>
         getClientCertificateConfigFieldBuilder() {
       if (clientCertificateConfigBuilder_ == null) {
-        clientCertificateConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.ClientCertificateConfig, com.google.container.v1.ClientCertificateConfig.Builder, com.google.container.v1.ClientCertificateConfigOrBuilder>(
-                getClientCertificateConfig(),
-                getParentForChildren(),
-                isClean());
+        clientCertificateConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ClientCertificateConfig,
+                com.google.container.v1.ClientCertificateConfig.Builder,
+                com.google.container.v1.ClientCertificateConfigOrBuilder>(
+                getClientCertificateConfig(), getParentForChildren(), isClean());
         clientCertificateConfig_ = null;
       }
       return clientCertificateConfigBuilder_;
@@ -1164,6 +1248,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterCaCertificate_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate that is the root of
      * trust for the cluster.
@@ -1174,8 +1260,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterCaCertificate() {
       java.lang.Object ref = clusterCaCertificate_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterCaCertificate_ = s;
         return s;
@@ -1184,6 +1269,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate that is the root of
      * trust for the cluster.
@@ -1191,13 +1278,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ca_certificate = 100;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterCaCertificateBytes() {
+    public com.google.protobuf.ByteString getClusterCaCertificateBytes() {
       java.lang.Object ref = clusterCaCertificate_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterCaCertificate_ = b;
         return b;
       } else {
@@ -1205,6 +1290,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate that is the root of
      * trust for the cluster.
@@ -1212,17 +1299,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ca_certificate = 100;</code>
      */
-    public Builder setClusterCaCertificate(
-        java.lang.String value) {
+    public Builder setClusterCaCertificate(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterCaCertificate_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate that is the root of
      * trust for the cluster.
@@ -1231,12 +1319,14 @@ private static final long serialVersionUID = 0L;
      * <code>string cluster_ca_certificate = 100;</code>
      */
     public Builder clearClusterCaCertificate() {
-      
+
       clusterCaCertificate_ = getDefaultInstance().getClusterCaCertificate();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate that is the root of
      * trust for the cluster.
@@ -1244,13 +1334,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ca_certificate = 100;</code>
      */
-    public Builder setClusterCaCertificateBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterCaCertificateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterCaCertificate_ = value;
       onChanged();
       return this;
@@ -1258,6 +1347,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clientCertificate_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
@@ -1268,8 +1359,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClientCertificate() {
       java.lang.Object ref = clientCertificate_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clientCertificate_ = s;
         return s;
@@ -1278,6 +1368,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
@@ -1285,13 +1377,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_certificate = 101;</code>
      */
-    public com.google.protobuf.ByteString
-        getClientCertificateBytes() {
+    public com.google.protobuf.ByteString getClientCertificateBytes() {
       java.lang.Object ref = clientCertificate_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clientCertificate_ = b;
         return b;
       } else {
@@ -1299,6 +1389,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
@@ -1306,17 +1398,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_certificate = 101;</code>
      */
-    public Builder setClientCertificate(
-        java.lang.String value) {
+    public Builder setClientCertificate(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clientCertificate_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
@@ -1325,12 +1418,14 @@ private static final long serialVersionUID = 0L;
      * <code>string client_certificate = 101;</code>
      */
     public Builder clearClientCertificate() {
-      
+
       clientCertificate_ = getDefaultInstance().getClientCertificate();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded public certificate used by clients to
      * authenticate to the cluster endpoint.
@@ -1338,13 +1433,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_certificate = 101;</code>
      */
-    public Builder setClientCertificateBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClientCertificateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clientCertificate_ = value;
       onChanged();
       return this;
@@ -1352,6 +1446,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clientKey_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
@@ -1362,8 +1458,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClientKey() {
       java.lang.Object ref = clientKey_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clientKey_ = s;
         return s;
@@ -1372,6 +1467,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
@@ -1379,13 +1476,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_key = 102;</code>
      */
-    public com.google.protobuf.ByteString
-        getClientKeyBytes() {
+    public com.google.protobuf.ByteString getClientKeyBytes() {
       java.lang.Object ref = clientKey_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clientKey_ = b;
         return b;
       } else {
@@ -1393,6 +1488,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
@@ -1400,17 +1497,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_key = 102;</code>
      */
-    public Builder setClientKey(
-        java.lang.String value) {
+    public Builder setClientKey(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clientKey_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
@@ -1419,12 +1517,14 @@ private static final long serialVersionUID = 0L;
      * <code>string client_key = 102;</code>
      */
     public Builder clearClientKey() {
-      
+
       clientKey_ = getDefaultInstance().getClientKey();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Base64-encoded private key used by clients to authenticate
      * to the cluster endpoint.
@@ -1432,20 +1532,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_key = 102;</code>
      */
-    public Builder setClientKeyBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClientKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clientKey_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1455,12 +1554,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.MasterAuth)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.MasterAuth)
   private static final com.google.container.v1.MasterAuth DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.MasterAuth();
   }
@@ -1469,16 +1568,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MasterAuth>
-      PARSER = new com.google.protobuf.AbstractParser<MasterAuth>() {
-    @java.lang.Override
-    public MasterAuth parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MasterAuth(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<MasterAuth> PARSER =
+      new com.google.protobuf.AbstractParser<MasterAuth>() {
+        @java.lang.Override
+        public MasterAuth parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MasterAuth(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<MasterAuth> parser() {
     return PARSER;
@@ -1493,6 +1592,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.MasterAuth getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

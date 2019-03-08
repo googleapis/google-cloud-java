@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface TextSegmentOrBuilder extends
+public interface TextSegmentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.TextSegment)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Video segment where a text snippet was detected.
    * </pre>
@@ -16,6 +19,8 @@ public interface TextSegmentOrBuilder extends
    */
   boolean hasSegment();
   /**
+   *
+   *
    * <pre>
    * Video segment where a text snippet was detected.
    * </pre>
@@ -24,6 +29,8 @@ public interface TextSegmentOrBuilder extends
    */
   com.google.cloud.videointelligence.v1p2beta1.VideoSegment getSegment();
   /**
+   *
+   *
    * <pre>
    * Video segment where a text snippet was detected.
    * </pre>
@@ -33,6 +40,8 @@ public interface TextSegmentOrBuilder extends
   com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder getSegmentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Confidence for the track of detected text. It is calculated as the highest
    * over all frames where OCR detected text appears.
@@ -43,15 +52,18 @@ public interface TextSegmentOrBuilder extends
   float getConfidence();
 
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> 
-      getFramesList();
+  java.util.List<com.google.cloud.videointelligence.v1p2beta1.TextFrame> getFramesList();
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
@@ -60,6 +72,8 @@ public interface TextSegmentOrBuilder extends
    */
   com.google.cloud.videointelligence.v1p2beta1.TextFrame getFrames(int index);
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
@@ -68,21 +82,24 @@ public interface TextSegmentOrBuilder extends
    */
   int getFramesCount();
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder>
       getFramesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Information related to the frames where OCR detected text appears.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.TextFrame frames = 3;</code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder getFramesOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1p2beta1.TextFrameOrBuilder getFramesOrBuilder(int index);
 }

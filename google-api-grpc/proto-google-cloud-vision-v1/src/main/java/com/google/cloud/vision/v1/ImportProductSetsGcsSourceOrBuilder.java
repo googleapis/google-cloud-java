@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface ImportProductSetsGcsSourceOrBuilder extends
+public interface ImportProductSetsGcsSourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.ImportProductSetsGcsSource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the input csv file.
    * The URI must start with `gs://`.
@@ -29,13 +32,15 @@ public interface ImportProductSetsGcsSourceOrBuilder extends
    * `product-display-name` column refers to
    * [display_name][google.cloud.vision.v1.Product.display_name], the
    * `product-category` column refers to
-   * [product_category][google.cloud.vision.v1.Product.product_category], and the
-   * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
+   * [product_category][google.cloud.vision.v1.Product.product_category], and
+   * the `labels` column refers to
+   * [product_labels][google.cloud.vision.v1.Product.product_labels].
    * The `image-id` column is optional but must be unique if provided. If it is
    * empty, the system will automatically assign a unique id to the image.
    * The `product-display-name` column is optional. If it is empty, the system
-   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
-   * space (" "). You can update the `display_name` later by using the API.
+   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
+   * for the product to a space (" "). You can update the `display_name` later
+   * by using the API.
    * If a `Product` with the specified `product-id` already exists, then the
    * system ignores the `product-display-name`, `product-category`, and `labels`
    * columns.
@@ -62,6 +67,8 @@ public interface ImportProductSetsGcsSourceOrBuilder extends
    */
   java.lang.String getCsvFileUri();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the input csv file.
    * The URI must start with `gs://`.
@@ -83,13 +90,15 @@ public interface ImportProductSetsGcsSourceOrBuilder extends
    * `product-display-name` column refers to
    * [display_name][google.cloud.vision.v1.Product.display_name], the
    * `product-category` column refers to
-   * [product_category][google.cloud.vision.v1.Product.product_category], and the
-   * `labels` column refers to [product_labels][google.cloud.vision.v1.Product.product_labels].
+   * [product_category][google.cloud.vision.v1.Product.product_category], and
+   * the `labels` column refers to
+   * [product_labels][google.cloud.vision.v1.Product.product_labels].
    * The `image-id` column is optional but must be unique if provided. If it is
    * empty, the system will automatically assign a unique id to the image.
    * The `product-display-name` column is optional. If it is empty, the system
-   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field for the product to a
-   * space (" "). You can update the `display_name` later by using the API.
+   * sets the [display_name][google.cloud.vision.v1.Product.display_name] field
+   * for the product to a space (" "). You can update the `display_name` later
+   * by using the API.
    * If a `Product` with the specified `product-id` already exists, then the
    * system ignores the `product-display-name`, `product-category`, and `labels`
    * columns.
@@ -114,6 +123,5 @@ public interface ImportProductSetsGcsSourceOrBuilder extends
    *
    * <code>string csv_file_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getCsvFileUriBytes();
+  com.google.protobuf.ByteString getCsvFileUriBytes();
 }

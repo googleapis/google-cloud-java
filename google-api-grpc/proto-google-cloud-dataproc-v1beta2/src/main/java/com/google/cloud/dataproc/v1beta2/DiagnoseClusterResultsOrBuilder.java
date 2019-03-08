@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface DiagnoseClusterResultsOrBuilder extends
+public interface DiagnoseClusterResultsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.DiagnoseClusterResults)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The Cloud Storage URI of the diagnostic output.
    * The output report is a plain text file with a summary of collected
@@ -18,6 +21,8 @@ public interface DiagnoseClusterResultsOrBuilder extends
    */
   java.lang.String getOutputUri();
   /**
+   *
+   *
    * <pre>
    * Output only. The Cloud Storage URI of the diagnostic output.
    * The output report is a plain text file with a summary of collected
@@ -26,6 +31,5 @@ public interface DiagnoseClusterResultsOrBuilder extends
    *
    * <code>string output_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getOutputUriBytes();
+  com.google.protobuf.ByteString getOutputUriBytes();
 }

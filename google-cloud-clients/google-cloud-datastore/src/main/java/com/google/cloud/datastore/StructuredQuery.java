@@ -41,13 +41,14 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * An implementation of a Google Cloud Datastore Query that can be constructed by providing
- * all the specific query elements.
+ * An implementation of a Google Cloud Datastore Query that can be constructed by providing all the
+ * specific query elements.
  *
  * <h3>A usage example:</h3>
  *
  * <p>A simple query that returns all entities for a specific kind
- * <pre> {@code
+ *
+ * <pre>{@code
  * Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind).build();
  * QueryResults<Entity> results = datastore.run(query);
  * while (results.hasNext()) {
@@ -57,15 +58,17 @@ import java.util.Objects;
  * }</pre>
  *
  * <p>A simple key-only query of all entities for a specific kind
- * <pre> {@code
+ *
+ * <pre>{@code
  * Query<Key> keyOnlyQuery =  Query.newKeyQueryBuilder().setKind(KIND1).build();
  * QueryResults<Key> results = datastore.run(keyOnlyQuery);
  * ...
  * }</pre>
  *
- * <p>A less trivial example of a projection query that returns the first 10 results
- * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
- * <pre> {@code
+ * <p>A less trivial example of a projection query that returns the first 10 results of "age" and
+ * "name" properties (sorted and grouped by "age") with an age greater than 18
+ *
+ * <pre>{@code
  * Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
  *     .setKind(kind)
  *     .setProjection(Projection.property("age"), Projection.first("name"))
@@ -101,8 +104,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
     private static final long serialVersionUID = -6443285436239990860L;
 
-    Filter() {
-    }
+    Filter() {}
 
     abstract com.google.datastore.v1.Filter toPb();
 
@@ -118,9 +120,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  /**
-   * A class representing a filter composed of a combination of other filters.
-   */
+  /** A class representing a filter composed of a combination of other filters. */
   public static final class CompositeFilter extends Filter {
 
     private static final long serialVersionUID = 3610352685739360009L;
@@ -142,9 +142,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
             }
           };
 
-      private static final StringEnumType<Operator> type = new StringEnumType(
-          Operator.class,
-          CONSTRUCTOR);
+      private static final StringEnumType<Operator> type =
+          new StringEnumType(Operator.class, CONSTRUCTOR);
 
       static final Operator AND = type.createAndRegister("AND");
 
@@ -164,16 +163,12 @@ public abstract class StructuredQuery<V> extends Query<V> {
         return type.valueOfStrict(constant);
       }
 
-      /**
-       * Get the Operator for the given String constant, and allow unrecognized values.
-       */
+      /** Get the Operator for the given String constant, and allow unrecognized values. */
       static Operator valueOf(String constant) {
         return type.valueOf(constant);
       }
 
-      /**
-       * Return the known values for Operator.
-       */
+      /** Return the known values for Operator. */
       static Operator[] values() {
         return type.values();
       }
@@ -213,8 +208,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
         return false;
       }
       CompositeFilter other = (CompositeFilter) obj;
-      return operator.equals(other.operator)
-          && filters.equals(other.filters);
+      return operator.equals(other.operator) && filters.equals(other.filters);
     }
 
     static CompositeFilter fromPb(com.google.datastore.v1.CompositeFilter compositeFilterPb) {
@@ -246,9 +240,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  /**
-   * A class representing a filter based on a single property or ancestor.
-   */
+  /** A class representing a filter based on a single property or ancestor. */
   public static final class PropertyFilter extends Filter {
 
     private static final long serialVersionUID = -4514695915258598597L;
@@ -272,16 +264,13 @@ public abstract class StructuredQuery<V> extends Query<V> {
             }
           };
 
-      private static final StringEnumType<Operator> type = new StringEnumType(
-          Operator.class,
-          CONSTRUCTOR);
+      private static final StringEnumType<Operator> type =
+          new StringEnumType(Operator.class, CONSTRUCTOR);
 
       static final Operator LESS_THAN = type.createAndRegister("LESS_THAN");
-      static final Operator LESS_THAN_OR_EQUAL = type
-          .createAndRegister("LESS_THAN_OR_EQUAL");
+      static final Operator LESS_THAN_OR_EQUAL = type.createAndRegister("LESS_THAN_OR_EQUAL");
       static final Operator GREATER_THAN = type.createAndRegister("GREATER_THAN");
-      static final Operator GREATER_THAN_OR_EQUAL = type
-          .createAndRegister("GREATER_THAN_OR_EQUAL");
+      static final Operator GREATER_THAN_OR_EQUAL = type.createAndRegister("GREATER_THAN_OR_EQUAL");
       static final Operator EQUAL = type.createAndRegister("EQUAL");
       static final Operator HAS_ANCESTOR = type.createAndRegister("HAS_ANCESTOR");
 
@@ -301,16 +290,12 @@ public abstract class StructuredQuery<V> extends Query<V> {
         return type.valueOfStrict(constant);
       }
 
-      /**
-       * Get the Operator for the given String constant, and allow unrecognized values.
-       */
+      /** Get the Operator for the given String constant, and allow unrecognized values. */
       static Operator valueOf(String constant) {
         return type.valueOf(constant);
       }
 
-      /**
-       * Return the known values for Operator.
-       */
+      /** Return the known values for Operator. */
       static Operator[] values() {
         return type.values();
       }
@@ -561,9 +546,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
             }
           };
 
-      private static final StringEnumType<Direction> type = new StringEnumType(
-          Direction.class,
-          CONSTRUCTOR);
+      private static final StringEnumType<Direction> type =
+          new StringEnumType(Direction.class, CONSTRUCTOR);
 
       public static final Direction ASCENDING = type.createAndRegister("ASCENDING");
       public static final Direction DESCENDING = type.createAndRegister("DESCENDING");
@@ -584,16 +568,12 @@ public abstract class StructuredQuery<V> extends Query<V> {
         return type.valueOfStrict(constant);
       }
 
-      /**
-       * Get the Direction for the given String constant, and allow unrecognized values.
-       */
+      /** Get the Direction for the given String constant, and allow unrecognized values. */
       static Direction valueOf(String constant) {
         return type.valueOf(constant);
       }
 
-      /**
-       * Return the known values for Direction.
-       */
+      /** Return the known values for Direction. */
       static Direction[] values() {
         return type.values();
       }
@@ -618,22 +598,15 @@ public abstract class StructuredQuery<V> extends Query<V> {
         return false;
       }
       OrderBy other = (OrderBy) obj;
-      return property.equals(other.property)
-          && direction.equals(other.direction);
+      return property.equals(other.property) && direction.equals(other.direction);
     }
 
-
-    /**
-     * Returns the property according to which the query result should be ordered.
-     */
+    /** Returns the property according to which the query result should be ordered. */
     public String getProperty() {
       return property;
     }
 
-
-    /**
-     * Returns the order's direction.
-     */
+    /** Returns the order's direction. */
     public Direction getDirection() {
       return direction;
     }
@@ -641,8 +614,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
     com.google.datastore.v1.PropertyOrder toPb() {
       return com.google.datastore.v1.PropertyOrder.newBuilder()
           .setDirection(direction.toPb())
-          .setProperty(com.google.datastore.v1.PropertyReference.newBuilder()
-              .setName(property).build())
+          .setProperty(
+              com.google.datastore.v1.PropertyReference.newBuilder().setName(property).build())
           .build();
     }
 
@@ -676,59 +649,33 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   public interface Builder<V> {
 
-
-    /**
-     * Sets the namespace for the query.
-     */
+    /** Sets the namespace for the query. */
     Builder<V> setNamespace(String namespace);
 
-
-    /**
-     * Sets the kind for the query.
-     */
+    /** Sets the kind for the query. */
     Builder<V> setKind(String kind);
 
-
-    /**
-     * Sets the start cursor for the query.
-     */
+    /** Sets the start cursor for the query. */
     Builder<V> setStartCursor(Cursor startCursor);
 
-
-    /**
-     * Sets the end cursor for the query.
-     */
+    /** Sets the end cursor for the query. */
     Builder<V> setEndCursor(Cursor endCursor);
 
-
-    /**
-     * Sets the offset for the query.
-     */
+    /** Sets the offset for the query. */
     Builder<V> setOffset(int offset);
 
-
-    /**
-     * Sets the limit for the query.
-     */
+    /** Sets the limit for the query. */
     Builder<V> setLimit(Integer limit);
-
 
     Builder<V> setFilter(Filter filter);
 
-    /**
-     * Clears any previously specified order by settings.
-     */
+    /** Clears any previously specified order by settings. */
     Builder<V> clearOrderBy();
 
-
-    /**
-     * Sets the query's order by clause (clearing any previously specified order by settings).
-     */
+    /** Sets the query's order by clause (clearing any previously specified order by settings). */
     Builder<V> setOrderBy(OrderBy orderBy, OrderBy... others);
 
-    /**
-     * Adds settings to the existing order by clause.
-     */
+    /** Adds settings to the existing order by clause. */
     Builder<V> addOrderBy(OrderBy orderBy, OrderBy... others);
 
     StructuredQuery<V> build();
@@ -777,13 +724,11 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return (B) this;
     }
 
-
     @Override
     public B setNamespace(String namespace) {
       this.namespace = namespace;
       return self();
     }
-
 
     @Override
     public B setKind(String kind) {
@@ -791,20 +736,17 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-
     @Override
     public B setStartCursor(Cursor startCursor) {
       this.startCursor = startCursor;
       return self();
     }
 
-
     @Override
     public B setEndCursor(Cursor endCursor) {
       this.endCursor = endCursor;
       return self();
     }
-
 
     @Override
     public B setOffset(int offset) {
@@ -813,14 +755,12 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-
     @Override
     public B setLimit(Integer limit) {
       Preconditions.checkArgument(limit == null || limit > 0, "limit must be positive");
       this.limit = limit;
       return self();
     }
-
 
     @Override
     public B setFilter(Filter filter) {
@@ -833,7 +773,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       orderBy.clear();
       return self();
     }
-
 
     @Override
     public B setOrderBy(OrderBy orderBy, OrderBy... others) {
@@ -854,7 +793,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-
     B setProjection(String projection, String... others) {
       clearProjection();
       addProjection(projection, others);
@@ -871,7 +809,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       distinctOn.clear();
       return self();
     }
-
 
     B setDistinctOn(String property, String... others) {
       clearDistinctOn();
@@ -948,8 +885,17 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(getNamespace(), kind, startCursor, endCursor, offset, limit, filter,
-        orderBy, projection, distinctOn);
+    return Objects.hash(
+        getNamespace(),
+        kind,
+        startCursor,
+        endCursor,
+        offset,
+        limit,
+        filter,
+        orderBy,
+        projection,
+        distinctOn);
   }
 
   @Override
@@ -971,13 +917,9 @@ public abstract class StructuredQuery<V> extends Query<V> {
         && Objects.equals(orderBy, other.orderBy)
         && Objects.equals(projection, other.projection)
         && Objects.equals(distinctOn, other.distinctOn);
-
   }
 
-
-  /**
-   * Returns the kind for this query.
-   */
+  /** Returns the kind for this query. */
   public String getKind() {
     return kind;
   }
@@ -986,66 +928,42 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return projection.size() == 1 && KEY_PROPERTY_NAME.equals(projection.get(0));
   }
 
-
-  /**
-   * Returns the projection for this query.
-   */
+  /** Returns the projection for this query. */
   public List<String> getProjection() {
     return projection;
   }
 
-
-  /**
-   * Returns the filter for this query.
-   */
+  /** Returns the filter for this query. */
   public Filter getFilter() {
     return filter;
   }
 
-
-  /**
-   * Returns the distinct on clause for this query.
-   */
+  /** Returns the distinct on clause for this query. */
   public List<String> getDistinctOn() {
     return distinctOn;
   }
 
-
-  /**
-   * Returns the order by clause for this query.
-   */
+  /** Returns the order by clause for this query. */
   public List<OrderBy> getOrderBy() {
     return orderBy;
   }
 
-
-  /**
-   * Returns the start cursor for this query.
-   */
+  /** Returns the start cursor for this query. */
   public Cursor getStartCursor() {
     return startCursor;
   }
 
-
-  /**
-   * Returns the end cursor for this query.
-   */
+  /** Returns the end cursor for this query. */
   public Cursor getEndCursor() {
     return endCursor;
   }
 
-
-  /**
-   * Returns the offset for this query.
-   */
+  /** Returns the offset for this query. */
   public int getOffset() {
     return offset;
   }
 
-
-  /**
-   * Returns the limit for this query.
-   */
+  /** Returns the limit for this query. */
   public Integer getLimit() {
     return limit;
   }
@@ -1096,8 +1014,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
       queryPb.addOrder(value.toPb());
     }
     for (String value : distinctOn) {
-      queryPb.addDistinctOn(com.google.datastore.v1.PropertyReference.newBuilder()
-          .setName(value).build());
+      queryPb.addDistinctOn(
+          com.google.datastore.v1.PropertyReference.newBuilder().setName(value).build());
     }
     for (String value : projection) {
       com.google.datastore.v1.Projection.Builder expressionPb =
@@ -1110,8 +1028,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
   }
 
   @SuppressWarnings("unchecked")
-  static <V> StructuredQuery<V> fromPb(ResultType<?> resultType, String namespace,
-      com.google.datastore.v1.Query queryPb) {
+  static <V> StructuredQuery<V> fromPb(
+      ResultType<?> resultType, String namespace, com.google.datastore.v1.Query queryPb) {
     BuilderImpl<?, ?> builder;
     if (resultType.equals(ResultType.ENTITY)) {
       builder = new EntityQuery.Builder();

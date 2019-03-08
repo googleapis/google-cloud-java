@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.database.v1;
 
-public interface DatabaseOrBuilder extends
+public interface DatabaseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.database.v1.Database)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the database. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -20,6 +23,8 @@ public interface DatabaseOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the database. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -30,10 +35,11 @@ public interface DatabaseOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The current database state.
    * </pre>
@@ -42,6 +48,8 @@ public interface DatabaseOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The current database state.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ViolatingResourceOrBuilder extends
+public interface ViolatingResourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ViolatingResource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The MIME type of this resource.
    * </pre>
@@ -16,16 +19,19 @@ public interface ViolatingResourceOrBuilder extends
    */
   java.lang.String getContentType();
   /**
+   *
+   *
    * <pre>
    * The MIME type of this resource.
    * </pre>
    *
    * <code>string content_type = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getContentTypeBytes();
+  com.google.protobuf.ByteString getContentTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * URL of this violating resource.
    * </pre>
@@ -34,12 +40,13 @@ public interface ViolatingResourceOrBuilder extends
    */
   java.lang.String getResourceUrl();
   /**
+   *
+   *
    * <pre>
    * URL of this violating resource.
    * </pre>
    *
    * <code>string resource_url = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceUrlBytes();
+  com.google.protobuf.ByteString getResourceUrlBytes();
 }

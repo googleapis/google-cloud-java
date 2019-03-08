@@ -24,7 +24,6 @@ import com.google.cloud.logging.SinkInfo.Destination.BucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.cloud.logging.SinkInfo.Destination.TopicDestination;
 import com.google.cloud.logging.SinkInfo.VersionFormat;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -38,30 +37,30 @@ public class SinkInfoTest {
   private static final BucketDestination BUCKET_DESTINATION = BucketDestination.of("bucket");
   private static final DatasetDestination DATASET_DESTINATION =
       DatasetDestination.of("project", "dataset");
-  private static final TopicDestination TOPIC_DESTINATION =
-      TopicDestination.of("project", "topic");
-  private static final SinkInfo BUCKET_SINK_INFO = SinkInfo.newBuilder(NAME, BUCKET_DESTINATION)
-      .setFilter(FILTER)
-      .setVersionFormat(VERSION)
-      .build();
-  private static final SinkInfo DATASET_SINK_INFO = SinkInfo.newBuilder(NAME, DATASET_DESTINATION)
-      .setFilter(FILTER)
-      .setVersionFormat(VERSION)
-      .build();
-  private static final SinkInfo TOPIC_SINK_INFO = SinkInfo.newBuilder(NAME, TOPIC_DESTINATION)
-      .setFilter(FILTER)
-      .setVersionFormat(VERSION)
-      .build();
+  private static final TopicDestination TOPIC_DESTINATION = TopicDestination.of("project", "topic");
+  private static final SinkInfo BUCKET_SINK_INFO =
+      SinkInfo.newBuilder(NAME, BUCKET_DESTINATION)
+          .setFilter(FILTER)
+          .setVersionFormat(VERSION)
+          .build();
+  private static final SinkInfo DATASET_SINK_INFO =
+      SinkInfo.newBuilder(NAME, DATASET_DESTINATION)
+          .setFilter(FILTER)
+          .setVersionFormat(VERSION)
+          .build();
+  private static final SinkInfo TOPIC_SINK_INFO =
+      SinkInfo.newBuilder(NAME, TOPIC_DESTINATION)
+          .setFilter(FILTER)
+          .setVersionFormat(VERSION)
+          .build();
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOfBucketDestination() {
     assertEquals(Destination.Type.BUCKET, BUCKET_DESTINATION.getType());
     assertEquals("bucket", BUCKET_DESTINATION.getBucket());
   }
-
 
   @Test
   public void testOfDatasetDestination() {
@@ -73,7 +72,6 @@ public class SinkInfoTest {
     assertEquals("dataset", datasetDestination.getDataset());
   }
 
-
   @Test
   public void testOfTopicDestination() {
     assertEquals(Destination.Type.TOPIC, TOPIC_DESTINATION.getType());
@@ -83,7 +81,6 @@ public class SinkInfoTest {
     assertNull(topicDestination.getProject());
     assertEquals("topic", topicDestination.getTopic());
   }
-
 
   @Test
   public void testToAndFromPbDestination() {
@@ -134,28 +131,31 @@ public class SinkInfoTest {
     assertEquals(VERSION, TOPIC_SINK_INFO.getVersionFormat());
   }
 
-
   @Test
   public void testToBuilder() {
     compareSinkInfo(BUCKET_SINK_INFO, BUCKET_SINK_INFO.toBuilder().build());
     compareSinkInfo(DATASET_SINK_INFO, DATASET_SINK_INFO.toBuilder().build());
     compareSinkInfo(TOPIC_SINK_INFO, TOPIC_SINK_INFO.toBuilder().build());
-    SinkInfo updatedSinkInfo = BUCKET_SINK_INFO.toBuilder()
-        .setDestination(TOPIC_DESTINATION)
-        .setName("newName")
-        .setFilter("logName=projects/my-projectid/logs/syslog")
-        .setVersionFormat(VersionFormat.V2)
-        .build();
+    SinkInfo updatedSinkInfo =
+        BUCKET_SINK_INFO
+            .toBuilder()
+            .setDestination(TOPIC_DESTINATION)
+            .setName("newName")
+            .setFilter("logName=projects/my-projectid/logs/syslog")
+            .setVersionFormat(VersionFormat.V2)
+            .build();
     assertEquals("newName", updatedSinkInfo.getName());
     assertEquals(TOPIC_DESTINATION, updatedSinkInfo.getDestination());
     assertEquals("logName=projects/my-projectid/logs/syslog", updatedSinkInfo.getFilter());
     assertEquals(VersionFormat.V2, updatedSinkInfo.getVersionFormat());
-    updatedSinkInfo = BUCKET_SINK_INFO.toBuilder()
-        .setDestination(BUCKET_DESTINATION)
-        .setName(NAME)
-        .setFilter(FILTER)
-        .setVersionFormat(VersionFormat.V1)
-        .build();
+    updatedSinkInfo =
+        BUCKET_SINK_INFO
+            .toBuilder()
+            .setDestination(BUCKET_DESTINATION)
+            .setName(NAME)
+            .setFilter(FILTER)
+            .setVersionFormat(VersionFormat.V1)
+            .build();
     assertEquals(BUCKET_SINK_INFO, updatedSinkInfo);
   }
 
@@ -165,7 +165,7 @@ public class SinkInfoTest {
     compareSinkInfo(DATASET_SINK_INFO, SinkInfo.fromPb(DATASET_SINK_INFO.toPb("project")));
     compareSinkInfo(TOPIC_SINK_INFO, SinkInfo.fromPb(TOPIC_SINK_INFO.toPb("project")));
     SinkInfo sinkInfo = SinkInfo.of("name", BUCKET_DESTINATION);
-    compareSinkInfo(sinkInfo, SinkInfo. fromPb(sinkInfo.toPb("project")));
+    compareSinkInfo(sinkInfo, SinkInfo.fromPb(sinkInfo.toPb("project")));
     sinkInfo = SinkInfo.of("name", DATASET_DESTINATION);
     compareSinkInfo(sinkInfo, SinkInfo.fromPb(sinkInfo.toPb("project")));
     sinkInfo = SinkInfo.of("name", TOPIC_DESTINATION);
@@ -176,12 +176,12 @@ public class SinkInfoTest {
   public void testToAndFromPb_NoProjectId() {
     DatasetDestination datasetDestination = DatasetDestination.of("dataset");
     SinkInfo sinkInfo = SinkInfo.of("name", DATASET_DESTINATION);
-    compareSinkInfo(sinkInfo,
-        SinkInfo.fromPb(SinkInfo.of("name", datasetDestination).toPb("project")));
+    compareSinkInfo(
+        sinkInfo, SinkInfo.fromPb(SinkInfo.of("name", datasetDestination).toPb("project")));
     TopicDestination topicDestination = TopicDestination.of("topic");
     sinkInfo = SinkInfo.of("name", TOPIC_DESTINATION);
-    compareSinkInfo(sinkInfo,
-        SinkInfo.fromPb(SinkInfo.of("name", topicDestination).toPb("project")));
+    compareSinkInfo(
+        sinkInfo, SinkInfo.fromPb(SinkInfo.of("name", topicDestination).toPb("project")));
   }
 
   private void compareBucketDestination(BucketDestination expected, BucketDestination value) {

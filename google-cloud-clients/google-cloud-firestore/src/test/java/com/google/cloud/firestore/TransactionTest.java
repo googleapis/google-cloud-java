@@ -45,8 +45,10 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.Write;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.DocumentMask;
+import com.google.firestore.v1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
 import java.util.ArrayList;
@@ -75,11 +77,7 @@ public class TransactionTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
-          firestoreRpc);
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
 
   @Captor private ArgumentCaptor<Message> requestCapture;
   @Captor private ArgumentCaptor<ApiStreamObserver<Message>> streamObserverCapture;
@@ -387,6 +385,50 @@ public class TransactionTest {
   }
 
   @Test
+  public void getMultipleDocumentsWithFieldMask() throws Exception {
+    doReturn(beginResponse())
+        .doReturn(commitResponse(0, 0))
+        .when(firestoreMock)
+        .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+    doAnswer(getAllResponse(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            requestCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    final DocumentReference doc1 = firestoreMock.document("coll/doc1");
+    final FieldMask fieldMask = FieldMask.of(FieldPath.of("foo", "bar"));
+
+    ApiFuture<List<DocumentSnapshot>> transaction =
+        firestoreMock.runTransaction(
+            new Transaction.Function<List<DocumentSnapshot>>() {
+              @Override
+              public List<DocumentSnapshot> updateCallback(Transaction transaction)
+                  throws ExecutionException, InterruptedException {
+                return transaction.getAll(new DocumentReference[] {doc1}, fieldMask).get();
+              }
+            },
+            options);
+    transaction.get();
+
+    List<Message> requests = requestCapture.getAllValues();
+    assertEquals(3, requests.size());
+
+    assertEquals(begin(), requests.get(0));
+    BatchGetDocumentsRequest expectedGetAll =
+        getAll(TRANSACTION_ID, doc1.getResourcePath().toString());
+    expectedGetAll =
+        expectedGetAll
+            .toBuilder()
+            .setMask(DocumentMask.newBuilder().addFieldPaths("foo.bar"))
+            .build();
+    assertEquals(expectedGetAll, requests.get(1));
+    assertEquals(commit(TRANSACTION_ID), requests.get(2));
+  }
+
+  @Test
   public void getQuery() throws Exception {
     doReturn(beginResponse())
         .doReturn(commitResponse(0, 0))
@@ -551,8 +593,8 @@ public class TransactionTest {
     List<Write> writes = new ArrayList<>();
     writes.add(delete());
 
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(1).setNanos(2);
     writes.add(delete(precondition.build()));
 

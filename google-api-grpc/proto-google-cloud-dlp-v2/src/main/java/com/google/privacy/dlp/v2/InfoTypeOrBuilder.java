@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InfoTypeOrBuilder extends
+public interface InfoTypeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InfoType)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the information type. Either a name of your choosing when
    * creating a CustomInfoType, or one of the names listed
@@ -20,6 +23,8 @@ public interface InfoTypeOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Name of the information type. Either a name of your choosing when
    * creating a CustomInfoType, or one of the names listed
@@ -30,6 +35,5 @@ public interface InfoTypeOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

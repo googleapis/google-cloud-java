@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface StreamingRecognitionConfigOrBuilder extends
+public interface StreamingRecognitionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.StreamingRecognitionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * *Required* Provides information to the recognizer that specifies how to
    * process the request.
@@ -17,6 +20,8 @@ public interface StreamingRecognitionConfigOrBuilder extends
    */
   boolean hasConfig();
   /**
+   *
+   *
    * <pre>
    * *Required* Provides information to the recognizer that specifies how to
    * process the request.
@@ -26,6 +31,8 @@ public interface StreamingRecognitionConfigOrBuilder extends
    */
   com.google.cloud.speech.v1.RecognitionConfig getConfig();
   /**
+   *
+   *
    * <pre>
    * *Required* Provides information to the recognizer that specifies how to
    * process the request.
@@ -36,6 +43,8 @@ public interface StreamingRecognitionConfigOrBuilder extends
   com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If `false` or omitted, the recognizer will perform continuous
    * recognition (continuing to wait for and process audio even if the user
@@ -54,6 +63,8 @@ public interface StreamingRecognitionConfigOrBuilder extends
   boolean getSingleUtterance();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If `true`, interim results (tentative hypotheses) may be
    * returned as they become available (these interim results are indicated with

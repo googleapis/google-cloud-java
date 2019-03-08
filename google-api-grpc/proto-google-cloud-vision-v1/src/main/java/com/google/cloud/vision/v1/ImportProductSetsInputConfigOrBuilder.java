@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface ImportProductSetsInputConfigOrBuilder extends
+public interface ImportProductSetsInputConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.ImportProductSetsInputConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location for a csv file which preserves a list
    * of ImportProductSetRequests in each line.
@@ -17,6 +20,8 @@ public interface ImportProductSetsInputConfigOrBuilder extends
    */
   boolean hasGcsSource();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location for a csv file which preserves a list
    * of ImportProductSetRequests in each line.
@@ -26,6 +31,8 @@ public interface ImportProductSetsInputConfigOrBuilder extends
    */
   com.google.cloud.vision.v1.ImportProductSetsGcsSource getGcsSource();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location for a csv file which preserves a list
    * of ImportProductSetRequests in each line.

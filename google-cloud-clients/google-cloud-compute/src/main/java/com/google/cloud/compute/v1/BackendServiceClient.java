@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.BackendServiceStub;
 import com.google.cloud.compute.v1.stub.BackendServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -56,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -630,8 +631,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services by
-   * making a list() request.
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -657,8 +657,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services by
-   * making a list() request.
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -682,8 +681,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services by
-   * making a list() request.
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -707,8 +705,7 @@ public class BackendServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services by
-   * making a list() request.
+   * Returns the specified BackendService resource. Gets a list of available backend services.
    *
    * <p>Sample code:
    *
@@ -1130,7 +1127,10 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1170,7 +1170,10 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1385,7 +1388,10 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1424,7 +1430,10 @@ public class BackendServiceClient implements BackgroundResource {
    * @param backendServiceResource A BackendService resource. This resource defines a group of
    *     backend virtual machines and their serving capacity. (== resource_for v1.backendService ==)
    *     (== resource_for beta.backendService ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1532,13 +1541,16 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class AggregatedListBackendServicesPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
-          BackendServicesScopedList, AggregatedListBackendServicesPage,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
+          BackendServicesScopedList,
+          AggregatedListBackendServicesPage,
           AggregatedListBackendServicesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListBackendServicesPagedResponse> createAsync(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         ApiFuture<BackendServiceAggregatedList> futureResponse) {
@@ -1554,7 +1566,8 @@ public class BackendServiceClient implements BackgroundResource {
                 AggregatedListBackendServicesPage input) {
               return new AggregatedListBackendServicesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListBackendServicesPagedResponse(AggregatedListBackendServicesPage page) {
@@ -1564,12 +1577,15 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class AggregatedListBackendServicesPage
       extends AbstractPage<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
-          BackendServicesScopedList, AggregatedListBackendServicesPage> {
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
+          BackendServicesScopedList,
+          AggregatedListBackendServicesPage> {
 
     private AggregatedListBackendServicesPage(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         BackendServiceAggregatedList response) {
@@ -1583,7 +1599,8 @@ public class BackendServiceClient implements BackgroundResource {
     @Override
     protected AggregatedListBackendServicesPage createPage(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         BackendServiceAggregatedList response) {
@@ -1593,7 +1610,8 @@ public class BackendServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListBackendServicesPage> createPageAsync(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         ApiFuture<BackendServiceAggregatedList> futureResponse) {
@@ -1603,8 +1621,10 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class AggregatedListBackendServicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
-          BackendServicesScopedList, AggregatedListBackendServicesPage,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
+          BackendServicesScopedList,
+          AggregatedListBackendServicesPage,
           AggregatedListBackendServicesFixedSizeCollection> {
 
     private AggregatedListBackendServicesFixedSizeCollection(
@@ -1625,8 +1645,11 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class ListBackendServicesPagedResponse
       extends AbstractPagedListResponse<
-          ListBackendServicesHttpRequest, BackendServiceList, BackendService,
-          ListBackendServicesPage, ListBackendServicesFixedSizeCollection> {
+          ListBackendServicesHttpRequest,
+          BackendServiceList,
+          BackendService,
+          ListBackendServicesPage,
+          ListBackendServicesFixedSizeCollection> {
 
     public static ApiFuture<ListBackendServicesPagedResponse> createAsync(
         PageContext<ListBackendServicesHttpRequest, BackendServiceList, BackendService> context,
@@ -1640,7 +1663,8 @@ public class BackendServiceClient implements BackgroundResource {
             public ListBackendServicesPagedResponse apply(ListBackendServicesPage input) {
               return new ListBackendServicesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListBackendServicesPagedResponse(ListBackendServicesPage page) {
@@ -1650,7 +1674,9 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class ListBackendServicesPage
       extends AbstractPage<
-          ListBackendServicesHttpRequest, BackendServiceList, BackendService,
+          ListBackendServicesHttpRequest,
+          BackendServiceList,
+          BackendService,
           ListBackendServicesPage> {
 
     private ListBackendServicesPage(
@@ -1680,8 +1706,11 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class ListBackendServicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBackendServicesHttpRequest, BackendServiceList, BackendService,
-          ListBackendServicesPage, ListBackendServicesFixedSizeCollection> {
+          ListBackendServicesHttpRequest,
+          BackendServiceList,
+          BackendService,
+          ListBackendServicesPage,
+          ListBackendServicesFixedSizeCollection> {
 
     private ListBackendServicesFixedSizeCollection(
         List<ListBackendServicesPage> pages, int collectionSize) {

@@ -50,7 +50,6 @@ public class PathElementTest {
     assertEquals(Long.valueOf(1), PE_3.getId());
   }
 
-
   @Test
   public void testHasName() throws Exception {
     assertFalse(PE_1.hasName());
@@ -64,7 +63,6 @@ public class PathElementTest {
     assertEquals("n", PE_2.getName());
     assertNull(PE_3.getName());
   }
-
 
   @Test
   public void testNameOrId() throws Exception {

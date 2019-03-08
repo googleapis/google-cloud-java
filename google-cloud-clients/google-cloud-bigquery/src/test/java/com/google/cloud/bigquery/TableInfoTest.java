@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
+import java.math.BigInteger;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
@@ -53,6 +54,7 @@ public class TableInfoTest {
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Long NUM_BYTES = 42L;
+  private static final Long NUM_LONG_TERM_BYTES = 21L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
   private static final StandardTableDefinition.StreamingBuffer STREAMING_BUFFER =
@@ -61,6 +63,7 @@ public class TableInfoTest {
       StandardTableDefinition.newBuilder()
           .setLocation(LOCATION)
           .setNumBytes(NUM_BYTES)
+          .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
           .setNumRows(NUM_ROWS)
           .setStreamingBuffer(STREAMING_BUFFER)
           .setSchema(TABLE_SCHEMA)
@@ -93,19 +96,23 @@ public class TableInfoTest {
           .setFriendlyName(FRIENDLY_NAME)
           .setGeneratedId(GENERATED_ID)
           .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setNumBytes(NUM_BYTES)
+          .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
+          .setNumRows(BigInteger.valueOf(NUM_ROWS))
           .setSelfLink(SELF_LINK)
           .setLabels(Collections.singletonMap("a", "b"))
           .build();
-  private static final TableInfo VIEW_INFO = TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
-      .setCreationTime(CREATION_TIME)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setExpirationTime(EXPIRATION_TIME)
-      .setFriendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModifiedTime(LAST_MODIFIED_TIME)
-      .setSelfLink(SELF_LINK)
-      .build();
+  private static final TableInfo VIEW_INFO =
+      TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setExpirationTime(EXPIRATION_TIME)
+          .setFriendlyName(FRIENDLY_NAME)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setSelfLink(SELF_LINK)
+          .build();
   private static final TableInfo EXTERNAL_TABLE_INFO =
       TableInfo.newBuilder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
           .setCreationTime(CREATION_TIME)
@@ -123,13 +130,9 @@ public class TableInfoTest {
     compareTableInfo(TABLE_INFO, TABLE_INFO.toBuilder().build());
     compareTableInfo(VIEW_INFO, VIEW_INFO.toBuilder().build());
     compareTableInfo(EXTERNAL_TABLE_INFO, EXTERNAL_TABLE_INFO.toBuilder().build());
-    TableInfo tableInfo = TABLE_INFO.toBuilder()
-        .setDescription("newDescription")
-        .build();
+    TableInfo tableInfo = TABLE_INFO.toBuilder().setDescription("newDescription").build();
     assertEquals("newDescription", tableInfo.getDescription());
-    tableInfo = tableInfo.toBuilder()
-        .setDescription("description")
-        .build();
+    tableInfo = tableInfo.toBuilder().setDescription("description").build();
     compareTableInfo(TABLE_INFO, tableInfo);
   }
 
@@ -155,6 +158,10 @@ public class TableInfoTest {
     assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.getLastModifiedTime());
     assertEquals(TABLE_DEFINITION, TABLE_INFO.getDefinition());
     assertEquals(SELF_LINK, TABLE_INFO.getSelfLink());
+    assertEquals(NUM_BYTES, TABLE_INFO.getNumBytes());
+    assertEquals(NUM_LONG_TERM_BYTES, TABLE_INFO.getNumLongTermBytes());
+    assertEquals(BigInteger.valueOf(NUM_ROWS), TABLE_INFO.getNumRows());
+
     assertEquals(TABLE_ID, VIEW_INFO.getTableId());
     assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
     assertEquals(CREATION_TIME, VIEW_INFO.getCreationTime());
@@ -166,6 +173,7 @@ public class TableInfoTest {
     assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.getLastModifiedTime());
     assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
     assertEquals(SELF_LINK, VIEW_INFO.getSelfLink());
+
     assertEquals(TABLE_ID, EXTERNAL_TABLE_INFO.getTableId());
     assertEquals(CREATION_TIME, EXTERNAL_TABLE_INFO.getCreationTime());
     assertEquals(DESCRIPTION, EXTERNAL_TABLE_INFO.getDescription());
@@ -177,7 +185,6 @@ public class TableInfoTest {
     assertEquals(EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_INFO.getDefinition());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.getSelfLink());
   }
-
 
   @Test
   public void testOf() {
@@ -230,6 +237,13 @@ public class TableInfoTest {
     assertEquals("project", VIEW_INFO.setProjectId("project").getTableId().getProject());
   }
 
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION).setProjectId("project");
+    tableInfo.setProjectId("not-override-project").toBuilder();
+    assertEquals("project", tableInfo.getTableId().getProject());
+  }
+
   private void compareTableInfo(TableInfo expected, TableInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.getTableId(), value.getTableId());
@@ -241,6 +255,9 @@ public class TableInfoTest {
     assertEquals(expected.getFriendlyName(), value.getFriendlyName());
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
+    assertEquals(expected.getNumBytes(), value.getNumBytes());
+    assertEquals(expected.getNumLongTermBytes(), value.getNumLongTermBytes());
+    assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.hashCode(), value.hashCode());

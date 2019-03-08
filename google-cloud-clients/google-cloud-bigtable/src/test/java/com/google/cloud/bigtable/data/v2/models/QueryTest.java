@@ -23,8 +23,8 @@ import com.google.bigtable.v2.ReadRowsRequest.Builder;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.collect.ImmutableList;
@@ -38,27 +38,30 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.SortedSet;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class QueryTest {
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
-  private static final TableName TABLE_NAME =
-      TableName.of("fake-project", "fake-instance", "fake-table");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String TABLE_ID = "fake-table";
   private static final String APP_PROFILE_ID = "fake-profile-id";
   private RequestContext requestContext;
 
+  @Rule public ExpectedException expect = ExpectedException.none();
+
   @Before
   public void setUp() {
-    requestContext = RequestContext.create(INSTANCE_NAME, APP_PROFILE_ID);
+    requestContext = RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
   }
 
   @Test
   public void requestContextTest() {
-    Query query = Query.create(TABLE_NAME.getTable());
+    Query query = Query.create(TABLE_ID);
 
     ReadRowsRequest proto = query.toProto(requestContext);
     assertThat(proto).isEqualTo(expectedProtoBuilder().build());
@@ -67,7 +70,7 @@ public class QueryTest {
   @Test
   public void rowKeysTest() {
     Query query =
-        Query.create(TABLE_NAME.getTable())
+        Query.create(TABLE_ID)
             .rowKey("simple-string")
             .rowKey(ByteString.copyFromUtf8("byte-string"));
 
@@ -84,7 +87,7 @@ public class QueryTest {
   @Test
   public void rowRangeTest() {
     Query query =
-        Query.create(TABLE_NAME.getTable())
+        Query.create(TABLE_ID)
             .range("simple-begin", "simple-end")
             .range(ByteString.copyFromUtf8("byte-begin"), ByteString.copyFromUtf8("byte-end"))
             .range(ByteStringRange.create("range-begin", "range-end"));
@@ -111,7 +114,7 @@ public class QueryTest {
 
   @Test
   public void filterTest() {
-    Query query = Query.create(TABLE_NAME.getTable()).filter(FILTERS.key().regex(".*"));
+    Query query = Query.create(TABLE_ID).filter(FILTERS.key().regex(".*"));
 
     Builder expectedProto =
         expectedProtoBuilder()
@@ -123,7 +126,7 @@ public class QueryTest {
 
   @Test
   public void limitTest() {
-    Query query = Query.create(TABLE_NAME.getTable()).limit(10);
+    Query query = Query.create(TABLE_ID).limit(10);
 
     Builder expectedProto = expectedProtoBuilder().setRowsLimit(10);
 
@@ -133,7 +136,7 @@ public class QueryTest {
 
   @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
-    Query expected = Query.create(TABLE_NAME.getTable()).filter(FILTERS.key().regex(".*"));
+    Query expected = Query.create(TABLE_ID).filter(FILTERS.key().regex(".*"));
 
     ByteArrayOutputStream bos = new ByteArrayOutputStream();
     ObjectOutputStream oos = new ObjectOutputStream(bos);
@@ -148,7 +151,7 @@ public class QueryTest {
 
   @Test
   public void shardTestSplitPoints() {
-    Query query = Query.create(TABLE_NAME.getTable()).range("a", "z");
+    Query query = Query.create(TABLE_ID).range("a", "z");
 
     SortedSet<ByteString> splitPoints =
         ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE)
@@ -161,7 +164,7 @@ public class QueryTest {
     assertThat(subQueries.get(0).toProto(requestContext))
         .isEqualTo(
             ReadRowsRequest.newBuilder()
-                .setTableName(TABLE_NAME.toString())
+                .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRows(
                     RowSet.newBuilder()
@@ -173,7 +176,7 @@ public class QueryTest {
     assertThat(subQueries.get(1).toProto(requestContext))
         .isEqualTo(
             ReadRowsRequest.newBuilder()
-                .setTableName(TABLE_NAME.toString())
+                .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRows(
                     RowSet.newBuilder()
@@ -186,7 +189,7 @@ public class QueryTest {
 
   @Test
   public void shardTestKeyOffsets() {
-    Query query = Query.create(TABLE_NAME.getTable()).range("a", "z");
+    Query query = Query.create(TABLE_ID).range("a", "z");
 
     List<KeyOffset> keyOffsets =
         ImmutableList.of(
@@ -199,7 +202,7 @@ public class QueryTest {
     assertThat(subQueries.get(0).toProto(requestContext))
         .isEqualTo(
             ReadRowsRequest.newBuilder()
-                .setTableName(TABLE_NAME.toString())
+                .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRows(
                     RowSet.newBuilder()
@@ -211,7 +214,7 @@ public class QueryTest {
     assertThat(subQueries.get(1).toProto(requestContext))
         .isEqualTo(
             ReadRowsRequest.newBuilder()
-                .setTableName(TABLE_NAME.toString())
+                .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRows(
                     RowSet.newBuilder()
@@ -224,7 +227,35 @@ public class QueryTest {
 
   private static ReadRowsRequest.Builder expectedProtoBuilder() {
     return ReadRowsRequest.newBuilder()
-        .setTableName(TABLE_NAME.toString())
+        .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
         .setAppProfileId(APP_PROFILE_ID);
+  }
+
+  @Test
+  public void testFromProto() {
+    ReadRowsRequest request =
+        ReadRowsRequest.newBuilder()
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setAppProfileId(APP_PROFILE_ID)
+            .setFilter(RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")))
+            .setRows(
+                RowSet.newBuilder()
+                    .addRowKeys(ByteString.copyFromUtf8("row-key"))
+                    .addRowRanges(
+                        RowRange.newBuilder()
+                            .setStartKeyClosed(ByteString.copyFromUtf8("j"))
+                            .setEndKeyClosed(ByteString.copyFromUtf8("z"))))
+            .build();
+    Query query = Query.fromProto(request);
+
+    assertThat(query.toProto(requestContext)).isEqualTo(request);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testFromProtoWithEmptyTableId() {
+    Query.fromProto(ReadRowsRequest.getDefaultInstance());
+
+    expect.expect(IllegalArgumentException.class);
+    expect.expectMessage("Invalid table name:");
   }
 }

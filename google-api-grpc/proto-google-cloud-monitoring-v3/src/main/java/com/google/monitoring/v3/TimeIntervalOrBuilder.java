@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface TimeIntervalOrBuilder extends
+public interface TimeIntervalOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.TimeInterval)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The end of the time interval.
    * </pre>
@@ -16,6 +19,8 @@ public interface TimeIntervalOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * Required. The end of the time interval.
    * </pre>
@@ -24,6 +29,8 @@ public interface TimeIntervalOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * Required. The end of the time interval.
    * </pre>
@@ -33,6 +40,8 @@ public interface TimeIntervalOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The beginning of the time interval.  The default value
    * for the start time is the end time. The start time must not be
@@ -43,6 +52,8 @@ public interface TimeIntervalOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Optional. The beginning of the time interval.  The default value
    * for the start time is the end time. The start time must not be
@@ -53,6 +64,8 @@ public interface TimeIntervalOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Optional. The beginning of the time interval.  The default value
    * for the start time is the end time. The start time must not be

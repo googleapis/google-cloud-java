@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.spanner.v1.BeginTransactionRequest;
@@ -36,6 +37,8 @@ import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -83,13 +86,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -127,7 +130,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class SpannerClient implements BackgroundResource {
   private final SpannerSettings settings;
   private final SpannerStub stub;
@@ -526,7 +528,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -549,7 +552,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -571,7 +575,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -594,7 +599,8 @@ public class SpannerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Ends a session, releasing server resources associated with it.
+   * Ends a session, releasing server resources associated with it. This will asynchronously trigger
+   * cancellation of any operations that are running with this session.
    *
    * <p>Sample code:
    *
@@ -709,6 +715,96 @@ public class SpannerClient implements BackgroundResource {
   public final ServerStreamingCallable<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlCallable() {
     return stub.executeStreamingSqlCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Executes a batch of SQL DML statements. This method allows many statements to be run with lower
+   * latency than submitting them sequentially with
+   * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+   *
+   * <p>Statements are executed in order, sequentially.
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+   * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed.
+   * If a statement fails, its error status will be returned as part of the
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will stop at the first
+   * failed statement; the remaining statements will not run.
+   *
+   * <p>ExecuteBatchDml is expected to return an OK status with a response even if there was an
+   * error while processing one of the DML statements. Clients must inspect response.status to
+   * determine if there were any errors while processing the request.
+   *
+   * <p>See more details in [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   TransactionSelector transaction = TransactionSelector.newBuilder().build();
+   *   List&lt;ExecuteBatchDmlRequest.Statement&gt; statements = new ArrayList&lt;&gt;();
+   *   long seqno = 0L;
+   *   ExecuteBatchDmlRequest request = ExecuteBatchDmlRequest.newBuilder()
+   *     .setSession(session.toString())
+   *     .setTransaction(transaction)
+   *     .addAllStatements(statements)
+   *     .setSeqno(seqno)
+   *     .build();
+   *   ExecuteBatchDmlResponse response = spannerClient.executeBatchDml(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteBatchDmlResponse executeBatchDml(ExecuteBatchDmlRequest request) {
+    return executeBatchDmlCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Executes a batch of SQL DML statements. This method allows many statements to be run with lower
+   * latency than submitting them sequentially with
+   * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+   *
+   * <p>Statements are executed in order, sequentially.
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+   * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed.
+   * If a statement fails, its error status will be returned as part of the
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will stop at the first
+   * failed statement; the remaining statements will not run.
+   *
+   * <p>ExecuteBatchDml is expected to return an OK status with a response even if there was an
+   * error while processing one of the DML statements. Clients must inspect response.status to
+   * determine if there were any errors while processing the request.
+   *
+   * <p>See more details in [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   TransactionSelector transaction = TransactionSelector.newBuilder().build();
+   *   List&lt;ExecuteBatchDmlRequest.Statement&gt; statements = new ArrayList&lt;&gt;();
+   *   long seqno = 0L;
+   *   ExecuteBatchDmlRequest request = ExecuteBatchDmlRequest.newBuilder()
+   *     .setSession(session.toString())
+   *     .setTransaction(transaction)
+   *     .addAllStatements(statements)
+   *     .setSeqno(seqno)
+   *     .build();
+   *   ApiFuture&lt;ExecuteBatchDmlResponse&gt; future = spannerClient.executeBatchDmlCallable().futureCall(request);
+   *   // Do something
+   *   ExecuteBatchDmlResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlCallable() {
+    return stub.executeBatchDmlCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1458,7 +1554,10 @@ public class SpannerClient implements BackgroundResource {
 
   public static class ListSessionsPagedResponse
       extends AbstractPagedListResponse<
-          ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage,
+          ListSessionsRequest,
+          ListSessionsResponse,
+          Session,
+          ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
     public static ApiFuture<ListSessionsPagedResponse> createAsync(
@@ -1473,7 +1572,8 @@ public class SpannerClient implements BackgroundResource {
             public ListSessionsPagedResponse apply(ListSessionsPage input) {
               return new ListSessionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSessionsPagedResponse(ListSessionsPage page) {
@@ -1511,7 +1611,10 @@ public class SpannerClient implements BackgroundResource {
 
   public static class ListSessionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage,
+          ListSessionsRequest,
+          ListSessionsResponse,
+          Session,
+          ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
     private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {

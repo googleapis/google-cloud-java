@@ -3,11 +3,14 @@
 
 package com.google.cloud.redis.v1beta1;
 
-public interface InstanceOrBuilder extends
+public interface InstanceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1beta1.Instance)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
@@ -23,6 +26,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
@@ -36,10 +41,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * An arbitrary and optional user-provided name for the instance.
    * </pre>
@@ -48,16 +54,19 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * An arbitrary and optional user-provided name for the instance.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
@@ -66,52 +75,52 @@ public interface InstanceOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -124,6 +133,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getLocationId();
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -134,10 +145,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string location_id = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getLocationIdBytes();
+  com.google.protobuf.ByteString getLocationIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
@@ -148,6 +160,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getAlternativeLocationId();
   /**
+   *
+   *
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
@@ -156,10 +170,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string alternative_location_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getAlternativeLocationIdBytes();
+  com.google.protobuf.ByteString getAlternativeLocationIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used.
@@ -169,6 +184,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getRedisVersion();
   /**
+   *
+   *
    * <pre>
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used.
@@ -176,10 +193,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string redis_version = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getRedisVersionBytes();
+  com.google.protobuf.ByteString getRedisVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The CIDR range of internal addresses that are reserved for this
    * instance. If not provided, the service will choose an unused /29 block,
@@ -191,6 +209,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getReservedIpRange();
   /**
+   *
+   *
    * <pre>
    * Optional. The CIDR range of internal addresses that are reserved for this
    * instance. If not provided, the service will choose an unused /29 block,
@@ -200,10 +220,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string reserved_ip_range = 9;</code>
    */
-  com.google.protobuf.ByteString
-      getReservedIpRangeBytes();
+  com.google.protobuf.ByteString getReservedIpRangeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Hostname or IP address of the exposed redis endpoint used by
    * clients to connect to the service.
@@ -213,6 +234,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getHost();
   /**
+   *
+   *
    * <pre>
    * Output only. Hostname or IP address of the exposed redis endpoint used by
    * clients to connect to the service.
@@ -220,10 +243,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string host = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getHostBytes();
+  com.google.protobuf.ByteString getHostBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The port number of the exposed redis endpoint.
    * </pre>
@@ -233,6 +257,8 @@ public interface InstanceOrBuilder extends
   int getPort();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. In
    * single zone deployments, this will always be the same as [location_id]
@@ -245,6 +271,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getCurrentLocationId();
   /**
+   *
+   *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. In
    * single zone deployments, this will always be the same as [location_id]
@@ -255,10 +283,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string current_location_id = 12;</code>
    */
-  com.google.protobuf.ByteString
-      getCurrentLocationIdBytes();
+  com.google.protobuf.ByteString getCurrentLocationIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time the instance was created.
    * </pre>
@@ -267,6 +296,8 @@ public interface InstanceOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time the instance was created.
    * </pre>
@@ -275,6 +306,8 @@ public interface InstanceOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time the instance was created.
    * </pre>
@@ -284,6 +317,8 @@ public interface InstanceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The current state of this instance.
    * </pre>
@@ -292,6 +327,8 @@ public interface InstanceOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The current state of this instance.
    * </pre>
@@ -301,6 +338,8 @@ public interface InstanceOrBuilder extends
   com.google.cloud.redis.v1beta1.Instance.State getState();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Additional information about the current status of this
    * instance, if available.
@@ -310,6 +349,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getStatusMessage();
   /**
+   *
+   *
    * <pre>
    * Output only. Additional information about the current status of this
    * instance, if available.
@@ -317,10 +358,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string status_message = 15;</code>
    */
-  com.google.protobuf.ByteString
-      getStatusMessageBytes();
+  com.google.protobuf.ByteString getStatusMessageBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -333,6 +375,8 @@ public interface InstanceOrBuilder extends
    */
   int getRedisConfigsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -343,15 +387,13 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-  boolean containsRedisConfigs(
-      java.lang.String key);
-  /**
-   * Use {@link #getRedisConfigsMap()} instead.
-   */
+  boolean containsRedisConfigs(java.lang.String key);
+  /** Use {@link #getRedisConfigsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getRedisConfigs();
+  java.util.Map<java.lang.String, java.lang.String> getRedisConfigs();
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -362,9 +404,10 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getRedisConfigsMap();
+  java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -375,11 +418,10 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-
-  java.lang.String getRedisConfigsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getRedisConfigsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -390,11 +432,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-
-  java.lang.String getRedisConfigsOrThrow(
-      java.lang.String key);
+  java.lang.String getRedisConfigsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Required. The service tier of the instance.
    * </pre>
@@ -403,6 +445,8 @@ public interface InstanceOrBuilder extends
    */
   int getTierValue();
   /**
+   *
+   *
    * <pre>
    * Required. The service tier of the instance.
    * </pre>
@@ -412,6 +456,8 @@ public interface InstanceOrBuilder extends
   com.google.cloud.redis.v1beta1.Instance.Tier getTier();
 
   /**
+   *
+   *
    * <pre>
    * Required. Redis memory size in GB.
    * </pre>
@@ -421,6 +467,8 @@ public interface InstanceOrBuilder extends
   int getMemorySizeGb();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The full name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -432,6 +480,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getAuthorizedNetwork();
   /**
+   *
+   *
    * <pre>
    * Optional. The full name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -441,6 +491,5 @@ public interface InstanceOrBuilder extends
    *
    * <code>string authorized_network = 20;</code>
    */
-  com.google.protobuf.ByteString
-      getAuthorizedNetworkBytes();
+  com.google.protobuf.ByteString getAuthorizedNetworkBytes();
 }

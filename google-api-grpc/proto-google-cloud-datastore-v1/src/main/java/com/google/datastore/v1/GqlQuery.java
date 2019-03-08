@@ -4,21 +4,25 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
- * A [GQL query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
+ * A [GQL
+ * query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.GqlQuery}
  */
-public  final class GqlQuery extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.GqlQuery)
     GqlQueryOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use GqlQuery.newBuilder() to construct.
   private GqlQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private GqlQuery() {
     queryString_ = "";
     allowLiterals_ = false;
@@ -26,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private GqlQuery(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,53 +53,62 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            queryString_ = s;
-            break;
-          }
-          case 16: {
-
-            allowLiterals_ = input.readBool();
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              positionalBindings_ = new java.util.ArrayList<com.google.datastore.v1.GqlQueryParameter>();
-              mutable_bitField0_ |= 0x00000008;
+              queryString_ = s;
+              break;
             }
-            positionalBindings_.add(
-                input.readMessage(com.google.datastore.v1.GqlQueryParameter.parser(), extensionRegistry));
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              namedBindings_ = com.google.protobuf.MapField.newMapField(
-                  NamedBindingsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+          case 16:
+            {
+              allowLiterals_ = input.readBool();
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
-            namedBindings__ = input.readMessage(
-                NamedBindingsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            namedBindings_.getMutableMap().put(
-                namedBindings__.getKey(), namedBindings__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                positionalBindings_ =
+                    new java.util.ArrayList<com.google.datastore.v1.GqlQueryParameter>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              positionalBindings_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.GqlQueryParameter.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                namedBindings_ =
+                    com.google.protobuf.MapField.newMapField(
+                        NamedBindingsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+                  namedBindings__ =
+                      input.readMessage(
+                          NamedBindingsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              namedBindings_
+                  .getMutableMap()
+                  .put(namedBindings__.getKey(), namedBindings__.getValue());
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         positionalBindings_ = java.util.Collections.unmodifiableList(positionalBindings_);
@@ -104,27 +117,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_GqlQuery_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.datastore.v1.QueryProto
+        .internal_static_google_datastore_v1_GqlQuery_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 5:
         return internalGetNamedBindings();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_GqlQuery_fieldAccessorTable
+    return com.google.datastore.v1.QueryProto
+        .internal_static_google_datastore_v1_GqlQuery_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.datastore.v1.GqlQuery.class, com.google.datastore.v1.GqlQuery.Builder.class);
   }
@@ -133,6 +147,8 @@ private static final long serialVersionUID = 0L;
   public static final int QUERY_STRING_FIELD_NUMBER = 1;
   private volatile java.lang.Object queryString_;
   /**
+   *
+   *
    * <pre>
    * A string of the format described
    * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
@@ -145,14 +161,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       queryString_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A string of the format described
    * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
@@ -160,13 +177,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query_string = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getQueryStringBytes() {
+  public com.google.protobuf.ByteString getQueryStringBytes() {
     java.lang.Object ref = queryString_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       queryString_ = b;
       return b;
     } else {
@@ -177,6 +192,8 @@ private static final long serialVersionUID = 0L;
   public static final int ALLOW_LITERALS_FIELD_NUMBER = 2;
   private boolean allowLiterals_;
   /**
+   *
+   *
    * <pre>
    * When false, the query string must not contain any literals and instead must
    * bind all values. For example,
@@ -191,21 +208,26 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAMED_BINDINGS_FIELD_NUMBER = 5;
+
   private static final class NamedBindingsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.google.datastore.v1.GqlQueryParameter> defaultEntry =
+            java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+        defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.google.datastore.v1.GqlQueryParameter>newDefaultInstance(
-                com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_GqlQuery_NamedBindingsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.google.datastore.v1.GqlQueryParameter.getDefaultInstance());
+                .<java.lang.String, com.google.datastore.v1.GqlQueryParameter>newDefaultInstance(
+                    com.google.datastore.v1.QueryProto
+                        .internal_static_google_datastore_v1_GqlQuery_NamedBindingsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.datastore.v1.GqlQueryParameter.getDefaultInstance());
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, com.google.datastore.v1.GqlQueryParameter> namedBindings_;
+
   private com.google.protobuf.MapField<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
-  internalGetNamedBindings() {
+      namedBindings_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+      internalGetNamedBindings() {
     if (namedBindings_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           NamedBindingsDefaultEntryHolder.defaultEntry);
@@ -217,6 +239,8 @@ private static final long serialVersionUID = 0L;
     return internalGetNamedBindings().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
@@ -226,20 +250,21 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
-
-  public boolean containsNamedBindings(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsNamedBindings(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetNamedBindings().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getNamedBindingsMap()} instead.
-   */
+  /** Use {@link #getNamedBindingsMap()} instead. */
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> getNamedBindings() {
+  public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+      getNamedBindings() {
     return getNamedBindingsMap();
   }
   /**
+   *
+   *
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
@@ -249,11 +274,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
-
-  public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> getNamedBindingsMap() {
+  public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+      getNamedBindingsMap() {
     return internalGetNamedBindings().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
@@ -263,16 +290,18 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
-
   public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrDefault(
-      java.lang.String key,
-      com.google.datastore.v1.GqlQueryParameter defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      java.lang.String key, com.google.datastore.v1.GqlQueryParameter defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> map =
         internalGetNamedBindings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * For each non-reserved named binding site in the query string, there must be
    * a named parameter with that name, but not necessarily the inverse.
@@ -282,10 +311,10 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
-
-  public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> map =
         internalGetNamedBindings().getMap();
     if (!map.containsKey(key)) {
@@ -297,6 +326,8 @@ private static final long serialVersionUID = 0L;
   public static final int POSITIONAL_BINDINGS_FIELD_NUMBER = 4;
   private java.util.List<com.google.datastore.v1.GqlQueryParameter> positionalBindings_;
   /**
+   *
+   *
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
@@ -310,6 +341,8 @@ private static final long serialVersionUID = 0L;
     return positionalBindings_;
   }
   /**
+   *
+   *
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
@@ -319,11 +352,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.GqlQueryParameterOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.GqlQueryParameterOrBuilder>
       getPositionalBindingsOrBuilderList() {
     return positionalBindings_;
   }
   /**
+   *
+   *
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
@@ -337,6 +372,8 @@ private static final long serialVersionUID = 0L;
     return positionalBindings_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
@@ -350,6 +387,8 @@ private static final long serialVersionUID = 0L;
     return positionalBindings_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Numbered binding site &#64;1 references the first numbered parameter,
    * effectively using 1-based indexing, rather than the usual 0.
@@ -365,6 +404,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -376,8 +416,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getQueryStringBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queryString_);
     }
@@ -387,12 +426,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < positionalBindings_.size(); i++) {
       output.writeMessage(4, positionalBindings_.get(i));
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetNamedBindings(),
-        NamedBindingsDefaultEntryHolder.defaultEntry,
-        5);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetNamedBindings(), NamedBindingsDefaultEntryHolder.defaultEntry, 5);
     unknownFields.writeTo(output);
   }
 
@@ -406,22 +441,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queryString_);
     }
     if (allowLiterals_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, allowLiterals_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowLiterals_);
     }
     for (int i = 0; i < positionalBindings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, positionalBindings_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, positionalBindings_.get(i));
     }
-    for (java.util.Map.Entry<java.lang.String, com.google.datastore.v1.GqlQueryParameter> entry
-         : internalGetNamedBindings().getMap().entrySet()) {
+    for (java.util.Map.Entry<java.lang.String, com.google.datastore.v1.GqlQueryParameter> entry :
+        internalGetNamedBindings().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
-      namedBindings__ = NamedBindingsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, namedBindings__);
+          namedBindings__ =
+              NamedBindingsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, namedBindings__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -431,7 +466,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.GqlQuery)) {
       return super.equals(obj);
@@ -439,14 +474,10 @@ private static final long serialVersionUID = 0L;
     com.google.datastore.v1.GqlQuery other = (com.google.datastore.v1.GqlQuery) obj;
 
     boolean result = true;
-    result = result && getQueryString()
-        .equals(other.getQueryString());
-    result = result && (getAllowLiterals()
-        == other.getAllowLiterals());
-    result = result && internalGetNamedBindings().equals(
-        other.internalGetNamedBindings());
-    result = result && getPositionalBindingsList()
-        .equals(other.getPositionalBindingsList());
+    result = result && getQueryString().equals(other.getQueryString());
+    result = result && (getAllowLiterals() == other.getAllowLiterals());
+    result = result && internalGetNamedBindings().equals(other.internalGetNamedBindings());
+    result = result && getPositionalBindingsList().equals(other.getPositionalBindingsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -461,8 +492,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + QUERY_STRING_FIELD_NUMBER;
     hash = (53 * hash) + getQueryString().hashCode();
     hash = (37 * hash) + ALLOW_LITERALS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getAllowLiterals());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowLiterals());
     if (!internalGetNamedBindings().getMap().isEmpty()) {
       hash = (37 * hash) + NAMED_BINDINGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetNamedBindings().hashCode();
@@ -476,140 +506,147 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.GqlQuery parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.GqlQuery parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.datastore.v1.GqlQuery parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.datastore.v1.GqlQuery parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.GqlQuery parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.GqlQuery parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.GqlQuery parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.datastore.v1.GqlQuery prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * A [GQL query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
+   * A [GQL
+   * query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.GqlQuery}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.GqlQuery)
       com.google.datastore.v1.GqlQueryOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_GqlQuery_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_GqlQuery_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 5:
           return internalGetNamedBindings();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 5:
           return internalGetMutableNamedBindings();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_GqlQuery_fieldAccessorTable
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_GqlQuery_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.GqlQuery.class, com.google.datastore.v1.GqlQuery.Builder.class);
+              com.google.datastore.v1.GqlQuery.class,
+              com.google.datastore.v1.GqlQuery.Builder.class);
     }
 
     // Construct using com.google.datastore.v1.GqlQuery.newBuilder()
@@ -617,17 +654,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPositionalBindingsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -646,9 +683,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_GqlQuery_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_GqlQuery_descriptor;
     }
 
     @java.lang.Override
@@ -692,38 +729,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.GqlQuery) {
-        return mergeFrom((com.google.datastore.v1.GqlQuery)other);
+        return mergeFrom((com.google.datastore.v1.GqlQuery) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -739,8 +777,7 @@ private static final long serialVersionUID = 0L;
       if (other.getAllowLiterals() != false) {
         setAllowLiterals(other.getAllowLiterals());
       }
-      internalGetMutableNamedBindings().mergeFrom(
-          other.internalGetNamedBindings());
+      internalGetMutableNamedBindings().mergeFrom(other.internalGetNamedBindings());
       if (positionalBindingsBuilder_ == null) {
         if (!other.positionalBindings_.isEmpty()) {
           if (positionalBindings_.isEmpty()) {
@@ -759,9 +796,10 @@ private static final long serialVersionUID = 0L;
             positionalBindingsBuilder_ = null;
             positionalBindings_ = other.positionalBindings_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            positionalBindingsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPositionalBindingsFieldBuilder() : null;
+            positionalBindingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPositionalBindingsFieldBuilder()
+                    : null;
           } else {
             positionalBindingsBuilder_.addAllMessages(other.positionalBindings_);
           }
@@ -795,10 +833,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object queryString_ = "";
     /**
+     *
+     *
      * <pre>
      * A string of the format described
      * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
@@ -809,8 +850,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getQueryString() {
       java.lang.Object ref = queryString_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         queryString_ = s;
         return s;
@@ -819,6 +859,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A string of the format described
      * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
@@ -826,13 +868,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query_string = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getQueryStringBytes() {
+    public com.google.protobuf.ByteString getQueryStringBytes() {
       java.lang.Object ref = queryString_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         queryString_ = b;
         return b;
       } else {
@@ -840,6 +880,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A string of the format described
      * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
@@ -847,17 +889,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query_string = 1;</code>
      */
-    public Builder setQueryString(
-        java.lang.String value) {
+    public Builder setQueryString(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       queryString_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A string of the format described
      * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
@@ -866,12 +909,14 @@ private static final long serialVersionUID = 0L;
      * <code>string query_string = 1;</code>
      */
     public Builder clearQueryString() {
-      
+
       queryString_ = getDefaultInstance().getQueryString();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A string of the format described
      * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
@@ -879,20 +924,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query_string = 1;</code>
      */
-    public Builder setQueryStringBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setQueryStringBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       queryString_ = value;
       onChanged();
       return this;
     }
 
-    private boolean allowLiterals_ ;
+    private boolean allowLiterals_;
     /**
+     *
+     *
      * <pre>
      * When false, the query string must not contain any literals and instead must
      * bind all values. For example,
@@ -906,6 +952,8 @@ private static final long serialVersionUID = 0L;
       return allowLiterals_;
     }
     /**
+     *
+     *
      * <pre>
      * When false, the query string must not contain any literals and instead must
      * bind all values. For example,
@@ -916,12 +964,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool allow_literals = 2;</code>
      */
     public Builder setAllowLiterals(boolean value) {
-      
+
       allowLiterals_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * When false, the query string must not contain any literals and instead must
      * bind all values. For example,
@@ -932,28 +982,34 @@ private static final long serialVersionUID = 0L;
      * <code>bool allow_literals = 2;</code>
      */
     public Builder clearAllowLiterals() {
-      
+
       allowLiterals_ = false;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.google.datastore.v1.GqlQueryParameter> namedBindings_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
-    internalGetNamedBindings() {
+            java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+        namedBindings_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+        internalGetNamedBindings() {
       if (namedBindings_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             NamedBindingsDefaultEntryHolder.defaultEntry);
       }
       return namedBindings_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
-    internalGetMutableNamedBindings() {
-      onChanged();;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+        internalGetMutableNamedBindings() {
+      onChanged();
+      ;
       if (namedBindings_ == null) {
-        namedBindings_ = com.google.protobuf.MapField.newMapField(
-            NamedBindingsDefaultEntryHolder.defaultEntry);
+        namedBindings_ =
+            com.google.protobuf.MapField.newMapField(NamedBindingsDefaultEntryHolder.defaultEntry);
       }
       if (!namedBindings_.isMutable()) {
         namedBindings_ = namedBindings_.copy();
@@ -965,6 +1021,8 @@ private static final long serialVersionUID = 0L;
       return internalGetNamedBindings().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
@@ -974,20 +1032,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
-
-    public boolean containsNamedBindings(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsNamedBindings(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetNamedBindings().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getNamedBindingsMap()} instead.
-     */
+    /** Use {@link #getNamedBindingsMap()} instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> getNamedBindings() {
+    public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+        getNamedBindings() {
       return getNamedBindingsMap();
     }
     /**
+     *
+     *
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
@@ -997,11 +1056,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
-
-    public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> getNamedBindingsMap() {
+    public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
+        getNamedBindingsMap() {
       return internalGetNamedBindings().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
@@ -1011,16 +1072,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
-
     public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrDefault(
-        java.lang.String key,
-        com.google.datastore.v1.GqlQueryParameter defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        java.lang.String key, com.google.datastore.v1.GqlQueryParameter defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> map =
           internalGetNamedBindings().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
@@ -1030,10 +1093,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
-
-    public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> map =
           internalGetNamedBindings().getMap();
       if (!map.containsKey(key)) {
@@ -1043,11 +1106,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearNamedBindings() {
-      internalGetMutableNamedBindings().getMutableMap()
-          .clear();
+      internalGetMutableNamedBindings().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
@@ -1057,23 +1121,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
-
-    public Builder removeNamedBindings(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableNamedBindings().getMutableMap()
-          .remove(key);
+    public Builder removeNamedBindings(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableNamedBindings().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter>
-    getMutableNamedBindings() {
+        getMutableNamedBindings() {
       return internalGetMutableNamedBindings().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
@@ -1084,15 +1147,19 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
     public Builder putNamedBindings(
-        java.lang.String key,
-        com.google.datastore.v1.GqlQueryParameter value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableNamedBindings().getMutableMap()
-          .put(key, value);
+        java.lang.String key, com.google.datastore.v1.GqlQueryParameter value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableNamedBindings().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For each non-reserved named binding site in the query string, there must be
      * a named parameter with that name, but not necessarily the inverse.
@@ -1102,27 +1169,32 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
      */
-
     public Builder putAllNamedBindings(
         java.util.Map<java.lang.String, com.google.datastore.v1.GqlQueryParameter> values) {
-      internalGetMutableNamedBindings().getMutableMap()
-          .putAll(values);
+      internalGetMutableNamedBindings().getMutableMap().putAll(values);
       return this;
     }
 
     private java.util.List<com.google.datastore.v1.GqlQueryParameter> positionalBindings_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensurePositionalBindingsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        positionalBindings_ = new java.util.ArrayList<com.google.datastore.v1.GqlQueryParameter>(positionalBindings_);
+        positionalBindings_ =
+            new java.util.ArrayList<com.google.datastore.v1.GqlQueryParameter>(positionalBindings_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.GqlQueryParameter, com.google.datastore.v1.GqlQueryParameter.Builder, com.google.datastore.v1.GqlQueryParameterOrBuilder> positionalBindingsBuilder_;
+            com.google.datastore.v1.GqlQueryParameter,
+            com.google.datastore.v1.GqlQueryParameter.Builder,
+            com.google.datastore.v1.GqlQueryParameterOrBuilder>
+        positionalBindingsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1140,6 +1212,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1157,6 +1231,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1174,6 +1250,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1198,6 +1276,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1219,6 +1299,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1242,6 +1324,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1266,6 +1350,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1287,6 +1373,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1308,6 +1396,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1321,8 +1411,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.GqlQueryParameter> values) {
       if (positionalBindingsBuilder_ == null) {
         ensurePositionalBindingsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, positionalBindings_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, positionalBindings_);
         onChanged();
       } else {
         positionalBindingsBuilder_.addAllMessages(values);
@@ -1330,6 +1419,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1350,6 +1441,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1370,6 +1463,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1384,6 +1479,8 @@ private static final long serialVersionUID = 0L;
       return getPositionalBindingsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1396,11 +1493,14 @@ private static final long serialVersionUID = 0L;
     public com.google.datastore.v1.GqlQueryParameterOrBuilder getPositionalBindingsOrBuilder(
         int index) {
       if (positionalBindingsBuilder_ == null) {
-        return positionalBindings_.get(index);  } else {
+        return positionalBindings_.get(index);
+      } else {
         return positionalBindingsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1410,8 +1510,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.GqlQueryParameterOrBuilder> 
-         getPositionalBindingsOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.GqlQueryParameterOrBuilder>
+        getPositionalBindingsOrBuilderList() {
       if (positionalBindingsBuilder_ != null) {
         return positionalBindingsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1419,6 +1519,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1429,10 +1531,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
      */
     public com.google.datastore.v1.GqlQueryParameter.Builder addPositionalBindingsBuilder() {
-      return getPositionalBindingsFieldBuilder().addBuilder(
-          com.google.datastore.v1.GqlQueryParameter.getDefaultInstance());
+      return getPositionalBindingsFieldBuilder()
+          .addBuilder(com.google.datastore.v1.GqlQueryParameter.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1444,10 +1548,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.datastore.v1.GqlQueryParameter.Builder addPositionalBindingsBuilder(
         int index) {
-      return getPositionalBindingsFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.GqlQueryParameter.getDefaultInstance());
+      return getPositionalBindingsFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.GqlQueryParameter.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Numbered binding site &#64;1 references the first numbered parameter,
      * effectively using 1-based indexing, rather than the usual 0.
@@ -1457,16 +1563,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.GqlQueryParameter positional_bindings = 4;</code>
      */
-    public java.util.List<com.google.datastore.v1.GqlQueryParameter.Builder> 
-         getPositionalBindingsBuilderList() {
+    public java.util.List<com.google.datastore.v1.GqlQueryParameter.Builder>
+        getPositionalBindingsBuilderList() {
       return getPositionalBindingsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.GqlQueryParameter, com.google.datastore.v1.GqlQueryParameter.Builder, com.google.datastore.v1.GqlQueryParameterOrBuilder> 
+            com.google.datastore.v1.GqlQueryParameter,
+            com.google.datastore.v1.GqlQueryParameter.Builder,
+            com.google.datastore.v1.GqlQueryParameterOrBuilder>
         getPositionalBindingsFieldBuilder() {
       if (positionalBindingsBuilder_ == null) {
-        positionalBindingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.GqlQueryParameter, com.google.datastore.v1.GqlQueryParameter.Builder, com.google.datastore.v1.GqlQueryParameterOrBuilder>(
+        positionalBindingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.GqlQueryParameter,
+                com.google.datastore.v1.GqlQueryParameter.Builder,
+                com.google.datastore.v1.GqlQueryParameterOrBuilder>(
                 positionalBindings_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -1475,9 +1587,9 @@ private static final long serialVersionUID = 0L;
       }
       return positionalBindingsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1487,12 +1599,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.GqlQuery)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.GqlQuery)
   private static final com.google.datastore.v1.GqlQuery DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.GqlQuery();
   }
@@ -1501,16 +1613,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GqlQuery>
-      PARSER = new com.google.protobuf.AbstractParser<GqlQuery>() {
-    @java.lang.Override
-    public GqlQuery parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GqlQuery(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<GqlQuery> PARSER =
+      new com.google.protobuf.AbstractParser<GqlQuery>() {
+        @java.lang.Override
+        public GqlQuery parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GqlQuery(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<GqlQuery> parser() {
     return PARSER;
@@ -1525,6 +1637,4 @@ private static final long serialVersionUID = 0L;
   public com.google.datastore.v1.GqlQuery getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

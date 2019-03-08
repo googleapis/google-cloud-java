@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ColumnFamilyOrBuilder extends
+public interface ColumnFamilyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ColumnFamily)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Garbage collection rule specified as a protobuf.
    * Must serialize to at most 500 bytes.
@@ -20,6 +23,8 @@ public interface ColumnFamilyOrBuilder extends
    */
   boolean hasGcRule();
   /**
+   *
+   *
    * <pre>
    * Garbage collection rule specified as a protobuf.
    * Must serialize to at most 500 bytes.
@@ -32,6 +37,8 @@ public interface ColumnFamilyOrBuilder extends
    */
   com.google.bigtable.admin.v2.GcRule getGcRule();
   /**
+   *
+   *
    * <pre>
    * Garbage collection rule specified as a protobuf.
    * Must serialize to at most 500 bytes.

@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.gaxx.reframing;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 
 /**

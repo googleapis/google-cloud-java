@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface ObjectTrackingAnnotationOrBuilder extends
+public interface ObjectTrackingAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.ObjectTrackingAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Entity to specify the object category that this track is labeled as.
    * </pre>
@@ -16,6 +19,8 @@ public interface ObjectTrackingAnnotationOrBuilder extends
    */
   boolean hasEntity();
   /**
+   *
+   *
    * <pre>
    * Entity to specify the object category that this track is labeled as.
    * </pre>
@@ -24,6 +29,8 @@ public interface ObjectTrackingAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1p2beta1.Entity getEntity();
   /**
+   *
+   *
    * <pre>
    * Entity to specify the object category that this track is labeled as.
    * </pre>
@@ -33,6 +40,8 @@ public interface ObjectTrackingAnnotationOrBuilder extends
   com.google.cloud.videointelligence.v1p2beta1.EntityOrBuilder getEntityOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Object category's labeling confidence of this track.
    * </pre>
@@ -42,15 +51,18 @@ public interface ObjectTrackingAnnotationOrBuilder extends
   float getConfidence();
 
   /**
+   *
+   *
    * <pre>
    * Information corresponding to all frames where this object track appears.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame frames = 2;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame> 
-      getFramesList();
+  java.util.List<com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame> getFramesList();
   /**
+   *
+   *
    * <pre>
    * Information corresponding to all frames where this object track appears.
    * </pre>
@@ -59,6 +71,8 @@ public interface ObjectTrackingAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame getFrames(int index);
   /**
+   *
+   *
    * <pre>
    * Information corresponding to all frames where this object track appears.
    * </pre>
@@ -67,15 +81,20 @@ public interface ObjectTrackingAnnotationOrBuilder extends
    */
   int getFramesCount();
   /**
+   *
+   *
    * <pre>
    * Information corresponding to all frames where this object track appears.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame frames = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrameOrBuilder> 
+  java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrameOrBuilder>
       getFramesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Information corresponding to all frames where this object track appears.
    * </pre>
@@ -86,6 +105,8 @@ public interface ObjectTrackingAnnotationOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Each object track corresponds to one video segment where it appears.
    * </pre>
@@ -94,6 +115,8 @@ public interface ObjectTrackingAnnotationOrBuilder extends
    */
   boolean hasSegment();
   /**
+   *
+   *
    * <pre>
    * Each object track corresponds to one video segment where it appears.
    * </pre>
@@ -102,6 +125,8 @@ public interface ObjectTrackingAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1p2beta1.VideoSegment getSegment();
   /**
+   *
+   *
    * <pre>
    * Each object track corresponds to one video segment where it appears.
    * </pre>

@@ -14,13 +14,13 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class DlpJobName implements ResourceName {
   }
 
   public static DlpJobName of(String project, String dlpJob) {
-    return newBuilder()
-      .setProject(project)
-      .setDlpJob(dlpJob)
-      .build();
+    return newBuilder().setProject(project).setDlpJob(dlpJob).build();
   }
 
   public static String format(String project, String dlpJob) {
-    return newBuilder()
-      .setProject(project)
-      .setDlpJob(dlpJob)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setDlpJob(dlpJob).build().toString();
   }
 
   public static DlpJobName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class DlpJobName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "DlpJobName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "DlpJobName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("dlp_job"));
   }
 
@@ -150,8 +144,7 @@ public class DlpJobName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(DlpJobName dlpJobName) {
       project = dlpJobName.project;
@@ -170,8 +163,7 @@ public class DlpJobName implements ResourceName {
     }
     if (o instanceof DlpJobName) {
       DlpJobName that = (DlpJobName) o;
-      return (this.project.equals(that.project))
-          && (this.dlpJob.equals(that.dlpJob));
+      return (this.project.equals(that.project)) && (this.dlpJob.equals(that.dlpJob));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class DlpJobName implements ResourceName {
     return h;
   }
 }
-

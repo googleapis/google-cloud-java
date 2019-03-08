@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.compute.deprecated.Compute.NetworkOption;
 import com.google.cloud.compute.deprecated.Compute.OperationOption;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
@@ -42,9 +41,7 @@ public class Network extends NetworkInfo {
   private final ComputeOptions options;
   private transient Compute compute;
 
-  /**
-   * A builder for {@code Network} objects.
-   */
+  /** A builder for {@code Network} objects. */
   public static class Builder extends NetworkInfo.Builder {
 
     private final Compute compute;
@@ -141,21 +138,19 @@ public class Network extends NetworkInfo {
    * Creates a subnetwork for this network given its identity and the range of IPv4 addresses in
    * CIDR format. Subnetwork creation is only supported for networks in "custom subnet mode" (i.e.
    * {@link #getConfiguration()} returns a {@link SubnetNetworkConfiguration}) with automatic
-   * creation of subnetworks disabled (i.e. {@link SubnetNetworkConfiguration#autoCreateSubnetworks()}
-   * returns {@code false}).
+   * creation of subnetworks disabled (i.e. {@link
+   * SubnetNetworkConfiguration#autoCreateSubnetworks()} returns {@code false}).
    *
    * @return an operation object if creation request was successfully sent
    * @throws ComputeException upon failure
    * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
    */
-  public Operation createSubnetwork(SubnetworkId subnetworkId, String ipRange,
-      OperationOption... options) {
+  public Operation createSubnetwork(
+      SubnetworkId subnetworkId, String ipRange, OperationOption... options) {
     return compute.create(SubnetworkInfo.of(subnetworkId, getNetworkId(), ipRange), options);
   }
 
-  /**
-   * Returns the network's {@code Compute} object used to issue requests.
-   */
+  /** Returns the network's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }
@@ -187,8 +182,7 @@ public class Network extends NetworkInfo {
     this.compute = options.getService();
   }
 
-  static Network fromPb(Compute compute,
-      com.google.api.services.compute.model.Network networkPb) {
+  static Network fromPb(Compute compute, com.google.api.services.compute.model.Network networkPb) {
     return new Network(compute, new NetworkInfo.BuilderImpl(networkPb));
   }
 }

@@ -3,20 +3,24 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface BatchGetAssetsHistoryResponseOrBuilder extends
+public interface BatchGetAssetsHistoryResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of assets with valid time windows.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1beta1.TemporalAsset assets = 1;</code>
    */
-  java.util.List<com.google.cloud.asset.v1beta1.TemporalAsset> 
-      getAssetsList();
+  java.util.List<com.google.cloud.asset.v1beta1.TemporalAsset> getAssetsList();
   /**
+   *
+   *
    * <pre>
    * A list of assets with valid time windows.
    * </pre>
@@ -25,6 +29,8 @@ public interface BatchGetAssetsHistoryResponseOrBuilder extends
    */
   com.google.cloud.asset.v1beta1.TemporalAsset getAssets(int index);
   /**
+   *
+   *
    * <pre>
    * A list of assets with valid time windows.
    * </pre>
@@ -33,21 +39,24 @@ public interface BatchGetAssetsHistoryResponseOrBuilder extends
    */
   int getAssetsCount();
   /**
+   *
+   *
    * <pre>
    * A list of assets with valid time windows.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1beta1.TemporalAsset assets = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.asset.v1beta1.TemporalAssetOrBuilder> 
+  java.util.List<? extends com.google.cloud.asset.v1beta1.TemporalAssetOrBuilder>
       getAssetsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of assets with valid time windows.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1beta1.TemporalAsset assets = 1;</code>
    */
-  com.google.cloud.asset.v1beta1.TemporalAssetOrBuilder getAssetsOrBuilder(
-      int index);
+  com.google.cloud.asset.v1beta1.TemporalAssetOrBuilder getAssetsOrBuilder(int index);
 }

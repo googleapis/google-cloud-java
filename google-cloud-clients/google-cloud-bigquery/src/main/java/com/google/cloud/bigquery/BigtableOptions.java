@@ -46,8 +46,7 @@ public class BigtableOptions extends FormatOptions {
     private Boolean readRowkeyAsString;
     private List<BigtableColumnFamily> columnFamilies;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(BigtableOptions bigtableOptions) {
       this.ignoreUnspecifiedColumnFamilies = bigtableOptions.ignoreUnspecifiedColumnFamilies;
@@ -78,11 +77,11 @@ public class BigtableOptions extends FormatOptions {
     /**
      * List of column families to expose in the table schema along with their types.
      *
-     * This list restricts the column families that can be referenced in queries and specifies their
-     * value types. You can use this list to do type conversions - see the 'type' field for more
-     * details. If you leave this list empty, all column families are present in the table schema
-     * and their values are read as BYTES. During a query only the column families referenced in
-     * that query are read from Bigtable.
+     * <p>This list restricts the column families that can be referenced in queries and specifies
+     * their value types. You can use this list to do type conversions - see the 'type' field for
+     * more details. If you leave this list empty, all column families are present in the table
+     * schema and their values are read as BYTES. During a query only the column families referenced
+     * in that query are read from Bigtable.
      */
     Builder setColumnFamilies(List<BigtableColumnFamily> columnFamilies) {
       this.columnFamilies = columnFamilies;
@@ -92,7 +91,6 @@ public class BigtableOptions extends FormatOptions {
     BigtableOptions build() {
       return new BigtableOptions(this);
     }
-
   }
 
   BigtableOptions(Builder builder) {
@@ -144,12 +142,13 @@ public class BigtableOptions extends FormatOptions {
   }
 
   com.google.api.services.bigquery.model.BigtableOptions toPb() {
-    com.google.api.services.bigquery.model.BigtableOptions options = new com.google.api.services.bigquery.model.BigtableOptions()
-        .setIgnoreUnspecifiedColumnFamilies(ignoreUnspecifiedColumnFamilies)
-        .setReadRowkeyAsString(readRowkeyAsString);
+    com.google.api.services.bigquery.model.BigtableOptions options =
+        new com.google.api.services.bigquery.model.BigtableOptions()
+            .setIgnoreUnspecifiedColumnFamilies(ignoreUnspecifiedColumnFamilies)
+            .setReadRowkeyAsString(readRowkeyAsString);
     if (columnFamilies != null) {
-      options
-          .setColumnFamilies(Lists.transform(columnFamilies, BigtableColumnFamily.TO_PB_FUNCTION));
+      options.setColumnFamilies(
+          Lists.transform(columnFamilies, BigtableColumnFamily.TO_PB_FUNCTION));
     }
     return options;
   }

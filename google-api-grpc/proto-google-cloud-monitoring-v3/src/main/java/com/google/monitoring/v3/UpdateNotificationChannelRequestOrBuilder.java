@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface UpdateNotificationChannelRequestOrBuilder extends
+public interface UpdateNotificationChannelRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UpdateNotificationChannelRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateNotificationChannelRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateNotificationChannelRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateNotificationChannelRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A description of the changes to be applied to the specified
    * notification channel. The description must provide a definition for
@@ -44,6 +53,8 @@ public interface UpdateNotificationChannelRequestOrBuilder extends
    */
   boolean hasNotificationChannel();
   /**
+   *
+   *
    * <pre>
    * A description of the changes to be applied to the specified
    * notification channel. The description must provide a definition for
@@ -55,6 +66,8 @@ public interface UpdateNotificationChannelRequestOrBuilder extends
    */
   com.google.monitoring.v3.NotificationChannel getNotificationChannel();
   /**
+   *
+   *
    * <pre>
    * A description of the changes to be applied to the specified
    * notification channel. The description must provide a definition for

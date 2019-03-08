@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface PubsubTargetOrBuilder extends
+public interface PubsubTargetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.PubsubTarget)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The name of the Cloud Pub/Sub topic to which messages will
@@ -22,6 +25,8 @@ public interface PubsubTargetOrBuilder extends
    */
   java.lang.String getTopicName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The name of the Cloud Pub/Sub topic to which messages will
@@ -34,10 +39,11 @@ public interface PubsubTargetOrBuilder extends
    *
    * <code>string topic_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTopicNameBytes();
+  com.google.protobuf.ByteString getTopicNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The message payload for PubsubMessage.
    * Pubsub message must contain either non-empty data, or at least one
@@ -49,6 +55,8 @@ public interface PubsubTargetOrBuilder extends
   com.google.protobuf.ByteString getData();
 
   /**
+   *
+   *
    * <pre>
    * Attributes for PubsubMessage.
    * Pubsub message must contain either non-empty data, or at least one
@@ -59,6 +67,8 @@ public interface PubsubTargetOrBuilder extends
    */
   int getAttributesCount();
   /**
+   *
+   *
    * <pre>
    * Attributes for PubsubMessage.
    * Pubsub message must contain either non-empty data, or at least one
@@ -67,15 +77,13 @@ public interface PubsubTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
-  boolean containsAttributes(
-      java.lang.String key);
-  /**
-   * Use {@link #getAttributesMap()} instead.
-   */
+  boolean containsAttributes(java.lang.String key);
+  /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributes();
+  java.util.Map<java.lang.String, java.lang.String> getAttributes();
   /**
+   *
+   *
    * <pre>
    * Attributes for PubsubMessage.
    * Pubsub message must contain either non-empty data, or at least one
@@ -84,9 +92,10 @@ public interface PubsubTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributesMap();
+  java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
   /**
+   *
+   *
    * <pre>
    * Attributes for PubsubMessage.
    * Pubsub message must contain either non-empty data, or at least one
@@ -95,11 +104,10 @@ public interface PubsubTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
-
-  java.lang.String getAttributesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getAttributesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Attributes for PubsubMessage.
    * Pubsub message must contain either non-empty data, or at least one
@@ -108,7 +116,5 @@ public interface PubsubTargetOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
-
-  java.lang.String getAttributesOrThrow(
-      java.lang.String key);
+  java.lang.String getAttributesOrThrow(java.lang.String key);
 }

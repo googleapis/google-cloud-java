@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InterconnectStub;
 import com.google.cloud.compute.v1.stub.InterconnectStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -55,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -352,6 +353,107 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   InterconnectsGetDiagnosticsResponse response = interconnectClient.getDiagnosticsInterconnect(interconnect);
+   * }
+   * </code></pre>
+   *
+   * @param interconnect Name of the interconnect resource to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(
+      ProjectGlobalInterconnectName interconnect) {
+
+    GetDiagnosticsInterconnectHttpRequest request =
+        GetDiagnosticsInterconnectHttpRequest.newBuilder()
+            .setInterconnect(interconnect == null ? null : interconnect.toString())
+            .build();
+    return getDiagnosticsInterconnect(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   InterconnectsGetDiagnosticsResponse response = interconnectClient.getDiagnosticsInterconnect(interconnect.toString());
+   * }
+   * </code></pre>
+   *
+   * @param interconnect Name of the interconnect resource to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(String interconnect) {
+
+    GetDiagnosticsInterconnectHttpRequest request =
+        GetDiagnosticsInterconnectHttpRequest.newBuilder().setInterconnect(interconnect).build();
+    return getDiagnosticsInterconnect(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   GetDiagnosticsInterconnectHttpRequest request = GetDiagnosticsInterconnectHttpRequest.newBuilder()
+   *     .setInterconnect(interconnect.toString())
+   *     .build();
+   *   InterconnectsGetDiagnosticsResponse response = interconnectClient.getDiagnosticsInterconnect(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(
+      GetDiagnosticsInterconnectHttpRequest request) {
+    return getDiagnosticsInterconnectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   GetDiagnosticsInterconnectHttpRequest request = GetDiagnosticsInterconnectHttpRequest.newBuilder()
+   *     .setInterconnect(interconnect.toString())
+   *     .build();
+   *   ApiFuture&lt;InterconnectsGetDiagnosticsResponse&gt; future = interconnectClient.getDiagnosticsInterconnectCallable().futureCall(request);
+   *   // Do something
+   *   InterconnectsGetDiagnosticsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectCallable() {
+    return stub.getDiagnosticsInterconnectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
@@ -626,7 +728,10 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -665,7 +770,10 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -770,7 +878,10 @@ public class InterconnectClient implements BackgroundResource {
 
   public static class ListInterconnectsPagedResponse
       extends AbstractPagedListResponse<
-          ListInterconnectsHttpRequest, InterconnectList, Interconnect, ListInterconnectsPage,
+          ListInterconnectsHttpRequest,
+          InterconnectList,
+          Interconnect,
+          ListInterconnectsPage,
           ListInterconnectsFixedSizeCollection> {
 
     public static ApiFuture<ListInterconnectsPagedResponse> createAsync(
@@ -785,7 +896,8 @@ public class InterconnectClient implements BackgroundResource {
             public ListInterconnectsPagedResponse apply(ListInterconnectsPage input) {
               return new ListInterconnectsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInterconnectsPagedResponse(ListInterconnectsPage page) {
@@ -824,7 +936,10 @@ public class InterconnectClient implements BackgroundResource {
 
   public static class ListInterconnectsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInterconnectsHttpRequest, InterconnectList, Interconnect, ListInterconnectsPage,
+          ListInterconnectsHttpRequest,
+          InterconnectList,
+          Interconnect,
+          ListInterconnectsPage,
           ListInterconnectsFixedSizeCollection> {
 
     private ListInterconnectsFixedSizeCollection(

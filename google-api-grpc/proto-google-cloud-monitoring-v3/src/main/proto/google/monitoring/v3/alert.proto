@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2018 Google LLC.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,6 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
 
 syntax = "proto3";
 
@@ -28,7 +29,6 @@ option java_multiple_files = true;
 option java_outer_classname = "AlertProto";
 option java_package = "com.google.monitoring.v3";
 option php_namespace = "Google\\Cloud\\Monitoring\\V3";
-
 
 // A description of the conditions under which some aspect of your system is
 // considered to be "unhealthy" and the ways to notify people or services about
@@ -92,8 +92,10 @@ message AlertPolicy {
       // are applied in the order specified.
       //
       // This field is similar to the one in the
-      // [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-      // It is advisable to use the `ListTimeSeries` method when debugging this field.
+      // [`MetricService.ListTimeSeries`
+      // request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+      // is advisable to use the `ListTimeSeries` method when debugging this
+      // field.
       repeated Aggregation aggregations = 8;
 
       // A [filter](/monitoring/api/v3/filters) that identifies a time
@@ -187,8 +189,10 @@ message AlertPolicy {
       // are applied in the order specified.
       //
       // This field is similar to the
-      // one in the [`MetricService.ListTimeSeries` request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
-      // It is advisable to use the `ListTimeSeries` method when debugging this field.
+      // one in the [`MetricService.ListTimeSeries`
+      // request](/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It
+      // is advisable to use the `ListTimeSeries` method when debugging this
+      // field.
       repeated Aggregation aggregations = 5;
 
       // The amount of time that a time series must fail to report new

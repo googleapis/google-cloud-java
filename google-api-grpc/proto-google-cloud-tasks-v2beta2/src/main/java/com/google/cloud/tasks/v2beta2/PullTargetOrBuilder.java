@@ -3,7 +3,7 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface PullTargetOrBuilder extends
+public interface PullTargetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.PullTarget)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

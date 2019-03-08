@@ -77,17 +77,16 @@ public interface TransactionRunner {
   /**
    * Allows overriding the default behaviour of blocking nested transactions.
    *
-   * Note that the client library does not maintain any information regarding the nesting structure.
-   * If an outer transaction fails and an inner transaction succeeds, upon retry of the outer
-   * transaction, the inner transaction will be re-executed.
+   * <p>Note that the client library does not maintain any information regarding the nesting
+   * structure. If an outer transaction fails and an inner transaction succeeds, upon retry of the
+   * outer transaction, the inner transaction will be re-executed.
    *
-   * Use with care when certain that the inner transaction is idempotent. Avoid doing this when
+   * <p>Use with care when certain that the inner transaction is idempotent. Avoid doing this when
    * accessing the same db. There might be legitimate uses where access need to be made across DBs
    * for instance.
    *
-   * E.g. of nesting that is discouraged, see {@code nestedReadWriteTxnThrows}
-   * {@code nestedReadOnlyTxnThrows}, {@code nestedBatchTxnThrows},
-   * {@code nestedSingleUseReadTxnThrows}
+   * <p>E.g. of nesting that is discouraged, see {@code nestedReadWriteTxnThrows} {@code
+   * nestedReadOnlyTxnThrows}, {@code nestedBatchTxnThrows}, {@code nestedSingleUseReadTxnThrows}
    *
    * @return this object
    */

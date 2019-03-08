@@ -14,7 +14,5 @@
  * limitations under the License.
  */
 
-/**
- * Core classes for the {@code google-cloud} library.
- */
+/** Core classes for the {@code google-cloud} library. */
 package com.google.cloud;

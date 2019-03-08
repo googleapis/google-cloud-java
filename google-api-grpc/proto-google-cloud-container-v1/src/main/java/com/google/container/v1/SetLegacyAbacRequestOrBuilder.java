@@ -3,71 +3,95 @@
 
 package com.google.container.v1;
 
-public interface SetLegacyAbacRequestOrBuilder extends
+public interface SetLegacyAbacRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.SetLegacyAbacRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to update.
+   * Deprecated. The name of the cluster to update.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster to update.
+   * Deprecated. The name of the cluster to update.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Whether ABAC authorization will be enabled in the cluster.
    * </pre>
@@ -75,4 +99,27 @@ public interface SetLegacyAbacRequestOrBuilder extends
    * <code>bool enabled = 4;</code>
    */
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to set legacy abac.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to set legacy abac.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  com.google.protobuf.ByteString getNameBytes();
 }

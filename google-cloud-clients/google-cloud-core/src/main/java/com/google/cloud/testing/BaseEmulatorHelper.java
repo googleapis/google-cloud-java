@@ -24,7 +24,6 @@ import com.google.cloud.ServiceOptions;
 import com.google.common.io.CharStreams;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.UncheckedExecutionException;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -59,9 +58,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import org.threeten.bp.Duration;
 
-/**
- * Utility class to start and stop a local service which is used by unit testing.
- */
+/** Utility class to start and stop a local service which is used by unit testing. */
 @InternalApi
 public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
 
@@ -88,9 +85,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
    */
   protected abstract List<EmulatorRunner> getEmulatorRunners();
 
-  /**
-   * Returns a logger.
-   */
+  /** Returns a logger. */
   protected abstract Logger getLogger();
 
   /**
@@ -108,8 +103,9 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
       }
     }
     if (activeRunner != null) {
-      blockingProcessReader = BlockingProcessStreamReader.start(emulator,
-          activeRunner.getProcess().getInputStream(), blockUntilOutput, getLogger());
+      blockingProcessReader =
+          BlockingProcessStreamReader.start(
+              emulator, activeRunner.getProcess().getInputStream(), blockUntilOutput, getLogger());
     } else {
       // No available runner found.
       throw new IOException("No available emulator runner is found.");
@@ -117,10 +113,11 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
   }
 
   /**
-   * Waits for the local service's subprocess to terminate,
-   * and stop any possible thread listening for its output.
+   * Waits for the local service's subprocess to terminate, and stop any possible thread listening
+   * for its output.
    */
-  protected final int waitForProcess(Duration timeout) throws IOException, InterruptedException, TimeoutException {
+  protected final int waitForProcess(Duration timeout)
+      throws IOException, InterruptedException, TimeoutException {
     if (activeRunner != null) {
       int exitCode = activeRunner.waitFor(timeout);
       activeRunner = null;
@@ -133,23 +130,26 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     return 0;
   }
 
-  private static int waitForProcess(final Process process, Duration timeout) throws InterruptedException, TimeoutException {
+  private static int waitForProcess(final Process process, Duration timeout)
+      throws InterruptedException, TimeoutException {
     if (process == null) {
       return 0;
     }
 
     final SettableFuture<Integer> exitValue = SettableFuture.create();
 
-    Thread waiter = new Thread(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          exitValue.set(process.waitFor());
-        } catch (InterruptedException e) {
-          exitValue.setException(e);
-        }
-      }
-    });
+    Thread waiter =
+        new Thread(
+            new Runnable() {
+              @Override
+              public void run() {
+                try {
+                  exitValue.set(process.waitFor());
+                } catch (InterruptedException e) {
+                  exitValue.setException(e);
+                }
+              }
+            });
     waiter.start();
 
     try {
@@ -164,38 +164,27 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
   }
 
-  /**
-   * Returns the port to which the local emulator is listening.
-   */
+  /** Returns the port to which the local emulator is listening. */
   public int getPort() {
     return port;
   }
 
-  /**
-   * Returns the project ID associated with the local emulator.
-   */
+  /** Returns the project ID associated with the local emulator. */
   public String getProjectId() {
     return projectId;
   }
 
-  /**
-   * Returns service options to access the local emulator.
-   */
+  /** Returns service options to access the local emulator. */
   public abstract T getOptions();
 
-  /**
-   * Starts the local emulator.
-   */
+  /** Starts the local emulator. */
   public abstract void start() throws IOException, InterruptedException;
 
-  /**
-   * Stops the local emulator.
-   */
-  public abstract void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException;
+  /** Stops the local emulator. */
+  public abstract void stop(Duration timeout)
+      throws IOException, InterruptedException, TimeoutException;
 
-  /**
-   * Resets the internal state of the emulator.
-   */
+  /** Resets the internal state of the emulator. */
   public abstract void reset() throws IOException;
 
   protected final String sendPostRequest(String request) throws IOException {
@@ -225,9 +214,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
-  /**
-   * Utility interface to start and run an emulator.
-   */
+  /** Utility interface to start and run an emulator. */
   protected interface EmulatorRunner {
 
     /**
@@ -236,26 +223,17 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
      */
     boolean isAvailable();
 
-    /**
-     * Starts the emulator associated to this runner.
-     */
+    /** Starts the emulator associated to this runner. */
     void start() throws IOException;
 
-    /**
-     * Wait for the emulator associated to this runner to terminate,
-     * returning the exit status.
-     */
+    /** Wait for the emulator associated to this runner to terminate, returning the exit status. */
     int waitFor(Duration timeout) throws InterruptedException, TimeoutException;
 
-    /**
-     * Returns the process associated to the emulator, if any.
-     */
+    /** Returns the process associated to the emulator, if any. */
     Process getProcess();
   }
 
-  /**
-   * Utility class to start and run an emulator from the Google Cloud SDK.
-   */
+  /** Utility class to start and run an emulator from the Google Cloud SDK. */
   protected static class GcloudEmulatorRunner implements EmulatorRunner {
 
     private final List<String> commandText;
@@ -337,9 +315,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
   }
 
-  /**
-   * Utility class to start and run an emulator from a download URL.
-   */
+  /** Utility class to start and run an emulator from a download URL. */
   protected static class DownloadableEmulatorRunner implements EmulatorRunner {
 
     private final List<String> commandText;
@@ -349,8 +325,8 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     private Process process;
     private static final Logger log = Logger.getLogger(DownloadableEmulatorRunner.class.getName());
 
-    public DownloadableEmulatorRunner(List<String> commandText, URL downloadUrl,
-        String md5CheckSum) {
+    public DownloadableEmulatorRunner(
+        List<String> commandText, URL downloadUrl, String md5CheckSum) {
       this.commandText = commandText;
       this.md5CheckSum = md5CheckSum;
       this.downloadUrl = downloadUrl;
@@ -370,23 +346,30 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
 
     @Override
     public void start() throws IOException {
-      ExceptionHandler retryOnAnythingExceptionHandler = ExceptionHandler.newBuilder().retryOn(Exception.class).build();
+      ExceptionHandler retryOnAnythingExceptionHandler =
+          ExceptionHandler.newBuilder().retryOn(Exception.class).build();
 
-      Path emulatorPath = RetryHelper.runWithRetries(new Callable<Path>() {
-          @Override
-          public Path call() throws IOException {
-              return downloadEmulator();
-          }
-        }, ServiceOptions.getDefaultRetrySettings(), retryOnAnythingExceptionHandler,
+      Path emulatorPath =
+          RetryHelper.runWithRetries(
+              new Callable<Path>() {
+                @Override
+                public Path call() throws IOException {
+                  return downloadEmulator();
+                }
+              },
+              ServiceOptions.getDefaultRetrySettings(),
+              retryOnAnythingExceptionHandler,
               CurrentMillisClock.getDefaultClock());
-      process = CommandWrapper.create()
-          .setCommand(commandText)
-          .setDirectory(emulatorPath)
-          // gcloud redirects all output to stderr while emulators' executables use either stdout
-          // or stderr with no apparent convention. To be able to properly intercept and block
-          // waiting for emulators to be ready we redirect everything to stdout
-          .setRedirectErrorStream()
-          .start();
+      process =
+          CommandWrapper.create()
+              .setCommand(commandText)
+              .setDirectory(emulatorPath)
+              // gcloud redirects all output to stderr while emulators' executables use either
+              // stdout
+              // or stderr with no apparent convention. To be able to properly intercept and block
+              // waiting for emulators to be ready we redirect everything to stdout
+              .setRedirectErrorStream()
+              .start();
     }
 
     @Override
@@ -416,12 +399,13 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
           log.fine("Unzipping emulator");
         }
         ZipEntry entry = zipIn.getNextEntry();
-        while (entry != null) { 
+        while (entry != null) {
           File filePath = new File(emulatorFolder, entry.getName());
           String canonicalEmulatorFolderPath = emulatorFolder.getCanonicalPath();
           String canonicalFilePath = filePath.getCanonicalPath();
           if (!canonicalFilePath.startsWith(canonicalEmulatorFolderPath + File.separator)) {
-            throw new IllegalStateException("Entry is outside of the target dir: " + entry.getName());
+            throw new IllegalStateException(
+                "Entry is outside of the target dir: " + entry.getName());
           }
           if (!entry.isDirectory()) {
             extractFile(zipIn, filePath);

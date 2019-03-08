@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface GetProductRequestOrBuilder extends
+public interface GetProductRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.GetProductRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the Product to get.
    * Format is:
@@ -18,6 +21,8 @@ public interface GetProductRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of the Product to get.
    * Format is:
@@ -26,6 +31,5 @@ public interface GetProductRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

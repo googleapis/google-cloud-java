@@ -49,8 +49,8 @@ public class DatabaseSelect {
     String databaseId = args[1];
     try {
       // Creates a database client
-      DatabaseClient dbClient = spanner.getDatabaseClient(DatabaseId.of(
-          options.getProjectId(), instanceId, databaseId));
+      DatabaseClient dbClient =
+          spanner.getDatabaseClient(DatabaseId.of(options.getProjectId(), instanceId, databaseId));
       // Queries the database
       try (ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"))) {
         System.out.println("\n\nResults:");

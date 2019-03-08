@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class FolderLogName extends LogName {
   }
 
   public static FolderLogName of(String folder, String log) {
-    return newBuilder()
-      .setFolder(folder)
-      .setLog(log)
-      .build();
+    return newBuilder().setFolder(folder).setLog(log).build();
   }
 
   public static String format(String folder, String log) {
-    return newBuilder()
-      .setFolder(folder)
-      .setLog(log)
-      .build()
-      .toString();
+    return newBuilder().setFolder(folder).setLog(log).build().toString();
   }
 
   public static FolderLogName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class FolderLogName extends LogName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "FolderLogName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "FolderLogName.parse: formattedString not in valid format");
     return of(matchMap.get("folder"), matchMap.get("log"));
   }
 
@@ -150,8 +143,7 @@ public class FolderLogName extends LogName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(FolderLogName folderLogName) {
       folder = folderLogName.folder;
@@ -170,8 +162,7 @@ public class FolderLogName extends LogName {
     }
     if (o instanceof FolderLogName) {
       FolderLogName that = (FolderLogName) o;
-      return (this.folder.equals(that.folder))
-          && (this.log.equals(that.log));
+      return (this.folder.equals(that.folder)) && (this.log.equals(that.log));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class FolderLogName extends LogName {
     return h;
   }
 }
-

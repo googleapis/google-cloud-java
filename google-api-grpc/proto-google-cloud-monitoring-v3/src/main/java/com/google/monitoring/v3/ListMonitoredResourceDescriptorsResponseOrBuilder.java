@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
+public interface ListMonitoredResourceDescriptorsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListMonitoredResourceDescriptorsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The monitored resource descriptors that are available to this project
    * and that match `filter`, if present.
@@ -15,9 +18,10 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
-  java.util.List<com.google.api.MonitoredResourceDescriptor> 
-      getResourceDescriptorsList();
+  java.util.List<com.google.api.MonitoredResourceDescriptor> getResourceDescriptorsList();
   /**
+   *
+   *
    * <pre>
    * The monitored resource descriptors that are available to this project
    * and that match `filter`, if present.
@@ -27,6 +31,8 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
    */
   com.google.api.MonitoredResourceDescriptor getResourceDescriptors(int index);
   /**
+   *
+   *
    * <pre>
    * The monitored resource descriptors that are available to this project
    * and that match `filter`, if present.
@@ -36,6 +42,8 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
    */
   int getResourceDescriptorsCount();
   /**
+   *
+   *
    * <pre>
    * The monitored resource descriptors that are available to this project
    * and that match `filter`, if present.
@@ -43,9 +51,11 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
-  java.util.List<? extends com.google.api.MonitoredResourceDescriptorOrBuilder> 
+  java.util.List<? extends com.google.api.MonitoredResourceDescriptorOrBuilder>
       getResourceDescriptorsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The monitored resource descriptors that are available to this project
    * and that match `filter`, if present.
@@ -53,10 +63,11 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor resource_descriptors = 1;</code>
    */
-  com.google.api.MonitoredResourceDescriptorOrBuilder getResourceDescriptorsOrBuilder(
-      int index);
+  com.google.api.MonitoredResourceDescriptorOrBuilder getResourceDescriptorsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -67,6 +78,8 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -75,6 +88,5 @@ public interface ListMonitoredResourceDescriptorsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

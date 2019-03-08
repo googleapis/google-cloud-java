@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface UpdateSessionEntityTypeRequestOrBuilder extends
+public interface UpdateSessionEntityTypeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -21,6 +24,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder extends
    */
   boolean hasSessionEntityType();
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -34,6 +39,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType();
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -48,6 +55,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -56,6 +65,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -64,6 +75,8 @@ public interface UpdateSessionEntityTypeRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>

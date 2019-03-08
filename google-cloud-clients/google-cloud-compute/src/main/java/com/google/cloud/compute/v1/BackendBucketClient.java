@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.BackendBucketStub;
 import com.google.cloud.compute.v1.stub.BackendBucketStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -56,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -858,7 +859,10 @@ public class BackendBucketClient implements BackgroundResource {
    * @param backendBucket Name of the BackendBucket resource to patch.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -895,7 +899,10 @@ public class BackendBucketClient implements BackgroundResource {
    * @param backendBucket Name of the BackendBucket resource to patch.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -987,7 +994,10 @@ public class BackendBucketClient implements BackgroundResource {
    * @param backendBucket Name of the BackendBucket resource to update.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1023,7 +1033,10 @@ public class BackendBucketClient implements BackgroundResource {
    * @param backendBucket Name of the BackendBucket resource to update.
    * @param backendBucketResource A BackendBucket resource. This resource defines a Cloud Storage
    *     bucket.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1127,7 +1140,10 @@ public class BackendBucketClient implements BackgroundResource {
 
   public static class ListBackendBucketsPagedResponse
       extends AbstractPagedListResponse<
-          ListBackendBucketsHttpRequest, BackendBucketList, BackendBucket, ListBackendBucketsPage,
+          ListBackendBucketsHttpRequest,
+          BackendBucketList,
+          BackendBucket,
+          ListBackendBucketsPage,
           ListBackendBucketsFixedSizeCollection> {
 
     public static ApiFuture<ListBackendBucketsPagedResponse> createAsync(
@@ -1142,7 +1158,8 @@ public class BackendBucketClient implements BackgroundResource {
             public ListBackendBucketsPagedResponse apply(ListBackendBucketsPage input) {
               return new ListBackendBucketsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListBackendBucketsPagedResponse(ListBackendBucketsPage page) {
@@ -1181,7 +1198,10 @@ public class BackendBucketClient implements BackgroundResource {
 
   public static class ListBackendBucketsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBackendBucketsHttpRequest, BackendBucketList, BackendBucket, ListBackendBucketsPage,
+          ListBackendBucketsHttpRequest,
+          BackendBucketList,
+          BackendBucket,
+          ListBackendBucketsPage,
           ListBackendBucketsFixedSizeCollection> {
 
     private ListBackendBucketsFixedSizeCollection(

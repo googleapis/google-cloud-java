@@ -23,5 +23,4 @@ import com.google.cloud.spi.ServiceRpcFactory;
  * An interface for DnsRpc factory. Implementation will be loaded via {@link
  * java.util.ServiceLoader}.
  */
-public interface DnsRpcFactory extends ServiceRpcFactory<DnsOptions> {
-}
+public interface DnsRpcFactory extends ServiceRpcFactory<DnsOptions> {}

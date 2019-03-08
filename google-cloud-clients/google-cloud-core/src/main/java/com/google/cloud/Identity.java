@@ -20,17 +20,17 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFunction;
 import com.google.common.base.CaseFormat;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * An identity in a {@link Policy}. The following types of identities are permitted in IAM policies:
+ *
  * <ul>
- * <li>Google account
- * <li>Service account
- * <li>Google group
- * <li>Google Apps domain
+ *   <li>Google account
+ *   <li>Service account
+ *   <li>Google group
+ *   <li>Google Apps domain
  * </ul>
  *
  * <p>There are also two special identities that represent all users and all Google-authenticated
@@ -46,9 +46,7 @@ public final class Identity implements Serializable {
   private final Type type;
   private final String value;
 
-  /**
-   * The types of IAM identities.
-   */
+  /** The types of IAM identities. */
   public static final class Type extends StringEnumValue {
     private static final long serialVersionUID = 3809891273596003916L;
 
@@ -64,73 +62,50 @@ public final class Identity implements Serializable {
           }
         };
 
-    private static final StringEnumType<Type> type = new StringEnumType(
-        Type.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Type> type = new StringEnumType(Type.class, CONSTRUCTOR);
 
-    /**
-     * Represents anyone who is on the internet; with or without a Google account.
-     */
+    /** Represents anyone who is on the internet; with or without a Google account. */
     public static final Type ALL_USERS = type.createAndRegister("ALL_USERS");
 
-    /**
-     * Represents anyone who is authenticated with a Google account or a service account.
-     */
-    public static final Type ALL_AUTHENTICATED_USERS = type.createAndRegister("ALL_AUTHENTICATED_USERS");
+    /** Represents anyone who is authenticated with a Google account or a service account. */
+    public static final Type ALL_AUTHENTICATED_USERS =
+        type.createAndRegister("ALL_AUTHENTICATED_USERS");
 
-    /**
-     * Represents a specific Google account.
-     */
+    /** Represents a specific Google account. */
     public static final Type USER = type.createAndRegister("USER");
 
-    /**
-     * Represents a service account.
-     */
+    /** Represents a service account. */
     public static final Type SERVICE_ACCOUNT = type.createAndRegister("SERVICE_ACCOUNT");
 
-    /**
-     * Represents a Google group.
-     */
+    /** Represents a Google group. */
     public static final Type GROUP = type.createAndRegister("GROUP");
 
-    /**
-     * Represents all the users of a Google Apps domain name.
-     */
+    /** Represents all the users of a Google Apps domain name. */
     public static final Type DOMAIN = type.createAndRegister("DOMAIN");
 
-    /**
-     * Represents owners of a Google Cloud Platform project.
-     */
+    /** Represents owners of a Google Cloud Platform project. */
     public static final Type PROJECT_OWNER = type.createAndRegister("PROJECT_OWNER");
 
-    /**
-     * Represents editors of a Google Cloud Platform project.
-     */
+    /** Represents editors of a Google Cloud Platform project. */
     public static final Type PROJECT_EDITOR = type.createAndRegister("PROJECT_EDITOR");
 
-    /**
-     * Represents viewers of a Google Cloud Platform project.
-     */
+    /** Represents viewers of a Google Cloud Platform project. */
     public static final Type PROJECT_VIEWER = type.createAndRegister("PROJECT_VIEWER");
 
     /**
-     * Get the Type for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Type for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Type valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Type for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Type for the given String constant, and allow unrecognized values. */
     public static Type valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Type.
-     */
+    /** Return the known values for Type. */
     public static Type[] values() {
       return type.values();
     }
@@ -141,20 +116,19 @@ public final class Identity implements Serializable {
     this.value = value;
   }
 
-
   public Type getType() {
     return type;
   }
 
-
   /**
    * Returns the string identifier for this identity. The value corresponds to:
+   *
    * <ul>
-   *   <li>email address (for identities of type {@code USER}, {@code SERVICE_ACCOUNT}, and
-   *       {@code GROUP})
+   *   <li>email address (for identities of type {@code USER}, {@code SERVICE_ACCOUNT}, and {@code
+   *       GROUP})
    *   <li>domain (for identities of type {@code DOMAIN})
-   *   <li>{@code null} (for identities of type {@code ALL_USERS} and
-   *       {@code ALL_AUTHENTICATED_USERS})
+   *   <li>{@code null} (for identities of type {@code ALL_USERS} and {@code
+   *       ALL_AUTHENTICATED_USERS})
    * </ul>
    */
   public String getValue() {
@@ -216,25 +190,28 @@ public final class Identity implements Serializable {
   public static Identity domain(String domain) {
     return new Identity(Type.DOMAIN, checkNotNull(domain));
   }
-  
+
   /**
    * Returns a new project owner identity.
+   *
    * @param projectId A Google Cloud Platform project ID. For example, <I>my-sample-project</I>.
    */
   public static Identity projectOwner(String projectId) {
     return new Identity(Type.PROJECT_OWNER, checkNotNull(projectId));
   }
-  
+
   /**
    * Returns a new project editor identity.
+   *
    * @param projectId A Google Cloud Platform project ID. For example, <I>my-sample-project</I>.
    */
   public static Identity projectEditor(String projectId) {
     return new Identity(Type.PROJECT_EDITOR, checkNotNull(projectId));
   }
-  
+
   /**
    * Returns a new project viewer identity.
+   *
    * @param projectId A Google Cloud Platform project ID. For example, <I>my-sample-project</I>.
    */
   public static Identity projectViewer(String projectId) {
@@ -282,7 +259,7 @@ public final class Identity implements Serializable {
     Type type = Type.valueOf(CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, info[0]));
     if (info.length == 1) {
       return new Identity(type, null);
-    } else if (info.length == 2){
+    } else if (info.length == 2) {
       return new Identity(type, info[1]);
     } else {
       throw new IllegalArgumentException("Illegal identity string: \"" + identityStr + "\"");

@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta2;
 
-public interface VideoContextOrBuilder extends
+public interface VideoContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta2.VideoContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -16,9 +19,10 @@ public interface VideoContextOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta2.VideoSegment> 
-      getSegmentsList();
+  java.util.List<com.google.cloud.videointelligence.v1beta2.VideoSegment> getSegmentsList();
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -29,6 +33,8 @@ public interface VideoContextOrBuilder extends
    */
   com.google.cloud.videointelligence.v1beta2.VideoSegment getSegments(int index);
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -39,6 +45,8 @@ public interface VideoContextOrBuilder extends
    */
   int getSegmentsCount();
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -47,9 +55,11 @@ public interface VideoContextOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -58,106 +68,153 @@ public interface VideoContextOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.VideoSegment segments = 1;</code>
    */
-  com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder getSegmentsOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder getSegmentsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
   boolean hasLabelDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig getLabelDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta2.LabelDetectionConfigOrBuilder getLabelDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1beta2.LabelDetectionConfigOrBuilder
+      getLabelDetectionConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
   boolean hasShotChangeDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig getShotChangeDetectionConfig();
+  com.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig
+      getShotChangeDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfigOrBuilder getShotChangeDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfigOrBuilder
+      getShotChangeDetectionConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
   boolean hasExplicitContentDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig getExplicitContentDetectionConfig();
+  com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig
+      getExplicitContentDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfigOrBuilder getExplicitContentDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfigOrBuilder
+      getExplicitContentDetectionConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Config for FACE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.FaceDetectionConfig face_detection_config = 5;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.FaceDetectionConfig face_detection_config = 5;
+   * </code>
    */
   boolean hasFaceDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for FACE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.FaceDetectionConfig face_detection_config = 5;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.FaceDetectionConfig face_detection_config = 5;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta2.FaceDetectionConfig getFaceDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for FACE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.FaceDetectionConfig face_detection_config = 5;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.FaceDetectionConfig face_detection_config = 5;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta2.FaceDetectionConfigOrBuilder getFaceDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1beta2.FaceDetectionConfigOrBuilder
+      getFaceDetectionConfigOrBuilder();
 }

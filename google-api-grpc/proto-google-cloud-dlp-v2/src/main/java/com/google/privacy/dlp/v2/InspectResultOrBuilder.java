@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InspectResultOrBuilder extends
+public interface InspectResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of findings for an item.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.Finding> 
-      getFindingsList();
+  java.util.List<com.google.privacy.dlp.v2.Finding> getFindingsList();
   /**
+   *
+   *
    * <pre>
    * List of findings for an item.
    * </pre>
@@ -25,6 +29,8 @@ public interface InspectResultOrBuilder extends
    */
   com.google.privacy.dlp.v2.Finding getFindings(int index);
   /**
+   *
+   *
    * <pre>
    * List of findings for an item.
    * </pre>
@@ -33,25 +39,29 @@ public interface InspectResultOrBuilder extends
    */
   int getFindingsCount();
   /**
+   *
+   *
    * <pre>
    * List of findings for an item.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.FindingOrBuilder> 
-      getFindingsOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.FindingOrBuilder> getFindingsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of findings for an item.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
-  com.google.privacy.dlp.v2.FindingOrBuilder getFindingsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.FindingOrBuilder getFindingsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If true, then this item might have more findings than were returned,
    * and the findings returned are an arbitrary subset of all findings.

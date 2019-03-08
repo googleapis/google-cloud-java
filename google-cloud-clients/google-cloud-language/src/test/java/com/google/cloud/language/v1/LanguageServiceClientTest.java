@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.cloud.language.v1.AnnotateTextRequest.Features;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;

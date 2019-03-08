@@ -4,15 +4,18 @@
 package com.google.cloud.videointelligence.v1p2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Video annotation feature.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.videointelligence.v1p2beta1.Feature}
  */
-public enum Feature
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Unspecified.
    * </pre>
@@ -21,6 +24,8 @@ public enum Feature
    */
   FEATURE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Label detection. Detect objects, such as dog or flower.
    * </pre>
@@ -29,6 +34,8 @@ public enum Feature
    */
   LABEL_DETECTION(1),
   /**
+   *
+   *
    * <pre>
    * Shot change detection.
    * </pre>
@@ -37,6 +44,8 @@ public enum Feature
    */
   SHOT_CHANGE_DETECTION(2),
   /**
+   *
+   *
    * <pre>
    * Explicit content detection.
    * </pre>
@@ -45,6 +54,8 @@ public enum Feature
    */
   EXPLICIT_CONTENT_DETECTION(3),
   /**
+   *
+   *
    * <pre>
    * OCR text detection and tracking.
    * </pre>
@@ -53,6 +64,8 @@ public enum Feature
    */
   TEXT_DETECTION(7),
   /**
+   *
+   *
    * <pre>
    * Object detection and tracking.
    * </pre>
@@ -64,6 +77,8 @@ public enum Feature
   ;
 
   /**
+   *
+   *
    * <pre>
    * Unspecified.
    * </pre>
@@ -72,6 +87,8 @@ public enum Feature
    */
   public static final int FEATURE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Label detection. Detect objects, such as dog or flower.
    * </pre>
@@ -80,6 +97,8 @@ public enum Feature
    */
   public static final int LABEL_DETECTION_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Shot change detection.
    * </pre>
@@ -88,6 +107,8 @@ public enum Feature
    */
   public static final int SHOT_CHANGE_DETECTION_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Explicit content detection.
    * </pre>
@@ -96,6 +117,8 @@ public enum Feature
    */
   public static final int EXPLICIT_CONTENT_DETECTION_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * OCR text detection and tracking.
    * </pre>
@@ -104,6 +127,8 @@ public enum Feature
    */
   public static final int TEXT_DETECTION_VALUE = 7;
   /**
+   *
+   *
    * <pre>
    * Object detection and tracking.
    * </pre>
@@ -111,7 +136,6 @@ public enum Feature
    * <code>OBJECT_TRACKING = 9;</code>
    */
   public static final int OBJECT_TRACKING_VALUE = 9;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -121,9 +145,7 @@ public enum Feature
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static Feature valueOf(int value) {
     return forNumber(value);
@@ -131,48 +153,54 @@ public enum Feature
 
   public static Feature forNumber(int value) {
     switch (value) {
-      case 0: return FEATURE_UNSPECIFIED;
-      case 1: return LABEL_DETECTION;
-      case 2: return SHOT_CHANGE_DETECTION;
-      case 3: return EXPLICIT_CONTENT_DETECTION;
-      case 7: return TEXT_DETECTION;
-      case 9: return OBJECT_TRACKING;
-      default: return null;
+      case 0:
+        return FEATURE_UNSPECIFIED;
+      case 1:
+        return LABEL_DETECTION;
+      case 2:
+        return SHOT_CHANGE_DETECTION;
+      case 3:
+        return EXPLICIT_CONTENT_DETECTION;
+      case 7:
+        return TEXT_DETECTION;
+      case 9:
+        return OBJECT_TRACKING;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<Feature>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<Feature> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      Feature> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Feature>() {
-          public Feature findValueByNumber(int number) {
-            return Feature.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<Feature> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<Feature>() {
+        public Feature findValueByNumber(int number) {
+          return Feature.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.getDescriptor().getEnumTypes().get(0);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+        .getDescriptor()
+        .getEnumTypes()
+        .get(0);
   }
 
   private static final Feature[] VALUES = values();
 
-  public static Feature valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static Feature valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -188,4 +216,3 @@ public enum Feature
 
   // @@protoc_insertion_point(enum_scope:google.cloud.videointelligence.v1p2beta1.Feature)
 }
-

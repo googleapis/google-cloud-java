@@ -19,7 +19,6 @@ package com.google.cloud.compute.deprecated;
 import com.google.api.services.compute.model.Disk;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -40,23 +39,15 @@ public abstract class DiskConfiguration implements Serializable {
   private final Long sizeGb;
   private final DiskTypeId diskType;
 
-  /**
-   * Type of a Google Compute Engine disk configuration.
-   */
+  /** Type of a Google Compute Engine disk configuration. */
   public enum Type {
-    /**
-     * A Google Compute Engine standard disk configuration.
-     */
+    /** A Google Compute Engine standard disk configuration. */
     STANDARD,
 
-    /**
-     * A Google Compute Engine disk configuration that creates a disk from an image.
-     */
+    /** A Google Compute Engine disk configuration that creates a disk from an image. */
     IMAGE,
 
-    /**
-     * A Google Compute Engine disk configuration that creates a disk from a snapshot.
-     */
+    /** A Google Compute Engine disk configuration that creates a disk from a snapshot. */
     SNAPSHOT
   }
 
@@ -100,25 +91,19 @@ public abstract class DiskConfiguration implements Serializable {
       return self();
     }
 
-    /**
-     * Sets the size of the persistent disk, in GB.
-     */
+    /** Sets the size of the persistent disk, in GB. */
     public B setSizeGb(Long sizeGb) {
       this.sizeGb = sizeGb;
       return self();
     }
 
-    /**
-     * Sets the identity of the disk type. If not set {@code pd-standard} will be used.
-     */
+    /** Sets the identity of the disk type. If not set {@code pd-standard} will be used. */
     public B setDiskType(DiskTypeId diskType) {
       this.diskType = diskType;
       return self();
     }
 
-    /**
-     * Creates an object.
-     */
+    /** Creates an object. */
     public abstract T build();
   }
 
@@ -130,32 +115,26 @@ public abstract class DiskConfiguration implements Serializable {
 
   /**
    * Returns the disk configuration's type. This method returns {@link Type#STANDARD} for a standard
-   * configuration that creates a disk given its type and size. This method returns
-   * {@link Type#SNAPSHOT} for a configuration that creates a disk from a Google Compute Engine
-   * snapshot. This method returns {@link Type#IMAGE} for a configuration that creates a disk
-   * from a Google Compute Engine image.
+   * configuration that creates a disk given its type and size. This method returns {@link
+   * Type#SNAPSHOT} for a configuration that creates a disk from a Google Compute Engine snapshot.
+   * This method returns {@link Type#IMAGE} for a configuration that creates a disk from a Google
+   * Compute Engine image.
    */
   public Type getType() {
     return type;
   }
 
-  /**
-   * Returns the size of the persistent disk, in GB.
-   */
+  /** Returns the size of the persistent disk, in GB. */
   public Long getSizeGb() {
     return sizeGb;
   }
 
-  /**
-   * Returns the identity of the disk type.
-   */
+  /** Returns the identity of the disk type. */
   public DiskTypeId getDiskType() {
     return diskType;
   }
 
-  /**
-   * Returns a builder for the object.
-   */
+  /** Returns a builder for the object. */
   public abstract Builder toBuilder();
 
   ToStringHelper toStringHelper() {

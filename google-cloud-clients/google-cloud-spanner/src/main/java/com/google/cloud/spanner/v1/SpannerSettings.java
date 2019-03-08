@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -80,7 +82,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class SpannerSettings extends ClientSettings<SpannerSettings> {
   /** Returns the object with the settings used for calls to createSession. */
   public UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings() {
@@ -112,6 +113,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
   public ServerStreamingCallSettings<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlSettings() {
     return ((SpannerStubSettings) getStubSettings()).executeStreamingSqlSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeBatchDml. */
+  public UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings() {
+    return ((SpannerStubSettings) getStubSettings()).executeBatchDmlSettings();
   }
 
   /** Returns the object with the settings used for calls to read. */
@@ -276,6 +283,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
     public ServerStreamingCallSettings.Builder<ExecuteSqlRequest, PartialResultSet>
         executeStreamingSqlSettings() {
       return getStubSettingsBuilder().executeStreamingSqlSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeBatchDml. */
+    public UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings() {
+      return getStubSettingsBuilder().executeBatchDmlSettings();
     }
 
     /** Returns the builder for the settings used for calls to read. */

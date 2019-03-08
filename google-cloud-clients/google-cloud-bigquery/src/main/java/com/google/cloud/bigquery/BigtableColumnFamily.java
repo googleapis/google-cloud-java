@@ -15,9 +15,9 @@
  */
 package com.google.cloud.bigquery;
 
+import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
-import com.google.auto.value.AutoValue;
 import java.io.Serializable;
 import java.util.List;
 
@@ -25,12 +25,11 @@ import java.util.List;
  * List of column families to expose in the table schema along with their types. This list restricts
  * the column families that can be referenced in queries and specifies their value types.
  *
- * You can use this list to do type conversions - see the 'type' field for more details. If you
+ * <p>You can use this list to do type conversions - see the 'type' field for more details. If you
  * leave this list empty, all column families are present in the table schema and their values are
  * read as BYTES. During a query only the column families referenced in that query are read from
  * Bigtable.
  */
-
 @AutoValue
 public abstract class BigtableColumnFamily implements Serializable {
 
@@ -49,9 +48,7 @@ public abstract class BigtableColumnFamily implements Serializable {
   @AutoValue.Builder
   public abstract static class Builder {
 
-    /**
-     * Identifier of the column family.
-     */
+    /** Identifier of the column family. */
     public abstract Builder setFamilyID(String familyID);
 
     /**
@@ -64,10 +61,10 @@ public abstract class BigtableColumnFamily implements Serializable {
     /**
      * The encoding of the values when the type is not STRING.
      *
-     * Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY
-     * - indicates values are encoded using HBase Bytes.toBytes family of functions.
+     * <p>Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings.
+     * BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions.
      *
-     * This can be overridden for a specific column by listing that column in 'columns' and
+     * <p>This can be overridden for a specific column by listing that column in 'columns' and
      * specifying an encoding for it.
      */
     public abstract Builder setEncoding(String encoding);
@@ -83,9 +80,9 @@ public abstract class BigtableColumnFamily implements Serializable {
      * The type to convert the value in cells of this column family. The values are expected to be
      * encoded using HBase Bytes.toBytes function when using the BINARY encoding value.
      *
-     * Following BigQuery types are allowed (case-sensitive): BYTES STRING INTEGER FLOAT BOOLEAN.
+     * <p>Following BigQuery types are allowed (case-sensitive): BYTES STRING INTEGER FLOAT BOOLEAN.
      *
-     * The default type is BYTES. This can be overridden for a specific column by listing that
+     * <p>The default type is BYTES. This can be overridden for a specific column by listing that
      * column in 'columns' and specifying a type for it.
      */
     public abstract Builder setType(String type);
@@ -106,39 +103,42 @@ public abstract class BigtableColumnFamily implements Serializable {
     builder.setOnlyReadLatest(columnFamily.getOnlyReadLatest());
     builder.setType(columnFamily.getType());
     return builder.build();
-
   }
 
   com.google.api.services.bigquery.model.BigtableColumnFamily toPb() {
-    com.google.api.services.bigquery.model.BigtableColumnFamily colFamilyPb = new com.google.api.services.bigquery.model.BigtableColumnFamily()
-        .setFamilyId(getFamilyID())
-        .setEncoding(getEncoding())
-        .setOnlyReadLatest(getOnlyReadLatest())
-        .setType(getType());
+    com.google.api.services.bigquery.model.BigtableColumnFamily colFamilyPb =
+        new com.google.api.services.bigquery.model.BigtableColumnFamily()
+            .setFamilyId(getFamilyID())
+            .setEncoding(getEncoding())
+            .setOnlyReadLatest(getOnlyReadLatest())
+            .setType(getType());
     if (getColumns() != null) {
       colFamilyPb.setColumns(Lists.transform(getColumns(), BigtableColumn.TO_PB_FUNCTION));
     }
     return colFamilyPb;
   }
 
-  static final Function<com.google.api.services.bigquery.model.BigtableColumnFamily, BigtableColumnFamily> FROM_PB_FUNCTION =
-      new Function<com.google.api.services.bigquery.model.BigtableColumnFamily, BigtableColumnFamily>() {
-        @Override
-        public BigtableColumnFamily apply(
-            com.google.api.services.bigquery.model.BigtableColumnFamily pb) {
-          return BigtableColumnFamily.fromPb(pb);
-        }
-      };
+  static final Function<
+          com.google.api.services.bigquery.model.BigtableColumnFamily, BigtableColumnFamily>
+      FROM_PB_FUNCTION =
+          new Function<
+              com.google.api.services.bigquery.model.BigtableColumnFamily, BigtableColumnFamily>() {
+            @Override
+            public BigtableColumnFamily apply(
+                com.google.api.services.bigquery.model.BigtableColumnFamily pb) {
+              return BigtableColumnFamily.fromPb(pb);
+            }
+          };
 
-  static final Function<BigtableColumnFamily, com.google.api.services.bigquery.model.BigtableColumnFamily> TO_PB_FUNCTION =
-      new Function<BigtableColumnFamily, com.google.api.services.bigquery.model.BigtableColumnFamily>() {
-        @Override
-        public com.google.api.services.bigquery.model.BigtableColumnFamily apply(
-            BigtableColumnFamily columnFamily) {
-          return columnFamily.toPb();
-        }
-      };
+  static final Function<
+          BigtableColumnFamily, com.google.api.services.bigquery.model.BigtableColumnFamily>
+      TO_PB_FUNCTION =
+          new Function<
+              BigtableColumnFamily, com.google.api.services.bigquery.model.BigtableColumnFamily>() {
+            @Override
+            public com.google.api.services.bigquery.model.BigtableColumnFamily apply(
+                BigtableColumnFamily columnFamily) {
+              return columnFamily.toPb();
+            }
+          };
 }
-
-
-

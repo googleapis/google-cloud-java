@@ -25,15 +25,13 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
-
+import java.util.Set;
+import java.util.UUID;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
-
-import java.util.Set;
-import java.util.UUID;
 
 public class ITQuerySnippets {
 
@@ -49,8 +47,7 @@ public class ITQuerySnippets {
         }
       };
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(60);
+  @Rule public Timeout globalTimeout = Timeout.seconds(60);
 
   @BeforeClass
   public static void beforeClass() {
@@ -78,7 +75,6 @@ public class ITQuerySnippets {
     }
   }
 
-
   @Test
   public void testNewTypedQuery() throws InterruptedException {
     QuerySnippets transactionSnippets = new QuerySnippets(datastore);
@@ -89,7 +85,6 @@ public class ITQuerySnippets {
       resultSet = Sets.newHashSet(results);
     }
   }
-
 
   @Test
   public void testNewEntityQuery() throws InterruptedException {
@@ -112,7 +107,6 @@ public class ITQuerySnippets {
       resultSet = Sets.newHashSet(results);
     }
   }
-
 
   @Test
   public void testNewProjectionEntityQuery() throws InterruptedException {

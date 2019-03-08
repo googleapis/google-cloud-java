@@ -4,6 +4,8 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * The request for [Read][google.spanner.v1.Spanner.Read] and
  * [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
@@ -11,15 +13,16 @@ package com.google.spanner.v1;
  *
  * Protobuf type {@code google.spanner.v1.ReadRequest}
  */
-public  final class ReadRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ReadRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.ReadRequest)
     ReadRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ReadRequest.newBuilder() to construct.
   private ReadRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ReadRequest() {
     session_ = "";
     table_ = "";
@@ -31,10 +34,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ReadRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54,88 +57,95 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            session_ = s;
-            break;
-          }
-          case 18: {
-            com.google.spanner.v1.TransactionSelector.Builder subBuilder = null;
-            if (transaction_ != null) {
-              subBuilder = transaction_.toBuilder();
+              session_ = s;
+              break;
             }
-            transaction_ = input.readMessage(com.google.spanner.v1.TransactionSelector.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(transaction_);
-              transaction_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.spanner.v1.TransactionSelector.Builder subBuilder = null;
+              if (transaction_ != null) {
+                subBuilder = transaction_.toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(
+                      com.google.spanner.v1.TransactionSelector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            table_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            index_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              columns_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              table_ = s;
+              break;
             }
-            columns_.add(s);
-            break;
-          }
-          case 50: {
-            com.google.spanner.v1.KeySet.Builder subBuilder = null;
-            if (keySet_ != null) {
-              subBuilder = keySet_.toBuilder();
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              index_ = s;
+              break;
             }
-            keySet_ = input.readMessage(com.google.spanner.v1.KeySet.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(keySet_);
-              keySet_ = subBuilder.buildPartial();
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                columns_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              columns_.add(s);
+              break;
             }
+          case 50:
+            {
+              com.google.spanner.v1.KeySet.Builder subBuilder = null;
+              if (keySet_ != null) {
+                subBuilder = keySet_.toBuilder();
+              }
+              keySet_ = input.readMessage(com.google.spanner.v1.KeySet.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(keySet_);
+                keySet_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 64: {
-
-            limit_ = input.readInt64();
-            break;
-          }
-          case 74: {
-
-            resumeToken_ = input.readBytes();
-            break;
-          }
-          case 82: {
-
-            partitionToken_ = input.readBytes();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 64:
+            {
+              limit_ = input.readInt64();
+              break;
+            }
+          case 74:
+            {
+              resumeToken_ = input.readBytes();
+              break;
+            }
+          case 82:
+            {
+              partitionToken_ = input.readBytes();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         columns_ = columns_.getUnmodifiableView();
@@ -144,23 +154,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_ReadRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.v1.SpannerProto
+        .internal_static_google_spanner_v1_ReadRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_ReadRequest_fieldAccessorTable
+    return com.google.spanner.v1.SpannerProto
+        .internal_static_google_spanner_v1_ReadRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.v1.ReadRequest.class, com.google.spanner.v1.ReadRequest.Builder.class);
+            com.google.spanner.v1.ReadRequest.class,
+            com.google.spanner.v1.ReadRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int SESSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object session_;
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the read should be performed.
    * </pre>
@@ -172,27 +187,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       session_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the read should be performed.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getSessionBytes() {
+  public com.google.protobuf.ByteString getSessionBytes() {
     java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       session_ = b;
       return b;
     } else {
@@ -203,6 +217,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRANSACTION_FIELD_NUMBER = 2;
   private com.google.spanner.v1.TransactionSelector transaction_;
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -214,6 +230,8 @@ private static final long serialVersionUID = 0L;
     return transaction_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -222,9 +240,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
    */
   public com.google.spanner.v1.TransactionSelector getTransaction() {
-    return transaction_ == null ? com.google.spanner.v1.TransactionSelector.getDefaultInstance() : transaction_;
+    return transaction_ == null
+        ? com.google.spanner.v1.TransactionSelector.getDefaultInstance()
+        : transaction_;
   }
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -239,6 +261,8 @@ private static final long serialVersionUID = 0L;
   public static final int TABLE_FIELD_NUMBER = 3;
   private volatile java.lang.Object table_;
   /**
+   *
+   *
    * <pre>
    * Required. The name of the table in the database to be read.
    * </pre>
@@ -250,27 +274,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       table_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The name of the table in the database to be read.
    * </pre>
    *
    * <code>string table = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getTableBytes() {
+  public com.google.protobuf.ByteString getTableBytes() {
     java.lang.Object ref = table_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       table_ = b;
       return b;
     } else {
@@ -281,10 +304,15 @@ private static final long serialVersionUID = 0L;
   public static final int INDEX_FIELD_NUMBER = 4;
   private volatile java.lang.Object index_;
   /**
+   *
+   *
    * <pre>
-   * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
-   * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
-   * and sorting result rows. See [key_set][google.spanner.v1.ReadRequest.key_set] for further information.
+   * If non-empty, the name of an index on
+   * [table][google.spanner.v1.ReadRequest.table]. This index is used instead of
+   * the table primary key when interpreting
+   * [key_set][google.spanner.v1.ReadRequest.key_set] and sorting result rows.
+   * See [key_set][google.spanner.v1.ReadRequest.key_set] for further
+   * information.
    * </pre>
    *
    * <code>string index = 4;</code>
@@ -294,29 +322,31 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       index_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
-   * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
-   * and sorting result rows. See [key_set][google.spanner.v1.ReadRequest.key_set] for further information.
+   * If non-empty, the name of an index on
+   * [table][google.spanner.v1.ReadRequest.table]. This index is used instead of
+   * the table primary key when interpreting
+   * [key_set][google.spanner.v1.ReadRequest.key_set] and sorting result rows.
+   * See [key_set][google.spanner.v1.ReadRequest.key_set] for further
+   * information.
    * </pre>
    *
    * <code>string index = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getIndexBytes() {
+  public com.google.protobuf.ByteString getIndexBytes() {
     java.lang.Object ref = index_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       index_ = b;
       return b;
     } else {
@@ -327,21 +357,24 @@ private static final long serialVersionUID = 0L;
   public static final int COLUMNS_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList columns_;
   /**
+   *
+   *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+   * for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getColumnsList() {
+  public com.google.protobuf.ProtocolStringList getColumnsList() {
     return columns_;
   }
   /**
+   *
+   *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+   * for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
@@ -350,9 +383,11 @@ private static final long serialVersionUID = 0L;
     return columns_.size();
   }
   /**
+   *
+   *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+   * for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
@@ -361,30 +396,37 @@ private static final long serialVersionUID = 0L;
     return columns_.get(index);
   }
   /**
+   *
+   *
    * <pre>
-   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-   * this request.
+   * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+   * for each row matching this request.
    * </pre>
    *
    * <code>repeated string columns = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getColumnsBytes(int index) {
+  public com.google.protobuf.ByteString getColumnsBytes(int index) {
     return columns_.getByteString(index);
   }
 
   public static final int KEY_SET_FIELD_NUMBER = 6;
   private com.google.spanner.v1.KeySet keySet_;
   /**
+   *
+   *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-   * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-   * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-   * index keys in [index][google.spanner.v1.ReadRequest.index].
-   * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-   * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-   * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-   * empty, rows will be yielded in an unspecified order.
+   * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+   * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+   * If [index][google.spanner.v1.ReadRequest.index] is present, then
+   * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+   * in [index][google.spanner.v1.ReadRequest.index].
+   * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+   * field is empty, rows are yielded in table primary key order (if
+   * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+   * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+   * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+   * not empty, rows will be yielded in an unspecified order.
    * It is not an error for the `key_set` to name rows that do not
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
@@ -395,15 +437,21 @@ private static final long serialVersionUID = 0L;
     return keySet_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-   * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-   * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-   * index keys in [index][google.spanner.v1.ReadRequest.index].
-   * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-   * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-   * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-   * empty, rows will be yielded in an unspecified order.
+   * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+   * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+   * If [index][google.spanner.v1.ReadRequest.index] is present, then
+   * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+   * in [index][google.spanner.v1.ReadRequest.index].
+   * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+   * field is empty, rows are yielded in table primary key order (if
+   * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+   * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+   * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+   * not empty, rows will be yielded in an unspecified order.
    * It is not an error for the `key_set` to name rows that do not
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
@@ -414,15 +462,21 @@ private static final long serialVersionUID = 0L;
     return keySet_ == null ? com.google.spanner.v1.KeySet.getDefaultInstance() : keySet_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-   * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-   * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-   * index keys in [index][google.spanner.v1.ReadRequest.index].
-   * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-   * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-   * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-   * empty, rows will be yielded in an unspecified order.
+   * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+   * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+   * If [index][google.spanner.v1.ReadRequest.index] is present, then
+   * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+   * in [index][google.spanner.v1.ReadRequest.index].
+   * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+   * field is empty, rows are yielded in table primary key order (if
+   * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+   * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+   * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+   * not empty, rows will be yielded in an unspecified order.
    * It is not an error for the `key_set` to name rows that do not
    * exist in the database. Read yields nothing for nonexistent rows.
    * </pre>
@@ -436,6 +490,8 @@ private static final long serialVersionUID = 0L;
   public static final int LIMIT_FIELD_NUMBER = 8;
   private long limit_;
   /**
+   *
+   *
    * <pre>
    * If greater than zero, only the first `limit` rows are yielded. If `limit`
    * is zero, the default is no limit. A limit cannot be specified if
@@ -451,12 +507,14 @@ private static final long serialVersionUID = 0L;
   public static final int RESUME_TOKEN_FIELD_NUMBER = 9;
   private com.google.protobuf.ByteString resumeToken_;
   /**
+   *
+   *
    * <pre>
    * If this request is resuming a previously interrupted read,
    * `resume_token` should be copied from the last
-   * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-   * enables the new read to resume where the last read left off. The
-   * rest of the request parameters must exactly match the request
+   * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+   * interruption. Doing this enables the new read to resume where the last read
+   * left off. The rest of the request parameters must exactly match the request
    * that yielded this token.
    * </pre>
    *
@@ -469,6 +527,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARTITION_TOKEN_FIELD_NUMBER = 10;
   private com.google.protobuf.ByteString partitionToken_;
   /**
+   *
+   *
    * <pre>
    * If present, results will be restricted to the specified partition
    * previously created using PartitionRead().    There must be an exact
@@ -483,6 +543,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -494,8 +555,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getSessionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, session_);
     }
@@ -536,8 +596,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, session_);
     }
     if (transaction_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getTransaction());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTransaction());
     }
     if (!getTableBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, table_);
@@ -554,20 +613,16 @@ private static final long serialVersionUID = 0L;
       size += 1 * getColumnsList().size();
     }
     if (keySet_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getKeySet());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getKeySet());
     }
     if (limit_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, limit_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, limit_);
     }
     if (!resumeToken_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(9, resumeToken_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(9, resumeToken_);
     }
     if (!partitionToken_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(10, partitionToken_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(10, partitionToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -577,7 +632,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.ReadRequest)) {
       return super.equals(obj);
@@ -585,30 +640,21 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.ReadRequest other = (com.google.spanner.v1.ReadRequest) obj;
 
     boolean result = true;
-    result = result && getSession()
-        .equals(other.getSession());
+    result = result && getSession().equals(other.getSession());
     result = result && (hasTransaction() == other.hasTransaction());
     if (hasTransaction()) {
-      result = result && getTransaction()
-          .equals(other.getTransaction());
+      result = result && getTransaction().equals(other.getTransaction());
     }
-    result = result && getTable()
-        .equals(other.getTable());
-    result = result && getIndex()
-        .equals(other.getIndex());
-    result = result && getColumnsList()
-        .equals(other.getColumnsList());
+    result = result && getTable().equals(other.getTable());
+    result = result && getIndex().equals(other.getIndex());
+    result = result && getColumnsList().equals(other.getColumnsList());
     result = result && (hasKeySet() == other.hasKeySet());
     if (hasKeySet()) {
-      result = result && getKeySet()
-          .equals(other.getKeySet());
+      result = result && getKeySet().equals(other.getKeySet());
     }
-    result = result && (getLimit()
-        == other.getLimit());
-    result = result && getResumeToken()
-        .equals(other.getResumeToken());
-    result = result && getPartitionToken()
-        .equals(other.getPartitionToken());
+    result = result && (getLimit() == other.getLimit());
+    result = result && getResumeToken().equals(other.getResumeToken());
+    result = result && getPartitionToken().equals(other.getPartitionToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -639,8 +685,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getKeySet().hashCode();
     }
     hash = (37 * hash) + LIMIT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLimit());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLimit());
     hash = (37 * hash) + RESUME_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getResumeToken().hashCode();
     hash = (37 * hash) + PARTITION_TOKEN_FIELD_NUMBER;
@@ -650,97 +695,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.ReadRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.ReadRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.ReadRequest parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.ReadRequest parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.ReadRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.ReadRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.ReadRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.spanner.v1.ReadRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request for [Read][google.spanner.v1.Spanner.Read] and
    * [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
@@ -748,21 +799,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.ReadRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.ReadRequest)
       com.google.spanner.v1.ReadRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_ReadRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_ReadRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_ReadRequest_fieldAccessorTable
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_ReadRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.ReadRequest.class, com.google.spanner.v1.ReadRequest.Builder.class);
+              com.google.spanner.v1.ReadRequest.class,
+              com.google.spanner.v1.ReadRequest.Builder.class);
     }
 
     // Construct using com.google.spanner.v1.ReadRequest.newBuilder()
@@ -770,16 +823,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -813,9 +865,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_ReadRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_ReadRequest_descriptor;
     }
 
     @java.lang.Override
@@ -867,38 +919,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.ReadRequest) {
-        return mergeFrom((com.google.spanner.v1.ReadRequest)other);
+        return mergeFrom((com.google.spanner.v1.ReadRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -972,10 +1025,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object session_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The session in which the read should be performed.
      * </pre>
@@ -985,8 +1041,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSession() {
       java.lang.Object ref = session_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         session_ = s;
         return s;
@@ -995,19 +1050,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session in which the read should be performed.
      * </pre>
      *
      * <code>string session = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSessionBytes() {
+    public com.google.protobuf.ByteString getSessionBytes() {
       java.lang.Object ref = session_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         session_ = b;
         return b;
       } else {
@@ -1015,23 +1070,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session in which the read should be performed.
      * </pre>
      *
      * <code>string session = 1;</code>
      */
-    public Builder setSession(
-        java.lang.String value) {
+    public Builder setSession(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       session_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session in which the read should be performed.
      * </pre>
@@ -1039,25 +1097,26 @@ private static final long serialVersionUID = 0L;
      * <code>string session = 1;</code>
      */
     public Builder clearSession() {
-      
+
       session_ = getDefaultInstance().getSession();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session in which the read should be performed.
      * </pre>
      *
      * <code>string session = 1;</code>
      */
-    public Builder setSessionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSessionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       session_ = value;
       onChanged();
       return this;
@@ -1065,8 +1124,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.v1.TransactionSelector transaction_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.TransactionSelector, com.google.spanner.v1.TransactionSelector.Builder, com.google.spanner.v1.TransactionSelectorOrBuilder> transactionBuilder_;
+            com.google.spanner.v1.TransactionSelector,
+            com.google.spanner.v1.TransactionSelector.Builder,
+            com.google.spanner.v1.TransactionSelectorOrBuilder>
+        transactionBuilder_;
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1078,6 +1142,8 @@ private static final long serialVersionUID = 0L;
       return transactionBuilder_ != null || transaction_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1087,12 +1153,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.spanner.v1.TransactionSelector getTransaction() {
       if (transactionBuilder_ == null) {
-        return transaction_ == null ? com.google.spanner.v1.TransactionSelector.getDefaultInstance() : transaction_;
+        return transaction_ == null
+            ? com.google.spanner.v1.TransactionSelector.getDefaultInstance()
+            : transaction_;
       } else {
         return transactionBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1114,6 +1184,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1133,6 +1205,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1144,7 +1218,9 @@ private static final long serialVersionUID = 0L;
       if (transactionBuilder_ == null) {
         if (transaction_ != null) {
           transaction_ =
-            com.google.spanner.v1.TransactionSelector.newBuilder(transaction_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.TransactionSelector.newBuilder(transaction_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           transaction_ = value;
         }
@@ -1156,6 +1232,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1175,6 +1253,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1183,11 +1263,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
      */
     public com.google.spanner.v1.TransactionSelector.Builder getTransactionBuilder() {
-      
+
       onChanged();
       return getTransactionFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1199,11 +1281,14 @@ private static final long serialVersionUID = 0L;
       if (transactionBuilder_ != null) {
         return transactionBuilder_.getMessageOrBuilder();
       } else {
-        return transaction_ == null ?
-            com.google.spanner.v1.TransactionSelector.getDefaultInstance() : transaction_;
+        return transaction_ == null
+            ? com.google.spanner.v1.TransactionSelector.getDefaultInstance()
+            : transaction_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The transaction to use. If none is provided, the default is a
      * temporary read-only transaction with strong concurrency.
@@ -1212,14 +1297,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.TransactionSelector transaction = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.TransactionSelector, com.google.spanner.v1.TransactionSelector.Builder, com.google.spanner.v1.TransactionSelectorOrBuilder> 
+            com.google.spanner.v1.TransactionSelector,
+            com.google.spanner.v1.TransactionSelector.Builder,
+            com.google.spanner.v1.TransactionSelectorOrBuilder>
         getTransactionFieldBuilder() {
       if (transactionBuilder_ == null) {
-        transactionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.TransactionSelector, com.google.spanner.v1.TransactionSelector.Builder, com.google.spanner.v1.TransactionSelectorOrBuilder>(
-                getTransaction(),
-                getParentForChildren(),
-                isClean());
+        transactionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.TransactionSelector,
+                com.google.spanner.v1.TransactionSelector.Builder,
+                com.google.spanner.v1.TransactionSelectorOrBuilder>(
+                getTransaction(), getParentForChildren(), isClean());
         transaction_ = null;
       }
       return transactionBuilder_;
@@ -1227,6 +1315,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object table_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The name of the table in the database to be read.
      * </pre>
@@ -1236,8 +1326,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTable() {
       java.lang.Object ref = table_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         table_ = s;
         return s;
@@ -1246,19 +1335,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the table in the database to be read.
      * </pre>
      *
      * <code>string table = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getTableBytes() {
+    public com.google.protobuf.ByteString getTableBytes() {
       java.lang.Object ref = table_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         table_ = b;
         return b;
       } else {
@@ -1266,23 +1355,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the table in the database to be read.
      * </pre>
      *
      * <code>string table = 3;</code>
      */
-    public Builder setTable(
-        java.lang.String value) {
+    public Builder setTable(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       table_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the table in the database to be read.
      * </pre>
@@ -1290,25 +1382,26 @@ private static final long serialVersionUID = 0L;
      * <code>string table = 3;</code>
      */
     public Builder clearTable() {
-      
+
       table_ = getDefaultInstance().getTable();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the table in the database to be read.
      * </pre>
      *
      * <code>string table = 3;</code>
      */
-    public Builder setTableBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTableBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       table_ = value;
       onChanged();
       return this;
@@ -1316,10 +1409,15 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object index_ = "";
     /**
+     *
+     *
      * <pre>
-     * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
-     * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
-     * and sorting result rows. See [key_set][google.spanner.v1.ReadRequest.key_set] for further information.
+     * If non-empty, the name of an index on
+     * [table][google.spanner.v1.ReadRequest.table]. This index is used instead of
+     * the table primary key when interpreting
+     * [key_set][google.spanner.v1.ReadRequest.key_set] and sorting result rows.
+     * See [key_set][google.spanner.v1.ReadRequest.key_set] for further
+     * information.
      * </pre>
      *
      * <code>string index = 4;</code>
@@ -1327,8 +1425,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getIndex() {
       java.lang.Object ref = index_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         index_ = s;
         return s;
@@ -1337,21 +1434,24 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
-     * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
-     * and sorting result rows. See [key_set][google.spanner.v1.ReadRequest.key_set] for further information.
+     * If non-empty, the name of an index on
+     * [table][google.spanner.v1.ReadRequest.table]. This index is used instead of
+     * the table primary key when interpreting
+     * [key_set][google.spanner.v1.ReadRequest.key_set] and sorting result rows.
+     * See [key_set][google.spanner.v1.ReadRequest.key_set] for further
+     * information.
      * </pre>
      *
      * <code>string index = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getIndexBytes() {
+    public com.google.protobuf.ByteString getIndexBytes() {
       java.lang.Object ref = index_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         index_ = b;
         return b;
       } else {
@@ -1359,83 +1459,101 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
-     * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
-     * and sorting result rows. See [key_set][google.spanner.v1.ReadRequest.key_set] for further information.
+     * If non-empty, the name of an index on
+     * [table][google.spanner.v1.ReadRequest.table]. This index is used instead of
+     * the table primary key when interpreting
+     * [key_set][google.spanner.v1.ReadRequest.key_set] and sorting result rows.
+     * See [key_set][google.spanner.v1.ReadRequest.key_set] for further
+     * information.
      * </pre>
      *
      * <code>string index = 4;</code>
      */
-    public Builder setIndex(
-        java.lang.String value) {
+    public Builder setIndex(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       index_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
-     * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
-     * and sorting result rows. See [key_set][google.spanner.v1.ReadRequest.key_set] for further information.
+     * If non-empty, the name of an index on
+     * [table][google.spanner.v1.ReadRequest.table]. This index is used instead of
+     * the table primary key when interpreting
+     * [key_set][google.spanner.v1.ReadRequest.key_set] and sorting result rows.
+     * See [key_set][google.spanner.v1.ReadRequest.key_set] for further
+     * information.
      * </pre>
      *
      * <code>string index = 4;</code>
      */
     public Builder clearIndex() {
-      
+
       index_ = getDefaultInstance().getIndex();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
-     * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
-     * and sorting result rows. See [key_set][google.spanner.v1.ReadRequest.key_set] for further information.
+     * If non-empty, the name of an index on
+     * [table][google.spanner.v1.ReadRequest.table]. This index is used instead of
+     * the table primary key when interpreting
+     * [key_set][google.spanner.v1.ReadRequest.key_set] and sorting result rows.
+     * See [key_set][google.spanner.v1.ReadRequest.key_set] for further
+     * information.
      * </pre>
      *
      * <code>string index = 4;</code>
      */
-    public Builder setIndexBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setIndexBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       index_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList columns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList columns_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureColumnsIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         columns_ = new com.google.protobuf.LazyStringArrayList(columns_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getColumnsList() {
+    public com.google.protobuf.ProtocolStringList getColumnsList() {
       return columns_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
@@ -1444,9 +1562,11 @@ private static final long serialVersionUID = 0L;
       return columns_.size();
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
@@ -1455,73 +1575,78 @@ private static final long serialVersionUID = 0L;
       return columns_.get(index);
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getColumnsBytes(int index) {
+    public com.google.protobuf.ByteString getColumnsBytes(int index) {
       return columns_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
      */
-    public Builder setColumns(
-        int index, java.lang.String value) {
+    public Builder setColumns(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureColumnsIsMutable();
       columns_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
      */
-    public Builder addColumns(
-        java.lang.String value) {
+    public Builder addColumns(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureColumnsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureColumnsIsMutable();
       columns_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
      */
-    public Builder addAllColumns(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllColumns(java.lang.Iterable<java.lang.String> values) {
       ensureColumnsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, columns_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, columns_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
@@ -1533,19 +1658,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
-     * this request.
+     * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned
+     * for each row matching this request.
      * </pre>
      *
      * <code>repeated string columns = 5;</code>
      */
-    public Builder addColumnsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addColumnsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureColumnsIsMutable();
       columns_.add(value);
       onChanged();
@@ -1554,17 +1680,26 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.v1.KeySet keySet_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.KeySet, com.google.spanner.v1.KeySet.Builder, com.google.spanner.v1.KeySetOrBuilder> keySetBuilder_;
+            com.google.spanner.v1.KeySet,
+            com.google.spanner.v1.KeySet.Builder,
+            com.google.spanner.v1.KeySetOrBuilder>
+        keySetBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1575,15 +1710,21 @@ private static final long serialVersionUID = 0L;
       return keySetBuilder_ != null || keySet_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1598,15 +1739,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1627,23 +1774,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 6;</code>
      */
-    public Builder setKeySet(
-        com.google.spanner.v1.KeySet.Builder builderForValue) {
+    public Builder setKeySet(com.google.spanner.v1.KeySet.Builder builderForValue) {
       if (keySetBuilder_ == null) {
         keySet_ = builderForValue.build();
         onChanged();
@@ -1654,15 +1806,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1673,7 +1831,7 @@ private static final long serialVersionUID = 0L;
       if (keySetBuilder_ == null) {
         if (keySet_ != null) {
           keySet_ =
-            com.google.spanner.v1.KeySet.newBuilder(keySet_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.KeySet.newBuilder(keySet_).mergeFrom(value).buildPartial();
         } else {
           keySet_ = value;
         }
@@ -1685,15 +1843,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1712,15 +1876,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1728,20 +1898,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.KeySet key_set = 6;</code>
      */
     public com.google.spanner.v1.KeySet.Builder getKeySetBuilder() {
-      
+
       onChanged();
       return getKeySetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1752,20 +1928,25 @@ private static final long serialVersionUID = 0L;
       if (keySetBuilder_ != null) {
         return keySetBuilder_.getMessageOrBuilder();
       } else {
-        return keySet_ == null ?
-            com.google.spanner.v1.KeySet.getDefaultInstance() : keySet_;
+        return keySet_ == null ? com.google.spanner.v1.KeySet.getDefaultInstance() : keySet_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. `key_set` identifies the rows to be yielded. `key_set` names the
-     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
-     * is present. If [index][google.spanner.v1.ReadRequest.index] is present, then [key_set][google.spanner.v1.ReadRequest.key_set] instead names
-     * index keys in [index][google.spanner.v1.ReadRequest.index].
-     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is empty, rows are yielded
-     * in table primary key order (if [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
-     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the [partition_token][google.spanner.v1.ReadRequest.partition_token] field is not
-     * empty, rows will be yielded in an unspecified order.
+     * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to
+     * be yielded, unless [index][google.spanner.v1.ReadRequest.index] is present.
+     * If [index][google.spanner.v1.ReadRequest.index] is present, then
+     * [key_set][google.spanner.v1.ReadRequest.key_set] instead names index keys
+     * in [index][google.spanner.v1.ReadRequest.index].
+     * If the [partition_token][google.spanner.v1.ReadRequest.partition_token]
+     * field is empty, rows are yielded in table primary key order (if
+     * [index][google.spanner.v1.ReadRequest.index] is empty) or index key order
+     * (if [index][google.spanner.v1.ReadRequest.index] is non-empty).  If the
+     * [partition_token][google.spanner.v1.ReadRequest.partition_token] field is
+     * not empty, rows will be yielded in an unspecified order.
      * It is not an error for the `key_set` to name rows that do not
      * exist in the database. Read yields nothing for nonexistent rows.
      * </pre>
@@ -1773,21 +1954,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.KeySet key_set = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.KeySet, com.google.spanner.v1.KeySet.Builder, com.google.spanner.v1.KeySetOrBuilder> 
+            com.google.spanner.v1.KeySet,
+            com.google.spanner.v1.KeySet.Builder,
+            com.google.spanner.v1.KeySetOrBuilder>
         getKeySetFieldBuilder() {
       if (keySetBuilder_ == null) {
-        keySetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.KeySet, com.google.spanner.v1.KeySet.Builder, com.google.spanner.v1.KeySetOrBuilder>(
-                getKeySet(),
-                getParentForChildren(),
-                isClean());
+        keySetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.KeySet,
+                com.google.spanner.v1.KeySet.Builder,
+                com.google.spanner.v1.KeySetOrBuilder>(
+                getKeySet(), getParentForChildren(), isClean());
         keySet_ = null;
       }
       return keySetBuilder_;
     }
 
-    private long limit_ ;
+    private long limit_;
     /**
+     *
+     *
      * <pre>
      * If greater than zero, only the first `limit` rows are yielded. If `limit`
      * is zero, the default is no limit. A limit cannot be specified if
@@ -1800,6 +1986,8 @@ private static final long serialVersionUID = 0L;
       return limit_;
     }
     /**
+     *
+     *
      * <pre>
      * If greater than zero, only the first `limit` rows are yielded. If `limit`
      * is zero, the default is no limit. A limit cannot be specified if
@@ -1809,12 +1997,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 limit = 8;</code>
      */
     public Builder setLimit(long value) {
-      
+
       limit_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If greater than zero, only the first `limit` rows are yielded. If `limit`
      * is zero, the default is no limit. A limit cannot be specified if
@@ -1824,7 +2014,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 limit = 8;</code>
      */
     public Builder clearLimit() {
-      
+
       limit_ = 0L;
       onChanged();
       return this;
@@ -1832,12 +2022,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * If this request is resuming a previously interrupted read,
      * `resume_token` should be copied from the last
-     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new read to resume where the last read left off. The
-     * rest of the request parameters must exactly match the request
+     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+     * interruption. Doing this enables the new read to resume where the last read
+     * left off. The rest of the request parameters must exactly match the request
      * that yielded this token.
      * </pre>
      *
@@ -1847,12 +2039,14 @@ private static final long serialVersionUID = 0L;
       return resumeToken_;
     }
     /**
+     *
+     *
      * <pre>
      * If this request is resuming a previously interrupted read,
      * `resume_token` should be copied from the last
-     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new read to resume where the last read left off. The
-     * rest of the request parameters must exactly match the request
+     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+     * interruption. Doing this enables the new read to resume where the last read
+     * left off. The rest of the request parameters must exactly match the request
      * that yielded this token.
      * </pre>
      *
@@ -1860,27 +2054,29 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResumeToken(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       resumeToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If this request is resuming a previously interrupted read,
      * `resume_token` should be copied from the last
-     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-     * enables the new read to resume where the last read left off. The
-     * rest of the request parameters must exactly match the request
+     * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+     * interruption. Doing this enables the new read to resume where the last read
+     * left off. The rest of the request parameters must exactly match the request
      * that yielded this token.
      * </pre>
      *
      * <code>bytes resume_token = 9;</code>
      */
     public Builder clearResumeToken() {
-      
+
       resumeToken_ = getDefaultInstance().getResumeToken();
       onChanged();
       return this;
@@ -1888,6 +2084,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString partitionToken_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * If present, results will be restricted to the specified partition
      * previously created using PartitionRead().    There must be an exact
@@ -1901,6 +2099,8 @@ private static final long serialVersionUID = 0L;
       return partitionToken_;
     }
     /**
+     *
+     *
      * <pre>
      * If present, results will be restricted to the specified partition
      * previously created using PartitionRead().    There must be an exact
@@ -1912,14 +2112,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPartitionToken(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       partitionToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, results will be restricted to the specified partition
      * previously created using PartitionRead().    There must be an exact
@@ -1930,14 +2132,14 @@ private static final long serialVersionUID = 0L;
      * <code>bytes partition_token = 10;</code>
      */
     public Builder clearPartitionToken() {
-      
+
       partitionToken_ = getDefaultInstance().getPartitionToken();
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1947,12 +2149,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.ReadRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.ReadRequest)
   private static final com.google.spanner.v1.ReadRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.ReadRequest();
   }
@@ -1961,16 +2163,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReadRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ReadRequest>() {
-    @java.lang.Override
-    public ReadRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReadRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ReadRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ReadRequest>() {
+        @java.lang.Override
+        public ReadRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReadRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ReadRequest> parser() {
     return PARSER;
@@ -1985,6 +2187,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.v1.ReadRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

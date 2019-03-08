@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ListGroupStatsRequestOrBuilder extends
+public interface ListGroupStatsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as &lt;code&gt;projects/&lt;/code&gt; plus the
@@ -20,6 +23,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   java.lang.String getProjectName();
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as &lt;code&gt;projects/&lt;/code&gt; plus the
@@ -30,19 +35,21 @@ public interface ListGroupStatsRequestOrBuilder extends
    *
    * <code>string project_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectNameBytes();
+  com.google.protobuf.ByteString getProjectNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] List all &lt;code&gt;ErrorGroupStats&lt;/code&gt; with these IDs.
    * </pre>
    *
    * <code>repeated string group_id = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getGroupIdList();
+  java.util.List<java.lang.String> getGroupIdList();
   /**
+   *
+   *
    * <pre>
    * [Optional] List all &lt;code&gt;ErrorGroupStats&lt;/code&gt; with these IDs.
    * </pre>
@@ -51,6 +58,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   int getGroupIdCount();
   /**
+   *
+   *
    * <pre>
    * [Optional] List all &lt;code&gt;ErrorGroupStats&lt;/code&gt; with these IDs.
    * </pre>
@@ -59,47 +68,60 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   java.lang.String getGroupId(int index);
   /**
+   *
+   *
    * <pre>
    * [Optional] List all &lt;code&gt;ErrorGroupStats&lt;/code&gt; with these IDs.
    * </pre>
    *
    * <code>repeated string group_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getGroupIdBytes(int index);
+  com.google.protobuf.ByteString getGroupIdBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * [Optional] List only &lt;code&gt;ErrorGroupStats&lt;/code&gt; which belong to a service
    * context that matches the filter.
    * Data for all service contexts is returned if this field is not specified.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;</code>
+   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+   * </code>
    */
   boolean hasServiceFilter();
   /**
+   *
+   *
    * <pre>
    * [Optional] List only &lt;code&gt;ErrorGroupStats&lt;/code&gt; which belong to a service
    * context that matches the filter.
    * Data for all service contexts is returned if this field is not specified.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;</code>
+   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+   * </code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter getServiceFilter();
   /**
+   *
+   *
    * <pre>
    * [Optional] List only &lt;code&gt;ErrorGroupStats&lt;/code&gt; which belong to a service
    * context that matches the filter.
    * Data for all service contexts is returned if this field is not specified.
    * </pre>
    *
-   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;</code>
+   * <code>.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter service_filter = 3;
+   * </code>
    */
-  com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder getServiceFilterOrBuilder();
+  com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilterOrBuilder
+      getServiceFilterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] List data for the given time range.
    * If not set a default time range is used. The field time_range_begin
@@ -114,6 +136,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   boolean hasTimeRange();
   /**
+   *
+   *
    * <pre>
    * [Optional] List data for the given time range.
    * If not set a default time range is used. The field time_range_begin
@@ -128,6 +152,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange getTimeRange();
   /**
+   *
+   *
    * <pre>
    * [Optional] List data for the given time range.
    * If not set a default time range is used. The field time_range_begin
@@ -143,6 +169,8 @@ public interface ListGroupStatsRequestOrBuilder extends
   com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRangeOrBuilder getTimeRangeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The preferred duration for a single returned `TimedCount`.
    * If not set, no timed counts are returned.
@@ -152,6 +180,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   boolean hasTimedCountDuration();
   /**
+   *
+   *
    * <pre>
    * [Optional] The preferred duration for a single returned `TimedCount`.
    * If not set, no timed counts are returned.
@@ -161,6 +191,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   com.google.protobuf.Duration getTimedCountDuration();
   /**
+   *
+   *
    * <pre>
    * [Optional] The preferred duration for a single returned `TimedCount`.
    * If not set, no timed counts are returned.
@@ -171,6 +203,8 @@ public interface ListGroupStatsRequestOrBuilder extends
   com.google.protobuf.DurationOrBuilder getTimedCountDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The alignment of the timed counts to be returned.
    * Default is `ALIGNMENT_EQUAL_AT_END`.
@@ -180,6 +214,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   int getAlignmentValue();
   /**
+   *
+   *
    * <pre>
    * [Optional] The alignment of the timed counts to be returned.
    * Default is `ALIGNMENT_EQUAL_AT_END`.
@@ -190,6 +226,8 @@ public interface ListGroupStatsRequestOrBuilder extends
   com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment getAlignment();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] Time where the timed counts shall be aligned if rounded
    * alignment is chosen. Default is 00:00 UTC.
@@ -199,6 +237,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   boolean hasAlignmentTime();
   /**
+   *
+   *
    * <pre>
    * [Optional] Time where the timed counts shall be aligned if rounded
    * alignment is chosen. Default is 00:00 UTC.
@@ -208,6 +248,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getAlignmentTime();
   /**
+   *
+   *
    * <pre>
    * [Optional] Time where the timed counts shall be aligned if rounded
    * alignment is chosen. Default is 00:00 UTC.
@@ -218,6 +260,8 @@ public interface ListGroupStatsRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getAlignmentTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The sort order in which the results are returned.
    * Default is `COUNT_DESC`.
@@ -227,6 +271,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   int getOrderValue();
   /**
+   *
+   *
    * <pre>
    * [Optional] The sort order in which the results are returned.
    * Default is `COUNT_DESC`.
@@ -237,6 +283,8 @@ public interface ListGroupStatsRequestOrBuilder extends
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder getOrder();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The maximum number of results to return per response.
    * Default is 20.
@@ -247,6 +295,8 @@ public interface ListGroupStatsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] A `next_page_token` provided by a previous response. To view
    * additional results, pass this token along with the identical query
@@ -257,6 +307,8 @@ public interface ListGroupStatsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * [Optional] A `next_page_token` provided by a previous response. To view
    * additional results, pass this token along with the identical query
@@ -265,6 +317,5 @@ public interface ListGroupStatsRequestOrBuilder extends
    *
    * <code>string page_token = 12;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

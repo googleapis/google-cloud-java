@@ -4,6 +4,8 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * Partial results from a streaming read or SQL query. Streaming reads and
  * SQL queries better tolerate large result sets, large rows, and large
@@ -12,15 +14,16 @@ package com.google.spanner.v1;
  *
  * Protobuf type {@code google.spanner.v1.PartialResultSet}
  */
-public  final class PartialResultSet extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PartialResultSet extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.PartialResultSet)
     PartialResultSetOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PartialResultSet.newBuilder() to construct.
   private PartialResultSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PartialResultSet() {
     values_ = java.util.Collections.emptyList();
     chunkedValue_ = false;
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PartialResultSet(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,65 +54,70 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.spanner.v1.ResultSetMetadata.Builder subBuilder = null;
-            if (metadata_ != null) {
-              subBuilder = metadata_.toBuilder();
-            }
-            metadata_ = input.readMessage(com.google.spanner.v1.ResultSetMetadata.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(metadata_);
-              metadata_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.spanner.v1.ResultSetMetadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ =
+                  input.readMessage(
+                      com.google.spanner.v1.ResultSetMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              values_ = new java.util.ArrayList<com.google.protobuf.Value>();
-              mutable_bitField0_ |= 0x00000002;
+              break;
             }
-            values_.add(
-                input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry));
-            break;
-          }
-          case 24: {
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                values_ = new java.util.ArrayList<com.google.protobuf.Value>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              values_.add(input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry));
+              break;
+            }
+          case 24:
+            {
+              chunkedValue_ = input.readBool();
+              break;
+            }
+          case 34:
+            {
+              resumeToken_ = input.readBytes();
+              break;
+            }
+          case 42:
+            {
+              com.google.spanner.v1.ResultSetStats.Builder subBuilder = null;
+              if (stats_ != null) {
+                subBuilder = stats_.toBuilder();
+              }
+              stats_ =
+                  input.readMessage(
+                      com.google.spanner.v1.ResultSetStats.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stats_);
+                stats_ = subBuilder.buildPartial();
+              }
 
-            chunkedValue_ = input.readBool();
-            break;
-          }
-          case 34: {
-
-            resumeToken_ = input.readBytes();
-            break;
-          }
-          case 42: {
-            com.google.spanner.v1.ResultSetStats.Builder subBuilder = null;
-            if (stats_ != null) {
-              subBuilder = stats_.toBuilder();
+              break;
             }
-            stats_ = input.readMessage(com.google.spanner.v1.ResultSetStats.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(stats_);
-              stats_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         values_ = java.util.Collections.unmodifiableList(values_);
@@ -118,23 +126,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.v1.ResultSetProto.internal_static_google_spanner_v1_PartialResultSet_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.v1.ResultSetProto
+        .internal_static_google_spanner_v1_PartialResultSet_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.ResultSetProto.internal_static_google_spanner_v1_PartialResultSet_fieldAccessorTable
+    return com.google.spanner.v1.ResultSetProto
+        .internal_static_google_spanner_v1_PartialResultSet_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.v1.PartialResultSet.class, com.google.spanner.v1.PartialResultSet.Builder.class);
+            com.google.spanner.v1.PartialResultSet.class,
+            com.google.spanner.v1.PartialResultSet.Builder.class);
   }
 
   private int bitField0_;
   public static final int METADATA_FIELD_NUMBER = 1;
   private com.google.spanner.v1.ResultSetMetadata metadata_;
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -146,6 +159,8 @@ private static final long serialVersionUID = 0L;
     return metadata_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -154,9 +169,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
    */
   public com.google.spanner.v1.ResultSetMetadata getMetadata() {
-    return metadata_ == null ? com.google.spanner.v1.ResultSetMetadata.getDefaultInstance() : metadata_;
+    return metadata_ == null
+        ? com.google.spanner.v1.ResultSetMetadata.getDefaultInstance()
+        : metadata_;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -171,6 +190,8 @@ private static final long serialVersionUID = 0L;
   public static final int VALUES_FIELD_NUMBER = 2;
   private java.util.List<com.google.protobuf.Value> values_;
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -181,9 +202,10 @@ private static final long serialVersionUID = 0L;
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -239,6 +261,8 @@ private static final long serialVersionUID = 0L;
     return values_;
   }
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -249,9 +273,10 @@ private static final long serialVersionUID = 0L;
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -303,11 +328,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  public java.util.List<? extends com.google.protobuf.ValueOrBuilder> 
-      getValuesOrBuilderList() {
+  public java.util.List<? extends com.google.protobuf.ValueOrBuilder> getValuesOrBuilderList() {
     return values_;
   }
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -318,9 +344,10 @@ private static final long serialVersionUID = 0L;
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -376,6 +403,8 @@ private static final long serialVersionUID = 0L;
     return values_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -386,9 +415,10 @@ private static final long serialVersionUID = 0L;
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -444,6 +474,8 @@ private static final long serialVersionUID = 0L;
     return values_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -454,9 +486,10 @@ private static final long serialVersionUID = 0L;
    * [here][google.spanner.v1.TypeCode].
    * It is possible that the last value in values is "chunked",
    * meaning that the rest of the value is sent in subsequent
-   * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-   * field. Two or more chunked values can be merged to form a
-   * complete value as follows:
+   * `PartialResultSet`(s). This is denoted by the
+   * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+   * Two or more chunked values can be merged to form a complete value as
+   * follows:
    *   * `bool/number/null`: cannot be chunked
    *   * `string`: concatenate the strings
    *   * `list`: concatenate the lists. If the last element in a list is a
@@ -508,18 +541,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  public com.google.protobuf.ValueOrBuilder getValuesOrBuilder(
-      int index) {
+  public com.google.protobuf.ValueOrBuilder getValuesOrBuilder(int index) {
     return values_.get(index);
   }
 
   public static final int CHUNKED_VALUE_FIELD_NUMBER = 3;
   private boolean chunkedValue_;
   /**
+   *
+   *
    * <pre>
-   * If true, then the final value in [values][google.spanner.v1.PartialResultSet.values] is chunked, and must
-   * be combined with more values from subsequent `PartialResultSet`s
-   * to obtain a complete field value.
+   * If true, then the final value in
+   * [values][google.spanner.v1.PartialResultSet.values] is chunked, and must be
+   * combined with more values from subsequent `PartialResultSet`s to obtain a
+   * complete field value.
    * </pre>
    *
    * <code>bool chunked_value = 3;</code>
@@ -531,6 +566,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESUME_TOKEN_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString resumeToken_;
   /**
+   *
+   *
    * <pre>
    * Streaming calls might be interrupted for a variety of reasons, such
    * as TCP connection loss. If this occurs, the stream of results can
@@ -548,13 +585,14 @@ private static final long serialVersionUID = 0L;
   public static final int STATS_FIELD_NUMBER = 5;
   private com.google.spanner.v1.ResultSetStats stats_;
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -563,13 +601,14 @@ private static final long serialVersionUID = 0L;
     return stats_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -578,13 +617,14 @@ private static final long serialVersionUID = 0L;
     return stats_ == null ? com.google.spanner.v1.ResultSetStats.getDefaultInstance() : stats_;
   }
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
-   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-   * only once with the last response in the stream.
-   * This field will also be present in the last response for DML
-   * statements.
+   * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+   * and are sent only once with the last response in the stream. This field
+   * will also be present in the last response for DML statements.
    * </pre>
    *
    * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -594,6 +634,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -605,8 +646,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (metadata_ != null) {
       output.writeMessage(1, getMetadata());
     }
@@ -632,24 +672,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (metadata_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getMetadata());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMetadata());
     }
     for (int i = 0; i < values_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, values_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, values_.get(i));
     }
     if (chunkedValue_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, chunkedValue_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, chunkedValue_);
     }
     if (!resumeToken_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(4, resumeToken_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, resumeToken_);
     }
     if (stats_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getStats());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStats());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -659,7 +694,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.PartialResultSet)) {
       return super.equals(obj);
@@ -669,19 +704,14 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasMetadata() == other.hasMetadata());
     if (hasMetadata()) {
-      result = result && getMetadata()
-          .equals(other.getMetadata());
+      result = result && getMetadata().equals(other.getMetadata());
     }
-    result = result && getValuesList()
-        .equals(other.getValuesList());
-    result = result && (getChunkedValue()
-        == other.getChunkedValue());
-    result = result && getResumeToken()
-        .equals(other.getResumeToken());
+    result = result && getValuesList().equals(other.getValuesList());
+    result = result && (getChunkedValue() == other.getChunkedValue());
+    result = result && getResumeToken().equals(other.getResumeToken());
     result = result && (hasStats() == other.hasStats());
     if (hasStats()) {
-      result = result && getStats()
-          .equals(other.getStats());
+      result = result && getStats().equals(other.getStats());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -703,8 +733,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getValuesList().hashCode();
     }
     hash = (37 * hash) + CHUNKED_VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getChunkedValue());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getChunkedValue());
     hash = (37 * hash) + RESUME_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getResumeToken().hashCode();
     if (hasStats()) {
@@ -716,97 +745,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.PartialResultSet parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.PartialResultSet parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartialResultSet parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.spanner.v1.PartialResultSet prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Partial results from a streaming read or SQL query. Streaming reads and
    * SQL queries better tolerate large result sets, large rows, and large
@@ -815,21 +851,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.PartialResultSet}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.PartialResultSet)
       com.google.spanner.v1.PartialResultSetOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.ResultSetProto.internal_static_google_spanner_v1_PartialResultSet_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.ResultSetProto
+          .internal_static_google_spanner_v1_PartialResultSet_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.ResultSetProto.internal_static_google_spanner_v1_PartialResultSet_fieldAccessorTable
+      return com.google.spanner.v1.ResultSetProto
+          .internal_static_google_spanner_v1_PartialResultSet_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.PartialResultSet.class, com.google.spanner.v1.PartialResultSet.Builder.class);
+              com.google.spanner.v1.PartialResultSet.class,
+              com.google.spanner.v1.PartialResultSet.Builder.class);
     }
 
     // Construct using com.google.spanner.v1.PartialResultSet.newBuilder()
@@ -837,17 +875,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getValuesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -877,9 +915,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.ResultSetProto.internal_static_google_spanner_v1_PartialResultSet_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.ResultSetProto
+          .internal_static_google_spanner_v1_PartialResultSet_descriptor;
     }
 
     @java.lang.Override
@@ -898,7 +936,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.spanner.v1.PartialResultSet buildPartial() {
-      com.google.spanner.v1.PartialResultSet result = new com.google.spanner.v1.PartialResultSet(this);
+      com.google.spanner.v1.PartialResultSet result =
+          new com.google.spanner.v1.PartialResultSet(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (metadataBuilder_ == null) {
@@ -931,38 +970,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.PartialResultSet) {
-        return mergeFrom((com.google.spanner.v1.PartialResultSet)other);
+        return mergeFrom((com.google.spanner.v1.PartialResultSet) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -992,9 +1032,10 @@ private static final long serialVersionUID = 0L;
             valuesBuilder_ = null;
             values_ = other.values_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            valuesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getValuesFieldBuilder() : null;
+            valuesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getValuesFieldBuilder()
+                    : null;
           } else {
             valuesBuilder_.addAllMessages(other.values_);
           }
@@ -1037,12 +1078,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.spanner.v1.ResultSetMetadata metadata_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.ResultSetMetadata, com.google.spanner.v1.ResultSetMetadata.Builder, com.google.spanner.v1.ResultSetMetadataOrBuilder> metadataBuilder_;
+            com.google.spanner.v1.ResultSetMetadata,
+            com.google.spanner.v1.ResultSetMetadata.Builder,
+            com.google.spanner.v1.ResultSetMetadataOrBuilder>
+        metadataBuilder_;
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1054,6 +1101,8 @@ private static final long serialVersionUID = 0L;
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1063,12 +1112,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.spanner.v1.ResultSetMetadata getMetadata() {
       if (metadataBuilder_ == null) {
-        return metadata_ == null ? com.google.spanner.v1.ResultSetMetadata.getDefaultInstance() : metadata_;
+        return metadata_ == null
+            ? com.google.spanner.v1.ResultSetMetadata.getDefaultInstance()
+            : metadata_;
       } else {
         return metadataBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1090,6 +1143,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1097,8 +1152,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
      */
-    public Builder setMetadata(
-        com.google.spanner.v1.ResultSetMetadata.Builder builderForValue) {
+    public Builder setMetadata(com.google.spanner.v1.ResultSetMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
         onChanged();
@@ -1109,6 +1163,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1120,7 +1176,9 @@ private static final long serialVersionUID = 0L;
       if (metadataBuilder_ == null) {
         if (metadata_ != null) {
           metadata_ =
-            com.google.spanner.v1.ResultSetMetadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.ResultSetMetadata.newBuilder(metadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           metadata_ = value;
         }
@@ -1132,6 +1190,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1151,6 +1211,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1159,11 +1221,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
      */
     public com.google.spanner.v1.ResultSetMetadata.Builder getMetadataBuilder() {
-      
+
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1175,11 +1239,14 @@ private static final long serialVersionUID = 0L;
       if (metadataBuilder_ != null) {
         return metadataBuilder_.getMessageOrBuilder();
       } else {
-        return metadata_ == null ?
-            com.google.spanner.v1.ResultSetMetadata.getDefaultInstance() : metadata_;
+        return metadata_ == null
+            ? com.google.spanner.v1.ResultSetMetadata.getDefaultInstance()
+            : metadata_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata about the result set, such as row type information.
      * Only present in the first response.
@@ -1188,32 +1255,40 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.ResultSetMetadata metadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.ResultSetMetadata, com.google.spanner.v1.ResultSetMetadata.Builder, com.google.spanner.v1.ResultSetMetadataOrBuilder> 
+            com.google.spanner.v1.ResultSetMetadata,
+            com.google.spanner.v1.ResultSetMetadata.Builder,
+            com.google.spanner.v1.ResultSetMetadataOrBuilder>
         getMetadataFieldBuilder() {
       if (metadataBuilder_ == null) {
-        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.ResultSetMetadata, com.google.spanner.v1.ResultSetMetadata.Builder, com.google.spanner.v1.ResultSetMetadataOrBuilder>(
-                getMetadata(),
-                getParentForChildren(),
-                isClean());
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.ResultSetMetadata,
+                com.google.spanner.v1.ResultSetMetadata.Builder,
+                com.google.spanner.v1.ResultSetMetadataOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
         metadata_ = null;
       }
       return metadataBuilder_;
     }
 
-    private java.util.List<com.google.protobuf.Value> values_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.protobuf.Value> values_ = java.util.Collections.emptyList();
+
     private void ensureValuesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         values_ = new java.util.ArrayList<com.google.protobuf.Value>(values_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> valuesBuilder_;
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        valuesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1224,9 +1299,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1286,6 +1362,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1296,9 +1374,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1358,6 +1437,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1368,9 +1449,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1430,6 +1512,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1440,9 +1524,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1494,8 +1579,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public Builder setValues(
-        int index, com.google.protobuf.Value value) {
+    public Builder setValues(int index, com.google.protobuf.Value value) {
       if (valuesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1509,6 +1593,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1519,9 +1605,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1573,8 +1660,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public Builder setValues(
-        int index, com.google.protobuf.Value.Builder builderForValue) {
+    public Builder setValues(int index, com.google.protobuf.Value.Builder builderForValue) {
       if (valuesBuilder_ == null) {
         ensureValuesIsMutable();
         values_.set(index, builderForValue.build());
@@ -1585,6 +1671,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1595,9 +1683,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1663,6 +1752,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1673,9 +1764,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1727,8 +1819,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public Builder addValues(
-        int index, com.google.protobuf.Value value) {
+    public Builder addValues(int index, com.google.protobuf.Value value) {
       if (valuesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1742,6 +1833,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1752,9 +1845,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1806,8 +1900,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public Builder addValues(
-        com.google.protobuf.Value.Builder builderForValue) {
+    public Builder addValues(com.google.protobuf.Value.Builder builderForValue) {
       if (valuesBuilder_ == null) {
         ensureValuesIsMutable();
         values_.add(builderForValue.build());
@@ -1818,6 +1911,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1828,9 +1923,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1882,8 +1978,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public Builder addValues(
-        int index, com.google.protobuf.Value.Builder builderForValue) {
+    public Builder addValues(int index, com.google.protobuf.Value.Builder builderForValue) {
       if (valuesBuilder_ == null) {
         ensureValuesIsMutable();
         values_.add(index, builderForValue.build());
@@ -1894,6 +1989,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1904,9 +2001,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -1958,12 +2056,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public Builder addAllValues(
-        java.lang.Iterable<? extends com.google.protobuf.Value> values) {
+    public Builder addAllValues(java.lang.Iterable<? extends com.google.protobuf.Value> values) {
       if (valuesBuilder_ == null) {
         ensureValuesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, values_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
         onChanged();
       } else {
         valuesBuilder_.addAllMessages(values);
@@ -1971,6 +2067,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -1981,9 +2079,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2046,6 +2145,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -2056,9 +2157,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2121,6 +2223,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -2131,9 +2235,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2185,11 +2290,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public com.google.protobuf.Value.Builder getValuesBuilder(
-        int index) {
+    public com.google.protobuf.Value.Builder getValuesBuilder(int index) {
       return getValuesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -2200,9 +2306,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2254,14 +2361,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public com.google.protobuf.ValueOrBuilder getValuesOrBuilder(
-        int index) {
+    public com.google.protobuf.ValueOrBuilder getValuesOrBuilder(int index) {
       if (valuesBuilder_ == null) {
-        return values_.get(index);  } else {
+        return values_.get(index);
+      } else {
         return valuesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -2272,9 +2381,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2326,8 +2436,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public java.util.List<? extends com.google.protobuf.ValueOrBuilder> 
-         getValuesOrBuilderList() {
+    public java.util.List<? extends com.google.protobuf.ValueOrBuilder> getValuesOrBuilderList() {
       if (valuesBuilder_ != null) {
         return valuesBuilder_.getMessageOrBuilderList();
       } else {
@@ -2335,6 +2444,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -2345,9 +2456,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2400,10 +2512,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
     public com.google.protobuf.Value.Builder addValuesBuilder() {
-      return getValuesFieldBuilder().addBuilder(
-          com.google.protobuf.Value.getDefaultInstance());
+      return getValuesFieldBuilder().addBuilder(com.google.protobuf.Value.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -2414,9 +2527,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2468,12 +2582,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public com.google.protobuf.Value.Builder addValuesBuilder(
-        int index) {
-      return getValuesFieldBuilder().addBuilder(
-          index, com.google.protobuf.Value.getDefaultInstance());
+    public com.google.protobuf.Value.Builder addValuesBuilder(int index) {
+      return getValuesFieldBuilder()
+          .addBuilder(index, com.google.protobuf.Value.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A streamed result set consists of a stream of values, which might
      * be split into many `PartialResultSet` messages to accommodate
@@ -2484,9 +2599,10 @@ private static final long serialVersionUID = 0L;
      * [here][google.spanner.v1.TypeCode].
      * It is possible that the last value in values is "chunked",
      * meaning that the rest of the value is sent in subsequent
-     * `PartialResultSet`(s). This is denoted by the [chunked_value][google.spanner.v1.PartialResultSet.chunked_value]
-     * field. Two or more chunked values can be merged to form a
-     * complete value as follows:
+     * `PartialResultSet`(s). This is denoted by the
+     * [chunked_value][google.spanner.v1.PartialResultSet.chunked_value] field.
+     * Two or more chunked values can be merged to form a complete value as
+     * follows:
      *   * `bool/number/null`: cannot be chunked
      *   * `string`: concatenate the strings
      *   * `list`: concatenate the lists. If the last element in a list is a
@@ -2538,16 +2654,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Value values = 2;</code>
      */
-    public java.util.List<com.google.protobuf.Value.Builder> 
-         getValuesBuilderList() {
+    public java.util.List<com.google.protobuf.Value.Builder> getValuesBuilderList() {
       return getValuesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
         getValuesFieldBuilder() {
       if (valuesBuilder_ == null) {
-        valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
+        valuesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
                 values_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -2557,12 +2678,15 @@ private static final long serialVersionUID = 0L;
       return valuesBuilder_;
     }
 
-    private boolean chunkedValue_ ;
+    private boolean chunkedValue_;
     /**
+     *
+     *
      * <pre>
-     * If true, then the final value in [values][google.spanner.v1.PartialResultSet.values] is chunked, and must
-     * be combined with more values from subsequent `PartialResultSet`s
-     * to obtain a complete field value.
+     * If true, then the final value in
+     * [values][google.spanner.v1.PartialResultSet.values] is chunked, and must be
+     * combined with more values from subsequent `PartialResultSet`s to obtain a
+     * complete field value.
      * </pre>
      *
      * <code>bool chunked_value = 3;</code>
@@ -2571,31 +2695,37 @@ private static final long serialVersionUID = 0L;
       return chunkedValue_;
     }
     /**
+     *
+     *
      * <pre>
-     * If true, then the final value in [values][google.spanner.v1.PartialResultSet.values] is chunked, and must
-     * be combined with more values from subsequent `PartialResultSet`s
-     * to obtain a complete field value.
+     * If true, then the final value in
+     * [values][google.spanner.v1.PartialResultSet.values] is chunked, and must be
+     * combined with more values from subsequent `PartialResultSet`s to obtain a
+     * complete field value.
      * </pre>
      *
      * <code>bool chunked_value = 3;</code>
      */
     public Builder setChunkedValue(boolean value) {
-      
+
       chunkedValue_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * If true, then the final value in [values][google.spanner.v1.PartialResultSet.values] is chunked, and must
-     * be combined with more values from subsequent `PartialResultSet`s
-     * to obtain a complete field value.
+     * If true, then the final value in
+     * [values][google.spanner.v1.PartialResultSet.values] is chunked, and must be
+     * combined with more values from subsequent `PartialResultSet`s to obtain a
+     * complete field value.
      * </pre>
      *
      * <code>bool chunked_value = 3;</code>
      */
     public Builder clearChunkedValue() {
-      
+
       chunkedValue_ = false;
       onChanged();
       return this;
@@ -2603,6 +2733,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * Streaming calls might be interrupted for a variety of reasons, such
      * as TCP connection loss. If this occurs, the stream of results can
@@ -2617,6 +2749,8 @@ private static final long serialVersionUID = 0L;
       return resumeToken_;
     }
     /**
+     *
+     *
      * <pre>
      * Streaming calls might be interrupted for a variety of reasons, such
      * as TCP connection loss. If this occurs, the stream of results can
@@ -2629,14 +2763,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setResumeToken(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       resumeToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Streaming calls might be interrupted for a variety of reasons, such
      * as TCP connection loss. If this occurs, the stream of results can
@@ -2648,7 +2784,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes resume_token = 4;</code>
      */
     public Builder clearResumeToken() {
-      
+
       resumeToken_ = getDefaultInstance().getResumeToken();
       onChanged();
       return this;
@@ -2656,15 +2792,19 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.v1.ResultSetStats stats_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.ResultSetStats, com.google.spanner.v1.ResultSetStats.Builder, com.google.spanner.v1.ResultSetStatsOrBuilder> statsBuilder_;
+            com.google.spanner.v1.ResultSetStats,
+            com.google.spanner.v1.ResultSetStats.Builder,
+            com.google.spanner.v1.ResultSetStatsOrBuilder>
+        statsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2673,13 +2813,14 @@ private static final long serialVersionUID = 0L;
       return statsBuilder_ != null || stats_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2692,13 +2833,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2717,19 +2859,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
      */
-    public Builder setStats(
-        com.google.spanner.v1.ResultSetStats.Builder builderForValue) {
+    public Builder setStats(com.google.spanner.v1.ResultSetStats.Builder builderForValue) {
       if (statsBuilder_ == null) {
         stats_ = builderForValue.build();
         onChanged();
@@ -2740,13 +2882,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2755,7 +2898,9 @@ private static final long serialVersionUID = 0L;
       if (statsBuilder_ == null) {
         if (stats_ != null) {
           stats_ =
-            com.google.spanner.v1.ResultSetStats.newBuilder(stats_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.ResultSetStats.newBuilder(stats_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           stats_ = value;
         }
@@ -2767,13 +2912,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2790,30 +2936,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
      */
     public com.google.spanner.v1.ResultSetStats.Builder getStatsBuilder() {
-      
+
       onChanged();
       return getStatsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
@@ -2822,38 +2970,41 @@ private static final long serialVersionUID = 0L;
       if (statsBuilder_ != null) {
         return statsBuilder_.getMessageOrBuilder();
       } else {
-        return stats_ == null ?
-            com.google.spanner.v1.ResultSetStats.getDefaultInstance() : stats_;
+        return stats_ == null ? com.google.spanner.v1.ResultSetStats.getDefaultInstance() : stats_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Query plan and execution statistics for the statement that produced this
      * streaming result set. These can be requested by setting
-     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] and are sent
-     * only once with the last response in the stream.
-     * This field will also be present in the last response for DML
-     * statements.
+     * [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode]
+     * and are sent only once with the last response in the stream. This field
+     * will also be present in the last response for DML statements.
      * </pre>
      *
      * <code>.google.spanner.v1.ResultSetStats stats = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.ResultSetStats, com.google.spanner.v1.ResultSetStats.Builder, com.google.spanner.v1.ResultSetStatsOrBuilder> 
+            com.google.spanner.v1.ResultSetStats,
+            com.google.spanner.v1.ResultSetStats.Builder,
+            com.google.spanner.v1.ResultSetStatsOrBuilder>
         getStatsFieldBuilder() {
       if (statsBuilder_ == null) {
-        statsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.ResultSetStats, com.google.spanner.v1.ResultSetStats.Builder, com.google.spanner.v1.ResultSetStatsOrBuilder>(
-                getStats(),
-                getParentForChildren(),
-                isClean());
+        statsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.ResultSetStats,
+                com.google.spanner.v1.ResultSetStats.Builder,
+                com.google.spanner.v1.ResultSetStatsOrBuilder>(
+                getStats(), getParentForChildren(), isClean());
         stats_ = null;
       }
       return statsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2863,12 +3014,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.PartialResultSet)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.PartialResultSet)
   private static final com.google.spanner.v1.PartialResultSet DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.PartialResultSet();
   }
@@ -2877,16 +3028,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PartialResultSet>
-      PARSER = new com.google.protobuf.AbstractParser<PartialResultSet>() {
-    @java.lang.Override
-    public PartialResultSet parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PartialResultSet(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PartialResultSet> PARSER =
+      new com.google.protobuf.AbstractParser<PartialResultSet>() {
+        @java.lang.Override
+        public PartialResultSet parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PartialResultSet(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PartialResultSet> parser() {
     return PARSER;
@@ -2901,6 +3052,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.v1.PartialResultSet getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

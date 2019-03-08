@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface RestoreAgentRequestOrBuilder extends
+public interface RestoreAgentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.RestoreAgentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The project that the agent to restore is associated with.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -17,6 +20,8 @@ public interface RestoreAgentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The project that the agent to restore is associated with.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -24,10 +29,11 @@ public interface RestoreAgentRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to restore.
    * Note: The URI must start with "gs://".
@@ -37,6 +43,8 @@ public interface RestoreAgentRequestOrBuilder extends
    */
   java.lang.String getAgentUri();
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to restore.
    * Note: The URI must start with "gs://".
@@ -44,10 +52,11 @@ public interface RestoreAgentRequestOrBuilder extends
    *
    * <code>string agent_uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAgentUriBytes();
+  com.google.protobuf.ByteString getAgentUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The agent to restore.
    * Example for how to restore an agent via the command line:

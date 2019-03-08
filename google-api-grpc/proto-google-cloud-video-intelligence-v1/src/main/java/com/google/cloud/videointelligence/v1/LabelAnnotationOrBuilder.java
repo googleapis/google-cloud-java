@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface LabelAnnotationOrBuilder extends
+public interface LabelAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.LabelAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Detected entity.
    * </pre>
@@ -16,6 +19,8 @@ public interface LabelAnnotationOrBuilder extends
    */
   boolean hasEntity();
   /**
+   *
+   *
    * <pre>
    * Detected entity.
    * </pre>
@@ -24,6 +29,8 @@ public interface LabelAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.Entity getEntity();
   /**
+   *
+   *
    * <pre>
    * Detected entity.
    * </pre>
@@ -33,6 +40,8 @@ public interface LabelAnnotationOrBuilder extends
   com.google.cloud.videointelligence.v1.EntityOrBuilder getEntityOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Common categories for the detected entity.
    * E.g. when the label is `Terrier` the category is likely `dog`. And in some
@@ -42,9 +51,10 @@ public interface LabelAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.Entity> 
-      getCategoryEntitiesList();
+  java.util.List<com.google.cloud.videointelligence.v1.Entity> getCategoryEntitiesList();
   /**
+   *
+   *
    * <pre>
    * Common categories for the detected entity.
    * E.g. when the label is `Terrier` the category is likely `dog`. And in some
@@ -56,6 +66,8 @@ public interface LabelAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.Entity getCategoryEntities(int index);
   /**
+   *
+   *
    * <pre>
    * Common categories for the detected entity.
    * E.g. when the label is `Terrier` the category is likely `dog`. And in some
@@ -67,6 +79,8 @@ public interface LabelAnnotationOrBuilder extends
    */
   int getCategoryEntitiesCount();
   /**
+   *
+   *
    * <pre>
    * Common categories for the detected entity.
    * E.g. when the label is `Terrier` the category is likely `dog`. And in some
@@ -76,9 +90,11 @@ public interface LabelAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.EntityOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1.EntityOrBuilder>
       getCategoryEntitiesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Common categories for the detected entity.
    * E.g. when the label is `Terrier` the category is likely `dog`. And in some
@@ -88,19 +104,21 @@ public interface LabelAnnotationOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1.Entity category_entities = 2;</code>
    */
-  com.google.cloud.videointelligence.v1.EntityOrBuilder getCategoryEntitiesOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1.EntityOrBuilder getCategoryEntitiesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * All video segments where a label was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.LabelSegment> 
-      getSegmentsList();
+  java.util.List<com.google.cloud.videointelligence.v1.LabelSegment> getSegmentsList();
   /**
+   *
+   *
    * <pre>
    * All video segments where a label was detected.
    * </pre>
@@ -109,6 +127,8 @@ public interface LabelAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.LabelSegment getSegments(int index);
   /**
+   *
+   *
    * <pre>
    * All video segments where a label was detected.
    * </pre>
@@ -117,34 +137,40 @@ public interface LabelAnnotationOrBuilder extends
    */
   int getSegmentsCount();
   /**
+   *
+   *
    * <pre>
    * All video segments where a label was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.LabelSegmentOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1.LabelSegmentOrBuilder>
       getSegmentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * All video segments where a label was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelSegment segments = 3;</code>
    */
-  com.google.cloud.videointelligence.v1.LabelSegmentOrBuilder getSegmentsOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1.LabelSegmentOrBuilder getSegmentsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * All video frames where a label was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.LabelFrame> 
-      getFramesList();
+  java.util.List<com.google.cloud.videointelligence.v1.LabelFrame> getFramesList();
   /**
+   *
+   *
    * <pre>
    * All video frames where a label was detected.
    * </pre>
@@ -153,6 +179,8 @@ public interface LabelAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.LabelFrame getFrames(int index);
   /**
+   *
+   *
    * <pre>
    * All video frames where a label was detected.
    * </pre>
@@ -161,21 +189,24 @@ public interface LabelAnnotationOrBuilder extends
    */
   int getFramesCount();
   /**
+   *
+   *
    * <pre>
    * All video frames where a label was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.LabelFrameOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1.LabelFrameOrBuilder>
       getFramesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * All video frames where a label was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.LabelFrame frames = 4;</code>
    */
-  com.google.cloud.videointelligence.v1.LabelFrameOrBuilder getFramesOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1.LabelFrameOrBuilder getFramesOrBuilder(int index);
 }

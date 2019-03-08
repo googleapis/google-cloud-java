@@ -30,14 +30,6 @@ import static java.nio.file.StandardOpenOption.WRITE;
 import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.testing.NullPointerTester;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -59,10 +51,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link CloudStorageFileSystemProvider}.
- */
+/** Unit tests for {@link CloudStorageFileSystemProvider}. */
 @RunWith(JUnit4.class)
 public class CloudStorageFileSystemProviderTest {
 
@@ -332,8 +328,8 @@ public class CloudStorageFileSystemProviderTest {
   @Test
   public void testWrite_absoluteObjectName_disableStrip_slashGetsPreserved() throws Exception {
     try (CloudStorageFileSystem fs =
-            forBucket(
-                "greenbean", CloudStorageConfiguration.builder().stripPrefixSlash(false).build())) {
+        forBucket(
+            "greenbean", CloudStorageConfiguration.builder().stripPrefixSlash(false).build())) {
       Path path = fs.getPath("/adipose/yep");
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
@@ -393,7 +389,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testExists_trailingSlash_disablePseudoDirectories() throws Exception  {
+  public void testExists_trailingSlash_disablePseudoDirectories() throws Exception {
     try (CloudStorageFileSystem fs = forBucket("military", usePseudoDirectories(false))) {
       assertThat(Files.exists(fs.getPath("fashion/"))).isFalse();
     }
@@ -443,7 +439,7 @@ public class CloudStorageFileSystemProviderTest {
       // the root folder is a directory
       assertThat(Files.isDirectory(fs.getPath("/"))).isTrue();
       assertThat(Files.isDirectory(fs.getPath(""))).isTrue();
-      }
+    }
   }
 
   @Test
@@ -498,7 +494,7 @@ public class CloudStorageFileSystemProviderTest {
     }
   }
 
-    @Test
+  @Test
   public void testCopy() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
@@ -599,7 +595,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testIsDirectory_trailingSlash_pseudoDirectoriesDisabled_false() throws Exception  {
+  public void testIsDirectory_trailingSlash_pseudoDirectoriesDisabled_false() throws Exception {
     try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
       assertThat(Files.isDirectory(fs.getPath("fundir/"))).isFalse();
     }
@@ -698,7 +694,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testNewFileSystem() throws Exception {
-    Map<String,String> env = new HashMap<>();
+    Map<String, String> env = new HashMap<>();
     FileSystems.newFileSystem(URI.create("gs://bucket/path/to/file"), env);
   }
 

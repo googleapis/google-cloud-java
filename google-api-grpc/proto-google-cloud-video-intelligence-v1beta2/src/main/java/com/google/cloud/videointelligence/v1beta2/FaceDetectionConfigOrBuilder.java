@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta2;
 
-public interface FaceDetectionConfigOrBuilder extends
+public interface FaceDetectionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta2.FaceDetectionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Model to use for face detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -18,6 +21,8 @@ public interface FaceDetectionConfigOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * Model to use for face detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -26,10 +31,11 @@ public interface FaceDetectionConfigOrBuilder extends
    *
    * <code>string model = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 
   /**
+   *
+   *
    * <pre>
    * Whether bounding boxes be included in the face annotation output.
    * </pre>

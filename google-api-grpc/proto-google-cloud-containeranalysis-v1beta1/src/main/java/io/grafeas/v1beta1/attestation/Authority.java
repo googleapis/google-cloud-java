@@ -4,6 +4,8 @@
 package io.grafeas.v1beta1.attestation;
 
 /**
+ *
+ *
  * <pre>
  * Note kind that represents a logical attestation "role" or "authority". For
  * example, an organization might have one `Authority` for "QA" and one for
@@ -17,23 +19,23 @@ package io.grafeas.v1beta1.attestation;
  *
  * Protobuf type {@code grafeas.v1beta1.attestation.Authority}
  */
-public  final class Authority extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Authority extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.Authority)
     AuthorityOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Authority.newBuilder() to construct.
   private Authority(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Authority() {
-  }
+
+  private Authority() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Authority(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,56 +55,64 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            io.grafeas.v1beta1.attestation.Authority.Hint.Builder subBuilder = null;
-            if (hint_ != null) {
-              subBuilder = hint_.toBuilder();
-            }
-            hint_ = input.readMessage(io.grafeas.v1beta1.attestation.Authority.Hint.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(hint_);
-              hint_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              io.grafeas.v1beta1.attestation.Authority.Hint.Builder subBuilder = null;
+              if (hint_ != null) {
+                subBuilder = hint_.toBuilder();
+              }
+              hint_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.attestation.Authority.Hint.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hint_);
+                hint_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.attestation.AttestationOuterClass
+        .internal_static_grafeas_v1beta1_attestation_Authority_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_fieldAccessorTable
+    return io.grafeas.v1beta1.attestation.AttestationOuterClass
+        .internal_static_grafeas_v1beta1_attestation_Authority_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.attestation.Authority.class, io.grafeas.v1beta1.attestation.Authority.Builder.class);
+            io.grafeas.v1beta1.attestation.Authority.class,
+            io.grafeas.v1beta1.attestation.Authority.Builder.class);
   }
 
-  public interface HintOrBuilder extends
+  public interface HintOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.attestation.Authority.Hint)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The human readable name of this Attestation Authority, for example "qa".
      * </pre>
@@ -111,16 +121,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getHumanReadableName();
     /**
+     *
+     *
      * <pre>
      * The human readable name of this Attestation Authority, for example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getHumanReadableNameBytes();
+    com.google.protobuf.ByteString getHumanReadableNameBytes();
   }
   /**
+   *
+   *
    * <pre>
    * This submessage provides human-readable hints about the purpose of the
    * Authority. Because the name of a Note acts as its resource reference, it is
@@ -133,24 +146,25 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1beta1.attestation.Authority.Hint}
    */
-  public  static final class Hint extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Hint extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.Authority.Hint)
       HintOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Hint.newBuilder() to construct.
     private Hint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Hint() {
       humanReadableName_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Hint(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -170,47 +184,52 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              humanReadableName_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                humanReadableName_ = s;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_Hint_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Authority_Hint_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_Hint_fieldAccessorTable
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Authority_Hint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.attestation.Authority.Hint.class, io.grafeas.v1beta1.attestation.Authority.Hint.Builder.class);
+              io.grafeas.v1beta1.attestation.Authority.Hint.class,
+              io.grafeas.v1beta1.attestation.Authority.Hint.Builder.class);
     }
 
     public static final int HUMAN_READABLE_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object humanReadableName_;
     /**
+     *
+     *
      * <pre>
      * The human readable name of this Attestation Authority, for example "qa".
      * </pre>
@@ -222,27 +241,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         humanReadableName_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The human readable name of this Attestation Authority, for example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getHumanReadableNameBytes() {
+    public com.google.protobuf.ByteString getHumanReadableNameBytes() {
       java.lang.Object ref = humanReadableName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         humanReadableName_ = b;
         return b;
       } else {
@@ -251,6 +269,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -262,8 +281,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getHumanReadableNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, humanReadableName_);
       }
@@ -287,16 +305,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.grafeas.v1beta1.attestation.Authority.Hint)) {
         return super.equals(obj);
       }
-      io.grafeas.v1beta1.attestation.Authority.Hint other = (io.grafeas.v1beta1.attestation.Authority.Hint) obj;
+      io.grafeas.v1beta1.attestation.Authority.Hint other =
+          (io.grafeas.v1beta1.attestation.Authority.Hint) obj;
 
       boolean result = true;
-      result = result && getHumanReadableName()
-          .equals(other.getHumanReadableName());
+      result = result && getHumanReadableName().equals(other.getHumanReadableName());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -315,88 +333,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.grafeas.v1beta1.attestation.Authority.Hint parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.grafeas.v1beta1.attestation.Authority.Hint parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1beta1.attestation.Authority.Hint parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.grafeas.v1beta1.attestation.Authority.Hint prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -406,6 +430,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * This submessage provides human-readable hints about the purpose of the
      * Authority. Because the name of a Note acts as its resource reference, it is
@@ -418,21 +444,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code grafeas.v1beta1.attestation.Authority.Hint}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.attestation.Authority.Hint)
         io.grafeas.v1beta1.attestation.Authority.HintOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_Hint_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1beta1.attestation.AttestationOuterClass
+            .internal_static_grafeas_v1beta1_attestation_Authority_Hint_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_Hint_fieldAccessorTable
+        return io.grafeas.v1beta1.attestation.AttestationOuterClass
+            .internal_static_grafeas_v1beta1_attestation_Authority_Hint_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1beta1.attestation.Authority.Hint.class, io.grafeas.v1beta1.attestation.Authority.Hint.Builder.class);
+                io.grafeas.v1beta1.attestation.Authority.Hint.class,
+                io.grafeas.v1beta1.attestation.Authority.Hint.Builder.class);
       }
 
       // Construct using io.grafeas.v1beta1.attestation.Authority.Hint.newBuilder()
@@ -440,16 +469,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -459,9 +487,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_Hint_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1beta1.attestation.AttestationOuterClass
+            .internal_static_grafeas_v1beta1_attestation_Authority_Hint_descriptor;
       }
 
       @java.lang.Override
@@ -480,7 +508,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public io.grafeas.v1beta1.attestation.Authority.Hint buildPartial() {
-        io.grafeas.v1beta1.attestation.Authority.Hint result = new io.grafeas.v1beta1.attestation.Authority.Hint(this);
+        io.grafeas.v1beta1.attestation.Authority.Hint result =
+            new io.grafeas.v1beta1.attestation.Authority.Hint(this);
         result.humanReadableName_ = humanReadableName_;
         onBuilt();
         return result;
@@ -490,38 +519,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1beta1.attestation.Authority.Hint) {
-          return mergeFrom((io.grafeas.v1beta1.attestation.Authority.Hint)other);
+          return mergeFrom((io.grafeas.v1beta1.attestation.Authority.Hint) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -529,7 +561,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(io.grafeas.v1beta1.attestation.Authority.Hint other) {
-        if (other == io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance()) return this;
+        if (other == io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance())
+          return this;
         if (!other.getHumanReadableName().isEmpty()) {
           humanReadableName_ = other.humanReadableName_;
           onChanged();
@@ -565,6 +598,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object humanReadableName_ = "";
       /**
+       *
+       *
        * <pre>
        * The human readable name of this Attestation Authority, for example "qa".
        * </pre>
@@ -574,8 +609,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getHumanReadableName() {
         java.lang.Object ref = humanReadableName_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           humanReadableName_ = s;
           return s;
@@ -584,19 +618,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The human readable name of this Attestation Authority, for example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getHumanReadableNameBytes() {
+      public com.google.protobuf.ByteString getHumanReadableNameBytes() {
         java.lang.Object ref = humanReadableName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           humanReadableName_ = b;
           return b;
         } else {
@@ -604,23 +638,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The human readable name of this Attestation Authority, for example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
        */
-      public Builder setHumanReadableName(
-          java.lang.String value) {
+      public Builder setHumanReadableName(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         humanReadableName_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The human readable name of this Attestation Authority, for example "qa".
        * </pre>
@@ -628,29 +665,31 @@ private static final long serialVersionUID = 0L;
        * <code>string human_readable_name = 1;</code>
        */
       public Builder clearHumanReadableName() {
-        
+
         humanReadableName_ = getDefaultInstance().getHumanReadableName();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The human readable name of this Attestation Authority, for example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
        */
-      public Builder setHumanReadableNameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setHumanReadableNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         humanReadableName_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -663,12 +702,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.attestation.Authority.Hint)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1beta1.attestation.Authority.Hint)
     private static final io.grafeas.v1beta1.attestation.Authority.Hint DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1beta1.attestation.Authority.Hint();
     }
@@ -677,16 +716,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Hint>
-        PARSER = new com.google.protobuf.AbstractParser<Hint>() {
-      @java.lang.Override
-      public Hint parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Hint(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Hint> PARSER =
+        new com.google.protobuf.AbstractParser<Hint>() {
+          @java.lang.Override
+          public Hint parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Hint(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Hint> parser() {
       return PARSER;
@@ -701,12 +740,13 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.attestation.Authority.Hint getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int HINT_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.attestation.Authority.Hint hint_;
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
@@ -717,6 +757,8 @@ private static final long serialVersionUID = 0L;
     return hint_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
@@ -724,9 +766,13 @@ private static final long serialVersionUID = 0L;
    * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
    */
   public io.grafeas.v1beta1.attestation.Authority.Hint getHint() {
-    return hint_ == null ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance() : hint_;
+    return hint_ == null
+        ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance()
+        : hint_;
   }
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
@@ -738,6 +784,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -749,8 +796,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (hint_ != null) {
       output.writeMessage(1, getHint());
     }
@@ -764,8 +810,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (hint_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getHint());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getHint());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -775,7 +820,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.attestation.Authority)) {
       return super.equals(obj);
@@ -785,8 +830,7 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasHint() == other.hasHint());
     if (hasHint()) {
-      result = result && getHint()
-          .equals(other.getHint());
+      result = result && getHint().equals(other.getHint());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -808,97 +852,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.attestation.Authority parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.attestation.Authority parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.attestation.Authority parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.attestation.Authority parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.attestation.Authority parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.attestation.Authority parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1beta1.attestation.Authority prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Note kind that represents a logical attestation "role" or "authority". For
    * example, an organization might have one `Authority` for "QA" and one for
@@ -912,21 +963,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1beta1.attestation.Authority}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.attestation.Authority)
       io.grafeas.v1beta1.attestation.AuthorityOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Authority_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_fieldAccessorTable
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Authority_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.attestation.Authority.class, io.grafeas.v1beta1.attestation.Authority.Builder.class);
+              io.grafeas.v1beta1.attestation.Authority.class,
+              io.grafeas.v1beta1.attestation.Authority.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.attestation.Authority.newBuilder()
@@ -934,16 +987,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -957,9 +1009,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Authority_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Authority_descriptor;
     }
 
     @java.lang.Override
@@ -978,7 +1030,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public io.grafeas.v1beta1.attestation.Authority buildPartial() {
-      io.grafeas.v1beta1.attestation.Authority result = new io.grafeas.v1beta1.attestation.Authority(this);
+      io.grafeas.v1beta1.attestation.Authority result =
+          new io.grafeas.v1beta1.attestation.Authority(this);
       if (hintBuilder_ == null) {
         result.hint_ = hint_;
       } else {
@@ -992,38 +1045,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.attestation.Authority) {
-        return mergeFrom((io.grafeas.v1beta1.attestation.Authority)other);
+        return mergeFrom((io.grafeas.v1beta1.attestation.Authority) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1066,8 +1120,13 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1beta1.attestation.Authority.Hint hint_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.attestation.Authority.Hint, io.grafeas.v1beta1.attestation.Authority.Hint.Builder, io.grafeas.v1beta1.attestation.Authority.HintOrBuilder> hintBuilder_;
+            io.grafeas.v1beta1.attestation.Authority.Hint,
+            io.grafeas.v1beta1.attestation.Authority.Hint.Builder,
+            io.grafeas.v1beta1.attestation.Authority.HintOrBuilder>
+        hintBuilder_;
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1078,6 +1137,8 @@ private static final long serialVersionUID = 0L;
       return hintBuilder_ != null || hint_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1086,12 +1147,16 @@ private static final long serialVersionUID = 0L;
      */
     public io.grafeas.v1beta1.attestation.Authority.Hint getHint() {
       if (hintBuilder_ == null) {
-        return hint_ == null ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance() : hint_;
+        return hint_ == null
+            ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance()
+            : hint_;
       } else {
         return hintBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1112,14 +1177,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
      */
-    public Builder setHint(
-        io.grafeas.v1beta1.attestation.Authority.Hint.Builder builderForValue) {
+    public Builder setHint(io.grafeas.v1beta1.attestation.Authority.Hint.Builder builderForValue) {
       if (hintBuilder_ == null) {
         hint_ = builderForValue.build();
         onChanged();
@@ -1130,6 +1196,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1140,7 +1208,9 @@ private static final long serialVersionUID = 0L;
       if (hintBuilder_ == null) {
         if (hint_ != null) {
           hint_ =
-            io.grafeas.v1beta1.attestation.Authority.Hint.newBuilder(hint_).mergeFrom(value).buildPartial();
+              io.grafeas.v1beta1.attestation.Authority.Hint.newBuilder(hint_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           hint_ = value;
         }
@@ -1152,6 +1222,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1170,6 +1242,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1177,11 +1251,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
      */
     public io.grafeas.v1beta1.attestation.Authority.Hint.Builder getHintBuilder() {
-      
+
       onChanged();
       return getHintFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1192,11 +1268,14 @@ private static final long serialVersionUID = 0L;
       if (hintBuilder_ != null) {
         return hintBuilder_.getMessageOrBuilder();
       } else {
-        return hint_ == null ?
-            io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance() : hint_;
+        return hint_ == null
+            ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance()
+            : hint_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1204,21 +1283,24 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.attestation.Authority.Hint hint = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.attestation.Authority.Hint, io.grafeas.v1beta1.attestation.Authority.Hint.Builder, io.grafeas.v1beta1.attestation.Authority.HintOrBuilder> 
+            io.grafeas.v1beta1.attestation.Authority.Hint,
+            io.grafeas.v1beta1.attestation.Authority.Hint.Builder,
+            io.grafeas.v1beta1.attestation.Authority.HintOrBuilder>
         getHintFieldBuilder() {
       if (hintBuilder_ == null) {
-        hintBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.attestation.Authority.Hint, io.grafeas.v1beta1.attestation.Authority.Hint.Builder, io.grafeas.v1beta1.attestation.Authority.HintOrBuilder>(
-                getHint(),
-                getParentForChildren(),
-                isClean());
+        hintBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.attestation.Authority.Hint,
+                io.grafeas.v1beta1.attestation.Authority.Hint.Builder,
+                io.grafeas.v1beta1.attestation.Authority.HintOrBuilder>(
+                getHint(), getParentForChildren(), isClean());
         hint_ = null;
       }
       return hintBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1228,12 +1310,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.attestation.Authority)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.attestation.Authority)
   private static final io.grafeas.v1beta1.attestation.Authority DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.attestation.Authority();
   }
@@ -1242,16 +1324,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Authority>
-      PARSER = new com.google.protobuf.AbstractParser<Authority>() {
-    @java.lang.Override
-    public Authority parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Authority(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Authority> PARSER =
+      new com.google.protobuf.AbstractParser<Authority>() {
+        @java.lang.Override
+        public Authority parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Authority(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Authority> parser() {
     return PARSER;
@@ -1266,6 +1348,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1beta1.attestation.Authority getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

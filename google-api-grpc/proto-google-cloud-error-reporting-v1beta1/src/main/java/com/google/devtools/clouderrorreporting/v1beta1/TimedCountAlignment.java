@@ -4,15 +4,18 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Specifies how the time periods of error group counts are aligned.
  * </pre>
  *
  * Protobuf enum {@code google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment}
  */
-public enum TimedCountAlignment
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum TimedCountAlignment implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * No alignment specified.
    * </pre>
@@ -21,6 +24,8 @@ public enum TimedCountAlignment
    */
   ERROR_COUNT_ALIGNMENT_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * The time periods shall be consecutive, have width equal to the
    * requested duration, and be aligned at the `alignment_time` provided in
@@ -36,6 +41,8 @@ public enum TimedCountAlignment
    */
   ALIGNMENT_EQUAL_ROUNDED(1),
   /**
+   *
+   *
    * <pre>
    * The time periods shall be consecutive, have width equal to the
    * requested duration, and be aligned at the end of the requested time
@@ -50,6 +57,8 @@ public enum TimedCountAlignment
   ;
 
   /**
+   *
+   *
    * <pre>
    * No alignment specified.
    * </pre>
@@ -58,6 +67,8 @@ public enum TimedCountAlignment
    */
   public static final int ERROR_COUNT_ALIGNMENT_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * The time periods shall be consecutive, have width equal to the
    * requested duration, and be aligned at the `alignment_time` provided in
@@ -73,6 +84,8 @@ public enum TimedCountAlignment
    */
   public static final int ALIGNMENT_EQUAL_ROUNDED_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * The time periods shall be consecutive, have width equal to the
    * requested duration, and be aligned at the end of the requested time
@@ -84,7 +97,6 @@ public enum TimedCountAlignment
    */
   public static final int ALIGNMENT_EQUAL_AT_END_VALUE = 2;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -93,9 +105,7 @@ public enum TimedCountAlignment
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static TimedCountAlignment valueOf(int value) {
     return forNumber(value);
@@ -103,10 +113,14 @@ public enum TimedCountAlignment
 
   public static TimedCountAlignment forNumber(int value) {
     switch (value) {
-      case 0: return ERROR_COUNT_ALIGNMENT_UNSPECIFIED;
-      case 1: return ALIGNMENT_EQUAL_ROUNDED;
-      case 2: return ALIGNMENT_EQUAL_AT_END;
-      default: return null;
+      case 0:
+        return ERROR_COUNT_ALIGNMENT_UNSPECIFIED;
+      case 1:
+        return ALIGNMENT_EQUAL_ROUNDED;
+      case 2:
+        return ALIGNMENT_EQUAL_AT_END;
+      default:
+        return null;
     }
   }
 
@@ -114,25 +128,27 @@ public enum TimedCountAlignment
       internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      TimedCountAlignment> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<TimedCountAlignment>() {
-          public TimedCountAlignment findValueByNumber(int number) {
-            return TimedCountAlignment.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<TimedCountAlignment>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TimedCountAlignment>() {
+            public TimedCountAlignment findValueByNumber(int number) {
+              return TimedCountAlignment.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.getDescriptor().getEnumTypes().get(0);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.getDescriptor()
+        .getEnumTypes()
+        .get(0);
   }
 
   private static final TimedCountAlignment[] VALUES = values();
@@ -140,8 +156,7 @@ public enum TimedCountAlignment
   public static TimedCountAlignment valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -157,4 +172,3 @@ public enum TimedCountAlignment
 
   // @@protoc_insertion_point(enum_scope:google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment)
 }
-

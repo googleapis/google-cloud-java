@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CreateTableFromSnapshotMetadataOrBuilder extends
+public interface CreateTableFromSnapshotMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateTableFromSnapshotMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateTableFromSnapshot
    * operation.
@@ -17,6 +20,8 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
    */
   boolean hasOriginalRequest();
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateTableFromSnapshot
    * operation.
@@ -26,6 +31,8 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
    */
   com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest getOriginalRequest();
   /**
+   *
+   *
    * <pre>
    * The request that prompted the initiation of this CreateTableFromSnapshot
    * operation.
@@ -33,9 +40,12 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
    *
    * <code>.google.bigtable.admin.v2.CreateTableFromSnapshotRequest original_request = 1;</code>
    */
-  com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder getOriginalRequestOrBuilder();
+  com.google.bigtable.admin.v2.CreateTableFromSnapshotRequestOrBuilder
+      getOriginalRequestOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -44,6 +54,8 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
    */
   boolean hasRequestTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -52,6 +64,8 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getRequestTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the original request was received.
    * </pre>
@@ -61,6 +75,8 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>
@@ -69,6 +85,8 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
    */
   boolean hasFinishTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>
@@ -77,6 +95,8 @@ public interface CreateTableFromSnapshotMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getFinishTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the operation failed or was completed successfully.
    * </pre>

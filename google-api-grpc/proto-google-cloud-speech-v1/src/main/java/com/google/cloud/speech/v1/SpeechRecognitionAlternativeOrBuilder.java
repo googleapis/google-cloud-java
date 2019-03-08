@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface SpeechRecognitionAlternativeOrBuilder extends
+public interface SpeechRecognitionAlternativeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.SpeechRecognitionAlternative)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. Transcript text representing the words that the user spoke.
    * </pre>
@@ -16,16 +19,19 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
    */
   java.lang.String getTranscript();
   /**
+   *
+   *
    * <pre>
    * Output only. Transcript text representing the words that the user spoke.
    * </pre>
    *
    * <code>string transcript = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTranscriptBytes();
+  com.google.protobuf.ByteString getTranscriptBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
@@ -41,46 +47,63 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
   float getConfidence();
 
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.WordInfo words = 3;</code>
    */
-  java.util.List<com.google.cloud.speech.v1.WordInfo> 
-      getWordsList();
+  java.util.List<com.google.cloud.speech.v1.WordInfo> getWordsList();
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.WordInfo words = 3;</code>
    */
   com.google.cloud.speech.v1.WordInfo getWords(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.WordInfo words = 3;</code>
    */
   int getWordsCount();
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.WordInfo words = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.speech.v1.WordInfoOrBuilder> 
-      getWordsOrBuilderList();
+  java.util.List<? extends com.google.cloud.speech.v1.WordInfoOrBuilder> getWordsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
+   * from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1.WordInfo words = 3;</code>
    */
-  com.google.cloud.speech.v1.WordInfoOrBuilder getWordsOrBuilder(
-      int index);
+  com.google.cloud.speech.v1.WordInfoOrBuilder getWordsOrBuilder(int index);
 }

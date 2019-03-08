@@ -23,17 +23,13 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
-
 import java.nio.file.attribute.FileTime;
 import java.util.List;
 import java.util.Objects;
-
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-/**
- * Metadata for a Google Cloud Storage file.
- */
+/** Metadata for a Google Cloud Storage file. */
 @Immutable
 final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 

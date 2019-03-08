@@ -20,19 +20,22 @@
  * <p>A simple usage example:
  *
  * <p>Before the test:
- * <pre> {@code
+ *
+ * <pre>{@code
  * RemoteStorageHelper helper = RemoteStorageHelper.create();
  * Storage storage = helper.getOptions().getService();
  * String bucket = RemoteStorageHelper.generateBucketName();
  * storage.create(BucketInfo.of(bucket));
- * } </pre>
+ * }</pre>
  *
  * <p>After the test:
- * <pre> {@code
- * RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
- * } </pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage">
+ * <pre>{@code
+ * RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
+ * }</pre>
+ *
+ * @see <a
+ *     href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.storage.testing;

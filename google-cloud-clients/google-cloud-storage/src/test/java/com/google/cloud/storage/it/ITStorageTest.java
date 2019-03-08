@@ -28,24 +28,29 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.apache.ApacheHttpTransport;
 import com.google.api.client.util.DateTime;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
-import com.google.cloud.kms.v1.CreateKeyRingRequest;
-import com.google.cloud.kms.v1.CryptoKeyName;
-import com.google.cloud.kms.v1.CryptoKey;
-import com.google.cloud.kms.v1.GetCryptoKeyRequest;
-import com.google.cloud.kms.v1.GetKeyRingRequest;
-import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceBlockingStub;
-import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
-import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
+import com.google.cloud.kms.v1.CreateKeyRingRequest;
+import com.google.cloud.kms.v1.CryptoKey;
+import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.GetCryptoKeyRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceBlockingStub;
+import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.kms.v1.LocationName;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
@@ -79,6 +84,15 @@ import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
 import com.google.iam.v1.Binding;
+import com.google.iam.v1.IAMPolicyGrpc;
+import com.google.iam.v1.SetIamPolicyRequest;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.auth.MoreCallCredentials;
+import io.grpc.stub.MetadataUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -102,19 +116,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
-
-import com.google.iam.v1.IAMPolicyGrpc;
-import com.google.iam.v1.SetIamPolicyRequest;
-import io.grpc.auth.MoreCallCredentials;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-import io.grpc.Metadata;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
-import io.grpc.stub.MetadataUtils;
-
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITStorageTest {
@@ -148,7 +154,8 @@ public class ITStorageTest {
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
-  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+  private static final boolean IS_VPC_TEST =
+      System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
           && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
@@ -160,8 +167,9 @@ public class ITStorageTest {
             .setLocation("us")
             .setLifecycleRules(
                 ImmutableList.of(
-                    new LifecycleRule(LifecycleAction.newDeleteAction(),
-                            LifecycleCondition.newBuilder().setAge(1).build())))
+                    new LifecycleRule(
+                        LifecycleAction.newDeleteAction(),
+                        LifecycleCondition.newBuilder().setAge(1).build())))
             .build());
 
     // Prepare KMS KeyRing for CMEK tests
@@ -181,6 +189,15 @@ public class ITStorageTest {
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
+    }
+  }
+
+  private static class CustomHttpTransportFactory implements HttpTransportFactory {
+    @Override
+    public HttpTransport create() {
+      PoolingHttpClientConnectionManager manager = new PoolingHttpClientConnectionManager();
+      manager.setMaxTotal(1);
+      return new ApacheHttpTransport(HttpClients.createMinimal(manager));
     }
   }
 
@@ -363,8 +380,7 @@ public class ITStorageTest {
             .setLifecycleRules(
                 ImmutableList.of(
                     new LifecycleRule(
-                        LifecycleAction.newSetStorageClassAction(
-                            StorageClass.COLDLINE),
+                        LifecycleAction.newSetStorageClassAction(StorageClass.COLDLINE),
                         LifecycleCondition.newBuilder()
                             .setAge(1)
                             .setNumberOfNewerVersions(3)
@@ -373,12 +389,16 @@ public class ITStorageTest {
                             .setMatchesStorageClass(ImmutableList.of(StorageClass.COLDLINE))
                             .build())))
             .build());
-    Bucket remoteBucket = storage.get(lifecycleTestBucketName, Storage.BucketGetOption.fields(BucketField.LIFECYCLE));
+    Bucket remoteBucket =
+        storage.get(lifecycleTestBucketName, Storage.BucketGetOption.fields(BucketField.LIFECYCLE));
     LifecycleRule lifecycleRule = remoteBucket.getLifecycleRules().get(0);
     try {
       assertTrue(
-          lifecycleRule.getAction().getActionType().equals(LifecycleRule.SetStorageClassLifecycleAction.TYPE));
-      assertEquals(3,  lifecycleRule.getCondition().getNumberOfNewerVersions().intValue());
+          lifecycleRule
+              .getAction()
+              .getActionType()
+              .equals(LifecycleRule.SetStorageClassLifecycleAction.TYPE));
+      assertEquals(3, lifecycleRule.getCondition().getNumberOfNewerVersions().intValue());
       assertNotNull(lifecycleRule.getCondition().getCreatedBefore());
       assertFalse(lifecycleRule.getCondition().getIsLive());
       assertEquals(1, lifecycleRule.getCondition().getAge().intValue());
@@ -435,6 +455,26 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blob.getBucket(), remoteBlob.getBucket());
     assertEquals(blob.getName(), remoteBlob.getName());
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    assertTrue(remoteBlob.delete());
+  }
+
+  @Test
+  public void testCreateBlobMd5Crc32cFromHexString() {
+    String blobName = "test-create-blob-md5-crc32c-from-hex-string";
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMd5FromHexString("3b54781b51c94835084898e821899585")
+            .setCrc32cFromHexString("f4ddc43d")
+            .build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    assertEquals(blob.getBucket(), remoteBlob.getBucket());
+    assertEquals(blob.getName(), remoteBlob.getName());
+    assertEquals(blob.getMd5ToHexString(), remoteBlob.getMd5ToHexString());
+    assertEquals(blob.getCrc32cToHexString(), remoteBlob.getCrc32cToHexString());
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
@@ -1252,7 +1292,8 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testRotateFromCustomerEncryptionToKmsKeyWithCustomerEncrytion() {
+  @Ignore
+  public void testRotateFromCustomerEncryptionToKmsKeyWithCustomerEncryption() {
     String sourceBlobName = "test-copy-blob-encryption-key-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
     ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
@@ -1741,9 +1782,32 @@ public class ITStorageTest {
     assertTrue(storage.delete(BUCKET, blobName));
   }
 
+  @Test(timeout = 5000)
+  public void testWriteChannelWithConnectionPool() throws IOException {
+    TransportOptions transportOptions =
+        HttpTransportOptions.newBuilder()
+            .setHttpTransportFactory(new CustomHttpTransportFactory())
+            .build();
+    Storage storageWithPool =
+        StorageOptions.newBuilder().setTransportOptions(transportOptions).build().getService();
+    String blobName = "test-custom-pool-management";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    byte[] stringBytes;
+    try (WriteChannel writer = storageWithPool.writer(blob)) {
+      stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+      writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+      writer.write(ByteBuffer.wrap(stringBytes));
+    }
+    try (WriteChannel writer = storageWithPool.writer(blob)) {
+      stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+      writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+      writer.write(ByteBuffer.wrap(stringBytes));
+    }
+  }
+
   @Test
   public void testGetSignedUrl() throws IOException {
-    if(storage.getOptions().getCredentials() != null) {
+    if (storage.getOptions().getCredentials() != null) {
       assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
     }
 
@@ -2397,5 +2461,85 @@ public class ITStorageTest {
     ServiceAccount serviceAccount = storage.getServiceAccount(projectId);
     assertNotNull(serviceAccount);
     assertTrue(serviceAccount.getEmail().endsWith(SERVICE_ACCOUNT_EMAIL_SUFFIX));
+  }
+
+  @Test
+  public void testBucketWithBucketPolicyOnlyEnabled() throws Exception {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      storage.create(
+          Bucket.newBuilder(bpoBucket)
+              .setIamConfiguration(
+                  BucketInfo.IamConfiguration.newBuilder()
+                      .setIsBucketPolicyOnlyEnabled(true)
+                      .build())
+              .build());
+
+      Bucket remoteBucket =
+          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+      try {
+        remoteBucket.listAcls();
+        fail("StorageException was expected.");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+      try {
+        remoteBucket.listDefaultAcls();
+        fail("StorageException was expected");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
+  public void testEnableAndDisableBucketPolicyOnlyOnExistingBucket() throws Exception {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      BucketInfo.IamConfiguration bpoDisabledIamConfiguration =
+          BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(false).build();
+      Bucket bucket =
+          storage.create(
+              Bucket.newBuilder(bpoBucket)
+                  .setIamConfiguration(bpoDisabledIamConfiguration)
+                  .setAcl(ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .setDefaultAcl(
+                      ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .build());
+
+      bucket
+          .toBuilder()
+          .setIamConfiguration(
+              bpoDisabledIamConfiguration.toBuilder().setIsBucketPolicyOnlyEnabled(true).build())
+          .build()
+          .update();
+
+      Bucket remoteBucket =
+          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+
+      bucket.toBuilder().setIamConfiguration(bpoDisabledIamConfiguration).build().update();
+
+      remoteBucket =
+          storage.get(
+              bpoBucket,
+              Storage.BucketGetOption.fields(
+                  BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
+
+      assertFalse(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getDefaultAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getDefaultAcl().get(0).getRole());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getAcl().get(0).getRole());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+    }
   }
 }

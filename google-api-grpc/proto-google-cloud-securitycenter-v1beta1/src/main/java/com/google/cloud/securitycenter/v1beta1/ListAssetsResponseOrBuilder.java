@@ -3,55 +3,81 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface ListAssetsResponseOrBuilder extends
+public interface ListAssetsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.ListAssetsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult> 
+  java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>
       getListAssetsResultsList();
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult getListAssetsResults(int index);
+  com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult getListAssetsResults(
+      int index);
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
   int getListAssetsResultsCount();
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder> 
+  java.util.List<
+          ? extends
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder>
       getListAssetsResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder getListAssetsResultsOrBuilder(
-      int index);
+  com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder
+      getListAssetsResultsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Time used for executing the list request.
    * </pre>
@@ -60,6 +86,8 @@ public interface ListAssetsResponseOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used for executing the list request.
    * </pre>
@@ -68,6 +96,8 @@ public interface ListAssetsResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used for executing the list request.
    * </pre>
@@ -77,6 +107,8 @@ public interface ListAssetsResponseOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results.
@@ -86,6 +118,8 @@ public interface ListAssetsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results.
@@ -93,10 +127,11 @@ public interface ListAssetsResponseOrBuilder extends
    *
    * <code>string next_page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The total number of assets matching the query.
    * </pre>

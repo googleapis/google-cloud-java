@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface RangeOrBuilder extends
+public interface RangeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Range)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Index of the first character of the range (inclusive).
    * </pre>
@@ -17,6 +20,8 @@ public interface RangeOrBuilder extends
   long getStart();
 
   /**
+   *
+   *
    * <pre>
    * Index of the last character of the range (exclusive).
    * </pre>

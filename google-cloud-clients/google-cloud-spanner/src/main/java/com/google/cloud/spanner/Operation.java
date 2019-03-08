@@ -21,7 +21,6 @@ import com.google.api.core.CurrentMillisClock;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.PollException;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryOption;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -142,30 +141,31 @@ public class Operation<R, M> {
     RetrySettings waitSettings =
         RetryOption.mergeToSettings(DEFAULT_OPERATION_WAIT_SETTINGS, waitOptions);
     try {
-      com.google.longrunning.Operation proto = RetryHelper.poll(
-          new Callable<com.google.longrunning.Operation>() {
-            @Override
-            public com.google.longrunning.Operation call() throws Exception {
-              return rpc.getOperation(name);
-            }
-          },
-          waitSettings,
-          new BasicResultRetryAlgorithm<com.google.longrunning.Operation>() {
-            @Override
-            public boolean shouldRetry(
-                Throwable prevThrowable, com.google.longrunning.Operation prevResponse) {
-              if (prevResponse != null) {
-                return !prevResponse.getDone();
-              }
-              if (prevThrowable instanceof SpannerException) {
-                SpannerException spannerException = (SpannerException) prevThrowable;
-                return spannerException.getErrorCode() != ErrorCode.NOT_FOUND
-                    && spannerException.isRetryable();
-              }
-              return false;
-            }
-          },
-          clock);
+      com.google.longrunning.Operation proto =
+          RetryHelper.poll(
+              new Callable<com.google.longrunning.Operation>() {
+                @Override
+                public com.google.longrunning.Operation call() throws Exception {
+                  return rpc.getOperation(name);
+                }
+              },
+              waitSettings,
+              new BasicResultRetryAlgorithm<com.google.longrunning.Operation>() {
+                @Override
+                public boolean shouldRetry(
+                    Throwable prevThrowable, com.google.longrunning.Operation prevResponse) {
+                  if (prevResponse != null) {
+                    return !prevResponse.getDone();
+                  }
+                  if (prevThrowable instanceof SpannerException) {
+                    SpannerException spannerException = (SpannerException) prevThrowable;
+                    return spannerException.getErrorCode() != ErrorCode.NOT_FOUND
+                        && spannerException.isRetryable();
+                  }
+                  return false;
+                }
+              },
+              clock);
       return Operation.create(rpc, proto, parser);
     } catch (InterruptedException e) {
       throw SpannerExceptionFactory.propagateInterrupt(e);
@@ -173,7 +173,7 @@ public class Operation<R, M> {
       Throwable cause = e.getCause();
       if (cause instanceof SpannerException) {
         SpannerException spannerException = (SpannerException) cause;
-        if(spannerException.getErrorCode() == ErrorCode.NOT_FOUND) {
+        if (spannerException.getErrorCode() == ErrorCode.NOT_FOUND) {
           return null;
         }
         throw spannerException;

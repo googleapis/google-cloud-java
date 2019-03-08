@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface VoiceSelectionParamsOrBuilder extends
+public interface VoiceSelectionParamsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.VoiceSelectionParams)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The name of the voice. If not set, the service will choose a
    * voice based on the other parameters such as language_code and gender.
@@ -17,6 +20,8 @@ public interface VoiceSelectionParamsOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Optional. The name of the voice. If not set, the service will choose a
    * voice based on the other parameters such as language_code and gender.
@@ -24,10 +29,11 @@ public interface VoiceSelectionParamsOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The preferred gender of the voice. If not set, the service will
    * choose a voice based on the other parameters such as language_code and
@@ -40,6 +46,8 @@ public interface VoiceSelectionParamsOrBuilder extends
    */
   int getSsmlGenderValue();
   /**
+   *
+   *
    * <pre>
    * Optional. The preferred gender of the voice. If not set, the service will
    * choose a voice based on the other parameters such as language_code and

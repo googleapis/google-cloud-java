@@ -4,29 +4,31 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * A column with a semantic tag attached.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.QuasiId}
  */
-public  final class QuasiId extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class QuasiId extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.QuasiId)
     QuasiIdOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use QuasiId.newBuilder() to construct.
   private QuasiId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private QuasiId() {
-  }
+
+  private QuasiId() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private QuasiId(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,100 +48,105 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
-            if (field_ != null) {
-              subBuilder = field_.toBuilder();
-            }
-            field_ = input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(field_);
-              field_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.privacy.dlp.v2.FieldId.Builder subBuilder = null;
+              if (field_ != null) {
+                subBuilder = field_.toBuilder();
+              }
+              field_ =
+                  input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(field_);
+                field_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
-            if (tagCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.InfoType) tag_).toBuilder();
+              break;
             }
-            tag_ =
-                input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.InfoType) tag_);
-              tag_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
+              if (tagCase_ == 2) {
+                subBuilder = ((com.google.privacy.dlp.v2.InfoType) tag_).toBuilder();
+              }
+              tag_ =
+                  input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.InfoType) tag_);
+                tag_ = subBuilder.buildPartial();
+              }
+              tagCase_ = 2;
+              break;
             }
-            tagCase_ = 2;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            tagCase_ = 3;
-            tag_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Empty.Builder subBuilder = null;
-            if (tagCase_ == 4) {
-              subBuilder = ((com.google.protobuf.Empty) tag_).toBuilder();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              tagCase_ = 3;
+              tag_ = s;
+              break;
             }
-            tag_ =
-                input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.Empty) tag_);
-              tag_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.protobuf.Empty.Builder subBuilder = null;
+              if (tagCase_ == 4) {
+                subBuilder = ((com.google.protobuf.Empty) tag_).toBuilder();
+              }
+              tag_ = input.readMessage(com.google.protobuf.Empty.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Empty) tag_);
+                tag_ = subBuilder.buildPartial();
+              }
+              tagCase_ = 4;
+              break;
             }
-            tagCase_ = 4;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuasiId_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_QuasiId_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuasiId_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_QuasiId_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.QuasiId.class, com.google.privacy.dlp.v2.QuasiId.Builder.class);
+            com.google.privacy.dlp.v2.QuasiId.class,
+            com.google.privacy.dlp.v2.QuasiId.Builder.class);
   }
 
   private int tagCase_ = 0;
   private java.lang.Object tag_;
-  public enum TagCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TagCase implements com.google.protobuf.Internal.EnumLite {
     INFO_TYPE(2),
     CUSTOM_TAG(3),
     INFERRED(4),
     TAG_NOT_SET(0);
     private final int value;
+
     private TagCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TagCase valueOf(int value) {
       return forNumber(value);
@@ -147,27 +154,33 @@ private static final long serialVersionUID = 0L;
 
     public static TagCase forNumber(int value) {
       switch (value) {
-        case 2: return INFO_TYPE;
-        case 3: return CUSTOM_TAG;
-        case 4: return INFERRED;
-        case 0: return TAG_NOT_SET;
-        default: return null;
+        case 2:
+          return INFO_TYPE;
+        case 3:
+          return CUSTOM_TAG;
+        case 4:
+          return INFERRED;
+        case 0:
+          return TAG_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TagCase
-  getTagCase() {
-    return TagCase.forNumber(
-        tagCase_);
+  public TagCase getTagCase() {
+    return TagCase.forNumber(tagCase_);
   }
 
   public static final int FIELD_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.FieldId field_;
   /**
+   *
+   *
    * <pre>
    * Identifies the column. [required]
    * </pre>
@@ -178,6 +191,8 @@ private static final long serialVersionUID = 0L;
     return field_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Identifies the column. [required]
    * </pre>
@@ -188,6 +203,8 @@ private static final long serialVersionUID = 0L;
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
   /**
+   *
+   *
    * <pre>
    * Identifies the column. [required]
    * </pre>
@@ -200,6 +217,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int INFO_TYPE_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a InfoType to use the relevant public
    * dataset as a statistical model of population, if available. We
@@ -214,6 +233,8 @@ private static final long serialVersionUID = 0L;
     return tagCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a InfoType to use the relevant public
    * dataset as a statistical model of population, if available. We
@@ -226,11 +247,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     if (tagCase_ == 2) {
-       return (com.google.privacy.dlp.v2.InfoType) tag_;
+      return (com.google.privacy.dlp.v2.InfoType) tag_;
     }
     return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a InfoType to use the relevant public
    * dataset as a statistical model of population, if available. We
@@ -243,13 +266,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
     if (tagCase_ == 2) {
-       return (com.google.privacy.dlp.v2.InfoType) tag_;
+      return (com.google.privacy.dlp.v2.InfoType) tag_;
     }
     return com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
   }
 
   public static final int CUSTOM_TAG_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a custom tag. In this case, the user must
    * indicate an auxiliary table that contains statistical information on
@@ -266,8 +291,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (tagCase_ == 3) {
         tag_ = s;
@@ -276,6 +300,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A column can be tagged with a custom tag. In this case, the user must
    * indicate an auxiliary table that contains statistical information on
@@ -284,16 +310,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string custom_tag = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getCustomTagBytes() {
+  public com.google.protobuf.ByteString getCustomTagBytes() {
     java.lang.Object ref = "";
     if (tagCase_ == 3) {
       ref = tag_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (tagCase_ == 3) {
         tag_ = b;
       }
@@ -305,6 +329,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int INFERRED_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * If no semantic tag is indicated, we infer the statistical model from
    * the distribution of values in the input data
@@ -316,6 +342,8 @@ private static final long serialVersionUID = 0L;
     return tagCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * If no semantic tag is indicated, we infer the statistical model from
    * the distribution of values in the input data
@@ -325,11 +353,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.Empty getInferred() {
     if (tagCase_ == 4) {
-       return (com.google.protobuf.Empty) tag_;
+      return (com.google.protobuf.Empty) tag_;
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * If no semantic tag is indicated, we infer the statistical model from
    * the distribution of values in the input data
@@ -339,12 +369,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.EmptyOrBuilder getInferredOrBuilder() {
     if (tagCase_ == 4) {
-       return (com.google.protobuf.Empty) tag_;
+      return (com.google.protobuf.Empty) tag_;
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -356,8 +387,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (field_ != null) {
       output.writeMessage(1, getField());
     }
@@ -380,19 +410,20 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (field_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getField());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getField());
     }
     if (tagCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.InfoType) tag_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.InfoType) tag_);
     }
     if (tagCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tag_);
     }
     if (tagCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.protobuf.Empty) tag_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.protobuf.Empty) tag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -402,7 +433,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.QuasiId)) {
       return super.equals(obj);
@@ -412,24 +443,19 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasField() == other.hasField());
     if (hasField()) {
-      result = result && getField()
-          .equals(other.getField());
+      result = result && getField().equals(other.getField());
     }
-    result = result && getTagCase().equals(
-        other.getTagCase());
+    result = result && getTagCase().equals(other.getTagCase());
     if (!result) return false;
     switch (tagCase_) {
       case 2:
-        result = result && getInfoType()
-            .equals(other.getInfoType());
+        result = result && getInfoType().equals(other.getInfoType());
         break;
       case 3:
-        result = result && getCustomTag()
-            .equals(other.getCustomTag());
+        result = result && getCustomTag().equals(other.getCustomTag());
         break;
       case 4:
-        result = result && getInferred()
-            .equals(other.getInferred());
+        result = result && getInferred().equals(other.getInferred());
         break;
       case 0:
       default:
@@ -470,118 +496,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.QuasiId parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.QuasiId parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.QuasiId parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.privacy.dlp.v2.QuasiId parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.QuasiId parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.QuasiId prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A column with a semantic tag attached.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.QuasiId}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.QuasiId)
       com.google.privacy.dlp.v2.QuasiIdOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuasiId_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_QuasiId_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuasiId_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_QuasiId_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.QuasiId.class, com.google.privacy.dlp.v2.QuasiId.Builder.class);
+              com.google.privacy.dlp.v2.QuasiId.class,
+              com.google.privacy.dlp.v2.QuasiId.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.QuasiId.newBuilder()
@@ -589,16 +623,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -614,9 +647,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuasiId_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_QuasiId_descriptor;
     }
 
     @java.lang.Override
@@ -667,38 +700,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.QuasiId) {
-        return mergeFrom((com.google.privacy.dlp.v2.QuasiId)other);
+        return mergeFrom((com.google.privacy.dlp.v2.QuasiId) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -711,23 +745,27 @@ private static final long serialVersionUID = 0L;
         mergeField(other.getField());
       }
       switch (other.getTagCase()) {
-        case INFO_TYPE: {
-          mergeInfoType(other.getInfoType());
-          break;
-        }
-        case CUSTOM_TAG: {
-          tagCase_ = 3;
-          tag_ = other.tag_;
-          onChanged();
-          break;
-        }
-        case INFERRED: {
-          mergeInferred(other.getInferred());
-          break;
-        }
-        case TAG_NOT_SET: {
-          break;
-        }
+        case INFO_TYPE:
+          {
+            mergeInfoType(other.getInfoType());
+            break;
+          }
+        case CUSTOM_TAG:
+          {
+            tagCase_ = 3;
+            tag_ = other.tag_;
+            onChanged();
+            break;
+          }
+        case INFERRED:
+          {
+            mergeInferred(other.getInferred());
+            break;
+          }
+        case TAG_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -757,12 +795,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int tagCase_ = 0;
     private java.lang.Object tag_;
-    public TagCase
-        getTagCase() {
-      return TagCase.forNumber(
-          tagCase_);
+
+    public TagCase getTagCase() {
+      return TagCase.forNumber(tagCase_);
     }
 
     public Builder clearTag() {
@@ -772,11 +810,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.privacy.dlp.v2.FieldId field_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> fieldBuilder_;
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
+        fieldBuilder_;
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -787,6 +829,8 @@ private static final long serialVersionUID = 0L;
       return fieldBuilder_ != null || field_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -801,6 +845,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -821,14 +867,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
-    public Builder setField(
-        com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+    public Builder setField(com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
       if (fieldBuilder_ == null) {
         field_ = builderForValue.build();
         onChanged();
@@ -839,6 +886,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -849,7 +898,7 @@ private static final long serialVersionUID = 0L;
       if (fieldBuilder_ == null) {
         if (field_ != null) {
           field_ =
-            com.google.privacy.dlp.v2.FieldId.newBuilder(field_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.FieldId.newBuilder(field_).mergeFrom(value).buildPartial();
         } else {
           field_ = value;
         }
@@ -861,6 +910,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -879,6 +930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -886,11 +939,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
     public com.google.privacy.dlp.v2.FieldId.Builder getFieldBuilder() {
-      
+
       onChanged();
       return getFieldFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -901,11 +956,12 @@ private static final long serialVersionUID = 0L;
       if (fieldBuilder_ != null) {
         return fieldBuilder_.getMessageOrBuilder();
       } else {
-        return field_ == null ?
-            com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
+        return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the column. [required]
      * </pre>
@@ -913,22 +969,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.FieldId field = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+            com.google.privacy.dlp.v2.FieldId,
+            com.google.privacy.dlp.v2.FieldId.Builder,
+            com.google.privacy.dlp.v2.FieldIdOrBuilder>
         getFieldFieldBuilder() {
       if (fieldBuilder_ == null) {
-        fieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
-                getField(),
-                getParentForChildren(),
-                isClean());
+        fieldBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.FieldId,
+                com.google.privacy.dlp.v2.FieldId.Builder,
+                com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                getField(), getParentForChildren(), isClean());
         field_ = null;
       }
       return fieldBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> infoTypeBuilder_;
+            com.google.privacy.dlp.v2.InfoType,
+            com.google.privacy.dlp.v2.InfoType.Builder,
+            com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+        infoTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -943,6 +1007,8 @@ private static final long serialVersionUID = 0L;
       return tagCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -967,6 +1033,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -991,6 +1059,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -1001,8 +1071,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
      */
-    public Builder setInfoType(
-        com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
+    public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (infoTypeBuilder_ == null) {
         tag_ = builderForValue.build();
         onChanged();
@@ -1013,6 +1082,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -1025,10 +1096,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeInfoType(com.google.privacy.dlp.v2.InfoType value) {
       if (infoTypeBuilder_ == null) {
-        if (tagCase_ == 2 &&
-            tag_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
-          tag_ = com.google.privacy.dlp.v2.InfoType.newBuilder((com.google.privacy.dlp.v2.InfoType) tag_)
-              .mergeFrom(value).buildPartial();
+        if (tagCase_ == 2 && tag_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+          tag_ =
+              com.google.privacy.dlp.v2.InfoType.newBuilder(
+                      (com.google.privacy.dlp.v2.InfoType) tag_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           tag_ = value;
         }
@@ -1043,6 +1116,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -1070,6 +1145,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -1084,6 +1161,8 @@ private static final long serialVersionUID = 0L;
       return getInfoTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -1105,6 +1184,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a InfoType to use the relevant public
      * dataset as a statistical model of population, if available. We
@@ -1116,25 +1197,31 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InfoType info_type = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
+            com.google.privacy.dlp.v2.InfoType,
+            com.google.privacy.dlp.v2.InfoType.Builder,
+            com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         getInfoTypeFieldBuilder() {
       if (infoTypeBuilder_ == null) {
         if (!(tagCase_ == 2)) {
           tag_ = com.google.privacy.dlp.v2.InfoType.getDefaultInstance();
         }
-        infoTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
-                (com.google.privacy.dlp.v2.InfoType) tag_,
-                getParentForChildren(),
-                isClean());
+        infoTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InfoType,
+                com.google.privacy.dlp.v2.InfoType.Builder,
+                com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
+                (com.google.privacy.dlp.v2.InfoType) tag_, getParentForChildren(), isClean());
         tag_ = null;
       }
       tagCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return infoTypeBuilder_;
     }
 
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
@@ -1149,8 +1236,7 @@ private static final long serialVersionUID = 0L;
         ref = tag_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (tagCase_ == 3) {
           tag_ = s;
@@ -1161,6 +1247,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
@@ -1169,16 +1257,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string custom_tag = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getCustomTagBytes() {
+    public com.google.protobuf.ByteString getCustomTagBytes() {
       java.lang.Object ref = "";
       if (tagCase_ == 3) {
         ref = tag_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (tagCase_ == 3) {
           tag_ = b;
         }
@@ -1188,6 +1274,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
@@ -1196,17 +1284,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string custom_tag = 3;</code>
      */
-    public Builder setCustomTag(
-        java.lang.String value) {
+    public Builder setCustomTag(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  tagCase_ = 3;
+        throw new NullPointerException();
+      }
+      tagCase_ = 3;
       tag_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
@@ -1224,6 +1313,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
@@ -1232,12 +1323,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string custom_tag = 3;</code>
      */
-    public Builder setCustomTagBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCustomTagBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       tagCase_ = 3;
       tag_ = value;
       onChanged();
@@ -1245,8 +1335,13 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> inferredBuilder_;
+            com.google.protobuf.Empty,
+            com.google.protobuf.Empty.Builder,
+            com.google.protobuf.EmptyOrBuilder>
+        inferredBuilder_;
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1258,6 +1353,8 @@ private static final long serialVersionUID = 0L;
       return tagCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1279,6 +1376,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1300,6 +1399,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1307,8 +1408,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Empty inferred = 4;</code>
      */
-    public Builder setInferred(
-        com.google.protobuf.Empty.Builder builderForValue) {
+    public Builder setInferred(com.google.protobuf.Empty.Builder builderForValue) {
       if (inferredBuilder_ == null) {
         tag_ = builderForValue.build();
         onChanged();
@@ -1319,6 +1419,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1328,10 +1430,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeInferred(com.google.protobuf.Empty value) {
       if (inferredBuilder_ == null) {
-        if (tagCase_ == 4 &&
-            tag_ != com.google.protobuf.Empty.getDefaultInstance()) {
-          tag_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) tag_)
-              .mergeFrom(value).buildPartial();
+        if (tagCase_ == 4 && tag_ != com.google.protobuf.Empty.getDefaultInstance()) {
+          tag_ =
+              com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) tag_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           tag_ = value;
         }
@@ -1346,6 +1449,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1370,6 +1475,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1381,6 +1488,8 @@ private static final long serialVersionUID = 0L;
       return getInferredFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1399,6 +1508,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If no semantic tag is indicated, we infer the statistical model from
      * the distribution of values in the input data
@@ -1407,26 +1518,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Empty inferred = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> 
+            com.google.protobuf.Empty,
+            com.google.protobuf.Empty.Builder,
+            com.google.protobuf.EmptyOrBuilder>
         getInferredFieldBuilder() {
       if (inferredBuilder_ == null) {
         if (!(tagCase_ == 4)) {
           tag_ = com.google.protobuf.Empty.getDefaultInstance();
         }
-        inferredBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
-                (com.google.protobuf.Empty) tag_,
-                getParentForChildren(),
-                isClean());
+        inferredBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Empty,
+                com.google.protobuf.Empty.Builder,
+                com.google.protobuf.EmptyOrBuilder>(
+                (com.google.protobuf.Empty) tag_, getParentForChildren(), isClean());
         tag_ = null;
       }
       tagCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return inferredBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1436,12 +1551,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.QuasiId)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.QuasiId)
   private static final com.google.privacy.dlp.v2.QuasiId DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.QuasiId();
   }
@@ -1450,16 +1565,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<QuasiId>
-      PARSER = new com.google.protobuf.AbstractParser<QuasiId>() {
-    @java.lang.Override
-    public QuasiId parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new QuasiId(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<QuasiId> PARSER =
+      new com.google.protobuf.AbstractParser<QuasiId>() {
+        @java.lang.Override
+        public QuasiId parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new QuasiId(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<QuasiId> parser() {
     return PARSER;
@@ -1474,6 +1589,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.QuasiId getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface X509CertificateDetailsOrBuilder extends
+public interface X509CertificateDetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.X509CertificateDetails)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The entity that signed the certificate.
    * </pre>
@@ -16,16 +19,19 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   java.lang.String getIssuer();
   /**
+   *
+   *
    * <pre>
    * The entity that signed the certificate.
    * </pre>
    *
    * <code>string issuer = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getIssuerBytes();
+  com.google.protobuf.ByteString getIssuerBytes();
 
   /**
+   *
+   *
    * <pre>
    * The entity the certificate and public key belong to.
    * </pre>
@@ -34,16 +40,19 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   java.lang.String getSubject();
   /**
+   *
+   *
    * <pre>
    * The entity the certificate and public key belong to.
    * </pre>
    *
    * <code>string subject = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getSubjectBytes();
+  com.google.protobuf.ByteString getSubjectBytes();
 
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes valid.
    * </pre>
@@ -52,6 +61,8 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes valid.
    * </pre>
@@ -60,6 +71,8 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes valid.
    * </pre>
@@ -69,6 +82,8 @@ public interface X509CertificateDetailsOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes invalid.
    * </pre>
@@ -77,6 +92,8 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   boolean hasExpiryTime();
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes invalid.
    * </pre>
@@ -85,6 +102,8 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   com.google.protobuf.Timestamp getExpiryTime();
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes invalid.
    * </pre>
@@ -94,6 +113,8 @@ public interface X509CertificateDetailsOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The algorithm used to sign the certificate.
    * </pre>
@@ -102,16 +123,19 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   java.lang.String getSignatureAlgorithm();
   /**
+   *
+   *
    * <pre>
    * The algorithm used to sign the certificate.
    * </pre>
    *
    * <code>string signature_algorithm = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getSignatureAlgorithmBytes();
+  com.google.protobuf.ByteString getSignatureAlgorithmBytes();
 
   /**
+   *
+   *
    * <pre>
    * The type of public key in the certificate.
    * </pre>
@@ -120,12 +144,13 @@ public interface X509CertificateDetailsOrBuilder extends
    */
   java.lang.String getPublicKeyType();
   /**
+   *
+   *
    * <pre>
    * The type of public key in the certificate.
    * </pre>
    *
    * <code>string public_key_type = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getPublicKeyTypeBytes();
+  com.google.protobuf.ByteString getPublicKeyTypeBytes();
 }

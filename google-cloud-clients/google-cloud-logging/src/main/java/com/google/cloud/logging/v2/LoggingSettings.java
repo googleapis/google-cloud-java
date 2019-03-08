@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,7 +95,8 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest,
+          ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return ((LoggingServiceV2StubSettings) getStubSettings())
@@ -224,7 +225,8 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest,
+            ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return getStubSettingsBuilder().listMonitoredResourceDescriptorsSettings();

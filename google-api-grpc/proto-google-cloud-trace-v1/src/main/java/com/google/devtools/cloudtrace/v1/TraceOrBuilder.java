@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v1;
 
-public interface TraceOrBuilder extends
+public interface TraceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v1.Trace)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Project ID of the Cloud project where the trace data is stored.
    * </pre>
@@ -16,16 +19,19 @@ public interface TraceOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Project ID of the Cloud project where the trace data is stored.
    * </pre>
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Globally unique identifier for the trace. This identifier is a 128-bit
    * numeric value formatted as a 32-byte hex string.
@@ -35,6 +41,8 @@ public interface TraceOrBuilder extends
    */
   java.lang.String getTraceId();
   /**
+   *
+   *
    * <pre>
    * Globally unique identifier for the trace. This identifier is a 128-bit
    * numeric value formatted as a 32-byte hex string.
@@ -42,19 +50,21 @@ public interface TraceOrBuilder extends
    *
    * <code>string trace_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTraceIdBytes();
+  com.google.protobuf.ByteString getTraceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Collection of spans in the trace.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
-  java.util.List<com.google.devtools.cloudtrace.v1.TraceSpan> 
-      getSpansList();
+  java.util.List<com.google.devtools.cloudtrace.v1.TraceSpan> getSpansList();
   /**
+   *
+   *
    * <pre>
    * Collection of spans in the trace.
    * </pre>
@@ -63,6 +73,8 @@ public interface TraceOrBuilder extends
    */
   com.google.devtools.cloudtrace.v1.TraceSpan getSpans(int index);
   /**
+   *
+   *
    * <pre>
    * Collection of spans in the trace.
    * </pre>
@@ -71,21 +83,24 @@ public interface TraceOrBuilder extends
    */
   int getSpansCount();
   /**
+   *
+   *
    * <pre>
    * Collection of spans in the trace.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
-  java.util.List<? extends com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder> 
+  java.util.List<? extends com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder>
       getSpansOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Collection of spans in the trace.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudtrace.v1.TraceSpan spans = 3;</code>
    */
-  com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder getSpansOrBuilder(
-      int index);
+  com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder getSpansOrBuilder(int index);
 }

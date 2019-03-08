@@ -3,13 +3,16 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface ManagedGroupConfigOrBuilder extends
+public interface ManagedGroupConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.ManagedGroupConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * Output-only. The name of the Instance Template used for the Managed
+   * Output only. The name of the Instance Template used for the Managed
    * Instance Group.
    * </pre>
    *
@@ -17,31 +20,35 @@ public interface ManagedGroupConfigOrBuilder extends
    */
   java.lang.String getInstanceTemplateName();
   /**
+   *
+   *
    * <pre>
-   * Output-only. The name of the Instance Template used for the Managed
+   * Output only. The name of the Instance Template used for the Managed
    * Instance Group.
    * </pre>
    *
    * <code>string instance_template_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceTemplateNameBytes();
+  com.google.protobuf.ByteString getInstanceTemplateNameBytes();
 
   /**
+   *
+   *
    * <pre>
-   * Output-only. The name of the Instance Group Manager for this group.
+   * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
    * <code>string instance_group_manager_name = 2;</code>
    */
   java.lang.String getInstanceGroupManagerName();
   /**
+   *
+   *
    * <pre>
-   * Output-only. The name of the Instance Group Manager for this group.
+   * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
    * <code>string instance_group_manager_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceGroupManagerNameBytes();
+  com.google.protobuf.ByteString getInstanceGroupManagerNameBytes();
 }

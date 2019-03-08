@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ListProductsRequestOrBuilder extends
+public interface ListProductsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ListProductsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project OR ProductSet from which Products should be listed.
    * Format:
@@ -18,6 +21,8 @@ public interface ListProductsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The project OR ProductSet from which Products should be listed.
    * Format:
@@ -26,10 +31,11 @@ public interface ListProductsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of items to return. Default 10, maximum 100.
    * </pre>
@@ -39,6 +45,8 @@ public interface ListProductsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The next_page_token returned from a previous List request, if any.
    * </pre>
@@ -47,12 +55,13 @@ public interface ListProductsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The next_page_token returned from a previous List request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface GenerateConsistencyTokenResponseOrBuilder extends
+public interface GenerateConsistencyTokenResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.GenerateConsistencyTokenResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The generated consistency token.
    * </pre>
@@ -16,12 +19,13 @@ public interface GenerateConsistencyTokenResponseOrBuilder extends
    */
   java.lang.String getConsistencyToken();
   /**
+   *
+   *
    * <pre>
    * The generated consistency token.
    * </pre>
    *
    * <code>string consistency_token = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getConsistencyTokenBytes();
+  com.google.protobuf.ByteString getConsistencyTokenBytes();
 }

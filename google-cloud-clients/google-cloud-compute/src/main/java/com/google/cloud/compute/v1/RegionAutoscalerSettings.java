@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,8 @@ public class RegionAutoscalerSettings extends ClientSettings<RegionAutoscalerSet
 
   /** Returns the object with the settings used for calls to listRegionAutoscalers. */
   public PagedCallSettings<
-          ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+          ListRegionAutoscalersHttpRequest,
+          RegionAutoscalerList,
           ListRegionAutoscalersPagedResponse>
       listRegionAutoscalersSettings() {
     return ((RegionAutoscalerStubSettings) getStubSettings()).listRegionAutoscalersSettings();
@@ -223,7 +224,8 @@ public class RegionAutoscalerSettings extends ClientSettings<RegionAutoscalerSet
 
     /** Returns the builder for the settings used for calls to listRegionAutoscalers. */
     public PagedCallSettings.Builder<
-            ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+            ListRegionAutoscalersHttpRequest,
+            RegionAutoscalerList,
             ListRegionAutoscalersPagedResponse>
         listRegionAutoscalersSettings() {
       return getStubSettingsBuilder().listRegionAutoscalersSettings();

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface UptimeCheckConfigOrBuilder extends
+public interface UptimeCheckConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A unique resource name for this UptimeCheckConfig. The format is:
    *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -20,6 +23,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * A unique resource name for this UptimeCheckConfig. The format is:
    *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -30,13 +35,14 @@ public interface UptimeCheckConfigOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A human-friendly name for the uptime check configuration. The display name
-   * should be unique within a Stackdriver Account in order to make it easier
+   * should be unique within a Stackdriver Workspace in order to make it easier
    * to identify; however, uniqueness is not enforced. Required.
    * </pre>
    *
@@ -44,18 +50,21 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * A human-friendly name for the uptime check configuration. The display name
-   * should be unique within a Stackdriver Account in order to make it easier
+   * should be unique within a Stackdriver Workspace in order to make it easier
    * to identify; however, uniqueness is not enforced. Required.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -72,6 +81,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   boolean hasMonitoredResource();
   /**
+   *
+   *
    * <pre>
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -88,6 +99,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.api.MonitoredResource getMonitoredResource();
   /**
+   *
+   *
    * <pre>
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -105,6 +118,8 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.api.MonitoredResourceOrBuilder getMonitoredResourceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The group resource associated with the configuration.
    * </pre>
@@ -113,6 +128,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   boolean hasResourceGroup();
   /**
+   *
+   *
    * <pre>
    * The group resource associated with the configuration.
    * </pre>
@@ -121,6 +138,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup getResourceGroup();
   /**
+   *
+   *
    * <pre>
    * The group resource associated with the configuration.
    * </pre>
@@ -130,6 +149,8 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder getResourceGroupOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make an HTTP or HTTPS check.
    * </pre>
@@ -138,6 +159,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   boolean hasHttpCheck();
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make an HTTP or HTTPS check.
    * </pre>
@@ -146,6 +169,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.monitoring.v3.UptimeCheckConfig.HttpCheck getHttpCheck();
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make an HTTP or HTTPS check.
    * </pre>
@@ -155,6 +180,8 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder getHttpCheckOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make a TCP check.
    * </pre>
@@ -163,6 +190,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   boolean hasTcpCheck();
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make a TCP check.
    * </pre>
@@ -171,6 +200,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.monitoring.v3.UptimeCheckConfig.TcpCheck getTcpCheck();
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make a TCP check.
    * </pre>
@@ -180,6 +211,8 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder getTcpCheckOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -191,6 +224,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   boolean hasPeriod();
   /**
+   *
+   *
    * <pre>
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -202,6 +237,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.protobuf.Duration getPeriod();
   /**
+   *
+   *
    * <pre>
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -214,6 +251,8 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getPeriodOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait for the request to complete (must be
    * between 1 and 60 seconds). Required.
@@ -223,6 +262,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   boolean hasTimeout();
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait for the request to complete (must be
    * between 1 and 60 seconds). Required.
@@ -232,6 +273,8 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.protobuf.Duration getTimeout();
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait for the request to complete (must be
    * between 1 and 60 seconds). Required.
@@ -242,6 +285,8 @@ public interface UptimeCheckConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -250,11 +295,14 @@ public interface UptimeCheckConfigOrBuilder extends
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
-  java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher> 
+  java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
       getContentMatchersList();
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -263,10 +311,13 @@ public interface UptimeCheckConfigOrBuilder extends
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
   com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher getContentMatchers(int index);
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -275,10 +326,13 @@ public interface UptimeCheckConfigOrBuilder extends
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
   int getContentMatchersCount();
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -287,11 +341,14 @@ public interface UptimeCheckConfigOrBuilder extends
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
-  java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>
       getContentMatchersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -300,14 +357,18 @@ public interface UptimeCheckConfigOrBuilder extends
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
   com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder getContentMatchersOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -318,8 +379,11 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   java.util.List<com.google.monitoring.v3.UptimeCheckRegion> getSelectedRegionsList();
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -330,8 +394,11 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   int getSelectedRegionsCount();
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -342,8 +409,11 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.monitoring.v3.UptimeCheckRegion getSelectedRegions(int index);
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -352,11 +422,13 @@ public interface UptimeCheckConfigOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
    */
-  java.util.List<java.lang.Integer>
-  getSelectedRegionsValueList();
+  java.util.List<java.lang.Integer> getSelectedRegionsValueList();
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -368,8 +440,13 @@ public interface UptimeCheckConfigOrBuilder extends
   int getSelectedRegionsValue(int index);
 
   /**
+   *
+   *
    * <pre>
-   * Denotes whether this is a check that egresses from InternalCheckers.
+   * If this is true, then checks are made only from the 'internal_checkers'.
+   * If it is false, then checks are made only from the 'selected_regions'.
+   * It is an error to provide 'selected_regions' when is_internal is true,
+   * or to provide 'internal_checkers' when is_internal is false.
    * </pre>
    *
    * <code>bool is_internal = 15;</code>
@@ -377,20 +454,23 @@ public interface UptimeCheckConfigOrBuilder extends
   boolean getIsInternal();
 
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  java.util.List<com.google.monitoring.v3.InternalChecker> 
-      getInternalCheckersList();
+  java.util.List<com.google.monitoring.v3.InternalChecker> getInternalCheckersList();
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
@@ -398,9 +478,11 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   com.google.monitoring.v3.InternalChecker getInternalCheckers(int index);
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
@@ -408,27 +490,30 @@ public interface UptimeCheckConfigOrBuilder extends
    */
   int getInternalCheckersCount();
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder>
       getInternalCheckersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
-      int index);
+  com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(int index);
 
   public com.google.monitoring.v3.UptimeCheckConfig.ResourceCase getResourceCase();
 

@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ScanConfigOrBuilder extends
+public interface ScanConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ScanConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the ScanConfig. The name follows the format of
    * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -18,6 +21,8 @@ public interface ScanConfigOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the ScanConfig. The name follows the format of
    * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -26,10 +31,11 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The user provided display name of the ScanConfig.
@@ -39,6 +45,8 @@ public interface ScanConfigOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The user provided display name of the ScanConfig.
@@ -46,10 +54,11 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum QPS during scanning. A valid value ranges from 5 to 20
    * inclusively. If the field is unspecified or its value is set 0, server will
@@ -62,6 +71,8 @@ public interface ScanConfigOrBuilder extends
   int getMaxQps();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -69,9 +80,10 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>repeated string starting_urls = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getStartingUrlsList();
+  java.util.List<java.lang.String> getStartingUrlsList();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -81,6 +93,8 @@ public interface ScanConfigOrBuilder extends
    */
   int getStartingUrlsCount();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -90,6 +104,8 @@ public interface ScanConfigOrBuilder extends
    */
   java.lang.String getStartingUrls(int index);
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -97,38 +113,49 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>repeated string starting_urls = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getStartingUrlsBytes(int index);
+  com.google.protobuf.ByteString getStartingUrlsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The authentication configuration. If specified, service will use the
    * authentication configuration during scanning.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+   * </code>
    */
   boolean hasAuthentication();
   /**
+   *
+   *
    * <pre>
    * The authentication configuration. If specified, service will use the
    * authentication configuration during scanning.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+   * </code>
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getAuthentication();
   /**
+   *
+   *
    * <pre>
    * The authentication configuration. If specified, service will use the
    * authentication configuration during scanning.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+   * </code>
    */
-  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder getAuthenticationOrBuilder();
+  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder
+      getAuthenticationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The user agent used during scanning.
    * </pre>
@@ -137,6 +164,8 @@ public interface ScanConfigOrBuilder extends
    */
   int getUserAgentValue();
   /**
+   *
+   *
    * <pre>
    * The user agent used during scanning.
    * </pre>
@@ -146,6 +175,8 @@ public interface ScanConfigOrBuilder extends
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent();
 
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -153,9 +184,10 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>repeated string blacklist_patterns = 7;</code>
    */
-  java.util.List<java.lang.String>
-      getBlacklistPatternsList();
+  java.util.List<java.lang.String> getBlacklistPatternsList();
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -165,6 +197,8 @@ public interface ScanConfigOrBuilder extends
    */
   int getBlacklistPatternsCount();
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -174,6 +208,8 @@ public interface ScanConfigOrBuilder extends
    */
   java.lang.String getBlacklistPatterns(int index);
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -181,10 +217,11 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>repeated string blacklist_patterns = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getBlacklistPatternsBytes(int index);
+  com.google.protobuf.ByteString getBlacklistPatternsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The schedule of the ScanConfig.
    * </pre>
@@ -193,6 +230,8 @@ public interface ScanConfigOrBuilder extends
    */
   boolean hasSchedule();
   /**
+   *
+   *
    * <pre>
    * The schedule of the ScanConfig.
    * </pre>
@@ -201,6 +240,8 @@ public interface ScanConfigOrBuilder extends
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getSchedule();
   /**
+   *
+   *
    * <pre>
    * The schedule of the ScanConfig.
    * </pre>
@@ -210,49 +251,70 @@ public interface ScanConfigOrBuilder extends
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder getScheduleOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
-  java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform> getTargetPlatformsList();
+  java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
+      getTargetPlatformsList();
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
   int getTargetPlatformsCount();
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
-  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(int index);
+  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(
+      int index);
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
-  java.util.List<java.lang.Integer>
-  getTargetPlatformsValueList();
+  java.util.List<java.lang.Integer> getTargetPlatformsValueList();
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
   int getTargetPlatformsValue(int index);
 }

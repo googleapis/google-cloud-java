@@ -38,7 +38,6 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
       this.numAutoAllocatedIds = numAutoAllocatedIds;
     }
 
-
     @Override
     public List<Key> getGeneratedKeys() {
       Iterator<com.google.datastore.v1.MutationResult> results =
@@ -52,14 +51,14 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   TransactionImpl(DatastoreImpl datastore) {
-      this(datastore, null);
+    this(datastore, null);
   }
 
   TransactionImpl(DatastoreImpl datastore, TransactionOptions options) {
     super("transaction");
     this.datastore = datastore;
     com.google.datastore.v1.BeginTransactionRequest.Builder requestPb =
-            com.google.datastore.v1.BeginTransactionRequest.newBuilder();
+        com.google.datastore.v1.BeginTransactionRequest.newBuilder();
 
     if (options != null) {
       requestPb.setTransactionOptions(options);
@@ -121,7 +120,6 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     deactivate();
     rolledback = true;
   }
-
 
   @Override
   public Datastore getDatastore() {

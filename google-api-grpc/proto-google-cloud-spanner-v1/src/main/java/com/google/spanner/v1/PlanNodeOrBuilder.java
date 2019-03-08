@@ -3,13 +3,17 @@
 
 package com.google.spanner.v1;
 
-public interface PlanNodeOrBuilder extends
+public interface PlanNodeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.PlanNode)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * The `PlanNode`'s index in [node list][google.spanner.v1.QueryPlan.plan_nodes].
+   * The `PlanNode`'s index in [node
+   * list][google.spanner.v1.QueryPlan.plan_nodes].
    * </pre>
    *
    * <code>int32 index = 1;</code>
@@ -17,24 +21,28 @@ public interface PlanNodeOrBuilder extends
   int getIndex();
 
   /**
+   *
+   *
    * <pre>
    * Used to determine the type of node. May be needed for visualizing
    * different kinds of nodes differently. For example, If the node is a
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-   * which can be used to directly embed a description of the node in its
-   * parent.
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+   * condensed representation which can be used to directly embed a description
+   * of the node in its parent.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * Used to determine the type of node. May be needed for visualizing
    * different kinds of nodes differently. For example, If the node is a
-   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a condensed representation
-   * which can be used to directly embed a description of the node in its
-   * parent.
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] node, it will have a
+   * condensed representation which can be used to directly embed a description
+   * of the node in its parent.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.Kind kind = 2;</code>
@@ -42,6 +50,8 @@ public interface PlanNodeOrBuilder extends
   com.google.spanner.v1.PlanNode.Kind getKind();
 
   /**
+   *
+   *
    * <pre>
    * The display name for the node.
    * </pre>
@@ -50,25 +60,29 @@ public interface PlanNodeOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * The display name for the node.
    * </pre>
    *
    * <code>string display_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
    */
-  java.util.List<com.google.spanner.v1.PlanNode.ChildLink> 
-      getChildLinksList();
+  java.util.List<com.google.spanner.v1.PlanNode.ChildLink> getChildLinksList();
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
@@ -77,6 +91,8 @@ public interface PlanNodeOrBuilder extends
    */
   com.google.spanner.v1.PlanNode.ChildLink getChildLinks(int index);
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
@@ -85,43 +101,55 @@ public interface PlanNodeOrBuilder extends
    */
   int getChildLinksCount();
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
    */
-  java.util.List<? extends com.google.spanner.v1.PlanNode.ChildLinkOrBuilder> 
+  java.util.List<? extends com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>
       getChildLinksOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of child node `index`es and their relationship to this parent.
    * </pre>
    *
    * <code>repeated .google.spanner.v1.PlanNode.ChildLink child_links = 4;</code>
    */
-  com.google.spanner.v1.PlanNode.ChildLinkOrBuilder getChildLinksOrBuilder(
-      int index);
+  com.google.spanner.v1.PlanNode.ChildLinkOrBuilder getChildLinksOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
-   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
    */
   boolean hasShortRepresentation();
   /**
+   *
+   *
    * <pre>
-   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
    */
   com.google.spanner.v1.PlanNode.ShortRepresentation getShortRepresentation();
   /**
+   *
+   *
    * <pre>
-   * Condensed representation for [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
+   * Condensed representation for
+   * [SCALAR][google.spanner.v1.PlanNode.Kind.SCALAR] nodes.
    * </pre>
    *
    * <code>.google.spanner.v1.PlanNode.ShortRepresentation short_representation = 5;</code>
@@ -129,6 +157,8 @@ public interface PlanNodeOrBuilder extends
   com.google.spanner.v1.PlanNode.ShortRepresentationOrBuilder getShortRepresentationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Attributes relevant to the node contained in a group of key-value pairs.
    * For example, a Parameter Reference node could have the following
@@ -143,6 +173,8 @@ public interface PlanNodeOrBuilder extends
    */
   boolean hasMetadata();
   /**
+   *
+   *
    * <pre>
    * Attributes relevant to the node contained in a group of key-value pairs.
    * For example, a Parameter Reference node could have the following
@@ -157,6 +189,8 @@ public interface PlanNodeOrBuilder extends
    */
   com.google.protobuf.Struct getMetadata();
   /**
+   *
+   *
    * <pre>
    * Attributes relevant to the node contained in a group of key-value pairs.
    * For example, a Parameter Reference node could have the following
@@ -172,6 +206,8 @@ public interface PlanNodeOrBuilder extends
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The execution statistics associated with the node, contained in a group of
    * key-value pairs. Only present if the plan was returned as a result of a
@@ -183,6 +219,8 @@ public interface PlanNodeOrBuilder extends
    */
   boolean hasExecutionStats();
   /**
+   *
+   *
    * <pre>
    * The execution statistics associated with the node, contained in a group of
    * key-value pairs. Only present if the plan was returned as a result of a
@@ -194,6 +232,8 @@ public interface PlanNodeOrBuilder extends
    */
   com.google.protobuf.Struct getExecutionStats();
   /**
+   *
+   *
    * <pre>
    * The execution statistics associated with the node, contained in a group of
    * key-value pairs. Only present if the plan was returned as a result of a

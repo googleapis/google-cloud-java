@@ -4,29 +4,31 @@
 package com.google.cloud.vision.v1;
 
 /**
+ *
+ *
  * <pre>
  * Stores image properties, such as dominant colors.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.ImageProperties}
  */
-public  final class ImageProperties extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ImageProperties extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ImageProperties)
     ImagePropertiesOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ImageProperties.newBuilder() to construct.
   private ImageProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImageProperties() {
-  }
+
+  private ImageProperties() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ImageProperties(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,54 +48,62 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.vision.v1.DominantColorsAnnotation.Builder subBuilder = null;
-            if (dominantColors_ != null) {
-              subBuilder = dominantColors_.toBuilder();
-            }
-            dominantColors_ = input.readMessage(com.google.cloud.vision.v1.DominantColorsAnnotation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(dominantColors_);
-              dominantColors_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.vision.v1.DominantColorsAnnotation.Builder subBuilder = null;
+              if (dominantColors_ != null) {
+                subBuilder = dominantColors_.toBuilder();
+              }
+              dominantColors_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1.DominantColorsAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dominantColors_);
+                dominantColors_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageProperties_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_ImageProperties_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageProperties_fieldAccessorTable
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_ImageProperties_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.ImageProperties.class, com.google.cloud.vision.v1.ImageProperties.Builder.class);
+            com.google.cloud.vision.v1.ImageProperties.class,
+            com.google.cloud.vision.v1.ImageProperties.Builder.class);
   }
 
   public static final int DOMINANT_COLORS_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.DominantColorsAnnotation dominantColors_;
   /**
+   *
+   *
    * <pre>
    * If present, dominant colors completed successfully.
    * </pre>
@@ -104,6 +114,8 @@ private static final long serialVersionUID = 0L;
     return dominantColors_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, dominant colors completed successfully.
    * </pre>
@@ -111,9 +123,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1.DominantColorsAnnotation dominant_colors = 1;</code>
    */
   public com.google.cloud.vision.v1.DominantColorsAnnotation getDominantColors() {
-    return dominantColors_ == null ? com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance() : dominantColors_;
+    return dominantColors_ == null
+        ? com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance()
+        : dominantColors_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, dominant colors completed successfully.
    * </pre>
@@ -125,6 +141,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -136,8 +153,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (dominantColors_ != null) {
       output.writeMessage(1, getDominantColors());
     }
@@ -151,8 +167,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (dominantColors_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getDominantColors());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDominantColors());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -162,18 +177,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1.ImageProperties)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1.ImageProperties other = (com.google.cloud.vision.v1.ImageProperties) obj;
+    com.google.cloud.vision.v1.ImageProperties other =
+        (com.google.cloud.vision.v1.ImageProperties) obj;
 
     boolean result = true;
     result = result && (hasDominantColors() == other.hasDominantColors());
     if (hasDominantColors()) {
-      result = result && getDominantColors()
-          .equals(other.getDominantColors());
+      result = result && getDominantColors().equals(other.getDominantColors());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -195,118 +210,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1.ImageProperties parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1.ImageProperties parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1.ImageProperties parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1.ImageProperties parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1.ImageProperties parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.ImageProperties parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1.ImageProperties prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Stores image properties, such as dominant colors.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.ImageProperties}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.ImageProperties)
       com.google.cloud.vision.v1.ImagePropertiesOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageProperties_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_ImageProperties_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageProperties_fieldAccessorTable
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_ImageProperties_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.ImageProperties.class, com.google.cloud.vision.v1.ImageProperties.Builder.class);
+              com.google.cloud.vision.v1.ImageProperties.class,
+              com.google.cloud.vision.v1.ImageProperties.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1.ImageProperties.newBuilder()
@@ -314,16 +338,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -337,9 +360,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageProperties_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_ImageProperties_descriptor;
     }
 
     @java.lang.Override
@@ -358,7 +381,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1.ImageProperties buildPartial() {
-      com.google.cloud.vision.v1.ImageProperties result = new com.google.cloud.vision.v1.ImageProperties(this);
+      com.google.cloud.vision.v1.ImageProperties result =
+          new com.google.cloud.vision.v1.ImageProperties(this);
       if (dominantColorsBuilder_ == null) {
         result.dominantColors_ = dominantColors_;
       } else {
@@ -372,38 +396,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.ImageProperties) {
-        return mergeFrom((com.google.cloud.vision.v1.ImageProperties)other);
+        return mergeFrom((com.google.cloud.vision.v1.ImageProperties) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -446,8 +471,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1.DominantColorsAnnotation dominantColors_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.DominantColorsAnnotation, com.google.cloud.vision.v1.DominantColorsAnnotation.Builder, com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder> dominantColorsBuilder_;
+            com.google.cloud.vision.v1.DominantColorsAnnotation,
+            com.google.cloud.vision.v1.DominantColorsAnnotation.Builder,
+            com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder>
+        dominantColorsBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -458,6 +488,8 @@ private static final long serialVersionUID = 0L;
       return dominantColorsBuilder_ != null || dominantColors_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -466,12 +498,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.DominantColorsAnnotation getDominantColors() {
       if (dominantColorsBuilder_ == null) {
-        return dominantColors_ == null ? com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance() : dominantColors_;
+        return dominantColors_ == null
+            ? com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance()
+            : dominantColors_;
       } else {
         return dominantColorsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -492,6 +528,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -510,6 +548,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -520,7 +560,9 @@ private static final long serialVersionUID = 0L;
       if (dominantColorsBuilder_ == null) {
         if (dominantColors_ != null) {
           dominantColors_ =
-            com.google.cloud.vision.v1.DominantColorsAnnotation.newBuilder(dominantColors_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1.DominantColorsAnnotation.newBuilder(dominantColors_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           dominantColors_ = value;
         }
@@ -532,6 +574,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -550,6 +594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -557,26 +603,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.DominantColorsAnnotation dominant_colors = 1;</code>
      */
     public com.google.cloud.vision.v1.DominantColorsAnnotation.Builder getDominantColorsBuilder() {
-      
+
       onChanged();
       return getDominantColorsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.DominantColorsAnnotation dominant_colors = 1;</code>
      */
-    public com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder getDominantColorsOrBuilder() {
+    public com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder
+        getDominantColorsOrBuilder() {
       if (dominantColorsBuilder_ != null) {
         return dominantColorsBuilder_.getMessageOrBuilder();
       } else {
-        return dominantColors_ == null ?
-            com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance() : dominantColors_;
+        return dominantColors_ == null
+            ? com.google.cloud.vision.v1.DominantColorsAnnotation.getDefaultInstance()
+            : dominantColors_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, dominant colors completed successfully.
      * </pre>
@@ -584,21 +636,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.DominantColorsAnnotation dominant_colors = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.DominantColorsAnnotation, com.google.cloud.vision.v1.DominantColorsAnnotation.Builder, com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder> 
+            com.google.cloud.vision.v1.DominantColorsAnnotation,
+            com.google.cloud.vision.v1.DominantColorsAnnotation.Builder,
+            com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder>
         getDominantColorsFieldBuilder() {
       if (dominantColorsBuilder_ == null) {
-        dominantColorsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1.DominantColorsAnnotation, com.google.cloud.vision.v1.DominantColorsAnnotation.Builder, com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder>(
-                getDominantColors(),
-                getParentForChildren(),
-                isClean());
+        dominantColorsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1.DominantColorsAnnotation,
+                com.google.cloud.vision.v1.DominantColorsAnnotation.Builder,
+                com.google.cloud.vision.v1.DominantColorsAnnotationOrBuilder>(
+                getDominantColors(), getParentForChildren(), isClean());
         dominantColors_ = null;
       }
       return dominantColorsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -608,12 +663,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.ImageProperties)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.ImageProperties)
   private static final com.google.cloud.vision.v1.ImageProperties DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1.ImageProperties();
   }
@@ -622,16 +677,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImageProperties>
-      PARSER = new com.google.protobuf.AbstractParser<ImageProperties>() {
-    @java.lang.Override
-    public ImageProperties parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImageProperties(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ImageProperties> PARSER =
+      new com.google.protobuf.AbstractParser<ImageProperties>() {
+        @java.lang.Override
+        public ImageProperties parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ImageProperties(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ImageProperties> parser() {
     return PARSER;
@@ -646,6 +701,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1.ImageProperties getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

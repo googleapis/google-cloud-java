@@ -4,6 +4,8 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * A description of a notification channel. The descriptor includes
  * the properties of the channel and the set of labels or fields that
@@ -12,15 +14,16 @@ package com.google.monitoring.v3;
  *
  * Protobuf type {@code google.monitoring.v3.NotificationChannelDescriptor}
  */
-public  final class NotificationChannelDescriptor extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class NotificationChannelDescriptor extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.NotificationChannelDescriptor)
     NotificationChannelDescriptorOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use NotificationChannelDescriptor.newBuilder() to construct.
   private NotificationChannelDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private NotificationChannelDescriptor() {
     name_ = "";
     type_ = "";
@@ -31,10 +34,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private NotificationChannelDescriptor(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54,76 +57,82 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            type_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>();
-              mutable_bitField0_ |= 0x00000010;
+              type_ = s;
+              break;
             }
-            labels_.add(
-                input.readMessage(com.google.api.LabelDescriptor.parser(), extensionRegistry));
-            break;
-          }
-          case 40: {
-            int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              supportedTiers_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000020;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
+              break;
             }
-            supportedTiers_.add(rawValue);
-            break;
-          }
-          case 42: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              labels_.add(
+                  input.readMessage(com.google.api.LabelDescriptor.parser(), extensionRegistry));
+              break;
+            }
+          case 40:
+            {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
                 supportedTiers_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000020;
               }
               supportedTiers_.add(rawValue);
+              break;
             }
-            input.popLimit(oldLimit);
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 42:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                  supportedTiers_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000020;
+                }
+                supportedTiers_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              name_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         labels_ = java.util.Collections.unmodifiableList(labels_);
@@ -135,23 +144,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannelDescriptor_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.NotificationProto
+        .internal_static_google_monitoring_v3_NotificationChannelDescriptor_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannelDescriptor_fieldAccessorTable
+    return com.google.monitoring.v3.NotificationProto
+        .internal_static_google_monitoring_v3_NotificationChannelDescriptor_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.NotificationChannelDescriptor.class, com.google.monitoring.v3.NotificationChannelDescriptor.Builder.class);
+            com.google.monitoring.v3.NotificationChannelDescriptor.class,
+            com.google.monitoring.v3.NotificationChannelDescriptor.Builder.class);
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 6;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this descriptor. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -165,14 +179,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this descriptor. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -181,13 +196,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -198,6 +211,8 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
+   *
+   *
    * <pre>
    * The type of notification channel, such as "email", "sms", etc.
    * Notification channel types are globally unique.
@@ -210,14 +225,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       type_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The type of notification channel, such as "email", "sms", etc.
    * Notification channel types are globally unique.
@@ -225,13 +241,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string type = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
+  public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       type_ = b;
       return b;
     } else {
@@ -242,6 +256,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * A human-readable name for the notification channel type.  This
    * form of the name is suitable for a user interface.
@@ -254,14 +270,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A human-readable name for the notification channel type.  This
    * form of the name is suitable for a user interface.
@@ -269,13 +286,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -286,6 +301,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * A human-readable description of the notification channel
    * type. The description may include a description of the properties
@@ -299,14 +316,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A human-readable description of the notification channel
    * type. The description may include a description of the properties
@@ -315,13 +333,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -332,6 +348,8 @@ private static final long serialVersionUID = 0L;
   public static final int LABELS_FIELD_NUMBER = 4;
   private java.util.List<com.google.api.LabelDescriptor> labels_;
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -344,6 +362,8 @@ private static final long serialVersionUID = 0L;
     return labels_;
   }
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -352,11 +372,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
-  public java.util.List<? extends com.google.api.LabelDescriptorOrBuilder> 
+  public java.util.List<? extends com.google.api.LabelDescriptorOrBuilder>
       getLabelsOrBuilderList() {
     return labels_;
   }
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -369,6 +391,8 @@ private static final long serialVersionUID = 0L;
     return labels_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -381,6 +405,8 @@ private static final long serialVersionUID = 0L;
     return labels_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -389,83 +415,106 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
-  public com.google.api.LabelDescriptorOrBuilder getLabelsOrBuilder(
-      int index) {
+  public com.google.api.LabelDescriptorOrBuilder getLabelsOrBuilder(int index) {
     return labels_.get(index);
   }
 
   public static final int SUPPORTED_TIERS_FIELD_NUMBER = 5;
   private java.util.List<java.lang.Integer> supportedTiers_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.monitoring.v3.ServiceTier> supportedTiers_converter_ =
+          java.lang.Integer, com.google.monitoring.v3.ServiceTier>
+      supportedTiers_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.monitoring.v3.ServiceTier>() {
             public com.google.monitoring.v3.ServiceTier convert(java.lang.Integer from) {
               @SuppressWarnings("deprecation")
-              com.google.monitoring.v3.ServiceTier result = com.google.monitoring.v3.ServiceTier.valueOf(from);
+              com.google.monitoring.v3.ServiceTier result =
+                  com.google.monitoring.v3.ServiceTier.valueOf(from);
               return result == null ? com.google.monitoring.v3.ServiceTier.UNRECOGNIZED : result;
             }
           };
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
+  @java.lang.Deprecated
+  public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
     return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.monitoring.v3.ServiceTier>(supportedTiers_, supportedTiers_converter_);
+        java.lang.Integer, com.google.monitoring.v3.ServiceTier>(
+        supportedTiers_, supportedTiers_converter_);
   }
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated public int getSupportedTiersCount() {
+  @java.lang.Deprecated
+  public int getSupportedTiersCount() {
     return supportedTiers_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
+  @java.lang.Deprecated
+  public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
     return supportedTiers_converter_.convert(supportedTiers_.get(index));
   }
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated public java.util.List<java.lang.Integer>
-  getSupportedTiersValueList() {
+  @java.lang.Deprecated
+  public java.util.List<java.lang.Integer> getSupportedTiersValueList() {
     return supportedTiers_;
   }
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated public int getSupportedTiersValue(int index) {
+  @java.lang.Deprecated
+  public int getSupportedTiersValue(int index) {
     return supportedTiers_.get(index);
   }
+
   private int supportedTiersMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -477,8 +526,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
@@ -521,20 +569,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     for (int i = 0; i < labels_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, labels_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels_.get(i));
     }
     {
       int dataSize = 0;
       for (int i = 0; i < supportedTiers_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(supportedTiers_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(supportedTiers_.get(i));
       }
       size += dataSize;
-      if (!getSupportedTiersList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }supportedTiersMemoizedSerializedSize = dataSize;
+      if (!getSupportedTiersList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      supportedTiersMemoizedSerializedSize = dataSize;
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
@@ -547,24 +595,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.NotificationChannelDescriptor)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.NotificationChannelDescriptor other = (com.google.monitoring.v3.NotificationChannelDescriptor) obj;
+    com.google.monitoring.v3.NotificationChannelDescriptor other =
+        (com.google.monitoring.v3.NotificationChannelDescriptor) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getType()
-        .equals(other.getType());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getLabelsList()
-        .equals(other.getLabelsList());
+    result = result && getName().equals(other.getName());
+    result = result && getType().equals(other.getType());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getLabelsList().equals(other.getLabelsList());
     result = result && supportedTiers_.equals(other.supportedTiers_);
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -599,96 +643,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.monitoring.v3.NotificationChannelDescriptor parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.NotificationChannelDescriptor parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.NotificationChannelDescriptor parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.monitoring.v3.NotificationChannelDescriptor prototype) {
+
+  public static Builder newBuilder(
+      com.google.monitoring.v3.NotificationChannelDescriptor prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A description of a notification channel. The descriptor includes
    * the properties of the channel and the set of labels or fields that
@@ -697,21 +749,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.monitoring.v3.NotificationChannelDescriptor}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.NotificationChannelDescriptor)
       com.google.monitoring.v3.NotificationChannelDescriptorOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannelDescriptor_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.NotificationProto
+          .internal_static_google_monitoring_v3_NotificationChannelDescriptor_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannelDescriptor_fieldAccessorTable
+      return com.google.monitoring.v3.NotificationProto
+          .internal_static_google_monitoring_v3_NotificationChannelDescriptor_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.NotificationChannelDescriptor.class, com.google.monitoring.v3.NotificationChannelDescriptor.Builder.class);
+              com.google.monitoring.v3.NotificationChannelDescriptor.class,
+              com.google.monitoring.v3.NotificationChannelDescriptor.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.NotificationChannelDescriptor.newBuilder()
@@ -719,17 +773,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLabelsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -753,9 +807,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannelDescriptor_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.NotificationProto
+          .internal_static_google_monitoring_v3_NotificationChannelDescriptor_descriptor;
     }
 
     @java.lang.Override
@@ -774,7 +828,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.monitoring.v3.NotificationChannelDescriptor buildPartial() {
-      com.google.monitoring.v3.NotificationChannelDescriptor result = new com.google.monitoring.v3.NotificationChannelDescriptor(this);
+      com.google.monitoring.v3.NotificationChannelDescriptor result =
+          new com.google.monitoring.v3.NotificationChannelDescriptor(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -804,38 +859,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.NotificationChannelDescriptor) {
-        return mergeFrom((com.google.monitoring.v3.NotificationChannelDescriptor)other);
+        return mergeFrom((com.google.monitoring.v3.NotificationChannelDescriptor) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -843,7 +899,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.monitoring.v3.NotificationChannelDescriptor other) {
-      if (other == com.google.monitoring.v3.NotificationChannelDescriptor.getDefaultInstance()) return this;
+      if (other == com.google.monitoring.v3.NotificationChannelDescriptor.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -878,9 +935,10 @@ private static final long serialVersionUID = 0L;
             labelsBuilder_ = null;
             labels_ = other.labels_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            labelsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLabelsFieldBuilder() : null;
+            labelsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLabelsFieldBuilder()
+                    : null;
           } else {
             labelsBuilder_.addAllMessages(other.labels_);
           }
@@ -915,7 +973,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.v3.NotificationChannelDescriptor) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.monitoring.v3.NotificationChannelDescriptor) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -924,10 +983,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this descriptor. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -939,8 +1001,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -949,6 +1010,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this descriptor. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -957,13 +1020,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -971,6 +1032,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this descriptor. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -979,17 +1042,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 6;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this descriptor. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -999,12 +1063,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 6;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this descriptor. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -1013,13 +1079,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 6;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1027,6 +1092,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object type_ = "";
     /**
+     *
+     *
      * <pre>
      * The type of notification channel, such as "email", "sms", etc.
      * Notification channel types are globally unique.
@@ -1037,8 +1104,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
@@ -1047,6 +1113,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of notification channel, such as "email", "sms", etc.
      * Notification channel types are globally unique.
@@ -1054,13 +1122,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
+    public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -1068,6 +1134,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of notification channel, such as "email", "sms", etc.
      * Notification channel types are globally unique.
@@ -1075,17 +1143,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 1;</code>
      */
-    public Builder setType(
-        java.lang.String value) {
+    public Builder setType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       type_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of notification channel, such as "email", "sms", etc.
      * Notification channel types are globally unique.
@@ -1094,12 +1163,14 @@ private static final long serialVersionUID = 0L;
      * <code>string type = 1;</code>
      */
     public Builder clearType() {
-      
+
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of notification channel, such as "email", "sms", etc.
      * Notification channel types are globally unique.
@@ -1107,13 +1178,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 1;</code>
      */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       type_ = value;
       onChanged();
       return this;
@@ -1121,6 +1191,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * A human-readable name for the notification channel type.  This
      * form of the name is suitable for a user interface.
@@ -1131,8 +1203,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1141,6 +1212,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable name for the notification channel type.  This
      * form of the name is suitable for a user interface.
@@ -1148,13 +1221,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1162,6 +1233,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable name for the notification channel type.  This
      * form of the name is suitable for a user interface.
@@ -1169,17 +1242,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable name for the notification channel type.  This
      * form of the name is suitable for a user interface.
@@ -1188,12 +1262,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable name for the notification channel type.  This
      * form of the name is suitable for a user interface.
@@ -1201,13 +1277,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -1215,6 +1290,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * A human-readable description of the notification channel
      * type. The description may include a description of the properties
@@ -1226,8 +1303,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1236,6 +1312,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description of the notification channel
      * type. The description may include a description of the properties
@@ -1244,13 +1322,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1258,6 +1334,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description of the notification channel
      * type. The description may include a description of the properties
@@ -1266,17 +1344,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 3;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description of the notification channel
      * type. The description may include a description of the properties
@@ -1286,12 +1365,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 3;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description of the notification channel
      * type. The description may include a description of the properties
@@ -1300,31 +1381,36 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 3;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.api.LabelDescriptor> labels_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureLabelsIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>(labels_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.api.LabelDescriptor, com.google.api.LabelDescriptor.Builder, com.google.api.LabelDescriptorOrBuilder> labelsBuilder_;
+            com.google.api.LabelDescriptor,
+            com.google.api.LabelDescriptor.Builder,
+            com.google.api.LabelDescriptorOrBuilder>
+        labelsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1341,6 +1427,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1357,6 +1445,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1373,6 +1463,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1381,8 +1473,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public Builder setLabels(
-        int index, com.google.api.LabelDescriptor value) {
+    public Builder setLabels(int index, com.google.api.LabelDescriptor value) {
       if (labelsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1396,6 +1487,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1404,8 +1497,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public Builder setLabels(
-        int index, com.google.api.LabelDescriptor.Builder builderForValue) {
+    public Builder setLabels(int index, com.google.api.LabelDescriptor.Builder builderForValue) {
       if (labelsBuilder_ == null) {
         ensureLabelsIsMutable();
         labels_.set(index, builderForValue.build());
@@ -1416,6 +1508,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1438,6 +1532,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1446,8 +1542,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public Builder addLabels(
-        int index, com.google.api.LabelDescriptor value) {
+    public Builder addLabels(int index, com.google.api.LabelDescriptor value) {
       if (labelsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1461,6 +1556,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1469,8 +1566,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public Builder addLabels(
-        com.google.api.LabelDescriptor.Builder builderForValue) {
+    public Builder addLabels(com.google.api.LabelDescriptor.Builder builderForValue) {
       if (labelsBuilder_ == null) {
         ensureLabelsIsMutable();
         labels_.add(builderForValue.build());
@@ -1481,6 +1577,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1489,8 +1587,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public Builder addLabels(
-        int index, com.google.api.LabelDescriptor.Builder builderForValue) {
+    public Builder addLabels(int index, com.google.api.LabelDescriptor.Builder builderForValue) {
       if (labelsBuilder_ == null) {
         ensureLabelsIsMutable();
         labels_.add(index, builderForValue.build());
@@ -1501,6 +1598,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1513,8 +1612,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.api.LabelDescriptor> values) {
       if (labelsBuilder_ == null) {
         ensureLabelsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, labels_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labels_);
         onChanged();
       } else {
         labelsBuilder_.addAllMessages(values);
@@ -1522,6 +1620,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1541,6 +1641,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1560,6 +1662,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1568,11 +1672,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public com.google.api.LabelDescriptor.Builder getLabelsBuilder(
-        int index) {
+    public com.google.api.LabelDescriptor.Builder getLabelsBuilder(int index) {
       return getLabelsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1581,14 +1686,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public com.google.api.LabelDescriptorOrBuilder getLabelsOrBuilder(
-        int index) {
+    public com.google.api.LabelDescriptorOrBuilder getLabelsOrBuilder(int index) {
       if (labelsBuilder_ == null) {
-        return labels_.get(index);  } else {
+        return labels_.get(index);
+      } else {
         return labelsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1597,8 +1704,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public java.util.List<? extends com.google.api.LabelDescriptorOrBuilder> 
-         getLabelsOrBuilderList() {
+    public java.util.List<? extends com.google.api.LabelDescriptorOrBuilder>
+        getLabelsOrBuilderList() {
       if (labelsBuilder_ != null) {
         return labelsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1606,6 +1713,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1615,10 +1724,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
     public com.google.api.LabelDescriptor.Builder addLabelsBuilder() {
-      return getLabelsFieldBuilder().addBuilder(
-          com.google.api.LabelDescriptor.getDefaultInstance());
+      return getLabelsFieldBuilder()
+          .addBuilder(com.google.api.LabelDescriptor.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1627,12 +1738,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public com.google.api.LabelDescriptor.Builder addLabelsBuilder(
-        int index) {
-      return getLabelsFieldBuilder().addBuilder(
-          index, com.google.api.LabelDescriptor.getDefaultInstance());
+    public com.google.api.LabelDescriptor.Builder addLabelsBuilder(int index) {
+      return getLabelsFieldBuilder()
+          .addBuilder(index, com.google.api.LabelDescriptor.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The set of labels that must be defined to identify a particular
      * channel of the corresponding type. Each label includes a
@@ -1641,16 +1753,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
-    public java.util.List<com.google.api.LabelDescriptor.Builder> 
-         getLabelsBuilderList() {
+    public java.util.List<com.google.api.LabelDescriptor.Builder> getLabelsBuilderList() {
       return getLabelsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.api.LabelDescriptor, com.google.api.LabelDescriptor.Builder, com.google.api.LabelDescriptorOrBuilder> 
+            com.google.api.LabelDescriptor,
+            com.google.api.LabelDescriptor.Builder,
+            com.google.api.LabelDescriptorOrBuilder>
         getLabelsFieldBuilder() {
       if (labelsBuilder_ == null) {
-        labelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.api.LabelDescriptor, com.google.api.LabelDescriptor.Builder, com.google.api.LabelDescriptorOrBuilder>(
+        labelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.api.LabelDescriptor,
+                com.google.api.LabelDescriptor.Builder,
+                com.google.api.LabelDescriptorOrBuilder>(
                 labels_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -1660,8 +1777,8 @@ private static final long serialVersionUID = 0L;
       return labelsBuilder_;
     }
 
-    private java.util.List<java.lang.Integer> supportedTiers_ =
-      java.util.Collections.emptyList();
+    private java.util.List<java.lang.Integer> supportedTiers_ = java.util.Collections.emptyList();
+
     private void ensureSupportedTiersIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         supportedTiers_ = new java.util.ArrayList<java.lang.Integer>(supportedTiers_);
@@ -1669,49 +1786,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
+    @java.lang.Deprecated
+    public java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.monitoring.v3.ServiceTier>(supportedTiers_, supportedTiers_converter_);
+          java.lang.Integer, com.google.monitoring.v3.ServiceTier>(
+          supportedTiers_, supportedTiers_converter_);
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public int getSupportedTiersCount() {
+    @java.lang.Deprecated
+    public int getSupportedTiersCount() {
       return supportedTiers_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
+    @java.lang.Deprecated
+    public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
       return supportedTiers_converter_.convert(supportedTiers_.get(index));
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder setSupportedTiers(
-        int index, com.google.monitoring.v3.ServiceTier value) {
+    @java.lang.Deprecated
+    public Builder setSupportedTiers(int index, com.google.monitoring.v3.ServiceTier value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1721,14 +1854,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder addSupportedTiers(com.google.monitoring.v3.ServiceTier value) {
+    @java.lang.Deprecated
+    public Builder addSupportedTiers(com.google.monitoring.v3.ServiceTier value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1738,14 +1875,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder addAllSupportedTiers(
+    @java.lang.Deprecated
+    public Builder addAllSupportedTiers(
         java.lang.Iterable<? extends com.google.monitoring.v3.ServiceTier> values) {
       ensureSupportedTiersIsMutable();
       for (com.google.monitoring.v3.ServiceTier value : values) {
@@ -1755,81 +1896,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder clearSupportedTiers() {
+    @java.lang.Deprecated
+    public Builder clearSupportedTiers() {
       supportedTiers_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public java.util.List<java.lang.Integer>
-    getSupportedTiersValueList() {
+    @java.lang.Deprecated
+    public java.util.List<java.lang.Integer> getSupportedTiersValueList() {
       return java.util.Collections.unmodifiableList(supportedTiers_);
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public int getSupportedTiersValue(int index) {
+    @java.lang.Deprecated
+    public int getSupportedTiersValue(int index) {
       return supportedTiers_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder setSupportedTiersValue(
-        int index, int value) {
+    @java.lang.Deprecated
+    public Builder setSupportedTiersValue(int index, int value) {
       ensureSupportedTiersIsMutable();
       supportedTiers_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder addSupportedTiersValue(int value) {
+    @java.lang.Deprecated
+    public Builder addSupportedTiersValue(int value) {
       ensureSupportedTiersIsMutable();
       supportedTiers_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The tiers that support this notification channel; the project service tier
      * must be one of the supported_tiers.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+     * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder addAllSupportedTiersValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+    @java.lang.Deprecated
+    public Builder addAllSupportedTiersValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureSupportedTiersIsMutable();
       for (int value : values) {
         supportedTiers_.add(value);
@@ -1837,9 +1999,9 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1849,12 +2011,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.NotificationChannelDescriptor)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.NotificationChannelDescriptor)
   private static final com.google.monitoring.v3.NotificationChannelDescriptor DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.NotificationChannelDescriptor();
   }
@@ -1863,16 +2025,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NotificationChannelDescriptor>
-      PARSER = new com.google.protobuf.AbstractParser<NotificationChannelDescriptor>() {
-    @java.lang.Override
-    public NotificationChannelDescriptor parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new NotificationChannelDescriptor(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<NotificationChannelDescriptor> PARSER =
+      new com.google.protobuf.AbstractParser<NotificationChannelDescriptor>() {
+        @java.lang.Override
+        public NotificationChannelDescriptor parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new NotificationChannelDescriptor(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<NotificationChannelDescriptor> parser() {
     return PARSER;
@@ -1887,6 +2049,4 @@ private static final long serialVersionUID = 0L;
   public com.google.monitoring.v3.NotificationChannelDescriptor getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

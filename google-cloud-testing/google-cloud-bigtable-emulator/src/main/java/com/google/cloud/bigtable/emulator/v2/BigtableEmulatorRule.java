@@ -20,13 +20,11 @@ import io.grpc.ManagedChannel;
 import org.junit.rules.ExternalResource;
 
 /**
- * The BigtableEmulatorRule manages the lifecycle of the Bigtable {@link Emulator}. Before the
- * start of a test, the emulator will be started on a random port and will be shutdown after the
- * test finishes.
+ * The BigtableEmulatorRule manages the lifecycle of the Bigtable {@link Emulator}. Before the start
+ * of a test, the emulator will be started on a random port and will be shutdown after the test
+ * finishes.
  *
- * <p>Example usage:
- *
- * <code>{@code
+ * <p>Example usage: <code>{@code
  *   {@literal @RunWith(JUnit4.class)}
  *   public class MyTest {
  *     {@literal @Rule}
@@ -48,7 +46,7 @@ public class BigtableEmulatorRule extends ExternalResource {
     return new BigtableEmulatorRule();
   }
 
-  private BigtableEmulatorRule() { }
+  private BigtableEmulatorRule() {}
 
   /** Initializes the Bigtable emulator before a test runs. */
   @Override

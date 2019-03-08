@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface ColumnRangeOrBuilder extends
+public interface ColumnRangeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ColumnRange)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the column family within which this range falls.
    * </pre>
@@ -16,16 +19,19 @@ public interface ColumnRangeOrBuilder extends
    */
   java.lang.String getFamilyName();
   /**
+   *
+   *
    * <pre>
    * The name of the column family within which this range falls.
    * </pre>
    *
    * <code>string family_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getFamilyNameBytes();
+  com.google.protobuf.ByteString getFamilyNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive lower bound for the range.
    * </pre>
@@ -35,6 +41,8 @@ public interface ColumnRangeOrBuilder extends
   com.google.protobuf.ByteString getStartQualifierClosed();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive lower bound for the range.
    * </pre>
@@ -44,6 +52,8 @@ public interface ColumnRangeOrBuilder extends
   com.google.protobuf.ByteString getStartQualifierOpen();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive upper bound for the range.
    * </pre>
@@ -53,6 +63,8 @@ public interface ColumnRangeOrBuilder extends
   com.google.protobuf.ByteString getEndQualifierClosed();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive upper bound for the range.
    * </pre>

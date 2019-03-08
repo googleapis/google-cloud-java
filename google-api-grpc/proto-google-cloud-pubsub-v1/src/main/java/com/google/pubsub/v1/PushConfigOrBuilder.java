@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface PushConfigOrBuilder extends
+public interface PushConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PushConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use "https://example.com/push".
@@ -17,6 +20,8 @@ public interface PushConfigOrBuilder extends
    */
   java.lang.String getPushEndpoint();
   /**
+   *
+   *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use "https://example.com/push".
@@ -24,10 +29,11 @@ public interface PushConfigOrBuilder extends
    *
    * <code>string push_endpoint = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPushEndpointBytes();
+  com.google.protobuf.ByteString getPushEndpointBytes();
 
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -51,6 +57,8 @@ public interface PushConfigOrBuilder extends
    */
   int getAttributesCount();
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -72,15 +80,13 @@ public interface PushConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-  boolean containsAttributes(
-      java.lang.String key);
-  /**
-   * Use {@link #getAttributesMap()} instead.
-   */
+  boolean containsAttributes(java.lang.String key);
+  /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributes();
+  java.util.Map<java.lang.String, java.lang.String> getAttributes();
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -102,9 +108,10 @@ public interface PushConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributesMap();
+  java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -126,33 +133,66 @@ public interface PushConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
+  java.lang.String getAttributesOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Endpoint configuration attributes.
+   * Every endpoint has a set of API supported attributes that can be used to
+   * control different aspects of the message delivery.
+   * The currently supported attribute is `x-goog-version`, which you can
+   * use to change the format of the pushed message. This attribute
+   * indicates the version of the data expected by the endpoint. This
+   * controls the shape of the pushed message (i.e., its fields and metadata).
+   * The endpoint version is based on the version of the Pub/Sub API.
+   * If not present during the `CreateSubscription` call, it will default to
+   * the version of the API used to make such call. If not present during a
+   * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
+   * calls will always return a valid version, even if the subscription was
+   * created without this attribute.
+   * The possible values for this attribute are:
+   * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
+   * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   */
+  java.lang.String getAttributesOrThrow(java.lang.String key);
 
-  java.lang.String getAttributesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
-   * Endpoint configuration attributes.
-   * Every endpoint has a set of API supported attributes that can be used to
-   * control different aspects of the message delivery.
-   * The currently supported attribute is `x-goog-version`, which you can
-   * use to change the format of the pushed message. This attribute
-   * indicates the version of the data expected by the endpoint. This
-   * controls the shape of the pushed message (i.e., its fields and metadata).
-   * The endpoint version is based on the version of the Pub/Sub API.
-   * If not present during the `CreateSubscription` call, it will default to
-   * the version of the API used to make such call. If not present during a
-   * `ModifyPushConfig` call, its value will not be changed. `GetSubscription`
-   * calls will always return a valid version, even if the subscription was
-   * created without this attribute.
-   * The possible values for this attribute are:
-   * * `v1beta1`: uses the push format defined in the v1beta1 Pub/Sub API.
-   * * `v1` or `v1beta2`: uses the push format defined in the v1 Pub/Sub API.
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; attributes = 2;</code>
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
    */
+  boolean hasOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  com.google.pubsub.v1.PushConfig.OidcToken getOidcToken();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder();
 
-  java.lang.String getAttributesOrThrow(
-      java.lang.String key);
+  public com.google.pubsub.v1.PushConfig.AuthenticationMethodCase getAuthenticationMethodCase();
 }

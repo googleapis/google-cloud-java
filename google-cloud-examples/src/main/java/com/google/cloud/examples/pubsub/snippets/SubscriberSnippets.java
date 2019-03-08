@@ -58,9 +58,7 @@ public class SubscriberSnippets {
   private final ApiFuture<Void> done;
 
   public SubscriberSnippets(
-      ProjectSubscriptionName subscriptionName,
-      MessageReceiver receiver,
-      ApiFuture<Void> done) {
+      ProjectSubscriptionName subscriptionName, MessageReceiver receiver, ApiFuture<Void> done) {
     this.subscriptionName = subscriptionName;
     this.receiver = receiver;
     this.done = done;
@@ -104,7 +102,8 @@ public class SubscriberSnippets {
     String projectId = "my-project-id";
     String subscriptionId = "my-subscription-id";
 
-    ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(projectId, subscriptionId);
+    ProjectSubscriptionName subscriptionName =
+        ProjectSubscriptionName.of(projectId, subscriptionId);
     // Instantiate an asynchronous message receiver
     MessageReceiver receiver =
         new MessageReceiver() {
@@ -195,9 +194,8 @@ public class SubscriberSnippets {
         SubscriberStubSettings.newBuilder()
             .setTransportChannelProvider(
                 SubscriberStubSettings.defaultGrpcTransportProviderBuilder()
-                    .setMaxInboundMessageSize(20<<20) // 20MB
-                    .build()
-            )
+                    .setMaxInboundMessageSize(20 << 20) // 20MB
+                    .build())
             .build();
 
     try (SubscriberStub subscriber = GrpcSubscriberStub.create(subscriberStubSettings)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.InstanceGroupStub;
 import com.google.cloud.compute.v1.stub.InstanceGroupStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -56,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1325,13 +1326,16 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupsPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
-          InstanceGroupsScopedList, AggregatedListInstanceGroupsPage,
+          AggregatedListInstanceGroupsHttpRequest,
+          InstanceGroupAggregatedList,
+          InstanceGroupsScopedList,
+          AggregatedListInstanceGroupsPage,
           AggregatedListInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInstanceGroupsPagedResponse> createAsync(
         PageContext<
-                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                AggregatedListInstanceGroupsHttpRequest,
+                InstanceGroupAggregatedList,
                 InstanceGroupsScopedList>
             context,
         ApiFuture<InstanceGroupAggregatedList> futureResponse) {
@@ -1347,7 +1351,8 @@ public class InstanceGroupClient implements BackgroundResource {
                 AggregatedListInstanceGroupsPage input) {
               return new AggregatedListInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListInstanceGroupsPagedResponse(AggregatedListInstanceGroupsPage page) {
@@ -1357,12 +1362,15 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupsPage
       extends AbstractPage<
-          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
-          InstanceGroupsScopedList, AggregatedListInstanceGroupsPage> {
+          AggregatedListInstanceGroupsHttpRequest,
+          InstanceGroupAggregatedList,
+          InstanceGroupsScopedList,
+          AggregatedListInstanceGroupsPage> {
 
     private AggregatedListInstanceGroupsPage(
         PageContext<
-                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                AggregatedListInstanceGroupsHttpRequest,
+                InstanceGroupAggregatedList,
                 InstanceGroupsScopedList>
             context,
         InstanceGroupAggregatedList response) {
@@ -1376,7 +1384,8 @@ public class InstanceGroupClient implements BackgroundResource {
     @Override
     protected AggregatedListInstanceGroupsPage createPage(
         PageContext<
-                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                AggregatedListInstanceGroupsHttpRequest,
+                InstanceGroupAggregatedList,
                 InstanceGroupsScopedList>
             context,
         InstanceGroupAggregatedList response) {
@@ -1386,7 +1395,8 @@ public class InstanceGroupClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListInstanceGroupsPage> createPageAsync(
         PageContext<
-                AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                AggregatedListInstanceGroupsHttpRequest,
+                InstanceGroupAggregatedList,
                 InstanceGroupsScopedList>
             context,
         ApiFuture<InstanceGroupAggregatedList> futureResponse) {
@@ -1396,8 +1406,10 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
-          InstanceGroupsScopedList, AggregatedListInstanceGroupsPage,
+          AggregatedListInstanceGroupsHttpRequest,
+          InstanceGroupAggregatedList,
+          InstanceGroupsScopedList,
+          AggregatedListInstanceGroupsPage,
           AggregatedListInstanceGroupsFixedSizeCollection> {
 
     private AggregatedListInstanceGroupsFixedSizeCollection(
@@ -1418,7 +1430,10 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class ListInstanceGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListInstanceGroupsHttpRequest, InstanceGroupList, InstanceGroup, ListInstanceGroupsPage,
+          ListInstanceGroupsHttpRequest,
+          InstanceGroupList,
+          InstanceGroup,
+          ListInstanceGroupsPage,
           ListInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListInstanceGroupsPagedResponse> createAsync(
@@ -1433,7 +1448,8 @@ public class InstanceGroupClient implements BackgroundResource {
             public ListInstanceGroupsPagedResponse apply(ListInstanceGroupsPage input) {
               return new ListInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstanceGroupsPagedResponse(ListInstanceGroupsPage page) {
@@ -1472,7 +1488,10 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class ListInstanceGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstanceGroupsHttpRequest, InstanceGroupList, InstanceGroup, ListInstanceGroupsPage,
+          ListInstanceGroupsHttpRequest,
+          InstanceGroupList,
+          InstanceGroup,
+          ListInstanceGroupsPage,
           ListInstanceGroupsFixedSizeCollection> {
 
     private ListInstanceGroupsFixedSizeCollection(
@@ -1493,13 +1512,16 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class ListInstancesInstanceGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
-          InstanceWithNamedPorts, ListInstancesInstanceGroupsPage,
+          ListInstancesInstanceGroupsHttpRequest,
+          InstanceGroupsListInstances,
+          InstanceWithNamedPorts,
+          ListInstancesInstanceGroupsPage,
           ListInstancesInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListInstancesInstanceGroupsPagedResponse> createAsync(
         PageContext<
-                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                ListInstancesInstanceGroupsHttpRequest,
+                InstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         ApiFuture<InstanceGroupsListInstances> futureResponse) {
@@ -1515,7 +1537,8 @@ public class InstanceGroupClient implements BackgroundResource {
                 ListInstancesInstanceGroupsPage input) {
               return new ListInstancesInstanceGroupsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstancesInstanceGroupsPagedResponse(ListInstancesInstanceGroupsPage page) {
@@ -1525,12 +1548,15 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class ListInstancesInstanceGroupsPage
       extends AbstractPage<
-          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
-          InstanceWithNamedPorts, ListInstancesInstanceGroupsPage> {
+          ListInstancesInstanceGroupsHttpRequest,
+          InstanceGroupsListInstances,
+          InstanceWithNamedPorts,
+          ListInstancesInstanceGroupsPage> {
 
     private ListInstancesInstanceGroupsPage(
         PageContext<
-                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                ListInstancesInstanceGroupsHttpRequest,
+                InstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         InstanceGroupsListInstances response) {
@@ -1544,7 +1570,8 @@ public class InstanceGroupClient implements BackgroundResource {
     @Override
     protected ListInstancesInstanceGroupsPage createPage(
         PageContext<
-                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                ListInstancesInstanceGroupsHttpRequest,
+                InstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         InstanceGroupsListInstances response) {
@@ -1554,7 +1581,8 @@ public class InstanceGroupClient implements BackgroundResource {
     @Override
     public ApiFuture<ListInstancesInstanceGroupsPage> createPageAsync(
         PageContext<
-                ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                ListInstancesInstanceGroupsHttpRequest,
+                InstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         ApiFuture<InstanceGroupsListInstances> futureResponse) {
@@ -1564,8 +1592,10 @@ public class InstanceGroupClient implements BackgroundResource {
 
   public static class ListInstancesInstanceGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
-          InstanceWithNamedPorts, ListInstancesInstanceGroupsPage,
+          ListInstancesInstanceGroupsHttpRequest,
+          InstanceGroupsListInstances,
+          InstanceWithNamedPorts,
+          ListInstancesInstanceGroupsPage,
           ListInstancesInstanceGroupsFixedSizeCollection> {
 
     private ListInstancesInstanceGroupsFixedSizeCollection(

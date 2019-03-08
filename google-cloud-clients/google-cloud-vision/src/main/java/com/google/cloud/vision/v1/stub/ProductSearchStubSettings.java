@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,7 +146,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
   private final UnaryCallSettings<RemoveProductFromProductSetRequest, Empty>
       removeProductFromProductSetSettings;
   private final PagedCallSettings<
-          ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+          ListProductsInProductSetRequest,
+          ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings;
   private final UnaryCallSettings<ImportProductSetsRequest, Operation> importProductSetsSettings;
@@ -243,7 +244,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
   /** Returns the object with the settings used for calls to listProductsInProductSet. */
   public PagedCallSettings<
-          ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+          ListProductsInProductSetRequest,
+          ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings() {
     return listProductsInProductSetSettings;
@@ -383,7 +385,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<Product> extractResources(ListProductsResponse payload) {
-              return payload.getProductsList();
+              return payload.getProductsList() != null
+                  ? payload.getProductsList()
+                  : ImmutableList.<Product>of();
             }
           };
 
@@ -421,7 +425,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<ReferenceImage> extractResources(ListReferenceImagesResponse payload) {
-              return payload.getReferenceImagesList();
+              return payload.getReferenceImagesList() != null
+                  ? payload.getReferenceImagesList()
+                  : ImmutableList.<ReferenceImage>of();
             }
           };
 
@@ -458,7 +464,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<ProductSet> extractResources(ListProductSetsResponse payload) {
-              return payload.getProductSetsList();
+              return payload.getProductSetsList() != null
+                  ? payload.getProductSetsList()
+                  : ImmutableList.<ProductSet>of();
             }
           };
 
@@ -500,7 +508,9 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<Product> extractResources(ListProductsInProductSetResponse payload) {
-              return payload.getProductsList();
+              return payload.getProductsList() != null
+                  ? payload.getProductsList()
+                  : ImmutableList.<Product>of();
             }
           };
 
@@ -525,7 +535,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           ListReferenceImagesRequest, ListReferenceImagesResponse, ListReferenceImagesPagedResponse>
       LIST_REFERENCE_IMAGES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListReferenceImagesRequest, ListReferenceImagesResponse,
+              ListReferenceImagesRequest,
+              ListReferenceImagesResponse,
               ListReferenceImagesPagedResponse>() {
             @Override
             public ApiFuture<ListReferenceImagesPagedResponse> getFuturePagedResponse(
@@ -559,11 +570,13 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+          ListProductsInProductSetRequest,
+          ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
       LIST_PRODUCTS_IN_PRODUCT_SET_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+              ListProductsInProductSetRequest,
+              ListProductsInProductSetResponse,
               ListProductsInProductSetPagedResponse>() {
             @Override
             public ApiFuture<ListProductsInProductSetPagedResponse> getFuturePagedResponse(
@@ -593,7 +606,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     private final UnaryCallSettings.Builder<UpdateProductRequest, Product> updateProductSettings;
     private final UnaryCallSettings.Builder<DeleteProductRequest, Empty> deleteProductSettings;
     private final PagedCallSettings.Builder<
-            ListReferenceImagesRequest, ListReferenceImagesResponse,
+            ListReferenceImagesRequest,
+            ListReferenceImagesResponse,
             ListReferenceImagesPagedResponse>
         listReferenceImagesSettings;
     private final UnaryCallSettings.Builder<GetReferenceImageRequest, ReferenceImage>
@@ -617,7 +631,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     private final UnaryCallSettings.Builder<RemoveProductFromProductSetRequest, Empty>
         removeProductFromProductSetSettings;
     private final PagedCallSettings.Builder<
-            ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+            ListProductsInProductSetRequest,
+            ListProductsInProductSetResponse,
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings;
     private final UnaryCallSettings.Builder<ImportProductSetsRequest, Operation>
@@ -950,7 +965,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
     /** Returns the builder for the settings used for calls to listReferenceImages. */
     public PagedCallSettings.Builder<
-            ListReferenceImagesRequest, ListReferenceImagesResponse,
+            ListReferenceImagesRequest,
+            ListReferenceImagesResponse,
             ListReferenceImagesPagedResponse>
         listReferenceImagesSettings() {
       return listReferenceImagesSettings;
@@ -1017,7 +1033,8 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
     /** Returns the builder for the settings used for calls to listProductsInProductSet. */
     public PagedCallSettings.Builder<
-            ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+            ListProductsInProductSetRequest,
+            ListProductsInProductSetResponse,
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings() {
       return listProductsInProductSetSettings;

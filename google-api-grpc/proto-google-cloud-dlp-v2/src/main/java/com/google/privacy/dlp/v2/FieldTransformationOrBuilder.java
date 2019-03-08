@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface FieldTransformationOrBuilder extends
+public interface FieldTransformationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.FieldTransformation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.FieldId> 
-      getFieldsList();
+  java.util.List<com.google.privacy.dlp.v2.FieldId> getFieldsList();
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
@@ -25,6 +29,8 @@ public interface FieldTransformationOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getFields(int index);
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
@@ -33,25 +39,29 @@ public interface FieldTransformationOrBuilder extends
    */
   int getFieldsCount();
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
-      getFieldsOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> getFieldsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Input field(s) to apply the transformation to. [required]
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1;</code>
    */
-  com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.FieldIdOrBuilder getFieldsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
@@ -66,6 +76,8 @@ public interface FieldTransformationOrBuilder extends
    */
   boolean hasCondition();
   /**
+   *
+   *
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
@@ -80,6 +92,8 @@ public interface FieldTransformationOrBuilder extends
    */
   com.google.privacy.dlp.v2.RecordCondition getCondition();
   /**
+   *
+   *
    * <pre>
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
@@ -95,6 +109,8 @@ public interface FieldTransformationOrBuilder extends
   com.google.privacy.dlp.v2.RecordConditionOrBuilder getConditionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Apply the transformation to the entire field.
    * </pre>
@@ -103,6 +119,8 @@ public interface FieldTransformationOrBuilder extends
    */
   boolean hasPrimitiveTransformation();
   /**
+   *
+   *
    * <pre>
    * Apply the transformation to the entire field.
    * </pre>
@@ -111,6 +129,8 @@ public interface FieldTransformationOrBuilder extends
    */
   com.google.privacy.dlp.v2.PrimitiveTransformation getPrimitiveTransformation();
   /**
+   *
+   *
    * <pre>
    * Apply the transformation to the entire field.
    * </pre>
@@ -120,6 +140,8 @@ public interface FieldTransformationOrBuilder extends
   com.google.privacy.dlp.v2.PrimitiveTransformationOrBuilder getPrimitiveTransformationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Treat the contents of the field as free text, and selectively
    * transform content that matches an `InfoType`.
@@ -129,6 +151,8 @@ public interface FieldTransformationOrBuilder extends
    */
   boolean hasInfoTypeTransformations();
   /**
+   *
+   *
    * <pre>
    * Treat the contents of the field as free text, and selectively
    * transform content that matches an `InfoType`.
@@ -138,6 +162,8 @@ public interface FieldTransformationOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations();
   /**
+   *
+   *
    * <pre>
    * Treat the contents of the field as free text, and selectively
    * transform content that matches an `InfoType`.

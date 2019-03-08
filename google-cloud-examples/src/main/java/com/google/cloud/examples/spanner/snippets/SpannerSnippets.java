@@ -30,9 +30,7 @@ import com.google.cloud.spanner.InstanceAdminClient;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
 
-/**
- * This class contains snippets for {@link com.google.cloud.spanner.Spanner} interface.
- */
+/** This class contains snippets for {@link com.google.cloud.spanner.Spanner} interface. */
 public class SpannerSnippets {
 
   DatabaseAdminClient getDatabaseAdminClient() {
@@ -52,8 +50,7 @@ public class SpannerSnippets {
     final String project = "test-project";
     final String instance = "test-instance";
     final String database = "example-db";
-    DatabaseId db =
-        DatabaseId.of(project, instance, database);
+    DatabaseId db = DatabaseId.of(project, instance, database);
     DatabaseClient dbClient = spanner.getDatabaseClient(db);
     // [END get_db_client]
 
@@ -77,12 +74,10 @@ public class SpannerSnippets {
     final String project = "test-project";
     final String instance = "test-instance";
     final String database = "example-db";
-    DatabaseId db =
-        DatabaseId.of(project, instance, database);
+    DatabaseId db = DatabaseId.of(project, instance, database);
     BatchClient batchClient = spanner.getBatchClient(db);
     // [END get_batch_client]
 
     return batchClient;
   }
 }
-

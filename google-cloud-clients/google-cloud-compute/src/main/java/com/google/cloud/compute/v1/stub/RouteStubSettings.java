@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -234,7 +234,9 @@ public class RouteStubSettings extends StubSettings<RouteStubSettings> {
 
             @Override
             public Iterable<Route> extractResources(RouteList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Route>of();
             }
           };
 

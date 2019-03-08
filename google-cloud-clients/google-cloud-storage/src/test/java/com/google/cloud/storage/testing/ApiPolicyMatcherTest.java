@@ -36,53 +36,46 @@ public class ApiPolicyMatcherTest {
   private static final String ETAG = "CAE=";
   private static final Policy API_POLICY_1 =
       new Policy()
-          .setBindings(ImmutableList.of(
-              new Bindings()
-                  .setMembers(ImmutableList.of("allUsers"))
-                  .setRole("roles/storage.objectViewer"),
-              new Bindings()
-                  .setMembers(
-                      ImmutableList.of(
-                          "user:test1@gmail.com",
-                          "user:test2@gmail.com"))
-                  .setRole("roles/storage.objectAdmin"),
-              new Bindings()
-                  .setMembers(ImmutableList.of("group:test-group@gmail.com"))
-                  .setRole("roles/storage.admin")))
+          .setBindings(
+              ImmutableList.of(
+                  new Bindings()
+                      .setMembers(ImmutableList.of("allUsers"))
+                      .setRole("roles/storage.objectViewer"),
+                  new Bindings()
+                      .setMembers(ImmutableList.of("user:test1@gmail.com", "user:test2@gmail.com"))
+                      .setRole("roles/storage.objectAdmin"),
+                  new Bindings()
+                      .setMembers(ImmutableList.of("group:test-group@gmail.com"))
+                      .setRole("roles/storage.admin")))
           .setEtag(ETAG);
   private static final Policy API_POLICY_2 =
       new Policy()
-          .setBindings(ImmutableList.of(
-              new Bindings()
-                  .setMembers(ImmutableList.of("group:test-group@gmail.com"))
-                  .setRole("roles/storage.admin"),
-              new Bindings()
-                  .setMembers(ImmutableList.of("allUsers"))
-                  .setRole("roles/storage.objectViewer"),
-              new Bindings()
-                  .setMembers(
-                      ImmutableList.of(
-                          "user:test2@gmail.com",
-                          "user:test1@gmail.com"))
-                  .setRole("roles/storage.objectAdmin")))
+          .setBindings(
+              ImmutableList.of(
+                  new Bindings()
+                      .setMembers(ImmutableList.of("group:test-group@gmail.com"))
+                      .setRole("roles/storage.admin"),
+                  new Bindings()
+                      .setMembers(ImmutableList.of("allUsers"))
+                      .setRole("roles/storage.objectViewer"),
+                  new Bindings()
+                      .setMembers(ImmutableList.of("user:test2@gmail.com", "user:test1@gmail.com"))
+                      .setRole("roles/storage.objectAdmin")))
           .setEtag(ETAG);
-  private static final Policy API_POLICY_MISSING_BINDINGS =
-      new Policy().setEtag(ETAG);
+  private static final Policy API_POLICY_MISSING_BINDINGS = new Policy().setEtag(ETAG);
   private static final Policy API_POLICY_MISSING_ETAG =
       new Policy()
-          .setBindings(ImmutableList.of(
-              new Bindings()
-                  .setMembers(ImmutableList.of("group:test-group@gmail.com"))
-                  .setRole("roles/storage.admin"),
-              new Bindings()
-                  .setMembers(ImmutableList.of("allUsers"))
-                  .setRole("roles/storage.objectViewer"),
-              new Bindings()
-                  .setMembers(
-                      ImmutableList.of(
-                          "user:test2@gmail.com",
-                          "user:test1@gmail.com"))
-                  .setRole("roles/storage.objectAdmin")));
+          .setBindings(
+              ImmutableList.of(
+                  new Bindings()
+                      .setMembers(ImmutableList.of("group:test-group@gmail.com"))
+                      .setRole("roles/storage.admin"),
+                  new Bindings()
+                      .setMembers(ImmutableList.of("allUsers"))
+                      .setRole("roles/storage.objectViewer"),
+                  new Bindings()
+                      .setMembers(ImmutableList.of("user:test2@gmail.com", "user:test1@gmail.com"))
+                      .setRole("roles/storage.objectAdmin")));
 
   @Test
   public void testEquivalence() {

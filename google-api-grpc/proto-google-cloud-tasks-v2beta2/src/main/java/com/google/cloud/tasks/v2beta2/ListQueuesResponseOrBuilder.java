@@ -3,20 +3,24 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface ListQueuesResponseOrBuilder extends
+public interface ListQueuesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.ListQueuesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Queue queues = 1;</code>
    */
-  java.util.List<com.google.cloud.tasks.v2beta2.Queue> 
-      getQueuesList();
+  java.util.List<com.google.cloud.tasks.v2beta2.Queue> getQueuesList();
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListQueuesResponseOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.Queue getQueues(int index);
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
@@ -33,29 +39,34 @@ public interface ListQueuesResponseOrBuilder extends
    */
   int getQueuesCount();
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Queue queues = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.tasks.v2beta2.QueueOrBuilder> 
-      getQueuesOrBuilderList();
+  java.util.List<? extends com.google.cloud.tasks.v2beta2.QueueOrBuilder> getQueuesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Queue queues = 1;</code>
    */
-  com.google.cloud.tasks.v2beta2.QueueOrBuilder getQueuesOrBuilder(
-      int index);
+  com.google.cloud.tasks.v2beta2.QueueOrBuilder getQueuesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * To return the next page of results, call
-   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this value as the
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
+   * value as the
    * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
    * If the next_page_token is empty, there are no more results.
    * The page token is valid for only 2 hours.
@@ -65,10 +76,13 @@ public interface ListQueuesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * To return the next page of results, call
-   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this value as the
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] with this
+   * value as the
    * [page_token][google.cloud.tasks.v2beta2.ListQueuesRequest.page_token].
    * If the next_page_token is empty, there are no more results.
    * The page token is valid for only 2 hours.
@@ -76,6 +90,5 @@ public interface ListQueuesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

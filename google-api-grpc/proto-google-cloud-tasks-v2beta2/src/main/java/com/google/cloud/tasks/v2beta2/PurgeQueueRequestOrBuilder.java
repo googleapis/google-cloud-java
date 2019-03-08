@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface PurgeQueueRequestOrBuilder extends
+public interface PurgeQueueRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.PurgeQueueRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -18,6 +21,8 @@ public interface PurgeQueueRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -26,6 +31,5 @@ public interface PurgeQueueRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

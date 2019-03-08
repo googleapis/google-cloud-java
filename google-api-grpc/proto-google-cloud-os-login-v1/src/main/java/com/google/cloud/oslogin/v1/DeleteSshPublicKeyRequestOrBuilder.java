@@ -3,11 +3,14 @@
 
 package com.google.cloud.oslogin.v1;
 
-public interface DeleteSshPublicKeyRequestOrBuilder extends
+public interface DeleteSshPublicKeyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.v1.DeleteSshPublicKeyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -18,6 +21,8 @@ public interface DeleteSshPublicKeyRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -26,6 +31,5 @@ public interface DeleteSshPublicKeyRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

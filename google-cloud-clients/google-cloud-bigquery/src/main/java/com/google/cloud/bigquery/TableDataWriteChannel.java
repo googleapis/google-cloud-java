@@ -28,11 +28,11 @@ import java.util.concurrent.Callable;
 
 /**
  * {@link WriteChannel} implementation to stream data into a BigQuery table. Use {@link #getJob()}
- * to get the job used to insert streamed data. Please notice that {@link #getJob()} returns
- * {@code null} until the channel is closed.
+ * to get the job used to insert streamed data. Please notice that {@link #getJob()} returns {@code
+ * null} until the channel is closed.
  */
-public class TableDataWriteChannel extends
-    BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> {
+public class TableDataWriteChannel
+    extends BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> {
 
   private Job job;
 
@@ -41,22 +41,27 @@ public class TableDataWriteChannel extends
     this(options, writeChannelConfiguration, open(options, jobId, writeChannelConfiguration));
   }
 
-  TableDataWriteChannel(BigQueryOptions options, WriteChannelConfiguration config,
-      String uploadId) {
+  TableDataWriteChannel(
+      BigQueryOptions options, WriteChannelConfiguration config, String uploadId) {
     super(options, config, uploadId);
   }
 
   @Override
   protected void flushBuffer(final int length, final boolean last) {
     try {
-      com.google.api.services.bigquery.model.Job jobPb = runWithRetries(
-          new Callable<com.google.api.services.bigquery.model.Job>() {
-            @Override
-            public com.google.api.services.bigquery.model.Job call() {
-              return getOptions().getBigQueryRpcV2().write(
-                  getUploadId(), getBuffer(), 0, getPosition(), length, last);
-            }
-      }, getOptions().getRetrySettings(), BigQueryImpl.EXCEPTION_HANDLER, getOptions().getClock());
+      com.google.api.services.bigquery.model.Job jobPb =
+          runWithRetries(
+              new Callable<com.google.api.services.bigquery.model.Job>() {
+                @Override
+                public com.google.api.services.bigquery.model.Job call() {
+                  return getOptions()
+                      .getBigQueryRpcV2()
+                      .write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
+                }
+              },
+              getOptions().getRetrySettings(),
+              BigQueryImpl.EXCEPTION_HANDLER,
+              getOptions().getClock());
       job = jobPb != null ? Job.fromPb(getOptions().getService(), jobPb) : null;
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -122,8 +127,11 @@ public class TableDataWriteChannel extends
 
       private final Job job;
 
-      private Builder(BigQueryOptions options, WriteChannelConfiguration configuration,
-          String uploadId, Job job) {
+      private Builder(
+          BigQueryOptions options,
+          WriteChannelConfiguration configuration,
+          String uploadId,
+          Job job) {
         super(options, configuration, uploadId);
         this.job = job;
       }
@@ -133,8 +141,8 @@ public class TableDataWriteChannel extends
       }
     }
 
-    static Builder builder(BigQueryOptions options, WriteChannelConfiguration config,
-        String uploadId, Job job) {
+    static Builder builder(
+        BigQueryOptions options, WriteChannelConfiguration config, String uploadId, Job job) {
       return new Builder(options, config, uploadId, job);
     }
 

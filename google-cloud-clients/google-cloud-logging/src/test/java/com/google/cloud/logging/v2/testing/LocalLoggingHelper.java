@@ -20,9 +20,7 @@ import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.io.IOException;
 
-/**
- * LocalLoggingHelper runs an in-memory Logging server for use in tests.
- */
+/** LocalLoggingHelper runs an in-memory Logging server for use in tests. */
 public class LocalLoggingHelper {
   private final String address;
   private final Server server;
@@ -35,9 +33,7 @@ public class LocalLoggingHelper {
     this.server =
         InProcessServerBuilder.forName(address).addService(loggingImpl.bindService()).build();
   }
-  /**
-   * Starts the in-memory service.
-   */
+  /** Starts the in-memory service. */
   public void start() {
     try {
       server.start();
@@ -45,27 +41,19 @@ public class LocalLoggingHelper {
       throw new RuntimeException(ex);
     }
   }
-  /**
-   * Resets the state of the in-memory service.
-   */
+  /** Resets the state of the in-memory service. */
   public void reset() {
     loggingImpl.reset();
   }
-  /**
-   * Returns the internal in-memory service.
-   */
+  /** Returns the internal in-memory service. */
   public LocalLoggingImpl getLoggingImpl() {
     return loggingImpl;
   }
-  /**
-   * Creates a channel for making requests to the in-memory service.
-   */
+  /** Creates a channel for making requests to the in-memory service. */
   public ManagedChannel createChannel() {
     return InProcessChannelBuilder.forName(address).usePlaintext(true).build();
   }
-  /**
-   * Shuts down the in-memory service.
-   */
+  /** Shuts down the in-memory service. */
   public void shutdownNow() {
     server.shutdownNow();
   }

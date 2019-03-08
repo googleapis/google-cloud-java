@@ -38,7 +38,6 @@ public class EntityTest {
     assertEquals("bar", ENTITY.getString("foo"));
   }
 
-
   @Test
   public void testCopyFrom() throws Exception {
     Entity.Builder builder = Entity.newBuilder(ENTITY);
@@ -48,7 +47,6 @@ public class EntityTest {
     assertEquals(KEY2, entity.getKey());
     assertEquals(ENTITY.getProperties(), entity.getProperties());
   }
-
 
   @Test
   public void testCopyFromIncompleteEntity() throws Exception {
