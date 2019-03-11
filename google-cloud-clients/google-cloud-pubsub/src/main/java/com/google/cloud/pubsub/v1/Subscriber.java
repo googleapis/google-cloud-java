@@ -99,7 +99,10 @@ public class Subscriber extends AbstractApiService {
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
   private final Duration maxAckExtensionPeriod;
+  // The ExecutorProvider used to generate executors for processing messages.
   private final ExecutorProvider executorProvider;
+  // An instantiation of the SystemExecutorProvider used for processing acks
+  // and other system actions.
   @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
