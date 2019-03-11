@@ -62,7 +62,6 @@ public class OpenCensusUtil {
   private static final TagContextBinarySerializer serializer =
       Tags.getTagPropagationComponent().getBinarySerializer();
 
-  private static final TraceOptions SAMPLED = TraceOptions.builder().setIsSampled(true).build();
   private static final Tracer tracer = Tracing.getTracer();
   private static final TextFormat traceContextTextFormat =
       Tracing.getPropagationComponent().getTraceContextFormat();
