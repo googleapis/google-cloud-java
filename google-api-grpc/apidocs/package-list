@@ -17,7 +17,9 @@ com.google.cloud.oslogin.common
 com.google.cloud.oslogin.v1
 com.google.cloud.redis.v1
 com.google.cloud.redis.v1beta1
+com.google.cloud.scheduler.v1
 com.google.cloud.scheduler.v1beta1
+com.google.cloud.securitycenter.v1
 com.google.cloud.securitycenter.v1beta1
 com.google.cloud.speech.v1
 com.google.cloud.speech.v1beta1

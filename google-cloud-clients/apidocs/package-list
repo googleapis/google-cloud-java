@@ -101,8 +101,12 @@ com.google.cloud.resourcemanager
 com.google.cloud.resourcemanager.spi
 com.google.cloud.resourcemanager.spi.v1beta1
 com.google.cloud.resourcemanager.testing
+com.google.cloud.scheduler.v1
+com.google.cloud.scheduler.v1.stub
 com.google.cloud.scheduler.v1beta1
 com.google.cloud.scheduler.v1beta1.stub
+com.google.cloud.securitycenter.v1
+com.google.cloud.securitycenter.v1.stub
 com.google.cloud.securitycenter.v1beta1
 com.google.cloud.securitycenter.v1beta1.stub
 com.google.cloud.spanner
