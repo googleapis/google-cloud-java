@@ -85,8 +85,7 @@ String instanceId = "my-database";
 String tableId = "my-table";
 
 // Create the client
-BigtableDataClient dataClient = BigtableDataClient.create(
-    InstanceName.of(projectId, instanceId));
+BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId);
 
 try {
   // Query a table
