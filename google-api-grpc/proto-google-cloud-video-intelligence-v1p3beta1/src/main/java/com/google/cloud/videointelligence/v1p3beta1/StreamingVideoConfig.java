@@ -576,7 +576,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (feature_
         != com.google.cloud.videointelligence.v1p3beta1.StreamingFeature
-            .STREAMING_FEATURE_UNSPECIFIED.getNumber()) {
+            .STREAMING_FEATURE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, feature_);
     }
     if (streamingConfigCase_ == 2) {
@@ -617,7 +618,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     size = 0;
     if (feature_
         != com.google.cloud.videointelligence.v1p3beta1.StreamingFeature
-            .STREAMING_FEATURE_UNSPECIFIED.getNumber()) {
+            .STREAMING_FEATURE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, feature_);
     }
     if (streamingConfigCase_ == 2) {
