@@ -110,6 +110,7 @@ grpc-google-cloud-video-intelligence-v1beta1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1beta2:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1p1beta1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-video-intelligence-v1p2beta1:0.48.0:0.48.1-SNAPSHOT
+grpc-google-cloud-video-intelligence-v1p3beta1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-vision-v1:1.47.0:1.47.1-SNAPSHOT
 grpc-google-cloud-vision-v1p1beta1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-vision-v1p2beta1:1.47.0:1.47.1-SNAPSHOT
@@ -165,6 +166,7 @@ proto-google-cloud-video-intelligence-v1beta1:0.48.0:0.48.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1beta2:0.48.0:0.48.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1p1beta1:0.48.0:0.48.1-SNAPSHOT
 proto-google-cloud-video-intelligence-v1p2beta1:0.48.0:0.48.1-SNAPSHOT
+proto-google-cloud-video-intelligence-v1p3beta1:0.48.0:0.48.1-SNAPSHOT
 proto-google-cloud-vision-v1:1.47.0:1.47.1-SNAPSHOT
 proto-google-cloud-vision-v1p1beta1:0.48.0:0.48.1-SNAPSHOT
 proto-google-cloud-vision-v1p2beta1:1.47.0:1.47.1-SNAPSHOT
