@@ -311,10 +311,11 @@ public final class SecuritycenterService {
           + "organizations/*/assets/*/securityMarks}:"
           + "\016security_marksZ^2L/v1/{security_marks.n"
           + "ame=organizations/*/sources/*/findings/*"
-          + "/securityMarks}:\016security_marksBt\n\"com.g"
-          + "oogle.cloud.securitycenter.v1P\001ZLgoogle."
-          + "golang.org/genproto/googleapis/cloud/sec"
-          + "uritycenter/v1;securitycenterb\006proto3"
+          + "/securityMarks}:\016security_marksB\225\001\n\"com."
+          + "google.cloud.securitycenter.v1P\001ZLgoogle"
+          + ".golang.org/genproto/googleapis/cloud/se"
+          + "curitycenter/v1;securitycenter\252\002\036Google."
+          + "Cloud.SecurityCenter.V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
