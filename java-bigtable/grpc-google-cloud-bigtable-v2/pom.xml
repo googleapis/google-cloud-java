@@ -3,13 +3,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
-  <version>0.48.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
+  <version>0.48.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
   <name>grpc-google-cloud-bigtable-v2</name>
   <description>GRPC library for grpc-google-cloud-bigtable-v2</description>
   <parent>
     <groupId>com.google.api.grpc</groupId>
     <artifactId>google-api-grpc</artifactId>
-    <version>0.48.0</version><!-- {x-version-update:google-api-grpc:current} -->
+    <version>0.48.1-SNAPSHOT</version><!-- {x-version-update:google-api-grpc:current} -->
   </parent>
   <dependencies>
     <dependency>
