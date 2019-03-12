@@ -917,6 +917,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-video-intelligence-v1p3beta1</artifactId>
+        <version>0.48.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p2beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-video-intelligence-v1p3beta1</artifactId>
+        <version>0.48.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p2beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iot-v1</artifactId>
         <version>0.48.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iot-v1:current} -->
       </dependency>
