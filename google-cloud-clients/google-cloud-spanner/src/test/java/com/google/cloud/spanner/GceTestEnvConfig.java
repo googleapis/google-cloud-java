@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkState;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spanner.spi.v1.SpannerInterceptorProvider;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -28,6 +29,8 @@ import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -35,6 +38,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class GceTestEnvConfig implements TestEnvConfig {
   public static final String GCE_PROJECT_ID = "spanner.gce.config.project_id";
   public static final String GCE_SERVER_URL = "spanner.gce.config.server_url";
+  public static final String GCE_CREDENTIALS_FILE = "spanner.gce.config.credentials_file";
   public static final String GCE_STREAM_BROKEN_PROBABILITY =
       "spanner.gce.config.stream_broken_probability";
 
@@ -43,6 +47,7 @@ public class GceTestEnvConfig implements TestEnvConfig {
   public GceTestEnvConfig() {
     String projectId = System.getProperty(GCE_PROJECT_ID, "");
     String serverUrl = System.getProperty(GCE_SERVER_URL, "");
+    String credentialsFile = System.getProperty(GCE_CREDENTIALS_FILE, "");
     double errorProbability =
         Double.parseDouble(System.getProperty(GCE_STREAM_BROKEN_PROBABILITY, "0.0"));
     checkState(errorProbability <= 1.0);
@@ -53,8 +58,16 @@ public class GceTestEnvConfig implements TestEnvConfig {
     if (!serverUrl.isEmpty()) {
       builder.setHost(serverUrl);
     }
+    if (!credentialsFile.isEmpty()) {
+      try {
+        builder.setCredentials(GoogleCredentials.fromStream(new FileInputStream(credentialsFile)));
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
     options =
         builder
+            .setAbortedTransactionInjector(new AbortedTransactionInjectorImpl())
             .setInterceptorProvider(
                 SpannerInterceptorProvider.createDefault()
                     .with(new GrpcErrorInjector(errorProbability)))
@@ -71,6 +84,25 @@ public class GceTestEnvConfig implements TestEnvConfig {
 
   @Override
   public void tearDown() {}
+
+  /** Injects simulated aborted transaction. */
+  private static final class AbortedTransactionInjectorImpl implements AbortedTransactionInjector {
+    private boolean injectAbortOnce = false;
+
+    @Override
+    public boolean shouldAbort() {
+      if (injectAbortOnce) {
+        injectAbortOnce = false;
+        return true;
+      }
+      return false;
+    }
+
+    @Override
+    public void injectAbortOnce() {
+      this.injectAbortOnce = true;
+    }
+  }
 
   /** Injects errors in streaming calls to simulate call restarts */
   private static class GrpcErrorInjector implements ClientInterceptor {

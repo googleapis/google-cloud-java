@@ -47,6 +47,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final int MAX_CHANNELS = 256;
   private final TransportChannelProvider channelProvider;
   private final GrpcInterceptorProvider interceptorProvider;
+  private final AbortedTransactionInjector abortedInjector;
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
   private final int numChannels;
@@ -83,6 +84,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     channelProvider = builder.channelProvider;
     interceptorProvider = builder.interceptorProvider;
+    abortedInjector = builder.abortedInjector;
     sessionPoolOptions =
         builder.sessionPoolOptions != null
             ? builder.sessionPoolOptions
@@ -97,6 +99,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private TransportChannelProvider channelProvider;
     private GrpcInterceptorProvider interceptorProvider;
+    private AbortedTransactionInjector abortedInjector;
 
     /** By default, we create 4 channels per {@link SpannerOptions} */
     private int numChannels = 4;
@@ -145,6 +148,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets the {@link AbortedTransactionInjector} for the {@link Spanner} instances that will be
+     * created. An {@link AbortedTransactionInjector} can be used to inject {@link AbortedException}
+     * into a read/write transaction for testing the retry-robustness of your code. You should only
+     * use this in test code.
+     */
+    public Builder setAbortedTransactionInjector(AbortedTransactionInjector abortedInjector) {
+      this.abortedInjector = abortedInjector;
+      return this;
+    }
+
+    /**
      * Sets the number of gRPC channels to use. By default 4 channels are created per {@link
      * SpannerOptions}.
      */
@@ -166,8 +180,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Sets the labels to add to all Sessions created in this client.
      *
      * @param sessionLabels Map from label key to label value. Label key and value cannot be null.
-     *     For more information on valid syntax see <a
-     *     href="https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Session">
+     *     For more information on valid syntax see <a href=
+     *     "https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.Session">
      *     api docs </a>.
      */
     public Builder setSessionLabels(Map<String, String> sessionLabels) {
@@ -216,6 +230,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public GrpcInterceptorProvider getInterceptorProvider() {
     return interceptorProvider;
+  }
+
+  public AbortedTransactionInjector getAbortedInjector() {
+    return abortedInjector;
   }
 
   public int getNumChannels() {
