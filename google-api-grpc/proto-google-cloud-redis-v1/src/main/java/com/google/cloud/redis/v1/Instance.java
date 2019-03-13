@@ -37,7 +37,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     tier_ = 0;
     memorySizeGb_ = 0;
     authorizedNetwork_ = "";
-    persistenceIamIdentity_ = "";
   }
 
   @java.lang.Override
@@ -201,13 +200,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               authorizedNetwork_ = s;
               break;
             }
-          case 170:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              persistenceIamIdentity_ = s;
-              break;
-            }
           default:
             {
               if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -341,16 +333,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Redis instance is importing data (availability may be affected).
-     * </pre>
-     *
-     * <code>IMPORTING = 8;</code>
-     */
-    IMPORTING(8),
-    /**
-     *
-     *
-     * <pre>
      * Redis instance is failing over (availability may be affected).
      * </pre>
      *
@@ -436,16 +418,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Redis instance is importing data (availability may be affected).
-     * </pre>
-     *
-     * <code>IMPORTING = 8;</code>
-     */
-    public static final int IMPORTING_VALUE = 8;
-    /**
-     *
-     *
-     * <pre>
      * Redis instance is failing over (availability may be affected).
      * </pre>
      *
@@ -483,8 +455,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return REPAIRING;
         case 6:
           return MAINTENANCE;
-        case 8:
-          return IMPORTING;
         case 9:
           return FAILING_OVER;
         default:
@@ -982,9 +952,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Updating the
    * version will perform an upgrade/downgrade to the new version. Currently,
-   * the supported values are:
-   *  * `REDIS_4_0` for Redis 4.0 compatibility
-   *  * `REDIS_3_2` for Redis 3.2 compatibility
+   * the supported values are `REDIS_3_2` for Redis 3.2.
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -1007,9 +975,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Updating the
    * version will perform an upgrade/downgrade to the new version. Currently,
-   * the supported values are:
-   *  * `REDIS_4_0` for Redis 4.0 compatibility
-   *  * `REDIS_3_2` for Redis 3.2 compatibility
+   * the supported values are `REDIS_3_2` for Redis 3.2.
    * </pre>
    *
    * <code>string redis_version = 7;</code>
@@ -1334,13 +1300,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
-   *  Redis 4.0 and above:
-   *  * activedefrag
-   *  * lfu-log-factor
-   *  * lfu-decay-time
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1363,13 +1324,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
-   *  Redis 4.0 and above:
-   *  * activedefrag
-   *  * lfu-log-factor
-   *  * lfu-decay-time
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1384,13 +1340,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
-   *  Redis 4.0 and above:
-   *  * activedefrag
-   *  * lfu-log-factor
-   *  * lfu-decay-time
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1410,13 +1361,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
-   *  Redis 3.2 and above:
-   *  * maxmemory-policy
-   *  * notify-keyspace-events
-   *  Redis 4.0 and above:
-   *  * activedefrag
-   *  * lfu-log-factor
-   *  * lfu-decay-time
+   *  *   maxmemory-policy
+   *  *   notify-keyspace-events
    * </pre>
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -1526,57 +1472,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PERSISTENCE_IAM_IDENTITY_FIELD_NUMBER = 21;
-  private volatile java.lang.Object persistenceIamIdentity_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Cloud IAM identity used by import / export operations to
-   * transfer data to/from Cloud Storage. Format is
-   * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
-   * for a given instance so should be checked before each import/export
-   * operation.
-   * </pre>
-   *
-   * <code>string persistence_iam_identity = 21;</code>
-   */
-  public java.lang.String getPersistenceIamIdentity() {
-    java.lang.Object ref = persistenceIamIdentity_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      persistenceIamIdentity_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Cloud IAM identity used by import / export operations to
-   * transfer data to/from Cloud Storage. Format is
-   * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
-   * for a given instance so should be checked before each import/export
-   * operation.
-   * </pre>
-   *
-   * <code>string persistence_iam_identity = 21;</code>
-   */
-  public com.google.protobuf.ByteString getPersistenceIamIdentityBytes() {
-    java.lang.Object ref = persistenceIamIdentity_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      persistenceIamIdentity_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1639,9 +1534,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getAuthorizedNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, authorizedNetwork_);
-    }
-    if (!getPersistenceIamIdentityBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, persistenceIamIdentity_);
     }
     unknownFields.writeTo(output);
   }
@@ -1717,9 +1609,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getAuthorizedNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, authorizedNetwork_);
     }
-    if (!getPersistenceIamIdentityBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, persistenceIamIdentity_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1756,7 +1645,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     result = result && tier_ == other.tier_;
     result = result && (getMemorySizeGb() == other.getMemorySizeGb());
     result = result && getAuthorizedNetwork().equals(other.getAuthorizedNetwork());
-    result = result && getPersistenceIamIdentity().equals(other.getPersistenceIamIdentity());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1808,8 +1696,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMemorySizeGb();
     hash = (37 * hash) + AUTHORIZED_NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getAuthorizedNetwork().hashCode();
-    hash = (37 * hash) + PERSISTENCE_IAM_IDENTITY_FIELD_NUMBER;
-    hash = (53 * hash) + getPersistenceIamIdentity().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2014,8 +1900,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       authorizedNetwork_ = "";
 
-      persistenceIamIdentity_ = "";
-
       return this;
     }
 
@@ -2067,7 +1951,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.tier_ = tier_;
       result.memorySizeGb_ = memorySizeGb_;
       result.authorizedNetwork_ = authorizedNetwork_;
-      result.persistenceIamIdentity_ = persistenceIamIdentity_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -2173,10 +2056,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAuthorizedNetwork().isEmpty()) {
         authorizedNetwork_ = other.authorizedNetwork_;
-        onChanged();
-      }
-      if (!other.getPersistenceIamIdentity().isEmpty()) {
-        persistenceIamIdentity_ = other.persistenceIamIdentity_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2811,9 +2690,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
-     *  * `REDIS_4_0` for Redis 4.0 compatibility
-     *  * `REDIS_3_2` for Redis 3.2 compatibility
+     * the supported values are `REDIS_3_2` for Redis 3.2.
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2836,9 +2713,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
-     *  * `REDIS_4_0` for Redis 4.0 compatibility
-     *  * `REDIS_3_2` for Redis 3.2 compatibility
+     * the supported values are `REDIS_3_2` for Redis 3.2.
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2861,9 +2736,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
-     *  * `REDIS_4_0` for Redis 4.0 compatibility
-     *  * `REDIS_3_2` for Redis 3.2 compatibility
+     * the supported values are `REDIS_3_2` for Redis 3.2.
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2884,9 +2757,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
-     *  * `REDIS_4_0` for Redis 4.0 compatibility
-     *  * `REDIS_3_2` for Redis 3.2 compatibility
+     * the supported values are `REDIS_3_2` for Redis 3.2.
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -2904,9 +2775,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used. Updating the
      * version will perform an upgrade/downgrade to the new version. Currently,
-     * the supported values are:
-     *  * `REDIS_4_0` for Redis 4.0 compatibility
-     *  * `REDIS_3_2` for Redis 3.2 compatibility
+     * the supported values are `REDIS_3_2` for Redis 3.2.
      * </pre>
      *
      * <code>string redis_version = 7;</code>
@@ -3677,13 +3546,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
-     *  Redis 4.0 and above:
-     *  * activedefrag
-     *  * lfu-log-factor
-     *  * lfu-decay-time
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3706,13 +3570,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
-     *  Redis 4.0 and above:
-     *  * activedefrag
-     *  * lfu-log-factor
-     *  * lfu-decay-time
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3727,13 +3586,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
-     *  Redis 4.0 and above:
-     *  * activedefrag
-     *  * lfu-log-factor
-     *  * lfu-decay-time
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3753,13 +3607,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
-     *  Redis 4.0 and above:
-     *  * activedefrag
-     *  * lfu-log-factor
-     *  * lfu-decay-time
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3786,13 +3635,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
-     *  Redis 4.0 and above:
-     *  * activedefrag
-     *  * lfu-log-factor
-     *  * lfu-decay-time
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3816,13 +3660,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
-     *  Redis 4.0 and above:
-     *  * activedefrag
-     *  * lfu-log-factor
-     *  * lfu-decay-time
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -3844,13 +3683,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
      * are:
-     *  Redis 3.2 and above:
-     *  * maxmemory-policy
-     *  * notify-keyspace-events
-     *  Redis 4.0 and above:
-     *  * activedefrag
-     *  * lfu-log-factor
-     *  * lfu-decay-time
+     *  *   maxmemory-policy
+     *  *   notify-keyspace-events
      * </pre>
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
@@ -4085,120 +3919,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       authorizedNetwork_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object persistenceIamIdentity_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Cloud IAM identity used by import / export operations to
-     * transfer data to/from Cloud Storage. Format is
-     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
-     * for a given instance so should be checked before each import/export
-     * operation.
-     * </pre>
-     *
-     * <code>string persistence_iam_identity = 21;</code>
-     */
-    public java.lang.String getPersistenceIamIdentity() {
-      java.lang.Object ref = persistenceIamIdentity_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        persistenceIamIdentity_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Cloud IAM identity used by import / export operations to
-     * transfer data to/from Cloud Storage. Format is
-     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
-     * for a given instance so should be checked before each import/export
-     * operation.
-     * </pre>
-     *
-     * <code>string persistence_iam_identity = 21;</code>
-     */
-    public com.google.protobuf.ByteString getPersistenceIamIdentityBytes() {
-      java.lang.Object ref = persistenceIamIdentity_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        persistenceIamIdentity_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Cloud IAM identity used by import / export operations to
-     * transfer data to/from Cloud Storage. Format is
-     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
-     * for a given instance so should be checked before each import/export
-     * operation.
-     * </pre>
-     *
-     * <code>string persistence_iam_identity = 21;</code>
-     */
-    public Builder setPersistenceIamIdentity(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      persistenceIamIdentity_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Cloud IAM identity used by import / export operations to
-     * transfer data to/from Cloud Storage. Format is
-     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
-     * for a given instance so should be checked before each import/export
-     * operation.
-     * </pre>
-     *
-     * <code>string persistence_iam_identity = 21;</code>
-     */
-    public Builder clearPersistenceIamIdentity() {
-
-      persistenceIamIdentity_ = getDefaultInstance().getPersistenceIamIdentity();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Cloud IAM identity used by import / export operations to
-     * transfer data to/from Cloud Storage. Format is
-     * "serviceAccount:&lt;service_account_email&gt;". The value may change over time
-     * for a given instance so should be checked before each import/export
-     * operation.
-     * </pre>
-     *
-     * <code>string persistence_iam_identity = 21;</code>
-     */
-    public Builder setPersistenceIamIdentityBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      persistenceIamIdentity_ = value;
       onChanged();
       return this;
     }

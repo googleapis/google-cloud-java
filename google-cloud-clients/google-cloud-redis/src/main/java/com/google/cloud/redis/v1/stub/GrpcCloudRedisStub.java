@@ -27,10 +27,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1.CreateInstanceRequest;
 import com.google.cloud.redis.v1.DeleteInstanceRequest;
-import com.google.cloud.redis.v1.ExportInstanceRequest;
 import com.google.cloud.redis.v1.FailoverInstanceRequest;
 import com.google.cloud.redis.v1.GetInstanceRequest;
-import com.google.cloud.redis.v1.ImportInstanceRequest;
 import com.google.cloud.redis.v1.Instance;
 import com.google.cloud.redis.v1.ListInstancesRequest;
 import com.google.cloud.redis.v1.ListInstancesResponse;
@@ -99,24 +97,6 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ImportInstanceRequest, Operation>
-      importInstanceMethodDescriptor =
-          MethodDescriptor.<ImportInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1.CloudRedis/ImportInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ImportInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<ExportInstanceRequest, Operation>
-      exportInstanceMethodDescriptor =
-          MethodDescriptor.<ExportInstanceRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.cloud.redis.v1.CloudRedis/ExportInstance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ExportInstanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<FailoverInstanceRequest, Operation>
       failoverInstanceMethodDescriptor =
           MethodDescriptor.<FailoverInstanceRequest, Operation>newBuilder()
@@ -143,12 +123,6 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
-  private final UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable;
-  private final OperationCallable<ImportInstanceRequest, Instance, OperationMetadata>
-      importInstanceOperationCallable;
-  private final UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable;
-  private final OperationCallable<ExportInstanceRequest, Instance, OperationMetadata>
-      exportInstanceOperationCallable;
   private final UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable;
   private final OperationCallable<FailoverInstanceRequest, Instance, OperationMetadata>
       failoverInstanceOperationCallable;
@@ -213,14 +187,6 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
             .build();
-    GrpcCallSettings<ImportInstanceRequest, Operation> importInstanceTransportSettings =
-        GrpcCallSettings.<ImportInstanceRequest, Operation>newBuilder()
-            .setMethodDescriptor(importInstanceMethodDescriptor)
-            .build();
-    GrpcCallSettings<ExportInstanceRequest, Operation> exportInstanceTransportSettings =
-        GrpcCallSettings.<ExportInstanceRequest, Operation>newBuilder()
-            .setMethodDescriptor(exportInstanceMethodDescriptor)
-            .build();
     GrpcCallSettings<FailoverInstanceRequest, Operation> failoverInstanceTransportSettings =
         GrpcCallSettings.<FailoverInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(failoverInstanceMethodDescriptor)
@@ -260,24 +226,6 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
         callableFactory.createOperationCallable(
             deleteInstanceTransportSettings,
             settings.deleteInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.importInstanceCallable =
-        callableFactory.createUnaryCallable(
-            importInstanceTransportSettings, settings.importInstanceSettings(), clientContext);
-    this.importInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            importInstanceTransportSettings,
-            settings.importInstanceOperationSettings(),
-            clientContext,
-            this.operationsStub);
-    this.exportInstanceCallable =
-        callableFactory.createUnaryCallable(
-            exportInstanceTransportSettings, settings.exportInstanceSettings(), clientContext);
-    this.exportInstanceOperationCallable =
-        callableFactory.createOperationCallable(
-            exportInstanceTransportSettings,
-            settings.exportInstanceOperationSettings(),
             clientContext,
             this.operationsStub);
     this.failoverInstanceCallable =
@@ -339,26 +287,6 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ImportInstanceRequest, Instance, OperationMetadata>
-      importInstanceOperationCallable() {
-    return importInstanceOperationCallable;
-  }
-
-  public UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable() {
-    return importInstanceCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportInstanceRequest, Instance, OperationMetadata>
-      exportInstanceOperationCallable() {
-    return exportInstanceOperationCallable;
-  }
-
-  public UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable() {
-    return exportInstanceCallable;
   }
 
   @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
