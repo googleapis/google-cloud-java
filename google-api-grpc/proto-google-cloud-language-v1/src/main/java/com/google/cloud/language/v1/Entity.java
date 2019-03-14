@@ -254,6 +254,56 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 7;</code>
      */
     OTHER(7),
+    /**
+     *
+     *
+     * <pre>
+     * Phone number
+     * </pre>
+     *
+     * <code>PHONE_NUMBER = 9;</code>
+     */
+    PHONE_NUMBER(9),
+    /**
+     *
+     *
+     * <pre>
+     * Address
+     * </pre>
+     *
+     * <code>ADDRESS = 10;</code>
+     */
+    ADDRESS(10),
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>DATE = 11;</code>
+     */
+    DATE(11),
+    /**
+     *
+     *
+     * <pre>
+     * Number
+     * </pre>
+     *
+     * <code>NUMBER = 12;</code>
+     */
+    NUMBER(12),
+    /**
+     *
+     *
+     * <pre>
+     * Price
+     * </pre>
+     *
+     * <code>PRICE = 13;</code>
+     */
+    PRICE(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -337,6 +387,56 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 7;</code>
      */
     public static final int OTHER_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Phone number
+     * </pre>
+     *
+     * <code>PHONE_NUMBER = 9;</code>
+     */
+    public static final int PHONE_NUMBER_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Address
+     * </pre>
+     *
+     * <code>ADDRESS = 10;</code>
+     */
+    public static final int ADDRESS_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Date
+     * </pre>
+     *
+     * <code>DATE = 11;</code>
+     */
+    public static final int DATE_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Number
+     * </pre>
+     *
+     * <code>NUMBER = 12;</code>
+     */
+    public static final int NUMBER_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Price
+     * </pre>
+     *
+     * <code>PRICE = 13;</code>
+     */
+    public static final int PRICE_VALUE = 13;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -370,6 +470,16 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           return CONSUMER_GOOD;
         case 7:
           return OTHER;
+        case 9:
+          return PHONE_NUMBER;
+        case 10:
+          return ADDRESS;
+        case 11:
+          return DATE;
+        case 12:
+          return NUMBER;
+        case 13:
+          return PRICE;
         default:
           return null;
       }
