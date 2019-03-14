@@ -26,7 +26,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     parent_ = "";
     filter_ = "";
     groupBy_ = "";
-    having_ = "";
     pageToken_ = "";
     pageSize_ = 0;
   }
@@ -104,13 +103,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
                 compareDuration_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              having_ = s;
               break;
             }
           case 58:
@@ -493,53 +485,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     return getCompareDuration();
   }
 
-  public static final int HAVING_FIELD_NUMBER = 6;
-  private volatile java.lang.Object having_;
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'finding.state' and 'state_change'
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  public java.lang.String getHaving() {
-    java.lang.Object ref = having_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      having_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'finding.state' and 'state_change'
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  public com.google.protobuf.ByteString getHavingBytes() {
-    java.lang.Object ref = having_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      having_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int PAGE_TOKEN_FIELD_NUMBER = 7;
   private volatile java.lang.Object pageToken_;
   /**
@@ -632,9 +577,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     if (compareDuration_ != null) {
       output.writeMessage(5, getCompareDuration());
     }
-    if (!getHavingBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, having_);
-    }
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pageToken_);
     }
@@ -664,9 +606,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     }
     if (compareDuration_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCompareDuration());
-    }
-    if (!getHavingBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, having_);
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pageToken_);
@@ -702,7 +641,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
     if (hasCompareDuration()) {
       result = result && getCompareDuration().equals(other.getCompareDuration());
     }
-    result = result && getHaving().equals(other.getHaving());
     result = result && getPageToken().equals(other.getPageToken());
     result = result && (getPageSize() == other.getPageSize());
     result = result && unknownFields.equals(other.unknownFields);
@@ -730,8 +668,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + COMPARE_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getCompareDuration().hashCode();
     }
-    hash = (37 * hash) + HAVING_FIELD_NUMBER;
-    hash = (53 * hash) + getHaving().hashCode();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
@@ -900,8 +836,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         compareDuration_ = null;
         compareDurationBuilder_ = null;
       }
-      having_ = "";
-
       pageToken_ = "";
 
       pageSize_ = 0;
@@ -946,7 +880,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.compareDuration_ = compareDurationBuilder_.build();
       }
-      result.having_ = having_;
       result.pageToken_ = pageToken_;
       result.pageSize_ = pageSize_;
       onBuilt();
@@ -1016,10 +949,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
       }
       if (other.hasCompareDuration()) {
         mergeCompareDuration(other.getCompareDuration());
-      }
-      if (!other.getHaving().isEmpty()) {
-        having_ = other.having_;
-        onChanged();
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
@@ -2041,110 +1970,6 @@ public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMes
         compareDuration_ = null;
       }
       return compareDurationBuilder_;
-    }
-
-    private java.lang.Object having_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'finding.state' and 'state_change'
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public java.lang.String getHaving() {
-      java.lang.Object ref = having_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        having_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'finding.state' and 'state_change'
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public com.google.protobuf.ByteString getHavingBytes() {
-      java.lang.Object ref = having_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        having_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'finding.state' and 'state_change'
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public Builder setHaving(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      having_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'finding.state' and 'state_change'
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public Builder clearHaving() {
-
-      having_ = getDefaultInstance().getHaving();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'finding.state' and 'state_change'
-     * are supported and requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public Builder setHavingBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      having_ = value;
-      onChanged();
-      return this;
     }
 
     private java.lang.Object pageToken_ = "";

@@ -140,62 +140,61 @@ public final class SecuritycenterService {
           + "&.google.cloud.securitycenter.v1.Source\""
           + ".\n\036GetOrganizationSettingsRequest\022\014\n\004nam"
           + "e\030\001 \001(\t\" \n\020GetSourceRequest\022\014\n\004name\030\001 \001("
-          + "\t\"\341\001\n\022GroupAssetsRequest\022\016\n\006parent\030\001 \001(\t"
+          + "\t\"\327\001\n\022GroupAssetsRequest\022\016\n\006parent\030\001 \001(\t"
           + "\022\016\n\006filter\030\002 \001(\t\022\020\n\010group_by\030\003 \001(\t\0223\n\020co"
           + "mpare_duration\030\004 \001(\0132\031.google.protobuf.D"
           + "uration\022-\n\tread_time\030\005 \001(\0132\032.google.prot"
-          + "obuf.Timestamp\022\016\n\006having\030\006 \001(\t\022\022\n\npage_t"
-          + "oken\030\007 \001(\t\022\021\n\tpage_size\030\010 \001(\005\"\270\001\n\023GroupA"
-          + "ssetsResponse\022E\n\020group_by_results\030\001 \003(\0132"
-          + "+.google.cloud.securitycenter.v1.GroupRe"
-          + "sult\022-\n\tread_time\030\002 \001(\0132\032.google.protobu"
-          + "f.Timestamp\022\027\n\017next_page_token\030\003 \001(\t\022\022\n\n"
-          + "total_size\030\004 \001(\005\"\343\001\n\024GroupFindingsReques"
-          + "t\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\020\n\010gro"
-          + "up_by\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.google."
-          + "protobuf.Timestamp\0223\n\020compare_duration\030\005"
-          + " \001(\0132\031.google.protobuf.Duration\022\016\n\006havin"
-          + "g\030\006 \001(\t\022\022\n\npage_token\030\007 \001(\t\022\021\n\tpage_size"
-          + "\030\010 \001(\005\"\272\001\n\025GroupFindingsResponse\022E\n\020grou"
-          + "p_by_results\030\001 \003(\0132+.google.cloud.securi"
-          + "tycenter.v1.GroupResult\022-\n\tread_time\030\002 \001"
-          + "(\0132\032.google.protobuf.Timestamp\022\027\n\017next_p"
-          + "age_token\030\003 \001(\t\022\022\n\ntotal_size\030\004 \001(\005\"\270\001\n\013"
-          + "GroupResult\022O\n\nproperties\030\001 \003(\0132;.google"
-          + ".cloud.securitycenter.v1.GroupResult.Pro"
-          + "pertiesEntry\022\r\n\005count\030\002 \001(\003\032I\n\017Propertie"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.goo"
-          + "gle.protobuf.Value:\0028\001\"K\n\022ListSourcesReq"
-          + "uest\022\016\n\006parent\030\001 \001(\t\022\022\n\npage_token\030\002 \001(\t"
-          + "\022\021\n\tpage_size\030\007 \001(\005\"g\n\023ListSourcesRespon"
-          + "se\0227\n\007sources\030\001 \003(\0132&.google.cloud.secur"
-          + "itycenter.v1.Source\022\027\n\017next_page_token\030\002"
-          + " \001(\t\"\220\002\n\021ListAssetsRequest\022\016\n\006parent\030\001 \001"
-          + "(\t\022\016\n\006filter\030\002 \001(\t\022\020\n\010order_by\030\003 \001(\t\022-\n\t"
-          + "read_time\030\004 \001(\0132\032.google.protobuf.Timest"
-          + "amp\0223\n\020compare_duration\030\005 \001(\0132\031.google.p"
-          + "rotobuf.Duration\022\016\n\006having\030\006 \001(\t\022.\n\nfiel"
-          + "d_mask\030\007 \001(\0132\032.google.protobuf.FieldMask"
-          + "\022\022\n\npage_token\030\010 \001(\t\022\021\n\tpage_size\030\t \001(\005\""
-          + "\303\003\n\022ListAssetsResponse\022`\n\023list_assets_re"
-          + "sults\030\001 \003(\0132C.google.cloud.securitycente"
-          + "r.v1.ListAssetsResponse.ListAssetsResult"
-          + "\022-\n\tread_time\030\002 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp\022\027\n\017next_page_token\030\003 \001(\t\022\022\n\ntota"
-          + "l_size\030\004 \001(\005\032\356\001\n\020ListAssetsResult\0224\n\005ass"
-          + "et\030\001 \001(\0132%.google.cloud.securitycenter.v"
-          + "1.Asset\022e\n\014state_change\030\002 \001(\0162O.google.c"
-          + "loud.securitycenter.v1.ListAssetsRespons"
-          + "e.ListAssetsResult.StateChange\"=\n\013StateC"
-          + "hange\022\n\n\006UNUSED\020\000\022\t\n\005ADDED\020\001\022\013\n\007REMOVED\020"
-          + "\002\022\n\n\006ACTIVE\020\003\"\222\002\n\023ListFindingsRequest\022\016\n"
-          + "\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\020\n\010order_b"
-          + "y\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.google.prot"
-          + "obuf.Timestamp\0223\n\020compare_duration\030\005 \001(\013"
-          + "2\031.google.protobuf.Duration\022\016\n\006having\030\006 "
-          + "\001(\t\022.\n\nfield_mask\030\007 \001(\0132\032.google.protobu"
-          + "f.FieldMask\022\022\n\npage_token\030\010 \001(\t\022\021\n\tpage_"
-          + "size\030\t \001(\005\"\345\003\n\024ListFindingsResponse\022f\n\025l"
+          + "obuf.Timestamp\022\022\n\npage_token\030\007 \001(\t\022\021\n\tpa"
+          + "ge_size\030\010 \001(\005J\004\010\006\020\007\"\270\001\n\023GroupAssetsRespo"
+          + "nse\022E\n\020group_by_results\030\001 \003(\0132+.google.c"
+          + "loud.securitycenter.v1.GroupResult\022-\n\tre"
+          + "ad_time\030\002 \001(\0132\032.google.protobuf.Timestam"
+          + "p\022\027\n\017next_page_token\030\003 \001(\t\022\022\n\ntotal_size"
+          + "\030\004 \001(\005\"\331\001\n\024GroupFindingsRequest\022\016\n\006paren"
+          + "t\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\020\n\010group_by\030\003 \001("
+          + "\t\022-\n\tread_time\030\004 \001(\0132\032.google.protobuf.T"
+          + "imestamp\0223\n\020compare_duration\030\005 \001(\0132\031.goo"
+          + "gle.protobuf.Duration\022\022\n\npage_token\030\007 \001("
+          + "\t\022\021\n\tpage_size\030\010 \001(\005J\004\010\006\020\007\"\272\001\n\025GroupFind"
+          + "ingsResponse\022E\n\020group_by_results\030\001 \003(\0132+"
+          + ".google.cloud.securitycenter.v1.GroupRes"
+          + "ult\022-\n\tread_time\030\002 \001(\0132\032.google.protobuf"
+          + ".Timestamp\022\027\n\017next_page_token\030\003 \001(\t\022\022\n\nt"
+          + "otal_size\030\004 \001(\005\"\270\001\n\013GroupResult\022O\n\nprope"
+          + "rties\030\001 \003(\0132;.google.cloud.securitycente"
+          + "r.v1.GroupResult.PropertiesEntry\022\r\n\005coun"
+          + "t\030\002 \001(\003\032I\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "%\n\005value\030\002 \001(\0132\026.google.protobuf.Value:\002"
+          + "8\001\"K\n\022ListSourcesRequest\022\016\n\006parent\030\001 \001(\t"
+          + "\022\022\n\npage_token\030\002 \001(\t\022\021\n\tpage_size\030\007 \001(\005\""
+          + "g\n\023ListSourcesResponse\0227\n\007sources\030\001 \003(\0132"
+          + "&.google.cloud.securitycenter.v1.Source\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\"\206\002\n\021ListAssetsR"
+          + "equest\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\020"
+          + "\n\010order_by\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\0223\n\020compare_durat"
+          + "ion\030\005 \001(\0132\031.google.protobuf.Duration\022.\n\n"
+          + "field_mask\030\007 \001(\0132\032.google.protobuf.Field"
+          + "Mask\022\022\n\npage_token\030\010 \001(\t\022\021\n\tpage_size\030\t "
+          + "\001(\005J\004\010\006\020\007\"\303\003\n\022ListAssetsResponse\022`\n\023list"
+          + "_assets_results\030\001 \003(\0132C.google.cloud.sec"
+          + "uritycenter.v1.ListAssetsResponse.ListAs"
+          + "setsResult\022-\n\tread_time\030\002 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022\027\n\017next_page_token\030\003 \001"
+          + "(\t\022\022\n\ntotal_size\030\004 \001(\005\032\356\001\n\020ListAssetsRes"
+          + "ult\0224\n\005asset\030\001 \001(\0132%.google.cloud.securi"
+          + "tycenter.v1.Asset\022e\n\014state_change\030\002 \001(\0162"
+          + "O.google.cloud.securitycenter.v1.ListAss"
+          + "etsResponse.ListAssetsResult.StateChange"
+          + "\"=\n\013StateChange\022\n\n\006UNUSED\020\000\022\t\n\005ADDED\020\001\022\013"
+          + "\n\007REMOVED\020\002\022\n\n\006ACTIVE\020\003\"\210\002\n\023ListFindings"
+          + "Request\022\016\n\006parent\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022"
+          + "\020\n\010order_by\030\003 \001(\t\022-\n\tread_time\030\004 \001(\0132\032.g"
+          + "oogle.protobuf.Timestamp\0223\n\020compare_dura"
+          + "tion\030\005 \001(\0132\031.google.protobuf.Duration\022.\n"
+          + "\nfield_mask\030\007 \001(\0132\032.google.protobuf.Fiel"
+          + "dMask\022\022\n\npage_token\030\010 \001(\t\022\021\n\tpage_size\030\t"
+          + " \001(\005J\004\010\006\020\007\"\345\003\n\024ListFindingsResponse\022f\n\025l"
           + "ist_findings_results\030\001 \003(\0132G.google.clou"
           + "d.securitycenter.v1.ListFindingsResponse"
           + ".ListFindingsResult\022-\n\tread_time\030\002 \001(\0132\032"
@@ -382,14 +381,7 @@ public final class SecuritycenterService {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GroupAssetsRequest_descriptor,
             new java.lang.String[] {
-              "Parent",
-              "Filter",
-              "GroupBy",
-              "CompareDuration",
-              "ReadTime",
-              "Having",
-              "PageToken",
-              "PageSize",
+              "Parent", "Filter", "GroupBy", "CompareDuration", "ReadTime", "PageToken", "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_GroupAssetsResponse_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -405,14 +397,7 @@ public final class SecuritycenterService {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_GroupFindingsRequest_descriptor,
             new java.lang.String[] {
-              "Parent",
-              "Filter",
-              "GroupBy",
-              "ReadTime",
-              "CompareDuration",
-              "Having",
-              "PageToken",
-              "PageSize",
+              "Parent", "Filter", "GroupBy", "ReadTime", "CompareDuration", "PageToken", "PageSize",
             });
     internal_static_google_cloud_securitycenter_v1_GroupFindingsResponse_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -467,7 +452,6 @@ public final class SecuritycenterService {
               "OrderBy",
               "ReadTime",
               "CompareDuration",
-              "Having",
               "FieldMask",
               "PageToken",
               "PageSize",
@@ -501,7 +485,6 @@ public final class SecuritycenterService {
               "OrderBy",
               "ReadTime",
               "CompareDuration",
-              "Having",
               "FieldMask",
               "PageToken",
               "PageSize",

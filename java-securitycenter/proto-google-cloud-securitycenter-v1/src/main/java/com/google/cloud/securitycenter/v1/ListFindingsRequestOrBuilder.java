@@ -257,31 +257,6 @@ public interface ListFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'finding.state' and 'state_change'
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  java.lang.String getHaving();
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'finding.state' and 'state_change'
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  com.google.protobuf.ByteString getHavingBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional.
    * A field mask to specify the Finding fields to be listed in the response.
    * An empty field mask will list all fields.
