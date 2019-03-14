@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.spanner.SpannerOptions.SpannerTestOptions;
 import com.google.cloud.spanner.spi.v1.SpannerInterceptorProvider;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -67,7 +68,10 @@ public class GceTestEnvConfig implements TestEnvConfig {
     }
     options =
         builder
-            .setAbortedTransactionInjector(new AbortedTransactionInjectorImpl())
+            .setSpannerTestOptions(
+                SpannerTestOptions.newBuilder()
+                    .setAbortedTransactionInjector(new AbortedTransactionInjectorImpl())
+                    .build())
             .setInterceptorProvider(
                 SpannerInterceptorProvider.createDefault()
                     .with(new GrpcErrorInjector(errorProbability)))

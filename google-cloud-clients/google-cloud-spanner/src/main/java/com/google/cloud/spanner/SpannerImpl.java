@@ -157,7 +157,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private final Random random = new Random();
   private final SpannerRpc gapicRpc;
   private final int defaultPrefetchChunks;
-  private final AbortedTransactionInjector abortedInjector;
 
   @GuardedBy("this")
   private final Map<DatabaseId, DatabaseClientImpl> dbClients = new HashMap<>();
@@ -171,7 +170,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SpannerImpl(SpannerRpc gapicRpc, int defaultPrefetchChunks, SpannerOptions options) {
     super(options);
     this.gapicRpc = gapicRpc;
-    this.abortedInjector = options.getAbortedInjector();
     this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
     this.instanceClient =
@@ -186,8 +184,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return new ExponentialBackOff.Builder()
         .setInitialIntervalMillis(MIN_BACKOFF_MS)
         .setMaxIntervalMillis(MAX_BACKOFF_MS)
-        // Prevent Backoff.STOP from getting returned.
-        .setMaxElapsedTimeMillis(Integer.MAX_VALUE)
+        .setMaxElapsedTimeMillis(Integer.MAX_VALUE) // Prevent Backoff.STOP from getting returned.
         .build();
   }
 
@@ -289,7 +286,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 }
               });
       span.end();
-      return new SessionImpl(session.getName(), options);
+      return newSession(session.getName(), options);
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
@@ -299,6 +296,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SessionImpl sessionWithId(String name) {
     final Map<SpannerRpc.Option, ?> options =
         SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
+    return newSession(name, options);
+  }
+
+  SessionImpl newSession(String name, Map<SpannerRpc.Option, ?> options) {
     return new SessionImpl(name, options);
   }
 
@@ -779,6 +780,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       return options;
     }
 
+    ByteString getReadyTransactionId() {
+      return readyTransactionId;
+    }
+
     @Override
     public long executePartitionedUpdate(Statement stmt) {
       setActive(null);
@@ -931,14 +936,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     TransactionContextImpl newTransaction() {
-      TransactionContextImpl txn;
-      if (abortedInjector == null) {
-        txn = new TransactionContextImpl(this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
-      } else {
-        txn =
-            new TransactionContextWithSimulatedAbortsImpl(
-                this, readyTransactionId, gapicRpc, defaultPrefetchChunks, abortedInjector);
-      }
+      TransactionContextImpl txn =
+          new TransactionContextImpl(this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
       return txn;
     }
 
@@ -1065,7 +1064,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         QueryOption... options) {
       Options readOptions = Options.fromQueryOptions(options);
       return executeQueryInternalWithOptions(
-          statement, queryMode, readOptions, null /* partitionToken */);
+          statement, queryMode, readOptions, null /*partitionToken*/);
     }
 
     ExecuteSqlRequest.Builder getExecuteSqlRequestBuilder(
@@ -1207,7 +1206,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         ReadOption... options) {
       Options readOptions = Options.fromReadOptions(options);
       return readInternalWithOptions(
-          table, index, keys, columns, readOptions, null /* partitionToken */);
+          table, index, keys, columns, readOptions, null /*partitionToken*/);
     }
 
     ResultSet readInternalWithOptions(
@@ -1298,7 +1297,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private TransactionContextImpl txn;
     private volatile boolean isValid = true;
 
-    @Override
     public TransactionRunner allowNestedTransaction() {
       blockNestedTxn = false;
       return this;
@@ -1624,7 +1622,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       // TODO(user): Make this an async fire-and-forget request.
       try {
         // Note that we're not retrying this request since we don't particularly care about the
-        // response. Normally, the next thing that will happen is that we will make a fresh
+        // response.  Normally, the next thing that will happen is that we will make a fresh
         // transaction attempt, which should implicitly abort this one.
         span.addAnnotation("Starting Rollback");
         rpc.rollback(
@@ -1727,73 +1725,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             results);
       }
       return results;
-    }
-  }
-
-  /**
-   * {@link TransactionContext} that is used when an {@link AbortedTransactionInjector} has been
-   * registered on this {@link SpannerImpl}.
-   */
-  static class TransactionContextWithSimulatedAbortsImpl extends TransactionContextImpl {
-    private final class InjectedResultSet extends ForwardingResultSet {
-      private InjectedResultSet(ResultSet delegate) {
-        super(delegate);
-      }
-
-      @Override
-      public boolean next() {
-        TransactionContextWithSimulatedAbortsImpl.this.aborted = aborted || injector.shouldAbort();
-        checkAndThrowInjectedAbort();
-        return super.next();
-      }
-    }
-
-    private final AbortedTransactionInjector injector;
-    private boolean aborted = false;
-
-    private TransactionContextWithSimulatedAbortsImpl(
-        SessionImpl session,
-        @Nullable ByteString transactionId,
-        SpannerRpc rpc,
-        int defaultPrefetchChunks,
-        AbortedTransactionInjector injector) {
-      super(session, transactionId, rpc, defaultPrefetchChunks);
-      Preconditions.checkNotNull(injector);
-      this.injector = injector;
-    }
-
-    private void checkAndThrowInjectedAbort() {
-      if (aborted) {
-        SpannerException e =
-            SpannerExceptionFactory.newSpannerException(
-                ErrorCode.ABORTED, "Transaction abort was injected");
-        onError(e);
-        throw e;
-      }
-    }
-
-    @Override
-    void commit() {
-      this.aborted = aborted || injector.shouldAbort();
-      checkAndThrowInjectedAbort();
-      super.commit();
-    }
-
-    @Override
-    void beforeReadOrQuery() {
-      super.beforeReadOrQuery();
-      this.aborted = aborted || injector.shouldAbort();
-      checkAndThrowInjectedAbort();
-    }
-
-    @Override
-    ResultSet executeQueryInternalWithOptions(
-        Statement statement,
-        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
-        Options readOptions,
-        ByteString partitionToken) {
-      return new InjectedResultSet(
-          super.executeQueryInternalWithOptions(statement, queryMode, readOptions, partitionToken));
     }
   }
 
@@ -1950,10 +1881,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       throwIfTransactionsPending();
 
       // Since we only support synchronous calls, just block on "txnLock" while the RPC is in
-      // flight. Note that we use the strategy of sending an explicit BeginTransaction() RPC,
-      // rather than using the first read in the transaction to begin it implicitly. The chosen
+      // flight.  Note that we use the strategy of sending an explicit BeginTransaction() RPC,
+      // rather than using the first read in the transaction to begin it implicitly.  The chosen
       // strategy is sub-optimal in the case of the first read being fast, as it incurs an extra
-      // RTT, but optimal if the first read is slow. Since we don't know how fast the read will be,
+      // RTT, but optimal if the first read is slow.  Since we don't know how fast the read will be,
       // and we are using non-streaming reads (so we don't see the metadata until the entire read
       // has finished), using BeginTransaction() is the safest path.
       // TODO(user): Fix comment / begin transaction on first read; we now use streaming reads.
@@ -2371,7 +2302,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 }
               });
         case INT64:
-          // For int64/float64 types, use custom containers. These avoid wrapper object
+          // For int64/float64 types, use custom containers.  These avoid wrapper object
           // creation for non-null arrays.
           return new Int64Array(listValue);
         case FLOAT64:
@@ -2670,10 +2601,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     protected final PartialResultSet computeNext() {
       PartialResultSet next;
       try {
-        // TODO: Ideally honor io.grpc.Context while blocking here. In practice,
-        // cancellation/deadline results in an error being delivered to "stream", which
-        // should mean that we do not block significantly longer afterwards, but it would
-        // be more robust to use poll() with a timeout.
+        // TODO: Ideally honor io.grpc.Context while blocking here.  In practice,
+        //       cancellation/deadline results in an error being delivered to "stream", which
+        //       should mean that we do not block significantly longer afterwards, but it would
+        //       be more robust to use poll() with a timeout.
         next = stream.take();
       } catch (InterruptedException e) {
         // Treat interrupt as a request to cancel the read.
@@ -2802,7 +2733,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             }
             buffer.add(next);
             if (buffer.size() > maxBufferSize && buffer.getLast().getResumeToken().isEmpty()) {
-              // We need to flush without a restart token. Errors encountered until we see
+              // We need to flush without a restart token.  Errors encountered until we see
               // such a token will fail the read.
               safeToRetry = false;
             }
@@ -2932,8 +2863,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     /*
-     * Get the query statistics. Query statistics are delivered with the last PartialResultSet in
-     * the stream. Any attempt to call this method before the caller has finished consuming the
+     * Get the query statistics. Query statistics are delivered with the last PartialResultSet
+     * in the stream. Any attempt to call this method before the caller has finished consuming the
      * results will return null.
      */
     @Nullable

@@ -87,7 +87,7 @@ public class ITAbortedTest {
   }
 
   private AbortedTransactionInjector getInjector() {
-    return env.getTestHelper().getOptions().getAbortedInjector();
+    return env.getTestHelper().getOptions().getSpannerTestOptions().getAbortedTransactionInjector();
   }
 
   @Test

@@ -47,7 +47,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final int MAX_CHANNELS = 256;
   private final TransportChannelProvider channelProvider;
   private final GrpcInterceptorProvider interceptorProvider;
-  private final AbortedTransactionInjector abortedInjector;
+  private final SpannerTestOptions spannerTestOptions;
   private final SessionPoolOptions sessionPoolOptions;
   private final int prefetchChunks;
   private final int numChannels;
@@ -59,6 +59,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public Spanner create(SpannerOptions serviceOptions) {
+      if (serviceOptions.getSpannerTestOptions() != null) {
+        return new SpannerTestImpl(serviceOptions);
+      }
       return new SpannerImpl(serviceOptions);
     }
   }
@@ -84,7 +87,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     channelProvider = builder.channelProvider;
     interceptorProvider = builder.interceptorProvider;
-    abortedInjector = builder.abortedInjector;
+    spannerTestOptions = builder.spannerTestOptions;
     sessionPoolOptions =
         builder.sessionPoolOptions != null
             ? builder.sessionPoolOptions
@@ -93,13 +96,55 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     sessionLabels = builder.sessionLabels;
   }
 
+  /** Additional test options for building a {@link Spanner} in test code. */
+  public static class SpannerTestOptions {
+    public static class Builder {
+      private AbortedTransactionInjector abortedTransactionInjector;
+
+      /**
+       * Sets the {@link AbortedTransactionInjector} for the {@link Spanner} instances that will be
+       * created. An {@link AbortedTransactionInjector} can be used to inject {@link
+       * AbortedException} into a read/write transaction for testing the retry-robustness of your
+       * code. You should only use this in test code.
+       */
+      public Builder setAbortedTransactionInjector(
+          AbortedTransactionInjector abortedTransactionInjector) {
+        Preconditions.checkNotNull(abortedTransactionInjector);
+        this.abortedTransactionInjector = abortedTransactionInjector;
+        return this;
+      }
+
+      public SpannerTestOptions build() {
+        Preconditions.checkState(
+            abortedTransactionInjector != null,
+            "There are no test options set on this builder. Set at least one.");
+        return new SpannerTestOptions(this);
+      }
+    }
+
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    private final AbortedTransactionInjector abortedTransactionInjector;
+
+    private SpannerTestOptions(Builder builder) {
+      abortedTransactionInjector = builder.abortedTransactionInjector;
+    }
+
+    /** Returns the {@link AbortedTransactionInjector} of this {@link SpannerTestOptions}. */
+    public AbortedTransactionInjector getAbortedTransactionInjector() {
+      return abortedTransactionInjector;
+    }
+  }
+
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private TransportChannelProvider channelProvider;
     private GrpcInterceptorProvider interceptorProvider;
-    private AbortedTransactionInjector abortedInjector;
+    private SpannerTestOptions spannerTestOptions;
 
     /** By default, we create 4 channels per {@link SpannerOptions} */
     private int numChannels = 4;
@@ -118,6 +163,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.sessionLabels = options.sessionLabels;
       this.channelProvider = options.channelProvider;
       this.interceptorProvider = options.interceptorProvider;
+      this.spannerTestOptions = options.spannerTestOptions;
     }
 
     @Override
@@ -144,17 +190,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setInterceptorProvider(GrpcInterceptorProvider interceptorProvider) {
       this.interceptorProvider = interceptorProvider;
-      return this;
-    }
-
-    /**
-     * Sets the {@link AbortedTransactionInjector} for the {@link Spanner} instances that will be
-     * created. An {@link AbortedTransactionInjector} can be used to inject {@link AbortedException}
-     * into a read/write transaction for testing the retry-robustness of your code. You should only
-     * use this in test code.
-     */
-    public Builder setAbortedTransactionInjector(AbortedTransactionInjector abortedInjector) {
-      this.abortedInjector = abortedInjector;
       return this;
     }
 
@@ -209,6 +244,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    /**
+     * Sets the test options to use when building a {@link Spanner} service. Only use this for your
+     * test code.
+     */
+    public Builder setSpannerTestOptions(SpannerTestOptions spannerTestOptions) {
+      this.spannerTestOptions = spannerTestOptions;
+      return this;
+    }
+
     @Override
     public SpannerOptions build() {
       return new SpannerOptions(this);
@@ -232,8 +276,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return interceptorProvider;
   }
 
-  public AbortedTransactionInjector getAbortedInjector() {
-    return abortedInjector;
+  public SpannerTestOptions getSpannerTestOptions() {
+    return spannerTestOptions;
   }
 
   public int getNumChannels() {
