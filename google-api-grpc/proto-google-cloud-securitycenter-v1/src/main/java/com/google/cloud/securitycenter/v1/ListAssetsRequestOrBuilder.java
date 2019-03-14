@@ -257,31 +257,6 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'state_change' is supported and
-   * requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  java.lang.String getHaving();
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'state_change' is supported and
-   * requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  com.google.protobuf.ByteString getHavingBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional.
    * A field mask to specify the ListAssetsResult fields to be listed in the
    * response.
