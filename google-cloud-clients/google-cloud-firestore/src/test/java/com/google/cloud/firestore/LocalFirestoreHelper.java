@@ -272,6 +272,10 @@ public final class LocalFirestoreHelper {
         .build();
   }
 
+  public static FieldTransform increment(Value value) {
+    return FieldTransform.newBuilder().setIncrement(value).build();
+  }
+
   public static FieldTransform arrayUnion(Value... values) {
     return FieldTransform.newBuilder()
         .setAppendMissingElements(ArrayValue.newBuilder().addAllValues(Arrays.asList(values)))

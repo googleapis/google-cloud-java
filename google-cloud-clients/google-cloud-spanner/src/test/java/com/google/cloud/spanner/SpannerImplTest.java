@@ -17,6 +17,8 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.grpc.GrpcTransportOptions;
@@ -24,6 +26,7 @@ import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import javax.net.ssl.SSLHandshakeException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -132,5 +135,50 @@ public class SpannerImplTest {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage().contains("Unexpected exception thrown"));
     }
+  }
+
+  @Test
+  public void sslHandshakeExceptionIsNotRetryable() {
+    // Verify that a SpannerException with code UNAVAILABLE and cause SSLHandshakeException is not
+    // retryable.
+    boolean gotExpectedException = false;
+    try {
+      SpannerImpl.runWithRetries(
+          new Callable<Object>() {
+            @Override
+            public Void call() throws Exception {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE,
+                  "This exception should not be retryable",
+                  new SSLHandshakeException("some SSL handshake exception"));
+            }
+          });
+    } catch (SpannerException e) {
+      gotExpectedException = true;
+      assertThat(e.isRetryable(), is(false));
+      assertThat(e.getErrorCode()).isEqualTo(ErrorCode.UNAVAILABLE);
+      assertThat(e.getMessage().contains("This exception should not be retryable"));
+    }
+    assertThat(gotExpectedException, is(true));
+
+    // Verify that any other SpannerException with code UNAVAILABLE is retryable.
+    SpannerImpl.runWithRetries(
+        new Callable<Object>() {
+          private boolean firstTime = true;
+
+          @Override
+          public Void call() throws Exception {
+            // Keep track of whethr this is the first call or a subsequent call to avoid an infinite
+            // loop.
+            if (firstTime) {
+              firstTime = false;
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE,
+                  "This exception should be retryable",
+                  new Exception("some other exception"));
+            }
+            return null;
+          }
+        });
   }
 }

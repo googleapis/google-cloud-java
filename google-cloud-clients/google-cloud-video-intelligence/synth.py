@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 gapic = gcp.GAPICGenerator()
 
 service = 'video-intelligence'
-versions = ['v1', 'v1beta1', 'v1beta2', 'v1p1beta1', 'v1p2beta1']
+versions = ['v1', 'v1beta1', 'v1beta2', 'v1p1beta1', 'v1p2beta1', 'v1p3beta1']
 config_pattern = '/google/cloud/videointelligence/artman_videointelligence_{version}.yaml'
 
 for version in versions:
