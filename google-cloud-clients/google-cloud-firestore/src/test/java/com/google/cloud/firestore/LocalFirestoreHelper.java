@@ -149,8 +149,7 @@ public final class LocalFirestoreHelper {
   }
 
   public static class InvalidPOJO {
-    @Nullable
-    BigInteger bigIntegerValue = null;
+    @Nullable BigInteger bigIntegerValue = null;
     @Nullable Byte byteValue = null;
     @Nullable Short shortValue = null;
 
@@ -181,7 +180,6 @@ public final class LocalFirestoreHelper {
       this.shortValue = shortValue;
     }
   }
-
 
   public static <K, V> Map<K, V> map(K key, V value, Object... moreKeysAndValues) {
     Map<K, V> map = new HashMap<>();
