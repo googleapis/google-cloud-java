@@ -48,6 +48,8 @@ public class InstanceAdminClientImplTest {
   private static final String CONFIG_NAME = "projects/my-project/instanceConfigs/my-config";
   private static final String CONFIG_NAME2 = "projects/my-project/instanceConfigs/my-config2";
 
+  private final SpannerOptions spannerOptions =
+      SpannerOptions.newBuilder().setProjectId(PROJECT_ID).build();
   @Mock SpannerRpc rpc;
   @Mock DatabaseAdminClient dbClient;
   SpannerImpl.InstanceAdminClientImpl client;
@@ -55,7 +57,7 @@ public class InstanceAdminClientImplTest {
   @Before
   public void setUp() {
     initMocks(this);
-    client = new SpannerImpl.InstanceAdminClientImpl(PROJECT_ID, rpc, dbClient);
+    client = new SpannerImpl.InstanceAdminClientImpl(PROJECT_ID, rpc, dbClient, spannerOptions);
   }
 
   @Test

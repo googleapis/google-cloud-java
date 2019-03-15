@@ -22,6 +22,7 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.api.core.CurrentMillisClock;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
@@ -73,6 +74,8 @@ public final class BatchClientImplTest {
     Transaction txnMetadata =
         Transaction.newBuilder().setId(TXN_ID).setReadTimestamp(timestamp).build();
     when(spannerOptions.getSpannerRpcV1()).thenReturn(gapicRpc);
+    when(spannerOptions.getProjectId()).thenReturn("p1");
+    when(spannerOptions.getClock()).thenReturn(CurrentMillisClock.getDefaultClock());
     when(gapicRpc.beginTransaction(Mockito.<BeginTransactionRequest>any(), optionsCaptor.capture()))
         .thenReturn(txnMetadata);
 

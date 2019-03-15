@@ -114,6 +114,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
+import org.threeten.bp.Duration;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
@@ -171,9 +172,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     super(options);
     this.gapicRpc = gapicRpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
-    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
+    this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc, options);
     this.instanceClient =
-        new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
+        new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient, options);
   }
 
   SpannerImpl(SpannerOptions options) {
@@ -238,11 +239,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    *
    * <p>TODO: Consider replacing with RetryHelper from gcloud-core.
    */
-  static <T> T runWithRetries(Callable<T> callable) {
+  static <T> T runWithRetries(Callable<T> callable, SpannerOptions options) {
     // Use same backoff setting as abort, somewhat arbitrarily.
     Span span = tracer.getCurrentSpan();
     ExponentialBackOff backOff = newBackOff();
     Context context = Context.current();
+    long startTime = options.getClock().millisTime();
     int attempt = 0;
     while (true) {
       attempt++;
@@ -262,6 +264,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           backoffSleep(context, delay);
         } else {
           backoffSleep(context, backOff);
+        }
+        if (options.getRetrySettings() != null) {
+          if ((Duration.ofMillis(options.getClock().millisTime() - startTime))
+                  .compareTo(options.getRetrySettings().getTotalTimeout())
+              > 0) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.DEADLINE_EXCEEDED, "Total timeout was exceeded");
+          }
+          if (options.getRetrySettings().getMaxAttempts() > 0
+              && attempt >= options.getRetrySettings().getMaxAttempts()) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.DEADLINE_EXCEEDED, "Max attempts was exceeded");
+          }
         }
       } catch (Exception e) {
         Throwables.throwIfUnchecked(e);
@@ -284,7 +299,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   return gapicRpc.createSession(
                       db.getName(), getOptions().getSessionLabels(), options);
                 }
-              });
+              },
+              getOptions());
       span.end();
       return new SessionImpl(session.getName(), options);
     } catch (RuntimeException e) {
@@ -413,6 +429,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   private abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
+    private final SpannerOptions options;
+
+    private PageFetcher(SpannerOptions options) {
+      this.options = options;
+    }
 
     @Override
     public Page<S> getNextPage() {
@@ -423,7 +444,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public Paginated<T> call() {
                   return getNextPage(nextPageToken);
                 }
-              });
+              },
+              options);
       this.nextPageToken = nextPage.getNextPageToken();
       List<S> results = new ArrayList<>();
       for (T proto : nextPage.getResults()) {
@@ -446,10 +468,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     private final String projectId;
     private final SpannerRpc rpc;
+    private final SpannerOptions options;
 
-    DatabaseAdminClientImpl(String projectId, SpannerRpc rpc) {
+    DatabaseAdminClientImpl(String projectId, SpannerRpc rpc, SpannerOptions options) {
       this.projectId = projectId;
       this.rpc = rpc;
+      this.options = options;
     }
 
     @Override
@@ -492,7 +516,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return Database.fromProto(rpc.getDatabase(dbName), DatabaseAdminClientImpl.this);
             }
           };
-      return runWithRetries(callable);
+      return runWithRetries(callable, options);
     }
 
     @Override
@@ -536,7 +560,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return null;
             }
           };
-      runWithRetries(callable);
+      runWithRetries(callable, options);
     }
 
     @Override
@@ -549,7 +573,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return rpc.getDatabaseDdl(dbName);
             }
           };
-      return runWithRetries(callable);
+      return runWithRetries(callable, options);
     }
 
     @Override
@@ -560,7 +584,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           !listOptions.hasFilter(), "Filter option is not support by" + "listDatabases");
       final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
       PageFetcher<Database, com.google.spanner.admin.database.v1.Database> pageFetcher =
-          new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>() {
+          new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>(this.options) {
             @Override
             public Paginated<com.google.spanner.admin.database.v1.Database> getNextPage(
                 String nextPageToken) {
@@ -591,11 +615,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     final DatabaseAdminClient dbClient;
     final String projectId;
     final SpannerRpc rpc;
+    private final SpannerOptions options;
 
-    InstanceAdminClientImpl(String projectId, SpannerRpc rpc, DatabaseAdminClient dbClient) {
+    InstanceAdminClientImpl(
+        String projectId, SpannerRpc rpc, DatabaseAdminClient dbClient, SpannerOptions options) {
       this.projectId = projectId;
       this.rpc = rpc;
       this.dbClient = dbClient;
+      this.options = options;
     }
 
     @Override
@@ -608,7 +635,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return InstanceConfig.fromProto(
                   rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
             }
-          });
+          },
+          options);
     }
 
     @Override
@@ -618,7 +646,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           !listOptions.hasFilter(), "Filter option is not supported by listInstanceConfigs");
       final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
       PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig> pageFetcher =
-          new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>() {
+          new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>(
+              this.options) {
             @Override
             public Paginated<com.google.spanner.admin.instance.v1.InstanceConfig> getNextPage(
                 String nextPageToken) {
@@ -678,7 +707,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return Instance.fromProto(
                   rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
             }
-          });
+          },
+          options);
     }
 
     @Override
@@ -687,7 +717,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
       final String filter = listOptions.filter();
       PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance> pageFetcher =
-          new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>() {
+          new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>(this.options) {
             @Override
             public Paginated<com.google.spanner.admin.instance.v1.Instance> getNextPage(
                 String nextPageToken) {
@@ -714,7 +744,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
               return null;
             }
-          });
+          },
+          options);
     }
 
     @Override
@@ -776,6 +807,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       return options;
     }
 
+    SpannerOptions getSpannerOptions() {
+      return SpannerImpl.this.getOptions();
+    }
+
     @Override
     public long executePartitionedUpdate(Statement stmt) {
       setActive(null);
@@ -823,7 +858,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public CommitResponse call() throws Exception {
                     return gapicRpc.commit(request, options);
                   }
-                });
+                },
+                SpannerImpl.this.getOptions());
         Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
         span.end();
         return t;
@@ -890,7 +926,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 gapicRpc.deleteSession(name, options);
                 return null;
               }
-            });
+            },
+            SpannerImpl.this.getOptions());
         span.end();
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
@@ -915,7 +952,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public Transaction call() throws Exception {
                     return gapicRpc.beginTransaction(request, options);
                   }
-                });
+                },
+                SpannerImpl.this.getOptions());
         if (txn.getId().isEmpty()) {
           throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
         }
@@ -1447,7 +1485,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public Transaction call() throws Exception {
                   return rpc.beginTransaction(request, session.options);
                 }
-              });
+              },
+              session.getSpannerOptions());
       if (txn.getId().isEmpty()) {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.INTERNAL,
@@ -1479,7 +1518,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public com.google.spanner.v1.ResultSet call() throws Exception {
                   return rpc.executeQuery(builder.build(), session.options);
                 }
-              });
+              },
+              session.getSpannerOptions());
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "Partitioned DML response missing stats possibly due to non-DML statement as input");
@@ -1570,7 +1610,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public CommitResponse call() throws Exception {
                     return rpc.commit(commitRequest, session.options);
                   }
-                });
+                },
+                session.getSpannerOptions());
 
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
@@ -1684,7 +1725,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public com.google.spanner.v1.ResultSet call() throws Exception {
                   return rpc.executeQuery(builder.build(), session.options);
                 }
-              });
+              },
+              session.getSpannerOptions());
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
@@ -1704,7 +1746,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public com.google.spanner.v1.ExecuteBatchDmlResponse call() throws Exception {
                   return rpc.executeBatchDml(builder.build(), session.options);
                 }
-              });
+              },
+              session.getSpannerOptions());
       long[] results = new long[response.getResultSetsCount()];
       for (int i = 0; i < response.getResultSetsCount(); ++i) {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();
@@ -1900,7 +1943,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                     public Transaction call() throws Exception {
                       return rpc.beginTransaction(request, session.options);
                     }
-                  });
+                  },
+                  session.getSpannerOptions());
           if (!transaction.hasReadTimestamp()) {
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");

@@ -50,6 +50,8 @@ public class DatabaseAdminClientImplTest {
   private static final String DB_NAME = "projects/my-project/instances/my-instance/databases/my-db";
   private static final String DB_NAME2 =
       "projects/my-project/instances/my-instance/databases/my-db2";
+  private static final SpannerOptions SPANNER_OPTIONS =
+      SpannerOptions.newBuilder().setProjectId(PROJECT_ID).build();
 
   @Mock SpannerRpc rpc;
   SpannerImpl.DatabaseAdminClientImpl client;
@@ -57,7 +59,7 @@ public class DatabaseAdminClientImplTest {
   @Before
   public void setUp() {
     initMocks(this);
-    client = new SpannerImpl.DatabaseAdminClientImpl(PROJECT_ID, rpc);
+    client = new SpannerImpl.DatabaseAdminClientImpl(PROJECT_ID, rpc, SPANNER_OPTIONS);
   }
 
   private Database getDatabaseProto() {

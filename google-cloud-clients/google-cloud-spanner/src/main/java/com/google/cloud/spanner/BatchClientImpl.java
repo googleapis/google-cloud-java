@@ -61,6 +61,7 @@ public class BatchClientImpl implements BatchClient {
       implements BatchReadOnlyTransaction {
     private final String sessionName;
     private final Map<SpannerRpc.Option, ?> options;
+    private final SpannerOptions spannerOptions;
 
     BatchReadOnlyTransactionImpl(SpannerImpl spanner, SessionImpl session, TimestampBound bound) {
       super(
@@ -70,6 +71,7 @@ public class BatchClientImpl implements BatchClient {
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
+      this.spannerOptions = spanner.getOptions();
       initTransaction();
     }
 
@@ -83,6 +85,7 @@ public class BatchClientImpl implements BatchClient {
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
+      this.spannerOptions = spanner.getOptions();
     }
 
     @Override
@@ -143,7 +146,8 @@ public class BatchClientImpl implements BatchClient {
                 public PartitionResponse call() throws Exception {
                   return rpc.partitionRead(request, options);
                 }
-              });
+              },
+              spannerOptions);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =
@@ -188,7 +192,8 @@ public class BatchClientImpl implements BatchClient {
                 public PartitionResponse call() throws Exception {
                   return rpc.partitionQuery(request, options);
                 }
-              });
+              },
+              spannerOptions);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =

@@ -32,6 +32,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
+import org.threeten.bp.Duration;
 
 /** Unit tests for {@link SpannerImpl#runWithRetries}. */
 @RunWith(JUnit4.class)
@@ -55,6 +56,8 @@ public class SpannerImplRetryTest {
   }
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
+  private final SpannerOptions spannerOptions =
+      SpannerOptions.newBuilder().setProjectId("p1").build();
 
   StringCallable callable;
 
@@ -66,7 +69,7 @@ public class SpannerImplRetryTest {
   @Test
   public void ok() {
     Mockito.when(callable.call()).thenReturn("r");
-    assertThat(SpannerImpl.runWithRetries(callable)).isEqualTo("r");
+    assertThat(SpannerImpl.runWithRetries(callable, spannerOptions)).isEqualTo("r");
   }
 
   @Test
@@ -74,7 +77,7 @@ public class SpannerImplRetryTest {
     Mockito.when(callable.call())
         .thenThrow(new NonRetryableException(ErrorCode.FAILED_PRECONDITION, "Failed by test"));
     expectedException.expect(isSpannerException(ErrorCode.FAILED_PRECONDITION));
-    SpannerImpl.runWithRetries(callable);
+    SpannerImpl.runWithRetries(callable, spannerOptions);
   }
 
   @Test
@@ -84,7 +87,7 @@ public class SpannerImplRetryTest {
         .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #2"))
         .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #3"))
         .thenReturn("r");
-    assertThat(SpannerImpl.runWithRetries(callable)).isEqualTo("r");
+    assertThat(SpannerImpl.runWithRetries(callable, spannerOptions)).isEqualTo("r");
   }
 
   @Test
@@ -95,7 +98,7 @@ public class SpannerImplRetryTest {
         .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #3"))
         .thenThrow(new NonRetryableException(ErrorCode.FAILED_PRECONDITION, "Failed by test"));
     expectedException.expect(isSpannerException(ErrorCode.FAILED_PRECONDITION));
-    SpannerImpl.runWithRetries(callable);
+    SpannerImpl.runWithRetries(callable, spannerOptions);
   }
 
   @Test
@@ -108,7 +111,7 @@ public class SpannerImplRetryTest {
             new Runnable() {
               @Override
               public void run() {
-                SpannerImpl.runWithRetries(callable);
+                SpannerImpl.runWithRetries(callable, spannerOptions);
               }
             });
     context.cancel(new RuntimeException("Cancelled by test"));
@@ -128,9 +131,55 @@ public class SpannerImplRetryTest {
             new Runnable() {
               @Override
               public void run() {
-                SpannerImpl.runWithRetries(callable);
+                SpannerImpl.runWithRetries(callable, spannerOptions);
               }
             });
+    expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
+    work.run();
+  }
+
+  @Test
+  public void totalTimeoutDeadlineExceeded() {
+    final SpannerOptions options =
+        spannerOptions
+            .toBuilder()
+            .setRetrySettings(
+                spannerOptions
+                    .getRetrySettings()
+                    .toBuilder()
+                    .setTotalTimeout(Duration.ofMillis(100L))
+                    .build())
+            .build();
+    Mockito.when(callable.call())
+        .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #1"));
+    Runnable work =
+        new Runnable() {
+          @Override
+          public void run() {
+            SpannerImpl.runWithRetries(callable, options);
+          }
+        };
+    expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
+    work.run();
+  }
+
+  @Test
+  public void maxAttemptsExceeded() {
+    final SpannerOptions options =
+        spannerOptions
+            .toBuilder()
+            .setRetrySettings(
+                spannerOptions.getRetrySettings().toBuilder().setMaxAttempts(3).build())
+            .build();
+    Mockito.when(callable.call())
+        .thenThrow(new RetryableException(ErrorCode.UNAVAILABLE, "Failure #1"));
+    Runnable work =
+        new Runnable() {
+          @Override
+          public void run() {
+            SpannerImpl.runWithRetries(callable, options);
+          }
+        };
     expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
     work.run();
   }

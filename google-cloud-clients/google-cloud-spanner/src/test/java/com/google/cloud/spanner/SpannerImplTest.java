@@ -21,6 +21,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.CurrentMillisClock;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
@@ -49,6 +50,8 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    Mockito.when(spannerOptions.getProjectId()).thenReturn("p1");
+    Mockito.when(spannerOptions.getClock()).thenReturn(CurrentMillisClock.getDefaultClock());
     impl = new SpannerImpl(rpc, 1, spannerOptions);
   }
 
@@ -130,7 +133,8 @@ public class SpannerImplTest {
             public Void call() throws Exception {
               throw new Exception("Should be translated to SpannerException");
             }
-          });
+          },
+          spannerOptions);
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage().contains("Unexpected exception thrown"));
@@ -152,7 +156,8 @@ public class SpannerImplTest {
                   "This exception should not be retryable",
                   new SSLHandshakeException("some SSL handshake exception"));
             }
-          });
+          },
+          spannerOptions);
     } catch (SpannerException e) {
       gotExpectedException = true;
       assertThat(e.isRetryable(), is(false));
@@ -179,6 +184,7 @@ public class SpannerImplTest {
             }
             return null;
           }
-        });
+        },
+        spannerOptions);
   }
 }

@@ -61,7 +61,7 @@ public class SessionImplTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   @Mock private SpannerRpc rpc;
-  @Mock private SpannerOptions spannerOptions;
+  private SpannerOptions spannerOptions = SpannerOptions.newBuilder().setProjectId("p1").build();
   private com.google.cloud.spanner.Session session;
   @Captor private ArgumentCaptor<Map<SpannerRpc.Option, Object>> optionsCaptor;
   private Map<SpannerRpc.Option, Object> options;
