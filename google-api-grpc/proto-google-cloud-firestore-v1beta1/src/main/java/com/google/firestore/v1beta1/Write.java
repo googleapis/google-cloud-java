@@ -300,7 +300,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applies a tranformation to a document.
+   * Applies a transformation to a document.
    * At most one `transform` per document is allowed in a given request.
    * An `update` cannot follow a `transform` on the same document in a given
    * request.
@@ -315,7 +315,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applies a tranformation to a document.
+   * Applies a transformation to a document.
    * At most one `transform` per document is allowed in a given request.
    * An `update` cannot follow a `transform` on the same document in a given
    * request.
@@ -333,7 +333,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Applies a tranformation to a document.
+   * Applies a transformation to a document.
    * At most one `transform` per document is allowed in a given request.
    * An `update` cannot follow a `transform` on the same document in a given
    * request.
@@ -1241,7 +1241,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1256,7 +1256,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1281,7 +1281,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1306,7 +1306,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1329,7 +1329,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1363,7 +1363,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1391,7 +1391,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1406,7 +1406,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
@@ -1428,7 +1428,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Applies a tranformation to a document.
+     * Applies a transformation to a document.
      * At most one `transform` per document is allowed in a given request.
      * An `update` cannot follow a `transform` on the same document in a given
      * request.
