@@ -19,6 +19,9 @@ package com.google.cloud.pubsub.v1;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.core.ApiClock;
+import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.Distribution;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -28,6 +31,8 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.pubsub.v1.Subscriber.Builder;
+import com.google.cloud.pubsub.v1.Subscriber.StreamingSubscriberConnectionProvider;
+import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.ManagedChannel;
@@ -36,11 +41,14 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.threeten.bp.Duration;
 
 /** Tests for {@link Subscriber}. */
 public class SubscriberTest {
@@ -138,6 +146,76 @@ public class SubscriberTest {
       GrpcStatusCode grpcCode = (GrpcStatusCode) ex.getStatusCode();
       assertEquals(StatusCode.Code.INVALID_ARGUMENT, grpcCode.getCode());
     }
+  }
+
+  @Test
+  public void testSubscriberStats() throws Exception {
+    final long acked = 8L;
+    final long nacked = 2L;
+    final long totalMessages = 10L;
+    final long extended = 3L;
+    final SubscriberStats stats =
+        SubscriberStats.newBuilder()
+            .setNumberOfAutoExtendedAckDeadlines(extended)
+            .setTotalAckedMessages(acked)
+            .setTotalNackedMessages(nacked)
+            .setTotalReceivedMessages(totalMessages)
+            .build();
+    final AtomicInteger numberOfConnections = new AtomicInteger(0);
+    StreamingSubscriberConnectionProvider provider =
+        new StreamingSubscriberConnectionProvider() {
+          @Override
+          StreamingSubscriberConnection createConnection(
+              String subscription,
+              MessageReceiver receiver,
+              Duration ackExpirationPadding,
+              Duration maxAckExtensionPeriod,
+              Distribution ackLatencyDistribution,
+              SubscriberStub stub,
+              int channelAffinity,
+              FlowController flowController,
+              ScheduledExecutorService executor,
+              ScheduledExecutorService systemExecutor,
+              ApiClock clock) {
+            numberOfConnections.incrementAndGet();
+            StreamingSubscriberConnection connection =
+                new StreamingSubscriberConnection(
+                    subscription,
+                    receiver,
+                    ackExpirationPadding,
+                    maxAckExtensionPeriod,
+                    ackLatencyDistribution,
+                    stub,
+                    channelAffinity,
+                    flowController,
+                    executor,
+                    systemExecutor,
+                    clock) {
+                  @Override
+                  SubscriberStats getSubscriberStats() {
+                    return stats;
+                  }
+                };
+            return connection;
+          }
+        };
+    Builder builder =
+        getTestSubscriberBuilder(testReceiver)
+            .setStreamingSubscriberConnectionProvider(provider)
+            .setParallelPullCount(5);
+    Subscriber subscriber = startSubscriber(builder);
+    assertEquals(
+        numberOfConnections.get() * totalMessages,
+        subscriber.getSubscriberStats().getTotalReceivedMessages());
+    assertEquals(
+        numberOfConnections.get() * acked, subscriber.getSubscriberStats().getTotalAckedMessages());
+    assertEquals(
+        numberOfConnections.get() * nacked,
+        subscriber.getSubscriberStats().getTotalNackedMessages());
+    assertEquals(
+        numberOfConnections.get() * extended,
+        subscriber.getSubscriberStats().getNumberOfAutoExtendedAckDeadlines());
+    subscriber.stopAsync().awaitTerminated();
   }
 
   private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {

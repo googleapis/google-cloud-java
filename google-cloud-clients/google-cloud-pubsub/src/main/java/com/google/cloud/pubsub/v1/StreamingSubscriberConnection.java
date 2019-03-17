@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
 /** Implementation of {@link AckProcessor} based on Cloud Pub/Sub streaming pull. */
-final class StreamingSubscriberConnection extends AbstractApiService implements AckProcessor {
+class StreamingSubscriberConnection extends AbstractApiService implements AckProcessor {
   private static final Logger logger =
       Logger.getLogger(StreamingSubscriberConnection.class.getName());
 
@@ -122,6 +122,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       lock.unlock();
       notifyStopped();
     }
+  }
+
+  SubscriberStats getSubscriberStats() {
+    return messageDispatcher.getSubscriberStats();
   }
 
   private class StreamingPullResponseObserver implements ResponseObserver<StreamingPullResponse> {

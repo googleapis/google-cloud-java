@@ -97,6 +97,12 @@ class MessageDispatcher {
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
 
+  private final Lock statsLock = new ReentrantLock();
+  private volatile long receivedMessages = 0L;
+  private volatile long nackedMessages = 0L;
+  private volatile long ackedMessages = 0L;
+  private volatile long numberOfAutoExtendedAckDeadlines = 0L;
+
   /** Stores the data needed to asynchronously modify acknowledgement deadlines. */
   static class PendingModifyAckDeadline {
     final List<String> ackIds;
@@ -187,6 +193,56 @@ class MessageDispatcher {
       }
       destination.add(ackId);
       forget();
+    }
+  }
+
+  SubscriberStats getSubscriberStats() {
+    statsLock.lock();
+    try {
+      return SubscriberStats.newBuilder()
+          .setNumberOfAutoExtendedAckDeadlines(numberOfAutoExtendedAckDeadlines)
+          .setTotalAckedMessages(ackedMessages)
+          .setTotalNackedMessages(nackedMessages)
+          .setTotalReceivedMessages(receivedMessages)
+          .build();
+    } finally {
+      statsLock.unlock();
+    }
+  }
+
+  private void increaseReceivedMessages(long count) {
+    statsLock.lock();
+    try {
+      receivedMessages += count;
+    } finally {
+      statsLock.unlock();
+    }
+  }
+
+  private void increaseAckCount(long count) {
+    statsLock.lock();
+    try {
+      ackedMessages += count;
+    } finally {
+      statsLock.unlock();
+    }
+  }
+
+  private void increaseNackCount(long count) {
+    statsLock.lock();
+    try {
+      nackedMessages += count;
+    } finally {
+      statsLock.unlock();
+    }
+  }
+
+  private void increaseAutoExtendedDeadlineCount(long count) {
+    statsLock.lock();
+    try {
+      numberOfAutoExtendedAckDeadlines += count;
+    } finally {
+      statsLock.unlock();
     }
   }
 
@@ -365,6 +421,7 @@ class MessageDispatcher {
     }
 
     messagesWaiter.incrementPendingMessages(outstandingBatch.messages.size());
+    increaseReceivedMessages(outstandingBatch.messages.size());
     outstandingMessageBatches.add(outstandingBatch);
     processOutstandingBatches();
   }
@@ -477,6 +534,7 @@ class MessageDispatcher {
 
     List<String> acksToSend = Collections.emptyList();
     ackProcessor.sendAckOperations(acksToSend, modacks);
+    increaseAutoExtendedDeadlineCount(modack.ackIds.size() + modacks.size());
   }
 
   @InternalApi
@@ -486,12 +544,14 @@ class MessageDispatcher {
     List<String> acksToSend = new ArrayList<>();
     pendingAcks.drainTo(acksToSend);
     logger.log(Level.FINER, "Sending {0} acks", acksToSend.size());
+    increaseAckCount(acksToSend.size());
 
     PendingModifyAckDeadline nacksToSend = new PendingModifyAckDeadline(0);
     pendingNacks.drainTo(nacksToSend.ackIds);
     logger.log(Level.FINER, "Sending {0} nacks", nacksToSend.ackIds.size());
     if (!nacksToSend.ackIds.isEmpty()) {
       modifyAckDeadlinesToSend.add(nacksToSend);
+      increaseNackCount(nacksToSend.ackIds.size());
     }
 
     PendingModifyAckDeadline receiptsToSend =

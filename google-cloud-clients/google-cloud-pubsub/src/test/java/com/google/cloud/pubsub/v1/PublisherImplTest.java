@@ -22,7 +22,14 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ExecutorProvider;
@@ -41,14 +48,6 @@ import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessServerBuilder;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -106,6 +105,8 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
+    assertEquals(2, publisher.getPublisherStats().getPendingMessages());
+    assertEquals(0, publisher.getPublisherStats().getAckedMessages());
     assertFalse(publishFuture1.isDone());
     assertFalse(publishFuture2.isDone());
 
@@ -113,6 +114,8 @@ public class PublisherImplTest {
 
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
+    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
+    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     publisher.shutdown();
@@ -138,11 +141,13 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
     ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
+    assertEquals(3, publisher.getPublisherStats().getPendingMessages());
 
     // Note we are not advancing time but message should still get published
 
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
+    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
 
     assertFalse(publishFuture3.isDone());
 
@@ -151,6 +156,8 @@ public class PublisherImplTest {
 
     assertEquals("3", publishFuture3.get());
     assertEquals("4", publishFuture4.get());
+    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
+    assertEquals(4, publisher.getPublisherStats().getAckedMessages());
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
@@ -177,16 +184,21 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
     ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
+    assertEquals(3, publisher.getPublisherStats().getPendingMessages());
 
     // Note we are not advancing time but message should still get published
 
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
     assertFalse(publishFuture3.isDone());
+    assertEquals(1, publisher.getPublisherStats().getPendingMessages());
+    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
 
     ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "D");
     assertEquals("3", publishFuture3.get());
     assertEquals("4", publishFuture4.get());
+    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
+    assertEquals(4, publisher.getPublisherStats().getAckedMessages());
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
@@ -211,6 +223,7 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("3"));
 
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    assertEquals(1, publisher.getPublisherStats().getPendingMessages());
 
     fakeExecutor.advanceTime(Duration.ofSeconds(2));
     assertFalse(publishFuture1.isDone());
@@ -220,15 +233,20 @@ public class PublisherImplTest {
     // Publishing triggered by batch size
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
+    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
+    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
 
     ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
 
     assertFalse(publishFuture3.isDone());
+    assertEquals(1, publisher.getPublisherStats().getPendingMessages());
+    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
 
     // Publishing triggered by time
     fakeExecutor.advanceTime(Duration.ofSeconds(5));
 
     assertEquals("3", publishFuture3.get());
+    assertEquals(3, publisher.getPublisherStats().getAckedMessages());
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     assertEquals(1, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
@@ -259,6 +277,8 @@ public class PublisherImplTest {
       fail("should throw exception");
     } catch (ExecutionException e) {
       assertThat(e.getCause()).isInstanceOf(DataLossException.class);
+      assertEquals(0, publisher.getPublisherStats().getAckedMessages());
+      assertEquals(1, publisher.getPublisherStats().getFailedMessages());
     }
   }
 
@@ -281,6 +301,8 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
+    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
+    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
@@ -308,6 +330,8 @@ public class PublisherImplTest {
       publishFuture1.get();
     } finally {
       assertSame(testPublisherServiceImpl.getCapturedRequests().size(), 1);
+      assertEquals(0, publisher.getPublisherStats().getAckedMessages());
+      assertEquals(1, publisher.getPublisherStats().getFailedMessages());
       publisher.shutdown();
       publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
@@ -333,6 +357,8 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
+    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
+    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
 
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
@@ -359,6 +385,8 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
+    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
+    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
 
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
@@ -390,6 +418,8 @@ public class PublisherImplTest {
       publishFuture1.get();
     } finally {
       assertTrue(testPublisherServiceImpl.getCapturedRequests().size() >= 1);
+      assertEquals(0, publisher.getPublisherStats().getAckedMessages());
+      assertEquals(1, publisher.getPublisherStats().getFailedMessages());
       publisher.shutdown();
       publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
@@ -570,6 +600,39 @@ public class PublisherImplTest {
     } catch (IllegalArgumentException expected) {
       // Expected
     }
+  }
+
+  @Test
+  public void testPublisherStats() throws Exception {
+    Publisher publisher = getTestPublisherBuilder()
+        .setBatchingSettings(Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
+            .setDelayThreshold(Duration.ofSeconds(5)).setElementCountThreshold(10L).build())
+        .build();
+
+    testPublisherServiceImpl
+        .addPublishResponse(PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
+    ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
+    ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
+
+    PublisherStats stats = publisher.getPublisherStats();
+    assertEquals(2, stats.getPendingMessages());
+    assertEquals(0, stats.getAckedMessages());
+    assertEquals(0, stats.getFailedMessages());
+    assertEquals(2, stats.getSentMessages());
+
+    fakeExecutor.advanceTime(Duration.ofSeconds(10));
+    assertEquals("1", publishFuture1.get());
+    assertEquals("2", publishFuture2.get());
+
+    stats = publisher.getPublisherStats();
+    assertEquals(0, stats.getPendingMessages());
+    assertEquals(2, stats.getAckedMessages());
+    assertEquals(0, stats.getFailedMessages());
+    assertEquals(2, stats.getSentMessages());
+
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
+    publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
   }
 
   private Builder getTestPublisherBuilder() {

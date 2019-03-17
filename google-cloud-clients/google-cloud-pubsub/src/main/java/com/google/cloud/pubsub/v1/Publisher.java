@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -95,6 +97,11 @@ public class Publisher {
   private final List<AutoCloseable> closeables;
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
+
+  private final Lock statsLock = new ReentrantLock();
+  private volatile long ackedMessages = 0L;
+  private volatile long failedMessages = 0L;
+  private volatile long pendingMessages = 0L;
 
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
@@ -235,6 +242,7 @@ public class Publisher {
     }
 
     messagesWaiter.incrementPendingMessages(1);
+    increaseStatsPendingCount();
 
     if (batchToSend != null) {
       logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
@@ -320,17 +328,22 @@ public class Publisher {
           public void onSuccess(PublishResponse result) {
             try {
               if (result.getMessageIdsCount() != outstandingBatch.size()) {
-                Throwable t =
-                    new IllegalStateException(
-                        String.format(
-                            "The publish result count %s does not match "
-                                + "the expected %s results. Please contact Cloud Pub/Sub support "
-                                + "if this frequently occurs",
-                            result.getMessageIdsCount(), outstandingBatch.size()));
-                for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
-                  oustandingMessage.publishResult.setException(t);
+                try {
+                  Throwable t =
+                      new IllegalStateException(
+                          String.format(
+                              "The publish result count %s does not match "
+                                  + "the expected %s results. Please contact Cloud Pub/Sub support "
+                                  + "if this frequently occurs",
+                              result.getMessageIdsCount(), outstandingBatch.size()));
+                  for (OutstandingPublish oustandingMessage :
+                      outstandingBatch.outstandingPublishes) {
+                    oustandingMessage.publishResult.setException(t);
+                  }
+                  return;
+                } finally {
+                  updateStatsFailedCount(result.getMessageIdsCount());
                 }
-                return;
               }
 
               Iterator<OutstandingPublish> messagesResultsIt =
@@ -339,6 +352,7 @@ public class Publisher {
                 messagesResultsIt.next().publishResult.set(messageId);
               }
             } finally {
+              updateStatsAckedCount(result.getMessageIdsCount());
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
@@ -350,10 +364,56 @@ public class Publisher {
                 outstandingPublish.publishResult.setException(t);
               }
             } finally {
+              updateStatsFailedCount(outstandingBatch.outstandingPublishes.size());
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
-        });
+        },
+        directExecutor());
+  }
+
+  /** Creates and returns a snapshot of the statistics of this publisher. */
+  public PublisherStats getPublisherStats() {
+    statsLock.lock();
+    try {
+      return PublisherStats.newBuilder()
+          .setAckedMessages(ackedMessages)
+          .setFailedMessages(failedMessages)
+          .setPendingMessages(pendingMessages)
+          .setSentMessages(ackedMessages + failedMessages + pendingMessages)
+          .build();
+    } finally {
+      statsLock.unlock();
+    }
+  }
+
+  private void increaseStatsPendingCount() {
+    statsLock.lock();
+    try {
+      pendingMessages++;
+    } finally {
+      statsLock.unlock();
+    }
+  }
+
+  private void updateStatsFailedCount(long failedCount) {
+    statsLock.lock();
+    try {
+      pendingMessages -= failedCount;
+      failedMessages += failedCount;
+    } finally {
+      statsLock.unlock();
+    }
+  }
+
+  private void updateStatsAckedCount(long ackedCount) {
+    statsLock.lock();
+    try {
+      pendingMessages -= ackedCount;
+      ackedMessages += ackedCount;
+    } finally {
+      statsLock.unlock();
+    }
   }
 
   private static final class OutstandingBatch {

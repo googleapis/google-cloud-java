@@ -17,23 +17,14 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.auto.value.AutoValue;
+import java.util.List;
 
 /**
  * A snapshot of the subscriber statistics at the time they were requested from the {@link
  * Subscriber}.
  */
 @AutoValue
-abstract class SubscriberStats {
-
-  @AutoValue
-  // TODO: Finish implementation.
-  public abstract static class Stats {}
-
-  /** Number of successfully published messages. */
-  public abstract long getReceivedMessages();
-
-  /** Number of successfully published messages. */
-  public abstract long getAckedMessages();
+public abstract class SubscriberStats {
 
   /** Number of received messages. */
   public abstract long getTotalReceivedMessages();
@@ -41,38 +32,67 @@ abstract class SubscriberStats {
   /** Number messages acked. */
   public abstract long getTotalAckedMessages();
 
-  /** End to end latency. */
-  public abstract Stats getEndToEndLatency();
-
-  /**
-   * Acknowledgement latency; time in between the message has been received and then acknowledged or
-   * rejected.
-   */
-  public abstract Stats getAckLatency();
+  /** Number messages nacked. */
+  public abstract long getTotalNackedMessages();
 
   /** Number of messages for which we have auto extended its acknowledgement deadline. */
   public abstract long getNumberOfAutoExtendedAckDeadlines();
 
-  public static Builder newBuilder() {
+  static Builder newBuilder() {
     return new AutoValue_SubscriberStats.Builder();
   }
 
   @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder setReceivedMessages(long value);
+  abstract static class Builder {
+    abstract Builder setTotalReceivedMessages(long value);
 
-    public abstract Builder setAckedMessages(long value);
+    abstract Builder setTotalAckedMessages(long value);
 
-    public abstract Builder setTotalReceivedMessages(long value);
+    abstract Builder setTotalNackedMessages(long value);
 
-    public abstract Builder setTotalAckedMessages(long value);
+    abstract Builder setNumberOfAutoExtendedAckDeadlines(long value);
 
-    public abstract Builder setEndToEndLatency(Stats value);
+    abstract SubscriberStats build();
 
-    public abstract Builder setAckLatency(Stats value);
+    SubscriberStats build(List<SubscriberStats> stats) {
+      return SubscriberStats.newBuilder()
+          .setNumberOfAutoExtendedAckDeadlines(getTotalNumberOfAutoExtendedAckDeadlines(stats))
+          .setTotalAckedMessages(getTotalAckedMessages(stats))
+          .setTotalNackedMessages(getTotalNackedMessages(stats))
+          .setTotalReceivedMessages(getTotalReceivedMessages(stats))
+          .build();
+    }
 
-    public abstract Builder setNumberOfAutoExtendedAckDeadlines(long value);
+    private static long getTotalReceivedMessages(List<SubscriberStats> stats) {
+      long res = 0L;
+      for (SubscriberStats stat : stats) {
+        res += stat.getTotalReceivedMessages();
+      }
+      return res;
+    }
 
-    public abstract SubscriberStats build();
+    private static long getTotalAckedMessages(List<SubscriberStats> stats) {
+      long res = 0L;
+      for (SubscriberStats stat : stats) {
+        res += stat.getTotalAckedMessages();
+      }
+      return res;
+    }
+
+    private static long getTotalNackedMessages(List<SubscriberStats> stats) {
+      long res = 0L;
+      for (SubscriberStats stat : stats) {
+        res += stat.getTotalNackedMessages();
+      }
+      return res;
+    }
+
+    private static long getTotalNumberOfAutoExtendedAckDeadlines(List<SubscriberStats> stats) {
+      long res = 0L;
+      for (SubscriberStats stat : stats) {
+        res += stat.getNumberOfAutoExtendedAckDeadlines();
+      }
+      return res;
+    }
   }
 }

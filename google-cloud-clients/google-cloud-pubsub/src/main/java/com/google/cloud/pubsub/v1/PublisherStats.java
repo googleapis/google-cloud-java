@@ -23,7 +23,7 @@ import com.google.auto.value.AutoValue;
  * Publisher}.
  */
 @AutoValue
-abstract class PublisherStats {
+public abstract class PublisherStats {
   /** Number of successfully published messages. */
   public abstract long getAckedMessages();
 
@@ -36,20 +36,20 @@ abstract class PublisherStats {
   /** Total messages sent, equal to pending + acked + failed messages. */
   public abstract long getSentMessages();
 
-  public static Builder newBuilder() {
+  static Builder newBuilder() {
     return new AutoValue_PublisherStats.Builder();
   }
 
   @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder setAckedMessages(long value);
+  abstract static class Builder {
+    abstract Builder setAckedMessages(long value);
 
-    public abstract Builder setFailedMessages(long value);
+    abstract Builder setFailedMessages(long value);
 
-    public abstract Builder setPendingMessages(long value);
+    abstract Builder setPendingMessages(long value);
 
-    public abstract Builder setSentMessages(long value);
+    abstract Builder setSentMessages(long value);
 
-    public abstract PublisherStats build();
+    abstract PublisherStats build();
   }
 }

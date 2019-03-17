@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
@@ -202,5 +203,29 @@ public class MessageDispatcherTest {
     consumers.take().ack();
 
     assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(42);
+  }
+
+  @Test
+  public void testStats() throws Exception {
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    consumers.take().ack();
+    dispatcher.processOutstandingAckOperations();
+    assertEquals(1, dispatcher.getSubscriberStats().getTotalAckedMessages());
+    assertEquals(1, dispatcher.getSubscriberStats().getTotalReceivedMessages());
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    consumers.take().nack();
+    dispatcher.processOutstandingAckOperations();
+    assertEquals(1, dispatcher.getSubscriberStats().getTotalNackedMessages());
+    assertEquals(2, dispatcher.getSubscriberStats().getTotalReceivedMessages());
+
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.extendDeadlines();
+
+    sentModAcks.clear();
+    consumers.take().ack();
+    // The deadline of both acked messages will be extended, as none of them has actually been sent.
+    assertEquals(2, dispatcher.getSubscriberStats().getNumberOfAutoExtendedAckDeadlines());
+    assertEquals(3, dispatcher.getSubscriberStats().getTotalReceivedMessages());
   }
 }
