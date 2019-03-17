@@ -296,12 +296,13 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
-    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
-    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
     publisher.awaitTermination(1, TimeUnit.MINUTES);
+    
+    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
+    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
   }
 
   @Test(expected = ExecutionException.class)
@@ -380,12 +381,13 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
-    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
-    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
 
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
     publisher.awaitTermination(1, TimeUnit.MINUTES);
+    
+    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
+    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
   }
 
   @Test(expected = ExecutionException.class)
