@@ -22,14 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.threeten.bp.Duration;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ExecutorProvider;
@@ -48,6 +41,14 @@ import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
@@ -105,8 +106,6 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
-    assertEquals(2, publisher.getPublisherStats().getPendingMessages());
-    assertEquals(0, publisher.getPublisherStats().getAckedMessages());
     assertFalse(publishFuture1.isDone());
     assertFalse(publishFuture2.isDone());
 
@@ -141,7 +140,6 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
     ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
-    assertEquals(3, publisher.getPublisherStats().getPendingMessages());
 
     // Note we are not advancing time but message should still get published
 
@@ -184,14 +182,12 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
     ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
-    assertEquals(3, publisher.getPublisherStats().getPendingMessages());
 
     // Note we are not advancing time but message should still get published
 
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
     assertFalse(publishFuture3.isDone());
-    assertEquals(1, publisher.getPublisherStats().getPendingMessages());
     assertEquals(2, publisher.getPublisherStats().getAckedMessages());
 
     ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "D");
@@ -223,7 +219,6 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("3"));
 
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-    assertEquals(1, publisher.getPublisherStats().getPendingMessages());
 
     fakeExecutor.advanceTime(Duration.ofSeconds(2));
     assertFalse(publishFuture1.isDone());
@@ -604,13 +599,18 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherStats() throws Exception {
-    Publisher publisher = getTestPublisherBuilder()
-        .setBatchingSettings(Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
-            .setDelayThreshold(Duration.ofSeconds(5)).setElementCountThreshold(10L).build())
-        .build();
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setDelayThreshold(Duration.ofSeconds(5))
+                    .setElementCountThreshold(10L)
+                    .build())
+            .build();
 
-    testPublisherServiceImpl
-        .addPublishResponse(PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
+    testPublisherServiceImpl.addPublishResponse(
+        PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
