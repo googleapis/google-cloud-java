@@ -143,9 +143,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   /**
    * Sets options that are only used by the constructor.
    *
-   * Instead of calling this, when possible use CloudStorageFileSystem.forBucket
-   * and pass StorageOptions as an argument.
-   * */
+   * <p>Instead of calling this, when possible use CloudStorageFileSystem.forBucket and pass
+   * StorageOptions as an argument.
+   */
   @VisibleForTesting
   public static void setStorageOptions(@Nullable StorageOptions newStorageOptions) {
     futureStorageOptions = newStorageOptions;

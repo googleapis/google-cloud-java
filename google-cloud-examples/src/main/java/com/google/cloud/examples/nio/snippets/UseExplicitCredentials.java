@@ -20,7 +20,6 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
 import com.google.cloud.storage.contrib.nio.CloudStorageFileSystem;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -39,8 +38,8 @@ public class UseExplicitCredentials {
             "mybucket",
             CloudStorageConfiguration.DEFAULT,
             StorageOptions.newBuilder()
-                .setCredentials(ServiceAccountCredentials.fromStream(
-                    new FileInputStream(myCredentials)))
+                .setCredentials(
+                    ServiceAccountCredentials.fromStream(new FileInputStream(myCredentials)))
                 .build());
     // Can now read and write to the bucket using fs
     // (see e.g. ReadAllLines for an example).
