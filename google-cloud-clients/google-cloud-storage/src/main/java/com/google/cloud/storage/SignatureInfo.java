@@ -155,6 +155,7 @@ public class SignatureInfo {
         .append(COMPONENT_SEPARATOR);
 
     canonicalRequest.append("UNSIGNED-PAYLOAD");
+
     return Hashing.sha256()
         .hashString(canonicalRequest.toString(), StandardCharsets.UTF_8)
         .toString();
@@ -177,7 +178,6 @@ public class SignatureInfo {
     queryString.append(
         "X-Goog-SignedHeaders="
             + UrlEscapers.urlFormParameterEscaper().escape(signedHeaders.toString()));
-
     return queryString.toString();
   }
 

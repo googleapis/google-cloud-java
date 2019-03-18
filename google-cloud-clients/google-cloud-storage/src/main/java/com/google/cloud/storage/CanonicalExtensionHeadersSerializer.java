@@ -79,7 +79,6 @@ public class CanonicalExtensionHeadersSerializer {
     if (canonicalizedExtensionHeaders == null || canonicalizedExtensionHeaders.isEmpty()) {
       return serializedHeaders;
     }
-
     Map<String, String> lowercaseHeaders = getLowercaseHeaders(canonicalizedExtensionHeaders, isV4);
 
     List<String> sortedHeaderNames = new ArrayList<>(lowercaseHeaders.keySet());
