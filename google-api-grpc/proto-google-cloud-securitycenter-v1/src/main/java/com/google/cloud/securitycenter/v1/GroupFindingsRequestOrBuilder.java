@@ -262,31 +262,6 @@ public interface GroupFindingsRequestOrBuilder
    *
    *
    * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'finding.state' and 'state_change'
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  java.lang.String getHaving();
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'finding.state' and 'state_change'
-   * are supported and requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  com.google.protobuf.ByteString getHavingBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * The value returned by the last `GroupFindingsResponse`; indicates
    * that this is a continuation of a prior `GroupFindings` call, and
    * that the system should return the next page of data.

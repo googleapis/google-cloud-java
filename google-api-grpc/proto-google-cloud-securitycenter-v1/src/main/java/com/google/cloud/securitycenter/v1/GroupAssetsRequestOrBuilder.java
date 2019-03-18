@@ -267,31 +267,6 @@ public interface GroupAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'state_change' is supported and
-   * requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  java.lang.String getHaving();
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'state_change' is supported and
-   * requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  com.google.protobuf.ByteString getHavingBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * The value returned by the last `GroupAssetsResponse`; indicates
    * that this is a continuation of a prior `GroupAssets` call, and that the
    * system should return the next page of data.

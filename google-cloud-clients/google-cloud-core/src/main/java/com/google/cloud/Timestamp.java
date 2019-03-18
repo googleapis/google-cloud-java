@@ -27,6 +27,8 @@ import org.threeten.bp.Instant;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.format.DateTimeFormatterBuilder;
+import org.threeten.bp.temporal.TemporalAccessor;
 
 /**
  * Represents a timestamp with nanosecond precision. Timestamps cover the range [0001-01-01,
@@ -46,6 +48,15 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
       new Timestamp(253402300799L, (int) TimeUnit.SECONDS.toNanos(1) - 1);
 
   private static final DateTimeFormatter format = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+
+  private static final DateTimeFormatter timestampParser =
+      new DateTimeFormatterBuilder()
+          .appendOptional(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+          .optionalStart()
+          .appendOffsetId()
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
 
   private final long seconds;
   private final int nanos;
@@ -170,7 +181,8 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    * the timezone offset (always ends in "Z").
    */
   public static Timestamp parseTimestamp(String timestamp) {
-    Instant instant = Instant.parse(timestamp);
+    TemporalAccessor temporalAccessor = timestampParser.parse(timestamp);
+    Instant instant = Instant.from(temporalAccessor);
     return ofTimeSecondsAndNanos(instant.getEpochSecond(), instant.getNano());
   }
 

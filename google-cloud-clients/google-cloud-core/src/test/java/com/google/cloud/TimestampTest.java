@@ -186,6 +186,15 @@ public class TimestampTest {
   }
 
   @Test
+  public void parseTimestampWithoutTimeZoneOffset() {
+    assertThat(Timestamp.parseTimestamp("0001-01-01T00:00:00")).isEqualTo(Timestamp.MIN_VALUE);
+    assertThat(Timestamp.parseTimestamp("9999-12-31T23:59:59.999999999"))
+        .isEqualTo(Timestamp.MAX_VALUE);
+    assertThat(Timestamp.parseTimestamp("2015-10-12T15:14:54"))
+        .isEqualTo(Timestamp.ofTimeSecondsAndNanos(TEST_TIME_SECONDS, 0));
+  }
+
+  @Test
   public void fromProto() {
     com.google.protobuf.Timestamp proto =
         com.google.protobuf.Timestamp.newBuilder().setSeconds(1234).setNanos(567).build();

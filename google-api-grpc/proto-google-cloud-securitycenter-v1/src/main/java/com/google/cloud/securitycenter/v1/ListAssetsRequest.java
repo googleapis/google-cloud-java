@@ -26,7 +26,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     parent_ = "";
     filter_ = "";
     orderBy_ = "";
-    having_ = "";
     pageToken_ = "";
     pageSize_ = 0;
   }
@@ -104,13 +103,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
                 compareDuration_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              having_ = s;
               break;
             }
           case 58:
@@ -503,53 +495,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     return getCompareDuration();
   }
 
-  public static final int HAVING_FIELD_NUMBER = 6;
-  private volatile java.lang.Object having_;
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'state_change' is supported and
-   * requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  public java.lang.String getHaving() {
-    java.lang.Object ref = having_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      having_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Filter that specifies what fields to further filter on *after* the query
-   * filter has been executed. Currently only 'state_change' is supported and
-   * requires compare_duration to be specified.
-   * </pre>
-   *
-   * <code>string having = 6;</code>
-   */
-  public com.google.protobuf.ByteString getHavingBytes() {
-    java.lang.Object ref = having_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      having_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int FIELD_MASK_FIELD_NUMBER = 7;
   private com.google.protobuf.FieldMask fieldMask_;
   /**
@@ -690,9 +635,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     if (compareDuration_ != null) {
       output.writeMessage(5, getCompareDuration());
     }
-    if (!getHavingBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, having_);
-    }
     if (fieldMask_ != null) {
       output.writeMessage(7, getFieldMask());
     }
@@ -725,9 +667,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     }
     if (compareDuration_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCompareDuration());
-    }
-    if (!getHavingBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, having_);
     }
     if (fieldMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFieldMask());
@@ -766,7 +705,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     if (hasCompareDuration()) {
       result = result && getCompareDuration().equals(other.getCompareDuration());
     }
-    result = result && getHaving().equals(other.getHaving());
     result = result && (hasFieldMask() == other.hasFieldMask());
     if (hasFieldMask()) {
       result = result && getFieldMask().equals(other.getFieldMask());
@@ -798,8 +736,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + COMPARE_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getCompareDuration().hashCode();
     }
-    hash = (37 * hash) + HAVING_FIELD_NUMBER;
-    hash = (53 * hash) + getHaving().hashCode();
     if (hasFieldMask()) {
       hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getFieldMask().hashCode();
@@ -971,8 +907,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         compareDuration_ = null;
         compareDurationBuilder_ = null;
       }
-      having_ = "";
-
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = null;
       } else {
@@ -1023,7 +957,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       } else {
         result.compareDuration_ = compareDurationBuilder_.build();
       }
-      result.having_ = having_;
       if (fieldMaskBuilder_ == null) {
         result.fieldMask_ = fieldMask_;
       } else {
@@ -1098,10 +1031,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasCompareDuration()) {
         mergeCompareDuration(other.getCompareDuration());
-      }
-      if (!other.getHaving().isEmpty()) {
-        having_ = other.having_;
-        onChanged();
       }
       if (other.hasFieldMask()) {
         mergeFieldMask(other.getFieldMask());
@@ -2112,110 +2041,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         compareDuration_ = null;
       }
       return compareDurationBuilder_;
-    }
-
-    private java.lang.Object having_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'state_change' is supported and
-     * requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public java.lang.String getHaving() {
-      java.lang.Object ref = having_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        having_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'state_change' is supported and
-     * requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public com.google.protobuf.ByteString getHavingBytes() {
-      java.lang.Object ref = having_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        having_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'state_change' is supported and
-     * requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public Builder setHaving(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      having_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'state_change' is supported and
-     * requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public Builder clearHaving() {
-
-      having_ = getDefaultInstance().getHaving();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Filter that specifies what fields to further filter on *after* the query
-     * filter has been executed. Currently only 'state_change' is supported and
-     * requires compare_duration to be specified.
-     * </pre>
-     *
-     * <code>string having = 6;</code>
-     */
-    public Builder setHavingBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      having_ = value;
-      onChanged();
-      return this;
     }
 
     private com.google.protobuf.FieldMask fieldMask_ = null;
