@@ -31,10 +31,12 @@ import static org.junit.Assume.assumeTrue;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.apache.ApacheHttpTransport;
 import com.google.api.client.util.DateTime;
+import com.google.api.core.ApiClock;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
@@ -95,6 +97,8 @@ import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.MetadataUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -112,6 +116,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
@@ -162,18 +167,14 @@ public class ITStorageTest {
   public static void beforeClass() throws IOException {
     remoteStorageHelper = RemoteStorageHelper.create();
     storage = remoteStorageHelper.getOptions().getService();
-    storage.create(
-        BucketInfo.newBuilder(BUCKET)
-            .setLocation("us")
-            .setLifecycleRules(
-                ImmutableList.of(
-                    new LifecycleRule(
-                        LifecycleAction.newDeleteAction(),
-                        LifecycleCondition.newBuilder().setAge(1).build())))
-            .build());
+
+     storage.create( BucketInfo.newBuilder(BUCKET) .setLocation("us") .setLifecycleRules(
+     ImmutableList.of( new LifecycleRule( LifecycleAction.newDeleteAction(),
+     LifecycleCondition.newBuilder().setAge(1).build()))) .build());
+
 
     // Prepare KMS KeyRing for CMEK tests
-    prepareKmsKeys();
+       prepareKmsKeys();
   }
 
   @AfterClass
@@ -198,6 +199,22 @@ public class ITStorageTest {
       PoolingHttpClientConnectionManager manager = new PoolingHttpClientConnectionManager();
       manager.setMaxTotal(1);
       return new ApacheHttpTransport(HttpClients.createMinimal(manager));
+    }
+  }
+
+  private static class FakeClock implements ApiClock {
+    private final AtomicLong currentNanoTime;
+
+    public FakeClock(long initialNanoTime) {
+      this.currentNanoTime = new AtomicLong(initialNanoTime);
+    }
+
+    public long nanoTime() {
+      return this.currentNanoTime.get();
+    }
+
+    public long millisTime() {
+      return TimeUnit.MILLISECONDS.convert(this.nanoTime(), TimeUnit.NANOSECONDS);
     }
   }
 
@@ -1822,6 +1839,36 @@ public class ITStorageTest {
       assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
       assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     }
+  }
+
+  @Test
+  //TODO rewrite this to load JSON conformance tests instead
+  public void testV4UrlSigning() throws IOException {
+    Storage dummyAccountStorage =
+        remoteStorageHelper
+            .getOptions()
+            .toBuilder()
+            .setClock(
+                new FakeClock(TimeUnit.NANOSECONDS.convert(1549040400000L, TimeUnit.MILLISECONDS)))
+            .setCredentials(
+                ServiceAccountCredentials.fromStream(
+                    new FileInputStream(
+                        new File("src/test/resources/URLSignerV4TestAccount.json"))))
+            .build()
+            .getService();
+    String bucket = "test-bucket";
+    String object = "test-object";
+
+    BlobInfo blob = BlobInfo.newBuilder(bucket, object).build();
+
+    assertEquals(
+        "https://storage.googleapis.com/test-bucket/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host&X-Goog-Signature=95e6a13d43a1d1962e667f17397f2b80ac9bdd1669210d5e08e0135df9dff4e56113485dbe429ca2266487b9d1796ebdee2d7cf682a6ef3bb9fbb4c351686fba90d7b621cf1c4eb1fdf126460dd25fa0837dfdde0a9fd98662ce60844c458448fb2b352c203d9969cb74efa4bdb742287744a4f2308afa4af0e0773f55e32e92973619249214b97283b2daa14195244444e33f938138d1e5f561088ce8011f4986dda33a556412594db7c12fc40e1ff3f1bedeb7a42f5bcda0b9567f17f65855f65071fabb88ea12371877f3f77f10e1466fff6ff6973b74a933322ff0949ce357e20abe96c3dd5cfab42c9c83e740a4d32b9e11e146f0eb3404d2e975896f74",
+        dummyAccountStorage.signUrl(
+            blob,
+            10,
+            TimeUnit.SECONDS,
+            Storage.SignUrlOption.httpMethod(HttpMethod.GET),
+            Storage.SignUrlOption.withV4Signature()).toString());
   }
 
   @Test
