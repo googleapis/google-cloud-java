@@ -134,4 +134,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-speech]: https://cloud.google.com/speech/
 [speech-product-docs]: https://cloud.google.com/speech/docs
-[speech-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/speech/v1beta1/package-summary.html
+[speech-client-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/speech/v1/package-summary.html
