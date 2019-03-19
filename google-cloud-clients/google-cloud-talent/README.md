@@ -27,11 +27,11 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-talent:0.71.0-beta'
+compile 'com.google.cloud:google-cloud-talent:0.1.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "0.71.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "0.1.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
