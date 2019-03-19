@@ -37,6 +37,7 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
@@ -595,6 +596,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       case ASYNC:
       default:
         final ApiFuture<Void> writeFuture = writeAsync(logEntries, writeOptions);
+        synchronized (writeLock) {
+          pendingWrites.add(writeFuture);
+        }
         ApiFutures.addCallback(
             writeFuture,
             new ApiFutureCallback<Void>() {
@@ -619,9 +623,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                 }
               }
             });
-        synchronized (writeLock) {
-          pendingWrites.add(writeFuture);
-        }
         break;
     }
   }
@@ -706,5 +707,12 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;
+  }
+
+  @VisibleForTesting
+  int getNumPendingWrites() {
+    synchronized (writeLock) {
+      return pendingWrites.size();
+    }
   }
 }
