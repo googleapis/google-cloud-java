@@ -6,7 +6,8 @@ application that uses Java NIO without the need to recompile.
 
 Note that whenever possible, you instead want to recompile the app and use the normal
 dependency mechanism to add a dependency to google-cloud-nio. You can see examples of
-this in the [google-cloud-examples](../../../google-cloud-examples) project.
+this in the [google-cloud-examples](../../../google-cloud-examples) project,
+[under nio](../../../google-cloud-examples/src/main/java/com/google/cloud/examples/nio).
 
 To run this example:
 

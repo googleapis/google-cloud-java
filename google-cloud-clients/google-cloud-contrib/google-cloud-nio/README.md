@@ -57,7 +57,8 @@ Authentication
 --------------
 
 See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
-section in the base directory's README.
+section in the base directory's README. This shows how to construct the `StorageOptions` object,
+which you can then pass to `CloudStorageFileSystem.forBucket`.
 
 About Google Cloud Storage
 --------------------------
