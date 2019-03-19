@@ -626,6 +626,7 @@ public class Publisher {
      * Gives the ability to set an {@link ApiFunction} that will transform the {@link PubsubMessage}
      * before it is sent
      */
+    @BetaApi
     public Builder setTransform(ApiFunction<PubsubMessage, PubsubMessage> messageTransform) {
       this.messageTransform =
           Preconditions.checkNotNull(messageTransform, "The messageTransform cannnot be null.");
