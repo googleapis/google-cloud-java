@@ -181,6 +181,36 @@ public class LoggingAppenderTest {
     // assertThat(resourceArg.getValue()).isEqualTo(defaultWriteOptions[1]);
   }
 
+  @Test
+  public void testMdcValuesAreConvertedToLabels() {
+    LogEntry logEntry =
+        LogEntry.newBuilder(StringPayload.of("this is a test"))
+            .setTimestamp(100000L)
+            .setSeverity(Severity.INFO)
+            .setLabels(
+                new ImmutableMap.Builder<String, String>()
+                    .put("levelName", "INFO")
+                    .put("levelValue", String.valueOf(20000L))
+                    .put("mdc1", "value1")
+                    .put("mdc2", "value2")
+                    .build())
+            .build();
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(capture(capturedArgument), (WriteOption) anyObject(), (WriteOption) anyObject());
+    expectLastCall().once();
+    replay(logging);
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    LoggingEvent loggingEvent = createLoggingEvent(Level.INFO, timestamp.getSeconds());
+    loggingEvent.setMDCPropertyMap(ImmutableMap.of("mdc1", "value1", "mdc2", "value2"));
+    loggingAppender.start();
+    // info event does not get logged
+    loggingAppender.doAppend(loggingEvent);
+    verify(logging);
+    assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
+    assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
+  }
+
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {
     LoggingEvent loggingEvent = new LoggingEvent();
     loggingEvent.setMessage("this is a test");
