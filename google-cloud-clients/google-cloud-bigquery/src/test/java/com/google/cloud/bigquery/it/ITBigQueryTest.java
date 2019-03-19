@@ -620,21 +620,24 @@ public class ITBigQueryTest {
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     Table createdPartitioningTable = bigquery.create(tableInfo);
     assertNotNull(createdPartitioningTable);
-    Page<Table> tables = bigquery.listTables(DATASET);
-    boolean found = false;
-    Iterator<Table> tableIterator = tables.getValues().iterator();
-    while (tableIterator.hasNext() && !found) {
-      StandardTableDefinition standardTableDefinition = tableIterator.next().getDefinition();
-      if (standardTableDefinition.getTimePartitioning().getType().equals(Type.DAY)
-          && standardTableDefinition
-              .getTimePartitioning()
-              .getExpirationMs()
-              .equals(EXPIRATION_MS)) {
-        found = true;
+    try {
+      Page<Table> tables = bigquery.listTables(DATASET);
+      boolean found = false;
+      Iterator<Table> tableIterator = tables.getValues().iterator();
+      while (tableIterator.hasNext() && !found) {
+        StandardTableDefinition standardTableDefinition = tableIterator.next().getDefinition();
+        if (standardTableDefinition.getTimePartitioning().getType().equals(Type.DAY)
+            && standardTableDefinition
+                .getTimePartitioning()
+                .getExpirationMs()
+                .equals(EXPIRATION_MS)) {
+          found = true;
+        }
       }
+      assertTrue(found);
+    } finally {
+      createdPartitioningTable.delete();
     }
-    assertTrue(found);
-    assertTrue(createdPartitioningTable.delete());
   }
 
   @Test
