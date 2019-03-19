@@ -803,7 +803,8 @@
     <module>proto-google-cloud-speech-v1</module>
     <module>proto-google-cloud-speech-v1beta1</module>
     <module>proto-google-cloud-speech-v1p1beta1</module>
-    <module>proto-google-cloud-talent-v4beta1</module><module>proto-google-cloud-tasks-v2beta2</module>
+    <module>proto-google-cloud-talent-v4beta1</module>
+    <module>proto-google-cloud-tasks-v2beta2</module>
     <module>proto-google-cloud-tasks-v2beta3</module>
     <module>proto-google-cloud-texttospeech-v1</module>
     <module>proto-google-cloud-texttospeech-v1beta1</module>
