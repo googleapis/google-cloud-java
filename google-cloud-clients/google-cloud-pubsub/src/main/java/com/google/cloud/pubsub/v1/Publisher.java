@@ -54,6 +54,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
@@ -98,10 +99,9 @@ public class Publisher {
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
 
-  private final Lock statsLock = new ReentrantLock();
-  private volatile long ackedMessages = 0L;
-  private volatile long failedMessages = 0L;
-  private volatile long pendingMessages = 0L;
+  private final AtomicLong ackedMessages = new AtomicLong();
+  private final AtomicLong failedMessages = new AtomicLong();
+  private final AtomicLong pendingMessages = new AtomicLong();
 
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
@@ -242,7 +242,7 @@ public class Publisher {
     }
 
     messagesWaiter.incrementPendingMessages(1);
-    increaseStatsPendingCount();
+    pendingMessages.incrementAndGet();
 
     if (batchToSend != null) {
       logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
@@ -342,7 +342,7 @@ public class Publisher {
                   }
                   return;
                 } finally {
-                  updateStatsFailedCount(result.getMessageIdsCount());
+                  failedMessages.addAndGet(result.getMessageIdsCount());
                 }
               }
 
@@ -352,7 +352,8 @@ public class Publisher {
                 messagesResultsIt.next().publishResult.set(messageId);
               }
             } finally {
-              updateStatsAckedCount(result.getMessageIdsCount());
+              ackedMessages.addAndGet(result.getMessageIdsCount());
+              pendingMessages.addAndGet(-result.getMessageIdsCount());
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
@@ -364,7 +365,8 @@ public class Publisher {
                 outstandingPublish.publishResult.setException(t);
               }
             } finally {
-              updateStatsFailedCount(outstandingBatch.outstandingPublishes.size());
+              failedMessages.addAndGet(outstandingBatch.outstandingPublishes.size());
+              pendingMessages.addAndGet(-outstandingBatch.outstandingPublishes.size());
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
@@ -374,46 +376,12 @@ public class Publisher {
 
   /** Creates and returns a snapshot of the statistics of this publisher. */
   public PublisherStats getPublisherStats() {
-    statsLock.lock();
-    try {
-      return PublisherStats.newBuilder()
-          .setAckedMessages(ackedMessages)
-          .setFailedMessages(failedMessages)
-          .setPendingMessages(pendingMessages)
-          .setSentMessages(ackedMessages + failedMessages + pendingMessages)
-          .build();
-    } finally {
-      statsLock.unlock();
-    }
-  }
-
-  private void increaseStatsPendingCount() {
-    statsLock.lock();
-    try {
-      pendingMessages++;
-    } finally {
-      statsLock.unlock();
-    }
-  }
-
-  private void updateStatsFailedCount(long failedCount) {
-    statsLock.lock();
-    try {
-      pendingMessages -= failedCount;
-      failedMessages += failedCount;
-    } finally {
-      statsLock.unlock();
-    }
-  }
-
-  private void updateStatsAckedCount(long ackedCount) {
-    statsLock.lock();
-    try {
-      pendingMessages -= ackedCount;
-      ackedMessages += ackedCount;
-    } finally {
-      statsLock.unlock();
-    }
+    return PublisherStats.newBuilder()
+        .setAckedMessages(ackedMessages.get())
+        .setFailedMessages(failedMessages.get())
+        .setPendingMessages(pendingMessages.get())
+        .setSentMessages(ackedMessages.get() + failedMessages.get() + pendingMessages.get())
+        .build();
   }
 
   private static final class OutstandingBatch {

@@ -33,6 +33,7 @@ import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.DataLossException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
+import com.google.common.base.Supplier;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishResponse;
@@ -87,9 +88,19 @@ public class PublisherImplTest {
     testServer.shutdownNow().awaitTermination();
   }
 
+  private void assertStatistic(Supplier<Long> supplier, long expected) {
+    long startTime = System.currentTimeMillis();
+    while (supplier.get() != expected) {
+      Thread.yield();
+      if ((System.currentTimeMillis() - startTime) > 5000L) {
+        fail();
+      }
+    }
+  }
+
   @Test
   public void testPublishByDuration() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
             .setBatchingSettings(
@@ -113,8 +124,20 @@ public class PublisherImplTest {
 
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
-    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
-    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        2L);
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     publisher.shutdown();
@@ -123,7 +146,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublishByNumBatchedMessages() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
@@ -145,7 +168,20 @@ public class PublisherImplTest {
 
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
-    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        1L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        2L);
 
     assertFalse(publishFuture3.isDone());
 
@@ -154,8 +190,20 @@ public class PublisherImplTest {
 
     assertEquals("3", publishFuture3.get());
     assertEquals("4", publishFuture4.get());
-    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
-    assertEquals(4, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        4L);
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
@@ -165,7 +213,7 @@ public class PublisherImplTest {
 
   @Test
   public void testSinglePublishByNumBytes() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
@@ -188,13 +236,38 @@ public class PublisherImplTest {
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
     assertFalse(publishFuture3.isDone());
-    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        1L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        2L);
 
     ApiFuture<String> publishFuture4 = sendTestMessage(publisher, "D");
     assertEquals("3", publishFuture3.get());
     assertEquals("4", publishFuture4.get());
-    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
-    assertEquals(4, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        4L);
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
@@ -203,7 +276,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublishMixedSizeAndDuration() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
             .setBatchingSettings(
@@ -228,20 +301,57 @@ public class PublisherImplTest {
     // Publishing triggered by batch size
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
-    assertEquals(0, publisher.getPublisherStats().getPendingMessages());
-    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        2L);
 
     ApiFuture<String> publishFuture3 = sendTestMessage(publisher, "C");
 
     assertFalse(publishFuture3.isDone());
-    assertEquals(1, publisher.getPublisherStats().getPendingMessages());
-    assertEquals(2, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        1L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        2L);
 
     // Publishing triggered by time
     fakeExecutor.advanceTime(Duration.ofSeconds(5));
 
     assertEquals("3", publishFuture3.get());
-    assertEquals(3, publisher.getPublisherStats().getAckedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        3L);
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     assertEquals(1, testPublisherServiceImpl.getCapturedRequests().get(1).getMessagesCount());
@@ -256,7 +366,7 @@ public class PublisherImplTest {
 
   @Test
   public void testErrorPropagation() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setBatchingSettings(
@@ -272,14 +382,26 @@ public class PublisherImplTest {
       fail("should throw exception");
     } catch (ExecutionException e) {
       assertThat(e.getCause()).isInstanceOf(DataLossException.class);
-      assertEquals(0, publisher.getPublisherStats().getAckedMessages());
-      assertEquals(1, publisher.getPublisherStats().getFailedMessages());
+      assertStatistic(
+          new Supplier<Long>() {
+            public Long get() {
+              return publisher.getPublisherStats().getAckedMessages();
+            }
+          },
+          0L);
+      assertStatistic(
+          new Supplier<Long>() {
+            public Long get() {
+              return publisher.getPublisherStats().getFailedMessages();
+            }
+          },
+          1L);
     }
   }
 
   @Test
   public void testPublishFailureRetries() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setBatchingSettings(
@@ -300,14 +422,26 @@ public class PublisherImplTest {
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
     publisher.awaitTermination(1, TimeUnit.MINUTES);
-    
-    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
-    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
+
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        1L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getFailedMessages();
+          }
+        },
+        0L);
   }
 
   @Test(expected = ExecutionException.class)
   public void testPublishFailureRetries_retriesDisabled() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setRetrySettings(
@@ -326,8 +460,20 @@ public class PublisherImplTest {
       publishFuture1.get();
     } finally {
       assertSame(testPublisherServiceImpl.getCapturedRequests().size(), 1);
-      assertEquals(0, publisher.getPublisherStats().getAckedMessages());
-      assertEquals(1, publisher.getPublisherStats().getFailedMessages());
+      assertStatistic(
+          new Supplier<Long>() {
+            public Long get() {
+              return publisher.getPublisherStats().getAckedMessages();
+            }
+          },
+          0L);
+      assertStatistic(
+          new Supplier<Long>() {
+            public Long get() {
+              return publisher.getPublisherStats().getFailedMessages();
+            }
+          },
+          1L);
       publisher.shutdown();
       publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
@@ -335,7 +481,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublishFailureRetries_maxRetriesSetup() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setRetrySettings(
@@ -353,8 +499,20 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
-    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
-    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        1L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getFailedMessages();
+          }
+        },
+        0L);
 
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
@@ -363,7 +521,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublishFailureRetries_maxRetriesSetUnlimited() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setRetrySettings(
@@ -385,14 +543,26 @@ public class PublisherImplTest {
     assertEquals(3, testPublisherServiceImpl.getCapturedRequests().size());
     publisher.shutdown();
     publisher.awaitTermination(1, TimeUnit.MINUTES);
-    
-    assertEquals(1, publisher.getPublisherStats().getAckedMessages());
-    assertEquals(0, publisher.getPublisherStats().getFailedMessages());
+
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        1L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getFailedMessages();
+          }
+        },
+        0L);
   }
 
   @Test(expected = ExecutionException.class)
   public void testPublishFailureRetries_nonRetryableFailsImmediately() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setRetrySettings(
@@ -415,8 +585,20 @@ public class PublisherImplTest {
       publishFuture1.get();
     } finally {
       assertTrue(testPublisherServiceImpl.getCapturedRequests().size() >= 1);
-      assertEquals(0, publisher.getPublisherStats().getAckedMessages());
-      assertEquals(1, publisher.getPublisherStats().getFailedMessages());
+      assertStatistic(
+          new Supplier<Long>() {
+            public Long get() {
+              return publisher.getPublisherStats().getAckedMessages();
+            }
+          },
+          0L);
+      assertStatistic(
+          new Supplier<Long>() {
+            public Long get() {
+              return publisher.getPublisherStats().getFailedMessages();
+            }
+          },
+          1L);
       publisher.shutdown();
       publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
@@ -601,7 +783,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherStats() throws Exception {
-    Publisher publisher =
+    final Publisher publisher =
         getTestPublisherBuilder()
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
@@ -616,21 +798,67 @@ public class PublisherImplTest {
     ApiFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
     ApiFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
-    PublisherStats stats = publisher.getPublisherStats();
-    assertEquals(2, stats.getPendingMessages());
-    assertEquals(0, stats.getAckedMessages());
-    assertEquals(0, stats.getFailedMessages());
-    assertEquals(2, stats.getSentMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        2L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getFailedMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getSentMessages();
+          }
+        },
+        2L);
 
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
 
-    stats = publisher.getPublisherStats();
-    assertEquals(0, stats.getPendingMessages());
-    assertEquals(2, stats.getAckedMessages());
-    assertEquals(0, stats.getFailedMessages());
-    assertEquals(2, stats.getSentMessages());
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getPendingMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getAckedMessages();
+          }
+        },
+        2L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getFailedMessages();
+          }
+        },
+        0L);
+    assertStatistic(
+        new Supplier<Long>() {
+          public Long get() {
+            return publisher.getPublisherStats().getSentMessages();
+          }
+        },
+        2L);
 
     assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
     publisher.shutdown();
