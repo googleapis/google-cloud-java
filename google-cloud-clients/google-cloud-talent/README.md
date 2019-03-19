@@ -96,5 +96,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [product-overview]: https://cloud.google.com/solutions/talent-solution/
-[product-docs]: https://cloud.google.com/talent-solution/job-search/docs/
+[product-docs]: https://cloud.google.com/talent-solution/docs/
 [lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/talent/v4beta1/package-summary.html
