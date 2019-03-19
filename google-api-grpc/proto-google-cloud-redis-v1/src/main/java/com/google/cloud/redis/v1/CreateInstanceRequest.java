@@ -7,8 +7,7 @@ package com.google.cloud.redis.v1;
  *
  *
  * <pre>
- * Request for
- * [CreateInstance][google.cloud.redis.v1.CloudRedis.CreateInstance].
+ * Request for [CreateInstance][google.cloud.redis.v1.CloudRedis.CreateInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1.CreateInstanceRequest}
@@ -443,8 +442,7 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for
-   * [CreateInstance][google.cloud.redis.v1.CloudRedis.CreateInstance].
+   * Request for [CreateInstance][google.cloud.redis.v1.CloudRedis.CreateInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1.CreateInstanceRequest}
