@@ -28,10 +28,10 @@ public class AssetSnippets {
   /**
    * Filter that returns all projects in the organization
    */
-  // [START  asset_resource_project_filter]
+  // [START asset_resource_project_filter]
   public static final String PROJECT_ASSET_FILTERS =
       "security_center_properties.resource_type=\"google.cloud.resourcemanager.Project\"";
-  // [END  asset_resource_project_filter]
+  // [END asset_resource_project_filter]
 
 
   /**
@@ -57,15 +57,15 @@ public class AssetSnippets {
    * @param asOf The instant in time to query for.  If null, current time is assumed
    */
 
-  // [TARGET list_assets
+  // [TARGET list_assets]
   // [VARIABLE "filter"]
   // [VARIABLE "as_of"]
-  // [START list_assets ]
+  // [START list_assets]
   public ImmutableList<ListAssetsResult> listAssets(String filter,
       Instant asOf) {
     ListAssetsRequest.Builder request =
         ListAssetsRequest.newBuilder().setParent(organizationName.toString());
-    // 
+    // Default for API is to return all assets.
     if (filter != null) {
       request.setFilter(filter);
     }
@@ -80,13 +80,13 @@ public class AssetSnippets {
     // the Iterable returned response.iterateAll() directly.
     return ImmutableList.copyOf(response.iterateAll());
   }
-  // [END list_assets ]
+  // [END list_assets]
 
   /**
    * Run and print results from common queries.
    */
   void demoListAssets() {
-    // [ START demo_list_assets ] ]
+    // [START demo_list_assets]
     // This takes care of formatting the resource name appropriately from the id..
 
     // Query for all currently existing assets
@@ -98,7 +98,7 @@ public class AssetSnippets {
     System.out.println("Open HTTP Firewall Rules (1 day ago): " + listAssets(
         PROJECT_ASSET_FILTERS,
         Instant.now().minus(Duration.ofDays(1))));
-    // [ END demo_list_assets ] ]
+    // [END demo_list_assets]
   }
 
   /**
@@ -113,7 +113,7 @@ public class AssetSnippets {
    */
   public ImmutableList<ListAssetsResult> listAssetAndStatusChanges(Duration timeSpan, String filter,
       Instant asOf) {
-    // [ START list_asset_changes ] ]
+    // [START list_asset_changes]
     ListAssetsRequest.Builder request =
         ListAssetsRequest.newBuilder().setParent(organizationName.toString());
     request.getCompareDurationBuilder().setSeconds(timeSpan.getSeconds())
@@ -133,7 +133,7 @@ public class AssetSnippets {
     // this can cause out of memory issues.  You can process them batches by returning
     // the Iterable returned response.iterateAll() directly.
     return ImmutableList.copyOf(response.iterateAll());
-    // [ END list_asset_changes ] ]
+    // [END list_asset_changes]
   }
 
   /**
@@ -141,7 +141,7 @@ public class AssetSnippets {
    * String, Instant)}.
    */
   void demoListAssetAndStatusChanges() {
-    // [ START demo_list_asset_changes ] ]
+    // [START demo_list_asset_changes]
     // List assets that are GCP Projects and their changes over the last day.
     System.out.println(listAssetAndStatusChanges(Duration.ofDays(1), PROJECT_ASSET_FILTERS, null));
 
@@ -153,7 +153,7 @@ public class AssetSnippets {
         "Project Changes between (between Dec 2019 and Jan 2019): " + listAssetAndStatusChanges(
             lastMonth, /* filter (no filter applied) = */null,
             jan1.atZone(ZoneId.of("Europe/Paris")).toInstant()));
-    // [ END demo_list_asset_changes ] ]
+    // [END demo_list_asset_changes]
   }
 
   public static void main(String... args) throws IOException {
