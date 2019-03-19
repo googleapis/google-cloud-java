@@ -22,7 +22,7 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent</artifactId>
-  <version>0.1.1-beta</version>
+  <version>0.1.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
