@@ -78,6 +78,12 @@
       <artifactId>grpc-google-iam-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-impl</artifactId>
+      <version>${opencensus.version}</version>
+      <scope>test</scope>
+    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
