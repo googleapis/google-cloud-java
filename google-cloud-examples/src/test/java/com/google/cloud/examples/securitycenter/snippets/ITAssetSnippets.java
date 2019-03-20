@@ -1,10 +1,6 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
-import static com.google.cloud.ServiceOptions.getDefaultProjectId;
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
-import static org.hamcrest.MatcherAssert.assertThat;
-
 
 import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
@@ -24,8 +20,10 @@ public class ITAssetSnippets {
   static SecurityCenterClient client;
   static AssetSnippets snippets;
 
-  public static final Instant NOTHING_INSTANCE = LocalDateTime.of(2019, 1, 1, 0, 0).toInstant(ZoneOffset.UTC);
-  public static final Instant SOMETHING_INSTANCE = LocalDateTime.of(2019, 3, 14, 8, 0).toInstant(ZoneOffset.ofHours((-8)));
+  public static final Instant NOTHING_INSTANCE =
+      LocalDateTime.of(2019, 1, 1, 0, 0).toInstant(ZoneOffset.UTC);
+  public static final Instant SOMETHING_INSTANCE =
+      LocalDateTime.of(2019, 3, 14, 8, 0).toInstant(ZoneOffset.ofHours((-8)));
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -46,14 +44,12 @@ public class ITAssetSnippets {
 
   @Test
   public void testAllAssetsReturned() {
-    assertTrue(0 < snippets.listAssets(null, null).size() );
+    assertTrue(0 < snippets.listAssets(null, null).size());
   }
 
   @Test
   public void testBeforeDateNoAssetsReturned() {
-    assertTrue(
-        snippets.listAssets(null, NOTHING_INSTANCE)
-            .isEmpty());
+    assertTrue(snippets.listAssets(null, NOTHING_INSTANCE).isEmpty());
   }
 
   @Test
@@ -63,13 +59,15 @@ public class ITAssetSnippets {
 
   @Test
   public void testListAssetsWithFilterAndInstance() {
-    assertTrue(3 >= snippets.listAssets(AssetSnippets.PROJECT_ASSET_FILTERS, SOMETHING_INSTANCE).size());
+    assertTrue(
+        3 >= snippets.listAssets(AssetSnippets.PROJECT_ASSET_FILTERS, SOMETHING_INSTANCE).size());
   }
 
   @Test
   public void testChangesReturnsValues() {
-    ImmutableList<ListAssetsResult> result =  snippets.listAssetAndStatusChanges(Duration.ofDays(3), AssetSnippets.PROJECT_ASSET_FILTERS,
-        SOMETHING_INSTANCE);
+    ImmutableList<ListAssetsResult> result =
+        snippets.listAssetAndStatusChanges(
+            Duration.ofDays(3), AssetSnippets.PROJECT_ASSET_FILTERS, SOMETHING_INSTANCE);
     assertTrue("Result: " + result.toString(), result.toString().contains("ADDED"));
     assertTrue(3 >= result.size());
   }
@@ -82,6 +80,4 @@ public class ITAssetSnippets {
   private static String getOrganizationId() {
     return System.getenv("GCLOUD_ORGANIZATION");
   }
-
-
 }
