@@ -22,6 +22,7 @@ import com.google.cloud.firestore.annotation.IgnoreExtraProperties;
 import com.google.cloud.firestore.annotation.PropertyName;
 import com.google.cloud.firestore.annotation.ServerTimestamp;
 import com.google.cloud.firestore.annotation.ThrowOnExtraProperties;
+import com.google.firestore.v1.Value;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -166,7 +167,8 @@ class CustomClassMapper {
         || o instanceof GeoPoint
         || o instanceof Blob
         || o instanceof DocumentReference
-        || o instanceof FieldValue) {
+        || o instanceof FieldValue
+        || o instanceof Value) {
       return o;
     } else {
       Class<T> clazz = (Class<T>) o.getClass();
