@@ -27,12 +27,20 @@
       <artifactId>google-cloud-core-http</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-datastore-v1</artifactId>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-core-grpc</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1-proto-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-datastore-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-datastore-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -59,6 +67,14 @@
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Need testing utility classes for generated gRPC clients tests -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
   </dependencies>

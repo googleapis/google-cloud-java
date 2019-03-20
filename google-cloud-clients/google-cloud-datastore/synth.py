@@ -31,8 +31,10 @@ for version in versions:
       config_path=config_pattern.format(version=version),
       artman_output_name='')
 
-  # Datastore only generates protos
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', f'src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
   s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
 
   java.format_code('./src')
   java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+  java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')

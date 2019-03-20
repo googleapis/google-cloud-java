@@ -72,6 +72,7 @@ grpc-google-cloud-container-v1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-containeranalysis-v1beta1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-dataproc-v1beta2:0.48.0:0.48.1-SNAPSHOT
+grpc-google-cloud-datastore-v1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-dialogflow-v2:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-dialogflow-v2beta1:0.48.0:0.48.1-SNAPSHOT
 grpc-google-cloud-dlp-v2:0.48.0:0.48.1-SNAPSHOT

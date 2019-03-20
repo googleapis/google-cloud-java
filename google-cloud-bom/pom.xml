@@ -380,6 +380,11 @@
         <version>0.48.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-datastore-v1</artifactId>
+        <version>0.48.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastore-v1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp</artifactId>
         <version>0.83.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
