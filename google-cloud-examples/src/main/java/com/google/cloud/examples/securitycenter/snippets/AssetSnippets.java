@@ -91,10 +91,10 @@ public class AssetSnippets {
 
     // Query for all currently existing assets
     System.out.println("All Assets: " + listAssets(null, null));
-    // Query for all firewall rules with open HTTP ports as of now.
+    // Query for all projects as of now.
     System.out.println("Project Assets (now): " + listAssets(
         PROJECT_ASSET_FILTERS, null));
-    // Query for all firewall rules with open HTTP open HTTP ports as of a day ago.
+    // Query for all projects as of a day ago.
     System.out.println("Open HTTP Firewall Rules (1 day ago): " + listAssets(
         PROJECT_ASSET_FILTERS,
         Instant.now().minus(Duration.ofDays(1))));
