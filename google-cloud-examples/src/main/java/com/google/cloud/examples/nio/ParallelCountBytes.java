@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit;
  * NIO reads. It prints a MD5 hash and reports how long it took.
  *
  * <p>See the <a
- * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * href="https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  *
  * <pre>{@code target/appassembler/bin/ParallelCountBytes <file>}</pre>

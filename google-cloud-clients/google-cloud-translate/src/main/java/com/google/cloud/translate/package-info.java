@@ -24,7 +24,7 @@
  * com.google.cloud.ServiceOptions.Builder#setCredentials setCredentials} to set credentials, or
  * {@link com.google.cloud.translate.TranslateOptions.Builder#setApiKey(java.lang.String)} to set an
  * API key. For the complete source code see <a
- * href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java">
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java">
  * DetectLanguageAndTranslate.java</a>.
  *
  * <pre>
