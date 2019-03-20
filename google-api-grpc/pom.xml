@@ -694,6 +694,16 @@
         <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
         <version>0.10.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-iamcredentials-v1:current}-->
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
+        <version>0.0.1-beta-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-talent-v4beta1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
+        <version>0.0.1-beta-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-talent-v4beta1:current}-->
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -735,6 +745,7 @@
     <module>grpc-google-cloud-speech-v1</module>
     <module>grpc-google-cloud-speech-v1beta1</module>
     <module>grpc-google-cloud-speech-v1p1beta1</module>
+    <module>grpc-google-cloud-talent-v4beta1</module>
     <module>grpc-google-cloud-tasks-v2beta2</module>
     <module>grpc-google-cloud-tasks-v2beta3</module>
     <module>grpc-google-cloud-texttospeech-v1</module>
@@ -792,6 +803,7 @@
     <module>proto-google-cloud-speech-v1</module>
     <module>proto-google-cloud-speech-v1beta1</module>
     <module>proto-google-cloud-speech-v1p1beta1</module>
+    <module>proto-google-cloud-talent-v4beta1</module>
     <module>proto-google-cloud-tasks-v2beta2</module>
     <module>proto-google-cloud-tasks-v2beta3</module>
     <module>proto-google-cloud-texttospeech-v1</module>
