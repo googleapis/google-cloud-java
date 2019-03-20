@@ -16,33 +16,23 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFunction;
-import com.google.cloud.ServiceOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.MustBeClosed;
 import com.google.pubsub.v1.PubsubMessage;
-
 import io.opencensus.common.Scope;
-import io.opencensus.tags.propagation.TagContextBinarySerializer;
-import io.opencensus.tags.propagation.TagContextDeserializationException;
-import io.opencensus.tags.propagation.TagContextSerializationException;
 import io.opencensus.tags.TagContext;
 import io.opencensus.tags.Tagger;
 import io.opencensus.tags.Tags;
+import io.opencensus.tags.propagation.TagContextBinarySerializer;
+import io.opencensus.trace.Link;
+import io.opencensus.trace.SpanContext;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
 import io.opencensus.trace.propagation.SpanContextParseException;
 import io.opencensus.trace.propagation.TextFormat;
 import io.opencensus.trace.propagation.TextFormat.Getter;
 import io.opencensus.trace.propagation.TextFormat.Setter;
-import io.opencensus.trace.Link;
-import io.opencensus.trace.Span;
-import io.opencensus.trace.SpanId;
-import io.opencensus.trace.SpanContext;
-import io.opencensus.trace.TraceId;
-import io.opencensus.trace.TraceOptions;
-import io.opencensus.trace.Tracer;
-import io.opencensus.trace.Tracing;
 import io.opencensus.trace.samplers.Samplers;
-
-import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -90,21 +80,23 @@ public class OpenCensusUtil {
         }
       };
 
-  private static final Setter<StringBuilder> setter = new Setter<StringBuilder>() {
-      @Override
-      public void put(StringBuilder carrier, String key, String value) {
-        if (key.equals(TRACEPARENT_KEY)) {
-          carrier.append(value);
+  private static final Setter<StringBuilder> setter =
+      new Setter<StringBuilder>() {
+        @Override
+        public void put(StringBuilder carrier, String key, String value) {
+          if (key.equals(TRACEPARENT_KEY)) {
+            carrier.append(value);
+          }
         }
-      }
-    };
+      };
 
-  private static final Getter<String> getter = new Getter<String>() {
-      @Override
-      public String get(String carrier, String key) {
-        return key.equals(TRACEPARENT_KEY) ? carrier : null;
-      }
-    };
+  private static final Getter<String> getter =
+      new Getter<String>() {
+        @Override
+        public String get(String carrier, String key) {
+          return key.equals(TRACEPARENT_KEY) ? carrier : null;
+        }
+      };
 
   @VisibleForTesting
   static String encodeSpanContext(SpanContext ctxt) {
@@ -139,17 +131,15 @@ public class OpenCensusUtil {
   private static void addParentLink(String encodedParentSpanContext) {
     try {
       SpanContext ctxt = traceContextTextFormat.extract(encodedParentSpanContext, getter);
-      tracer.getCurrentSpan().addLink(Link.fromSpanContext(
-          ctxt,
-          Link.Type.PARENT_LINKED_SPAN));
+      tracer.getCurrentSpan().addLink(Link.fromSpanContext(ctxt, Link.Type.PARENT_LINKED_SPAN));
     } catch (SpanContextParseException exn) {
       logger.log(Level.INFO, "OpenCensus: Trace Context Deserialization Exception: " + exn);
     }
   }
 
   /**
-   * Wrapper class for {@link MessageReceiver} that decodes any received trace and tag contexts
-   * and puts them in scope.
+   * Wrapper class for {@link MessageReceiver} that decodes any received trace and tag contexts and
+   * puts them in scope.
    */
   public static class OpenCensusMessageReceiver implements MessageReceiver {
     private final MessageReceiver receiver;

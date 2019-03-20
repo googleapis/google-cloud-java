@@ -20,14 +20,11 @@ import static com.google.cloud.pubsub.v1.OpenCensusUtil.MESSAGE_RECEIVER_SPAN_NA
 import static com.google.cloud.pubsub.v1.OpenCensusUtil.OPEN_CENSUS_MESSAGE_TRANSFORM;
 import static com.google.cloud.pubsub.v1.OpenCensusUtil.TAG_CONTEXT_KEY;
 import static com.google.cloud.pubsub.v1.OpenCensusUtil.TRACE_CONTEXT_KEY;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
-
 import io.opencensus.common.Scope;
 import io.opencensus.tags.TagContext;
 import io.opencensus.tags.TagKey;
@@ -41,12 +38,9 @@ import io.opencensus.trace.Tracing;
 import io.opencensus.trace.export.RunningSpanStore;
 import io.opencensus.trace.export.RunningSpanStore.Filter;
 import io.opencensus.trace.export.SpanData;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.junit.Test;
-import org.junit.rules.TestName;
 
 /** Tests for {@link OpenCensusUtil}. */
 public class OpenCensusUtilTest {
@@ -62,8 +56,7 @@ public class OpenCensusUtilTest {
   public void testOpenCensusMessageReceiver() throws Exception {
     PubsubMessage message;
     SpanContext publisherContext;
-    try (
-        Scope traceScope = OpenCensusUtil.createScopedSpan(TEST_PARENT_LINK_NAME);
+    try (Scope traceScope = OpenCensusUtil.createScopedSpan(TEST_PARENT_LINK_NAME);
         Scope tagScope = createScopeTags()) {
       message = OPEN_CENSUS_MESSAGE_TRANSFORM.apply(generatePubsubMessage(500));
       publisherContext = tracer.getCurrentSpan().getContext();
@@ -78,8 +71,7 @@ public class OpenCensusUtilTest {
   // context is not added as an attribute.
   @Test
   public void testOpenCensusMessageTransformer() {
-    try (
-        Scope traceScope = OpenCensusUtil.createScopedSpan("PublisherTestRoot");
+    try (Scope traceScope = OpenCensusUtil.createScopedSpan("PublisherTestRoot");
         Scope tagScope = createScopeTags()) {
       PubsubMessage originalMessage = generatePubsubMessage(500);
       assertEquals("", originalMessage.getAttributesOrDefault(TRACE_CONTEXT_KEY, ""));
@@ -88,10 +80,9 @@ public class OpenCensusUtilTest {
       PubsubMessage attributedMessage = OPEN_CENSUS_MESSAGE_TRANSFORM.apply(originalMessage);
       String encodedSpanContext =
           OpenCensusUtil.encodeSpanContext(tracer.getCurrentSpan().getContext());
-      assertNotEquals("",  encodedSpanContext);
+      assertNotEquals("", encodedSpanContext);
       assertEquals(
-          encodedSpanContext,
-          attributedMessage.getAttributesOrDefault(TRACE_CONTEXT_KEY, ""));
+          encodedSpanContext, attributedMessage.getAttributesOrDefault(TRACE_CONTEXT_KEY, ""));
       assertEquals("", attributedMessage.getAttributesOrDefault(TAG_CONTEXT_KEY, ""));
     }
   }
@@ -110,12 +101,10 @@ public class OpenCensusUtilTest {
 
   private static final class NoOpAckReplyConsumer implements AckReplyConsumer {
     @Override
-    public void ack() {
-    }
+    public void ack() {}
 
     @Override
-    public void nack() {
-    }
+    public void nack() {}
   }
 
   private static final class TestMessageReceiver implements MessageReceiver {

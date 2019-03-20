@@ -533,7 +533,7 @@ public class Publisher {
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
     ApiFunction<PubsubMessage, PubsubMessage> messageTransform =
-        new ApiFunction<PubsubMessage, PubsubMessage> () {
+        new ApiFunction<PubsubMessage, PubsubMessage>() {
           @Override
           public PubsubMessage apply(PubsubMessage input) {
             return input;
