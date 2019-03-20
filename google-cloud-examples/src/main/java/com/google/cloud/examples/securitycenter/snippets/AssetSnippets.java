@@ -95,7 +95,7 @@ public class AssetSnippets {
     System.out.println("Project Assets (now): " + listAssets(
         PROJECT_ASSET_FILTERS, null));
     // Query for all projects as of a day ago.
-    System.out.println("Open HTTP Firewall Rules (1 day ago): " + listAssets(
+    System.out.println("Project Assets (1 day ago): " + listAssets(
         PROJECT_ASSET_FILTERS,
         Instant.now().minus(Duration.ofDays(1))));
     // [END demo_list_assets]
