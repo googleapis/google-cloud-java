@@ -375,6 +375,7 @@ public class Publisher {
   }
 
   /** Creates and returns a snapshot of the statistics of this publisher. */
+  @BetaApi
   public PublisherStats getPublisherStats() {
     return PublisherStats.newBuilder()
         .setAckedMessages(ackedMessages.get())
