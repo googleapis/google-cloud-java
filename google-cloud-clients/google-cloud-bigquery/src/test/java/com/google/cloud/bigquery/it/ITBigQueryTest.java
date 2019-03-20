@@ -626,7 +626,8 @@ public class ITBigQueryTest {
       Iterator<Table> tableIterator = tables.getValues().iterator();
       while (tableIterator.hasNext() && !found) {
         StandardTableDefinition standardTableDefinition = tableIterator.next().getDefinition();
-        if (standardTableDefinition.getTimePartitioning().getType().equals(Type.DAY)
+        if (standardTableDefinition.getTimePartitioning() != null
+            && standardTableDefinition.getTimePartitioning().getType().equals(Type.DAY)
             && standardTableDefinition
                 .getTimePartitioning()
                 .getExpirationMs()
