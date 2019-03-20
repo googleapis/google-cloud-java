@@ -16,12 +16,11 @@
 
 package com.google.cloud.storage;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import com.google.common.collect.ImmutableMap;
 import com.google.common.hash.Hashing;
 import com.google.common.net.UrlEscapers;
-
-import static com.google.common.base.Preconditions.checkArgument;
-
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -147,7 +146,7 @@ public class SignatureInfo {
     canonicalRequest.append(constructV4QueryString()).append(COMPONENT_SEPARATOR);
 
     canonicalRequest
-        .append(serializer.serialize(canonicalizedExtensionHeaders, true))
+        .append(serializer.serialize(canonicalizedExtensionHeaders))
         .append(COMPONENT_SEPARATOR);
 
     canonicalRequest

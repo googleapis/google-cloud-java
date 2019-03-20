@@ -31,12 +31,10 @@ import static org.junit.Assume.assumeTrue;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.apache.ApacheHttpTransport;
 import com.google.api.client.util.DateTime;
-import com.google.api.core.ApiClock;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
@@ -85,11 +83,6 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.IAMPolicyGrpc;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -102,17 +95,12 @@ import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.MetadataUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.security.Key;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -124,7 +112,6 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
@@ -187,7 +174,7 @@ public class ITStorageTest {
             .build());
 
     // Prepare KMS KeyRing for CMEK tests
-       prepareKmsKeys();
+    prepareKmsKeys();
   }
 
   @AfterClass
@@ -212,22 +199,6 @@ public class ITStorageTest {
       PoolingHttpClientConnectionManager manager = new PoolingHttpClientConnectionManager();
       manager.setMaxTotal(1);
       return new ApacheHttpTransport(HttpClients.createMinimal(manager));
-    }
-  }
-
-  private static class FakeClock implements ApiClock {
-    private final AtomicLong currentNanoTime;
-
-    public FakeClock(long initialNanoTime) {
-      this.currentNanoTime = new AtomicLong(initialNanoTime);
-    }
-
-    public long nanoTime() {
-      return this.currentNanoTime.get();
-    }
-
-    public long millisTime() {
-      return TimeUnit.MILLISECONDS.convert(this.nanoTime(), TimeUnit.NANOSECONDS);
     }
   }
 
@@ -1851,82 +1822,6 @@ public class ITStorageTest {
     try (InputStream responseStream = connection.getInputStream()) {
       assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
       assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
-    }
-  }
-
-  public class TestCase {
-    String description;
-    String bucket;
-    String object;
-    String method;
-    String expiration;
-    String timestamp;
-    String expectedUrl;
-    JsonObject headers;
-
-    public String toString() {
-      return description;
-    }
-  }
-
-  @Test
-  public void testV4UrlSigning() throws Exception {
-    Storage dummyAccountStorage =
-        remoteStorageHelper
-            .getOptions()
-            .toBuilder()
-            .setCredentials(
-                ServiceAccountCredentials.fromStream(
-                    new FileInputStream(
-                        new File("src/test/resources/URLSignerV4TestAccount.json"))))
-            .build()
-            .getService();
-
-    Gson gson = new GsonBuilder().create();
-
-    String testCaseJson =
-        new String(Files.readAllBytes(Paths.get("src/test/resources/URLSignerV4TestData.json")));
-
-    JsonArray testCases = gson.fromJson(testCaseJson, JsonArray.class);
-
-    for (JsonElement testCaseElement : testCases) {
-      TestCase testCase = gson.fromJson(testCaseElement, TestCase.class);
-
-      dummyAccountStorage =
-          dummyAccountStorage
-              .getOptions()
-              .toBuilder()
-              .setClock(
-                  new FakeClock(
-                      TimeUnit.NANOSECONDS.convert(
-                          new SimpleDateFormat("yyyyMMdd'T'hhmmss'Z'")
-                              .parse(testCase.timestamp)
-                              .getTime(),
-                          TimeUnit.MILLISECONDS)))
-              .build()
-              .getService();
-
-      BlobInfo blob = BlobInfo.newBuilder(testCase.bucket, testCase.object).build();
-
-      Map<String, String> headers = new HashMap<>();
-      if (testCase.headers != null) {
-        for (Map.Entry<String, JsonElement> entry : testCase.headers.entrySet()) {
-          JsonArray value = entry.getValue().getAsJsonArray();
-          headers.put(entry.getKey(), value.get(0).getAsString());
-        }
-      }
-
-      assertEquals(
-          testCase.expectedUrl,
-          dummyAccountStorage
-              .signUrl(
-                  blob,
-                  Long.valueOf(testCase.expiration),
-                  TimeUnit.MILLISECONDS,
-                  Storage.SignUrlOption.httpMethod(HttpMethod.valueOf(testCase.method)),
-                  Storage.SignUrlOption.withExtHeaders(headers),
-                  Storage.SignUrlOption.withV4Signature())
-              .toString());
     }
   }
 

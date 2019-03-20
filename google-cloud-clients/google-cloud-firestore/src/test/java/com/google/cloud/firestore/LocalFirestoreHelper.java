@@ -52,6 +52,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.NullValue;
 import com.google.type.LatLng;
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -144,6 +145,39 @@ public final class LocalFirestoreHelper {
     class Inner {
 
       @com.google.cloud.firestore.annotation.ServerTimestamp public Date bar;
+    }
+  }
+
+  public static class InvalidPOJO {
+    @Nullable BigInteger bigIntegerValue = null;
+    @Nullable Byte byteValue = null;
+    @Nullable Short shortValue = null;
+
+    @Nullable
+    public BigInteger getBigIntegerValue() {
+      return bigIntegerValue;
+    }
+
+    public void setBigIntegerValue(@Nullable BigInteger bigIntegerValue) {
+      this.bigIntegerValue = bigIntegerValue;
+    }
+
+    @Nullable
+    public Byte getByteValue() {
+      return byteValue;
+    }
+
+    public void setByteValue(@Nullable Byte byteValue) {
+      this.byteValue = byteValue;
+    }
+
+    @Nullable
+    public Short getShortValue() {
+      return shortValue;
+    }
+
+    public void setShortValue(@Nullable Short shortValue) {
+      this.shortValue = shortValue;
     }
   }
 

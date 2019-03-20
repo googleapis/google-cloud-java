@@ -34,7 +34,7 @@ public class CanonicalExtensionHeadersSerializer {
   private static final char HEADER_SEPARATOR = ':';
   private static final char HEADER_NAME_SEPARATOR = ';';
 
-  public StringBuilder serialize(Map<String, String> canonicalizedExtensionHeaders, boolean isV4) {
+  public StringBuilder serialize(Map<String, String> canonicalizedExtensionHeaders) {
 
     StringBuilder serializedHeaders = new StringBuilder();
 
@@ -42,7 +42,7 @@ public class CanonicalExtensionHeadersSerializer {
       return serializedHeaders;
     }
 
-    Map<String, String> lowercaseHeaders = getLowercaseHeaders(canonicalizedExtensionHeaders, isV4);
+    Map<String, String> lowercaseHeaders = getLowercaseHeaders(canonicalizedExtensionHeaders);
 
     // Sort all custom headers by header name using a lexicographical sort by code point value.
     List<String> sortedHeaderNames = new ArrayList<>(lowercaseHeaders.keySet());
@@ -68,18 +68,13 @@ public class CanonicalExtensionHeadersSerializer {
     return serializedHeaders;
   }
 
-  public StringBuilder serialize(Map<String, String> canonicalizedExtensionHeaders) {
-    return serialize(canonicalizedExtensionHeaders, false);
-  }
-
-  public StringBuilder serializeHeaderNames(
-      Map<String, String> canonicalizedExtensionHeaders, boolean isV4) {
+  public StringBuilder serializeHeaderNames(Map<String, String> canonicalizedExtensionHeaders) {
     StringBuilder serializedHeaders = new StringBuilder();
 
     if (canonicalizedExtensionHeaders == null || canonicalizedExtensionHeaders.isEmpty()) {
       return serializedHeaders;
     }
-    Map<String, String> lowercaseHeaders = getLowercaseHeaders(canonicalizedExtensionHeaders, isV4);
+    Map<String, String> lowercaseHeaders = getLowercaseHeaders(canonicalizedExtensionHeaders);
 
     List<String> sortedHeaderNames = new ArrayList<>(lowercaseHeaders.keySet());
     Collections.sort(sortedHeaderNames);
@@ -93,12 +88,8 @@ public class CanonicalExtensionHeadersSerializer {
     return serializedHeaders;
   }
 
-  public StringBuilder serializeHeaderNames(Map<String, String> canonicalizedExtentionHeaders) {
-    return serializeHeaderNames(canonicalizedExtentionHeaders, true);
-  }
-
   private Map<String, String> getLowercaseHeaders(
-      Map<String, String> canonicalizedExtensionHeaders, boolean isV4) {
+      Map<String, String> canonicalizedExtensionHeaders) {
     // Make all custom header names lowercase.
     Map<String, String> lowercaseHeaders = new HashMap<>();
     for (String headerName : new ArrayList<>(canonicalizedExtensionHeaders.keySet())) {
@@ -107,8 +98,7 @@ public class CanonicalExtensionHeadersSerializer {
 
       // If present, remove the x-goog-encryption-key and x-goog-encryption-key-sha256 headers.
       if ("x-goog-encryption-key".equals(lowercaseHeaderName)
-          || "x-goog-encryption-key-sha256".equals(lowercaseHeaderName)
-          || (isV4 && "x-goog-encryption-algorithm".equals(lowercaseHeaderName))) {
+          || "x-goog-encryption-key-sha256".equals(lowercaseHeaderName)) {
 
         continue;
       }
