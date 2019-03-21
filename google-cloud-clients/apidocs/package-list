@@ -130,6 +130,8 @@ com.google.cloud.storage.contrib.nio.testing
 com.google.cloud.storage.spi
 com.google.cloud.storage.spi.v1
 com.google.cloud.storage.testing
+com.google.cloud.talent.v4beta1
+com.google.cloud.talent.v4beta1.stub
 com.google.cloud.tasks.v2beta2
 com.google.cloud.tasks.v2beta2.stub
 com.google.cloud.tasks.v2beta3
@@ -157,6 +159,8 @@ com.google.cloud.videointelligence.v1p1beta1
 com.google.cloud.videointelligence.v1p1beta1.stub
 com.google.cloud.videointelligence.v1p2beta1
 com.google.cloud.videointelligence.v1p2beta1.stub
+com.google.cloud.videointelligence.v1p3beta1
+com.google.cloud.videointelligence.v1p3beta1.stub
 com.google.cloud.vision.v1
 com.google.cloud.vision.v1.stub
 com.google.cloud.vision.v1p1beta1

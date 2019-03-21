@@ -24,6 +24,7 @@ com.google.cloud.securitycenter.v1beta1
 com.google.cloud.speech.v1
 com.google.cloud.speech.v1beta1
 com.google.cloud.speech.v1p1beta1
+com.google.cloud.talent.v4beta1
 com.google.cloud.tasks.v2beta2
 com.google.cloud.tasks.v2beta3
 com.google.cloud.texttospeech.v1
@@ -33,6 +34,7 @@ com.google.cloud.videointelligence.v1beta1
 com.google.cloud.videointelligence.v1beta2
 com.google.cloud.videointelligence.v1p1beta1
 com.google.cloud.videointelligence.v1p2beta1
+com.google.cloud.videointelligence.v1p3beta1
 com.google.cloud.vision.v1
 com.google.cloud.vision.v1p1beta1
 com.google.cloud.vision.v1p2beta1
