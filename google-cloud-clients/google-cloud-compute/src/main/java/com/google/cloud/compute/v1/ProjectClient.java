@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ProjectStub;
 import com.google.cloud.compute.v1.stub.ProjectStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1692,7 +1693,8 @@ public class ProjectClient implements BackgroundResource {
             public GetXpnResourcesProjectsPagedResponse apply(GetXpnResourcesProjectsPage input) {
               return new GetXpnResourcesProjectsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private GetXpnResourcesProjectsPagedResponse(GetXpnResourcesProjectsPage page) {
@@ -1779,7 +1781,8 @@ public class ProjectClient implements BackgroundResource {
             public ListXpnHostsProjectsPagedResponse apply(ListXpnHostsProjectsPage input) {
               return new ListXpnHostsProjectsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListXpnHostsProjectsPagedResponse(ListXpnHostsProjectsPage page) {

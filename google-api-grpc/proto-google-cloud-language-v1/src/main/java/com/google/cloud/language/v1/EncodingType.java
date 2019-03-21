@@ -45,7 +45,7 @@ public enum EncodingType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoding-dependent information (such as `begin_offset`) is calculated based
-   * on the UTF-16 encoding of the input. Java and Javascript are examples of
+   * on the UTF-16 encoding of the input. Java and JavaScript are examples of
    * languages that use this encoding natively.
    * </pre>
    *
@@ -95,7 +95,7 @@ public enum EncodingType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoding-dependent information (such as `begin_offset`) is calculated based
-   * on the UTF-16 encoding of the input. Java and Javascript are examples of
+   * on the UTF-16 encoding of the input. Java and JavaScript are examples of
    * languages that use this encoding natively.
    * </pre>
    *

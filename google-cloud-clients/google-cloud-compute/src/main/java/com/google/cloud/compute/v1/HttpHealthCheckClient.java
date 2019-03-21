@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.HttpHealthCheckStub;
 import com.google.cloud.compute.v1.stub.HttpHealthCheckStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -936,7 +937,8 @@ public class HttpHealthCheckClient implements BackgroundResource {
             public ListHttpHealthChecksPagedResponse apply(ListHttpHealthChecksPage input) {
               return new ListHttpHealthChecksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListHttpHealthChecksPagedResponse(ListHttpHealthChecksPage page) {

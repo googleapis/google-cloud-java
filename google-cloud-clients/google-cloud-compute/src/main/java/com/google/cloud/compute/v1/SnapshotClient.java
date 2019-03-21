@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.SnapshotStub;
 import com.google.cloud.compute.v1.stub.SnapshotStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -999,7 +1000,8 @@ public class SnapshotClient implements BackgroundResource {
             public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
               return new ListSnapshotsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSnapshotsPagedResponse(ListSnapshotsPage page) {

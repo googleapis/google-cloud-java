@@ -71,6 +71,8 @@ import org.junit.rules.TestName;
 
 public class ITSystemTest {
 
+  private static final double DOUBLE_EPSILON = 0.000001;
+
   private final Map<String, Object> SINGLE_FIELD_MAP = LocalFirestoreHelper.SINGLE_FIELD_MAP;
   private final Map<String, Object> ALL_SUPPORTED_TYPES_MAP =
       LocalFirestoreHelper.ALL_SUPPORTED_TYPES_MAP;
@@ -976,5 +978,23 @@ public class ITSystemTest {
     doc2.set(Collections.singletonMap("foo", (Object) FieldValue.arrayRemove("baz"))).get();
 
     assertTrue(containsQuery.get().get().isEmpty());
+  }
+
+  @Test
+  public void integerIncrement() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("sum", (Object) 1L)).get();
+    docRef.update("sum", FieldValue.increment(2)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(3L, docSnap.get("sum"));
+  }
+
+  @Test
+  public void floatIncrement() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("sum", (Object) 1.1)).get();
+    docRef.update("sum", FieldValue.increment(2.2)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(3.3, (Double) docSnap.get("sum"), DOUBLE_EPSILON);
   }
 }

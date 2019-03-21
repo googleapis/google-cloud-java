@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.FirewallStub;
 import com.google.cloud.compute.v1.stub.FirewallStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -905,7 +906,8 @@ public class FirewallClient implements BackgroundResource {
             public ListFirewallsPagedResponse apply(ListFirewallsPage input) {
               return new ListFirewallsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListFirewallsPagedResponse(ListFirewallsPage page) {

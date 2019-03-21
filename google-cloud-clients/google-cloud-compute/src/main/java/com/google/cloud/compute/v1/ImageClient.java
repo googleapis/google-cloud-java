@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ImageStub;
 import com.google.cloud.compute.v1.stub.ImageStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1321,7 +1322,8 @@ public class ImageClient implements BackgroundResource {
             public ListImagesPagedResponse apply(ListImagesPage input) {
               return new ListImagesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListImagesPagedResponse(ListImagesPage page) {

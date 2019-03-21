@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.redis.v1.stub.CloudRedisStub;
 import com.google.cloud.redis.v1.stub.CloudRedisStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -1400,7 +1401,8 @@ public class CloudRedisClient implements BackgroundResource {
             public ListInstancesPagedResponse apply(ListInstancesPage input) {
               return new ListInstancesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListInstancesPagedResponse(ListInstancesPage page) {

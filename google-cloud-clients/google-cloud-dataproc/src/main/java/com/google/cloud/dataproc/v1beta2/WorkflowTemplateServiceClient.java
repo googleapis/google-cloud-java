@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.stub.WorkflowTemplateServiceStub;
 import com.google.cloud.dataproc.v1beta2.stub.WorkflowTemplateServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -1177,7 +1178,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
             public ListWorkflowTemplatesPagedResponse apply(ListWorkflowTemplatesPage input) {
               return new ListWorkflowTemplatesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListWorkflowTemplatesPagedResponse(ListWorkflowTemplatesPage page) {

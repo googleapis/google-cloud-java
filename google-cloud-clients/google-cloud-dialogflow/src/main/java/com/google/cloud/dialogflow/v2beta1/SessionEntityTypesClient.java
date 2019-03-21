@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.stub.SessionEntityTypesStub;
 import com.google.cloud.dialogflow.v2beta1.stub.SessionEntityTypesStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -754,7 +755,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
             public ListSessionEntityTypesPagedResponse apply(ListSessionEntityTypesPage input) {
               return new ListSessionEntityTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSessionEntityTypesPagedResponse(ListSessionEntityTypesPage page) {

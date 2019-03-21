@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.LoggingServiceV2Stub;
 import com.google.cloud.logging.v2.stub.LoggingServiceV2StubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -866,7 +867,8 @@ public class LoggingClient implements BackgroundResource {
             public ListLogEntriesPagedResponse apply(ListLogEntriesPage input) {
               return new ListLogEntriesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListLogEntriesPagedResponse(ListLogEntriesPage page) {
@@ -954,7 +956,8 @@ public class LoggingClient implements BackgroundResource {
                 ListMonitoredResourceDescriptorsPage input) {
               return new ListMonitoredResourceDescriptorsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListMonitoredResourceDescriptorsPagedResponse(
@@ -1047,7 +1050,8 @@ public class LoggingClient implements BackgroundResource {
             public ListLogsPagedResponse apply(ListLogsPage input) {
               return new ListLogsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListLogsPagedResponse(ListLogsPage page) {

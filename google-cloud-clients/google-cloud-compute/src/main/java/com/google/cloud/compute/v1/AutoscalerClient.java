@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.AutoscalerStub;
 import com.google.cloud.compute.v1.stub.AutoscalerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1096,7 +1097,8 @@ public class AutoscalerClient implements BackgroundResource {
                 AggregatedListAutoscalersPage input) {
               return new AggregatedListAutoscalersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListAutoscalersPagedResponse(AggregatedListAutoscalersPage page) {
@@ -1192,7 +1194,8 @@ public class AutoscalerClient implements BackgroundResource {
             public ListAutoscalersPagedResponse apply(ListAutoscalersPage input) {
               return new ListAutoscalersPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAutoscalersPagedResponse(ListAutoscalersPage page) {

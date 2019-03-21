@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2Stub;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2StubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
@@ -1490,7 +1491,8 @@ public class ConfigClient implements BackgroundResource {
             public ListSinksPagedResponse apply(ListSinksPage input) {
               return new ListSinksPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListSinksPagedResponse(ListSinksPage page) {
@@ -1569,7 +1571,8 @@ public class ConfigClient implements BackgroundResource {
             public ListExclusionsPagedResponse apply(ListExclusionsPage input) {
               return new ListExclusionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListExclusionsPagedResponse(ListExclusionsPage page) {

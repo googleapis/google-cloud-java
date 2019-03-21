@@ -68,7 +68,7 @@ public final class VpnTunnelsScopedList implements ApiMessage {
     return null;
   }
 
-  /** A list of vpn tunnels contained in this scope. */
+  /** A list of VPN tunnels contained in this scope. */
   public List<VpnTunnel> getVpnTunnelsList() {
     return vpnTunnels;
   }
@@ -122,12 +122,12 @@ public final class VpnTunnelsScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
-    /** A list of vpn tunnels contained in this scope. */
+    /** A list of VPN tunnels contained in this scope. */
     public List<VpnTunnel> getVpnTunnelsList() {
       return vpnTunnels;
     }
 
-    /** A list of vpn tunnels contained in this scope. */
+    /** A list of VPN tunnels contained in this scope. */
     public Builder addAllVpnTunnels(List<VpnTunnel> vpnTunnels) {
       if (this.vpnTunnels == null) {
         this.vpnTunnels = new LinkedList<>();
@@ -136,7 +136,7 @@ public final class VpnTunnelsScopedList implements ApiMessage {
       return this;
     }
 
-    /** A list of vpn tunnels contained in this scope. */
+    /** A list of VPN tunnels contained in this scope. */
     public Builder addVpnTunnels(VpnTunnel vpnTunnels) {
       if (this.vpnTunnels == null) {
         this.vpnTunnels = new LinkedList<>();

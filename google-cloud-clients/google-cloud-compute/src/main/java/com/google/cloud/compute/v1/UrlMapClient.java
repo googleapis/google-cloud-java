@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.UrlMapStub;
 import com.google.cloud.compute.v1.stub.UrlMapStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1137,7 +1138,8 @@ public class UrlMapClient implements BackgroundResource {
             public ListUrlMapsPagedResponse apply(ListUrlMapsPage input) {
               return new ListUrlMapsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListUrlMapsPagedResponse(ListUrlMapsPage page) {

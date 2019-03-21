@@ -78,10 +78,14 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
+@BetaApi
 public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-language")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentSettings;
@@ -246,9 +250,9 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(20000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeout(Duration.ofMillis(20000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);

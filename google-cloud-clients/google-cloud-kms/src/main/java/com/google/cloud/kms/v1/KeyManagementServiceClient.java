@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.kms.v1.stub.KeyManagementServiceStub;
 import com.google.cloud.kms.v1.stub.KeyManagementServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -2852,7 +2853,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListKeyRingsPagedResponse apply(ListKeyRingsPage input) {
               return new ListKeyRingsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListKeyRingsPagedResponse(ListKeyRingsPage page) {
@@ -2931,7 +2933,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListCryptoKeysPagedResponse apply(ListCryptoKeysPage input) {
               return new ListCryptoKeysPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListCryptoKeysPagedResponse(ListCryptoKeysPage page) {
@@ -3012,7 +3015,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListCryptoKeyVersionsPagedResponse apply(ListCryptoKeyVersionsPage input) {
               return new ListCryptoKeyVersionsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListCryptoKeyVersionsPagedResponse(ListCryptoKeyVersionsPage page) {

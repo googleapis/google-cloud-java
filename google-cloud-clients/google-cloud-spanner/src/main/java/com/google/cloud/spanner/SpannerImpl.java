@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerBatchUpdateException;
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExceptionForCancellation;
 import static com.google.common.base.Preconditions.checkArgument;
@@ -69,6 +70,7 @@ import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
 import com.google.spanner.v1.PartialResultSet;
@@ -1080,6 +1082,36 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       return builder;
     }
 
+    ExecuteBatchDmlRequest.Builder getExecuteBatchDmlRequestBuilder(
+        Iterable<Statement> statements) {
+      ExecuteBatchDmlRequest.Builder builder =
+          ExecuteBatchDmlRequest.newBuilder().setSession(session.name);
+      int idx = 0;
+      for (Statement stmt : statements) {
+        builder.addStatementsBuilder();
+        builder.getStatementsBuilder(idx).setSql(stmt.getSql());
+        Map<String, Value> stmtParameters = stmt.getParameters();
+        if (!stmtParameters.isEmpty()) {
+          com.google.protobuf.Struct.Builder paramsBuilder =
+              builder.getStatementsBuilder(idx).getParamsBuilder();
+          for (Map.Entry<String, Value> param : stmtParameters.entrySet()) {
+            paramsBuilder.putFields(param.getKey(), param.getValue().toProto());
+            builder
+                .getStatementsBuilder(idx)
+                .putParamTypes(param.getKey(), param.getValue().getType().toProto());
+          }
+        }
+        idx++;
+      }
+
+      TransactionSelector selector = getTransactionSelector();
+      if (selector != null) {
+        builder.setTransaction(selector);
+      }
+      builder.setSeqno(getSeqNo());
+      return builder;
+    }
+
     ResultSet executeQueryInternalWithOptions(
         Statement statement,
         com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
@@ -1659,6 +1691,32 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       // For standard DML, using the exact row count.
       return resultSet.getStats().getRowCountExact();
+    }
+
+    @Override
+    public long[] batchUpdate(Iterable<Statement> statements) {
+      beforeReadOrQuery();
+      final ExecuteBatchDmlRequest.Builder builder = getExecuteBatchDmlRequestBuilder(statements);
+      com.google.spanner.v1.ExecuteBatchDmlResponse response =
+          runWithRetries(
+              new Callable<com.google.spanner.v1.ExecuteBatchDmlResponse>() {
+                @Override
+                public com.google.spanner.v1.ExecuteBatchDmlResponse call() throws Exception {
+                  return rpc.executeBatchDml(builder.build(), session.options);
+                }
+              });
+      long[] results = new long[response.getResultSetsCount()];
+      for (int i = 0; i < response.getResultSetsCount(); ++i) {
+        results[i] = response.getResultSets(i).getStats().getRowCountExact();
+      }
+
+      if (response.getStatus().getCode() != 0) {
+        throw newSpannerBatchUpdateException(
+            ErrorCode.fromRpcStatus(response.getStatus()),
+            response.getStatus().getMessage(),
+            results);
+      }
+      return results;
     }
   }
 

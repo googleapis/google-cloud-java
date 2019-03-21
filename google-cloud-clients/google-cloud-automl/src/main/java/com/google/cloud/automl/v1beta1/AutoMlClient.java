@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.automl.v1beta1.stub.AutoMlStub;
 import com.google.cloud.automl.v1beta1.stub.AutoMlStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -1882,7 +1883,8 @@ public class AutoMlClient implements BackgroundResource {
             public ListDatasetsPagedResponse apply(ListDatasetsPage input) {
               return new ListDatasetsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListDatasetsPagedResponse(ListDatasetsPage page) {
@@ -1961,7 +1963,8 @@ public class AutoMlClient implements BackgroundResource {
             public ListModelsPagedResponse apply(ListModelsPage input) {
               return new ListModelsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListModelsPagedResponse(ListModelsPage page) {
@@ -2041,7 +2044,8 @@ public class AutoMlClient implements BackgroundResource {
             public ListModelEvaluationsPagedResponse apply(ListModelEvaluationsPage input) {
               return new ListModelEvaluationsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListModelEvaluationsPagedResponse(ListModelEvaluationsPage page) {

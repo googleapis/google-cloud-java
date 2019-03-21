@@ -58,6 +58,7 @@ import com.google.bigtable.admin.v2.UpdateClusterMetadata;
 import com.google.bigtable.admin.v2.UpdateInstanceMetadata;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -2130,7 +2131,8 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
             public ListAppProfilesPagedResponse apply(ListAppProfilesPage input) {
               return new ListAppProfilesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListAppProfilesPagedResponse(ListAppProfilesPage page) {

@@ -111,12 +111,25 @@ public class BigQueryImplTest {
       StandardTableDefinition.of(TABLE_SCHEMA);
   private static final ModelTableDefinition MODEL_TABLE_DEFINITION =
       ModelTableDefinition.newBuilder().build();
+  private static final Long EXPIRATION_MS = 86400000L;
+  private static final Long TABLE_CREATION_TIME = 1546275600000L;
+  private static final TimePartitioning TIME_PARTITIONING =
+      TimePartitioning.of(TimePartitioning.Type.DAY, EXPIRATION_MS);
+  private static final StandardTableDefinition TABLE_DEFINITION_WITH_PARTITIONING =
+      StandardTableDefinition.newBuilder()
+          .setSchema(TABLE_SCHEMA)
+          .setTimePartitioning(TIME_PARTITIONING)
+          .build();
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_DEFINITION);
   private static final TableInfo MODEL_TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, MODEL_TABLE_DEFINITION);
+  private static final TableInfo TABLE_INFO_WITH_PARTITIONS =
+      TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION_WITH_PARTITIONING)
+          .setCreationTime(TABLE_CREATION_TIME)
+          .build();
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, "URI");
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION_WITH_PROJECT =
@@ -717,6 +730,22 @@ public class BigQueryImplTest {
         .andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Table> page = bigquery.listTables(DATASET);
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
+  }
+
+  @Test
+  public void testListTablesReturnedParameters() {
+    bigquery = options.getService();
+    ImmutableList<Table> tableList =
+        ImmutableList.of(
+            new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PARTITIONS)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
+        Tuple.of(CURSOR, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
+    EasyMock.expect(bigqueryRpcMock.listTables(PROJECT, DATASET, TABLE_LIST_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(bigqueryRpcMock);
+    Page<Table> page = bigquery.listTables(DATASET, TABLE_LIST_PAGE_SIZE, TABLE_LIST_PAGE_TOKEN);
     assertEquals(CURSOR, page.getNextPageToken());
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
   }

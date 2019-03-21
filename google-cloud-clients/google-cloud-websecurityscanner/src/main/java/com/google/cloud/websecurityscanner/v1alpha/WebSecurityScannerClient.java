@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.websecurityscanner.v1alpha.stub.WebSecurityScannerStub;
 import com.google.cloud.websecurityscanner.v1alpha.stub.WebSecurityScannerStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -1391,7 +1392,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListScanConfigsPagedResponse apply(ListScanConfigsPage input) {
               return new ListScanConfigsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListScanConfigsPagedResponse(ListScanConfigsPage page) {
@@ -1472,7 +1474,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListScanRunsPagedResponse apply(ListScanRunsPage input) {
               return new ListScanRunsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListScanRunsPagedResponse(ListScanRunsPage page) {
@@ -1551,7 +1554,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListCrawledUrlsPagedResponse apply(ListCrawledUrlsPage input) {
               return new ListCrawledUrlsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListCrawledUrlsPagedResponse(ListCrawledUrlsPage page) {
@@ -1632,7 +1636,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListFindingsPagedResponse apply(ListFindingsPage input) {
               return new ListFindingsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListFindingsPagedResponse(ListFindingsPage page) {

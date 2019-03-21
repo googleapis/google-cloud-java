@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.MachineTypeStub;
 import com.google.cloud.compute.v1.stub.MachineTypeStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -585,7 +586,8 @@ public class MachineTypeClient implements BackgroundResource {
                 AggregatedListMachineTypesPage input) {
               return new AggregatedListMachineTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListMachineTypesPagedResponse(AggregatedListMachineTypesPage page) {
@@ -681,7 +683,8 @@ public class MachineTypeClient implements BackgroundResource {
             public ListMachineTypesPagedResponse apply(ListMachineTypesPage input) {
               return new ListMachineTypesPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListMachineTypesPagedResponse(ListMachineTypesPage page) {

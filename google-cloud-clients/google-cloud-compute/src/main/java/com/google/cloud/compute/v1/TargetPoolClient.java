@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.TargetPoolStub;
 import com.google.cloud.compute.v1.stub.TargetPoolStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -1496,7 +1497,8 @@ public class TargetPoolClient implements BackgroundResource {
                 AggregatedListTargetPoolsPage input) {
               return new AggregatedListTargetPoolsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private AggregatedListTargetPoolsPagedResponse(AggregatedListTargetPoolsPage page) {
@@ -1592,7 +1594,8 @@ public class TargetPoolClient implements BackgroundResource {
             public ListTargetPoolsPagedResponse apply(ListTargetPoolsPage input) {
               return new ListTargetPoolsPagedResponse(input);
             }
-          });
+          },
+          MoreExecutors.directExecutor());
     }
 
     private ListTargetPoolsPagedResponse(ListTargetPoolsPage page) {
