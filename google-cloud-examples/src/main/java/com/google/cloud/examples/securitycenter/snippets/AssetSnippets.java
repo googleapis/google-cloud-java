@@ -141,7 +141,7 @@ public class AssetSnippets {
     final Duration lastMonth = Duration.ofDays(ChronoUnit.DAYS.between(feb, march));
     // Query projects and their state changes over between February 18, 2019 and March 18, 2019.
     System.out.println(
-        "Project Changes between (between Dec 2019 and Jan 2019): "
+        "Project Changes over a month: "
             + listAssetAndStatusChanges(
                 lastMonth,
                 PROJECT_ASSET_FILTERS,
