@@ -25,6 +25,7 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -64,7 +65,7 @@ public class SignatureInfo {
     this.timestamp = builder.timestamp;
 
     if (Storage.SignUrlOption.SignatureVersion.V4.equals(signatureVersion)
-        && !builder.canonicalizedExtensionHeaders.containsKey("host")) {
+        && (!builder.canonicalizedExtensionHeaders.containsKey("host"))) {
       canonicalizedExtensionHeaders =
           new ImmutableMap.Builder<String, String>()
               .putAll(builder.canonicalizedExtensionHeaders)
@@ -112,7 +113,8 @@ public class SignatureInfo {
 
     if (canonicalizedExtensionHeaders != null) {
       payload.append(
-          new CanonicalExtensionHeadersSerializer().serialize(canonicalizedExtensionHeaders));
+          new CanonicalExtensionHeadersSerializer(Storage.SignUrlOption.SignatureVersion.V2)
+              .serialize(canonicalizedExtensionHeaders));
     }
 
     payload.append(canonicalizedResource);
@@ -137,7 +139,8 @@ public class SignatureInfo {
   private String constructV4CanonicalRequestHash() {
     StringBuilder canonicalRequest = new StringBuilder();
 
-    CanonicalExtensionHeadersSerializer serializer = new CanonicalExtensionHeadersSerializer();
+    CanonicalExtensionHeadersSerializer serializer =
+        new CanonicalExtensionHeadersSerializer(Storage.SignUrlOption.SignatureVersion.V4);
 
     canonicalRequest.append(httpVerb.name()).append(COMPONENT_SEPARATOR);
 
@@ -162,7 +165,7 @@ public class SignatureInfo {
 
   public String constructV4QueryString() {
     StringBuilder signedHeaders =
-        new CanonicalExtensionHeadersSerializer()
+        new CanonicalExtensionHeadersSerializer(Storage.SignUrlOption.SignatureVersion.V4)
             .serializeHeaderNames(canonicalizedExtensionHeaders);
 
     StringBuilder queryString = new StringBuilder();
@@ -302,6 +305,10 @@ public class SignatureInfo {
         checkArgument(timestamp > 0, "Timestamp required to use V4 signing");
         checkArgument(
             expiration <= 604800000, "Expiration can't be longer than 7 days to use V4 signing");
+      }
+
+      if (canonicalizedExtensionHeaders == null) {
+        canonicalizedExtensionHeaders = new HashMap<>();
       }
 
       return new SignatureInfo(this);
