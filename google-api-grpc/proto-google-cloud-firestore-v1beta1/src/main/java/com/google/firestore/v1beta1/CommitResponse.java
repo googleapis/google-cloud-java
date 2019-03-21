@@ -7,8 +7,7 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * The response for
- * [Firestore.Commit][google.firestore.v1beta1.Firestore.Commit].
+ * The response for [Firestore.Commit][google.firestore.v1beta1.Firestore.Commit].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.CommitResponse}
@@ -408,8 +407,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response for
-   * [Firestore.Commit][google.firestore.v1beta1.Firestore.Commit].
+   * The response for [Firestore.Commit][google.firestore.v1beta1.Firestore.Commit].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.CommitResponse}
