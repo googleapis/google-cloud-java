@@ -17,7 +17,6 @@
 package com.google.cloud.storage;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.storage.SignatureInfo.Builder;
@@ -76,13 +75,13 @@ public class SignatureInfoTest {
 
     builder.setSignatureVersion(Storage.SignUrlOption.SignatureVersion.V4);
     builder.setAccountEmail("me@google.com");
-    builder.setTimestamp(100L);
+    builder.setTimestamp(1000000000000L);
 
     String unsignedPayload = builder.build().constructUnsignedPayload();
 
     assertTrue(
         unsignedPayload.startsWith(
-            "GOOG4-RSA-SHA256\n" + "19691231T040000Z\n" + "19691231/auto/storage/goog4_request\n"));
+            "GOOG4-RSA-SHA256\n" + "20010908T064640Z\n" + "20010908/auto/storage/goog4_request\n"));
   }
 
   @Test
@@ -91,12 +90,12 @@ public class SignatureInfoTest {
 
     builder.setSignatureVersion(Storage.SignUrlOption.SignatureVersion.V4);
     builder.setAccountEmail("me@google.com");
-    builder.setTimestamp(100L);
+    builder.setTimestamp(1000000000000L);
 
     String queryString = builder.build().constructV4QueryString();
     assertEquals(
-        "X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=me%40google.com%2F19691231%2F"
-            + "auto%2Fstorage%2Fgoog4_request&X-Goog-Date=19691231T040000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host",
+        "X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=me%40google.com%2F20010908%2F"
+            + "auto%2Fstorage%2Fgoog4_request&X-Goog-Date=20010908T064640Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host",
         queryString);
   }
 }
