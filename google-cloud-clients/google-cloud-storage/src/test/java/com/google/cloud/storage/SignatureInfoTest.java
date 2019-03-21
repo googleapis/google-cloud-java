@@ -17,6 +17,8 @@
 package com.google.cloud.storage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.storage.SignatureInfo.Builder;
 import java.net.URI;
@@ -66,5 +68,35 @@ public class SignatureInfoTest {
     String rawPayload = "PUT\n\n\n0\nx-goog-acl:public-read\nx-goog-meta-owner:myself\n" + RESOURCE;
 
     assertEquals(rawPayload, unsignedPayload);
+  }
+
+  @Test
+  public void constructV4UnsignedPayload() {
+    Builder builder = new SignatureInfo.Builder(HttpMethod.PUT, 10L, URI.create(RESOURCE));
+
+    builder.setSignatureVersion(Storage.SignUrlOption.SignatureVersion.V4);
+    builder.setAccountEmail("me@google.com");
+    builder.setTimestamp(100L);
+
+    String unsignedPayload = builder.build().constructUnsignedPayload();
+
+    assertTrue(
+        unsignedPayload.startsWith(
+            "GOOG4-RSA-SHA256\n" + "19691231T040000Z\n" + "19691231/auto/storage/goog4_request\n"));
+  }
+
+  @Test
+  public void constructV4QueryString() {
+    Builder builder = new SignatureInfo.Builder(HttpMethod.PUT, 10L, URI.create(RESOURCE));
+
+    builder.setSignatureVersion(Storage.SignUrlOption.SignatureVersion.V4);
+    builder.setAccountEmail("me@google.com");
+    builder.setTimestamp(100L);
+
+    String queryString = builder.build().constructV4QueryString();
+    assertEquals(
+        "X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=me%40google.com%2F19691231%2F"
+            + "auto%2Fstorage%2Fgoog4_request&X-Goog-Date=19691231T040000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host",
+        queryString);
   }
 }
