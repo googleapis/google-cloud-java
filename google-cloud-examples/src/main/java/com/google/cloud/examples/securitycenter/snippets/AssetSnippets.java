@@ -49,11 +49,10 @@ public class AssetSnippets {
    * @param asOf The instant in time to query for. If null, current time is assumed
    */
 
-  // [TARGET list_assets]
-  // [VARIABLE "filter"]
-  // [VARIABLE "as_of"]
   // [START list_assets]
   public ImmutableList<ListAssetsResult> listAssets(String filter, Instant asOf) {
+    // Start setting up a request for to search for all assets in an organization.
+    // OrganizationName organizationName = OrganizationName.of("123234324");
     ListAssetsRequest.Builder request =
         ListAssetsRequest.newBuilder().setParent(organizationName.toString());
     // Default for API is to return all assets.
@@ -75,18 +74,21 @@ public class AssetSnippets {
 
   /** Run and print results from common queries. */
   void demoListAssets() {
-    // [START demo_list_assets]
-    // This takes care of formatting the resource name appropriately from the id..
 
     // Query for all currently existing assets
+    // [START demo_list_all_assets]
     System.out.println("All Assets: " + listAssets(null, null));
+    // [END demo_list_all_assets]
     // Query for all projects as of now.
+    // [START demo_list_assets_with_filter]
     System.out.println("Project Assets (now): " + listAssets(PROJECT_ASSET_FILTERS, null));
+    // [END demo_list_assets_with_filter]
     // Query for all projects as of a day ago.
+    // [START demo_list_assets_with_filter_and_time]
     System.out.println(
         "Project Assets (1 day ago): "
             + listAssets(PROJECT_ASSET_FILTERS, Instant.now().minus(Duration.ofDays(1))));
-    // [END demo_list_assets]
+    // [END demo_list_assets_with_filter_and_time]
   }
 
   /**
@@ -98,16 +100,19 @@ public class AssetSnippets {
    *     all assets in the organization are returned.
    * @param asOf The instant in time to query for. If null, current time is assumed.
    */
+  // [START list_asset_changes]
   public ImmutableList<ListAssetsResult> listAssetAndStatusChanges(
       Duration timeSpan, String filter, Instant asOf) {
-    // [START list_asset_changes]
+
+    // Start setting up a request for to search for all assets in an organization.
+    // OrganizationName organizationName = OrganizationName.of("123234324");
     ListAssetsRequest.Builder request =
         ListAssetsRequest.newBuilder().setParent(organizationName.toString());
     request
         .getCompareDurationBuilder()
         .setSeconds(timeSpan.getSeconds())
         .setNanos(timeSpan.getNano());
-    //
+    // Default for API is to return all assets.
     if (filter != null) {
       request.setFilter(filter);
     }
@@ -122,8 +127,8 @@ public class AssetSnippets {
     // this can cause out of memory issues.  You can process them batches by returning
     // the Iterable returned response.iterateAll() directly.
     return ImmutableList.copyOf(response.iterateAll());
-    // [END list_asset_changes]
   }
+  // [END list_asset_changes]
 
   /**
    * Run and print demo outputs of different parameters for {@link
@@ -131,19 +136,15 @@ public class AssetSnippets {
    */
   void demoListAssetAndStatusChanges() {
     // [START demo_list_asset_changes]
-    // List assets that are GCP Projects and their changes over the last day.
-    System.out.println(listAssetAndStatusChanges(Duration.ofDays(1), PROJECT_ASSET_FILTERS, null));
-
-    final LocalDateTime jan1 = LocalDateTime.of(2019, 1, 1, 0, 0);
-    final LocalDateTime dec1 = LocalDateTime.of(2018, 12, 1, 0, 0);
-    final Duration lastMonth = Duration.ofDays(ChronoUnit.DAYS.between(dec1, jan1));
-    // Query for GCE instances with the name including "Debia" and there changes over between Dec 1,
-    // 2019 and Jan 1, 2019 .
+    final LocalDateTime march = LocalDateTime.of(2019, 3, 18, 0, 0);
+    final LocalDateTime feb = LocalDateTime.of(2019, 2, 18, 0, 0);
+    final Duration lastMonth = Duration.ofDays(ChronoUnit.DAYS.between(feb, march));
+    // Query projects and their state changes over between February 18, 2019 and March 18, 2019.
     System.out.println(
         "Project Changes between (between Dec 2019 and Jan 2019): "
             + listAssetAndStatusChanges(
-                lastMonth, /* filter (no filter applied) = */
-                null,
+                lastMonth,
+                PROJECT_ASSET_FILTERS,
                 jan1.atZone(ZoneId.of("Europe/Paris")).toInstant()));
     // [END demo_list_asset_changes]
   }
