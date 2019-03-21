@@ -625,7 +625,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
     long expiration =
         isV4
-            ? unit.toMillis(duration)
+            ? TimeUnit.SECONDS.convert(unit.toMillis(duration), TimeUnit.MILLISECONDS)
             : TimeUnit.SECONDS.convert(
                 getOptions().getClock().millisTime() + unit.toMillis(duration),
                 TimeUnit.MILLISECONDS);
@@ -659,16 +659,20 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         stBuilder.append(optionMap.get(SignUrlOption.Option.HOST_NAME)).append(path);
       }
 
-      BaseEncoding encoding = isV4 ? BaseEncoding.base16().lowerCase() : BaseEncoding.base64();
-      String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
-      stBuilder.append("?");
       if (isV4) {
+        BaseEncoding encoding = BaseEncoding.base16().lowerCase();
+        String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
+        stBuilder.append("?");
         stBuilder.append(signatureInfo.constructV4QueryString());
+        stBuilder.append("&X-Goog-Signature=").append(signature);
       } else {
+        BaseEncoding encoding = BaseEncoding.base64();
+        String signature = URLEncoder.encode(encoding.encode(signatureBytes), UTF_8.name());
+        stBuilder.append("?");
         stBuilder.append("GoogleAccessId=").append(credentials.getAccount());
         stBuilder.append("&Expires=").append(expiration);
+        stBuilder.append("&Signature=").append(signature);
       }
-      stBuilder.append(isV4 ? "&X-Goog-Signature=" : "&Signature=").append(signature);
 
       return new URL(stBuilder.toString());
 

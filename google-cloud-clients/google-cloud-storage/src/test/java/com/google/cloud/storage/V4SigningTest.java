@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.it;
+package com.google.cloud.storage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,6 +34,7 @@ import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.Test;
@@ -79,17 +80,19 @@ public class V4SigningTest {
             .toBuilder()
             .setCredentials(
                 ServiceAccountCredentials.fromStream(
-                    getClass().getResourceAsStream("../../../../../UrlSignerV4TestAccount.json")))
+                    getClass().getResourceAsStream("/UrlSignerV4TestAccount.json")))
             .build()
             .getService();
     Gson gson = new GsonBuilder().create();
 
     String testCaseJson =
         CharStreams.toString(
-            new InputStreamReader(
-                getClass().getResourceAsStream("../../../../../UrlSignerV4TestData.json")));
+            new InputStreamReader(getClass().getResourceAsStream("/UrlSignerV4TestData.json")));
 
     JsonArray testCases = gson.fromJson(testCaseJson, JsonArray.class);
+
+    SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd'T'hhmmss'Z'");
+    format.setTimeZone(TimeZone.getTimeZone("UTC"));
 
     for (JsonElement testCaseElement : testCases) {
       TestCase testCase = gson.fromJson(testCaseElement, TestCase.class);
@@ -101,7 +104,7 @@ public class V4SigningTest {
               .setClock(
                   new FakeClock(
                       TimeUnit.NANOSECONDS.convert(
-                          new SimpleDateFormat("yyyyMMdd'T'hhmmss'Z'")
+                              format
                               .parse(testCase.timestamp)
                               .getTime(),
                           TimeUnit.MILLISECONDS)))
@@ -124,7 +127,7 @@ public class V4SigningTest {
               .signUrl(
                   blob,
                   Long.valueOf(testCase.expiration),
-                  TimeUnit.MILLISECONDS,
+                  TimeUnit.SECONDS,
                   Storage.SignUrlOption.httpMethod(HttpMethod.valueOf(testCase.method)),
                   Storage.SignUrlOption.withExtHeaders(headers),
                   Storage.SignUrlOption.withV4Signature())

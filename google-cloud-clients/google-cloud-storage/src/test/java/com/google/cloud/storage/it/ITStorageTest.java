@@ -1845,6 +1845,25 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testV4SignedUrl() throws IOException {
+    if (storage.getOptions().getCredentials() != null) {
+      assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
+    }
+
+    String blobName = "test-get-signed-url-blob";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.withV4Signature());
+    URLConnection connection = url.openConnection();
+    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+    try (InputStream responseStream = connection.getInputStream()) {
+      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    }
+  }
+
+  @Test
   public void testGetBlobs() {
     String sourceBlobName1 = "test-get-blobs-1";
     String sourceBlobName2 = "test-get-blobs-2";

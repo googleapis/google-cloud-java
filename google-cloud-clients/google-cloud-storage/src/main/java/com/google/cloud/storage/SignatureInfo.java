@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 /**
  * Signature Info holds payload components of the string that requires signing.
@@ -77,8 +78,14 @@ public class SignatureInfo {
 
     Date date = new Date(timestamp);
 
-    yearMonthDay = new SimpleDateFormat("yyyyMMdd").format(date);
-    exactDate = new SimpleDateFormat("yyyyMMdd'T'hhmmss'Z'").format(date);
+    SimpleDateFormat yearMonthDayFormat = new SimpleDateFormat("yyyyMMdd");
+    SimpleDateFormat exactDateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
+
+    yearMonthDayFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+    exactDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+    yearMonthDay = yearMonthDayFormat.format(date);
+    exactDate = exactDateFormat.format(date);
   }
 
   /**
@@ -108,7 +115,6 @@ public class SignatureInfo {
       payload.append(contentType);
     }
     payload.append(COMPONENT_SEPARATOR);
-
     payload.append(expiration).append(COMPONENT_SEPARATOR);
 
     if (canonicalizedExtensionHeaders != null) {
@@ -126,11 +132,8 @@ public class SignatureInfo {
     StringBuilder payload = new StringBuilder();
 
     payload.append(GOOG4_RSA_SHA256).append(COMPONENT_SEPARATOR);
-
     payload.append(exactDate).append(COMPONENT_SEPARATOR);
-
     payload.append(yearMonthDay).append(SCOPE).append(COMPONENT_SEPARATOR);
-
     payload.append(constructV4CanonicalRequestHash());
 
     return payload.toString();
@@ -143,19 +146,14 @@ public class SignatureInfo {
         new CanonicalExtensionHeadersSerializer(Storage.SignUrlOption.SignatureVersion.V4);
 
     canonicalRequest.append(httpVerb.name()).append(COMPONENT_SEPARATOR);
-
     canonicalRequest.append(canonicalizedResource).append(COMPONENT_SEPARATOR);
-
     canonicalRequest.append(constructV4QueryString()).append(COMPONENT_SEPARATOR);
-
     canonicalRequest
         .append(serializer.serialize(canonicalizedExtensionHeaders))
         .append(COMPONENT_SEPARATOR);
-
     canonicalRequest
         .append(serializer.serializeHeaderNames(canonicalizedExtensionHeaders))
         .append(COMPONENT_SEPARATOR);
-
     canonicalRequest.append("UNSIGNED-PAYLOAD");
 
     return Hashing.sha256()
@@ -304,7 +302,7 @@ public class SignatureInfo {
         checkArgument(accountEmail != null, "Account email required to use V4 signing");
         checkArgument(timestamp > 0, "Timestamp required to use V4 signing");
         checkArgument(
-            expiration <= 604800000, "Expiration can't be longer than 7 days to use V4 signing");
+            expiration < 604800, "Expiration can't be longer than 7 days to use V4 signing");
       }
 
       if (canonicalizedExtensionHeaders == null) {
