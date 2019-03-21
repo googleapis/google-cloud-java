@@ -1,6 +1,5 @@
 package com.google.cloud.examples.securitycenter.snippets;
 
-
 import com.google.cloud.securitycenter.v1beta1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1beta1.OrganizationName;
