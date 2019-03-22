@@ -85,34 +85,43 @@ public interface DatabaseClient {
 
   /**
    * Returns a context in which a single read can be performed using {@link TimestampBound#strong()}
-   * concurrency.
+   * concurrency. This method will return a {@link ReadContext} that will not return the read
+   * timestamp that was used by Cloud Spanner. If you want to be able to access the read timestamp,
+   * you should use the method {@link #singleUseReadOnlyTransaction()}.
    *
    * <p>Example of single use.
    *
-   * <pre>{@code
-   * long singerId = my_singer_id;
-   * String column = "FirstName";
-   * Struct row =
-   *     dbClient.singleUse().readRow("Singers", Key.of(singerId), Collections.singleton(column));
-   * String firstName = row.getString(column);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   long singerId = my_singer_id;
+   *   String column = "FirstName";
+   *   Struct row =
+   *       dbClient.singleUse().readRow("Singers", Key.of(singerId), Collections.singleton(column));
+   *   String firstName = row.getString(column);
+   * }
+   * </pre>
    */
   ReadContext singleUse();
 
   /**
-   * Returns a context in which a single read can be performed at the given timestamp bound.
+   * Returns a context in which a single read can be performed at the given timestamp bound. This
+   * method will return a {@link ReadContext} that will not return the read timestamp that was used
+   * by Cloud Spanner. If you want to be able to access the read timestamp, you should use the
+   * method {@link #singleUseReadOnlyTransaction()}.
    *
    * <p>Example of single use with timestamp bound.
    *
-   * <pre>{@code
-   * long singerId = my_singer_id;
-   * String column = "FirstName";
-   * Struct row =
-   *     dbClient
-   *         .singleUse(TimestampBound.ofMaxStaleness(10, TimeUnit.SECONDS))
-   *         .readRow("Singers", Key.of(singerId), Collections.singleton(column));
-   * String firstName = row.getString(column);
-   * }</pre>
+   * <pre>
+   * {
+   *   &#64;code
+   *   long singerId = my_singer_id;
+   *   String column = "FirstName";
+   *   Struct row = dbClient.singleUse(TimestampBound.ofMaxStaleness(10, TimeUnit.SECONDS))
+   *       .readRow("Singers", Key.of(singerId), Collections.singleton(column));
+   *   String firstName = row.getString(column);
+   * }
+   * </pre>
    *
    * @param bound the timestamp bound at which to perform the read
    */
