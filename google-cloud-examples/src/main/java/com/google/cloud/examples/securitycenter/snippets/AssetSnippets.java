@@ -164,20 +164,17 @@ public class AssetSnippets {
   }
   // [END list_asset_changes_status_changes]
 
-  public static void main(String... args) throws IOException {
-    try (SecurityCenterClient client = SecurityCenterClient.create()) {
-      String org_id = System.getenv("ORGANIZATION_ID");
-      if (args.length > 0) {
-        org_id = args[0];
-      }
-      if (org_id == null) {
-        Preconditions.checkNotNull(
-            org_id,
-            "Organization ID must either be set in the environment variable \"ORGANIZATION_ID\" or passed"
-                + " as the first parameter to the program.");
-      }
-
-      listAssetsWithFilter(OrganizationName.of(org_id));
+  public static void main(String... args) {
+    String org_id = System.getenv("ORGANIZATION_ID");
+    if (args.length > 0) {
+      org_id = args[0];
     }
+
+    Preconditions.checkNotNull(
+        org_id,
+        "Organization ID must either be set in the environment variable \"ORGANIZATION_ID\" or passed"
+            + " as the first parameter to the program.");
+
+    listAssetsWithFilter(OrganizationName.of(org_id));
   }
 }
