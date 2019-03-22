@@ -7,8 +7,7 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * The response for
- * [Firestore.Listen][google.firestore.v1beta1.Firestore.Listen].
+ * The response for [Firestore.Listen][google.firestore.v1beta1.Firestore.Listen].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.ListenResponse}
@@ -354,8 +353,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1beta1.Document] has been removed from a
-   * target (because it is no longer relevant to that target).
+   * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+   * relevant to that target).
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -367,8 +366,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1beta1.Document] has been removed from a
-   * target (because it is no longer relevant to that target).
+   * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+   * relevant to that target).
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -383,8 +382,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1beta1.Document] has been removed from a
-   * target (because it is no longer relevant to that target).
+   * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+   * relevant to that target).
    * </pre>
    *
    * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -689,8 +688,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response for
-   * [Firestore.Listen][google.firestore.v1beta1.Firestore.Listen].
+   * The response for [Firestore.Listen][google.firestore.v1beta1.Firestore.Listen].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.ListenResponse}
@@ -1534,8 +1532,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1547,8 +1545,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1570,8 +1568,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1593,8 +1591,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1614,8 +1612,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1646,8 +1644,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1672,8 +1670,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1685,8 +1683,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
@@ -1705,8 +1703,8 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A [Document][google.firestore.v1beta1.Document] has been removed from a
-     * target (because it is no longer relevant to that target).
+     * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
+     * relevant to that target).
      * </pre>
      *
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>

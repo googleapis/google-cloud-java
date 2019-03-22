@@ -42,8 +42,8 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n google/firestore/v1/common.proto\022\023goog"
-          + "le.firestore.v1\032\034google/api/annotations."
-          + "proto\032\037google/protobuf/timestamp.proto\"#"
+          + "le.firestore.v1\032\037google/protobuf/timesta"
+          + "mp.proto\032\034google/api/annotations.proto\"#"
           + "\n\014DocumentMask\022\023\n\013field_paths\030\001 \003(\t\"e\n\014P"
           + "recondition\022\020\n\006exists\030\001 \001(\010H\000\0221\n\013update_"
           + "time\030\002 \001(\0132\032.google.protobuf.TimestampH\000"
@@ -72,8 +72,8 @@ public final class CommonProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_firestore_v1_DocumentMask_descriptor =
@@ -116,8 +116,8 @@ public final class CommonProto {
             new java.lang.String[] {
               "ReadTime", "ConsistencySelector",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

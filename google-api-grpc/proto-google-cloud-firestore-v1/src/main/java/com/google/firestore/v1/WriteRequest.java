@@ -335,9 +335,9 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A stream token that was previously sent by the server.
    * The client should set this field to the token from the most recent
-   * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This
-   * acknowledges that the client has received responses up to this token. After
-   * sending this token, earlier tokens may not be used anymore.
+   * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This acknowledges that the client has
+   * received responses up to this token. After sending this token, earlier
+   * tokens may not be used anymore.
    * The server may close the stream if there are too many unacknowledged
    * responses.
    * Leave this field unset when creating a new stream. To resume a stream at
@@ -1531,9 +1531,9 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A stream token that was previously sent by the server.
      * The client should set this field to the token from the most recent
-     * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This
-     * acknowledges that the client has received responses up to this token. After
-     * sending this token, earlier tokens may not be used anymore.
+     * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This acknowledges that the client has
+     * received responses up to this token. After sending this token, earlier
+     * tokens may not be used anymore.
      * The server may close the stream if there are too many unacknowledged
      * responses.
      * Leave this field unset when creating a new stream. To resume a stream at
@@ -1552,9 +1552,9 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A stream token that was previously sent by the server.
      * The client should set this field to the token from the most recent
-     * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This
-     * acknowledges that the client has received responses up to this token. After
-     * sending this token, earlier tokens may not be used anymore.
+     * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This acknowledges that the client has
+     * received responses up to this token. After sending this token, earlier
+     * tokens may not be used anymore.
      * The server may close the stream if there are too many unacknowledged
      * responses.
      * Leave this field unset when creating a new stream. To resume a stream at
@@ -1579,9 +1579,9 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A stream token that was previously sent by the server.
      * The client should set this field to the token from the most recent
-     * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This
-     * acknowledges that the client has received responses up to this token. After
-     * sending this token, earlier tokens may not be used anymore.
+     * [WriteResponse][google.firestore.v1.WriteResponse] it has received. This acknowledges that the client has
+     * received responses up to this token. After sending this token, earlier
+     * tokens may not be used anymore.
      * The server may close the stream if there are too many unacknowledged
      * responses.
      * Leave this field unset when creating a new stream. To resume a stream at

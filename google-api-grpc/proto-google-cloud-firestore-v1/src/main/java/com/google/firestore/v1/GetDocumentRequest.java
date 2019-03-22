@@ -7,8 +7,7 @@ package com.google.firestore.v1;
  *
  *
  * <pre>
- * The request for
- * [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
+ * The request for [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.GetDocumentRequest}
@@ -541,8 +540,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request for
-   * [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
+   * The request for [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.GetDocumentRequest}

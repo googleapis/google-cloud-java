@@ -7,8 +7,7 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * The request for
- * [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
+ * The request for [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.CreateDocumentRequest}
@@ -571,8 +570,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request for
-   * [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
+   * The request for [Firestore.CreateDocument][google.firestore.v1beta1.Firestore.CreateDocument].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.CreateDocumentRequest}
