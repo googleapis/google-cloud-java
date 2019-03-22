@@ -337,7 +337,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     }
     if (dataProtectionMode_
         != com.google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode
-            .DATA_PROTECTION_MODE_UNSPECIFIED.getNumber()) {
+            .DATA_PROTECTION_MODE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, dataProtectionMode_);
     }
     unknownFields.writeTo(output);
@@ -354,7 +355,8 @@ public final class FailoverInstanceRequest extends com.google.protobuf.Generated
     }
     if (dataProtectionMode_
         != com.google.cloud.redis.v1.FailoverInstanceRequest.DataProtectionMode
-            .DATA_PROTECTION_MODE_UNSPECIFIED.getNumber()) {
+            .DATA_PROTECTION_MODE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, dataProtectionMode_);
     }
     size += unknownFields.getSerializedSize();
