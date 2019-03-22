@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-03-22T07:43:53.166974Z",
+  "updateTime": "2019-03-22T15:57:43.978857Z",
   "sources": [
     {
       "generator": {
@@ -18,6 +18,16 @@
     }
   ],
   "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "firestore-admin",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/firestore/admin/artman_firestore_v1.yaml"
+      }
+    },
     {
       "client": {
         "source": "googleapis",
