@@ -735,8 +735,6 @@ public class Recognize {
               .setEncoding(AudioEncoding.LINEAR16)
               .setLanguageCode("en-US")
               .setSampleRateHertz(8000)
-              // Enhanced models are only available to projects that
-              // opt in for audio data collection.
               .setUseEnhanced(true)
               // A model must be specified to use enhanced model.
               .setModel("phone_call")
