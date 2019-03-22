@@ -12,8 +12,7 @@ public interface DocumentMaskOrBuilder
    *
    *
    * <pre>
-   * The list of field paths in the mask. See
-   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *
@@ -24,8 +23,7 @@ public interface DocumentMaskOrBuilder
    *
    *
    * <pre>
-   * The list of field paths in the mask. See
-   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *
@@ -36,8 +34,7 @@ public interface DocumentMaskOrBuilder
    *
    *
    * <pre>
-   * The list of field paths in the mask. See
-   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *
@@ -48,8 +45,7 @@ public interface DocumentMaskOrBuilder
    *
    *
    * <pre>
-   * The list of field paths in the mask. See
-   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *

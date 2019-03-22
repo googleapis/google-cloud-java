@@ -54,10 +54,10 @@ public final class WriteProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\037google/firestore/v1/write.proto\022\023googl"
-          + "e.firestore.v1\032\034google/api/annotations.p"
-          + "roto\032 google/firestore/v1/common.proto\032\""
-          + "google/firestore/v1/document.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\"\211\002\n\005Write\022/\n"
+          + "e.firestore.v1\032 google/firestore/v1/comm"
+          + "on.proto\032\"google/firestore/v1/document.p"
+          + "roto\032\037google/protobuf/timestamp.proto\032\034g"
+          + "oogle/api/annotations.proto\"\211\002\n\005Write\022/\n"
           + "\006update\030\001 \001(\0132\035.google.firestore.v1.Docu"
           + "mentH\000\022\020\n\006delete\030\002 \001(\tH\000\022;\n\ttransform\030\006 "
           + "\001(\0132&.google.firestore.v1.DocumentTransf"
@@ -109,10 +109,10 @@ public final class WriteProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.firestore.v1.CommonProto.getDescriptor(),
           com.google.firestore.v1.DocumentProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_firestore_v1_Write_descriptor = getDescriptor().getMessageTypes().get(0);
@@ -185,10 +185,10 @@ public final class WriteProto {
             new java.lang.String[] {
               "TargetId", "Count",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.firestore.v1.CommonProto.getDescriptor();
     com.google.firestore.v1.DocumentProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

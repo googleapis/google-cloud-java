@@ -105,8 +105,8 @@ public interface ListenResponseOrBuilder
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1.Document] has been removed from a target
-   * (because it is no longer relevant to that target).
+   * A [Document][google.firestore.v1.Document] has been removed from a target (because it is no longer
+   * relevant to that target).
    * </pre>
    *
    * <code>.google.firestore.v1.DocumentRemove document_remove = 6;</code>
@@ -116,8 +116,8 @@ public interface ListenResponseOrBuilder
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1.Document] has been removed from a target
-   * (because it is no longer relevant to that target).
+   * A [Document][google.firestore.v1.Document] has been removed from a target (because it is no longer
+   * relevant to that target).
    * </pre>
    *
    * <code>.google.firestore.v1.DocumentRemove document_remove = 6;</code>
@@ -127,8 +127,8 @@ public interface ListenResponseOrBuilder
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1.Document] has been removed from a target
-   * (because it is no longer relevant to that target).
+   * A [Document][google.firestore.v1.Document] has been removed from a target (because it is no longer
+   * relevant to that target).
    * </pre>
    *
    * <code>.google.firestore.v1.DocumentRemove document_remove = 6;</code>

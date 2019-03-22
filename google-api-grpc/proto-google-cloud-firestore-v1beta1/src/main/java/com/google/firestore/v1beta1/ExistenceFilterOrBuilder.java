@@ -23,8 +23,7 @@ public interface ExistenceFilterOrBuilder
    *
    *
    * <pre>
-   * The total count of documents that match
-   * [target_id][google.firestore.v1beta1.ExistenceFilter.target_id].
+   * The total count of documents that match [target_id][google.firestore.v1beta1.ExistenceFilter.target_id].
    * If different from the count of documents in the client that match, the
    * client must manually determine which documents no longer match the target.
    * </pre>

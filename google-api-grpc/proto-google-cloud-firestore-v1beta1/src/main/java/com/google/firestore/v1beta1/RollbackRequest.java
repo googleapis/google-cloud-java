@@ -7,8 +7,7 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * The request for
- * [Firestore.Rollback][google.firestore.v1beta1.Firestore.Rollback].
+ * The request for [Firestore.Rollback][google.firestore.v1beta1.Firestore.Rollback].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.RollbackRequest}
@@ -331,8 +330,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request for
-   * [Firestore.Rollback][google.firestore.v1beta1.Firestore.Rollback].
+   * The request for [Firestore.Rollback][google.firestore.v1beta1.Firestore.Rollback].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.RollbackRequest}
