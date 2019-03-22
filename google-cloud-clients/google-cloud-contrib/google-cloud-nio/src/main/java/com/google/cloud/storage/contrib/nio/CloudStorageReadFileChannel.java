@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package com.google.cloud.storage.contrib.nio;
 
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
@@ -23,71 +24,59 @@ import java.nio.channels.FileLock;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.channels.WritableByteChannel;
-import com.google.common.base.Preconditions;
 
-class CloudStorageFileChannel extends FileChannel {
-  private long position = 0L;
-  private final SeekableByteChannel writeChannel;
+class CloudStorageReadFileChannel extends FileChannel {
+  private static final String READ_ONLY = "This FileChannel is read-only";
+  private final SeekableByteChannel readChannel;
 
-  CloudStorageFileChannel(SeekableByteChannel writeChannel) {
-    this.writeChannel = writeChannel;
+  CloudStorageReadFileChannel(SeekableByteChannel readChannel) {
+    Preconditions.checkNotNull(readChannel);
+    this.readChannel = readChannel;
   }
 
   @Override
   public int read(ByteBuffer dst) throws IOException {
-    int res = writeChannel.read(dst);
-    position += res;
-    return res;
+    return readChannel.read(dst);
   }
 
   @Override
   public long read(ByteBuffer[] dsts, int offset, int length) throws IOException {
     long res = 0L;
     for (int i = offset; i < offset + length; i++) {
-      res += writeChannel.read(dsts[i]);
+      res += readChannel.read(dsts[i]);
     }
-    position += res;
     return res;
   }
 
   @Override
   public int write(ByteBuffer src) throws IOException {
-    int res = writeChannel.write(src);
-    position += res;
-    return res;
+    throw new UnsupportedOperationException(READ_ONLY);
   }
 
   @Override
   public long write(ByteBuffer[] srcs, int offset, int length) throws IOException {
-    long res = 0L;
-    for (int i = offset; i < offset + length; i++) {
-      res += writeChannel.write(srcs[i]);
-    }
-    position += res;
-    return res;
+    throw new UnsupportedOperationException(READ_ONLY);
   }
 
   @Override
   public long position() throws IOException {
-    return position;
+    return readChannel.position();
   }
 
   @Override
   public FileChannel position(long newPosition) throws IOException {
-    this.position = newPosition;
-    writeChannel.position(newPosition);
+    readChannel.position(newPosition);
     return this;
   }
 
   @Override
   public long size() throws IOException {
-    return writeChannel.size();
+    return readChannel.size();
   }
 
   @Override
   public FileChannel truncate(long size) throws IOException {
-    writeChannel.truncate(size);
-    return this;
+    throw new UnsupportedOperationException(READ_ONLY);
   }
 
   @Override
@@ -97,41 +86,43 @@ class CloudStorageFileChannel extends FileChannel {
 
   @Override
   public long transferTo(long position, long count, WritableByteChannel target) throws IOException {
-    Preconditions.checkArgument(count <= Integer.MAX_VALUE,
-        "Transfering more than Integer.MAX_VALUE bytes is not supported");
-    ByteBuffer buffer = ByteBuffer.allocate((int) count);
-    long res = read(buffer, position);
-    buffer.position(0);
-    target.write(buffer);
+    long originalPosition = position();
+    position(position);
+    int blockSize = (int) Math.min(count, 0xfffffL);
+    long res = 0L;
+    int bytesRead = 0;
+    ByteBuffer buffer = ByteBuffer.allocate(blockSize);
+    while (res < count && bytesRead >= 0) {
+      buffer.position(0);
+      bytesRead = read(buffer);
+      if (bytesRead > 0) {
+        buffer.position(0);
+        buffer.limit(bytesRead);
+        target.write(buffer);
+        res += bytesRead;
+      }
+    }
+    position(originalPosition);
     return res;
   }
 
   @Override
   public long transferFrom(ReadableByteChannel src, long position, long count) throws IOException {
-    Preconditions.checkArgument(count <= Integer.MAX_VALUE,
-        "Transfering more than Integer.MAX_VALUE bytes is not supported");
-    ByteBuffer buffer = ByteBuffer.allocate((int) count);
-    long res = src.read(buffer);
-    write(buffer);
-    return res;
+    throw new UnsupportedOperationException(READ_ONLY);
   }
 
   @Override
   public int read(ByteBuffer dst, long position) throws IOException {
     long originalPosition = position();
     position(position);
-    int res = writeChannel.read(dst);
+    int res = readChannel.read(dst);
     position(originalPosition);
     return res;
   }
 
   @Override
   public int write(ByteBuffer src, long position) throws IOException {
-    long originalPosition = position();
-    position(position);
-    int res = writeChannel.write(src);
-    position(originalPosition);
-    return res;
+    throw new UnsupportedOperationException(READ_ONLY);
   }
 
   @Override
@@ -151,7 +142,6 @@ class CloudStorageFileChannel extends FileChannel {
 
   @Override
   protected void implCloseChannel() throws IOException {
-    writeChannel.close();
+    readChannel.close();
   }
-
 }

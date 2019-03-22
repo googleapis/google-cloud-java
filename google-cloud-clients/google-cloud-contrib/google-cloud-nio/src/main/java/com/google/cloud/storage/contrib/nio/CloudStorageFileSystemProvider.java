@@ -287,15 +287,46 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
   }
 
+  /**
+   * Open a file for reading OR writing. The {@link FileChannel} that is returned will only allow
+   * reads or writes depending on the {@link OpenOption}s that are specified. If any of the
+   * following have been specified, the {@link FileChannel} will be write-only:
+   * {@link StandardOpenOption#CREATE}
+   * <ul>
+   * <li>{@link StandardOpenOption#CREATE}</li>
+   * <li>{@link StandardOpenOption#CREATE_NEW}</li>
+   * <li>{@link StandardOpenOption#WRITE}</li>
+   * <li>{@link StandardOpenOption#TRUNCATE_EXISTING}</li>
+   * </ul>
+   * In all other cases the {@link FileChannel} will be read-only.
+   *
+   * @param path The path to the file to open or create
+   * @param options The options specifying how the file should be opened, and whether the
+   *        {@link FileChannel} should be read-only or write-only.
+   * @param attrs (not supported, the values will be ignored)
+   * @throws IOException
+   */
   @Override
   public FileChannel newFileChannel(Path path, Set<? extends OpenOption> options,
       FileAttribute<?>... attrs) throws IOException {
     checkNotNull(path);
     initStorage();
     CloudStorageUtil.checkNotNullArray(attrs);
-    CloudStorageWriteChannel writeChannel =
-        (CloudStorageWriteChannel) newWriteChannel(path, options);
-    return new CloudStorageFileChannel(writeChannel);
+    if (options.contains(StandardOpenOption.CREATE_NEW)) {
+      Files.createFile(path, attrs);
+    } else if (options.contains(StandardOpenOption.CREATE) && !Files.exists(path)) {
+      Files.createFile(path, attrs);
+    }
+    if (options.contains(StandardOpenOption.WRITE) || options.contains(StandardOpenOption.CREATE)
+        || options.contains(StandardOpenOption.CREATE_NEW)
+        || options.contains(StandardOpenOption.TRUNCATE_EXISTING)) {
+      CloudStorageWriteChannel writeChannel =
+          (CloudStorageWriteChannel) newWriteChannel(path, options);
+      return new CloudStorageWriteFileChannel(writeChannel);
+    } else {
+      CloudStorageReadChannel readChannel = (CloudStorageReadChannel) newReadChannel(path, options);
+      return new CloudStorageReadFileChannel(readChannel);
+    }
   }
 
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)

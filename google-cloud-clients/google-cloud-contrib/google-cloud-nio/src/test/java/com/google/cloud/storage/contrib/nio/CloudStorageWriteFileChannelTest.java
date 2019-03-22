@@ -18,6 +18,7 @@ package com.google.cloud.storage.contrib.nio;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -30,7 +31,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class CloudStorageFileChannelTest {
+public class CloudStorageWriteFileChannelTest {
   private static final class SeekableByteChannelImpl implements SeekableByteChannel {
     private boolean open = true;
     private ByteBuffer data;
@@ -51,22 +52,21 @@ public class CloudStorageFileChannelTest {
 
     @Override
     public int read(ByteBuffer dst) throws IOException {
-      byte[] tmp = new byte[dst.remaining()];
-      data.get(tmp);
-      dst.put(tmp);
-      return tmp.length;
+      byte[] tmp = new byte[Math.min(dst.remaining(), data.remaining())];
+      if (tmp.length == 0) {
+        return -1;
+      } else {
+        data.get(tmp);
+        dst.put(tmp);
+        return tmp.length;
+      }
     }
 
     @Override
     public int write(ByteBuffer src) throws IOException {
       int res = src.remaining();
-      if (data.position() + res > data.capacity()) {
-        ByteBuffer newData = ByteBuffer.allocate(data.capacity() + res);
-        int currentPos = data.position();
-        data.position(0);
-        newData.put(data);
-        data = newData;
-        data.position(currentPos);
+      if (data.position() + res > data.limit()) {
+        data.limit(data.limit() + res);
       }
       data.put(src);
       return res;
@@ -79,10 +79,8 @@ public class CloudStorageFileChannelTest {
 
     @Override
     public SeekableByteChannel position(long newPosition) throws IOException {
-      if (newPosition >= data.capacity()) {
-        ByteBuffer newData = ByteBuffer.allocate((int) newPosition);
-        newData.put(data);
-        data = newData;
+      if (newPosition >= data.limit()) {
+        data.limit((int) newPosition);
       }
       data.position((int) newPosition);
       return this;
@@ -90,54 +88,35 @@ public class CloudStorageFileChannelTest {
 
     @Override
     public long size() throws IOException {
-      return data.capacity();
+      return data.limit();
     }
 
     @Override
     public SeekableByteChannel truncate(long size) throws IOException {
-      if (size < data.capacity()) {
-        int position = data.position();
-        ByteBuffer newData = ByteBuffer.allocate((int) size);
-        newData.put(data.array(), 0, (int) size);
-        data = newData;
-        data.position(position > (int) size ? (int) size : position);
+      if (size < data.limit()) {
+        if (data.position() >= size) {
+          data.position((int) size - 1);
+        }
+        data.limit((int) size);
       }
       return this;
     }
   }
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
-  private CloudStorageFileChannel fileChannel;
+  private CloudStorageWriteFileChannel fileChannel;
   private SeekableByteChannel writeChannel;
+  private ByteBuffer data;
 
   @Before
   public void before() throws IOException {
-    ByteBuffer data = ByteBuffer.wrap(new byte[] {1, 2, 3});
+    data = ByteBuffer.allocate(5000);
+    data.limit(3);
+    data.put(new byte[] {1, 2, 3});
+    data.position(0);
     writeChannel = new SeekableByteChannelImpl(data);
-    fileChannel = new CloudStorageFileChannel(writeChannel);
-  }
-
-  @Test
-  public void testRead() throws IOException {
-    ByteBuffer buffer = ByteBuffer.allocate(1);
-    assertThat(fileChannel.position(), is(equalTo(0L)));
-    assertThat(fileChannel.read(buffer), is(equalTo(1)));
-    assertThat(fileChannel.position(), is(equalTo(1L)));
-    assertThat(buffer.get(0), is(equalTo((byte) 1)));
-  }
-
-  @Test
-  public void testReadArray() throws IOException {
-    ByteBuffer[] buffers =
-        new ByteBuffer[] {ByteBuffer.allocate(1), ByteBuffer.allocate(1), ByteBuffer.allocate(1)};
-    assertThat(fileChannel.position(), is(equalTo(0L)));
-    assertThat(fileChannel.read(buffers), is(equalTo(3L)));
-    assertThat(fileChannel.position(), is(equalTo(3L)));
-    assertThat(buffers[0].get(0), is(equalTo((byte) 1)));
-    assertThat(buffers[1].get(0), is(equalTo((byte) 2)));
-    assertThat(buffers[2].get(0), is(equalTo((byte) 3)));
+    fileChannel = new CloudStorageWriteFileChannel(writeChannel);
   }
 
   @Test
@@ -147,11 +126,7 @@ public class CloudStorageFileChannelTest {
     assertThat(fileChannel.position(), is(equalTo(0L)));
     assertThat(fileChannel.write(buffer), is(equalTo(1)));
     assertThat(fileChannel.position(), is(equalTo(1L)));
-
-    ByteBuffer read = ByteBuffer.allocate(1);
-    fileChannel.position(0);
-    fileChannel.read(read);
-    assertThat(read.get(0), is(equalTo((byte) 100)));
+    assertThat(data.get(0), is(equalTo((byte) 100)));
   }
 
   @Test
@@ -165,13 +140,9 @@ public class CloudStorageFileChannelTest {
     assertThat(fileChannel.write(buffers), is(equalTo(3L)));
     assertThat(fileChannel.position(), is(equalTo(3L)));
 
-    ByteBuffer[] read =
-        new ByteBuffer[] {ByteBuffer.allocate(1), ByteBuffer.allocate(1), ByteBuffer.allocate(1)};
-    fileChannel.position(0);
-    fileChannel.read(read);
-    assertThat(read[0].get(0), is(equalTo((byte) 10)));
-    assertThat(read[1].get(0), is(equalTo((byte) 20)));
-    assertThat(read[2].get(0), is(equalTo((byte) 30)));
+    assertThat(data.get(0), is(equalTo((byte) 10)));
+    assertThat(data.get(1), is(equalTo((byte) 20)));
+    assertThat(data.get(2), is(equalTo((byte) 30)));
   }
 
   @Test
@@ -196,12 +167,37 @@ public class CloudStorageFileChannelTest {
   }
 
   @Test
-  public void testTransferTo() throws IOException {
-    SeekableByteChannelImpl target = new SeekableByteChannelImpl(ByteBuffer.allocate(100));
-    assertThat(fileChannel.transferTo(0L, 3L, target), is(equalTo(3L)));
-    assertThat(target.position(), is(equalTo(3L)));
-    ByteBuffer dst = ByteBuffer.allocate(3);
-    target.read(dst);
+  public void testTransferFrom() throws IOException {
+    SeekableByteChannelImpl src = new SeekableByteChannelImpl(ByteBuffer.allocate(100));
+    src.write(ByteBuffer.wrap(new byte[] {10, 20, 30}));
+    src.position(0L);
+    fileChannel.position(0L);
+    assertThat(fileChannel.transferFrom(src, 0L, 3L), is(equalTo(3L)));
+    assertThat(src.position(), is(equalTo(3L)));
+
+    assertThat(data.get(0), is(equalTo((byte) 10)));
+    assertThat(data.get(1), is(equalTo((byte) 20)));
+    assertThat(data.get(2), is(equalTo((byte) 30)));
   }
 
+  @Test
+  public void testWriteOnPosition() throws IOException {
+    ByteBuffer buffer = ByteBuffer.allocate(1);
+    buffer.put((byte) 100).position(0);
+    assertThat(fileChannel.position(), is(equalTo(0L)));
+    assertThat(fileChannel.write(buffer, 0), is(equalTo(1)));
+    assertThat(data.get(0), is(equalTo((byte) 100)));
+  }
+
+  @Test
+  public void testWriteBeyondEnd() throws IOException {
+    fileChannel.position(3L);
+    ByteBuffer src = ByteBuffer.wrap(new byte[] {10, 20, 30});
+    assertThat(fileChannel.write(src), is(equalTo(3)));
+    assertThat(fileChannel.position(), is(equalTo(6L)));
+    fileChannel.position(3L);
+    assertThat(data.get(3), is(equalTo((byte) 10)));
+    assertThat(data.get(4), is(equalTo((byte) 20)));
+    assertThat(data.get(5), is(equalTo((byte) 30)));
+  }
 }
