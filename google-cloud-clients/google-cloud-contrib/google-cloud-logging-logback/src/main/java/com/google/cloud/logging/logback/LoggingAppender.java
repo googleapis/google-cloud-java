@@ -38,6 +38,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import javax.annotation.Nonnull;
 
 /**
  * <a href="https://logback.qos.ch/">Logback</a> appender for StackDriver Cloud Logging.
@@ -60,6 +61,10 @@ import java.util.Set;
  *   <li>&lt;enhancer&gt;com.example.enhancer2&lt;/enhancer&gt;
  *   <li>&lt;/appender&gt;
  * </ul>
+ *
+ * Users can extend this class and override the method {@link #createLoggingOptions()} if you need
+ * to specify custom {@link LoggingOptions}, and reference the subclass in logback.xml instead of
+ * {@link LoggingAppender}.
  */
 public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
@@ -186,7 +191,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   String getProjectId() {
-    return LoggingOptions.getDefaultInstance().getProjectId();
+    return createLoggingOptions().getProjectId();
   }
 
   @Override
@@ -212,11 +217,27 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (logging == null) {
       synchronized (this) {
         if (logging == null) {
-          logging = LoggingOptions.getDefaultInstance().getService();
+          logging = createLoggingOptions().getService();
         }
       }
     }
     return logging;
+  }
+
+  /**
+   * Creates the {@link LoggingOptions} to use for this {@link LoggingAppender}. Users can subclass
+   * {@link LoggingAppender} and override this method if they need to supply custom {@link
+   * LoggingOptions}, such as a specific credentials file. The default implementation returns {@link
+   * LoggingOptions#getDefaultInstance()}. Make sure to reference your own subclass in your logback
+   * configuration instead of {@link LoggingAppender} if you want to use custom {@link
+   * LoggingOptions}.
+   *
+   * @return the {@link LoggingOptions} that should be used for this {@link LoggingAppender}. May
+   *     not be <code>null</code>.
+   */
+  @Nonnull
+  public LoggingOptions createLoggingOptions() {
+    return LoggingOptions.getDefaultInstance();
   }
 
   private LogEntry logEntryFor(ILoggingEvent e) {

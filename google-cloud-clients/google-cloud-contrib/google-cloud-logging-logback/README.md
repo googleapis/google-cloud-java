@@ -88,6 +88,23 @@ Authentication
 See the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
 section in the base directory's README.
 
+You can also specify custom credentials and other options by creating a subclass of `com.google.cloud.logging.logback.LoggingAppender` and override the method `createLoggingOptions()`. Your logback.xml configuration file must reference your subclass instead of `com.google.cloud.logging.logback.LoggingAppender`.
+
+```java
+public class CustomLoggingAppender extends LoggingAppender {
+  @Override
+  public LoggingOptions createLoggingOptions() {
+    try {
+      return LoggingOptions.newBuilder()
+          .setCredentials(GoogleCredentials.fromStream(
+              new FileInputStream("/path/to/credentials.json")))
+          .build();
+    } catch (IOException e) {
+      throw new RuntimeException("Could not find credentials", e);
+    }
+  }
+}
+```
 
 Limitations
 -----------
