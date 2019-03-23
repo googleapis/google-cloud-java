@@ -91,16 +91,13 @@ public interface DatabaseClient {
    *
    * <p>Example of single use.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   long singerId = my_singer_id;
-   *   String column = "FirstName";
-   *   Struct row =
-   *       dbClient.singleUse().readRow("Singers", Key.of(singerId), Collections.singleton(column));
-   *   String firstName = row.getString(column);
-   * }
-   * </pre>
+   * <pre>{@code
+   * long singerId = my_singer_id;
+   * String column = "FirstName";
+   * Struct row =
+   *     dbClient.singleUse().readRow("Singers", Key.of(singerId), Collections.singleton(column));
+   * String firstName = row.getString(column);
+   * }</pre>
    */
   ReadContext singleUse();
 
@@ -112,16 +109,13 @@ public interface DatabaseClient {
    *
    * <p>Example of single use with timestamp bound.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   long singerId = my_singer_id;
-   *   String column = "FirstName";
-   *   Struct row = dbClient.singleUse(TimestampBound.ofMaxStaleness(10, TimeUnit.SECONDS))
-   *       .readRow("Singers", Key.of(singerId), Collections.singleton(column));
-   *   String firstName = row.getString(column);
-   * }
-   * </pre>
+   * <pre>{@code
+   * long singerId = my_singer_id;
+   * String column = "FirstName";
+   * Struct row = dbClient.singleUse(TimestampBound.ofMaxStaleness(10, TimeUnit.SECONDS))
+   *     .readRow("Singers", Key.of(singerId), Collections.singleton(column));
+   * String firstName = row.getString(column);
+   * }</pre>
    *
    * @param bound the timestamp bound at which to perform the read
    */
