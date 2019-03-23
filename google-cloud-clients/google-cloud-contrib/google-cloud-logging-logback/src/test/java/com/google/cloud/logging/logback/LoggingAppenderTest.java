@@ -31,6 +31,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
@@ -209,6 +210,20 @@ public class LoggingAppenderTest {
     verify(logging);
     assertThat(capturedArgument.getValue().iterator().hasNext()).isTrue();
     assertThat(capturedArgument.getValue().iterator().next()).isEqualTo(logEntry);
+  }
+
+  @Test
+  public void testCreateLoggingOptions() {
+    LoggingAppender appender =
+        new LoggingAppender() {
+          @Override
+          public LoggingOptions createLoggingOptions() {
+            return LoggingOptions.newBuilder().setProjectId(projectId).build();
+          }
+        };
+    assertThat(appender.getProjectId()).isEqualTo(projectId);
+    appender.start();
+    assertThat(appender.isStarted()).isTrue();
   }
 
   private LoggingEvent createLoggingEvent(Level level, long timestamp) {
