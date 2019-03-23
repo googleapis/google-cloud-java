@@ -60,47 +60,58 @@ class CloudStorageWriteFileChannel extends FileChannel {
 
   @Override
   public int write(ByteBuffer src) throws IOException {
-    checkValid();
-    int res = writeChannel.write(src);
-    return res;
+    synchronized (this) {
+      checkValid();
+      return writeChannel.write(src);
+    }
   }
 
   @Override
   public long write(ByteBuffer[] srcs, int offset, int length) throws IOException {
-    checkValid();
-    long res = 0L;
-    for (int i = offset; i < offset + length; i++) {
-      res += writeChannel.write(srcs[i]);
+    synchronized (this) {
+      checkValid();
+      long res = 0L;
+      for (int i = offset; i < offset + length; i++) {
+        res += writeChannel.write(srcs[i]);
+      }
+      return res;
     }
-    return res;
   }
 
   @Override
   public long position() throws IOException {
-    checkValid();
-    return writeChannel.position();
+    synchronized (this) {
+      checkValid();
+      return writeChannel.position();
+    }
   }
 
   @Override
   public FileChannel position(long newPosition) throws IOException {
-    checkValid();
-    if (newPosition != position()) {
-      writeChannel.position(newPosition);
+    synchronized (this) {
+      checkValid();
+      if (newPosition != position()) {
+        writeChannel.position(newPosition);
+      }
+      return this;
     }
-    return this;
   }
 
   @Override
   public long size() throws IOException {
-    checkValid();
-    return writeChannel.size();
+    synchronized (this) {
+      checkValid();
+      return writeChannel.size();
+    }
   }
 
   @Override
   public FileChannel truncate(long size) throws IOException {
-    checkValid();
-    writeChannel.truncate(size);
-    return this;
+    synchronized (this) {
+      checkValid();
+      writeChannel.truncate(size);
+      return this;
+    }
   }
 
   @Override
@@ -115,30 +126,32 @@ class CloudStorageWriteFileChannel extends FileChannel {
 
   @Override
   public long transferFrom(ReadableByteChannel src, long position, long count) throws IOException {
-    checkValid();
-    if (position != position()) {
-      throw new UnsupportedOperationException(
-          "This FileChannel only supports transferFrom at the current position");
-    }
-    int blockSize = (int) Math.min(count, 0xfffffL);
-    long res = 0L;
-    int bytesRead = 0;
-    ByteBuffer buffer = ByteBuffer.allocate(blockSize);
-    while (res < count && bytesRead >= 0) {
-      buffer.position(0);
-      bytesRead = src.read(buffer);
-      if (bytesRead > 0) {
-        buffer.position(0);
-        buffer.limit(bytesRead);
-        write(buffer);
-        res += bytesRead;
+    synchronized (this) {
+      checkValid();
+      if (position != position()) {
+        throw new UnsupportedOperationException(
+            "This FileChannel only supports transferFrom at the current position");
       }
+      int blockSize = (int) Math.min(count, 0xfffffL);
+      long res = 0L;
+      int bytesRead = 0;
+      ByteBuffer buffer = ByteBuffer.allocate(blockSize);
+      while (res < count && bytesRead >= 0) {
+        buffer.position(0);
+        bytesRead = src.read(buffer);
+        if (bytesRead > 0) {
+          buffer.position(0);
+          buffer.limit(bytesRead);
+          write(buffer);
+          res += bytesRead;
+        }
+      }
+      // The channel is no longer valid as the position has been updated, and there is no way of
+      // resetting it, but this way we at least support the write-at-position and transferFrom
+      // methods being called once.
+      this.valid = false;
+      return res;
     }
-    // The channel is no longer valid as the position has been updated, and there is no way of
-    // resetting it, but this way we at least support the write-at-position and transferFrom methods
-    // being called once.
-    this.valid = false;
-    return res;
   }
 
   @Override
@@ -148,17 +161,20 @@ class CloudStorageWriteFileChannel extends FileChannel {
 
   @Override
   public int write(ByteBuffer src, long position) throws IOException {
-    checkValid();
-    if (position != position()) {
-      throw new UnsupportedOperationException(
-          "This FileChannel only supports write at the current position");
+    synchronized (this) {
+      checkValid();
+      if (position != position()) {
+        throw new UnsupportedOperationException(
+            "This FileChannel only supports write at the current position");
+      }
+      int res = writeChannel.write(src);
+      // The channel is no longer valid as the position has been updated, and there is no way of
+      // resetting it, but this way we at least support the write-at-position and transferFrom
+      // methods
+      // being called once.
+      this.valid = false;
+      return res;
     }
-    int res = writeChannel.write(src);
-    // The channel is no longer valid as the position has been updated, and there is no way of
-    // resetting it, but this way we at least support the write-at-position and transferFrom methods
-    // being called once.
-    this.valid = false;
-    return res;
   }
 
   @Override
