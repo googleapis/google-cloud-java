@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -231,6 +232,10 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     builder
         .addLabel(LEVEL_NAME_KEY, level.toString())
         .addLabel(LEVEL_VALUE_KEY, String.valueOf(level.toInt()));
+
+    for (Map.Entry<String, String> entry : e.getMDCPropertyMap().entrySet()) {
+      builder.addLabel(entry.getKey(), entry.getValue());
+    }
 
     if (loggingEnhancers != null) {
       for (LoggingEnhancer enhancer : loggingEnhancers) {

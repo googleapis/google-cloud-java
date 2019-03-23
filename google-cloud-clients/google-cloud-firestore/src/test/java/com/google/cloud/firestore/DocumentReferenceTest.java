@@ -66,6 +66,7 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
+import com.google.cloud.firestore.LocalFirestoreHelper.InvalidPOJO;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
@@ -73,12 +74,14 @@ import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.Value;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -164,6 +167,38 @@ public class DocumentReferenceTest {
         "docRef", Value.newBuilder().setReferenceValue(DOCUMENT_NAME).build());
 
     assertCommitEquals(commit(set(documentReferenceFields)), commitCapture.getValue());
+  }
+
+  @Test
+  public void doesNotSerializeAdvancedNumberTypes() {
+    Map<InvalidPOJO, String> expectedErrorMessages = new HashMap<>();
+
+    InvalidPOJO pojo = new InvalidPOJO();
+    pojo.bigIntegerValue = new BigInteger("0");
+    expectedErrorMessages.put(
+        pojo,
+        "Could not serialize object. Numbers of type BigInteger are not supported, please use an int, long, float or double (found in field 'bigIntegerValue')");
+
+    pojo = new InvalidPOJO();
+    pojo.byteValue = 0;
+    expectedErrorMessages.put(
+        pojo,
+        "Could not serialize object. Numbers of type Byte are not supported, please use an int, long, float or double (found in field 'byteValue')");
+
+    pojo = new InvalidPOJO();
+    pojo.shortValue = 0;
+    expectedErrorMessages.put(
+        pojo,
+        "Could not serialize object. Numbers of type Short are not supported, please use an int, long, float or double (found in field 'shortValue')");
+
+    for (Map.Entry<InvalidPOJO, String> testCase : expectedErrorMessages.entrySet()) {
+      try {
+        documentReference.set(testCase.getKey());
+        fail();
+      } catch (IllegalArgumentException e) {
+        assertEquals(testCase.getValue(), e.getMessage());
+      }
+    }
   }
 
   @Test
@@ -262,6 +297,37 @@ public class DocumentReferenceTest {
     assertEquals(TIMESTAMP, snapshot.get("timestampValue"));
     assertEquals(Timestamp.of(DATE), snapshot.getData().get("dateValue"));
     assertEquals(TIMESTAMP, snapshot.getData().get("timestampValue"));
+  }
+
+  @Test
+  public void doesNotDeserializeAdvancedNumberTypes() throws Exception {
+    Map<String, String> fieldNamesToTypeNames =
+        map("bigIntegerValue", "BigInteger", "shortValue", "Short", "byteValue", "Byte");
+
+    for (Entry<String, String> testCase : fieldNamesToTypeNames.entrySet()) {
+      String fieldName = testCase.getKey();
+      String typeName = testCase.getValue();
+      Map<String, Value> response = map(fieldName, Value.newBuilder().setIntegerValue(0).build());
+
+      doAnswer(getAllResponse(response))
+          .when(firestoreMock)
+          .streamRequest(
+              getAllCapture.capture(),
+              streamObserverCapture.capture(),
+              Matchers.<ServerStreamingCallable>any());
+
+      DocumentSnapshot snapshot = documentReference.get().get();
+      try {
+        snapshot.toObject(InvalidPOJO.class);
+        fail();
+      } catch (RuntimeException e) {
+        assertEquals(
+            String.format(
+                "Could not deserialize object. Deserializing values to %s is not supported (found in field '%s')",
+                typeName, fieldName),
+            e.getMessage());
+      }
+    }
   }
 
   @Test

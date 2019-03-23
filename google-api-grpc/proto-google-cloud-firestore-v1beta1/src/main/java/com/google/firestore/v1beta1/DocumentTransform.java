@@ -118,9 +118,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The path of the field. See
-     * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-     * path syntax reference.
+     * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+     * reference.
      * </pre>
      *
      * <code>string field_path = 1;</code>
@@ -130,9 +129,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The path of the field. See
-     * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-     * path syntax reference.
+     * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+     * reference.
      * </pre>
      *
      * <code>string field_path = 1;</code>
@@ -816,9 +814,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The path of the field. See
-     * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-     * path syntax reference.
+     * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+     * reference.
      * </pre>
      *
      * <code>string field_path = 1;</code>
@@ -838,9 +835,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The path of the field. See
-     * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-     * path syntax reference.
+     * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+     * reference.
      * </pre>
      *
      * <code>string field_path = 1;</code>
@@ -1777,9 +1773,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The path of the field. See
-       * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-       * path syntax reference.
+       * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+       * reference.
        * </pre>
        *
        * <code>string field_path = 1;</code>
@@ -1799,9 +1794,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The path of the field. See
-       * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-       * path syntax reference.
+       * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+       * reference.
        * </pre>
        *
        * <code>string field_path = 1;</code>
@@ -1821,9 +1815,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The path of the field. See
-       * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-       * path syntax reference.
+       * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+       * reference.
        * </pre>
        *
        * <code>string field_path = 1;</code>
@@ -1841,9 +1834,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The path of the field. See
-       * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-       * path syntax reference.
+       * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+       * reference.
        * </pre>
        *
        * <code>string field_path = 1;</code>
@@ -1858,9 +1850,8 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The path of the field. See
-       * [Document.fields][google.firestore.v1beta1.Document.fields] for the field
-       * path syntax reference.
+       * The path of the field. See [Document.fields][google.firestore.v1beta1.Document.fields] for the field path syntax
+       * reference.
        * </pre>
        *
        * <code>string field_path = 1;</code>

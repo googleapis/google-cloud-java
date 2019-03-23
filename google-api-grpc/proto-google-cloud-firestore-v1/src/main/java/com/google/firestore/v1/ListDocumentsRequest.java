@@ -7,8 +7,7 @@ package com.google.firestore.v1;
  *
  *
  * <pre>
- * The request for
- * [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
+ * The request for [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.ListDocumentsRequest}
@@ -521,9 +520,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * If the list should show missing documents. A missing document is a
    * document that does not exist but has sub-documents. These documents will
-   * be returned with a key but will not have fields,
-   * [Document.create_time][google.firestore.v1.Document.create_time], or
-   * [Document.update_time][google.firestore.v1.Document.update_time] set.
+   * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1.Document.create_time],
+   * or [Document.update_time][google.firestore.v1.Document.update_time] set.
    * Requests with `show_missing` may not specify `where` or
    * `order_by`.
    * </pre>
@@ -797,8 +795,7 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request for
-   * [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
+   * The request for [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.ListDocumentsRequest}
@@ -1954,9 +1951,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If the list should show missing documents. A missing document is a
      * document that does not exist but has sub-documents. These documents will
-     * be returned with a key but will not have fields,
-     * [Document.create_time][google.firestore.v1.Document.create_time], or
-     * [Document.update_time][google.firestore.v1.Document.update_time] set.
+     * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1.Document.create_time],
+     * or [Document.update_time][google.firestore.v1.Document.update_time] set.
      * Requests with `show_missing` may not specify `where` or
      * `order_by`.
      * </pre>
@@ -1972,9 +1968,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If the list should show missing documents. A missing document is a
      * document that does not exist but has sub-documents. These documents will
-     * be returned with a key but will not have fields,
-     * [Document.create_time][google.firestore.v1.Document.create_time], or
-     * [Document.update_time][google.firestore.v1.Document.update_time] set.
+     * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1.Document.create_time],
+     * or [Document.update_time][google.firestore.v1.Document.update_time] set.
      * Requests with `show_missing` may not specify `where` or
      * `order_by`.
      * </pre>
@@ -1993,9 +1988,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * If the list should show missing documents. A missing document is a
      * document that does not exist but has sub-documents. These documents will
-     * be returned with a key but will not have fields,
-     * [Document.create_time][google.firestore.v1.Document.create_time], or
-     * [Document.update_time][google.firestore.v1.Document.update_time] set.
+     * be returned with a key but will not have fields, [Document.create_time][google.firestore.v1.Document.create_time],
+     * or [Document.update_time][google.firestore.v1.Document.update_time] set.
      * Requests with `show_missing` may not specify `where` or
      * `order_by`.
      * </pre>

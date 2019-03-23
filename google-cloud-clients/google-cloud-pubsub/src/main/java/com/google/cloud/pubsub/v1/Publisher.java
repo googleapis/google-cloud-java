@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.v1;
 
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -98,6 +99,7 @@ public class Publisher {
   private final List<AutoCloseable> closeables;
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
+  private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
 
   private final AtomicLong ackedMessages = new AtomicLong();
   private final AtomicLong failedMessages = new AtomicLong();
@@ -117,6 +119,7 @@ public class Publisher {
     topicName = builder.topicName;
 
     this.batchingSettings = builder.batchingSettings;
+    this.messageTransform = builder.messageTransform;
 
     messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
@@ -199,6 +202,7 @@ public class Publisher {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
 
+    message = messageTransform.apply(message);
     final int messageSize = message.getSerializedSize();
     OutstandingBatch batchToSend = null;
     SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
@@ -557,6 +561,14 @@ public class Publisher {
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
+    ApiFunction<PubsubMessage, PubsubMessage> messageTransform =
+        new ApiFunction<PubsubMessage, PubsubMessage>() {
+          @Override
+          public PubsubMessage apply(PubsubMessage input) {
+            return input;
+          }
+        };
+
     private Builder(String topic) {
       this.topicName = Preconditions.checkNotNull(topic);
     }
@@ -636,6 +648,17 @@ public class Publisher {
     /** Gives the ability to set a custom executor to be used by the library. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       this.executorProvider = Preconditions.checkNotNull(executorProvider);
+      return this;
+    }
+
+    /**
+     * Gives the ability to set an {@link ApiFunction} that will transform the {@link PubsubMessage}
+     * before it is sent
+     */
+    @BetaApi
+    public Builder setTransform(ApiFunction<PubsubMessage, PubsubMessage> messageTransform) {
+      this.messageTransform =
+          Preconditions.checkNotNull(messageTransform, "The messageTransform cannnot be null.");
       return this;
     }
 

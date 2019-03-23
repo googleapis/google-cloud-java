@@ -20,34 +20,21 @@ import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
 
-service = 'firestore'
-version='v1beta1'
+def generate_client(service, version, config_path):
+  library = gapic.java_library(
+      service=service,
+      version=version,
+      config_path=config_path,
+      artman_output_name='')
 
-library = gapic.java_library(
-    service=service,
-    version='v1beta1',
-    config_path=f'/google/firestore/artman_firestore.yaml',
-    artman_output_name='')
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
 
-s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
-s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+  java.format_code('./src')
+  java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
 
-java.format_code('./src')
-java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
-
-version='v1'
-library = gapic.java_library(
-    service=service,
-    version='v1',
-    config_path=f'/google/firestore/artman_firestore_v1.yaml',
-    artman_output_name='')
-
-s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
-s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
-
-java.format_code('./src')
-java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
-java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+generate_client('firestore-admin', 'v1', '/google/firestore/admin/artman_firestore_v1.yaml')
+generate_client('firestore', 'v1beta1', '/google/firestore/artman_firestore.yaml')
+generate_client('firestore', 'v1', '/google/firestore/artman_firestore_v1.yaml')

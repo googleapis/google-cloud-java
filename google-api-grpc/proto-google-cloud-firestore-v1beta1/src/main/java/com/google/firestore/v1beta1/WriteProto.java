@@ -54,11 +54,11 @@ public final class WriteProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$google/firestore/v1beta1/write.proto\022\030"
-          + "google.firestore.v1beta1\032\034google/api/ann"
-          + "otations.proto\032%google/firestore/v1beta1"
-          + "/common.proto\032\'google/firestore/v1beta1/"
-          + "document.proto\032\037google/protobuf/timestam"
-          + "p.proto\"\235\002\n\005Write\0224\n\006update\030\001 \001(\0132\".goog"
+          + "google.firestore.v1beta1\032%google/firesto"
+          + "re/v1beta1/common.proto\032\'google/firestor"
+          + "e/v1beta1/document.proto\032\037google/protobu"
+          + "f/timestamp.proto\032\034google/api/annotation"
+          + "s.proto\"\235\002\n\005Write\0224\n\006update\030\001 \001(\0132\".goog"
           + "le.firestore.v1beta1.DocumentH\000\022\020\n\006delet"
           + "e\030\002 \001(\tH\000\022@\n\ttransform\030\006 \001(\0132+.google.fi"
           + "restore.v1beta1.DocumentTransformH\000\022;\n\013u"
@@ -112,10 +112,10 @@ public final class WriteProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.firestore.v1beta1.CommonProto.getDescriptor(),
           com.google.firestore.v1beta1.DocumentProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         },
         assigner);
     internal_static_google_firestore_v1beta1_Write_descriptor =
@@ -191,10 +191,10 @@ public final class WriteProto {
             new java.lang.String[] {
               "TargetId", "Count",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
     com.google.firestore.v1beta1.CommonProto.getDescriptor();
     com.google.firestore.v1beta1.DocumentProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
