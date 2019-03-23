@@ -1816,15 +1816,16 @@ public final class TableReferenceProto {
     java.lang.String[] descriptorData = {
       "\n;google/cloud/bigquery/storage/v1beta1/"
           + "table_reference.proto\022%google.cloud.bigq"
-          + "uery.storage.v1beta1\032\037google/protobuf/ti"
-          + "mestamp.proto\"J\n\016TableReference\022\022\n\nproje"
-          + "ct_id\030\001 \001(\t\022\022\n\ndataset_id\030\002 \001(\t\022\020\n\010table"
-          + "_id\030\003 \001(\t\"C\n\016TableModifiers\0221\n\rsnapshot_"
-          + "time\030\001 \001(\0132\032.google.protobuf.TimestampB\216"
-          + "\001\n)com.google.cloud.bigquery.storage.v1b"
-          + "eta1B\023TableReferenceProtoZLgoogle.golang"
-          + ".org/genproto/googleapis/cloud/bigquery/"
-          + "storage/v1beta1;storageb\006proto3"
+          + "uery.storage.v1beta1\032\031google/api/resourc"
+          + "e.proto\032\037google/protobuf/timestamp.proto"
+          + "\"J\n\016TableReference\022\022\n\nproject_id\030\001 \001(\t\022\022"
+          + "\n\ndataset_id\030\002 \001(\t\022\020\n\010table_id\030\003 \001(\t\"C\n\016"
+          + "TableModifiers\0221\n\rsnapshot_time\030\001 \001(\0132\032."
+          + "google.protobuf.TimestampB\216\001\n)com.google"
+          + ".cloud.bigquery.storage.v1beta1B\023TableRe"
+          + "ferenceProtoZLgoogle.golang.org/genproto"
+          + "/googleapis/cloud/bigquery/storage/v1bet"
+          + "a1;storageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1837,6 +1838,7 @@ public final class TableReferenceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -1856,6 +1858,7 @@ public final class TableReferenceProto {
             new java.lang.String[] {
               "SnapshotTime",
             });
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
