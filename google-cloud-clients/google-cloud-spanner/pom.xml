@@ -61,7 +61,7 @@
           </systemPropertyVariables>
           <groups>com.google.cloud.spanner.IntegrationTest</groups>
           <excludedGroups>com.google.cloud.spanner.FlakyTest</excludedGroups>
-          <forkedProcessExitTimeoutInSeconds>240</forkedProcessExitTimeoutInSeconds>
+          <forkedProcessTimeoutInSeconds>2400</forkedProcessTimeoutInSeconds>
         </configuration>
         <dependencies>
           <dependency>
