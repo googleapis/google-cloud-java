@@ -137,4 +137,37 @@ public interface PubsubMessageOrBuilder
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies related messages for which publish order should be respected.
+   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+   * published with the same `ordering_key` value will be delivered to
+   * subscribers in the order in which they are received by the Pub/Sub system.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string ordering_key = 5;</code>
+   */
+  java.lang.String getOrderingKey();
+  /**
+   *
+   *
+   * <pre>
+   * Identifies related messages for which publish order should be respected.
+   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+   * published with the same `ordering_key` value will be delivered to
+   * subscribers in the order in which they are received by the Pub/Sub system.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string ordering_key = 5;</code>
+   */
+  com.google.protobuf.ByteString getOrderingKeyBytes();
 }
