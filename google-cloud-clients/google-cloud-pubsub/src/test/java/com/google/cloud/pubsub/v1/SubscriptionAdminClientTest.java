@@ -127,12 +127,14 @@ public class SubscriptionAdminClientTest {
     TopicName topic2 = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
     int ackDeadlineSeconds2 = 921632575;
     boolean retainAckedMessages = false;
+    boolean enableMessageOrdering = true;
     Subscription expectedResponse =
         Subscription.newBuilder()
             .setName(name2.toString())
             .setTopic(topic2.toString())
             .setAckDeadlineSeconds(ackDeadlineSeconds2)
             .setRetainAckedMessages(retainAckedMessages)
+            .setEnableMessageOrdering(enableMessageOrdering)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -185,12 +187,14 @@ public class SubscriptionAdminClientTest {
     TopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
     int ackDeadlineSeconds = 2135351438;
     boolean retainAckedMessages = false;
+    boolean enableMessageOrdering = true;
     Subscription expectedResponse =
         Subscription.newBuilder()
             .setName(name.toString())
             .setTopic(topic.toString())
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .setRetainAckedMessages(retainAckedMessages)
+            .setEnableMessageOrdering(enableMessageOrdering)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
