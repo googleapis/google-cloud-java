@@ -25,10 +25,14 @@ import java.util.List;
 /** Forwarding implements of StructReader */
 public class ForwardingStructReader implements StructReader {
 
-  private final StructReader delegate;
+  private StructReader delegate;
 
   public ForwardingStructReader(StructReader delegate) {
     this.delegate = Preconditions.checkNotNull(delegate);
+  }
+
+  void replaceDelegate(StructReader newDelegate) {
+    this.delegate = Preconditions.checkNotNull(newDelegate);
   }
 
   @Override

@@ -22,11 +22,17 @@ import com.google.spanner.v1.ResultSetStats;
 /** Forwarding implementation of ResultSet that forwards all calls to a delegate. */
 public class ForwardingResultSet extends ForwardingStructReader implements ResultSet {
 
-  private final ResultSet delegate;
+  private ResultSet delegate;
 
   public ForwardingResultSet(ResultSet delegate) {
     super(delegate);
     this.delegate = Preconditions.checkNotNull(delegate);
+  }
+
+  void replaceDelegate(ResultSet newDelegate) {
+    Preconditions.checkNotNull(newDelegate);
+    super.replaceDelegate(newDelegate);
+    this.delegate = newDelegate;
   }
 
   @Override

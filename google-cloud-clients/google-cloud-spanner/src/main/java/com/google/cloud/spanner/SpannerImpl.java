@@ -250,11 +250,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         return dbClients.get(db);
       } else {
         SessionPool pool = SessionPool.createPool(getOptions(), db, SpannerImpl.this);
-        DatabaseClientImpl dbClient = new DatabaseClientImpl(pool);
+        DatabaseClientImpl dbClient = createDatabaseClient(pool);
         dbClients.put(db, dbClient);
         return dbClient;
       }
     }
+  }
+
+  DatabaseClientImpl createDatabaseClient(SessionPool pool) {
+    return new DatabaseClientImpl(pool);
   }
 
   @Override

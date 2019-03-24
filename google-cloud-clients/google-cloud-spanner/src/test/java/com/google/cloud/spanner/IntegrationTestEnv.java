@@ -22,7 +22,6 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.testing.RemoteSpannerHelper;
 import com.google.common.collect.Iterators;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.rules.ExternalResource;
@@ -85,12 +84,17 @@ public class IntegrationTestEnv extends ExternalResource {
       instanceId = InstanceId.of(config.spannerOptions().getProjectId(), "test-instance");
       isOwnedInstance = true;
     }
-    testHelper = RemoteSpannerHelper.create(options, instanceId);
+    testHelper = createTestHelper(options, instanceId);
     instanceAdminClient = testHelper.getClient().getInstanceAdminClient();
     logger.log(Level.FINE, "Test env endpoint is {0}", options.getHost());
     if (isOwnedInstance) {
       initializeInstance(instanceId);
     }
+  }
+
+  RemoteSpannerHelper createTestHelper(SpannerOptions options, InstanceId instanceId)
+      throws Throwable {
+    return RemoteSpannerHelper.create(options, instanceId);
   }
 
   @Override
@@ -116,7 +120,7 @@ public class IntegrationTestEnv extends ExternalResource {
         instanceAdminClient.createInstance(instance);
     Instance createdInstance;
     try {
-      createdInstance = op.get(500L, TimeUnit.MILLISECONDS);
+      createdInstance = op.get();
     } catch (Exception e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
@@ -138,7 +142,7 @@ public class IntegrationTestEnv extends ExternalResource {
     }
   }
 
-  private void checkInitialized() {
+  void checkInitialized() {
     checkState(testHelper != null, "Setup has not completed successfully");
   }
 }
