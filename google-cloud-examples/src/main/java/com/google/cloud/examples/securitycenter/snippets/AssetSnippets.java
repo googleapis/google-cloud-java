@@ -31,8 +31,6 @@ import org.threeten.bp.Instant;
 public class AssetSnippets {
   private AssetSnippets() {}
 
-  // [END asset_resource_project_filter]
-
   /**
    * Lists all assets for an organization.
    *
