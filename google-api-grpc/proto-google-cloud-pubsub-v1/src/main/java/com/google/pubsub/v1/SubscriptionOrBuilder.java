@@ -269,6 +269,23 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
+   * If true, messages published with the same `ordering_key` in `PubsubMessage`
+   * will be delivered to the subscribers in the order in which they
+   * are received by the Pub/Sub system. Otherwise, they may be delivered in
+   * any order.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>bool enable_message_ordering = 10;</code>
+   */
+  boolean getEnableMessageOrdering();
+
+  /**
+   *
+   *
+   * <pre>
    * A policy that specifies the conditions for this subscription's expiration.
    * A subscription is considered active as long as any connected subscriber is
    * successfully consuming messages from the subscription or is issuing

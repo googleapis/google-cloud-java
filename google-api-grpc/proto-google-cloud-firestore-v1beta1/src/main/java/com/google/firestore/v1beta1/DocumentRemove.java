@@ -7,14 +7,12 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * A [Document][google.firestore.v1beta1.Document] has been removed from the
- * view of the targets.
+ * A [Document][google.firestore.v1beta1.Document] has been removed from the view of the targets.
  * Sent if the document is no longer relevant to a target and is out of view.
  * Can be sent instead of a DocumentDelete or a DocumentChange if the server
  * can not send the new value of the document.
- * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages
- * may be returned for the same logical write or delete, if multiple targets are
- * affected.
+ * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages may be returned for the same logical
+ * write or delete, if multiple targets are affected.
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.DocumentRemove}
@@ -148,8 +146,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the [Document][google.firestore.v1beta1.Document] that
-   * has gone out of view.
+   * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
    * </pre>
    *
    * <code>string document = 1;</code>
@@ -169,8 +166,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the [Document][google.firestore.v1beta1.Document] that
-   * has gone out of view.
+   * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
    * </pre>
    *
    * <code>string document = 1;</code>
@@ -474,14 +470,12 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [Document][google.firestore.v1beta1.Document] has been removed from the
-   * view of the targets.
+   * A [Document][google.firestore.v1beta1.Document] has been removed from the view of the targets.
    * Sent if the document is no longer relevant to a target and is out of view.
    * Can be sent instead of a DocumentDelete or a DocumentChange if the server
    * can not send the new value of the document.
-   * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages
-   * may be returned for the same logical write or delete, if multiple targets are
-   * affected.
+   * Multiple [DocumentRemove][google.firestore.v1beta1.DocumentRemove] messages may be returned for the same logical
+   * write or delete, if multiple targets are affected.
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.DocumentRemove}
@@ -675,8 +669,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -696,8 +689,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -717,8 +709,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -736,8 +727,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>
@@ -752,8 +742,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the [Document][google.firestore.v1beta1.Document] that
-     * has gone out of view.
+     * The resource name of the [Document][google.firestore.v1beta1.Document] that has gone out of view.
      * </pre>
      *
      * <code>string document = 1;</code>

@@ -21,7 +21,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * * Each location has a collection of Redis instances, named: `/instances/&#42;`
  * * As such, Redis instances are resources of the form:
  *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
- * Note that location_id must be refering to a GCP `region`; for example:
+ * Note that location_id must be referring to a GCP `region`; for example:
  * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
  * </pre>
  */
@@ -244,108 +244,6 @@ public final class CloudRedisGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getImportInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
-      METHOD_IMPORT_INSTANCE = getImportInstanceMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
-      getImportInstanceMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
-      getImportInstanceMethod() {
-    return getImportInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
-      getImportInstanceMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.redis.v1.ImportInstanceRequest, com.google.longrunning.Operation>
-        getImportInstanceMethod;
-    if ((getImportInstanceMethod = CloudRedisGrpc.getImportInstanceMethod) == null) {
-      synchronized (CloudRedisGrpc.class) {
-        if ((getImportInstanceMethod = CloudRedisGrpc.getImportInstanceMethod) == null) {
-          CloudRedisGrpc.getImportInstanceMethod =
-              getImportInstanceMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.redis.v1.ImportInstanceRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "ImportInstance"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.redis.v1.ImportInstanceRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(new CloudRedisMethodDescriptorSupplier("ImportInstance"))
-                      .build();
-        }
-      }
-    }
-    return getImportInstanceMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getExportInstanceMethod()} instead.
-  public static final io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
-      METHOD_EXPORT_INSTANCE = getExportInstanceMethodHelper();
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
-      getExportInstanceMethod;
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
-      getExportInstanceMethod() {
-    return getExportInstanceMethodHelper();
-  }
-
-  private static io.grpc.MethodDescriptor<
-          com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
-      getExportInstanceMethodHelper() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.redis.v1.ExportInstanceRequest, com.google.longrunning.Operation>
-        getExportInstanceMethod;
-    if ((getExportInstanceMethod = CloudRedisGrpc.getExportInstanceMethod) == null) {
-      synchronized (CloudRedisGrpc.class) {
-        if ((getExportInstanceMethod = CloudRedisGrpc.getExportInstanceMethod) == null) {
-          CloudRedisGrpc.getExportInstanceMethod =
-              getExportInstanceMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.redis.v1.ExportInstanceRequest,
-                          com.google.longrunning.Operation>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              "google.cloud.redis.v1.CloudRedis", "ExportInstance"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.redis.v1.ExportInstanceRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.longrunning.Operation.getDefaultInstance()))
-                      .setSchemaDescriptor(new CloudRedisMethodDescriptorSupplier("ExportInstance"))
-                      .build();
-        }
-      }
-    }
-    return getExportInstanceMethod;
-  }
-
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getFailoverInstanceMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.cloud.redis.v1.FailoverInstanceRequest, com.google.longrunning.Operation>
@@ -480,7 +378,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -559,40 +457,6 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Import a Redis RDB snapshot file from GCS into a Redis instance.
-     * Redis may stop serving during this operation. Instance state will be
-     * IMPORTING for entire operation. When complete, the instance will contain
-     * only data from the imported file.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public void importInstance(
-        com.google.cloud.redis.v1.ImportInstanceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getImportInstanceMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Export Redis instance data into a Redis RDB format file in GCS.
-     * Redis will continue serving during this operation.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public void exportInstance(
-        com.google.cloud.redis.v1.ExportInstanceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnimplementedUnaryCall(getExportInstanceMethodHelper(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Failover the master role to current replica node against a specific
      * STANDARD tier redis instance.
      * </pre>
@@ -646,18 +510,6 @@ public final class CloudRedisGrpc {
                       com.google.cloud.redis.v1.UpdateInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
           .addMethod(
-              getImportInstanceMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1.ImportInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_INSTANCE)))
-          .addMethod(
-              getExportInstanceMethodHelper(),
-              asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1.ExportInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_INSTANCE)))
-          .addMethod(
               getFailoverInstanceMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
@@ -687,7 +539,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -790,46 +642,6 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Import a Redis RDB snapshot file from GCS into a Redis instance.
-     * Redis may stop serving during this operation. Instance state will be
-     * IMPORTING for entire operation. When complete, the instance will contain
-     * only data from the imported file.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public void importInstance(
-        com.google.cloud.redis.v1.ImportInstanceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getImportInstanceMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Export Redis instance data into a Redis RDB format file in GCS.
-     * Redis will continue serving during this operation.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public void exportInstance(
-        com.google.cloud.redis.v1.ExportInstanceRequest request,
-        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getExportInstanceMethodHelper(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Failover the master role to current replica node against a specific
      * STANDARD tier redis instance.
      * </pre>
@@ -875,7 +687,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -967,40 +779,6 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Import a Redis RDB snapshot file from GCS into a Redis instance.
-     * Redis may stop serving during this operation. Instance state will be
-     * IMPORTING for entire operation. When complete, the instance will contain
-     * only data from the imported file.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public com.google.longrunning.Operation importInstance(
-        com.google.cloud.redis.v1.ImportInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getImportInstanceMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Export Redis instance data into a Redis RDB format file in GCS.
-     * Redis will continue serving during this operation.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public com.google.longrunning.Operation exportInstance(
-        com.google.cloud.redis.v1.ExportInstanceRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getExportInstanceMethodHelper(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Failover the master role to current replica node against a specific
      * STANDARD tier redis instance.
      * </pre>
@@ -1040,7 +818,7 @@ public final class CloudRedisGrpc {
    * * Each location has a collection of Redis instances, named: `/instances/&#42;`
    * * As such, Redis instances are resources of the form:
    *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note that location_id must be refering to a GCP `region`; for example:
+   * Note that location_id must be referring to a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
@@ -1132,40 +910,6 @@ public final class CloudRedisGrpc {
      *
      *
      * <pre>
-     * Import a Redis RDB snapshot file from GCS into a Redis instance.
-     * Redis may stop serving during this operation. Instance state will be
-     * IMPORTING for entire operation. When complete, the instance will contain
-     * only data from the imported file.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        importInstance(com.google.cloud.redis.v1.ImportInstanceRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getImportInstanceMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Export Redis instance data into a Redis RDB format file in GCS.
-     * Redis will continue serving during this operation.
-     * The returned operation is automatically deleted after a few hours, so
-     * there is no need to call DeleteOperation.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        exportInstance(com.google.cloud.redis.v1.ExportInstanceRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getExportInstanceMethodHelper(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Failover the master role to current replica node against a specific
      * STANDARD tier redis instance.
      * </pre>
@@ -1195,10 +939,8 @@ public final class CloudRedisGrpc {
   private static final int METHODID_GET_INSTANCE = 1;
   private static final int METHODID_CREATE_INSTANCE = 2;
   private static final int METHODID_UPDATE_INSTANCE = 3;
-  private static final int METHODID_IMPORT_INSTANCE = 4;
-  private static final int METHODID_EXPORT_INSTANCE = 5;
-  private static final int METHODID_FAILOVER_INSTANCE = 6;
-  private static final int METHODID_DELETE_INSTANCE = 7;
+  private static final int METHODID_FAILOVER_INSTANCE = 4;
+  private static final int METHODID_DELETE_INSTANCE = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1236,16 +978,6 @@ public final class CloudRedisGrpc {
         case METHODID_UPDATE_INSTANCE:
           serviceImpl.updateInstance(
               (com.google.cloud.redis.v1.UpdateInstanceRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_IMPORT_INSTANCE:
-          serviceImpl.importInstance(
-              (com.google.cloud.redis.v1.ImportInstanceRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_EXPORT_INSTANCE:
-          serviceImpl.exportInstance(
-              (com.google.cloud.redis.v1.ExportInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_FAILOVER_INSTANCE:
@@ -1326,8 +1058,6 @@ public final class CloudRedisGrpc {
                       .addMethod(getGetInstanceMethodHelper())
                       .addMethod(getCreateInstanceMethodHelper())
                       .addMethod(getUpdateInstanceMethodHelper())
-                      .addMethod(getImportInstanceMethodHelper())
-                      .addMethod(getExportInstanceMethodHelper())
                       .addMethod(getFailoverInstanceMethodHelper())
                       .addMethod(getDeleteInstanceMethodHelper())
                       .build();

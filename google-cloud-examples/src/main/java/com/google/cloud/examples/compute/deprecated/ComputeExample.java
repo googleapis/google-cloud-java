@@ -83,7 +83,7 @@ import java.util.Map;
  * <p>This example demonstrates a simple/typical Compute usage.
  *
  * <p>See the <a
- * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * href="https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  *
  * <pre>{@code target/appassembler/bin/ComputeExample [<project_id>]

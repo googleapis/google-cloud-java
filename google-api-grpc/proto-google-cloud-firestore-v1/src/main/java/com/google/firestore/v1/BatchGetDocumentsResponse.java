@@ -7,8 +7,7 @@ package com.google.firestore.v1;
  *
  *
  * <pre>
- * The streamed response for
- * [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
+ * The streamed response for [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.BatchGetDocumentsResponse}
@@ -273,8 +272,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
    * <pre>
    * The transaction that was started as part of this request.
    * Will only be set in the first response, and only if
-   * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction]
-   * was set in the request.
+   * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction] was set in the request.
    * </pre>
    *
    * <code>bytes transaction = 3;</code>
@@ -547,8 +545,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The streamed response for
-   * [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
+   * The streamed response for [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.BatchGetDocumentsResponse}
@@ -1076,8 +1073,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
      * <pre>
      * The transaction that was started as part of this request.
      * Will only be set in the first response, and only if
-     * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction]
-     * was set in the request.
+     * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction] was set in the request.
      * </pre>
      *
      * <code>bytes transaction = 3;</code>
@@ -1091,8 +1087,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
      * <pre>
      * The transaction that was started as part of this request.
      * Will only be set in the first response, and only if
-     * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction]
-     * was set in the request.
+     * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction] was set in the request.
      * </pre>
      *
      * <code>bytes transaction = 3;</code>
@@ -1112,8 +1107,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
      * <pre>
      * The transaction that was started as part of this request.
      * Will only be set in the first response, and only if
-     * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction]
-     * was set in the request.
+     * [BatchGetDocumentsRequest.new_transaction][google.firestore.v1.BatchGetDocumentsRequest.new_transaction] was set in the request.
      * </pre>
      *
      * <code>bytes transaction = 3;</code>

@@ -7,8 +7,7 @@ package com.google.firestore.v1;
  *
  *
  * <pre>
- * The request for
- * [Firestore.ListCollectionIds][google.firestore.v1.Firestore.ListCollectionIds].
+ * The request for [Firestore.ListCollectionIds][google.firestore.v1.Firestore.ListCollectionIds].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.ListCollectionIdsRequest}
@@ -397,8 +396,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request for
-   * [Firestore.ListCollectionIds][google.firestore.v1.Firestore.ListCollectionIds].
+   * The request for [Firestore.ListCollectionIds][google.firestore.v1.Firestore.ListCollectionIds].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.ListCollectionIdsRequest}

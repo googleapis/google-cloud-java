@@ -120,7 +120,7 @@ public class HttpStorageRpc implements StorageRpc {
 
     // Batch size is limited as, due to some current service implementation details, the service
     // performs better if the batches are split for better distribution. See
-    // https://github.com/GoogleCloudPlatform/google-cloud-java/pull/952#issuecomment-213466772 for
+    // https://github.com/googleapis/google-cloud-java/pull/952#issuecomment-213466772 for
     // background.
     private static final int MAX_BATCH_SIZE = 100;
 
@@ -667,7 +667,7 @@ public class HttpStorageRpc implements StorageRpc {
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
       HttpResponse httpResponse = req.executeMedia();
       // todo(mziccard) remove when
-      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/982 is fixed
+      // https://github.com/googleapis/google-cloud-java/issues/982 is fixed
       String contentEncoding = httpResponse.getContentEncoding();
       if (contentEncoding != null && contentEncoding.contains("gzip")) {
         try {

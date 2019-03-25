@@ -49,8 +49,7 @@
  *
  * <p>When using google-cloud from outside of App/Compute Engine, you have to <a
  * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a project
- * ID</a> and <a
- * href="https://github.com/GoogleCloudPlatform/google-cloud-java#authentication">provide
+ * ID</a> and <a href="https://github.com/googleapis/google-cloud-java#authentication">provide
  * credentials</a>.
  *
  * @see <a href="https://cloud.google.com/storage/">Google Cloud Storage</a>
