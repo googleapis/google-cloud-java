@@ -22,7 +22,9 @@ import static com.google.cloud.pubsub.v1.OpenCensusUtil.TAG_CONTEXT_KEY;
 import static com.google.cloud.pubsub.v1.OpenCensusUtil.TRACE_CONTEXT_KEY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.fail;
 
+import com.google.common.base.Stopwatch;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import io.opencensus.common.Scope;
@@ -40,6 +42,7 @@ import io.opencensus.trace.export.RunningSpanStore.Filter;
 import io.opencensus.trace.export.SpanData;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 /** Tests for {@link OpenCensusUtil}. */
@@ -123,8 +126,8 @@ public class OpenCensusUtilTest {
     @Override
     public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
       assertEquals(originalTagContext, tagger.getCurrentTagContext());
+      assertSpanCount(1);
       Collection<SpanData> spanDatas = runningSpanStore.getRunningSpans(RECEIVER_FILTER);
-      assertEquals(spanDatas.size(), 1);
       for (SpanData spanData : spanDatas) {
         List<Link> links = spanData.getLinks().getLinks();
         assertEquals(links.size(), 1);
@@ -134,6 +137,20 @@ public class OpenCensusUtilTest {
         assertEquals(parentLinkedSpan.getSpanId(), link.getSpanId());
       }
       consumer.ack();
+    }
+
+    private void assertSpanCount(int expected) {
+      Stopwatch watch = Stopwatch.createStarted();
+      while (true) {
+        Collection<SpanData> spanDatas = runningSpanStore.getRunningSpans(RECEIVER_FILTER);
+        if (spanDatas.size() == 1) {
+          break;
+        }
+        Thread.yield();
+        if (watch.elapsed(TimeUnit.SECONDS) >= 5) {
+          fail();
+        }
+      }
     }
   }
 }
