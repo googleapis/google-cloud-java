@@ -148,6 +148,8 @@ class UserDataConverter {
     } else if (sanitizedObject instanceof Blob) {
       Blob blob = (Blob) sanitizedObject;
       return Value.newBuilder().setBytesValue(blob.toByteString()).build();
+    } else if (sanitizedObject instanceof Value) {
+      return (Value) sanitizedObject;
     } else if (sanitizedObject instanceof DocumentReference) {
       DocumentReference docRef = (DocumentReference) sanitizedObject;
       return Value.newBuilder().setReferenceValue(docRef.getName()).build();
