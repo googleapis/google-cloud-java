@@ -60,7 +60,7 @@ import java.util.concurrent.TimeUnit;
  * <p>This example demonstrates a simple/typical storage usage.
  *
  * <p>See the <a
- * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * href="https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  *
  * <pre>{@code target/appassembler/bin/StorageExample [<project_id>]

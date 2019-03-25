@@ -42,7 +42,7 @@ import org.threeten.bp.format.DateTimeFormatter;
  * of type A, and lists record sets.
  *
  * <p>See the <a
- * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * href="https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  *
  * <pre>{@code target/appassembler/bin/DnsExample [<project_id>]

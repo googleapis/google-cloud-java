@@ -5,7 +5,7 @@
   <version>0.84.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Asset</name>
-  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-clients/google-cloud-asset</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-asset</url>
   <description>
     Java idiomatic client for Google Cloud Asset
   </description>
