@@ -20,9 +20,6 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.api.core.ApiClock;
 import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.HttpMethod;
-import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.io.CharStreams;
 import com.google.gson.Gson;

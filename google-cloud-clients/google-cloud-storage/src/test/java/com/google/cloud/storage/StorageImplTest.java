@@ -1977,7 +1977,7 @@ public class StorageImplTest {
       URL url =
           storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
       String escapedBlobName =
-          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F");
+          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F").replace(";", "%3B");
       String stringUrl = url.toString();
       String expectedUrl =
           new StringBuilder("https://storage.googleapis.com/")
@@ -2036,7 +2036,7 @@ public class StorageImplTest {
               TimeUnit.DAYS,
               Storage.SignUrlOption.withHostName("https://example.com"));
       String escapedBlobName =
-          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F");
+          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F").replace(";", "%3B");
       String stringUrl = url.toString();
       String expectedUrl =
           new StringBuilder("https://example.com/")
