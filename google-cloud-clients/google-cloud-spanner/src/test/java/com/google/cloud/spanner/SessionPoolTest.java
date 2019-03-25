@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.atMost;
 import static org.mockito.Mockito.doAnswer;
@@ -29,13 +30,27 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
 import com.google.cloud.spanner.SessionPool.Clock;
 import com.google.cloud.spanner.SessionPool.PooledSession;
+import com.google.cloud.spanner.SpannerImpl.SessionImpl;
+import com.google.cloud.spanner.SpannerImpl.TransactionContextImpl;
+import com.google.cloud.spanner.SpannerImpl.TransactionRunnerImpl;
+import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.ResultStreamConsumer;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
+import com.google.protobuf.ByteString;
+import com.google.spanner.v1.CommitRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.ResultSetStats;
+import com.google.spanner.v1.RollbackRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -49,6 +64,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
@@ -546,6 +562,223 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     runMaintainanceLoop(clock, pool, pool.poolMaintainer.numKeepAliveCycles);
     verify(session, times(3)).singleUse(any(TimestampBound.class));
     pool.closeAsync().get();
+  }
+
+  @Test
+  public void testSessionNotFoundSingleUse() {
+    Statement statement = Statement.of("SELECT 1");
+    Session closedSession = mockSession();
+    ReadContext closedContext = mock(ReadContext.class);
+    ResultSet closedResultSet = mock(ResultSet.class);
+    when(closedResultSet.next())
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found"));
+    when(closedContext.executeQuery(statement)).thenReturn(closedResultSet);
+    when(closedSession.singleUse()).thenReturn(closedContext);
+
+    Session openSession = mockSession();
+    ReadContext openContext = mock(ReadContext.class);
+    ResultSet openResultSet = mock(ResultSet.class);
+    when(openResultSet.next()).thenReturn(true, false);
+    when(openContext.executeQuery(statement)).thenReturn(openResultSet);
+    when(openSession.singleUse()).thenReturn(openContext);
+
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
+    FakeClock clock = new FakeClock();
+    clock.currentTimeMillis = System.currentTimeMillis();
+    pool = createPool(clock);
+    ReadContext context = pool.getReadSession().singleUse();
+    ResultSet resultSet = context.executeQuery(statement);
+    assertThat(resultSet.next()).isTrue();
+  }
+
+  @Test
+  public void testSessionNotFoundReadOnlyTransaction() {
+    Statement statement = Statement.of("SELECT 1");
+    Session closedSession = mockSession();
+    when(closedSession.readOnlyTransaction())
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found"));
+
+    Session openSession = mockSession();
+    ReadOnlyTransaction openTransaction = mock(ReadOnlyTransaction.class);
+    ResultSet openResultSet = mock(ResultSet.class);
+    when(openResultSet.next()).thenReturn(true, false);
+    when(openTransaction.executeQuery(statement)).thenReturn(openResultSet);
+    when(openSession.readOnlyTransaction()).thenReturn(openTransaction);
+
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
+    FakeClock clock = new FakeClock();
+    clock.currentTimeMillis = System.currentTimeMillis();
+    pool = createPool(clock);
+    ReadOnlyTransaction transaction = pool.getReadSession().readOnlyTransaction();
+    ResultSet resultSet = transaction.executeQuery(statement);
+    assertThat(resultSet.next()).isTrue();
+  }
+
+  private enum ReadWriteTransactionTestStatementType {
+    QUERY,
+    ANALYZE,
+    UPDATE,
+    BATCH_UPDATE,
+    WRITE,
+    EXCEPTION;
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
+  public void testSessionNotFoundReadWriteTransaction() {
+    final Statement queryStatement = Statement.of("SELECT 1");
+    final Statement updateStatement = Statement.of("UPDATE FOO SET BAR=1 WHERE ID=2");
+    final SpannerException sessionNotFound =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
+    for (ReadWriteTransactionTestStatementType statementType :
+        ReadWriteTransactionTestStatementType.values()) {
+      final ReadWriteTransactionTestStatementType executeStatementType = statementType;
+      for (boolean prepared : new boolean[] {true, false}) {
+        final boolean hasPreparedTransaction = prepared;
+        SpannerRpc.StreamingCall closedStreamingCall = mock(SpannerRpc.StreamingCall.class);
+        doThrow(sessionNotFound).when(closedStreamingCall).request(Mockito.anyInt());
+        SpannerRpc rpc = mock(SpannerRpc.class);
+        when(rpc.executeQuery(
+                any(ExecuteSqlRequest.class), any(ResultStreamConsumer.class), any(Map.class)))
+            .thenReturn(closedStreamingCall);
+        when(rpc.executeQuery(any(ExecuteSqlRequest.class), any(Map.class)))
+            .thenThrow(sessionNotFound);
+        when(rpc.executeBatchDml(any(ExecuteBatchDmlRequest.class), any(Map.class)))
+            .thenThrow(sessionNotFound);
+        when(rpc.commit(any(CommitRequest.class), any(Map.class))).thenThrow(sessionNotFound);
+        doThrow(sessionNotFound).when(rpc).rollback(any(RollbackRequest.class), any(Map.class));
+        SessionImpl closedSession = mock(SessionImpl.class);
+        when(closedSession.getName())
+            .thenReturn("projects/dummy/instances/dummy/database/dummy/sessions/session-closed");
+        ByteString preparedTransactionId =
+            hasPreparedTransaction ? ByteString.copyFromUtf8("test-txn") : null;
+        final TransactionContextImpl closedTransactionContext =
+            new TransactionContextImpl(closedSession, preparedTransactionId, rpc, 10);
+        when(closedSession.newTransaction()).thenReturn(closedTransactionContext);
+        when(closedSession.beginTransaction()).thenThrow(sessionNotFound);
+        TransactionRunnerImpl closedTransactionRunner =
+            new TransactionRunnerImpl(closedSession, rpc, 10);
+        when(closedSession.readWriteTransaction()).thenReturn(closedTransactionRunner);
+
+        SessionImpl openSession = mock(SessionImpl.class);
+        when(openSession.getName())
+            .thenReturn("projects/dummy/instances/dummy/database/dummy/sessions/session-open");
+        final TransactionContextImpl openTransactionContext = mock(TransactionContextImpl.class);
+        when(openSession.newTransaction()).thenReturn(openTransactionContext);
+        when(openSession.beginTransaction()).thenReturn(ByteString.copyFromUtf8("open-txn"));
+        TransactionRunnerImpl openTransactionRunner =
+            new TransactionRunnerImpl(openSession, mock(SpannerRpc.class), 10);
+        when(openSession.readWriteTransaction()).thenReturn(openTransactionRunner);
+
+        ResultSet openResultSet = mock(ResultSet.class);
+        when(openResultSet.next()).thenReturn(true, false);
+        ResultSet planResultSet = mock(ResultSet.class);
+        when(planResultSet.getStats()).thenReturn(ResultSetStats.getDefaultInstance());
+        when(openTransactionContext.executeQuery(queryStatement)).thenReturn(openResultSet);
+        when(openTransactionContext.analyzeQuery(queryStatement, QueryAnalyzeMode.PLAN))
+            .thenReturn(planResultSet);
+        when(openTransactionContext.executeUpdate(updateStatement)).thenReturn(1L);
+        when(openTransactionContext.batchUpdate(Arrays.asList(updateStatement, updateStatement)))
+            .thenReturn(new long[] {1L, 1L});
+
+        when(client.createSession(db)).thenReturn(closedSession, openSession);
+        FakeClock clock = new FakeClock();
+        clock.currentTimeMillis = System.currentTimeMillis();
+        pool = createPool(clock);
+        TransactionRunner runner = pool.getReadWriteSession().readWriteTransaction();
+        try {
+          runner.run(
+              new TransactionCallable<Integer>() {
+                private int callNumber = 0;
+
+                @Override
+                public Integer run(TransactionContext transaction) throws Exception {
+                  callNumber++;
+                  if (hasPreparedTransaction) {
+                    // If the session had a prepared read/write transaction, that transaction will
+                    // be
+                    // given to the runner in the first place and the SessionNotFoundException will
+                    // occur on the first query / update statement.
+                    if (callNumber == 1) {
+                      assertThat(transaction).isEqualTo(closedTransactionContext);
+                    } else {
+                      assertThat(transaction).isEqualTo(openTransactionContext);
+                    }
+                  } else {
+                    // If the session did not have a prepared read/write transaction, a the library
+                    // tried to create a new transaction before handing it to the transaction
+                    // runner.
+                    // The creation of the new transaction failed with a SessionNotFoundException,
+                    // and
+                    // the session was re-created before the run method was called.
+                    assertThat(transaction).isEqualTo(openTransactionContext);
+                  }
+                  switch (executeStatementType) {
+                    case QUERY:
+                      ResultSet resultSet = transaction.executeQuery(queryStatement);
+                      assertThat(resultSet.next()).isTrue();
+                      break;
+                    case ANALYZE:
+                      ResultSet planResultSet =
+                          transaction.analyzeQuery(queryStatement, QueryAnalyzeMode.PLAN);
+                      assertThat(planResultSet.next()).isFalse();
+                      assertThat(planResultSet.getStats()).isNotNull();
+                      break;
+                    case UPDATE:
+                      long updateCount = transaction.executeUpdate(updateStatement);
+                      assertThat(updateCount).isEqualTo(1L);
+                      break;
+                    case BATCH_UPDATE:
+                      long[] updateCounts =
+                          transaction.batchUpdate(Arrays.asList(updateStatement, updateStatement));
+                      assertThat(updateCounts).isEqualTo(new long[] {1L, 1L});
+                      break;
+                    case WRITE:
+                      transaction.buffer(Mutation.delete("FOO", Key.of(1L)));
+                      break;
+                    case EXCEPTION:
+                      throw new RuntimeException("rollback at call " + callNumber);
+                    default:
+                      fail("Unknown statement type: " + executeStatementType);
+                  }
+                  return callNumber;
+                }
+              });
+        } catch (Exception e) {
+          // The rollback will also cause a SessionNotFoundException, but this is caught, logged and
+          // further ignored by the library, meaning that the session will not be re-created for
+          // retry. Hence rollback at call 1.
+          assertThat(
+                  executeStatementType == ReadWriteTransactionTestStatementType.EXCEPTION
+                      && e.getMessage().contains("rollback at call 1"))
+              .isTrue();
+        }
+      }
+    }
+  }
+
+  @Test
+  public void testSessionNotFoundOnPrepareTransaction() {
+    final SpannerException sessionNotFound =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
+    SessionImpl closedSession = mock(SessionImpl.class);
+    when(closedSession.getName())
+        .thenReturn("projects/dummy/instances/dummy/database/dummy/sessions/session-closed");
+    when(closedSession.beginTransaction()).thenThrow(sessionNotFound);
+    doThrow(sessionNotFound).when(closedSession).prepareReadWriteTransaction();
+
+    SessionImpl openSession = mock(SessionImpl.class);
+    when(openSession.getName())
+        .thenReturn("projects/dummy/instances/dummy/database/dummy/sessions/session-open");
+
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
+    FakeClock clock = new FakeClock();
+    clock.currentTimeMillis = System.currentTimeMillis();
+    pool = createPool(clock);
+    PooledSession session = (PooledSession) pool.getReadWriteSession();
+    assertThat(session.delegate).isEqualTo(openSession);
   }
 
   private void mockKeepAlive(Session session) {
