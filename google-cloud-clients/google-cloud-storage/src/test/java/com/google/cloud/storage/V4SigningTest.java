@@ -104,10 +104,7 @@ public class V4SigningTest {
               .setClock(
                   new FakeClock(
                       TimeUnit.NANOSECONDS.convert(
-                              format
-                              .parse(testCase.timestamp)
-                              .getTime(),
-                          TimeUnit.MILLISECONDS)))
+                          format.parse(testCase.timestamp).getTime(), TimeUnit.MILLISECONDS)))
               .build()
               .getService();
 

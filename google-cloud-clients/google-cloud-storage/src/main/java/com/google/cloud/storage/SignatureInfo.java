@@ -302,7 +302,7 @@ public class SignatureInfo {
         checkArgument(accountEmail != null, "Account email required to use V4 signing");
         checkArgument(timestamp > 0, "Timestamp required to use V4 signing");
         checkArgument(
-            expiration < 604800, "Expiration can't be longer than 7 days to use V4 signing");
+            expiration <= 604800, "Expiration can't be longer than 7 days to use V4 signing");
       }
 
       if (canonicalizedExtensionHeaders == null) {

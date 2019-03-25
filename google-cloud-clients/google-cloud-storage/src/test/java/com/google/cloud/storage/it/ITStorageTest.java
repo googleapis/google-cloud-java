@@ -1850,7 +1850,7 @@ public class ITStorageTest {
       assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
     }
 
-    String blobName = "test-get-signed-url-blob";
+    String blobName = "test-get-signed-url-blob/with/slashes/and?special=!#$&'()*+,:;=?@[]";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);

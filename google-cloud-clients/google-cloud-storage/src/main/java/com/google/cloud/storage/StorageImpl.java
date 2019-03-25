@@ -643,7 +643,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     String escapedName = UrlEscapers.urlFragmentEscaper().escape(blobInfo.getName());
-    stPath.append(escapedName.replace("?", "%3F"));
+    stPath.append(escapedName.replace("?", "%3F").replace(";", "%3B"));
 
     URI path = URI.create(stPath.toString());
 
