@@ -446,18 +446,18 @@ public class CloudRedisClientTest {
             .build();
     mockCloudRedis.addResponse(resultOperation);
 
-    String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
     FailoverInstanceRequest.DataProtectionMode dataProtectionMode =
         FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
 
-    Instance actualResponse = client.failoverInstanceAsync(formattedName, dataProtectionMode).get();
+    Instance actualResponse = client.failoverInstanceAsync(name, dataProtectionMode).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudRedis.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     FailoverInstanceRequest actualRequest = (FailoverInstanceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, InstanceName.parse(actualRequest.getName()));
     Assert.assertEquals(dataProtectionMode, actualRequest.getDataProtectionMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -472,11 +472,11 @@ public class CloudRedisClientTest {
     mockCloudRedis.addException(exception);
 
     try {
-      String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
       FailoverInstanceRequest.DataProtectionMode dataProtectionMode =
           FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
 
-      client.failoverInstanceAsync(formattedName, dataProtectionMode).get();
+      client.failoverInstanceAsync(name, dataProtectionMode).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
