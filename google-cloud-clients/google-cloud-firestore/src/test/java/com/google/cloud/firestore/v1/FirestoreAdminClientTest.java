@@ -27,17 +27,21 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.firestore.admin.v1.CreateIndexRequest;
+import com.google.firestore.admin.v1.DatabaseName;
 import com.google.firestore.admin.v1.DeleteIndexRequest;
 import com.google.firestore.admin.v1.ExportDocumentsRequest;
 import com.google.firestore.admin.v1.Field;
+import com.google.firestore.admin.v1.FieldName;
 import com.google.firestore.admin.v1.GetFieldRequest;
 import com.google.firestore.admin.v1.GetIndexRequest;
 import com.google.firestore.admin.v1.ImportDocumentsRequest;
 import com.google.firestore.admin.v1.Index;
+import com.google.firestore.admin.v1.IndexName;
 import com.google.firestore.admin.v1.ListFieldsRequest;
 import com.google.firestore.admin.v1.ListFieldsResponse;
 import com.google.firestore.admin.v1.ListIndexesRequest;
 import com.google.firestore.admin.v1.ListIndexesResponse;
+import com.google.firestore.admin.v1.ParentName;
 import com.google.firestore.admin.v1.UpdateFieldRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -99,8 +103,7 @@ public class FirestoreAdminClientTest {
     Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedParent =
-        FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+    String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
     Index index = Index.newBuilder().build();
 
     Operation actualResponse = client.createIndex(formattedParent, index);
@@ -125,8 +128,7 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedParent =
-          FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+      String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
       Index index = Index.newBuilder().build();
 
       client.createIndex(formattedParent, index);
@@ -149,8 +151,7 @@ public class FirestoreAdminClientTest {
             .build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedParent =
-        FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+    String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
 
     ListIndexesPagedResponse pagedListResponse = client.listIndexes(formattedParent);
 
@@ -176,8 +177,7 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedParent =
-          FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+      String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
 
       client.listIndexes(formattedParent);
       Assert.fail("No exception raised");
@@ -193,18 +193,16 @@ public class FirestoreAdminClientTest {
     Index expectedResponse = Index.newBuilder().setName(name2).build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedName =
-        FirestoreAdminClient.formatIndexName(
-            "[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+    IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
 
-    Index actualResponse = client.getIndex(formattedName);
+    Index actualResponse = client.getIndex(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIndexRequest actualRequest = (GetIndexRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, IndexName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -218,11 +216,9 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedName =
-          FirestoreAdminClient.formatIndexName(
-              "[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+      IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
 
-      client.getIndex(formattedName);
+      client.getIndex(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -235,17 +231,15 @@ public class FirestoreAdminClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedName =
-        FirestoreAdminClient.formatIndexName(
-            "[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+    IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
 
-    client.deleteIndex(formattedName);
+    client.deleteIndex(name);
 
     List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteIndexRequest actualRequest = (DeleteIndexRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, IndexName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -259,11 +253,9 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedName =
-          FirestoreAdminClient.formatIndexName(
-              "[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+      IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
 
-      client.deleteIndex(formattedName);
+      client.deleteIndex(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -278,16 +270,16 @@ public class FirestoreAdminClientTest {
     Operation expectedResponse = Operation.newBuilder().setName(name2).setDone(done).build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+    DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
 
-    Operation actualResponse = client.importDocuments(formattedName);
+    Operation actualResponse = client.importDocuments(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ImportDocumentsRequest actualRequest = (ImportDocumentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, DatabaseName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -301,9 +293,9 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+      DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
 
-      client.importDocuments(formattedName);
+      client.importDocuments(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -318,16 +310,16 @@ public class FirestoreAdminClientTest {
     Operation expectedResponse = Operation.newBuilder().setName(name2).setDone(done).build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+    DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
 
-    Operation actualResponse = client.exportDocuments(formattedName);
+    Operation actualResponse = client.exportDocuments(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ExportDocumentsRequest actualRequest = (ExportDocumentsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, DatabaseName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -341,9 +333,9 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+      DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
 
-      client.exportDocuments(formattedName);
+      client.exportDocuments(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -357,18 +349,16 @@ public class FirestoreAdminClientTest {
     Field expectedResponse = Field.newBuilder().setName(name2).build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedName =
-        FirestoreAdminClient.formatFieldName(
-            "[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
+    FieldName name = FieldName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
 
-    Field actualResponse = client.getField(formattedName);
+    Field actualResponse = client.getField(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockFirestoreAdmin.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetFieldRequest actualRequest = (GetFieldRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, FieldName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -382,11 +372,9 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedName =
-          FirestoreAdminClient.formatFieldName(
-              "[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
+      FieldName name = FieldName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
 
-      client.getField(formattedName);
+      client.getField(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -406,8 +394,7 @@ public class FirestoreAdminClientTest {
             .build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
-    String formattedParent =
-        FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+    String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
 
     ListFieldsPagedResponse pagedListResponse = client.listFields(formattedParent);
 
@@ -433,8 +420,7 @@ public class FirestoreAdminClientTest {
     mockFirestoreAdmin.addException(exception);
 
     try {
-      String formattedParent =
-          FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+      String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
 
       client.listFields(formattedParent);
       Assert.fail("No exception raised");
