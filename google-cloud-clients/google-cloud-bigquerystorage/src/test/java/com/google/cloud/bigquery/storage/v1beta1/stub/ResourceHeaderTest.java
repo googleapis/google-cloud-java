@@ -32,7 +32,9 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition;
 import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference;
 import java.util.regex.Pattern;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -73,28 +75,35 @@ public class ResourceHeaderTest {
   private static final String TEST_HEADER_VALUE = "simple-header-value";
   private static final Pattern TEST_PATTERN = Pattern.compile(".*" + TEST_HEADER_VALUE + ".*");
 
-  private InProcessServer<?> server;
+  private static InProcessServer<?> server;
+
   private LocalChannelProvider channelProvider;
   private BigQueryStorageClient client;
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeClass
+  public static void setUpClass() throws Exception {
     server = new InProcessServer<>(new BigQueryStorageImplBase() {}, NAME);
     server.start();
-    channelProvider = LocalChannelProvider.create(NAME);
+  }
 
+  @Before
+  public void setUp() throws Exception {
+    channelProvider = LocalChannelProvider.create(NAME);
     BigQueryStorageSettings.Builder settingsBuilder =
         BigQueryStorageSettings.newBuilder()
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setHeaderProvider(FixedHeaderProvider.create(TEST_HEADER_NAME, TEST_HEADER_VALUE))
             .setTransportChannelProvider(channelProvider);
-
     client = BigQueryStorageClient.create(settingsBuilder.build());
   }
 
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @AfterClass
+  public static void tearDownClass() throws Exception {
     server.stop();
     server.blockUntilShutdown();
   }
