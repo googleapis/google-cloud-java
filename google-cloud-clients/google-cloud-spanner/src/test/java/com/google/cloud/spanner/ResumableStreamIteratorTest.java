@@ -19,6 +19,8 @@ package com.google.cloud.spanner;
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
+import com.google.cloud.spanner.AbstractResultSet.ResumableStreamIterator;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
@@ -41,7 +43,7 @@ import org.mockito.Mockito;
 @RunWith(JUnit4.class)
 public class ResumableStreamIteratorTest {
   interface Starter {
-    SpannerImpl.CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
+    CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
   }
 
   interface ResultSetStream {
@@ -64,7 +66,7 @@ public class ResumableStreamIteratorTest {
   }
 
   static class ResultSetIterator extends AbstractIterator<PartialResultSet>
-      implements SpannerImpl.CloseableIterator<PartialResultSet> {
+      implements CloseableIterator<PartialResultSet> {
     final ResultSetStream stream;
 
     ResultSetIterator(ResultSetStream stream) {
@@ -89,7 +91,7 @@ public class ResumableStreamIteratorTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
   Starter starter = Mockito.mock(Starter.class);
-  SpannerImpl.ResumableStreamIterator iterator;
+  ResumableStreamIterator iterator;
 
   @Before
   public void setUp() {
@@ -98,10 +100,9 @@ public class ResumableStreamIteratorTest {
 
   private void initWithLimit(int maxBufferSize) {
     iterator =
-        new SpannerImpl.ResumableStreamIterator(maxBufferSize, "", null) {
+        new ResumableStreamIterator(maxBufferSize, "", null) {
           @Override
-          SpannerImpl.CloseableIterator<PartialResultSet> startStream(
-              @Nullable ByteString resumeToken) {
+          CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
             return starter.startStream(resumeToken);
           }
         };

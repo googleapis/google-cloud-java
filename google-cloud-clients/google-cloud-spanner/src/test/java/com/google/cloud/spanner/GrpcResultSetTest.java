@@ -23,6 +23,8 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.AbstractResultSet.GrpcResultSet;
+import com.google.cloud.spanner.AbstractResultSet.GrpcStreamIterator;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -51,11 +53,11 @@ import org.junit.runners.JUnit4;
 public class GrpcResultSetTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
-  private SpannerImpl.GrpcResultSet resultSet;
+  private GrpcResultSet resultSet;
   private SpannerRpc.ResultStreamConsumer consumer;
-  private SpannerImpl.GrpcStreamIterator stream;
+  private GrpcStreamIterator stream;
 
-  private static class NoOpListener implements SpannerImpl.AbstractResultSet.Listener {
+  private static class NoOpListener implements AbstractResultSet.Listener {
     @Override
     public void onTransactionMetadata(Transaction transaction) throws SpannerException {}
 
@@ -68,7 +70,7 @@ public class GrpcResultSetTest {
 
   @Before
   public void setUp() {
-    stream = new SpannerImpl.GrpcStreamIterator(10);
+    stream = new GrpcStreamIterator(10);
     stream.setCall(
         new SpannerRpc.StreamingCall() {
           @Override
@@ -78,11 +80,11 @@ public class GrpcResultSetTest {
           public void request(int numMessages) {}
         });
     consumer = stream.consumer();
-    resultSet = new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), QueryMode.NORMAL);
+    resultSet = new GrpcResultSet(stream, new NoOpListener());
   }
 
-  public SpannerImpl.GrpcResultSet resultSetWithMode(QueryMode queryMode) {
-    return new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), queryMode);
+  public GrpcResultSet resultSetWithMode(QueryMode queryMode) {
+    return new GrpcResultSet(stream, new NoOpListener());
   }
 
   @Test
@@ -631,7 +633,7 @@ public class GrpcResultSetTest {
 
   private void verifySerialization(
       Function<Value, com.google.protobuf.Value> protoFn, Value... values) {
-    resultSet = new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), QueryMode.NORMAL);
+    resultSet = new GrpcResultSet(stream, new NoOpListener());
     PartialResultSet.Builder builder = PartialResultSet.newBuilder();
     List<Type.StructField> types = new ArrayList<>();
     for (Value value : values) {

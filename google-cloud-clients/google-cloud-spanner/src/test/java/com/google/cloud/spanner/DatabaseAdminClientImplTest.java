@@ -40,7 +40,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 
-/** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.DatabaseAdminClientImpl}. */
+/** Unit tests for {@link com.google.cloud.spanner.DatabaseAdminClientImpl}. */
 @RunWith(JUnit4.class)
 public class DatabaseAdminClientImplTest {
   private static final String PROJECT_ID = "my-project";
@@ -52,12 +52,12 @@ public class DatabaseAdminClientImplTest {
       "projects/my-project/instances/my-instance/databases/my-db2";
 
   @Mock SpannerRpc rpc;
-  SpannerImpl.DatabaseAdminClientImpl client;
+  DatabaseAdminClientImpl client;
 
   @Before
   public void setUp() {
     initMocks(this);
-    client = new SpannerImpl.DatabaseAdminClientImpl(PROJECT_ID, rpc);
+    client = new DatabaseAdminClientImpl(PROJECT_ID, rpc);
   }
 
   private Database getDatabaseProto() {

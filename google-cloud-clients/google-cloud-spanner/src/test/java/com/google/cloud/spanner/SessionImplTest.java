@@ -55,7 +55,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-/** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.SessionImpl}. */
+/** Unit tests for {@link com.google.cloud.spanner.SessionImpl}. */
 @RunWith(JUnit4.class)
 public class SessionImplTest {
   @Rule public ExpectedException expectedException = ExpectedException.none();

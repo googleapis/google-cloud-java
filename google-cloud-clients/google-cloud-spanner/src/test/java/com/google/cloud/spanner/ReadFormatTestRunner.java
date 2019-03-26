@@ -19,10 +19,11 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.spanner.AbstractResultSet.GrpcResultSet;
+import com.google.cloud.spanner.AbstractResultSet.GrpcStreamIterator;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.io.Resources;
 import com.google.protobuf.util.JsonFormat;
-import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.Transaction;
 import java.nio.charset.StandardCharsets;
@@ -42,7 +43,7 @@ import org.junit.runners.model.InitializationError;
 /** Test runner that runs tests specified in json file */
 public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
 
-  private static class NoOpListener implements SpannerImpl.AbstractResultSet.Listener {
+  private static class NoOpListener implements AbstractResultSet.Listener {
     @Override
     public void onTransactionMetadata(Transaction transaction) throws SpannerException {}
 
@@ -99,9 +100,9 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
   }
 
   private class TestCaseRunner {
-    private SpannerImpl.GrpcResultSet resultSet;
+    private GrpcResultSet resultSet;
     private SpannerRpc.ResultStreamConsumer consumer;
-    private SpannerImpl.GrpcStreamIterator stream;
+    private GrpcStreamIterator stream;
     private JSONObject testCase;
 
     TestCaseRunner(JSONObject testCase) {
@@ -109,7 +110,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
     }
 
     private void run() throws Exception {
-      stream = new SpannerImpl.GrpcStreamIterator(10);
+      stream = new GrpcStreamIterator(10);
       stream.setCall(
           new SpannerRpc.StreamingCall() {
             @Override
@@ -119,7 +120,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
             public void request(int numMessages) {}
           });
       consumer = stream.consumer();
-      resultSet = new SpannerImpl.GrpcResultSet(stream, new NoOpListener(), QueryMode.NORMAL);
+      resultSet = new GrpcResultSet(stream, new NoOpListener());
 
       JSONArray chunks = testCase.getJSONArray("chunks");
       JSONObject expectedResult = testCase.getJSONObject("result");
@@ -132,8 +133,7 @@ public class ReadFormatTestRunner extends ParentRunner<JSONObject> {
       assertResultSet(resultSet, expectedResult.getJSONArray("value"));
     }
 
-    private void assertResultSet(SpannerImpl.GrpcResultSet actual, JSONArray expected)
-        throws Exception {
+    private void assertResultSet(GrpcResultSet actual, JSONArray expected) throws Exception {
       int i = 0;
       while (actual.next()) {
         Struct actualRow = actual.getCurrentRowAsStruct();

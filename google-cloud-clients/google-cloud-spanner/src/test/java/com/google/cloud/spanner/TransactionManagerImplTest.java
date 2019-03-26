@@ -24,8 +24,8 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.SpannerImpl.SessionImpl;
 import com.google.cloud.spanner.TransactionManager.TransactionState;
+import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -41,7 +41,7 @@ public class TransactionManagerImplTest {
   @Rule public ExpectedException exception = ExpectedException.none();
 
   @Mock private SessionImpl session;
-  @Mock SpannerImpl.TransactionContextImpl txn;
+  @Mock TransactionContextImpl txn;
   private TransactionManagerImpl manager;
 
   @Before
@@ -117,7 +117,7 @@ public class TransactionManagerImplTest {
     } catch (AbortedException e) {
       assertThat(manager.getState()).isEqualTo(TransactionState.ABORTED);
     }
-    txn = Mockito.mock(SpannerImpl.TransactionContextImpl.class);
+    txn = Mockito.mock(TransactionContextImpl.class);
     when(session.newTransaction()).thenReturn(txn);
     assertThat(manager.resetForRetry()).isEqualTo(txn);
     assertThat(manager.getState()).isEqualTo(TransactionState.STARTED);

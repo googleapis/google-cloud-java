@@ -18,15 +18,16 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.any;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.client.util.BackOff;
 import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
+import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import io.grpc.Context;
 import io.grpc.Status;
@@ -43,10 +44,10 @@ import org.mockito.MockitoAnnotations;
 @RunWith(JUnit4.class)
 public class TransactionRunnerImplTest {
   @Mock private SpannerRpc rpc;
-  @Mock private SpannerImpl.SessionImpl session;
-  @Mock private SpannerImpl.TransactionRunnerImpl.Sleeper sleeper;
-  @Mock private SpannerImpl.TransactionContextImpl txn;
-  private SpannerImpl.TransactionRunnerImpl transactionRunner;
+  @Mock private SessionImpl session;
+  @Mock private TransactionRunnerImpl.Sleeper sleeper;
+  @Mock private TransactionContextImpl txn;
+  private TransactionRunnerImpl transactionRunner;
   private boolean firstRun;
 
   @Before
@@ -54,7 +55,7 @@ public class TransactionRunnerImplTest {
     MockitoAnnotations.initMocks(this);
     firstRun = true;
     when(session.newTransaction()).thenReturn(txn);
-    transactionRunner = new SpannerImpl.TransactionRunnerImpl(session, rpc, sleeper, 1);
+    transactionRunner = new TransactionRunnerImpl(session, rpc, sleeper, 1);
   }
 
   @Test

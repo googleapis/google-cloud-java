@@ -37,7 +37,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 
-/** Unit tests for {@link com.google.cloud.spanner.SpannerImpl.InstanceAdminClientImpl}. */
+/** Unit tests for {@link com.google.cloud.spanner.InstanceAdminClientImpl}. */
 @RunWith(JUnit4.class)
 public class InstanceAdminClientImplTest {
   private static final String PROJECT_ID = "my-project";
@@ -50,12 +50,12 @@ public class InstanceAdminClientImplTest {
 
   @Mock SpannerRpc rpc;
   @Mock DatabaseAdminClient dbClient;
-  SpannerImpl.InstanceAdminClientImpl client;
+  InstanceAdminClientImpl client;
 
   @Before
   public void setUp() {
     initMocks(this);
-    client = new SpannerImpl.InstanceAdminClientImpl(PROJECT_ID, rpc, dbClient);
+    client = new InstanceAdminClientImpl(PROJECT_ID, rpc, dbClient);
   }
 
   @Test
