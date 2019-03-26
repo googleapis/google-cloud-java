@@ -18,7 +18,7 @@ package com.google.cloud.monitoring.v3;
 import static com.google.cloud.monitoring.v3.MetricServiceClient.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.common.base.Preconditions;
-import com.google.protos.google.monitoring.v3.ProjectName;
+import com.google.monitoring.v3.ProjectName;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Test;
