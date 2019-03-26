@@ -38,3 +38,4 @@ for version in versions:
     java.format_code('./src')
     java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
     java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
