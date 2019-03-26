@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -41,12 +42,12 @@ import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
-import com.google.monitoring.v3.MetricDescriptorName;
-import com.google.monitoring.v3.MonitoredResourceDescriptorName;
-import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
+import com.google.protos.google.monitoring.v3.MetricDescriptorName;
+import com.google.protos.google.monitoring.v3.MonitoredResourceDescriptorName;
+import com.google.protos.google.monitoring.v3.ProjectName;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -123,6 +124,86 @@ import javax.annotation.Generated;
 public class MetricServiceClient implements BackgroundResource {
   private final MetricServiceSettings settings;
   private final MetricServiceStub stub;
+
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
+
+  private static final PathTemplate METRIC_DESCRIPTOR_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/metricDescriptors/{metric_descriptor=**}");
+
+  private static final PathTemplate MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
+
+  /** Formats a string containing the fully-qualified path to represent a project resource. */
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent a metric_descriptor resource.
+   */
+  public static final String formatMetricDescriptorName(String project, String metricDescriptor) {
+    return METRIC_DESCRIPTOR_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "metric_descriptor", metricDescriptor);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent a
+   * monitored_resource_descriptor resource.
+   */
+  public static final String formatMonitoredResourceDescriptorName(
+      String project, String monitoredResourceDescriptor) {
+    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "monitored_resource_descriptor", monitoredResourceDescriptor);
+  }
+
+  /** Parses the project from the given fully-qualified path which represents a project resource. */
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a metric_descriptor
+   * resource.
+   */
+  public static final String parseProjectFromMetricDescriptorName(String metricDescriptorName) {
+    return METRIC_DESCRIPTOR_PATH_TEMPLATE.parse(metricDescriptorName).get("project");
+  }
+
+  /**
+   * Parses the metric_descriptor from the given fully-qualified path which represents a
+   * metric_descriptor resource.
+   */
+  public static final String parseMetricDescriptorFromMetricDescriptorName(
+      String metricDescriptorName) {
+    return METRIC_DESCRIPTOR_PATH_TEMPLATE.parse(metricDescriptorName).get("metric_descriptor");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a
+   * monitored_resource_descriptor resource.
+   */
+  public static final String parseProjectFromMonitoredResourceDescriptorName(
+      String monitoredResourceDescriptorName) {
+    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE
+        .parse(monitoredResourceDescriptorName)
+        .get("project");
+  }
+
+  /**
+   * Parses the monitored_resource_descriptor from the given fully-qualified path which represents a
+   * monitored_resource_descriptor resource.
+   */
+  public static final String parseMonitoredResourceDescriptorFromMonitoredResourceDescriptorName(
+      String monitoredResourceDescriptorName) {
+    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE
+        .parse(monitoredResourceDescriptorName)
+        .get("monitored_resource_descriptor");
+  }
 
   /** Constructs an instance of MetricServiceClient with default settings. */
   public static final MetricServiceClient create() throws IOException {

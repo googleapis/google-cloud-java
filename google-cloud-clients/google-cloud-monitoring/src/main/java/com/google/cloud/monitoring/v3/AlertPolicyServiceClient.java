@@ -25,20 +25,21 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStub;
 import com.google.cloud.monitoring.v3.stub.AlertPolicyServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.AlertPolicy;
-import com.google.monitoring.v3.AlertPolicyName;
 import com.google.monitoring.v3.CreateAlertPolicyRequest;
 import com.google.monitoring.v3.DeleteAlertPolicyRequest;
 import com.google.monitoring.v3.GetAlertPolicyRequest;
 import com.google.monitoring.v3.ListAlertPoliciesRequest;
 import com.google.monitoring.v3.ListAlertPoliciesResponse;
-import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateAlertPolicyRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protos.google.monitoring.v3.AlertPolicyName;
+import com.google.protos.google.monitoring.v3.ProjectName;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -120,6 +121,88 @@ import javax.annotation.Generated;
 public class AlertPolicyServiceClient implements BackgroundResource {
   private final AlertPolicyServiceSettings settings;
   private final AlertPolicyServiceStub stub;
+
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
+
+  private static final PathTemplate ALERT_POLICY_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/alertPolicies/{alert_policy}");
+
+  private static final PathTemplate ALERT_POLICY_CONDITION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/alertPolicies/{alert_policy}/conditions/{condition}");
+
+  /** Formats a string containing the fully-qualified path to represent a project resource. */
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /** Formats a string containing the fully-qualified path to represent a alert_policy resource. */
+  public static final String formatAlertPolicyName(String project, String alertPolicy) {
+    return ALERT_POLICY_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "alert_policy", alertPolicy);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent a alert_policy_condition
+   * resource.
+   */
+  public static final String formatAlertPolicyConditionName(
+      String project, String alertPolicy, String condition) {
+    return ALERT_POLICY_CONDITION_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "alert_policy", alertPolicy,
+        "condition", condition);
+  }
+
+  /** Parses the project from the given fully-qualified path which represents a project resource. */
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a alert_policy
+   * resource.
+   */
+  public static final String parseProjectFromAlertPolicyName(String alertPolicyName) {
+    return ALERT_POLICY_PATH_TEMPLATE.parse(alertPolicyName).get("project");
+  }
+
+  /**
+   * Parses the alert_policy from the given fully-qualified path which represents a alert_policy
+   * resource.
+   */
+  public static final String parseAlertPolicyFromAlertPolicyName(String alertPolicyName) {
+    return ALERT_POLICY_PATH_TEMPLATE.parse(alertPolicyName).get("alert_policy");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a
+   * alert_policy_condition resource.
+   */
+  public static final String parseProjectFromAlertPolicyConditionName(
+      String alertPolicyConditionName) {
+    return ALERT_POLICY_CONDITION_PATH_TEMPLATE.parse(alertPolicyConditionName).get("project");
+  }
+
+  /**
+   * Parses the alert_policy from the given fully-qualified path which represents a
+   * alert_policy_condition resource.
+   */
+  public static final String parseAlertPolicyFromAlertPolicyConditionName(
+      String alertPolicyConditionName) {
+    return ALERT_POLICY_CONDITION_PATH_TEMPLATE.parse(alertPolicyConditionName).get("alert_policy");
+  }
+
+  /**
+   * Parses the condition from the given fully-qualified path which represents a
+   * alert_policy_condition resource.
+   */
+  public static final String parseConditionFromAlertPolicyConditionName(
+      String alertPolicyConditionName) {
+    return ALERT_POLICY_CONDITION_PATH_TEMPLATE.parse(alertPolicyConditionName).get("condition");
+  }
 
   /** Constructs an instance of AlertPolicyServiceClient with default settings. */
   public static final AlertPolicyServiceClient create() throws IOException {
