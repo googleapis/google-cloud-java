@@ -110,8 +110,7 @@ public class V4SigningTest {
       Map<String, String> headers = new HashMap<>();
       if (testCase.headers != null) {
         for (Map.Entry<String, JsonElement> entry : testCase.headers.entrySet()) {
-          JsonArray value = entry.getValue().getAsJsonArray();
-          headers.put(entry.getKey(), value.get(0).getAsString());
+          headers.put(entry.getKey(), entry.getValue().getAsString());
         }
       }
 
