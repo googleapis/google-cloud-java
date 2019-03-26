@@ -3061,8 +3061,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (op_
           != com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator
-              .OPERATOR_UNSPECIFIED
-              .getNumber()) {
+              .OPERATOR_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, op_);
       }
       for (int i = 0; i < filters_.size(); i++) {
@@ -3079,8 +3078,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       size = 0;
       if (op_
           != com.google.firestore.v1beta1.StructuredQuery.CompositeFilter.Operator
-              .OPERATOR_UNSPECIFIED
-              .getNumber()) {
+              .OPERATOR_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, op_);
       }
       for (int i = 0; i < filters_.size(); i++) {

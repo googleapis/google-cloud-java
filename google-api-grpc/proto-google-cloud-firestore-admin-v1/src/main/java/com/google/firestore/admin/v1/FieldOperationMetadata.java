@@ -589,8 +589,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (changeType_
           != com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta.ChangeType
-              .CHANGE_TYPE_UNSPECIFIED
-              .getNumber()) {
+              .CHANGE_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, changeType_);
       }
       if (index_ != null) {
@@ -607,8 +606,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       size = 0;
       if (changeType_
           != com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta.ChangeType
-              .CHANGE_TYPE_UNSPECIFIED
-              .getNumber()) {
+              .CHANGE_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, changeType_);
       }
       if (index_ != null) {
