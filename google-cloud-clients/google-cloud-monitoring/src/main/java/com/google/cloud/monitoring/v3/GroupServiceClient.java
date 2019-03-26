@@ -26,7 +26,6 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStub;
 import com.google.cloud.monitoring.v3.stub.GroupServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -34,14 +33,14 @@ import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
 import com.google.monitoring.v3.Group;
-import com.google.monitoring.v3.GroupName;
 import com.google.monitoring.v3.ListGroupMembersRequest;
 import com.google.monitoring.v3.ListGroupMembersResponse;
 import com.google.monitoring.v3.ListGroupsRequest;
 import com.google.monitoring.v3.ListGroupsResponse;
-import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
+import com.google.protos.google.monitoring.v3.GroupName;
+import com.google.protos.google.monitoring.v3.ProjectName;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -125,39 +124,6 @@ import javax.annotation.Generated;
 public class GroupServiceClient implements BackgroundResource {
   private final GroupServiceSettings settings;
   private final GroupServiceStub stub;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate GROUP_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a group resource. */
-  public static final String formatGroupName(String project, String group) {
-    return GROUP_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "group", group);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a group resource. */
-  public static final String parseProjectFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("project");
-  }
-
-  /** Parses the group from the given fully-qualified path which represents a group resource. */
-  public static final String parseGroupFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
-  }
 
   /** Constructs an instance of GroupServiceClient with default settings. */
   public static final GroupServiceClient create() throws IOException {

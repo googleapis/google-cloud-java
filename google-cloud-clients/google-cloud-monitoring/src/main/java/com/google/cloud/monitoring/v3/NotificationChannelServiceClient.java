@@ -25,7 +25,6 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.monitoring.v3.stub.NotificationChannelServiceStub;
 import com.google.cloud.monitoring.v3.stub.NotificationChannelServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -39,12 +38,12 @@ import com.google.monitoring.v3.ListNotificationChannelsRequest;
 import com.google.monitoring.v3.ListNotificationChannelsResponse;
 import com.google.monitoring.v3.NotificationChannel;
 import com.google.monitoring.v3.NotificationChannelDescriptor;
-import com.google.monitoring.v3.NotificationChannelDescriptorName;
-import com.google.monitoring.v3.NotificationChannelName;
-import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateNotificationChannelRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protos.google.monitoring.v3.NotificationChannelDescriptorName;
+import com.google.protos.google.monitoring.v3.NotificationChannelName;
+import com.google.protos.google.monitoring.v3.ProjectName;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -122,91 +121,6 @@ import javax.annotation.Generated;
 public class NotificationChannelServiceClient implements BackgroundResource {
   private final NotificationChannelServiceSettings settings;
   private final NotificationChannelServiceStub stub;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate NOTIFICATION_CHANNEL_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/notificationChannels/{notification_channel}");
-
-  private static final PathTemplate NOTIFICATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a notification_channel
-   * resource.
-   */
-  public static final String formatNotificationChannelName(
-      String project, String notificationChannel) {
-    return NOTIFICATION_CHANNEL_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "notification_channel", notificationChannel);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a
-   * notification_channel_descriptor resource.
-   */
-  public static final String formatNotificationChannelDescriptorName(
-      String project, String channelDescriptor) {
-    return NOTIFICATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "channel_descriptor", channelDescriptor);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a notification_channel
-   * resource.
-   */
-  public static final String parseProjectFromNotificationChannelName(
-      String notificationChannelName) {
-    return NOTIFICATION_CHANNEL_PATH_TEMPLATE.parse(notificationChannelName).get("project");
-  }
-
-  /**
-   * Parses the notification_channel from the given fully-qualified path which represents a
-   * notification_channel resource.
-   */
-  public static final String parseNotificationChannelFromNotificationChannelName(
-      String notificationChannelName) {
-    return NOTIFICATION_CHANNEL_PATH_TEMPLATE
-        .parse(notificationChannelName)
-        .get("notification_channel");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a
-   * notification_channel_descriptor resource.
-   */
-  public static final String parseProjectFromNotificationChannelDescriptorName(
-      String notificationChannelDescriptorName) {
-    return NOTIFICATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE
-        .parse(notificationChannelDescriptorName)
-        .get("project");
-  }
-
-  /**
-   * Parses the channel_descriptor from the given fully-qualified path which represents a
-   * notification_channel_descriptor resource.
-   */
-  public static final String parseChannelDescriptorFromNotificationChannelDescriptorName(
-      String notificationChannelDescriptorName) {
-    return NOTIFICATION_CHANNEL_DESCRIPTOR_PATH_TEMPLATE
-        .parse(notificationChannelDescriptorName)
-        .get("channel_descriptor");
-  }
 
   /** Constructs an instance of NotificationChannelServiceClient with default settings. */
   public static final NotificationChannelServiceClient create() throws IOException {
