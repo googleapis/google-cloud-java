@@ -50,8 +50,7 @@ public class ResourceHeaderTest {
   private static final ReadSession TEST_SESSION =
       ReadSession.newBuilder().setName("sessionName").build();
 
-  private static final Stream TEST_STREAM =
-      Stream.newBuilder().setName("streamName").build();
+  private static final Stream TEST_STREAM = Stream.newBuilder().setName("streamName").build();
 
   private static final String NAME = "resource-header-test:123";
 
@@ -115,10 +114,7 @@ public class ResourceHeaderTest {
     try {
       ReadRowsRequest request =
           ReadRowsRequest.newBuilder()
-              .setReadPosition(
-                  StreamPosition.newBuilder()
-                      .setStream(TEST_STREAM)
-                      .setOffset(125))
+              .setReadPosition(StreamPosition.newBuilder().setStream(TEST_STREAM).setOffset(125))
               .build();
       client.readRowsCallable().call(request);
     } catch (UnimplementedException e) {
@@ -169,5 +165,4 @@ public class ResourceHeaderTest {
     boolean testHeaderSent = channelProvider.isHeaderSent(TEST_HEADER_NAME, TEST_PATTERN);
     assertWithMessage("Provided header was sent").that(testHeaderSent).isTrue();
   }
-
 }
