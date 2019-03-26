@@ -137,9 +137,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_TestSuite_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.TestSuite.class,
-          com.google.cloud.firestore.conformance.TestDefinition.TestSuite.Builder.class);
+          .internal_static_tests_TestSuite_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.TestSuite.class,
+              com.google.cloud.firestore.conformance.TestDefinition.TestSuite.Builder.class);
     }
 
     public static final int TESTS_FIELD_NUMBER = 1;
@@ -351,9 +352,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_TestSuite_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.TestSuite.class,
-            com.google.cloud.firestore.conformance.TestDefinition.TestSuite.Builder.class);
+            .internal_static_tests_TestSuite_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.TestSuite.class,
+                com.google.cloud.firestore.conformance.TestDefinition.TestSuite.Builder.class);
       }
 
       // Construct using
@@ -1132,9 +1134,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_Test_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.Test.class,
-          com.google.cloud.firestore.conformance.TestDefinition.Test.Builder.class);
+          .internal_static_tests_Test_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.Test.class,
+              com.google.cloud.firestore.conformance.TestDefinition.Test.Builder.class);
     }
 
     private int testCase_ = 0;
@@ -1725,9 +1728,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_Test_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.Test.class,
-            com.google.cloud.firestore.conformance.TestDefinition.Test.Builder.class);
+            .internal_static_tests_Test_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.Test.class,
+                com.google.cloud.firestore.conformance.TestDefinition.Test.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.Test.newBuilder()
@@ -3388,9 +3392,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_GetTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.GetTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.GetTest.Builder.class);
+          .internal_static_tests_GetTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.GetTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.GetTest.Builder.class);
     }
 
     public static final int DOC_REF_PATH_FIELD_NUMBER = 1;
@@ -3670,9 +3675,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_GetTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.GetTest.class,
-            com.google.cloud.firestore.conformance.TestDefinition.GetTest.Builder.class);
+            .internal_static_tests_GetTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.GetTest.class,
+                com.google.cloud.firestore.conformance.TestDefinition.GetTest.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.GetTest.newBuilder()
@@ -4344,9 +4350,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_CreateTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.CreateTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.CreateTest.Builder.class);
+          .internal_static_tests_CreateTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.CreateTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.CreateTest.Builder.class);
     }
 
     public static final int DOC_REF_PATH_FIELD_NUMBER = 1;
@@ -4708,9 +4715,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_CreateTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.CreateTest.class,
-            com.google.cloud.firestore.conformance.TestDefinition.CreateTest.Builder.class);
+            .internal_static_tests_CreateTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.CreateTest.class,
+                com.google.cloud.firestore.conformance.TestDefinition.CreateTest.Builder.class);
       }
 
       // Construct using
@@ -5592,9 +5600,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_SetTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.SetTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.SetTest.Builder.class);
+          .internal_static_tests_SetTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.SetTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.SetTest.Builder.class);
     }
 
     public static final int DOC_REF_PATH_FIELD_NUMBER = 1;
@@ -6006,9 +6015,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_SetTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.SetTest.class,
-            com.google.cloud.firestore.conformance.TestDefinition.SetTest.Builder.class);
+            .internal_static_tests_SetTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.SetTest.class,
+                com.google.cloud.firestore.conformance.TestDefinition.SetTest.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.SetTest.newBuilder()
@@ -7073,9 +7083,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_UpdateTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.Builder.class);
+          .internal_static_tests_UpdateTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.Builder.class);
     }
 
     public static final int DOC_REF_PATH_FIELD_NUMBER = 1;
@@ -7488,9 +7499,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_UpdateTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.class,
-            com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.Builder.class);
+            .internal_static_tests_UpdateTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.class,
+                com.google.cloud.firestore.conformance.TestDefinition.UpdateTest.Builder.class);
       }
 
       // Construct using
@@ -8652,9 +8664,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_UpdatePathsTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.UpdatePathsTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.UpdatePathsTest.Builder.class);
+          .internal_static_tests_UpdatePathsTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.UpdatePathsTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.UpdatePathsTest.Builder.class);
     }
 
     private int bitField0_;
@@ -10661,9 +10674,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_DeleteTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.Builder.class);
+          .internal_static_tests_DeleteTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.Builder.class);
     }
 
     public static final int DOC_REF_PATH_FIELD_NUMBER = 1;
@@ -10999,9 +11013,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_DeleteTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.class,
-            com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.Builder.class);
+            .internal_static_tests_DeleteTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.class,
+                com.google.cloud.firestore.conformance.TestDefinition.DeleteTest.Builder.class);
       }
 
       // Construct using
@@ -11810,9 +11825,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_SetOption_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.SetOption.class,
-          com.google.cloud.firestore.conformance.TestDefinition.SetOption.Builder.class);
+          .internal_static_tests_SetOption_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.SetOption.class,
+              com.google.cloud.firestore.conformance.TestDefinition.SetOption.Builder.class);
     }
 
     private int bitField0_;
@@ -12089,9 +12105,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_SetOption_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.SetOption.class,
-            com.google.cloud.firestore.conformance.TestDefinition.SetOption.Builder.class);
+            .internal_static_tests_SetOption_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.SetOption.class,
+                com.google.cloud.firestore.conformance.TestDefinition.SetOption.Builder.class);
       }
 
       // Construct using
@@ -12896,9 +12913,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_QueryTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.QueryTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.QueryTest.Builder.class);
+          .internal_static_tests_QueryTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.QueryTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.QueryTest.Builder.class);
     }
 
     private int bitField0_;
@@ -13200,9 +13218,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_QueryTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.QueryTest.class,
-            com.google.cloud.firestore.conformance.TestDefinition.QueryTest.Builder.class);
+            .internal_static_tests_QueryTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.QueryTest.class,
+                com.google.cloud.firestore.conformance.TestDefinition.QueryTest.Builder.class);
       }
 
       // Construct using
@@ -14183,9 +14202,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_Clause_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.Clause.class,
-          com.google.cloud.firestore.conformance.TestDefinition.Clause.Builder.class);
+          .internal_static_tests_Clause_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.Clause.class,
+              com.google.cloud.firestore.conformance.TestDefinition.Clause.Builder.class);
     }
 
     private int clauseCase_ = 0;
@@ -14728,9 +14748,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_Clause_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.Clause.class,
-            com.google.cloud.firestore.conformance.TestDefinition.Clause.Builder.class);
+            .internal_static_tests_Clause_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.Clause.class,
+                com.google.cloud.firestore.conformance.TestDefinition.Clause.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.Clause.newBuilder()
@@ -16126,9 +16147,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_Select_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.Select.class,
-          com.google.cloud.firestore.conformance.TestDefinition.Select.Builder.class);
+          .internal_static_tests_Select_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.Select.class,
+              com.google.cloud.firestore.conformance.TestDefinition.Select.Builder.class);
     }
 
     public static final int FIELDS_FIELD_NUMBER = 1;
@@ -16331,9 +16353,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_Select_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.Select.class,
-            com.google.cloud.firestore.conformance.TestDefinition.Select.Builder.class);
+            .internal_static_tests_Select_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.Select.class,
+                com.google.cloud.firestore.conformance.TestDefinition.Select.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.Select.newBuilder()
@@ -16899,9 +16922,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_Where_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.Where.class,
-          com.google.cloud.firestore.conformance.TestDefinition.Where.Builder.class);
+          .internal_static_tests_Where_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.Where.class,
+              com.google.cloud.firestore.conformance.TestDefinition.Where.Builder.class);
     }
 
     public static final int PATH_FIELD_NUMBER = 1;
@@ -17170,9 +17194,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_Where_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.Where.class,
-            com.google.cloud.firestore.conformance.TestDefinition.Where.Builder.class);
+            .internal_static_tests_Where_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.Where.class,
+                com.google.cloud.firestore.conformance.TestDefinition.Where.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.Where.newBuilder()
@@ -17713,9 +17738,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_OrderBy_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.OrderBy.class,
-          com.google.cloud.firestore.conformance.TestDefinition.OrderBy.Builder.class);
+          .internal_static_tests_OrderBy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.OrderBy.class,
+              com.google.cloud.firestore.conformance.TestDefinition.OrderBy.Builder.class);
     }
 
     public static final int PATH_FIELD_NUMBER = 1;
@@ -17964,9 +17990,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_OrderBy_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.OrderBy.class,
-            com.google.cloud.firestore.conformance.TestDefinition.OrderBy.Builder.class);
+            .internal_static_tests_OrderBy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.OrderBy.class,
+                com.google.cloud.firestore.conformance.TestDefinition.OrderBy.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.OrderBy.newBuilder()
@@ -18508,9 +18535,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_Cursor_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.Cursor.class,
-          com.google.cloud.firestore.conformance.TestDefinition.Cursor.Builder.class);
+          .internal_static_tests_Cursor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.Cursor.class,
+              com.google.cloud.firestore.conformance.TestDefinition.Cursor.Builder.class);
     }
 
     private int bitField0_;
@@ -18767,9 +18795,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_Cursor_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.Cursor.class,
-            com.google.cloud.firestore.conformance.TestDefinition.Cursor.Builder.class);
+            .internal_static_tests_Cursor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.Cursor.class,
+                com.google.cloud.firestore.conformance.TestDefinition.Cursor.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.Cursor.newBuilder()
@@ -19331,9 +19360,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_DocSnapshot_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.class,
-          com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.Builder.class);
+          .internal_static_tests_DocSnapshot_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.class,
+              com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.Builder.class);
     }
 
     public static final int PATH_FIELD_NUMBER = 1;
@@ -19571,9 +19601,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_DocSnapshot_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.class,
-            com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.Builder.class);
+            .internal_static_tests_DocSnapshot_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.class,
+                com.google.cloud.firestore.conformance.TestDefinition.DocSnapshot.Builder.class);
       }
 
       // Construct using
@@ -19961,9 +19992,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_FieldPath_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.FieldPath.class,
-          com.google.cloud.firestore.conformance.TestDefinition.FieldPath.Builder.class);
+          .internal_static_tests_FieldPath_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.FieldPath.class,
+              com.google.cloud.firestore.conformance.TestDefinition.FieldPath.Builder.class);
     }
 
     public static final int FIELD_FIELD_NUMBER = 1;
@@ -20164,9 +20196,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_FieldPath_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.FieldPath.class,
-            com.google.cloud.firestore.conformance.TestDefinition.FieldPath.Builder.class);
+            .internal_static_tests_FieldPath_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.FieldPath.class,
+                com.google.cloud.firestore.conformance.TestDefinition.FieldPath.Builder.class);
       }
 
       // Construct using
@@ -20583,9 +20616,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_ListenTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.ListenTest.class,
-          com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder.class);
+          .internal_static_tests_ListenTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.ListenTest.class,
+              com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder.class);
     }
 
     private int bitField0_;
@@ -20858,9 +20892,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_ListenTest_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.ListenTest.class,
-            com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder.class);
+            .internal_static_tests_ListenTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.ListenTest.class,
+                com.google.cloud.firestore.conformance.TestDefinition.ListenTest.Builder.class);
       }
 
       // Construct using
@@ -21740,9 +21775,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_Snapshot_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.Snapshot.class,
-          com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder.class);
+          .internal_static_tests_Snapshot_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.Snapshot.class,
+              com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder.class);
     }
 
     private int bitField0_;
@@ -22011,9 +22047,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_Snapshot_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.Snapshot.class,
-            com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder.class);
+            .internal_static_tests_Snapshot_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.Snapshot.class,
+                com.google.cloud.firestore.conformance.TestDefinition.Snapshot.Builder.class);
       }
 
       // Construct using com.google.cloud.firestore.conformance.TestDefinition.Snapshot.newBuilder()
@@ -22949,9 +22986,10 @@ public final class TestDefinition {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.firestore.conformance.TestDefinition
-          .internal_static_tests_DocChange_fieldAccessorTable.ensureFieldAccessorsInitialized(
-          com.google.cloud.firestore.conformance.TestDefinition.DocChange.class,
-          com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder.class);
+          .internal_static_tests_DocChange_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.firestore.conformance.TestDefinition.DocChange.class,
+              com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder.class);
     }
 
     /** Protobuf enum {@code tests.DocChange.Kind} */
@@ -23303,9 +23341,10 @@ public final class TestDefinition {
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.firestore.conformance.TestDefinition
-            .internal_static_tests_DocChange_fieldAccessorTable.ensureFieldAccessorsInitialized(
-            com.google.cloud.firestore.conformance.TestDefinition.DocChange.class,
-            com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder.class);
+            .internal_static_tests_DocChange_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.firestore.conformance.TestDefinition.DocChange.class,
+                com.google.cloud.firestore.conformance.TestDefinition.DocChange.Builder.class);
       }
 
       // Construct using
