@@ -984,9 +984,44 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
-   *   Instance response = cloudRedisClient.failoverInstanceAsync(formattedName, dataProtectionMode).get();
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name, dataProtectionMode).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Redis instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region
+   * @param dataProtectionMode Optional. Available data protection modes that the user can choose.
+   *     If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Instance, OperationMetadata> failoverInstanceAsync(
+      InstanceName name, FailoverInstanceRequest.DataProtectionMode dataProtectionMode) {
+
+    FailoverInstanceRequest request =
+        FailoverInstanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDataProtectionMode(dataProtectionMode)
+            .build();
+    return failoverInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Failover the master role to current replica node against a specific STANDARD tier redis
+   * instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
+   *   Instance response = cloudRedisClient.failoverInstanceAsync(name.toString(), dataProtectionMode).get();
    * }
    * </code></pre>
    *
@@ -1019,10 +1054,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setDataProtectionMode(dataProtectionMode)
    *     .build();
    *   Instance response = cloudRedisClient.failoverInstanceAsync(request).get();
@@ -1048,10 +1083,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setDataProtectionMode(dataProtectionMode)
    *     .build();
    *   OperationFuture&lt;Instance, OperationMetadata&gt; future = cloudRedisClient.failoverInstanceOperationCallable().futureCall(request);
@@ -1075,10 +1110,10 @@ public class CloudRedisClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
-   *   String formattedName = InstanceName.format("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   FailoverInstanceRequest.DataProtectionMode dataProtectionMode = FailoverInstanceRequest.DataProtectionMode.DATA_PROTECTION_MODE_UNSPECIFIED;
    *   FailoverInstanceRequest request = FailoverInstanceRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setDataProtectionMode(dataProtectionMode)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = cloudRedisClient.failoverInstanceCallable().futureCall(request);
