@@ -79,8 +79,6 @@ public class GapicDatastoreRpc implements DatastoreRpc {
   private static final int DEFAULT_PERIOD_SECONDS = 10;
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
-  private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
-  private static final int MAX_METADATA_SIZE = 32 * 1024; // bytes
   private static final String PROPERTY_TIMEOUT_SECONDS =
       "com.google.cloud.spanner.watchdogTimeoutSeconds";
   private static final String PROPERTY_PERIOD_SECONDS =
@@ -134,19 +132,27 @@ public class GapicDatastoreRpc implements DatastoreRpc {
               .setBackgroundResources(
                   Collections.<BackgroundResource>singletonList(transportChannel))
               .build();
-      DatastoreSettings datastoreSettings = DatastoreSettings.newBuilder(clientContext)
-          .setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options))
-          .setHeaderProvider(mergedHeaderProvider)
-          .setTransportChannelProvider(GrpcTransportOptions.setUpChannelProvider(
-              DatastoreSettings.defaultGrpcTransportProviderBuilder(), options)
-          )
-          .build();
-      datastoreStub = DatastoreClient.create(datastoreSettings).getStub();
-    } catch (IOException e) {
-      throw new DatastoreException(e);
+
+      this.datastoreStub =
+          GrpcDatastoreStub.create(
+              DatastoreStubSettings.newBuilder(clientContext)
+                  .setTransportChannelProvider(GrpcTransportOptions.setUpChannelProvider(
+                      DatastoreSettings.defaultGrpcTransportProviderBuilder(), options))
+                  .setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options))
+                  .applyToAllUnaryMethods(
+                      new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                        @Override
+                        public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
+                          builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
+                          return null;
+                        }
+                      })
+                  .build());
+
+    } catch (Exception e) {
+      throw DatastoreExceptionFactory.newDatastoreException(e);
     }
   }
-
 
   @Override
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) {
