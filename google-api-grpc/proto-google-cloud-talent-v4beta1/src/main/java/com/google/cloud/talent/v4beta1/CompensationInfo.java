@@ -1438,14 +1438,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (type_
           != com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType
-              .COMPENSATION_TYPE_UNSPECIFIED
-              .getNumber()) {
+              .COMPENSATION_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, type_);
       }
       if (unit_
           != com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit
-              .COMPENSATION_UNIT_UNSPECIFIED
-              .getNumber()) {
+              .COMPENSATION_UNIT_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, unit_);
       }
       if (compensationAmountCase_ == 3) {
@@ -1474,14 +1472,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (type_
           != com.google.cloud.talent.v4beta1.CompensationInfo.CompensationType
-              .COMPENSATION_TYPE_UNSPECIFIED
-              .getNumber()) {
+              .COMPENSATION_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
       }
       if (unit_
           != com.google.cloud.talent.v4beta1.CompensationInfo.CompensationUnit
-              .COMPENSATION_UNIT_UNSPECIFIED
-              .getNumber()) {
+              .COMPENSATION_UNIT_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, unit_);
       }
       if (compensationAmountCase_ == 3) {

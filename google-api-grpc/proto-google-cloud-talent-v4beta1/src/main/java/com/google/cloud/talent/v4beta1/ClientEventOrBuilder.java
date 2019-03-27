@@ -163,79 +163,25 @@ public interface ClientEventOrBuilder
    *
    * <pre>
    * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
+   * Notes about the event provided by recruiters or other users, for example,
+   * feedback on why a profile was bookmarked.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
+   * <code>string event_notes = 9;</code>
    */
-  int getExtraInfoCount();
+  java.lang.String getEventNotes();
   /**
    *
    *
    * <pre>
    * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
+   * Notes about the event provided by recruiters or other users, for example,
+   * feedback on why a profile was bookmarked.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
+   * <code>string event_notes = 9;</code>
    */
-  boolean containsExtraInfo(java.lang.String key);
-  /** Use {@link #getExtraInfoMap()} instead. */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String> getExtraInfo();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
-   */
-  java.util.Map<java.lang.String, java.lang.String> getExtraInfoMap();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
-   */
-  java.lang.String getExtraInfoOrDefault(java.lang.String key, java.lang.String defaultValue);
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
-   */
-  java.lang.String getExtraInfoOrThrow(java.lang.String key);
+  com.google.protobuf.ByteString getEventNotesBytes();
 
   public com.google.cloud.talent.v4beta1.ClientEvent.EventCase getEventCase();
 }

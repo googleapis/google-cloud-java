@@ -99,8 +99,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required.
    * The resource name of the company to be deleted.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -122,8 +125,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required.
    * The resource name of the company to be deleted.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -466,8 +472,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required.
      * The resource name of the company to be deleted.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -489,8 +498,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required.
      * The resource name of the company to be deleted.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -512,8 +524,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required.
      * The resource name of the company to be deleted.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -533,8 +548,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required.
      * The resource name of the company to be deleted.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -551,8 +569,11 @@ public final class DeleteCompanyRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required.
      * The resource name of the company to be deleted.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
      * <code>string name = 1;</code>

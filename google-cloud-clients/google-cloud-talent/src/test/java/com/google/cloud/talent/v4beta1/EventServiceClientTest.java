@@ -37,12 +37,12 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class EventServiceClientTest {
+  private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
   private static MockCompletion mockCompletion;
   private static MockEventService mockEventService;
   private static MockJobService mockJobService;
   private static MockProfileService mockProfileService;
-  private static MockResumeService mockResumeService;
   private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private EventServiceClient client;
@@ -50,23 +50,23 @@ public class EventServiceClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
     mockCompletion = new MockCompletion();
     mockEventService = new MockEventService();
     mockJobService = new MockJobService();
     mockProfileService = new MockProfileService();
-    mockResumeService = new MockResumeService();
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             "in-process-1",
             Arrays.<MockGrpcService>asList(
+                mockApplicationService,
                 mockCompanyService,
                 mockCompletion,
                 mockEventService,
                 mockJobService,
                 mockProfileService,
-                mockResumeService,
                 mockTenantService));
     serviceHelper.start();
   }
@@ -98,11 +98,16 @@ public class EventServiceClientTest {
   public void createClientEventTest() {
     String requestId = "requestId37109963";
     String eventId = "eventId278118624";
+    String eventNotes = "eventNotes445073628";
     ClientEvent expectedResponse =
-        ClientEvent.newBuilder().setRequestId(requestId).setEventId(eventId).build();
+        ClientEvent.newBuilder()
+            .setRequestId(requestId)
+            .setEventId(eventId)
+            .setEventNotes(eventNotes)
+            .build();
     mockEventService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
     ClientEvent clientEvent = ClientEvent.newBuilder().build();
 
     ClientEvent actualResponse = client.createClientEvent(parent, clientEvent);
@@ -112,7 +117,7 @@ public class EventServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateClientEventRequest actualRequest = (CreateClientEventRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
     Assert.assertEquals(clientEvent, actualRequest.getClientEvent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -127,7 +132,7 @@ public class EventServiceClientTest {
     mockEventService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
       ClientEvent clientEvent = ClientEvent.newBuilder().build();
 
       client.createClientEvent(parent, clientEvent);

@@ -32,7 +32,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     workExperienceFilter_ = java.util.Collections.emptyList();
     timeFilters_ = java.util.Collections.emptyList();
     applicationDateFilters_ = java.util.Collections.emptyList();
-    applicationOutcomeReasonFilters_ = java.util.Collections.emptyList();
+    applicationOutcomeNotesFilters_ = java.util.Collections.emptyList();
     applicationLastStageFilters_ = java.util.Collections.emptyList();
     applicationJobFilters_ = java.util.Collections.emptyList();
     applicationStatusFilters_ = java.util.Collections.emptyList();
@@ -187,14 +187,14 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
           case 90:
             {
               if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-                applicationOutcomeReasonFilters_ =
+                applicationOutcomeNotesFilters_ =
                     new java.util.ArrayList<
-                        com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>();
+                        com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>();
                 mutable_bitField0_ |= 0x00000400;
               }
-              applicationOutcomeReasonFilters_.add(
+              applicationOutcomeNotesFilters_.add(
                   input.readMessage(
-                      com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.parser(),
+                      com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.parser(),
                       extensionRegistry));
               break;
             }
@@ -285,8 +285,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         applicationDateFilters_ = java.util.Collections.unmodifiableList(applicationDateFilters_);
       }
       if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-        applicationOutcomeReasonFilters_ =
-            java.util.Collections.unmodifiableList(applicationOutcomeReasonFilters_);
+        applicationOutcomeNotesFilters_ =
+            java.util.Collections.unmodifiableList(applicationOutcomeNotesFilters_);
       }
       if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
         applicationLastStageFilters_ =
@@ -1219,93 +1219,93 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     return applicationDateFilters_.get(index);
   }
 
-  public static final int APPLICATION_OUTCOME_REASON_FILTERS_FIELD_NUMBER = 11;
-  private java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>
-      applicationOutcomeReasonFilters_;
+  public static final int APPLICATION_OUTCOME_NOTES_FILTERS_FIELD_NUMBER = 11;
+  private java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>
+      applicationOutcomeNotesFilters_;
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  public java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>
-      getApplicationOutcomeReasonFiltersList() {
-    return applicationOutcomeReasonFilters_;
+  public java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>
+      getApplicationOutcomeNotesFiltersList() {
+    return applicationOutcomeNotesFilters_;
   }
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
   public java.util.List<
-          ? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder>
-      getApplicationOutcomeReasonFiltersOrBuilderList() {
-    return applicationOutcomeReasonFilters_;
+          ? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>
+      getApplicationOutcomeNotesFiltersOrBuilderList() {
+    return applicationOutcomeNotesFilters_;
   }
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  public int getApplicationOutcomeReasonFiltersCount() {
-    return applicationOutcomeReasonFilters_.size();
+  public int getApplicationOutcomeNotesFiltersCount() {
+    return applicationOutcomeNotesFilters_.size();
   }
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  public com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter
-      getApplicationOutcomeReasonFilters(int index) {
-    return applicationOutcomeReasonFilters_.get(index);
+  public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter
+      getApplicationOutcomeNotesFilters(int index) {
+    return applicationOutcomeNotesFilters_.get(index);
   }
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  public com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder
-      getApplicationOutcomeReasonFiltersOrBuilder(int index) {
-    return applicationOutcomeReasonFilters_.get(index);
+  public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder
+      getApplicationOutcomeNotesFiltersOrBuilder(int index) {
+    return applicationOutcomeNotesFilters_.get(index);
   }
 
   public static final int APPLICATION_LAST_STAGE_FILTERS_FIELD_NUMBER = 12;
@@ -1568,9 +1568,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
-   * Supported operators are: =, != where the left of the operator is a custom
-   * field key and the right of the operator is a string (surrounded by quotes)
-   * value.
+   * String custom attributes: supported operators are =, != where the left of
+   * the operator is a custom field key and the right of the operator is a
+   * string (surrounded by quotes) value.
+   * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+   * operators where the left of the operator is a custom field key and the
+   * right of the operator is a numeric value.
    * Supported functions are LOWER(&lt;field_name&gt;) to
    * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
    * existence of a key.
@@ -1604,9 +1607,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
-   * Supported operators are: =, != where the left of the operator is a custom
-   * field key and the right of the operator is a string (surrounded by quotes)
-   * value.
+   * String custom attributes: supported operators are =, != where the left of
+   * the operator is a custom field key and the right of the operator is a
+   * string (surrounded by quotes) value.
+   * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+   * operators where the left of the operator is a custom field key and the
+   * right of the operator is a numeric value.
    * Supported functions are LOWER(&lt;field_name&gt;) to
    * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
    * existence of a key.
@@ -1676,8 +1682,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < applicationDateFilters_.size(); i++) {
       output.writeMessage(10, applicationDateFilters_.get(i));
     }
-    for (int i = 0; i < applicationOutcomeReasonFilters_.size(); i++) {
-      output.writeMessage(11, applicationOutcomeReasonFilters_.get(i));
+    for (int i = 0; i < applicationOutcomeNotesFilters_.size(); i++) {
+      output.writeMessage(11, applicationOutcomeNotesFilters_.get(i));
     }
     for (int i = 0; i < applicationLastStageFilters_.size(); i++) {
       output.writeMessage(12, applicationLastStageFilters_.get(i));
@@ -1733,10 +1739,10 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, applicationDateFilters_.get(i));
     }
-    for (int i = 0; i < applicationOutcomeReasonFilters_.size(); i++) {
+    for (int i = 0; i < applicationOutcomeNotesFilters_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              11, applicationOutcomeReasonFilters_.get(i));
+              11, applicationOutcomeNotesFilters_.get(i));
     }
     for (int i = 0; i < applicationLastStageFilters_.size(); i++) {
       size +=
@@ -1789,8 +1795,8 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         result && getApplicationDateFiltersList().equals(other.getApplicationDateFiltersList());
     result =
         result
-            && getApplicationOutcomeReasonFiltersList()
-                .equals(other.getApplicationOutcomeReasonFiltersList());
+            && getApplicationOutcomeNotesFiltersList()
+                .equals(other.getApplicationOutcomeNotesFiltersList());
     result =
         result
             && getApplicationLastStageFiltersList()
@@ -1848,9 +1854,9 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + APPLICATION_DATE_FILTERS_FIELD_NUMBER;
       hash = (53 * hash) + getApplicationDateFiltersList().hashCode();
     }
-    if (getApplicationOutcomeReasonFiltersCount() > 0) {
-      hash = (37 * hash) + APPLICATION_OUTCOME_REASON_FILTERS_FIELD_NUMBER;
-      hash = (53 * hash) + getApplicationOutcomeReasonFiltersList().hashCode();
+    if (getApplicationOutcomeNotesFiltersCount() > 0) {
+      hash = (37 * hash) + APPLICATION_OUTCOME_NOTES_FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationOutcomeNotesFiltersList().hashCode();
     }
     if (getApplicationLastStageFiltersCount() > 0) {
       hash = (37 * hash) + APPLICATION_LAST_STAGE_FILTERS_FIELD_NUMBER;
@@ -2014,7 +2020,7 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
         getWorkExperienceFilterFieldBuilder();
         getTimeFiltersFieldBuilder();
         getApplicationDateFiltersFieldBuilder();
-        getApplicationOutcomeReasonFiltersFieldBuilder();
+        getApplicationOutcomeNotesFiltersFieldBuilder();
         getApplicationLastStageFiltersFieldBuilder();
         getApplicationJobFiltersFieldBuilder();
         getApplicationStatusFiltersFieldBuilder();
@@ -2080,11 +2086,11 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         applicationDateFiltersBuilder_.clear();
       }
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        applicationOutcomeReasonFilters_ = java.util.Collections.emptyList();
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        applicationOutcomeNotesFilters_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000400);
       } else {
-        applicationOutcomeReasonFiltersBuilder_.clear();
+        applicationOutcomeNotesFiltersBuilder_.clear();
       }
       if (applicationLastStageFiltersBuilder_ == null) {
         applicationLastStageFilters_ = java.util.Collections.emptyList();
@@ -2213,15 +2219,15 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.applicationDateFilters_ = applicationDateFiltersBuilder_.build();
       }
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
         if (((bitField0_ & 0x00000400) == 0x00000400)) {
-          applicationOutcomeReasonFilters_ =
-              java.util.Collections.unmodifiableList(applicationOutcomeReasonFilters_);
+          applicationOutcomeNotesFilters_ =
+              java.util.Collections.unmodifiableList(applicationOutcomeNotesFilters_);
           bitField0_ = (bitField0_ & ~0x00000400);
         }
-        result.applicationOutcomeReasonFilters_ = applicationOutcomeReasonFilters_;
+        result.applicationOutcomeNotesFilters_ = applicationOutcomeNotesFilters_;
       } else {
-        result.applicationOutcomeReasonFilters_ = applicationOutcomeReasonFiltersBuilder_.build();
+        result.applicationOutcomeNotesFilters_ = applicationOutcomeNotesFiltersBuilder_.build();
       }
       if (applicationLastStageFiltersBuilder_ == null) {
         if (((bitField0_ & 0x00000800) == 0x00000800)) {
@@ -2526,31 +2532,31 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        if (!other.applicationOutcomeReasonFilters_.isEmpty()) {
-          if (applicationOutcomeReasonFilters_.isEmpty()) {
-            applicationOutcomeReasonFilters_ = other.applicationOutcomeReasonFilters_;
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        if (!other.applicationOutcomeNotesFilters_.isEmpty()) {
+          if (applicationOutcomeNotesFilters_.isEmpty()) {
+            applicationOutcomeNotesFilters_ = other.applicationOutcomeNotesFilters_;
             bitField0_ = (bitField0_ & ~0x00000400);
           } else {
-            ensureApplicationOutcomeReasonFiltersIsMutable();
-            applicationOutcomeReasonFilters_.addAll(other.applicationOutcomeReasonFilters_);
+            ensureApplicationOutcomeNotesFiltersIsMutable();
+            applicationOutcomeNotesFilters_.addAll(other.applicationOutcomeNotesFilters_);
           }
           onChanged();
         }
       } else {
-        if (!other.applicationOutcomeReasonFilters_.isEmpty()) {
-          if (applicationOutcomeReasonFiltersBuilder_.isEmpty()) {
-            applicationOutcomeReasonFiltersBuilder_.dispose();
-            applicationOutcomeReasonFiltersBuilder_ = null;
-            applicationOutcomeReasonFilters_ = other.applicationOutcomeReasonFilters_;
+        if (!other.applicationOutcomeNotesFilters_.isEmpty()) {
+          if (applicationOutcomeNotesFiltersBuilder_.isEmpty()) {
+            applicationOutcomeNotesFiltersBuilder_.dispose();
+            applicationOutcomeNotesFiltersBuilder_ = null;
+            applicationOutcomeNotesFilters_ = other.applicationOutcomeNotesFilters_;
             bitField0_ = (bitField0_ & ~0x00000400);
-            applicationOutcomeReasonFiltersBuilder_ =
+            applicationOutcomeNotesFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getApplicationOutcomeReasonFiltersFieldBuilder()
+                    ? getApplicationOutcomeNotesFiltersFieldBuilder()
                     : null;
           } else {
-            applicationOutcomeReasonFiltersBuilder_.addAllMessages(
-                other.applicationOutcomeReasonFilters_);
+            applicationOutcomeNotesFiltersBuilder_.addAllMessages(
+                other.applicationOutcomeNotesFilters_);
           }
         }
       }
@@ -6870,43 +6876,43 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
       return applicationDateFiltersBuilder_;
     }
 
-    private java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>
-        applicationOutcomeReasonFilters_ = java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>
+        applicationOutcomeNotesFilters_ = java.util.Collections.emptyList();
 
-    private void ensureApplicationOutcomeReasonFiltersIsMutable() {
+    private void ensureApplicationOutcomeNotesFiltersIsMutable() {
       if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-        applicationOutcomeReasonFilters_ =
-            new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>(
-                applicationOutcomeReasonFilters_);
+        applicationOutcomeNotesFilters_ =
+            new java.util.ArrayList<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>(
+                applicationOutcomeNotesFilters_);
         bitField0_ |= 0x00000400;
       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter,
-            com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder,
-            com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder>
-        applicationOutcomeReasonFiltersBuilder_;
+            com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter,
+            com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder,
+            com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>
+        applicationOutcomeNotesFiltersBuilder_;
 
     /**
      *
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>
-        getApplicationOutcomeReasonFiltersList() {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(applicationOutcomeReasonFilters_);
+    public java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>
+        getApplicationOutcomeNotesFiltersList() {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(applicationOutcomeNotesFilters_);
       } else {
-        return applicationOutcomeReasonFiltersBuilder_.getMessageList();
+        return applicationOutcomeNotesFiltersBuilder_.getMessageList();
       }
     }
     /**
@@ -6914,19 +6920,19 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public int getApplicationOutcomeReasonFiltersCount() {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        return applicationOutcomeReasonFilters_.size();
+    public int getApplicationOutcomeNotesFiltersCount() {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        return applicationOutcomeNotesFilters_.size();
       } else {
-        return applicationOutcomeReasonFiltersBuilder_.getCount();
+        return applicationOutcomeNotesFiltersBuilder_.getCount();
       }
     }
     /**
@@ -6934,20 +6940,20 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter
-        getApplicationOutcomeReasonFilters(int index) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        return applicationOutcomeReasonFilters_.get(index);
+    public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter
+        getApplicationOutcomeNotesFilters(int index) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        return applicationOutcomeNotesFilters_.get(index);
       } else {
-        return applicationOutcomeReasonFiltersBuilder_.getMessage(index);
+        return applicationOutcomeNotesFiltersBuilder_.getMessage(index);
       }
     }
     /**
@@ -6955,25 +6961,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder setApplicationOutcomeReasonFilters(
-        int index, com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter value) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
+    public Builder setApplicationOutcomeNotesFilters(
+        int index, com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter value) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureApplicationOutcomeReasonFiltersIsMutable();
-        applicationOutcomeReasonFilters_.set(index, value);
+        ensureApplicationOutcomeNotesFiltersIsMutable();
+        applicationOutcomeNotesFilters_.set(index, value);
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.setMessage(index, value);
+        applicationOutcomeNotesFiltersBuilder_.setMessage(index, value);
       }
       return this;
     }
@@ -6982,23 +6988,23 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder setApplicationOutcomeReasonFilters(
+    public Builder setApplicationOutcomeNotesFilters(
         int index,
-        com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder builderForValue) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        ensureApplicationOutcomeReasonFiltersIsMutable();
-        applicationOutcomeReasonFilters_.set(index, builderForValue.build());
+        com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder builderForValue) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        ensureApplicationOutcomeNotesFiltersIsMutable();
+        applicationOutcomeNotesFilters_.set(index, builderForValue.build());
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.setMessage(index, builderForValue.build());
+        applicationOutcomeNotesFiltersBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -7007,25 +7013,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder addApplicationOutcomeReasonFilters(
-        com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter value) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
+    public Builder addApplicationOutcomeNotesFilters(
+        com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter value) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureApplicationOutcomeReasonFiltersIsMutable();
-        applicationOutcomeReasonFilters_.add(value);
+        ensureApplicationOutcomeNotesFiltersIsMutable();
+        applicationOutcomeNotesFilters_.add(value);
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.addMessage(value);
+        applicationOutcomeNotesFiltersBuilder_.addMessage(value);
       }
       return this;
     }
@@ -7034,25 +7040,25 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder addApplicationOutcomeReasonFilters(
-        int index, com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter value) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
+    public Builder addApplicationOutcomeNotesFilters(
+        int index, com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter value) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureApplicationOutcomeReasonFiltersIsMutable();
-        applicationOutcomeReasonFilters_.add(index, value);
+        ensureApplicationOutcomeNotesFiltersIsMutable();
+        applicationOutcomeNotesFilters_.add(index, value);
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.addMessage(index, value);
+        applicationOutcomeNotesFiltersBuilder_.addMessage(index, value);
       }
       return this;
     }
@@ -7061,22 +7067,22 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder addApplicationOutcomeReasonFilters(
-        com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder builderForValue) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        ensureApplicationOutcomeReasonFiltersIsMutable();
-        applicationOutcomeReasonFilters_.add(builderForValue.build());
+    public Builder addApplicationOutcomeNotesFilters(
+        com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder builderForValue) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        ensureApplicationOutcomeNotesFiltersIsMutable();
+        applicationOutcomeNotesFilters_.add(builderForValue.build());
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.addMessage(builderForValue.build());
+        applicationOutcomeNotesFiltersBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
@@ -7085,23 +7091,23 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder addApplicationOutcomeReasonFilters(
+    public Builder addApplicationOutcomeNotesFilters(
         int index,
-        com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder builderForValue) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        ensureApplicationOutcomeReasonFiltersIsMutable();
-        applicationOutcomeReasonFilters_.add(index, builderForValue.build());
+        com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder builderForValue) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        ensureApplicationOutcomeNotesFiltersIsMutable();
+        applicationOutcomeNotesFilters_.add(index, builderForValue.build());
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.addMessage(index, builderForValue.build());
+        applicationOutcomeNotesFiltersBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
@@ -7110,24 +7116,24 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder addAllApplicationOutcomeReasonFilters(
-        java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>
+    public Builder addAllApplicationOutcomeNotesFilters(
+        java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>
             values) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        ensureApplicationOutcomeReasonFiltersIsMutable();
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        ensureApplicationOutcomeNotesFiltersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, applicationOutcomeReasonFilters_);
+            values, applicationOutcomeNotesFilters_);
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.addAllMessages(values);
+        applicationOutcomeNotesFiltersBuilder_.addAllMessages(values);
       }
       return this;
     }
@@ -7136,21 +7142,21 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder clearApplicationOutcomeReasonFilters() {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        applicationOutcomeReasonFilters_ = java.util.Collections.emptyList();
+    public Builder clearApplicationOutcomeNotesFilters() {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        applicationOutcomeNotesFilters_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.clear();
+        applicationOutcomeNotesFiltersBuilder_.clear();
       }
       return this;
     }
@@ -7159,21 +7165,21 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public Builder removeApplicationOutcomeReasonFilters(int index) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        ensureApplicationOutcomeReasonFiltersIsMutable();
-        applicationOutcomeReasonFilters_.remove(index);
+    public Builder removeApplicationOutcomeNotesFilters(int index) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        ensureApplicationOutcomeNotesFiltersIsMutable();
+        applicationOutcomeNotesFilters_.remove(index);
         onChanged();
       } else {
-        applicationOutcomeReasonFiltersBuilder_.remove(index);
+        applicationOutcomeNotesFiltersBuilder_.remove(index);
       }
       return this;
     }
@@ -7182,37 +7188,37 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder
-        getApplicationOutcomeReasonFiltersBuilder(int index) {
-      return getApplicationOutcomeReasonFiltersFieldBuilder().getBuilder(index);
+    public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder
+        getApplicationOutcomeNotesFiltersBuilder(int index) {
+      return getApplicationOutcomeNotesFiltersFieldBuilder().getBuilder(index);
     }
     /**
      *
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder
-        getApplicationOutcomeReasonFiltersOrBuilder(int index) {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        return applicationOutcomeReasonFilters_.get(index);
+    public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder
+        getApplicationOutcomeNotesFiltersOrBuilder(int index) {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        return applicationOutcomeNotesFilters_.get(index);
       } else {
-        return applicationOutcomeReasonFiltersBuilder_.getMessageOrBuilder(index);
+        return applicationOutcomeNotesFiltersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
@@ -7220,21 +7226,21 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
     public java.util.List<
-            ? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder>
-        getApplicationOutcomeReasonFiltersOrBuilderList() {
-      if (applicationOutcomeReasonFiltersBuilder_ != null) {
-        return applicationOutcomeReasonFiltersBuilder_.getMessageOrBuilderList();
+            ? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>
+        getApplicationOutcomeNotesFiltersOrBuilderList() {
+      if (applicationOutcomeNotesFiltersBuilder_ != null) {
+        return applicationOutcomeNotesFiltersBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(applicationOutcomeReasonFilters_);
+        return java.util.Collections.unmodifiableList(applicationOutcomeNotesFilters_);
       }
     }
     /**
@@ -7242,76 +7248,76 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder
-        addApplicationOutcomeReasonFiltersBuilder() {
-      return getApplicationOutcomeReasonFiltersFieldBuilder()
+    public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder
+        addApplicationOutcomeNotesFiltersBuilder() {
+      return getApplicationOutcomeNotesFiltersFieldBuilder()
           .addBuilder(
-              com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.getDefaultInstance());
+              com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder
-        addApplicationOutcomeReasonFiltersBuilder(int index) {
-      return getApplicationOutcomeReasonFiltersFieldBuilder()
+    public com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder
+        addApplicationOutcomeNotesFiltersBuilder(int index) {
+      return getApplicationOutcomeNotesFiltersFieldBuilder()
           .addBuilder(
               index,
-              com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.getDefaultInstance());
+              com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.getDefaultInstance());
     }
     /**
      *
      *
      * <pre>
      * Optional.
-     * The application outcome reason filters specify the reasons for outcome of
+     * The application outcome notes filters specify the notes for the outcome of
      * the job application.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+     * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
      * </code>
      */
-    public java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder>
-        getApplicationOutcomeReasonFiltersBuilderList() {
-      return getApplicationOutcomeReasonFiltersFieldBuilder().getBuilderList();
+    public java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder>
+        getApplicationOutcomeNotesFiltersBuilderList() {
+      return getApplicationOutcomeNotesFiltersFieldBuilder().getBuilderList();
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter,
-            com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder,
-            com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder>
-        getApplicationOutcomeReasonFiltersFieldBuilder() {
-      if (applicationOutcomeReasonFiltersBuilder_ == null) {
-        applicationOutcomeReasonFiltersBuilder_ =
+            com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter,
+            com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder,
+            com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>
+        getApplicationOutcomeNotesFiltersFieldBuilder() {
+      if (applicationOutcomeNotesFiltersBuilder_ == null) {
+        applicationOutcomeNotesFiltersBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter,
-                com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter.Builder,
-                com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder>(
-                applicationOutcomeReasonFilters_,
+                com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter,
+                com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter.Builder,
+                com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>(
+                applicationOutcomeNotesFilters_,
                 ((bitField0_ & 0x00000400) == 0x00000400),
                 getParentForChildren(),
                 isClean());
-        applicationOutcomeReasonFilters_ = null;
+        applicationOutcomeNotesFilters_ = null;
       }
-      return applicationOutcomeReasonFiltersBuilder_;
+      return applicationOutcomeNotesFiltersBuilder_;
     }
 
     private java.util.List<com.google.cloud.talent.v4beta1.ApplicationLastStageFilter>
@@ -8610,9 +8616,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
-     * Supported operators are: =, != where the left of the operator is a custom
-     * field key and the right of the operator is a string (surrounded by quotes)
-     * value.
+     * String custom attributes: supported operators are =, != where the left of
+     * the operator is a custom field key and the right of the operator is a
+     * string (surrounded by quotes) value.
+     * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+     * operators where the left of the operator is a custom field key and the
+     * right of the operator is a numeric value.
      * Supported functions are LOWER(&lt;field_name&gt;) to
      * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
      * existence of a key.
@@ -8646,9 +8655,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
-     * Supported operators are: =, != where the left of the operator is a custom
-     * field key and the right of the operator is a string (surrounded by quotes)
-     * value.
+     * String custom attributes: supported operators are =, != where the left of
+     * the operator is a custom field key and the right of the operator is a
+     * string (surrounded by quotes) value.
+     * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+     * operators where the left of the operator is a custom field key and the
+     * right of the operator is a numeric value.
      * Supported functions are LOWER(&lt;field_name&gt;) to
      * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
      * existence of a key.
@@ -8682,9 +8694,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
-     * Supported operators are: =, != where the left of the operator is a custom
-     * field key and the right of the operator is a string (surrounded by quotes)
-     * value.
+     * String custom attributes: supported operators are =, != where the left of
+     * the operator is a custom field key and the right of the operator is a
+     * string (surrounded by quotes) value.
+     * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+     * operators where the left of the operator is a custom field key and the
+     * right of the operator is a numeric value.
      * Supported functions are LOWER(&lt;field_name&gt;) to
      * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
      * existence of a key.
@@ -8716,9 +8731,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
-     * Supported operators are: =, != where the left of the operator is a custom
-     * field key and the right of the operator is a string (surrounded by quotes)
-     * value.
+     * String custom attributes: supported operators are =, != where the left of
+     * the operator is a custom field key and the right of the operator is a
+     * string (surrounded by quotes) value.
+     * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+     * operators where the left of the operator is a custom field key and the
+     * right of the operator is a numeric value.
      * Supported functions are LOWER(&lt;field_name&gt;) to
      * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
      * existence of a key.
@@ -8747,9 +8765,12 @@ public final class ProfileQuery extends com.google.protobuf.GeneratedMessageV3
      * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
      * that are marked as `filterable`.
      * The syntax for this expression is a subset of Google SQL syntax.
-     * Supported operators are: =, != where the left of the operator is a custom
-     * field key and the right of the operator is a string (surrounded by quotes)
-     * value.
+     * String custom attributes: supported operators are =, != where the left of
+     * the operator is a custom field key and the right of the operator is a
+     * string (surrounded by quotes) value.
+     * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+     * operators where the left of the operator is a custom field key and the
+     * right of the operator is a numeric value.
      * Supported functions are LOWER(&lt;field_name&gt;) to
      * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
      * existence of a key.

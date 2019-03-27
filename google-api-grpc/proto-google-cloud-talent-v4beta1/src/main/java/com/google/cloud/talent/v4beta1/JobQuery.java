@@ -25,7 +25,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
   private JobQuery() {
     query_ = "";
-    companyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     locationFilters_ = java.util.Collections.emptyList();
     jobCategories_ = java.util.Collections.emptyList();
     companyDisplayNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -71,10 +71,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                companyNames_ = new com.google.protobuf.LazyStringArrayList();
+                companies_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              companyNames_.add(s);
+              companies_.add(s);
               break;
             }
           case 26:
@@ -245,7 +245,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-        companyNames_ = companyNames_.getUnmodifiableView();
+        companies_ = companies_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
@@ -335,8 +335,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int COMPANY_NAMES_FIELD_NUMBER = 2;
-  private com.google.protobuf.LazyStringList companyNames_;
+  public static final int COMPANIES_FIELD_NUMBER = 2;
+  private com.google.protobuf.LazyStringList companies_;
   /**
    *
    *
@@ -347,15 +347,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList getCompanyNamesList() {
-    return companyNames_;
+  public com.google.protobuf.ProtocolStringList getCompaniesList() {
+    return companies_;
   }
   /**
    *
@@ -367,15 +370,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  public int getCompanyNamesCount() {
-    return companyNames_.size();
+  public int getCompaniesCount() {
+    return companies_.size();
   }
   /**
    *
@@ -387,15 +393,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  public java.lang.String getCompanyNames(int index) {
-    return companyNames_.get(index);
+  public java.lang.String getCompanies(int index) {
+    return companies_.get(index);
   }
   /**
    *
@@ -407,15 +416,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  public com.google.protobuf.ByteString getCompanyNamesBytes(int index) {
-    return companyNames_.getByteString(index);
+  public com.google.protobuf.ByteString getCompaniesBytes(int index) {
+    return companies_.getByteString(index);
   }
 
   public static final int LOCATION_FILTERS_FIELD_NUMBER = 3;
@@ -1257,8 +1269,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     if (!getQueryBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
     }
-    for (int i = 0; i < companyNames_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, companyNames_.getRaw(i));
+    for (int i = 0; i < companies_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, companies_.getRaw(i));
     }
     for (int i = 0; i < locationFilters_.size(); i++) {
       output.writeMessage(3, locationFilters_.get(i));
@@ -1315,11 +1327,11 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < companyNames_.size(); i++) {
-        dataSize += computeStringSizeNoTag(companyNames_.getRaw(i));
+      for (int i = 0; i < companies_.size(); i++) {
+        dataSize += computeStringSizeNoTag(companies_.getRaw(i));
       }
       size += dataSize;
-      size += 1 * getCompanyNamesList().size();
+      size += 1 * getCompaniesList().size();
     }
     for (int i = 0; i < locationFilters_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, locationFilters_.get(i));
@@ -1406,7 +1418,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
 
     boolean result = true;
     result = result && getQuery().equals(other.getQuery());
-    result = result && getCompanyNamesList().equals(other.getCompanyNamesList());
+    result = result && getCompaniesList().equals(other.getCompaniesList());
     result = result && getLocationFiltersList().equals(other.getLocationFiltersList());
     result = result && jobCategories_.equals(other.jobCategories_);
     result = result && (hasCommuteFilter() == other.hasCommuteFilter());
@@ -1440,9 +1452,9 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getQuery().hashCode();
-    if (getCompanyNamesCount() > 0) {
-      hash = (37 * hash) + COMPANY_NAMES_FIELD_NUMBER;
-      hash = (53 * hash) + getCompanyNamesList().hashCode();
+    if (getCompaniesCount() > 0) {
+      hash = (37 * hash) + COMPANIES_FIELD_NUMBER;
+      hash = (53 * hash) + getCompaniesList().hashCode();
     }
     if (getLocationFiltersCount() > 0) {
       hash = (37 * hash) + LOCATION_FILTERS_FIELD_NUMBER;
@@ -1634,7 +1646,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       query_ = "";
 
-      companyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
@@ -1705,10 +1717,10 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       int to_bitField0_ = 0;
       result.query_ = query_;
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        companyNames_ = companyNames_.getUnmodifiableView();
+        companies_ = companies_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
-      result.companyNames_ = companyNames_;
+      result.companies_ = companies_;
       if (locationFiltersBuilder_ == null) {
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
@@ -1814,13 +1826,13 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
         query_ = other.query_;
         onChanged();
       }
-      if (!other.companyNames_.isEmpty()) {
-        if (companyNames_.isEmpty()) {
-          companyNames_ = other.companyNames_;
+      if (!other.companies_.isEmpty()) {
+        if (companies_.isEmpty()) {
+          companies_ = other.companies_;
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          ensureCompanyNamesIsMutable();
-          companyNames_.addAll(other.companyNames_);
+          ensureCompaniesIsMutable();
+          companies_.addAll(other.companies_);
         }
         onChanged();
       }
@@ -2057,12 +2069,12 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList companyNames_ =
+    private com.google.protobuf.LazyStringList companies_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
-    private void ensureCompanyNamesIsMutable() {
+    private void ensureCompaniesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        companyNames_ = new com.google.protobuf.LazyStringArrayList(companyNames_);
+        companies_ = new com.google.protobuf.LazyStringArrayList(companies_);
         bitField0_ |= 0x00000002;
       }
     }
@@ -2076,15 +2088,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList getCompanyNamesList() {
-      return companyNames_.getUnmodifiableView();
+    public com.google.protobuf.ProtocolStringList getCompaniesList() {
+      return companies_.getUnmodifiableView();
     }
     /**
      *
@@ -2096,15 +2111,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public int getCompanyNamesCount() {
-      return companyNames_.size();
+    public int getCompaniesCount() {
+      return companies_.size();
     }
     /**
      *
@@ -2116,15 +2134,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public java.lang.String getCompanyNames(int index) {
-      return companyNames_.get(index);
+    public java.lang.String getCompanies(int index) {
+      return companies_.get(index);
     }
     /**
      *
@@ -2136,15 +2157,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public com.google.protobuf.ByteString getCompanyNamesBytes(int index) {
-      return companyNames_.getByteString(index);
+    public com.google.protobuf.ByteString getCompaniesBytes(int index) {
+      return companies_.getByteString(index);
     }
     /**
      *
@@ -2156,19 +2180,22 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public Builder setCompanyNames(int index, java.lang.String value) {
+    public Builder setCompanies(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureCompanyNamesIsMutable();
-      companyNames_.set(index, value);
+      ensureCompaniesIsMutable();
+      companies_.set(index, value);
       onChanged();
       return this;
     }
@@ -2182,19 +2209,22 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public Builder addCompanyNames(java.lang.String value) {
+    public Builder addCompanies(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureCompanyNamesIsMutable();
-      companyNames_.add(value);
+      ensureCompaniesIsMutable();
+      companies_.add(value);
       onChanged();
       return this;
     }
@@ -2208,16 +2238,19 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public Builder addAllCompanyNames(java.lang.Iterable<java.lang.String> values) {
-      ensureCompanyNamesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, companyNames_);
+    public Builder addAllCompanies(java.lang.Iterable<java.lang.String> values) {
+      ensureCompaniesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, companies_);
       onChanged();
       return this;
     }
@@ -2231,15 +2264,18 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public Builder clearCompanyNames() {
-      companyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearCompanies() {
+      companies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
@@ -2254,20 +2290,23 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * companies.
      * If multiple values are specified, jobs are searched against the
      * companies specified.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * At most 20 company filters are allowed.
      * </pre>
      *
-     * <code>repeated string company_names = 2;</code>
+     * <code>repeated string companies = 2;</code>
      */
-    public Builder addCompanyNamesBytes(com.google.protobuf.ByteString value) {
+    public Builder addCompaniesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      ensureCompanyNamesIsMutable();
-      companyNames_.add(value);
+      ensureCompaniesIsMutable();
+      companies_.add(value);
       onChanged();
       return this;
     }

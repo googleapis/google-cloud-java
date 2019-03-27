@@ -569,8 +569,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
     if (telecommutePreference_
         != com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference
-            .TELECOMMUTE_PREFERENCE_UNSPECIFIED
-            .getNumber()) {
+            .TELECOMMUTE_PREFERENCE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, telecommutePreference_);
     }
     if (negated_ != false) {
@@ -599,8 +598,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
     if (telecommutePreference_
         != com.google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference
-            .TELECOMMUTE_PREFERENCE_UNSPECIFIED
-            .getNumber()) {
+            .TELECOMMUTE_PREFERENCE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, telecommutePreference_);
     }
     if (negated_ != false) {

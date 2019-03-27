@@ -454,6 +454,8 @@ public final class ProfileServiceGrpc {
      *
      * <pre>
      * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
      * </pre>
      */
     public void deleteProfile(
@@ -619,6 +621,8 @@ public final class ProfileServiceGrpc {
      *
      * <pre>
      * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
      * </pre>
      */
     public void deleteProfile(
@@ -734,6 +738,8 @@ public final class ProfileServiceGrpc {
      *
      * <pre>
      * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
      * </pre>
      */
     public com.google.protobuf.Empty deleteProfile(
@@ -846,6 +852,8 @@ public final class ProfileServiceGrpc {
      *
      * <pre>
      * Deletes the specified profile.
+     * Prerequisite: The profile has no associated applications or assignments
+     * associated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

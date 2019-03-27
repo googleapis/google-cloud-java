@@ -1129,8 +1129,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (importanceLevel_
           != com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
-              .IMPORTANCE_LEVEL_UNSPECIFIED
-              .getNumber()) {
+              .IMPORTANCE_LEVEL_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, importanceLevel_);
       }
       if (!getRankingExpressionBytes().isEmpty()) {
@@ -1147,8 +1146,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       size = 0;
       if (importanceLevel_
           != com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.ImportanceLevel
-              .IMPORTANCE_LEVEL_UNSPECIFIED
-              .getNumber()) {
+              .IMPORTANCE_LEVEL_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, importanceLevel_);
       }
       if (!getRankingExpressionBytes().isEmpty()) {
@@ -1803,9 +1801,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required.
-   * The resource name of the project to search within.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * The resource name of the tenant to search within.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -1826,9 +1826,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required.
-   * The resource name of the project to search within.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * The resource name of the tenant to search within.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -2980,8 +2982,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
     if (diversificationLevel_
         != com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel
-            .DIVERSIFICATION_LEVEL_UNSPECIFIED
-            .getNumber()) {
+            .DIVERSIFICATION_LEVEL_UNSPECIFIED.getNumber()) {
       output.writeEnum(13, diversificationLevel_);
     }
     if (customRankingInfo_ != null) {
@@ -3039,8 +3040,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
     if (diversificationLevel_
         != com.google.cloud.talent.v4beta1.SearchJobsRequest.DiversificationLevel
-            .DIVERSIFICATION_LEVEL_UNSPECIFIED
-            .getNumber()) {
+            .DIVERSIFICATION_LEVEL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, diversificationLevel_);
     }
     if (customRankingInfo_ != null) {
@@ -3558,9 +3558,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required.
-     * The resource name of the project to search within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant to search within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -3581,9 +3583,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required.
-     * The resource name of the project to search within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant to search within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -3604,9 +3608,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required.
-     * The resource name of the project to search within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant to search within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -3625,9 +3631,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required.
-     * The resource name of the project to search within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant to search within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -3643,9 +3651,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required.
-     * The resource name of the project to search within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant to search within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
