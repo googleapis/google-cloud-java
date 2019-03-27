@@ -23,6 +23,7 @@ import ch.qos.logback.classic.spi.StackTraceElementProxy;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
 import ch.qos.logback.core.util.Loader;
 import com.google.api.core.InternalApi;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
@@ -32,13 +33,15 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.MonitoredResourceUtil;
 import com.google.cloud.logging.Payload;
 import com.google.cloud.logging.Severity;
+import com.google.common.base.Strings;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nonnull;
 
 /**
  * <a href="https://logback.qos.ch/">Logback</a> appender for StackDriver Cloud Logging.
@@ -56,15 +59,13 @@ import javax.annotation.Nonnull;
  *       Standard, GCE and GKE, defaults to "global". See <a
  *       href="https://cloud.google.com/logging/docs/api/v2/resource-list">supported resource
  *       types</a>
+ *   <li>&lt;credentialsFile&gt;/path/to/credentials/file&lt;/credentialsFile&gt; (Optional,
+ *       defaults to the default credentials of the environment)
  *   <li>(Optional) add custom labels to log entries using {@link LoggingEnhancer} classes.
  *   <li>&lt;enhancer&gt;com.example.enhancer1&lt;/enhancer&gt;
  *   <li>&lt;enhancer&gt;com.example.enhancer2&lt;/enhancer&gt;
  *   <li>&lt;/appender&gt;
  * </ul>
- *
- * Users can extend this class and override the method {@link #createLoggingOptions()} if you need
- * to specify custom {@link LoggingOptions}, and reference the subclass in logback.xml instead of
- * {@link LoggingAppender}.
  */
 public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
@@ -79,6 +80,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private Level flushLevel;
   private String log;
   private String resourceType;
+  private String credentialsFile;
   private Set<String> enhancerClassNames = new HashSet<>();
   private Set<String> loggingEventEnhancerClassNames = new HashSet<>();
 
@@ -114,6 +116,17 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    */
   public void setResourceType(String resourceType) {
     this.resourceType = resourceType;
+  }
+
+  /**
+   * Sets the credentials file to use to create the {@link LoggingOptions}. The credentials returned
+   * by {@link GoogleCredentials#getApplicationDefault()} will be used if no custom credentials file
+   * has been set.
+   *
+   * @param credentialsFile The credentials file to use.
+   */
+  public void setCredentialsFile(String credentialsFile) {
+    this.credentialsFile = credentialsFile;
   }
 
   /** Add extra labels using classes that implement {@link LoggingEnhancer}. */
@@ -224,20 +237,23 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     return logging;
   }
 
-  /**
-   * Creates the {@link LoggingOptions} to use for this {@link LoggingAppender}. Users can subclass
-   * {@link LoggingAppender} and override this method if they need to supply custom {@link
-   * LoggingOptions}, such as a specific credentials file. The default implementation returns {@link
-   * LoggingOptions#getDefaultInstance()}. Make sure to reference your own subclass in your logback
-   * configuration instead of {@link LoggingAppender} if you want to use custom {@link
-   * LoggingOptions}.
-   *
-   * @return the {@link LoggingOptions} that should be used for this {@link LoggingAppender}. May
-   *     not be <code>null</code>.
-   */
-  @Nonnull
-  public LoggingOptions createLoggingOptions() {
-    return LoggingOptions.getDefaultInstance();
+  /** Creates the {@link LoggingOptions} to use for this {@link LoggingAppender}. */
+  LoggingOptions createLoggingOptions() {
+    if (Strings.isNullOrEmpty(credentialsFile)) {
+      return LoggingOptions.getDefaultInstance();
+    } else {
+      try {
+        return LoggingOptions.newBuilder()
+            .setCredentials(GoogleCredentials.fromStream(new FileInputStream(credentialsFile)))
+            .build();
+      } catch (IOException e) {
+        throw new RuntimeException(
+            String.format(
+                "Could not read credentials file %s. Please verify that the file exists and is a valid Google credentials file.",
+                credentialsFile),
+            e);
+      }
+    }
   }
 
   private LogEntry logEntryFor(ILoggingEvent e) {
