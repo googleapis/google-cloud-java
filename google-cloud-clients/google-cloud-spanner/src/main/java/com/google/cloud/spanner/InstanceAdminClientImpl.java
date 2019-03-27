@@ -35,7 +35,8 @@ import java.util.concurrent.Callable;
 
 /** Default implementation of {@link InstanceAdminClient} */
 class InstanceAdminClientImpl implements InstanceAdminClient {
-  private static final PathTemplate PROJECT_NAME_TEMPLATE = PathTemplate.create("projects/{project}");
+  private static final PathTemplate PROJECT_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
   private final DatabaseAdminClient dbClient;
   private final String projectId;
   private final SpannerRpc rpc;

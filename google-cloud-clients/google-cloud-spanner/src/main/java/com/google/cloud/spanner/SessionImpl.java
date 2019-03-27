@@ -83,7 +83,11 @@ class SessionImpl implements Session {
   private ByteString readyTransactionId;
   private final Map<SpannerRpc.Option, ?> options;
 
-  SessionImpl(SpannerRpc gapicRpc, int defaultPrefetchChunks, String name, Map<SpannerRpc.Option, ?> options) {
+  SessionImpl(
+      SpannerRpc gapicRpc,
+      int defaultPrefetchChunks,
+      String name,
+      Map<SpannerRpc.Option, ?> options) {
     this.gapicRpc = gapicRpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.options = options;
@@ -166,8 +170,7 @@ class SessionImpl implements Session {
 
   @Override
   public ReadContext singleUse(TimestampBound bound) {
-    return setActive(
-        new SingleReadContext(this, bound, gapicRpc, defaultPrefetchChunks));
+    return setActive(new SingleReadContext(this, bound, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
@@ -178,8 +181,7 @@ class SessionImpl implements Session {
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
     return setActive(
-        new SingleUseReadOnlyTransaction(
-            this, bound, gapicRpc, defaultPrefetchChunks));
+        new SingleUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
@@ -189,15 +191,12 @@ class SessionImpl implements Session {
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    return setActive(
-        new MultiUseReadOnlyTransaction(
-            this, bound, gapicRpc, defaultPrefetchChunks));
+    return setActive(new MultiUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
   public TransactionRunner readWriteTransaction() {
-    return setActive(
-        new TransactionRunnerImpl(this, gapicRpc, defaultPrefetchChunks));
+    return setActive(new TransactionRunnerImpl(this, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
@@ -256,8 +255,7 @@ class SessionImpl implements Session {
 
   TransactionContextImpl newTransaction() {
     TransactionContextImpl txn =
-        new TransactionContextImpl(
-            this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
+        new TransactionContextImpl(this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
     return txn;
   }
 

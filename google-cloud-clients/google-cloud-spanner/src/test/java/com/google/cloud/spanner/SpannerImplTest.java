@@ -21,6 +21,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
+
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -34,8 +37,6 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
 
 /** Unit tests for {@link SpannerImpl}. */
 @RunWith(JUnit4.class)

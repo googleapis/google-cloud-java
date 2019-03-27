@@ -121,8 +121,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         mutations = null;
       }
       final CommitRequest commitRequest = builder.build();
-      Span opSpan =
-          tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
+      Span opSpan = tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
         CommitResponse commitResponse =
             SpannerImpl.runWithRetries(
