@@ -10,7 +10,7 @@ package com.google.cloud.talent.v4beta1;
  * Input only.
  * Application Date Range Filter.
  * The API matches profiles with
- * [JobApplication.application_date][google.cloud.talent.v4beta1.JobApplication.application_date]
+ * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
  * between start date and end date (both boundaries are inclusive). The filter
  * is ignored if both
  * [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date]
@@ -395,7 +395,7 @@ public final class ApplicationDateFilter extends com.google.protobuf.GeneratedMe
    * Input only.
    * Application Date Range Filter.
    * The API matches profiles with
-   * [JobApplication.application_date][google.cloud.talent.v4beta1.JobApplication.application_date]
+   * [Application.application_date][google.cloud.talent.v4beta1.Application.application_date]
    * between start date and end date (both boundaries are inclusive). The filter
    * is ignored if both
    * [start_date][google.cloud.talent.v4beta1.ApplicationDateFilter.start_date]

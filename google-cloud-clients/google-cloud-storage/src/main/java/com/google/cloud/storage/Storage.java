@@ -943,10 +943,18 @@ public interface Storage extends Service<StorageOptions> {
       return new SignUrlOption(Option.EXT_HEADERS, extHeaders);
     }
 
+    /**
+     * Use if signature version should be V2. This is the default if neither this or {@code withV4Signature()} is
+     * called.
+     */
     public static SignUrlOption withV2Signature() {
       return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V2);
     }
 
+    /**
+     * Use if signature version should be V4. Note that V4 Signed URLs can't have an expiration longer than 7 days.
+     * V2 will be the default if neither this or {@code withV2Signature()} is called.
+     */
     public static SignUrlOption withV4Signature() {
       return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V4);
     }

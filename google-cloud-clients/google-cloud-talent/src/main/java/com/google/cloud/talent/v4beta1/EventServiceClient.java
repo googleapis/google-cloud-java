@@ -34,7 +34,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
  *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
  * }
@@ -155,19 +155,24 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
    * }
    * </code></pre>
    *
-   * @param parent Parent project name.
+   * @param parent Required.
+   *     <p>Resource name of the tenant under which the event is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/api-test-project/tenant/foo".
+   *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
+   *     "projects/api-test-project".
    * @param clientEvent Required.
    *     <p>Events issued when end user interacts with customer's application that uses Cloud Talent
    *     Solution.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ClientEvent createClientEvent(ProjectName parent, ClientEvent clientEvent) {
+  public final ClientEvent createClientEvent(TenantOrProjectName parent, ClientEvent clientEvent) {
 
     CreateClientEventRequest request =
         CreateClientEventRequest.newBuilder()
@@ -188,13 +193,18 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   ClientEvent response = eventServiceClient.createClientEvent(parent.toString(), clientEvent);
    * }
    * </code></pre>
    *
-   * @param parent Parent project name.
+   * @param parent Required.
+   *     <p>Resource name of the tenant under which the event is created.
+   *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *     "projects/api-test-project/tenant/foo".
+   *     <p>Tenant id is optional and a default tenant is created if unspecified, for example,
+   *     "projects/api-test-project".
    * @param clientEvent Required.
    *     <p>Events issued when end user interacts with customer's application that uses Cloud Talent
    *     Solution.
@@ -218,7 +228,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
    *     .setParent(parent.toString())
@@ -246,7 +256,7 @@ public class EventServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
    *   CreateClientEventRequest request = CreateClientEventRequest.newBuilder()
    *     .setParent(parent.toString())

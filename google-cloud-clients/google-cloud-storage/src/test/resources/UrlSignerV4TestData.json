@@ -1,6 +1,3 @@
-// Assumed constant for all tests:
-// - email: test-iam-credentials@dummy-project-id.iam.gserviceaccount.com
-// - project: dummy-project-id
 [
   {
     "description": "Simple GET",
@@ -29,7 +26,7 @@
     "method": "POST",
     "expiration": 10,
     "headers": {
-      "x-goog-resumable": [ "start" ]
+      "x-goog-resumable": "start"
     },
     "timestamp": "20190201T090000Z",
     "expectedUrl": "https://storage.googleapis.com/test-bucket/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host%3Bx-goog-resumable&X-Goog-Signature=4a6d39b23343cedf4c30782aed4b384001828c79ffa3a080a481ea01a640dea0a0ceb58d67a12cef3b243c3f036bb3799c6ee88e8db3eaf7d0bdd4b70a228d0736e07eaa1ee076aff5c6ce09dff1f1f03a0d8ead0d2893408dd3604fdabff553aa6d7af2da67cdba6790006a70240f96717b98f1a6ccb24f00940749599be7ef72aaa5358db63ddd54b2de9e2d6d6a586eac4fe25f36d86fc6ab150418e9c6fa01b732cded226c6d62fc95b72473a4cc55a8257482583fe66d9ab6ede909eb41516a8690946c3e87b0f2052eb0e97e012a14b2f721c42e6e19b8a1cd5658ea36264f10b9b1ada66b8ed5bf7ed7d1708377ac6e5fe608ae361fb594d2e5b24c54"
@@ -60,8 +57,8 @@
     "bucket": "test-bucket",
     "object": "test-object",
     "headers": {
-      "foo": [ "foo-value" ],
-      "BAR": [ "BAR-value" ]
+      "foo": "foo-value",
+      "BAR": "BAR-value"
     },
     "method": "GET",
     "expiration": 10,
@@ -74,9 +71,9 @@
     "bucket": "test-bucket",
     "object": "test-object",
     "headers": {
-      "leading": [ "    xyz" ],
-      "trailing": [ "abc    " ],
-      "collapsed": [ "abc    def" ]
+      "leading": "    xyz",
+      "trailing": "abc    ",
+      "collapsed": "abc    def"
     },
     "method": "GET",
     "expiration": 10,
@@ -85,14 +82,27 @@
   },
 
   {
+    "description": "Header value with multiple inline values",
+    "bucket": "test-bucket",
+    "object": "test-object",
+    "headers": {
+      "multiple": " xyz ,  abc, def  , xyz   "
+    },
+    "method": "GET",
+    "expiration": 10,
+    "timestamp": "20190201T090000Z",
+    "expectedUrl": "https://storage.googleapis.com/test-bucket/test-object?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host%3Bmultiple&X-Goog-Signature=5cc113735625341f59c7203f0c2c9febc95ba6af6b9c38814f8e523214712087dc0996e4960d273ae1889f248ac1e58d4d19cb3a69ad7670e9a8ca1b434e878f59339dc7006cf32dfd715337e9f593e0504371839174962a08294586e0c78160a7aa303397888c8350637c6af3b32ac310886cc4590bfda9ca561ee58fb5b8ec56bc606d2ada6e7df31f4276e9dcb96bcaea39dc2cd096f3fad774f9c4b30e317ad43736c05f76831437f44e8726c1e90d3f6c9827dc273f211f32fc85658dfc5d357eb606743a6b00a29e519eef1bebaf9db3e8f4b1f5f9afb648ad06e60bc42fa8b57025056697c874c9ea76f5a73201c9717ea43e54713ff3502ff3fc626b"
+  },
+
+  {
     "description": "Customer-supplied encryption key",
     "bucket": "test-bucket",
     "object": "test-object",
     "headers":
     {
-      "X-Goog-Encryption-Key": [ "key" ],
-      "X-Goog-Encryption-Key-Sha256": [ "key-hash" ],
-      "X-Goog-Encryption-Algorithm": [ "AES256" ]
+      "X-Goog-Encryption-Key": "key",
+      "X-Goog-Encryption-Key-Sha256": "key-hash",
+      "X-Goog-Encryption-Algorithm": "AES256"
     },
     "method": "GET",
     "expiration": 10,
@@ -109,5 +119,4 @@
     "timestamp": "20190201T090000Z",
     "expectedUrl": "https://storage.googleapis.com/test-bucket/?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=test-iam-credentials%40dummy-project-id.iam.gserviceaccount.com%2F20190201%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20190201T090000Z&X-Goog-Expires=10&X-Goog-SignedHeaders=host&X-Goog-Signature=2a1d342f11ddf0c90c669b9ba89ab5099f94049a86351cacbc85845fd5a8b31e1f9c8d484926c19fbd6930da6c8d3049ca8ebcfeefb7b02e53137755d36f97baab479414528b2802f10d94541facb888edf886d91ba124e60cb3801464f61aadc575fc921c99cf8c52e281f7bc0d3e740f529201c469c8e52775b6433687e0c0dca1c6b874614c3c3d09599be1e192c40ad6827416e387bf6e88a5f501f1d8225bce498d134599d0dfe30c9c833c244d3f90cf9595b9f8175658b788ee5c4a90b575fde5e83c645772250c7098373ca754b39d0fc1ebca2f50261a015931541c9827920eba67a1c41613853a1bd23299a1f9f5d583c0feb05ea2f792ba390d27"
   }
-
 ]

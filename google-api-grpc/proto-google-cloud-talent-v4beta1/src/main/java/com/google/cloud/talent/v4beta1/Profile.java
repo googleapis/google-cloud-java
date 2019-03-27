@@ -9,8 +9,8 @@ package com.google.cloud.talent.v4beta1;
  * <pre>
  * A resource that represents the profile for a job candidate (also referred to
  * as a "single-source profile"). A profile belongs to a
- * [Tenant][google.cloud.talent.v4beta1.Tenant], which is an isolated instance
- * of the customer that owns the profile.
+ * [Company][google.cloud.talent.v4beta1.Company], which is the
+ * company/organization that owns the profile.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.Profile}
@@ -45,8 +45,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     publications_ = java.util.Collections.emptyList();
     patents_ = java.util.Collections.emptyList();
     certifications_ = java.util.Collections.emptyList();
-    jobApplications_ = java.util.Collections.emptyList();
-    recruitingNotes_ = java.util.Collections.emptyList();
+    applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     processed_ = false;
     keywordSnippet_ = "";
   }
@@ -315,30 +315,6 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.talent.v4beta1.Certification.parser(), extensionRegistry));
               break;
             }
-          case 194:
-            {
-              if (!((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
-                jobApplications_ =
-                    new java.util.ArrayList<com.google.cloud.talent.v4beta1.JobApplication>();
-                mutable_bitField0_ |= 0x00400000;
-              }
-              jobApplications_.add(
-                  input.readMessage(
-                      com.google.cloud.talent.v4beta1.JobApplication.parser(), extensionRegistry));
-              break;
-            }
-          case 202:
-            {
-              if (!((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
-                recruitingNotes_ =
-                    new java.util.ArrayList<com.google.cloud.talent.v4beta1.RecruitingNote>();
-                mutable_bitField0_ |= 0x00800000;
-              }
-              recruitingNotes_.add(
-                  input.readMessage(
-                      com.google.cloud.talent.v4beta1.RecruitingNote.parser(), extensionRegistry));
-              break;
-            }
           case 210:
             {
               if (!((mutable_bitField0_ & 0x01000000) == 0x01000000)) {
@@ -368,6 +344,26 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               keywordSnippet_ = s;
+              break;
+            }
+          case 378:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
+                applications_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00400000;
+              }
+              applications_.add(s);
+              break;
+            }
+          case 386:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
+                assignments_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00800000;
+              }
+              assignments_.add(s);
               break;
             }
           default:
@@ -424,10 +420,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         certifications_ = java.util.Collections.unmodifiableList(certifications_);
       }
       if (((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
-        jobApplications_ = java.util.Collections.unmodifiableList(jobApplications_);
+        applications_ = applications_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
-        recruitingNotes_ = java.util.Collections.unmodifiableList(recruitingNotes_);
+        assignments_ = assignments_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -2001,154 +1997,106 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     return certifications_.get(index);
   }
 
-  public static final int JOB_APPLICATIONS_FIELD_NUMBER = 24;
-  private java.util.List<com.google.cloud.talent.v4beta1.JobApplication> jobApplications_;
+  public static final int APPLICATIONS_FIELD_NUMBER = 47;
+  private com.google.protobuf.LazyStringList applications_;
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  public java.util.List<com.google.cloud.talent.v4beta1.JobApplication> getJobApplicationsList() {
-    return jobApplications_;
+  public com.google.protobuf.ProtocolStringList getApplicationsList() {
+    return applications_;
   }
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  public java.util.List<? extends com.google.cloud.talent.v4beta1.JobApplicationOrBuilder>
-      getJobApplicationsOrBuilderList() {
-    return jobApplications_;
+  public int getApplicationsCount() {
+    return applications_.size();
   }
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  public int getJobApplicationsCount() {
-    return jobApplications_.size();
+  public java.lang.String getApplications(int index) {
+    return applications_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  public com.google.cloud.talent.v4beta1.JobApplication getJobApplications(int index) {
-    return jobApplications_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The job applications of the candidate.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-   */
-  public com.google.cloud.talent.v4beta1.JobApplicationOrBuilder getJobApplicationsOrBuilder(
-      int index) {
-    return jobApplications_.get(index);
+  public com.google.protobuf.ByteString getApplicationsBytes(int index) {
+    return applications_.getByteString(index);
   }
 
-  public static final int RECRUITING_NOTES_FIELD_NUMBER = 25;
-  private java.util.List<com.google.cloud.talent.v4beta1.RecruitingNote> recruitingNotes_;
+  public static final int ASSIGNMENTS_FIELD_NUMBER = 48;
+  private com.google.protobuf.LazyStringList assignments_;
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  public java.util.List<com.google.cloud.talent.v4beta1.RecruitingNote> getRecruitingNotesList() {
-    return recruitingNotes_;
+  public com.google.protobuf.ProtocolStringList getAssignmentsList() {
+    return assignments_;
   }
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  public java.util.List<? extends com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder>
-      getRecruitingNotesOrBuilderList() {
-    return recruitingNotes_;
+  public int getAssignmentsCount() {
+    return assignments_.size();
   }
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  public int getRecruitingNotesCount() {
-    return recruitingNotes_.size();
+  public java.lang.String getAssignments(int index) {
+    return assignments_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  public com.google.cloud.talent.v4beta1.RecruitingNote getRecruitingNotes(int index) {
-    return recruitingNotes_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
-   * </pre>
-   *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-   */
-  public com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder getRecruitingNotesOrBuilder(
-      int index) {
-    return recruitingNotes_.get(index);
+  public com.google.protobuf.ByteString getAssignmentsBytes(int index) {
+    return assignments_.getByteString(index);
   }
 
   public static final int CUSTOM_ATTRIBUTES_FIELD_NUMBER = 26;
@@ -2195,16 +2143,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -2232,16 +2181,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -2261,16 +2211,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -2295,16 +2246,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -2463,12 +2415,6 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < certifications_.size(); i++) {
       output.writeMessage(23, certifications_.get(i));
     }
-    for (int i = 0; i < jobApplications_.size(); i++) {
-      output.writeMessage(24, jobApplications_.get(i));
-    }
-    for (int i = 0; i < recruitingNotes_.size(); i++) {
-      output.writeMessage(25, recruitingNotes_.get(i));
-    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetCustomAttributes(), CustomAttributesDefaultEntryHolder.defaultEntry, 26);
     if (processed_ != false) {
@@ -2476,6 +2422,12 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getKeywordSnippetBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, keywordSnippet_);
+    }
+    for (int i = 0; i < applications_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 47, applications_.getRaw(i));
+    }
+    for (int i = 0; i < assignments_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 48, assignments_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2556,12 +2508,6 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < certifications_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, certifications_.get(i));
     }
-    for (int i = 0; i < jobApplications_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, jobApplications_.get(i));
-    }
-    for (int i = 0; i < recruitingNotes_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, recruitingNotes_.get(i));
-    }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
         entry : internalGetCustomAttributes().getMap().entrySet()) {
       com.google.protobuf.MapEntry<
@@ -2579,6 +2525,22 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getKeywordSnippetBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, keywordSnippet_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < applications_.size(); i++) {
+        dataSize += computeStringSizeNoTag(applications_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getApplicationsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < assignments_.size(); i++) {
+        dataSize += computeStringSizeNoTag(assignments_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAssignmentsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2627,8 +2589,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
     result = result && getPublicationsList().equals(other.getPublicationsList());
     result = result && getPatentsList().equals(other.getPatentsList());
     result = result && getCertificationsList().equals(other.getCertificationsList());
-    result = result && getJobApplicationsList().equals(other.getJobApplicationsList());
-    result = result && getRecruitingNotesList().equals(other.getRecruitingNotesList());
+    result = result && getApplicationsList().equals(other.getApplicationsList());
+    result = result && getAssignmentsList().equals(other.getAssignmentsList());
     result = result && internalGetCustomAttributes().equals(other.internalGetCustomAttributes());
     result = result && (getProcessed() == other.getProcessed());
     result = result && getKeywordSnippet().equals(other.getKeywordSnippet());
@@ -2719,13 +2681,13 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CERTIFICATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getCertificationsList().hashCode();
     }
-    if (getJobApplicationsCount() > 0) {
-      hash = (37 * hash) + JOB_APPLICATIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getJobApplicationsList().hashCode();
+    if (getApplicationsCount() > 0) {
+      hash = (37 * hash) + APPLICATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationsList().hashCode();
     }
-    if (getRecruitingNotesCount() > 0) {
-      hash = (37 * hash) + RECRUITING_NOTES_FIELD_NUMBER;
-      hash = (53 * hash) + getRecruitingNotesList().hashCode();
+    if (getAssignmentsCount() > 0) {
+      hash = (37 * hash) + ASSIGNMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAssignmentsList().hashCode();
     }
     if (!internalGetCustomAttributes().getMap().isEmpty()) {
       hash = (37 * hash) + CUSTOM_ATTRIBUTES_FIELD_NUMBER;
@@ -2841,8 +2803,8 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A resource that represents the profile for a job candidate (also referred to
    * as a "single-source profile"). A profile belongs to a
-   * [Tenant][google.cloud.talent.v4beta1.Tenant], which is an isolated instance
-   * of the customer that owns the profile.
+   * [Company][google.cloud.talent.v4beta1.Company], which is the
+   * company/organization that owns the profile.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.Profile}
@@ -2911,8 +2873,6 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
         getPublicationsFieldBuilder();
         getPatentsFieldBuilder();
         getCertificationsFieldBuilder();
-        getJobApplicationsFieldBuilder();
-        getRecruitingNotesFieldBuilder();
       }
     }
 
@@ -3027,18 +2987,10 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       } else {
         certificationsBuilder_.clear();
       }
-      if (jobApplicationsBuilder_ == null) {
-        jobApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00400000);
-      } else {
-        jobApplicationsBuilder_.clear();
-      }
-      if (recruitingNotesBuilder_ == null) {
-        recruitingNotes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00800000);
-      } else {
-        recruitingNotesBuilder_.clear();
-      }
+      applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00400000);
+      assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00800000);
       internalGetMutableCustomAttributes().clear();
       processed_ = false;
 
@@ -3211,24 +3163,16 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.certifications_ = certificationsBuilder_.build();
       }
-      if (jobApplicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) == 0x00400000)) {
-          jobApplications_ = java.util.Collections.unmodifiableList(jobApplications_);
-          bitField0_ = (bitField0_ & ~0x00400000);
-        }
-        result.jobApplications_ = jobApplications_;
-      } else {
-        result.jobApplications_ = jobApplicationsBuilder_.build();
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        applications_ = applications_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00400000);
       }
-      if (recruitingNotesBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) == 0x00800000)) {
-          recruitingNotes_ = java.util.Collections.unmodifiableList(recruitingNotes_);
-          bitField0_ = (bitField0_ & ~0x00800000);
-        }
-        result.recruitingNotes_ = recruitingNotes_;
-      } else {
-        result.recruitingNotes_ = recruitingNotesBuilder_.build();
+      result.applications_ = applications_;
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+        assignments_ = assignments_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00800000);
       }
+      result.assignments_ = assignments_;
       result.customAttributes_ = internalGetCustomAttributes();
       result.customAttributes_.makeImmutable();
       result.processed_ = processed_;
@@ -3667,59 +3611,25 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (jobApplicationsBuilder_ == null) {
-        if (!other.jobApplications_.isEmpty()) {
-          if (jobApplications_.isEmpty()) {
-            jobApplications_ = other.jobApplications_;
-            bitField0_ = (bitField0_ & ~0x00400000);
-          } else {
-            ensureJobApplicationsIsMutable();
-            jobApplications_.addAll(other.jobApplications_);
-          }
-          onChanged();
+      if (!other.applications_.isEmpty()) {
+        if (applications_.isEmpty()) {
+          applications_ = other.applications_;
+          bitField0_ = (bitField0_ & ~0x00400000);
+        } else {
+          ensureApplicationsIsMutable();
+          applications_.addAll(other.applications_);
         }
-      } else {
-        if (!other.jobApplications_.isEmpty()) {
-          if (jobApplicationsBuilder_.isEmpty()) {
-            jobApplicationsBuilder_.dispose();
-            jobApplicationsBuilder_ = null;
-            jobApplications_ = other.jobApplications_;
-            bitField0_ = (bitField0_ & ~0x00400000);
-            jobApplicationsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getJobApplicationsFieldBuilder()
-                    : null;
-          } else {
-            jobApplicationsBuilder_.addAllMessages(other.jobApplications_);
-          }
-        }
+        onChanged();
       }
-      if (recruitingNotesBuilder_ == null) {
-        if (!other.recruitingNotes_.isEmpty()) {
-          if (recruitingNotes_.isEmpty()) {
-            recruitingNotes_ = other.recruitingNotes_;
-            bitField0_ = (bitField0_ & ~0x00800000);
-          } else {
-            ensureRecruitingNotesIsMutable();
-            recruitingNotes_.addAll(other.recruitingNotes_);
-          }
-          onChanged();
+      if (!other.assignments_.isEmpty()) {
+        if (assignments_.isEmpty()) {
+          assignments_ = other.assignments_;
+          bitField0_ = (bitField0_ & ~0x00800000);
+        } else {
+          ensureAssignmentsIsMutable();
+          assignments_.addAll(other.assignments_);
         }
-      } else {
-        if (!other.recruitingNotes_.isEmpty()) {
-          if (recruitingNotesBuilder_.isEmpty()) {
-            recruitingNotesBuilder_.dispose();
-            recruitingNotesBuilder_ = null;
-            recruitingNotes_ = other.recruitingNotes_;
-            bitField0_ = (bitField0_ & ~0x00800000);
-            recruitingNotesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getRecruitingNotesFieldBuilder()
-                    : null;
-          } else {
-            recruitingNotesBuilder_.addAllMessages(other.recruitingNotes_);
-          }
-        }
+        onChanged();
       }
       internalGetMutableCustomAttributes().mergeFrom(other.internalGetCustomAttributes());
       if (other.getProcessed() != false) {
@@ -10567,796 +10477,290 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
       return certificationsBuilder_;
     }
 
-    private java.util.List<com.google.cloud.talent.v4beta1.JobApplication> jobApplications_ =
-        java.util.Collections.emptyList();
+    private com.google.protobuf.LazyStringList applications_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
-    private void ensureJobApplicationsIsMutable() {
+    private void ensureApplicationsIsMutable() {
       if (!((bitField0_ & 0x00400000) == 0x00400000)) {
-        jobApplications_ =
-            new java.util.ArrayList<com.google.cloud.talent.v4beta1.JobApplication>(
-                jobApplications_);
+        applications_ = new com.google.protobuf.LazyStringArrayList(applications_);
         bitField0_ |= 0x00400000;
       }
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.JobApplication,
-            com.google.cloud.talent.v4beta1.JobApplication.Builder,
-            com.google.cloud.talent.v4beta1.JobApplicationOrBuilder>
-        jobApplicationsBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public java.util.List<com.google.cloud.talent.v4beta1.JobApplication> getJobApplicationsList() {
-      if (jobApplicationsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(jobApplications_);
-      } else {
-        return jobApplicationsBuilder_.getMessageList();
-      }
+    public com.google.protobuf.ProtocolStringList getApplicationsList() {
+      return applications_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public int getJobApplicationsCount() {
-      if (jobApplicationsBuilder_ == null) {
-        return jobApplications_.size();
-      } else {
-        return jobApplicationsBuilder_.getCount();
-      }
+    public int getApplicationsCount() {
+      return applications_.size();
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public com.google.cloud.talent.v4beta1.JobApplication getJobApplications(int index) {
-      if (jobApplicationsBuilder_ == null) {
-        return jobApplications_.get(index);
-      } else {
-        return jobApplicationsBuilder_.getMessage(index);
-      }
+    public java.lang.String getApplications(int index) {
+      return applications_.get(index);
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public Builder setJobApplications(
-        int index, com.google.cloud.talent.v4beta1.JobApplication value) {
-      if (jobApplicationsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureJobApplicationsIsMutable();
-        jobApplications_.set(index, value);
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.setMessage(index, value);
+    public com.google.protobuf.ByteString getApplicationsBytes(int index) {
+      return applications_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the candidate's applications.
+     * </pre>
+     *
+     * <code>repeated string applications = 47;</code>
+     */
+    public Builder setApplications(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
+      ensureApplicationsIsMutable();
+      applications_.set(index, value);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public Builder setJobApplications(
-        int index, com.google.cloud.talent.v4beta1.JobApplication.Builder builderForValue) {
-      if (jobApplicationsBuilder_ == null) {
-        ensureJobApplicationsIsMutable();
-        jobApplications_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.setMessage(index, builderForValue.build());
+    public Builder addApplications(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
+      ensureApplicationsIsMutable();
+      applications_.add(value);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public Builder addJobApplications(com.google.cloud.talent.v4beta1.JobApplication value) {
-      if (jobApplicationsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureJobApplicationsIsMutable();
-        jobApplications_.add(value);
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.addMessage(value);
-      }
+    public Builder addAllApplications(java.lang.Iterable<java.lang.String> values) {
+      ensureApplicationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, applications_);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public Builder addJobApplications(
-        int index, com.google.cloud.talent.v4beta1.JobApplication value) {
-      if (jobApplicationsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureJobApplicationsIsMutable();
-        jobApplications_.add(index, value);
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.addMessage(index, value);
-      }
+    public Builder clearApplications() {
+      applications_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The job applications of the candidate.
+     * Output only. The resource names of the candidate's applications.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+     * <code>repeated string applications = 47;</code>
      */
-    public Builder addJobApplications(
-        com.google.cloud.talent.v4beta1.JobApplication.Builder builderForValue) {
-      if (jobApplicationsBuilder_ == null) {
-        ensureJobApplicationsIsMutable();
-        jobApplications_.add(builderForValue.build());
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.addMessage(builderForValue.build());
+    public Builder addApplicationsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
+      checkByteStringIsUtf8(value);
+      ensureApplicationsIsMutable();
+      applications_.add(value);
+      onChanged();
       return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public Builder addJobApplications(
-        int index, com.google.cloud.talent.v4beta1.JobApplication.Builder builderForValue) {
-      if (jobApplicationsBuilder_ == null) {
-        ensureJobApplicationsIsMutable();
-        jobApplications_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public Builder addAllJobApplications(
-        java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.JobApplication> values) {
-      if (jobApplicationsBuilder_ == null) {
-        ensureJobApplicationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobApplications_);
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public Builder clearJobApplications() {
-      if (jobApplicationsBuilder_ == null) {
-        jobApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00400000);
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public Builder removeJobApplications(int index) {
-      if (jobApplicationsBuilder_ == null) {
-        ensureJobApplicationsIsMutable();
-        jobApplications_.remove(index);
-        onChanged();
-      } else {
-        jobApplicationsBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public com.google.cloud.talent.v4beta1.JobApplication.Builder getJobApplicationsBuilder(
-        int index) {
-      return getJobApplicationsFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public com.google.cloud.talent.v4beta1.JobApplicationOrBuilder getJobApplicationsOrBuilder(
-        int index) {
-      if (jobApplicationsBuilder_ == null) {
-        return jobApplications_.get(index);
-      } else {
-        return jobApplicationsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public java.util.List<? extends com.google.cloud.talent.v4beta1.JobApplicationOrBuilder>
-        getJobApplicationsOrBuilderList() {
-      if (jobApplicationsBuilder_ != null) {
-        return jobApplicationsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(jobApplications_);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public com.google.cloud.talent.v4beta1.JobApplication.Builder addJobApplicationsBuilder() {
-      return getJobApplicationsFieldBuilder()
-          .addBuilder(com.google.cloud.talent.v4beta1.JobApplication.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public com.google.cloud.talent.v4beta1.JobApplication.Builder addJobApplicationsBuilder(
-        int index) {
-      return getJobApplicationsFieldBuilder()
-          .addBuilder(index, com.google.cloud.talent.v4beta1.JobApplication.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job applications of the candidate.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-     */
-    public java.util.List<com.google.cloud.talent.v4beta1.JobApplication.Builder>
-        getJobApplicationsBuilderList() {
-      return getJobApplicationsFieldBuilder().getBuilderList();
     }
 
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.JobApplication,
-            com.google.cloud.talent.v4beta1.JobApplication.Builder,
-            com.google.cloud.talent.v4beta1.JobApplicationOrBuilder>
-        getJobApplicationsFieldBuilder() {
-      if (jobApplicationsBuilder_ == null) {
-        jobApplicationsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.talent.v4beta1.JobApplication,
-                com.google.cloud.talent.v4beta1.JobApplication.Builder,
-                com.google.cloud.talent.v4beta1.JobApplicationOrBuilder>(
-                jobApplications_,
-                ((bitField0_ & 0x00400000) == 0x00400000),
-                getParentForChildren(),
-                isClean());
-        jobApplications_ = null;
-      }
-      return jobApplicationsBuilder_;
-    }
+    private com.google.protobuf.LazyStringList assignments_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
 
-    private java.util.List<com.google.cloud.talent.v4beta1.RecruitingNote> recruitingNotes_ =
-        java.util.Collections.emptyList();
-
-    private void ensureRecruitingNotesIsMutable() {
+    private void ensureAssignmentsIsMutable() {
       if (!((bitField0_ & 0x00800000) == 0x00800000)) {
-        recruitingNotes_ =
-            new java.util.ArrayList<com.google.cloud.talent.v4beta1.RecruitingNote>(
-                recruitingNotes_);
+        assignments_ = new com.google.protobuf.LazyStringArrayList(assignments_);
         bitField0_ |= 0x00800000;
       }
     }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.RecruitingNote,
-            com.google.cloud.talent.v4beta1.RecruitingNote.Builder,
-            com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder>
-        recruitingNotesBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public java.util.List<com.google.cloud.talent.v4beta1.RecruitingNote> getRecruitingNotesList() {
-      if (recruitingNotesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(recruitingNotes_);
-      } else {
-        return recruitingNotesBuilder_.getMessageList();
-      }
+    public com.google.protobuf.ProtocolStringList getAssignmentsList() {
+      return assignments_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public int getRecruitingNotesCount() {
-      if (recruitingNotesBuilder_ == null) {
-        return recruitingNotes_.size();
-      } else {
-        return recruitingNotesBuilder_.getCount();
-      }
+    public int getAssignmentsCount() {
+      return assignments_.size();
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public com.google.cloud.talent.v4beta1.RecruitingNote getRecruitingNotes(int index) {
-      if (recruitingNotesBuilder_ == null) {
-        return recruitingNotes_.get(index);
-      } else {
-        return recruitingNotesBuilder_.getMessage(index);
-      }
+    public java.lang.String getAssignments(int index) {
+      return assignments_.get(index);
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public Builder setRecruitingNotes(
-        int index, com.google.cloud.talent.v4beta1.RecruitingNote value) {
-      if (recruitingNotesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRecruitingNotesIsMutable();
-        recruitingNotes_.set(index, value);
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.setMessage(index, value);
+    public com.google.protobuf.ByteString getAssignmentsBytes(int index) {
+      return assignments_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the candidate's assignments.
+     * </pre>
+     *
+     * <code>repeated string assignments = 48;</code>
+     */
+    public Builder setAssignments(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
+      ensureAssignmentsIsMutable();
+      assignments_.set(index, value);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public Builder setRecruitingNotes(
-        int index, com.google.cloud.talent.v4beta1.RecruitingNote.Builder builderForValue) {
-      if (recruitingNotesBuilder_ == null) {
-        ensureRecruitingNotesIsMutable();
-        recruitingNotes_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.setMessage(index, builderForValue.build());
+    public Builder addAssignments(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
+      ensureAssignmentsIsMutable();
+      assignments_.add(value);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public Builder addRecruitingNotes(com.google.cloud.talent.v4beta1.RecruitingNote value) {
-      if (recruitingNotesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRecruitingNotesIsMutable();
-        recruitingNotes_.add(value);
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.addMessage(value);
-      }
+    public Builder addAllAssignments(java.lang.Iterable<java.lang.String> values) {
+      ensureAssignmentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assignments_);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public Builder addRecruitingNotes(
-        int index, com.google.cloud.talent.v4beta1.RecruitingNote value) {
-      if (recruitingNotesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureRecruitingNotesIsMutable();
-        recruitingNotes_.add(index, value);
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.addMessage(index, value);
-      }
+    public Builder clearAssignments() {
+      assignments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00800000);
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
+     * Output only. The resource names of the candidate's assignments.
      * </pre>
      *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+     * <code>repeated string assignments = 48;</code>
      */
-    public Builder addRecruitingNotes(
-        com.google.cloud.talent.v4beta1.RecruitingNote.Builder builderForValue) {
-      if (recruitingNotesBuilder_ == null) {
-        ensureRecruitingNotesIsMutable();
-        recruitingNotes_.add(builderForValue.build());
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.addMessage(builderForValue.build());
+    public Builder addAssignmentsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
       }
+      checkByteStringIsUtf8(value);
+      ensureAssignmentsIsMutable();
+      assignments_.add(value);
+      onChanged();
       return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public Builder addRecruitingNotes(
-        int index, com.google.cloud.talent.v4beta1.RecruitingNote.Builder builderForValue) {
-      if (recruitingNotesBuilder_ == null) {
-        ensureRecruitingNotesIsMutable();
-        recruitingNotes_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public Builder addAllRecruitingNotes(
-        java.lang.Iterable<? extends com.google.cloud.talent.v4beta1.RecruitingNote> values) {
-      if (recruitingNotesBuilder_ == null) {
-        ensureRecruitingNotesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, recruitingNotes_);
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public Builder clearRecruitingNotes() {
-      if (recruitingNotesBuilder_ == null) {
-        recruitingNotes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00800000);
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public Builder removeRecruitingNotes(int index) {
-      if (recruitingNotesBuilder_ == null) {
-        ensureRecruitingNotesIsMutable();
-        recruitingNotes_.remove(index);
-        onChanged();
-      } else {
-        recruitingNotesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public com.google.cloud.talent.v4beta1.RecruitingNote.Builder getRecruitingNotesBuilder(
-        int index) {
-      return getRecruitingNotesFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder getRecruitingNotesOrBuilder(
-        int index) {
-      if (recruitingNotesBuilder_ == null) {
-        return recruitingNotes_.get(index);
-      } else {
-        return recruitingNotesBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public java.util.List<? extends com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder>
-        getRecruitingNotesOrBuilderList() {
-      if (recruitingNotesBuilder_ != null) {
-        return recruitingNotesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(recruitingNotes_);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public com.google.cloud.talent.v4beta1.RecruitingNote.Builder addRecruitingNotesBuilder() {
-      return getRecruitingNotesFieldBuilder()
-          .addBuilder(com.google.cloud.talent.v4beta1.RecruitingNote.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public com.google.cloud.talent.v4beta1.RecruitingNote.Builder addRecruitingNotesBuilder(
-        int index) {
-      return getRecruitingNotesFieldBuilder()
-          .addBuilder(index, com.google.cloud.talent.v4beta1.RecruitingNote.getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The recruiting notes added for the candidate.
-     * For example, the recruiter can add some unstructured comments for this
-     * candidate like "this candidate also has experiences in volunteer work".
-     * </pre>
-     *
-     * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-     */
-    public java.util.List<com.google.cloud.talent.v4beta1.RecruitingNote.Builder>
-        getRecruitingNotesBuilderList() {
-      return getRecruitingNotesFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.RecruitingNote,
-            com.google.cloud.talent.v4beta1.RecruitingNote.Builder,
-            com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder>
-        getRecruitingNotesFieldBuilder() {
-      if (recruitingNotesBuilder_ == null) {
-        recruitingNotesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.talent.v4beta1.RecruitingNote,
-                com.google.cloud.talent.v4beta1.RecruitingNote.Builder,
-                com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder>(
-                recruitingNotes_,
-                ((bitField0_ & 0x00800000) == 0x00800000),
-                getParentForChildren(),
-                isClean());
-        recruitingNotes_ = null;
-      }
-      return recruitingNotesBuilder_;
     }
 
     private com.google.protobuf.MapField<
@@ -11402,16 +10806,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
      * details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
-     * limit is exceeded, an error is thrown.
+     * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+     * by default. These are filterable when the `filterable` flag is set to
+     * `true`.
      * Numeric custom attributes: each key can only map to one numeric value,
-     * otherwise an error is thrown.
+     * otherwise an error is thrown. Client can also filter on numeric custom
+     * attributes using '&gt;', '&lt;' or '=' operators.
      * String custom attributes: each key can map up to 50 string values. For
      * filterable string value, each value has a byte size of no more than 256B.
      * For unfilterable string values, the maximum byte size of a single key is
      * 64B. An error is thrown for any request exceeding the limit.
      * The maximum total byte size is 10KB.
-     * Currently filterable numeric custom attributes are not supported, and
-     * they automatically set to unfilterable.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -11439,16 +10844,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
      * details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
-     * limit is exceeded, an error is thrown.
+     * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+     * by default. These are filterable when the `filterable` flag is set to
+     * `true`.
      * Numeric custom attributes: each key can only map to one numeric value,
-     * otherwise an error is thrown.
+     * otherwise an error is thrown. Client can also filter on numeric custom
+     * attributes using '&gt;', '&lt;' or '=' operators.
      * String custom attributes: each key can map up to 50 string values. For
      * filterable string value, each value has a byte size of no more than 256B.
      * For unfilterable string values, the maximum byte size of a single key is
      * 64B. An error is thrown for any request exceeding the limit.
      * The maximum total byte size is 10KB.
-     * Currently filterable numeric custom attributes are not supported, and
-     * they automatically set to unfilterable.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -11468,16 +10874,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
      * details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
-     * limit is exceeded, an error is thrown.
+     * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+     * by default. These are filterable when the `filterable` flag is set to
+     * `true`.
      * Numeric custom attributes: each key can only map to one numeric value,
-     * otherwise an error is thrown.
+     * otherwise an error is thrown. Client can also filter on numeric custom
+     * attributes using '&gt;', '&lt;' or '=' operators.
      * String custom attributes: each key can map up to 50 string values. For
      * filterable string value, each value has a byte size of no more than 256B.
      * For unfilterable string values, the maximum byte size of a single key is
      * 64B. An error is thrown for any request exceeding the limit.
      * The maximum total byte size is 10KB.
-     * Currently filterable numeric custom attributes are not supported, and
-     * they automatically set to unfilterable.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -11502,16 +10909,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
      * details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
-     * limit is exceeded, an error is thrown.
+     * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+     * by default. These are filterable when the `filterable` flag is set to
+     * `true`.
      * Numeric custom attributes: each key can only map to one numeric value,
-     * otherwise an error is thrown.
+     * otherwise an error is thrown. Client can also filter on numeric custom
+     * attributes using '&gt;', '&lt;' or '=' operators.
      * String custom attributes: each key can map up to 50 string values. For
      * filterable string value, each value has a byte size of no more than 256B.
      * For unfilterable string values, the maximum byte size of a single key is
      * 64B. An error is thrown for any request exceeding the limit.
      * The maximum total byte size is 10KB.
-     * Currently filterable numeric custom attributes are not supported, and
-     * they automatically set to unfilterable.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -11544,16 +10952,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
      * details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
-     * limit is exceeded, an error is thrown.
+     * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+     * by default. These are filterable when the `filterable` flag is set to
+     * `true`.
      * Numeric custom attributes: each key can only map to one numeric value,
-     * otherwise an error is thrown.
+     * otherwise an error is thrown. Client can also filter on numeric custom
+     * attributes using '&gt;', '&lt;' or '=' operators.
      * String custom attributes: each key can map up to 50 string values. For
      * filterable string value, each value has a byte size of no more than 256B.
      * For unfilterable string values, the maximum byte size of a single key is
      * 64B. An error is thrown for any request exceeding the limit.
      * The maximum total byte size is 10KB.
-     * Currently filterable numeric custom attributes are not supported, and
-     * they automatically set to unfilterable.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -11582,16 +10991,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
      * details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
-     * limit is exceeded, an error is thrown.
+     * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+     * by default. These are filterable when the `filterable` flag is set to
+     * `true`.
      * Numeric custom attributes: each key can only map to one numeric value,
-     * otherwise an error is thrown.
+     * otherwise an error is thrown. Client can also filter on numeric custom
+     * attributes using '&gt;', '&lt;' or '=' operators.
      * String custom attributes: each key can map up to 50 string values. For
      * filterable string value, each value has a byte size of no more than 256B.
      * For unfilterable string values, the maximum byte size of a single key is
      * 64B. An error is thrown for any request exceeding the limit.
      * The maximum total byte size is 10KB.
-     * Currently filterable numeric custom attributes are not supported, and
-     * they automatically set to unfilterable.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -11618,16 +11028,17 @@ public final class Profile extends com.google.protobuf.GeneratedMessageV3
      * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
      * details.
      * At most 100 filterable and at most 100 unfilterable keys are supported. If
-     * limit is exceeded, an error is thrown.
+     * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+     * by default. These are filterable when the `filterable` flag is set to
+     * `true`.
      * Numeric custom attributes: each key can only map to one numeric value,
-     * otherwise an error is thrown.
+     * otherwise an error is thrown. Client can also filter on numeric custom
+     * attributes using '&gt;', '&lt;' or '=' operators.
      * String custom attributes: each key can map up to 50 string values. For
      * filterable string value, each value has a byte size of no more than 256B.
      * For unfilterable string values, the maximum byte size of a single key is
      * 64B. An error is thrown for any request exceeding the limit.
      * The maximum total byte size is 10KB.
-     * Currently filterable numeric custom attributes are not supported, and
-     * they automatically set to unfilterable.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
