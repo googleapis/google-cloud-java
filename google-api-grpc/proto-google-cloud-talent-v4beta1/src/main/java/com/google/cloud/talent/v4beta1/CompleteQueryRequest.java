@@ -879,12 +879,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
     if (scope_
         != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope
-            .COMPLETION_SCOPE_UNSPECIFIED.getNumber()) {
+            .COMPLETION_SCOPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(6, scope_);
     }
     if (type_
         != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType
-            .COMPLETION_TYPE_UNSPECIFIED.getNumber()) {
+            .COMPLETION_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(7, type_);
     }
     unknownFields.writeTo(output);
@@ -918,12 +920,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
     if (scope_
         != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope
-            .COMPLETION_SCOPE_UNSPECIFIED.getNumber()) {
+            .COMPLETION_SCOPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, scope_);
     }
     if (type_
         != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType
-            .COMPLETION_TYPE_UNSPECIFIED.getNumber()) {
+            .COMPLETION_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, type_);
     }
     size += unknownFields.getSerializedSize();

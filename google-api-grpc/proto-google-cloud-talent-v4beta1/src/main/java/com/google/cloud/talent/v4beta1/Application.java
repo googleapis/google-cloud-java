@@ -1520,12 +1520,14 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     }
     if (stage_
         != com.google.cloud.talent.v4beta1.Application.ApplicationStage
-            .APPLICATION_STAGE_UNSPECIFIED.getNumber()) {
+            .APPLICATION_STAGE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(11, stage_);
     }
     if (state_
         != com.google.cloud.talent.v4beta1.Application.ApplicationState
-            .APPLICATION_STATE_UNSPECIFIED.getNumber()) {
+            .APPLICATION_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(13, state_);
     }
     for (int i = 0; i < interviews_.size(); i++) {
@@ -1581,12 +1583,14 @@ public final class Application extends com.google.protobuf.GeneratedMessageV3
     }
     if (stage_
         != com.google.cloud.talent.v4beta1.Application.ApplicationStage
-            .APPLICATION_STAGE_UNSPECIFIED.getNumber()) {
+            .APPLICATION_STAGE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, stage_);
     }
     if (state_
         != com.google.cloud.talent.v4beta1.Application.ApplicationState
-            .APPLICATION_STATE_UNSPECIFIED.getNumber()) {
+            .APPLICATION_STATE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, state_);
     }
     for (int i = 0; i < interviews_.size(); i++) {

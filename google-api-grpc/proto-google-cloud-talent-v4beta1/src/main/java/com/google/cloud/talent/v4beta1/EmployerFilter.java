@@ -407,7 +407,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
     }
     if (mode_
         != com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode
-            .EMPLOYER_FILTER_MODE_UNSPECIFIED.getNumber()) {
+            .EMPLOYER_FILTER_MODE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, mode_);
     }
     if (negated_ != false) {
@@ -427,7 +428,8 @@ public final class EmployerFilter extends com.google.protobuf.GeneratedMessageV3
     }
     if (mode_
         != com.google.cloud.talent.v4beta1.EmployerFilter.EmployerFilterMode
-            .EMPLOYER_FILTER_MODE_UNSPECIFIED.getNumber()) {
+            .EMPLOYER_FILTER_MODE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, mode_);
     }
     if (negated_ != false) {

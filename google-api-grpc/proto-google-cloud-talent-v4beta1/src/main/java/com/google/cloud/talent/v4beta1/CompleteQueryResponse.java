@@ -429,7 +429,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       if (type_
           != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType
-              .COMPLETION_TYPE_UNSPECIFIED.getNumber()) {
+              .COMPLETION_TYPE_UNSPECIFIED
+              .getNumber()) {
         output.writeEnum(2, type_);
       }
       if (!getImageUriBytes().isEmpty()) {
@@ -449,7 +450,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       if (type_
           != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionType
-              .COMPLETION_TYPE_UNSPECIFIED.getNumber()) {
+              .COMPLETION_TYPE_UNSPECIFIED
+              .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
       }
       if (!getImageUriBytes().isEmpty()) {

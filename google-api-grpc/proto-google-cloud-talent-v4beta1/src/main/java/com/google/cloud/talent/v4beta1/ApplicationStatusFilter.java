@@ -172,7 +172,8 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (applicationState_
         != com.google.cloud.talent.v4beta1.Application.ApplicationState
-            .APPLICATION_STATE_UNSPECIFIED.getNumber()) {
+            .APPLICATION_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, applicationState_);
     }
     if (negated_ != false) {
@@ -189,7 +190,8 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
     size = 0;
     if (applicationState_
         != com.google.cloud.talent.v4beta1.Application.ApplicationState
-            .APPLICATION_STATE_UNSPECIFIED.getNumber()) {
+            .APPLICATION_STATE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, applicationState_);
     }
     if (negated_ != false) {

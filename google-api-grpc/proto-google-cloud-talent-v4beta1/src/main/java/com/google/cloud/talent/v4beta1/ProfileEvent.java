@@ -466,7 +466,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (type_
         != com.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType
-            .PROFILE_EVENT_TYPE_UNSPECIFIED.getNumber()) {
+            .PROFILE_EVENT_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, type_);
     }
     for (int i = 0; i < profiles_.size(); i++) {
@@ -486,7 +487,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (type_
         != com.google.cloud.talent.v4beta1.ProfileEvent.ProfileEventType
-            .PROFILE_EVENT_TYPE_UNSPECIFIED.getNumber()) {
+            .PROFILE_EVENT_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
     }
     {
