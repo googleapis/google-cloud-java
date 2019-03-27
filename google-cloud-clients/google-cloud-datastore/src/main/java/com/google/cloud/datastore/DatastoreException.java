@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ public class DatastoreException extends BaseGrpcServiceException {
 
   public DatastoreException(
       int code, String message, String reason, boolean idempotent, Throwable cause) {
-    super(message, null, 0, false);
+    super(message, null, code, false);
   }
 
   public DatastoreException(IOException exception) {

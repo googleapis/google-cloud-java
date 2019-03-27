@@ -50,23 +50,6 @@ public final class DatastoreExceptionFactory {
     return DatastoreExceptionFactory.newDatastoreException(ErrorCode.CANCELLED, "Interrupted", e);
   }
 
-  /**
-   * Transforms a {@code TimeoutException} to a {@code SpannerException}.
-   *
-   * <pre>
-   * <code>
-   * try {
-   *   Spanner spanner = SpannerOptions.getDefaultInstance();
-   *   spanner
-   *       .getDatabaseAdminClient()
-   *       .createDatabase("[INSTANCE_ID]", "[DATABASE_ID]", [STATEMENTS])
-   *       .get();
-   * } catch (TimeoutException e) {
-   *   propagateTimeout(e);
-   * }
-   * </code>
-   * </pre>
-   */
   public static DatastoreException propagateTimeout(TimeoutException e) {
     return DatastoreExceptionFactory.newDatastoreException(
         ErrorCode.DEADLINE_EXCEEDED, "Operation did not complete in the given time", e);

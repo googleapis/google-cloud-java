@@ -20,34 +20,26 @@ import static com.google.cloud.datastore.DatastoreExceptionFactory.newDatastoreE
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
-import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannel;
-import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreExceptionFactory;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.v1.DatastoreClient;
 import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.datastore.v1.stub.DatastoreStub;
 import com.google.cloud.datastore.v1.stub.DatastoreStubSettings;
 import com.google.cloud.datastore.v1.stub.GrpcDatastoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
@@ -65,12 +57,10 @@ import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import java.io.IOException;
 import java.util.Collections;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
 import org.threeten.bp.Duration;
 
 public class GapicDatastoreRpc implements DatastoreRpc {
@@ -80,9 +70,9 @@ public class GapicDatastoreRpc implements DatastoreRpc {
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
   private static final String PROPERTY_TIMEOUT_SECONDS =
-      "com.google.cloud.spanner.watchdogTimeoutSeconds";
+      "com.google.cloud.datastore.watchdogTimeoutSeconds";
   private static final String PROPERTY_PERIOD_SECONDS =
-      "com.google.cloud.spanner.watchdogPeriodSeconds";
+      "com.google.cloud.datastore.watchdogPeriodSeconds";
   private final Duration waitTimeout =
       systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
   private final Duration idleTimeout =
@@ -114,25 +104,24 @@ public class GapicDatastoreRpc implements DatastoreRpc {
                 GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion())
             .build();
     HeaderProvider mergedHeaderProvider = options.getMergedHeaderProvider(internalHeaderProvider);
+
     this.metadataProvider =
         DatastoreMetadataProvider.create(
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
+    ManagedChannel managedChannel =
+        ManagedChannelBuilder.forTarget(options.getHost()).build();
+    TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setCredentials(options.getCredentials())
+            .setTransportChannel(transportChannel)
+            .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
+            .setBackgroundResources(
+                Collections.<BackgroundResource>singletonList(transportChannel))
+            .build();
 
     try {
-      ManagedChannel managedChannel =
-          ManagedChannelBuilder.forTarget(options.getHost()).build();
-      TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
-
-      ClientContext clientContext =
-          ClientContext.newBuilder()
-              .setCredentials(options.getCredentials())
-              .setTransportChannel(transportChannel)
-              .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
-              .setBackgroundResources(
-                  Collections.<BackgroundResource>singletonList(transportChannel))
-              .build();
-
       this.datastoreStub =
           GrpcDatastoreStub.create(
               DatastoreStubSettings.newBuilder(clientContext)
@@ -150,7 +139,7 @@ public class GapicDatastoreRpc implements DatastoreRpc {
                   .build());
 
     } catch (Exception e) {
-      throw DatastoreExceptionFactory.newDatastoreException(e);
+      throw newDatastoreException(e);
     }
   }
 
