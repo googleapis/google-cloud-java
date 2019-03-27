@@ -1474,4 +1474,47 @@ public class StorageSnippets {
     // [END storage_get_bucket_policy_only]
     return bucket;
   }
+
+  /** Example of how to generate a GET V4 Signed URL */
+  public URL generateV4GetObjectSignedUrl(String bucketName, String objectName) throws StorageException {
+    // [START storage_generate_signed_url_v4]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of an object, e.g. "my-object"
+    // String objectName = "my-object";
+
+    BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
+    URL url = storage.signUrl(blobinfo, 7, TimeUnit.DAYS, Storage.SignUrlOption.withV4Signature());
+
+    System.out.println("Generated GET signed URL:");
+    System.out.println(url);
+    // [END storage_generate_signed_url_v4]
+    return url;
+  }
+
+  /** Example of how to generate a PUT V4 Signed URL */
+  public URL generateV4GPutbjectSignedUrl(String bucketName, String objectName) throws StorageException {
+    // [START storage_generate_upload_signed_url_v4]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    // The name of a new object to upload, e.g. "my-object"
+    // String objectName = "my-object";
+
+    BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
+    URL url = storage.signUrl(blobinfo, 7, TimeUnit.DAYS, Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
+            Storage.SignUrlOption.withV4Signature());
+
+    System.out.println("Generated PUT signed URL:");
+    System.out.println(url);
+    // [END storage_generate_upload_signed_url_v4]
+    return url;
+  }
 }
