@@ -45,8 +45,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import javax.net.ssl.HttpsURLConnection;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Date;
@@ -580,5 +582,29 @@ public class ITStorageSnippets {
     assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
     bucket = storageSnippets.disableBucketPolicyOnly(tempBucket);
     assertFalse(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+  }
+
+  @Test
+  public void testV4SignedURLs() throws IOException{
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    Bucket bucket = storageSnippets.createBucket(tempBucket);
+    assertNotNull(bucket);
+    String tempObject = "test-upload-signed-url-object";
+    URL uploadUrl = storageSnippets.generateV4GPutbjectSignedUrl(tempBucket, tempObject);
+    HttpsURLConnection connection = (HttpsURLConnection)uploadUrl.openConnection();
+    connection.setRequestMethod("PUT");
+    connection.setDoOutput(true);
+    byte[] write = new byte[BLOB_BYTE_CONTENT.length];
+    try (OutputStream out = connection.getOutputStream()) {
+      out.write(BLOB_BYTE_CONTENT);
+      assertEquals(connection.getResponseCode(), 200);
+    }
+    URL downloadUrl = storageSnippets.generateV4GetObjectSignedUrl(tempBucket, tempObject);
+    connection = (HttpsURLConnection)downloadUrl.openConnection();
+    byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
+    try (InputStream responseStream = connection.getInputStream()) {
+      assertEquals(BLOB_BYTE_CONTENT.length, responseStream.read(readBytes));
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    }
   }
 }

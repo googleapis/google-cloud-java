@@ -2123,6 +2123,15 @@ public interface Storage extends Service<StorageOptions> {
    *     TimeUnit.DAYS);
    * }</pre>
    *
+   * <p>Example of creating a signed URL passing the {@link SignUrlOption#withV4Signature()} option,
+   *  which enables V4 signing.
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
+   *     7, TimeUnit.DAYS, Storage.SignUrlOption.withV4Signature());
+   * }</pre>
+   *
    * <p>Example of creating a signed URL passing the {@link
    * SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the URL.
    *
