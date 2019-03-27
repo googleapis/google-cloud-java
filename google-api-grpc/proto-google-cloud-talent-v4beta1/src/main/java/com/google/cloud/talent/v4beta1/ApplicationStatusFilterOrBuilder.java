@@ -13,37 +13,38 @@ public interface ApplicationStatusFilterOrBuilder
    *
    * <pre>
    * Required.
-   * User entered or selected application status. The API does an exact match
-   * between the application status specified in this filter and the
-   * [JobApplication.status][] in profiles.
+   * User entered or selected application state. The API does an exact match
+   * between the application state specified in this filter and the
+   * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+   * profiles.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-   * </code>
+   * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
    */
-  int getApplicationStatusValue();
+  int getApplicationStateValue();
   /**
    *
    *
    * <pre>
    * Required.
-   * User entered or selected application status. The API does an exact match
-   * between the application status specified in this filter and the
-   * [JobApplication.status][] in profiles.
+   * User entered or selected application state. The API does an exact match
+   * between the application state specified in this filter and the
+   * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+   * profiles.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-   * </code>
+   * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
    */
-  com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus getApplicationStatus();
+  com.google.cloud.talent.v4beta1.Application.ApplicationState getApplicationState();
 
   /**
    *
    *
    * <pre>
    * Optional.
-   * If true, The API excludes all candidates with any [JobApplication.status][]
-   * matching the status specified in the filter.
+   * If true, The API excludes all candidates with any
+   * [Application.state][google.cloud.talent.v4beta1.Application.state] matching
+   * the state specified in the filter.
    * </pre>
    *
    * <code>bool negated = 2;</code>

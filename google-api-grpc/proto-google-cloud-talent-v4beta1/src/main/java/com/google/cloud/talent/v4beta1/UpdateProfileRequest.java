@@ -187,7 +187,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * * publications
    * * patents
    * * certifications
-   * * jobApplications
    * * recruitingNotes
    * * customAttributes
    * </pre>
@@ -225,7 +224,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * * publications
    * * patents
    * * certifications
-   * * jobApplications
    * * recruitingNotes
    * * customAttributes
    * </pre>
@@ -263,7 +261,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
    * * publications
    * * patents
    * * certifications
-   * * jobApplications
    * * recruitingNotes
    * * customAttributes
    * </pre>
@@ -857,7 +854,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -895,7 +891,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -939,7 +934,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -987,7 +981,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -1032,7 +1025,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -1082,7 +1074,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -1128,7 +1119,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -1168,7 +1158,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>
@@ -1212,7 +1201,6 @@ public final class UpdateProfileRequest extends com.google.protobuf.GeneratedMes
      * * publications
      * * patents
      * * certifications
-     * * jobApplications
      * * recruitingNotes
      * * customAttributes
      * </pre>

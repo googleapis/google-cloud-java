@@ -100,8 +100,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required.
    * The resource name of the job to retrieve.
-   * The format is "projects/{project_id}/jobs/{job_id}",
-   * for example, "projects/api-test-project/jobs/1234".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/jobs/1234".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -123,8 +126,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required.
    * The resource name of the job to retrieve.
-   * The format is "projects/{project_id}/jobs/{job_id}",
-   * for example, "projects/api-test-project/jobs/1234".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+   * example, "projects/api-test-project/tenants/foo/jobs/1234".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/jobs/1234".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -466,8 +472,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource name of the job to retrieve.
-     * The format is "projects/{project_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/jobs/1234".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/jobs/1234".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -489,8 +498,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource name of the job to retrieve.
-     * The format is "projects/{project_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/jobs/1234".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/jobs/1234".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -512,8 +524,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource name of the job to retrieve.
-     * The format is "projects/{project_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/jobs/1234".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/jobs/1234".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -533,8 +548,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource name of the job to retrieve.
-     * The format is "projects/{project_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/jobs/1234".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/jobs/1234".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -551,8 +569,11 @@ public final class GetJobRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required.
      * The resource name of the job to retrieve.
-     * The format is "projects/{project_id}/jobs/{job_id}",
-     * for example, "projects/api-test-project/jobs/1234".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
+     * example, "projects/api-test-project/tenants/foo/jobs/1234".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/jobs/1234".
      * </pre>
      *
      * <code>string name = 1;</code>

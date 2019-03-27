@@ -64,17 +64,6 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CYCLING = 4;</code>
    */
   CYCLING(4),
-  /**
-   *
-   *
-   * <pre>
-   * Commute time is calculated based on public transit that is wheelchair
-   * accessible.
-   * </pre>
-   *
-   * <code>TRANSIT_ACCESSIBLE = 5;</code>
-   */
-  TRANSIT_ACCESSIBLE(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -129,17 +118,6 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CYCLING = 4;</code>
    */
   public static final int CYCLING_VALUE = 4;
-  /**
-   *
-   *
-   * <pre>
-   * Commute time is calculated based on public transit that is wheelchair
-   * accessible.
-   * </pre>
-   *
-   * <code>TRANSIT_ACCESSIBLE = 5;</code>
-   */
-  public static final int TRANSIT_ACCESSIBLE_VALUE = 5;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -167,8 +145,6 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
         return WALKING;
       case 4:
         return CYCLING;
-      case 5:
-        return TRANSIT_ACCESSIBLE;
       default:
         return null;
     }

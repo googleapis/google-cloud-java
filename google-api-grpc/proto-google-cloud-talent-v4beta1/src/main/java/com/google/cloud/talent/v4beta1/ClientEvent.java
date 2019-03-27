@@ -29,6 +29,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
   private ClientEvent() {
     requestId_ = "";
     eventId_ = "";
+    eventNotes_ = "";
   }
 
   @java.lang.Override
@@ -116,19 +117,11 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
               eventCase_ = 6;
               break;
             }
-          case 58:
+          case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                extraInfo_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ExtraInfoDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> extraInfo__ =
-                  input.readMessage(
-                      ExtraInfoDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              extraInfo_.getMutableMap().put(extraInfo__.getKey(), extraInfo__.getValue());
+              java.lang.String s = input.readStringRequireUtf8();
+
+              eventNotes_ = s;
               break;
             }
           default:
@@ -155,17 +148,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_talent_v4beta1_ClientEvent_descriptor;
   }
 
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(int number) {
-    switch (number) {
-      case 7:
-        return internalGetExtraInfo();
-      default:
-        throw new RuntimeException("Invalid map field number: " + number);
-    }
-  }
-
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -176,7 +158,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4beta1.ClientEvent.Builder.class);
   }
 
-  private int bitField0_;
   private int eventCase_ = 0;
   private java.lang.Object event_;
 
@@ -445,118 +426,51 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance();
   }
 
-  public static final int EXTRA_INFO_FIELD_NUMBER = 7;
-
-  private static final class ExtraInfoDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.talent.v4beta1.EventProto
-                .internal_static_google_cloud_talent_v4beta1_ClientEvent_ExtraInfoEntry_descriptor,
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "",
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "");
-  }
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> extraInfo_;
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetExtraInfo() {
-    if (extraInfo_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(ExtraInfoDefaultEntryHolder.defaultEntry);
+  public static final int EVENT_NOTES_FIELD_NUMBER = 9;
+  private volatile java.lang.Object eventNotes_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * Notes about the event provided by recruiters or other users, for example,
+   * feedback on why a profile was bookmarked.
+   * </pre>
+   *
+   * <code>string event_notes = 9;</code>
+   */
+  public java.lang.String getEventNotes() {
+    java.lang.Object ref = eventNotes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      eventNotes_ = s;
+      return s;
     }
-    return extraInfo_;
-  }
-
-  public int getExtraInfoCount() {
-    return internalGetExtraInfo().getMap().size();
   }
   /**
    *
    *
    * <pre>
    * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
+   * Notes about the event provided by recruiters or other users, for example,
+   * feedback on why a profile was bookmarked.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
+   * <code>string event_notes = 9;</code>
    */
-  public boolean containsExtraInfo(java.lang.String key) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
+  public com.google.protobuf.ByteString getEventNotesBytes() {
+    java.lang.Object ref = eventNotes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      eventNotes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
     }
-    return internalGetExtraInfo().getMap().containsKey(key);
-  }
-  /** Use {@link #getExtraInfoMap()} instead. */
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getExtraInfo() {
-    return getExtraInfoMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
-   */
-  public java.util.Map<java.lang.String, java.lang.String> getExtraInfoMap() {
-    return internalGetExtraInfo().getMap();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
-   */
-  public java.lang.String getExtraInfoOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetExtraInfo().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * Extra information about this event. Used for storing information with no
-   * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-   * example, user application specific context or details.
-   * At most 20 keys are supported. The maximum total size of all keys and
-   * values is 2 KB.
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; extra_info = 7;</code>
-   */
-  public java.lang.String getExtraInfoOrThrow(java.lang.String key) {
-    if (key == null) {
-      throw new java.lang.NullPointerException();
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetExtraInfo().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -588,8 +502,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     if (eventCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.talent.v4beta1.ProfileEvent) event_);
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetExtraInfo(), ExtraInfoDefaultEntryHolder.defaultEntry, 7);
+    if (!getEventNotesBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, eventNotes_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -618,15 +533,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.talent.v4beta1.ProfileEvent) event_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetExtraInfo().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> extraInfo__ =
-          ExtraInfoDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, extraInfo__);
+    if (!getEventNotesBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, eventNotes_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -651,7 +559,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       result = result && getCreateTime().equals(other.getCreateTime());
     }
-    result = result && internalGetExtraInfo().equals(other.internalGetExtraInfo());
+    result = result && getEventNotes().equals(other.getEventNotes());
     result = result && getEventCase().equals(other.getEventCase());
     if (!result) return false;
     switch (eventCase_) {
@@ -683,10 +591,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
-    if (!internalGetExtraInfo().getMap().isEmpty()) {
-      hash = (37 * hash) + EXTRA_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetExtraInfo().hashCode();
-    }
+    hash = (37 * hash) + EVENT_NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getEventNotes().hashCode();
     switch (eventCase_) {
       case 5:
         hash = (37 * hash) + JOB_EVENT_FIELD_NUMBER;
@@ -821,26 +727,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_talent_v4beta1_ClientEvent_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(int number) {
-      switch (number) {
-        case 7:
-          return internalGetExtraInfo();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
-      switch (number) {
-        case 7:
-          return internalGetMutableExtraInfo();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -878,7 +764,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
         createTimeBuilder_ = null;
       }
-      internalGetMutableExtraInfo().clear();
+      eventNotes_ = "";
+
       eventCase_ = 0;
       event_ = null;
       return this;
@@ -908,8 +795,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4beta1.ClientEvent buildPartial() {
       com.google.cloud.talent.v4beta1.ClientEvent result =
           new com.google.cloud.talent.v4beta1.ClientEvent(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.requestId_ = requestId_;
       result.eventId_ = eventId_;
       if (createTimeBuilder_ == null) {
@@ -931,9 +816,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
           result.event_ = profileEventBuilder_.build();
         }
       }
-      result.extraInfo_ = internalGetExtraInfo();
-      result.extraInfo_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
+      result.eventNotes_ = eventNotes_;
       result.eventCase_ = eventCase_;
       onBuilt();
       return result;
@@ -995,7 +878,10 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
-      internalGetMutableExtraInfo().mergeFrom(other.internalGetExtraInfo());
+      if (!other.getEventNotes().isEmpty()) {
+        eventNotes_ = other.eventNotes_;
+        onChanged();
+      }
       switch (other.getEventCase()) {
         case JOB_EVENT:
           {
@@ -1054,8 +940,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
-    private int bitField0_;
 
     private java.lang.Object requestId_ = "";
     /**
@@ -1869,174 +1753,69 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       return profileEventBuilder_;
     }
 
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> extraInfo_;
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetExtraInfo() {
-      if (extraInfo_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(ExtraInfoDefaultEntryHolder.defaultEntry);
+    private java.lang.Object eventNotes_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * Notes about the event provided by recruiters or other users, for example,
+     * feedback on why a profile was bookmarked.
+     * </pre>
+     *
+     * <code>string event_notes = 9;</code>
+     */
+    public java.lang.String getEventNotes() {
+      java.lang.Object ref = eventNotes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        eventNotes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
-      return extraInfo_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableExtraInfo() {
-      onChanged();
-      ;
-      if (extraInfo_ == null) {
-        extraInfo_ =
-            com.google.protobuf.MapField.newMapField(ExtraInfoDefaultEntryHolder.defaultEntry);
-      }
-      if (!extraInfo_.isMutable()) {
-        extraInfo_ = extraInfo_.copy();
-      }
-      return extraInfo_;
-    }
-
-    public int getExtraInfoCount() {
-      return internalGetExtraInfo().getMap().size();
     }
     /**
      *
      *
      * <pre>
      * Optional.
-     * Extra information about this event. Used for storing information with no
-     * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-     * example, user application specific context or details.
-     * At most 20 keys are supported. The maximum total size of all keys and
-     * values is 2 KB.
+     * Notes about the event provided by recruiters or other users, for example,
+     * feedback on why a profile was bookmarked.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; extra_info = 7;</code>
+     * <code>string event_notes = 9;</code>
      */
-    public boolean containsExtraInfo(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
+    public com.google.protobuf.ByteString getEventNotesBytes() {
+      java.lang.Object ref = eventNotes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        eventNotes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return internalGetExtraInfo().getMap().containsKey(key);
-    }
-    /** Use {@link #getExtraInfoMap()} instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getExtraInfo() {
-      return getExtraInfoMap();
     }
     /**
      *
      *
      * <pre>
      * Optional.
-     * Extra information about this event. Used for storing information with no
-     * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-     * example, user application specific context or details.
-     * At most 20 keys are supported. The maximum total size of all keys and
-     * values is 2 KB.
+     * Notes about the event provided by recruiters or other users, for example,
+     * feedback on why a profile was bookmarked.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; extra_info = 7;</code>
+     * <code>string event_notes = 9;</code>
      */
-    public java.util.Map<java.lang.String, java.lang.String> getExtraInfoMap() {
-      return internalGetExtraInfo().getMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * Extra information about this event. Used for storing information with no
-     * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-     * example, user application specific context or details.
-     * At most 20 keys are supported. The maximum total size of all keys and
-     * values is 2 KB.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; extra_info = 7;</code>
-     */
-    public java.lang.String getExtraInfoOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetExtraInfo().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * Extra information about this event. Used for storing information with no
-     * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-     * example, user application specific context or details.
-     * At most 20 keys are supported. The maximum total size of all keys and
-     * values is 2 KB.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; extra_info = 7;</code>
-     */
-    public java.lang.String getExtraInfoOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetExtraInfo().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public Builder clearExtraInfo() {
-      internalGetMutableExtraInfo().getMutableMap().clear();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * Extra information about this event. Used for storing information with no
-     * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-     * example, user application specific context or details.
-     * At most 20 keys are supported. The maximum total size of all keys and
-     * values is 2 KB.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; extra_info = 7;</code>
-     */
-    public Builder removeExtraInfo(java.lang.String key) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
-      internalGetMutableExtraInfo().getMutableMap().remove(key);
-      return this;
-    }
-    /** Use alternate mutation accessors instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableExtraInfo() {
-      return internalGetMutableExtraInfo().getMutableMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * Extra information about this event. Used for storing information with no
-     * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-     * example, user application specific context or details.
-     * At most 20 keys are supported. The maximum total size of all keys and
-     * values is 2 KB.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; extra_info = 7;</code>
-     */
-    public Builder putExtraInfo(java.lang.String key, java.lang.String value) {
-      if (key == null) {
-        throw new java.lang.NullPointerException();
-      }
+    public Builder setEventNotes(java.lang.String value) {
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
-      internalGetMutableExtraInfo().getMutableMap().put(key, value);
+
+      eventNotes_ = value;
+      onChanged();
       return this;
     }
     /**
@@ -2044,17 +1823,37 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional.
-     * Extra information about this event. Used for storing information with no
-     * matching field in [event][google.cloud.talent.v4beta1.event] payload, for
-     * example, user application specific context or details.
-     * At most 20 keys are supported. The maximum total size of all keys and
-     * values is 2 KB.
+     * Notes about the event provided by recruiters or other users, for example,
+     * feedback on why a profile was bookmarked.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; extra_info = 7;</code>
+     * <code>string event_notes = 9;</code>
      */
-    public Builder putAllExtraInfo(java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableExtraInfo().getMutableMap().putAll(values);
+    public Builder clearEventNotes() {
+
+      eventNotes_ = getDefaultInstance().getEventNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * Notes about the event provided by recruiters or other users, for example,
+     * feedback on why a profile was bookmarked.
+     * </pre>
+     *
+     * <code>string event_notes = 9;</code>
+     */
+    public Builder setEventNotesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      eventNotes_ = value;
+      onChanged();
       return this;
     }
 

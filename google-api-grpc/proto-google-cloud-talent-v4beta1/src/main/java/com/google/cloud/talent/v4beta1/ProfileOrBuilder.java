@@ -1235,125 +1235,83 @@ public interface ProfileOrBuilder
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  java.util.List<com.google.cloud.talent.v4beta1.JobApplication> getJobApplicationsList();
+  java.util.List<java.lang.String> getApplicationsList();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  com.google.cloud.talent.v4beta1.JobApplication getJobApplications(int index);
+  int getApplicationsCount();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  int getJobApplicationsCount();
+  java.lang.String getApplications(int index);
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The job applications of the candidate.
+   * Output only. The resource names of the candidate's applications.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
+   * <code>repeated string applications = 47;</code>
    */
-  java.util.List<? extends com.google.cloud.talent.v4beta1.JobApplicationOrBuilder>
-      getJobApplicationsOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The job applications of the candidate.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.talent.v4beta1.JobApplication job_applications = 24;</code>
-   */
-  com.google.cloud.talent.v4beta1.JobApplicationOrBuilder getJobApplicationsOrBuilder(int index);
+  com.google.protobuf.ByteString getApplicationsBytes(int index);
 
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  java.util.List<com.google.cloud.talent.v4beta1.RecruitingNote> getRecruitingNotesList();
+  java.util.List<java.lang.String> getAssignmentsList();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  com.google.cloud.talent.v4beta1.RecruitingNote getRecruitingNotes(int index);
+  int getAssignmentsCount();
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  int getRecruitingNotesCount();
+  java.lang.String getAssignments(int index);
   /**
    *
    *
    * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
+   * Output only. The resource names of the candidate's assignments.
    * </pre>
    *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
+   * <code>repeated string assignments = 48;</code>
    */
-  java.util.List<? extends com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder>
-      getRecruitingNotesOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * Optional.
-   * The recruiting notes added for the candidate.
-   * For example, the recruiter can add some unstructured comments for this
-   * candidate like "this candidate also has experiences in volunteer work".
-   * </pre>
-   *
-   * <code>repeated .google.cloud.talent.v4beta1.RecruitingNote recruiting_notes = 25;</code>
-   */
-  com.google.cloud.talent.v4beta1.RecruitingNoteOrBuilder getRecruitingNotesOrBuilder(int index);
+  com.google.protobuf.ByteString getAssignmentsBytes(int index);
 
   /**
    *
@@ -1365,16 +1323,17 @@ public interface ProfileOrBuilder
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -1391,16 +1350,17 @@ public interface ProfileOrBuilder
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -1421,16 +1381,17 @@ public interface ProfileOrBuilder
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -1448,16 +1409,17 @@ public interface ProfileOrBuilder
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;
@@ -1475,16 +1437,17 @@ public interface ProfileOrBuilder
    * [CustomAttribute][google.cloud.talent.v4beta1.CustomAttribute] for more
    * details.
    * At most 100 filterable and at most 100 unfilterable keys are supported. If
-   * limit is exceeded, an error is thrown.
+   * limit is exceeded, an error is thrown. Custom attributes are `unfilterable`
+   * by default. These are filterable when the `filterable` flag is set to
+   * `true`.
    * Numeric custom attributes: each key can only map to one numeric value,
-   * otherwise an error is thrown.
+   * otherwise an error is thrown. Client can also filter on numeric custom
+   * attributes using '&gt;', '&lt;' or '=' operators.
    * String custom attributes: each key can map up to 50 string values. For
    * filterable string value, each value has a byte size of no more than 256B.
    * For unfilterable string values, the maximum byte size of a single key is
    * 64B. An error is thrown for any request exceeding the limit.
    * The maximum total byte size is 10KB.
-   * Currently filterable numeric custom attributes are not supported, and
-   * they automatically set to unfilterable.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.talent.v4beta1.CustomAttribute&gt; custom_attributes = 26;

@@ -61,10 +61,6 @@ public final class ProfileResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_Degree_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_talent_v4beta1_Skill_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_talent_v4beta1_Skill_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_talent_v4beta1_Activity_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_Activity_fieldAccessorTable;
@@ -76,18 +72,6 @@ public final class ProfileResourceProto {
       internal_static_google_cloud_talent_v4beta1_Patent_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_Patent_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_talent_v4beta1_JobApplication_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_talent_v4beta1_JobApplication_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_talent_v4beta1_Certification_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_talent_v4beta1_Certification_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_talent_v4beta1_RecruitingNote_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_talent_v4beta1_RecruitingNote_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -101,160 +85,124 @@ public final class ProfileResourceProto {
           + "oto\022\033google.cloud.talent.v4beta1\032\034google"
           + "/api/annotations.proto\032(google/cloud/tal"
           + "ent/v4beta1/common.proto\032%google/cloud/t"
-          + "alent/v4beta1/job.proto\032\037google/protobuf"
-          + "/timestamp.proto\032\036google/protobuf/wrappe"
-          + "rs.proto\032\026google/type/date.proto\032 google"
-          + "/type/postal_address.proto\"\276\013\n\007Profile\022\014"
-          + "\n\004name\030\001 \001(\t\022\023\n\013external_id\030\002 \001(\t\022\016\n\006sou"
-          + "rce\030\003 \001(\t\022\013\n\003uri\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\t"
-          + "\022.\n\nis_hirable\030\006 \001(\0132\032.google.protobuf.B"
-          + "oolValue\022/\n\013create_time\030\007 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022/\n\013update_time\030\010 \001(\0132\032"
-          + ".google.protobuf.Timestamp\022\024\n\014resume_hrx"
-          + "ml\030\n \001(\t\022=\n\014person_names\030\013 \003(\0132\'.google."
-          + "cloud.talent.v4beta1.PersonName\0227\n\taddre"
-          + "sses\030\014 \003(\0132$.google.cloud.talent.v4beta1"
-          + ".Address\022;\n\017email_addresses\030\r \003(\0132\".goog"
-          + "le.cloud.talent.v4beta1.Email\0229\n\rphone_n"
-          + "umbers\030\016 \003(\0132\".google.cloud.talent.v4bet"
-          + "a1.Phone\022?\n\rpersonal_uris\030\017 \003(\0132(.google"
-          + ".cloud.talent.v4beta1.PersonalUri\022S\n\027add"
-          + "itional_contact_info\030\020 \003(\01322.google.clou"
-          + "d.talent.v4beta1.AdditionalContactInfo\022I"
-          + "\n\022employment_records\030\021 \003(\0132-.google.clou"
-          + "d.talent.v4beta1.EmploymentRecord\022G\n\021edu"
-          + "cation_records\030\022 \003(\0132,.google.cloud.tale"
-          + "nt.v4beta1.EducationRecord\0222\n\006skills\030\023 \003"
-          + "(\0132\".google.cloud.talent.v4beta1.Skill\0229"
-          + "\n\nactivities\030\024 \003(\0132%.google.cloud.talent"
-          + ".v4beta1.Activity\022>\n\014publications\030\025 \003(\0132"
-          + "(.google.cloud.talent.v4beta1.Publicatio"
-          + "n\0224\n\007patents\030\026 \003(\0132#.google.cloud.talent"
-          + ".v4beta1.Patent\022B\n\016certifications\030\027 \003(\0132"
-          + "*.google.cloud.talent.v4beta1.Certificat"
-          + "ion\022E\n\020job_applications\030\030 \003(\0132+.google.c"
-          + "loud.talent.v4beta1.JobApplication\022E\n\020re"
-          + "cruiting_notes\030\031 \003(\0132+.google.cloud.tale"
-          + "nt.v4beta1.RecruitingNote\022U\n\021custom_attr"
-          + "ibutes\030\032 \003(\0132:.google.cloud.talent.v4bet"
-          + "a1.Profile.CustomAttributesEntry\022\021\n\tproc"
-          + "essed\030\033 \001(\010\022\027\n\017keyword_snippet\030\034 \001(\t\032e\n\025"
-          + "CustomAttributesEntry\022\013\n\003key\030\001 \001(\t\022;\n\005va"
-          + "lue\030\002 \001(\0132,.google.cloud.talent.v4beta1."
-          + "CustomAttribute:\0028\001\"\243\002\n\nPersonName\022\030\n\016fo"
-          + "rmatted_name\030\001 \001(\tH\000\022W\n\017structured_name\030"
-          + "\002 \001(\0132<.google.cloud.talent.v4beta1.Pers"
-          + "onName.PersonStructuredNameH\000\022\026\n\016preferr"
-          + "ed_name\030\003 \001(\t\032{\n\024PersonStructuredName\022\022\n"
-          + "\ngiven_name\030\001 \001(\t\022\026\n\016middle_initial\030\002 \001("
-          + "\t\022\023\n\013family_name\030\003 \001(\t\022\020\n\010suffixes\030\004 \003(\t"
-          + "\022\020\n\010prefixes\030\005 \003(\tB\r\n\013person_name\"\334\001\n\007Ad"
-          + "dress\022<\n\005usage\030\001 \001(\0162-.google.cloud.tale"
-          + "nt.v4beta1.ContactInfoUsage\022\036\n\024unstructu"
-          + "red_address\030\002 \001(\tH\000\0228\n\022structured_addres"
-          + "s\030\003 \001(\0132\032.google.type.PostalAddressH\000\022.\n"
-          + "\nis_current\030\004 \001(\0132\032.google.protobuf.Bool"
-          + "ValueB\t\n\007address\"\\\n\005Email\022<\n\005usage\030\001 \001(\016"
+          + "alent/v4beta1/job.proto\032\036google/protobuf"
+          + "/duration.proto\032 google/protobuf/field_m"
+          + "ask.proto\032\037google/protobuf/timestamp.pro"
+          + "to\032\036google/protobuf/wrappers.proto\032\026goog"
+          + "le/type/date.proto\032 google/type/postal_a"
+          + "ddress.proto\"\333\n\n\007Profile\022\014\n\004name\030\001 \001(\t\022\023"
+          + "\n\013external_id\030\002 \001(\t\022\016\n\006source\030\003 \001(\t\022\013\n\003u"
+          + "ri\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\t\022.\n\nis_hirable"
+          + "\030\006 \001(\0132\032.google.protobuf.BoolValue\022/\n\013cr"
+          + "eate_time\030\007 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022/\n\013update_time\030\010 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022\024\n\014resume_hrxml\030\n \001(\t\022=\n\014pe"
+          + "rson_names\030\013 \003(\0132\'.google.cloud.talent.v"
+          + "4beta1.PersonName\0227\n\taddresses\030\014 \003(\0132$.g"
+          + "oogle.cloud.talent.v4beta1.Address\022;\n\017em"
+          + "ail_addresses\030\r \003(\0132\".google.cloud.talen"
+          + "t.v4beta1.Email\0229\n\rphone_numbers\030\016 \003(\0132\""
+          + ".google.cloud.talent.v4beta1.Phone\022?\n\rpe"
+          + "rsonal_uris\030\017 \003(\0132(.google.cloud.talent."
+          + "v4beta1.PersonalUri\022S\n\027additional_contac"
+          + "t_info\030\020 \003(\01322.google.cloud.talent.v4bet"
+          + "a1.AdditionalContactInfo\022I\n\022employment_r"
+          + "ecords\030\021 \003(\0132-.google.cloud.talent.v4bet"
+          + "a1.EmploymentRecord\022G\n\021education_records"
+          + "\030\022 \003(\0132,.google.cloud.talent.v4beta1.Edu"
+          + "cationRecord\0222\n\006skills\030\023 \003(\0132\".google.cl"
+          + "oud.talent.v4beta1.Skill\0229\n\nactivities\030\024"
+          + " \003(\0132%.google.cloud.talent.v4beta1.Activ"
+          + "ity\022>\n\014publications\030\025 \003(\0132(.google.cloud"
+          + ".talent.v4beta1.Publication\0224\n\007patents\030\026"
+          + " \003(\0132#.google.cloud.talent.v4beta1.Paten"
+          + "t\022B\n\016certifications\030\027 \003(\0132*.google.cloud"
+          + ".talent.v4beta1.Certification\022\024\n\014applica"
+          + "tions\030/ \003(\t\022\023\n\013assignments\0300 \003(\t\022U\n\021cust"
+          + "om_attributes\030\032 \003(\0132:.google.cloud.talen"
+          + "t.v4beta1.Profile.CustomAttributesEntry\022"
+          + "\021\n\tprocessed\030\033 \001(\010\022\027\n\017keyword_snippet\030\034 "
+          + "\001(\t\032e\n\025CustomAttributesEntry\022\013\n\003key\030\001 \001("
+          + "\t\022;\n\005value\030\002 \001(\0132,.google.cloud.talent.v"
+          + "4beta1.CustomAttribute:\0028\001\"\243\002\n\nPersonNam"
+          + "e\022\030\n\016formatted_name\030\001 \001(\tH\000\022W\n\017structure"
+          + "d_name\030\002 \001(\0132<.google.cloud.talent.v4bet"
+          + "a1.PersonName.PersonStructuredNameH\000\022\026\n\016"
+          + "preferred_name\030\003 \001(\t\032{\n\024PersonStructured"
+          + "Name\022\022\n\ngiven_name\030\001 \001(\t\022\026\n\016middle_initi"
+          + "al\030\002 \001(\t\022\023\n\013family_name\030\003 \001(\t\022\020\n\010suffixe"
+          + "s\030\004 \003(\t\022\020\n\010prefixes\030\005 \003(\tB\r\n\013person_name"
+          + "\"\331\001\n\007Address\022<\n\005usage\030\001 \001(\0162-.google.clo"
+          + "ud.talent.v4beta1.ContactInfoUsage\022\036\n\024un"
+          + "structured_address\030\002 \001(\tH\000\0228\n\022structured"
+          + "_address\030\003 \001(\0132\032.google.type.PostalAddre"
+          + "ssH\000\022+\n\007current\030\004 \001(\0132\032.google.protobuf."
+          + "BoolValueB\t\n\007address\"\\\n\005Email\022<\n\005usage\030\001"
+          + " \001(\0162-.google.cloud.talent.v4beta1.Conta"
+          + "ctInfoUsage\022\025\n\remail_address\030\002 \001(\t\"\317\002\n\005P"
+          + "hone\022<\n\005usage\030\001 \001(\0162-.google.cloud.talen"
+          + "t.v4beta1.ContactInfoUsage\022:\n\004type\030\002 \001(\016"
+          + "2,.google.cloud.talent.v4beta1.Phone.Pho"
+          + "neType\022\016\n\006number\030\003 \001(\t\022\026\n\016when_available"
+          + "\030\004 \001(\t\"\243\001\n\tPhoneType\022\032\n\026PHONE_TYPE_UNSPE"
+          + "CIFIED\020\000\022\014\n\010LANDLINE\020\001\022\n\n\006MOBILE\020\002\022\007\n\003FA"
+          + "X\020\003\022\t\n\005PAGER\020\004\022\016\n\nTTY_OR_TDD\020\005\022\r\n\tVOICEM"
+          + "AIL\020\006\022\013\n\007VIRTUAL\020\007\022\010\n\004VOIP\020\010\022\026\n\022MOBILE_O"
+          + "R_LANDLINE\020\t\"\032\n\013PersonalUri\022\013\n\003uri\030\001 \001(\t"
+          + "\"w\n\025AdditionalContactInfo\022<\n\005usage\030\001 \001(\016"
           + "2-.google.cloud.talent.v4beta1.ContactIn"
-          + "foUsage\022\025\n\remail_address\030\002 \001(\t\"\317\002\n\005Phone"
-          + "\022<\n\005usage\030\001 \001(\0162-.google.cloud.talent.v4"
-          + "beta1.ContactInfoUsage\022:\n\004type\030\002 \001(\0162,.g"
-          + "oogle.cloud.talent.v4beta1.Phone.PhoneTy"
-          + "pe\022\016\n\006number\030\003 \001(\t\022\026\n\016when_available\030\004 \001"
-          + "(\t\"\243\001\n\tPhoneType\022\032\n\026PHONE_TYPE_UNSPECIFI"
-          + "ED\020\000\022\014\n\010LANDLINE\020\001\022\n\n\006MOBILE\020\002\022\007\n\003FAX\020\003\022"
-          + "\t\n\005PAGER\020\004\022\016\n\nTTY_OR_TDD\020\005\022\r\n\tVOICEMAIL\020"
-          + "\006\022\013\n\007VIRTUAL\020\007\022\010\n\004VOIP\020\010\022\026\n\022MOBILE_OR_LA"
-          + "NDLINE\020\t\"\032\n\013PersonalUri\022\013\n\003uri\030\001 \001(\t\"w\n\025"
-          + "AdditionalContactInfo\022<\n\005usage\030\001 \001(\0162-.g"
-          + "oogle.cloud.talent.v4beta1.ContactInfoUs"
-          + "age\022\014\n\004name\030\002 \001(\t\022\022\n\ncontact_id\030\003 \001(\t\"\354\003"
-          + "\n\020EmploymentRecord\022%\n\nstart_date\030\001 \001(\0132\021"
-          + ".google.type.Date\022#\n\010end_date\030\002 \001(\0132\021.go"
-          + "ogle.type.Date\022\025\n\remployer_name\030\003 \001(\t\022\025\n"
-          + "\rdivision_name\030\004 \001(\t\0225\n\007address\030\005 \001(\0132$."
-          + "google.cloud.talent.v4beta1.Address\022\021\n\tj"
-          + "ob_title\030\006 \001(\t\022\027\n\017job_description\030\007 \001(\t\022"
-          + ":\n\026is_supervised_position\030\010 \001(\0132\032.google"
-          + ".protobuf.BoolValue\0224\n\020is_self_employed\030"
-          + "\t \001(\0132\032.google.protobuf.BoolValue\022.\n\nis_"
-          + "current\030\n \001(\0132\032.google.protobuf.BoolValu"
-          + "e\022\031\n\021job_title_snippet\030\013 \001(\t\022\037\n\027job_desc"
-          + "ription_snippet\030\014 \001(\t\022\035\n\025employer_name_s"
-          + "nippet\030\r \001(\t\"\302\003\n\017EducationRecord\022%\n\nstar"
-          + "t_date\030\001 \001(\0132\021.google.type.Date\022#\n\010end_d"
-          + "ate\030\002 \001(\0132\021.google.type.Date\0223\n\030expected"
-          + "_graduation_date\030\003 \001(\0132\021.google.type.Dat"
-          + "e\022\023\n\013school_name\030\004 \001(\t\0225\n\007address\030\005 \001(\0132"
-          + "$.google.cloud.talent.v4beta1.Address\022\034\n"
-          + "\022degree_description\030\006 \001(\tH\000\022@\n\021structure"
-          + "d_degree\030\007 \001(\0132#.google.cloud.talent.v4b"
-          + "eta1.DegreeH\000\022\023\n\013description\030\010 \001(\t\022.\n\nis"
-          + "_current\030\t \001(\0132\032.google.protobuf.BoolVal"
-          + "ue\022\033\n\023school_name_snippet\030\n \001(\t\022\026\n\016degre"
-          + "e_snippet\030\013 \001(\tB\010\n\006degree\"t\n\006Degree\022<\n\013d"
-          + "egree_type\030\001 \001(\0162\'.google.cloud.talent.v"
-          + "4beta1.DegreeType\022\023\n\013degree_name\030\002 \001(\t\022\027"
-          + "\n\017fields_of_study\030\003 \003(\t\"\324\002\n\005Skill\022\024\n\014dis"
-          + "play_name\030\001 \001(\t\022)\n\016last_used_date\030\002 \001(\0132"
-          + "\021.google.type.Date\022G\n\005level\030\003 \001(\01628.goog"
-          + "le.cloud.talent.v4beta1.Skill.SkillProfi"
-          + "ciencyLevel\022\017\n\007context\030\004 \001(\t\022\032\n\022skill_na"
-          + "me_snippet\030\005 \001(\t\"\223\001\n\025SkillProficiencyLev"
-          + "el\022\'\n#SKILL_PROFICIENCY_LEVEL_UNSPECIFIE"
-          + "D\020\000\022\031\n\025FUNDAMENTAL_AWARENESS\020\001\022\n\n\006NOVICE"
-          + "\020\002\022\020\n\014INTERMEDIATE\020\003\022\014\n\010ADVANCED\020\004\022\n\n\006EX"
-          + "PERT\020\005\"\303\002\n\010Activity\022\024\n\014display_name\030\001 \001("
-          + "\t\022\023\n\013description\030\002 \001(\t\022\013\n\003uri\030\003 \001(\t\022&\n\013c"
-          + "reate_date\030\004 \001(\0132\021.google.type.Date\022&\n\013u"
-          + "pdate_date\030\005 \001(\0132\021.google.type.Date\022\024\n\014t"
-          + "eam_members\030\006 \003(\t\0227\n\013skills_used\030\007 \003(\0132\""
-          + ".google.cloud.talent.v4beta1.Skill\022\035\n\025ac"
-          + "tivity_name_snippet\030\010 \001(\t\022$\n\034activity_de"
-          + "scription_snippet\030\t \001(\t\022\033\n\023skills_used_s"
-          + "nippet\030\n \003(\t\"\313\001\n\013Publication\022\017\n\007authors\030"
-          + "\001 \003(\t\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 \001("
-          + "\t\022\017\n\007journal\030\004 \001(\t\022\016\n\006volume\030\005 \001(\t\022\021\n\tpu"
-          + "blisher\030\006 \001(\t\022+\n\020publication_date\030\007 \001(\0132"
-          + "\021.google.type.Date\022\030\n\020publication_type\030\010"
-          + " \001(\t\022\014\n\004isbn\030\t \001(\t\"\251\002\n\006Patent\022\024\n\014display"
-          + "_name\030\001 \001(\t\022\021\n\tinventors\030\002 \003(\t\022\025\n\rpatent"
-          + "_status\030\003 \001(\t\022-\n\022patent_status_date\030\004 \001("
-          + "\0132\021.google.type.Date\022-\n\022patent_filing_da"
-          + "te\030\005 \001(\0132\021.google.type.Date\022\025\n\rpatent_of"
-          + "fice\030\006 \001(\t\022\025\n\rpatent_number\030\007 \001(\t\022\032\n\022pat"
-          + "ent_description\030\010 \001(\t\0227\n\013skills_used\030\t \003"
-          + "(\0132\".google.cloud.talent.v4beta1.Skill\"\373"
-          + "\005\n\016JobApplication\022-\n\003job\030\001 \001(\0132 .google."
-          + "cloud.talent.v4beta1.Job\022\026\n\016application_"
-          + "id\030\002 \001(\t\022+\n\020application_date\030\003 \001(\0132\021.goo"
-          + "gle.type.Date\022\022\n\nlast_stage\030\004 \001(\t\022L\n\005sta"
-          + "te\030\005 \001(\0162=.google.cloud.talent.v4beta1.J"
-          + "obApplication.ApplicationStatus\022\037\n\027avera"
-          + "ge_interview_score\030\006 \001(\001\022 \n\030interview_sc"
-          + "ore_scale_id\030\007 \001(\t\022\034\n\024number_of_intervie"
-          + "ws\030\010 \001(\005\0228\n\024is_employee_referred\030\t \001(\0132\032"
-          + ".google.protobuf.BoolValue\022/\n\013update_tim"
-          + "e\030\n \001(\0132\032.google.protobuf.Timestamp\022\026\n\016o"
-          + "utcome_reason\030\013 \001(\t\022\034\n\024outcome_positiven"
-          + "ess\030\014 \001(\001\022,\n\010is_match\030\r \001(\0132\032.google.pro"
-          + "tobuf.BoolValue\022\031\n\021job_title_snippet\030\016 \001"
-          + "(\t\"\307\001\n\021ApplicationStatus\022\"\n\036APPLICATION_"
-          + "STATUS_UNSPECIFIED\020\000\022\022\n\016OFFER_EXTENDED\020\001"
-          + "\022\031\n\025REJECTED_BY_CANDIDATE\020\002\022\n\n\006ACTIVE\020\003\022"
-          + "\030\n\024REJECTED_BY_EMPLOYER\020\004\022\026\n\022HIRED_PENDI"
-          + "NG_DATE\020\005\022\021\n\rHIRED_STARTED\020\006\022\016\n\nPROSPECT"
-          + "ED\020\007\"\236\001\n\rCertification\022\024\n\014display_name\030\001"
-          + " \001(\t\022\'\n\014acquire_date\030\002 \001(\0132\021.google.type"
-          + ".Date\022&\n\013expire_date\030\003 \001(\0132\021.google.type"
-          + ".Date\022\021\n\tauthority\030\004 \001(\t\022\023\n\013description\030"
-          + "\005 \001(\t\"g\n\016RecruitingNote\022\014\n\004note\030\001 \001(\t\022\021\n"
-          + "\tcommenter\030\002 \001(\t\022&\n\013create_date\030\003 \001(\0132\021."
-          + "google.type.Date\022\014\n\004type\030\004 \001(\tB\202\001\n\037com.g"
-          + "oogle.cloud.talent.v4beta1B\024ProfileResou"
-          + "rceProtoP\001ZAgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/talent/v4beta1;talent\242\002\003"
-          + "CTSb\006proto3"
+          + "foUsage\022\014\n\004name\030\002 \001(\t\022\022\n\ncontact_id\030\003 \001("
+          + "\t\"\343\003\n\020EmploymentRecord\022%\n\nstart_date\030\001 \001"
+          + "(\0132\021.google.type.Date\022#\n\010end_date\030\002 \001(\0132"
+          + "\021.google.type.Date\022\025\n\remployer_name\030\003 \001("
+          + "\t\022\025\n\rdivision_name\030\004 \001(\t\0225\n\007address\030\005 \001("
+          + "\0132$.google.cloud.talent.v4beta1.Address\022"
+          + "\021\n\tjob_title\030\006 \001(\t\022\027\n\017job_description\030\007 "
+          + "\001(\t\0221\n\ris_supervisor\030\010 \001(\0132\032.google.prot"
+          + "obuf.BoolValue\0224\n\020is_self_employed\030\t \001(\013"
+          + "2\032.google.protobuf.BoolValue\022.\n\nis_curre"
+          + "nt\030\n \001(\0132\032.google.protobuf.BoolValue\022\031\n\021"
+          + "job_title_snippet\030\013 \001(\t\022\037\n\027job_descripti"
+          + "on_snippet\030\014 \001(\t\022\035\n\025employer_name_snippe"
+          + "t\030\r \001(\t\"\302\003\n\017EducationRecord\022%\n\nstart_dat"
+          + "e\030\001 \001(\0132\021.google.type.Date\022#\n\010end_date\030\002"
+          + " \001(\0132\021.google.type.Date\0223\n\030expected_grad"
+          + "uation_date\030\003 \001(\0132\021.google.type.Date\022\023\n\013"
+          + "school_name\030\004 \001(\t\0225\n\007address\030\005 \001(\0132$.goo"
+          + "gle.cloud.talent.v4beta1.Address\022\034\n\022degr"
+          + "ee_description\030\006 \001(\tH\000\022@\n\021structured_deg"
+          + "ree\030\007 \001(\0132#.google.cloud.talent.v4beta1."
+          + "DegreeH\000\022\023\n\013description\030\010 \001(\t\022.\n\nis_curr"
+          + "ent\030\t \001(\0132\032.google.protobuf.BoolValue\022\033\n"
+          + "\023school_name_snippet\030\n \001(\t\022\026\n\016degree_sni"
+          + "ppet\030\013 \001(\tB\010\n\006degree\"t\n\006Degree\022<\n\013degree"
+          + "_type\030\001 \001(\0162\'.google.cloud.talent.v4beta"
+          + "1.DegreeType\022\023\n\013degree_name\030\002 \001(\t\022\027\n\017fie"
+          + "lds_of_study\030\003 \003(\t\"\303\002\n\010Activity\022\024\n\014displ"
+          + "ay_name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\013\n\003ur"
+          + "i\030\003 \001(\t\022&\n\013create_date\030\004 \001(\0132\021.google.ty"
+          + "pe.Date\022&\n\013update_date\030\005 \001(\0132\021.google.ty"
+          + "pe.Date\022\024\n\014team_members\030\006 \003(\t\0227\n\013skills_"
+          + "used\030\007 \003(\0132\".google.cloud.talent.v4beta1"
+          + ".Skill\022\035\n\025activity_name_snippet\030\010 \001(\t\022$\n"
+          + "\034activity_description_snippet\030\t \001(\t\022\033\n\023s"
+          + "kills_used_snippet\030\n \003(\t\"\313\001\n\013Publication"
+          + "\022\017\n\007authors\030\001 \003(\t\022\r\n\005title\030\002 \001(\t\022\023\n\013desc"
+          + "ription\030\003 \001(\t\022\017\n\007journal\030\004 \001(\t\022\016\n\006volume"
+          + "\030\005 \001(\t\022\021\n\tpublisher\030\006 \001(\t\022+\n\020publication"
+          + "_date\030\007 \001(\0132\021.google.type.Date\022\030\n\020public"
+          + "ation_type\030\010 \001(\t\022\014\n\004isbn\030\t \001(\t\"\251\002\n\006Paten"
+          + "t\022\024\n\014display_name\030\001 \001(\t\022\021\n\tinventors\030\002 \003"
+          + "(\t\022\025\n\rpatent_status\030\003 \001(\t\022-\n\022patent_stat"
+          + "us_date\030\004 \001(\0132\021.google.type.Date\022-\n\022pate"
+          + "nt_filing_date\030\005 \001(\0132\021.google.type.Date\022"
+          + "\025\n\rpatent_office\030\006 \001(\t\022\025\n\rpatent_number\030"
+          + "\007 \001(\t\022\032\n\022patent_description\030\010 \001(\t\0227\n\013ski"
+          + "lls_used\030\t \003(\0132\".google.cloud.talent.v4b"
+          + "eta1.SkillB\202\001\n\037com.google.cloud.talent.v"
+          + "4beta1B\024ProfileResourceProtoP\001ZAgoogle.g"
+          + "olang.org/genproto/googleapis/cloud/tale"
+          + "nt/v4beta1;talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -270,6 +218,8 @@ public final class ProfileResourceProto {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
+          com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.google.type.DateProto.getDescriptor(),
@@ -304,8 +254,8 @@ public final class ProfileResourceProto {
               "Publications",
               "Patents",
               "Certifications",
-              "JobApplications",
-              "RecruitingNotes",
+              "Applications",
+              "Assignments",
               "CustomAttributes",
               "Processed",
               "KeywordSnippet",
@@ -340,7 +290,7 @@ public final class ProfileResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Address_descriptor,
             new java.lang.String[] {
-              "Usage", "UnstructuredAddress", "StructuredAddress", "IsCurrent", "Address",
+              "Usage", "UnstructuredAddress", "StructuredAddress", "Current", "Address",
             });
     internal_static_google_cloud_talent_v4beta1_Email_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -387,7 +337,7 @@ public final class ProfileResourceProto {
               "Address",
               "JobTitle",
               "JobDescription",
-              "IsSupervisedPosition",
+              "IsSupervisor",
               "IsSelfEmployed",
               "IsCurrent",
               "JobTitleSnippet",
@@ -421,16 +371,8 @@ public final class ProfileResourceProto {
             new java.lang.String[] {
               "DegreeType", "DegreeName", "FieldsOfStudy",
             });
-    internal_static_google_cloud_talent_v4beta1_Skill_descriptor =
-        getDescriptor().getMessageTypes().get(10);
-    internal_static_google_cloud_talent_v4beta1_Skill_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_talent_v4beta1_Skill_descriptor,
-            new java.lang.String[] {
-              "DisplayName", "LastUsedDate", "Level", "Context", "SkillNameSnippet",
-            });
     internal_static_google_cloud_talent_v4beta1_Activity_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_talent_v4beta1_Activity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Activity_descriptor,
@@ -447,7 +389,7 @@ public final class ProfileResourceProto {
               "SkillsUsedSnippet",
             });
     internal_static_google_cloud_talent_v4beta1_Publication_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_talent_v4beta1_Publication_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Publication_descriptor,
@@ -463,7 +405,7 @@ public final class ProfileResourceProto {
               "Isbn",
             });
     internal_static_google_cloud_talent_v4beta1_Patent_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_talent_v4beta1_Patent_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_Patent_descriptor,
@@ -478,46 +420,11 @@ public final class ProfileResourceProto {
               "PatentDescription",
               "SkillsUsed",
             });
-    internal_static_google_cloud_talent_v4beta1_JobApplication_descriptor =
-        getDescriptor().getMessageTypes().get(14);
-    internal_static_google_cloud_talent_v4beta1_JobApplication_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_talent_v4beta1_JobApplication_descriptor,
-            new java.lang.String[] {
-              "Job",
-              "ApplicationId",
-              "ApplicationDate",
-              "LastStage",
-              "State",
-              "AverageInterviewScore",
-              "InterviewScoreScaleId",
-              "NumberOfInterviews",
-              "IsEmployeeReferred",
-              "UpdateTime",
-              "OutcomeReason",
-              "OutcomePositiveness",
-              "IsMatch",
-              "JobTitleSnippet",
-            });
-    internal_static_google_cloud_talent_v4beta1_Certification_descriptor =
-        getDescriptor().getMessageTypes().get(15);
-    internal_static_google_cloud_talent_v4beta1_Certification_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_talent_v4beta1_Certification_descriptor,
-            new java.lang.String[] {
-              "DisplayName", "AcquireDate", "ExpireDate", "Authority", "Description",
-            });
-    internal_static_google_cloud_talent_v4beta1_RecruitingNote_descriptor =
-        getDescriptor().getMessageTypes().get(16);
-    internal_static_google_cloud_talent_v4beta1_RecruitingNote_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_talent_v4beta1_RecruitingNote_descriptor,
-            new java.lang.String[] {
-              "Note", "Commenter", "CreateDate", "Type",
-            });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();

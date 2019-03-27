@@ -13,9 +13,11 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * Required.
-   * The resource name of the project under which the job is created.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * The resource name of the tenant under which the job is created.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -26,9 +28,11 @@ public interface ListJobsRequestOrBuilder
    *
    * <pre>
    * Required.
-   * The resource name of the project under which the job is created.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * The resource name of the tenant under which the job is created.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -48,11 +52,11 @@ public interface ListJobsRequestOrBuilder
    * * `status` (Optional) Available values: OPEN, EXPIRED, ALL. Defaults to
    * OPEN if no value is specified.
    * Sample Query:
-   * * companyName = "projects/api-test-project/companies/123"
-   * * companyName = "projects/api-test-project/companies/123" AND requisitionId
-   * = "req-1"
-   * * companyName = "projects/api-test-project/companies/123" AND status =
-   * "EXPIRED"
+   * * companyName = "projects/api-test-project/tenants/foo/companies/bar"
+   * * companyName = "projects/api-test-project/tenants/foo/companies/bar" AND
+   * requisitionId = "req-1"
+   * * companyName = "projects/api-test-project/tenants/foo/companies/bar" AND
+   * status = "EXPIRED"
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -71,11 +75,11 @@ public interface ListJobsRequestOrBuilder
    * * `status` (Optional) Available values: OPEN, EXPIRED, ALL. Defaults to
    * OPEN if no value is specified.
    * Sample Query:
-   * * companyName = "projects/api-test-project/companies/123"
-   * * companyName = "projects/api-test-project/companies/123" AND requisitionId
-   * = "req-1"
-   * * companyName = "projects/api-test-project/companies/123" AND status =
-   * "EXPIRED"
+   * * companyName = "projects/api-test-project/tenants/foo/companies/bar"
+   * * companyName = "projects/api-test-project/tenants/foo/companies/bar" AND
+   * requisitionId = "req-1"
+   * * companyName = "projects/api-test-project/tenants/foo/companies/bar" AND
+   * status = "EXPIRED"
    * </pre>
    *
    * <code>string filter = 2;</code>
