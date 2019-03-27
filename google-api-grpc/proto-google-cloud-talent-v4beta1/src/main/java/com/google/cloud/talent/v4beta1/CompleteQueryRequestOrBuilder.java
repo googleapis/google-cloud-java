@@ -13,27 +13,31 @@ public interface CompleteQueryRequestOrBuilder
    *
    * <pre>
    * Required.
-   * Resource name of project the completion is performed within.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * Resource name of tenant the completion is performed within.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string parent = 1;</code>
    */
-  java.lang.String getName();
+  java.lang.String getParent();
   /**
    *
    *
    * <pre>
    * Required.
-   * Resource name of project the completion is performed within.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * Resource name of tenant the completion is performed within.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
    *
@@ -208,26 +212,32 @@ public interface CompleteQueryRequestOrBuilder
    * <pre>
    * Optional.
    * If provided, restricts completion to specified company.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
-   * <code>string company_name = 5;</code>
+   * <code>string company = 5;</code>
    */
-  java.lang.String getCompanyName();
+  java.lang.String getCompany();
   /**
    *
    *
    * <pre>
    * Optional.
    * If provided, restricts completion to specified company.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
-   * <code>string company_name = 5;</code>
+   * <code>string company = 5;</code>
    */
-  com.google.protobuf.ByteString getCompanyNameBytes();
+  com.google.protobuf.ByteString getCompanyBytes();
 
   /**
    *

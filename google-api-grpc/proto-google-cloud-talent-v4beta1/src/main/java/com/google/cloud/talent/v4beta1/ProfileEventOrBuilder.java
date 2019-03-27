@@ -91,9 +91,9 @@ public interface ProfileEventOrBuilder
    * [JobApplication.job.requisition_id][] in the profile.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>repeated string jobs = 6;</code>
    */
-  java.lang.String getJobId();
+  java.util.List<java.lang.String> getJobsList();
   /**
    *
    *
@@ -105,7 +105,35 @@ public interface ProfileEventOrBuilder
    * [JobApplication.job.requisition_id][] in the profile.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>repeated string jobs = 6;</code>
    */
-  com.google.protobuf.ByteString getJobIdBytes();
+  int getJobsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The job ID associated with this client event if there is one. Leave it
+   * empty if the event isn't associated with a job.
+   * The job ID should be consistent with the
+   * [JobApplication.job.requisition_id][] in the profile.
+   * </pre>
+   *
+   * <code>repeated string jobs = 6;</code>
+   */
+  java.lang.String getJobs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The job ID associated with this client event if there is one. Leave it
+   * empty if the event isn't associated with a job.
+   * The job ID should be consistent with the
+   * [JobApplication.job.requisition_id][] in the profile.
+   * </pre>
+   *
+   * <code>repeated string jobs = 6;</code>
+   */
+  com.google.protobuf.ByteString getJobsBytes(int index);
 }

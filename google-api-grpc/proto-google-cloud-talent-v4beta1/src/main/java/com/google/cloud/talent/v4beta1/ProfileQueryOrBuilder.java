@@ -777,75 +777,75 @@ public interface ProfileQueryOrBuilder
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter>
-      getApplicationOutcomeReasonFiltersList();
+  java.util.List<com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter>
+      getApplicationOutcomeNotesFiltersList();
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter getApplicationOutcomeReasonFilters(
+  com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter getApplicationOutcomeNotesFilters(
       int index);
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  int getApplicationOutcomeReasonFiltersCount();
+  int getApplicationOutcomeNotesFiltersCount();
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  java.util.List<? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder>
-      getApplicationOutcomeReasonFiltersOrBuilderList();
+  java.util.List<? extends com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder>
+      getApplicationOutcomeNotesFiltersOrBuilderList();
   /**
    *
    *
    * <pre>
    * Optional.
-   * The application outcome reason filters specify the reasons for outcome of
+   * The application outcome notes filters specify the notes for the outcome of
    * the job application.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter application_outcome_reason_filters = 11;
+   * repeated .google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter application_outcome_notes_filters = 11;
    * </code>
    */
-  com.google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilterOrBuilder
-      getApplicationOutcomeReasonFiltersOrBuilder(int index);
+  com.google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilterOrBuilder
+      getApplicationOutcomeNotesFiltersOrBuilder(int index);
 
   /**
    *
@@ -1064,9 +1064,12 @@ public interface ProfileQueryOrBuilder
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
-   * Supported operators are: =, != where the left of the operator is a custom
-   * field key and the right of the operator is a string (surrounded by quotes)
-   * value.
+   * String custom attributes: supported operators are =, != where the left of
+   * the operator is a custom field key and the right of the operator is a
+   * string (surrounded by quotes) value.
+   * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+   * operators where the left of the operator is a custom field key and the
+   * right of the operator is a numeric value.
    * Supported functions are LOWER(&lt;field_name&gt;) to
    * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
    * existence of a key.
@@ -1090,9 +1093,12 @@ public interface ProfileQueryOrBuilder
    * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes]
    * that are marked as `filterable`.
    * The syntax for this expression is a subset of Google SQL syntax.
-   * Supported operators are: =, != where the left of the operator is a custom
-   * field key and the right of the operator is a string (surrounded by quotes)
-   * value.
+   * String custom attributes: supported operators are =, != where the left of
+   * the operator is a custom field key and the right of the operator is a
+   * string (surrounded by quotes) value.
+   * Numeric custom attributes: Supported operators are '&gt;', '&lt;' or '='
+   * operators where the left of the operator is a custom field key and the
+   * right of the operator is a numeric value.
    * Supported functions are LOWER(&lt;field_name&gt;) to
    * perform case insensitive match and EMPTY(&lt;field_name&gt;) to filter on the
    * existence of a key.

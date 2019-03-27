@@ -47,8 +47,7 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * A minimal view of the job, with the following attributes:
    * [Job.name][google.cloud.talent.v4beta1.Job.name],
    * [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id],
-   * [Job.job_title][],
-   * [Job.company_name][google.cloud.talent.v4beta1.Job.company_name],
+   * [Job.job_title][], [Job.company][google.cloud.talent.v4beta1.Job.company],
    * [Job.DerivedInfo.locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations],
    * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code].
    * </pre>
@@ -63,8 +62,7 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * A small view of the job, with the following attributes in the search
    * results: [Job.name][google.cloud.talent.v4beta1.Job.name],
    * [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id],
-   * [Job.job_title][],
-   * [Job.company_name][google.cloud.talent.v4beta1.Job.company_name],
+   * [Job.job_title][], [Job.company][google.cloud.talent.v4beta1.Job.company],
    * [Job.DerivedInfo.locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations],
    * [Job.visibility][google.cloud.talent.v4beta1.Job.visibility],
    * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],
@@ -117,8 +115,7 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * A minimal view of the job, with the following attributes:
    * [Job.name][google.cloud.talent.v4beta1.Job.name],
    * [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id],
-   * [Job.job_title][],
-   * [Job.company_name][google.cloud.talent.v4beta1.Job.company_name],
+   * [Job.job_title][], [Job.company][google.cloud.talent.v4beta1.Job.company],
    * [Job.DerivedInfo.locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations],
    * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code].
    * </pre>
@@ -133,8 +130,7 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * A small view of the job, with the following attributes in the search
    * results: [Job.name][google.cloud.talent.v4beta1.Job.name],
    * [Job.requisition_id][google.cloud.talent.v4beta1.Job.requisition_id],
-   * [Job.job_title][],
-   * [Job.company_name][google.cloud.talent.v4beta1.Job.company_name],
+   * [Job.job_title][], [Job.company][google.cloud.talent.v4beta1.Job.company],
    * [Job.DerivedInfo.locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations],
    * [Job.visibility][google.cloud.talent.v4beta1.Job.visibility],
    * [Job.language_code][google.cloud.talent.v4beta1.Job.language_code],

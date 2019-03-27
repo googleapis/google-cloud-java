@@ -26,7 +26,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
   private ProfileEvent() {
     type_ = 0;
     profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    jobId_ = "";
+    jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -70,11 +70,14 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
               profiles_.add(s);
               break;
             }
-          case 26:
+          case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              jobId_ = s;
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                jobs_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              jobs_.add(s);
               break;
             }
           default:
@@ -93,6 +96,9 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         profiles_ = profiles_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        jobs_ = jobs_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -164,80 +170,6 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>BOOKMARK = 3;</code>
      */
     BOOKMARK(3),
-    /**
-     *
-     *
-     * <pre>
-     * Comment added to the profile.
-     * </pre>
-     *
-     * <code>COMMENT_ADDED = 4;</code>
-     */
-    COMMENT_ADDED(4),
-    /**
-     *
-     *
-     * <pre>
-     * Email sent regarding the profile.
-     * </pre>
-     *
-     * <code>EMAIL_SENT = 5;</code>
-     */
-    EMAIL_SENT(5),
-    /**
-     *
-     *
-     * <pre>
-     * The resume of the profile is viewed.
-     * </pre>
-     *
-     * <code>RESUME_VIEWED = 6;</code>
-     */
-    RESUME_VIEWED(6),
-    /**
-     *
-     *
-     * <pre>
-     * The profile is added to a job.
-     * </pre>
-     *
-     * <code>ADD_TO_JOB = 7;</code>
-     */
-    ADD_TO_JOB(7),
-    /**
-     *
-     *
-     * <pre>
-     * The recruiter explicitly highlights that a given profile is interesting
-     * enough for later review or is a good result for the search.
-     * </pre>
-     *
-     * <code>POSITIVE_REACTION_TO_PROFILE = 8;</code>
-     */
-    POSITIVE_REACTION_TO_PROFILE(8),
-    /**
-     *
-     *
-     * <pre>
-     * The recruiter explicitly highlights that a given profile is not
-     * interesting enough for later review or is not a good result for the
-     * search.
-     * </pre>
-     *
-     * <code>NEGATIVE_REACTION_TO_PROFILE = 9;</code>
-     */
-    NEGATIVE_REACTION_TO_PROFILE(9),
-    /**
-     *
-     *
-     * <pre>
-     * The candidate is interesting enough to set up an initial screen with the
-     * recruiter. This step may be skipped based on the interview process.
-     * </pre>
-     *
-     * <code>SCREEN = 10;</code>
-     */
-    SCREEN(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -281,80 +213,6 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>BOOKMARK = 3;</code>
      */
     public static final int BOOKMARK_VALUE = 3;
-    /**
-     *
-     *
-     * <pre>
-     * Comment added to the profile.
-     * </pre>
-     *
-     * <code>COMMENT_ADDED = 4;</code>
-     */
-    public static final int COMMENT_ADDED_VALUE = 4;
-    /**
-     *
-     *
-     * <pre>
-     * Email sent regarding the profile.
-     * </pre>
-     *
-     * <code>EMAIL_SENT = 5;</code>
-     */
-    public static final int EMAIL_SENT_VALUE = 5;
-    /**
-     *
-     *
-     * <pre>
-     * The resume of the profile is viewed.
-     * </pre>
-     *
-     * <code>RESUME_VIEWED = 6;</code>
-     */
-    public static final int RESUME_VIEWED_VALUE = 6;
-    /**
-     *
-     *
-     * <pre>
-     * The profile is added to a job.
-     * </pre>
-     *
-     * <code>ADD_TO_JOB = 7;</code>
-     */
-    public static final int ADD_TO_JOB_VALUE = 7;
-    /**
-     *
-     *
-     * <pre>
-     * The recruiter explicitly highlights that a given profile is interesting
-     * enough for later review or is a good result for the search.
-     * </pre>
-     *
-     * <code>POSITIVE_REACTION_TO_PROFILE = 8;</code>
-     */
-    public static final int POSITIVE_REACTION_TO_PROFILE_VALUE = 8;
-    /**
-     *
-     *
-     * <pre>
-     * The recruiter explicitly highlights that a given profile is not
-     * interesting enough for later review or is not a good result for the
-     * search.
-     * </pre>
-     *
-     * <code>NEGATIVE_REACTION_TO_PROFILE = 9;</code>
-     */
-    public static final int NEGATIVE_REACTION_TO_PROFILE_VALUE = 9;
-    /**
-     *
-     *
-     * <pre>
-     * The candidate is interesting enough to set up an initial screen with the
-     * recruiter. This step may be skipped based on the interview process.
-     * </pre>
-     *
-     * <code>SCREEN = 10;</code>
-     */
-    public static final int SCREEN_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -380,20 +238,6 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
           return VIEW;
         case 3:
           return BOOKMARK;
-        case 4:
-          return COMMENT_ADDED;
-        case 5:
-          return EMAIL_SENT;
-        case 6:
-          return RESUME_VIEWED;
-        case 7:
-          return ADD_TO_JOB;
-        case 8:
-          return POSITIVE_REACTION_TO_PROFILE;
-        case 9:
-          return NEGATIVE_REACTION_TO_PROFILE;
-        case 10:
-          return SCREEN;
         default:
           return null;
       }
@@ -539,8 +383,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
     return profiles_.getByteString(index);
   }
 
-  public static final int JOB_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object jobId_;
+  public static final int JOBS_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList jobs_;
   /**
    *
    *
@@ -552,18 +396,10 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    * [JobApplication.job.requisition_id][] in the profile.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>repeated string jobs = 6;</code>
    */
-  public java.lang.String getJobId() {
-    java.lang.Object ref = jobId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      jobId_ = s;
-      return s;
-    }
+  public com.google.protobuf.ProtocolStringList getJobsList() {
+    return jobs_;
   }
   /**
    *
@@ -576,18 +412,42 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
    * [JobApplication.job.requisition_id][] in the profile.
    * </pre>
    *
-   * <code>string job_id = 3;</code>
+   * <code>repeated string jobs = 6;</code>
    */
-  public com.google.protobuf.ByteString getJobIdBytes() {
-    java.lang.Object ref = jobId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      jobId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getJobsCount() {
+    return jobs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The job ID associated with this client event if there is one. Leave it
+   * empty if the event isn't associated with a job.
+   * The job ID should be consistent with the
+   * [JobApplication.job.requisition_id][] in the profile.
+   * </pre>
+   *
+   * <code>repeated string jobs = 6;</code>
+   */
+  public java.lang.String getJobs(int index) {
+    return jobs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional.
+   * The job ID associated with this client event if there is one. Leave it
+   * empty if the event isn't associated with a job.
+   * The job ID should be consistent with the
+   * [JobApplication.job.requisition_id][] in the profile.
+   * </pre>
+   *
+   * <code>repeated string jobs = 6;</code>
+   */
+  public com.google.protobuf.ByteString getJobsBytes(int index) {
+    return jobs_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -613,8 +473,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < profiles_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, profiles_.getRaw(i));
     }
-    if (!getJobIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobId_);
+    for (int i = 0; i < jobs_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, jobs_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -639,8 +499,13 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getProfilesList().size();
     }
-    if (!getJobIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobId_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < jobs_.size(); i++) {
+        dataSize += computeStringSizeNoTag(jobs_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getJobsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -661,7 +526,7 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
     boolean result = true;
     result = result && type_ == other.type_;
     result = result && getProfilesList().equals(other.getProfilesList());
-    result = result && getJobId().equals(other.getJobId());
+    result = result && getJobsList().equals(other.getJobsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -679,8 +544,10 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PROFILES_FIELD_NUMBER;
       hash = (53 * hash) + getProfilesList().hashCode();
     }
-    hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getJobId().hashCode();
+    if (getJobsCount() > 0) {
+      hash = (37 * hash) + JOBS_FIELD_NUMBER;
+      hash = (53 * hash) + getJobsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -831,8 +698,8 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
 
       profiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      jobId_ = "";
-
+      jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -868,7 +735,11 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.profiles_ = profiles_;
-      result.jobId_ = jobId_;
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        jobs_ = jobs_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.jobs_ = jobs_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -932,8 +803,14 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getJobId().isEmpty()) {
-        jobId_ = other.jobId_;
+      if (!other.jobs_.isEmpty()) {
+        if (jobs_.isEmpty()) {
+          jobs_ = other.jobs_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureJobsIsMutable();
+          jobs_.addAll(other.jobs_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1211,29 +1088,13 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object jobId_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional.
-     * The job ID associated with this client event if there is one. Leave it
-     * empty if the event isn't associated with a job.
-     * The job ID should be consistent with the
-     * [JobApplication.job.requisition_id][] in the profile.
-     * </pre>
-     *
-     * <code>string job_id = 3;</code>
-     */
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
+    private com.google.protobuf.LazyStringList jobs_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureJobsIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1247,18 +1108,10 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobApplication.job.requisition_id][] in the profile.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>repeated string jobs = 6;</code>
      */
-    public com.google.protobuf.ByteString getJobIdBytes() {
-      java.lang.Object ref = jobId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        jobId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ProtocolStringList getJobsList() {
+      return jobs_.getUnmodifiableView();
     }
     /**
      *
@@ -1271,14 +1124,62 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobApplication.job.requisition_id][] in the profile.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>repeated string jobs = 6;</code>
      */
-    public Builder setJobId(java.lang.String value) {
+    public int getJobsCount() {
+      return jobs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The job ID associated with this client event if there is one. Leave it
+     * empty if the event isn't associated with a job.
+     * The job ID should be consistent with the
+     * [JobApplication.job.requisition_id][] in the profile.
+     * </pre>
+     *
+     * <code>repeated string jobs = 6;</code>
+     */
+    public java.lang.String getJobs(int index) {
+      return jobs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The job ID associated with this client event if there is one. Leave it
+     * empty if the event isn't associated with a job.
+     * The job ID should be consistent with the
+     * [JobApplication.job.requisition_id][] in the profile.
+     * </pre>
+     *
+     * <code>repeated string jobs = 6;</code>
+     */
+    public com.google.protobuf.ByteString getJobsBytes(int index) {
+      return jobs_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The job ID associated with this client event if there is one. Leave it
+     * empty if the event isn't associated with a job.
+     * The job ID should be consistent with the
+     * [JobApplication.job.requisition_id][] in the profile.
+     * </pre>
+     *
+     * <code>repeated string jobs = 6;</code>
+     */
+    public Builder setJobs(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-
-      jobId_ = value;
+      ensureJobsIsMutable();
+      jobs_.set(index, value);
       onChanged();
       return this;
     }
@@ -1293,11 +1194,14 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobApplication.job.requisition_id][] in the profile.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>repeated string jobs = 6;</code>
      */
-    public Builder clearJobId() {
-
-      jobId_ = getDefaultInstance().getJobId();
+    public Builder addJobs(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureJobsIsMutable();
+      jobs_.add(value);
       onChanged();
       return this;
     }
@@ -1312,15 +1216,53 @@ public final class ProfileEvent extends com.google.protobuf.GeneratedMessageV3
      * [JobApplication.job.requisition_id][] in the profile.
      * </pre>
      *
-     * <code>string job_id = 3;</code>
+     * <code>repeated string jobs = 6;</code>
      */
-    public Builder setJobIdBytes(com.google.protobuf.ByteString value) {
+    public Builder addAllJobs(java.lang.Iterable<java.lang.String> values) {
+      ensureJobsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobs_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The job ID associated with this client event if there is one. Leave it
+     * empty if the event isn't associated with a job.
+     * The job ID should be consistent with the
+     * [JobApplication.job.requisition_id][] in the profile.
+     * </pre>
+     *
+     * <code>repeated string jobs = 6;</code>
+     */
+    public Builder clearJobs() {
+      jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional.
+     * The job ID associated with this client event if there is one. Leave it
+     * empty if the event isn't associated with a job.
+     * The job ID should be consistent with the
+     * [JobApplication.job.requisition_id][] in the profile.
+     * </pre>
+     *
+     * <code>repeated string jobs = 6;</code>
+     */
+    public Builder addJobsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
-      jobId_ = value;
+      ensureJobsIsMutable();
+      jobs_.add(value);
       onChanged();
       return this;
     }

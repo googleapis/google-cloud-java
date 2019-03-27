@@ -57,9 +57,9 @@ public final class FiltersProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_ApplicationDateFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeReasonFilter_descriptor;
+      internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeNotesFilter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeReasonFilter_fieldAccessorTable;
+      internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeNotesFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_talent_v4beta1_ApplicationLastStageFilter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -87,126 +87,127 @@ public final class FiltersProto {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/talent/v4beta1/filters.pr"
           + "oto\022\033google.cloud.talent.v4beta1\032\034google"
-          + "/api/annotations.proto\032(google/cloud/tal"
-          + "ent/v4beta1/common.proto\032%google/cloud/t"
-          + "alent/v4beta1/job.proto\032)google/cloud/ta"
-          + "lent/v4beta1/profile.proto\032\036google/proto"
-          + "buf/duration.proto\032\037google/protobuf/time"
-          + "stamp.proto\032\036google/protobuf/wrappers.pr"
-          + "oto\032\026google/type/date.proto\032\030google/type"
-          + "/latlng.proto\032\033google/type/timeofday.pro"
-          + "to\"\347\004\n\010JobQuery\022\r\n\005query\030\001 \001(\t\022\025\n\rcompan"
-          + "y_names\030\002 \003(\t\022E\n\020location_filters\030\003 \003(\0132"
-          + "+.google.cloud.talent.v4beta1.LocationFi"
-          + "lter\022@\n\016job_categories\030\004 \003(\0162(.google.cl"
-          + "oud.talent.v4beta1.JobCategory\022B\n\016commut"
-          + "e_filter\030\005 \001(\0132*.google.cloud.talent.v4b"
-          + "eta1.CommuteFilter\022\035\n\025company_display_na"
-          + "mes\030\006 \003(\t\022L\n\023compensation_filter\030\007 \001(\0132/"
-          + ".google.cloud.talent.v4beta1.Compensatio"
-          + "nFilter\022\037\n\027custom_attribute_filter\030\010 \001(\t"
-          + "\022\033\n\023disable_spell_check\030\t \001(\010\022E\n\020employm"
-          + "ent_types\030\n \003(\0162+.google.cloud.talent.v4"
-          + "beta1.EmploymentType\022\026\n\016language_codes\030\013"
-          + " \003(\t\022G\n\022publish_time_range\030\014 \001(\0132+.googl"
-          + "e.cloud.talent.v4beta1.TimestampRange\022\025\n"
-          + "\rexcluded_jobs\030\r \003(\t\"\256\010\n\014ProfileQuery\022\r\n"
-          + "\005query\030\001 \001(\t\022E\n\020location_filters\030\002 \003(\0132+"
-          + ".google.cloud.talent.v4beta1.LocationFil"
-          + "ter\022F\n\021job_title_filters\030\003 \003(\0132+.google."
-          + "cloud.talent.v4beta1.JobTitleFilter\022E\n\020e"
-          + "mployer_filters\030\004 \003(\0132+.google.cloud.tal"
-          + "ent.v4beta1.EmployerFilter\022G\n\021education_"
-          + "filters\030\005 \003(\0132,.google.cloud.talent.v4be"
-          + "ta1.EducationFilter\022?\n\rskill_filters\030\006 \003"
-          + "(\0132(.google.cloud.talent.v4beta1.SkillFi"
-          + "lter\022Q\n\026work_experience_filter\030\007 \003(\01321.g"
-          + "oogle.cloud.talent.v4beta1.WorkExperienc"
-          + "eFilter\022=\n\014time_filters\030\010 \003(\0132\'.google.c"
-          + "loud.talent.v4beta1.TimeFilter\0222\n\016hirabl"
-          + "e_filter\030\t \001(\0132\032.google.protobuf.BoolVal"
-          + "ue\022T\n\030application_date_filters\030\n \003(\01322.g"
-          + "oogle.cloud.talent.v4beta1.ApplicationDa"
-          + "teFilter\022g\n\"application_outcome_reason_f"
-          + "ilters\030\013 \003(\0132;.google.cloud.talent.v4bet"
-          + "a1.ApplicationOutcomeReasonFilter\022_\n\036app"
-          + "lication_last_stage_filters\030\014 \003(\01327.goog"
-          + "le.cloud.talent.v4beta1.ApplicationLastS"
-          + "tageFilter\022R\n\027application_job_filters\030\r "
-          + "\003(\01321.google.cloud.talent.v4beta1.Applic"
-          + "ationJobFilter\022X\n\032application_status_fil"
-          + "ters\030\016 \003(\01324.google.cloud.talent.v4beta1"
-          + ".ApplicationStatusFilter\022\033\n\023custom_field"
-          + "_filter\030\017 \001(\t\"\337\002\n\016LocationFilter\022\017\n\007addr"
-          + "ess\030\001 \001(\t\022\023\n\013region_code\030\002 \001(\t\022$\n\007lat_ln"
-          + "g\030\003 \001(\0132\023.google.type.LatLng\022\031\n\021distance"
-          + "_in_miles\030\004 \001(\001\022a\n\026telecommute_preferenc"
-          + "e\030\005 \001(\0162A.google.cloud.talent.v4beta1.Lo"
-          + "cationFilter.TelecommutePreference\022\017\n\007ne"
-          + "gated\030\006 \001(\010\"r\n\025TelecommutePreference\022&\n\""
-          + "TELECOMMUTE_PREFERENCE_UNSPECIFIED\020\000\022\030\n\024"
-          + "TELECOMMUTE_EXCLUDED\020\001\022\027\n\023TELECOMMUTE_AL"
-          + "LOWED\020\002\"\300\003\n\022CompensationFilter\022H\n\004type\030\001"
-          + " \001(\0162:.google.cloud.talent.v4beta1.Compe"
-          + "nsationFilter.FilterType\022M\n\005units\030\002 \003(\0162"
-          + ">.google.cloud.talent.v4beta1.Compensati"
-          + "onInfo.CompensationUnit\022N\n\005range\030\003 \001(\0132?"
-          + ".google.cloud.talent.v4beta1.Compensatio"
-          + "nInfo.CompensationRange\0228\n0include_jobs_"
-          + "with_unspecified_compensation_range\030\004 \001("
-          + "\010\"\206\001\n\nFilterType\022\033\n\027FILTER_TYPE_UNSPECIF"
-          + "IED\020\000\022\r\n\tUNIT_ONLY\020\001\022\023\n\017UNIT_AND_AMOUNT\020"
-          + "\002\022\032\n\026ANNUALIZED_BASE_AMOUNT\020\003\022\033\n\027ANNUALI"
-          + "ZED_TOTAL_AMOUNT\020\004\"\274\003\n\rCommuteFilter\022B\n\016"
-          + "commute_method\030\001 \001(\0162*.google.cloud.tale"
-          + "nt.v4beta1.CommuteMethod\022.\n\021start_coordi"
-          + "nates\030\002 \001(\0132\023.google.type.LatLng\0222\n\017trav"
-          + "el_duration\030\003 \001(\0132\031.google.protobuf.Dura"
-          + "tion\022!\n\031allow_imprecise_addresses\030\004 \001(\010\022"
-          + "N\n\014road_traffic\030\005 \001(\01626.google.cloud.tal"
-          + "ent.v4beta1.CommuteFilter.RoadTrafficH\000\022"
-          + "0\n\016departure_time\030\006 \001(\0132\026.google.type.Ti"
-          + "meOfDayH\000\"L\n\013RoadTraffic\022\034\n\030ROAD_TRAFFIC"
-          + "_UNSPECIFIED\020\000\022\020\n\014TRAFFIC_FREE\020\001\022\r\n\tBUSY"
-          + "_HOUR\020\002B\020\n\016traffic_option\"4\n\016JobTitleFil"
-          + "ter\022\021\n\tjob_title\030\001 \001(\t\022\017\n\007negated\030\002 \001(\010\""
-          + "-\n\013SkillFilter\022\r\n\005skill\030\001 \001(\t\022\017\n\007negated"
-          + "\030\002 \001(\010\"\241\002\n\016EmployerFilter\022\020\n\010employer\030\001 "
-          + "\001(\t\022L\n\004mode\030\002 \001(\0162>.google.cloud.talent."
-          + "v4beta1.EmployerFilter.EmployerFilterMod"
-          + "e\022\017\n\007negated\030\003 \001(\010\"\235\001\n\022EmployerFilterMod"
-          + "e\022$\n EMPLOYER_FILTER_MODE_UNSPECIFIED\020\000\022"
-          + "\032\n\026ALL_EMPLOYMENT_RECORDS\020\001\022#\n\037CURRENT_E"
-          + "MPLOYMENT_RECORDS_ONLY\020\002\022 \n\034PAST_EMPLOYM"
-          + "ENT_RECORDS_ONLY\020\003\"\210\001\n\017EducationFilter\022\016"
-          + "\n\006school\030\001 \001(\t\022\026\n\016field_of_study\030\002 \001(\t\022<"
-          + "\n\013degree_type\030\003 \001(\0162\'.google.cloud.talen"
-          + "t.v4beta1.DegreeType\022\017\n\007negated\030\006 \001(\010\"|\n"
-          + "\024WorkExperienceFilter\0221\n\016min_experience\030"
-          + "\001 \001(\0132\031.google.protobuf.Duration\0221\n\016max_"
-          + "experience\030\002 \001(\0132\031.google.protobuf.Durat"
-          + "ion\"c\n\025ApplicationDateFilter\022%\n\nstart_da"
-          + "te\030\001 \001(\0132\021.google.type.Date\022#\n\010end_date\030"
-          + "\002 \001(\0132\021.google.type.Date\"I\n\036ApplicationO"
-          + "utcomeReasonFilter\022\026\n\016outcome_reason\030\001 \001"
-          + "(\t\022\017\n\007negated\030\002 \001(\010\"A\n\032ApplicationLastSt"
-          + "ageFilter\022\022\n\nlast_stage\030\001 \001(\t\022\017\n\007negated"
-          + "\030\002 \001(\010\"h\n\024ApplicationJobFilter\022\020\n\010job_na"
-          + "me\030\001 \001(\t\022\032\n\022job_requisition_id\030\002 \001(\t\022\021\n\t"
-          + "job_title\030\003 \001(\t\022\017\n\007negated\030\004 \001(\010\"\205\001\n\027App"
-          + "licationStatusFilter\022Y\n\022application_stat"
-          + "us\030\001 \001(\0162=.google.cloud.talent.v4beta1.J"
-          + "obApplication.ApplicationStatus\022\017\n\007negat"
-          + "ed\030\002 \001(\010\"\374\001\n\nTimeFilter\022.\n\nstart_time\030\001 "
-          + "\001(\0132\032.google.protobuf.Timestamp\022,\n\010end_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\022E\n"
-          + "\ntime_field\030\003 \001(\01621.google.cloud.talent."
-          + "v4beta1.TimeFilter.TimeField\"I\n\tTimeFiel"
-          + "d\022\032\n\026TIME_FIELD_UNSPECIFIED\020\000\022\017\n\013CREATE_"
-          + "TIME\020\001\022\017\n\013UPDATE_TIME\020\002Bz\n\037com.google.cl"
-          + "oud.talent.v4beta1B\014FiltersProtoP\001ZAgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "talent/v4beta1;talent\242\002\003CTSb\006proto3"
+          + "/api/annotations.proto\032-google/cloud/tal"
+          + "ent/v4beta1/application.proto\032(google/cl"
+          + "oud/talent/v4beta1/common.proto\032%google/"
+          + "cloud/talent/v4beta1/job.proto\032)google/c"
+          + "loud/talent/v4beta1/profile.proto\032\036googl"
+          + "e/protobuf/duration.proto\032\037google/protob"
+          + "uf/timestamp.proto\032\036google/protobuf/wrap"
+          + "pers.proto\032\026google/type/date.proto\032\030goog"
+          + "le/type/latlng.proto\032\033google/type/timeof"
+          + "day.proto\"\343\004\n\010JobQuery\022\r\n\005query\030\001 \001(\t\022\021\n"
+          + "\tcompanies\030\002 \003(\t\022E\n\020location_filters\030\003 \003"
+          + "(\0132+.google.cloud.talent.v4beta1.Locatio"
+          + "nFilter\022@\n\016job_categories\030\004 \003(\0162(.google"
+          + ".cloud.talent.v4beta1.JobCategory\022B\n\016com"
+          + "mute_filter\030\005 \001(\0132*.google.cloud.talent."
+          + "v4beta1.CommuteFilter\022\035\n\025company_display"
+          + "_names\030\006 \003(\t\022L\n\023compensation_filter\030\007 \001("
+          + "\0132/.google.cloud.talent.v4beta1.Compensa"
+          + "tionFilter\022\037\n\027custom_attribute_filter\030\010 "
+          + "\001(\t\022\033\n\023disable_spell_check\030\t \001(\010\022E\n\020empl"
+          + "oyment_types\030\n \003(\0162+.google.cloud.talent"
+          + ".v4beta1.EmploymentType\022\026\n\016language_code"
+          + "s\030\013 \003(\t\022G\n\022publish_time_range\030\014 \001(\0132+.go"
+          + "ogle.cloud.talent.v4beta1.TimestampRange"
+          + "\022\025\n\rexcluded_jobs\030\r \003(\t\"\254\010\n\014ProfileQuery"
+          + "\022\r\n\005query\030\001 \001(\t\022E\n\020location_filters\030\002 \003("
+          + "\0132+.google.cloud.talent.v4beta1.Location"
+          + "Filter\022F\n\021job_title_filters\030\003 \003(\0132+.goog"
+          + "le.cloud.talent.v4beta1.JobTitleFilter\022E"
+          + "\n\020employer_filters\030\004 \003(\0132+.google.cloud."
+          + "talent.v4beta1.EmployerFilter\022G\n\021educati"
+          + "on_filters\030\005 \003(\0132,.google.cloud.talent.v"
+          + "4beta1.EducationFilter\022?\n\rskill_filters\030"
+          + "\006 \003(\0132(.google.cloud.talent.v4beta1.Skil"
+          + "lFilter\022Q\n\026work_experience_filter\030\007 \003(\0132"
+          + "1.google.cloud.talent.v4beta1.WorkExperi"
+          + "enceFilter\022=\n\014time_filters\030\010 \003(\0132\'.googl"
+          + "e.cloud.talent.v4beta1.TimeFilter\0222\n\016hir"
+          + "able_filter\030\t \001(\0132\032.google.protobuf.Bool"
+          + "Value\022T\n\030application_date_filters\030\n \003(\0132"
+          + "2.google.cloud.talent.v4beta1.Applicatio"
+          + "nDateFilter\022e\n!application_outcome_notes"
+          + "_filters\030\013 \003(\0132:.google.cloud.talent.v4b"
+          + "eta1.ApplicationOutcomeNotesFilter\022_\n\036ap"
+          + "plication_last_stage_filters\030\014 \003(\01327.goo"
+          + "gle.cloud.talent.v4beta1.ApplicationLast"
+          + "StageFilter\022R\n\027application_job_filters\030\r"
+          + " \003(\01321.google.cloud.talent.v4beta1.Appli"
+          + "cationJobFilter\022X\n\032application_status_fi"
+          + "lters\030\016 \003(\01324.google.cloud.talent.v4beta"
+          + "1.ApplicationStatusFilter\022\033\n\023custom_fiel"
+          + "d_filter\030\017 \001(\t\"\337\002\n\016LocationFilter\022\017\n\007add"
+          + "ress\030\001 \001(\t\022\023\n\013region_code\030\002 \001(\t\022$\n\007lat_l"
+          + "ng\030\003 \001(\0132\023.google.type.LatLng\022\031\n\021distanc"
+          + "e_in_miles\030\004 \001(\001\022a\n\026telecommute_preferen"
+          + "ce\030\005 \001(\0162A.google.cloud.talent.v4beta1.L"
+          + "ocationFilter.TelecommutePreference\022\017\n\007n"
+          + "egated\030\006 \001(\010\"r\n\025TelecommutePreference\022&\n"
+          + "\"TELECOMMUTE_PREFERENCE_UNSPECIFIED\020\000\022\030\n"
+          + "\024TELECOMMUTE_EXCLUDED\020\001\022\027\n\023TELECOMMUTE_A"
+          + "LLOWED\020\002\"\300\003\n\022CompensationFilter\022H\n\004type\030"
+          + "\001 \001(\0162:.google.cloud.talent.v4beta1.Comp"
+          + "ensationFilter.FilterType\022M\n\005units\030\002 \003(\016"
+          + "2>.google.cloud.talent.v4beta1.Compensat"
+          + "ionInfo.CompensationUnit\022N\n\005range\030\003 \001(\0132"
+          + "?.google.cloud.talent.v4beta1.Compensati"
+          + "onInfo.CompensationRange\0228\n0include_jobs"
+          + "_with_unspecified_compensation_range\030\004 \001"
+          + "(\010\"\206\001\n\nFilterType\022\033\n\027FILTER_TYPE_UNSPECI"
+          + "FIED\020\000\022\r\n\tUNIT_ONLY\020\001\022\023\n\017UNIT_AND_AMOUNT"
+          + "\020\002\022\032\n\026ANNUALIZED_BASE_AMOUNT\020\003\022\033\n\027ANNUAL"
+          + "IZED_TOTAL_AMOUNT\020\004\"\274\003\n\rCommuteFilter\022B\n"
+          + "\016commute_method\030\001 \001(\0162*.google.cloud.tal"
+          + "ent.v4beta1.CommuteMethod\022.\n\021start_coord"
+          + "inates\030\002 \001(\0132\023.google.type.LatLng\0222\n\017tra"
+          + "vel_duration\030\003 \001(\0132\031.google.protobuf.Dur"
+          + "ation\022!\n\031allow_imprecise_addresses\030\004 \001(\010"
+          + "\022N\n\014road_traffic\030\005 \001(\01626.google.cloud.ta"
+          + "lent.v4beta1.CommuteFilter.RoadTrafficH\000"
+          + "\0220\n\016departure_time\030\006 \001(\0132\026.google.type.T"
+          + "imeOfDayH\000\"L\n\013RoadTraffic\022\034\n\030ROAD_TRAFFI"
+          + "C_UNSPECIFIED\020\000\022\020\n\014TRAFFIC_FREE\020\001\022\r\n\tBUS"
+          + "Y_HOUR\020\002B\020\n\016traffic_option\"4\n\016JobTitleFi"
+          + "lter\022\021\n\tjob_title\030\001 \001(\t\022\017\n\007negated\030\002 \001(\010"
+          + "\"-\n\013SkillFilter\022\r\n\005skill\030\001 \001(\t\022\017\n\007negate"
+          + "d\030\002 \001(\010\"\241\002\n\016EmployerFilter\022\020\n\010employer\030\001"
+          + " \001(\t\022L\n\004mode\030\002 \001(\0162>.google.cloud.talent"
+          + ".v4beta1.EmployerFilter.EmployerFilterMo"
+          + "de\022\017\n\007negated\030\003 \001(\010\"\235\001\n\022EmployerFilterMo"
+          + "de\022$\n EMPLOYER_FILTER_MODE_UNSPECIFIED\020\000"
+          + "\022\032\n\026ALL_EMPLOYMENT_RECORDS\020\001\022#\n\037CURRENT_"
+          + "EMPLOYMENT_RECORDS_ONLY\020\002\022 \n\034PAST_EMPLOY"
+          + "MENT_RECORDS_ONLY\020\003\"\210\001\n\017EducationFilter\022"
+          + "\016\n\006school\030\001 \001(\t\022\026\n\016field_of_study\030\002 \001(\t\022"
+          + "<\n\013degree_type\030\003 \001(\0162\'.google.cloud.tale"
+          + "nt.v4beta1.DegreeType\022\017\n\007negated\030\006 \001(\010\"|"
+          + "\n\024WorkExperienceFilter\0221\n\016min_experience"
+          + "\030\001 \001(\0132\031.google.protobuf.Duration\0221\n\016max"
+          + "_experience\030\002 \001(\0132\031.google.protobuf.Dura"
+          + "tion\"c\n\025ApplicationDateFilter\022%\n\nstart_d"
+          + "ate\030\001 \001(\0132\021.google.type.Date\022#\n\010end_date"
+          + "\030\002 \001(\0132\021.google.type.Date\"G\n\035Application"
+          + "OutcomeNotesFilter\022\025\n\routcome_notes\030\001 \001("
+          + "\t\022\017\n\007negated\030\002 \001(\010\"A\n\032ApplicationLastSta"
+          + "geFilter\022\022\n\nlast_stage\030\001 \001(\t\022\017\n\007negated\030"
+          + "\002 \001(\010\"c\n\024ApplicationJobFilter\022\013\n\003job\030\001 \001"
+          + "(\t\022\032\n\022job_requisition_id\030\002 \001(\t\022\021\n\tjob_ti"
+          + "tle\030\003 \001(\t\022\017\n\007negated\030\004 \001(\010\"\200\001\n\027Applicati"
+          + "onStatusFilter\022T\n\021application_state\030\001 \001("
+          + "\01629.google.cloud.talent.v4beta1.Applicat"
+          + "ion.ApplicationState\022\017\n\007negated\030\002 \001(\010\"\374\001"
+          + "\n\nTimeFilter\022.\n\nstart_time\030\001 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032"
+          + ".google.protobuf.Timestamp\022E\n\ntime_field"
+          + "\030\003 \001(\01621.google.cloud.talent.v4beta1.Tim"
+          + "eFilter.TimeField\"I\n\tTimeField\022\032\n\026TIME_F"
+          + "IELD_UNSPECIFIED\020\000\022\017\n\013CREATE_TIME\020\001\022\017\n\013U"
+          + "PDATE_TIME\020\002Bz\n\037com.google.cloud.talent."
+          + "v4beta1B\014FiltersProtoP\001ZAgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/talent/v4be"
+          + "ta1;talent\242\002\003CTSb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -220,6 +221,7 @@ public final class FiltersProto {
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.cloud.talent.v4beta1.ApplicationResourceProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.CommonProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor(),
           com.google.cloud.talent.v4beta1.ProfileResourceProto.getDescriptor(),
@@ -238,7 +240,7 @@ public final class FiltersProto {
             internal_static_google_cloud_talent_v4beta1_JobQuery_descriptor,
             new java.lang.String[] {
               "Query",
-              "CompanyNames",
+              "Companies",
               "LocationFilters",
               "JobCategories",
               "CommuteFilter",
@@ -267,7 +269,7 @@ public final class FiltersProto {
               "TimeFilters",
               "HirableFilter",
               "ApplicationDateFilters",
-              "ApplicationOutcomeReasonFilters",
+              "ApplicationOutcomeNotesFilters",
               "ApplicationLastStageFilters",
               "ApplicationJobFilters",
               "ApplicationStatusFilters",
@@ -356,13 +358,13 @@ public final class FiltersProto {
             new java.lang.String[] {
               "StartDate", "EndDate",
             });
-    internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeReasonFilter_descriptor =
+    internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeNotesFilter_descriptor =
         getDescriptor().getMessageTypes().get(11);
-    internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeReasonFilter_fieldAccessorTable =
+    internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeNotesFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeReasonFilter_descriptor,
+            internal_static_google_cloud_talent_v4beta1_ApplicationOutcomeNotesFilter_descriptor,
             new java.lang.String[] {
-              "OutcomeReason", "Negated",
+              "OutcomeNotes", "Negated",
             });
     internal_static_google_cloud_talent_v4beta1_ApplicationLastStageFilter_descriptor =
         getDescriptor().getMessageTypes().get(12);
@@ -378,7 +380,7 @@ public final class FiltersProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_ApplicationJobFilter_descriptor,
             new java.lang.String[] {
-              "JobName", "JobRequisitionId", "JobTitle", "Negated",
+              "Job", "JobRequisitionId", "JobTitle", "Negated",
             });
     internal_static_google_cloud_talent_v4beta1_ApplicationStatusFilter_descriptor =
         getDescriptor().getMessageTypes().get(14);
@@ -386,7 +388,7 @@ public final class FiltersProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_ApplicationStatusFilter_descriptor,
             new java.lang.String[] {
-              "ApplicationStatus", "Negated",
+              "ApplicationState", "Negated",
             });
     internal_static_google_cloud_talent_v4beta1_TimeFilter_descriptor =
         getDescriptor().getMessageTypes().get(15);
@@ -397,6 +399,7 @@ public final class FiltersProto {
               "StartTime", "EndTime", "TimeField",
             });
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.cloud.talent.v4beta1.ApplicationResourceProto.getDescriptor();
     com.google.cloud.talent.v4beta1.CommonProto.getDescriptor();
     com.google.cloud.talent.v4beta1.JobResourceProto.getDescriptor();
     com.google.cloud.talent.v4beta1.ProfileResourceProto.getDescriptor();

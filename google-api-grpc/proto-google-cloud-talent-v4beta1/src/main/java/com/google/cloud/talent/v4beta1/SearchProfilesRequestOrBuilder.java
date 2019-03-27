@@ -308,7 +308,7 @@ public interface SearchProfilesRequestOrBuilder
    * * institution: The school name. For example, "MIT",
    * "University of California, Berkeley"
    * * degree: Highest education degree in ISCED code. Each value in degree
-   * covers specific level of education, without any expansion to upper nor
+   * covers a specific level of education, without any expansion to upper nor
    * lower levels of education degree.
    * * experience_in_months: experience in months. 0 means 0 month to 1 month
    * (exclusive).
@@ -316,10 +316,10 @@ public interface SearchProfilesRequestOrBuilder
    * See
    * [ApplicationDateFilter][google.cloud.talent.v4beta1.ApplicationDateFilter]
    * for more details.
-   * * application_outcome_reason: The application outcome reason specifies the
-   * outcome reasons of job application.
+   * * application_outcome_notes: The application outcome reason specifies the
+   * reasons behind the outcome of the job application.
    * See
-   * [ApplicationOutcomeReasonFilter][google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter]
+   * [ApplicationOutcomeNotesFilter][google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter]
    * for more details.
    * * application_last_stage: The application last stage specifies the last
    * stage of job application.
@@ -398,7 +398,7 @@ public interface SearchProfilesRequestOrBuilder
    * * institution: The school name. For example, "MIT",
    * "University of California, Berkeley"
    * * degree: Highest education degree in ISCED code. Each value in degree
-   * covers specific level of education, without any expansion to upper nor
+   * covers a specific level of education, without any expansion to upper nor
    * lower levels of education degree.
    * * experience_in_months: experience in months. 0 means 0 month to 1 month
    * (exclusive).
@@ -406,10 +406,10 @@ public interface SearchProfilesRequestOrBuilder
    * See
    * [ApplicationDateFilter][google.cloud.talent.v4beta1.ApplicationDateFilter]
    * for more details.
-   * * application_outcome_reason: The application outcome reason specifies the
-   * outcome reasons of job application.
+   * * application_outcome_notes: The application outcome reason specifies the
+   * reasons behind the outcome of the job application.
    * See
-   * [ApplicationOutcomeReasonFilter][google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter]
+   * [ApplicationOutcomeNotesFilter][google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter]
    * for more details.
    * * application_last_stage: The application last stage specifies the last
    * stage of job application.
@@ -488,7 +488,7 @@ public interface SearchProfilesRequestOrBuilder
    * * institution: The school name. For example, "MIT",
    * "University of California, Berkeley"
    * * degree: Highest education degree in ISCED code. Each value in degree
-   * covers specific level of education, without any expansion to upper nor
+   * covers a specific level of education, without any expansion to upper nor
    * lower levels of education degree.
    * * experience_in_months: experience in months. 0 means 0 month to 1 month
    * (exclusive).
@@ -496,10 +496,10 @@ public interface SearchProfilesRequestOrBuilder
    * See
    * [ApplicationDateFilter][google.cloud.talent.v4beta1.ApplicationDateFilter]
    * for more details.
-   * * application_outcome_reason: The application outcome reason specifies the
-   * outcome reasons of job application.
+   * * application_outcome_notes: The application outcome reason specifies the
+   * reasons behind the outcome of the job application.
    * See
-   * [ApplicationOutcomeReasonFilter][google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter]
+   * [ApplicationOutcomeNotesFilter][google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter]
    * for more details.
    * * application_last_stage: The application last stage specifies the last
    * stage of job application.
@@ -578,7 +578,7 @@ public interface SearchProfilesRequestOrBuilder
    * * institution: The school name. For example, "MIT",
    * "University of California, Berkeley"
    * * degree: Highest education degree in ISCED code. Each value in degree
-   * covers specific level of education, without any expansion to upper nor
+   * covers a specific level of education, without any expansion to upper nor
    * lower levels of education degree.
    * * experience_in_months: experience in months. 0 means 0 month to 1 month
    * (exclusive).
@@ -586,10 +586,10 @@ public interface SearchProfilesRequestOrBuilder
    * See
    * [ApplicationDateFilter][google.cloud.talent.v4beta1.ApplicationDateFilter]
    * for more details.
-   * * application_outcome_reason: The application outcome reason specifies the
-   * outcome reasons of job application.
+   * * application_outcome_notes: The application outcome reason specifies the
+   * reasons behind the outcome of the job application.
    * See
-   * [ApplicationOutcomeReasonFilter][google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter]
+   * [ApplicationOutcomeNotesFilter][google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter]
    * for more details.
    * * application_last_stage: The application last stage specifies the last
    * stage of job application.
@@ -669,7 +669,7 @@ public interface SearchProfilesRequestOrBuilder
    * * institution: The school name. For example, "MIT",
    * "University of California, Berkeley"
    * * degree: Highest education degree in ISCED code. Each value in degree
-   * covers specific level of education, without any expansion to upper nor
+   * covers a specific level of education, without any expansion to upper nor
    * lower levels of education degree.
    * * experience_in_months: experience in months. 0 means 0 month to 1 month
    * (exclusive).
@@ -677,10 +677,10 @@ public interface SearchProfilesRequestOrBuilder
    * See
    * [ApplicationDateFilter][google.cloud.talent.v4beta1.ApplicationDateFilter]
    * for more details.
-   * * application_outcome_reason: The application outcome reason specifies the
-   * outcome reasons of job application.
+   * * application_outcome_notes: The application outcome reason specifies the
+   * reasons behind the outcome of the job application.
    * See
-   * [ApplicationOutcomeReasonFilter][google.cloud.talent.v4beta1.ApplicationOutcomeReasonFilter]
+   * [ApplicationOutcomeNotesFilter][google.cloud.talent.v4beta1.ApplicationOutcomeNotesFilter]
    * for more details.
    * * application_last_stage: The application last stage specifies the last
    * stage of job application.

@@ -34,11 +34,11 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (CompletionClient completionClient = CompletionClient.create()) {
- *   ProjectName name = ProjectName.of("[PROJECT]");
+ *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
  *   String query = "";
  *   int pageSize = 0;
  *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
- *     .setName(name.toString())
+ *     .setParent(parent.toString())
  *     .setQuery(query)
  *     .setPageSize(pageSize)
  *     .build();
@@ -158,11 +158,11 @@ public class CompletionClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompletionClient completionClient = CompletionClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   String query = "";
    *   int pageSize = 0;
    *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
-   *     .setName(name.toString())
+   *     .setParent(parent.toString())
    *     .setQuery(query)
    *     .setPageSize(pageSize)
    *     .build();
@@ -186,11 +186,11 @@ public class CompletionClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CompletionClient completionClient = CompletionClient.create()) {
-   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
    *   String query = "";
    *   int pageSize = 0;
    *   CompleteQueryRequest request = CompleteQueryRequest.newBuilder()
-   *     .setName(name.toString())
+   *     .setParent(parent.toString())
    *     .setQuery(query)
    *     .setPageSize(pageSize)
    *     .build();
