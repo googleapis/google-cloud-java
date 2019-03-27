@@ -594,6 +594,7 @@ public class ITStorageSnippets {
     HttpsURLConnection connection = (HttpsURLConnection)uploadUrl.openConnection();
     connection.setRequestMethod("PUT");
     connection.setDoOutput(true);
+    connection.setRequestProperty("Content-Type", "application/octet-stream");
     byte[] write = new byte[BLOB_BYTE_CONTENT.length];
     try (OutputStream out = connection.getOutputStream()) {
       out.write(BLOB_BYTE_CONTENT);
