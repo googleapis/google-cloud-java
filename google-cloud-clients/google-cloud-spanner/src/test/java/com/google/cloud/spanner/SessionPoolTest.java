@@ -30,6 +30,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
 import com.google.cloud.spanner.SessionPool.Clock;
 import com.google.cloud.spanner.SessionPool.PooledSession;
@@ -50,6 +51,7 @@ import com.google.spanner.v1.RollbackRequest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -779,6 +781,63 @@ public class SessionPoolTest extends BaseSessionPoolTest {
     pool = createPool(clock);
     PooledSession session = (PooledSession) pool.getReadWriteSession();
     assertThat(session.delegate).isEqualTo(openSession);
+  }
+
+  @Test
+  public void testSessionNotFoundWrite() {
+    SpannerException sessionNotFound =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
+    List<Mutation> mutations = Arrays.asList(Mutation.newInsertBuilder("FOO").build());
+    Session closedSession = mockSession();
+    when(closedSession.write(mutations)).thenThrow(sessionNotFound);
+
+    Session openSession = mockSession();
+    when(openSession.write(mutations)).thenReturn(Timestamp.now());
+
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
+    FakeClock clock = new FakeClock();
+    clock.currentTimeMillis = System.currentTimeMillis();
+    pool = createPool(clock);
+    Session session = pool.getReadWriteSession();
+    assertThat(session.write(mutations)).isNotNull();
+  }
+
+  @Test
+  public void testSessionNotFoundWriteAtLeastOnce() {
+    SpannerException sessionNotFound =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
+    List<Mutation> mutations = Arrays.asList(Mutation.newInsertBuilder("FOO").build());
+    Session closedSession = mockSession();
+    when(closedSession.writeAtLeastOnce(mutations)).thenThrow(sessionNotFound);
+
+    Session openSession = mockSession();
+    when(openSession.writeAtLeastOnce(mutations)).thenReturn(Timestamp.now());
+
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
+    FakeClock clock = new FakeClock();
+    clock.currentTimeMillis = System.currentTimeMillis();
+    pool = createPool(clock);
+    Session session = pool.getReadWriteSession();
+    assertThat(session.writeAtLeastOnce(mutations)).isNotNull();
+  }
+
+  @Test
+  public void testSessionNotFoundPartitionedUpdate() {
+    SpannerException sessionNotFound =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.NOT_FOUND, "Session not found");
+    Statement statement = Statement.of("UPDATE FOO SET BAR=1 WHERE 1=1");
+    Session closedSession = mockSession();
+    when(closedSession.executePartitionedUpdate(statement)).thenThrow(sessionNotFound);
+
+    Session openSession = mockSession();
+    when(openSession.executePartitionedUpdate(statement)).thenReturn(1L);
+
+    when(client.createSession(db)).thenReturn(closedSession, openSession);
+    FakeClock clock = new FakeClock();
+    clock.currentTimeMillis = System.currentTimeMillis();
+    pool = createPool(clock);
+    Session session = pool.getReadWriteSession();
+    assertThat(session.executePartitionedUpdate(statement)).isEqualTo(1L);
   }
 
   private void mockKeepAlive(Session session) {

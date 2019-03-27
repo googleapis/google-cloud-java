@@ -395,11 +395,25 @@ final class SessionPool {
       this.state = SessionState.CLOSING;
     }
 
-    @Override
-    public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
+    /**
+     * Executes a method that does a database call and retries the method if a {@link
+     * SessionNotFoundException} is thrown.
+     */
+    private <T> T runWithSessionRetry(Supplier<T> method) {
       try {
+        return internalRunWithSessionRetry(method);
+      } catch (SessionNotFoundException e) {
+        maybeRecreateUnderlyingSession(e);
+        lastException = null;
+        return internalRunWithSessionRetry(method);
+      }
+    }
+
+    private <T> T internalRunWithSessionRetry(Supplier<T> method) {
+      try {
+        T res = method.get();
         markUsed();
-        return delegate.write(mutations);
+        return res;
       } catch (SpannerException e) {
         throw lastException = e;
       } finally {
@@ -408,27 +422,36 @@ final class SessionPool {
     }
 
     @Override
-    public long executePartitionedUpdate(Statement stmt) throws SpannerException {
-      try {
-        markUsed();
-        return delegate.executePartitionedUpdate(stmt);
-      } catch (SpannerException e) {
-        throw lastException = e;
-      } finally {
-        close();
-      }
+    public Timestamp write(final Iterable<Mutation> mutations) throws SpannerException {
+      return runWithSessionRetry(
+          new Supplier<Timestamp>() {
+            @Override
+            public Timestamp get() {
+              return delegate.write(mutations);
+            }
+          });
     }
 
     @Override
-    public Timestamp writeAtLeastOnce(Iterable<Mutation> mutations) throws SpannerException {
-      try {
-        markUsed();
-        return delegate.writeAtLeastOnce(mutations);
-      } catch (SpannerException e) {
-        throw lastException = e;
-      } finally {
-        close();
-      }
+    public long executePartitionedUpdate(final Statement stmt) throws SpannerException {
+      return runWithSessionRetry(
+          new Supplier<Long>() {
+            @Override
+            public Long get() {
+              return delegate.executePartitionedUpdate(stmt);
+            }
+          });
+    }
+
+    @Override
+    public Timestamp writeAtLeastOnce(final Iterable<Mutation> mutations) throws SpannerException {
+      return runWithSessionRetry(
+          new Supplier<Timestamp>() {
+            @Override
+            public Timestamp get() {
+              return delegate.writeAtLeastOnce(mutations);
+            }
+          });
     }
 
     @Override
