@@ -166,16 +166,16 @@ public class UptimeCheckServiceClientTest {
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
-    String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+    UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
-    UptimeCheckConfig actualResponse = client.getUptimeCheckConfig(formattedName);
+    UptimeCheckConfig actualResponse = client.getUptimeCheckConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockUptimeCheckService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetUptimeCheckConfigRequest actualRequest = (GetUptimeCheckConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, UptimeCheckConfigName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -189,9 +189,9 @@ public class UptimeCheckServiceClientTest {
     mockUptimeCheckService.addException(exception);
 
     try {
-      String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+      UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
-      client.getUptimeCheckConfig(formattedName);
+      client.getUptimeCheckConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -302,16 +302,16 @@ public class UptimeCheckServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
-    String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+    UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
-    client.deleteUptimeCheckConfig(formattedName);
+    client.deleteUptimeCheckConfig(name);
 
     List<GeneratedMessageV3> actualRequests = mockUptimeCheckService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteUptimeCheckConfigRequest actualRequest =
         (DeleteUptimeCheckConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, UptimeCheckConfigName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -325,9 +325,9 @@ public class UptimeCheckServiceClientTest {
     mockUptimeCheckService.addException(exception);
 
     try {
-      String formattedName = UptimeCheckConfigName.format("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+      UptimeCheckConfigName name = UptimeCheckConfigName.of("[PROJECT]", "[UPTIME_CHECK_CONFIG]");
 
-      client.deleteUptimeCheckConfig(formattedName);
+      client.deleteUptimeCheckConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

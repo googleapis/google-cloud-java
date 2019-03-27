@@ -131,14 +131,14 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
           case 66:
             {
               com.google.protobuf.BoolValue.Builder subBuilder = null;
-              if (isSupervisedPosition_ != null) {
-                subBuilder = isSupervisedPosition_.toBuilder();
+              if (isSupervisor_ != null) {
+                subBuilder = isSupervisor_.toBuilder();
               }
-              isSupervisedPosition_ =
+              isSupervisor_ =
                   input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(isSupervisedPosition_);
-                isSupervisedPosition_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(isSupervisor_);
+                isSupervisor_ = subBuilder.buildPartial();
               }
 
               break;
@@ -583,48 +583,48 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int IS_SUPERVISED_POSITION_FIELD_NUMBER = 8;
-  private com.google.protobuf.BoolValue isSupervisedPosition_;
+  public static final int IS_SUPERVISOR_FIELD_NUMBER = 8;
+  private com.google.protobuf.BoolValue isSupervisor_;
   /**
    *
    *
    * <pre>
    * Optional.
-   * If it's a supervised position.
+   * If it is a supervisor position.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+   * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
    */
-  public boolean hasIsSupervisedPosition() {
-    return isSupervisedPosition_ != null;
+  public boolean hasIsSupervisor() {
+    return isSupervisor_ != null;
   }
   /**
    *
    *
    * <pre>
    * Optional.
-   * If it's a supervised position.
+   * If it is a supervisor position.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+   * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
    */
-  public com.google.protobuf.BoolValue getIsSupervisedPosition() {
-    return isSupervisedPosition_ == null
+  public com.google.protobuf.BoolValue getIsSupervisor() {
+    return isSupervisor_ == null
         ? com.google.protobuf.BoolValue.getDefaultInstance()
-        : isSupervisedPosition_;
+        : isSupervisor_;
   }
   /**
    *
    *
    * <pre>
    * Optional.
-   * If it's a supervised position.
+   * If it is a supervisor position.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+   * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
    */
-  public com.google.protobuf.BoolValueOrBuilder getIsSupervisedPositionOrBuilder() {
-    return getIsSupervisedPosition();
+  public com.google.protobuf.BoolValueOrBuilder getIsSupervisorOrBuilder() {
+    return getIsSupervisor();
   }
 
   public static final int IS_SELF_EMPLOYED_FIELD_NUMBER = 9;
@@ -901,8 +901,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     if (!getJobDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, jobDescription_);
     }
-    if (isSupervisedPosition_ != null) {
-      output.writeMessage(8, getIsSupervisedPosition());
+    if (isSupervisor_ != null) {
+      output.writeMessage(8, getIsSupervisor());
     }
     if (isSelfEmployed_ != null) {
       output.writeMessage(9, getIsSelfEmployed());
@@ -949,9 +949,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     if (!getJobDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, jobDescription_);
     }
-    if (isSupervisedPosition_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getIsSupervisedPosition());
+    if (isSupervisor_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getIsSupervisor());
     }
     if (isSelfEmployed_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getIsSelfEmployed());
@@ -1001,9 +1000,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     }
     result = result && getJobTitle().equals(other.getJobTitle());
     result = result && getJobDescription().equals(other.getJobDescription());
-    result = result && (hasIsSupervisedPosition() == other.hasIsSupervisedPosition());
-    if (hasIsSupervisedPosition()) {
-      result = result && getIsSupervisedPosition().equals(other.getIsSupervisedPosition());
+    result = result && (hasIsSupervisor() == other.hasIsSupervisor());
+    if (hasIsSupervisor()) {
+      result = result && getIsSupervisor().equals(other.getIsSupervisor());
     }
     result = result && (hasIsSelfEmployed() == other.hasIsSelfEmployed());
     if (hasIsSelfEmployed()) {
@@ -1047,9 +1046,9 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getJobTitle().hashCode();
     hash = (37 * hash) + JOB_DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getJobDescription().hashCode();
-    if (hasIsSupervisedPosition()) {
-      hash = (37 * hash) + IS_SUPERVISED_POSITION_FIELD_NUMBER;
-      hash = (53 * hash) + getIsSupervisedPosition().hashCode();
+    if (hasIsSupervisor()) {
+      hash = (37 * hash) + IS_SUPERVISOR_FIELD_NUMBER;
+      hash = (53 * hash) + getIsSupervisor().hashCode();
     }
     if (hasIsSelfEmployed()) {
       hash = (37 * hash) + IS_SELF_EMPLOYED_FIELD_NUMBER;
@@ -1236,11 +1235,11 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
 
       jobDescription_ = "";
 
-      if (isSupervisedPositionBuilder_ == null) {
-        isSupervisedPosition_ = null;
+      if (isSupervisorBuilder_ == null) {
+        isSupervisor_ = null;
       } else {
-        isSupervisedPosition_ = null;
-        isSupervisedPositionBuilder_ = null;
+        isSupervisor_ = null;
+        isSupervisorBuilder_ = null;
       }
       if (isSelfEmployedBuilder_ == null) {
         isSelfEmployed_ = null;
@@ -1306,10 +1305,10 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       }
       result.jobTitle_ = jobTitle_;
       result.jobDescription_ = jobDescription_;
-      if (isSupervisedPositionBuilder_ == null) {
-        result.isSupervisedPosition_ = isSupervisedPosition_;
+      if (isSupervisorBuilder_ == null) {
+        result.isSupervisor_ = isSupervisor_;
       } else {
-        result.isSupervisedPosition_ = isSupervisedPositionBuilder_.build();
+        result.isSupervisor_ = isSupervisorBuilder_.build();
       }
       if (isSelfEmployedBuilder_ == null) {
         result.isSelfEmployed_ = isSelfEmployed_;
@@ -1399,8 +1398,8 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
         jobDescription_ = other.jobDescription_;
         onChanged();
       }
-      if (other.hasIsSupervisedPosition()) {
-        mergeIsSupervisedPosition(other.getIsSupervisedPosition());
+      if (other.hasIsSupervisor()) {
+        mergeIsSupervisor(other.getIsSupervisor());
       }
       if (other.hasIsSelfEmployed()) {
         mergeIsSelfEmployed(other.getIsSelfEmployed());
@@ -2523,42 +2522,42 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.BoolValue isSupervisedPosition_ = null;
+    private com.google.protobuf.BoolValue isSupervisor_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
-        isSupervisedPositionBuilder_;
+        isSupervisorBuilder_;
     /**
      *
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public boolean hasIsSupervisedPosition() {
-      return isSupervisedPositionBuilder_ != null || isSupervisedPosition_ != null;
+    public boolean hasIsSupervisor() {
+      return isSupervisorBuilder_ != null || isSupervisor_ != null;
     }
     /**
      *
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public com.google.protobuf.BoolValue getIsSupervisedPosition() {
-      if (isSupervisedPositionBuilder_ == null) {
-        return isSupervisedPosition_ == null
+    public com.google.protobuf.BoolValue getIsSupervisor() {
+      if (isSupervisorBuilder_ == null) {
+        return isSupervisor_ == null
             ? com.google.protobuf.BoolValue.getDefaultInstance()
-            : isSupervisedPosition_;
+            : isSupervisor_;
       } else {
-        return isSupervisedPositionBuilder_.getMessage();
+        return isSupervisorBuilder_.getMessage();
       }
     }
     /**
@@ -2566,20 +2565,20 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public Builder setIsSupervisedPosition(com.google.protobuf.BoolValue value) {
-      if (isSupervisedPositionBuilder_ == null) {
+    public Builder setIsSupervisor(com.google.protobuf.BoolValue value) {
+      if (isSupervisorBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        isSupervisedPosition_ = value;
+        isSupervisor_ = value;
         onChanged();
       } else {
-        isSupervisedPositionBuilder_.setMessage(value);
+        isSupervisorBuilder_.setMessage(value);
       }
 
       return this;
@@ -2589,17 +2588,17 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public Builder setIsSupervisedPosition(com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (isSupervisedPositionBuilder_ == null) {
-        isSupervisedPosition_ = builderForValue.build();
+    public Builder setIsSupervisor(com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (isSupervisorBuilder_ == null) {
+        isSupervisor_ = builderForValue.build();
         onChanged();
       } else {
-        isSupervisedPositionBuilder_.setMessage(builderForValue.build());
+        isSupervisorBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -2609,24 +2608,24 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public Builder mergeIsSupervisedPosition(com.google.protobuf.BoolValue value) {
-      if (isSupervisedPositionBuilder_ == null) {
-        if (isSupervisedPosition_ != null) {
-          isSupervisedPosition_ =
-              com.google.protobuf.BoolValue.newBuilder(isSupervisedPosition_)
+    public Builder mergeIsSupervisor(com.google.protobuf.BoolValue value) {
+      if (isSupervisorBuilder_ == null) {
+        if (isSupervisor_ != null) {
+          isSupervisor_ =
+              com.google.protobuf.BoolValue.newBuilder(isSupervisor_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          isSupervisedPosition_ = value;
+          isSupervisor_ = value;
         }
         onChanged();
       } else {
-        isSupervisedPositionBuilder_.mergeFrom(value);
+        isSupervisorBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -2636,18 +2635,18 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public Builder clearIsSupervisedPosition() {
-      if (isSupervisedPositionBuilder_ == null) {
-        isSupervisedPosition_ = null;
+    public Builder clearIsSupervisor() {
+      if (isSupervisorBuilder_ == null) {
+        isSupervisor_ = null;
         onChanged();
       } else {
-        isSupervisedPosition_ = null;
-        isSupervisedPositionBuilder_ = null;
+        isSupervisor_ = null;
+        isSupervisorBuilder_ = null;
       }
 
       return this;
@@ -2657,33 +2656,33 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public com.google.protobuf.BoolValue.Builder getIsSupervisedPositionBuilder() {
+    public com.google.protobuf.BoolValue.Builder getIsSupervisorBuilder() {
 
       onChanged();
-      return getIsSupervisedPositionFieldBuilder().getBuilder();
+      return getIsSupervisorFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
-    public com.google.protobuf.BoolValueOrBuilder getIsSupervisedPositionOrBuilder() {
-      if (isSupervisedPositionBuilder_ != null) {
-        return isSupervisedPositionBuilder_.getMessageOrBuilder();
+    public com.google.protobuf.BoolValueOrBuilder getIsSupervisorOrBuilder() {
+      if (isSupervisorBuilder_ != null) {
+        return isSupervisorBuilder_.getMessageOrBuilder();
       } else {
-        return isSupervisedPosition_ == null
+        return isSupervisor_ == null
             ? com.google.protobuf.BoolValue.getDefaultInstance()
-            : isSupervisedPosition_;
+            : isSupervisor_;
       }
     }
     /**
@@ -2691,26 +2690,26 @@ public final class EmploymentRecord extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional.
-     * If it's a supervised position.
+     * If it is a supervisor position.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+     * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
-        getIsSupervisedPositionFieldBuilder() {
-      if (isSupervisedPositionBuilder_ == null) {
-        isSupervisedPositionBuilder_ =
+        getIsSupervisorFieldBuilder() {
+      if (isSupervisorBuilder_ == null) {
+        isSupervisorBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.BoolValue,
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>(
-                getIsSupervisedPosition(), getParentForChildren(), isClean());
-        isSupervisedPosition_ = null;
+                getIsSupervisor(), getParentForChildren(), isClean());
+        isSupervisor_ = null;
       }
-      return isSupervisedPositionBuilder_;
+      return isSupervisorBuilder_;
     }
 
     private com.google.protobuf.BoolValue isSelfEmployed_ = null;

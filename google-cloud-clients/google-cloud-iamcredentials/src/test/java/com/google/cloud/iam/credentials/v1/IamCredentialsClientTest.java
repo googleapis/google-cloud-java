@@ -83,21 +83,20 @@ public class IamCredentialsClientTest {
         GenerateAccessTokenResponse.newBuilder().setAccessToken(accessToken).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     List<String> scope = new ArrayList<>();
     Duration lifetime = Duration.newBuilder().build();
 
     GenerateAccessTokenResponse actualResponse =
-        client.generateAccessToken(formattedName, delegates, scope, lifetime);
+        client.generateAccessToken(name, delegates, scope, lifetime);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GenerateAccessTokenRequest actualRequest = (GenerateAccessTokenRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ServiceAccountName.parse(actualRequest.getName()));
     Assert.assertEquals(delegates, actualRequest.getDelegatesList());
     Assert.assertEquals(scope, actualRequest.getScopeList());
     Assert.assertEquals(lifetime, actualRequest.getLifetime());
@@ -114,13 +113,12 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       List<String> scope = new ArrayList<>();
       Duration lifetime = Duration.newBuilder().build();
 
-      client.generateAccessToken(formattedName, delegates, scope, lifetime);
+      client.generateAccessToken(name, delegates, scope, lifetime);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -135,21 +133,20 @@ public class IamCredentialsClientTest {
         GenerateIdTokenResponse.newBuilder().setToken(token).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     String audience = "audience975628804";
     boolean includeEmail = false;
 
     GenerateIdTokenResponse actualResponse =
-        client.generateIdToken(formattedName, delegates, audience, includeEmail);
+        client.generateIdToken(name, delegates, audience, includeEmail);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GenerateIdTokenRequest actualRequest = (GenerateIdTokenRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ServiceAccountName.parse(actualRequest.getName()));
     Assert.assertEquals(delegates, actualRequest.getDelegatesList());
     Assert.assertEquals(audience, actualRequest.getAudience());
     Assert.assertEquals(includeEmail, actualRequest.getIncludeEmail());
@@ -166,13 +163,12 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       String audience = "audience975628804";
       boolean includeEmail = false;
 
-      client.generateIdToken(formattedName, delegates, audience, includeEmail);
+      client.generateIdToken(name, delegates, audience, includeEmail);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -188,19 +184,18 @@ public class IamCredentialsClientTest {
         SignBlobResponse.newBuilder().setKeyId(keyId).setSignedBlob(signedBlob).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     ByteString payload = ByteString.copyFromUtf8("-114");
 
-    SignBlobResponse actualResponse = client.signBlob(formattedName, delegates, payload);
+    SignBlobResponse actualResponse = client.signBlob(name, delegates, payload);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SignBlobRequest actualRequest = (SignBlobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ServiceAccountName.parse(actualRequest.getName()));
     Assert.assertEquals(delegates, actualRequest.getDelegatesList());
     Assert.assertEquals(payload, actualRequest.getPayload());
     Assert.assertTrue(
@@ -216,12 +211,11 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       ByteString payload = ByteString.copyFromUtf8("-114");
 
-      client.signBlob(formattedName, delegates, payload);
+      client.signBlob(name, delegates, payload);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -237,8 +231,7 @@ public class IamCredentialsClientTest {
         SignJwtResponse.newBuilder().setKeyId(keyId).setSignedJwt(signedJwt).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     String payload = "-114";
 
@@ -265,8 +258,7 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       String payload = "-114";
 
@@ -285,13 +277,12 @@ public class IamCredentialsClientTest {
         GenerateIdentityBindingAccessTokenResponse.newBuilder().setAccessToken(accessToken).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> scope = new ArrayList<>();
     String jwt = "jwt105671";
 
     GenerateIdentityBindingAccessTokenResponse actualResponse =
-        client.generateIdentityBindingAccessToken(formattedName, scope, jwt);
+        client.generateIdentityBindingAccessToken(name, scope, jwt);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
@@ -299,7 +290,7 @@ public class IamCredentialsClientTest {
     GenerateIdentityBindingAccessTokenRequest actualRequest =
         (GenerateIdentityBindingAccessTokenRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, ServiceAccountName.parse(actualRequest.getName()));
     Assert.assertEquals(scope, actualRequest.getScopeList());
     Assert.assertEquals(jwt, actualRequest.getJwt());
     Assert.assertTrue(
@@ -315,12 +306,11 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> scope = new ArrayList<>();
       String jwt = "jwt105671";
 
-      client.generateIdentityBindingAccessToken(formattedName, scope, jwt);
+      client.generateIdentityBindingAccessToken(name, scope, jwt);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

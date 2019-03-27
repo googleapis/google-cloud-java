@@ -12,7 +12,7 @@ public interface TimestampRangeOrBuilder
    *
    *
    * <pre>
-   * Begin of the period.
+   * Begin of the period (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -22,7 +22,7 @@ public interface TimestampRangeOrBuilder
    *
    *
    * <pre>
-   * Begin of the period.
+   * Begin of the period (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -32,7 +32,7 @@ public interface TimestampRangeOrBuilder
    *
    *
    * <pre>
-   * Begin of the period.
+   * Begin of the period (inclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -43,7 +43,7 @@ public interface TimestampRangeOrBuilder
    *
    *
    * <pre>
-   * End of the period.
+   * End of the period (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -53,7 +53,7 @@ public interface TimestampRangeOrBuilder
    *
    *
    * <pre>
-   * End of the period.
+   * End of the period (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -63,7 +63,7 @@ public interface TimestampRangeOrBuilder
    *
    *
    * <pre>
-   * End of the period.
+   * End of the period (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>

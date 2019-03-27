@@ -41,12 +41,12 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class JobServiceClientTest {
+  private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
   private static MockCompletion mockCompletion;
   private static MockEventService mockEventService;
   private static MockJobService mockJobService;
   private static MockProfileService mockProfileService;
-  private static MockResumeService mockResumeService;
   private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private JobServiceClient client;
@@ -54,23 +54,23 @@ public class JobServiceClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
     mockCompletion = new MockCompletion();
     mockEventService = new MockEventService();
     mockJobService = new MockJobService();
     mockProfileService = new MockProfileService();
-    mockResumeService = new MockResumeService();
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             "in-process-1",
             Arrays.<MockGrpcService>asList(
+                mockApplicationService,
                 mockCompanyService,
                 mockCompletion,
                 mockEventService,
                 mockJobService,
                 mockProfileService,
-                mockResumeService,
                 mockTenantService));
     serviceHelper.start();
   }
@@ -100,8 +100,8 @@ public class JobServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void createJobTest() {
-    JobName name = JobName.of("[PROJECT]", "[JOBS]");
-    String companyName = "companyName1429880077";
+    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+    String company = "company950484093";
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -115,7 +115,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name.toString())
-            .setCompanyName(companyName)
+            .setCompany(company)
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -129,7 +129,7 @@ public class JobServiceClientTest {
             .build();
     mockJobService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
     Job job = Job.newBuilder().build();
 
     Job actualResponse = client.createJob(parent, job);
@@ -139,7 +139,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CreateJobRequest actualRequest = (CreateJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
     Assert.assertEquals(job, actualRequest.getJob());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -154,7 +154,7 @@ public class JobServiceClientTest {
     mockJobService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
       Job job = Job.newBuilder().build();
 
       client.createJob(parent, job);
@@ -167,8 +167,8 @@ public class JobServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void getJobTest() {
-    JobName name2 = JobName.of("[PROJECT]", "[JOBS]");
-    String companyName = "companyName1429880077";
+    JobName name2 = JobOldName.of("[PROJECT]", "[JOBS]");
+    String company = "company950484093";
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -182,7 +182,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name2.toString())
-            .setCompanyName(companyName)
+            .setCompany(company)
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -196,7 +196,7 @@ public class JobServiceClientTest {
             .build();
     mockJobService.addResponse(expectedResponse);
 
-    JobName name = JobName.of("[PROJECT]", "[JOBS]");
+    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
 
     Job actualResponse = client.getJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -205,7 +205,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     GetJobRequest actualRequest = (GetJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, JobNames.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -219,7 +219,7 @@ public class JobServiceClientTest {
     mockJobService.addException(exception);
 
     try {
-      JobName name = JobName.of("[PROJECT]", "[JOBS]");
+      JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
 
       client.getJob(name);
       Assert.fail("No exception raised");
@@ -231,8 +231,8 @@ public class JobServiceClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateJobTest() {
-    JobName name = JobName.of("[PROJECT]", "[JOBS]");
-    String companyName = "companyName1429880077";
+    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
+    String company = "company950484093";
     String requisitionId = "requisitionId980224926";
     String title = "title110371416";
     String description = "description-1724546052";
@@ -246,7 +246,7 @@ public class JobServiceClientTest {
     Job expectedResponse =
         Job.newBuilder()
             .setName(name.toString())
-            .setCompanyName(companyName)
+            .setCompany(company)
             .setRequisitionId(requisitionId)
             .setTitle(title)
             .setDescription(description)
@@ -298,7 +298,7 @@ public class JobServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockJobService.addResponse(expectedResponse);
 
-    JobName name = JobName.of("[PROJECT]", "[JOBS]");
+    JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
 
     client.deleteJob(name);
 
@@ -306,7 +306,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
+    Assert.assertEquals(name, JobNames.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -320,7 +320,7 @@ public class JobServiceClientTest {
     mockJobService.addException(exception);
 
     try {
-      JobName name = JobName.of("[PROJECT]", "[JOBS]");
+      JobName name = JobOldName.of("[PROJECT]", "[JOBS]");
 
       client.deleteJob(name);
       Assert.fail("No exception raised");
@@ -339,7 +339,7 @@ public class JobServiceClientTest {
         ListJobsResponse.newBuilder().setNextPageToken(nextPageToken).addAllJobs(jobs).build();
     mockJobService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
     String filter = "filter-1274492040";
 
     ListJobsPagedResponse pagedListResponse = client.listJobs(parent, filter);
@@ -352,7 +352,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListJobsRequest actualRequest = (ListJobsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -367,7 +367,7 @@ public class JobServiceClientTest {
     mockJobService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
       String filter = "filter-1274492040";
 
       client.listJobs(parent, filter);
@@ -383,7 +383,7 @@ public class JobServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockJobService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
     String filter = "filter-1274492040";
 
     client.batchDeleteJobs(parent, filter);
@@ -392,7 +392,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     BatchDeleteJobsRequest actualRequest = (BatchDeleteJobsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -407,7 +407,7 @@ public class JobServiceClientTest {
     mockJobService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
       String filter = "filter-1274492040";
 
       client.batchDeleteJobs(parent, filter);

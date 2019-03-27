@@ -25,18 +25,20 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.firestore.v1.stub.FirestoreAdminStub;
 import com.google.cloud.firestore.v1.stub.FirestoreAdminStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.admin.v1.CreateIndexRequest;
+import com.google.firestore.admin.v1.DatabaseName;
 import com.google.firestore.admin.v1.DeleteIndexRequest;
 import com.google.firestore.admin.v1.ExportDocumentsRequest;
 import com.google.firestore.admin.v1.Field;
+import com.google.firestore.admin.v1.FieldName;
 import com.google.firestore.admin.v1.GetFieldRequest;
 import com.google.firestore.admin.v1.GetIndexRequest;
 import com.google.firestore.admin.v1.ImportDocumentsRequest;
 import com.google.firestore.admin.v1.Index;
+import com.google.firestore.admin.v1.IndexName;
 import com.google.firestore.admin.v1.ListFieldsRequest;
 import com.google.firestore.admin.v1.ListFieldsResponse;
 import com.google.firestore.admin.v1.ListIndexesRequest;
@@ -60,7 +62,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
- *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+ *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
  *   Index index = Index.newBuilder().build();
  *   Operation response = firestoreAdminClient.createIndex(formattedParent, index);
  * }
@@ -123,133 +125,6 @@ public class FirestoreAdminClient implements BackgroundResource {
   private final FirestoreAdminSettings settings;
   private final FirestoreAdminStub stub;
 
-  private static final PathTemplate DATABASE_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/databases/{database}");
-
-  private static final PathTemplate PARENT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/databases/{database}/collectionGroups/{collection_id}");
-
-  private static final PathTemplate INDEX_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/databases/{database}/collectionGroups/{collection_id}/indexes/{index_id}");
-
-  private static final PathTemplate FIELD_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/databases/{database}/collectionGroups/{collection_id}/fields/{field_id}");
-
-  /** Formats a string containing the fully-qualified path to represent a database resource. */
-  public static final String formatDatabaseName(String project, String database) {
-    return DATABASE_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a parent resource. */
-  public static final String formatParentName(
-      String project, String database, String collectionId) {
-    return PARENT_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database,
-        "collection_id", collectionId);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a index resource. */
-  public static final String formatIndexName(
-      String project, String database, String collectionId, String indexId) {
-    return INDEX_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database,
-        "collection_id", collectionId,
-        "index_id", indexId);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a field resource. */
-  public static final String formatFieldName(
-      String project, String database, String collectionId, String fieldId) {
-    return FIELD_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database,
-        "collection_id", collectionId,
-        "field_id", fieldId);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a database resource.
-   */
-  public static final String parseProjectFromDatabaseName(String databaseName) {
-    return DATABASE_PATH_TEMPLATE.parse(databaseName).get("project");
-  }
-
-  /**
-   * Parses the database from the given fully-qualified path which represents a database resource.
-   */
-  public static final String parseDatabaseFromDatabaseName(String databaseName) {
-    return DATABASE_PATH_TEMPLATE.parse(databaseName).get("database");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a parent resource. */
-  public static final String parseProjectFromParentName(String parentName) {
-    return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
-  }
-
-  /** Parses the database from the given fully-qualified path which represents a parent resource. */
-  public static final String parseDatabaseFromParentName(String parentName) {
-    return PARENT_PATH_TEMPLATE.parse(parentName).get("database");
-  }
-
-  /**
-   * Parses the collection_id from the given fully-qualified path which represents a parent
-   * resource.
-   */
-  public static final String parseCollectionIdFromParentName(String parentName) {
-    return PARENT_PATH_TEMPLATE.parse(parentName).get("collection_id");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a index resource. */
-  public static final String parseProjectFromIndexName(String indexName) {
-    return INDEX_PATH_TEMPLATE.parse(indexName).get("project");
-  }
-
-  /** Parses the database from the given fully-qualified path which represents a index resource. */
-  public static final String parseDatabaseFromIndexName(String indexName) {
-    return INDEX_PATH_TEMPLATE.parse(indexName).get("database");
-  }
-
-  /**
-   * Parses the collection_id from the given fully-qualified path which represents a index resource.
-   */
-  public static final String parseCollectionIdFromIndexName(String indexName) {
-    return INDEX_PATH_TEMPLATE.parse(indexName).get("collection_id");
-  }
-
-  /** Parses the index_id from the given fully-qualified path which represents a index resource. */
-  public static final String parseIndexIdFromIndexName(String indexName) {
-    return INDEX_PATH_TEMPLATE.parse(indexName).get("index_id");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a field resource. */
-  public static final String parseProjectFromFieldName(String fieldName) {
-    return FIELD_PATH_TEMPLATE.parse(fieldName).get("project");
-  }
-
-  /** Parses the database from the given fully-qualified path which represents a field resource. */
-  public static final String parseDatabaseFromFieldName(String fieldName) {
-    return FIELD_PATH_TEMPLATE.parse(fieldName).get("database");
-  }
-
-  /**
-   * Parses the collection_id from the given fully-qualified path which represents a field resource.
-   */
-  public static final String parseCollectionIdFromFieldName(String fieldName) {
-    return FIELD_PATH_TEMPLATE.parse(fieldName).get("collection_id");
-  }
-
-  /** Parses the field_id from the given fully-qualified path which represents a field resource. */
-  public static final String parseFieldIdFromFieldName(String fieldName) {
-    return FIELD_PATH_TEMPLATE.parse(fieldName).get("field_id");
-  }
-
   /** Constructs an instance of FirestoreAdminClient with default settings. */
   public static final FirestoreAdminClient create() throws IOException {
     return create(FirestoreAdminSettings.newBuilder().build());
@@ -309,7 +184,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   Index index = Index.newBuilder().build();
    *   Operation response = firestoreAdminClient.createIndex(formattedParent, index);
    * }
@@ -321,7 +196,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createIndex(String parent, Index index) {
-    PARENT_PATH_TEMPLATE.validate(parent, "createIndex");
+
     CreateIndexRequest request =
         CreateIndexRequest.newBuilder().setParent(parent).setIndex(index).build();
     return createIndex(request);
@@ -338,7 +213,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   Index index = Index.newBuilder().build();
    *   CreateIndexRequest request = CreateIndexRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -366,7 +241,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   Index index = Index.newBuilder().build();
    *   CreateIndexRequest request = CreateIndexRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -390,7 +265,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   for (Index element : firestoreAdminClient.listIndexes(formattedParent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -402,7 +277,6 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIndexesPagedResponse listIndexes(String parent) {
-    PARENT_PATH_TEMPLATE.validate(parent, "listIndexes");
     ListIndexesRequest request = ListIndexesRequest.newBuilder().setParent(parent).build();
     return listIndexes(request);
   }
@@ -415,7 +289,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListIndexesRequest request = ListIndexesRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -440,7 +314,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListIndexesRequest request = ListIndexesRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -465,7 +339,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListIndexesRequest request = ListIndexesRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -496,8 +370,32 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatIndexName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
-   *   Index response = firestoreAdminClient.getIndex(formattedName);
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   Index response = firestoreAdminClient.getIndex(name);
+   * }
+   * </code></pre>
+   *
+   * @param name A name of the form
+   *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{index_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Index getIndex(IndexName name) {
+
+    GetIndexRequest request =
+        GetIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getIndex(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a composite index.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   Index response = firestoreAdminClient.getIndex(name.toString());
    * }
    * </code></pre>
    *
@@ -506,7 +404,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Index getIndex(String name) {
-    INDEX_PATH_TEMPLATE.validate(name, "getIndex");
+
     GetIndexRequest request = GetIndexRequest.newBuilder().setName(name).build();
     return getIndex(request);
   }
@@ -519,9 +417,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatIndexName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
    *   GetIndexRequest request = GetIndexRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Index response = firestoreAdminClient.getIndex(request);
    * }
@@ -542,9 +440,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatIndexName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
    *   GetIndexRequest request = GetIndexRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Index&gt; future = firestoreAdminClient.getIndexCallable().futureCall(request);
    *   // Do something
@@ -564,8 +462,32 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatIndexName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
-   *   firestoreAdminClient.deleteIndex(formattedName);
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   firestoreAdminClient.deleteIndex(name);
+   * }
+   * </code></pre>
+   *
+   * @param name A name of the form
+   *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{index_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIndex(IndexName name) {
+
+    DeleteIndexRequest request =
+        DeleteIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteIndex(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a composite index.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   firestoreAdminClient.deleteIndex(name.toString());
    * }
    * </code></pre>
    *
@@ -574,7 +496,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteIndex(String name) {
-    INDEX_PATH_TEMPLATE.validate(name, "deleteIndex");
+
     DeleteIndexRequest request = DeleteIndexRequest.newBuilder().setName(name).build();
     deleteIndex(request);
   }
@@ -587,9 +509,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatIndexName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
    *   DeleteIndexRequest request = DeleteIndexRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   firestoreAdminClient.deleteIndex(request);
    * }
@@ -610,9 +532,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatIndexName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
+   *   IndexName name = IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[INDEX_ID]");
    *   DeleteIndexRequest request = DeleteIndexRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = firestoreAdminClient.deleteIndexCallable().futureCall(request);
    *   // Do something
@@ -635,8 +557,35 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
-   *   Operation response = firestoreAdminClient.importDocuments(formattedName);
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
+   *   Operation response = firestoreAdminClient.importDocuments(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Database to import into. Should be of the form:
+   *     `projects/{project_id}/databases/{database_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation importDocuments(DatabaseName name) {
+
+    ImportDocumentsRequest request =
+        ImportDocumentsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return importDocuments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Imports documents into Google Cloud Firestore. Existing documents with the same name are
+   * overwritten. The import occurs in the background and its progress can be monitored and managed
+   * via the Operation resource that is created. If an ImportDocuments operation is cancelled, it is
+   * possible that a subset of the data has already been imported to Cloud Firestore.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
+   *   Operation response = firestoreAdminClient.importDocuments(name.toString());
    * }
    * </code></pre>
    *
@@ -645,7 +594,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation importDocuments(String name) {
-    DATABASE_PATH_TEMPLATE.validate(name, "importDocuments");
+
     ImportDocumentsRequest request = ImportDocumentsRequest.newBuilder().setName(name).build();
     return importDocuments(request);
   }
@@ -661,9 +610,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
    *   ImportDocumentsRequest request = ImportDocumentsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Operation response = firestoreAdminClient.importDocuments(request);
    * }
@@ -687,9 +636,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
    *   ImportDocumentsRequest request = ImportDocumentsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firestoreAdminClient.importDocumentsCallable().futureCall(request);
    *   // Do something
@@ -714,8 +663,37 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
-   *   Operation response = firestoreAdminClient.exportDocuments(formattedName);
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
+   *   Operation response = firestoreAdminClient.exportDocuments(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Database to export. Should be of the form:
+   *     `projects/{project_id}/databases/{database_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Operation exportDocuments(DatabaseName name) {
+
+    ExportDocumentsRequest request =
+        ExportDocumentsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return exportDocuments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage
+   * system, such as Google Cloud Storage. Recent updates to documents may not be reflected in the
+   * export. The export occurs in the background and its progress can be monitored and managed via
+   * the Operation resource that is created. The output of an export may only be used once the
+   * associated operation is done. If an export operation is cancelled before completion it may
+   * leave partial data behind in Google Cloud Storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
+   *   Operation response = firestoreAdminClient.exportDocuments(name.toString());
    * }
    * </code></pre>
    *
@@ -724,7 +702,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation exportDocuments(String name) {
-    DATABASE_PATH_TEMPLATE.validate(name, "exportDocuments");
+
     ExportDocumentsRequest request = ExportDocumentsRequest.newBuilder().setName(name).build();
     return exportDocuments(request);
   }
@@ -742,9 +720,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
    *   ExportDocumentsRequest request = ExportDocumentsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Operation response = firestoreAdminClient.exportDocuments(request);
    * }
@@ -770,9 +748,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatDatabaseName("[PROJECT]", "[DATABASE]");
+   *   DatabaseName name = DatabaseName.of("[PROJECT]", "[DATABASE]");
    *   ExportDocumentsRequest request = ExportDocumentsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = firestoreAdminClient.exportDocumentsCallable().futureCall(request);
    *   // Do something
@@ -792,8 +770,32 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatFieldName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
-   *   Field response = firestoreAdminClient.getField(formattedName);
+   *   FieldName name = FieldName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
+   *   Field response = firestoreAdminClient.getField(name);
+   * }
+   * </code></pre>
+   *
+   * @param name A name of the form
+   *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Field getField(FieldName name) {
+
+    GetFieldRequest request =
+        GetFieldRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getField(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the metadata and configuration for a Field.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   FieldName name = FieldName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
+   *   Field response = firestoreAdminClient.getField(name.toString());
    * }
    * </code></pre>
    *
@@ -802,7 +804,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Field getField(String name) {
-    FIELD_PATH_TEMPLATE.validate(name, "getField");
+
     GetFieldRequest request = GetFieldRequest.newBuilder().setName(name).build();
     return getField(request);
   }
@@ -815,9 +817,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatFieldName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
+   *   FieldName name = FieldName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
    *   GetFieldRequest request = GetFieldRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Field response = firestoreAdminClient.getField(request);
    * }
@@ -838,9 +840,9 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedName = FirestoreAdminClient.formatFieldName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
+   *   FieldName name = FieldName.of("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]", "[FIELD_ID]");
    *   GetFieldRequest request = GetFieldRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Field&gt; future = firestoreAdminClient.getFieldCallable().futureCall(request);
    *   // Do something
@@ -865,7 +867,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   for (Field element : firestoreAdminClient.listFields(formattedParent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -877,7 +879,6 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFieldsPagedResponse listFields(String parent) {
-    PARENT_PATH_TEMPLATE.validate(parent, "listFields");
     ListFieldsRequest request = ListFieldsRequest.newBuilder().setParent(parent).build();
     return listFields(request);
   }
@@ -895,7 +896,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListFieldsRequest request = ListFieldsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -925,7 +926,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListFieldsRequest request = ListFieldsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -954,7 +955,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
-   *   String formattedParent = FirestoreAdminClient.formatParentName("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
+   *   String formattedParent = ParentName.format("[PROJECT]", "[DATABASE]", "[COLLECTION_ID]");
    *   ListFieldsRequest request = ListFieldsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();

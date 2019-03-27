@@ -8,7 +8,7 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * Input only.
- * Filter on status of Application.
+ * Filter on state of Application.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.ApplicationStatusFilter}
@@ -24,7 +24,7 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
   }
 
   private ApplicationStatusFilter() {
-    applicationStatus_ = 0;
+    applicationState_ = 0;
     negated_ = false;
   }
 
@@ -56,7 +56,7 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
             {
               int rawValue = input.readEnum();
 
-              applicationStatus_ = rawValue;
+              applicationState_ = rawValue;
               break;
             }
           case 16:
@@ -98,44 +98,43 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
             com.google.cloud.talent.v4beta1.ApplicationStatusFilter.Builder.class);
   }
 
-  public static final int APPLICATION_STATUS_FIELD_NUMBER = 1;
-  private int applicationStatus_;
+  public static final int APPLICATION_STATE_FIELD_NUMBER = 1;
+  private int applicationState_;
   /**
    *
    *
    * <pre>
    * Required.
-   * User entered or selected application status. The API does an exact match
-   * between the application status specified in this filter and the
-   * [JobApplication.status][] in profiles.
+   * User entered or selected application state. The API does an exact match
+   * between the application state specified in this filter and the
+   * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+   * profiles.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-   * </code>
+   * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
    */
-  public int getApplicationStatusValue() {
-    return applicationStatus_;
+  public int getApplicationStateValue() {
+    return applicationState_;
   }
   /**
    *
    *
    * <pre>
    * Required.
-   * User entered or selected application status. The API does an exact match
-   * between the application status specified in this filter and the
-   * [JobApplication.status][] in profiles.
+   * User entered or selected application state. The API does an exact match
+   * between the application state specified in this filter and the
+   * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+   * profiles.
    * </pre>
    *
-   * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-   * </code>
+   * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
    */
-  public com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus getApplicationStatus() {
+  public com.google.cloud.talent.v4beta1.Application.ApplicationState getApplicationState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus result =
-        com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus.valueOf(
-            applicationStatus_);
+    com.google.cloud.talent.v4beta1.Application.ApplicationState result =
+        com.google.cloud.talent.v4beta1.Application.ApplicationState.valueOf(applicationState_);
     return result == null
-        ? com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus.UNRECOGNIZED
+        ? com.google.cloud.talent.v4beta1.Application.ApplicationState.UNRECOGNIZED
         : result;
   }
 
@@ -146,8 +145,9 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
    *
    * <pre>
    * Optional.
-   * If true, The API excludes all candidates with any [JobApplication.status][]
-   * matching the status specified in the filter.
+   * If true, The API excludes all candidates with any
+   * [Application.state][google.cloud.talent.v4beta1.Application.state] matching
+   * the state specified in the filter.
    * </pre>
    *
    * <code>bool negated = 2;</code>
@@ -170,11 +170,11 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (applicationStatus_
-        != com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus
-            .APPLICATION_STATUS_UNSPECIFIED
+    if (applicationState_
+        != com.google.cloud.talent.v4beta1.Application.ApplicationState
+            .APPLICATION_STATE_UNSPECIFIED
             .getNumber()) {
-      output.writeEnum(1, applicationStatus_);
+      output.writeEnum(1, applicationState_);
     }
     if (negated_ != false) {
       output.writeBool(2, negated_);
@@ -188,11 +188,11 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (applicationStatus_
-        != com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus
-            .APPLICATION_STATUS_UNSPECIFIED
+    if (applicationState_
+        != com.google.cloud.talent.v4beta1.Application.ApplicationState
+            .APPLICATION_STATE_UNSPECIFIED
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, applicationStatus_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, applicationState_);
     }
     if (negated_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, negated_);
@@ -214,7 +214,7 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
         (com.google.cloud.talent.v4beta1.ApplicationStatusFilter) obj;
 
     boolean result = true;
-    result = result && applicationStatus_ == other.applicationStatus_;
+    result = result && applicationState_ == other.applicationState_;
     result = result && (getNegated() == other.getNegated());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -227,8 +227,8 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + APPLICATION_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + applicationStatus_;
+    hash = (37 * hash) + APPLICATION_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + applicationState_;
     hash = (37 * hash) + NEGATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNegated());
     hash = (29 * hash) + unknownFields.hashCode();
@@ -337,7 +337,7 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
    *
    * <pre>
    * Input only.
-   * Filter on status of Application.
+   * Filter on state of Application.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.ApplicationStatusFilter}
@@ -378,7 +378,7 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      applicationStatus_ = 0;
+      applicationState_ = 0;
 
       negated_ = false;
 
@@ -409,7 +409,7 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
     public com.google.cloud.talent.v4beta1.ApplicationStatusFilter buildPartial() {
       com.google.cloud.talent.v4beta1.ApplicationStatusFilter result =
           new com.google.cloud.talent.v4beta1.ApplicationStatusFilter(this);
-      result.applicationStatus_ = applicationStatus_;
+      result.applicationState_ = applicationState_;
       result.negated_ = negated_;
       onBuilt();
       return result;
@@ -461,8 +461,8 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.talent.v4beta1.ApplicationStatusFilter other) {
       if (other == com.google.cloud.talent.v4beta1.ApplicationStatusFilter.getDefaultInstance())
         return this;
-      if (other.applicationStatus_ != 0) {
-        setApplicationStatusValue(other.getApplicationStatusValue());
+      if (other.applicationState_ != 0) {
+        setApplicationStateValue(other.getApplicationStateValue());
       }
       if (other.getNegated() != false) {
         setNegated(other.getNegated());
@@ -497,38 +497,38 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
       return this;
     }
 
-    private int applicationStatus_ = 0;
+    private int applicationState_ = 0;
     /**
      *
      *
      * <pre>
      * Required.
-     * User entered or selected application status. The API does an exact match
-     * between the application status specified in this filter and the
-     * [JobApplication.status][] in profiles.
+     * User entered or selected application state. The API does an exact match
+     * between the application state specified in this filter and the
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+     * profiles.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-     * </code>
+     * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
      */
-    public int getApplicationStatusValue() {
-      return applicationStatus_;
+    public int getApplicationStateValue() {
+      return applicationState_;
     }
     /**
      *
      *
      * <pre>
      * Required.
-     * User entered or selected application status. The API does an exact match
-     * between the application status specified in this filter and the
-     * [JobApplication.status][] in profiles.
+     * User entered or selected application state. The API does an exact match
+     * between the application state specified in this filter and the
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+     * profiles.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-     * </code>
+     * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
      */
-    public Builder setApplicationStatusValue(int value) {
-      applicationStatus_ = value;
+    public Builder setApplicationStateValue(int value) {
+      applicationState_ = value;
       onChanged();
       return this;
     }
@@ -537,21 +537,20 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
      *
      * <pre>
      * Required.
-     * User entered or selected application status. The API does an exact match
-     * between the application status specified in this filter and the
-     * [JobApplication.status][] in profiles.
+     * User entered or selected application state. The API does an exact match
+     * between the application state specified in this filter and the
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+     * profiles.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-     * </code>
+     * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
      */
-    public com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus getApplicationStatus() {
+    public com.google.cloud.talent.v4beta1.Application.ApplicationState getApplicationState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus result =
-          com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus.valueOf(
-              applicationStatus_);
+      com.google.cloud.talent.v4beta1.Application.ApplicationState result =
+          com.google.cloud.talent.v4beta1.Application.ApplicationState.valueOf(applicationState_);
       return result == null
-          ? com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus.UNRECOGNIZED
+          ? com.google.cloud.talent.v4beta1.Application.ApplicationState.UNRECOGNIZED
           : result;
     }
     /**
@@ -559,21 +558,21 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
      *
      * <pre>
      * Required.
-     * User entered or selected application status. The API does an exact match
-     * between the application status specified in this filter and the
-     * [JobApplication.status][] in profiles.
+     * User entered or selected application state. The API does an exact match
+     * between the application state specified in this filter and the
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+     * profiles.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-     * </code>
+     * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
      */
-    public Builder setApplicationStatus(
-        com.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus value) {
+    public Builder setApplicationState(
+        com.google.cloud.talent.v4beta1.Application.ApplicationState value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      applicationStatus_ = value.getNumber();
+      applicationState_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -582,17 +581,17 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
      *
      * <pre>
      * Required.
-     * User entered or selected application status. The API does an exact match
-     * between the application status specified in this filter and the
-     * [JobApplication.status][] in profiles.
+     * User entered or selected application state. The API does an exact match
+     * between the application state specified in this filter and the
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] in
+     * profiles.
      * </pre>
      *
-     * <code>.google.cloud.talent.v4beta1.JobApplication.ApplicationStatus application_status = 1;
-     * </code>
+     * <code>.google.cloud.talent.v4beta1.Application.ApplicationState application_state = 1;</code>
      */
-    public Builder clearApplicationStatus() {
+    public Builder clearApplicationState() {
 
-      applicationStatus_ = 0;
+      applicationState_ = 0;
       onChanged();
       return this;
     }
@@ -603,8 +602,9 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional.
-     * If true, The API excludes all candidates with any [JobApplication.status][]
-     * matching the status specified in the filter.
+     * If true, The API excludes all candidates with any
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] matching
+     * the state specified in the filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -617,8 +617,9 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional.
-     * If true, The API excludes all candidates with any [JobApplication.status][]
-     * matching the status specified in the filter.
+     * If true, The API excludes all candidates with any
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] matching
+     * the state specified in the filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -634,8 +635,9 @@ public final class ApplicationStatusFilter extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional.
-     * If true, The API excludes all candidates with any [JobApplication.status][]
-     * matching the status specified in the filter.
+     * If true, The API excludes all candidates with any
+     * [Application.state][google.cloud.talent.v4beta1.Application.state] matching
+     * the state specified in the filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>

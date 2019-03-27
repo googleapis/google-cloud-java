@@ -568,7 +568,8 @@ public class ProfileServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified profile.
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
    *
    * <p>Sample code:
    *
@@ -594,7 +595,8 @@ public class ProfileServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified profile.
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
    *
    * <p>Sample code:
    *
@@ -619,7 +621,8 @@ public class ProfileServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified profile.
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
    *
    * <p>Sample code:
    *
@@ -642,7 +645,8 @@ public class ProfileServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the specified profile.
+   * Deletes the specified profile. Prerequisite: The profile has no associated applications or
+   * assignments associated.
    *
    * <p>Sample code:
    *

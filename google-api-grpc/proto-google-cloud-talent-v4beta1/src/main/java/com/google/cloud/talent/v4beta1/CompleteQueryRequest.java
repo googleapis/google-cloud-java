@@ -24,11 +24,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   private CompleteQueryRequest() {
-    name_ = "";
+    parent_ = "";
     query_ = "";
     languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     pageSize_ = 0;
-    companyName_ = "";
+    company_ = "";
     scope_ = 0;
     type_ = 0;
   }
@@ -61,7 +61,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              parent_ = s;
               break;
             }
           case 18:
@@ -90,7 +90,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              companyName_ = s;
+              company_ = s;
               break;
             }
           case 48:
@@ -465,28 +465,30 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   private int bitField0_;
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int PARENT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object parent_;
   /**
    *
    *
    * <pre>
    * Required.
-   * Resource name of project the completion is performed within.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * Resource name of tenant the completion is performed within.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string parent = 1;</code>
    */
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      parent_ = s;
       return s;
     }
   }
@@ -495,19 +497,21 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required.
-   * Resource name of project the completion is performed within.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * Resource name of tenant the completion is performed within.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getParentBytes() {
+    java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      parent_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -717,28 +721,31 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     return pageSize_;
   }
 
-  public static final int COMPANY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object companyName_;
+  public static final int COMPANY_FIELD_NUMBER = 5;
+  private volatile java.lang.Object company_;
   /**
    *
    *
    * <pre>
    * Optional.
    * If provided, restricts completion to specified company.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
-   * <code>string company_name = 5;</code>
+   * <code>string company = 5;</code>
    */
-  public java.lang.String getCompanyName() {
-    java.lang.Object ref = companyName_;
+  public java.lang.String getCompany() {
+    java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      companyName_ = s;
+      company_ = s;
       return s;
     }
   }
@@ -748,18 +755,21 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional.
    * If provided, restricts completion to specified company.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * </pre>
    *
-   * <code>string company_name = 5;</code>
+   * <code>string company = 5;</code>
    */
-  public com.google.protobuf.ByteString getCompanyNameBytes() {
-    java.lang.Object ref = companyName_;
+  public com.google.protobuf.ByteString getCompanyBytes() {
+    java.lang.Object ref = company_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      companyName_ = b;
+      company_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -852,8 +862,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     if (!getQueryBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, query_);
@@ -864,8 +874,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (pageSize_ != 0) {
       output.writeInt32(4, pageSize_);
     }
-    if (!getCompanyNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, companyName_);
+    if (!getCompanyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, company_);
     }
     if (scope_
         != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope
@@ -888,8 +898,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (!getQueryBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, query_);
@@ -905,8 +915,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, pageSize_);
     }
-    if (!getCompanyNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, companyName_);
+    if (!getCompanyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, company_);
     }
     if (scope_
         != com.google.cloud.talent.v4beta1.CompleteQueryRequest.CompletionScope
@@ -937,11 +947,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         (com.google.cloud.talent.v4beta1.CompleteQueryRequest) obj;
 
     boolean result = true;
-    result = result && getName().equals(other.getName());
+    result = result && getParent().equals(other.getParent());
     result = result && getQuery().equals(other.getQuery());
     result = result && getLanguageCodesList().equals(other.getLanguageCodesList());
     result = result && (getPageSize() == other.getPageSize());
-    result = result && getCompanyName().equals(other.getCompanyName());
+    result = result && getCompany().equals(other.getCompany());
     result = result && scope_ == other.scope_;
     result = result && type_ == other.type_;
     result = result && unknownFields.equals(other.unknownFields);
@@ -955,8 +965,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getQuery().hashCode();
     if (getLanguageCodesCount() > 0) {
@@ -965,8 +975,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + COMPANY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getCompanyName().hashCode();
+    hash = (37 * hash) + COMPANY_FIELD_NUMBER;
+    hash = (53 * hash) + getCompany().hashCode();
     hash = (37 * hash) + SCOPE_FIELD_NUMBER;
     hash = (53 * hash) + scope_;
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -1117,7 +1127,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      parent_ = "";
 
       query_ = "";
 
@@ -1125,7 +1135,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
 
-      companyName_ = "";
+      company_ = "";
 
       scope_ = 0;
 
@@ -1160,7 +1170,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
           new com.google.cloud.talent.v4beta1.CompleteQueryRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      result.name_ = name_;
+      result.parent_ = parent_;
       result.query_ = query_;
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         languageCodes_ = languageCodes_.getUnmodifiableView();
@@ -1168,7 +1178,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       result.languageCodes_ = languageCodes_;
       result.pageSize_ = pageSize_;
-      result.companyName_ = companyName_;
+      result.company_ = company_;
       result.scope_ = scope_;
       result.type_ = type_;
       result.bitField0_ = to_bitField0_;
@@ -1222,8 +1232,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.talent.v4beta1.CompleteQueryRequest other) {
       if (other == com.google.cloud.talent.v4beta1.CompleteQueryRequest.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
@@ -1243,8 +1253,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
-      if (!other.getCompanyName().isEmpty()) {
-        companyName_ = other.companyName_;
+      if (!other.getCompany().isEmpty()) {
+        company_ = other.company_;
         onChanged();
       }
       if (other.scope_ != 0) {
@@ -1285,25 +1295,27 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
      * Required.
-     * Resource name of project the completion is performed within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * Resource name of tenant the completion is performed within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string parent = 1;</code>
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        parent_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1314,19 +1326,21 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required.
-     * Resource name of project the completion is performed within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * Resource name of tenant the completion is performed within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getParentBytes() {
+      java.lang.Object ref = parent_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        parent_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1337,19 +1351,21 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required.
-     * Resource name of project the completion is performed within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * Resource name of tenant the completion is performed within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string parent = 1;</code>
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      name_ = value;
+      parent_ = value;
       onChanged();
       return this;
     }
@@ -1358,16 +1374,18 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required.
-     * Resource name of project the completion is performed within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * Resource name of tenant the completion is performed within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string parent = 1;</code>
      */
-    public Builder clearName() {
+    public Builder clearParent() {
 
-      name_ = getDefaultInstance().getName();
+      parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
@@ -1376,20 +1394,22 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required.
-     * Resource name of project the completion is performed within.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * Resource name of tenant the completion is performed within.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string parent = 1;</code>
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      name_ = value;
+      parent_ = value;
       onChanged();
       return this;
     }
@@ -1889,25 +1909,28 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private java.lang.Object companyName_ = "";
+    private java.lang.Object company_ = "";
     /**
      *
      *
      * <pre>
      * Optional.
      * If provided, restricts completion to specified company.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
-     * <code>string company_name = 5;</code>
+     * <code>string company = 5;</code>
      */
-    public java.lang.String getCompanyName() {
-      java.lang.Object ref = companyName_;
+    public java.lang.String getCompany() {
+      java.lang.Object ref = company_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        companyName_ = s;
+        company_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1919,18 +1942,21 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional.
      * If provided, restricts completion to specified company.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
-     * <code>string company_name = 5;</code>
+     * <code>string company = 5;</code>
      */
-    public com.google.protobuf.ByteString getCompanyNameBytes() {
-      java.lang.Object ref = companyName_;
+    public com.google.protobuf.ByteString getCompanyBytes() {
+      java.lang.Object ref = company_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        companyName_ = b;
+        company_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1942,18 +1968,21 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional.
      * If provided, restricts completion to specified company.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
-     * <code>string company_name = 5;</code>
+     * <code>string company = 5;</code>
      */
-    public Builder setCompanyName(java.lang.String value) {
+    public Builder setCompany(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      companyName_ = value;
+      company_ = value;
       onChanged();
       return this;
     }
@@ -1963,15 +1992,18 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional.
      * If provided, restricts completion to specified company.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
-     * <code>string company_name = 5;</code>
+     * <code>string company = 5;</code>
      */
-    public Builder clearCompanyName() {
+    public Builder clearCompany() {
 
-      companyName_ = getDefaultInstance().getCompanyName();
+      company_ = getDefaultInstance().getCompany();
       onChanged();
       return this;
     }
@@ -1981,19 +2013,22 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional.
      * If provided, restricts completion to specified company.
-     * The format is "projects/{project_id}/companies/{company_id}", for example,
-     * "projects/api-test-project/companies/foo".
+     * The format is
+     * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+     * example, "projects/api-test-project/tenants/foo/companies/bar".
+     * Tenant id is optional and the default tenant is used if unspecified, for
+     * example, "projects/api-test-project/companies/bar".
      * </pre>
      *
-     * <code>string company_name = 5;</code>
+     * <code>string company = 5;</code>
      */
-    public Builder setCompanyNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setCompanyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      companyName_ = value;
+      company_ = value;
       onChanged();
       return this;
     }

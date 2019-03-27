@@ -28,12 +28,12 @@ import org.junit.BeforeClass;
 
 @javax.annotation.Generated("by GAPIC")
 public class CompletionClientTest {
+  private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
   private static MockCompletion mockCompletion;
   private static MockEventService mockEventService;
   private static MockJobService mockJobService;
   private static MockProfileService mockProfileService;
-  private static MockResumeService mockResumeService;
   private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private CompletionClient client;
@@ -41,23 +41,23 @@ public class CompletionClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
     mockCompletion = new MockCompletion();
     mockEventService = new MockEventService();
     mockJobService = new MockJobService();
     mockProfileService = new MockProfileService();
-    mockResumeService = new MockResumeService();
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             "in-process-1",
             Arrays.<MockGrpcService>asList(
+                mockApplicationService,
                 mockCompanyService,
                 mockCompletion,
                 mockEventService,
                 mockJobService,
                 mockProfileService,
-                mockResumeService,
                 mockTenantService));
     serviceHelper.start();
   }
