@@ -112,27 +112,34 @@ final class SessionPool {
 
         @Override
         public boolean next() throws SpannerException {
-          while (true) {
-            try {
-              boolean ret = super.next();
-              if (beforeFirst) {
-                session.markUsed();
-                beforeFirst = false;
-              }
-              if (!ret && isSingleUse) {
-                close();
-              }
-              return ret;
-            } catch (SessionNotFoundException e) {
-              recreateSessionIfPossible(e);
-              replaceDelegate(resultSetSupplier.get());
-            } catch (SpannerException e) {
-              if (!closed && isSingleUse) {
-                session.lastException = e;
-                AutoClosingReadContext.this.close();
-              }
-              throw e;
+          try {
+            return internalNext();
+          } catch (SessionNotFoundException e) {
+            recreateSessionIfPossible(e);
+            replaceDelegate(resultSetSupplier.get());
+            return internalNext();
+          }
+        }
+
+        private boolean internalNext() {
+          try {
+            boolean ret = super.next();
+            if (beforeFirst) {
+              session.markUsed();
+              beforeFirst = false;
             }
+            if (!ret && isSingleUse) {
+              close();
+            }
+            return ret;
+          } catch (SessionNotFoundException e) {
+            throw e;
+          } catch (SpannerException e) {
+            if (!closed && isSingleUse) {
+              session.lastException = e;
+              AutoClosingReadContext.this.close();
+            }
+            throw e;
           }
         }
 
@@ -268,16 +275,19 @@ final class SessionPool {
 
     @Override
     public TransactionContext begin() {
-      while (true) {
-        try {
-          TransactionContext res = delegate.begin();
-          session.markUsed();
-          return res;
-        } catch (SessionNotFoundException e) {
-          session.maybeRecreateUnderlyingSession(e);
-          delegate = session.delegate.transactionManager();
-        }
+      try {
+        return internalBegin();
+      } catch (SessionNotFoundException e) {
+        session.maybeRecreateUnderlyingSession(e);
+        delegate = session.delegate.transactionManager();
+        return internalBegin();
       }
+    }
+
+    private TransactionContext internalBegin() {
+      TransactionContext res = delegate.begin();
+      session.markUsed();
+      return res;
     }
 
     @Override
@@ -459,70 +469,56 @@ final class SessionPool {
 
     @Override
     public ReadOnlyTransaction singleUseReadOnlyTransaction() {
-      try {
-        return new AutoClosingReadTransaction(
-            new Supplier<ReadOnlyTransaction>() {
-              @Override
-              public ReadOnlyTransaction get() {
-                return delegate.singleUseReadOnlyTransaction();
-              }
-            },
-            this,
-            true);
-      } catch (Exception e) {
-        close();
-        throw e;
-      }
+      return internalReadOnlyTransaction(
+          new Supplier<ReadOnlyTransaction>() {
+            @Override
+            public ReadOnlyTransaction get() {
+              return delegate.singleUseReadOnlyTransaction();
+            }
+          },
+          true);
     }
 
     @Override
     public ReadOnlyTransaction singleUseReadOnlyTransaction(final TimestampBound bound) {
-      try {
-        return new AutoClosingReadTransaction(
-            new Supplier<ReadOnlyTransaction>() {
-              @Override
-              public ReadOnlyTransaction get() {
-                return delegate.singleUseReadOnlyTransaction(bound);
-              }
-            },
-            this,
-            true);
-      } catch (Exception e) {
-        close();
-        throw e;
-      }
+      return internalReadOnlyTransaction(
+          new Supplier<ReadOnlyTransaction>() {
+            @Override
+            public ReadOnlyTransaction get() {
+              return delegate.singleUseReadOnlyTransaction(bound);
+            }
+          },
+          true);
     }
 
     @Override
     public ReadOnlyTransaction readOnlyTransaction() {
-      try {
-        return new AutoClosingReadTransaction(
-            new Supplier<ReadOnlyTransaction>() {
-              @Override
-              public ReadOnlyTransaction get() {
-                return delegate.readOnlyTransaction();
-              }
-            },
-            this,
-            false);
-      } catch (Exception e) {
-        close();
-        throw e;
-      }
+      return internalReadOnlyTransaction(
+          new Supplier<ReadOnlyTransaction>() {
+            @Override
+            public ReadOnlyTransaction get() {
+              return delegate.readOnlyTransaction();
+            }
+          },
+          false);
     }
 
     @Override
     public ReadOnlyTransaction readOnlyTransaction(final TimestampBound bound) {
+      return internalReadOnlyTransaction(
+          new Supplier<ReadOnlyTransaction>() {
+            @Override
+            public ReadOnlyTransaction get() {
+              return delegate.readOnlyTransaction(bound);
+            }
+          },
+          false);
+    }
+
+    private ReadOnlyTransaction internalReadOnlyTransaction(
+        Supplier<ReadOnlyTransaction> transactionSupplier, boolean isSingleUse) {
       try {
-        return new AutoClosingReadTransaction(
-            new Supplier<ReadOnlyTransaction>() {
-              @Override
-              public ReadOnlyTransaction get() {
-                return delegate.readOnlyTransaction(bound);
-              }
-            },
-            this,
-            false);
+        return new AutoClosingReadTransaction(transactionSupplier, this, isSingleUse);
       } catch (Exception e) {
         close();
         throw e;
