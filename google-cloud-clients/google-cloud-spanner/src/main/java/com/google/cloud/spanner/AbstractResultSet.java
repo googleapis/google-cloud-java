@@ -44,6 +44,8 @@ import io.grpc.Context;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
 import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -55,10 +57,13 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 /** Implementation of {@link ResultSet}. */
 abstract class AbstractResultSet<R> extends AbstractStructReader implements ResultSet {
+  private static final Tracer tracer = Tracing.getTracer();
+
   interface Listener {
     /**
      * Called when transaction metadata is seen. This method may be invoked at most once. If the
@@ -320,8 +325,8 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
   }
 
   static class GrpcStruct extends Struct implements Serializable {
-    protected final Type type;
-    protected final List<Object> rowData;
+    private final Type type;
+    private final List<Object> rowData;
 
     /**
      * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used as
@@ -815,6 +820,7 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
   @VisibleForTesting
   abstract static class ResumableStreamIterator extends AbstractIterator<PartialResultSet>
       implements CloseableIterator<PartialResultSet> {
+    private static final Logger logger = Logger.getLogger(ResumableStreamIterator.class.getName());
     private final BackOff backOff = SpannerImpl.newBackOff();
     private final LinkedList<PartialResultSet> buffer = new LinkedList<>();
     private final int maxBufferSize;
@@ -832,7 +838,7 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
     protected ResumableStreamIterator(int maxBufferSize, String streamName, Span parent) {
       checkArgument(maxBufferSize >= 0);
       this.maxBufferSize = maxBufferSize;
-      this.span = SpannerImpl.tracer.spanBuilderWithExplicitParent(streamName, parent).startSpan();
+      this.span = tracer.spanBuilderWithExplicitParent(streamName, parent).startSpan();
     }
 
     abstract CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken);
@@ -856,7 +862,7 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
                   "ResumeToken",
                   AttributeValue.stringAttributeValue(
                       resumeToken == null ? "null" : resumeToken.toStringUtf8())));
-          try (Scope s = SpannerImpl.tracer.withSpan(span)) {
+          try (Scope s = tracer.withSpan(span)) {
             // When start a new stream set the Span as current to make the gRPC Span a child of
             // this Span.
             stream = checkNotNull(startStream(resumeToken));
@@ -898,14 +904,14 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
           if (safeToRetry && e.isRetryable()) {
             span.addAnnotation(
                 "Stream broken. Safe to retry", TraceUtil.getExceptionAnnotations(e));
-            SpannerImpl.logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
+            logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
             // Truncate any items in the buffer before the last retry token.
             while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
               buffer.removeLast();
             }
             assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
             stream = null;
-            try (Scope s = SpannerImpl.tracer.withSpan(span)) {
+            try (Scope s = tracer.withSpan(span)) {
               long delay = e.getRetryDelayInMillis();
               if (delay != -1) {
                 SpannerImpl.backoffSleep(context, delay);

@@ -43,7 +43,7 @@ class PartitionedDMLTransaction implements SessionTransaction {
     this.transactionId = initTransaction();
   }
 
-  ByteString initTransaction() {
+  private ByteString initTransaction() {
     final BeginTransactionRequest request =
         BeginTransactionRequest.newBuilder()
             .setSession(session.getName())
@@ -67,7 +67,7 @@ class PartitionedDMLTransaction implements SessionTransaction {
     return txn.getId();
   }
 
-  public long executePartitionedUpdate(Statement statement) {
+  long executePartitionedUpdate(Statement statement) {
     checkState(isValid, "Partitioned DML has been invalidated by a new operation on the session");
     final ExecuteSqlRequest.Builder builder =
         ExecuteSqlRequest.newBuilder()

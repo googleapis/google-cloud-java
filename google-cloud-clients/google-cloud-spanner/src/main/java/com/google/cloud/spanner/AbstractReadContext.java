@@ -262,8 +262,8 @@ abstract class AbstractReadContext
   final Object lock = new Object();
   final SessionImpl session;
   final SpannerRpc rpc;
-  final int defaultPrefetchChunks;
   final Span span;
+  private final int defaultPrefetchChunks;
 
   @GuardedBy("lock")
   private boolean isValid = true;

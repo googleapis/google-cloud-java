@@ -22,6 +22,7 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.longrunning.OperationFutureImpl;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.paging.Page;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.SpannerImpl.PageFetcher;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
@@ -34,9 +35,10 @@ import java.util.concurrent.Callable;
 
 /** Default implementation of {@link InstanceAdminClient} */
 class InstanceAdminClientImpl implements InstanceAdminClient {
-  final DatabaseAdminClient dbClient;
-  final String projectId;
-  final SpannerRpc rpc;
+  private static final PathTemplate PROJECT_NAME_TEMPLATE = PathTemplate.create("projects/{project}");
+  private final DatabaseAdminClient dbClient;
+  private final String projectId;
+  private final SpannerRpc rpc;
 
   InstanceAdminClientImpl(String projectId, SpannerRpc rpc, DatabaseAdminClient dbClient) {
     this.projectId = projectId;
@@ -86,7 +88,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
   @Override
   public OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
       throws SpannerException {
-    String projectName = SpannerImpl.PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
+    String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
         rawOperationFuture =
             rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());

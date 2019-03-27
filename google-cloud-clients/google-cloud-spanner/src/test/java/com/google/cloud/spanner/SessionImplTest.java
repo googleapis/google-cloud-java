@@ -69,7 +69,8 @@ public class SessionImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    SpannerImpl spanner = new SpannerImpl(rpc, 1, spannerOptions);
+    Mockito.when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
     String dbName = "projects/p1/instances/i1/databases/d1";
     String sessionName = dbName + "/sessions/s1";
     DatabaseId db = DatabaseId.of(dbName);

@@ -20,9 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
-
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import static org.mockito.Mockito.when;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -36,6 +34,8 @@ import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 
 /** Unit tests for {@link SpannerImpl}. */
 @RunWith(JUnit4.class)
@@ -49,7 +49,8 @@ public class SpannerImplTest {
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    impl = new SpannerImpl(rpc, 1, spannerOptions);
+    when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    impl = new SpannerImpl(rpc, spannerOptions);
   }
 
   @Test
@@ -99,7 +100,7 @@ public class SpannerImplTest {
 
   @Test
   public void getDbclientAfterCloseThrows() {
-    SpannerImpl imp = new SpannerImpl(rpc, 1, spannerOptions);
+    SpannerImpl imp = new SpannerImpl(rpc, spannerOptions);
     Map<String, String> labels = new HashMap<>();
     labels.put("env", "dev");
     Mockito.when(spannerOptions.getSessionLabels()).thenReturn(labels);

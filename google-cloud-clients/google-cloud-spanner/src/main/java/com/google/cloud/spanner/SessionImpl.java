@@ -34,6 +34,8 @@ import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -46,6 +48,8 @@ import javax.annotation.Nullable;
  * users need not be aware of the actual session management, pooling and handling.
  */
 class SessionImpl implements Session {
+  private static final Tracer tracer = Tracing.getTracer();
+
   /** Keep track of running transactions on this session per thread. */
   static final ThreadLocal<Boolean> hasPendingTransaction =
       new ThreadLocal<Boolean>() {
@@ -72,14 +76,16 @@ class SessionImpl implements Session {
     void invalidate();
   }
 
-  private final SpannerImpl spanner;
+  private final SpannerRpc gapicRpc;
+  private final int defaultPrefetchChunks;
   private final String name;
   private SessionTransaction activeTransaction;
   private ByteString readyTransactionId;
   private final Map<SpannerRpc.Option, ?> options;
 
-  SessionImpl(SpannerImpl spannerImpl, String name, Map<SpannerRpc.Option, ?> options) {
-    spanner = spannerImpl;
+  SessionImpl(SpannerRpc gapicRpc, int defaultPrefetchChunks, String name, Map<SpannerRpc.Option, ?> options) {
+    this.gapicRpc = gapicRpc;
+    this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.options = options;
     this.name = checkNotNull(name);
   }
@@ -96,7 +102,7 @@ class SessionImpl implements Session {
   @Override
   public long executePartitionedUpdate(Statement stmt) {
     setActive(null);
-    PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, spanner.gapicRpc);
+    PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, gapicRpc);
     return txn.executePartitionedUpdate(stmt);
   }
 
@@ -131,14 +137,14 @@ class SessionImpl implements Session {
                 TransactionOptions.newBuilder()
                     .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
             .build();
-    Span span = SpannerImpl.tracer.spanBuilder(SpannerImpl.COMMIT).startSpan();
-    try (Scope s = SpannerImpl.tracer.withSpan(span)) {
+    Span span = tracer.spanBuilder(SpannerImpl.COMMIT).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       CommitResponse response =
           SpannerImpl.runWithRetries(
               new Callable<CommitResponse>() {
                 @Override
                 public CommitResponse call() throws Exception {
-                  return SessionImpl.this.spanner.gapicRpc.commit(request, options);
+                  return SessionImpl.this.gapicRpc.commit(request, options);
                 }
               });
       Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
@@ -161,7 +167,7 @@ class SessionImpl implements Session {
   @Override
   public ReadContext singleUse(TimestampBound bound) {
     return setActive(
-        new SingleReadContext(this, bound, spanner.gapicRpc, spanner.defaultPrefetchChunks));
+        new SingleReadContext(this, bound, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
@@ -173,7 +179,7 @@ class SessionImpl implements Session {
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
     return setActive(
         new SingleUseReadOnlyTransaction(
-            this, bound, spanner.gapicRpc, spanner.defaultPrefetchChunks));
+            this, bound, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
@@ -185,13 +191,13 @@ class SessionImpl implements Session {
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
     return setActive(
         new MultiUseReadOnlyTransaction(
-            this, bound, spanner.gapicRpc, spanner.defaultPrefetchChunks));
+            this, bound, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
   public TransactionRunner readWriteTransaction() {
     return setActive(
-        new TransactionRunnerImpl(this, spanner.gapicRpc, spanner.defaultPrefetchChunks));
+        new TransactionRunnerImpl(this, gapicRpc, defaultPrefetchChunks));
   }
 
   @Override
@@ -202,13 +208,13 @@ class SessionImpl implements Session {
 
   @Override
   public void close() {
-    Span span = SpannerImpl.tracer.spanBuilder(SpannerImpl.DELETE_SESSION).startSpan();
-    try (Scope s = SpannerImpl.tracer.withSpan(span)) {
+    Span span = tracer.spanBuilder(SpannerImpl.DELETE_SESSION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       SpannerImpl.runWithRetries(
           new Callable<Void>() {
             @Override
             public Void call() throws Exception {
-              SessionImpl.this.spanner.gapicRpc.deleteSession(name, options);
+              SessionImpl.this.gapicRpc.deleteSession(name, options);
               return null;
             }
           });
@@ -220,8 +226,8 @@ class SessionImpl implements Session {
   }
 
   ByteString beginTransaction() {
-    Span span = SpannerImpl.tracer.spanBuilder(SpannerImpl.BEGIN_TRANSACTION).startSpan();
-    try (Scope s = SpannerImpl.tracer.withSpan(span)) {
+    Span span = tracer.spanBuilder(SpannerImpl.BEGIN_TRANSACTION).startSpan();
+    try (Scope s = tracer.withSpan(span)) {
       final BeginTransactionRequest request =
           BeginTransactionRequest.newBuilder()
               .setSession(name)
@@ -234,7 +240,7 @@ class SessionImpl implements Session {
               new Callable<Transaction>() {
                 @Override
                 public Transaction call() throws Exception {
-                  return SessionImpl.this.spanner.gapicRpc.beginTransaction(request, options);
+                  return SessionImpl.this.gapicRpc.beginTransaction(request, options);
                 }
               });
       if (txn.getId().isEmpty()) {
@@ -251,7 +257,7 @@ class SessionImpl implements Session {
   TransactionContextImpl newTransaction() {
     TransactionContextImpl txn =
         new TransactionContextImpl(
-            this, readyTransactionId, spanner.gapicRpc, spanner.defaultPrefetchChunks);
+            this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
     return txn;
   }
 

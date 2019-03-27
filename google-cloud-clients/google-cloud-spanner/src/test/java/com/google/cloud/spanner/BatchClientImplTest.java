@@ -59,7 +59,8 @@ public final class BatchClientImplTest {
   public void setUp() {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
-    SpannerImpl spanner = new SpannerImpl(gapicRpc, 1, spannerOptions);
+    when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);
     client = new BatchClientImpl(db, spanner);
   }
 
@@ -67,7 +68,7 @@ public final class BatchClientImplTest {
   public void testBatchReadOnlyTxnWithBound() throws Exception {
     Session sessionProto = Session.newBuilder().setName(SESSION_NAME).build();
     when(gapicRpc.createSession(
-            eq(DB_NAME), (Map<String, String>) anyMap(), optionsCaptor.capture()))
+            eq(DB_NAME), anyMap(), optionsCaptor.capture()))
         .thenReturn(sessionProto);
     com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
     Transaction txnMetadata =

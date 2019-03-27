@@ -20,28 +20,6 @@ import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExcepti
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerExceptionForCancellation;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-import com.google.api.client.util.BackOff;
-import com.google.api.client.util.ExponentialBackOff;
-import com.google.api.gax.paging.Page;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.cloud.BaseService;
-import com.google.cloud.PageImpl;
-import com.google.cloud.PageImpl.NextPageFetcher;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Throwables;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Maps;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-import io.grpc.Context;
-import io.opencensus.common.Scope;
-import io.opencensus.trace.AttributeValue;
-import io.opencensus.trace.Span;
-import io.opencensus.trace.Tracer;
-import io.opencensus.trace.Tracing;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,17 +36,37 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
+import com.google.api.client.util.BackOff;
+import com.google.api.client.util.ExponentialBackOff;
+import com.google.api.gax.paging.Page;
+import com.google.cloud.BaseService;
+import com.google.cloud.PageImpl;
+import com.google.cloud.PageImpl.NextPageFetcher;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Throwables;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+import io.grpc.Context;
+import io.opencensus.common.Scope;
+import io.opencensus.trace.AttributeValue;
+import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
+import io.opencensus.trace.Tracing;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final int MIN_BACKOFF_MS = 1000;
   private static final int MAX_BACKOFF_MS = 32000;
-  static final PathTemplate PROJECT_NAME_TEMPLATE = PathTemplate.create("projects/{project}");
 
-  static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
-  static final Tracer tracer = Tracing.getTracer();
+  private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
+  private static final Tracer tracer = Tracing.getTracer();
 
-  private static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
+  static final String CREATE_SESSION = "CloudSpannerOperation.CreateSession";
   static final String DELETE_SESSION = "CloudSpannerOperation.DeleteSession";
   static final String BEGIN_TRANSACTION = "CloudSpannerOperation.BeginTransaction";
   static final String COMMIT = "CloudSpannerOperation.Commit";
@@ -80,8 +78,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private final Random random = new Random();
-  final SpannerRpc gapicRpc;
-  final int defaultPrefetchChunks;
+  private final SpannerRpc gapicRpc;
 
   @GuardedBy("this")
   private final Map<DatabaseId, DatabaseClientImpl> dbClients = new HashMap<>();
@@ -92,17 +89,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
 
-  SpannerImpl(SpannerRpc gapicRpc, int defaultPrefetchChunks, SpannerOptions options) {
+  @VisibleForTesting
+  SpannerImpl(SpannerRpc gapicRpc, SpannerOptions options) {
     super(options);
     this.gapicRpc = gapicRpc;
-    this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
     this.instanceClient =
         new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
+    this(options.getSpannerRpcV1(), options);
   }
 
   static ExponentialBackOff newBackOff() {
@@ -211,7 +208,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 }
               });
       span.end();
-      return new SessionImpl(this, session.getName(), options);
+      return new SessionImpl(gapicRpc, getOptions().getPrefetchChunks(), session.getName(), options);
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
       throw e;
@@ -222,7 +219,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   SessionImpl sessionWithId(String name) {
     final Map<SpannerRpc.Option, ?> options =
         SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
-    return new SessionImpl(this, name, options);
+    return new SessionImpl(gapicRpc, getOptions().getPrefetchChunks(), name, options);
   }
 
   @Override

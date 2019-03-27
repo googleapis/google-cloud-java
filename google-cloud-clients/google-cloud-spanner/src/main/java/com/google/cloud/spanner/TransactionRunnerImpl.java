@@ -39,6 +39,7 @@ import io.grpc.Context;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
+import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +49,10 @@ import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
-@VisibleForTesting
+/** Default implementation of {@link TransactionRunner}. */
 class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
-  static final Logger txnLogger = Logger.getLogger(TransactionRunner.class.getName());
+  private static final Tracer tracer = Tracing.getTracer();
+  private static final Logger txnLogger = Logger.getLogger(TransactionRunner.class.getName());
 
   @VisibleForTesting
   static class TransactionContextImpl extends AbstractReadContext implements TransactionContext {
@@ -120,8 +122,8 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       }
       final CommitRequest commitRequest = builder.build();
       Span opSpan =
-          SpannerImpl.tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
-      try (Scope s = SpannerImpl.tracer.withSpan(opSpan)) {
+          tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
+      try (Scope s = tracer.withSpan(opSpan)) {
         CommitResponse commitResponse =
             SpannerImpl.runWithRetries(
                 new Callable<CommitResponse>() {
@@ -318,7 +320,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
   @Nullable
   @Override
   public <T> T run(TransactionCallable<T> callable) {
-    try (Scope s = SpannerImpl.tracer.withSpan(span)) {
+    try (Scope s = tracer.withSpan(span)) {
       if (blockNestedTxn) {
         SessionImpl.hasPendingTransaction.set(Boolean.TRUE);
       }
