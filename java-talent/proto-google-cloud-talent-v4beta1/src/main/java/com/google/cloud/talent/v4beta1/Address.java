@@ -82,14 +82,14 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           case 34:
             {
               com.google.protobuf.BoolValue.Builder subBuilder = null;
-              if (isCurrent_ != null) {
-                subBuilder = isCurrent_.toBuilder();
+              if (current_ != null) {
+                subBuilder = current_.toBuilder();
               }
-              isCurrent_ =
+              current_ =
                   input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(isCurrent_);
-                isCurrent_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(current_);
+                current_ = subBuilder.buildPartial();
               }
 
               break;
@@ -310,8 +310,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     return com.google.type.PostalAddress.getDefaultInstance();
   }
 
-  public static final int IS_CURRENT_FIELD_NUMBER = 4;
-  private com.google.protobuf.BoolValue isCurrent_;
+  public static final int CURRENT_FIELD_NUMBER = 4;
+  private com.google.protobuf.BoolValue current_;
   /**
    *
    *
@@ -320,10 +320,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Indicates if it's the person's current address.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_current = 4;</code>
+   * <code>.google.protobuf.BoolValue current = 4;</code>
    */
-  public boolean hasIsCurrent() {
-    return isCurrent_ != null;
+  public boolean hasCurrent() {
+    return current_ != null;
   }
   /**
    *
@@ -333,10 +333,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Indicates if it's the person's current address.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_current = 4;</code>
+   * <code>.google.protobuf.BoolValue current = 4;</code>
    */
-  public com.google.protobuf.BoolValue getIsCurrent() {
-    return isCurrent_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCurrent_;
+  public com.google.protobuf.BoolValue getCurrent() {
+    return current_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : current_;
   }
   /**
    *
@@ -346,10 +346,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * Indicates if it's the person's current address.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_current = 4;</code>
+   * <code>.google.protobuf.BoolValue current = 4;</code>
    */
-  public com.google.protobuf.BoolValueOrBuilder getIsCurrentOrBuilder() {
-    return getIsCurrent();
+  public com.google.protobuf.BoolValueOrBuilder getCurrentOrBuilder() {
+    return getCurrent();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,8 +377,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (addressCase_ == 3) {
       output.writeMessage(3, (com.google.type.PostalAddress) address_);
     }
-    if (isCurrent_ != null) {
-      output.writeMessage(4, getIsCurrent());
+    if (current_ != null) {
+      output.writeMessage(4, getCurrent());
     }
     unknownFields.writeTo(output);
   }
@@ -402,8 +402,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.type.PostalAddress) address_);
     }
-    if (isCurrent_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getIsCurrent());
+    if (current_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCurrent());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -422,9 +422,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
 
     boolean result = true;
     result = result && usage_ == other.usage_;
-    result = result && (hasIsCurrent() == other.hasIsCurrent());
-    if (hasIsCurrent()) {
-      result = result && getIsCurrent().equals(other.getIsCurrent());
+    result = result && (hasCurrent() == other.hasCurrent());
+    if (hasCurrent()) {
+      result = result && getCurrent().equals(other.getCurrent());
     }
     result = result && getAddressCase().equals(other.getAddressCase());
     if (!result) return false;
@@ -451,9 +451,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + USAGE_FIELD_NUMBER;
     hash = (53 * hash) + usage_;
-    if (hasIsCurrent()) {
-      hash = (37 * hash) + IS_CURRENT_FIELD_NUMBER;
-      hash = (53 * hash) + getIsCurrent().hashCode();
+    if (hasCurrent()) {
+      hash = (37 * hash) + CURRENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrent().hashCode();
     }
     switch (addressCase_) {
       case 2:
@@ -614,11 +614,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       usage_ = 0;
 
-      if (isCurrentBuilder_ == null) {
-        isCurrent_ = null;
+      if (currentBuilder_ == null) {
+        current_ = null;
       } else {
-        isCurrent_ = null;
-        isCurrentBuilder_ = null;
+        current_ = null;
+        currentBuilder_ = null;
       }
       addressCase_ = 0;
       address_ = null;
@@ -660,10 +660,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           result.address_ = structuredAddressBuilder_.build();
         }
       }
-      if (isCurrentBuilder_ == null) {
-        result.isCurrent_ = isCurrent_;
+      if (currentBuilder_ == null) {
+        result.current_ = current_;
       } else {
-        result.isCurrent_ = isCurrentBuilder_.build();
+        result.current_ = currentBuilder_.build();
       }
       result.addressCase_ = addressCase_;
       onBuilt();
@@ -718,8 +718,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (other.usage_ != 0) {
         setUsageValue(other.getUsageValue());
       }
-      if (other.hasIsCurrent()) {
-        mergeIsCurrent(other.getIsCurrent());
+      if (other.hasCurrent()) {
+        mergeCurrent(other.getCurrent());
       }
       switch (other.getAddressCase()) {
         case UNSTRUCTURED_ADDRESS:
@@ -1205,12 +1205,12 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return structuredAddressBuilder_;
     }
 
-    private com.google.protobuf.BoolValue isCurrent_ = null;
+    private com.google.protobuf.BoolValue current_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
-        isCurrentBuilder_;
+        currentBuilder_;
     /**
      *
      *
@@ -1219,10 +1219,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public boolean hasIsCurrent() {
-      return isCurrentBuilder_ != null || isCurrent_ != null;
+    public boolean hasCurrent() {
+      return currentBuilder_ != null || current_ != null;
     }
     /**
      *
@@ -1232,13 +1232,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public com.google.protobuf.BoolValue getIsCurrent() {
-      if (isCurrentBuilder_ == null) {
-        return isCurrent_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCurrent_;
+    public com.google.protobuf.BoolValue getCurrent() {
+      if (currentBuilder_ == null) {
+        return current_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : current_;
       } else {
-        return isCurrentBuilder_.getMessage();
+        return currentBuilder_.getMessage();
       }
     }
     /**
@@ -1249,17 +1249,17 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public Builder setIsCurrent(com.google.protobuf.BoolValue value) {
-      if (isCurrentBuilder_ == null) {
+    public Builder setCurrent(com.google.protobuf.BoolValue value) {
+      if (currentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        isCurrent_ = value;
+        current_ = value;
         onChanged();
       } else {
-        isCurrentBuilder_.setMessage(value);
+        currentBuilder_.setMessage(value);
       }
 
       return this;
@@ -1272,14 +1272,14 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public Builder setIsCurrent(com.google.protobuf.BoolValue.Builder builderForValue) {
-      if (isCurrentBuilder_ == null) {
-        isCurrent_ = builderForValue.build();
+    public Builder setCurrent(com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (currentBuilder_ == null) {
+        current_ = builderForValue.build();
         onChanged();
       } else {
-        isCurrentBuilder_.setMessage(builderForValue.build());
+        currentBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1292,19 +1292,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public Builder mergeIsCurrent(com.google.protobuf.BoolValue value) {
-      if (isCurrentBuilder_ == null) {
-        if (isCurrent_ != null) {
-          isCurrent_ =
-              com.google.protobuf.BoolValue.newBuilder(isCurrent_).mergeFrom(value).buildPartial();
+    public Builder mergeCurrent(com.google.protobuf.BoolValue value) {
+      if (currentBuilder_ == null) {
+        if (current_ != null) {
+          current_ =
+              com.google.protobuf.BoolValue.newBuilder(current_).mergeFrom(value).buildPartial();
         } else {
-          isCurrent_ = value;
+          current_ = value;
         }
         onChanged();
       } else {
-        isCurrentBuilder_.mergeFrom(value);
+        currentBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -1317,15 +1317,15 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public Builder clearIsCurrent() {
-      if (isCurrentBuilder_ == null) {
-        isCurrent_ = null;
+    public Builder clearCurrent() {
+      if (currentBuilder_ == null) {
+        current_ = null;
         onChanged();
       } else {
-        isCurrent_ = null;
-        isCurrentBuilder_ = null;
+        current_ = null;
+        currentBuilder_ = null;
       }
 
       return this;
@@ -1338,12 +1338,12 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public com.google.protobuf.BoolValue.Builder getIsCurrentBuilder() {
+    public com.google.protobuf.BoolValue.Builder getCurrentBuilder() {
 
       onChanged();
-      return getIsCurrentFieldBuilder().getBuilder();
+      return getCurrentFieldBuilder().getBuilder();
     }
     /**
      *
@@ -1353,13 +1353,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
-    public com.google.protobuf.BoolValueOrBuilder getIsCurrentOrBuilder() {
-      if (isCurrentBuilder_ != null) {
-        return isCurrentBuilder_.getMessageOrBuilder();
+    public com.google.protobuf.BoolValueOrBuilder getCurrentOrBuilder() {
+      if (currentBuilder_ != null) {
+        return currentBuilder_.getMessageOrBuilder();
       } else {
-        return isCurrent_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCurrent_;
+        return current_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : current_;
       }
     }
     /**
@@ -1370,23 +1370,23 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * Indicates if it's the person's current address.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue is_current = 4;</code>
+     * <code>.google.protobuf.BoolValue current = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
-        getIsCurrentFieldBuilder() {
-      if (isCurrentBuilder_ == null) {
-        isCurrentBuilder_ =
+        getCurrentFieldBuilder() {
+      if (currentBuilder_ == null) {
+        currentBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.protobuf.BoolValue,
                 com.google.protobuf.BoolValue.Builder,
                 com.google.protobuf.BoolValueOrBuilder>(
-                getIsCurrent(), getParentForChildren(), isClean());
-        isCurrent_ = null;
+                getCurrent(), getParentForChildren(), isClean());
+        current_ = null;
       }
-      return isCurrentBuilder_;
+      return currentBuilder_;
     }
 
     @java.lang.Override

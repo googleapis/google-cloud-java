@@ -88,9 +88,9 @@ public interface ListProfilesRequestOrBuilder
    * * name
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
    */
-  boolean hasFieldMask();
+  boolean hasReadMask();
   /**
    *
    *
@@ -102,9 +102,9 @@ public interface ListProfilesRequestOrBuilder
    * * name
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
    */
-  com.google.protobuf.FieldMask getFieldMask();
+  com.google.protobuf.FieldMask getReadMask();
   /**
    *
    *
@@ -116,7 +116,7 @@ public interface ListProfilesRequestOrBuilder
    * * name
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask field_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask read_mask = 4;</code>
    */
-  com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
+  com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder();
 }

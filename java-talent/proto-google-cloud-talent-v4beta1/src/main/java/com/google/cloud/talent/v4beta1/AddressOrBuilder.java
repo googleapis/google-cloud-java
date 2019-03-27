@@ -105,9 +105,9 @@ public interface AddressOrBuilder
    * Indicates if it's the person's current address.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_current = 4;</code>
+   * <code>.google.protobuf.BoolValue current = 4;</code>
    */
-  boolean hasIsCurrent();
+  boolean hasCurrent();
   /**
    *
    *
@@ -116,9 +116,9 @@ public interface AddressOrBuilder
    * Indicates if it's the person's current address.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_current = 4;</code>
+   * <code>.google.protobuf.BoolValue current = 4;</code>
    */
-  com.google.protobuf.BoolValue getIsCurrent();
+  com.google.protobuf.BoolValue getCurrent();
   /**
    *
    *
@@ -127,9 +127,9 @@ public interface AddressOrBuilder
    * Indicates if it's the person's current address.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_current = 4;</code>
+   * <code>.google.protobuf.BoolValue current = 4;</code>
    */
-  com.google.protobuf.BoolValueOrBuilder getIsCurrentOrBuilder();
+  com.google.protobuf.BoolValueOrBuilder getCurrentOrBuilder();
 
   public com.google.cloud.talent.v4beta1.Address.AddressCase getAddressCase();
 }

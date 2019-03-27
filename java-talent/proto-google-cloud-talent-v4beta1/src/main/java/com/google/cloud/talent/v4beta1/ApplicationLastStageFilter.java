@@ -107,8 +107,7 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
    * Required.
    * User entered or selected last stage the candidate reached in the
    * application. The API does an exact match on the
-   * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-   * in profiles.
+   * [Application.last_stage][] in profiles.
    * </pre>
    *
    * <code>string last_stage = 1;</code>
@@ -131,8 +130,7 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
    * Required.
    * User entered or selected last stage the candidate reached in the
    * application. The API does an exact match on the
-   * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-   * in profiles.
+   * [Application.last_stage][] in profiles.
    * </pre>
    *
    * <code>string last_stage = 1;</code>
@@ -157,8 +155,8 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
    * <pre>
    * Optional.
    * If true, The API excludes all candidates with any
-   * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-   * matching the last stage specified in the filter.
+   * [Application.last_stage][] matching the last stage specified in the
+   * filter.
    * </pre>
    *
    * <code>bool negated = 2;</code>
@@ -511,8 +509,7 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * Required.
      * User entered or selected last stage the candidate reached in the
      * application. The API does an exact match on the
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * in profiles.
+     * [Application.last_stage][] in profiles.
      * </pre>
      *
      * <code>string last_stage = 1;</code>
@@ -535,8 +532,7 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * Required.
      * User entered or selected last stage the candidate reached in the
      * application. The API does an exact match on the
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * in profiles.
+     * [Application.last_stage][] in profiles.
      * </pre>
      *
      * <code>string last_stage = 1;</code>
@@ -559,8 +555,7 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * Required.
      * User entered or selected last stage the candidate reached in the
      * application. The API does an exact match on the
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * in profiles.
+     * [Application.last_stage][] in profiles.
      * </pre>
      *
      * <code>string last_stage = 1;</code>
@@ -581,8 +576,7 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * Required.
      * User entered or selected last stage the candidate reached in the
      * application. The API does an exact match on the
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * in profiles.
+     * [Application.last_stage][] in profiles.
      * </pre>
      *
      * <code>string last_stage = 1;</code>
@@ -600,8 +594,7 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * Required.
      * User entered or selected last stage the candidate reached in the
      * application. The API does an exact match on the
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * in profiles.
+     * [Application.last_stage][] in profiles.
      * </pre>
      *
      * <code>string last_stage = 1;</code>
@@ -624,8 +617,8 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * <pre>
      * Optional.
      * If true, The API excludes all candidates with any
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * matching the last stage specified in the filter.
+     * [Application.last_stage][] matching the last stage specified in the
+     * filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -639,8 +632,8 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * <pre>
      * Optional.
      * If true, The API excludes all candidates with any
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * matching the last stage specified in the filter.
+     * [Application.last_stage][] matching the last stage specified in the
+     * filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>
@@ -657,8 +650,8 @@ public final class ApplicationLastStageFilter extends com.google.protobuf.Genera
      * <pre>
      * Optional.
      * If true, The API excludes all candidates with any
-     * [JobApplication.last_stage][google.cloud.talent.v4beta1.JobApplication.last_stage]
-     * matching the last stage specified in the filter.
+     * [Application.last_stage][] matching the last stage specified in the
+     * filter.
      * </pre>
      *
      * <code>bool negated = 2;</code>

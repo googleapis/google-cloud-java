@@ -254,34 +254,34 @@ public interface EmploymentRecordOrBuilder
    *
    * <pre>
    * Optional.
-   * If it's a supervised position.
+   * If it is a supervisor position.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+   * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
    */
-  boolean hasIsSupervisedPosition();
+  boolean hasIsSupervisor();
   /**
    *
    *
    * <pre>
    * Optional.
-   * If it's a supervised position.
+   * If it is a supervisor position.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+   * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
    */
-  com.google.protobuf.BoolValue getIsSupervisedPosition();
+  com.google.protobuf.BoolValue getIsSupervisor();
   /**
    *
    *
    * <pre>
    * Optional.
-   * If it's a supervised position.
+   * If it is a supervisor position.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue is_supervised_position = 8;</code>
+   * <code>.google.protobuf.BoolValue is_supervisor = 8;</code>
    */
-  com.google.protobuf.BoolValueOrBuilder getIsSupervisedPositionOrBuilder();
+  com.google.protobuf.BoolValueOrBuilder getIsSupervisorOrBuilder();
 
   /**
    *

@@ -17,10 +17,6 @@ public final class EventProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_ClientEvent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_talent_v4beta1_ClientEvent_ExtraInfoEntry_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_talent_v4beta1_ClientEvent_ExtraInfoEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_talent_v4beta1_JobEvent_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_talent_v4beta1_JobEvent_fieldAccessorTable;
@@ -40,41 +36,35 @@ public final class EventProto {
       "\n\'google/cloud/talent/v4beta1/event.prot"
           + "o\022\033google.cloud.talent.v4beta1\032\034google/a"
           + "pi/annotations.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\"\354\002\n\013ClientEvent\022\022\n\nrequest"
+          + "mestamp.proto\"\202\002\n\013ClientEvent\022\022\n\nrequest"
           + "_id\030\001 \001(\t\022\020\n\010event_id\030\002 \001(\t\022/\n\013create_ti"
           + "me\030\004 \001(\0132\032.google.protobuf.Timestamp\022:\n\t"
           + "job_event\030\005 \001(\0132%.google.cloud.talent.v4"
           + "beta1.JobEventH\000\022B\n\rprofile_event\030\006 \001(\0132"
           + ").google.cloud.talent.v4beta1.ProfileEve"
-          + "ntH\000\022K\n\nextra_info\030\007 \003(\01327.google.cloud."
-          + "talent.v4beta1.ClientEvent.ExtraInfoEntr"
-          + "y\0320\n\016ExtraInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001B\007\n\005event\"\357\003\n\010JobEvent\022@\n\004typ"
-          + "e\030\001 \001(\01622.google.cloud.talent.v4beta1.Jo"
-          + "bEvent.JobEventType\022\014\n\004jobs\030\002 \003(\t\"\222\003\n\014Jo"
-          + "bEventType\022\036\n\032JOB_EVENT_TYPE_UNSPECIFIED"
-          + "\020\000\022\016\n\nIMPRESSION\020\001\022\010\n\004VIEW\020\002\022\021\n\rVIEW_RED"
-          + "IRECT\020\003\022\025\n\021APPLICATION_START\020\004\022\026\n\022APPLIC"
-          + "ATION_FINISH\020\005\022 \n\034APPLICATION_QUICK_SUBM"
-          + "ISSION\020\006\022\030\n\024APPLICATION_REDIRECT\020\007\022!\n\035AP"
-          + "PLICATION_START_FROM_SEARCH\020\010\022$\n APPLICA"
-          + "TION_REDIRECT_FROM_SEARCH\020\t\022\036\n\032APPLICATI"
-          + "ON_COMPANY_SUBMIT\020\n\022\014\n\010BOOKMARK\020\013\022\020\n\014NOT"
-          + "IFICATION\020\014\022\t\n\005HIRED\020\r\022\013\n\007SENT_CV\020\016\022\025\n\021I"
-          + "NTERVIEW_GRANTED\020\017\022\022\n\016NOT_INTERESTED\020\020\"\361"
-          + "\002\n\014ProfileEvent\022H\n\004type\030\001 \001(\0162:.google.c"
-          + "loud.talent.v4beta1.ProfileEvent.Profile"
-          + "EventType\022\020\n\010profiles\030\002 \003(\t\022\016\n\006job_id\030\003 "
-          + "\001(\t\"\364\001\n\020ProfileEventType\022\"\n\036PROFILE_EVEN"
-          + "T_TYPE_UNSPECIFIED\020\000\022\016\n\nIMPRESSION\020\001\022\010\n\004"
-          + "VIEW\020\002\022\014\n\010BOOKMARK\020\003\022\021\n\rCOMMENT_ADDED\020\004\022"
-          + "\016\n\nEMAIL_SENT\020\005\022\021\n\rRESUME_VIEWED\020\006\022\016\n\nAD"
-          + "D_TO_JOB\020\007\022 \n\034POSITIVE_REACTION_TO_PROFI"
-          + "LE\020\010\022 \n\034NEGATIVE_REACTION_TO_PROFILE\020\t\022\n"
-          + "\n\006SCREEN\020\nBx\n\037com.google.cloud.talent.v4"
-          + "beta1B\nEventProtoP\001ZAgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/talent/v4beta1;"
-          + "talent\242\002\003CTSb\006proto3"
+          + "ntH\000\022\023\n\013event_notes\030\t \001(\tB\007\n\005event\"\357\003\n\010J"
+          + "obEvent\022@\n\004type\030\001 \001(\01622.google.cloud.tal"
+          + "ent.v4beta1.JobEvent.JobEventType\022\014\n\004job"
+          + "s\030\002 \003(\t\"\222\003\n\014JobEventType\022\036\n\032JOB_EVENT_TY"
+          + "PE_UNSPECIFIED\020\000\022\016\n\nIMPRESSION\020\001\022\010\n\004VIEW"
+          + "\020\002\022\021\n\rVIEW_REDIRECT\020\003\022\025\n\021APPLICATION_STA"
+          + "RT\020\004\022\026\n\022APPLICATION_FINISH\020\005\022 \n\034APPLICAT"
+          + "ION_QUICK_SUBMISSION\020\006\022\030\n\024APPLICATION_RE"
+          + "DIRECT\020\007\022!\n\035APPLICATION_START_FROM_SEARC"
+          + "H\020\010\022$\n APPLICATION_REDIRECT_FROM_SEARCH\020"
+          + "\t\022\036\n\032APPLICATION_COMPANY_SUBMIT\020\n\022\014\n\010BOO"
+          + "KMARK\020\013\022\020\n\014NOTIFICATION\020\014\022\t\n\005HIRED\020\r\022\013\n\007"
+          + "SENT_CV\020\016\022\025\n\021INTERVIEW_GRANTED\020\017\022\022\n\016NOT_"
+          + "INTERESTED\020\020\"\330\001\n\014ProfileEvent\022H\n\004type\030\001 "
+          + "\001(\0162:.google.cloud.talent.v4beta1.Profil"
+          + "eEvent.ProfileEventType\022\020\n\010profiles\030\002 \003("
+          + "\t\022\014\n\004jobs\030\006 \003(\t\"^\n\020ProfileEventType\022\"\n\036P"
+          + "ROFILE_EVENT_TYPE_UNSPECIFIED\020\000\022\016\n\nIMPRE"
+          + "SSION\020\001\022\010\n\004VIEW\020\002\022\014\n\010BOOKMARK\020\003Bx\n\037com.g"
+          + "oogle.cloud.talent.v4beta1B\nEventProtoP\001"
+          + "ZAgoogle.golang.org/genproto/googleapis/"
+          + "cloud/talent/v4beta1;talent\242\002\003CTSb\006proto"
+          + "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -102,16 +92,8 @@ public final class EventProto {
               "CreateTime",
               "JobEvent",
               "ProfileEvent",
-              "ExtraInfo",
+              "EventNotes",
               "Event",
-            });
-    internal_static_google_cloud_talent_v4beta1_ClientEvent_ExtraInfoEntry_descriptor =
-        internal_static_google_cloud_talent_v4beta1_ClientEvent_descriptor.getNestedTypes().get(0);
-    internal_static_google_cloud_talent_v4beta1_ClientEvent_ExtraInfoEntry_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_talent_v4beta1_ClientEvent_ExtraInfoEntry_descriptor,
-            new java.lang.String[] {
-              "Key", "Value",
             });
     internal_static_google_cloud_talent_v4beta1_JobEvent_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -127,7 +109,7 @@ public final class EventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_talent_v4beta1_ProfileEvent_descriptor,
             new java.lang.String[] {
-              "Type", "Profiles", "JobId",
+              "Type", "Profiles", "Jobs",
             });
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

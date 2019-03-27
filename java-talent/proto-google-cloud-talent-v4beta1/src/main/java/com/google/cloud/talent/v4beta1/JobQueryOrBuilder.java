@@ -45,14 +45,17 @@ public interface JobQueryOrBuilder
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  java.util.List<java.lang.String> getCompanyNamesList();
+  java.util.List<java.lang.String> getCompaniesList();
   /**
    *
    *
@@ -63,14 +66,17 @@ public interface JobQueryOrBuilder
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  int getCompanyNamesCount();
+  int getCompaniesCount();
   /**
    *
    *
@@ -81,14 +87,17 @@ public interface JobQueryOrBuilder
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  java.lang.String getCompanyNames(int index);
+  java.lang.String getCompanies(int index);
   /**
    *
    *
@@ -99,14 +108,17 @@ public interface JobQueryOrBuilder
    * companies.
    * If multiple values are specified, jobs are searched against the
    * companies specified.
-   * The format is "projects/{project_id}/companies/{company_id}", for example,
-   * "projects/api-test-project/companies/foo".
+   * The format is
+   * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   * example, "projects/api-test-project/tenants/foo/companies/bar".
+   * Tenant id is optional and the default tenant is used if unspecified, for
+   * example, "projects/api-test-project/companies/bar".
    * At most 20 company filters are allowed.
    * </pre>
    *
-   * <code>repeated string company_names = 2;</code>
+   * <code>repeated string companies = 2;</code>
    */
-  com.google.protobuf.ByteString getCompanyNamesBytes(int index);
+  com.google.protobuf.ByteString getCompaniesBytes(int index);
 
   /**
    *
