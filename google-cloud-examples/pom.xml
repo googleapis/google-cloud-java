@@ -71,6 +71,10 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-securitycenter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-speech</artifactId>
     </dependency>
     <dependency>
