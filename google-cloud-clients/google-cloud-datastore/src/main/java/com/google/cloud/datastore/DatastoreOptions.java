@@ -18,17 +18,21 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
-import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
-import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.datastore.spi.v1.GapicDatastoreRpc;
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Objects;
 import java.util.Set;
 
@@ -38,8 +42,11 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   private static final String API_SHORT_NAME = "Datastore";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
+  private static final int MAX_CHANNELS = 256;
 
   private final String namespace;
+  private final TransportChannelProvider channelProvider;
+  private final int numChannels;
 
   public static class DefaultDatastoreFactory implements DatastoreFactory {
 
@@ -57,29 +64,46 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
     @Override
     public ServiceRpc create(DatastoreOptions options) {
-      return new HttpDatastoreRpc(options);
+      return new GapicDatastoreRpc(options);
     }
+
   }
 
   public static class Builder extends ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
 
     private String namespace;
+    private TransportChannelProvider channelProvider;
+    /** By default, we create 4 channels per {@link DatastoreOptions} */
+    private int numChannels = 4;
+
 
     private Builder() {}
 
     private Builder(DatastoreOptions options) {
       super(options);
-      namespace = options.namespace;
+      this.namespace = options.namespace;
+      this.numChannels = options.numChannels;
+      this.channelProvider = options.channelProvider;
     }
 
     @Override
     public Builder setTransportOptions(TransportOptions transportOptions) {
-      if (!(transportOptions instanceof HttpTransportOptions)) {
+      if (!(transportOptions instanceof GrpcTransportOptions)) {
         throw new IllegalArgumentException(
-            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+            "Only grpc transport is allowed for " + API_SHORT_NAME + ".");
       }
       return super.setTransportOptions(transportOptions);
     }
+
+    /**
+     * Sets the {@code ChannelProvider}. {@link GapicDatastoreRpc} would create a default one if none
+     * is provided.
+     */
+    public Builder setChannelProvider(TransportChannelProvider channelProvider) {
+      this.channelProvider = channelProvider;
+      return this;
+    }
+
 
     @Override
     public DatastoreOptions build() {
@@ -95,6 +119,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private DatastoreOptions(Builder builder) {
     super(DatastoreFactory.class, DatastoreRpcFactory.class, builder, new DatastoreDefaults());
+    numChannels = builder.numChannels;
+    Preconditions.checkArgument(
+        numChannels >= 1 && numChannels <= MAX_CHANNELS,
+        "Number of channels must fall in the range [1, %s], found: %s",
+        MAX_CHANNELS,
+        numChannels);
+    channelProvider = builder.channelProvider;
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
   }
 
@@ -116,6 +147,10 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     return projectId != null ? projectId : super.getDefaultProject();
   }
 
+  public static GrpcTransportOptions getDefaultGrpcTransportOptions() {
+    return GrpcTransportOptions.newBuilder().build();
+  }
+
   private static class DatastoreDefaults implements ServiceDefaults<Datastore, DatastoreOptions> {
 
     @Override
@@ -130,12 +165,16 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
     @Override
     public TransportOptions getDefaultTransportOptions() {
-      return getDefaultHttpTransportOptions();
+      return getDefaultGrpcTransportOptions();
     }
   }
 
-  public static HttpTransportOptions getDefaultHttpTransportOptions() {
-    return HttpTransportOptions.newBuilder().build();
+  public TransportChannelProvider getChannelProvider() {
+    return channelProvider;
+  }
+
+  public int getNumChannels() {
+    return numChannels;
   }
 
   /** Returns the default namespace to be used by the datastore service. */
@@ -192,4 +231,16 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   public static Builder newBuilder() {
     return new Builder();
   }
+
+  public String getEndpoint() {
+    URL url;
+    try {
+      url = new URL(getHost());
+    } catch (MalformedURLException e) {
+      throw new IllegalArgumentException("Invalid host: " + getHost(), e);
+    }
+    return String.format(
+        "%s:%s", url.getHost(), url.getPort() < 0 ? url.getDefaultPort() : url.getPort());
+  }
+
 }

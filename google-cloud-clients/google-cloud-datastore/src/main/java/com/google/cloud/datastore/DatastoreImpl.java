@@ -47,9 +47,17 @@ import java.util.concurrent.Callable;
 final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
 
   private final DatastoreRpc datastoreRpc;
+
   private final RetrySettings retrySettings;
   private static final ExceptionHandler TRANSACTION_EXCEPTION_HANDLER =
       TransactionExceptionHandler.build();
+
+  DatastoreImpl(DatastoreRpc gapicRpc, DatastoreOptions options) {
+    super(options);
+    this.datastoreRpc = gapicRpc;
+    retrySettings =
+        MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
+  }
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
