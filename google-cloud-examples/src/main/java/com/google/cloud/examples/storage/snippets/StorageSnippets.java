@@ -1487,7 +1487,10 @@ public class StorageSnippets {
     // The name of an object, e.g. "my-object"
     // String objectName = "my-object";
 
+    // Define resource
     BlobInfo blobinfo = BlobInfo.newBuilder(BlobId.of(bucketName, objectName)).build();
+
+    // Generate Signed URL
     URL url = storage.signUrl(blobinfo, 15, TimeUnit.MINUTES, Storage.SignUrlOption.withV4Signature());
 
     System.out.println("Generated GET signed URL:");
@@ -1519,6 +1522,7 @@ public class StorageSnippets {
 
     URL url = storage.signUrl(blobinfo, 15, TimeUnit.MINUTES, Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
             Storage.SignUrlOption.withExtHeaders(extensionHeaders),
+
             Storage.SignUrlOption.withV4Signature());
 
     System.out.println("Generated PUT signed URL:");
