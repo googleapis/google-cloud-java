@@ -89,7 +89,7 @@ final class SessionPool {
       this.session = session;
       this.isSingleUse = isSingleUse;
       try {
-        this.readContextDelegate = delegateSupplier.get();
+        this.readContextDelegate = readContextDelegateSupplier.get();
       } catch (SessionNotFoundException e) {
         recreateSessionIfPossible(e);
       }
