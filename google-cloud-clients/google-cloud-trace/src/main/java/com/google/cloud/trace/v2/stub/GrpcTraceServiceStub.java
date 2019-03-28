@@ -21,13 +21,16 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest;
 import com.google.devtools.cloudtrace.v2.Span;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -105,10 +108,28 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
     GrpcCallSettings<BatchWriteSpansRequest, Empty> batchWriteSpansTransportSettings =
         GrpcCallSettings.<BatchWriteSpansRequest, Empty>newBuilder()
             .setMethodDescriptor(batchWriteSpansMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<BatchWriteSpansRequest>() {
+                  @Override
+                  public Map<String, String> extract(BatchWriteSpansRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<Span, Span> createSpanTransportSettings =
         GrpcCallSettings.<Span, Span>newBuilder()
             .setMethodDescriptor(createSpanMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<Span>() {
+                  @Override
+                  public Map<String, String> extract(Span request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.batchWriteSpansCallable =
