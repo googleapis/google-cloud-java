@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest;
@@ -30,10 +31,12 @@ import com.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest;
 import com.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -144,19 +147,55 @@ public class GrpcKnowledgeBasesStub extends KnowledgeBasesStub {
         listKnowledgeBasesTransportSettings =
             GrpcCallSettings.<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse>newBuilder()
                 .setMethodDescriptor(listKnowledgeBasesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListKnowledgeBasesRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListKnowledgeBasesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetKnowledgeBaseRequest, KnowledgeBase> getKnowledgeBaseTransportSettings =
         GrpcCallSettings.<GetKnowledgeBaseRequest, KnowledgeBase>newBuilder()
             .setMethodDescriptor(getKnowledgeBaseMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetKnowledgeBaseRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetKnowledgeBaseRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateKnowledgeBaseRequest, KnowledgeBase>
         createKnowledgeBaseTransportSettings =
             GrpcCallSettings.<CreateKnowledgeBaseRequest, KnowledgeBase>newBuilder()
                 .setMethodDescriptor(createKnowledgeBaseMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<CreateKnowledgeBaseRequest>() {
+                      @Override
+                      public Map<String, String> extract(CreateKnowledgeBaseRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseTransportSettings =
         GrpcCallSettings.<DeleteKnowledgeBaseRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteKnowledgeBaseMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteKnowledgeBaseRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteKnowledgeBaseRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listKnowledgeBasesCallable =
