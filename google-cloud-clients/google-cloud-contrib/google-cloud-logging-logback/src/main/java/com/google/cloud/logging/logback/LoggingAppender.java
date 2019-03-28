@@ -158,7 +158,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private <T> T getEnhancer(String enhancerClassName) {
     try {
       Class<T> clz = (Class<T>) Loader.loadClass(enhancerClassName.trim());
-      return clz.newInstance();
+      return clz.getDeclaredConstructor().newInstance();
     } catch (Exception ex) {
       // If we cannot create the enhancer we fallback to null
     }
@@ -171,10 +171,13 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (isStarted()) {
       return;
     }
+    super.start();
+
+    logging = LoggingOptions.getDefaultInstance().getService();
     MonitoredResource resource = getMonitoredResource(getProjectId());
     defaultWriteOptions =
         new WriteOption[] {WriteOption.logName(getLogName()), WriteOption.resource(resource)};
-    getLogging().setFlushSeverity(severityFor(getFlushLevel()));
+    logging.setFlushSeverity(severityFor(getFlushLevel()));
     loggingEnhancers = new ArrayList<>();
     List<LoggingEnhancer> resourceEnhancers = MonitoredResourceUtil.getResourceEnhancers();
     loggingEnhancers.addAll(resourceEnhancers);
@@ -182,7 +185,6 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     loggingEventEnhancers = new ArrayList<>();
     loggingEventEnhancers.addAll(getLoggingEventEnhancers());
 
-    super.start();
   }
 
   String getProjectId() {
@@ -209,13 +211,6 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   Logging getLogging() {
-    if (logging == null) {
-      synchronized (this) {
-        if (logging == null) {
-          logging = LoggingOptions.getDefaultInstance().getService();
-        }
-      }
-    }
     return logging;
   }
 
