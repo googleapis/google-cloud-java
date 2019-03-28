@@ -73,6 +73,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
   private volatile Logging logging;
+  private LoggingOptions loggingOptions;
   private List<LoggingEnhancer> loggingEnhancers;
   private List<LoggingEventEnhancer> loggingEventEnhancers;
   private WriteOption[] defaultWriteOptions;
@@ -204,7 +205,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   }
 
   String getProjectId() {
-    return createLoggingOptions().getProjectId();
+    return getLoggingOptions().getProjectId();
   }
 
   @Override
@@ -230,30 +231,35 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     if (logging == null) {
       synchronized (this) {
         if (logging == null) {
-          logging = createLoggingOptions().getService();
+          logging = getLoggingOptions().getService();
         }
       }
     }
     return logging;
   }
 
-  /** Creates the {@link LoggingOptions} to use for this {@link LoggingAppender}. */
-  LoggingOptions createLoggingOptions() {
-    if (Strings.isNullOrEmpty(credentialsFile)) {
-      return LoggingOptions.getDefaultInstance();
-    } else {
-      try {
-        return LoggingOptions.newBuilder()
-            .setCredentials(GoogleCredentials.fromStream(new FileInputStream(credentialsFile)))
-            .build();
-      } catch (IOException e) {
-        throw new RuntimeException(
-            String.format(
-                "Could not read credentials file %s. Please verify that the file exists and is a valid Google credentials file.",
-                credentialsFile),
-            e);
+  /** Gets the {@link LoggingOptions} to use for this {@link LoggingAppender}. */
+  LoggingOptions getLoggingOptions() {
+    if (loggingOptions == null) {
+      if (Strings.isNullOrEmpty(credentialsFile)) {
+        loggingOptions = LoggingOptions.getDefaultInstance();
+      } else {
+        try {
+          loggingOptions =
+              LoggingOptions.newBuilder()
+                  .setCredentials(
+                      GoogleCredentials.fromStream(new FileInputStream(credentialsFile)))
+                  .build();
+        } catch (IOException e) {
+          throw new RuntimeException(
+              String.format(
+                  "Could not read credentials file %s. Please verify that the file exists and is a valid Google credentials file.",
+                  credentialsFile),
+              e);
+        }
       }
     }
+    return loggingOptions;
   }
 
   private LogEntry logEntryFor(ILoggingEvent e) {

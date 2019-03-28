@@ -32,6 +32,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
+import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
@@ -214,14 +215,27 @@ public class LoggingAppenderTest {
 
   @Test
   public void testCreateLoggingOptions() {
+    // Try to build LoggingOptions with custom credentials.
     final String nonExistentFile = "/path/to/non/existent/file";
     LoggingAppender appender = new LoggingAppender();
     appender.setCredentialsFile(nonExistentFile);
     try {
-      appender.createLoggingOptions();
+      appender.getLoggingOptions();
       fail("Expected exception");
     } catch (Exception e) {
       assertThat(e.getMessage().contains(nonExistentFile));
+    }
+    // Try to build LoggingOptions with default credentials.
+    LoggingOptions defaultOptions = null;
+    try {
+      defaultOptions = LoggingOptions.getDefaultInstance();
+    } catch (Exception e) {
+      // Could not build a default LoggingOptions instance.
+    }
+    if (defaultOptions != null) {
+      appender = new LoggingAppender();
+      LoggingOptions options = appender.getLoggingOptions();
+      assertThat(options).isEqualTo(defaultOptions);
     }
   }
 
