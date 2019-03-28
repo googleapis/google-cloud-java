@@ -24,7 +24,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.CreateExclusionRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
@@ -43,6 +45,7 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -198,43 +201,133 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     GrpcCallSettings<ListSinksRequest, ListSinksResponse> listSinksTransportSettings =
         GrpcCallSettings.<ListSinksRequest, ListSinksResponse>newBuilder()
             .setMethodDescriptor(listSinksMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListSinksRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListSinksRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetSinkRequest, LogSink> getSinkTransportSettings =
         GrpcCallSettings.<GetSinkRequest, LogSink>newBuilder()
             .setMethodDescriptor(getSinkMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetSinkRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetSinkRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("sink_name", String.valueOf(request.getSinkName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateSinkRequest, LogSink> createSinkTransportSettings =
         GrpcCallSettings.<CreateSinkRequest, LogSink>newBuilder()
             .setMethodDescriptor(createSinkMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateSinkRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateSinkRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateSinkRequest, LogSink> updateSinkTransportSettings =
         GrpcCallSettings.<UpdateSinkRequest, LogSink>newBuilder()
             .setMethodDescriptor(updateSinkMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateSinkRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateSinkRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("sink_name", String.valueOf(request.getSinkName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteSinkRequest, Empty> deleteSinkTransportSettings =
         GrpcCallSettings.<DeleteSinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSinkMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteSinkRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteSinkRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("sink_name", String.valueOf(request.getSinkName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListExclusionsRequest, ListExclusionsResponse>
         listExclusionsTransportSettings =
             GrpcCallSettings.<ListExclusionsRequest, ListExclusionsResponse>newBuilder()
                 .setMethodDescriptor(listExclusionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListExclusionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListExclusionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetExclusionRequest, LogExclusion> getExclusionTransportSettings =
         GrpcCallSettings.<GetExclusionRequest, LogExclusion>newBuilder()
             .setMethodDescriptor(getExclusionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetExclusionRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetExclusionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateExclusionRequest, LogExclusion> createExclusionTransportSettings =
         GrpcCallSettings.<CreateExclusionRequest, LogExclusion>newBuilder()
             .setMethodDescriptor(createExclusionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateExclusionRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateExclusionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionTransportSettings =
         GrpcCallSettings.<UpdateExclusionRequest, LogExclusion>newBuilder()
             .setMethodDescriptor(updateExclusionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateExclusionRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateExclusionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteExclusionRequest, Empty> deleteExclusionTransportSettings =
         GrpcCallSettings.<DeleteExclusionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteExclusionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteExclusionRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteExclusionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listSinksCallable =
