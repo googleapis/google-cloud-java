@@ -834,8 +834,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   @Override
   public Map<String, Object> readAttributes(Path path, String attributes, LinkOption... options) {
     // TODO(#811): Java 7 NIO defines at least eleven string attributes we'd want to support
-    // (eg. BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
-    // implementation we rely on the other overload for now.
+    //             (eg. BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
+    //             implementation we rely on the other overload for now.
     throw new UnsupportedOperationException();
   }
 
@@ -989,18 +989,15 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    *
    * <p>Example of listing buckets, specifying the page size and a name prefix.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   String prefix = "bucket_";
-   *   Page<Bucket> buckets = provider.listBuckets(BucketListOption.prefix(prefix));
-   *   Iterator<Bucket> bucketIterator = buckets.iterateAll();
-   *   while (bucketIterator.hasNext()) {
-   *     Bucket bucket = bucketIterator.next();
-   *     // do something with the bucket
-   *   }
+   * <pre>{@code
+   * String prefix = "bucket_";
+   * Page<Bucket> buckets = provider.listBuckets(BucketListOption.prefix(prefix));
+   * Iterator<Bucket> bucketIterator = buckets.iterateAll();
+   * while (bucketIterator.hasNext()) {
+   *   Bucket bucket = bucketIterator.next();
+   *   // do something with the bucket
    * }
-   * </pre>
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
