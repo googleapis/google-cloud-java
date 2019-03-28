@@ -24,7 +24,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -44,6 +46,7 @@ import com.google.pubsub.v1.UpdateTopicRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -196,45 +199,135 @@ public class GrpcPublisherStub extends PublisherStub {
     GrpcCallSettings<Topic, Topic> createTopicTransportSettings =
         GrpcCallSettings.<Topic, Topic>newBuilder()
             .setMethodDescriptor(createTopicMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<Topic>() {
+                  @Override
+                  public Map<String, String> extract(Topic request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<UpdateTopicRequest, Topic> updateTopicTransportSettings =
         GrpcCallSettings.<UpdateTopicRequest, Topic>newBuilder()
             .setMethodDescriptor(updateTopicMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateTopicRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateTopicRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("topic.name", String.valueOf(request.getTopic().getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<PublishRequest, PublishResponse> publishTransportSettings =
         GrpcCallSettings.<PublishRequest, PublishResponse>newBuilder()
             .setMethodDescriptor(publishMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PublishRequest>() {
+                  @Override
+                  public Map<String, String> extract(PublishRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("topic", String.valueOf(request.getTopic()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetTopicRequest, Topic> getTopicTransportSettings =
         GrpcCallSettings.<GetTopicRequest, Topic>newBuilder()
             .setMethodDescriptor(getTopicMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetTopicRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetTopicRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("topic", String.valueOf(request.getTopic()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListTopicsRequest, ListTopicsResponse> listTopicsTransportSettings =
         GrpcCallSettings.<ListTopicsRequest, ListTopicsResponse>newBuilder()
             .setMethodDescriptor(listTopicsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListTopicsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListTopicsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project", String.valueOf(request.getProject()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
         listTopicSubscriptionsTransportSettings =
             GrpcCallSettings
                 .<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>newBuilder()
                 .setMethodDescriptor(listTopicSubscriptionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListTopicSubscriptionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListTopicSubscriptionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("topic", String.valueOf(request.getTopic()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<DeleteTopicRequest, Empty> deleteTopicTransportSettings =
         GrpcCallSettings.<DeleteTopicRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTopicMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteTopicRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteTopicRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("topic", String.valueOf(request.getTopic()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
                 .build();
 
     this.createTopicCallable =
