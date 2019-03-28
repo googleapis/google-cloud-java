@@ -23,7 +23,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -33,6 +35,7 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -118,6 +121,15 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
     GrpcCallSettings<PatchTracesRequest, Empty> patchTracesTransportSettings =
         GrpcCallSettings.<PatchTracesRequest, Empty>newBuilder()
             .setMethodDescriptor(patchTracesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PatchTracesRequest>() {
+                  @Override
+                  public Map<String, String> extract(PatchTracesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetTraceRequest, Trace> getTraceTransportSettings =
         GrpcCallSettings.<GetTraceRequest, Trace>newBuilder()
@@ -126,6 +138,15 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
     GrpcCallSettings<ListTracesRequest, ListTracesResponse> listTracesTransportSettings =
         GrpcCallSettings.<ListTracesRequest, ListTracesResponse>newBuilder()
             .setMethodDescriptor(listTracesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListTracesRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListTracesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.patchTracesCallable =
