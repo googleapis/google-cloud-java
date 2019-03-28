@@ -21,12 +21,15 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.automl.v1beta1.PredictRequest;
 import com.google.cloud.automl.v1beta1.PredictResponse;
+import com.google.common.collect.ImmutableMap;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -96,6 +99,15 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     GrpcCallSettings<PredictRequest, PredictResponse> predictTransportSettings =
         GrpcCallSettings.<PredictRequest, PredictResponse>newBuilder()
             .setMethodDescriptor(predictMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PredictRequest>() {
+                  @Override
+                  public Map<String, String> extract(PredictRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.predictCallable =
