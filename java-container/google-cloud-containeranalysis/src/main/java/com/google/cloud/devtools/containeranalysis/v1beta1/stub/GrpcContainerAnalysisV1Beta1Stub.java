@@ -23,7 +23,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.containeranalysis.v1beta1.GetScanConfigRequest;
 import com.google.containeranalysis.v1beta1.ListScanConfigsRequest;
 import com.google.containeranalysis.v1beta1.ListScanConfigsResponse;
@@ -37,6 +39,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -167,28 +170,82 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetIamPolicyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetIamPolicyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("resource", String.valueOf(request.getResource()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
+                      @Override
+                      public Map<String, String> extract(TestIamPermissionsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("resource", String.valueOf(request.getResource()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
         GrpcCallSettings.<GetScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(getScanConfigMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetScanConfigRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetScanConfigRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
         listScanConfigsTransportSettings =
             GrpcCallSettings.<ListScanConfigsRequest, ListScanConfigsResponse>newBuilder()
                 .setMethodDescriptor(listScanConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListScanConfigsRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListScanConfigsRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
         GrpcCallSettings.<UpdateScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(updateScanConfigMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateScanConfigRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateScanConfigRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.setIamPolicyCallable =
