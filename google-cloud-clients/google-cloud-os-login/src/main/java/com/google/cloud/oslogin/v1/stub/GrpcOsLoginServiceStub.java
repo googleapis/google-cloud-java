@@ -21,6 +21,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey;
 import com.google.cloud.oslogin.v1.DeletePosixAccountRequest;
@@ -31,10 +32,12 @@ import com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse;
 import com.google.cloud.oslogin.v1.LoginProfile;
 import com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -158,27 +161,81 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
     GrpcCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
         GrpcCallSettings.<DeletePosixAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePosixAccountMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeletePosixAccountRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeletePosixAccountRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyTransportSettings =
         GrpcCallSettings.<DeleteSshPublicKeyRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteSshPublicKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteSshPublicKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteSshPublicKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileTransportSettings =
         GrpcCallSettings.<GetLoginProfileRequest, LoginProfile>newBuilder()
             .setMethodDescriptor(getLoginProfileMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetLoginProfileRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetLoginProfileRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetSshPublicKeyRequest, SshPublicKey> getSshPublicKeyTransportSettings =
         GrpcCallSettings.<GetSshPublicKeyRequest, SshPublicKey>newBuilder()
             .setMethodDescriptor(getSshPublicKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetSshPublicKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetSshPublicKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeyTransportSettings =
             GrpcCallSettings.<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>newBuilder()
                 .setMethodDescriptor(importSshPublicKeyMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ImportSshPublicKeyRequest>() {
+                      @Override
+                      public Map<String, String> extract(ImportSshPublicKeyRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
                 .build();
     GrpcCallSettings<UpdateSshPublicKeyRequest, SshPublicKey> updateSshPublicKeyTransportSettings =
         GrpcCallSettings.<UpdateSshPublicKeyRequest, SshPublicKey>newBuilder()
             .setMethodDescriptor(updateSshPublicKeyMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateSshPublicKeyRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateSshPublicKeyRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.deletePosixAccountCallable =
