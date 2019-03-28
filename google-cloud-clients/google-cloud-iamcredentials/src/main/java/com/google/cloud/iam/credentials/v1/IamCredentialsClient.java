@@ -571,10 +571,49 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
    *   String payload = "";
-   *   SignJwtResponse response = iamCredentialsClient.signJwt(formattedName, delegates, payload);
+   *   SignJwtResponse response = iamCredentialsClient.signJwt(name, delegates, payload);
+   * }
+   * </code></pre>
+   *
+   * @param name The resource name of the service account for which the credentials are requested,
+   *     in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+   * @param delegates The sequence of service accounts in a delegation chain. Each service account
+   *     must be granted the `roles/iam.serviceAccountTokenCreator` role on its next service account
+   *     in the chain. The last service account in the chain must be granted the
+   *     `roles/iam.serviceAccountTokenCreator` role on the service account that is specified in the
+   *     `name` field of the request.
+   *     <p>The delegates must have the following format:
+   *     `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+   * @param payload The JWT payload to sign: a JSON object that contains a JWT Claims Set.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SignJwtResponse signJwt(
+      ServiceAccountName name, List<String> delegates, String payload) {
+
+    SignJwtRequest request =
+        SignJwtRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .addAllDelegates(delegates)
+            .setPayload(payload)
+            .build();
+    return signJwt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Signs a JWT using a service account's system-managed private key.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
+   *   String payload = "";
+   *   SignJwtResponse response = iamCredentialsClient.signJwt(name.toString(), delegates, payload);
    * }
    * </code></pre>
    *
@@ -609,10 +648,10 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   String payload = "";
    *   SignJwtRequest request = SignJwtRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setPayload(payload)
    *     .build();
    *   SignJwtResponse response = iamCredentialsClient.signJwt(request);
@@ -634,10 +673,10 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   String payload = "";
    *   SignJwtRequest request = SignJwtRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .setPayload(payload)
    *     .build();
    *   ApiFuture&lt;SignJwtResponse&gt; future = iamCredentialsClient.signJwtCallable().futureCall(request);
