@@ -65,8 +65,8 @@ abstract class AbstractReadContext
     private boolean used;
 
     SingleReadContext(
-        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
-      super(session, rpc, defaultPrefetchChunks);
+        SessionImpl session, TimestampBound bound, SpannerImpl spanner, int defaultPrefetchChunks) {
+      super(session, spanner, defaultPrefetchChunks);
       this.bound = bound;
     }
 
@@ -101,8 +101,8 @@ abstract class AbstractReadContext
     private Timestamp timestamp;
 
     SingleUseReadOnlyTransaction(
-        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
-      super(session, bound, rpc, defaultPrefetchChunks);
+        SessionImpl session, TimestampBound bound, SpannerImpl spanner, int defaultPrefetchChunks) {
+      super(session, bound, spanner, defaultPrefetchChunks);
     }
 
     @Override
@@ -150,8 +150,8 @@ abstract class AbstractReadContext
     private ByteString transactionId;
 
     MultiUseReadOnlyTransaction(
-        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
-      super(session, rpc, defaultPrefetchChunks);
+        SessionImpl session, TimestampBound bound, SpannerImpl spanner, int defaultPrefetchChunks) {
+      super(session, spanner, defaultPrefetchChunks);
       checkArgument(
           bound.getMode() != TimestampBound.Mode.MAX_STALENESS
               && bound.getMode() != TimestampBound.Mode.MIN_READ_TIMESTAMP,
@@ -165,9 +165,9 @@ abstract class AbstractReadContext
         SessionImpl session,
         ByteString transactionId,
         Timestamp timestamp,
-        SpannerRpc rpc,
+        SpannerImpl spanner,
         int defaultPrefetchChunks) {
-      super(session, rpc, defaultPrefetchChunks);
+      super(session, spanner, defaultPrefetchChunks);
       this.transactionId = transactionId;
       this.timestamp = timestamp;
     }
@@ -227,13 +227,14 @@ abstract class AbstractReadContext
                   .setOptions(options)
                   .build();
           Transaction transaction =
-              SpannerImpl.runWithRetries(
+              spanner.runWithRetries(
                   new Callable<Transaction>() {
                     @Override
                     public Transaction call() throws Exception {
-                      return rpc.beginTransaction(request, session.getOptions());
+                      return spanner.getRpc().beginTransaction(request, session.getOptions());
                     }
-                  });
+                  },
+                  SpannerImpl.BEGIN_TRANSACTION.retryOnErrorCodes);
           if (!transaction.hasReadTimestamp()) {
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
@@ -261,7 +262,7 @@ abstract class AbstractReadContext
 
   final Object lock = new Object();
   final SessionImpl session;
-  final SpannerRpc rpc;
+  final SpannerImpl spanner;
   final Span span;
   private final int defaultPrefetchChunks;
 
@@ -279,14 +280,14 @@ abstract class AbstractReadContext
   // much more frequently.
   private static final int MAX_BUFFERED_CHUNKS = 512;
 
-  AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks) {
-    this(session, rpc, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
+  AbstractReadContext(SessionImpl session, SpannerImpl spanner, int defaultPrefetchChunks) {
+    this(session, spanner, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
   }
 
   private AbstractReadContext(
-      SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks, Span span) {
+      SessionImpl session, SpannerImpl spanner, int defaultPrefetchChunks, Span span) {
     this.session = session;
-    this.rpc = rpc;
+    this.spanner = spanner;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.span = span;
   }
@@ -418,7 +419,7 @@ abstract class AbstractReadContext
     final int prefetchChunks =
         readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
     ResumableStreamIterator stream =
-        new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, SpannerImpl.QUERY, span) {
+        new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, SpannerImpl.QUERY.method, span) {
           @Override
           CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
             GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
@@ -426,7 +427,9 @@ abstract class AbstractReadContext
               request.setResumeToken(resumeToken);
             }
             SpannerRpc.StreamingCall call =
-                rpc.executeQuery(request.build(), stream.consumer(), session.getOptions());
+                spanner
+                    .getRpc()
+                    .executeQuery(request.build(), stream.consumer(), session.getOptions());
             call.request(prefetchChunks);
             stream.setCall(call);
             return stream;
@@ -525,7 +528,7 @@ abstract class AbstractReadContext
     final int prefetchChunks =
         readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
     ResumableStreamIterator stream =
-        new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, SpannerImpl.READ, span) {
+        new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, SpannerImpl.READ.method, span) {
           @Override
           CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
             GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
@@ -533,7 +536,7 @@ abstract class AbstractReadContext
               builder.setResumeToken(resumeToken);
             }
             SpannerRpc.StreamingCall call =
-                rpc.read(builder.build(), stream.consumer(), session.getOptions());
+                spanner.getRpc().read(builder.build(), stream.consumer(), session.getOptions());
             call.request(prefetchChunks);
             stream.setCall(call);
             return stream;

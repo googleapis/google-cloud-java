@@ -76,7 +76,7 @@ class SessionImpl implements Session {
     void invalidate();
   }
 
-  private final SpannerRpc gapicRpc;
+  private final SpannerImpl spanner;
   private final int defaultPrefetchChunks;
   private final String name;
   private SessionTransaction activeTransaction;
@@ -84,11 +84,11 @@ class SessionImpl implements Session {
   private final Map<SpannerRpc.Option, ?> options;
 
   SessionImpl(
-      SpannerRpc gapicRpc,
+      SpannerImpl spanner,
       int defaultPrefetchChunks,
       String name,
       Map<SpannerRpc.Option, ?> options) {
-    this.gapicRpc = gapicRpc;
+    this.spanner = spanner;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.options = options;
     this.name = checkNotNull(name);
@@ -106,7 +106,7 @@ class SessionImpl implements Session {
   @Override
   public long executePartitionedUpdate(Statement stmt) {
     setActive(null);
-    PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, gapicRpc);
+    PartitionedDMLTransaction txn = new PartitionedDMLTransaction(this, spanner);
     return txn.executePartitionedUpdate(stmt);
   }
 
@@ -141,16 +141,17 @@ class SessionImpl implements Session {
                 TransactionOptions.newBuilder()
                     .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
             .build();
-    Span span = tracer.spanBuilder(SpannerImpl.COMMIT).startSpan();
+    Span span = tracer.spanBuilder(SpannerImpl.COMMIT.method).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       CommitResponse response =
-          SpannerImpl.runWithRetries(
+          spanner.runWithRetries(
               new Callable<CommitResponse>() {
                 @Override
                 public CommitResponse call() throws Exception {
-                  return SessionImpl.this.gapicRpc.commit(request, options);
+                  return spanner.getRpc().commit(request, options);
                 }
-              });
+              },
+              SpannerImpl.COMMIT.retryOnErrorCodes);
       Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
       span.end();
       return t;
@@ -170,7 +171,7 @@ class SessionImpl implements Session {
 
   @Override
   public ReadContext singleUse(TimestampBound bound) {
-    return setActive(new SingleReadContext(this, bound, gapicRpc, defaultPrefetchChunks));
+    return setActive(new SingleReadContext(this, bound, spanner, defaultPrefetchChunks));
   }
 
   @Override
@@ -180,8 +181,7 @@ class SessionImpl implements Session {
 
   @Override
   public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
-    return setActive(
-        new SingleUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
+    return setActive(new SingleUseReadOnlyTransaction(this, bound, spanner, defaultPrefetchChunks));
   }
 
   @Override
@@ -191,12 +191,12 @@ class SessionImpl implements Session {
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    return setActive(new MultiUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
+    return setActive(new MultiUseReadOnlyTransaction(this, bound, spanner, defaultPrefetchChunks));
   }
 
   @Override
   public TransactionRunner readWriteTransaction() {
-    return setActive(new TransactionRunnerImpl(this, gapicRpc, defaultPrefetchChunks));
+    return setActive(new TransactionRunnerImpl(this, spanner.getRpc(), defaultPrefetchChunks));
   }
 
   @Override
@@ -207,16 +207,17 @@ class SessionImpl implements Session {
 
   @Override
   public void close() {
-    Span span = tracer.spanBuilder(SpannerImpl.DELETE_SESSION).startSpan();
+    Span span = tracer.spanBuilder(SpannerImpl.DELETE_SESSION.method).startSpan();
     try (Scope s = tracer.withSpan(span)) {
-      SpannerImpl.runWithRetries(
+      spanner.runWithRetries(
           new Callable<Void>() {
             @Override
             public Void call() throws Exception {
-              SessionImpl.this.gapicRpc.deleteSession(name, options);
+              spanner.getRpc().deleteSession(name, options);
               return null;
             }
-          });
+          },
+          SpannerImpl.DELETE_SESSION.retryOnErrorCodes);
       span.end();
     } catch (RuntimeException e) {
       TraceUtil.endSpanWithFailure(span, e);
@@ -225,7 +226,7 @@ class SessionImpl implements Session {
   }
 
   ByteString beginTransaction() {
-    Span span = tracer.spanBuilder(SpannerImpl.BEGIN_TRANSACTION).startSpan();
+    Span span = tracer.spanBuilder(SpannerImpl.BEGIN_TRANSACTION.method).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       final BeginTransactionRequest request =
           BeginTransactionRequest.newBuilder()
@@ -235,13 +236,14 @@ class SessionImpl implements Session {
                       .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
               .build();
       Transaction txn =
-          SpannerImpl.runWithRetries(
+          spanner.runWithRetries(
               new Callable<Transaction>() {
                 @Override
                 public Transaction call() throws Exception {
-                  return SessionImpl.this.gapicRpc.beginTransaction(request, options);
+                  return spanner.getRpc().beginTransaction(request, options);
                 }
-              });
+              },
+              SpannerImpl.BEGIN_TRANSACTION.retryOnErrorCodes);
       if (txn.getId().isEmpty()) {
         throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
       }
@@ -255,7 +257,7 @@ class SessionImpl implements Session {
 
   TransactionContextImpl newTransaction() {
     TransactionContextImpl txn =
-        new TransactionContextImpl(this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
+        new TransactionContextImpl(this, readyTransactionId, spanner, defaultPrefetchChunks);
     return txn;
   }
 

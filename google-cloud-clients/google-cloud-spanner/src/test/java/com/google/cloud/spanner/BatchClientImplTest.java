@@ -22,6 +22,8 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
@@ -60,6 +62,8 @@ public final class BatchClientImplTest {
     initMocks(this);
     DatabaseId db = DatabaseId.of(DB_NAME);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
     SpannerImpl spanner = new SpannerImpl(gapicRpc, spannerOptions);
     client = new BatchClientImpl(db, spanner);
   }

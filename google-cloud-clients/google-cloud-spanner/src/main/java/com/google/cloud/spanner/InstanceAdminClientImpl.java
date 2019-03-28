@@ -25,7 +25,6 @@ import com.google.api.gax.paging.Page;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.cloud.spanner.SpannerImpl.PageFetcher;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.FieldMask;
@@ -39,25 +38,27 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
       PathTemplate.create("projects/{project}");
   private final DatabaseAdminClient dbClient;
   private final String projectId;
-  private final SpannerRpc rpc;
+  private final SpannerImpl spanner;
 
-  InstanceAdminClientImpl(String projectId, SpannerRpc rpc, DatabaseAdminClient dbClient) {
+  InstanceAdminClientImpl(String projectId, SpannerImpl spanner, DatabaseAdminClient dbClient) {
     this.projectId = projectId;
-    this.rpc = rpc;
+    this.spanner = spanner;
     this.dbClient = dbClient;
   }
 
   @Override
   public InstanceConfig getInstanceConfig(String configId) throws SpannerException {
     final String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
-    return SpannerImpl.runWithRetries(
+    return spanner.runWithRetries(
         new Callable<InstanceConfig>() {
           @Override
           public InstanceConfig call() {
             return InstanceConfig.fromProto(
-                rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
+                spanner.getRpc().getInstanceConfig(instanceConfigName),
+                InstanceAdminClientImpl.this);
           }
-        });
+        },
+        SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Override
@@ -67,11 +68,12 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
         !listOptions.hasFilter(), "Filter option is not supported by listInstanceConfigs");
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig> pageFetcher =
-        new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>() {
+        new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>(
+            spanner, SpannerImpl.DEFAULT_RETRY_ERROR_CODES) {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.InstanceConfig> getNextPage(
               String nextPageToken) {
-            return rpc.listInstanceConfigs(pageSize, nextPageToken);
+            return spanner.getRpc().listInstanceConfigs(pageSize, nextPageToken);
           }
 
           @Override
@@ -92,7 +94,9 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
     String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
         rawOperationFuture =
-            rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
+            spanner
+                .getRpc()
+                .createInstance(projectName, instance.getId().getInstance(), instance.toProto());
 
     return new OperationFutureImpl<Instance, CreateInstanceMetadata>(
         rawOperationFuture.getPollingFuture(),
@@ -120,14 +124,15 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
   @Override
   public Instance getInstance(String instanceId) throws SpannerException {
     final String instanceName = new InstanceId(projectId, instanceId).getName();
-    return SpannerImpl.runWithRetries(
+    return spanner.runWithRetries(
         new Callable<Instance>() {
           @Override
           public Instance call() {
             return Instance.fromProto(
-                rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
+                spanner.getRpc().getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
           }
-        });
+        },
+        SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Override
@@ -136,11 +141,12 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
     final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
     final String filter = listOptions.filter();
     PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance> pageFetcher =
-        new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>() {
+        new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>(
+            spanner, SpannerImpl.DEFAULT_RETRY_ERROR_CODES) {
           @Override
           public Paginated<com.google.spanner.admin.instance.v1.Instance> getNextPage(
               String nextPageToken) {
-            return rpc.listInstances(pageSize, nextPageToken, filter);
+            return spanner.getRpc().listInstances(pageSize, nextPageToken, filter);
           }
 
           @Override
@@ -156,14 +162,15 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
 
   @Override
   public void deleteInstance(final String instanceId) throws SpannerException {
-    SpannerImpl.runWithRetries(
+    spanner.runWithRetries(
         new Callable<Void>() {
           @Override
           public Void call() {
-            rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
+            spanner.getRpc().deleteInstance(new InstanceId(projectId, instanceId).getName());
             return null;
           }
-        });
+        },
+        SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 
   @Override
@@ -175,7 +182,7 @@ class InstanceAdminClientImpl implements InstanceAdminClient {
             : InstanceInfo.InstanceField.toFieldMask(fieldsToUpdate);
 
     OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
-        rawOperationFuture = rpc.updateInstance(instance.toProto(), fieldMask);
+        rawOperationFuture = spanner.getRpc().updateInstance(instance.toProto(), fieldMask);
     return new OperationFutureImpl<Instance, UpdateInstanceMetadata>(
         rawOperationFuture.getPollingFuture(),
         rawOperationFuture.getInitialFuture(),

@@ -19,7 +19,6 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.spanner.SessionImpl.SessionTransaction;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
@@ -34,12 +33,12 @@ import java.util.concurrent.Callable;
 class PartitionedDMLTransaction implements SessionTransaction {
   private final ByteString transactionId;
   private final SessionImpl session;
-  private final SpannerRpc rpc;
+  private final SpannerImpl spanner;
   private volatile boolean isValid = true;
 
-  PartitionedDMLTransaction(SessionImpl session, SpannerRpc rpc) {
+  PartitionedDMLTransaction(SessionImpl session, SpannerImpl spanner) {
     this.session = session;
-    this.rpc = rpc;
+    this.spanner = spanner;
     this.transactionId = initTransaction();
   }
 
@@ -52,13 +51,14 @@ class PartitionedDMLTransaction implements SessionTransaction {
                     .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
             .build();
     Transaction txn =
-        SpannerImpl.runWithRetries(
+        spanner.runWithRetries(
             new Callable<Transaction>() {
               @Override
               public Transaction call() throws Exception {
-                return rpc.beginTransaction(request, session.getOptions());
+                return spanner.getRpc().beginTransaction(request, session.getOptions());
               }
-            });
+            },
+            SpannerImpl.BEGIN_TRANSACTION.retryOnErrorCodes);
     if (txn.getId().isEmpty()) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INTERNAL,
@@ -84,13 +84,14 @@ class PartitionedDMLTransaction implements SessionTransaction {
       }
     }
     com.google.spanner.v1.ResultSet resultSet =
-        SpannerImpl.runWithRetries(
+        spanner.runWithRetries(
             new Callable<com.google.spanner.v1.ResultSet>() {
               @Override
               public com.google.spanner.v1.ResultSet call() throws Exception {
-                return rpc.executeQuery(builder.build(), session.getOptions());
+                return spanner.getRpc().executeQuery(builder.build(), session.getOptions());
               }
-            });
+            },
+            SpannerImpl.QUERY.retryOnErrorCodes);
     if (!resultSet.hasStats()) {
       throw new IllegalArgumentException(
           "Partitioned DML response missing stats possibly due to non-DML statement as input");

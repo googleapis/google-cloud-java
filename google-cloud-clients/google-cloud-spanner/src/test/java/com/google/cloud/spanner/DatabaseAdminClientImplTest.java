@@ -17,11 +17,14 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.api.core.NanoClock;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;
@@ -57,7 +60,11 @@ public class DatabaseAdminClientImplTest {
   @Before
   public void setUp() {
     initMocks(this);
-    client = new DatabaseAdminClientImpl(PROJECT_ID, rpc);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    client = new DatabaseAdminClientImpl(PROJECT_ID, spanner);
   }
 
   private Database getDatabaseProto() {

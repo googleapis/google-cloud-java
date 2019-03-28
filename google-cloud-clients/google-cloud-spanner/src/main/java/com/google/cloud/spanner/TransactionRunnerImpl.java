@@ -72,9 +72,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     TransactionContextImpl(
         SessionImpl session,
         @Nullable ByteString transactionId,
-        SpannerRpc rpc,
+        SpannerImpl spanner,
         int defaultPrefetchChunks) {
-      super(session, rpc, defaultPrefetchChunks);
+      super(session, spanner, defaultPrefetchChunks);
       this.transactionId = transactionId;
     }
 
@@ -121,16 +121,18 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         mutations = null;
       }
       final CommitRequest commitRequest = builder.build();
-      Span opSpan = tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT, span).startSpan();
+      Span opSpan =
+          tracer.spanBuilderWithExplicitParent(SpannerImpl.COMMIT.method, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
         CommitResponse commitResponse =
-            SpannerImpl.runWithRetries(
+            spanner.runWithRetries(
                 new Callable<CommitResponse>() {
                   @Override
                   public CommitResponse call() throws Exception {
-                    return rpc.commit(commitRequest, session.getOptions());
+                    return spanner.getRpc().commit(commitRequest, session.getOptions());
                   }
-                });
+                },
+                SpannerImpl.COMMIT.retryOnErrorCodes);
 
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
@@ -177,12 +179,14 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         // response.  Normally, the next thing that will happen is that we will make a fresh
         // transaction attempt, which should implicitly abort this one.
         span.addAnnotation("Starting Rollback");
-        rpc.rollback(
-            RollbackRequest.newBuilder()
-                .setSession(session.getName())
-                .setTransactionId(transactionId)
-                .build(),
-            session.getOptions());
+        spanner
+            .getRpc()
+            .rollback(
+                RollbackRequest.newBuilder()
+                    .setSession(session.getName())
+                    .setTransactionId(transactionId)
+                    .build(),
+                session.getOptions());
         span.addAnnotation("Rollback Done");
       } catch (SpannerException e) {
         txnLogger.log(Level.FINE, "Exception during rollback", e);
@@ -238,13 +242,14 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       final ExecuteSqlRequest.Builder builder =
           getExecuteSqlRequestBuilder(statement, QueryMode.NORMAL);
       com.google.spanner.v1.ResultSet resultSet =
-          SpannerImpl.runWithRetries(
+          spanner.runWithRetries(
               new Callable<com.google.spanner.v1.ResultSet>() {
                 @Override
                 public com.google.spanner.v1.ResultSet call() throws Exception {
-                  return rpc.executeQuery(builder.build(), session.getOptions());
+                  return spanner.getRpc().executeQuery(builder.build(), session.getOptions());
                 }
-              });
+              },
+              SpannerImpl.QUERY.retryOnErrorCodes);
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
@@ -258,13 +263,14 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       beforeReadOrQuery();
       final ExecuteBatchDmlRequest.Builder builder = getExecuteBatchDmlRequestBuilder(statements);
       com.google.spanner.v1.ExecuteBatchDmlResponse response =
-          SpannerImpl.runWithRetries(
+          spanner.runWithRetries(
               new Callable<com.google.spanner.v1.ExecuteBatchDmlResponse>() {
                 @Override
                 public com.google.spanner.v1.ExecuteBatchDmlResponse call() throws Exception {
-                  return rpc.executeBatchDml(builder.build(), session.getOptions());
+                  return spanner.getRpc().executeBatchDml(builder.build(), session.getOptions());
                 }
-              });
+              },
+              SpannerImpl.QUERY.retryOnErrorCodes);
       long[] results = new long[response.getResultSetsCount()];
       for (int i = 0; i < response.getResultSetsCount(); ++i) {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();

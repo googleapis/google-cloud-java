@@ -65,7 +65,7 @@ public class BatchClientImpl implements BatchClient {
       super(
           checkNotNull(session),
           checkNotNull(bound),
-          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
+          checkNotNull(spanner),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
@@ -78,7 +78,7 @@ public class BatchClientImpl implements BatchClient {
           checkNotNull(session),
           checkNotNull(batchTransactionId).getTransactionId(),
           batchTransactionId.getTimestamp(),
-          checkNotNull(spanner).getOptions().getSpannerRpcV1(),
+          checkNotNull(spanner),
           spanner.getOptions().getPrefetchChunks());
       this.sessionName = session.getName();
       this.options = session.getOptions();
@@ -136,13 +136,14 @@ public class BatchClientImpl implements BatchClient {
 
       final PartitionReadRequest request = builder.build();
       PartitionResponse response =
-          SpannerImpl.runWithRetries(
+          spanner.runWithRetries(
               new Callable<PartitionResponse>() {
                 @Override
                 public PartitionResponse call() throws Exception {
-                  return rpc.partitionRead(request, options);
+                  return spanner.getRpc().partitionRead(request, options);
                 }
-              });
+              },
+              SpannerImpl.READ.retryOnErrorCodes);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =
@@ -181,13 +182,14 @@ public class BatchClientImpl implements BatchClient {
 
       final PartitionQueryRequest request = builder.build();
       PartitionResponse response =
-          SpannerImpl.runWithRetries(
+          spanner.runWithRetries(
               new Callable<PartitionResponse>() {
                 @Override
                 public PartitionResponse call() throws Exception {
-                  return rpc.partitionQuery(request, options);
+                  return spanner.getRpc().partitionQuery(request, options);
                 }
-              });
+              },
+              SpannerImpl.QUERY.retryOnErrorCodes);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =

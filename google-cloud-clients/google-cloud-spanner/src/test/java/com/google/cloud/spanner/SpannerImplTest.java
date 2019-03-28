@@ -22,6 +22,8 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.util.HashMap;
@@ -51,6 +53,8 @@ public class SpannerImplTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
     when(spannerOptions.getPrefetchChunks()).thenReturn(1);
+    when(spannerOptions.getRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(spannerOptions.getClock()).thenReturn(NanoClock.getDefaultClock());
     impl = new SpannerImpl(rpc, spannerOptions);
   }
 
@@ -126,13 +130,14 @@ public class SpannerImplTest {
   @Test
   public void exceptionIsTranslated() {
     try {
-      SpannerImpl.runWithRetries(
+      impl.runWithRetries(
           new Callable<Object>() {
             @Override
             public Void call() throws Exception {
               throw new Exception("Should be translated to SpannerException");
             }
-          });
+          },
+          SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage().contains("Unexpected exception thrown"));
@@ -145,7 +150,7 @@ public class SpannerImplTest {
     // retryable.
     boolean gotExpectedException = false;
     try {
-      SpannerImpl.runWithRetries(
+      impl.runWithRetries(
           new Callable<Object>() {
             @Override
             public Void call() throws Exception {
@@ -154,7 +159,8 @@ public class SpannerImplTest {
                   "This exception should not be retryable",
                   new SSLHandshakeException("some SSL handshake exception"));
             }
-          });
+          },
+          SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
     } catch (SpannerException e) {
       gotExpectedException = true;
       assertThat(e.isRetryable(), is(false));
@@ -164,7 +170,7 @@ public class SpannerImplTest {
     assertThat(gotExpectedException, is(true));
 
     // Verify that any other SpannerException with code UNAVAILABLE is retryable.
-    SpannerImpl.runWithRetries(
+    impl.runWithRetries(
         new Callable<Object>() {
           private boolean firstTime = true;
 
@@ -181,6 +187,7 @@ public class SpannerImplTest {
             }
             return null;
           }
-        });
+        },
+        SpannerImpl.DEFAULT_RETRY_ERROR_CODES);
   }
 }
