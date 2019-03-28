@@ -128,20 +128,6 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
   }
 
   @Override
-  public void updateInstance(Instance request, StreamObserver<Instance> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Instance) {
-      requests.add(request);
-      responseObserver.onNext((Instance) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
   public void partialUpdateInstance(
       PartialUpdateInstanceRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.remove();
