@@ -25,7 +25,6 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.websecurityscanner.v1alpha.stub.WebSecurityScannerStub;
 import com.google.cloud.websecurityscanner.v1alpha.stub.WebSecurityScannerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -48,9 +47,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
- *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
- *   ScanConfig response = webSecurityScannerClient.createScanConfig(formattedParent, scanConfig);
+ *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent, scanConfig);
  * }
  * </code>
  * </pre>
@@ -112,116 +111,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
   private final WebSecurityScannerSettings settings;
   private final WebSecurityScannerStub stub;
 
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate SCAN_CONFIG_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/scanConfigs/{scan_config}");
-
-  private static final PathTemplate SCAN_RUN_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/scanConfigs/{scan_config}/scanRuns/{scan_run}");
-
-  private static final PathTemplate FINDING_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/scanConfigs/{scan_config}/scanRuns/{scan_run}/findings/{finding}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a scan_config resource. */
-  public static final String formatScanConfigName(String project, String scanConfig) {
-    return SCAN_CONFIG_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "scan_config", scanConfig);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a scan_run resource. */
-  public static final String formatScanRunName(String project, String scanConfig, String scanRun) {
-    return SCAN_RUN_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "scan_config", scanConfig,
-        "scan_run", scanRun);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a finding resource. */
-  public static final String formatFindingName(
-      String project, String scanConfig, String scanRun, String finding) {
-    return FINDING_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "scan_config", scanConfig,
-        "scan_run", scanRun,
-        "finding", finding);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a scan_config resource.
-   */
-  public static final String parseProjectFromScanConfigName(String scanConfigName) {
-    return SCAN_CONFIG_PATH_TEMPLATE.parse(scanConfigName).get("project");
-  }
-
-  /**
-   * Parses the scan_config from the given fully-qualified path which represents a scan_config
-   * resource.
-   */
-  public static final String parseScanConfigFromScanConfigName(String scanConfigName) {
-    return SCAN_CONFIG_PATH_TEMPLATE.parse(scanConfigName).get("scan_config");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a scan_run resource.
-   */
-  public static final String parseProjectFromScanRunName(String scanRunName) {
-    return SCAN_RUN_PATH_TEMPLATE.parse(scanRunName).get("project");
-  }
-
-  /**
-   * Parses the scan_config from the given fully-qualified path which represents a scan_run
-   * resource.
-   */
-  public static final String parseScanConfigFromScanRunName(String scanRunName) {
-    return SCAN_RUN_PATH_TEMPLATE.parse(scanRunName).get("scan_config");
-  }
-
-  /**
-   * Parses the scan_run from the given fully-qualified path which represents a scan_run resource.
-   */
-  public static final String parseScanRunFromScanRunName(String scanRunName) {
-    return SCAN_RUN_PATH_TEMPLATE.parse(scanRunName).get("scan_run");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a finding resource. */
-  public static final String parseProjectFromFindingName(String findingName) {
-    return FINDING_PATH_TEMPLATE.parse(findingName).get("project");
-  }
-
-  /**
-   * Parses the scan_config from the given fully-qualified path which represents a finding resource.
-   */
-  public static final String parseScanConfigFromFindingName(String findingName) {
-    return FINDING_PATH_TEMPLATE.parse(findingName).get("scan_config");
-  }
-
-  /**
-   * Parses the scan_run from the given fully-qualified path which represents a finding resource.
-   */
-  public static final String parseScanRunFromFindingName(String findingName) {
-    return FINDING_PATH_TEMPLATE.parse(findingName).get("scan_run");
-  }
-
-  /** Parses the finding from the given fully-qualified path which represents a finding resource. */
-  public static final String parseFindingFromFindingName(String findingName) {
-    return FINDING_PATH_TEMPLATE.parse(findingName).get("finding");
-  }
-
   /** Constructs an instance of WebSecurityScannerClient with default settings. */
   public static final WebSecurityScannerClient create() throws IOException {
     return create(WebSecurityScannerSettings.newBuilder().build());
@@ -278,9 +167,38 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
-   *   ScanConfig response = webSecurityScannerClient.createScanConfig(formattedParent, scanConfig);
+   *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent, scanConfig);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name where the scan is created, which should be a
+   *     project resource name in the format 'projects/{projectId}'.
+   * @param scanConfig Required. The ScanConfig to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ScanConfig createScanConfig(ProjectName parent, ScanConfig scanConfig) {
+
+    CreateScanConfigRequest request =
+        CreateScanConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setScanConfig(scanConfig)
+            .build();
+    return createScanConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a new ScanConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
+   *   ScanConfig response = webSecurityScannerClient.createScanConfig(parent.toString(), scanConfig);
    * }
    * </code></pre>
    *
@@ -290,7 +208,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig createScanConfig(String parent, ScanConfig scanConfig) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "createScanConfig");
+
     CreateScanConfigRequest request =
         CreateScanConfigRequest.newBuilder().setParent(parent).setScanConfig(scanConfig).build();
     return createScanConfig(request);
@@ -304,10 +222,10 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
    *   CreateScanConfigRequest request = CreateScanConfigRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setScanConfig(scanConfig)
    *     .build();
    *   ScanConfig response = webSecurityScannerClient.createScanConfig(request);
@@ -329,10 +247,10 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
    *   CreateScanConfigRequest request = CreateScanConfigRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setScanConfig(scanConfig)
    *     .build();
    *   ApiFuture&lt;ScanConfig&gt; future = webSecurityScannerClient.createScanConfigCallable().futureCall(request);
@@ -353,8 +271,32 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
-   *   webSecurityScannerClient.deleteScanConfig(formattedName);
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   webSecurityScannerClient.deleteScanConfig(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the ScanConfig to be deleted. The name follows the
+   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteScanConfig(ScanConfigName name) {
+
+    DeleteScanConfigRequest request =
+        DeleteScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteScanConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes an existing ScanConfig and its child resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   webSecurityScannerClient.deleteScanConfig(name.toString());
    * }
    * </code></pre>
    *
@@ -363,7 +305,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteScanConfig(String name) {
-    SCAN_CONFIG_PATH_TEMPLATE.validate(name, "deleteScanConfig");
+
     DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder().setName(name).build();
     deleteScanConfig(request);
   }
@@ -376,9 +318,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   webSecurityScannerClient.deleteScanConfig(request);
    * }
@@ -399,9 +341,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   DeleteScanConfigRequest request = DeleteScanConfigRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = webSecurityScannerClient.deleteScanConfigCallable().futureCall(request);
    *   // Do something
@@ -421,8 +363,32 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanConfig response = webSecurityScannerClient.getScanConfig(formattedName);
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfig response = webSecurityScannerClient.getScanConfig(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the ScanConfig to be returned. The name follows the
+   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ScanConfig getScanConfig(ScanConfigName name) {
+
+    GetScanConfigRequest request =
+        GetScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getScanConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a ScanConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfig response = webSecurityScannerClient.getScanConfig(name.toString());
    * }
    * </code></pre>
    *
@@ -431,7 +397,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanConfig getScanConfig(String name) {
-    SCAN_CONFIG_PATH_TEMPLATE.validate(name, "getScanConfig");
+
     GetScanConfigRequest request = GetScanConfigRequest.newBuilder().setName(name).build();
     return getScanConfig(request);
   }
@@ -444,9 +410,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   GetScanConfigRequest request = GetScanConfigRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ScanConfig response = webSecurityScannerClient.getScanConfig(request);
    * }
@@ -467,9 +433,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   GetScanConfigRequest request = GetScanConfigRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ScanConfig&gt; future = webSecurityScannerClient.getScanConfigCallable().futureCall(request);
    *   // Do something
@@ -489,8 +455,35 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
-   *   for (ScanConfig element : webSecurityScannerClient.listScanConfigs(formattedParent).iterateAll()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (ScanConfig element : webSecurityScannerClient.listScanConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, which should be a project resource name in
+   *     the format 'projects/{projectId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListScanConfigsPagedResponse listScanConfigs(ProjectName parent) {
+    ListScanConfigsRequest request =
+        ListScanConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listScanConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists ScanConfigs under a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (ScanConfig element : webSecurityScannerClient.listScanConfigs(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -501,7 +494,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListScanConfigsPagedResponse listScanConfigs(String parent) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "listScanConfigs");
     ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder().setParent(parent).build();
     return listScanConfigs(request);
   }
@@ -514,9 +506,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (ScanConfig element : webSecurityScannerClient.listScanConfigs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -539,9 +531,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListScanConfigsPagedResponse&gt; future = webSecurityScannerClient.listScanConfigsPagedCallable().futureCall(request);
    *   // Do something
@@ -564,9 +556,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
    *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListScanConfigsResponse response = webSecurityScannerClient.listScanConfigsCallable().call(request);
@@ -677,8 +669,32 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanRun response = webSecurityScannerClient.startScanRun(formattedName);
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanRun response = webSecurityScannerClient.startScanRun(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the ScanConfig to be used. The name follows the
+   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ScanRun startScanRun(ScanConfigName name) {
+
+    StartScanRunRequest request =
+        StartScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return startScanRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Start a ScanRun according to the given ScanConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanRun response = webSecurityScannerClient.startScanRun(name.toString());
    * }
    * </code></pre>
    *
@@ -687,7 +703,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun startScanRun(String name) {
-    SCAN_CONFIG_PATH_TEMPLATE.validate(name, "startScanRun");
+
     StartScanRunRequest request = StartScanRunRequest.newBuilder().setName(name).build();
     return startScanRun(request);
   }
@@ -700,9 +716,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   StartScanRunRequest request = StartScanRunRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ScanRun response = webSecurityScannerClient.startScanRun(request);
    * }
@@ -723,9 +739,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   StartScanRunRequest request = StartScanRunRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ScanRun&gt; future = webSecurityScannerClient.startScanRunCallable().futureCall(request);
    *   // Do something
@@ -745,8 +761,32 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
-   *   ScanRun response = webSecurityScannerClient.getScanRun(formattedName);
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRun response = webSecurityScannerClient.getScanRun(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the ScanRun to be returned. The name follows the
+   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ScanRun getScanRun(ScanRunName name) {
+
+    GetScanRunRequest request =
+        GetScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getScanRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a ScanRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRun response = webSecurityScannerClient.getScanRun(name.toString());
    * }
    * </code></pre>
    *
@@ -755,7 +795,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun getScanRun(String name) {
-    SCAN_RUN_PATH_TEMPLATE.validate(name, "getScanRun");
+
     GetScanRunRequest request = GetScanRunRequest.newBuilder().setName(name).build();
     return getScanRun(request);
   }
@@ -768,9 +808,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   GetScanRunRequest request = GetScanRunRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ScanRun response = webSecurityScannerClient.getScanRun(request);
    * }
@@ -791,9 +831,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   GetScanRunRequest request = GetScanRunRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ScanRun&gt; future = webSecurityScannerClient.getScanRunCallable().futureCall(request);
    *   // Do something
@@ -813,8 +853,35 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
-   *   for (ScanRun element : webSecurityScannerClient.listScanRuns(formattedParent).iterateAll()) {
+   *   ScanConfigName parent = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   for (ScanRun element : webSecurityScannerClient.listScanRuns(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, which should be a scan resource name in the
+   *     format 'projects/{projectId}/scanConfigs/{scanConfigId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListScanRunsPagedResponse listScanRuns(ScanConfigName parent) {
+    ListScanRunsRequest request =
+        ListScanRunsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listScanRuns(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists ScanRuns under a given ScanConfig, in descending order of ScanRun stop time.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanConfigName parent = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
+   *   for (ScanRun element : webSecurityScannerClient.listScanRuns(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -825,7 +892,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListScanRunsPagedResponse listScanRuns(String parent) {
-    SCAN_CONFIG_PATH_TEMPLATE.validate(parent, "listScanRuns");
     ListScanRunsRequest request = ListScanRunsRequest.newBuilder().setParent(parent).build();
     return listScanRuns(request);
   }
@@ -838,9 +904,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName parent = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   ListScanRunsRequest request = ListScanRunsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (ScanRun element : webSecurityScannerClient.listScanRuns(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -863,9 +929,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName parent = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   ListScanRunsRequest request = ListScanRunsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListScanRunsPagedResponse&gt; future = webSecurityScannerClient.listScanRunsPagedCallable().futureCall(request);
    *   // Do something
@@ -888,9 +954,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+   *   ScanConfigName parent = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
    *   ListScanRunsRequest request = ListScanRunsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListScanRunsResponse response = webSecurityScannerClient.listScanRunsCallable().call(request);
@@ -919,8 +985,32 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
-   *   ScanRun response = webSecurityScannerClient.stopScanRun(formattedName);
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRun response = webSecurityScannerClient.stopScanRun(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the ScanRun to be stopped. The name follows the
+   *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ScanRun stopScanRun(ScanRunName name) {
+
+    StopScanRunRequest request =
+        StopScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return stopScanRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Stops a ScanRun. The stopped ScanRun is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRun response = webSecurityScannerClient.stopScanRun(name.toString());
    * }
    * </code></pre>
    *
@@ -929,7 +1019,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScanRun stopScanRun(String name) {
-    SCAN_RUN_PATH_TEMPLATE.validate(name, "stopScanRun");
+
     StopScanRunRequest request = StopScanRunRequest.newBuilder().setName(name).build();
     return stopScanRun(request);
   }
@@ -942,9 +1032,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   StopScanRunRequest request = StopScanRunRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ScanRun response = webSecurityScannerClient.stopScanRun(request);
    * }
@@ -965,9 +1055,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName name = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   StopScanRunRequest request = StopScanRunRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;ScanRun&gt; future = webSecurityScannerClient.stopScanRunCallable().futureCall(request);
    *   // Do something
@@ -987,8 +1077,35 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
-   *   for (CrawledUrl element : webSecurityScannerClient.listCrawledUrls(formattedParent).iterateAll()) {
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   for (CrawledUrl element : webSecurityScannerClient.listCrawledUrls(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, which should be a scan run resource name in
+   *     the format 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCrawledUrlsPagedResponse listCrawledUrls(ScanRunName parent) {
+    ListCrawledUrlsRequest request =
+        ListCrawledUrlsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCrawledUrls(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List CrawledUrls under a given ScanRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   for (CrawledUrl element : webSecurityScannerClient.listCrawledUrls(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -999,7 +1116,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCrawledUrlsPagedResponse listCrawledUrls(String parent) {
-    SCAN_RUN_PATH_TEMPLATE.validate(parent, "listCrawledUrls");
     ListCrawledUrlsRequest request = ListCrawledUrlsRequest.newBuilder().setParent(parent).build();
     return listCrawledUrls(request);
   }
@@ -1012,9 +1128,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   ListCrawledUrlsRequest request = ListCrawledUrlsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (CrawledUrl element : webSecurityScannerClient.listCrawledUrls(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1037,9 +1153,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   ListCrawledUrlsRequest request = ListCrawledUrlsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListCrawledUrlsPagedResponse&gt; future = webSecurityScannerClient.listCrawledUrlsPagedCallable().futureCall(request);
    *   // Do something
@@ -1062,9 +1178,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   ListCrawledUrlsRequest request = ListCrawledUrlsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListCrawledUrlsResponse response = webSecurityScannerClient.listCrawledUrlsCallable().call(request);
@@ -1094,8 +1210,33 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatFindingName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
-   *   Finding response = webSecurityScannerClient.getFinding(formattedName);
+   *   FindingName name = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+   *   Finding response = webSecurityScannerClient.getFinding(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The resource name of the Finding to be returned. The name follows the
+   *     format of
+   *     'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}/findings/{findingId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding getFinding(FindingName name) {
+
+    GetFindingRequest request =
+        GetFindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getFinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a Finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   FindingName name = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+   *   Finding response = webSecurityScannerClient.getFinding(name.toString());
    * }
    * </code></pre>
    *
@@ -1105,7 +1246,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Finding getFinding(String name) {
-    FINDING_PATH_TEMPLATE.validate(name, "getFinding");
+
     GetFindingRequest request = GetFindingRequest.newBuilder().setName(name).build();
     return getFinding(request);
   }
@@ -1118,9 +1259,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatFindingName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+   *   FindingName name = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
    *   GetFindingRequest request = GetFindingRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Finding response = webSecurityScannerClient.getFinding(request);
    * }
@@ -1141,9 +1282,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedName = WebSecurityScannerClient.formatFindingName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+   *   FindingName name = FindingName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
    *   GetFindingRequest request = GetFindingRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Finding&gt; future = webSecurityScannerClient.getFindingCallable().futureCall(request);
    *   // Do something
@@ -1163,9 +1304,40 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   String filter = "";
-   *   for (Finding element : webSecurityScannerClient.listFindings(formattedParent, filter).iterateAll()) {
+   *   for (Finding element : webSecurityScannerClient.listFindings(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, which should be a scan run resource name in
+   *     the format 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+   * @param filter The filter expression. The expression must be in the format: &lt;field&gt;
+   *     &lt;operator&gt; &lt;value&gt;. Supported field: 'finding_type'. Supported operator: '='.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFindingsPagedResponse listFindings(ScanRunName parent, String filter) {
+    ListFindingsRequest request =
+        ListFindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return listFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List Findings under a given ScanRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   String filter = "";
+   *   for (Finding element : webSecurityScannerClient.listFindings(parent.toString(), filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -1178,7 +1350,6 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingsPagedResponse listFindings(String parent, String filter) {
-    SCAN_RUN_PATH_TEMPLATE.validate(parent, "listFindings");
     ListFindingsRequest request =
         ListFindingsRequest.newBuilder().setParent(parent).setFilter(filter).build();
     return listFindings(request);
@@ -1192,10 +1363,10 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   String filter = "";
    *   ListFindingsRequest request = ListFindingsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setFilter(filter)
    *     .build();
    *   for (Finding element : webSecurityScannerClient.listFindings(request).iterateAll()) {
@@ -1219,10 +1390,10 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   String filter = "";
    *   ListFindingsRequest request = ListFindingsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setFilter(filter)
    *     .build();
    *   ApiFuture&lt;ListFindingsPagedResponse&gt; future = webSecurityScannerClient.listFindingsPagedCallable().futureCall(request);
@@ -1246,10 +1417,10 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   String filter = "";
    *   ListFindingsRequest request = ListFindingsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setFilter(filter)
    *     .build();
    *   while (true) {
@@ -1279,8 +1450,34 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
-   *   ListFindingTypeStatsResponse response = webSecurityScannerClient.listFindingTypeStats(formattedParent);
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ListFindingTypeStatsResponse response = webSecurityScannerClient.listFindingTypeStats(parent);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The parent resource name, which should be a scan run resource name in
+   *     the format 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFindingTypeStatsResponse listFindingTypeStats(ScanRunName parent) {
+
+    ListFindingTypeStatsRequest request =
+        ListFindingTypeStatsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFindingTypeStats(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * List all FindingTypeStats under a given ScanRun.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ListFindingTypeStatsResponse response = webSecurityScannerClient.listFindingTypeStats(parent.toString());
    * }
    * </code></pre>
    *
@@ -1289,7 +1486,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFindingTypeStatsResponse listFindingTypeStats(String parent) {
-    SCAN_RUN_PATH_TEMPLATE.validate(parent, "listFindingTypeStats");
+
     ListFindingTypeStatsRequest request =
         ListFindingTypeStatsRequest.newBuilder().setParent(parent).build();
     return listFindingTypeStats(request);
@@ -1303,9 +1500,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   ListFindingTypeStatsRequest request = ListFindingTypeStatsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ListFindingTypeStatsResponse response = webSecurityScannerClient.listFindingTypeStats(request);
    * }
@@ -1327,9 +1524,9 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
-   *   String formattedParent = WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+   *   ScanRunName parent = ScanRunName.of("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
    *   ListFindingTypeStatsRequest request = ListFindingTypeStatsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListFindingTypeStatsResponse&gt; future = webSecurityScannerClient.listFindingTypeStatsCallable().futureCall(request);
    *   // Do something
