@@ -27,7 +27,6 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     filter_ = "";
     orderBy_ = "";
     view_ = 0;
-    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -129,7 +128,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -710,23 +709,22 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     com.google.monitoring.v3.ListTimeSeriesRequest other =
         (com.google.monitoring.v3.ListTimeSeriesRequest) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getFilter().equals(other.getFilter());
-    result = result && (hasInterval() == other.hasInterval());
+    if (!getName().equals(other.getName())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (hasInterval() != other.hasInterval()) return false;
     if (hasInterval()) {
-      result = result && getInterval().equals(other.getInterval());
+      if (!getInterval().equals(other.getInterval())) return false;
     }
-    result = result && (hasAggregation() == other.hasAggregation());
+    if (hasAggregation() != other.hasAggregation()) return false;
     if (hasAggregation()) {
-      result = result && getAggregation().equals(other.getAggregation());
+      if (!getAggregation().equals(other.getAggregation())) return false;
     }
-    result = result && getOrderBy().equals(other.getOrderBy());
-    result = result && view_ == other.view_;
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (view_ != other.view_) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -974,35 +972,35 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1292,7 +1290,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.monitoring.v3.TimeInterval interval_ = null;
+    private com.google.monitoring.v3.TimeInterval interval_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.TimeInterval,
             com.google.monitoring.v3.TimeInterval.Builder,
@@ -1491,7 +1489,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       return intervalBuilder_;
     }
 
-    private com.google.monitoring.v3.Aggregation aggregation_ = null;
+    private com.google.monitoring.v3.Aggregation aggregation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.Aggregation,
             com.google.monitoring.v3.Aggregation.Builder,
@@ -2029,7 +2027,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
