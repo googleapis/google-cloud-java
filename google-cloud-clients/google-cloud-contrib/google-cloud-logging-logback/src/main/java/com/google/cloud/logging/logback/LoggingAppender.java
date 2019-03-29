@@ -184,7 +184,6 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     loggingEnhancers.addAll(getLoggingEnhancers());
     loggingEventEnhancers = new ArrayList<>();
     loggingEventEnhancers.addAll(getLoggingEventEnhancers());
-
   }
 
   String getProjectId() {
