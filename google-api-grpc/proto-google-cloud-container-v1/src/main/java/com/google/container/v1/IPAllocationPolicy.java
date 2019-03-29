@@ -23,8 +23,6 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
   }
 
   private IPAllocationPolicy() {
-    useIpAliases_ = false;
-    createSubnetwork_ = false;
     subnetworkName_ = "";
     clusterIpv4Cidr_ = "";
     nodeIpv4Cidr_ = "";
@@ -135,7 +133,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -780,21 +778,20 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     com.google.container.v1.IPAllocationPolicy other =
         (com.google.container.v1.IPAllocationPolicy) obj;
 
-    boolean result = true;
-    result = result && (getUseIpAliases() == other.getUseIpAliases());
-    result = result && (getCreateSubnetwork() == other.getCreateSubnetwork());
-    result = result && getSubnetworkName().equals(other.getSubnetworkName());
-    result = result && getClusterIpv4Cidr().equals(other.getClusterIpv4Cidr());
-    result = result && getNodeIpv4Cidr().equals(other.getNodeIpv4Cidr());
-    result = result && getServicesIpv4Cidr().equals(other.getServicesIpv4Cidr());
-    result = result && getClusterSecondaryRangeName().equals(other.getClusterSecondaryRangeName());
-    result =
-        result && getServicesSecondaryRangeName().equals(other.getServicesSecondaryRangeName());
-    result = result && getClusterIpv4CidrBlock().equals(other.getClusterIpv4CidrBlock());
-    result = result && getNodeIpv4CidrBlock().equals(other.getNodeIpv4CidrBlock());
-    result = result && getServicesIpv4CidrBlock().equals(other.getServicesIpv4CidrBlock());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getUseIpAliases() != other.getUseIpAliases()) return false;
+    if (getCreateSubnetwork() != other.getCreateSubnetwork()) return false;
+    if (!getSubnetworkName().equals(other.getSubnetworkName())) return false;
+    if (!getClusterIpv4Cidr().equals(other.getClusterIpv4Cidr())) return false;
+    if (!getNodeIpv4Cidr().equals(other.getNodeIpv4Cidr())) return false;
+    if (!getServicesIpv4Cidr().equals(other.getServicesIpv4Cidr())) return false;
+    if (!getClusterSecondaryRangeName().equals(other.getClusterSecondaryRangeName())) return false;
+    if (!getServicesSecondaryRangeName().equals(other.getServicesSecondaryRangeName()))
+      return false;
+    if (!getClusterIpv4CidrBlock().equals(other.getClusterIpv4CidrBlock())) return false;
+    if (!getNodeIpv4CidrBlock().equals(other.getNodeIpv4CidrBlock())) return false;
+    if (!getServicesIpv4CidrBlock().equals(other.getServicesIpv4CidrBlock())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1037,35 +1034,35 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2310,7 +2307,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

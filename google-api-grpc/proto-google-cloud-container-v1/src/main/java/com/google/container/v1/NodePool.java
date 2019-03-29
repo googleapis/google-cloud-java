@@ -29,7 +29,6 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
   private NodePool() {
     name_ = "";
-    initialNodeCount_ = 0;
     selfLink_ = "";
     version_ = "";
     instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -137,7 +136,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           case 818:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -160,7 +159,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -172,7 +171,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -950,28 +949,27 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1.NodePool other = (com.google.container.v1.NodePool) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasConfig() == other.hasConfig());
+    if (!getName().equals(other.getName())) return false;
+    if (hasConfig() != other.hasConfig()) return false;
     if (hasConfig()) {
-      result = result && getConfig().equals(other.getConfig());
+      if (!getConfig().equals(other.getConfig())) return false;
     }
-    result = result && (getInitialNodeCount() == other.getInitialNodeCount());
-    result = result && getSelfLink().equals(other.getSelfLink());
-    result = result && getVersion().equals(other.getVersion());
-    result = result && getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList());
-    result = result && status_ == other.status_;
-    result = result && getStatusMessage().equals(other.getStatusMessage());
-    result = result && (hasAutoscaling() == other.hasAutoscaling());
+    if (getInitialNodeCount() != other.getInitialNodeCount()) return false;
+    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
+    if (!getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList())) return false;
+    if (status_ != other.status_) return false;
+    if (!getStatusMessage().equals(other.getStatusMessage())) return false;
+    if (hasAutoscaling() != other.hasAutoscaling()) return false;
     if (hasAutoscaling()) {
-      result = result && getAutoscaling().equals(other.getAutoscaling());
+      if (!getAutoscaling().equals(other.getAutoscaling())) return false;
     }
-    result = result && (hasManagement() == other.hasManagement());
+    if (hasManagement() != other.hasManagement()) return false;
     if (hasManagement()) {
-      result = result && getManagement().equals(other.getManagement());
+      if (!getManagement().equals(other.getManagement())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1227,7 +1225,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       result.initialNodeCount_ = initialNodeCount_;
       result.selfLink_ = selfLink_;
       result.version_ = version_;
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
@@ -1251,35 +1249,35 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1460,7 +1458,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.NodeConfig config_ = null;
+    private com.google.container.v1.NodeConfig config_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodeConfig,
             com.google.container.v1.NodeConfig.Builder,
@@ -1882,7 +1880,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
         bitField0_ |= 0x00000020;
       }
@@ -2214,7 +2212,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.NodePoolAutoscaling autoscaling_ = null;
+    private com.google.container.v1.NodePoolAutoscaling autoscaling_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodePoolAutoscaling,
             com.google.container.v1.NodePoolAutoscaling.Builder,
@@ -2405,7 +2403,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return autoscalingBuilder_;
     }
 
-    private com.google.container.v1.NodeManagement management_ = null;
+    private com.google.container.v1.NodeManagement management_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodeManagement,
             com.google.container.v1.NodeManagement.Builder,
@@ -2588,7 +2586,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
