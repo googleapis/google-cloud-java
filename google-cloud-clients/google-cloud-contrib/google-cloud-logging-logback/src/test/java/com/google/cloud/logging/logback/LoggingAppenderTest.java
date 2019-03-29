@@ -48,14 +48,12 @@ public class LoggingAppenderTest {
   private LoggingAppender loggingAppender = new TestLoggingAppender();
 
   class TestLoggingAppender extends LoggingAppender {
+    TestLoggingAppender() {
+      super(logging);
+    }
     @Override
     String getProjectId() {
       return projectId;
-    }
-
-    @Override
-    Logging getLogging() {
-      return logging;
     }
   }
 

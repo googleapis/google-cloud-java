@@ -32,6 +32,7 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.MonitoredResourceUtil;
 import com.google.cloud.logging.Payload;
 import com.google.cloud.logging.Severity;
+import com.google.common.annotations.VisibleForTesting;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -66,7 +67,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private static final String LEVEL_NAME_KEY = "levelName";
   private static final String LEVEL_VALUE_KEY = "levelValue";
 
-  private volatile Logging logging;
+  private Logging logging;
   private List<LoggingEnhancer> loggingEnhancers;
   private List<LoggingEventEnhancer> loggingEventEnhancers;
   private WriteOption[] defaultWriteOptions;
@@ -76,6 +77,14 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private String resourceType;
   private Set<String> enhancerClassNames = new HashSet<>();
   private Set<String> loggingEventEnhancerClassNames = new HashSet<>();
+
+  public LoggingAppender() {
+  }
+
+  @VisibleForTesting
+  protected LoggingAppender(Logging logging) {
+    this.logging = logging;
+  }
 
   /**
    * Batched logging requests get immediately flushed for logs at or above this level.
@@ -173,7 +182,9 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     }
     super.start();
 
-    logging = LoggingOptions.getDefaultInstance().getService();
+    if (logging == null) {
+      logging = LoggingOptions.getDefaultInstance().getService();
+    }
     MonitoredResource resource = getMonitoredResource(getProjectId());
     defaultWriteOptions =
         new WriteOption[] {WriteOption.logName(getLogName()), WriteOption.resource(resource)};
