@@ -230,7 +230,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -672,48 +672,46 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     com.google.privacy.dlp.v2.PrimitiveTransformation other =
         (com.google.privacy.dlp.v2.PrimitiveTransformation) obj;
 
-    boolean result = true;
-    result = result && getTransformationCase().equals(other.getTransformationCase());
-    if (!result) return false;
+    if (!getTransformationCase().equals(other.getTransformationCase())) return false;
     switch (transformationCase_) {
       case 1:
-        result = result && getReplaceConfig().equals(other.getReplaceConfig());
+        if (!getReplaceConfig().equals(other.getReplaceConfig())) return false;
         break;
       case 2:
-        result = result && getRedactConfig().equals(other.getRedactConfig());
+        if (!getRedactConfig().equals(other.getRedactConfig())) return false;
         break;
       case 3:
-        result = result && getCharacterMaskConfig().equals(other.getCharacterMaskConfig());
+        if (!getCharacterMaskConfig().equals(other.getCharacterMaskConfig())) return false;
         break;
       case 4:
-        result =
-            result && getCryptoReplaceFfxFpeConfig().equals(other.getCryptoReplaceFfxFpeConfig());
+        if (!getCryptoReplaceFfxFpeConfig().equals(other.getCryptoReplaceFfxFpeConfig()))
+          return false;
         break;
       case 5:
-        result =
-            result && getFixedSizeBucketingConfig().equals(other.getFixedSizeBucketingConfig());
+        if (!getFixedSizeBucketingConfig().equals(other.getFixedSizeBucketingConfig()))
+          return false;
         break;
       case 6:
-        result = result && getBucketingConfig().equals(other.getBucketingConfig());
+        if (!getBucketingConfig().equals(other.getBucketingConfig())) return false;
         break;
       case 7:
-        result =
-            result && getReplaceWithInfoTypeConfig().equals(other.getReplaceWithInfoTypeConfig());
+        if (!getReplaceWithInfoTypeConfig().equals(other.getReplaceWithInfoTypeConfig()))
+          return false;
         break;
       case 8:
-        result = result && getTimePartConfig().equals(other.getTimePartConfig());
+        if (!getTimePartConfig().equals(other.getTimePartConfig())) return false;
         break;
       case 9:
-        result = result && getCryptoHashConfig().equals(other.getCryptoHashConfig());
+        if (!getCryptoHashConfig().equals(other.getCryptoHashConfig())) return false;
         break;
       case 11:
-        result = result && getDateShiftConfig().equals(other.getDateShiftConfig());
+        if (!getDateShiftConfig().equals(other.getDateShiftConfig())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1018,35 +1016,35 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2555,7 +2553,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

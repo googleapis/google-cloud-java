@@ -130,7 +130,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -570,30 +570,28 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     com.google.privacy.dlp.v2.ContentLocation other =
         (com.google.privacy.dlp.v2.ContentLocation) obj;
 
-    boolean result = true;
-    result = result && getContainerName().equals(other.getContainerName());
-    result = result && (hasContainerTimestamp() == other.hasContainerTimestamp());
+    if (!getContainerName().equals(other.getContainerName())) return false;
+    if (hasContainerTimestamp() != other.hasContainerTimestamp()) return false;
     if (hasContainerTimestamp()) {
-      result = result && getContainerTimestamp().equals(other.getContainerTimestamp());
+      if (!getContainerTimestamp().equals(other.getContainerTimestamp())) return false;
     }
-    result = result && getContainerVersion().equals(other.getContainerVersion());
-    result = result && getLocationCase().equals(other.getLocationCase());
-    if (!result) return false;
+    if (!getContainerVersion().equals(other.getContainerVersion())) return false;
+    if (!getLocationCase().equals(other.getLocationCase())) return false;
     switch (locationCase_) {
       case 2:
-        result = result && getRecordLocation().equals(other.getRecordLocation());
+        if (!getRecordLocation().equals(other.getRecordLocation())) return false;
         break;
       case 3:
-        result = result && getImageLocation().equals(other.getImageLocation());
+        if (!getImageLocation().equals(other.getImageLocation())) return false;
         break;
       case 5:
-        result = result && getDocumentLocation().equals(other.getDocumentLocation());
+        if (!getDocumentLocation().equals(other.getDocumentLocation())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -846,35 +844,35 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1699,7 +1697,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       return documentLocationBuilder_;
     }
 
-    private com.google.protobuf.Timestamp containerTimestamp_ = null;
+    private com.google.protobuf.Timestamp containerTimestamp_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2008,7 +2006,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -84,7 +84,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -94,7 +94,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -106,7 +106,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         actions_ = java.util.Collections.unmodifiableList(actions_);
       }
       this.unknownFields = unknownFields.build();
@@ -391,19 +391,18 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
     com.google.privacy.dlp.v2.InspectJobConfig other =
         (com.google.privacy.dlp.v2.InspectJobConfig) obj;
 
-    boolean result = true;
-    result = result && (hasStorageConfig() == other.hasStorageConfig());
+    if (hasStorageConfig() != other.hasStorageConfig()) return false;
     if (hasStorageConfig()) {
-      result = result && getStorageConfig().equals(other.getStorageConfig());
+      if (!getStorageConfig().equals(other.getStorageConfig())) return false;
     }
-    result = result && (hasInspectConfig() == other.hasInspectConfig());
+    if (hasInspectConfig() != other.hasInspectConfig()) return false;
     if (hasInspectConfig()) {
-      result = result && getInspectConfig().equals(other.getInspectConfig());
+      if (!getInspectConfig().equals(other.getInspectConfig())) return false;
     }
-    result = result && getInspectTemplateName().equals(other.getInspectTemplateName());
-    result = result && getActionsList().equals(other.getActionsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getInspectTemplateName().equals(other.getInspectTemplateName())) return false;
+    if (!getActionsList().equals(other.getActionsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -627,7 +626,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       }
       result.inspectTemplateName_ = inspectTemplateName_;
       if (actionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -642,35 +641,35 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -753,7 +752,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.privacy.dlp.v2.StorageConfig storageConfig_ = null;
+    private com.google.privacy.dlp.v2.StorageConfig storageConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.StorageConfig,
             com.google.privacy.dlp.v2.StorageConfig.Builder,
@@ -935,7 +934,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
       return storageConfigBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.InspectConfig inspectConfig_ = null;
+    private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.InspectConfig,
             com.google.privacy.dlp.v2.InspectConfig.Builder,
@@ -1225,7 +1224,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureActionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>(actions_);
         bitField0_ |= 0x00000008;
       }
@@ -1579,10 +1578,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.Action,
                 com.google.privacy.dlp.v2.Action.Builder,
                 com.google.privacy.dlp.v2.ActionOrBuilder>(
-                actions_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
-                getParentForChildren(),
-                isClean());
+                actions_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         actions_ = null;
       }
       return actionsBuilder_;
@@ -1590,7 +1586,7 @@ public final class InspectJobConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

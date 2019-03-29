@@ -115,7 +115,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -306,9 +306,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private TimespanConfig() {
-      enableAutoPopulationOfTimespanConfig_ = false;
-    }
+    private TimespanConfig() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -387,7 +385,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -648,25 +646,22 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.StorageConfig.TimespanConfig other =
           (com.google.privacy.dlp.v2.StorageConfig.TimespanConfig) obj;
 
-      boolean result = true;
-      result = result && (hasStartTime() == other.hasStartTime());
+      if (hasStartTime() != other.hasStartTime()) return false;
       if (hasStartTime()) {
-        result = result && getStartTime().equals(other.getStartTime());
+        if (!getStartTime().equals(other.getStartTime())) return false;
       }
-      result = result && (hasEndTime() == other.hasEndTime());
+      if (hasEndTime() != other.hasEndTime()) return false;
       if (hasEndTime()) {
-        result = result && getEndTime().equals(other.getEndTime());
+        if (!getEndTime().equals(other.getEndTime())) return false;
       }
-      result = result && (hasTimestampField() == other.hasTimestampField());
+      if (hasTimestampField() != other.hasTimestampField()) return false;
       if (hasTimestampField()) {
-        result = result && getTimestampField().equals(other.getTimestampField());
+        if (!getTimestampField().equals(other.getTimestampField())) return false;
       }
-      result =
-          result
-              && (getEnableAutoPopulationOfTimespanConfig()
-                  == other.getEnableAutoPopulationOfTimespanConfig());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getEnableAutoPopulationOfTimespanConfig()
+          != other.getEnableAutoPopulationOfTimespanConfig()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -910,23 +905,23 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -934,13 +929,13 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -998,7 +993,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.Timestamp startTime_ = null;
+      private com.google.protobuf.Timestamp startTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
               com.google.protobuf.Timestamp.Builder,
@@ -1179,7 +1174,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_;
       }
 
-      private com.google.protobuf.Timestamp endTime_ = null;
+      private com.google.protobuf.Timestamp endTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
               com.google.protobuf.Timestamp.Builder,
@@ -1363,7 +1358,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_;
       }
 
-      private com.google.privacy.dlp.v2.FieldId timestampField_ = null;
+      private com.google.privacy.dlp.v2.FieldId timestampField_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.FieldId,
               com.google.privacy.dlp.v2.FieldId.Builder,
@@ -1672,7 +1667,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1982,28 +1977,26 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.privacy.dlp.v2.StorageConfig other = (com.google.privacy.dlp.v2.StorageConfig) obj;
 
-    boolean result = true;
-    result = result && (hasTimespanConfig() == other.hasTimespanConfig());
+    if (hasTimespanConfig() != other.hasTimespanConfig()) return false;
     if (hasTimespanConfig()) {
-      result = result && getTimespanConfig().equals(other.getTimespanConfig());
+      if (!getTimespanConfig().equals(other.getTimespanConfig())) return false;
     }
-    result = result && getTypeCase().equals(other.getTypeCase());
-    if (!result) return false;
+    if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
       case 2:
-        result = result && getDatastoreOptions().equals(other.getDatastoreOptions());
+        if (!getDatastoreOptions().equals(other.getDatastoreOptions())) return false;
         break;
       case 3:
-        result = result && getCloudStorageOptions().equals(other.getCloudStorageOptions());
+        if (!getCloudStorageOptions().equals(other.getCloudStorageOptions())) return false;
         break;
       case 4:
-        result = result && getBigQueryOptions().equals(other.getBigQueryOptions());
+        if (!getBigQueryOptions().equals(other.getBigQueryOptions())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2246,35 +2239,35 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2963,7 +2956,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       return bigQueryOptionsBuilder_;
     }
 
-    private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_ = null;
+    private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfig,
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder,
@@ -3078,7 +3071,7 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

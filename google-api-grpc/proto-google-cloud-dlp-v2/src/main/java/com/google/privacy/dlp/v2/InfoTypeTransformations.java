@@ -55,7 +55,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 transformations_ =
                     new java.util.ArrayList<
                         com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>();
@@ -70,7 +70,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -82,7 +82,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         transformations_ = java.util.Collections.unmodifiableList(transformations_);
       }
       this.unknownFields = unknownFields.build();
@@ -254,7 +254,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>();
                   mutable_bitField0_ |= 0x00000001;
                 }
@@ -282,7 +282,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -294,7 +294,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
         }
         this.unknownFields = unknownFields.build();
@@ -489,14 +489,13 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation other =
           (com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation) obj;
 
-      boolean result = true;
-      result = result && getInfoTypesList().equals(other.getInfoTypesList());
-      result = result && (hasPrimitiveTransformation() == other.hasPrimitiveTransformation());
+      if (!getInfoTypesList().equals(other.getInfoTypesList())) return false;
+      if (hasPrimitiveTransformation() != other.hasPrimitiveTransformation()) return false;
       if (hasPrimitiveTransformation()) {
-        result = result && getPrimitiveTransformation().equals(other.getPrimitiveTransformation());
+        if (!getPrimitiveTransformation().equals(other.getPrimitiveTransformation())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -719,7 +718,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (infoTypesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -739,23 +738,23 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -763,13 +762,13 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -857,7 +856,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           java.util.Collections.emptyList();
 
       private void ensureInfoTypesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>(infoTypes_);
           bitField0_ |= 0x00000001;
         }
@@ -1231,16 +1230,13 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
                   com.google.privacy.dlp.v2.InfoType,
                   com.google.privacy.dlp.v2.InfoType.Builder,
                   com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
-                  infoTypes_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  infoTypes_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           infoTypes_ = null;
         }
         return infoTypesBuilder_;
       }
 
-      private com.google.privacy.dlp.v2.PrimitiveTransformation primitiveTransformation_ = null;
+      private com.google.privacy.dlp.v2.PrimitiveTransformation primitiveTransformation_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.privacy.dlp.v2.PrimitiveTransformation,
               com.google.privacy.dlp.v2.PrimitiveTransformation.Builder,
@@ -1430,7 +1426,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1613,10 +1609,9 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
     com.google.privacy.dlp.v2.InfoTypeTransformations other =
         (com.google.privacy.dlp.v2.InfoTypeTransformations) obj;
 
-    boolean result = true;
-    result = result && getTransformationsList().equals(other.getTransformationsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTransformationsList().equals(other.getTransformationsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1815,7 +1810,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
           new com.google.privacy.dlp.v2.InfoTypeTransformations(this);
       int from_bitField0_ = bitField0_;
       if (transformationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           transformations_ = java.util.Collections.unmodifiableList(transformations_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1829,35 +1824,35 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1936,7 +1931,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
         transformations_ = java.util.Collections.emptyList();
 
     private void ensureTransformationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         transformations_ =
             new java.util.ArrayList<
                 com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>(
@@ -2358,7 +2353,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
                 com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation.Builder,
                 com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>(
                 transformations_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         transformations_ = null;
@@ -2368,7 +2363,7 @@ public final class InfoTypeTransformations extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
