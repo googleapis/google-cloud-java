@@ -46,6 +46,8 @@ import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -505,6 +507,26 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public Page<Table> listTables(DatasetId datasetId, TableListOption... options) {
     DatasetId completeDatasetId = datasetId.setProjectId(getOptions().getProjectId());
     return listTables(completeDatasetId, getOptions(), optionMap(options));
+  }
+
+  @Override
+  public List<String> listPartitions(TableId tableId) {
+    List<String> partitions = new ArrayList<String>();
+    Table metaTable =
+        getTable(TableId.of(tableId.getDataset(), tableId.getTable() + "$__PARTITIONS_SUMMARY__"));
+    Schema metaSchema = metaTable.getDefinition().getSchema();
+    String partition_id = null;
+    for (Field field : metaSchema.getFields()) {
+      if (field.getName().equals("partition_id")) {
+        partition_id = field.getName();
+        break;
+      }
+    }
+    TableResult result = metaTable.list(metaSchema);
+    for (FieldValueList list : result.iterateAll()) {
+      partitions.add(list.get(partition_id).getStringValue());
+    }
+    return partitions;
   }
 
   private static Page<Table> listTables(
