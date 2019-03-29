@@ -67,7 +67,7 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 resultSets_ = new java.util.ArrayList<com.google.spanner.v1.ResultSet>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -91,7 +91,7 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -103,7 +103,7 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         resultSets_ = java.util.Collections.unmodifiableList(resultSets_);
       }
       this.unknownFields = unknownFields.build();
@@ -309,14 +309,13 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
     com.google.spanner.v1.ExecuteBatchDmlResponse other =
         (com.google.spanner.v1.ExecuteBatchDmlResponse) obj;
 
-    boolean result = true;
-    result = result && getResultSetsList().equals(other.getResultSetsList());
-    result = result && (hasStatus() == other.hasStatus());
+    if (!getResultSetsList().equals(other.getResultSetsList())) return false;
+    if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      result = result && getStatus().equals(other.getStatus());
+      if (!getStatus().equals(other.getStatus())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -538,7 +537,7 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (resultSetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           resultSets_ = java.util.Collections.unmodifiableList(resultSets_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -558,35 +557,35 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -666,7 +665,7 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureResultSetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         resultSets_ = new java.util.ArrayList<com.google.spanner.v1.ResultSet>(resultSets_);
         bitField0_ |= 0x00000001;
       }
@@ -1094,16 +1093,13 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
                 com.google.spanner.v1.ResultSet,
                 com.google.spanner.v1.ResultSet.Builder,
                 com.google.spanner.v1.ResultSetOrBuilder>(
-                resultSets_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                resultSets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         resultSets_ = null;
       }
       return resultSetsBuilder_;
     }
 
-    private com.google.rpc.Status status_ = null;
+    private com.google.rpc.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
@@ -1283,7 +1279,7 @@ public final class ExecuteBatchDmlResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

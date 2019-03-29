@@ -24,7 +24,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
   }
 
   private PlanNode() {
-    index_ = 0;
     kind_ = 0;
     displayName_ = "";
     childLinks_ = java.util.Collections.emptyList();
@@ -75,7 +74,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 childLinks_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>();
                 mutable_bitField0_ |= 0x00000008;
               }
@@ -132,7 +131,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -144,7 +143,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         childLinks_ = java.util.Collections.unmodifiableList(childLinks_);
       }
       this.unknownFields = unknownFields.build();
@@ -421,7 +420,6 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
 
     private ChildLink() {
-      childIndex_ = 0;
       type_ = "";
       variable_ = "";
     }
@@ -471,7 +469,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -681,12 +679,11 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       com.google.spanner.v1.PlanNode.ChildLink other =
           (com.google.spanner.v1.PlanNode.ChildLink) obj;
 
-      boolean result = true;
-      result = result && (getChildIndex() == other.getChildIndex());
-      result = result && getType().equals(other.getType());
-      result = result && getVariable().equals(other.getVariable());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getChildIndex() != other.getChildIndex()) return false;
+      if (!getType().equals(other.getType())) return false;
+      if (!getVariable().equals(other.getVariable())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -892,23 +889,23 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -916,13 +913,13 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1262,7 +1259,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1468,7 +1465,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
               }
             case 18:
               {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                   subqueries_ =
                       com.google.protobuf.MapField.newMapField(
                           SubqueriesDefaultEntryHolder.defaultEntry);
@@ -1483,7 +1480,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1738,11 +1735,10 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       com.google.spanner.v1.PlanNode.ShortRepresentation other =
           (com.google.spanner.v1.PlanNode.ShortRepresentation) obj;
 
-      boolean result = true;
-      result = result && getDescription().equals(other.getDescription());
-      result = result && internalGetSubqueries().equals(other.internalGetSubqueries());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getDescription().equals(other.getDescription())) return false;
+      if (!internalGetSubqueries().equals(other.internalGetSubqueries())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1968,23 +1964,23 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1992,13 +1988,13 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2328,7 +2324,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2770,25 +2766,24 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.spanner.v1.PlanNode other = (com.google.spanner.v1.PlanNode) obj;
 
-    boolean result = true;
-    result = result && (getIndex() == other.getIndex());
-    result = result && kind_ == other.kind_;
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getChildLinksList().equals(other.getChildLinksList());
-    result = result && (hasShortRepresentation() == other.hasShortRepresentation());
+    if (getIndex() != other.getIndex()) return false;
+    if (kind_ != other.kind_) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getChildLinksList().equals(other.getChildLinksList())) return false;
+    if (hasShortRepresentation() != other.hasShortRepresentation()) return false;
     if (hasShortRepresentation()) {
-      result = result && getShortRepresentation().equals(other.getShortRepresentation());
+      if (!getShortRepresentation().equals(other.getShortRepresentation())) return false;
     }
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && (hasExecutionStats() == other.hasExecutionStats());
+    if (hasExecutionStats() != other.hasExecutionStats()) return false;
     if (hasExecutionStats()) {
-      result = result && getExecutionStats().equals(other.getExecutionStats());
+      if (!getExecutionStats().equals(other.getExecutionStats())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3028,7 +3023,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       result.kind_ = kind_;
       result.displayName_ = displayName_;
       if (childLinksBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           childLinks_ = java.util.Collections.unmodifiableList(childLinks_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -3058,35 +3053,35 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3419,7 +3414,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureChildLinksIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         childLinks_ =
             new java.util.ArrayList<com.google.spanner.v1.PlanNode.ChildLink>(childLinks_);
         bitField0_ |= 0x00000008;
@@ -3759,16 +3754,13 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
                 com.google.spanner.v1.PlanNode.ChildLink,
                 com.google.spanner.v1.PlanNode.ChildLink.Builder,
                 com.google.spanner.v1.PlanNode.ChildLinkOrBuilder>(
-                childLinks_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
-                getParentForChildren(),
-                isClean());
+                childLinks_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         childLinks_ = null;
       }
       return childLinksBuilder_;
     }
 
-    private com.google.spanner.v1.PlanNode.ShortRepresentation shortRepresentation_ = null;
+    private com.google.spanner.v1.PlanNode.ShortRepresentation shortRepresentation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.v1.PlanNode.ShortRepresentation,
             com.google.spanner.v1.PlanNode.ShortRepresentation.Builder,
@@ -3963,7 +3955,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       return shortRepresentationBuilder_;
     }
 
-    private com.google.protobuf.Struct metadata_ = null;
+    private com.google.protobuf.Struct metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
             com.google.protobuf.Struct.Builder,
@@ -4192,7 +4184,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
       return metadataBuilder_;
     }
 
-    private com.google.protobuf.Struct executionStats_ = null;
+    private com.google.protobuf.Struct executionStats_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
             com.google.protobuf.Struct.Builder,
@@ -4402,7 +4394,7 @@ public final class PlanNode extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
