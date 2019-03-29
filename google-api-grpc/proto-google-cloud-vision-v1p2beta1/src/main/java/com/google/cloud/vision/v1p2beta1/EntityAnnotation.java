@@ -26,9 +26,6 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     mid_ = "";
     locale_ = "";
     description_ = "";
-    score_ = 0F;
-    confidence_ = 0F;
-    topicality_ = 0F;
     locations_ = java.util.Collections.emptyList();
     properties_ = java.util.Collections.emptyList();
   }
@@ -111,7 +108,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 locations_ =
                     new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.LocationInfo>();
                 mutable_bitField0_ |= 0x00000080;
@@ -123,7 +120,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 properties_ = new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Property>();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -134,7 +131,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -146,10 +143,10 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         locations_ = java.util.Collections.unmodifiableList(locations_);
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         properties_ = java.util.Collections.unmodifiableList(properties_);
       }
       this.unknownFields = unknownFields.build();
@@ -651,30 +648,23 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
     com.google.cloud.vision.v1p2beta1.EntityAnnotation other =
         (com.google.cloud.vision.v1p2beta1.EntityAnnotation) obj;
 
-    boolean result = true;
-    result = result && getMid().equals(other.getMid());
-    result = result && getLocale().equals(other.getLocale());
-    result = result && getDescription().equals(other.getDescription());
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getScore())
-                == java.lang.Float.floatToIntBits(other.getScore()));
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getConfidence())
-                == java.lang.Float.floatToIntBits(other.getConfidence()));
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getTopicality())
-                == java.lang.Float.floatToIntBits(other.getTopicality()));
-    result = result && (hasBoundingPoly() == other.hasBoundingPoly());
+    if (!getMid().equals(other.getMid())) return false;
+    if (!getLocale().equals(other.getLocale())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (java.lang.Float.floatToIntBits(getScore())
+        != java.lang.Float.floatToIntBits(other.getScore())) return false;
+    if (java.lang.Float.floatToIntBits(getConfidence())
+        != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
+    if (java.lang.Float.floatToIntBits(getTopicality())
+        != java.lang.Float.floatToIntBits(other.getTopicality())) return false;
+    if (hasBoundingPoly() != other.hasBoundingPoly()) return false;
     if (hasBoundingPoly()) {
-      result = result && getBoundingPoly().equals(other.getBoundingPoly());
+      if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
     }
-    result = result && getLocationsList().equals(other.getLocationsList());
-    result = result && getPropertiesList().equals(other.getPropertiesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getLocationsList().equals(other.getLocationsList())) return false;
+    if (!getPropertiesList().equals(other.getPropertiesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -927,7 +917,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         result.boundingPoly_ = boundingPolyBuilder_.build();
       }
       if (locationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           locations_ = java.util.Collections.unmodifiableList(locations_);
           bitField0_ = (bitField0_ & ~0x00000080);
         }
@@ -936,7 +926,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         result.locations_ = locationsBuilder_.build();
       }
       if (propertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           properties_ = java.util.Collections.unmodifiableList(properties_);
           bitField0_ = (bitField0_ & ~0x00000100);
         }
@@ -951,35 +941,35 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1558,7 +1548,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.cloud.vision.v1p2beta1.BoundingPoly boundingPoly_ = null;
+    private com.google.cloud.vision.v1p2beta1.BoundingPoly boundingPoly_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p2beta1.BoundingPoly,
             com.google.cloud.vision.v1p2beta1.BoundingPoly.Builder,
@@ -1753,7 +1743,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         locations_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.LocationInfo>(locations_);
         bitField0_ |= 0x00000080;
@@ -2167,10 +2157,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vision.v1p2beta1.LocationInfo,
                 com.google.cloud.vision.v1p2beta1.LocationInfo.Builder,
                 com.google.cloud.vision.v1p2beta1.LocationInfoOrBuilder>(
-                locations_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
-                getParentForChildren(),
-                isClean());
+                locations_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         locations_ = null;
       }
       return locationsBuilder_;
@@ -2180,7 +2167,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensurePropertiesIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         properties_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p2beta1.Property>(properties_);
         bitField0_ |= 0x00000100;
@@ -2539,10 +2526,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.vision.v1p2beta1.Property,
                 com.google.cloud.vision.v1p2beta1.Property.Builder,
                 com.google.cloud.vision.v1p2beta1.PropertyOrBuilder>(
-                properties_,
-                ((bitField0_ & 0x00000100) == 0x00000100),
-                getParentForChildren(),
-                isClean());
+                properties_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         properties_ = null;
       }
       return propertiesBuilder_;
@@ -2550,7 +2534,7 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
