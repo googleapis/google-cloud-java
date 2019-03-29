@@ -53,7 +53,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 traces_ = new java.util.ArrayList<com.google.devtools.cloudtrace.v1.Trace>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -71,7 +71,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -83,7 +83,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         traces_ = java.util.Collections.unmodifiableList(traces_);
       }
       this.unknownFields = unknownFields.build();
@@ -269,11 +269,10 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
     com.google.devtools.cloudtrace.v1.ListTracesResponse other =
         (com.google.devtools.cloudtrace.v1.ListTracesResponse) obj;
 
-    boolean result = true;
-    result = result && getTracesList().equals(other.getTracesList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTracesList().equals(other.getTracesList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -474,7 +473,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (tracesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           traces_ = java.util.Collections.unmodifiableList(traces_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -490,35 +489,35 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -601,7 +600,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureTracesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         traces_ = new java.util.ArrayList<com.google.devtools.cloudtrace.v1.Trace>(traces_);
         bitField0_ |= 0x00000001;
       }
@@ -939,10 +938,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
                 com.google.devtools.cloudtrace.v1.Trace,
                 com.google.devtools.cloudtrace.v1.Trace.Builder,
                 com.google.devtools.cloudtrace.v1.TraceOrBuilder>(
-                traces_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                traces_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         traces_ = null;
       }
       return tracesBuilder_;
@@ -1054,7 +1050,7 @@ public final class ListTracesResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

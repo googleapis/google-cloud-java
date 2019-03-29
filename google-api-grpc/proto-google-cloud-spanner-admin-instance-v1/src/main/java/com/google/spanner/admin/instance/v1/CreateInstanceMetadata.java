@@ -112,7 +112,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -377,25 +377,24 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
     com.google.spanner.admin.instance.v1.CreateInstanceMetadata other =
         (com.google.spanner.admin.instance.v1.CreateInstanceMetadata) obj;
 
-    boolean result = true;
-    result = result && (hasInstance() == other.hasInstance());
+    if (hasInstance() != other.hasInstance()) return false;
     if (hasInstance()) {
-      result = result && getInstance().equals(other.getInstance());
+      if (!getInstance().equals(other.getInstance())) return false;
     }
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasCancelTime() == other.hasCancelTime());
+    if (hasCancelTime() != other.hasCancelTime()) return false;
     if (hasCancelTime()) {
-      result = result && getCancelTime().equals(other.getCancelTime());
+      if (!getCancelTime().equals(other.getCancelTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -645,35 +644,35 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -731,7 +730,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.spanner.admin.instance.v1.Instance instance_ = null;
+    private com.google.spanner.admin.instance.v1.Instance instance_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.spanner.admin.instance.v1.Instance,
             com.google.spanner.admin.instance.v1.Instance.Builder,
@@ -913,7 +912,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
       return instanceBuilder_;
     }
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1106,7 +1105,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp cancelTime_ = null;
+    private com.google.protobuf.Timestamp cancelTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1303,7 +1302,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
       return cancelTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1480,7 +1479,7 @@ public final class CreateInstanceMetadata extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest;
@@ -32,12 +33,14 @@ import com.google.cloud.dialogflow.v2beta1.GetDocumentRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListDocumentsResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -143,18 +146,54 @@ public class GrpcDocumentsStub extends DocumentsStub {
     GrpcCallSettings<ListDocumentsRequest, ListDocumentsResponse> listDocumentsTransportSettings =
         GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
             .setMethodDescriptor(listDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListDocumentsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListDocumentsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
         GrpcCallSettings.<GetDocumentRequest, Document>newBuilder()
             .setMethodDescriptor(getDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateDocumentRequest, Operation> createDocumentTransportSettings =
         GrpcCallSettings.<CreateDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(createDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<CreateDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(CreateDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<DeleteDocumentRequest, Operation> deleteDocumentTransportSettings =
         GrpcCallSettings.<DeleteDocumentRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDocumentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteDocumentRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteDocumentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
 
     this.listDocumentsCallable =

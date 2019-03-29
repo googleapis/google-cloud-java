@@ -110,7 +110,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -383,22 +383,21 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent other =
         (com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent) obj;
 
-    boolean result = true;
-    result = result && (hasEventTime() == other.hasEventTime());
+    if (hasEventTime() != other.hasEventTime()) return false;
     if (hasEventTime()) {
-      result = result && getEventTime().equals(other.getEventTime());
+      if (!getEventTime().equals(other.getEventTime())) return false;
     }
-    result = result && (hasServiceContext() == other.hasServiceContext());
+    if (hasServiceContext() != other.hasServiceContext()) return false;
     if (hasServiceContext()) {
-      result = result && getServiceContext().equals(other.getServiceContext());
+      if (!getServiceContext().equals(other.getServiceContext())) return false;
     }
-    result = result && getMessage().equals(other.getMessage());
-    result = result && (hasContext() == other.hasContext());
+    if (!getMessage().equals(other.getMessage())) return false;
+    if (hasContext() != other.hasContext()) return false;
     if (hasContext()) {
-      result = result && getContext().equals(other.getContext());
+      if (!getContext().equals(other.getContext())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -641,35 +640,35 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -732,7 +731,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.Timestamp eventTime_ = null;
+    private com.google.protobuf.Timestamp eventTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -925,7 +924,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       return eventTimeBuilder_;
     }
 
-    private com.google.devtools.clouderrorreporting.v1beta1.ServiceContext serviceContext_ = null;
+    private com.google.devtools.clouderrorreporting.v1beta1.ServiceContext serviceContext_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContext,
             com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder,
@@ -1221,7 +1220,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.devtools.clouderrorreporting.v1beta1.ErrorContext context_ = null;
+    private com.google.devtools.clouderrorreporting.v1beta1.ErrorContext context_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.ErrorContext,
             com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.Builder,
@@ -1408,7 +1407,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -53,7 +53,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 errorEvents_ =
                     new java.util.ArrayList<
                         com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>();
@@ -89,7 +89,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -101,7 +101,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         errorEvents_ = java.util.Collections.unmodifiableList(errorEvents_);
       }
       this.unknownFields = unknownFields.build();
@@ -337,15 +337,14 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
     com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse other =
         (com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse) obj;
 
-    boolean result = true;
-    result = result && getErrorEventsList().equals(other.getErrorEventsList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && (hasTimeRangeBegin() == other.hasTimeRangeBegin());
+    if (!getErrorEventsList().equals(other.getErrorEventsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (hasTimeRangeBegin() != other.hasTimeRangeBegin()) return false;
     if (hasTimeRangeBegin()) {
-      result = result && getTimeRangeBegin().equals(other.getTimeRangeBegin());
+      if (!getTimeRangeBegin().equals(other.getTimeRangeBegin())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -561,7 +560,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (errorEventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           errorEvents_ = java.util.Collections.unmodifiableList(errorEvents_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -582,35 +581,35 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -700,7 +699,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
         errorEvents_ = java.util.Collections.emptyList();
 
     private void ensureErrorEventsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         errorEvents_ =
             new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>(
                 errorEvents_);
@@ -1075,10 +1074,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
                 com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
                 com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>(
-                errorEvents_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                errorEvents_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         errorEvents_ = null;
       }
       return errorEventsBuilder_;
@@ -1188,7 +1184,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private com.google.protobuf.Timestamp timeRangeBegin_ = null;
+    private com.google.protobuf.Timestamp timeRangeBegin_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -1371,7 +1367,7 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -25,21 +25,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
   private RecognitionConfig() {
     encoding_ = 0;
-    sampleRateHertz_ = 0;
-    audioChannelCount_ = 0;
-    enableSeparateRecognitionPerChannel_ = false;
     languageCode_ = "";
     alternativeLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    maxAlternatives_ = 0;
-    profanityFilter_ = false;
     speechContexts_ = java.util.Collections.emptyList();
-    enableWordTimeOffsets_ = false;
-    enableWordConfidence_ = false;
-    enableAutomaticPunctuation_ = false;
-    enableSpeakerDiarization_ = false;
-    diarizationSpeakerCount_ = 0;
     model_ = "";
-    useEnhanced_ = false;
   }
 
   @java.lang.Override
@@ -97,7 +86,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 speechContexts_ =
                     new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechContext>();
                 mutable_bitField0_ |= 0x00000100;
@@ -174,7 +163,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           case 146:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 alternativeLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -183,7 +172,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -195,10 +184,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -1325,33 +1314,30 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.speech.v1p1beta1.RecognitionConfig other =
         (com.google.cloud.speech.v1p1beta1.RecognitionConfig) obj;
 
-    boolean result = true;
-    result = result && encoding_ == other.encoding_;
-    result = result && (getSampleRateHertz() == other.getSampleRateHertz());
-    result = result && (getAudioChannelCount() == other.getAudioChannelCount());
-    result =
-        result
-            && (getEnableSeparateRecognitionPerChannel()
-                == other.getEnableSeparateRecognitionPerChannel());
-    result = result && getLanguageCode().equals(other.getLanguageCode());
-    result =
-        result && getAlternativeLanguageCodesList().equals(other.getAlternativeLanguageCodesList());
-    result = result && (getMaxAlternatives() == other.getMaxAlternatives());
-    result = result && (getProfanityFilter() == other.getProfanityFilter());
-    result = result && getSpeechContextsList().equals(other.getSpeechContextsList());
-    result = result && (getEnableWordTimeOffsets() == other.getEnableWordTimeOffsets());
-    result = result && (getEnableWordConfidence() == other.getEnableWordConfidence());
-    result = result && (getEnableAutomaticPunctuation() == other.getEnableAutomaticPunctuation());
-    result = result && (getEnableSpeakerDiarization() == other.getEnableSpeakerDiarization());
-    result = result && (getDiarizationSpeakerCount() == other.getDiarizationSpeakerCount());
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (encoding_ != other.encoding_) return false;
+    if (getSampleRateHertz() != other.getSampleRateHertz()) return false;
+    if (getAudioChannelCount() != other.getAudioChannelCount()) return false;
+    if (getEnableSeparateRecognitionPerChannel() != other.getEnableSeparateRecognitionPerChannel())
+      return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getAlternativeLanguageCodesList().equals(other.getAlternativeLanguageCodesList()))
+      return false;
+    if (getMaxAlternatives() != other.getMaxAlternatives()) return false;
+    if (getProfanityFilter() != other.getProfanityFilter()) return false;
+    if (!getSpeechContextsList().equals(other.getSpeechContextsList())) return false;
+    if (getEnableWordTimeOffsets() != other.getEnableWordTimeOffsets()) return false;
+    if (getEnableWordConfidence() != other.getEnableWordConfidence()) return false;
+    if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
+    if (getEnableSpeakerDiarization() != other.getEnableSpeakerDiarization()) return false;
+    if (getDiarizationSpeakerCount() != other.getDiarizationSpeakerCount()) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata().equals(other.getMetadata());
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    result = result && getModel().equals(other.getModel());
-    result = result && (getUseEnhanced() == other.getUseEnhanced());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getModel().equals(other.getModel())) return false;
+    if (getUseEnhanced() != other.getUseEnhanced()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1627,7 +1613,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       result.audioChannelCount_ = audioChannelCount_;
       result.enableSeparateRecognitionPerChannel_ = enableSeparateRecognitionPerChannel_;
       result.languageCode_ = languageCode_;
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         alternativeLanguageCodes_ = alternativeLanguageCodes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
@@ -1635,7 +1621,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
           bitField0_ = (bitField0_ & ~0x00000100);
         }
@@ -1662,35 +1648,35 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2226,7 +2212,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAlternativeLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         alternativeLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(alternativeLanguageCodes_);
         bitField0_ |= 0x00000020;
@@ -2581,7 +2567,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechContext>(
                 speechContexts_);
@@ -2983,7 +2969,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.speech.v1p1beta1.SpeechContext.Builder,
                 com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000100) == 0x00000100),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -3277,7 +3263,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata_ = null;
+    private com.google.cloud.speech.v1p1beta1.RecognitionMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v1p1beta1.RecognitionMetadata,
             com.google.cloud.speech.v1p1beta1.RecognitionMetadata.Builder,
@@ -3790,7 +3776,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

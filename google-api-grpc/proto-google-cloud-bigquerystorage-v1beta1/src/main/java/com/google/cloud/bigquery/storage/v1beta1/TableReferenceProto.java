@@ -152,7 +152,7 @@ public final class TableReferenceProto {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -373,12 +373,11 @@ public final class TableReferenceProto {
       com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference other =
           (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference) obj;
 
-      boolean result = true;
-      result = result && getProjectId().equals(other.getProjectId());
-      result = result && getDatasetId().equals(other.getDatasetId());
-      result = result && getTableId().equals(other.getTableId());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getProjectId().equals(other.getProjectId())) return false;
+      if (!getDatasetId().equals(other.getDatasetId())) return false;
+      if (!getTableId().equals(other.getTableId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -596,23 +595,23 @@ public final class TableReferenceProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -620,13 +619,13 @@ public final class TableReferenceProto {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -976,7 +975,7 @@ public final class TableReferenceProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1128,7 +1127,7 @@ public final class TableReferenceProto {
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1249,13 +1248,12 @@ public final class TableReferenceProto {
       com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers other =
           (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers) obj;
 
-      boolean result = true;
-      result = result && (hasSnapshotTime() == other.hasSnapshotTime());
+      if (hasSnapshotTime() != other.hasSnapshotTime()) return false;
       if (hasSnapshotTime()) {
-        result = result && getSnapshotTime().equals(other.getSnapshotTime());
+        if (!getSnapshotTime().equals(other.getSnapshotTime())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1473,23 +1471,23 @@ public final class TableReferenceProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1497,13 +1495,13 @@ public final class TableReferenceProto {
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1559,7 +1557,7 @@ public final class TableReferenceProto {
         return this;
       }
 
-      private com.google.protobuf.Timestamp snapshotTime_ = null;
+      private com.google.protobuf.Timestamp snapshotTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
               com.google.protobuf.Timestamp.Builder,
@@ -1743,7 +1741,7 @@ public final class TableReferenceProto {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override

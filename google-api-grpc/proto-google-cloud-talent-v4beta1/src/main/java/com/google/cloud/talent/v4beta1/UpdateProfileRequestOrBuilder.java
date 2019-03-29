@@ -70,7 +70,6 @@ public interface UpdateProfileRequestOrBuilder
    * * publications
    * * patents
    * * certifications
-   * * jobApplications
    * * recruitingNotes
    * * customAttributes
    * </pre>
@@ -106,7 +105,6 @@ public interface UpdateProfileRequestOrBuilder
    * * publications
    * * patents
    * * certifications
-   * * jobApplications
    * * recruitingNotes
    * * customAttributes
    * </pre>
@@ -142,7 +140,6 @@ public interface UpdateProfileRequestOrBuilder
    * * publications
    * * patents
    * * certifications
-   * * jobApplications
    * * recruitingNotes
    * * customAttributes
    * </pre>

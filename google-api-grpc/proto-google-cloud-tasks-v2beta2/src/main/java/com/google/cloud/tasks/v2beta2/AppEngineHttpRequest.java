@@ -121,7 +121,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 headers_ =
                     com.google.protobuf.MapField.newMapField(
                         HeadersDefaultEntryHolder.defaultEntry);
@@ -140,7 +140,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -668,17 +668,16 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     com.google.cloud.tasks.v2beta2.AppEngineHttpRequest other =
         (com.google.cloud.tasks.v2beta2.AppEngineHttpRequest) obj;
 
-    boolean result = true;
-    result = result && httpMethod_ == other.httpMethod_;
-    result = result && (hasAppEngineRouting() == other.hasAppEngineRouting());
+    if (httpMethod_ != other.httpMethod_) return false;
+    if (hasAppEngineRouting() != other.hasAppEngineRouting()) return false;
     if (hasAppEngineRouting()) {
-      result = result && getAppEngineRouting().equals(other.getAppEngineRouting());
+      if (!getAppEngineRouting().equals(other.getAppEngineRouting())) return false;
     }
-    result = result && getRelativeUrl().equals(other.getRelativeUrl());
-    result = result && internalGetHeaders().equals(other.internalGetHeaders());
-    result = result && getPayload().equals(other.getPayload());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getRelativeUrl().equals(other.getRelativeUrl())) return false;
+    if (!internalGetHeaders().equals(other.internalGetHeaders())) return false;
+    if (!getPayload().equals(other.getPayload())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -963,35 +962,35 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1174,7 +1173,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.cloud.tasks.v2beta2.AppEngineRouting appEngineRouting_ = null;
+    private com.google.cloud.tasks.v2beta2.AppEngineRouting appEngineRouting_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta2.AppEngineRouting,
             com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder,
@@ -1973,7 +1972,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

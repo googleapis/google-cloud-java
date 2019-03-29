@@ -25,7 +25,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   private Cluster() {
     name_ = "";
     description_ = "";
-    initialNodeCount_ = 0;
     loggingService_ = "";
     monitoringService_ = "";
     network_ = "";
@@ -33,7 +32,6 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     subnetwork_ = "";
     nodePools_ = java.util.Collections.emptyList();
     locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    enableKubernetesAlpha_ = false;
     labelFingerprint_ = "";
     selfLink_ = "";
     zone_ = "";
@@ -44,10 +42,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     createTime_ = "";
     status_ = 0;
     statusMessage_ = "";
-    nodeIpv4CidrSize_ = 0;
     servicesIpv4Cidr_ = "";
     instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    currentNodeCount_ = 0;
     expireTime_ = "";
     location_ = "";
   }
@@ -179,7 +175,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>();
                 mutable_bitField0_ |= 0x00000800;
               }
@@ -190,7 +186,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           case 106:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 locations_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00001000;
               }
@@ -204,7 +200,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             }
           case 122:
             {
-              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
                 resourceLabels_ =
                     com.google.protobuf.MapField.newMapField(
                         ResourceLabelsDefaultEntryHolder.defaultEntry);
@@ -416,7 +412,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           case 890:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField1_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField1_ & 0x00000004) != 0)) {
                 instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField1_ |= 0x00000004;
               }
@@ -444,7 +440,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -456,13 +452,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         nodePools_ = java.util.Collections.unmodifiableList(nodePools_);
       }
-      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         locations_ = locations_.getUnmodifiableView();
       }
-      if (((mutable_bitField1_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField1_ & 0x00000004) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -2782,82 +2778,78 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.container.v1.Cluster other = (com.google.container.v1.Cluster) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && (getInitialNodeCount() == other.getInitialNodeCount());
-    result = result && (hasNodeConfig() == other.hasNodeConfig());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (getInitialNodeCount() != other.getInitialNodeCount()) return false;
+    if (hasNodeConfig() != other.hasNodeConfig()) return false;
     if (hasNodeConfig()) {
-      result = result && getNodeConfig().equals(other.getNodeConfig());
+      if (!getNodeConfig().equals(other.getNodeConfig())) return false;
     }
-    result = result && (hasMasterAuth() == other.hasMasterAuth());
+    if (hasMasterAuth() != other.hasMasterAuth()) return false;
     if (hasMasterAuth()) {
-      result = result && getMasterAuth().equals(other.getMasterAuth());
+      if (!getMasterAuth().equals(other.getMasterAuth())) return false;
     }
-    result = result && getLoggingService().equals(other.getLoggingService());
-    result = result && getMonitoringService().equals(other.getMonitoringService());
-    result = result && getNetwork().equals(other.getNetwork());
-    result = result && getClusterIpv4Cidr().equals(other.getClusterIpv4Cidr());
-    result = result && (hasAddonsConfig() == other.hasAddonsConfig());
+    if (!getLoggingService().equals(other.getLoggingService())) return false;
+    if (!getMonitoringService().equals(other.getMonitoringService())) return false;
+    if (!getNetwork().equals(other.getNetwork())) return false;
+    if (!getClusterIpv4Cidr().equals(other.getClusterIpv4Cidr())) return false;
+    if (hasAddonsConfig() != other.hasAddonsConfig()) return false;
     if (hasAddonsConfig()) {
-      result = result && getAddonsConfig().equals(other.getAddonsConfig());
+      if (!getAddonsConfig().equals(other.getAddonsConfig())) return false;
     }
-    result = result && getSubnetwork().equals(other.getSubnetwork());
-    result = result && getNodePoolsList().equals(other.getNodePoolsList());
-    result = result && getLocationsList().equals(other.getLocationsList());
-    result = result && (getEnableKubernetesAlpha() == other.getEnableKubernetesAlpha());
-    result = result && internalGetResourceLabels().equals(other.internalGetResourceLabels());
-    result = result && getLabelFingerprint().equals(other.getLabelFingerprint());
-    result = result && (hasLegacyAbac() == other.hasLegacyAbac());
+    if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    if (!getNodePoolsList().equals(other.getNodePoolsList())) return false;
+    if (!getLocationsList().equals(other.getLocationsList())) return false;
+    if (getEnableKubernetesAlpha() != other.getEnableKubernetesAlpha()) return false;
+    if (!internalGetResourceLabels().equals(other.internalGetResourceLabels())) return false;
+    if (!getLabelFingerprint().equals(other.getLabelFingerprint())) return false;
+    if (hasLegacyAbac() != other.hasLegacyAbac()) return false;
     if (hasLegacyAbac()) {
-      result = result && getLegacyAbac().equals(other.getLegacyAbac());
+      if (!getLegacyAbac().equals(other.getLegacyAbac())) return false;
     }
-    result = result && (hasNetworkPolicy() == other.hasNetworkPolicy());
+    if (hasNetworkPolicy() != other.hasNetworkPolicy()) return false;
     if (hasNetworkPolicy()) {
-      result = result && getNetworkPolicy().equals(other.getNetworkPolicy());
+      if (!getNetworkPolicy().equals(other.getNetworkPolicy())) return false;
     }
-    result = result && (hasIpAllocationPolicy() == other.hasIpAllocationPolicy());
+    if (hasIpAllocationPolicy() != other.hasIpAllocationPolicy()) return false;
     if (hasIpAllocationPolicy()) {
-      result = result && getIpAllocationPolicy().equals(other.getIpAllocationPolicy());
+      if (!getIpAllocationPolicy().equals(other.getIpAllocationPolicy())) return false;
     }
-    result =
-        result
-            && (hasMasterAuthorizedNetworksConfig() == other.hasMasterAuthorizedNetworksConfig());
+    if (hasMasterAuthorizedNetworksConfig() != other.hasMasterAuthorizedNetworksConfig())
+      return false;
     if (hasMasterAuthorizedNetworksConfig()) {
-      result =
-          result
-              && getMasterAuthorizedNetworksConfig()
-                  .equals(other.getMasterAuthorizedNetworksConfig());
+      if (!getMasterAuthorizedNetworksConfig().equals(other.getMasterAuthorizedNetworksConfig()))
+        return false;
     }
-    result = result && (hasMaintenancePolicy() == other.hasMaintenancePolicy());
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
     if (hasMaintenancePolicy()) {
-      result = result && getMaintenancePolicy().equals(other.getMaintenancePolicy());
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
     }
-    result = result && (hasNetworkConfig() == other.hasNetworkConfig());
+    if (hasNetworkConfig() != other.hasNetworkConfig()) return false;
     if (hasNetworkConfig()) {
-      result = result && getNetworkConfig().equals(other.getNetworkConfig());
+      if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
     }
-    result = result && (hasPrivateClusterConfig() == other.hasPrivateClusterConfig());
+    if (hasPrivateClusterConfig() != other.hasPrivateClusterConfig()) return false;
     if (hasPrivateClusterConfig()) {
-      result = result && getPrivateClusterConfig().equals(other.getPrivateClusterConfig());
+      if (!getPrivateClusterConfig().equals(other.getPrivateClusterConfig())) return false;
     }
-    result = result && getSelfLink().equals(other.getSelfLink());
-    result = result && getZone().equals(other.getZone());
-    result = result && getEndpoint().equals(other.getEndpoint());
-    result = result && getInitialClusterVersion().equals(other.getInitialClusterVersion());
-    result = result && getCurrentMasterVersion().equals(other.getCurrentMasterVersion());
-    result = result && getCurrentNodeVersion().equals(other.getCurrentNodeVersion());
-    result = result && getCreateTime().equals(other.getCreateTime());
-    result = result && status_ == other.status_;
-    result = result && getStatusMessage().equals(other.getStatusMessage());
-    result = result && (getNodeIpv4CidrSize() == other.getNodeIpv4CidrSize());
-    result = result && getServicesIpv4Cidr().equals(other.getServicesIpv4Cidr());
-    result = result && getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList());
-    result = result && (getCurrentNodeCount() == other.getCurrentNodeCount());
-    result = result && getExpireTime().equals(other.getExpireTime());
-    result = result && getLocation().equals(other.getLocation());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (!getZone().equals(other.getZone())) return false;
+    if (!getEndpoint().equals(other.getEndpoint())) return false;
+    if (!getInitialClusterVersion().equals(other.getInitialClusterVersion())) return false;
+    if (!getCurrentMasterVersion().equals(other.getCurrentMasterVersion())) return false;
+    if (!getCurrentNodeVersion().equals(other.getCurrentNodeVersion())) return false;
+    if (!getCreateTime().equals(other.getCreateTime())) return false;
+    if (status_ != other.status_) return false;
+    if (!getStatusMessage().equals(other.getStatusMessage())) return false;
+    if (getNodeIpv4CidrSize() != other.getNodeIpv4CidrSize()) return false;
+    if (!getServicesIpv4Cidr().equals(other.getServicesIpv4Cidr())) return false;
+    if (!getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList())) return false;
+    if (getCurrentNodeCount() != other.getCurrentNodeCount()) return false;
+    if (!getExpireTime().equals(other.getExpireTime())) return false;
+    if (!getLocation().equals(other.getLocation())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3309,7 +3301,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       result.subnetwork_ = subnetwork_;
       if (nodePoolsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           nodePools_ = java.util.Collections.unmodifiableList(nodePools_);
           bitField0_ = (bitField0_ & ~0x00000800);
         }
@@ -3317,7 +3309,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.nodePools_ = nodePoolsBuilder_.build();
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         locations_ = locations_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00001000);
       }
@@ -3372,7 +3364,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       result.statusMessage_ = statusMessage_;
       result.nodeIpv4CidrSize_ = nodeIpv4CidrSize_;
       result.servicesIpv4Cidr_ = servicesIpv4Cidr_;
-      if (((bitField1_ & 0x00000004) == 0x00000004)) {
+      if (((bitField1_ & 0x00000004) != 0)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
         bitField1_ = (bitField1_ & ~0x00000004);
       }
@@ -3388,35 +3380,35 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3905,7 +3897,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.NodeConfig nodeConfig_ = null;
+    private com.google.container.v1.NodeConfig nodeConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodeConfig,
             com.google.container.v1.NodeConfig.Builder,
@@ -4158,7 +4150,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return nodeConfigBuilder_;
     }
 
-    private com.google.container.v1.MasterAuth masterAuth_ = null;
+    private com.google.container.v1.MasterAuth masterAuth_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.MasterAuth,
             com.google.container.v1.MasterAuth.Builder,
@@ -4785,7 +4777,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.AddonsConfig addonsConfig_ = null;
+    private com.google.container.v1.AddonsConfig addonsConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.AddonsConfig,
             com.google.container.v1.AddonsConfig.Builder,
@@ -5074,7 +5066,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNodePoolsIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         nodePools_ = new java.util.ArrayList<com.google.container.v1.NodePool>(nodePools_);
         bitField0_ |= 0x00000800;
       }
@@ -5448,10 +5440,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 com.google.container.v1.NodePool,
                 com.google.container.v1.NodePool.Builder,
                 com.google.container.v1.NodePoolOrBuilder>(
-                nodePools_,
-                ((bitField0_ & 0x00000800) == 0x00000800),
-                getParentForChildren(),
-                isClean());
+                nodePools_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         nodePools_ = null;
       }
       return nodePoolsBuilder_;
@@ -5461,7 +5450,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
         bitField0_ |= 0x00001000;
       }
@@ -5933,7 +5922,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.container.v1.LegacyAbac legacyAbac_ = null;
+    private com.google.container.v1.LegacyAbac legacyAbac_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.LegacyAbac,
             com.google.container.v1.LegacyAbac.Builder,
@@ -6114,7 +6103,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return legacyAbacBuilder_;
     }
 
-    private com.google.container.v1.NetworkPolicy networkPolicy_ = null;
+    private com.google.container.v1.NetworkPolicy networkPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NetworkPolicy,
             com.google.container.v1.NetworkPolicy.Builder,
@@ -6295,7 +6284,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return networkPolicyBuilder_;
     }
 
-    private com.google.container.v1.IPAllocationPolicy ipAllocationPolicy_ = null;
+    private com.google.container.v1.IPAllocationPolicy ipAllocationPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.IPAllocationPolicy,
             com.google.container.v1.IPAllocationPolicy.Builder,
@@ -6477,8 +6466,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return ipAllocationPolicyBuilder_;
     }
 
-    private com.google.container.v1.MasterAuthorizedNetworksConfig masterAuthorizedNetworksConfig_ =
-        null;
+    private com.google.container.v1.MasterAuthorizedNetworksConfig masterAuthorizedNetworksConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.MasterAuthorizedNetworksConfig,
             com.google.container.v1.MasterAuthorizedNetworksConfig.Builder,
@@ -6685,7 +6673,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return masterAuthorizedNetworksConfigBuilder_;
     }
 
-    private com.google.container.v1.MaintenancePolicy maintenancePolicy_ = null;
+    private com.google.container.v1.MaintenancePolicy maintenancePolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.MaintenancePolicy,
             com.google.container.v1.MaintenancePolicy.Builder,
@@ -6867,7 +6855,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return maintenancePolicyBuilder_;
     }
 
-    private com.google.container.v1.NetworkConfig networkConfig_ = null;
+    private com.google.container.v1.NetworkConfig networkConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NetworkConfig,
             com.google.container.v1.NetworkConfig.Builder,
@@ -7048,7 +7036,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return networkConfigBuilder_;
     }
 
-    private com.google.container.v1.PrivateClusterConfig privateClusterConfig_ = null;
+    private com.google.container.v1.PrivateClusterConfig privateClusterConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.PrivateClusterConfig,
             com.google.container.v1.PrivateClusterConfig.Builder,
@@ -8352,7 +8340,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField1_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField1_ & 0x00000004) != 0)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
         bitField1_ |= 0x00000004;
       }
@@ -8754,7 +8742,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

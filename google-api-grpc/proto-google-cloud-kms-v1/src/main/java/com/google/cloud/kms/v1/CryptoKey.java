@@ -132,7 +132,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000080;
@@ -161,7 +161,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1025,37 +1025,35 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.kms.v1.CryptoKey other = (com.google.cloud.kms.v1.CryptoKey) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && (hasPrimary() == other.hasPrimary());
+    if (!getName().equals(other.getName())) return false;
+    if (hasPrimary() != other.hasPrimary()) return false;
     if (hasPrimary()) {
-      result = result && getPrimary().equals(other.getPrimary());
+      if (!getPrimary().equals(other.getPrimary())) return false;
     }
-    result = result && purpose_ == other.purpose_;
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (purpose_ != other.purpose_) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasNextRotationTime() == other.hasNextRotationTime());
+    if (hasNextRotationTime() != other.hasNextRotationTime()) return false;
     if (hasNextRotationTime()) {
-      result = result && getNextRotationTime().equals(other.getNextRotationTime());
+      if (!getNextRotationTime().equals(other.getNextRotationTime())) return false;
     }
-    result = result && (hasVersionTemplate() == other.hasVersionTemplate());
+    if (hasVersionTemplate() != other.hasVersionTemplate()) return false;
     if (hasVersionTemplate()) {
-      result = result && getVersionTemplate().equals(other.getVersionTemplate());
+      if (!getVersionTemplate().equals(other.getVersionTemplate())) return false;
     }
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && getRotationScheduleCase().equals(other.getRotationScheduleCase());
-    if (!result) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getRotationScheduleCase().equals(other.getRotationScheduleCase())) return false;
     switch (rotationScheduleCase_) {
       case 8:
-        result = result && getRotationPeriod().equals(other.getRotationPeriod());
+        if (!getRotationPeriod().equals(other.getRotationPeriod())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1363,35 +1361,35 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1586,7 +1584,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.kms.v1.CryptoKeyVersion primary_ = null;
+    private com.google.cloud.kms.v1.CryptoKeyVersion primary_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.kms.v1.CryptoKeyVersion,
             com.google.cloud.kms.v1.CryptoKeyVersion.Builder,
@@ -1935,7 +1933,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2123,7 +2121,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp nextRotationTime_ = null;
+    private com.google.protobuf.Timestamp nextRotationTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2694,7 +2692,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       return rotationPeriodBuilder_;
     }
 
-    private com.google.cloud.kms.v1.CryptoKeyVersionTemplate versionTemplate_ = null;
+    private com.google.cloud.kms.v1.CryptoKeyVersionTemplate versionTemplate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.kms.v1.CryptoKeyVersionTemplate,
             com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder,
@@ -3082,7 +3080,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

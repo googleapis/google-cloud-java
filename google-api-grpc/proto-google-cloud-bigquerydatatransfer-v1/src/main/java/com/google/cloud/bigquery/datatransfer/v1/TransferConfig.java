@@ -33,10 +33,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     dataSourceId_ = "";
     schedule_ = "";
-    dataRefreshWindowDays_ = 0;
-    disabled_ = false;
     state_ = 0;
-    userId_ = 0L;
     datasetRegion_ = "";
   }
 
@@ -174,7 +171,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -821,31 +818,30 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.bigquery.datatransfer.v1.TransferConfig other =
         (com.google.cloud.bigquery.datatransfer.v1.TransferConfig) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDestinationDatasetId().equals(other.getDestinationDatasetId());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getDataSourceId().equals(other.getDataSourceId());
-    result = result && (hasParams() == other.hasParams());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDestinationDatasetId().equals(other.getDestinationDatasetId())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDataSourceId().equals(other.getDataSourceId())) return false;
+    if (hasParams() != other.hasParams()) return false;
     if (hasParams()) {
-      result = result && getParams().equals(other.getParams());
+      if (!getParams().equals(other.getParams())) return false;
     }
-    result = result && getSchedule().equals(other.getSchedule());
-    result = result && (getDataRefreshWindowDays() == other.getDataRefreshWindowDays());
-    result = result && (getDisabled() == other.getDisabled());
-    result = result && (hasUpdateTime() == other.hasUpdateTime());
+    if (!getSchedule().equals(other.getSchedule())) return false;
+    if (getDataRefreshWindowDays() != other.getDataRefreshWindowDays()) return false;
+    if (getDisabled() != other.getDisabled()) return false;
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
-      result = result && getUpdateTime().equals(other.getUpdateTime());
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    result = result && (hasNextRunTime() == other.hasNextRunTime());
+    if (hasNextRunTime() != other.hasNextRunTime()) return false;
     if (hasNextRunTime()) {
-      result = result && getNextRunTime().equals(other.getNextRunTime());
+      if (!getNextRunTime().equals(other.getNextRunTime())) return false;
     }
-    result = result && state_ == other.state_;
-    result = result && (getUserId() == other.getUserId());
-    result = result && getDatasetRegion().equals(other.getDatasetRegion());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (state_ != other.state_) return false;
+    if (getUserId() != other.getUserId()) return false;
+    if (!getDatasetRegion().equals(other.getDatasetRegion())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1134,35 +1130,35 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1654,7 +1650,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Struct params_ = null;
+    private com.google.protobuf.Struct params_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
             com.google.protobuf.Struct.Builder,
@@ -2083,7 +2079,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Timestamp updateTime_ = null;
+    private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2262,7 +2258,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp nextRunTime_ = null;
+    private com.google.protobuf.Timestamp nextRunTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2673,7 +2669,7 @@ public final class TransferConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

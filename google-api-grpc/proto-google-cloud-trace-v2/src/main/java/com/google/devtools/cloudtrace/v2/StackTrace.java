@@ -22,9 +22,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private StackTrace() {
-    stackTraceHashId_ = 0L;
-  }
+  private StackTrace() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -74,7 +72,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -320,10 +318,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private StackFrame() {
-      lineNumber_ = 0L;
-      columnNumber_ = 0L;
-    }
+    private StackFrame() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -445,7 +440,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -809,31 +804,30 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       com.google.devtools.cloudtrace.v2.StackTrace.StackFrame other =
           (com.google.devtools.cloudtrace.v2.StackTrace.StackFrame) obj;
 
-      boolean result = true;
-      result = result && (hasFunctionName() == other.hasFunctionName());
+      if (hasFunctionName() != other.hasFunctionName()) return false;
       if (hasFunctionName()) {
-        result = result && getFunctionName().equals(other.getFunctionName());
+        if (!getFunctionName().equals(other.getFunctionName())) return false;
       }
-      result = result && (hasOriginalFunctionName() == other.hasOriginalFunctionName());
+      if (hasOriginalFunctionName() != other.hasOriginalFunctionName()) return false;
       if (hasOriginalFunctionName()) {
-        result = result && getOriginalFunctionName().equals(other.getOriginalFunctionName());
+        if (!getOriginalFunctionName().equals(other.getOriginalFunctionName())) return false;
       }
-      result = result && (hasFileName() == other.hasFileName());
+      if (hasFileName() != other.hasFileName()) return false;
       if (hasFileName()) {
-        result = result && getFileName().equals(other.getFileName());
+        if (!getFileName().equals(other.getFileName())) return false;
       }
-      result = result && (getLineNumber() == other.getLineNumber());
-      result = result && (getColumnNumber() == other.getColumnNumber());
-      result = result && (hasLoadModule() == other.hasLoadModule());
+      if (getLineNumber() != other.getLineNumber()) return false;
+      if (getColumnNumber() != other.getColumnNumber()) return false;
+      if (hasLoadModule() != other.hasLoadModule()) return false;
       if (hasLoadModule()) {
-        result = result && getLoadModule().equals(other.getLoadModule());
+        if (!getLoadModule().equals(other.getLoadModule())) return false;
       }
-      result = result && (hasSourceVersion() == other.hasSourceVersion());
+      if (hasSourceVersion() != other.hasSourceVersion()) return false;
       if (hasSourceVersion()) {
-        result = result && getSourceVersion().equals(other.getSourceVersion());
+        if (!getSourceVersion().equals(other.getSourceVersion())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1109,23 +1103,23 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1133,13 +1127,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1206,7 +1200,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.devtools.cloudtrace.v2.TruncatableString functionName_ = null;
+      private com.google.devtools.cloudtrace.v2.TruncatableString functionName_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.devtools.cloudtrace.v2.TruncatableString,
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
@@ -1398,7 +1392,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         return functionNameBuilder_;
       }
 
-      private com.google.devtools.cloudtrace.v2.TruncatableString originalFunctionName_ = null;
+      private com.google.devtools.cloudtrace.v2.TruncatableString originalFunctionName_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.devtools.cloudtrace.v2.TruncatableString,
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
@@ -1603,7 +1597,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         return originalFunctionNameBuilder_;
       }
 
-      private com.google.devtools.cloudtrace.v2.TruncatableString fileName_ = null;
+      private com.google.devtools.cloudtrace.v2.TruncatableString fileName_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.devtools.cloudtrace.v2.TruncatableString,
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
@@ -1885,7 +1879,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.devtools.cloudtrace.v2.Module loadModule_ = null;
+      private com.google.devtools.cloudtrace.v2.Module loadModule_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.devtools.cloudtrace.v2.Module,
               com.google.devtools.cloudtrace.v2.Module.Builder,
@@ -2067,7 +2061,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         return loadModuleBuilder_;
       }
 
-      private com.google.devtools.cloudtrace.v2.TruncatableString sourceVersion_ = null;
+      private com.google.devtools.cloudtrace.v2.TruncatableString sourceVersion_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.devtools.cloudtrace.v2.TruncatableString,
               com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
@@ -2253,7 +2247,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2393,7 +2387,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     private StackFrames() {
       frame_ = java.util.Collections.emptyList();
-      droppedFramesCount_ = 0;
     }
 
     @java.lang.Override
@@ -2422,7 +2415,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               break;
             case 10:
               {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                   frame_ =
                       new java.util.ArrayList<
                           com.google.devtools.cloudtrace.v2.StackTrace.StackFrame>();
@@ -2441,7 +2434,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -2453,7 +2446,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           frame_ = java.util.Collections.unmodifiableList(frame_);
         }
         this.unknownFields = unknownFields.build();
@@ -2611,11 +2604,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       com.google.devtools.cloudtrace.v2.StackTrace.StackFrames other =
           (com.google.devtools.cloudtrace.v2.StackTrace.StackFrames) obj;
 
-      boolean result = true;
-      result = result && getFrameList().equals(other.getFrameList());
-      result = result && (getDroppedFramesCount() == other.getDroppedFramesCount());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFrameList().equals(other.getFrameList())) return false;
+      if (getDroppedFramesCount() != other.getDroppedFramesCount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2819,7 +2811,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (frameBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             frame_ = java.util.Collections.unmodifiableList(frame_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2835,23 +2827,23 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2859,13 +2851,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2947,7 +2939,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureFrameIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           frame_ =
               new java.util.ArrayList<com.google.devtools.cloudtrace.v2.StackTrace.StackFrame>(
                   frame_);
@@ -3302,10 +3294,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
                   com.google.devtools.cloudtrace.v2.StackTrace.StackFrame,
                   com.google.devtools.cloudtrace.v2.StackTrace.StackFrame.Builder,
                   com.google.devtools.cloudtrace.v2.StackTrace.StackFrameOrBuilder>(
-                  frame_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
+                  frame_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
           frame_ = null;
         }
         return frameBuilder_;
@@ -3364,7 +3353,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3527,14 +3516,13 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     com.google.devtools.cloudtrace.v2.StackTrace other =
         (com.google.devtools.cloudtrace.v2.StackTrace) obj;
 
-    boolean result = true;
-    result = result && (hasStackFrames() == other.hasStackFrames());
+    if (hasStackFrames() != other.hasStackFrames()) return false;
     if (hasStackFrames()) {
-      result = result && getStackFrames().equals(other.getStackFrames());
+      if (!getStackFrames().equals(other.getStackFrames())) return false;
     }
-    result = result && (getStackTraceHashId() == other.getStackTraceHashId());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getStackTraceHashId() != other.getStackTraceHashId()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3742,35 +3730,35 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3820,7 +3808,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.devtools.cloudtrace.v2.StackTrace.StackFrames stackFrames_ = null;
+    private com.google.devtools.cloudtrace.v2.StackTrace.StackFrames stackFrames_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.cloudtrace.v2.StackTrace.StackFrames,
             com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.Builder,
@@ -4069,7 +4057,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

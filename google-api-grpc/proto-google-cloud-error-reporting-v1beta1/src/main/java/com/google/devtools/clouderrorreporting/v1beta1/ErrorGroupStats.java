@@ -24,11 +24,8 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
   }
 
   private ErrorGroupStats() {
-    count_ = 0L;
-    affectedUsersCount_ = 0L;
     timedCounts_ = java.util.Collections.emptyList();
     affectedServices_ = java.util.Collections.emptyList();
-    numAffectedServices_ = 0;
   }
 
   @java.lang.Override
@@ -84,7 +81,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 timedCounts_ =
                     new java.util.ArrayList<
                         com.google.devtools.clouderrorreporting.v1beta1.TimedCount>();
@@ -128,7 +125,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 affectedServices_ =
                     new java.util.ArrayList<
                         com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>();
@@ -164,7 +161,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -176,10 +173,10 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         timedCounts_ = java.util.Collections.unmodifiableList(timedCounts_);
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         affectedServices_ = java.util.Collections.unmodifiableList(affectedServices_);
       }
       this.unknownFields = unknownFields.build();
@@ -719,30 +716,29 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
     com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats other =
         (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats) obj;
 
-    boolean result = true;
-    result = result && (hasGroup() == other.hasGroup());
+    if (hasGroup() != other.hasGroup()) return false;
     if (hasGroup()) {
-      result = result && getGroup().equals(other.getGroup());
+      if (!getGroup().equals(other.getGroup())) return false;
     }
-    result = result && (getCount() == other.getCount());
-    result = result && (getAffectedUsersCount() == other.getAffectedUsersCount());
-    result = result && getTimedCountsList().equals(other.getTimedCountsList());
-    result = result && (hasFirstSeenTime() == other.hasFirstSeenTime());
+    if (getCount() != other.getCount()) return false;
+    if (getAffectedUsersCount() != other.getAffectedUsersCount()) return false;
+    if (!getTimedCountsList().equals(other.getTimedCountsList())) return false;
+    if (hasFirstSeenTime() != other.hasFirstSeenTime()) return false;
     if (hasFirstSeenTime()) {
-      result = result && getFirstSeenTime().equals(other.getFirstSeenTime());
+      if (!getFirstSeenTime().equals(other.getFirstSeenTime())) return false;
     }
-    result = result && (hasLastSeenTime() == other.hasLastSeenTime());
+    if (hasLastSeenTime() != other.hasLastSeenTime()) return false;
     if (hasLastSeenTime()) {
-      result = result && getLastSeenTime().equals(other.getLastSeenTime());
+      if (!getLastSeenTime().equals(other.getLastSeenTime())) return false;
     }
-    result = result && getAffectedServicesList().equals(other.getAffectedServicesList());
-    result = result && (getNumAffectedServices() == other.getNumAffectedServices());
-    result = result && (hasRepresentative() == other.hasRepresentative());
+    if (!getAffectedServicesList().equals(other.getAffectedServicesList())) return false;
+    if (getNumAffectedServices() != other.getNumAffectedServices()) return false;
+    if (hasRepresentative() != other.hasRepresentative()) return false;
     if (hasRepresentative()) {
-      result = result && getRepresentative().equals(other.getRepresentative());
+      if (!getRepresentative().equals(other.getRepresentative())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1012,7 +1008,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       result.count_ = count_;
       result.affectedUsersCount_ = affectedUsersCount_;
       if (timedCountsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           timedCounts_ = java.util.Collections.unmodifiableList(timedCounts_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -1031,7 +1027,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         result.lastSeenTime_ = lastSeenTimeBuilder_.build();
       }
       if (affectedServicesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           affectedServices_ = java.util.Collections.unmodifiableList(affectedServices_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -1052,35 +1048,35 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1206,7 +1202,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group_ = null;
+    private com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup group_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup,
             com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder,
@@ -1516,7 +1512,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         timedCounts_ = java.util.Collections.emptyList();
 
     private void ensureTimedCountsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         timedCounts_ =
             new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TimedCount>(
                 timedCounts_);
@@ -1963,16 +1959,13 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
                 com.google.devtools.clouderrorreporting.v1beta1.TimedCount,
                 com.google.devtools.clouderrorreporting.v1beta1.TimedCount.Builder,
                 com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>(
-                timedCounts_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
-                getParentForChildren(),
-                isClean());
+                timedCounts_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         timedCounts_ = null;
       }
       return timedCountsBuilder_;
     }
 
-    private com.google.protobuf.Timestamp firstSeenTime_ = null;
+    private com.google.protobuf.Timestamp firstSeenTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2171,7 +2164,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       return firstSeenTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp lastSeenTime_ = null;
+    private com.google.protobuf.Timestamp lastSeenTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2374,7 +2367,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
         affectedServices_ = java.util.Collections.emptyList();
 
     private void ensureAffectedServicesIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         affectedServices_ =
             new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>(
                 affectedServices_);
@@ -2805,7 +2798,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
                 com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder,
                 com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>(
                 affectedServices_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         affectedServices_ = null;
@@ -2860,7 +2853,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative_ = null;
+    private com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent representative_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
             com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
@@ -3084,7 +3077,7 @@ public final class ErrorGroupStats extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

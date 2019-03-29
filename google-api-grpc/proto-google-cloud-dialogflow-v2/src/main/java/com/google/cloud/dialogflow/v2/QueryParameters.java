@@ -25,7 +25,6 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   private QueryParameters() {
     timeZone_ = "";
     contexts_ = java.util.Collections.emptyList();
-    resetContexts_ = false;
     sessionEntityTypes_ = java.util.Collections.emptyList();
   }
 
@@ -76,7 +75,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 contexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Context>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -92,7 +91,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 sessionEntityTypes_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2.SessionEntityType>();
                 mutable_bitField0_ |= 0x00000010;
@@ -119,7 +118,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -131,10 +130,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         contexts_ = java.util.Collections.unmodifiableList(contexts_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
       }
       this.unknownFields = unknownFields.build();
@@ -525,21 +524,20 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.dialogflow.v2.QueryParameters other =
         (com.google.cloud.dialogflow.v2.QueryParameters) obj;
 
-    boolean result = true;
-    result = result && getTimeZone().equals(other.getTimeZone());
-    result = result && (hasGeoLocation() == other.hasGeoLocation());
+    if (!getTimeZone().equals(other.getTimeZone())) return false;
+    if (hasGeoLocation() != other.hasGeoLocation()) return false;
     if (hasGeoLocation()) {
-      result = result && getGeoLocation().equals(other.getGeoLocation());
+      if (!getGeoLocation().equals(other.getGeoLocation())) return false;
     }
-    result = result && getContextsList().equals(other.getContextsList());
-    result = result && (getResetContexts() == other.getResetContexts());
-    result = result && getSessionEntityTypesList().equals(other.getSessionEntityTypesList());
-    result = result && (hasPayload() == other.hasPayload());
+    if (!getContextsList().equals(other.getContextsList())) return false;
+    if (getResetContexts() != other.getResetContexts()) return false;
+    if (!getSessionEntityTypesList().equals(other.getSessionEntityTypesList())) return false;
+    if (hasPayload() != other.hasPayload()) return false;
     if (hasPayload()) {
-      result = result && getPayload().equals(other.getPayload());
+      if (!getPayload().equals(other.getPayload())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -781,7 +779,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         result.geoLocation_ = geoLocationBuilder_.build();
       }
       if (contextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           contexts_ = java.util.Collections.unmodifiableList(contexts_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -791,7 +789,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       result.resetContexts_ = resetContexts_;
       if (sessionEntityTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -811,35 +809,35 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1061,7 +1059,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.type.LatLng geoLocation_ = null;
+    private com.google.type.LatLng geoLocation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         geoLocationBuilder_;
@@ -1236,7 +1234,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureContextsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         contexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Context>(contexts_);
         bitField0_ |= 0x00000004;
       }
@@ -1592,10 +1590,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2.Context,
                 com.google.cloud.dialogflow.v2.Context.Builder,
                 com.google.cloud.dialogflow.v2.ContextOrBuilder>(
-                contexts_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                contexts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         contexts_ = null;
       }
       return contextsBuilder_;
@@ -1652,7 +1647,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureSessionEntityTypesIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         sessionEntityTypes_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2.SessionEntityType>(
                 sessionEntityTypes_);
@@ -2037,7 +2032,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2.SessionEntityType.Builder,
                 com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>(
                 sessionEntityTypes_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         sessionEntityTypes_ = null;
@@ -2045,7 +2040,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       return sessionEntityTypesBuilder_;
     }
 
-    private com.google.protobuf.Struct payload_ = null;
+    private com.google.protobuf.Struct payload_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
             com.google.protobuf.Struct.Builder,
@@ -2231,7 +2226,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

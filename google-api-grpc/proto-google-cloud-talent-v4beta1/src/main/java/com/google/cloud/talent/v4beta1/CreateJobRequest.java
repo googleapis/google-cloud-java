@@ -115,9 +115,11 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required.
-   * The resource name of the project under which the job is created.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * The resource name of the tenant under which the job is created.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and a default tenant is created if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -138,9 +140,11 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required.
-   * The resource name of the project under which the job is created.
-   * The format is "projects/{project_id}", for example,
-   * "projects/api-test-project".
+   * The resource name of the tenant under which the job is created.
+   * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   * "projects/api-test-project/tenant/foo".
+   * Tenant id is optional and a default tenant is created if unspecified, for
+   * example, "projects/api-test-project".
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -552,9 +556,11 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required.
-     * The resource name of the project under which the job is created.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant under which the job is created.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and a default tenant is created if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -575,9 +581,11 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required.
-     * The resource name of the project under which the job is created.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant under which the job is created.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and a default tenant is created if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -598,9 +606,11 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required.
-     * The resource name of the project under which the job is created.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant under which the job is created.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and a default tenant is created if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -619,9 +629,11 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required.
-     * The resource name of the project under which the job is created.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant under which the job is created.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and a default tenant is created if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -637,9 +649,11 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required.
-     * The resource name of the project under which the job is created.
-     * The format is "projects/{project_id}", for example,
-     * "projects/api-test-project".
+     * The resource name of the tenant under which the job is created.
+     * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+     * "projects/api-test-project/tenant/foo".
+     * Tenant id is optional and a default tenant is created if unspecified, for
+     * example, "projects/api-test-project".
      * </pre>
      *
      * <code>string parent = 1;</code>
