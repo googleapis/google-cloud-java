@@ -44,8 +44,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   private StreamingRecognitionResult() {
     messageType_ = 0;
     transcript_ = "";
-    isFinal_ = false;
-    confidence_ = 0F;
   }
 
   @java.lang.Override
@@ -98,7 +96,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -476,16 +474,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     com.google.cloud.dialogflow.v2.StreamingRecognitionResult other =
         (com.google.cloud.dialogflow.v2.StreamingRecognitionResult) obj;
 
-    boolean result = true;
-    result = result && messageType_ == other.messageType_;
-    result = result && getTranscript().equals(other.getTranscript());
-    result = result && (getIsFinal() == other.getIsFinal());
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getConfidence())
-                == java.lang.Float.floatToIntBits(other.getConfidence()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (messageType_ != other.messageType_) return false;
+    if (!getTranscript().equals(other.getTranscript())) return false;
+    if (getIsFinal() != other.getIsFinal()) return false;
+    if (java.lang.Float.floatToIntBits(getConfidence())
+        != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -713,35 +708,35 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1101,7 +1096,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

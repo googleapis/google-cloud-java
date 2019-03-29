@@ -28,17 +28,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     displayName_ = "";
     webhookState_ = 0;
-    priority_ = 0;
-    isFallback_ = false;
-    mlEnabled_ = false;
-    mlDisabled_ = false;
-    endInteraction_ = false;
     inputContextNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     events_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     trainingPhrases_ = java.util.Collections.emptyList();
     action_ = "";
     outputContexts_ = java.util.Collections.emptyList();
-    resetContexts_ = false;
     parameters_ = java.util.Collections.emptyList();
     messages_ = java.util.Collections.emptyList();
     defaultResponsePlatforms_ = java.util.Collections.emptyList();
@@ -110,7 +104,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           case 58:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 inputContextNames_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -120,7 +114,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           case 66:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 events_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000200;
               }
@@ -129,7 +123,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 trainingPhrases_ =
                     new java.util.ArrayList<
                         com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>();
@@ -150,7 +144,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 90:
             {
-              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
                 outputContexts_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
                 mutable_bitField0_ |= 0x00001000;
@@ -167,7 +161,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
                 parameters_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Parameter>();
                 mutable_bitField0_ |= 0x00004000;
@@ -180,7 +174,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 114:
             {
-              if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
                 messages_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>();
                 mutable_bitField0_ |= 0x00008000;
@@ -194,7 +188,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           case 120:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
                 defaultResponsePlatforms_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00010000;
               }
@@ -207,7 +201,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+                if (!((mutable_bitField0_ & 0x00010000) != 0)) {
                   defaultResponsePlatforms_ = new java.util.ArrayList<java.lang.Integer>();
                   mutable_bitField0_ |= 0x00010000;
                 }
@@ -232,7 +226,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           case 146:
             {
-              if (!((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
                 followupIntentInfo_ =
                     new java.util.ArrayList<
                         com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>();
@@ -256,7 +250,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -268,29 +262,29 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         events_ = events_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
       }
-      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
         outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
       }
-      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((mutable_bitField0_ & 0x00004000) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
-      if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((mutable_bitField0_ & 0x00008000) != 0)) {
         messages_ = java.util.Collections.unmodifiableList(messages_);
       }
-      if (((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((mutable_bitField0_ & 0x00010000) != 0)) {
         defaultResponsePlatforms_ =
             java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
       }
-      if (((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((mutable_bitField0_ & 0x00080000) != 0)) {
         followupIntentInfo_ = java.util.Collections.unmodifiableList(followupIntentInfo_);
       }
       this.unknownFields = unknownFields.build();
@@ -607,7 +601,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       type_ = 0;
       parts_ = java.util.Collections.emptyList();
-      timesAddedCount_ = 0;
     }
 
     @java.lang.Override
@@ -650,7 +643,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               }
             case 26:
               {
-                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   parts_ =
                       new java.util.ArrayList<
                           com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part>();
@@ -669,7 +662,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -681,7 +674,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           parts_ = java.util.Collections.unmodifiableList(parts_);
         }
         this.unknownFields = unknownFields.build();
@@ -968,7 +961,6 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         text_ = "";
         entityType_ = "";
         alias_ = "";
-        userDefined_ = false;
       }
 
       @java.lang.Override
@@ -1023,7 +1015,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -1274,13 +1266,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part other =
             (com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part) obj;
 
-        boolean result = true;
-        result = result && getText().equals(other.getText());
-        result = result && getEntityType().equals(other.getEntityType());
-        result = result && getAlias().equals(other.getAlias());
-        result = result && (getUserDefined() == other.getUserDefined());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getText().equals(other.getText())) return false;
+        if (!getEntityType().equals(other.getEntityType())) return false;
+        if (!getAlias().equals(other.getAlias())) return false;
+        if (getUserDefined() != other.getUserDefined()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -1496,23 +1487,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -1520,13 +1511,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -1948,7 +1939,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -2237,13 +2228,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase other =
           (com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase) obj;
 
-      boolean result = true;
-      result = result && getName().equals(other.getName());
-      result = result && type_ == other.type_;
-      result = result && getPartsList().equals(other.getPartsList());
-      result = result && (getTimesAddedCount() == other.getTimesAddedCount());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName().equals(other.getName())) return false;
+      if (type_ != other.type_) return false;
+      if (!getPartsList().equals(other.getPartsList())) return false;
+      if (getTimesAddedCount() != other.getTimesAddedCount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2457,7 +2447,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         result.name_ = name_;
         result.type_ = type_;
         if (partsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             parts_ = java.util.Collections.unmodifiableList(parts_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
@@ -2473,23 +2463,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -2497,13 +2487,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2764,7 +2754,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           parts_ = java.util.Collections.emptyList();
 
       private void ensurePartsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           parts_ =
               new java.util.ArrayList<
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part>(parts_);
@@ -3178,10 +3168,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part,
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Part.Builder,
                   com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.PartOrBuilder>(
-                  parts_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
+                  parts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           parts_ = null;
         }
         return partsBuilder_;
@@ -3240,7 +3227,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3513,9 +3500,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       value_ = "";
       defaultValue_ = "";
       entityTypeDisplayName_ = "";
-      mandatory_ = false;
       prompts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      isList_ = false;
     }
 
     @java.lang.Override
@@ -3585,7 +3570,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                   prompts_ = new com.google.protobuf.LazyStringArrayList();
                   mutable_bitField0_ |= 0x00000040;
                 }
@@ -3599,7 +3584,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -3611,7 +3596,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
           prompts_ = prompts_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -4049,17 +4034,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Intent.Parameter other =
           (com.google.cloud.dialogflow.v2beta1.Intent.Parameter) obj;
 
-      boolean result = true;
-      result = result && getName().equals(other.getName());
-      result = result && getDisplayName().equals(other.getDisplayName());
-      result = result && getValue().equals(other.getValue());
-      result = result && getDefaultValue().equals(other.getDefaultValue());
-      result = result && getEntityTypeDisplayName().equals(other.getEntityTypeDisplayName());
-      result = result && (getMandatory() == other.getMandatory());
-      result = result && getPromptsList().equals(other.getPromptsList());
-      result = result && (getIsList() == other.getIsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName().equals(other.getName())) return false;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getValue().equals(other.getValue())) return false;
+      if (!getDefaultValue().equals(other.getDefaultValue())) return false;
+      if (!getEntityTypeDisplayName().equals(other.getEntityTypeDisplayName())) return false;
+      if (getMandatory() != other.getMandatory()) return false;
+      if (!getPromptsList().equals(other.getPromptsList())) return false;
+      if (getIsList() != other.getIsList()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4286,7 +4270,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         result.defaultValue_ = defaultValue_;
         result.entityTypeDisplayName_ = entityTypeDisplayName_;
         result.mandatory_ = mandatory_;
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           prompts_ = prompts_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -4299,23 +4283,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -4323,13 +4307,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -4987,7 +4971,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensurePromptsIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           prompts_ = new com.google.protobuf.LazyStringArrayList(prompts_);
           bitField0_ |= 0x00000040;
         }
@@ -5182,7 +5166,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -6095,7 +6079,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -6644,7 +6628,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     text_ = new com.google.protobuf.LazyStringArrayList();
                     mutable_bitField0_ |= 0x00000001;
                   }
@@ -6653,7 +6637,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -6666,7 +6650,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             text_ = text_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
@@ -6790,10 +6774,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.Text other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.Text) obj;
 
-        boolean result = true;
-        result = result && getTextList().equals(other.getTextList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getTextList().equals(other.getTextList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -6985,7 +6968,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Text result =
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Text(this);
           int from_bitField0_ = bitField0_;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             text_ = text_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -6996,23 +6979,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -7020,13 +7003,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -7088,7 +7071,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureTextIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             text_ = new com.google.protobuf.LazyStringArrayList(text_);
             bitField0_ |= 0x00000001;
           }
@@ -7230,7 +7213,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -7392,7 +7375,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -7564,11 +7547,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.Image other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.Image) obj;
 
-        boolean result = true;
-        result = result && getImageUri().equals(other.getImageUri());
-        result = result && getAccessibilityText().equals(other.getAccessibilityText());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getImageUri().equals(other.getImageUri())) return false;
+        if (!getAccessibilityText().equals(other.getAccessibilityText())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -7770,23 +7752,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -7794,13 +7776,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -8051,7 +8033,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -8226,7 +8208,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     quickReplies_ = new com.google.protobuf.LazyStringArrayList();
                     mutable_bitField0_ |= 0x00000002;
                   }
@@ -8235,7 +8217,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -8248,7 +8230,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             quickReplies_ = quickReplies_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
@@ -8422,11 +8404,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.QuickReplies) obj;
 
-        boolean result = true;
-        result = result && getTitle().equals(other.getTitle());
-        result = result && getQuickRepliesList().equals(other.getQuickRepliesList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!getQuickRepliesList().equals(other.getQuickRepliesList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -8629,7 +8610,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           result.title_ = title_;
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             quickReplies_ = quickReplies_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -8641,23 +8622,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -8665,13 +8646,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -8835,7 +8816,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureQuickRepliesIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             quickReplies_ = new com.google.protobuf.LazyStringArrayList(quickReplies_);
             bitField0_ |= 0x00000002;
           }
@@ -8977,7 +8958,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -9230,7 +9211,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 34:
                 {
-                  if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                     buttons_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button>();
@@ -9244,7 +9225,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -9257,7 +9238,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((mutable_bitField0_ & 0x00000008) != 0)) {
             buttons_ = java.util.Collections.unmodifiableList(buttons_);
           }
           this.unknownFields = unknownFields.build();
@@ -9393,7 +9374,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   }
                 default:
                   {
-                    if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                       done = true;
                     }
                     break;
@@ -9566,11 +9547,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button other =
               (com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button) obj;
 
-          boolean result = true;
-          result = result && getText().equals(other.getText());
-          result = result && getPostback().equals(other.getPostback());
-          result = result && unknownFields.equals(other.unknownFields);
-          return result;
+          if (!getText().equals(other.getText())) return false;
+          if (!getPostback().equals(other.getPostback())) return false;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
         }
 
         @java.lang.Override
@@ -9777,23 +9757,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public Builder clone() {
-            return (Builder) super.clone();
+            return super.clone();
           }
 
           @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.setField(field, value);
+            return super.setField(field, value);
           }
 
           @java.lang.Override
           public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
+            return super.clearField(field);
           }
 
           @java.lang.Override
           public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
+            return super.clearOneof(oneof);
           }
 
           @java.lang.Override
@@ -9801,13 +9781,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index,
               java.lang.Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
+            return super.setRepeatedField(field, index, value);
           }
 
           @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.addRepeatedField(field, value);
+            return super.addRepeatedField(field, value);
           }
 
           @java.lang.Override
@@ -10061,7 +10041,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFieldsProto3(unknownFields);
+            return super.setUnknownFields(unknownFields);
           }
 
           @java.lang.Override
@@ -10379,13 +10359,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.Card other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.Card) obj;
 
-        boolean result = true;
-        result = result && getTitle().equals(other.getTitle());
-        result = result && getSubtitle().equals(other.getSubtitle());
-        result = result && getImageUri().equals(other.getImageUri());
-        result = result && getButtonsList().equals(other.getButtonsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!getSubtitle().equals(other.getSubtitle())) return false;
+        if (!getImageUri().equals(other.getImageUri())) return false;
+        if (!getButtonsList().equals(other.getButtonsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -10600,7 +10579,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           result.subtitle_ = subtitle_;
           result.imageUri_ = imageUri_;
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            if (((bitField0_ & 0x00000008) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
               bitField0_ = (bitField0_ & ~0x00000008);
             }
@@ -10615,23 +10594,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -10639,13 +10618,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -11018,7 +10997,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (!((bitField0_ & 0x00000008) != 0)) {
             buttons_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button>(buttons_);
@@ -11401,10 +11380,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.Button.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Card.ButtonOrBuilder>(
-                    buttons_,
-                    ((bitField0_ & 0x00000008) == 0x00000008),
-                    getParentForChildren(),
-                    isClean());
+                    buttons_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -11413,7 +11389,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -11608,7 +11584,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -11833,12 +11809,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse) obj;
 
-        boolean result = true;
-        result = result && getTextToSpeech().equals(other.getTextToSpeech());
-        result = result && getSsml().equals(other.getSsml());
-        result = result && getDisplayText().equals(other.getDisplayText());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getTextToSpeech().equals(other.getTextToSpeech())) return false;
+        if (!getSsml().equals(other.getSsml())) return false;
+        if (!getDisplayText().equals(other.getDisplayText())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -12049,23 +12024,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -12073,13 +12048,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -12441,7 +12416,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -12616,7 +12591,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 break;
               case 10:
                 {
-                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     simpleResponses_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse>();
@@ -12631,7 +12606,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -12644,7 +12619,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             simpleResponses_ = java.util.Collections.unmodifiableList(simpleResponses_);
           }
           this.unknownFields = unknownFields.build();
@@ -12792,10 +12767,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses) obj;
 
-        boolean result = true;
-        result = result && getSimpleResponsesList().equals(other.getSimpleResponsesList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getSimpleResponsesList().equals(other.getSimpleResponsesList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -13003,7 +12977,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponses(this);
           int from_bitField0_ = bitField0_;
           if (simpleResponsesBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               simpleResponses_ = java.util.Collections.unmodifiableList(simpleResponses_);
               bitField0_ = (bitField0_ & ~0x00000001);
             }
@@ -13017,23 +12991,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -13041,13 +13015,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -13130,7 +13104,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             simpleResponses_ = java.util.Collections.emptyList();
 
         private void ensureSimpleResponsesIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             simpleResponses_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse>(
@@ -13534,7 +13508,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponse.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.SimpleResponseOrBuilder>(
                     simpleResponses_,
-                    ((bitField0_ & 0x00000001) == 0x00000001),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             simpleResponses_ = null;
@@ -13545,7 +13519,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -13853,7 +13827,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 42:
                 {
-                  if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                  if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                     buttons_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button>();
@@ -13868,7 +13842,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -13881,7 +13855,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((mutable_bitField0_ & 0x00000010) != 0)) {
             buttons_ = java.util.Collections.unmodifiableList(buttons_);
           }
           this.unknownFields = unknownFields.build();
@@ -14045,7 +14019,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   }
                 default:
                   {
-                    if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                       done = true;
                     }
                     break;
@@ -14162,7 +14136,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     }
                   default:
                     {
-                      if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                      if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                         done = true;
                       }
                       break;
@@ -14292,10 +14266,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                             .OpenUriAction)
                         obj;
 
-            boolean result = true;
-            result = result && getUri().equals(other.getUri());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
+            if (!getUri().equals(other.getUri())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
           }
 
           @java.lang.Override
@@ -14526,23 +14499,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
             @java.lang.Override
             public Builder clone() {
-              return (Builder) super.clone();
+              return super.clone();
             }
 
             @java.lang.Override
             public Builder setField(
                 com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-              return (Builder) super.setField(field, value);
+              return super.setField(field, value);
             }
 
             @java.lang.Override
             public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-              return (Builder) super.clearField(field);
+              return super.clearField(field);
             }
 
             @java.lang.Override
             public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-              return (Builder) super.clearOneof(oneof);
+              return super.clearOneof(oneof);
             }
 
             @java.lang.Override
@@ -14550,13 +14523,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Descriptors.FieldDescriptor field,
                 int index,
                 java.lang.Object value) {
-              return (Builder) super.setRepeatedField(field, index, value);
+              return super.setRepeatedField(field, index, value);
             }
 
             @java.lang.Override
             public Builder addRepeatedField(
                 com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-              return (Builder) super.addRepeatedField(field, value);
+              return super.addRepeatedField(field, value);
             }
 
             @java.lang.Override
@@ -14715,7 +14688,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             @java.lang.Override
             public final Builder setUnknownFields(
                 final com.google.protobuf.UnknownFieldSet unknownFields) {
-              return super.setUnknownFieldsProto3(unknownFields);
+              return super.setUnknownFields(unknownFields);
             }
 
             @java.lang.Override
@@ -14919,14 +14892,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button other =
               (com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button) obj;
 
-          boolean result = true;
-          result = result && getTitle().equals(other.getTitle());
-          result = result && (hasOpenUriAction() == other.hasOpenUriAction());
+          if (!getTitle().equals(other.getTitle())) return false;
+          if (hasOpenUriAction() != other.hasOpenUriAction()) return false;
           if (hasOpenUriAction()) {
-            result = result && getOpenUriAction().equals(other.getOpenUriAction());
+            if (!getOpenUriAction().equals(other.getOpenUriAction())) return false;
           }
-          result = result && unknownFields.equals(other.unknownFields);
-          return result;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
         }
 
         @java.lang.Override
@@ -15146,23 +15118,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public Builder clone() {
-            return (Builder) super.clone();
+            return super.clone();
           }
 
           @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.setField(field, value);
+            return super.setField(field, value);
           }
 
           @java.lang.Override
           public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
+            return super.clearField(field);
           }
 
           @java.lang.Override
           public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
+            return super.clearOneof(oneof);
           }
 
           @java.lang.Override
@@ -15170,13 +15142,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index,
               java.lang.Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
+            return super.setRepeatedField(field, index, value);
           }
 
           @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.addRepeatedField(field, value);
+            return super.addRepeatedField(field, value);
           }
 
           @java.lang.Override
@@ -15330,7 +15302,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           }
 
           private com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction
-              openUriAction_ = null;
+              openUriAction_;
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction,
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.OpenUriAction
@@ -15554,7 +15526,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFieldsProto3(unknownFields);
+            return super.setUnknownFields(unknownFields);
           }
 
           @java.lang.Override
@@ -15927,17 +15899,16 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard) obj;
 
-        boolean result = true;
-        result = result && getTitle().equals(other.getTitle());
-        result = result && getSubtitle().equals(other.getSubtitle());
-        result = result && getFormattedText().equals(other.getFormattedText());
-        result = result && (hasImage() == other.hasImage());
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!getSubtitle().equals(other.getSubtitle())) return false;
+        if (!getFormattedText().equals(other.getFormattedText())) return false;
+        if (hasImage() != other.hasImage()) return false;
         if (hasImage()) {
-          result = result && getImage().equals(other.getImage());
+          if (!getImage().equals(other.getImage())) return false;
         }
-        result = result && getButtonsList().equals(other.getButtonsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getButtonsList().equals(other.getButtonsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -16168,7 +16139,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             result.image_ = imageBuilder_.build();
           }
           if (buttonsBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            if (((bitField0_ & 0x00000010) != 0)) {
               buttons_ = java.util.Collections.unmodifiableList(buttons_);
               bitField0_ = (bitField0_ & ~0x00000010);
             }
@@ -16183,23 +16154,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -16207,13 +16178,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -16588,7 +16559,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
-        private com.google.cloud.dialogflow.v2beta1.Intent.Message.Image image_ = null;
+        private com.google.cloud.dialogflow.v2beta1.Intent.Message.Image image_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.Image,
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder,
@@ -16775,7 +16746,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             buttons_ = java.util.Collections.emptyList();
 
         private void ensureButtonsIsMutable() {
-          if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (!((bitField0_ & 0x00000010) != 0)) {
             buttons_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button>(buttons_);
@@ -17177,10 +17148,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.Button.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.BasicCard.ButtonOrBuilder>(
-                    buttons_,
-                    ((bitField0_ & 0x00000010) == 0x00000010),
-                    getParentForChildren(),
-                    isClean());
+                    buttons_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
             buttons_ = null;
           }
           return buttonsBuilder_;
@@ -17189,7 +17157,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -17324,7 +17292,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -17445,10 +17413,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion) obj;
 
-        boolean result = true;
-        result = result && getTitle().equals(other.getTitle());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -17649,23 +17616,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -17673,13 +17640,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -17829,7 +17796,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -17995,7 +17962,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 break;
               case 10:
                 {
-                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     suggestions_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion>();
@@ -18009,7 +17976,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -18022,7 +17989,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             suggestions_ = java.util.Collections.unmodifiableList(suggestions_);
           }
           this.unknownFields = unknownFields.build();
@@ -18164,10 +18131,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions) obj;
 
-        boolean result = true;
-        result = result && getSuggestionsList().equals(other.getSuggestionsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getSuggestionsList().equals(other.getSuggestionsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -18371,7 +18337,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestions(this);
           int from_bitField0_ = bitField0_;
           if (suggestionsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               suggestions_ = java.util.Collections.unmodifiableList(suggestions_);
               bitField0_ = (bitField0_ & ~0x00000001);
             }
@@ -18385,23 +18351,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -18409,13 +18375,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -18498,7 +18464,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             suggestions_ = java.util.Collections.emptyList();
 
         private void ensureSuggestionsIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             suggestions_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion>(suggestions_);
@@ -18896,7 +18862,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.Suggestion.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.SuggestionOrBuilder>(
                     suggestions_,
-                    ((bitField0_ & 0x00000001) == 0x00000001),
+                    ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
             suggestions_ = null;
@@ -18907,7 +18873,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -19073,7 +19039,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -19246,11 +19212,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.LinkOutSuggestion other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.LinkOutSuggestion) obj;
 
-        boolean result = true;
-        result = result && getDestinationName().equals(other.getDestinationName());
-        result = result && getUri().equals(other.getUri());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getDestinationName().equals(other.getDestinationName())) return false;
+        if (!getUri().equals(other.getUri())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -19459,23 +19424,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -19483,13 +19448,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -19744,7 +19709,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -19940,7 +19905,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               case 18:
                 {
-                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     items_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item>();
@@ -19955,7 +19920,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -19968,7 +19933,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             items_ = java.util.Collections.unmodifiableList(items_);
           }
           this.unknownFields = unknownFields.build();
@@ -20202,7 +20167,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   }
                 default:
                   {
-                    if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                       done = true;
                     }
                     break;
@@ -20471,19 +20436,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item other =
               (com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item) obj;
 
-          boolean result = true;
-          result = result && (hasInfo() == other.hasInfo());
+          if (hasInfo() != other.hasInfo()) return false;
           if (hasInfo()) {
-            result = result && getInfo().equals(other.getInfo());
+            if (!getInfo().equals(other.getInfo())) return false;
           }
-          result = result && getTitle().equals(other.getTitle());
-          result = result && getDescription().equals(other.getDescription());
-          result = result && (hasImage() == other.hasImage());
+          if (!getTitle().equals(other.getTitle())) return false;
+          if (!getDescription().equals(other.getDescription())) return false;
+          if (hasImage() != other.hasImage()) return false;
           if (hasImage()) {
-            result = result && getImage().equals(other.getImage());
+            if (!getImage().equals(other.getImage())) return false;
           }
-          result = result && unknownFields.equals(other.unknownFields);
-          return result;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
         }
 
         @java.lang.Override
@@ -20722,23 +20686,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public Builder clone() {
-            return (Builder) super.clone();
+            return super.clone();
           }
 
           @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.setField(field, value);
+            return super.setField(field, value);
           }
 
           @java.lang.Override
           public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
+            return super.clearField(field);
           }
 
           @java.lang.Override
           public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
+            return super.clearOneof(oneof);
           }
 
           @java.lang.Override
@@ -20746,13 +20710,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index,
               java.lang.Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
+            return super.setRepeatedField(field, index, value);
           }
 
           @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.addRepeatedField(field, value);
+            return super.addRepeatedField(field, value);
           }
 
           @java.lang.Override
@@ -20817,7 +20781,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info_ = null;
+          private com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info_;
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo,
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo.Builder,
@@ -21195,7 +21159,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.cloud.dialogflow.v2beta1.Intent.Message.Image image_ = null;
+          private com.google.cloud.dialogflow.v2beta1.Intent.Message.Image image_;
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.Image,
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder,
@@ -21383,7 +21347,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFieldsProto3(unknownFields);
+            return super.setUnknownFields(unknownFields);
           }
 
           @java.lang.Override
@@ -21605,11 +21569,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect) obj;
 
-        boolean result = true;
-        result = result && getTitle().equals(other.getTitle());
-        result = result && getItemsList().equals(other.getItemsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!getItemsList().equals(other.getItemsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -21818,7 +21781,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           int to_bitField0_ = 0;
           result.title_ = title_;
           if (itemsBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            if (((bitField0_ & 0x00000002) != 0)) {
               items_ = java.util.Collections.unmodifiableList(items_);
               bitField0_ = (bitField0_ & ~0x00000002);
             }
@@ -21833,23 +21796,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -21857,13 +21820,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -22043,7 +22006,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             items_ = java.util.Collections.emptyList();
 
         private void ensureItemsIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             items_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item>(items_);
@@ -22427,10 +22390,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.Item.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.ListSelect.ItemOrBuilder>(
-                    items_,
-                    ((bitField0_ & 0x00000002) == 0x00000002),
-                    getParentForChildren(),
-                    isClean());
+                    items_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
             items_ = null;
           }
           return itemsBuilder_;
@@ -22439,7 +22399,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -22611,7 +22571,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 break;
               case 10:
                 {
-                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                     items_ =
                         new java.util.ArrayList<
                             com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect
@@ -22627,7 +22587,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -22640,7 +22600,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
             items_ = java.util.Collections.unmodifiableList(items_);
           }
           this.unknownFields = unknownFields.build();
@@ -22874,7 +22834,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                   }
                 default:
                   {
-                    if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                       done = true;
                     }
                     break;
@@ -23144,19 +23104,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item other =
               (com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item) obj;
 
-          boolean result = true;
-          result = result && (hasInfo() == other.hasInfo());
+          if (hasInfo() != other.hasInfo()) return false;
           if (hasInfo()) {
-            result = result && getInfo().equals(other.getInfo());
+            if (!getInfo().equals(other.getInfo())) return false;
           }
-          result = result && getTitle().equals(other.getTitle());
-          result = result && getDescription().equals(other.getDescription());
-          result = result && (hasImage() == other.hasImage());
+          if (!getTitle().equals(other.getTitle())) return false;
+          if (!getDescription().equals(other.getDescription())) return false;
+          if (hasImage() != other.hasImage()) return false;
           if (hasImage()) {
-            result = result && getImage().equals(other.getImage());
+            if (!getImage().equals(other.getImage())) return false;
           }
-          result = result && unknownFields.equals(other.unknownFields);
-          return result;
+          if (!unknownFields.equals(other.unknownFields)) return false;
+          return true;
         }
 
         @java.lang.Override
@@ -23403,23 +23362,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public Builder clone() {
-            return (Builder) super.clone();
+            return super.clone();
           }
 
           @java.lang.Override
           public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.setField(field, value);
+            return super.setField(field, value);
           }
 
           @java.lang.Override
           public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return (Builder) super.clearField(field);
+            return super.clearField(field);
           }
 
           @java.lang.Override
           public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return (Builder) super.clearOneof(oneof);
+            return super.clearOneof(oneof);
           }
 
           @java.lang.Override
@@ -23427,13 +23386,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index,
               java.lang.Object value) {
-            return (Builder) super.setRepeatedField(field, index, value);
+            return super.setRepeatedField(field, index, value);
           }
 
           @java.lang.Override
           public Builder addRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return (Builder) super.addRepeatedField(field, value);
+            return super.addRepeatedField(field, value);
           }
 
           @java.lang.Override
@@ -23499,7 +23458,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info_ = null;
+          private com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo info_;
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo,
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo.Builder,
@@ -23877,7 +23836,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             return this;
           }
 
-          private com.google.cloud.dialogflow.v2beta1.Intent.Message.Image image_ = null;
+          private com.google.cloud.dialogflow.v2beta1.Intent.Message.Image image_;
           private com.google.protobuf.SingleFieldBuilderV3<
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.Image,
                   com.google.cloud.dialogflow.v2beta1.Intent.Message.Image.Builder,
@@ -24065,7 +24024,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFieldsProto3(unknownFields);
+            return super.setUnknownFields(unknownFields);
           }
 
           @java.lang.Override
@@ -24243,10 +24202,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect) obj;
 
-        boolean result = true;
-        result = result && getItemsList().equals(other.getItemsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getItemsList().equals(other.getItemsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -24450,7 +24408,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               new com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect(this);
           int from_bitField0_ = bitField0_;
           if (itemsBuilder_ == null) {
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            if (((bitField0_ & 0x00000001) != 0)) {
               items_ = java.util.Collections.unmodifiableList(items_);
               bitField0_ = (bitField0_ & ~0x00000001);
             }
@@ -24464,23 +24422,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -24488,13 +24446,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -24578,7 +24536,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             items_ = java.util.Collections.emptyList();
 
         private void ensureItemsIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (!((bitField0_ & 0x00000001) != 0)) {
             items_ =
                 new java.util.ArrayList<
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item>(items_);
@@ -24985,10 +24943,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect.Item.Builder,
                     com.google.cloud.dialogflow.v2beta1.Intent.Message.CarouselSelect
                         .ItemOrBuilder>(
-                    items_,
-                    ((bitField0_ & 0x00000001) == 0x00000001),
-                    getParentForChildren(),
-                    isClean());
+                    items_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
             items_ = null;
           }
           return itemsBuilder_;
@@ -24997,7 +24952,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -25181,7 +25136,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     synonyms_ = new com.google.protobuf.LazyStringArrayList();
                     mutable_bitField0_ |= 0x00000002;
                   }
@@ -25190,7 +25145,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -25203,7 +25158,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
             synonyms_ = synonyms_.getUnmodifiableView();
           }
           this.unknownFields = unknownFields.build();
@@ -25383,11 +25338,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.SelectItemInfo) obj;
 
-        boolean result = true;
-        result = result && getKey().equals(other.getKey());
-        result = result && getSynonymsList().equals(other.getSynonymsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getKey().equals(other.getKey())) return false;
+        if (!getSynonymsList().equals(other.getSynonymsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -25591,7 +25545,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           result.key_ = key_;
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             synonyms_ = synonyms_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -25603,23 +25557,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -25627,13 +25581,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -25802,7 +25756,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.LazyStringArrayList.EMPTY;
 
         private void ensureSynonymsIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (!((bitField0_ & 0x00000002) != 0)) {
             synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
             bitField0_ |= 0x00000002;
           }
@@ -25953,7 +25907,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -26107,7 +26061,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -26250,10 +26204,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyPlayAudio) obj;
 
-        boolean result = true;
-        result = result && getAudioUri().equals(other.getAudioUri());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getAudioUri().equals(other.getAudioUri())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -26457,23 +26410,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -26481,13 +26434,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -26690,7 +26643,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -26862,7 +26815,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -27095,21 +27048,19 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech) obj;
 
-        boolean result = true;
-        result = result && getSourceCase().equals(other.getSourceCase());
-        if (!result) return false;
+        if (!getSourceCase().equals(other.getSourceCase())) return false;
         switch (sourceCase_) {
           case 1:
-            result = result && getText().equals(other.getText());
+            if (!getText().equals(other.getText())) return false;
             break;
           case 2:
-            result = result && getSsml().equals(other.getSsml());
+            if (!getSsml().equals(other.getSsml())) return false;
             break;
           case 0:
           default:
         }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -27343,23 +27294,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -27367,13 +27318,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -27679,7 +27630,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -27819,7 +27770,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 }
               default:
                 {
-                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                     done = true;
                   }
                   break;
@@ -27946,10 +27897,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall other =
             (com.google.cloud.dialogflow.v2beta1.Intent.Message.TelephonyTransferCall) obj;
 
-        boolean result = true;
-        result = result && getPhoneNumber().equals(other.getPhoneNumber());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getPhoneNumber().equals(other.getPhoneNumber())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -28159,23 +28109,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
 
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
 
         @java.lang.Override
         public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
 
         @java.lang.Override
         public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
 
         @java.lang.Override
@@ -28183,13 +28133,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index,
             java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
 
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -28352,7 +28302,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -29371,59 +29321,57 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Intent.Message other =
           (com.google.cloud.dialogflow.v2beta1.Intent.Message) obj;
 
-      boolean result = true;
-      result = result && platform_ == other.platform_;
-      result = result && getMessageCase().equals(other.getMessageCase());
-      if (!result) return false;
+      if (platform_ != other.platform_) return false;
+      if (!getMessageCase().equals(other.getMessageCase())) return false;
       switch (messageCase_) {
         case 1:
-          result = result && getText().equals(other.getText());
+          if (!getText().equals(other.getText())) return false;
           break;
         case 2:
-          result = result && getImage().equals(other.getImage());
+          if (!getImage().equals(other.getImage())) return false;
           break;
         case 3:
-          result = result && getQuickReplies().equals(other.getQuickReplies());
+          if (!getQuickReplies().equals(other.getQuickReplies())) return false;
           break;
         case 4:
-          result = result && getCard().equals(other.getCard());
+          if (!getCard().equals(other.getCard())) return false;
           break;
         case 5:
-          result = result && getPayload().equals(other.getPayload());
+          if (!getPayload().equals(other.getPayload())) return false;
           break;
         case 7:
-          result = result && getSimpleResponses().equals(other.getSimpleResponses());
+          if (!getSimpleResponses().equals(other.getSimpleResponses())) return false;
           break;
         case 8:
-          result = result && getBasicCard().equals(other.getBasicCard());
+          if (!getBasicCard().equals(other.getBasicCard())) return false;
           break;
         case 9:
-          result = result && getSuggestions().equals(other.getSuggestions());
+          if (!getSuggestions().equals(other.getSuggestions())) return false;
           break;
         case 10:
-          result = result && getLinkOutSuggestion().equals(other.getLinkOutSuggestion());
+          if (!getLinkOutSuggestion().equals(other.getLinkOutSuggestion())) return false;
           break;
         case 11:
-          result = result && getListSelect().equals(other.getListSelect());
+          if (!getListSelect().equals(other.getListSelect())) return false;
           break;
         case 12:
-          result = result && getCarouselSelect().equals(other.getCarouselSelect());
+          if (!getCarouselSelect().equals(other.getCarouselSelect())) return false;
           break;
         case 13:
-          result = result && getTelephonyPlayAudio().equals(other.getTelephonyPlayAudio());
+          if (!getTelephonyPlayAudio().equals(other.getTelephonyPlayAudio())) return false;
           break;
         case 14:
-          result =
-              result && getTelephonySynthesizeSpeech().equals(other.getTelephonySynthesizeSpeech());
+          if (!getTelephonySynthesizeSpeech().equals(other.getTelephonySynthesizeSpeech()))
+            return false;
           break;
         case 15:
-          result = result && getTelephonyTransferCall().equals(other.getTelephonyTransferCall());
+          if (!getTelephonyTransferCall().equals(other.getTelephonyTransferCall())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -29779,23 +29727,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -29803,13 +29751,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -33104,7 +33052,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -33268,7 +33216,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -33442,11 +33390,10 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo other =
           (com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo) obj;
 
-      boolean result = true;
-      result = result && getFollowupIntentName().equals(other.getFollowupIntentName());
-      result = result && getParentFollowupIntentName().equals(other.getParentFollowupIntentName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getFollowupIntentName().equals(other.getFollowupIntentName())) return false;
+      if (!getParentFollowupIntentName().equals(other.getParentFollowupIntentName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -33648,23 +33595,23 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -33672,13 +33619,13 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -33936,7 +33883,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -35152,29 +35099,28 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dialogflow.v2beta1.Intent other =
         (com.google.cloud.dialogflow.v2beta1.Intent) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && webhookState_ == other.webhookState_;
-    result = result && (getPriority() == other.getPriority());
-    result = result && (getIsFallback() == other.getIsFallback());
-    result = result && (getMlEnabled() == other.getMlEnabled());
-    result = result && (getMlDisabled() == other.getMlDisabled());
-    result = result && (getEndInteraction() == other.getEndInteraction());
-    result = result && getInputContextNamesList().equals(other.getInputContextNamesList());
-    result = result && getEventsList().equals(other.getEventsList());
-    result = result && getTrainingPhrasesList().equals(other.getTrainingPhrasesList());
-    result = result && getAction().equals(other.getAction());
-    result = result && getOutputContextsList().equals(other.getOutputContextsList());
-    result = result && (getResetContexts() == other.getResetContexts());
-    result = result && getParametersList().equals(other.getParametersList());
-    result = result && getMessagesList().equals(other.getMessagesList());
-    result = result && defaultResponsePlatforms_.equals(other.defaultResponsePlatforms_);
-    result = result && getRootFollowupIntentName().equals(other.getRootFollowupIntentName());
-    result = result && getParentFollowupIntentName().equals(other.getParentFollowupIntentName());
-    result = result && getFollowupIntentInfoList().equals(other.getFollowupIntentInfoList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (webhookState_ != other.webhookState_) return false;
+    if (getPriority() != other.getPriority()) return false;
+    if (getIsFallback() != other.getIsFallback()) return false;
+    if (getMlEnabled() != other.getMlEnabled()) return false;
+    if (getMlDisabled() != other.getMlDisabled()) return false;
+    if (getEndInteraction() != other.getEndInteraction()) return false;
+    if (!getInputContextNamesList().equals(other.getInputContextNamesList())) return false;
+    if (!getEventsList().equals(other.getEventsList())) return false;
+    if (!getTrainingPhrasesList().equals(other.getTrainingPhrasesList())) return false;
+    if (!getAction().equals(other.getAction())) return false;
+    if (!getOutputContextsList().equals(other.getOutputContextsList())) return false;
+    if (getResetContexts() != other.getResetContexts()) return false;
+    if (!getParametersList().equals(other.getParametersList())) return false;
+    if (!getMessagesList().equals(other.getMessagesList())) return false;
+    if (!defaultResponsePlatforms_.equals(other.defaultResponsePlatforms_)) return false;
+    if (!getRootFollowupIntentName().equals(other.getRootFollowupIntentName())) return false;
+    if (!getParentFollowupIntentName().equals(other.getParentFollowupIntentName())) return false;
+    if (!getFollowupIntentInfoList().equals(other.getFollowupIntentInfoList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -35490,18 +35436,18 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       result.mlEnabled_ = mlEnabled_;
       result.mlDisabled_ = mlDisabled_;
       result.endInteraction_ = endInteraction_;
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         inputContextNames_ = inputContextNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.inputContextNames_ = inputContextNames_;
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         events_ = events_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.events_ = events_;
       if (trainingPhrasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           trainingPhrases_ = java.util.Collections.unmodifiableList(trainingPhrases_);
           bitField0_ = (bitField0_ & ~0x00000400);
         }
@@ -35511,7 +35457,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       result.action_ = action_;
       if (outputContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
           bitField0_ = (bitField0_ & ~0x00001000);
         }
@@ -35521,7 +35467,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       }
       result.resetContexts_ = resetContexts_;
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
           bitField0_ = (bitField0_ & ~0x00004000);
         }
@@ -35530,7 +35476,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         result.parameters_ = parametersBuilder_.build();
       }
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
           bitField0_ = (bitField0_ & ~0x00008000);
         }
@@ -35538,7 +35484,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.messages_ = messagesBuilder_.build();
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         defaultResponsePlatforms_ =
             java.util.Collections.unmodifiableList(defaultResponsePlatforms_);
         bitField0_ = (bitField0_ & ~0x00010000);
@@ -35547,7 +35493,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
       result.rootFollowupIntentName_ = rootFollowupIntentName_;
       result.parentFollowupIntentName_ = parentFollowupIntentName_;
       if (followupIntentInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           followupIntentInfo_ = java.util.Collections.unmodifiableList(followupIntentInfo_);
           bitField0_ = (bitField0_ & ~0x00080000);
         }
@@ -35562,35 +35508,35 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -36398,7 +36344,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInputContextNamesIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         inputContextNames_ = new com.google.protobuf.LazyStringArrayList(inputContextNames_);
         bitField0_ |= 0x00000100;
       }
@@ -36559,7 +36505,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         events_ = new com.google.protobuf.LazyStringArrayList(events_);
         bitField0_ |= 0x00000200;
       }
@@ -36720,7 +36666,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         trainingPhrases_ = java.util.Collections.emptyList();
 
     private void ensureTrainingPhrasesIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         trainingPhrases_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase>(
                 trainingPhrases_);
@@ -37114,7 +37060,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhrase.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.TrainingPhraseOrBuilder>(
                 trainingPhrases_,
-                ((bitField0_ & 0x00000400) == 0x00000400),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         trainingPhrases_ = null;
@@ -37225,7 +37171,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOutputContextsIsMutable() {
-      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         outputContexts_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
         bitField0_ |= 0x00001000;
@@ -37640,7 +37586,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Context.Builder,
                 com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
                 outputContexts_,
-                ((bitField0_ & 0x00001000) == 0x00001000),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         outputContexts_ = null;
@@ -37699,7 +37645,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Parameter>(
                 parameters_);
@@ -38048,10 +37994,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.Parameter,
                 com.google.cloud.dialogflow.v2beta1.Intent.Parameter.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.ParameterOrBuilder>(
-                parameters_,
-                ((bitField0_ & 0x00004000) == 0x00004000),
-                getParentForChildren(),
-                isClean());
+                parameters_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -38061,7 +38004,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         messages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(messages_);
         bitField0_ |= 0x00008000;
@@ -38426,10 +38369,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.Message,
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
-                messages_,
-                ((bitField0_ & 0x00008000) == 0x00008000),
-                getParentForChildren(),
-                isClean());
+                messages_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         messages_ = null;
       }
       return messagesBuilder_;
@@ -38439,7 +38379,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDefaultResponsePlatformsIsMutable() {
-      if (!((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         defaultResponsePlatforms_ =
             new java.util.ArrayList<java.lang.Integer>(defaultResponsePlatforms_);
         bitField0_ |= 0x00010000;
@@ -38883,7 +38823,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
         followupIntentInfo_ = java.util.Collections.emptyList();
 
     private void ensureFollowupIntentInfoIsMutable() {
-      if (!((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         followupIntentInfo_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo>(
                 followupIntentInfo_);
@@ -39296,7 +39236,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfo.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.FollowupIntentInfoOrBuilder>(
                 followupIntentInfo_,
-                ((bitField0_ & 0x00080000) == 0x00080000),
+                ((bitField0_ & 0x00080000) != 0),
                 getParentForChildren(),
                 isClean());
         followupIntentInfo_ = null;
@@ -39306,7 +39246,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
