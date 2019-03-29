@@ -167,7 +167,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1477,33 +1477,32 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     com.google.cloud.kms.v1.CryptoKeyVersion other = (com.google.cloud.kms.v1.CryptoKeyVersion) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && state_ == other.state_;
-    result = result && protectionLevel_ == other.protectionLevel_;
-    result = result && algorithm_ == other.algorithm_;
-    result = result && (hasAttestation() == other.hasAttestation());
+    if (!getName().equals(other.getName())) return false;
+    if (state_ != other.state_) return false;
+    if (protectionLevel_ != other.protectionLevel_) return false;
+    if (algorithm_ != other.algorithm_) return false;
+    if (hasAttestation() != other.hasAttestation()) return false;
     if (hasAttestation()) {
-      result = result && getAttestation().equals(other.getAttestation());
+      if (!getAttestation().equals(other.getAttestation())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasGenerateTime() == other.hasGenerateTime());
+    if (hasGenerateTime() != other.hasGenerateTime()) return false;
     if (hasGenerateTime()) {
-      result = result && getGenerateTime().equals(other.getGenerateTime());
+      if (!getGenerateTime().equals(other.getGenerateTime())) return false;
     }
-    result = result && (hasDestroyTime() == other.hasDestroyTime());
+    if (hasDestroyTime() != other.hasDestroyTime()) return false;
     if (hasDestroyTime()) {
-      result = result && getDestroyTime().equals(other.getDestroyTime());
+      if (!getDestroyTime().equals(other.getDestroyTime())) return false;
     }
-    result = result && (hasDestroyEventTime() == other.hasDestroyEventTime());
+    if (hasDestroyEventTime() != other.hasDestroyEventTime()) return false;
     if (hasDestroyEventTime()) {
-      result = result && getDestroyEventTime().equals(other.getDestroyEventTime());
+      if (!getDestroyEventTime().equals(other.getDestroyEventTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1794,35 +1793,35 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2261,7 +2260,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.cloud.kms.v1.KeyOperationAttestation attestation_ = null;
+    private com.google.cloud.kms.v1.KeyOperationAttestation attestation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.kms.v1.KeyOperationAttestation,
             com.google.cloud.kms.v1.KeyOperationAttestation.Builder,
@@ -2479,7 +2478,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return attestationBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2667,7 +2666,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp generateTime_ = null;
+    private com.google.protobuf.Timestamp generateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2866,7 +2865,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return generateTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp destroyTime_ = null;
+    private com.google.protobuf.Timestamp destroyTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3083,7 +3082,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       return destroyTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp destroyEventTime_ = null;
+    private com.google.protobuf.Timestamp destroyEventTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3293,7 +3292,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
