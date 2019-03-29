@@ -54,7 +54,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sentences_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -65,7 +65,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 tokens_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Token>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -83,7 +83,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -95,10 +95,10 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         sentences_ = java.util.Collections.unmodifiableList(sentences_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tokens_ = java.util.Collections.unmodifiableList(tokens_);
       }
       this.unknownFields = unknownFields.build();
@@ -356,12 +356,11 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse other =
         (com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse) obj;
 
-    boolean result = true;
-    result = result && getSentencesList().equals(other.getSentencesList());
-    result = result && getTokensList().equals(other.getTokensList());
-    result = result && getLanguage().equals(other.getLanguage());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getSentencesList().equals(other.getSentencesList())) return false;
+    if (!getTokensList().equals(other.getTokensList())) return false;
+    if (!getLanguage().equals(other.getLanguage())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -574,7 +573,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (sentencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           sentences_ = java.util.Collections.unmodifiableList(sentences_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -583,7 +582,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         result.sentences_ = sentencesBuilder_.build();
       }
       if (tokensBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tokens_ = java.util.Collections.unmodifiableList(tokens_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -599,35 +598,35 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -737,7 +736,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureSentencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         sentences_ =
             new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>(sentences_);
         bitField0_ |= 0x00000001;
@@ -1078,10 +1077,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
                 com.google.cloud.language.v1beta2.Sentence,
                 com.google.cloud.language.v1beta2.Sentence.Builder,
                 com.google.cloud.language.v1beta2.SentenceOrBuilder>(
-                sentences_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                sentences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         sentences_ = null;
       }
       return sentencesBuilder_;
@@ -1091,7 +1087,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureTokensIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tokens_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Token>(tokens_);
         bitField0_ |= 0x00000002;
       }
@@ -1429,10 +1425,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
                 com.google.cloud.language.v1beta2.Token,
                 com.google.cloud.language.v1beta2.Token.Builder,
                 com.google.cloud.language.v1beta2.TokenOrBuilder>(
-                tokens_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                tokens_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         tokens_ = null;
       }
       return tokensBuilder_;
@@ -1549,7 +1542,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

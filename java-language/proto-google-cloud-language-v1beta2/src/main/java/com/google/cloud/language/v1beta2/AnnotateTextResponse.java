@@ -56,7 +56,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sentences_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -67,7 +67,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 tokens_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Token>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -78,7 +78,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 entities_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Entity>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -112,7 +112,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 categories_ =
                     new java.util.ArrayList<
                         com.google.cloud.language.v1beta2.ClassificationCategory>();
@@ -126,7 +126,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -138,16 +138,16 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         sentences_ = java.util.Collections.unmodifiableList(sentences_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         tokens_ = java.util.Collections.unmodifiableList(tokens_);
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         entities_ = java.util.Collections.unmodifiableList(entities_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         categories_ = java.util.Collections.unmodifiableList(categories_);
       }
       this.unknownFields = unknownFields.build();
@@ -622,18 +622,17 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     com.google.cloud.language.v1beta2.AnnotateTextResponse other =
         (com.google.cloud.language.v1beta2.AnnotateTextResponse) obj;
 
-    boolean result = true;
-    result = result && getSentencesList().equals(other.getSentencesList());
-    result = result && getTokensList().equals(other.getTokensList());
-    result = result && getEntitiesList().equals(other.getEntitiesList());
-    result = result && (hasDocumentSentiment() == other.hasDocumentSentiment());
+    if (!getSentencesList().equals(other.getSentencesList())) return false;
+    if (!getTokensList().equals(other.getTokensList())) return false;
+    if (!getEntitiesList().equals(other.getEntitiesList())) return false;
+    if (hasDocumentSentiment() != other.hasDocumentSentiment()) return false;
     if (hasDocumentSentiment()) {
-      result = result && getDocumentSentiment().equals(other.getDocumentSentiment());
+      if (!getDocumentSentiment().equals(other.getDocumentSentiment())) return false;
     }
-    result = result && getLanguage().equals(other.getLanguage());
-    result = result && getCategoriesList().equals(other.getCategoriesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getLanguage().equals(other.getLanguage())) return false;
+    if (!getCategoriesList().equals(other.getCategoriesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -878,7 +877,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (sentencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           sentences_ = java.util.Collections.unmodifiableList(sentences_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -887,7 +886,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         result.sentences_ = sentencesBuilder_.build();
       }
       if (tokensBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tokens_ = java.util.Collections.unmodifiableList(tokens_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -896,7 +895,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         result.tokens_ = tokensBuilder_.build();
       }
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -911,7 +910,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       result.language_ = language_;
       if (categoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           categories_ = java.util.Collections.unmodifiableList(categories_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -926,35 +925,35 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1121,7 +1120,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureSentencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         sentences_ =
             new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>(sentences_);
         bitField0_ |= 0x00000001;
@@ -1480,10 +1479,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.language.v1beta2.Sentence,
                 com.google.cloud.language.v1beta2.Sentence.Builder,
                 com.google.cloud.language.v1beta2.SentenceOrBuilder>(
-                sentences_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                sentences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         sentences_ = null;
       }
       return sentencesBuilder_;
@@ -1493,7 +1489,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureTokensIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tokens_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Token>(tokens_);
         bitField0_ |= 0x00000002;
       }
@@ -1867,10 +1863,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.language.v1beta2.Token,
                 com.google.cloud.language.v1beta2.Token.Builder,
                 com.google.cloud.language.v1beta2.TokenOrBuilder>(
-                tokens_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                tokens_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         tokens_ = null;
       }
       return tokensBuilder_;
@@ -1880,7 +1873,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         entities_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Entity>(entities_);
         bitField0_ |= 0x00000004;
       }
@@ -2255,16 +2248,13 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.language.v1beta2.Entity,
                 com.google.cloud.language.v1beta2.Entity.Builder,
                 com.google.cloud.language.v1beta2.EntityOrBuilder>(
-                entities_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
-                getParentForChildren(),
-                isClean());
+                entities_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;
     }
 
-    private com.google.cloud.language.v1beta2.Sentiment documentSentiment_ = null;
+    private com.google.cloud.language.v1beta2.Sentiment documentSentiment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1beta2.Sentiment,
             com.google.cloud.language.v1beta2.Sentiment.Builder,
@@ -2568,7 +2558,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         categories_ =
             new java.util.ArrayList<com.google.cloud.language.v1beta2.ClassificationCategory>(
                 categories_);
@@ -2922,10 +2912,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.language.v1beta2.ClassificationCategory,
                 com.google.cloud.language.v1beta2.ClassificationCategory.Builder,
                 com.google.cloud.language.v1beta2.ClassificationCategoryOrBuilder>(
-                categories_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
-                getParentForChildren(),
-                isClean());
+                categories_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         categories_ = null;
       }
       return categoriesBuilder_;
@@ -2933,7 +2920,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
