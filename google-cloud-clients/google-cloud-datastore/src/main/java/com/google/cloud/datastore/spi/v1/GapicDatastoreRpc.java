@@ -21,8 +21,6 @@ import static com.google.cloud.datastore.DatastoreExceptionFactory.newDatastoreE
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.batching.BatchingSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -138,6 +136,7 @@ public class GapicDatastoreRpc implements DatastoreRpc {
                 .executor(executor)
                 .build();
         TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
+
         clientContext =
             ClientContext.newBuilder()
                 .setCredentials(options.getCredentials())
@@ -160,7 +159,11 @@ public class GapicDatastoreRpc implements DatastoreRpc {
                 .applyToAllUnaryMethods(retrySettingsSetter);
 
         this.datastoreStub = GrpcDatastoreStub
-            .create(datastoreBuilder.build());
+            .create(datastoreBuilder
+                .setTransportChannelProvider(GrpcTransportOptions.setUpChannelProvider(
+                    DatastoreSettings.defaultGrpcTransportProviderBuilder(), options))
+                .setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options))
+                .build());
       } else {
         ManagedChannel managedChannel =
             ManagedChannelBuilder.forTarget(options.getHost()).build();
