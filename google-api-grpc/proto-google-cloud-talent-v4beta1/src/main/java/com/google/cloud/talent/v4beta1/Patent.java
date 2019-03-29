@@ -66,7 +66,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 inventors_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -133,7 +133,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
             }
           case 74:
             {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -144,7 +144,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -156,10 +156,10 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         inventors_ = inventors_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
       }
       this.unknownFields = unknownFields.build();
@@ -731,24 +731,23 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.talent.v4beta1.Patent other = (com.google.cloud.talent.v4beta1.Patent) obj;
 
-    boolean result = true;
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getInventorsList().equals(other.getInventorsList());
-    result = result && getPatentStatus().equals(other.getPatentStatus());
-    result = result && (hasPatentStatusDate() == other.hasPatentStatusDate());
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getInventorsList().equals(other.getInventorsList())) return false;
+    if (!getPatentStatus().equals(other.getPatentStatus())) return false;
+    if (hasPatentStatusDate() != other.hasPatentStatusDate()) return false;
     if (hasPatentStatusDate()) {
-      result = result && getPatentStatusDate().equals(other.getPatentStatusDate());
+      if (!getPatentStatusDate().equals(other.getPatentStatusDate())) return false;
     }
-    result = result && (hasPatentFilingDate() == other.hasPatentFilingDate());
+    if (hasPatentFilingDate() != other.hasPatentFilingDate()) return false;
     if (hasPatentFilingDate()) {
-      result = result && getPatentFilingDate().equals(other.getPatentFilingDate());
+      if (!getPatentFilingDate().equals(other.getPatentFilingDate())) return false;
     }
-    result = result && getPatentOffice().equals(other.getPatentOffice());
-    result = result && getPatentNumber().equals(other.getPatentNumber());
-    result = result && getPatentDescription().equals(other.getPatentDescription());
-    result = result && getSkillsUsedList().equals(other.getSkillsUsedList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPatentOffice().equals(other.getPatentOffice())) return false;
+    if (!getPatentNumber().equals(other.getPatentNumber())) return false;
+    if (!getPatentDescription().equals(other.getPatentDescription())) return false;
+    if (!getSkillsUsedList().equals(other.getSkillsUsedList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -991,7 +990,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.displayName_ = displayName_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         inventors_ = inventors_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
@@ -1011,7 +1010,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
       result.patentNumber_ = patentNumber_;
       result.patentDescription_ = patentDescription_;
       if (skillsUsedBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
           bitField0_ = (bitField0_ & ~0x00000100);
         }
@@ -1026,35 +1025,35 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1271,7 +1270,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInventorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         inventors_ = new com.google.protobuf.LazyStringArrayList(inventors_);
         bitField0_ |= 0x00000002;
       }
@@ -1532,7 +1531,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.Date patentStatusDate_ = null;
+    private com.google.type.Date patentStatusDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         patentStatusDateBuilder_;
@@ -1714,7 +1713,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
       return patentStatusDateBuilder_;
     }
 
-    private com.google.type.Date patentFilingDate_ = null;
+    private com.google.type.Date patentFilingDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         patentFilingDateBuilder_;
@@ -2212,7 +2211,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSkillsUsedIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>(skillsUsed_);
         bitField0_ |= 0x00000100;
       }
@@ -2569,10 +2568,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Skill,
                 com.google.cloud.talent.v4beta1.Skill.Builder,
                 com.google.cloud.talent.v4beta1.SkillOrBuilder>(
-                skillsUsed_,
-                ((bitField0_ & 0x00000100) == 0x00000100),
-                getParentForChildren(),
-                isClean());
+                skillsUsed_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         skillsUsed_ = null;
       }
       return skillsUsedBuilder_;
@@ -2580,7 +2576,7 @@ public final class Patent extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

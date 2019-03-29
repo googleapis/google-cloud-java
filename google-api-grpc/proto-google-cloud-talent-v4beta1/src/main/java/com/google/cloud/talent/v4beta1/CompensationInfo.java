@@ -52,7 +52,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entries_ =
                     new java.util.ArrayList<
                         com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry>();
@@ -102,7 +102,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -114,7 +114,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entries_ = java.util.Collections.unmodifiableList(entries_);
       }
       this.unknownFields = unknownFields.build();
@@ -1057,7 +1057,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1519,28 +1519,26 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry other =
           (com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry) obj;
 
-      boolean result = true;
-      result = result && type_ == other.type_;
-      result = result && unit_ == other.unit_;
-      result = result && getDescription().equals(other.getDescription());
-      result = result && (hasExpectedUnitsPerYear() == other.hasExpectedUnitsPerYear());
+      if (type_ != other.type_) return false;
+      if (unit_ != other.unit_) return false;
+      if (!getDescription().equals(other.getDescription())) return false;
+      if (hasExpectedUnitsPerYear() != other.hasExpectedUnitsPerYear()) return false;
       if (hasExpectedUnitsPerYear()) {
-        result = result && getExpectedUnitsPerYear().equals(other.getExpectedUnitsPerYear());
+        if (!getExpectedUnitsPerYear().equals(other.getExpectedUnitsPerYear())) return false;
       }
-      result = result && getCompensationAmountCase().equals(other.getCompensationAmountCase());
-      if (!result) return false;
+      if (!getCompensationAmountCase().equals(other.getCompensationAmountCase())) return false;
       switch (compensationAmountCase_) {
         case 3:
-          result = result && getAmount().equals(other.getAmount());
+          if (!getAmount().equals(other.getAmount())) return false;
           break;
         case 4:
-          result = result && getRange().equals(other.getRange());
+          if (!getRange().equals(other.getRange())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1808,23 +1806,23 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1832,13 +1830,13 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -2653,7 +2651,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
-      private com.google.protobuf.DoubleValue expectedUnitsPerYear_ = null;
+      private com.google.protobuf.DoubleValue expectedUnitsPerYear_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.DoubleValue,
               com.google.protobuf.DoubleValue.Builder,
@@ -2928,7 +2926,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3145,7 +3143,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -3331,17 +3329,16 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange other =
           (com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange) obj;
 
-      boolean result = true;
-      result = result && (hasMaxCompensation() == other.hasMaxCompensation());
+      if (hasMaxCompensation() != other.hasMaxCompensation()) return false;
       if (hasMaxCompensation()) {
-        result = result && getMaxCompensation().equals(other.getMaxCompensation());
+        if (!getMaxCompensation().equals(other.getMaxCompensation())) return false;
       }
-      result = result && (hasMinCompensation() == other.hasMinCompensation());
+      if (hasMinCompensation() != other.hasMinCompensation()) return false;
       if (hasMinCompensation()) {
-        result = result && getMinCompensation().equals(other.getMinCompensation());
+        if (!getMinCompensation().equals(other.getMinCompensation())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3566,23 +3563,23 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -3590,13 +3587,13 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3652,7 +3649,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
-      private com.google.type.Money maxCompensation_ = null;
+      private com.google.type.Money maxCompensation_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           maxCompensationBuilder_;
@@ -3863,7 +3860,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return maxCompensationBuilder_;
       }
 
-      private com.google.type.Money minCompensation_ = null;
+      private com.google.type.Money minCompensation_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           minCompensationBuilder_;
@@ -4068,7 +4065,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -4405,29 +4402,21 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     com.google.cloud.talent.v4beta1.CompensationInfo other =
         (com.google.cloud.talent.v4beta1.CompensationInfo) obj;
 
-    boolean result = true;
-    result = result && getEntriesList().equals(other.getEntriesList());
-    result =
-        result
-            && (hasAnnualizedBaseCompensationRange() == other.hasAnnualizedBaseCompensationRange());
+    if (!getEntriesList().equals(other.getEntriesList())) return false;
+    if (hasAnnualizedBaseCompensationRange() != other.hasAnnualizedBaseCompensationRange())
+      return false;
     if (hasAnnualizedBaseCompensationRange()) {
-      result =
-          result
-              && getAnnualizedBaseCompensationRange()
-                  .equals(other.getAnnualizedBaseCompensationRange());
+      if (!getAnnualizedBaseCompensationRange().equals(other.getAnnualizedBaseCompensationRange()))
+        return false;
     }
-    result =
-        result
-            && (hasAnnualizedTotalCompensationRange()
-                == other.hasAnnualizedTotalCompensationRange());
+    if (hasAnnualizedTotalCompensationRange() != other.hasAnnualizedTotalCompensationRange())
+      return false;
     if (hasAnnualizedTotalCompensationRange()) {
-      result =
-          result
-              && getAnnualizedTotalCompensationRange()
-                  .equals(other.getAnnualizedTotalCompensationRange());
+      if (!getAnnualizedTotalCompensationRange()
+          .equals(other.getAnnualizedTotalCompensationRange())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -4644,7 +4633,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -4669,35 +4658,35 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -4781,7 +4770,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         entries_ = java.util.Collections.emptyList();
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entries_ =
             new java.util.ArrayList<
                 com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry>(entries_);
@@ -5236,17 +5225,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry,
                 com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.Builder,
                 com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntryOrBuilder>(
-                entries_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                entries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         entries_ = null;
       }
       return entriesBuilder_;
     }
 
     private com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
-        annualizedBaseCompensationRange_ = null;
+        annualizedBaseCompensationRange_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange,
             com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.Builder,
@@ -5502,7 +5488,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange
-        annualizedTotalCompensationRange_ = null;
+        annualizedTotalCompensationRange_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange,
             com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.Builder,
@@ -5759,7 +5745,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

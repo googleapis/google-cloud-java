@@ -111,7 +111,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 teamMembers_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -120,7 +120,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>();
                 mutable_bitField0_ |= 0x00000040;
               }
@@ -146,7 +146,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
           case 82:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
                 skillsUsedSnippet_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000200;
               }
@@ -155,7 +155,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -167,13 +167,13 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         teamMembers_ = teamMembers_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         skillsUsedSnippet_ = skillsUsedSnippet_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -828,26 +828,25 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.talent.v4beta1.Activity other = (com.google.cloud.talent.v4beta1.Activity) obj;
 
-    boolean result = true;
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && getUri().equals(other.getUri());
-    result = result && (hasCreateDate() == other.hasCreateDate());
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getUri().equals(other.getUri())) return false;
+    if (hasCreateDate() != other.hasCreateDate()) return false;
     if (hasCreateDate()) {
-      result = result && getCreateDate().equals(other.getCreateDate());
+      if (!getCreateDate().equals(other.getCreateDate())) return false;
     }
-    result = result && (hasUpdateDate() == other.hasUpdateDate());
+    if (hasUpdateDate() != other.hasUpdateDate()) return false;
     if (hasUpdateDate()) {
-      result = result && getUpdateDate().equals(other.getUpdateDate());
+      if (!getUpdateDate().equals(other.getUpdateDate())) return false;
     }
-    result = result && getTeamMembersList().equals(other.getTeamMembersList());
-    result = result && getSkillsUsedList().equals(other.getSkillsUsedList());
-    result = result && getActivityNameSnippet().equals(other.getActivityNameSnippet());
-    result =
-        result && getActivityDescriptionSnippet().equals(other.getActivityDescriptionSnippet());
-    result = result && getSkillsUsedSnippetList().equals(other.getSkillsUsedSnippetList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTeamMembersList().equals(other.getTeamMembersList())) return false;
+    if (!getSkillsUsedList().equals(other.getSkillsUsedList())) return false;
+    if (!getActivityNameSnippet().equals(other.getActivityNameSnippet())) return false;
+    if (!getActivityDescriptionSnippet().equals(other.getActivityDescriptionSnippet()))
+      return false;
+    if (!getSkillsUsedSnippetList().equals(other.getSkillsUsedSnippetList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1110,13 +1109,13 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateDate_ = updateDateBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         teamMembers_ = teamMembers_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.teamMembers_ = teamMembers_;
       if (skillsUsedBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           skillsUsed_ = java.util.Collections.unmodifiableList(skillsUsed_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -1126,7 +1125,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       }
       result.activityNameSnippet_ = activityNameSnippet_;
       result.activityDescriptionSnippet_ = activityDescriptionSnippet_;
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         skillsUsedSnippet_ = skillsUsedSnippet_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000200);
       }
@@ -1138,35 +1137,35 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1597,7 +1596,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.Date createDate_ = null;
+    private com.google.type.Date createDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         createDateBuilder_;
@@ -1775,7 +1774,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
       return createDateBuilder_;
     }
 
-    private com.google.type.Date updateDate_ = null;
+    private com.google.type.Date updateDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         updateDateBuilder_;
@@ -1957,7 +1956,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTeamMembersIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         teamMembers_ = new com.google.protobuf.LazyStringArrayList(teamMembers_);
         bitField0_ |= 0x00000020;
       }
@@ -2118,7 +2117,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSkillsUsedIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         skillsUsed_ = new java.util.ArrayList<com.google.cloud.talent.v4beta1.Skill>(skillsUsed_);
         bitField0_ |= 0x00000040;
       }
@@ -2475,10 +2474,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.talent.v4beta1.Skill,
                 com.google.cloud.talent.v4beta1.Skill.Builder,
                 com.google.cloud.talent.v4beta1.SkillOrBuilder>(
-                skillsUsed_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
-                getParentForChildren(),
-                isClean());
+                skillsUsed_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         skillsUsed_ = null;
       }
       return skillsUsedBuilder_;
@@ -2716,7 +2712,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSkillsUsedSnippetIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         skillsUsedSnippet_ = new com.google.protobuf.LazyStringArrayList(skillsUsedSnippet_);
         bitField0_ |= 0x00000200;
       }
@@ -2893,7 +2889,7 @@ public final class Activity extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

@@ -26,16 +26,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
   private SearchJobsRequest() {
     parent_ = "";
     searchMode_ = 0;
-    enableBroadening_ = false;
-    requirePreciseResultSize_ = false;
     histogramQueries_ = java.util.Collections.emptyList();
     jobView_ = 0;
-    offset_ = 0;
-    pageSize_ = 0;
     pageToken_ = "";
     orderBy_ = "";
     diversificationLevel_ = 0;
-    disableKeywordMatch_ = false;
   }
 
   @java.lang.Override
@@ -120,7 +115,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             }
           case 58:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 histogramQueries_ =
                     new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>();
                 mutable_bitField0_ |= 0x00000040;
@@ -193,7 +188,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -205,7 +200,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
       }
       this.unknownFields = unknownFields.build();
@@ -701,7 +696,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -1170,11 +1165,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo other =
           (com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo) obj;
 
-      boolean result = true;
-      result = result && importanceLevel_ == other.importanceLevel_;
-      result = result && getRankingExpression().equals(other.getRankingExpression());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (importanceLevel_ != other.importanceLevel_) return false;
+      if (!getRankingExpression().equals(other.getRankingExpression())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1381,23 +1375,23 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1405,13 +1399,13 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -1743,7 +1737,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3069,33 +3063,32 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     com.google.cloud.talent.v4beta1.SearchJobsRequest other =
         (com.google.cloud.talent.v4beta1.SearchJobsRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && searchMode_ == other.searchMode_;
-    result = result && (hasRequestMetadata() == other.hasRequestMetadata());
+    if (!getParent().equals(other.getParent())) return false;
+    if (searchMode_ != other.searchMode_) return false;
+    if (hasRequestMetadata() != other.hasRequestMetadata()) return false;
     if (hasRequestMetadata()) {
-      result = result && getRequestMetadata().equals(other.getRequestMetadata());
+      if (!getRequestMetadata().equals(other.getRequestMetadata())) return false;
     }
-    result = result && (hasJobQuery() == other.hasJobQuery());
+    if (hasJobQuery() != other.hasJobQuery()) return false;
     if (hasJobQuery()) {
-      result = result && getJobQuery().equals(other.getJobQuery());
+      if (!getJobQuery().equals(other.getJobQuery())) return false;
     }
-    result = result && (getEnableBroadening() == other.getEnableBroadening());
-    result = result && (getRequirePreciseResultSize() == other.getRequirePreciseResultSize());
-    result = result && getHistogramQueriesList().equals(other.getHistogramQueriesList());
-    result = result && jobView_ == other.jobView_;
-    result = result && (getOffset() == other.getOffset());
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && getOrderBy().equals(other.getOrderBy());
-    result = result && diversificationLevel_ == other.diversificationLevel_;
-    result = result && (hasCustomRankingInfo() == other.hasCustomRankingInfo());
+    if (getEnableBroadening() != other.getEnableBroadening()) return false;
+    if (getRequirePreciseResultSize() != other.getRequirePreciseResultSize()) return false;
+    if (!getHistogramQueriesList().equals(other.getHistogramQueriesList())) return false;
+    if (jobView_ != other.jobView_) return false;
+    if (getOffset() != other.getOffset()) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (diversificationLevel_ != other.diversificationLevel_) return false;
+    if (hasCustomRankingInfo() != other.hasCustomRankingInfo()) return false;
     if (hasCustomRankingInfo()) {
-      result = result && getCustomRankingInfo().equals(other.getCustomRankingInfo());
+      if (!getCustomRankingInfo().equals(other.getCustomRankingInfo())) return false;
     }
-    result = result && (getDisableKeywordMatch() == other.getDisableKeywordMatch());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getDisableKeywordMatch() != other.getDisableKeywordMatch()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -3381,7 +3374,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       result.enableBroadening_ = enableBroadening_;
       result.requirePreciseResultSize_ = requirePreciseResultSize_;
       if (histogramQueriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -3408,35 +3401,35 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3769,7 +3762,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.RequestMetadata requestMetadata_ = null;
+    private com.google.cloud.talent.v4beta1.RequestMetadata requestMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.RequestMetadata,
             com.google.cloud.talent.v4beta1.RequestMetadata.Builder,
@@ -3978,7 +3971,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return requestMetadataBuilder_;
     }
 
-    private com.google.cloud.talent.v4beta1.JobQuery jobQuery_ = null;
+    private com.google.cloud.talent.v4beta1.JobQuery jobQuery_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.JobQuery,
             com.google.cloud.talent.v4beta1.JobQuery.Builder,
@@ -4293,7 +4286,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureHistogramQueriesIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         histogramQueries_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.HistogramQuery>(
                 histogramQueries_);
@@ -6190,7 +6183,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.talent.v4beta1.HistogramQuery.Builder,
                 com.google.cloud.talent.v4beta1.HistogramQueryOrBuilder>(
                 histogramQueries_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         histogramQueries_ = null;
@@ -6997,8 +6990,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo customRankingInfo_ =
-        null;
+    private com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo customRankingInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo,
             com.google.cloud.talent.v4beta1.SearchJobsRequest.CustomRankingInfo.Builder,
@@ -7328,7 +7320,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

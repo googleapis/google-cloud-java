@@ -30,13 +30,11 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     externalId_ = "";
     size_ = 0;
     headquartersAddress_ = "";
-    hiringAgency_ = false;
     eeoText_ = "";
     websiteUri_ = "";
     careerSiteUri_ = "";
     imageUri_ = "";
     keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    suspended_ = false;
   }
 
   @java.lang.Override
@@ -134,7 +132,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           case 90:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 keywordSearchableJobCustomAttributes_ =
                     new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000400;
@@ -166,7 +164,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -178,7 +176,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         keywordSearchableJobCustomAttributes_ =
             keywordSearchableJobCustomAttributes_.getUnmodifiableView();
       }
@@ -304,7 +302,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -426,13 +424,12 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.talent.v4beta1.Company.DerivedInfo other =
           (com.google.cloud.talent.v4beta1.Company.DerivedInfo) obj;
 
-      boolean result = true;
-      result = result && (hasHeadquartersLocation() == other.hasHeadquartersLocation());
+      if (hasHeadquartersLocation() != other.hasHeadquartersLocation()) return false;
       if (hasHeadquartersLocation()) {
-        result = result && getHeadquartersLocation().equals(other.getHeadquartersLocation());
+        if (!getHeadquartersLocation().equals(other.getHeadquartersLocation())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -638,23 +635,23 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -662,13 +659,13 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -717,7 +714,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.cloud.talent.v4beta1.Location headquartersLocation_ = null;
+      private com.google.cloud.talent.v4beta1.Location headquartersLocation_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.Location,
               com.google.cloud.talent.v4beta1.Location.Builder,
@@ -911,7 +908,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1666,28 +1663,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.talent.v4beta1.Company other = (com.google.cloud.talent.v4beta1.Company) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getExternalId().equals(other.getExternalId());
-    result = result && size_ == other.size_;
-    result = result && getHeadquartersAddress().equals(other.getHeadquartersAddress());
-    result = result && (getHiringAgency() == other.getHiringAgency());
-    result = result && getEeoText().equals(other.getEeoText());
-    result = result && getWebsiteUri().equals(other.getWebsiteUri());
-    result = result && getCareerSiteUri().equals(other.getCareerSiteUri());
-    result = result && getImageUri().equals(other.getImageUri());
-    result =
-        result
-            && getKeywordSearchableJobCustomAttributesList()
-                .equals(other.getKeywordSearchableJobCustomAttributesList());
-    result = result && (hasDerivedInfo() == other.hasDerivedInfo());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getExternalId().equals(other.getExternalId())) return false;
+    if (size_ != other.size_) return false;
+    if (!getHeadquartersAddress().equals(other.getHeadquartersAddress())) return false;
+    if (getHiringAgency() != other.getHiringAgency()) return false;
+    if (!getEeoText().equals(other.getEeoText())) return false;
+    if (!getWebsiteUri().equals(other.getWebsiteUri())) return false;
+    if (!getCareerSiteUri().equals(other.getCareerSiteUri())) return false;
+    if (!getImageUri().equals(other.getImageUri())) return false;
+    if (!getKeywordSearchableJobCustomAttributesList()
+        .equals(other.getKeywordSearchableJobCustomAttributesList())) return false;
+    if (hasDerivedInfo() != other.hasDerivedInfo()) return false;
     if (hasDerivedInfo()) {
-      result = result && getDerivedInfo().equals(other.getDerivedInfo());
+      if (!getDerivedInfo().equals(other.getDerivedInfo())) return false;
     }
-    result = result && (getSuspended() == other.getSuspended());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getSuspended() != other.getSuspended()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1943,7 +1937,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       result.websiteUri_ = websiteUri_;
       result.careerSiteUri_ = careerSiteUri_;
       result.imageUri_ = imageUri_;
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         keywordSearchableJobCustomAttributes_ =
             keywordSearchableJobCustomAttributes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -1962,35 +1956,35 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -3110,7 +3104,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureKeywordSearchableJobCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         keywordSearchableJobCustomAttributes_ =
             new com.google.protobuf.LazyStringArrayList(keywordSearchableJobCustomAttributes_);
         bitField0_ |= 0x00000400;
@@ -3316,7 +3310,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.cloud.talent.v4beta1.Company.DerivedInfo derivedInfo_ = null;
+    private com.google.cloud.talent.v4beta1.Company.DerivedInfo derivedInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4beta1.Company.DerivedInfo,
             com.google.cloud.talent.v4beta1.Company.DerivedInfo.Builder,
@@ -3550,7 +3544,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

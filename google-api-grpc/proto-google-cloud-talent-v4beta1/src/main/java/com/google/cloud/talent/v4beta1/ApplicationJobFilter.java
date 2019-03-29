@@ -27,7 +27,6 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
     job_ = "";
     jobRequisitionId_ = "";
     jobTitle_ = "";
-    negated_ = false;
   }
 
   @java.lang.Override
@@ -82,7 +81,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -342,13 +341,12 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
     com.google.cloud.talent.v4beta1.ApplicationJobFilter other =
         (com.google.cloud.talent.v4beta1.ApplicationJobFilter) obj;
 
-    boolean result = true;
-    result = result && getJob().equals(other.getJob());
-    result = result && getJobRequisitionId().equals(other.getJobRequisitionId());
-    result = result && getJobTitle().equals(other.getJobTitle());
-    result = result && (getNegated() == other.getNegated());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getJob().equals(other.getJob())) return false;
+    if (!getJobRequisitionId().equals(other.getJobRequisitionId())) return false;
+    if (!getJobTitle().equals(other.getJobTitle())) return false;
+    if (getNegated() != other.getNegated()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -557,35 +555,35 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1028,7 +1026,7 @@ public final class ApplicationJobFilter extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

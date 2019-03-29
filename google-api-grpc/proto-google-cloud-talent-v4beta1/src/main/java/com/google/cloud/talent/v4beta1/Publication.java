@@ -60,7 +60,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
           case 10:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 authors_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -133,7 +133,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -145,7 +145,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         authors_ = authors_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -697,21 +697,20 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.talent.v4beta1.Publication other =
         (com.google.cloud.talent.v4beta1.Publication) obj;
 
-    boolean result = true;
-    result = result && getAuthorsList().equals(other.getAuthorsList());
-    result = result && getTitle().equals(other.getTitle());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && getJournal().equals(other.getJournal());
-    result = result && getVolume().equals(other.getVolume());
-    result = result && getPublisher().equals(other.getPublisher());
-    result = result && (hasPublicationDate() == other.hasPublicationDate());
+    if (!getAuthorsList().equals(other.getAuthorsList())) return false;
+    if (!getTitle().equals(other.getTitle())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getJournal().equals(other.getJournal())) return false;
+    if (!getVolume().equals(other.getVolume())) return false;
+    if (!getPublisher().equals(other.getPublisher())) return false;
+    if (hasPublicationDate() != other.hasPublicationDate()) return false;
     if (hasPublicationDate()) {
-      result = result && getPublicationDate().equals(other.getPublicationDate());
+      if (!getPublicationDate().equals(other.getPublicationDate())) return false;
     }
-    result = result && getPublicationType().equals(other.getPublicationType());
-    result = result && getIsbn().equals(other.getIsbn());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getPublicationType().equals(other.getPublicationType())) return false;
+    if (!getIsbn().equals(other.getIsbn())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -939,7 +938,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
           new com.google.cloud.talent.v4beta1.Publication(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         authors_ = authors_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
@@ -963,35 +962,35 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1082,7 +1081,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAuthorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         authors_ = new com.google.protobuf.LazyStringArrayList(authors_);
         bitField0_ |= 0x00000001;
       }
@@ -1759,7 +1758,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.type.Date publicationDate_ = null;
+    private com.google.type.Date publicationDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         publicationDateBuilder_;
@@ -2151,7 +2150,7 @@ public final class Publication extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
