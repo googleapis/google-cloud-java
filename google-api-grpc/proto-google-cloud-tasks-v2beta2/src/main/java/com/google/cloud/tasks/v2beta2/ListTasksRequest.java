@@ -26,7 +26,6 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
   private ListTasksRequest() {
     parent_ = "";
     responseView_ = 0;
-    pageSize_ = 0;
     pageToken_ = "";
   }
 
@@ -82,7 +81,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -349,13 +348,12 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
     com.google.cloud.tasks.v2beta2.ListTasksRequest other =
         (com.google.cloud.tasks.v2beta2.ListTasksRequest) obj;
 
-    boolean result = true;
-    result = result && getParent().equals(other.getParent());
-    result = result && responseView_ == other.responseView_;
-    result = result && (getPageSize() == other.getPageSize());
-    result = result && getPageToken().equals(other.getPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getParent().equals(other.getParent())) return false;
+    if (responseView_ != other.responseView_) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -564,35 +562,35 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1066,7 +1064,7 @@ public final class ListTasksRequest extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

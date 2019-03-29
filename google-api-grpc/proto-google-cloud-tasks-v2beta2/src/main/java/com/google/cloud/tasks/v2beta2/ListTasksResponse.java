@@ -54,7 +54,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tasks_ = new java.util.ArrayList<com.google.cloud.tasks.v2beta2.Task>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -72,7 +72,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -84,7 +84,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         tasks_ = java.util.Collections.unmodifiableList(tasks_);
       }
       this.unknownFields = unknownFields.build();
@@ -276,11 +276,10 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
     com.google.cloud.tasks.v2beta2.ListTasksResponse other =
         (com.google.cloud.tasks.v2beta2.ListTasksResponse) obj;
 
-    boolean result = true;
-    result = result && getTasksList().equals(other.getTasksList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTasksList().equals(other.getTasksList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -482,7 +481,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (tasksBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           tasks_ = java.util.Collections.unmodifiableList(tasks_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -498,35 +497,35 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -608,7 +607,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureTasksIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         tasks_ = new java.util.ArrayList<com.google.cloud.tasks.v2beta2.Task>(tasks_);
         bitField0_ |= 0x00000001;
       }
@@ -946,10 +945,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.tasks.v2beta2.Task,
                 com.google.cloud.tasks.v2beta2.Task.Builder,
                 com.google.cloud.tasks.v2beta2.TaskOrBuilder>(
-                tasks_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                tasks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         tasks_ = null;
       }
       return tasksBuilder_;
@@ -1076,7 +1072,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
