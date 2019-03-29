@@ -89,7 +89,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -520,18 +520,17 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.datastore.v1.PropertyFilter other = (com.google.datastore.v1.PropertyFilter) obj;
 
-    boolean result = true;
-    result = result && (hasProperty() == other.hasProperty());
+    if (hasProperty() != other.hasProperty()) return false;
     if (hasProperty()) {
-      result = result && getProperty().equals(other.getProperty());
+      if (!getProperty().equals(other.getProperty())) return false;
     }
-    result = result && op_ == other.op_;
-    result = result && (hasValue() == other.hasValue());
+    if (op_ != other.op_) return false;
+    if (hasValue() != other.hasValue()) return false;
     if (hasValue()) {
-      result = result && getValue().equals(other.getValue());
+      if (!getValue().equals(other.getValue())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -754,35 +753,35 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -835,7 +834,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.datastore.v1.PropertyReference property_ = null;
+    private com.google.datastore.v1.PropertyReference property_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.PropertyReference,
             com.google.datastore.v1.PropertyReference.Builder,
@@ -1092,7 +1091,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.datastore.v1.Value value_ = null;
+    private com.google.datastore.v1.Value value_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.Value,
             com.google.datastore.v1.Value.Builder,
@@ -1268,7 +1267,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
