@@ -54,7 +54,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 timeSeries_ = new java.util.ArrayList<com.google.monitoring.v3.TimeSeries>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -72,7 +72,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
             }
           case 26:
             {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 executionErrors_ = new java.util.ArrayList<com.google.rpc.Status>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -82,7 +82,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -94,10 +94,10 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         timeSeries_ = java.util.Collections.unmodifiableList(timeSeries_);
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         executionErrors_ = java.util.Collections.unmodifiableList(executionErrors_);
       }
       this.unknownFields = unknownFields.build();
@@ -358,12 +358,11 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
     com.google.monitoring.v3.ListTimeSeriesResponse other =
         (com.google.monitoring.v3.ListTimeSeriesResponse) obj;
 
-    boolean result = true;
-    result = result && getTimeSeriesList().equals(other.getTimeSeriesList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && getExecutionErrorsList().equals(other.getExecutionErrorsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTimeSeriesList().equals(other.getTimeSeriesList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getExecutionErrorsList().equals(other.getExecutionErrorsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -575,7 +574,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (timeSeriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           timeSeries_ = java.util.Collections.unmodifiableList(timeSeries_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -585,7 +584,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
       }
       result.nextPageToken_ = nextPageToken_;
       if (executionErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           executionErrors_ = java.util.Collections.unmodifiableList(executionErrors_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -600,35 +599,35 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -737,7 +736,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureTimeSeriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         timeSeries_ = new java.util.ArrayList<com.google.monitoring.v3.TimeSeries>(timeSeries_);
         bitField0_ |= 0x00000001;
       }
@@ -1075,10 +1074,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
                 com.google.monitoring.v3.TimeSeries,
                 com.google.monitoring.v3.TimeSeries.Builder,
                 com.google.monitoring.v3.TimeSeriesOrBuilder>(
-                timeSeries_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                timeSeries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         timeSeries_ = null;
       }
       return timeSeriesBuilder_;
@@ -1192,7 +1188,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureExecutionErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         executionErrors_ = new java.util.ArrayList<com.google.rpc.Status>(executionErrors_);
         bitField0_ |= 0x00000004;
       }
@@ -1543,7 +1539,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 executionErrors_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         executionErrors_ = null;
@@ -1553,7 +1549,7 @@ public final class ListTimeSeriesResponse extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
