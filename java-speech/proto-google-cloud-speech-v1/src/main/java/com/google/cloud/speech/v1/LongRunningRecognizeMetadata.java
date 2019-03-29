@@ -24,9 +24,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     super(builder);
   }
 
-  private LongRunningRecognizeMetadata() {
-    progressPercent_ = 0;
-  }
+  private LongRunningRecognizeMetadata() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -89,7 +87,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -274,18 +272,17 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     com.google.cloud.speech.v1.LongRunningRecognizeMetadata other =
         (com.google.cloud.speech.v1.LongRunningRecognizeMetadata) obj;
 
-    boolean result = true;
-    result = result && (getProgressPercent() == other.getProgressPercent());
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (getProgressPercent() != other.getProgressPercent()) return false;
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasLastUpdateTime() == other.hasLastUpdateTime());
+    if (hasLastUpdateTime() != other.hasLastUpdateTime()) return false;
     if (hasLastUpdateTime()) {
-      result = result && getLastUpdateTime().equals(other.getLastUpdateTime());
+      if (!getLastUpdateTime().equals(other.getLastUpdateTime())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -511,35 +508,35 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -641,7 +638,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       return this;
     }
 
-    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -816,7 +813,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp lastUpdateTime_ = null;
+    private com.google.protobuf.Timestamp lastUpdateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -999,7 +996,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

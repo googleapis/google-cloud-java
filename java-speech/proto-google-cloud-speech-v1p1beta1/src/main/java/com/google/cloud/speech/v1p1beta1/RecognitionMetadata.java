@@ -24,13 +24,11 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
   private RecognitionMetadata() {
     interactionType_ = 0;
-    industryNaicsCodeOfAudio_ = 0;
     microphoneDistance_ = 0;
     originalMediaType_ = 0;
     recordingDeviceType_ = 0;
     recordingDeviceName_ = "";
     originalMimeType_ = "";
-    obfuscatedId_ = 0L;
     audioTopic_ = "";
   }
 
@@ -119,7 +117,7 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1453,18 +1451,17 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     com.google.cloud.speech.v1p1beta1.RecognitionMetadata other =
         (com.google.cloud.speech.v1p1beta1.RecognitionMetadata) obj;
 
-    boolean result = true;
-    result = result && interactionType_ == other.interactionType_;
-    result = result && (getIndustryNaicsCodeOfAudio() == other.getIndustryNaicsCodeOfAudio());
-    result = result && microphoneDistance_ == other.microphoneDistance_;
-    result = result && originalMediaType_ == other.originalMediaType_;
-    result = result && recordingDeviceType_ == other.recordingDeviceType_;
-    result = result && getRecordingDeviceName().equals(other.getRecordingDeviceName());
-    result = result && getOriginalMimeType().equals(other.getOriginalMimeType());
-    result = result && (getObfuscatedId() == other.getObfuscatedId());
-    result = result && getAudioTopic().equals(other.getAudioTopic());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (interactionType_ != other.interactionType_) return false;
+    if (getIndustryNaicsCodeOfAudio() != other.getIndustryNaicsCodeOfAudio()) return false;
+    if (microphoneDistance_ != other.microphoneDistance_) return false;
+    if (originalMediaType_ != other.originalMediaType_) return false;
+    if (recordingDeviceType_ != other.recordingDeviceType_) return false;
+    if (!getRecordingDeviceName().equals(other.getRecordingDeviceName())) return false;
+    if (!getOriginalMimeType().equals(other.getOriginalMimeType())) return false;
+    if (getObfuscatedId() != other.getObfuscatedId()) return false;
+    if (!getAudioTopic().equals(other.getAudioTopic())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1698,35 +1695,35 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2580,7 +2577,7 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
