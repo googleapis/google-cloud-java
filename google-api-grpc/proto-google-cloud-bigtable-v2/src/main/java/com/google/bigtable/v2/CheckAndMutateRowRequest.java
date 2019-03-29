@@ -68,7 +68,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
             }
           case 34:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 trueMutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>();
                 mutable_bitField0_ |= 0x00000010;
               }
@@ -78,7 +78,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 falseMutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -110,7 +110,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -122,10 +122,10 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         trueMutations_ = java.util.Collections.unmodifiableList(trueMutations_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         falseMutations_ = java.util.Collections.unmodifiableList(falseMutations_);
       }
       this.unknownFields = unknownFields.build();
@@ -551,18 +551,17 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
     com.google.bigtable.v2.CheckAndMutateRowRequest other =
         (com.google.bigtable.v2.CheckAndMutateRowRequest) obj;
 
-    boolean result = true;
-    result = result && getTableName().equals(other.getTableName());
-    result = result && getAppProfileId().equals(other.getAppProfileId());
-    result = result && getRowKey().equals(other.getRowKey());
-    result = result && (hasPredicateFilter() == other.hasPredicateFilter());
+    if (!getTableName().equals(other.getTableName())) return false;
+    if (!getAppProfileId().equals(other.getAppProfileId())) return false;
+    if (!getRowKey().equals(other.getRowKey())) return false;
+    if (hasPredicateFilter() != other.hasPredicateFilter()) return false;
     if (hasPredicateFilter()) {
-      result = result && getPredicateFilter().equals(other.getPredicateFilter());
+      if (!getPredicateFilter().equals(other.getPredicateFilter())) return false;
     }
-    result = result && getTrueMutationsList().equals(other.getTrueMutationsList());
-    result = result && getFalseMutationsList().equals(other.getFalseMutationsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTrueMutationsList().equals(other.getTrueMutationsList())) return false;
+    if (!getFalseMutationsList().equals(other.getFalseMutationsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -800,7 +799,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         result.predicateFilter_ = predicateFilterBuilder_.build();
       }
       if (trueMutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           trueMutations_ = java.util.Collections.unmodifiableList(trueMutations_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -809,7 +808,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         result.trueMutations_ = trueMutationsBuilder_.build();
       }
       if (falseMutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           falseMutations_ = java.util.Collections.unmodifiableList(falseMutations_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -824,35 +823,35 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1222,7 +1221,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.bigtable.v2.RowFilter predicateFilter_ = null;
+    private com.google.bigtable.v2.RowFilter predicateFilter_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.v2.RowFilter,
             com.google.bigtable.v2.RowFilter.Builder,
@@ -1434,7 +1433,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureTrueMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         trueMutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>(trueMutations_);
         bitField0_ |= 0x00000010;
       }
@@ -1845,7 +1844,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
                 com.google.bigtable.v2.Mutation.Builder,
                 com.google.bigtable.v2.MutationOrBuilder>(
                 trueMutations_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         trueMutations_ = null;
@@ -1857,7 +1856,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureFalseMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         falseMutations_ = new java.util.ArrayList<com.google.bigtable.v2.Mutation>(falseMutations_);
         bitField0_ |= 0x00000020;
       }
@@ -2268,7 +2267,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
                 com.google.bigtable.v2.Mutation.Builder,
                 com.google.bigtable.v2.MutationOrBuilder>(
                 falseMutations_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         falseMutations_ = null;
@@ -2278,7 +2277,7 @@ public final class CheckAndMutateRowRequest extends com.google.protobuf.Generate
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
