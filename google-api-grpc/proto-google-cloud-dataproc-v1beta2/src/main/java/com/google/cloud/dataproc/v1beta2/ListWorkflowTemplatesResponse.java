@@ -53,7 +53,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 templates_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.WorkflowTemplate>();
                 mutable_bitField0_ |= 0x00000001;
@@ -73,7 +73,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -85,7 +85,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         templates_ = java.util.Collections.unmodifiableList(templates_);
       }
       this.unknownFields = unknownFields.build();
@@ -272,11 +272,10 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse other =
         (com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse) obj;
 
-    boolean result = true;
-    result = result && getTemplatesList().equals(other.getTemplatesList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getTemplatesList().equals(other.getTemplatesList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -479,7 +478,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (templatesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           templates_ = java.util.Collections.unmodifiableList(templates_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -495,35 +494,35 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -609,7 +608,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         java.util.Collections.emptyList();
 
     private void ensureTemplatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         templates_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.WorkflowTemplate>(templates_);
         bitField0_ |= 0x00000001;
@@ -956,10 +955,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
                 com.google.cloud.dataproc.v1beta2.WorkflowTemplate,
                 com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder,
                 com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>(
-                templates_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                templates_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         templates_ = null;
       }
       return templatesBuilder_;
@@ -1071,7 +1067,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

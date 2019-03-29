@@ -88,7 +88,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             }
           case 82:
             {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 statusHistory_ =
                     new java.util.ArrayList<
                         com.google.cloud.dataproc.v1beta2.ClusterOperationStatus>();
@@ -116,7 +116,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             }
           case 106:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000040;
@@ -130,7 +130,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
           case 114:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 warnings_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000080;
               }
@@ -139,7 +139,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -151,10 +151,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -715,20 +715,19 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata other =
         (com.google.cloud.dataproc.v1beta2.ClusterOperationMetadata) obj;
 
-    boolean result = true;
-    result = result && getClusterName().equals(other.getClusterName());
-    result = result && getClusterUuid().equals(other.getClusterUuid());
-    result = result && (hasStatus() == other.hasStatus());
+    if (!getClusterName().equals(other.getClusterName())) return false;
+    if (!getClusterUuid().equals(other.getClusterUuid())) return false;
+    if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      result = result && getStatus().equals(other.getStatus());
+      if (!getStatus().equals(other.getStatus())) return false;
     }
-    result = result && getStatusHistoryList().equals(other.getStatusHistoryList());
-    result = result && getOperationType().equals(other.getOperationType());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && internalGetLabels().equals(other.internalGetLabels());
-    result = result && getWarningsList().equals(other.getWarningsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getStatusHistoryList().equals(other.getStatusHistoryList())) return false;
+    if (!getOperationType().equals(other.getOperationType())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getWarningsList().equals(other.getWarningsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -990,7 +989,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         result.status_ = statusBuilder_.build();
       }
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
@@ -1002,7 +1001,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       result.description_ = description_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000080);
       }
@@ -1014,35 +1013,35 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1335,7 +1334,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.cloud.dataproc.v1beta2.ClusterOperationStatus status_ = null;
+    private com.google.cloud.dataproc.v1beta2.ClusterOperationStatus status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1beta2.ClusterOperationStatus,
             com.google.cloud.dataproc.v1beta2.ClusterOperationStatus.Builder,
@@ -1521,7 +1520,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         statusHistory_ = java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.ClusterOperationStatus>(
                 statusHistory_);
@@ -1896,7 +1895,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
                 com.google.cloud.dataproc.v1beta2.ClusterOperationStatus.Builder,
                 com.google.cloud.dataproc.v1beta2.ClusterOperationStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -2248,7 +2247,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
         bitField0_ |= 0x00000080;
       }
@@ -2389,7 +2388,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
