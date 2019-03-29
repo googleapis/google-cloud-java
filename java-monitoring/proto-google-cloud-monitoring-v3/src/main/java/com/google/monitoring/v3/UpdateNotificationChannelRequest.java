@@ -82,7 +82,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -254,17 +254,16 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
     com.google.monitoring.v3.UpdateNotificationChannelRequest other =
         (com.google.monitoring.v3.UpdateNotificationChannelRequest) obj;
 
-    boolean result = true;
-    result = result && (hasUpdateMask() == other.hasUpdateMask());
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
     if (hasUpdateMask()) {
-      result = result && getUpdateMask().equals(other.getUpdateMask());
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
-    result = result && (hasNotificationChannel() == other.hasNotificationChannel());
+    if (hasNotificationChannel() != other.hasNotificationChannel()) return false;
     if (hasNotificationChannel()) {
-      result = result && getNotificationChannel().equals(other.getNotificationChannel());
+      if (!getNotificationChannel().equals(other.getNotificationChannel())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -483,35 +482,35 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -563,7 +562,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
       return this;
     }
 
-    private com.google.protobuf.FieldMask updateMask_ = null;
+    private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
@@ -742,7 +741,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
       return updateMaskBuilder_;
     }
 
-    private com.google.monitoring.v3.NotificationChannel notificationChannel_ = null;
+    private com.google.monitoring.v3.NotificationChannel notificationChannel_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.NotificationChannel,
             com.google.monitoring.v3.NotificationChannel.Builder,
@@ -953,7 +952,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
