@@ -27,7 +27,6 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
   }
 
   private MasterAuthorizedNetworksConfig() {
-    enabled_ = false;
     cidrBlocks_ = java.util.Collections.emptyList();
   }
 
@@ -62,7 +61,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 cidrBlocks_ =
                     new java.util.ArrayList<
                         com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>();
@@ -76,7 +75,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -88,7 +87,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         cidrBlocks_ = java.util.Collections.unmodifiableList(cidrBlocks_);
       }
       this.unknownFields = unknownFields.build();
@@ -222,7 +221,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -391,11 +390,10 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock other =
           (com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock) obj;
 
-      boolean result = true;
-      result = result && getDisplayName().equals(other.getDisplayName());
-      result = result && getCidrBlock().equals(other.getCidrBlock());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getCidrBlock().equals(other.getCidrBlock())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -600,23 +598,23 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -624,13 +622,13 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -879,7 +877,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1076,11 +1074,10 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     com.google.container.v1.MasterAuthorizedNetworksConfig other =
         (com.google.container.v1.MasterAuthorizedNetworksConfig) obj;
 
-    boolean result = true;
-    result = result && (getEnabled() == other.getEnabled());
-    result = result && getCidrBlocksList().equals(other.getCidrBlocksList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getEnabled() != other.getEnabled()) return false;
+    if (!getCidrBlocksList().equals(other.getCidrBlocksList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1286,7 +1283,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       int to_bitField0_ = 0;
       result.enabled_ = enabled_;
       if (cidrBlocksBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           cidrBlocks_ = java.util.Collections.unmodifiableList(cidrBlocks_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -1301,35 +1298,35 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1455,7 +1452,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         cidrBlocks_ = java.util.Collections.emptyList();
 
     private void ensureCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         cidrBlocks_ =
             new java.util.ArrayList<
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock>(cidrBlocks_);
@@ -1852,10 +1849,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock,
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlock.Builder,
                 com.google.container.v1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder>(
-                cidrBlocks_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                cidrBlocks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         cidrBlocks_ = null;
       }
       return cidrBlocksBuilder_;
@@ -1863,7 +1857,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
