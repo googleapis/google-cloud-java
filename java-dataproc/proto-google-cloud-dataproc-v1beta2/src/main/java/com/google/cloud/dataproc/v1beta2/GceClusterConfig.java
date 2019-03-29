@@ -27,7 +27,6 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     zoneUri_ = "";
     networkUri_ = "";
     subnetworkUri_ = "";
-    internalIpOnly_ = false;
     serviceAccount_ = "";
     serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -74,7 +73,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -84,7 +83,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000040;
               }
@@ -93,7 +92,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 metadata_ =
                     com.google.protobuf.MapField.newMapField(
                         MetadataDefaultEntryHolder.defaultEntry);
@@ -127,7 +126,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -139,10 +138,10 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         tags_ = tags_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -779,17 +778,16 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     com.google.cloud.dataproc.v1beta2.GceClusterConfig other =
         (com.google.cloud.dataproc.v1beta2.GceClusterConfig) obj;
 
-    boolean result = true;
-    result = result && getZoneUri().equals(other.getZoneUri());
-    result = result && getNetworkUri().equals(other.getNetworkUri());
-    result = result && getSubnetworkUri().equals(other.getSubnetworkUri());
-    result = result && (getInternalIpOnly() == other.getInternalIpOnly());
-    result = result && getServiceAccount().equals(other.getServiceAccount());
-    result = result && getServiceAccountScopesList().equals(other.getServiceAccountScopesList());
-    result = result && getTagsList().equals(other.getTagsList());
-    result = result && internalGetMetadata().equals(other.internalGetMetadata());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getZoneUri().equals(other.getZoneUri())) return false;
+    if (!getNetworkUri().equals(other.getNetworkUri())) return false;
+    if (!getSubnetworkUri().equals(other.getSubnetworkUri())) return false;
+    if (getInternalIpOnly() != other.getInternalIpOnly()) return false;
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (!getServiceAccountScopesList().equals(other.getServiceAccountScopesList())) return false;
+    if (!getTagsList().equals(other.getTagsList())) return false;
+    if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1036,12 +1034,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       result.subnetworkUri_ = subnetworkUri_;
       result.internalIpOnly_ = internalIpOnly_;
       result.serviceAccount_ = serviceAccount_;
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.serviceAccountScopes_ = serviceAccountScopes_;
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         tags_ = tags_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000040);
       }
@@ -1055,35 +1053,35 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1755,7 +1753,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServiceAccountScopesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList(serviceAccountScopes_);
         bitField0_ |= 0x00000020;
       }
@@ -1988,7 +1986,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
         bitField0_ |= 0x00000040;
       }
@@ -2305,7 +2303,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

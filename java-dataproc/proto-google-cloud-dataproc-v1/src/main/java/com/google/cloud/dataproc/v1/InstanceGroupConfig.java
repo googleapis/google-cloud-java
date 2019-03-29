@@ -24,11 +24,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   private InstanceGroupConfig() {
-    numInstances_ = 0;
     instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     imageUri_ = "";
     machineTypeUri_ = "";
-    isPreemptible_ = false;
     accelerators_ = java.util.Collections.emptyList();
   }
 
@@ -64,7 +62,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 instanceNames_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -124,7 +122,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             }
           case 66:
             {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 accelerators_ =
                     new java.util.ArrayList<com.google.cloud.dataproc.v1.AcceleratorConfig>();
                 mutable_bitField0_ |= 0x00000080;
@@ -136,7 +134,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -148,10 +146,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
       }
       this.unknownFields = unknownFields.build();
@@ -630,23 +628,22 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     com.google.cloud.dataproc.v1.InstanceGroupConfig other =
         (com.google.cloud.dataproc.v1.InstanceGroupConfig) obj;
 
-    boolean result = true;
-    result = result && (getNumInstances() == other.getNumInstances());
-    result = result && getInstanceNamesList().equals(other.getInstanceNamesList());
-    result = result && getImageUri().equals(other.getImageUri());
-    result = result && getMachineTypeUri().equals(other.getMachineTypeUri());
-    result = result && (hasDiskConfig() == other.hasDiskConfig());
+    if (getNumInstances() != other.getNumInstances()) return false;
+    if (!getInstanceNamesList().equals(other.getInstanceNamesList())) return false;
+    if (!getImageUri().equals(other.getImageUri())) return false;
+    if (!getMachineTypeUri().equals(other.getMachineTypeUri())) return false;
+    if (hasDiskConfig() != other.hasDiskConfig()) return false;
     if (hasDiskConfig()) {
-      result = result && getDiskConfig().equals(other.getDiskConfig());
+      if (!getDiskConfig().equals(other.getDiskConfig())) return false;
     }
-    result = result && (getIsPreemptible() == other.getIsPreemptible());
-    result = result && (hasManagedGroupConfig() == other.hasManagedGroupConfig());
+    if (getIsPreemptible() != other.getIsPreemptible()) return false;
+    if (hasManagedGroupConfig() != other.hasManagedGroupConfig()) return false;
     if (hasManagedGroupConfig()) {
-      result = result && getManagedGroupConfig().equals(other.getManagedGroupConfig());
+      if (!getManagedGroupConfig().equals(other.getManagedGroupConfig())) return false;
     }
-    result = result && getAcceleratorsList().equals(other.getAcceleratorsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -886,7 +883,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.numInstances_ = numInstances_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
@@ -905,7 +902,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         result.managedGroupConfig_ = managedGroupConfigBuilder_.build();
       }
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
           bitField0_ = (bitField0_ & ~0x00000080);
         }
@@ -920,35 +917,35 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1103,7 +1100,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         instanceNames_ = new com.google.protobuf.LazyStringArrayList(instanceNames_);
         bitField0_ |= 0x00000002;
       }
@@ -1494,7 +1491,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.dataproc.v1.DiskConfig diskConfig_ = null;
+    private com.google.cloud.dataproc.v1.DiskConfig diskConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.DiskConfig,
             com.google.cloud.dataproc.v1.DiskConfig.Builder,
@@ -1722,7 +1719,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private com.google.cloud.dataproc.v1.ManagedGroupConfig managedGroupConfig_ = null;
+    private com.google.cloud.dataproc.v1.ManagedGroupConfig managedGroupConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ManagedGroupConfig,
             com.google.cloud.dataproc.v1.ManagedGroupConfig.Builder,
@@ -1927,7 +1924,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.AcceleratorConfig>(accelerators_);
         bitField0_ |= 0x00000080;
@@ -2327,10 +2324,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
                 com.google.cloud.dataproc.v1.AcceleratorConfig,
                 com.google.cloud.dataproc.v1.AcceleratorConfig.Builder,
                 com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder>(
-                accelerators_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
-                getParentForChildren(),
-                isClean());
+                accelerators_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;
@@ -2338,7 +2332,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
