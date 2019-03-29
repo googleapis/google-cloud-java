@@ -85,7 +85,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 relatedUrl_ = new java.util.ArrayList<io.grafeas.v1beta1.common.RelatedUrl>();
                 mutable_bitField0_ |= 0x00000010;
               }
@@ -142,7 +142,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           case 74:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000100;
               }
@@ -257,7 +257,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -269,10 +269,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         relatedUrl_ = java.util.Collections.unmodifiableList(relatedUrl_);
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         relatedNoteNames_ = relatedNoteNames_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -1211,54 +1211,52 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     io.grafeas.v1beta1.Note other = (io.grafeas.v1beta1.Note) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getShortDescription().equals(other.getShortDescription());
-    result = result && getLongDescription().equals(other.getLongDescription());
-    result = result && kind_ == other.kind_;
-    result = result && getRelatedUrlList().equals(other.getRelatedUrlList());
-    result = result && (hasExpirationTime() == other.hasExpirationTime());
+    if (!getName().equals(other.getName())) return false;
+    if (!getShortDescription().equals(other.getShortDescription())) return false;
+    if (!getLongDescription().equals(other.getLongDescription())) return false;
+    if (kind_ != other.kind_) return false;
+    if (!getRelatedUrlList().equals(other.getRelatedUrlList())) return false;
+    if (hasExpirationTime() != other.hasExpirationTime()) return false;
     if (hasExpirationTime()) {
-      result = result && getExpirationTime().equals(other.getExpirationTime());
+      if (!getExpirationTime().equals(other.getExpirationTime())) return false;
     }
-    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      result = result && getCreateTime().equals(other.getCreateTime());
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
-    result = result && (hasUpdateTime() == other.hasUpdateTime());
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
-      result = result && getUpdateTime().equals(other.getUpdateTime());
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    result = result && getRelatedNoteNamesList().equals(other.getRelatedNoteNamesList());
-    result = result && getTypeCase().equals(other.getTypeCase());
-    if (!result) return false;
+    if (!getRelatedNoteNamesList().equals(other.getRelatedNoteNamesList())) return false;
+    if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
       case 10:
-        result = result && getVulnerability().equals(other.getVulnerability());
+        if (!getVulnerability().equals(other.getVulnerability())) return false;
         break;
       case 11:
-        result = result && getBuild().equals(other.getBuild());
+        if (!getBuild().equals(other.getBuild())) return false;
         break;
       case 12:
-        result = result && getBaseImage().equals(other.getBaseImage());
+        if (!getBaseImage().equals(other.getBaseImage())) return false;
         break;
       case 13:
-        result = result && getPackage().equals(other.getPackage());
+        if (!getPackage().equals(other.getPackage())) return false;
         break;
       case 14:
-        result = result && getDeployable().equals(other.getDeployable());
+        if (!getDeployable().equals(other.getDeployable())) return false;
         break;
       case 15:
-        result = result && getDiscovery().equals(other.getDiscovery());
+        if (!getDiscovery().equals(other.getDiscovery())) return false;
         break;
       case 16:
-        result = result && getAttestationAuthority().equals(other.getAttestationAuthority());
+        if (!getAttestationAuthority().equals(other.getAttestationAuthority())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1539,7 +1537,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       result.longDescription_ = longDescription_;
       result.kind_ = kind_;
       if (relatedUrlBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           relatedUrl_ = java.util.Collections.unmodifiableList(relatedUrl_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -1562,7 +1560,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         relatedNoteNames_ = relatedNoteNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000100);
       }
@@ -1624,35 +1622,35 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2185,7 +2183,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRelatedUrlIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         relatedUrl_ = new java.util.ArrayList<io.grafeas.v1beta1.common.RelatedUrl>(relatedUrl_);
         bitField0_ |= 0x00000010;
       }
@@ -2523,16 +2521,13 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
                 io.grafeas.v1beta1.common.RelatedUrl,
                 io.grafeas.v1beta1.common.RelatedUrl.Builder,
                 io.grafeas.v1beta1.common.RelatedUrlOrBuilder>(
-                relatedUrl_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
-                getParentForChildren(),
-                isClean());
+                relatedUrl_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         relatedUrl_ = null;
       }
       return relatedUrlBuilder_;
     }
 
-    private com.google.protobuf.Timestamp expirationTime_ = null;
+    private com.google.protobuf.Timestamp expirationTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2713,7 +2708,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return expirationTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -2901,7 +2896,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
-    private com.google.protobuf.Timestamp updateTime_ = null;
+    private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
@@ -3093,7 +3088,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRelatedNoteNamesIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList(relatedNoteNames_);
         bitField0_ |= 0x00000100;
       }
@@ -4629,7 +4624,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
