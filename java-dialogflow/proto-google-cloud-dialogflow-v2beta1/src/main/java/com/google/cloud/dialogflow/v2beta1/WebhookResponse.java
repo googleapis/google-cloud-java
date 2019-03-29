@@ -27,7 +27,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     fulfillmentMessages_ = java.util.Collections.emptyList();
     source_ = "";
     outputContexts_ = java.util.Collections.emptyList();
-    endInteraction_ = false;
   }
 
   @java.lang.Override
@@ -63,7 +62,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 fulfillmentMessages_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>();
                 mutable_bitField0_ |= 0x00000002;
@@ -97,7 +96,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 outputContexts_ =
                     new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
                 mutable_bitField0_ |= 0x00000010;
@@ -130,7 +129,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -142,10 +141,10 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
       }
       this.unknownFields = unknownFields.build();
@@ -643,22 +642,21 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.dialogflow.v2beta1.WebhookResponse other =
         (com.google.cloud.dialogflow.v2beta1.WebhookResponse) obj;
 
-    boolean result = true;
-    result = result && getFulfillmentText().equals(other.getFulfillmentText());
-    result = result && getFulfillmentMessagesList().equals(other.getFulfillmentMessagesList());
-    result = result && getSource().equals(other.getSource());
-    result = result && (hasPayload() == other.hasPayload());
+    if (!getFulfillmentText().equals(other.getFulfillmentText())) return false;
+    if (!getFulfillmentMessagesList().equals(other.getFulfillmentMessagesList())) return false;
+    if (!getSource().equals(other.getSource())) return false;
+    if (hasPayload() != other.hasPayload()) return false;
     if (hasPayload()) {
-      result = result && getPayload().equals(other.getPayload());
+      if (!getPayload().equals(other.getPayload())) return false;
     }
-    result = result && getOutputContextsList().equals(other.getOutputContextsList());
-    result = result && (hasFollowupEventInput() == other.hasFollowupEventInput());
+    if (!getOutputContextsList().equals(other.getOutputContextsList())) return false;
+    if (hasFollowupEventInput() != other.hasFollowupEventInput()) return false;
     if (hasFollowupEventInput()) {
-      result = result && getFollowupEventInput().equals(other.getFollowupEventInput());
+      if (!getFollowupEventInput().equals(other.getFollowupEventInput())) return false;
     }
-    result = result && (getEndInteraction() == other.getEndInteraction());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getEndInteraction() != other.getEndInteraction()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -899,7 +897,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       int to_bitField0_ = 0;
       result.fulfillmentText_ = fulfillmentText_;
       if (fulfillmentMessagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -914,7 +912,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         result.payload_ = payloadBuilder_.build();
       }
       if (outputContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -935,35 +933,35 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1185,7 +1183,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         fulfillmentMessages_ = java.util.Collections.emptyList();
 
     private void ensureFulfillmentMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         fulfillmentMessages_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(
                 fulfillmentMessages_);
@@ -1573,7 +1571,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
                 com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
                 fulfillmentMessages_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         fulfillmentMessages_ = null;
@@ -1675,7 +1673,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.Struct payload_ = null;
+    private com.google.protobuf.Struct payload_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct,
             com.google.protobuf.Struct.Builder,
@@ -2043,7 +2041,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureOutputContextsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         outputContexts_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
         bitField0_ |= 0x00000010;
@@ -2404,7 +2402,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.dialogflow.v2beta1.Context.Builder,
                 com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
                 outputContexts_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         outputContexts_ = null;
@@ -2412,7 +2410,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       return outputContextsBuilder_;
     }
 
-    private com.google.cloud.dialogflow.v2beta1.EventInput followupEventInput_ = null;
+    private com.google.cloud.dialogflow.v2beta1.EventInput followupEventInput_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.EventInput,
             com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
@@ -2656,7 +2654,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

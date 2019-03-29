@@ -32,7 +32,6 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
 
   private StreamingDetectIntentRequest() {
     session_ = "";
-    singleUtterance_ = false;
     inputAudio_ = com.google.protobuf.ByteString.EMPTY;
   }
 
@@ -111,7 +110,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -398,20 +397,19 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     com.google.cloud.dialogflow.v2.StreamingDetectIntentRequest other =
         (com.google.cloud.dialogflow.v2.StreamingDetectIntentRequest) obj;
 
-    boolean result = true;
-    result = result && getSession().equals(other.getSession());
-    result = result && (hasQueryParams() == other.hasQueryParams());
+    if (!getSession().equals(other.getSession())) return false;
+    if (hasQueryParams() != other.hasQueryParams()) return false;
     if (hasQueryParams()) {
-      result = result && getQueryParams().equals(other.getQueryParams());
+      if (!getQueryParams().equals(other.getQueryParams())) return false;
     }
-    result = result && (hasQueryInput() == other.hasQueryInput());
+    if (hasQueryInput() != other.hasQueryInput()) return false;
     if (hasQueryInput()) {
-      result = result && getQueryInput().equals(other.getQueryInput());
+      if (!getQueryInput().equals(other.getQueryInput())) return false;
     }
-    result = result && (getSingleUtterance() == other.getSingleUtterance());
-    result = result && getInputAudio().equals(other.getInputAudio());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getSingleUtterance() != other.getSingleUtterance()) return false;
+    if (!getInputAudio().equals(other.getInputAudio())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -653,35 +651,35 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -862,7 +860,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       return this;
     }
 
-    private com.google.cloud.dialogflow.v2.QueryParameters queryParams_ = null;
+    private com.google.cloud.dialogflow.v2.QueryParameters queryParams_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.QueryParameters,
             com.google.cloud.dialogflow.v2.QueryParameters.Builder,
@@ -1044,7 +1042,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       return queryParamsBuilder_;
     }
 
-    private com.google.cloud.dialogflow.v2.QueryInput queryInput_ = null;
+    private com.google.cloud.dialogflow.v2.QueryInput queryInput_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2.QueryInput,
             com.google.cloud.dialogflow.v2.QueryInput.Builder,
@@ -1382,7 +1380,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
