@@ -19,18 +19,26 @@ package com.google.cloud.datastore.spi.v1;
 import static com.google.cloud.datastore.DatastoreExceptionFactory.newDatastoreException;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.api.gax.batching.BatchingSettings;
+import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallSettings.Builder;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreExceptionFactory;
@@ -40,6 +48,7 @@ import com.google.cloud.datastore.v1.stub.DatastoreStub;
 import com.google.cloud.datastore.v1.stub.DatastoreStubSettings;
 import com.google.cloud.datastore.v1.stub.GrpcDatastoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.common.collect.ImmutableSet;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
@@ -58,9 +67,12 @@ import io.grpc.Context;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.util.Collections;
+import java.util.EnumSet;
+import java.util.Set;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
 import org.threeten.bp.Duration;
 
 public class GapicDatastoreRpc implements DatastoreRpc {
@@ -85,14 +97,22 @@ public class GapicDatastoreRpc implements DatastoreRpc {
   private final DatastoreMetadataProvider metadataProvider;
   private final DatastoreStub datastoreStub;
 
+  private final ScheduledExecutorService executor;
+  private final ClientContext clientContext;
+  private final ExecutorFactory<ScheduledExecutorService> executorFactory;
+
   public static GapicDatastoreRpc create(DatastoreOptions options) {
     return new GapicDatastoreRpc(options);
   }
 
-  public GapicDatastoreRpc(DatastoreOptions options) {
+  public GapicDatastoreRpc(final DatastoreOptions options) {
     this.projectId = options.getProjectId();
     this.projectName = PROJECT_NAME_TEMPLATE.instantiate("project", this.projectId);
 
+
+    GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
+    executorFactory = transportOptions.getExecutorFactory();
+    executor = executorFactory.get();
     ApiClientHeaderProvider.Builder internalHeaderProviderBuilder =
         ApiClientHeaderProvider.newBuilder();
     ApiClientHeaderProvider internalHeaderProvider =
@@ -109,35 +129,67 @@ public class GapicDatastoreRpc implements DatastoreRpc {
         DatastoreMetadataProvider.create(
             mergedHeaderProvider.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
-    ManagedChannel managedChannel =
-        ManagedChannelBuilder.forTarget(options.getHost()).build();
-    TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
-    ClientContext clientContext =
-        ClientContext.newBuilder()
-            .setCredentials(options.getCredentials())
-            .setTransportChannel(transportChannel)
-            .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
-            .setBackgroundResources(
-                Collections.<BackgroundResource>singletonList(transportChannel))
-            .build();
+    try{
+      if (options.getHost().contains("localhost")
+          || NoCredentials.getInstance().equals(options.getCredentials())) {
+        ManagedChannel managedChannel =
+            ManagedChannelBuilder.forTarget(options.getHost())
+                .usePlaintext(true)
+                .executor(executor)
+                .build();
+        TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
+        clientContext =
+            ClientContext.newBuilder()
+                .setCredentials(options.getCredentials())
+                .setExecutor(executor)
+                .setTransportChannel(transportChannel)
+                .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
+                .setBackgroundResources(
+                    Collections.<BackgroundResource>singletonList(transportChannel))
+                .build();
+        ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
+            new ApiFunction<Builder<?, ?>, Void>() {
+              @Override
+              public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
+                builder.setRetrySettings(options.getRetrySettings());
+                return null;
+              }
+            };
+        DatastoreStubSettings.Builder datastoreBuilder =
+            DatastoreStubSettings.newBuilder(clientContext)
+                .applyToAllUnaryMethods(retrySettingsSetter);
 
-    try {
-      this.datastoreStub =
-          GrpcDatastoreStub.create(
-              DatastoreStubSettings.newBuilder(clientContext)
-                  .setTransportChannelProvider(GrpcTransportOptions.setUpChannelProvider(
-                      DatastoreSettings.defaultGrpcTransportProviderBuilder(), options))
-                  .setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options))
-                  .applyToAllUnaryMethods(
-                      new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
-                        @Override
-                        public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
-                          builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
-                          return null;
-                        }
-                      })
-                  .build());
+        this.datastoreStub = GrpcDatastoreStub
+            .create(datastoreBuilder.build());
+      } else {
+        ManagedChannel managedChannel =
+            ManagedChannelBuilder.forTarget(options.getHost()).build();
+        TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
+        clientContext =
+            ClientContext.newBuilder()
+                .setCredentials(options.getCredentials())
+                .setTransportChannel(transportChannel)
+                .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
+                .setBackgroundResources(
+                    Collections.<BackgroundResource>singletonList(transportChannel))
+                .build();
+        this.datastoreStub =
+            GrpcDatastoreStub.create(
+                DatastoreStubSettings.newBuilder(clientContext)
+                    .setTransportChannelProvider(GrpcTransportOptions.setUpChannelProvider(
+                        DatastoreSettings.defaultGrpcTransportProviderBuilder(), options))
+                    .setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options))
+                    .applyToAllUnaryMethods(
+                        new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                          @Override
+                          public Void apply(UnaryCallSettings.Builder<?, ?> builder) {
+                            builder.setRetryableCodes(ImmutableSet.<StatusCode.Code>of());
+                            return null;
+                          }
+                        })
+                    .build());
 
+      }
     } catch (Exception e) {
       throw newDatastoreException(e);
     }
@@ -219,4 +271,28 @@ public class GapicDatastoreRpc implements DatastoreRpc {
       throw newDatastoreException(context, e);
     }
   }
+
+  private static <V> ApiFuture<V> translate(
+      ApiFuture<V> from, final boolean idempotent, StatusCode.Code... returnNullOn) {
+    final Set<Code> returnNullOnSet;
+    if (returnNullOn.length > 0) {
+      returnNullOnSet = EnumSet.of(returnNullOn[0], returnNullOn);
+    } else {
+      returnNullOnSet = Collections.emptySet();
+    }
+    return ApiFutures.catching(
+        from,
+        ApiException.class,
+        new ApiFunction<ApiException, V>() {
+          @Override
+          public V apply(ApiException exception) {
+            if (returnNullOnSet.contains(exception.getStatusCode().getCode())) {
+              return null;
+            }
+            throw newDatastoreException(exception);
+          }
+        });
+  }
+
+
 }
