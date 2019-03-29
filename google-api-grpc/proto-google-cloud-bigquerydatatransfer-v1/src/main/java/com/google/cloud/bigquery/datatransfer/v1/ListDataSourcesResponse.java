@@ -53,7 +53,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dataSources_ =
                     new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSource>();
                 mutable_bitField0_ |= 0x00000001;
@@ -73,7 +73,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -85,7 +85,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         dataSources_ = java.util.Collections.unmodifiableList(dataSources_);
       }
       this.unknownFields = unknownFields.build();
@@ -274,11 +274,10 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
     com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse other =
         (com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse) obj;
 
-    boolean result = true;
-    result = result && getDataSourcesList().equals(other.getDataSourcesList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getDataSourcesList().equals(other.getDataSourcesList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -483,7 +482,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (dataSourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           dataSources_ = java.util.Collections.unmodifiableList(dataSources_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -499,35 +498,35 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -613,7 +612,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureDataSourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         dataSources_ =
             new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSource>(
                 dataSources_);
@@ -962,10 +961,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
                 com.google.cloud.bigquery.datatransfer.v1.DataSource,
                 com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder,
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>(
-                dataSources_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                dataSources_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         dataSources_ = null;
       }
       return dataSourcesBuilder_;
@@ -1082,7 +1078,7 @@ public final class ListDataSourcesResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

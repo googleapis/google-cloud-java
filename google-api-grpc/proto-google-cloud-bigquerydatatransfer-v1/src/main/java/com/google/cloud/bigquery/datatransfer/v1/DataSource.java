@@ -31,16 +31,11 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     clientId_ = "";
     scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     transferType_ = 0;
-    supportsMultipleTransfers_ = false;
-    updateDeadlineSeconds_ = 0;
     defaultSchedule_ = "";
-    supportsCustomSchedule_ = false;
     parameters_ = java.util.Collections.emptyList();
     helpUrl_ = "";
     authorizationType_ = 0;
     dataRefreshType_ = 0;
-    defaultDataRefreshWindowDays_ = 0;
-    manualRunsDisabled_ = false;
   }
 
   @java.lang.Override
@@ -105,7 +100,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 scopes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000020;
               }
@@ -143,7 +138,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             }
           case 98:
             {
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 parameters_ =
                     new java.util.ArrayList<
                         com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>();
@@ -203,7 +198,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -215,10 +210,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
       this.unknownFields = unknownFields.build();
@@ -1403,31 +1398,29 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.bigquery.datatransfer.v1.DataSource other =
         (com.google.cloud.bigquery.datatransfer.v1.DataSource) obj;
 
-    boolean result = true;
-    result = result && getName().equals(other.getName());
-    result = result && getDataSourceId().equals(other.getDataSourceId());
-    result = result && getDisplayName().equals(other.getDisplayName());
-    result = result && getDescription().equals(other.getDescription());
-    result = result && getClientId().equals(other.getClientId());
-    result = result && getScopesList().equals(other.getScopesList());
-    result = result && transferType_ == other.transferType_;
-    result = result && (getSupportsMultipleTransfers() == other.getSupportsMultipleTransfers());
-    result = result && (getUpdateDeadlineSeconds() == other.getUpdateDeadlineSeconds());
-    result = result && getDefaultSchedule().equals(other.getDefaultSchedule());
-    result = result && (getSupportsCustomSchedule() == other.getSupportsCustomSchedule());
-    result = result && getParametersList().equals(other.getParametersList());
-    result = result && getHelpUrl().equals(other.getHelpUrl());
-    result = result && authorizationType_ == other.authorizationType_;
-    result = result && dataRefreshType_ == other.dataRefreshType_;
-    result =
-        result && (getDefaultDataRefreshWindowDays() == other.getDefaultDataRefreshWindowDays());
-    result = result && (getManualRunsDisabled() == other.getManualRunsDisabled());
-    result = result && (hasMinimumScheduleInterval() == other.hasMinimumScheduleInterval());
+    if (!getName().equals(other.getName())) return false;
+    if (!getDataSourceId().equals(other.getDataSourceId())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getClientId().equals(other.getClientId())) return false;
+    if (!getScopesList().equals(other.getScopesList())) return false;
+    if (transferType_ != other.transferType_) return false;
+    if (getSupportsMultipleTransfers() != other.getSupportsMultipleTransfers()) return false;
+    if (getUpdateDeadlineSeconds() != other.getUpdateDeadlineSeconds()) return false;
+    if (!getDefaultSchedule().equals(other.getDefaultSchedule())) return false;
+    if (getSupportsCustomSchedule() != other.getSupportsCustomSchedule()) return false;
+    if (!getParametersList().equals(other.getParametersList())) return false;
+    if (!getHelpUrl().equals(other.getHelpUrl())) return false;
+    if (authorizationType_ != other.authorizationType_) return false;
+    if (dataRefreshType_ != other.dataRefreshType_) return false;
+    if (getDefaultDataRefreshWindowDays() != other.getDefaultDataRefreshWindowDays()) return false;
+    if (getManualRunsDisabled() != other.getManualRunsDisabled()) return false;
+    if (hasMinimumScheduleInterval() != other.hasMinimumScheduleInterval()) return false;
     if (hasMinimumScheduleInterval()) {
-      result = result && getMinimumScheduleInterval().equals(other.getMinimumScheduleInterval());
+      if (!getMinimumScheduleInterval().equals(other.getMinimumScheduleInterval())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1705,7 +1698,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       result.displayName_ = displayName_;
       result.description_ = description_;
       result.clientId_ = clientId_;
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         scopes_ = scopes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
@@ -1716,7 +1709,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       result.defaultSchedule_ = defaultSchedule_;
       result.supportsCustomSchedule_ = supportsCustomSchedule_;
       if (parametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           parameters_ = java.util.Collections.unmodifiableList(parameters_);
           bitField0_ = (bitField0_ & ~0x00000800);
         }
@@ -1741,35 +1734,35 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -2388,7 +2381,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureScopesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
         bitField0_ |= 0x00000020;
       }
@@ -2894,7 +2887,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
         parameters_ = java.util.Collections.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         parameters_ =
             new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>(
                 parameters_);
@@ -3269,10 +3262,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter,
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder,
                 com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>(
-                parameters_,
-                ((bitField0_ & 0x00000800) == 0x00000800),
-                getParentForChildren(),
-                isClean());
+                parameters_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         parameters_ = null;
       }
       return parametersBuilder_;
@@ -3663,7 +3653,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Duration minimumScheduleInterval_ = null;
+    private com.google.protobuf.Duration minimumScheduleInterval_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -3847,7 +3837,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
