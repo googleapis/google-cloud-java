@@ -52,7 +52,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 assets_ = new java.util.ArrayList<com.google.cloud.asset.v1beta1.TemporalAsset>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -63,7 +63,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -75,7 +75,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         assets_ = java.util.Collections.unmodifiableList(assets_);
       }
       this.unknownFields = unknownFields.build();
@@ -207,10 +207,9 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
     com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse other =
         (com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse) obj;
 
-    boolean result = true;
-    result = result && getAssetsList().equals(other.getAssetsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAssetsList().equals(other.getAssetsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -408,7 +407,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
           new com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse(this);
       int from_bitField0_ = bitField0_;
       if (assetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           assets_ = java.util.Collections.unmodifiableList(assets_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -422,35 +421,35 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -530,7 +529,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
         java.util.Collections.emptyList();
 
     private void ensureAssetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         assets_ = new java.util.ArrayList<com.google.cloud.asset.v1beta1.TemporalAsset>(assets_);
         bitField0_ |= 0x00000001;
       }
@@ -869,10 +868,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
                 com.google.cloud.asset.v1beta1.TemporalAsset,
                 com.google.cloud.asset.v1beta1.TemporalAsset.Builder,
                 com.google.cloud.asset.v1beta1.TemporalAssetOrBuilder>(
-                assets_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                assets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         assets_ = null;
       }
       return assetsBuilder_;
@@ -880,7 +876,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
