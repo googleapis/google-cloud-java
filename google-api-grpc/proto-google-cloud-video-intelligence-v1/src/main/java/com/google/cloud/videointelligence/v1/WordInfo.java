@@ -26,8 +26,6 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
   private WordInfo() {
     word_ = "";
-    confidence_ = 0F;
-    speakerTag_ = 0;
   }
 
   @java.lang.Override
@@ -103,7 +101,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -381,23 +379,20 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.videointelligence.v1.WordInfo other =
         (com.google.cloud.videointelligence.v1.WordInfo) obj;
 
-    boolean result = true;
-    result = result && (hasStartTime() == other.hasStartTime());
+    if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      result = result && getStartTime().equals(other.getStartTime());
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
-    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      result = result && getEndTime().equals(other.getEndTime());
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    result = result && getWord().equals(other.getWord());
-    result =
-        result
-            && (java.lang.Float.floatToIntBits(getConfidence())
-                == java.lang.Float.floatToIntBits(other.getConfidence()));
-    result = result && (getSpeakerTag() == other.getSpeakerTag());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getWord().equals(other.getWord())) return false;
+    if (java.lang.Float.floatToIntBits(getConfidence())
+        != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
+    if (getSpeakerTag() != other.getSpeakerTag()) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -632,35 +627,35 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -720,7 +715,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.Duration startTime_ = null;
+    private com.google.protobuf.Duration startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -922,7 +917,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       return startTimeBuilder_;
     }
 
-    private com.google.protobuf.Duration endTime_ = null;
+    private com.google.protobuf.Duration endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
             com.google.protobuf.Duration.Builder,
@@ -1332,7 +1327,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
