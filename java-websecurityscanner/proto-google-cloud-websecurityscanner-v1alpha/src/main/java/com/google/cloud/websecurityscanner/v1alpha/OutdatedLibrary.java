@@ -69,7 +69,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -78,7 +78,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -90,7 +90,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -313,12 +313,11 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary other =
         (com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary) obj;
 
-    boolean result = true;
-    result = result && getLibraryName().equals(other.getLibraryName());
-    result = result && getVersion().equals(other.getVersion());
-    result = result && getLearnMoreUrlsList().equals(other.getLearnMoreUrlsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getLibraryName().equals(other.getLibraryName())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
+    if (!getLearnMoreUrlsList().equals(other.getLearnMoreUrlsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -519,7 +518,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       int to_bitField0_ = 0;
       result.libraryName_ = libraryName_;
       result.version_ = version_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -531,35 +530,35 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -817,7 +816,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLearnMoreUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList(learnMoreUrls_);
         bitField0_ |= 0x00000004;
       }
@@ -958,7 +957,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
