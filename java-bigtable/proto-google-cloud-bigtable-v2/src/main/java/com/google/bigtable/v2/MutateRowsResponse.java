@@ -52,7 +52,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entries_ =
                     new java.util.ArrayList<com.google.bigtable.v2.MutateRowsResponse.Entry>();
                 mutable_bitField0_ |= 0x00000001;
@@ -64,7 +64,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -76,7 +76,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         entries_ = java.util.Collections.unmodifiableList(entries_);
       }
       this.unknownFields = unknownFields.build();
@@ -167,9 +167,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       super(builder);
     }
 
-    private Entry() {
-      index_ = 0L;
-    }
+    private Entry() {}
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -216,7 +214,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
               }
             default:
               {
-                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -363,14 +361,13 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       com.google.bigtable.v2.MutateRowsResponse.Entry other =
           (com.google.bigtable.v2.MutateRowsResponse.Entry) obj;
 
-      boolean result = true;
-      result = result && (getIndex() == other.getIndex());
-      result = result && (hasStatus() == other.hasStatus());
+      if (getIndex() != other.getIndex()) return false;
+      if (hasStatus() != other.hasStatus()) return false;
       if (hasStatus()) {
-        result = result && getStatus().equals(other.getStatus());
+        if (!getStatus().equals(other.getStatus())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -572,23 +569,23 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
 
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
 
       @java.lang.Override
       public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
 
       @java.lang.Override
       public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -596,13 +593,13 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index,
           java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -701,7 +698,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
-      private com.google.rpc.Status status_ = null;
+      private com.google.rpc.Status status_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
@@ -900,7 +897,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1058,10 +1055,9 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     com.google.bigtable.v2.MutateRowsResponse other =
         (com.google.bigtable.v2.MutateRowsResponse) obj;
 
-    boolean result = true;
-    result = result && getEntriesList().equals(other.getEntriesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getEntriesList().equals(other.getEntriesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1257,7 +1253,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
           new com.google.bigtable.v2.MutateRowsResponse(this);
       int from_bitField0_ = bitField0_;
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -1271,35 +1267,35 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1376,7 +1372,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entries_ =
             new java.util.ArrayList<com.google.bigtable.v2.MutateRowsResponse.Entry>(entries_);
         bitField0_ |= 0x00000001;
@@ -1717,10 +1713,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.bigtable.v2.MutateRowsResponse.Entry,
                 com.google.bigtable.v2.MutateRowsResponse.Entry.Builder,
                 com.google.bigtable.v2.MutateRowsResponse.EntryOrBuilder>(
-                entries_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                entries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         entries_ = null;
       }
       return entriesBuilder_;
@@ -1728,7 +1721,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

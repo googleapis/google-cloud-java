@@ -54,7 +54,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 appProfiles_ = new java.util.ArrayList<com.google.bigtable.admin.v2.AppProfile>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -73,7 +73,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
           case 26:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 failedLocations_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -82,7 +82,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -94,10 +94,10 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         appProfiles_ = java.util.Collections.unmodifiableList(appProfiles_);
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         failedLocations_ = failedLocations_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -357,12 +357,11 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
     com.google.bigtable.admin.v2.ListAppProfilesResponse other =
         (com.google.bigtable.admin.v2.ListAppProfilesResponse) obj;
 
-    boolean result = true;
-    result = result && getAppProfilesList().equals(other.getAppProfilesList());
-    result = result && getNextPageToken().equals(other.getNextPageToken());
-    result = result && getFailedLocationsList().equals(other.getFailedLocationsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getAppProfilesList().equals(other.getAppProfilesList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getFailedLocationsList().equals(other.getFailedLocationsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -569,7 +568,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (appProfilesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           appProfiles_ = java.util.Collections.unmodifiableList(appProfiles_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -578,7 +577,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
         result.appProfiles_ = appProfilesBuilder_.build();
       }
       result.nextPageToken_ = nextPageToken_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         failedLocations_ = failedLocations_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
@@ -590,35 +589,35 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -711,7 +710,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureAppProfilesIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         appProfiles_ =
             new java.util.ArrayList<com.google.bigtable.admin.v2.AppProfile>(appProfiles_);
         bitField0_ |= 0x00000001;
@@ -1051,10 +1050,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
                 com.google.bigtable.admin.v2.AppProfile,
                 com.google.bigtable.admin.v2.AppProfile.Builder,
                 com.google.bigtable.admin.v2.AppProfileOrBuilder>(
-                appProfiles_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
-                getParentForChildren(),
-                isClean());
+                appProfiles_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         appProfiles_ = null;
       }
       return appProfilesBuilder_;
@@ -1168,7 +1164,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFailedLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         failedLocations_ = new com.google.protobuf.LazyStringArrayList(failedLocations_);
         bitField0_ |= 0x00000004;
       }
@@ -1336,7 +1332,7 @@ public final class ListAppProfilesResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

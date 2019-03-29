@@ -53,7 +53,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
             break;
           case 10:
             {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 rowKeys_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -62,7 +62,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
             }
           case 18:
             {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 rowRanges_ = new java.util.ArrayList<com.google.bigtable.v2.RowRange>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -72,7 +72,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
             }
           default:
             {
-              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -84,10 +84,10 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_);
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_); // C
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         rowRanges_ = java.util.Collections.unmodifiableList(rowRanges_);
       }
       this.unknownFields = unknownFields.build();
@@ -266,11 +266,10 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.bigtable.v2.RowSet other = (com.google.bigtable.v2.RowSet) obj;
 
-    boolean result = true;
-    result = result && getRowKeysList().equals(other.getRowKeysList());
-    result = result && getRowRangesList().equals(other.getRowRangesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getRowKeysList().equals(other.getRowKeysList())) return false;
+    if (!getRowRangesList().equals(other.getRowRangesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -466,13 +465,13 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.RowSet buildPartial() {
       com.google.bigtable.v2.RowSet result = new com.google.bigtable.v2.RowSet(this);
       int from_bitField0_ = bitField0_;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         rowKeys_ = java.util.Collections.unmodifiableList(rowKeys_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.rowKeys_ = rowKeys_;
       if (rowRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           rowRanges_ = java.util.Collections.unmodifiableList(rowRanges_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -486,35 +485,35 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
 
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
 
     @java.lang.Override
     public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
 
     @java.lang.Override
     public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
 
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
 
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -601,7 +600,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRowKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         rowKeys_ = new java.util.ArrayList<com.google.protobuf.ByteString>(rowKeys_);
         bitField0_ |= 0x00000001;
       }
@@ -616,7 +615,9 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated bytes row_keys = 1;</code>
      */
     public java.util.List<com.google.protobuf.ByteString> getRowKeysList() {
-      return java.util.Collections.unmodifiableList(rowKeys_);
+      return ((bitField0_ & 0x00000001) != 0)
+          ? java.util.Collections.unmodifiableList(rowKeys_)
+          : rowKeys_;
     }
     /**
      *
@@ -714,7 +715,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRowRangesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         rowRanges_ = new java.util.ArrayList<com.google.bigtable.v2.RowRange>(rowRanges_);
         bitField0_ |= 0x00000002;
       }
@@ -1052,10 +1053,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.v2.RowRange,
                 com.google.bigtable.v2.RowRange.Builder,
                 com.google.bigtable.v2.RowRangeOrBuilder>(
-                rowRanges_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
-                getParentForChildren(),
-                isClean());
+                rowRanges_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         rowRanges_ = null;
       }
       return rowRangesBuilder_;
@@ -1063,7 +1061,7 @@ public final class RowSet extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
